@@ -1,0 +1,61 @@
+<script lang="tsx">
+import Vue from "vue";
+import Component from "vue-class-component";
+import { Prop } from "vue-property-decorator";
+import { Rarity } from "@/Types";
+
+@Component({})
+export default class RarityBadge extends Vue {
+	@Prop({
+		type: String,
+		required: true,
+	})
+	private rarity!: Rarity;
+
+	@Prop({
+		type: String,
+		default: "normal",
+	})
+	private size!: string;
+
+	private render () {
+		return <b-badge variant="light" class="rarity-badge" data-rarity={this.rarity} data-size={this.size}>
+			{this.$slots.default || this.rarity}
+		</b-badge>;
+	}
+}
+</script>
+
+<style lang="scss">
+.badge.rarity-badge {
+	margin-right: 2px;
+	font-size: 75%;
+	color: #000;
+
+	&:last-child {
+		margin-right: 0 !important;
+	}
+
+	&[data-rarity="B"] {
+		background-color: #e2f0d9;
+	}
+	&[data-rarity="A"] {
+		background-color: #deebf7;
+	}
+	&[data-rarity="S"] {
+		background-color: #fff2cc;
+	}
+	&[data-rarity="SS"] {
+		background-color: #fce391;
+	}
+
+	&[data-size="medium"] {
+		margin-right: 6px;
+		font-size: 100%;
+	}
+	&[data-size="large"] {
+		margin-right: 10px;
+		font-size: 120%;
+	}
+}
+</style>
