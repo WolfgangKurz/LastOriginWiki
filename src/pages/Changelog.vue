@@ -19,6 +19,18 @@
 				<div>파이어폭스를 제외한 브라우저에서 스킨이 잘려 표시되는 문제 수정</div>
 				<div>모바일 사이즈에서 유닛 정보 내용이 넘치는 문제 수정</div>
 				<div>모바일 사이즈에서 스킬 정보가 넘치는 문제 수정</div>
+				<div>
+					<b-badge variant="warning">세띠</b-badge>의 유형, 2번째 액티브 스킬
+					<b-badge variant="warning">쏘지마세요!</b-badge>의 사거리와 AP가 잘못 기입되어있던 문제 수정
+				</div>
+				<div>
+					<b-badge variant="warning">레이시</b-badge>의 1번째 패시브 스킬
+					<b-badge variant="warning">전자기 공명</b-badge>의 전기 속성 아군 설명이 올바르지 못하게 표시되던 문제 수정
+				</div>
+				<div>
+					<b-badge variant="warning">라비아타 프로토타입</b-badge>의 2번째 액티브 스킬
+					<b-badge variant="warning">철충 대파괴</b-badge>의 AP가 누락되어있던 문제 수정
+				</div>
 			</b-card-text>
 		</b-card>
 		<b-card class="mt-2">
