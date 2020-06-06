@@ -57,9 +57,14 @@ export default class SkillBound extends Vue {
 				const lv = x.substr(0, x.indexOf(":"));
 				if (lv.includes("~")) {
 					const from = parseInt(lv.substr(0, lv.indexOf("~")), 10);
-					const to = parseInt(lv.substr(lv.indexOf("~") + 1), 10);
+					const to = (() => {
+						const ilv = parseInt(lv.substr(lv.indexOf("~") + 1), 10);
+						if (ilv >= 10) return 13;
+						else return ilv;
+					})();
 
-					if (from > this.level || this.level > to || (this.level >= 10 && to >= 10)) return;
+					if (this.level < from || to < this.level) // 범위 밖
+						return;
 				} else {
 					const ilv = parseInt(lv, 10);
 					if (ilv < 10 && this.level !== ilv) return;

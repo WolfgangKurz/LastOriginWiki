@@ -8,57 +8,81 @@
 
 		<b-card class="mt-2">
 			<template #header>2020-06-06</template>
-			<b-card-text>배포 시작</b-card-text>
+			<b-card-text>
+				<div>배포 시작</div>
+				<div>레벨 10 이상의 스킬 범위가 정상적으로 표시되지 않는 문제 수정</div>
+				<div>
+					<b-badge variant="warning">오베로니아 레아</b-badge>의 2번째 패시브 스킬
+					<b-badge variant="warning">기상 최적화</b-badge>의 1~9 레벨 범위가 올바르지 않은 문제 수정
+				</div>
+			</b-card-text>
 		</b-card>
 		<b-card class="mt-2">
 			<template #header>2020-06-05</template>
 			<b-card-text>
-				<b-badge variant="warning">켈베로스 "드림위버 웨딩 스페셜 : 오늘은 얌전히!"</b-badge>,
-				<b-badge variant="warning">세띠 "드림위버 웨딩 스페셜 : 안식처"</b-badge>,
-				<b-badge variant="warning">블랙 웜 S9</b-badge> 스킨 추가
-				<br />
-				<b-badge variant="warning">세띠</b-badge> 스킬 정보 추가
+				<div>
+					<b-badge variant="warning">켈베로스 "드림위버 웨딩 스페셜 : 오늘은 얌전히!"</b-badge>,
+					<b-badge variant="warning">세띠 "드림위버 웨딩 스페셜 : 안식처"</b-badge>,
+					<b-badge variant="warning">블랙 웜 S9</b-badge>스킨 추가
+				</div>
+				<div>
+					<b-badge variant="warning">세띠</b-badge>스킬 정보 추가
+				</div>
 			</b-card-text>
 		</b-card>
 		<b-card class="mt-2">
 			<template #header>2020-06-04</template>
-			<b-card-text>유닛 스킬 정보 작성 완료 (세띠, 럼버제인 제외)</b-card-text>
+			<b-card-text>
+				<div>유닛 스킬 정보 작성 완료 (세띠, 럼버제인 제외)</div>
+			</b-card-text>
 		</b-card>
 		<b-card class="mt-2">
 			<template #header>2020-05-30</template>
 			<b-card-text>
-				<b-badge variant="warning">유닛 모달</b-badge> 내 스킨에
-				<b-badge variant="warning">로비 애니메이션</b-badge> 여부 추가.
+				<div>
+					<b-badge variant="warning">유닛 모달</b-badge>내 스킨에
+					<b-badge variant="warning">로비 애니메이션</b-badge>여부 추가.
+				</div>
 			</b-card-text>
 		</b-card>
 		<b-card class="mt-2">
 			<template #header>2020-05-23</template>
 			<b-card-text>
-				<b-badge variant="warning">유닛 모달</b-badge> 완성.
+				<div>
+					<b-badge variant="warning">유닛 모달</b-badge>완성.
+				</div>
 			</b-card-text>
 		</b-card>
 		<b-card class="mt-2">
 			<template #header>2020-05-21</template>
 			<b-card-text>
-				유닛정보
-				<b-badge variant="warning">일반 보기</b-badge>,
-				<b-badge variant="warning">그룹별 보기</b-badge> 완성.
+				<div>
+					유닛정보
+					<b-badge variant="warning">일반 보기</b-badge>,
+					<b-badge variant="warning">그룹별 보기</b-badge>완성.
+				</div>
 			</b-card-text>
 		</b-card>
 		<b-card class="mt-2">
 			<template #header>2020-05-18</template>
 			<b-card-text>
-				유닛정보
-				<b-badge variant="warning">테이블 보기</b-badge> 완성.
+				<div>
+					유닛정보
+					<b-badge variant="warning">테이블 보기</b-badge>완성.
+				</div>
 			</b-card-text>
 		</b-card>
 		<b-card class="mt-2">
 			<template #header>2020-05-17</template>
-			<b-card-text>장비정보 페이지 완성.</b-card-text>
+			<b-card-text>
+				<div>장비정보 페이지 완성.</div>
+			</b-card-text>
 		</b-card>
 		<b-card class="mt-2">
 			<template #header>2020-05-16</template>
-			<b-card-text>프로젝트 시작.</b-card-text>
+			<b-card-text>
+				<div>프로젝트 시작.</div>
+			</b-card-text>
 		</b-card>
 	</div>
 </template>
@@ -74,6 +98,14 @@ export default class Changelog extends Vue {
 
 <style lang="scss">
 #app > .container > .changelog {
+	.card-text > div {
+		padding: 4px 0 3px;
+		border-bottom: 1px solid #d9d9d9;
+
+		&:last-child {
+			border-bottom: 0;
+		}
+	}
 	.badge {
 		margin-bottom: 5px;
 		font-size: inherit;
