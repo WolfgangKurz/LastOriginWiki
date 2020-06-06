@@ -699,18 +699,25 @@ export default class UnitModal extends Vue {
 		}
 
 		> .unit-full-unit {
+			$margin: 4%;
 			position: absolute;
 			display: flex;
-			padding: 4%;
+			margin: $margin;
 			left: 0;
 			top: 0;
-			width: 100%;
-			height: 100%;
+			width: (100% - $margin * 2);
+			height: (100% - $margin * 2);
 
 			align-items: center;
 			justify-content: center;
 
 			> img {
+				position: absolute;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
 				max-width: 100%;
 				max-height: 100%;
 			}
