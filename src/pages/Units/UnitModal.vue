@@ -80,47 +80,48 @@
 						</div>
 					</b-td>
 				</b-tr>
-				<b-tr>
-					<b-th variant="dark">도감 번호</b-th>
-					<b-td>
-						<small>No.&nbsp;</small>
-						<strong>{{unit.id}}</strong>
-					</b-td>
-					<b-th variant="dark">소속</b-th>
-					<b-td>{{unit.group}}</b-td>
-				</b-tr>
-				<b-tr>
-					<b-th variant="dark">등급</b-th>
-					<b-td>
-						<rarity-badge :rarity="unit.rarity" size="medium">{{unit.rarity}} 등급</rarity-badge>
-					</b-td>
-					<b-th variant="dark">승급</b-th>
-					<b-td>
-						<template v-if="unit.promotions">
-							<rarity-badge
-								v-for="pro in unit.promotions"
-								:key="`unit-${unit.id}-promotion-${pro}`"
-								:rarity="pro"
-								size="medium"
-							>{{pro}} 승급</rarity-badge>
-						</template>
-						<template v-else>
-							<div class="text-secondary">승급 없음</div>
-						</template>
-					</b-td>
-				</b-tr>
-				<b-tr>
-					<b-th variant="dark">유형</b-th>
-					<b-td>
-						<unit-badge :type="unit.type" size="large" transparent black />
-					</b-td>
-					<b-th variant="dark">역할</b-th>
-					<b-td>
-						<unit-badge :role="unit.role" size="large" transparent black />
-					</b-td>
-				</b-tr>
 			</b-tbody>
 		</b-table-simple>
+
+		<b-container class="table-unit-modal mb-4">
+			<b-row cols="2" cols-md="4" class="text-center">
+				<b-col class="bg-dark text-white">도감 번호</b-col>
+				<b-col>
+					<small>No.&nbsp;</small>
+					<strong>{{unit.id}}</strong>
+				</b-col>
+				<b-col class="bg-dark text-white">소속</b-col>
+				<b-col>
+					<span class="break-keep">{{unit.group}}</span>
+				</b-col>
+				<b-col class="bg-dark text-white">등급</b-col>
+				<b-col>
+					<rarity-badge :rarity="unit.rarity" size="medium">{{unit.rarity}} 등급</rarity-badge>
+				</b-col>
+				<b-col class="bg-dark text-white">승급</b-col>
+				<b-col>
+					<template v-if="unit.promotions">
+						<rarity-badge
+							v-for="pro in unit.promotions"
+							:key="`unit-${unit.id}-promotion-${pro}`"
+							:rarity="pro"
+							size="medium"
+						>{{pro}} 승급</rarity-badge>
+					</template>
+					<template v-else>
+						<span class="text-secondary">승급 없음</span>
+					</template>
+				</b-col>
+				<b-col class="bg-dark text-white">유형</b-col>
+				<b-col>
+					<unit-badge :type="unit.type" size="large" transparent black />
+				</b-col>
+				<b-col class="bg-dark text-white">역할</b-col>
+				<b-col>
+					<unit-badge :role="unit.role" size="large" transparent black />
+				</b-col>
+			</b-row>
+		</b-container>
 
 		<b-row>
 			<b-col cols="12" sm="6">
@@ -203,74 +204,12 @@
 			</b-col>
 		</b-row>
 
-		<b-table-simple bordered table-class="table-unit-modal">
-			<b-thead head-variant="dark">
-				<b-tr>
-					<b-th colspan="3">
-						스킬 정보
-						<b-btn-group v-if="HasFormChange" class="ml-2">
-							<b-button
-								variant="outline-warning"
-								:pressed="formState === 'normal'"
-								size="sm"
-								@click="formState = 'normal'"
-							>Normal</b-button>
-							<b-button
-								variant="outline-warning"
-								:pressed="formState === 'change'"
-								size="sm"
-								@click="formState = 'change'"
-							>F.Change</b-button>
-						</b-btn-group>
-					</b-th>
-				</b-tr>
-				<b-tr>
-					<b-th>이름</b-th>
-					<b-th>
-						설명 및 수치
-						<b-form-select
-							class="table-unit-level-select"
-							size="sm"
-							v-model="skillLevel"
-							:options="SkillLevelList"
-						/>
-					</b-th>
-					<b-th>AP &amp; 사거리 &amp; 범위</b-th>
-				</b-tr>
-			</b-thead>
-			<b-tbody>
-				<b-tr v-for="(skill, idx) in Skills" :key="`unit-modal-skill-${idx}`">
-					<b-td>
-						<img class="skill-icon" :src="skill.icon" />
-						<div class="text-bold">{{skill.name}}</div>
-
-						<rarity-badge
-							v-if="skill.isPassive && skill.index > rarityIndex"
-							:rarity="rarityList[skill.index]"
-						>{{rarityList[skill.index]}} 승급 스킬</rarity-badge>
-					</b-td>
-					<b-td class="text-left">
-						<div
-							v-for="(line, lineIdx) in skill.desc"
-							:key="`unit-modal-skill-desc-${lineIdx}`"
-							class="unit-modal-skill"
-						>
-							<skill-description :text="line" :level="skillLevel" />
-						</div>
-					</b-td>
-					<b-th variant="dark" class="text-center">
-						<skill-bound
-							:passive="skill.isPassive"
-							:range="skill.range"
-							:target="skill.target"
-							:bound="skill.bound"
-							:ap="skill.ap"
-							:level="skillLevel + 1"
-						/>
-					</b-th>
-				</b-tr>
-			</b-tbody>
-		</b-table-simple>
+		<unit-skill-table
+			:skills="SkillsRaw"
+			:skill-level.sync="skillLevel"
+			:form-state.sync="formState"
+			:rarity="unit.rarity"
+		/>
 	</b-modal>
 </template>
 
@@ -289,8 +228,10 @@ import UnitBadge from "@/components/UnitBadge.vue";
 import RarityBadge from "@/components/RarityBadge.vue";
 import SkillBound from "@/components/SkillBound.vue";
 import SkillDescription from "@/components/SkillDescription.vue";
-
 import ElemIcon from "@/components/ElemIcon.vue";
+
+import UnitSkillTable from "./UnitSkillTable.vue";
+
 import { Unit, RawSkin, SkinInfo, RawCostTable, CostTable, RawSkill, Rarity, RawSkillUnit } from "@/Types";
 
 import { UnitData, SkillData } from "@/DB";
@@ -318,6 +259,7 @@ interface SkillTable {
 		ElemIcon,
 		SkillBound,
 		SkillDescription,
+		UnitSkillTable,
 	},
 })
 export default class UnitModal extends Vue {
@@ -345,6 +287,8 @@ export default class UnitModal extends Vue {
 	private linkBonus: "none" | "discount" | "skill" | "range" | "buf-debuf" | "speed" | "evade" | "hp" = "none";
 	private formState: "normal" | "change" = "normal";
 
+	private skillLevel: number = 0;
+
 	private get AssetsRoot () {
 		return AssetsRoot;
 	}
@@ -360,8 +304,6 @@ export default class UnitModal extends Vue {
 	private set linkBonusDiscount (value: boolean) {
 		this.linkBonus = value ? "discount" : "none";
 	}
-
-	private skillLevel: number = 0;
 
 	private get DisplayId () {
 		return ("00" + this.unit.id).substr(-3);
@@ -773,6 +715,17 @@ export default class UnitModal extends Vue {
 		padding-top: 2px;
 	}
 
+	.table-unit-modal.container {
+		.col {
+			margin-bottom: -1px;
+			padding: 0.75rem;
+			border: 1px solid #dee2e6;
+			&.bg-dark {
+				border-color: #454d55;
+				font-weight: bold;
+			}
+		}
+	}
 	.table-unit-modal.table-bordered {
 		td,
 		th {
@@ -807,5 +760,9 @@ export default class UnitModal extends Vue {
 			border-bottom: 0;
 		}
 	}
+}
+
+.break-keep {
+	word-break: keep-all;
 }
 </style>
