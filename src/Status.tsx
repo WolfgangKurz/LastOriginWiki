@@ -1,4 +1,5 @@
 import { Status } from "@/Types";
+import { UnitData } from '@/DB';
 
 export interface StatusTextType {
 	unknown: boolean;
@@ -199,8 +200,10 @@ export function StatusText (context: Vue, status: Status): StatusTextType {
 						disp = <span>{effectName(p0)} 해제 ({p1} 확률)</span>;
 					else if (isNumeric(p0))
 						disp = <span>해로운 효과 해제 ({p0} 확률)</span>;
-					else
+					else if (p.length > 1)
 						disp = <span>{effectName(p0)} 해제</span>;
+					else
+						disp = <span>해로운 효과 해제</span>;
 					break;
 
 				case "scout":
@@ -219,6 +222,8 @@ export function StatusText (context: Vue, status: Status): StatusTextType {
 					disp = <span>{name || x.act} {p.join(", ")}</span>;
 					break;
 			}
+
+			const randTip = x.rand ? <b-badge variant="info" class="float-right ml-1">랜덤</b-badge> : "";
 
 			if (status.on.length > 0) {
 				const triggers: Array<string | JSX.Element> = [];
@@ -260,6 +265,10 @@ export function StatusText (context: Vue, status: Status): StatusTextType {
 								text = "바이오로이드";
 							else if (x.params[0] === "ags")
 								text = "로봇";
+							else {
+								const iid = typeof x.params[0] === "string" ? parseInt(x.params[0], 10) : x.params[0];
+								text = `<${UnitData[iid].name}>가 장착 시`;
+							}
 							break;
 						case "hdmg":
 							if (x.inv)
@@ -280,11 +289,16 @@ export function StatusText (context: Vue, status: Status): StatusTextType {
 				if (x.repeats > 0) {
 					disp = <span>
 						{disp}
-						<div class="badge badge-danger float-right ml-1">{x.repeats}회</div>
+						{randTip}
+						<b-badge variant="danger" class="float-right ml-1">{x.repeats}회</b-badge>
 						{triggers}
 					</span>;
 				} else
-					disp = <span>{disp} {triggers}</span>;
+					disp = <span>
+						{disp}
+						{randTip}
+						{triggers}
+					</span>;
 			}
 
 			return disp;

@@ -12,6 +12,24 @@
 				<div>
 					<b-badge variant="warning">블랙 웜 S9</b-badge>의 스킬 정보 추가
 				</div>
+				<div>
+					<b-badge variant="warning">철혈의 레오나</b-badge>의 2번째 액티브 스킬
+					<b-badge variant="warning">돌격 명령</b-badge>의 AP 고정 수치가 표시되지 않는 문제 수정
+				</div>
+				<div>
+					<b-badge variant="warning">소완제 수제 도시락</b-badge>에
+					<b-badge variant="warning">펜리르</b-badge>조건이
+					<b-badge variant="info">unit</b-badge>으로 표시되는 문제 수정
+				</div>
+				<div>
+					<b-badge variant="warning">달의 마력이 담긴 송편</b-badge>의
+					<b-badge variant="warning">해로운 효과 해제</b-badge>속성이
+					<b-badge variant="info">???</b-badge>로 표시되는 문제 수정
+				</div>
+				<div>
+					<b-badge variant="warning">달의 마력이 담긴 송편</b-badge>의
+					<b-badge variant="info">랜덤</b-badge>조건이 표시되지 않는 문제 수정
+				</div>
 			</b-card-text>
 		</b-card>
 		<b-card class="mt-2">
@@ -64,8 +82,8 @@
 			<template #header>2020-05-30</template>
 			<b-card-text>
 				<div>
-					<b-badge variant="warning">유닛 모달</b-badge>내 스킨에
-					<b-badge variant="warning">로비 애니메이션</b-badge>여부 추가.
+					<b-badge variant="info">유닛 모달</b-badge>내 스킨에
+					<b-badge variant="info">로비 애니메이션</b-badge>여부 추가.
 				</div>
 			</b-card-text>
 		</b-card>
@@ -73,7 +91,7 @@
 			<template #header>2020-05-23</template>
 			<b-card-text>
 				<div>
-					<b-badge variant="warning">유닛 모달</b-badge>완성.
+					<b-badge variant="info">유닛 모달</b-badge>완성.
 				</div>
 			</b-card-text>
 		</b-card>
@@ -82,8 +100,8 @@
 			<b-card-text>
 				<div>
 					유닛정보
-					<b-badge variant="warning">일반 보기</b-badge>,
-					<b-badge variant="warning">그룹별 보기</b-badge>완성.
+					<b-badge variant="info">일반 보기</b-badge>,
+					<b-badge variant="info">그룹별 보기</b-badge>완성
 				</div>
 			</b-card-text>
 		</b-card>
@@ -92,20 +110,22 @@
 			<b-card-text>
 				<div>
 					유닛정보
-					<b-badge variant="warning">테이블 보기</b-badge>완성.
+					<b-badge variant="info">테이블 보기</b-badge>완성
 				</div>
 			</b-card-text>
 		</b-card>
 		<b-card class="mt-2">
 			<template #header>2020-05-17</template>
 			<b-card-text>
-				<div>장비정보 페이지 완성.</div>
+				<div>
+					<b-badge variant="info">장비정보</b-badge>페이지 완성
+				</div>
 			</b-card-text>
 		</b-card>
 		<b-card class="mt-2">
 			<template #header>2020-05-16</template>
 			<b-card-text>
-				<div>프로젝트 시작.</div>
+				<div>프로젝트 시작</div>
 			</b-card-text>
 		</b-card>
 	</div>
