@@ -15,6 +15,10 @@
 					<b-badge variant="warning">오베로니아 레아</b-badge>의 2번째 패시브 스킬
 					<b-badge variant="warning">기상 최적화</b-badge>의 1~9 레벨 범위가 올바르지 않은 문제 수정
 				</div>
+				<div>승급 후 자원 소모도 볼 수 있도록 수정</div>
+				<div>파이어폭스를 제외한 브라우저에서 스킨이 잘려 표시되는 문제 수정</div>
+				<div>모바일 사이즈에서 유닛 정보 내용이 넘치는 문제 수정</div>
+				<div>모바일 사이즈에서 스킬 정보가 넘치는 문제 수정</div>
 			</b-card-text>
 		</b-card>
 		<b-card class="mt-2">
