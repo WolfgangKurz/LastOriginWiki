@@ -7,6 +7,14 @@
 		<hr />
 
 		<b-card class="mt-2">
+			<template #header>2020-06-07</template>
+			<b-card-text>
+				<div>
+					<b-badge variant="warning">블랙 웜 S9</b-badge>의 스킬 정보 추가
+				</div>
+			</b-card-text>
+		</b-card>
+		<b-card class="mt-2">
 			<template #header>2020-06-06</template>
 			<b-card-text>
 				<div>배포 시작</div>
