@@ -1,9 +1,12 @@
 const path = require("path");
 const os = require("os");
 
-module.exports = {
-	publicPath: "https://lastorigin-wiki-assets.s3.ap-northeast-2.amazonaws.com/publish",
+const prependData = [
+	`$NODE_ENV: "${process.env.NODE_ENV}";`,
+	"@import \"@/theme.scss\";",
+].join("\n") + "\n";
 
+module.exports = {
 	chainWebpack: config => {
 		// import 경로 alias 정의
 		config.resolve.alias.set("@", path.resolve(__dirname, "src"));
@@ -17,6 +20,17 @@ module.exports = {
 			config.set("devtool", "source-map");
 		else
 			config.set("devtool", "none");
+
+		// Webpack entrypoint size 워닝 무시
+		config.performance.hints(false);
+
+		// MiniCssExtractPlugin Order 워닝 무시
+		config
+			.plugin("extract-css")
+			.tap(args => {
+				if (args.length > 0) args[0].ignoreOrder = true;
+				return args;
+			});
 
 		// fork-ts-checker-webpack-plugin 에 있는 memoryLimit 내용 수정
 		// 참고링크 https://www.npmjs.com/package/fork-ts-checker-webpack-plugin
@@ -47,8 +61,10 @@ module.exports = {
 		loaderOptions: {
 			sass: {
 				// CSS 전역 기본값
-				prependData: "@import \"@/theme.scss\";\n",
+				prependData,
 			},
 		},
 	},
 };
+if (process.env.NODE_ENV === "production")
+	module.exports.publicPath = "https://lastorigin-wiki-assets.s3.ap-northeast-2.amazonaws.com/publish";

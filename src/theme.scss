@@ -1,2 +1,10 @@
-$cdn: "https://lastorigin-wiki-assets.s3.ap-northeast-2.amazonaws.com";
-$assetsRoot: $cdn + "/publish/assets";
+$baseRoot: null;
+$assetsRoot: null;
+
+@if ($NODE_ENV == "development") {
+	$baseRoot: "/" !global;
+	$assetsRoot: $baseRoot + "assets" !global;
+} @else {
+	$baseRoot: "https://lastorigin-wiki-assets.s3.ap-northeast-2.amazonaws.com" !global;
+	$assetsRoot: $baseRoot + "/publish/assets" !global;
+}
