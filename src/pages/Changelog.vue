@@ -30,6 +30,49 @@
 					<b-badge variant="warning">달의 마력이 담긴 송편</b-badge>의
 					<b-badge variant="info">랜덤</b-badge>조건이 표시되지 않는 문제 수정
 				</div>
+				<div>
+					<b-badge variant="warning">럼버제인</b-badge>의 스킬 정보 추가
+				</div>
+				<div>
+					<b-badge variant="warning">A-87 밴시</b-badge>의 1번째 패시브 스킬의 오타 수정
+				</div>
+				<div>
+					<b-badge variant="warning">아르망 추기경</b-badge>의 1번째 액티브 스킬의 템플릿 오타 수정
+				</div>
+				<div>
+					<b-badge variant="warning">바닐라 A1</b-badge>의 1번째 패시브 스킬의 AP 증가량이 잘못 기입되어있던 점 수정
+				</div>
+				<div>
+					<b-badge variant="warning">공진의 알렉산드라</b-badge>의 1번째, 2번째 액티브 스킬과
+					<b-badge variant="info">폼 체인지</b-badge>후 1번째, 2번째 액티브 스킬의
+					AP, 회피 감소량이 잘못 기입되어있던 점 수정
+				</div>
+				<div>
+					<b-badge variant="warning">소완</b-badge>의 1번째 액티브 스킬의 공격력 계수가 잘못 기입되어있던 점 수정
+				</div>
+				<div>
+					<b-badge variant="warning">아이언 애니</b-badge>의 1번째 액티브 스킬의 공격력 계수가 잘못 기입되어있던 점 수정
+				</div>
+				<div>
+					<b-badge variant="warning">보속의 마리아</b-badge>의 1번째 액티브 스킬의 공격력 계수가 잘못 기입되어있던 점 수정
+				</div>
+				<div>
+					<b-badge variant="warning">블랙 리리스</b-badge>의 2번째 액티브 스킬의
+					<b-badge variant="info">피해 무효화</b-badge>횟수와 1번째 패시브 스킬의
+					<b-badge variant="info">전투 속행</b-badge>HP가 잘못 기입되어있던 점 수정
+				</div>
+				<div>
+					<b-badge variant="warning">성벽의 하치코</b-badge>의 2번째 패시브 스킬의
+					<b-badge variant="info">해로운 효과 해제</b-badge>가 확률 발동으로 작성되어있던 점 수정
+				</div>
+				<div>
+					<b-badge variant="warning">펜리르</b-badge>의 1번째 패시브 스킬의 AP 증가량이 표시되지 않는 문제 수정
+				</div>
+				<div>
+					<b-badge variant="warning">질주하는 아탈란테</b-badge>의 1번째 패시브 스킬의
+					<b-badge variant="info">공격력</b-badge>수치가 표시되지 않는 문제,
+					2번째 패시브 스킬의 아이콘이 표시되지 않는 점 수정
+				</div>
 			</b-card-text>
 		</b-card>
 		<b-card class="mt-2">
