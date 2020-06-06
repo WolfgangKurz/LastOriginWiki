@@ -127,7 +127,16 @@
 				<b-table-simple bordered fixed table-class="text-center table-unit-modal">
 					<b-thead head-variant="dark">
 						<b-tr>
-							<b-th colspan="4">소모 자원</b-th>
+							<b-th colspan="4">
+								소모 자원
+								<b-form-select
+									v-if="CostRarityList.length > 1"
+									class="table-unit-rarity-select"
+									size="sm"
+									v-model="costRarity"
+									:options="CostRarityList"
+								/>
+							</b-th>
 						</b-tr>
 						<b-tr>
 							<b-th>링크</b-th>
@@ -171,7 +180,7 @@
 						</b-tr>
 						<b-tr>
 							<b-td>
-								출격 비용 -{{unit.rarity === "SS" ? 25 : 20}}%
+								출격 비용 -{{costRarity === "SS" ? 25 : 20}}%
 								<b-checkbox class="float-right" v-model="linkBonusDiscount" />
 							</b-td>
 						</b-tr>
@@ -325,6 +334,7 @@ export default class UnitModal extends Vue {
 	private unit!: Unit;
 
 	private rarityList: Rarity[] = ["B", "A", "S", "SS"];
+	private costRarity: Rarity = "SS";
 
 	private skinIndex: number = 0;
 	private skinDisplay: boolean = this.imageExt === "webp";
@@ -362,6 +372,24 @@ export default class UnitModal extends Vue {
 		if (!raw) return false;
 
 		return Object.keys(raw).some(x => x.startsWith("F"));
+	}
+
+	private get CostRarityList () {
+		const list = [{
+			value: this.unit.rarity,
+			text: `${this.unit.rarity} 등급`,
+		}];
+
+		if (this.unit.promotions) {
+			list.push(...this.unit.promotions.map(x => (
+				{
+					value: x,
+					text: `${x} 승급`,
+				}),
+			));
+		}
+
+		return list;
 	}
 
 	private get rarityIndex () {
@@ -475,11 +503,11 @@ export default class UnitModal extends Vue {
 
 	private get CostTable (): CostTable {
 		type CostCell = [number, number, number, number, number, number];
-		const key = `${this.unit.rarity}_${this.unit.type}_${this.unit.role}`;
+		const key = `${this.costRarity}_${this.unit.type}_${this.unit.role}`;
 		let table = (CostData as unknown as RawCostTable)[key][this.unit.body];
 
 		if (this.CostDiscount) {
-			const isSS = this.unit.rarity === "SS";
+			const isSS = this.costRarity === "SS";
 			const _ = (x: number) => Math.ceil(x * (isSS ? 0.75 : 0.8));
 
 			table = JSON.parse(JSON.stringify(table));
@@ -550,6 +578,7 @@ export default class UnitModal extends Vue {
 		this.IsSimplified = false;
 		this.skillLevel = 9;
 		this.formState = "normal";
+		this.costRarity = this.unit.rarity;
 	}
 
 	@Watch("skinIndex")
@@ -753,7 +782,8 @@ export default class UnitModal extends Vue {
 		}
 	}
 
-	.table-unit-level-select {
+	.table-unit-level-select,
+	.table-unit-rarity-select {
 		margin-left: 5px;
 		width: 96px;
 		vertical-align: baseline;
