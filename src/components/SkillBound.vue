@@ -25,10 +25,10 @@ export default class SkillBound extends Vue {
 	private range!: number;
 
 	@Prop({
-		type: Number,
+		type: [Number, String],
 		default: 0,
 	})
-	private ap!: number;
+	private ap!: number | string;
 
 	@Prop({
 		type: Number,
@@ -44,6 +44,40 @@ export default class SkillBound extends Vue {
 
 	private get IsGlobal () {
 		return this.Bound.global;
+	}
+
+	private get AP () {
+		if (typeof this.ap === "number")
+			return this.ap;
+
+		let match = 0;
+		const aps = this.ap.split("\n");
+
+		aps.forEach(x => {
+			if (x.includes(":")) {
+				const lv = x.substr(0, x.indexOf(":"));
+				if (lv.includes("~")) {
+					const from = parseInt(lv.substr(0, lv.indexOf("~")), 10);
+					const to = (() => {
+						const ilv = parseInt(lv.substr(lv.indexOf("~") + 1), 10);
+						if (ilv >= 10) return 13;
+						else return ilv;
+					})();
+
+					if (this.level < from || to < this.level) // 범위 밖
+						return;
+				} else {
+					const ilv = parseInt(lv, 10);
+					if (ilv < 10 && this.level !== ilv) return;
+					else if (ilv >= 10 && this.level < 10) return;
+				}
+
+				match = parseInt(x.substr(x.indexOf(":") + 1), 10);
+			} else
+				match = parseInt(x, 10);
+		});
+
+		return match;
 	}
 
 	private get Bound () {
@@ -166,7 +200,7 @@ export default class SkillBound extends Vue {
 			</div>
 
 			<div class="skill-ap">
-				<div>AP</div> {this.ap}
+				<div>AP</div> {this.AP}
 			</div>
 
 			<div class="skill-grid">

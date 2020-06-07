@@ -76,6 +76,13 @@
 				<div>
 					<b-badge variant="warning">블랙 웜 S9</b-badge>의 1번째 패시브 스킬이 표시되지 않는 문제 수정
 				</div>
+				<div>
+					<b-badge variant="warning">시저스 리제</b-badge>의 2번째 패시브 스킬의 오타 수정
+				</div>
+				<div>
+					<b-badge variant="warning">AL 팬텀</b-badge>의
+					<b-badge variant="info">특급 요원 팬텀</b-badge>스킨이 승급 스킨으로 분류되지 않고 표시되지 않는 문제 수정
+				</div>
 			</b-card-text>
 		</b-card>
 		<b-card class="mt-2">
