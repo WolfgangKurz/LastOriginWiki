@@ -1,11 +1,19 @@
 <template>
 	<div class="equips">
-		<b-button-group>
+		<b-btn-group class="ml-3 mb-2">
 			<b-button variant="outline-secondary" :pressed="Display.Chip" @click="Filter('Chip')">칩</b-button>
 			<b-button variant="outline-secondary" :pressed="Display.OS" @click="Filter('OS')">OS</b-button>
 			<b-button variant="outline-secondary" :pressed="Display.Public" @click="Filter('Public')">보조장비</b-button>
 			<b-button variant="outline-secondary" :pressed="Display.Private" @click="Filter('Private')">전용장비</b-button>
-		</b-button-group>
+		</b-btn-group>
+
+		<b-btn-group class="ml-3 mb-2">
+			<b-button
+				variant="outline-warning"
+				:pressed="Display.EternalWar"
+				@click="Filter('EternalWar')"
+			>영원한 전장</b-button>
+		</b-btn-group>
 
 		<b-row class="mt-4" cols-xl="6" cols-lg="5" cols-md="4" cols-sm="3" cols="2">
 			<b-col v-for="group of EquipGroups" :key="`equip-${group}`" class="equip-item">
@@ -54,6 +62,7 @@ export default class Equips extends Vue {
 		OS: true,
 		Public: true,
 		Private: true,
+		EternalWar: false,
 	};
 
 	private SelectedEquip: string = "";
@@ -72,6 +81,9 @@ export default class Equips extends Vue {
 				const baseType = x.substr(0, x.indexOf("_"));
 				const first = _.first(group[x]);
 				if (!first) return false;
+
+				// 영전장비
+				if (this.Display.EternalWar && first.source !== "EternalWar") return false;
 
 				// 전용장비
 				if (first.limit && first.limit.every(y => typeof y === "number")) return this.Display.Private;

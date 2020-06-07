@@ -73,6 +73,9 @@
 					<b-badge variant="info">공격력</b-badge>수치가 표시되지 않는 문제,
 					2번째 패시브 스킬의 아이콘이 표시되지 않는 점 수정
 				</div>
+				<div>
+					<b-badge variant="warning">블랙 웜 S9</b-badge>의 1번째 패시브 스킬이 표시되지 않는 문제 수정
+				</div>
 			</b-card-text>
 		</b-card>
 		<b-card class="mt-2">
