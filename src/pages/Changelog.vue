@@ -90,6 +90,11 @@
 					<b-badge variant="info">초기형 포츈</b-badge>이 뒤바뀌어있던 점,
 					<b-badge variant="info">초기형 포츈</b-badge>의 중파가 누락되어있던 점 수정
 				</div>
+				<div>
+					<b-badge variant="warning">장비 속성</b-badge>의
+					<b-badge variant="info">HP 50%</b-badge>,
+					<b-badge variant="info">HP 25%</b-badge>의 이상/이하 조건이 반대로 표시되던 문제 수정
+				</div>
 			</b-card-text>
 		</b-card>
 		<b-card class="mt-2">
