@@ -75,7 +75,7 @@ function listMajors (auth) {
 					name: row[2],
 					icon: row[4],
 					range: parseInt(row[5], 10),
-					ap: parseInt(row[6], 10),
+					ap: /^[0-9]+$/.test(row[6]) ? parseInt(row[6], 10) : row[6],
 					target: row[7],
 					bound: row[8],
 					desc: row[9].split("\n"),
