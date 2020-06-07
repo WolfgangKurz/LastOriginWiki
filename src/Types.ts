@@ -151,6 +151,9 @@ export interface RawSkin {
 	/** Animated */
 	A: boolean;
 
+	/** has Google CG */
+	G: boolean;
+
 	skins?: SkinInfo[];
 	P?: SkinInfo;
 }
@@ -168,6 +171,9 @@ export interface SkinInfo {
 
 	/** Animated */
 	A: boolean;
+
+	/** has Google CG */
+	G: boolean;
 
 	/** Price */
 	price?: number;

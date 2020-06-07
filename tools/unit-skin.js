@@ -53,7 +53,7 @@ function listMajors (auth) {
 	const sheets = google.sheets({ version: "v4", auth });
 	sheets.spreadsheets.values.get({
 		spreadsheetId: "1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4",
-		range: "UnitSkin!A2:H",
+		range: "UnitSkin!A2:I",
 	}, (err, res) => {
 		if (err) return console.log("The API returned an error: " + err);
 
@@ -70,28 +70,17 @@ function listMajors (auth) {
 				const D = !!row[5];
 				const S = !!row[6];
 				const X = !!row[7];
+				const G = !!row[8];
 
 				if (!(unit in ret))
-					ret[unit] = { A, D, S, X };
-				else if (!P) {
+					ret[unit] = { A, D, S, X, G };
+				else if (P)
+					ret[unit].P = { t: skin, A, D, S, X, G };
+				else {
 					if (!("skins" in ret[unit]))
 						ret[unit].skins = [];
 
-					ret[unit].skins.push({
-						t: skin,
-						A,
-						D,
-						S,
-						X,
-					});
-				} else {
-					ret[unit].P = {
-						t: skin,
-						A,
-						D,
-						S,
-						X,
-					};
+					ret[unit].skins.push({ t: skin, A, D, S, X, G });
 				}
 			});
 
