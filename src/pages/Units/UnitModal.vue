@@ -77,6 +77,12 @@
 								:data-simplified="IsSimplified ? 1 : 0"
 								@click="IsSimplified = !IsSimplified"
 							/>
+							<div
+								v-if="SkinList[skinIndex].G"
+								class="skin-toggle skin-toggle-platform"
+								:data-platform="IsGoogle ? 1 : 0"
+								@click="IsGoogle = !IsGoogle"
+							/>
 						</div>
 					</b-td>
 				</b-tr>
@@ -283,6 +289,7 @@ export default class UnitModal extends Vue {
 
 	private IsDamaged: boolean = false;
 	private IsSimplified: boolean = false;
+	private IsGoogle: boolean = false;
 
 	private linkBonus: "none" | "discount" | "skill" | "range" | "buf-debuf" | "speed" | "evade" | "hp" = "none";
 	private formState: "normal" | "change" = "normal";
@@ -365,6 +372,7 @@ export default class UnitModal extends Vue {
 			S: skin.S,
 			X: skin.X,
 			A: skin.A,
+			G: skin.G,
 			isDef: true,
 			isPro: false,
 		});
@@ -436,7 +444,11 @@ export default class UnitModal extends Vue {
 			];
 		}
 
-		return list.join("");
+		const ret = list.join("");
+		if (skin.G && this.IsGoogle)
+			return ret.replace(/full/g, "full-g");
+		else
+			return ret;
 	}
 
 	private get CostDiscount () {
@@ -705,6 +717,21 @@ export default class UnitModal extends Vue {
 				background-size: 56px 28px;
 
 				&[data-simplified="1"] {
+					background-position-x: 0;
+				}
+			}
+			&.skin-toggle-platform {
+				position: absolute;
+				top: 150px;
+				right: 28px;
+				width: 28px;
+				height: 28px;
+				background-image: url($assetsRoot+"/icon-platform.png");
+				background-repeat: no-repeat;
+				background-position-x: -28px;
+				background-size: 56px 28px;
+
+				&[data-platform="1"] {
 					background-position-x: 0;
 				}
 			}
