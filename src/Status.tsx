@@ -272,15 +272,15 @@ export function StatusText (context: Vue, status: Status): StatusTextType {
 							break;
 						case "hdmg":
 							if (x.inv)
-								text = "HP 25% 이하일 때";
+								text = "HP 25% 이상일 때";
 							else
-								text = "HP 25% 초과일 때";
+								text = "HP 25% 이하일 때";
 							break;
 						case "mdmg":
 							if (x.inv)
-								text = "HP 50% 이하일 때";
+								text = "HP 50% 이상일 때";
 							else
-								text = "HP 50% 초과일 때";
+								text = "HP 50% 이하일 때";
 							break;
 					}
 					triggers.push(<div class="badge badge-warning float-right ml-1">{text}</div>);
