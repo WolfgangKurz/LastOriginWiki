@@ -95,6 +95,16 @@
 					<b-badge variant="info">HP 50%</b-badge>,
 					<b-badge variant="info">HP 25%</b-badge>의 이상/이하 조건이 반대로 표시되던 문제 수정
 				</div>
+				<div>
+					<b-badge variant="warning">라비아타 프로토타입</b-badge>의
+					<b-badge variant="info">한겨울의 만찬 라비아타</b-badge>스킨에 안경 ON/OFF 기능 추가
+				</div>
+				<div>
+					<b-badge variant="warning">라비아타 프로토타입</b-badge>의
+					<b-badge variant="info">한겨울의 만찬 라비아타</b-badge>스킨,
+					<b-badge variant="warning">MH-4 테티스</b-badge>기본 스킨에
+					<b-badge variant="danger">플레이스토어 버전 CG</b-badge>시험 추가
+				</div>
 			</b-card-text>
 		</b-card>
 		<b-card class="mt-2">
