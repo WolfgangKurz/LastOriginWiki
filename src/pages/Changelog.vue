@@ -74,7 +74,9 @@
 					2번째 패시브 스킬의 아이콘이 표시되지 않는 점 수정
 				</div>
 				<div>
-					<b-badge variant="warning">블랙 웜 S9</b-badge>의 1번째 패시브 스킬이 표시되지 않는 문제 수정
+					<b-badge variant="warning">블랙 웜 S9</b-badge>의 1번째 패시브 스킬
+					<b-badge variant="warning">뒤로 피하세요!</b-badge>이 표시되지 않는 문제, 3번째 패시브 스킬
+					<b-badge variant="warning">검은 분진</b-badge>의 대상이 아군으로 되어있던 점 수정
 				</div>
 				<div>
 					<b-badge variant="warning">시저스 리제</b-badge>의 2번째 패시브 스킬의 오타 수정
@@ -82,6 +84,11 @@
 				<div>
 					<b-badge variant="warning">AL 팬텀</b-badge>의
 					<b-badge variant="info">특급 요원 팬텀</b-badge>스킨이 승급 스킨으로 분류되지 않고 표시되지 않는 문제 수정
+				</div>
+				<div>
+					<b-badge variant="warning">포츈</b-badge>의 기본 스킨과
+					<b-badge variant="info">초기형 포츈</b-badge>이 뒤바뀌어있던 점,
+					<b-badge variant="info">초기형 포츈</b-badge>의 중파가 누락되어있던 점 수정
 				</div>
 			</b-card-text>
 		</b-card>
