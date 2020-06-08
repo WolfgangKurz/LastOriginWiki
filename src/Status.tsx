@@ -1,5 +1,5 @@
 import { Status } from "@/Types";
-import { UnitData } from '@/DB';
+import { UnitData } from "@/DB";
 
 export interface StatusTextType {
 	unknown: boolean;
@@ -200,7 +200,7 @@ export function StatusText (context: Vue, status: Status): StatusTextType {
 						disp = <span>{effectName(p0)} 해제 ({p1} 확률)</span>;
 					else if (isNumeric(p0))
 						disp = <span>해로운 효과 해제 ({p0} 확률)</span>;
-					else if (p.length > 1)
+					else if (p.length >= 1)
 						disp = <span>{effectName(p0)} 해제</span>;
 					else
 						disp = <span>해로운 효과 해제</span>;
@@ -294,11 +294,7 @@ export function StatusText (context: Vue, status: Status): StatusTextType {
 						{triggers}
 					</span>;
 				} else
-					disp = <span>
-						{disp}
-						{randTip}
-						{triggers}
-					</span>;
+					disp = <span>{disp}{randTip}{triggers}</span>;
 			}
 
 			return disp;
