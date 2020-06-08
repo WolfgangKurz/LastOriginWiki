@@ -7,6 +7,106 @@
 		<hr />
 
 		<b-card class="mt-2">
+			<template #header>2020-06-08</template>
+			<b-card-text>
+				<div>
+					<b-badge variant="warning">신속의 칸</b-badge>의 1번째 패시브 스킬 설명 일부가 누락된 점 수정
+				</div>
+				<div>
+					<b-badge variant="warning">에키드나</b-badge>의 1번째 액티브 스킬
+					<b-badge variant="warning">포식</b-badge>의 공격 범위가 잘못 기입되어있던 점 수정
+				</div>
+				<div>
+					<b-badge variant="warning">정밀형 전투 시스템</b-badge> 명칭이
+					<b-badge variant="info">정밀형 OS 시스템</b-badge>으로 표시되던 점 수정
+				</div>
+				<div>
+					<b-badge variant="warning">초정밀 조준기</b-badge>의 치명타 속성이
+					<b-badge variant="info">공격력</b-badge>으로 표시되던 점 수정
+				</div>
+				<div>
+					일부 장비의
+					<b-badge variant="warning">특정 효과 해제</b-badge>속성이
+					<b-badge variant="info">해로운 효과 해제</b-badge>로 표시되던 점 수정
+				</div>
+				<div>
+					<b-badge variant="warning">콘스탄챠 S2</b-badge>기본 스킨,
+					<b-badge variant="warning">콘스탄챠 S2</b-badge>의
+					<b-badge variant="info">안경을 벗은 콘스탄챠</b-badge>스킨에
+					<b-badge variant="danger">플레이스토어 버전 CG</b-badge>시험 추가
+				</div>
+				<div>
+					<b-badge variant="warning">세라피아스 앨리스</b-badge>기본 스킨,
+					<b-badge variant="warning">세라피아스 앨리스</b-badge>의
+					<b-badge variant="info">밤의 여왕의 초대 (중파만)</b-badge>스킨,
+					<b-badge variant="danger">플레이스토어 버전 CG</b-badge>시험 추가
+				</div>
+				<div>
+					<b-badge variant="warning">오베로니아 레아</b-badge>의
+					<b-badge variant="info">드림위버 웨딩 스페셜 : 요정 여왕</b-badge>스킨에
+					<b-badge variant="danger">플레이스토어 버전 CG</b-badge>시험 추가
+				</div>
+				<div>
+					<b-badge variant="warning">시저스 리제</b-badge>의
+					<b-badge variant="info">리제 인 더 베드</b-badge>스킨에
+					<b-badge variant="danger">플레이스토어 버전 CG</b-badge>시험 추가
+				</div>
+				<div>
+					<b-badge variant="warning">다프네</b-badge>의
+					<b-badge variant="info">다프네의 우아한 수영복</b-badge>스킨에
+					<b-badge variant="danger">플레이스토어 버전 CG</b-badge>시험 추가
+				</div>
+				<div>
+					<b-badge variant="warning">소완</b-badge>의
+					<b-badge variant="info">소완의 함정 (중파만)</b-badge>스킨,
+					<b-badge variant="info">술잔과 진솔한 이야기</b-badge>스킨에
+					<b-badge variant="danger">플레이스토어 버전 CG</b-badge>시험 추가
+				</div>
+				<div>
+					<b-badge variant="warning">보속의 마리아</b-badge>기본 스킨에
+					<b-badge variant="danger">플레이스토어 버전 CG</b-badge>시험 추가
+				</div>
+				<div>
+					<b-badge variant="warning">화롯가의 포티아</b-badge>기본 스킨에
+					<b-badge variant="danger">플레이스토어 버전 CG</b-badge>시험 추가
+				</div>
+				<div>
+					<b-badge variant="warning">CS 페로</b-badge>기본 스킨에
+					<b-badge variant="danger">플레이스토어 버전 CG</b-badge>시험 추가
+				</div>
+				<div>
+					<b-badge variant="warning">펜리르</b-badge>의
+					<b-badge variant="info">봄맞이 늑대 펜리르</b-badge>스킨에
+					<b-badge variant="danger">플레이스토어 버전 CG</b-badge>시험 추가
+				</div>
+				<div>
+					<b-badge variant="warning">T-50 PX 실키</b-badge>의
+					<b-badge variant="info">하계 전투복 실키</b-badge>스킨에
+					<b-badge variant="danger">플레이스토어 버전 CG</b-badge>시험 추가
+				</div>
+				<div>
+					<b-badge variant="warning">GS-130 피닉스</b-badge>기본 스킨,
+					<b-badge variant="info">하계 전투복 피닉스</b-badge>스킨에
+					<b-badge variant="danger">플레이스토어 버전 CG</b-badge>시험 추가
+				</div>
+				<div>
+					<b-badge variant="warning">T-20S 노움</b-badge>기본 스킨,
+					<b-badge variant="info">위험한 가족 : 가족의 탄생 (중파만)</b-badge>스킨에
+					<b-badge variant="danger">플레이스토어 버전 CG</b-badge>시험 추가
+				</div>
+				<div>
+					<b-badge variant="warning">철혈의 레오나</b-badge>의
+					<b-badge variant="info">레이싱 퀸 레오나</b-badge>스킨에
+					<b-badge variant="danger">플레이스토어 버전 CG</b-badge>시험 추가
+				</div>
+				<div>
+					<b-badge variant="warning">T-8W 발키리</b-badge>의
+					<b-badge variant="info">1년간의 추억</b-badge>스킨에
+					<b-badge variant="danger">플레이스토어 버전 CG</b-badge>시험 추가
+				</div>
+			</b-card-text>
+		</b-card>
+		<b-card class="mt-2">
 			<template #header>2020-06-07</template>
 			<b-card-text>
 				<div>
