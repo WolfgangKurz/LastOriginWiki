@@ -155,7 +155,7 @@ export default class UnitsNormal extends Vue {
 
 	private modalUnit (unit: Unit) {
 		if (unit.group)
-			this.$emit("modal", unit);
+			this.$router.push({ path: "/units/" + unit.id });
 	}
 }
 </script>

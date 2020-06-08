@@ -103,9 +103,9 @@ export default class UnitsGroup extends Vue {
 		return r;
 	}
 
-	@Emit("modal")
 	private modalUnit (unit: Unit) {
-		return undefined;
+		if (unit.group)
+			this.$router.push({ path: "/units/" + unit.id });
 	}
 }
 </script>

@@ -5,7 +5,7 @@
 				<b-tr>
 					<b-td colspan="2" rowspan="3">
 						<div class="position-relative d-inline-block">
-							<equip-icon :name="`${name}_${rarity}`" size="large" />
+							<equip-icon :name="`${name}_${lRarity}`" size="large" />
 							<equip-level :level="level" />
 						</div>
 					</b-td>
@@ -19,8 +19,8 @@
 				<b-tr>
 					<b-th variant="dark">장비 등급</b-th>
 					<b-td>
-						<template v-if="RarityList.length === 1">{{rarity.toUpperCase()}}</template>
-						<b-form-select v-else v-model="rarity" size="sm" :options="RarityList" />
+						<template v-if="RarityList.length === 1">{{raritySync.toUpperCase()}}</template>
+						<b-form-select v-else v-model="raritySync" size="sm" :options="RarityList" />
 					</b-td>
 				</b-tr>
 				<b-tr>
@@ -76,6 +76,8 @@ import UnitFace from "@/components/UnitFace.vue";
 import ElemIcon from "@/components/ElemIcon.vue";
 import EquipIcon from "./EquipIcon.vue";
 import EquipLevel from "./EquipLevel.vue";
+
+import { Rarity } from "@/Types";
 import { EquipData, UnitData } from "@/DB";
 
 import EquipNameTable from "@/json/equip-names.json";
@@ -100,13 +102,18 @@ export default class EquipModal extends Vue {
 	})
 	private displaySync!: boolean;
 
+	@PropSync("rarity", {
+		type: String,
+		default: "SS",
+	})
+	private raritySync!: Rarity;
+
 	@Prop({
 		type: String,
 		required: true,
 	})
 	private name!: string;
 
-	private rarity: LRarity = "ss";
 	private level: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 = 10;
 
 	@Watch("name")
@@ -114,18 +121,23 @@ export default class EquipModal extends Vue {
 		this.level = 10;
 	}
 
+	private get lRarity (): LRarity {
+		return this.raritySync.toLowerCase() as LRarity;
+	}
+
 	private get Equip () {
-		return _.find(EquipData, x => x.name === `${this.name}_${this.rarity}`) || null;
+		return _.find(EquipData, x => x.name === `${this.name}_${this.lRarity}`) || null;
 	}
 
 	private get RarityList () {
 		const list = (["ss", "s", "a", "b"] as LRarity[])
-			.filter((x) => _.some(EquipData, (y) => y.name.startsWith(this.name) && y.name.endsWith("_" + x)));
+			.filter((x) => _.some(EquipData, (y) => y.name.startsWith(this.name) && y.name.endsWith("_" + x)))
+			.map((x) => x.toUpperCase() as Rarity);
 
-		if (!list.includes(this.rarity))
-			this.rarity = list[0] || "ss";
+		if (!list.includes(this.raritySync))
+			this.raritySync = (list[0] || "SS") as Rarity;
 
-		return list.map(x => ({ value: x, text: x.toUpperCase() }));
+		return list.map(x => ({ value: x, text: x }));
 	}
 
 	private get isPrivate () {

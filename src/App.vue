@@ -1,11 +1,9 @@
 <template>
 	<div id="app">
-		<nav-bar :page="CurrentPage" @goto="GoTo" />
+		<nav-bar :page="CurrentPage()" @goto="GoTo" />
 
 		<div class="container p-4">
-			<keep-alive>
-				<component :is="CurrentPage" />
-			</keep-alive>
+			<router-view />
 		</div>
 	</div>
 </template>
@@ -24,18 +22,15 @@ import Changelog from "@/pages/Changelog.vue";
 @Component({
 	components: {
 		NavBar,
-
-		Home,
-		Units,
-		Equips,
-		Changelog,
 	},
 })
 export default class App extends Vue {
-	private CurrentPage: string = "Home";
+	private GoTo (path: string) {
+		this.$router.push({ path });
+	}
 
-	private GoTo (page: string) {
-		this.CurrentPage = page;
+	private CurrentPage () {
+		return this.$router.currentRoute.path;
 	}
 }
 </script>
