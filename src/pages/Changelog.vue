@@ -7,6 +7,14 @@
 		<hr />
 
 		<b-card class="mt-2">
+			<template #header>2020-06-09</template>
+			<b-card-text>
+				<div>
+					<b-badge variant="warning">Vue-Router</b-badge>적용
+				</div>
+			</b-card-text>
+		</b-card>
+		<b-card class="mt-2">
 			<template #header>2020-06-08</template>
 			<b-card-text>
 				<div>
