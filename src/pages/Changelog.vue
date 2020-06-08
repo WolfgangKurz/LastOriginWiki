@@ -17,7 +17,7 @@
 					<b-badge variant="warning">포식</b-badge>의 공격 범위가 잘못 기입되어있던 점 수정
 				</div>
 				<div>
-					<b-badge variant="warning">정밀형 전투 시스템</b-badge> 명칭이
+					<b-badge variant="warning">정밀형 전투 시스템</b-badge>명칭이
 					<b-badge variant="info">정밀형 OS 시스템</b-badge>으로 표시되던 점 수정
 				</div>
 				<div>
@@ -30,14 +30,14 @@
 					<b-badge variant="info">해로운 효과 해제</b-badge>로 표시되던 점 수정
 				</div>
 				<div>
-					<b-badge variant="warning">콘스탄챠 S2</b-badge>기본 스킨,
-					<b-badge variant="warning">콘스탄챠 S2</b-badge>의
+					<b-badge variant="warning">콘스탄챠 S2</b-badge>
+					<b-badge variant="info">기본 스킨</b-badge>,
 					<b-badge variant="info">안경을 벗은 콘스탄챠</b-badge>스킨에
 					<b-badge variant="danger">플레이스토어 버전 CG</b-badge>시험 추가
 				</div>
 				<div>
-					<b-badge variant="warning">세라피아스 앨리스</b-badge>기본 스킨,
-					<b-badge variant="warning">세라피아스 앨리스</b-badge>의
+					<b-badge variant="warning">세라피아스 앨리스</b-badge>
+					<b-badge variant="info">기본 스킨</b-badge>,
 					<b-badge variant="info">밤의 여왕의 초대 (중파만)</b-badge>스킨,
 					<b-badge variant="danger">플레이스토어 버전 CG</b-badge>시험 추가
 				</div>
@@ -63,15 +63,18 @@
 					<b-badge variant="danger">플레이스토어 버전 CG</b-badge>시험 추가
 				</div>
 				<div>
-					<b-badge variant="warning">보속의 마리아</b-badge>기본 스킨에
+					<b-badge variant="warning">보속의 마리아</b-badge>
+					<b-badge variant="info">기본 스킨</b-badge>에
 					<b-badge variant="danger">플레이스토어 버전 CG</b-badge>시험 추가
 				</div>
 				<div>
-					<b-badge variant="warning">화롯가의 포티아</b-badge>기본 스킨에
+					<b-badge variant="warning">화롯가의 포티아</b-badge>
+					<b-badge variant="info">기본 스킨</b-badge>에
 					<b-badge variant="danger">플레이스토어 버전 CG</b-badge>시험 추가
 				</div>
 				<div>
-					<b-badge variant="warning">CS 페로</b-badge>기본 스킨에
+					<b-badge variant="warning">CS 페로</b-badge>
+					<b-badge variant="info">기본 스킨</b-badge>에
 					<b-badge variant="danger">플레이스토어 버전 CG</b-badge>시험 추가
 				</div>
 				<div>
@@ -85,12 +88,14 @@
 					<b-badge variant="danger">플레이스토어 버전 CG</b-badge>시험 추가
 				</div>
 				<div>
-					<b-badge variant="warning">GS-130 피닉스</b-badge>기본 스킨,
+					<b-badge variant="warning">GS-130 피닉스</b-badge>
+					<b-badge variant="info">기본 스킨</b-badge>,
 					<b-badge variant="info">하계 전투복 피닉스</b-badge>스킨에
 					<b-badge variant="danger">플레이스토어 버전 CG</b-badge>시험 추가
 				</div>
 				<div>
-					<b-badge variant="warning">T-20S 노움</b-badge>기본 스킨,
+					<b-badge variant="warning">T-20S 노움</b-badge>
+					<b-badge variant="info">기본 스킨</b-badge>,
 					<b-badge variant="info">위험한 가족 : 가족의 탄생 (중파만)</b-badge>스킨에
 					<b-badge variant="danger">플레이스토어 버전 CG</b-badge>시험 추가
 				</div>
@@ -186,7 +191,8 @@
 					<b-badge variant="info">특급 요원 팬텀</b-badge>스킨이 승급 스킨으로 분류되지 않고 표시되지 않는 문제 수정
 				</div>
 				<div>
-					<b-badge variant="warning">포츈</b-badge>의 기본 스킨과
+					<b-badge variant="warning">포츈</b-badge>의
+					<b-badge variant="info">기본 스킨</b-badge>과
 					<b-badge variant="info">초기형 포츈</b-badge>이 뒤바뀌어있던 점,
 					<b-badge variant="info">초기형 포츈</b-badge>의 중파가 누락되어있던 점 수정
 				</div>
@@ -202,7 +208,8 @@
 				<div>
 					<b-badge variant="warning">라비아타 프로토타입</b-badge>의
 					<b-badge variant="info">한겨울의 만찬 라비아타</b-badge>스킨,
-					<b-badge variant="warning">MH-4 테티스</b-badge>기본 스킨에
+					<b-badge variant="warning">MH-4 테티스</b-badge>
+					<b-badge variant="info">기본 스킨</b-badge>에
 					<b-badge variant="danger">플레이스토어 버전 CG</b-badge>시험 추가
 				</div>
 			</b-card-text>
