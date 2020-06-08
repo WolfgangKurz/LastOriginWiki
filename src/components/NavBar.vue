@@ -11,11 +11,11 @@
 
 		<b-collapse id="topNavbarList" is-nav>
 			<b-navbar-nav class="mr-auto">
-				<b-nav-item :active="page === 'Home'" href="#" @click.prevent="GoTo('Home')">홈</b-nav-item>
-				<b-nav-item :active="page === 'Simulation'" href="#" disabled>모의전투</b-nav-item>
-				<b-nav-item :active="page === 'Units'" href="#" @click.prevent="GoTo('Units')">유닛정보</b-nav-item>
-				<b-nav-item :active="page === 'Equips'" href="#" @click.prevent="GoTo('Equips')">장비정보</b-nav-item>
-				<b-nav-item :active="page === 'Changelog'" href="#" @click.prevent="GoTo('Changelog')">Changelog</b-nav-item>
+				<b-nav-item :active="page === '/'" href="#" @click.prevent="GoTo('/')">홈</b-nav-item>
+				<b-nav-item :active="page === '/simulation'" href="#" disabled>모의전투</b-nav-item>
+				<b-nav-item :active="page === '/units'" href="#" @click.prevent="GoTo('/units')">유닛정보</b-nav-item>
+				<b-nav-item :active="page === '/equips'" href="#" @click.prevent="GoTo('/equips')">장비정보</b-nav-item>
+				<b-nav-item :active="page === '/changelog'" href="#" @click.prevent="GoTo('/changelog')">Changelog</b-nav-item>
 			</b-navbar-nav>
 		</b-collapse>
 	</b-navbar>

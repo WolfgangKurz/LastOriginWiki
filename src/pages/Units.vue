@@ -28,19 +28,13 @@
 			:normal-order.sync="normalOrder"
 			:dict-interpolation.sync="dictInterpolation"
 			:short-name-sort.sync="shortNameSort"
-			@modal="modalUnit"
 		/>
 		<units-table
 			v-else-if="filterType === 1"
 			:filter-flags="filterFlags"
 			:filter-promotion.sync="filterPromotion"
-			@modal="modalUnit"
 		/>
-		<units-group
-			v-else-if="filterType === 2"
-			:group-by-shortname.sync="groupByShortname"
-			@modal="modalUnit"
-		/>
+		<units-group v-else-if="filterType === 2" :group-by-shortname.sync="groupByShortname" />
 
 		<unit-modal :unit="selectedUnit" :display.sync="unitModalDisplay" />
 	</div>
@@ -49,6 +43,8 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
+import { Watch } from "vue-property-decorator";
+import { Route } from "vue-router";
 
 import { CharFilterFlag } from "@/State";
 
@@ -58,6 +54,7 @@ import UnitsGroup from "./Units/Group.vue";
 
 import UnitModal from "./Units/UnitModal.vue";
 import { Unit } from "@/Types";
+import { UnitData } from "@/DB";
 
 @Component({
 	components: {
@@ -102,9 +99,35 @@ export default class Units extends Vue {
 	private unitModalDisplay: boolean = false;
 	private selectedUnit: Unit = Unit.Empty;
 
+	@Watch("$route")
+	private routeChanged () {
+		this.checkParams();
+	}
+
+	@Watch("unitModalDisplay")
+	private unitModalDisplayWatch (value: boolean, prev: boolean) {
+		if (prev && !value)
+			this.$router.push({ path: "/units/" });
+	}
+
 	private modalUnit (target: Unit) {
 		this.selectedUnit = target;
 		this.unitModalDisplay = true;
+	}
+
+	private checkParams () {
+		const params = this.$route.params;
+
+		if ("id" in params) {
+			this.modalUnit(
+				UnitData[parseInt(params.id, 10)],
+			);
+		} else
+			this.unitModalDisplay = false;
+	}
+
+	private mounted () {
+		this.checkParams();
 	}
 }
 </script>

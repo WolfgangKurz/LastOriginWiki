@@ -29,12 +29,16 @@
 						<div class="equip-name">{{EquipName(group)}}</div>
 					</b-card-body>
 
-					<a href="#" class="stretched-link equip-stretched" @click.prevent="ShowEquip(group)" />
+					<a href="#" class="stretched-link equip-stretched" @click.prevent="modalEquipRequest(group)" />
 				</b-card>
 			</b-col>
 		</b-row>
 
-		<equip-modal :name="SelectedEquip" :display.sync="ShowEquipModal" />
+		<equip-modal
+			:name="selectedEquip"
+			:rarity.sync="currentRarity"
+			:display.sync="equipModalDisplay"
+		/>
 	</div>
 </template>
 
@@ -42,13 +46,14 @@
 import _ from "lodash";
 import Vue from "vue";
 import Component from "vue-class-component";
+import { Watch } from "vue-property-decorator";
 
 import EquipIcon from "./Equips/EquipIcon.vue";
 import EquipModal from "./Equips/EquipModal.vue";
 
 import EquipNameTable from "@/json/equip-names.json";
 import { EquipData } from "@/DB";
-import { Equip } from "@/Types";
+import { Equip, Rarity } from "@/Types";
 
 @Component({
 	components: {
@@ -65,9 +70,39 @@ export default class Equips extends Vue {
 		EternalWar: false,
 	};
 
-	private SelectedEquip: string = "";
+	private selectedEquip: string = "";
+	private currentRarity: Rarity = "SS";
 
-	private ShowEquipModal: boolean = false;
+	private equipModalDisplay: boolean = false;
+
+	@Watch("$route")
+	private routeChanged () {
+		this.checkParams();
+	}
+
+	@Watch("equipModalDisplay")
+	private equipModalDisplayWatch (value: boolean, prev: boolean) {
+		if (prev && !value)
+			this.$router.push({ path: "/equips/" });
+	}
+
+	@Watch("currentRarity")
+	private currentRarityWatch (value: boolean, prev: boolean) {
+		if (value !== prev && this.equipModalDisplay)
+			this.$router.push({ path: `/equips/${value}/${this.selectedEquip}` });
+	}
+
+	private checkParams () {
+		const params = this.$route.params;
+
+		if ("rarity" in params && ["SS", "S", "A", "B"].includes(params.rarity))
+			this.currentRarity = params.rarity as Rarity;
+
+		if ("id" in params)
+			this.modalEquip(params.id);
+		else
+			this.equipModalDisplay = false;
+	}
 
 	private get EquipRarity () {
 		return ["ss", "s", "a", "b"];
@@ -121,9 +156,14 @@ export default class Equips extends Vue {
 		return source;
 	}
 
-	private ShowEquip (name: string) {
-		this.SelectedEquip = name;
-		this.ShowEquipModal = true;
+	private modalEquip (name: string) {
+		this.selectedEquip = name;
+		this.equipModalDisplay = true;
+	}
+
+	private modalEquipRequest (name: string) {
+		if (name)
+			this.$router.push({ path: `/equips/${this.currentRarity}/${name}` });
 	}
 
 	private Filter (type: string) {

@@ -204,9 +204,9 @@ export default class UnitsTable extends Vue {
 		}
 	}
 
-	@Emit("modal")
 	private modalUnit (unit: Unit) {
-		return undefined;
+		if (unit.group)
+			this.$router.push({ path: "/units/" + unit.id });
 	}
 }
 </script>
