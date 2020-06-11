@@ -7,6 +7,15 @@
 		<hr />
 
 		<b-card class="mt-2">
+			<template #header>2020-06-10</template>
+			<b-card-text>
+				<div>
+					<b-badge variant="warning">T-10 님프</b-badge>의 2번째 액티브 스킬
+					<b-badge variant="warning">제압 난사</b-badge>의 공격력 계수가 잘못 기입된 점 수정
+				</div>
+			</b-card-text>
+		</b-card>
+		<b-card class="mt-2">
 			<template #header>2020-06-09</template>
 			<b-card-text>
 				<div>
