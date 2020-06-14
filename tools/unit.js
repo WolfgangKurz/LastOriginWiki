@@ -53,7 +53,7 @@ function listMajors (auth) {
 	const sheets = google.sheets({ version: "v4", auth });
 	sheets.spreadsheets.values.get({
 		spreadsheetId: "1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4",
-		range: "UnitTable!A2:K",
+		range: "UnitTable!A3:P",
 	}, (err, res) => {
 		if (err) return console.log("The API returned an error: " + err);
 
@@ -67,13 +67,18 @@ function listMajors (auth) {
 				const rarity = row[1];
 				const type = row[2];
 				const role = row[3];
-				const name = row[4];
-				const shortname = row[5];
-				const group = row[6];
-				const shortgroup = row[7];
-				const groupkey = row[8];
-				const body = row[9];
+				const body = row[4];
+				const name = row[5];
+				const shortname = row[6];
+				const group = row[7];
+				const shortgroup = row[8];
+				const groupkey = row[9];
 				const pro = row[10];
+
+				const linkBonus = row[11];
+				const flSkill = row[12];
+				const fl3 = row[13];
+				const fl4 = row[14];
 
 				const x = {
 					id: parseInt(id, 10),
@@ -81,11 +86,17 @@ function listMajors (auth) {
 					type,
 					role,
 					name,
+					body,
 					shortname,
 					group,
 					shortgroup,
 					groupkey,
-					body,
+					linkBonus: {
+						per: linkBonus,
+						skillPower: flSkill,
+						entry3: fl3,
+						entry4: fl4,
+					},
 				};
 				if (pro)
 					x.promotions = pro.split(",");
@@ -95,6 +106,42 @@ function listMajors (auth) {
 
 			fs.writeFileSync(
 				path.resolve(__dirname, "..", "src", "json", "unit.json"),
+				JSON.stringify(ret),
+			);
+		} else
+			console.log("No data found.");
+	});
+
+	sheets.spreadsheets.values.get({
+		spreadsheetId: "1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4",
+		range: "UnitStats!A3:M",
+	}, (err, res) => {
+		if (err) return console.log("The API returned an error: " + err);
+
+		const ret = {};
+		const rows = res.data.values;
+		if (rows.length) {
+			rows.map((row) => {
+				if (!row[1]) return;
+
+				const id = parseInt(row[0], 10);
+				const rarity = row[2];
+				if (!rarity) return;
+
+				const hp = [parseFloat(row[3]), parseFloat(row[4])];
+				const atk = [parseFloat(row[5]), parseFloat(row[6])];
+				const def = [parseFloat(row[7]), parseFloat(row[8])];
+				const spd = parseFloat(row[9]);
+				const crit = parseFloat(row[10]);
+				const acc = parseFloat(row[11]);
+				const eva = parseFloat(row[12]);
+
+				if (!(id in ret)) ret[id] = { id };
+				ret[id][rarity] = { hp, atk, def, spd, crit, acc, eva };
+			});
+
+			fs.writeFileSync(
+				path.resolve(__dirname, "..", "src", "json", "unit-stats.json"),
 				JSON.stringify(ret),
 			);
 		} else

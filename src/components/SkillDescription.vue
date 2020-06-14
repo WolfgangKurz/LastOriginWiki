@@ -138,12 +138,12 @@ export default class SkillDescription extends Vue {
 					const incPart = part[1].split("~")[1].split("/");
 					const inc = (lv: number) => {
 						let val = 0;
-						for (let i = 0; i < lv; i++) {
-							if (incPart.length === 1)
-								val += parseFloat(incPart[0]);
-							else
-								val += parseFloat(incPart[i % incPart.length]);
-						}
+
+						if (incPart.length === 1)
+							return parseFloat(incPart[0]) * lv;
+
+						for (let i = 0; i < lv; i++)
+							val += parseFloat(incPart[i % incPart.length]);
 						return val;
 					};
 					const value = func(basis + inc(this.level));
