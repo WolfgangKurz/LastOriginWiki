@@ -33,5 +33,5 @@ export function StatValue (type: StatType, statinfo: StatInfo, points: number, l
 	let base = statinfo.from + diff * (statinfo.level - 1) / 99;
 	base += bonus * PerPoint[type];
 	base *= (links * 0.2) + bonus + 1;
-	return base;
+	return Math.round(base);
 }

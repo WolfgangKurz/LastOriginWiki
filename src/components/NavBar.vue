@@ -12,10 +12,17 @@
 		<b-collapse id="topNavbarList" is-nav>
 			<b-navbar-nav class="mr-auto">
 				<b-nav-item :active="page === '/'" href="#" @click.prevent="GoTo('/')">홈</b-nav-item>
-				<b-nav-item :active="page === '/simulation'" href="#" disabled>모의전투</b-nav-item>
+				<b-nav-item :active="page === '/simulation'" href="#" @click.prevent="GoTo('/simulation')">
+					모의전투
+					<b-badge variant="warning">BETA</b-badge>
+				</b-nav-item>
 				<b-nav-item :active="page === '/units'" href="#" @click.prevent="GoTo('/units')">유닛정보</b-nav-item>
 				<b-nav-item :active="page === '/equips'" href="#" @click.prevent="GoTo('/equips')">장비정보</b-nav-item>
-				<b-nav-item :active="page === '/changelog'" href="#" @click.prevent="GoTo('/changelog')">Changelog</b-nav-item>
+				<b-nav-item
+					:active="page === '/changelog'"
+					href="#"
+					@click.prevent="GoTo('/changelog')"
+				>Changelog</b-nav-item>
 			</b-navbar-nav>
 		</b-collapse>
 	</b-navbar>
@@ -45,3 +52,9 @@ export default class NavBar extends Vue {
 	}
 }
 </script>
+
+<style lang="scss" scoped>
+.navbar-nav .nav-item {
+	padding: 0 10px;
+}
+</style>
