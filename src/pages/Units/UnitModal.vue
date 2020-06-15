@@ -354,6 +354,10 @@ export default class UnitModal extends Vue {
 			skill: [number, boolean];
 			spd: [number, boolean];
 		}
+
+		const hasEva = this.unit.linkBonus.entry3 === "eva" || this.unit.linkBonus.entry4 === "eva";
+		const isAirDef = this.unit.type === "air" && this.unit.role === "defender";
+
 		const LinkBonusTable = {
 			acc: "적중",
 			crit: "치명타",
@@ -377,11 +381,10 @@ export default class UnitModal extends Vue {
 			buff: "버프/디버프 효과 Lv+2",
 			crit: "치명타 +20%",
 			def: "방어력 +20%",
-			eva: "회피 +15%",
+			eva: "회피 +" + (isAirDef ? 20 : 15) + "%",
 			hp: "HP +20%",
 			range: "사거리 +1",
 		};
-		const hasEva = this.unit.linkBonus.entry3 === "eva" || this.unit.linkBonus.entry4 === "eva";
 
 		return {
 			IsHP: this.unit.linkBonus.per === "hp",
