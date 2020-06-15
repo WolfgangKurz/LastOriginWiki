@@ -129,6 +129,58 @@
 			</b-row>
 		</b-container>
 
+		<b-table-simple bordered fixed table-class="text-center table-unit-modal">
+			<b-thead head-variant="dark">
+				<b-tr>
+					<b-th colspan="4">
+						링크 보너스
+						<b-form-select
+							class="table-unit-link-select"
+							size="sm"
+							v-model="linkCount"
+							:options="LinkCountList"
+						/>
+					</b-th>
+				</b-tr>
+			</b-thead>
+			<b-tbody>
+				<b-tr>
+					<b-td>
+						HP
+						<span class="d-inline-block">
+							+
+							<b class="text-danger">{{LinkBonus.Value.HP}}</b>%
+						</span>
+					</b-td>
+					<b-td>
+						공격력
+						<span class="d-inline-block">
+							+
+							<b class="text-danger">{{LinkBonus.Value.Atk}}</b>%
+						</span>
+					</b-td>
+					<b-td>
+						<template v-if="!LinkBonus.IsHP">
+							{{LinkBonus.Per}}
+							<span class="d-inline-block">
+								+
+								<b class="text-danger">{{LinkBonus.Value.Per[0]}}</b>
+								<template v-if="LinkBonus.Value.Per[1]">%</template>
+							</span>
+						</template>
+						<b v-else class="text-secondary">-</b>
+					</b-td>
+					<b-td>
+						획득 경험치
+						<span class="d-inline-block">
+							+
+							<b class="text-danger">{{LinkBonus.Value.EXP}}</b>%
+						</span>
+					</b-td>
+				</b-tr>
+			</b-tbody>
+		</b-table-simple>
+
 		<b-row>
 			<b-col cols="12" sm="6">
 				<b-table-simple bordered fixed table-class="text-center table-unit-modal">
@@ -166,45 +218,28 @@
 				<b-table-simple bordered fixed table-class="text-left table-unit-modal mt-sm-5">
 					<b-thead head-variant="dark">
 						<b-tr>
-							<b-th class="text-center">
-								풀링크 보너스
-								<span id="unit-modal-fulllink-tooltip" class="text-warning">&#x26A0;</span>
-								<b-tooltip
-									target="unit-modal-fulllink-tooltip"
-									triggers="hover"
-									placement="bottomleft"
-									variant="warning"
-								>
-									아직 풀링크 보너스가 수집되지 않아서
-									<strong>"출격 비용 -20% / -25%"</strong>만 존재합니다.
-								</b-tooltip>
-							</b-th>
+							<b-th class="text-center">풀링크 보너스</b-th>
 						</b-tr>
 					</b-thead>
 					<b-tbody>
 						<b-tr>
-							<b-td class="text-secondary">없음</b-td>
-						</b-tr>
-						<b-tr>
 							<b-td>
-								출격 비용 -{{costRarity === "SS" ? 25 : 20}}%
+								출격 비용 -{{LinkBonus.Discount}}%
 								<b-checkbox class="float-right" v-model="linkBonusDiscount" />
 							</b-td>
 						</b-tr>
-						<!--
 						<b-tr>
-							<b-td>스킬 위력 +15%</b-td>
+							<b-td>스킬 위력 +{{LinkBonus.SkillPower}}%</b-td>
 						</b-tr>
 						<b-tr>
-							<b-td>사거리 +1</b-td>
+							<b-td>{{LinkBonus.Entry3}}</b-td>
 						</b-tr>
 						<b-tr>
-							<b-td>버프/디버프 효과 Lv+2</b-td>
+							<b-td>{{LinkBonus.Entry4}}</b-td>
 						</b-tr>
 						<b-tr>
-							<b-td>행동력 +0.1</b-td>
+							<b-td>행동력 +{{LinkBonus.Speed}}</b-td>
 						</b-tr>
-						-->
 					</b-tbody>
 				</b-table-simple>
 			</b-col>
@@ -238,7 +273,7 @@ import ElemIcon from "@/components/ElemIcon.vue";
 
 import UnitSkillTable from "./UnitSkillTable.vue";
 
-import { Unit, RawSkin, SkinInfo, RawCostTable, CostTable, RawSkill, Rarity, RawSkillUnit } from "@/Types";
+import { Unit, RawSkin, SkinInfo, RawCostTable, CostTable, RawSkill, Rarity, RawSkillUnit, LinkBonusType } from "@/Types";
 
 import { UnitData, SkillData } from "@/DB";
 import { AssetsRoot, ImageExtension } from "@/Const";
@@ -291,7 +326,8 @@ export default class UnitModal extends Vue {
 	private IsSimplified: boolean = false;
 	private IsGoogle: boolean = false;
 
-	private linkBonus: "none" | "discount" | "skill" | "range" | "buf-debuf" | "speed" | "evade" | "hp" = "none";
+	private linkCount: number = 5;
+	private linkBonusDiscount: boolean = false;
 	private formState: "normal" | "change" = "normal";
 
 	private skillLevel: number = 0;
@@ -304,12 +340,70 @@ export default class UnitModal extends Vue {
 		return ImageExtension();
 	}
 
-	private get linkBonusDiscount () {
-		return this.linkBonus === "discount";
+	private get LinkCountList () {
+		return [0, 1, 2, 3, 4, 5];
 	}
 
-	private set linkBonusDiscount (value: boolean) {
-		this.linkBonus = value ? "discount" : "none";
+	private get LinkBonus () {
+		interface LinkBonusValueTable {
+			acc: [number, boolean];
+			crit: [number, boolean];
+			def: [number, boolean];
+			eva: [number, boolean];
+			hp: [number, boolean];
+			skill: [number, boolean];
+			spd: [number, boolean];
+		}
+		const LinkBonusTable = {
+			acc: "적중",
+			crit: "치명타",
+			def: "방어력",
+			eva: "회피",
+			hp: "HP",
+			skill: "스킬 위력",
+			spd: "행동력",
+		};
+		const LinkBonusValue: LinkBonusValueTable = {
+			acc: [35, true],
+			crit: [10, true],
+			def: [15, true],
+			eva: [10, true],
+			hp: [0, true],
+			skill: [10, true],
+			spd: [0.1, false],
+		};
+		const FullLinkBonusTable = {
+			acc: "적중 +75%",
+			buff: "버프/디버프 효과 Lv+2",
+			crit: "치명타 +20%",
+			def: "방어력 +20%",
+			eva: "회피 +15%",
+			hp: "HP +20%",
+			range: "사거리 +1",
+		};
+		const hasEva = this.unit.linkBonus.entry3 === "eva" || this.unit.linkBonus.entry4 === "eva";
+
+		return {
+			IsHP: this.unit.linkBonus.per === "hp",
+			Per: LinkBonusTable[this.unit.linkBonus.per],
+			Value: {
+				HP: (this.unit.linkBonus.per === "hp" ? 125 : 100) * this.linkCount / 5,
+				Atk: 100 * this.linkCount / 5,
+				Per: [
+					LinkBonusValue[this.unit.linkBonus.per][0] * this.linkCount / 5,
+					LinkBonusValue[this.unit.linkBonus.per][1],
+				],
+				EXP: 20 * this.linkCount / 5,
+			},
+
+			Discount: this.unit.rarity === "SS" ? 25 : 20,
+			SkillPower: this.unit.linkBonus.skillPower,
+			Entry3: FullLinkBonusTable[this.unit.linkBonus.entry3],
+			Entry4: FullLinkBonusTable[this.unit.linkBonus.entry4],
+			Speed: this.unit.type === "air" && this.unit.role === "defender"
+				? (this.unit.rarity === "SS" && hasEva ? 0.2 : 0.15)
+				: 0.1,
+		};
 	}
 
 	private get DisplayId () {
@@ -451,16 +545,12 @@ export default class UnitModal extends Vue {
 			return ret;
 	}
 
-	private get CostDiscount () {
-		return this.linkBonus === "discount";
-	}
-
 	private get CostTable (): CostTable {
 		type CostCell = [number, number, number, number, number, number];
 		const key = `${this.costRarity}_${this.unit.type}_${this.unit.role}`;
 		let table = (CostData as unknown as RawCostTable)[key][this.unit.body];
 
-		if (this.CostDiscount) {
+		if (this.linkBonusDiscount) {
 			const isSS = this.costRarity === "SS";
 			const _ = (x: number) => Math.ceil(x * (isSS ? 0.75 : 0.8));
 
@@ -519,7 +609,7 @@ export default class UnitModal extends Vue {
 	}
 
 	private CostDiscountClass (level: number) {
-		if (this.CostDiscount && level === 5)
+		if (this.linkBonusDiscount && level === 5)
 			return "text-primary";
 		else
 			return "";
@@ -527,7 +617,6 @@ export default class UnitModal extends Vue {
 
 	private Reset () {
 		this.skinIndex = 0;
-		this.linkBonus = "none";
 		this.IsDamaged = false;
 		this.IsSimplified = false;
 		this.skillLevel = 9;
@@ -739,7 +828,7 @@ export default class UnitModal extends Vue {
 	}
 
 	.fulllink-table {
-		padding-top: 2px;
+		padding-top: 0.55em;
 	}
 
 	.table-unit-modal.container {
@@ -769,6 +858,7 @@ export default class UnitModal extends Vue {
 		}
 	}
 
+	.table-unit-link-select,
 	.table-unit-level-select,
 	.table-unit-rarity-select {
 		margin-left: 5px;

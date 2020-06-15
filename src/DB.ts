@@ -402,6 +402,8 @@ function CompileUnit () {
 				role: x.role.toLowerCase() as UnitRole,
 
 				promotions: x.promotions,
+
+				linkBonus: { ...x.linkBonus },
 			};
 			units[x.id] = y;
 		});

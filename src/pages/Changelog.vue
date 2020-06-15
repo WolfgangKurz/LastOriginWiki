@@ -10,6 +10,9 @@
 			<template #header>2020-06-15</template>
 			<b-card-text>
 				<div>
+					<b-badge variant="danger">링크 보너스</b-badge> 및 <b-badge variant="danger">풀링크 보너스</b-badge> 정보 추가
+				</div>
+				<div>
 					<b-badge variant="warning">A-1 블러디 팬서</b-badge>의 3번째 패시브
 					<b-badge variant="warning">순항 모드</b-badge>의 설명 오타 수정
 				</div>

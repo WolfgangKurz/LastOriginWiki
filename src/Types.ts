@@ -9,6 +9,9 @@ export type UnitPosition = "back" | "mid" | "front";
 export const TriggerTypeArray: string[] = ["attack", "flood", "kill", "pos", "round", "wave", "unit", "scout", "barrier", "hdmg", "mdmg"];
 export type TriggerType = "attack" | "flood" | "kill" | "pos" | "round" | "wave" | "unit" | "scout" | "barrier" | "hdmg" | "mdmg";
 
+export type LinkBonusType = "acc" | "crit" | "def" | "eva" | "hp" | "skill" | "spd";
+export type FullLinkBonusType = "acc" | "buff" | "crit" | "eva" | "hp" | "range";
+
 export interface Trigger {
 	inv: boolean;
 	type: TriggerType;
@@ -101,6 +104,13 @@ export interface RawUnit {
 	body: "Bioroid" | "AGS";
 
 	promotions?: Rarity[];
+
+	linkBonus: {
+		per: LinkBonusType;
+		skillPower: number;
+		entry3: FullLinkBonusType;
+		entry4: FullLinkBonusType;
+	};
 }
 export interface Unit {
 	id: number;
@@ -120,6 +130,13 @@ export interface Unit {
 	body: UnitBody;
 
 	promotions?: Rarity[];
+
+	linkBonus: {
+		per: LinkBonusType;
+		skillPower: number;
+		entry3: FullLinkBonusType;
+		entry4: FullLinkBonusType;
+	};
 }
 
 /* eslint-disable-next-line @typescript-eslint/no-namespace */
@@ -135,6 +152,12 @@ export namespace Unit {
 		shortgroup: "",
 		groupkey: "",
 		body: "bio",
+		linkBonus: {
+			per: "acc",
+			skillPower: 0,
+			entry3: "acc",
+			entry4: "acc",
+		},
 	};
 }
 
