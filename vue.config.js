@@ -55,6 +55,9 @@ module.exports = {
 	// CSS
 	css: {
 		requireModuleExtension: true,
+		extract: {
+			filename: "css/[name].[contenthash:8].css",
+		},
 		loaderOptions: {
 			sass: {
 				// CSS 전역 기본값
