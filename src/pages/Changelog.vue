@@ -7,6 +7,264 @@
 		<hr />
 
 		<b-card class="mt-2">
+			<template #header>2020-06-15</template>
+			<b-card-text>
+				<div>
+					<b-badge variant="warning">A-1 블러디 팬서</b-badge>의 3번째 패시브
+					<b-badge variant="warning">순항 모드</b-badge>의 설명 오타 수정
+				</div>
+				<div>
+					<b-badge variant="warning">AG-2C 세이렌</b-badge>의 1번째 스킬
+					<b-badge variant="warning">57mm 대공포</b-badge>및 폼 체인지 이후 1번째 스킬
+					<b-badge variant="warning">203mm 연장포</b-badge>와 2번째 스킬
+					<b-badge variant="warning">초토화 포격</b-badge>의 공격력 계수 오류 및 설명 오타 수정
+				</div>
+				<div>
+					<b-badge variant="warning">P-49 슬레이프니르</b-badge>의 2번째 스킬
+					<b-badge variant="warning">한계돌파</b-badge>의 아이콘 오류, 3번째 패시브
+					<b-badge variant="warning">멈출 수 없는 질주</b-badge>의 설명 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">RF87 로크</b-badge>의 3번째 패시브
+					<b-badge variant="warning">전자기 유도</b-badge>의 설명 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">티아멧</b-badge>의 2번째 스킬
+					<b-badge variant="warning">풀 웨폰 어썰트</b-badge>의 고정 피해 수치 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">X-00 에밀리</b-badge>의 2번째 패시브
+					<b-badge variant="warning">급속 충전</b-badge>의 AP 수치 오류 및 설명 오타 수정
+				</div>
+				<div>
+					<b-badge variant="warning">공진의 알렉산드라</b-badge>의 폼 체인지 이후 2번째 스킬
+					<b-badge variant="warning">전기폭풍</b-badge>의 설명 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">네오딤</b-badge>의 2번째 패시브
+					<b-badge variant="warning">반응 방벽</b-badge>의 방어력 수치 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">멸망의 메이</b-badge>의 3번째 패시브
+					<b-badge variant="warning">길동무 모집!?</b-badge>의 아이콘 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">불굴의 마리</b-badge>의 2번째 패시브
+					<b-badge variant="warning">대공 지휘</b-badge>의 적중 수치 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">뽀끄루 대마왕</b-badge>의 2번째 스킬
+					<b-badge variant="warning">크림슨 익스큐션</b-badge>의 AP 수치 오류, 1번째 패시브
+					<b-badge variant="warning">세뇌의 파동</b-badge>의 설명 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">샬럿</b-badge>의 1번째 스킬
+					<b-badge variant="warning">앙 가르드</b-badge>의 적중 수치 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">에이다 Type-G</b-badge>의 2번째 패시브
+					<b-badge variant="warning">연산 최적화</b-badge>의 AP 수치 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">에키드나</b-badge>의 1번째 스킬
+					<b-badge variant="warning">포식</b-badge>의 공격력 계수 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">오베로니아 레아</b-badge>의 버프/디버프 수치 오류, 1번째 스킬
+					<b-badge variant="warning">호우 주의보</b-badge>의 침수 설명 누락 수정
+				</div>
+				<div>
+					<b-badge variant="warning">철혈의 레오나</b-badge>의 폼 체인지 이후 2번째 패시브
+					<b-badge variant="warning">방어 지휘</b-badge>의 방어력 및 행동력 수치 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">타이런트</b-badge>의 1번째 스킬
+					<b-badge variant="warning">타이런트 바이트</b-badge>의 공격력 계수 오류, 2번째 스킬
+					<b-badge variant="warning">프라이멀 파이어</b-badge>의 공격력 계수 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">P-24 핀토</b-badge>의 3번째 패시브
+					<b-badge variant="warning">강행 돌입</b-badge>의 설명 누락 및 1번째 스킬
+					<b-badge variant="warning">위협 사격</b-badge>의 받는 피해 증가 수치 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">A-54 칼리스타</b-badge>의 1번째 스킬
+					<b-badge variant="warning">조준 포격</b-badge>의 공격력 계수 오류, 2번째 스킬
+					<b-badge variant="warning">90mm HEAT탄 연사</b-badge>의 공격력 계수 오류 및 설명 누락 수정
+				</div>
+				<div>
+					<b-badge variant="warning">AG-1 네레이드</b-badge>의 1번째 스킬
+					<b-badge variant="warning">벌집 만들기</b-badge>의 공격력 계수 오류, 2번째 스킬
+					<b-badge variant="warning">무차별 난사</b-badge>의 공격력 계수 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">AT-100 비스트헌터</b-badge>의 1번째 스킬
+					<b-badge variant="warning">157mm HEAT탄</b-badge>의 공격력 계수 오류, 2번째 스킬
+					<b-badge variant="warning">유산탄 포격</b-badge>의 공격력 계수 오류, 스킬 범위 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">GS-130 피닉스</b-badge>의 2번째 패시브
+					<b-badge variant="warning">숙련된 조준</b-badge>의 치명타 수치 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">P-3M 운디네</b-badge>의 2번째 스킬
+					<b-badge variant="warning">F.F 미사일</b-badge>의 방어 관통 수치 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">S12 쉐이드</b-badge>의 1번째 스킬
+					<b-badge variant="warning">연속사격</b-badge>의 공격력 계수 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">S5 기간테스</b-badge>의 1번째 패시브
+					<b-badge variant="warning">거점 방어 모드</b-badge>의 받는 피해 감소 수치 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">T-60 불가사리</b-badge>의 1번째 스킬
+					<b-badge variant="warning">쇼크 스파이크</b-badge>의 AP 수치 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">마법소녀 매지컬 모모</b-badge>의 1번째 스킬
+					<b-badge variant="warning">마법신의 요술봉</b-badge>의 피해량 증가 수치 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">마법소녀 매지컬 백토</b-badge>의 1번째 패시브
+					<b-badge variant="warning">정의는 지지 않아!</b-badge>의 설명 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">스파토이아</b-badge>의 1번째 스킬
+					<b-badge variant="warning">슈팅스타</b-badge>의 공격력 계수 오류, 2번째 스킬
+					<b-badge variant="warning">CQB 돌입</b-badge>의 공격력 계수 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">아이언 애니</b-badge>의 2번째 패시브
+					<b-badge variant="warning">범죄자 체포</b-badge>의 스킬 범위 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">엠프리스</b-badge>의 1번째 패시브
+					<b-badge variant="warning">의태</b-badge>의 피해 최소화 횟수 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">질주하는 아탈란테</b-badge>의 2번째 패시브
+					<b-badge variant="warning">펠타스트 숙련</b-badge>의 AP 수치 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">캐럴라이나</b-badge>의 1번째 패시브
+					<b-badge variant="warning">LBRB 스피커</b-badge>의 AP 수치 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">커넥터 유미</b-badge>의 1번째 스킬
+					<b-badge variant="warning">과부하 방전</b-badge>의 AP 수치 오류, 2번째 스킬
+					<b-badge variant="warning">전파 발신</b-badge>의 AP 수치 오류, 1번째 패시브
+					<b-badge variant="warning">이동형 기지국</b-badge>의 범위 증가 수치 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">코코 인 화이트셸</b-badge>의 1번째 스킬
+					<b-badge variant="warning">운석 파쇄 드릴</b-badge>의 설명 수정
+				</div>
+				<div>
+					<b-badge variant="warning">키르케</b-badge>의 2번째 스킬
+					<b-badge variant="warning">패밀리어 소환!</b-badge>의 누락 행 추가
+				</div>
+				<div>
+					<b-badge variant="warning">AS-12 스틸 드라코</b-badge>의 1번째 패시브
+					<b-badge variant="warning">진압 개시</b-badge>의 AP 수치 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">LRL</b-badge>의 2번째 스킬
+					<b-badge variant="warning">사이클롭스 이터널 빔</b-badge>의 AP 수치 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">M-5 이프리트</b-badge>의 1번째 스킬
+					<b-badge variant="warning">140mm 고폭탄</b-badge>의 공격력 계수 오류, AP 수치 오류, 2번째 스킬
+					<b-badge variant="warning">곡사 포격</b-badge>의 공격력 계수 오류, AP 수치 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">P-18 실피드</b-badge>의 2번째 스킬
+					<b-badge variant="warning">열 추적 로크 미사일</b-badge>의 공격력 계수 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">P-29 린트블룸</b-badge>의 2번째 패시브
+					<b-badge variant="warning">모두 주목해주세요~!</b-badge>의 누락 행 수정
+				</div>
+				<div>
+					<b-badge variant="warning">T-10 님프</b-badge>의 2번째 스킬
+					<b-badge variant="warning">제압 난사</b-badge>의 공격력 계수 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">T-3 레프리콘</b-badge>의 2번째 스킬
+					<b-badge variant="warning">경기관총 난사</b-badge>의 공격력 계수 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">바닐라 A1</b-badge>의 1번째 스킬
+					<b-badge variant="warning">다리 노리기</b-badge>의 공격력 계수 오류, 2번째 패시브
+					<b-badge variant="warning">앞장서시죠</b-badge>의 설명 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">시저스 리제</b-badge>의 1번째 스킬
+					<b-badge variant="warning">장갑 오려내기</b-badge>의 공격력 계수 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">A-14B 스프리건</b-badge>의 2번째 스킬
+					<b-badge variant="warning">BFG1000 저격용 캐논포</b-badge>의 공격력 계수 오류, 피해량 증가 수치 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">A-6 이오</b-badge>의 2번째 스킬
+					<b-badge variant="warning">전탄 방출</b-badge>의 공격력 계수 오류, AP 수치 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">CT103 포트리스</b-badge>의 폼 체인지 정보 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">K180 셀주크</b-badge>의 1번째 스킬
+					<b-badge variant="warning">175mm 직사포</b-badge>의 공격력 계수 오류, 2번째 스킬
+					<b-badge variant="warning">175mm 곡사포</b-badge>의 공격력 계수 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">세띠</b-badge>의 2번째 스킬
+					<b-badge variant="warning">쏘지마세요!</b-badge>의 AP 수치 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">AA-7 임펫</b-badge>의 1번째 패시브
+					<b-badge variant="warning">시제 EFP탄</b-badge>의 방어 관통 수치 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">GS-10 샌드걸</b-badge>의 2번째 스킬
+					<b-badge variant="warning">AT 미사일</b-badge>의 방어 관통 수치 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">T-9 그렘린</b-badge>의 승급 정보 누락, 1번째 패시브
+					<b-badge variant="warning">화기 불법 개조</b-badge>의 치명타 수치 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">P-2000 지니야</b-badge>의 2번째 스킬
+					<b-badge variant="warning">채프 미사일</b-badge>의 회피 수치 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">레이시</b-badge>의 1번째 스킬
+					<b-badge variant="warning">라이트닝 샷</b-badge>의 AP 수치 오류, 2번째 스킬
+					<b-badge variant="warning">스톰 볼트</b-badge>의 AP 수치 오류 수정
+				</div>
+				<div>
+					<b-badge variant="warning">SD3M 펍 헤드</b-badge>의 1번째 스킬
+					<b-badge variant="warning">테이저 건</b-badge>의 AP 수치 오류, 2번째 스킬
+					<b-badge variant="warning">체포 사슬</b-badge>의 설명 오타 수정
+				</div>
+				<div>
+					<b-badge variant="warning">드론 08</b-badge>의 1번째 스킬
+					<b-badge variant="warning">충격파 미사일</b-badge>의 AP 수치 오류, 2번째 스킬
+					<b-badge variant="warning">정밀 스캔</b-badge>의 누락 행 수정
+				</div>
+				<div>
+					<b-badge variant="warning">프레스터 요안나</b-badge>의 2번째 스킬
+					<b-badge variant="warning">기사도</b-badge>의 누락 행 수정
+				</div>
+				<div>
+					<b-badge variant="warning">화롯가의 포티아</b-badge>의 2번째 스킬
+					<b-badge variant="warning">파이어레인</b-badge>의 스킬 범위 오류, 지속 화염 피해 누락 오류 수정
+				</div>
+			</b-card-text>
+		</b-card>
+		<b-card class="mt-2">
 			<template #header>2020-06-10</template>
 			<b-card-text>
 				<div>
