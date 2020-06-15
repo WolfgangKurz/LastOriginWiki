@@ -76,7 +76,7 @@ function listMajors (auth) {
 				const pro = row[10];
 
 				const linkBonus = row[11];
-				const flSkill = row[12];
+				const flSkill = parseInt(row[12], 10);
 				const fl3 = row[13];
 				const fl4 = row[14];
 
