@@ -55,9 +55,6 @@ module.exports = {
 	// CSS
 	css: {
 		requireModuleExtension: true,
-		extract: {
-			filename: "css/[name].css",
-		},
 		loaderOptions: {
 			sass: {
 				// CSS 전역 기본값
