@@ -71,6 +71,7 @@ import ElemIcon from "@/components/ElemIcon.vue";
 import UnitIcon from "@/components/UnitIcon.vue";
 import UnitLevel from "@/components/UnitLevel.vue";
 import { UnitData } from "@/libs/DB";
+import { LRarity } from "@/libs/Types";
 
 @Component({
 	components: {

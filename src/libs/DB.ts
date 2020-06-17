@@ -406,6 +406,13 @@ function CompileUnit () {
 				promotions: x.promotions,
 
 				linkBonus: { ...x.linkBonus },
+
+				equip: [
+					x.equip[0],
+					x.equip[1],
+					x.equip[2],
+					x.equip[3],
+				],
 			};
 			units[x.id] = y;
 		});

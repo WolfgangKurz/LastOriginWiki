@@ -53,7 +53,7 @@ function listMajors (auth) {
 	const sheets = google.sheets({ version: "v4", auth });
 	sheets.spreadsheets.values.get({
 		spreadsheetId: "1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4",
-		range: "UnitTable!A3:P",
+		range: "UnitTable!A3:S",
 	}, (err, res) => {
 		if (err) return console.log("The API returned an error: " + err);
 
@@ -80,6 +80,11 @@ function listMajors (auth) {
 				const fl3 = row[13];
 				const fl4 = row[14];
 
+				const equip1 = row[15];
+				const equip2 = row[16];
+				const equip3 = row[17];
+				const equip4 = row[18];
+
 				const x = {
 					id: parseInt(id, 10),
 					rarity,
@@ -97,6 +102,7 @@ function listMajors (auth) {
 						entry3: fl3,
 						entry4: fl4,
 					},
+					equip: [equip1, equip2, equip3, equip4],
 				};
 				if (pro)
 					x.promotions = pro.split(",");

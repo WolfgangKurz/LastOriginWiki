@@ -122,6 +122,8 @@ export interface RawUnit {
 		entry3: FullLinkBonusType;
 		entry4: FullLinkBonusType;
 	};
+
+	equip: [string, string, string, string];
 }
 export interface Unit {
 	id: number;
@@ -148,6 +150,8 @@ export interface Unit {
 		entry3: FullLinkBonusType;
 		entry4: FullLinkBonusType;
 	};
+
+	equip: [string, string, string, string];
 }
 /* eslint-disable-next-line @typescript-eslint/no-namespace */
 export namespace Unit {
@@ -168,6 +172,7 @@ export namespace Unit {
 			entry3: "acc",
 			entry4: "acc",
 		},
+		equip: ["Chip", "Chip", "OS", "Public"],
 	};
 }
 
