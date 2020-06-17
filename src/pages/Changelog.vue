@@ -7,12 +7,22 @@
 		<hr />
 
 		<b-card class="mt-2">
+			<template #header>2020-06-17</template>
+			<b-card-text>
+				<div>
+					보호기의
+					<b-badge variant="danger">풀링크 보너스</b-badge>중
+					<b-badge variant="info">회피</b-badge>수치 오류 수정
+				</div>
+			</b-card-text>
+		</b-card>
+		<b-card class="mt-2">
 			<template #header>2020-06-15</template>
 			<b-card-text>
 				<div>
 					기동 보호기의
 					<b-badge variant="danger">풀링크 보너스</b-badge>중
-					<b-badge variant="info">회피</b-badge> 수치 오류 수정
+					<b-badge variant="info">회피</b-badge>수치 오류 수정
 				</div>
 				<div>
 					<b-badge variant="danger">링크 보너스</b-badge>및
