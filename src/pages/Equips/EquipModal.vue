@@ -77,7 +77,7 @@ import ElemIcon from "@/components/ElemIcon.vue";
 import EquipIcon from "@/components/EquipIcon.vue";
 import EquipLevel from "./EquipLevel.vue";
 
-import { Rarity } from "@/libs/Types";
+import { Rarity, LRarity } from "@/libs/Types";
 import { EquipData, UnitData } from "@/libs/DB";
 
 import EquipNameTable from "@/json/equip-names.json";

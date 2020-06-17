@@ -82,6 +82,7 @@ import ElemIcon from "@/components/ElemIcon.vue";
 import EquipIcon from "@/components/EquipIcon.vue";
 import EquipLevel from "@/components/EquipLevel.vue";
 import { EquipData, UnitData } from "@/libs/DB";
+import { LRarity } from "@/libs/Types";
 
 @Component({
 	components: {
