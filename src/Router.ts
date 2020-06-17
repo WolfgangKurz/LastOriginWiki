@@ -2,7 +2,10 @@ import VueRouter from "vue-router";
 
 import Home from "@/pages/Home.vue";
 import Simulation from "@/pages/Simulation.vue";
+
 import Units from "@/pages/Units.vue";
+import UnitView from "@/pages/Units/View.vue";
+
 import Equips from "@/pages/Equips.vue";
 import Changelog from "@/pages/Changelog.vue";
 
@@ -30,7 +33,7 @@ const Router = new VueRouter({
 		},
 		{
 			path: "/units/:id",
-			component: Units,
+			component: UnitView,
 		},
 
 		{

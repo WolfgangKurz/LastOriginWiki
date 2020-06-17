@@ -138,7 +138,6 @@ export interface Unit {
 		entry4: FullLinkBonusType;
 	};
 }
-
 /* eslint-disable-next-line @typescript-eslint/no-namespace */
 export namespace Unit {
 	export const Empty: Unit = {
@@ -158,6 +157,52 @@ export namespace Unit {
 			entry3: "acc",
 			entry4: "acc",
 		},
+	};
+}
+
+export interface UnitStatsPoint {
+	hp: number;
+	atk: number;
+	def: number;
+	crit: number;
+	acc: number;
+	eva: number;
+	spd?: number;
+}
+export interface UnitStatsRaw {
+	id: number;
+	SS?: UnitStats;
+	S?: UnitStats;
+	A?: UnitStats;
+	B?: UnitStats;
+}
+export interface UnitStats {
+	hp: number[];
+	atk: number[];
+	def: number[];
+	spd: number;
+	crit: number;
+	acc: number;
+	eva: number;
+}
+/* eslint-disable-next-line @typescript-eslint/no-namespace */
+export namespace UnitStats {
+	export const Empty: UnitStats = {
+		hp: [0, 0],
+		atk: [0, 0],
+		def: [0, 0],
+		spd: 0,
+		crit: 0,
+		acc: 0,
+		eva: 0,
+	};
+	export const EmptyPoint: UnitStatsPoint = {
+		hp: 0,
+		atk: 0,
+		def: 0,
+		crit: 0,
+		acc: 0,
+		eva: 0,
 	};
 }
 

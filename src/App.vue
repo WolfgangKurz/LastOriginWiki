@@ -36,14 +36,8 @@ export default class App extends Vue {
 </script>
 
 <style lang="scss">
-@import "bootstrap/scss/_functions.scss";
-@import "bootstrap/scss/_variables.scss";
-
-$custom-control-indicator-size: 1.25rem;
-$custom-switch-width: $custom-control-indicator-size * 2;
-$custom-switch-indicator-border-radius: $custom-control-indicator-size / 2;
-$custom-switch-indicator-size: subtract($custom-control-indicator-size, $custom-control-indicator-border-width * 4);
-@import "bootstrap/scss/bootstrap";
+@import "@/theme/bootstrap.scss";
+@import "@/theme/theme.scss";
 @import "bootstrap-vue/src/index";
 
 // @import "assets/font/SpoqaHanSans-kr.css";

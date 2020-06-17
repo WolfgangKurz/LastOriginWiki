@@ -35,8 +35,6 @@
 			:filter-promotion.sync="filterPromotion"
 		/>
 		<units-group v-else-if="filterType === 2" :group-by-shortname.sync="groupByShortname" />
-
-		<unit-modal :unit="selectedUnit" :display.sync="unitModalDisplay" />
 	</div>
 </template>
 
@@ -52,7 +50,6 @@ import UnitsTable from "./Units/Table.vue";
 import UnitsNormal from "./Units/Normal.vue";
 import UnitsGroup from "./Units/Group.vue";
 
-import UnitModal from "./Units/UnitModal.vue";
 import { Unit } from "@/Types";
 import { UnitData } from "@/DB";
 
@@ -61,8 +58,6 @@ import { UnitData } from "@/DB";
 		UnitsTable,
 		UnitsNormal,
 		UnitsGroup,
-
-		UnitModal,
 	},
 })
 export default class Units extends Vue {
@@ -110,19 +105,12 @@ export default class Units extends Vue {
 			this.$router.push({ path: "/units/" });
 	}
 
-	private modalUnit (target: Unit) {
-		this.selectedUnit = target;
-		this.unitModalDisplay = true;
-	}
-
 	private checkParams () {
 		const params = this.$route.params;
 
-		if ("id" in params) {
-			this.modalUnit(
-				UnitData[parseInt(params.id, 10)],
-			);
-		} else
+		if ("id" in params)
+			this.$router.replace("/units/" + params.id);
+		else
 			this.unitModalDisplay = false;
 	}
 

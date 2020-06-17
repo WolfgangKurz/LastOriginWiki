@@ -1,11 +1,13 @@
 import EquipDB from "@/json/equip.json";
 import UnitDB from "@/json/unit.json";
 import SkillDB from "@/json/unit-skill.json";
+import StatsDB from "@/json/unit-stats.json";
 
 import {
 	Equip, UnitType, UnitRole, Status,
 	Trigger, TriggerTypeArray, TriggerType,
 	Action, Unit, RawUnit, RawEquip, RawSkill,
+	UnitStatsRaw,
 } from "@/Types";
 import { ImageExtension, AssetsRoot } from "@/Const";
 
@@ -430,3 +432,7 @@ function CompileSkill () {
 	return table;
 }
 export const SkillData = CompileSkill();
+
+export const UnitStatsData: {
+	[key: number]: UnitStatsRaw;
+} = StatsDB;

@@ -1,5 +1,5 @@
 <template>
-	<b-modal v-model="displaySync" hide-footer size="lg" modal-class="unit-select-modal">
+	<b-modal v-model="displaySync" hide-footer size="xl" modal-class="unit-select-modal">
 		<template #modal-title>전투원 선택</template>
 
 		<div class="mb-3">
@@ -75,7 +75,7 @@
 			-->
 		</div>
 
-		<b-row cols="2" cols-xl="5" cols-lg="4" cols-md="3">
+		<b-row cols-xl="6" cols-lg="5" cols-md="4" cols="3">
 			<b-col v-for="unit in UnitList" :key="`unit-select-unit-${unit.id}`" class="mt-3">
 				<unit-card :unit="unit" @click="Select(unit)" />
 			</b-col>
@@ -90,6 +90,7 @@ import { Prop, Watch, PropSync } from "vue-property-decorator";
 
 import UnitCard from "@/pages/Units/UnitCard.vue";
 
+import { UnitSimulationInfo } from "./Simulation";
 import { UnitData } from "@/DB";
 import { Unit } from "@/Types";
 
@@ -110,6 +111,12 @@ export default class UnitSelectModal extends Vue {
 		default: false,
 	})
 	private displaySync!: boolean;
+
+	@Prop({
+		type: Array,
+		default: () => [],
+	})
+	private list!: UnitSimulationInfo[];
 
 	private filterFlags: CharFilterFlag = {
 		rarity: {
@@ -136,6 +143,7 @@ export default class UnitSelectModal extends Vue {
 
 	private get UnitList (): Unit[] {
 		return Object.values(UnitData)
+			.filter(x => !this.list.some(y => y.id === x.id))
 			.filter(x => {
 				if (!this.filterFlags.rarity.ss && x.rarity === "SS") return false;
 				if (!this.filterFlags.rarity.s && x.rarity === "S") return false;
@@ -168,25 +176,3 @@ export default class UnitSelectModal extends Vue {
 	}
 }
 </script>
-
-<style lang="scss">
-.rarity-B {
-	background-color: #e2f0d9;
-}
-.rarity-A {
-	background-color: #deebf7;
-}
-.rarity-S {
-	background-color: #fff2cc;
-}
-.rarity-SS {
-	background-color: #fce391;
-}
-
-.unit-card.invalid {
-	opacity: 0.33;
-	a.stretched-link {
-		cursor: not-allowed;
-	}
-}
-</style>
