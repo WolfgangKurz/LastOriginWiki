@@ -1,5 +1,5 @@
-import { Status } from "@/Types";
-import { UnitData } from "@/DB";
+import { Status } from "@/libs/Types";
+import { UnitData } from "@/libs/DB";
 
 export interface StatusTextType {
 	unknown: boolean;

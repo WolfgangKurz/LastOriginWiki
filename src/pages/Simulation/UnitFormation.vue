@@ -60,9 +60,6 @@ export default class UnitSelectModal extends Vue {
 </script>
 
 <style lang="scss">
-@import "bootstrap/scss/_functions.scss";
-@import "bootstrap/scss/_variables.scss";
-
 div.formation {
 	position: relative;
 	display: block;

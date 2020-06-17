@@ -12,9 +12,9 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, PropSync } from "vue-property-decorator";
 
-import { Rarity } from "@/Types";
+import { Rarity } from "@/libs/Types";
 
-import EquipIcon from "@/pages/Equips/EquipIcon.vue";
+import EquipIcon from "@/components/EquipIcon.vue";
 import EquipLevel from "@/pages/Equips/EquipLevel.vue";
 
 @Component({

@@ -141,10 +141,10 @@ import UnitFace from "@/components/UnitFace.vue";
 import UnitBadge from "@/components/UnitBadge.vue";
 import UnitCard from "./UnitCard.vue";
 
-import { UnitData } from "@/DB";
-import { Unit, Rarity, UnitType, UnitRole } from "@/Types";
+import { UnitData } from "@/libs/DB";
+import { Unit, Rarity, UnitType, UnitRole } from "@/libs/Types";
 
-import { CharFilterFlag } from "@/State";
+import { CharFilterFlag } from "@/libs/State";
 
 @Component({
 	components: {

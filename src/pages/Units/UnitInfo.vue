@@ -62,7 +62,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, Watch } from "vue-property-decorator";
 
-import { StatusText } from "@/Status";
+import { StatusText } from "@/libs/Status";
 
 import NodeRenderer from "@/components/NodeRenderer.vue";
 import UnitBadge from "@/components/UnitBadge.vue";
@@ -70,9 +70,7 @@ import UnitBadge from "@/components/UnitBadge.vue";
 import ElemIcon from "@/components/ElemIcon.vue";
 import UnitIcon from "@/components/UnitIcon.vue";
 import UnitLevel from "@/components/UnitLevel.vue";
-import { UnitData } from "@/DB";
-
-type LRarity = "ss" | "s" | "a" | "b";
+import { UnitData } from "@/libs/DB";
 
 @Component({
 	components: {

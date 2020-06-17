@@ -43,7 +43,7 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 
-import { ImageExtension, AssetsRoot } from "@/Const";
+import { ImageExtension, AssetsRoot } from "@/libs/Const";
 
 @Component({})
 export default class Home extends Vue {

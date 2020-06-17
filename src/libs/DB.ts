@@ -8,8 +8,8 @@ import {
 	Trigger, TriggerTypeArray, TriggerType,
 	Action, Unit, RawUnit, RawEquip, RawSkill,
 	UnitStatsRaw,
-} from "@/Types";
-import { ImageExtension, AssetsRoot } from "@/Const";
+} from "@/libs/Types";
+import { ImageExtension, AssetsRoot } from "@/libs/Const";
 
 function parseLimit (limit: string | undefined) {
 	if (!limit) return null;

@@ -1,7 +1,8 @@
 <template>
-	<b-modal v-model="displaySync" hide-footer size="xl" modal-class="unit-select-modal">
+	<b-modal v-model="displaySync" hide-footer size="md" modal-class="unit-select-modal">
 		<template #modal-title>전투원 선택</template>
 
+		<!-- 필터 -->
 		<div class="mb-3">
 			<b-btn-group class="ml-3 mb-2">
 				<b-button
@@ -75,9 +76,29 @@
 			-->
 		</div>
 
-		<b-row cols-xl="6" cols-lg="5" cols-md="4" cols="3">
-			<b-col v-for="unit in UnitList" :key="`unit-select-unit-${unit.id}`" class="mt-3">
-				<unit-card :unit="unit" @click="Select(unit)" />
+		<b-row class="justify-content-center">
+			<b-col cols="8" class="mb-4">
+				<b-dropdown variant="outline-dark">
+					<template #button-content>
+						<template v-if="SelectedUnit.id === 0">전투원을 선택해주세요.</template>
+						<template v-else>
+							<unit-face :id="SelectedUnit.id" size="40" class="mr-2" />
+							{{SelectedUnit.name}}
+						</template>
+					</template>
+					<b-dropdown-item
+						v-for="unit in UnitList"
+						:key="`simulation-unit-select-modal-${unit.id}`"
+						@click="SelectUnit(unit)"
+					>
+						<unit-face :id="unit.id" size="40" class="mr-2" />
+						<span class="d-inline-block mr-2">{{unit.name}}</span>
+					</b-dropdown-item>
+				</b-dropdown>
+				<!--  :options="UnitList" -->
+			</b-col>
+			<b-col cols="12">
+				<b-button variant="info" @click="Select(SelectedUnit)">전투원 선택</b-button>
 			</b-col>
 		</b-row>
 	</b-modal>
@@ -86,15 +107,15 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
-import { Prop, Watch, PropSync } from "vue-property-decorator";
+import { Prop, Watch, PropSync, Ref } from "vue-property-decorator";
 
-import UnitCard from "@/pages/Units/UnitCard.vue";
+import UnitFace from "@/components/UnitFace.vue";
 
 import { UnitSimulationInfo } from "./Simulation";
-import { UnitData } from "@/DB";
-import { Unit } from "@/Types";
+import { UnitData } from "@/libs/DB";
+import { Unit } from "@/libs/Types";
 
-import { CharFilterFlag } from "@/State";
+import { CharFilterFlag } from "@/libs/State";
 
 interface UnitDict {
 	[key: number]: Unit;
@@ -102,7 +123,7 @@ interface UnitDict {
 
 @Component({
 	components: {
-		UnitCard,
+		UnitFace,
 	},
 })
 export default class UnitSelectModal extends Vue {
@@ -117,6 +138,9 @@ export default class UnitSelectModal extends Vue {
 		default: () => [],
 	})
 	private list!: UnitSimulationInfo[];
+
+	private readonly empty = Unit.Empty;
+	private SelectedUnit: Unit = this.empty;
 
 	private filterFlags: CharFilterFlag = {
 		rarity: {
@@ -141,8 +165,8 @@ export default class UnitSelectModal extends Vue {
 		},
 	};
 
-	private get UnitList (): Unit[] {
-		return Object.values(UnitData)
+	private get UnitList () {
+		const list = Object.values(UnitData)
 			.filter(x => !this.list.some(y => y.id === x.id))
 			.filter(x => {
 				if (!this.filterFlags.rarity.ss && x.rarity === "SS") return false;
@@ -162,13 +186,16 @@ export default class UnitSelectModal extends Vue {
 				if (!this.filterFlags.body.ags && x.body === "ags") return false;
 				*/
 				return true;
-			})
-			.map(x => {
-				return {
-					...x,
-					id000: ("00" + x.id).substr(-3),
-				};
 			});
+
+		if (!list.includes(this.SelectedUnit))
+			this.SelectedUnit = this.empty;
+
+		return list;
+	}
+
+	private SelectUnit (unit: Unit) {
+		this.SelectedUnit = unit;
 	}
 
 	private Select (unit: Unit) {
@@ -176,3 +203,12 @@ export default class UnitSelectModal extends Vue {
 	}
 }
 </script>
+
+<style lang="scss">
+.unit-select-modal {
+	.dropdown-menu {
+		max-height: 400px;
+		overflow-y: auto;
+	}
+}
+</style>

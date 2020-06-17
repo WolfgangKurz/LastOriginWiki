@@ -3,7 +3,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import "./plugins/bootstrap-vue";
 
-import { initWEBP } from "@/Const";
+import { initWEBP } from "@/libs/Const";
 import Checkbox from "@/components/Checkbox.vue";
 
 // <b-container>, <b-row>, <b-col>:

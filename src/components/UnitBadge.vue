@@ -2,7 +2,7 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
-import { UnitRole, UnitType } from "@/Types";
+import { UnitRole, UnitType } from "@/libs/Types";
 
 const typeName = {
 	light: "경장",

@@ -1,4 +1,4 @@
-import { UnitStatsPoint, LinkBonusType } from "@/Types";
+import { UnitStatsPoint, LinkBonusType } from "@/libs/Types";
 
 export interface StatInfo {
 	from: number;

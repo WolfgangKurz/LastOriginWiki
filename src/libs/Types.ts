@@ -1,3 +1,4 @@
+export type LRarity = "ss" | "s" | "a" | "b";
 export type Rarity = "SS" | "S" | "A" | "B";
 
 export type UnitType = "light" | "air" | "heavy";
@@ -85,6 +86,16 @@ export interface Equip {
 	source: string;
 
 	stats: Array<Status[]>;
+}
+/* eslint-disable-next-line @typescript-eslint/no-namespace */
+export namespace Equip {
+	export const Empty: Equip = {
+		name: "-",
+		limit: null,
+		source: "",
+
+		stats: [],
+	};
 }
 
 export interface RawUnit {
