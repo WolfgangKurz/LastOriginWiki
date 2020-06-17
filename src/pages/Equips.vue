@@ -26,7 +26,7 @@
 					</b-card-header>
 
 					<b-card-body>
-						<div class="equip-name">{{EquipName(group)}}</div>
+						<div class="equip-name">{{EquipNames[group]}}</div>
 					</b-card-body>
 
 					<a href="#" class="stretched-link equip-stretched" @click.prevent="modalEquipRequest(group)" />
@@ -48,12 +48,12 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Watch } from "vue-property-decorator";
 
-import EquipIcon from "./Equips/EquipIcon.vue";
+import EquipIcon from "@/components/EquipIcon.vue";
 import EquipModal from "./Equips/EquipModal.vue";
 
 import EquipNameTable from "@/json/equip-names.json";
-import { EquipData } from "@/DB";
-import { Equip, Rarity } from "@/Types";
+import { EquipData } from "@/libs/DB";
+import { Equip, Rarity } from "@/libs/Types";
 
 @Component({
 	components: {
@@ -104,6 +104,10 @@ export default class Equips extends Vue {
 			this.equipModalDisplay = false;
 	}
 
+	private get EquipNames () {
+		return EquipNameTable;
+	}
+
 	private get EquipRarity () {
 		return ["ss", "s", "a", "b"];
 	}
@@ -129,16 +133,6 @@ export default class Equips extends Vue {
 
 				return false;
 			});
-	}
-
-	private EquipName (name: string) {
-		interface SSDict {
-			[key: string]: string;
-		}
-
-		if (name in EquipNameTable)
-			return (EquipNameTable as SSDict)[name];
-		return name;
 	}
 
 	private EquipSource (name: string) {

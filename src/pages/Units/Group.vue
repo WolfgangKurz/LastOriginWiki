@@ -40,11 +40,11 @@ import { Prop, PropSync, Emit } from "vue-property-decorator";
 
 import UnitCard from "./UnitCard.vue";
 
-import { UnitData } from "@/DB";
-import { Unit, Rarity, UnitType, UnitRole } from "@/Types";
-import { AssetsRoot, ImageExtension } from "@/Const";
+import { UnitData } from "@/libs/DB";
+import { Unit, Rarity, UnitType, UnitRole } from "@/libs/Types";
+import { AssetsRoot, ImageExtension } from "@/libs/Const";
 
-import { CharFilterFlag } from "@/State";
+import { CharFilterFlag } from "@/libs/State";
 
 @Component({
 	components: {

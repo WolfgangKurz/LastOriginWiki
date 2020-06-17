@@ -198,9 +198,6 @@ export default class SkillDescription extends Vue {
 </script>
 
 <style lang="scss">
-@import "bootstrap/scss/_functions";
-@import "bootstrap/scss/_variables";
-
 .skill-description {
 	.skill-value {
 		color: $danger;

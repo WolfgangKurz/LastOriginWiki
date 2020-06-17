@@ -3,7 +3,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
-import { AssetsRoot, ImageExtension } from "@/Const";
+import { AssetsRoot, ImageExtension } from "@/libs/Const";
 
 @Component({})
 export default class UnitFace extends Vue {

@@ -255,7 +255,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, Watch, PropSync } from "vue-property-decorator";
 
-import { StatusText } from "@/Status";
+import { StatusText } from "@/libs/Status";
 
 import NodeRenderer from "@/components/NodeRenderer.vue";
 import UnitFace from "@/components/UnitFace.vue";
@@ -267,15 +267,13 @@ import ElemIcon from "@/components/ElemIcon.vue";
 
 import UnitSkillTable from "./UnitSkillTable.vue";
 
-import { Unit, RawSkin, SkinInfo, RawCostTable, CostTable, RawSkill, Rarity, RawSkillUnit, LinkBonusType } from "@/Types";
+import { Unit, RawSkin, SkinInfo, RawCostTable, CostTable, RawSkill, Rarity, RawSkillUnit, LinkBonusType } from "@/libs/Types";
 
-import { UnitData, SkillData } from "@/DB";
-import { AssetsRoot, ImageExtension } from "@/Const";
+import { UnitData, SkillData } from "@/libs/DB";
+import { AssetsRoot, ImageExtension } from "@/libs/Const";
 
 import SkinData from "@/json/unit-skin.json";
 import CostData from "@/json/unit-cost.json";
-
-type LRarity = "ss" | "s" | "a" | "b";
 
 interface SkillItem extends RawSkillUnit {
 	index: number;

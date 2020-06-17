@@ -44,14 +44,14 @@ import Component from "vue-class-component";
 import { Watch } from "vue-property-decorator";
 import { Route } from "vue-router";
 
-import { CharFilterFlag } from "@/State";
+import { CharFilterFlag } from "@/libs/State";
 
 import UnitsTable from "./Units/Table.vue";
 import UnitsNormal from "./Units/Normal.vue";
 import UnitsGroup from "./Units/Group.vue";
 
-import { Unit } from "@/Types";
-import { UnitData } from "@/DB";
+import { Unit } from "@/libs/Types";
+import { UnitData } from "@/libs/DB";
 
 @Component({
 	components: {

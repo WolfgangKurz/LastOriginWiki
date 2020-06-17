@@ -67,22 +67,20 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, Watch, PropSync } from "vue-property-decorator";
 
-import { StatusText } from "@/Status";
+import { StatusText } from "@/libs/Status";
 
 import NodeRenderer from "@/components/NodeRenderer.vue";
 import UnitBadge from "@/components/UnitBadge.vue";
 import UnitFace from "@/components/UnitFace.vue";
 
 import ElemIcon from "@/components/ElemIcon.vue";
-import EquipIcon from "./EquipIcon.vue";
+import EquipIcon from "@/components/EquipIcon.vue";
 import EquipLevel from "./EquipLevel.vue";
 
-import { Rarity } from "@/Types";
-import { EquipData, UnitData } from "@/DB";
+import { Rarity } from "@/libs/Types";
+import { EquipData, UnitData } from "@/libs/DB";
 
 import EquipNameTable from "@/json/equip-names.json";
-
-type LRarity = "ss" | "s" | "a" | "b";
 
 @Component({
 	components: {

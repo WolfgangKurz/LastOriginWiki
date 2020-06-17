@@ -105,15 +105,13 @@ import SkillBound from "@/components/SkillBound.vue";
 import SkillDescription from "@/components/SkillDescription.vue";
 
 import ElemIcon from "@/components/ElemIcon.vue";
-import { RawSkill, Rarity, RawSkillUnit } from "@/Types";
+import { RawSkill, Rarity, RawSkillUnit } from "@/libs/Types";
 
-import { UnitData, SkillData } from "@/DB";
-import { AssetsRoot, ImageExtension } from "@/Const";
+import { UnitData, SkillData } from "@/libs/DB";
+import { AssetsRoot, ImageExtension } from "@/libs/Const";
 
 import SkinData from "@/json/unit-skin.json";
 import CostData from "@/json/unit-cost.json";
-
-type LRarity = "ss" | "s" | "a" | "b";
 
 interface SkillItem extends RawSkillUnit {
 	index: number;

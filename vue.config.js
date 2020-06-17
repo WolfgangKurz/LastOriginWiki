@@ -4,6 +4,7 @@ const os = require("os");
 const prependData = [
 	`$NODE_ENV: "${process.env.NODE_ENV}";`,
 	"@import \"@/theme.scss\";",
+	"@import \"@/theme/_base\";",
 ].join("\n") + "\n";
 
 module.exports = {

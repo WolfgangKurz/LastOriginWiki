@@ -2,8 +2,8 @@
 import Vue from "vue";
 import { Prop, Component } from "vue-property-decorator";
 
-import { Equip } from "@/Types";
-import { AssetsRoot, ImageExtension } from "@/Const";
+import { Equip } from "@/libs/Types";
+import { AssetsRoot, ImageExtension } from "@/libs/Const";
 
 @Component({})
 export default class EquipIcon extends Vue {

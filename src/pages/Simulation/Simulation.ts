@@ -1,5 +1,5 @@
-import { Unit, Rarity, UnitStatsPoint, UnitStats } from "@/Types";
-import { UnitData, UnitStatsData } from "@/DB";
+import { Unit, Rarity, UnitStatsPoint, UnitStats } from "@/libs/Types";
+import { UnitData } from "@/libs/DB";
 
 export interface UnitSimulationInfo {
 	id: number;
@@ -34,3 +34,25 @@ export namespace UnitSimulationInfo {
 		};
 	}
 }
+
+export const StatList = ["atk", "def", "hp", "acc", "eva", "crit"];
+export const StatTable = {
+	atk: "공격력",
+	def: "방어력",
+	hp: "체력",
+	acc: "적중률",
+	eva: "회피율",
+	crit: "치명타",
+	spd: "행동력",
+};
+
+export const StatDispList = ["atk", "def", "hp", "acc", "eva", "crit", "spd"];
+export const DetailPointsPostfix = {
+	atk: "",
+	def: "",
+	hp: "",
+	acc: "%",
+	eva: "%",
+	crit: "%",
+	spd: "",
+};

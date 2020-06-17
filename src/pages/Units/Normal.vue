@@ -54,10 +54,10 @@ import { Prop, PropSync, Emit } from "vue-property-decorator";
 
 import UnitCard from "./UnitCard.vue";
 
-import { UnitData } from "@/DB";
+import { UnitData } from "@/libs/DB";
 
-import { CharFilterFlag } from "@/State";
-import { Unit } from "@/Types";
+import { CharFilterFlag } from "@/libs/State";
+import { Unit } from "@/libs/Types";
 
 interface UnitDict {
 	[key: number]: Unit;

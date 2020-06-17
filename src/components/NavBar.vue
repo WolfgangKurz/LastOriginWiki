@@ -31,7 +31,7 @@
 import Vue from "vue";
 import { Emit, Prop, Component } from "vue-property-decorator";
 
-import { AssetsRoot } from "@/Const";
+import { AssetsRoot } from "@/libs/Const";
 
 @Component({})
 export default class NavBar extends Vue {
