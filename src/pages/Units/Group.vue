@@ -10,29 +10,25 @@
 			</b-btn-group>
 		</div>
 
-		<b-table-simple
+		<b-container
 			v-for="(list, group) in GroupList"
 			:key="`unit-group-${group}`"
 			class="unit-group mb-3"
-			responsive
-			small
 		>
-			<b-tbody>
-				<b-tr>
-					<b-th colspan="4" variant="dark">
-						<img :src="`${AssetsRoot}/${imageExt}/group/${GroupKeyTable[group]}.${imageExt}`" />
-						<div>{{group}}</div>
-					</b-th>
-					<b-td>
-						<b-row cols="2" cols-xl="5" cols-lg="4" cols-md="3" cols-sm="2">
-							<b-col v-for="unit in list" :key="`unit-group-${group}-${unit.id}`" class="unit-list-item">
-								<unit-card :unit="unit" @click="modalUnit(unit)" />
-							</b-col>
-						</b-row>
-					</b-td>
-				</b-tr>
-			</b-tbody>
-		</b-table-simple>
+			<b-row cols="1" cols-lg="2" class="text-center">
+				<b-col class="bg-dark text-white">
+					<img :src="`${AssetsRoot}/${imageExt}/group/${GroupKeyTable[group]}.${imageExt}`" />
+					<div>{{group}}</div>
+				</b-col>
+				<b-col>
+					<b-row cols="2" cols-xl="5" cols-lg="4" cols-md="3" cols-sm="2">
+						<b-col v-for="unit in list" :key="`unit-group-${group}-${unit.id}`" class="unit-list-item">
+							<unit-card :unit="unit" @click="modalUnit(unit)" />
+						</b-col>
+					</b-row>
+				</b-col>
+			</b-row>
+		</b-container>
 	</div>
 </template>
 
@@ -114,24 +110,21 @@ export default class UnitsGroup extends Vue {
 .unit-group {
 	width: 100%;
 
-	tbody tr {
-		th {
-			padding: 10px;
-			width: (100% / 6);
-			vertical-align: middle;
-			word-break: keep-all;
+	.unit-group > .row > .col:nth-child(2n + 1) {
+		padding: 10px;
+		vertical-align: middle;
+		word-break: keep-all;
 
-			> img {
-				width: 96px;
-			}
+		> img {
+			width: 96px;
 		}
+	}
 
-		td {
-			border: 1px solid #ccc;
+	.unit-group > .row > .col:nth-child(2n) {
+		border: 1px solid #ccc;
 
-			> .row {
-				margin: 0;
-			}
+		> .row {
+			margin: 0;
 		}
 	}
 }

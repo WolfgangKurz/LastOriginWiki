@@ -11,26 +11,17 @@
 
 		<b-collapse id="topNavbarList" is-nav>
 			<b-navbar-nav class="mr-auto">
-				<b-nav-item :active="page === '/'" href="#" @click.prevent="GoTo('/')">홈</b-nav-item>
+				<b-nav-item :active="IsRoot" href="#" @click.prevent="GoTo('/')">홈</b-nav-item>
 
-				<b-nav-item v-if="!Dev" :active="page === '/simulation'" href="#" disabled>모의전투</b-nav-item>
-				<b-nav-item
-					v-else
-					:active="page === '/simulation'"
-					href="#"
-					@click.prevent="GoTo('/simulation')"
-				>
+				<b-nav-item v-if="!Dev" :active="IsSimulation" href="#" disabled>모의전투</b-nav-item>
+				<b-nav-item v-else :active="IsSimulation" href="#" @click.prevent="GoTo('/simulation')">
 					모의전투
 					<b-badge variant="warning">BETA</b-badge>
 				</b-nav-item>
 
-				<b-nav-item :active="page === '/units'" href="#" @click.prevent="GoTo('/units')">유닛정보</b-nav-item>
-				<b-nav-item :active="page === '/equips'" href="#" @click.prevent="GoTo('/equips')">장비정보</b-nav-item>
-				<b-nav-item
-					:active="page === '/changelog'"
-					href="#"
-					@click.prevent="GoTo('/changelog')"
-				>Changelog</b-nav-item>
+				<b-nav-item :active="IsUnits" href="#" @click.prevent="GoTo('/units')">유닛정보</b-nav-item>
+				<b-nav-item :active="IsEquips" href="#" @click.prevent="GoTo('/equips')">장비정보</b-nav-item>
+				<b-nav-item :active="IsChangelog" href="#" @click.prevent="GoTo('/changelog')">Changelog</b-nav-item>
 			</b-navbar-nav>
 		</b-collapse>
 	</b-navbar>
@@ -49,6 +40,30 @@ export default class NavBar extends Vue {
 		required: true,
 	})
 	private page!: string;
+
+	private get pageLower () {
+		return this.page.toLowerCase();
+	}
+
+	private get IsRoot () {
+		return this.pageLower === "/";
+	}
+
+	private get IsSimulation () {
+		return this.pageLower === "/simulation" || this.pageLower.startsWith("/simulation/");
+	}
+
+	private get IsUnits () {
+		return this.pageLower === "/units" || this.pageLower.startsWith("/units/");
+	}
+
+	private get IsEquips () {
+		return this.pageLower === "/equips" || this.pageLower.startsWith("/equips/");
+	}
+
+	private get IsChangelog () {
+		return this.pageLower === "/changelog" || this.pageLower.startsWith("/changelog/");
+	}
 
 	private get AssetsRoot () {
 		return AssetsRoot;

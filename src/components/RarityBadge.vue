@@ -18,8 +18,14 @@ export default class RarityBadge extends Vue {
 	})
 	private size!: string;
 
+	@Prop({
+		type: Boolean,
+		default: false,
+	})
+	private border!: boolean;
+
 	private render () {
-		return <b-badge variant="light" class="rarity-badge" data-rarity={this.rarity} data-size={this.size}>
+		return <b-badge variant="light" class={["rarity-badge", this.border ? "bordered" : ""]} data-rarity={this.rarity} data-size={this.size}>
 			{this.$slots.default || this.rarity}
 		</b-badge>;
 	}
@@ -31,6 +37,10 @@ export default class RarityBadge extends Vue {
 	margin-right: 2px;
 	font-size: 75%;
 	color: #000;
+
+	&.bordered {
+		box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+	}
 
 	&:last-child {
 		margin-right: 0 !important;

@@ -212,19 +212,6 @@ export default class UnitsTable extends Vue {
 </script>
 
 <style lang="scss">
-.rarity-B {
-	background-color: #e2f0d9;
-}
-.rarity-A {
-	background-color: #deebf7;
-}
-.rarity-S {
-	background-color: #fff2cc;
-}
-.rarity-SS {
-	background-color: #fce391;
-}
-
 .unit-table {
 	th {
 		word-break: keep-all;

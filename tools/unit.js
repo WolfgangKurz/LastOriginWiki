@@ -128,13 +128,13 @@ function listMajors (auth) {
 				const rarity = row[2];
 				if (!rarity) return;
 
-				const hp = [parseFloat(row[3]), parseFloat(row[4])];
-				const atk = [parseFloat(row[5]), parseFloat(row[6])];
-				const def = [parseFloat(row[7]), parseFloat(row[8])];
-				const spd = parseFloat(row[9]);
-				const crit = parseFloat(row[10]);
-				const acc = parseFloat(row[11]);
-				const eva = parseFloat(row[12]);
+				const hp = [parseFloat(row[3]) || 0, parseFloat(row[4]) || 0];
+				const atk = [parseFloat(row[5] || 0), parseFloat(row[6]) || 0];
+				const def = [parseFloat(row[7] || 0), parseFloat(row[8]) || 0];
+				const spd = parseFloat(row[9]) || 0;
+				const crit = parseFloat(row[10]) || 0;
+				const acc = parseFloat(row[11]) || 0;
+				const eva = parseFloat(row[12]) || 0;
 
 				if (!(id in ret)) ret[id] = { id };
 				ret[id][rarity] = { hp, atk, def, spd, crit, acc, eva };

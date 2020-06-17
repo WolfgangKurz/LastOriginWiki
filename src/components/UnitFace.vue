@@ -25,9 +25,9 @@ export default class UnitFace extends Vue {
 	})
 	private type!: string;
 
-	public static GetURL (valid: boolean, id: number): string {
+	public static GetURL (invalid: boolean, id: number): string {
 		const ext = ImageExtension();
-		return valid
+		return invalid
 			? `${AssetsRoot}/transparent.png`
 			: `${AssetsRoot}/${ext}/face/${("00" + id).substr(-3)}.${ext}`;
 	}

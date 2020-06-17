@@ -159,25 +159,3 @@ export default class UnitsNormal extends Vue {
 	}
 }
 </script>
-
-<style lang="scss">
-.rarity-B {
-	background-color: #e2f0d9;
-}
-.rarity-A {
-	background-color: #deebf7;
-}
-.rarity-S {
-	background-color: #fff2cc;
-}
-.rarity-SS {
-	background-color: #fce391;
-}
-
-.unit-card.invalid {
-	opacity: 0.33;
-	a.stretched-link {
-		cursor: not-allowed;
-	}
-}
-</style>

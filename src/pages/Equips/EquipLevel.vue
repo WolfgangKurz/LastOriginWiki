@@ -1,5 +1,5 @@
 <template>
-	<div v-if="level > 0" class="equip-level">+{{level}}</div>
+	<div v-if="level > 0" class="equip-level" :style="{ 'font-size': size + 'px' }">+{{level}}</div>
 </template>
 
 <script lang="ts">
@@ -14,6 +14,12 @@ export default class EquipLevel extends Vue {
 		default: 0,
 	})
 	private level!: number | string;
+
+	@Prop({
+		type: Number,
+		default: 20,
+	})
+	private size!: number;
 }
 </script>
 
@@ -21,10 +27,9 @@ export default class EquipLevel extends Vue {
 .equip-level {
 	position: absolute;
 	top: 0;
-	right: 10px;
+	right: 0.25em;
 
 	font-weight: bold;
-	font-size: 20px;
 	color: #fff;
 	text-shadow: 0 0 2px #000,
 		0 0 2px #000,
