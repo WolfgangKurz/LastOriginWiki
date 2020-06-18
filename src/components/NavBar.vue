@@ -11,17 +11,17 @@
 
 		<b-collapse id="topNavbarList" is-nav>
 			<b-navbar-nav class="mr-auto">
-				<b-nav-item :active="IsRoot" href="#" @click.prevent="GoTo('/')">홈</b-nav-item>
+				<b-nav-item :active="IsRoot" href="/">홈</b-nav-item>
 
 				<b-nav-item v-if="!Dev" :active="IsSimulation" href="#" disabled>모의전투</b-nav-item>
-				<b-nav-item v-else :active="IsSimulation" href="#" @click.prevent="GoTo('/simulation')">
+				<b-nav-item v-else :active="IsSimulation" href="/simulation">
 					모의전투
-					<b-badge variant="warning">BETA</b-badge>
+					<b-badge variant="warning">ALPHA</b-badge>
 				</b-nav-item>
 
-				<b-nav-item :active="IsUnits" href="#" @click.prevent="GoTo('/units')">유닛정보</b-nav-item>
-				<b-nav-item :active="IsEquips" href="#" @click.prevent="GoTo('/equips')">장비정보</b-nav-item>
-				<b-nav-item :active="IsChangelog" href="#" @click.prevent="GoTo('/changelog')">Changelog</b-nav-item>
+				<b-nav-item :active="IsUnits" href="/units">유닛정보</b-nav-item>
+				<b-nav-item :active="IsEquips" href="/equips">장비정보</b-nav-item>
+				<b-nav-item :active="IsChangelog" href="/changelog">Changelog</b-nav-item>
 			</b-navbar-nav>
 		</b-collapse>
 	</b-navbar>

@@ -1,5 +1,24 @@
-import { Unit, Rarity, UnitStatsPoint, UnitStats } from "@/libs/Types";
+import { Unit, Rarity, UnitStatsPoint, UnitStats, EquipType, LRarity } from "@/libs/Types";
 import { UnitData } from "@/libs/DB";
+
+export interface EquipSlot {
+	Type: EquipType;
+	Name: string;
+	Level: number; // 0 ~ 10
+	Rarity: LRarity;
+}
+const EquipEmpty: EquipSlot = {
+	Type: "Chip",
+	Name: "",
+	Level: 10,
+	Rarity: "ss",
+};
+function EquipInit (type: EquipType): EquipSlot {
+	return {
+		...EquipEmpty,
+		Type: type,
+	};
+}
 
 export interface UnitSimulationInfo {
 	id: number;
@@ -10,6 +29,7 @@ export interface UnitSimulationInfo {
 
 	Unit: Unit;
 	Stats: UnitStatsPoint;
+	Equips: EquipSlot[];
 }
 
 /* eslint-disable-next-line @typescript-eslint/no-namespace */
@@ -21,6 +41,7 @@ export namespace UnitSimulationInfo {
 		Linked: [false, false, false, false, false],
 		Unit: Unit.Empty,
 		Stats: UnitStats.EmptyPoint,
+		Equips: [EquipEmpty, EquipEmpty, EquipEmpty, EquipEmpty],
 	};
 
 	/* eslint-disable-next-line no-inner-declarations */
@@ -31,6 +52,9 @@ export namespace UnitSimulationInfo {
 			id,
 			Rarity: unit.rarity,
 			Unit: unit,
+			Equips: new Array(4)
+				.fill(0)
+				.map((x, i) => EquipInit(unit.equip[i])),
 		};
 	}
 }
