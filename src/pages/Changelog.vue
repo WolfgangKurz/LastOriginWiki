@@ -11,6 +11,15 @@
 			<b-collapse id="changelog20200618" visible>
 				<b-card-body>
 					<div>
+						<b-badge variant="info">모의 전투</b-badge> 수치에 링크 보너스 수치가 중복 반영되는 문제 수정
+					</div>
+					<div>
+						<b-badge variant="info">모의 전투</b-badge> 수치에 링크 보너스 수치가 반영되지 않는 문제 수정
+					</div>
+					<div>
+						<b-badge variant="info">모의 전투</b-badge> 장비의 % 수치가 변동치로 취급되지 않아 변동량 표시가 보이지 않던 문제 수정
+					</div>
+					<div>
 						<b-badge variant="info">모의 전투</b-badge>기능
 						<b-badge variant="warning">ALPHA</b-badge>버전 공개
 					</div>
