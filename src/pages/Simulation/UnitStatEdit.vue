@@ -82,34 +82,44 @@
 			<b-row>
 				<b-col cols="12" class="text-center mt-2">
 					<item-slot
-						:type="unit.Equip[0].Type"
-						:name="unit.Equip[0].Name"
-						:level="unit.Equip[0].Level"
+						:type="unit.Equips[0].Type"
+						:name="unit.Equips[0].Name"
+						:rarity="unit.Equips[0].Rarity"
+						:level="unit.Equips[0].Level"
 						@click="EquipSelecting = 1"
 					/>
 					<item-slot
-						:type="unit.Equip[1].Type"
-						:name="unit.Equip[1].Name"
-						:level="unit.Equip[1].Level"
+						:type="unit.Equips[1].Type"
+						:name="unit.Equips[1].Name"
+						:rarity="unit.Equips[1].Rarity"
+						:level="unit.Equips[1].Level"
 						@click="EquipSelecting = 2"
 					/>
 					<item-slot
-						:type="unit.Equip[2].Type"
-						:name="unit.Equip[2].Name"
-						:level="unit.Equip[2].Level"
+						:type="unit.Equips[2].Type"
+						:name="unit.Equips[2].Name"
+						:rarity="unit.Equips[2].Rarity"
+						:level="unit.Equips[2].Level"
 						@click="EquipSelecting = 3"
 					/>
 					<item-slot
-						:type="unit.Equip[3].Type"
-						:name="unit.Equip[3].Name"
-						:level="unit.Equip[3].Level"
+						:type="unit.Equips[3].Type"
+						:name="unit.Equips[3].Name"
+						:rarity="unit.Equips[3].Rarity"
+						:level="unit.Equips[3].Level"
 						@click="EquipSelecting = 4"
 					/>
 				</b-col>
 			</b-row>
 		</b-card-body>
 
-		<unit-select-modal :display.sync="EquipSelecting" @select="EquipSelect" />
+		<equip-select-modal
+			:display.sync="EquipSelectDisplay"
+			:type="EquipSelectDisplay ? unit.Equips[EquipSelecting - 1].Type : ''"
+			:name="EquipSelectDisplay ? unit.Equips[EquipSelecting - 1].Name + '_' + unit.Equips[EquipSelecting - 1].Rarity : ''"
+			:level="EquipSelectDisplay ? unit.Equips[EquipSelecting - 1].Level : 10"
+			@select="EquipSelect"
+		/>
 	</b-card>
 </template>
 
@@ -118,7 +128,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
-import { UnitStatsPoint, Unit, UnitStats, LRarity } from "@/libs/Types";
+import { LRarity, UnitStatsPoint, Unit, UnitStats, Equip } from "@/libs/Types";
 import { UnitSimulationInfo, StatTable, StatList } from "./Simulation";
 import EquipSelectModal from "./EquipSelectModal.vue";
 
@@ -131,12 +141,14 @@ import ItemSlot from "./ItemSlot.vue";
 
 @Component({
 	components: {
+		EquipSelectModal,
+
 		StatIcon,
 		LinkIcon,
 		ItemSlot,
 	},
 })
-export default class UnitStatView extends Vue {
+export default class UnitStatEdit extends Vue {
 	@Prop({
 		type: Object,
 		required: true,
@@ -144,6 +156,15 @@ export default class UnitStatView extends Vue {
 	private unit!: UnitSimulationInfo;
 
 	private EquipSelecting: number = 0;
+
+	private get EquipSelectDisplay () {
+		return this.EquipSelecting > 0;
+	}
+
+	private set EquipSelectDisplay (value: boolean) {
+		if (!value)
+			this.EquipSelecting = 0;
+	}
 
 	private get StatList () {
 		return StatList;
@@ -181,7 +202,12 @@ export default class UnitStatView extends Vue {
 		return max;
 	}
 
-	private EquipSelect (group: string, rarity: LRarity, name: string) {
+	private EquipSelect (group: string, rarity: LRarity, level: number) {
+		const index = this.EquipSelecting - 1;
+		this.unit.Equips[index].Name = group;
+		this.unit.Equips[index].Rarity = rarity;
+		this.unit.Equips[index].Level = level;
+		this.EquipSelecting = 0;
 		return 0;
 	}
 

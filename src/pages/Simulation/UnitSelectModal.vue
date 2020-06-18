@@ -165,6 +165,12 @@ export default class UnitSelectModal extends Vue {
 		},
 	};
 
+	@Watch("display", { immediate: true })
+	private DisplayWatch (value: boolean) {
+		if (!value)
+			this.SelectedUnit = this.empty;
+	}
+
 	private get UnitList () {
 		const list = Object.values(UnitData)
 			.filter(x => !this.list.some(y => y.id === x.id))

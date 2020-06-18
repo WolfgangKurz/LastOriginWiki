@@ -53,7 +53,7 @@ import EquipModal from "./Equips/EquipModal.vue";
 
 import EquipNameTable from "@/json/equip-names.json";
 import { EquipData } from "@/libs/DB";
-import { Equip, Rarity } from "@/libs/Types";
+import { Equip, Rarity, EquipType } from "@/libs/Types";
 
 @Component({
 	components: {
@@ -161,7 +161,7 @@ export default class Equips extends Vue {
 	}
 
 	private Filter (type: string) {
-		const key = type as ("Chip" | "OS" | "Public" | "Private");
+		const key = type as EquipType;
 		this.Display[key] = !this.Display[key];
 	}
 }

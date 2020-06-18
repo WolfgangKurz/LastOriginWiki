@@ -6,6 +6,9 @@
 		</b-card-header>
 
 		<b-card-body class="text-left" style="font-size:90%">
+			<b-check class="ml-2" size="sm" v-model="includePercentValue">% 수치 계산</b-check>
+			<hr />
+
 			<b-row
 				v-for="key in StatDispList"
 				:key="`simulation-detail-stat-${key}`"
@@ -18,12 +21,15 @@
 					</span>
 				</b-col>
 				<b-col cols="7">
-					{{DetailPoints[key]}}
-					<span class="value-diff" :data-diff="DetailPointsDiff[key]">
-						({{DetailPointsDiff[key] > 0 ? "▲" : "▼"}}
-						{{NumValue(DetailPointsDiff[key], false)}})
+					{{NumValue(FinalPoints[key], false)}}
+					<span
+						class="value-diff d-inline-block"
+						:data-diff="DiffPoints[key]"
+					>
+						({{DiffPoints[key] > 0 ? "▲" : "▼"}}
+						{{NumValue(DiffPoints[key], false)}})
 					</span>
-					{{NumValue(DetailPointsPostfix[key], false)}}
+					{{DetailPointsPostfix[key]}}
 				</b-col>
 			</b-row>
 
@@ -34,14 +40,14 @@
 					<b-col cols="5" class="pr-0">HP</b-col>
 					<b-col cols="7">
 						+{{LinkBonus.Value.HP}}%
-						<span class="text-info">({{NumValue(DetailLinkPoints.hp)}})</span>
+						<span class="text-info">({{NumValue(LinkPoints.hp)}})</span>
 					</b-col>
 				</b-row>
 				<b-row>
 					<b-col cols="5" class="pr-0">공격력</b-col>
 					<b-col cols="7">
 						+{{LinkBonus.Value.Atk}}%
-						<span class="text-info">({{NumValue(DetailLinkPoints.atk)}})</span>
+						<span class="text-info">({{NumValue(LinkPoints.atk)}})</span>
 					</b-col>
 				</b-row>
 				<b-row v-if="!LinkBonus.IsHP">
@@ -70,15 +76,32 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
-import { UnitStatsPoint, Unit, UnitStats } from "@/libs/Types";
+import { UnitStatsPoint, Unit, UnitStats, UnitStatsPointAll } from "@/libs/Types";
 import { UnitSimulationInfo, StatDispList, DetailPointsPostfix, StatTable } from "./Simulation";
 
-import { UnitStatsData } from "@/libs/DB";
+import { UnitStatsData, EquipData } from "@/libs/DB";
 import { FormatNumber } from "@/libs/Functions";
 import { StatValue } from "@/libs/UnitStat";
 
 import RarityBadge from "@/components/RarityBadge.vue";
 import StatIcon from "./StatIcon.vue";
+
+interface UnitEquipPoints {
+	atk: number;
+	atkP: number;
+	def: number;
+	defP: number;
+	hp: number;
+	hpP: number;
+	acc: number;
+	accP: number;
+	eva: number;
+	evaP: number;
+	crit: number;
+	critP: number;
+	spd: number;
+	spdP: number;
+}
 
 @Component({
 	components: {
@@ -93,6 +116,8 @@ export default class UnitStatView extends Vue {
 	})
 	private unit!: UnitSimulationInfo;
 
+	private includePercentValue: boolean = true;
+
 	private get StatDispList () {
 		return StatDispList;
 	}
@@ -105,10 +130,15 @@ export default class UnitStatView extends Vue {
 		return StatTable;
 	}
 
-	private get DetailBasePoints (): UnitStatsPoint {
+	private get BasePoints (): UnitStatsPointAll {
 		const detail = this.unit;
 		const base = UnitStatsData[detail.id][detail.Rarity];
-		if (!base) return UnitStats.EmptyPoint;
+		if (!base) {
+			return {
+				...UnitStats.EmptyPoint,
+				spd: 0,
+			};
+		}
 
 		return {
 			atk: this.UnitStatValue("atk", "base"),
@@ -121,10 +151,15 @@ export default class UnitStatView extends Vue {
 		};
 	}
 
-	private get DetailPoints (): UnitStatsPoint {
+	private get FinalPoints (): UnitStatsPointAll {
 		const detail = this.unit;
 		const base = UnitStatsData[detail.id][detail.Rarity];
-		if (!base) return UnitStats.EmptyPoint;
+		if (!base) {
+			return {
+				...UnitStats.EmptyPoint,
+				spd: 0,
+			};
+		}
 
 		return {
 			atk: this.UnitStatValue("atk"),
@@ -133,26 +168,43 @@ export default class UnitStatView extends Vue {
 			acc: this.UnitStatValue("acc"),
 			eva: this.UnitStatValue("eva"),
 			crit: this.UnitStatValue("crit"),
-			spd: base.spd,
+			spd: this.UnitStatValue("spd"),
 		};
 	}
 
-	private get DetailPointsDiff (): UnitStatsPoint {
+	private get DiffPoints (): UnitStatsPointAll {
 		return {
-			atk: this.DetailPoints.atk - this.DetailBasePoints.atk,
-			def: this.DetailPoints.def - this.DetailBasePoints.def,
-			hp: this.DetailPoints.hp - this.DetailBasePoints.hp,
-			acc: this.DetailPoints.acc - this.DetailBasePoints.acc,
-			eva: this.DetailPoints.eva - this.DetailBasePoints.eva,
-			crit: this.DetailPoints.crit - this.DetailBasePoints.crit,
-			spd: (this.DetailPoints.spd || 0) - (this.DetailBasePoints.spd || 0),
+			atk: this.FinalPoints.atk - this.BasePoints.atk,
+			def: this.FinalPoints.def - this.BasePoints.def,
+			hp: this.FinalPoints.hp - this.BasePoints.hp,
+			acc: this.FinalPoints.acc - this.BasePoints.acc,
+			eva: this.FinalPoints.eva - this.BasePoints.eva,
+			crit: this.FinalPoints.crit - this.BasePoints.crit,
+			spd: this.FinalPoints.spd - this.BasePoints.spd,
 		};
 	}
 
-	private get DetailLinkPoints () {
+	private get EquipValues (): UnitEquipPoints {
+		const detail = this.unit;
+		const base = UnitStatsData[detail.id][detail.Rarity];
+		if (!base)
+			return { atk: 0, atkP: 0, def: 0, defP: 0, hp: 0, hpP: 0, acc: 0, accP: 0, eva: 0, evaP: 0, crit: 0, critP: 0, spd: 0, spdP: 0 };
+
 		return {
-			hp: this.UnitStatValue("hp", "link") - this.DetailBasePoints.hp,
-			atk: this.UnitStatValue("atk", "link") - this.DetailBasePoints.atk,
+			...(this.EquipStatValue("atk") as { atk: number; atkP: number }),
+			...(this.EquipStatValue("def") as { def: number; defP: number }),
+			...(this.EquipStatValue("hp") as { hp: number; hpP: number }),
+			...(this.EquipStatValue("acc") as { acc: number; accP: number }),
+			...(this.EquipStatValue("eva") as { eva: number; evaP: number }),
+			...(this.EquipStatValue("crit") as { crit: number; critP: number }),
+			...(this.EquipStatValue("spd") as { spd: number; spdP: number }),
+		};
+	}
+
+	private get LinkPoints () {
+		return {
+			hp: this.UnitStatValue("hp", "link") - this.BasePoints.hp,
+			atk: this.UnitStatValue("atk", "link") - this.BasePoints.atk,
 		};
 	}
 
@@ -166,12 +218,13 @@ export default class UnitStatView extends Vue {
 		if (!linkBonus) return 0;
 
 		const isBase = type === "base";
-		const isLink = type === "link" || type === "all";
+		const isLink = type === "link";
+		const isAll = type === "all";
 
 		if (Array.isArray(baseValue)) {
 			const value = detail.Stats[stat as keyof UnitStatsPoint] || 0;
 
-			return StatValue(
+			const withEquip = StatValue(
 				stat as keyof UnitStatsPoint,
 				{
 					from: baseValue[0],
@@ -179,16 +232,21 @@ export default class UnitStatView extends Vue {
 					level: detail.Level,
 					linkBonus: ["hp", "atk", "exp"],
 				},
-				isBase ? 0 : value, // Stat point
-				isBase ? 0 : (stat === "atk" ? 0 : 0), // Equip value
+				isBase || isLink ? 0 : value, // Stat point
+				isBase || isLink ? 0 : this.EquipValues[stat], // Equip value
 				!isLink ? 0 : this.LinkCount, // Link count
 				isBase ? 0 : 0, // Bonus factor
-				!isLink || stat !== detail.Unit.linkBonus.per ? 0 : linkBonus.Value.Per[0] as number, // Bonus value
+				stat !== detail.Unit.linkBonus.per || !(isLink || isAll)
+					? 0
+					: linkBonus.Value.Per[0] as number, // Bonus value
 			);
+			return this.includePercentValue
+				? withEquip * (1 + 0.01 * this.EquipValues[(stat + "P") as keyof UnitEquipPoints])
+				: withEquip;
 		} else {
 			const value = detail.Stats[stat as keyof UnitStatsPoint] || 0;
 
-			return StatValue(
+			const withEquip = StatValue(
 				stat as keyof UnitStatsPoint,
 				{
 					from: baseValue,
@@ -196,13 +254,63 @@ export default class UnitStatView extends Vue {
 					level: detail.Level,
 					linkBonus: ["hp", "atk", "exp"],
 				},
-				isBase ? 0 : value, // Stat point
-				0, // Equip value
+				isBase || isLink ? 0 : value, // Stat point
+				isBase || isLink ? 0 : this.EquipValues[stat], // Equip value
 				!isLink ? 0 : this.LinkCount, // Link count
 				isBase ? 0 : 0, // Bonus factor
-				!isLink || stat !== detail.Unit.linkBonus.per ? 0 : linkBonus.Value.Per[0] as number, // Bonus value
+				stat !== detail.Unit.linkBonus.per || !(isLink || isAll)
+					? 0
+					: linkBonus.Value.Per[0] as number, // Bonus value
 			);
+			return this.includePercentValue
+				? withEquip * (1 + 0.01 * this.EquipValues[(stat + "P") as keyof UnitEquipPoints])
+				: withEquip;
 		}
+	}
+
+	private EquipStatValue (target: keyof UnitStats) {
+		interface Table {
+			[key: string]: number;
+		}
+		const percentBased = ["acc", "crit", "eva"];
+		let value = 0;
+		let valueP = 0;
+		this.unit.Equips
+			.filter(x => x.Name)
+			.forEach(x => {
+				const name = `${x.Name}_${x.Rarity}`;
+				const level = x.Level;
+
+				const equip = EquipData.find(x => x.name === name);
+				if (!equip) return;
+
+				const stats = equip.stats[level];
+				for (const stat of stats) {
+					if (stat.on.length > 0) continue;
+
+					for (const act of stat.actions) {
+						if (act.rand) continue;
+						if (act.act !== target) continue;
+
+						const perc = act.params[0].endsWith("%");
+						const val = perc
+							? act.params[0].substr(0, act.params[0].length - 1)
+							: act.params[0];
+
+						// 고정 수치거나
+						// % 수치인데 수치가 % 베이스인 경우
+						if (!perc || (perc && percentBased.includes(target)))
+							value += parseFloat(val);
+						else
+							valueP += parseFloat(val);
+					}
+				}
+			});
+
+		const map: Table = {};
+		map[target] = value;
+		map[`${target}P`] = valueP;
+		return map;
 	}
 
 	private get LinkCount () {
@@ -278,10 +386,17 @@ export default class UnitStatView extends Vue {
 	}
 
 	private NumValue (value: number, floor: boolean = true) {
+		const normalized = ((v) => {
+			const fixed = value.toFixed(8);
+			return parseFloat(
+				fixed.substr(0, fixed.length - 6),
+			); // 2자리만 남기고
+		})(value);
+
 		return FormatNumber(
 			floor
-				? Math.floor(value)
-				: value,
+				? Math.floor(normalized)
+				: normalized,
 		);
 	}
 }
@@ -289,12 +404,12 @@ export default class UnitStatView extends Vue {
 
 <style lang="scss" scoped>
 .unit-stat-view {
-	.value-diff {
+	span.value-diff {
 		font-weight: bold;
 		color: $success;
 
 		&[data-diff="0"] {
-			display: none;
+			display: none !important;
 		}
 		&[data-diff^="-"] {
 			color: $danger;

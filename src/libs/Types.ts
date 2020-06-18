@@ -1,6 +1,8 @@
 export type LRarity = "ss" | "s" | "a" | "b";
 export type Rarity = "SS" | "S" | "A" | "B";
 
+export type EquipType = "Chip" | "OS" | "Public" | "Private";
+
 export type UnitType = "light" | "air" | "heavy";
 export type UnitRole = "attacker" | "defender" | "supporter";
 export type UnitBody = "bio" | "ags";
@@ -123,7 +125,7 @@ export interface RawUnit {
 		entry4: FullLinkBonusType;
 	};
 
-	equip: [string, string, string, string];
+	equip: [EquipType, EquipType, EquipType, EquipType];
 }
 export interface Unit {
 	id: number;
@@ -151,7 +153,7 @@ export interface Unit {
 		entry4: FullLinkBonusType;
 	};
 
-	equip: [string, string, string, string];
+	equip: [EquipType, EquipType, EquipType, EquipType];
 }
 /* eslint-disable-next-line @typescript-eslint/no-namespace */
 export namespace Unit {
@@ -185,6 +187,16 @@ export interface UnitStatsPoint {
 	eva: number;
 	spd?: number;
 }
+export interface UnitStatsPointAll {
+	hp: number;
+	atk: number;
+	def: number;
+	crit: number;
+	acc: number;
+	eva: number;
+	spd: number;
+}
+
 export interface UnitStatsRaw {
 	id: number;
 	SS?: UnitStats;
