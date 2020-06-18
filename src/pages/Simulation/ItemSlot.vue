@@ -1,7 +1,7 @@
 <template>
 	<div class="item-slot" :data-type="type" :data-name="name" v-on="$listeners">
 		<div v-if="name" class="equip">
-			<equip-icon :name="`${name}_${rarity.toUpperCase()}`" />
+			<equip-icon :name="`${name}_${rarity}`" />
 			<equip-level :level="level" :size="10" />
 		</div>
 	</div>
