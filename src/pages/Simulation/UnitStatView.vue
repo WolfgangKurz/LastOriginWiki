@@ -234,13 +234,13 @@ export default class UnitStatView extends Vue {
 				},
 				isBase || isLink ? 0 : value, // Stat point
 				isBase || isLink ? 0 : this.EquipValues[stat], // Equip value
-				!isLink ? 0 : this.LinkCount, // Link count
+				isBase ? 0 : this.LinkCount, // Link count
 				isBase ? 0 : 0, // Bonus factor
 				stat !== detail.Unit.linkBonus.per || !(isLink || isAll)
 					? 0
 					: linkBonus.Value.Per[0] as number, // Bonus value
 			);
-			return this.includePercentValue
+			return this.includePercentValue && !(isBase || isLink)
 				? withEquip * (1 + 0.01 * this.EquipValues[(stat + "P") as keyof UnitEquipPoints])
 				: withEquip;
 		} else {
@@ -256,13 +256,13 @@ export default class UnitStatView extends Vue {
 				},
 				isBase || isLink ? 0 : value, // Stat point
 				isBase || isLink ? 0 : this.EquipValues[stat], // Equip value
-				!isLink ? 0 : this.LinkCount, // Link count
+				isBase ? 0 : this.LinkCount, // Link count
 				isBase ? 0 : 0, // Bonus factor
 				stat !== detail.Unit.linkBonus.per || !(isLink || isAll)
 					? 0
 					: linkBonus.Value.Per[0] as number, // Bonus value
 			);
-			return this.includePercentValue
+			return this.includePercentValue && !(isBase || isLink)
 				? withEquip * (1 + 0.01 * this.EquipValues[(stat + "P") as keyof UnitEquipPoints])
 				: withEquip;
 		}

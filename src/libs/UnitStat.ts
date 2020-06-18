@@ -47,7 +47,7 @@ export function StatValue (
 	base *= 1 + (statinfo.linkBonus.includes(type) ? links * 0.2 : 0) + bonusFactor;
 
 	if (statinfo.from === statinfo.to)
-		return parseFloat((base + bonusValue * links).toFixed(8));
+		return parseFloat((base + bonusValue).toFixed(8));
 	else
-		return Math.round(base + bonusValue * links);
+		return Math.round(base + bonusValue);
 }
