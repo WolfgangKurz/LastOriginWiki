@@ -5,36 +5,27 @@
 				<button
 					type="button"
 					class="btn btn-outline-info"
-					:class="{ active: filterType === 0 }"
-					@click="filterType = 0"
-				>일반 보기</button>
-				<button
-					type="button"
-					class="btn btn-outline-info"
-					:class="{ active: filterType === 1 }"
-					@click="filterType = 1"
+					:class="{ active: DisplayType === 'table' }"
+					@click="DisplayType = 'table'"
 				>테이블 보기</button>
 				<button
 					type="button"
 					class="btn btn-outline-info"
-					:class="{ active: filterType === 2 }"
-					@click="filterType = 2"
+					:class="{ active: DisplayType === 'list' }"
+					@click="DisplayType = 'list'"
+				>목록 보기</button>
+				<button
+					type="button"
+					class="btn btn-outline-info"
+					:class="{ active: DisplayType === 'group' }"
+					@click="DisplayType = 'group'"
 				>그룹별 보기</button>
 			</div>
 		</div>
 
-		<units-normal
-			v-if="filterType === 0"
-			:normal-order.sync="normalOrder"
-			:dict-interpolation.sync="dictInterpolation"
-			:short-name-sort.sync="shortNameSort"
-		/>
-		<units-table
-			v-else-if="filterType === 1"
-			:filter-flags="filterFlags"
-			:filter-promotion.sync="filterPromotion"
-		/>
-		<units-group v-else-if="filterType === 2" :group-by-shortname.sync="groupByShortname" />
+		<units-table v-if="DisplayType === 'table'" />
+		<units-normal v-else-if="DisplayType === 'list'" />
+		<units-group v-else-if="DisplayType === 'group'" />
 	</div>
 </template>
 
@@ -44,7 +35,7 @@ import Component from "vue-class-component";
 import { Watch } from "vue-property-decorator";
 import { Route } from "vue-router";
 
-import { CharFilterFlag } from "@/libs/State";
+import StoreModule, { UnitDisplayType } from "@/libs/Store";
 
 import UnitsTable from "./Units/Table.vue";
 import UnitsNormal from "./Units/Normal.vue";
@@ -61,38 +52,18 @@ import { UnitData } from "@/libs/DB";
 	},
 })
 export default class Units extends Vue {
-	private filterType: 0 | 1 | 2 = 0;
-	private filterPromotion = false;
-	private filterFlags: CharFilterFlag = {
-		rarity: {
-			ss: true,
-			s: true,
-			a: true,
-			b: true,
-		},
-		type: {
-			light: true,
-			air: true,
-			heavy: true,
-		},
-		role: {
-			attacker: true,
-			defender: true,
-			supporter: true,
-		},
-		body: {
-			bioroid: true,
-			ags: true,
-		},
-	};
-
-	private normalOrder: number = 0;
-	private dictInterpolation: boolean = false;
-	private shortNameSort: boolean = false;
-	private groupByShortname: boolean = false;
-
 	private unitModalDisplay: boolean = false;
 	private selectedUnit: Unit = Unit.Empty;
+
+	// Vuex -----
+	private get DisplayType () {
+		return StoreModule.UnitDisplayType;
+	}
+
+	private set DisplayType (value: UnitDisplayType) {
+		StoreModule.setUnitDisplayType(value);
+	}
+	// Vuex -----
 
 	@Watch("$route")
 	private routeChanged () {
