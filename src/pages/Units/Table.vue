@@ -1,7 +1,7 @@
 <template>
 	<div class="unit-table">
-		<div>
-			<b-btn-group class="mx-2 mb-4">
+		<div class="mb-2">
+			<b-btn-group class="mx-2 mb-2">
 				<b-button
 					variant="outline-secondary"
 					:pressed="IncludePromotions"
@@ -9,7 +9,7 @@
 				>승급 후 등급 포함</b-button>
 			</b-btn-group>
 
-			<b-btn-group class="mx-2 mb-4">
+			<b-btn-group class="mx-2 mb-2">
 				<b-button
 					variant="outline-danger"
 					:pressed="Filters.Rarity.SS"
@@ -31,7 +31,7 @@
 					@click="Filters.Rarity.B = !Filters.Rarity.B"
 				>B</b-button>
 			</b-btn-group>
-			<b-btn-group class="mx-2 mb-4">
+			<b-btn-group class="mx-2 mb-2">
 				<b-button
 					variant="outline-success"
 					:pressed="Filters.Type.Light"
@@ -48,7 +48,7 @@
 					@click="Filters.Type.Heavy = !Filters.Type.Heavy"
 				>중장형</b-button>
 			</b-btn-group>
-			<b-btn-group class="mx-2 mb-4">
+			<b-btn-group class="mx-2 mb-2">
 				<b-button
 					variant="outline-primary"
 					:pressed="Filters.Role.Attacker"
@@ -65,7 +65,7 @@
 					@click="Filters.Role.Supporter = !Filters.Role.Supporter"
 				>지원기</b-button>
 			</b-btn-group>
-			<b-btn-group class="mx-2 mb-4">
+			<b-btn-group class="mx-2 mb-2">
 				<b-button
 					variant="outline-warning"
 					:pressed="Filters.Body.Bioroid"

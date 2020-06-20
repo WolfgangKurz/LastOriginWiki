@@ -7,17 +7,44 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
-			<b-card-header v-b-toggle.changelog20200618>2020-06-18</b-card-header>
-			<b-collapse id="changelog20200618" visible>
+			<b-card-header v-b-toggle.changelog20200621>2020-06-21</b-card-header>
+			<b-collapse id="changelog20200621" visible>
 				<b-card-body>
 					<div>
-						<b-badge variant="info">모의 전투</b-badge> 수치에 링크 보너스 수치가 중복 반영되는 문제 수정
+						<b-badge variant="info">유닛정보</b-badge>페이지가
+						<b-badge variant="info">전투원정보</b-badge>로 명칭이 변경되었습니다.
 					</div>
 					<div>
-						<b-badge variant="info">모의 전투</b-badge> 수치에 링크 보너스 수치가 반영되지 않는 문제 수정
+						<b-badge variant="info">전투원정보</b-badge>의 기본 모드를
+						<b-badge variant="warning">테이블보기</b-badge>로 변경했습니다.
 					</div>
 					<div>
-						<b-badge variant="info">모의 전투</b-badge> 장비의 % 수치가 변동치로 취급되지 않아 변동량 표시가 보이지 않던 문제 수정
+						<b-badge variant="info">전투원정보</b-badge>의
+						<b-badge variant="warning">상세보기</b-badge>페이지 레이아웃이 변경되었습니다.
+					</div>
+					<div>
+						<b-badge variant="info">전투원정보</b-badge>의 스킨에
+						<b-badge variant="warning">가격 표시</b-badge>가 추가됩니다.
+					</div>
+					<div>
+						페이지를 이동해도 이전에 선택한 옵션이 유지되도록 변경되었습니다. 단,
+						<b-badge variant="danger">새로고침</b-badge>을 하는 경우에는 초기화됩니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200618>2020-06-18</b-card-header>
+			<b-collapse id="changelog20200618">
+				<b-card-body>
+					<div>
+						<b-badge variant="info">모의 전투</b-badge>수치에 링크 보너스 수치가 중복 반영되는 문제 수정
+					</div>
+					<div>
+						<b-badge variant="info">모의 전투</b-badge>수치에 링크 보너스 수치가 반영되지 않는 문제 수정
+					</div>
+					<div>
+						<b-badge variant="info">모의 전투</b-badge>장비의 % 수치가 변동치로 취급되지 않아 변동량 표시가 보이지 않던 문제 수정
 					</div>
 					<div>
 						<b-badge variant="info">모의 전투</b-badge>기능

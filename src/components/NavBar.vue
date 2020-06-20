@@ -18,7 +18,7 @@
 					<b-badge variant="warning">ALPHA</b-badge>
 				</b-nav-item>
 
-				<b-nav-item :active="IsUnits" href="/units" @click.prevent="GoTo('/units')">유닛정보</b-nav-item>
+				<b-nav-item :active="IsUnits" href="/units" @click.prevent="GoTo('/units')">전투원정보</b-nav-item>
 				<b-nav-item :active="IsEquips" href="/equips" @click.prevent="GoTo('/equips')">장비정보</b-nav-item>
 				<b-nav-item :active="IsChangelog" href="/changelog" @click.prevent="GoTo('/changelog')">Changelog</b-nav-item>
 			</b-navbar-nav>

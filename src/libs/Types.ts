@@ -234,7 +234,23 @@ export namespace UnitStats {
 	};
 }
 
+interface SkinOffsetPart {
+	n: number;
+	d: number;
+	s: number;
+	x: number;
+}
+export interface SkinOffset {
+	normal: SkinOffsetPart;
+	google: SkinOffsetPart;
+}
 export interface RawSkin {
+	/** Offset */
+	offset: SkinOffset;
+
+	/** Skin Price */
+	price?: number;
+
 	/** Damaaged */
 	D: boolean;
 
@@ -255,6 +271,9 @@ export interface RawSkin {
 }
 export interface SkinInfo {
 	t: string;
+
+	/** Offset */
+	offset: SkinOffset;
 
 	/** Damaaged */
 	D: boolean;

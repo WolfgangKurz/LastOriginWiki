@@ -1,243 +1,205 @@
 <template>
 	<div class="unit-view">
-		<b-alert :class="`rarity-${unit.rarity}-force`" show>
-			<unit-face :id="unit.id" :size="30" type="mini" />
-			{{unit.name}}
-		</b-alert>
+		<b-row align-h="between" class="mb-2">
+			<b-col cols="auto">
+				<b-button variant="dark" @click="GoBack()">뒤로</b-button>
+			</b-col>
+			<b-col cols="auto">
+				<b-alert :class="`rarity-${unit.rarity}-force`" show>
+					<unit-face :id="unit.id" :size="30" type="mini" />
+					{{unit.name}}
+				</b-alert>
+			</b-col>
+		</b-row>
 
 		<!-- 스킨, 번호, 소속, 등급, 승급, 유형, 역할 -->
-		<b-table-simple bordered fixed table-class="text-center table-unit-modal">
-			<b-tbody>
-				<b-tr>
-					<b-td colspan="4">
-						<b-tabs v-model="skinIndex" nav-class="unit-skin-tabs">
-							<b-tab
-								v-for="(skin, index) in SkinList"
-								:key="`unit-${unit.id}-skin-${index}`"
-								:title-link-class="index === skinIndex ? 'bg-dark text-white' : 'text-dark'"
-								:active="index === 0"
-							>
-								<template #title>
-									<template v-if="skin.isPro">
-										<rarity-badge rarity="SS">SS 승급</rarity-badge>
-										{{skin.t}}
-									</template>
-									<template v-else>{{skin.t}}</template>
-								</template>
-							</b-tab>
-						</b-tabs>
-
-						<div
-							v-if="SkinList[skinIndex]"
-							class="unit-full"
-							:class="{ 'unit-full-collapse': !skinDisplay }"
-						>
-							<div class="unit-skin-toggle" @click="skinDisplay = !skinDisplay" />
-							<div
-								v-if="SkinList[skinIndex].A"
-								class="unit-skin-animated"
-								title="이 스킨은 '로비 애니메이션'이 존재합니다."
-								v-b-tooltip.hover.bottomright.v-primary
-							/>
-
-							<div class="unit-full-bg" />
-							<div class="unit-full-group">
-								<div>
-									<img :src="`${AssetsRoot}/${imageExt}/group/${unit.groupkey}.${imageExt}`" />
-								</div>
-							</div>
-							<div class="unit-full-unit">
-								<img :src="SkinImageURL" />
-							</div>
-
-							<div
-								v-if="!(SkinList[skinIndex].isPro || SkinList[skinIndex].isDef) &&  SkinList[skinIndex].price"
-								class="skin-price"
-							>
-								<img :src="`${AssetsRoot}/tuna.png`" />
-								{{SkinList[skinIndex].price}}
-							</div>
-
-							<div
-								v-if="(!SkinList[skinIndex].X && SkinList[skinIndex].D && !IsSimplified) || SkinList[skinIndex].X"
-								class="skin-toggle skin-toggle-damaged"
-								:data-damaged="IsDamaged ? 1 : 0"
-								@click="IsDamaged = !IsDamaged"
-							/>
-							<div
-								v-if="(!SkinList[skinIndex].X && SkinList[skinIndex].S && !IsDamaged) || SkinList[skinIndex].X"
-								class="skin-toggle skin-toggle-simplified"
-								:data-simplified="IsSimplified ? 1 : 0"
-								@click="IsSimplified = !IsSimplified"
-							/>
-							<div
-								v-if="SkinList[skinIndex].G"
-								class="skin-toggle skin-toggle-platform"
-								:data-platform="IsGoogle ? 1 : 0"
-								@click="IsGoogle = !IsGoogle"
-							/>
-						</div>
-					</b-td>
-				</b-tr>
-			</b-tbody>
-		</b-table-simple>
-
-		<b-container class="table-unit-modal mb-4">
-			<b-row cols="2" cols-md="4" class="text-center">
-				<b-col class="bg-dark text-white">도감 번호</b-col>
-				<b-col>
-					<small>No.&nbsp;</small>
-					<strong>{{unit.id}}</strong>
-				</b-col>
-				<b-col class="bg-dark text-white">소속</b-col>
-				<b-col>
-					<span class="break-keep">{{unit.group}}</span>
-				</b-col>
-				<b-col class="bg-dark text-white">등급</b-col>
-				<b-col>
-					<rarity-badge :rarity="unit.rarity" size="medium">{{unit.rarity}} 등급</rarity-badge>
-				</b-col>
-				<b-col class="bg-dark text-white">승급</b-col>
-				<b-col>
-					<template v-if="unit.promotions">
-						<rarity-badge
-							v-for="pro in unit.promotions"
-							:key="`unit-${unit.id}-promotion-${pro}`"
-							:rarity="pro"
-							size="medium"
-						>{{pro}} 승급</rarity-badge>
+		<b-tabs v-model="skinIndex" nav-class="unit-skin-tabs">
+			<b-tab
+				v-for="(skin, index) in SkinList"
+				:key="`unit-skin-${index}`"
+				:title-link-class="index === skinIndex ? `rarity-${skin.isPro ? 'SS' : unit.rarity}-force text-dark` : 'text-dark'"
+				:active="index === 0"
+			>
+				<template #title>
+					<template v-if="skin.isPro">
+						<b-badge v-if="index === skinIndex" variant="light">SS 승급</b-badge>
+						<rarity-badge v-else rarity="SS">SS 승급</rarity-badge>
+						{{skin.t}}
 					</template>
-					<template v-else>
-						<span class="text-secondary">승급 없음</span>
-					</template>
-				</b-col>
-				<b-col class="bg-dark text-white">유형</b-col>
-				<b-col>
-					<unit-badge :type="unit.type" size="large" transparent black />
-				</b-col>
-				<b-col class="bg-dark text-white">역할</b-col>
-				<b-col>
-					<unit-badge :role="unit.role" size="large" transparent black />
-				</b-col>
-			</b-row>
-		</b-container>
-
-		<b-table-simple bordered fixed table-class="text-center table-unit-modal">
-			<b-thead head-variant="dark">
-				<b-tr>
-					<b-th colspan="4">
-						링크 보너스
-						<b-form-select
-							class="table-unit-link-select"
-							size="sm"
-							v-model="linkCount"
-							:options="LinkCountList"
-						/>
-					</b-th>
-				</b-tr>
-			</b-thead>
-			<b-tbody>
-				<b-tr>
-					<b-td>
-						HP
-						<span class="d-inline-block">
-							+
-							<b class="text-danger">{{LinkBonus.Value.HP}}</b>%
-						</span>
-					</b-td>
-					<b-td>
-						공격력
-						<span class="d-inline-block">
-							+
-							<b class="text-danger">{{LinkBonus.Value.Atk}}</b>%
-						</span>
-					</b-td>
-					<b-td>
-						<template v-if="!LinkBonus.IsHP">
-							{{LinkBonus.Per}}
-							<span class="d-inline-block">
-								+
-								<b class="text-danger">{{LinkBonus.Value.Per[0]}}</b>
-								<template v-if="LinkBonus.Value.Per[1]">%</template>
-							</span>
-						</template>
-						<b v-else class="text-secondary">-</b>
-					</b-td>
-					<b-td>
-						획득 경험치
-						<span class="d-inline-block">
-							+
-							<b class="text-danger">{{LinkBonus.Value.EXP}}</b>%
-						</span>
-					</b-td>
-				</b-tr>
-			</b-tbody>
-		</b-table-simple>
-
+					<template v-else>{{skin.t}}</template>
+				</template>
+			</b-tab>
+		</b-tabs>
 		<b-row>
-			<b-col cols="12" sm="6">
+			<b-col cols="12" md="3">
+				<unit-skin-view
+					v-if="SkinList[skinIndex]"
+					:unit="unit"
+					:skin="SkinList[skinIndex]"
+					:index="skinIndex"
+					collapsed
+					detailable
+				/>
+			</b-col>
+
+			<b-col cols="12" md="9">
+				<b-container class="table-unit-modal mt-4 mb-3">
+					<b-row cols="2" cols-md="4" class="text-center">
+						<b-col class="bg-dark text-white">도감 번호</b-col>
+						<b-col>
+							<small>No.&nbsp;</small>
+							<strong>{{unit.id}}</strong>
+						</b-col>
+						<b-col class="bg-dark text-white">소속</b-col>
+						<b-col>
+							<span class="break-keep">{{unit.group}}</span>
+						</b-col>
+						<b-col class="bg-dark text-white">등급</b-col>
+						<b-col>
+							<rarity-badge :rarity="unit.rarity" size="medium">{{unit.rarity}} 등급</rarity-badge>
+						</b-col>
+						<b-col class="bg-dark text-white">승급</b-col>
+						<b-col>
+							<template v-if="unit.promotions">
+								<rarity-badge
+									v-for="pro in unit.promotions"
+									:key="`unit-promotion-${pro}`"
+									:rarity="pro"
+									size="medium"
+								>{{pro}} 승급</rarity-badge>
+							</template>
+							<template v-else>
+								<span class="text-secondary">승급 없음</span>
+							</template>
+						</b-col>
+						<b-col class="bg-dark text-white">유형</b-col>
+						<b-col>
+							<unit-badge :type="unit.type" size="large" transparent black />
+						</b-col>
+						<b-col class="bg-dark text-white">역할</b-col>
+						<b-col>
+							<unit-badge :role="unit.role" size="large" transparent black />
+						</b-col>
+					</b-row>
+				</b-container>
+
 				<b-table-simple bordered fixed table-class="text-center table-unit-modal">
 					<b-thead head-variant="dark">
 						<b-tr>
 							<b-th colspan="4">
-								소모 자원
+								링크 보너스
 								<b-form-select
-									v-if="CostRarityList.length > 1"
-									class="table-unit-rarity-select"
+									class="table-unit-link-select"
 									size="sm"
-									v-model="costRarity"
-									:options="CostRarityList"
+									v-model="linkCount"
+									:options="LinkCountList"
 								/>
 							</b-th>
-						</b-tr>
-						<b-tr>
-							<b-th>링크</b-th>
-							<b-th>부품</b-th>
-							<b-th>영양</b-th>
-							<b-th>전력</b-th>
-						</b-tr>
-					</b-thead>
-					<b-tbody>
-						<b-tr v-for="i in 6" :key="`unit-modal-cost-${i}`" class="text-center">
-							<b-th variant="dark">{{i - 1}}</b-th>
-							<b-td :class="CostDiscountClass(i - 1)">{{CostTable.components[i - 1]}}</b-td>
-							<b-td :class="CostDiscountClass(i - 1)">{{CostTable.nutritions[i - 1]}}</b-td>
-							<b-td :class="CostDiscountClass(i - 1)">{{CostTable.power[i - 1]}}</b-td>
-						</b-tr>
-					</b-tbody>
-				</b-table-simple>
-			</b-col>
-			<b-col cols="12" sm="6" class="fulllink-table">
-				<b-table-simple bordered fixed table-class="text-left table-unit-modal mt-sm-5">
-					<b-thead head-variant="dark">
-						<b-tr>
-							<b-th class="text-center">풀링크 보너스</b-th>
 						</b-tr>
 					</b-thead>
 					<b-tbody>
 						<b-tr>
 							<b-td>
-								출격 비용 -{{LinkBonus.Discount}}%
-								<b-checkbox class="float-right" v-model="linkBonusDiscount" />
+								HP
+								<span class="d-inline-block">
+									+
+									<b class="text-danger">{{LinkBonus.Value.HP}}</b>%
+								</span>
 							</b-td>
-						</b-tr>
-						<b-tr>
-							<b-td>스킬 위력 +{{LinkBonus.SkillPower}}%</b-td>
-						</b-tr>
-						<b-tr>
-							<b-td>{{LinkBonus.Entry3}}</b-td>
-						</b-tr>
-						<b-tr>
-							<b-td>{{LinkBonus.Entry4}}</b-td>
-						</b-tr>
-						<b-tr>
-							<b-td>행동력 +{{LinkBonus.Speed}}</b-td>
+							<b-td>
+								공격력
+								<span class="d-inline-block">
+									+
+									<b class="text-danger">{{LinkBonus.Value.Atk}}</b>%
+								</span>
+							</b-td>
+							<b-td>
+								<template v-if="!LinkBonus.IsHP">
+									{{LinkBonus.Per}}
+									<span class="d-inline-block">
+										+
+										<b class="text-danger">{{LinkBonus.Value.Per[0]}}</b>
+										<template v-if="LinkBonus.Value.Per[1]">%</template>
+									</span>
+								</template>
+								<b v-else class="text-secondary">-</b>
+							</b-td>
+							<b-td>
+								획득 경험치
+								<span class="d-inline-block">
+									+
+									<b class="text-danger">{{LinkBonus.Value.EXP}}</b>%
+								</span>
+							</b-td>
 						</b-tr>
 					</b-tbody>
 				</b-table-simple>
+
+				<b-row>
+					<b-col cols="12" sm="6">
+						<b-table-simple bordered fixed table-class="text-center table-unit-modal">
+							<b-thead head-variant="dark">
+								<b-tr>
+									<b-th colspan="4">
+										소모 자원
+										<b-form-select
+											v-if="CostRarityList.length > 1"
+											class="table-unit-rarity-select"
+											size="sm"
+											v-model="costRarity"
+											:options="CostRarityList"
+										/>
+									</b-th>
+								</b-tr>
+								<b-tr>
+									<b-th>링크</b-th>
+									<b-th>부품</b-th>
+									<b-th>영양</b-th>
+									<b-th>전력</b-th>
+								</b-tr>
+							</b-thead>
+							<b-tbody>
+								<b-tr v-for="i in 6" :key="`unit-modal-cost-${i}`" class="text-center">
+									<b-th variant="dark">{{i - 1}}</b-th>
+									<b-td :class="CostDiscountClass(i - 1)">{{CostTable.components[i - 1]}}</b-td>
+									<b-td :class="CostDiscountClass(i - 1)">{{CostTable.nutritions[i - 1]}}</b-td>
+									<b-td :class="CostDiscountClass(i - 1)">{{CostTable.power[i - 1]}}</b-td>
+								</b-tr>
+							</b-tbody>
+						</b-table-simple>
+					</b-col>
+					<b-col cols="12" sm="6" class="fulllink-table">
+						<b-table-simple bordered fixed table-class="text-left table-unit-modal mt-sm-5">
+							<b-thead head-variant="dark">
+								<b-tr>
+									<b-th class="text-center">풀링크 보너스</b-th>
+								</b-tr>
+							</b-thead>
+							<b-tbody>
+								<b-tr>
+									<b-td>
+										출격 비용 -{{LinkBonus.Discount}}%
+										<b-checkbox class="float-right" v-model="linkBonusDiscount" />
+									</b-td>
+								</b-tr>
+								<b-tr>
+									<b-td>스킬 위력 +{{LinkBonus.SkillPower}}%</b-td>
+								</b-tr>
+								<b-tr>
+									<b-td>{{LinkBonus.Entry3}}</b-td>
+								</b-tr>
+								<b-tr>
+									<b-td>{{LinkBonus.Entry4}}</b-td>
+								</b-tr>
+								<b-tr>
+									<b-td>행동력 +{{LinkBonus.Speed}}</b-td>
+								</b-tr>
+							</b-tbody>
+						</b-table-simple>
+					</b-col>
+				</b-row>
 			</b-col>
 		</b-row>
-
 		<unit-skill-table
 			v-if="SkillsRaw"
 			:skills="SkillsRaw"
@@ -255,6 +217,8 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, Watch, PropSync } from "vue-property-decorator";
 
+import StoreModule from "@/libs/Store";
+
 import { StatusText } from "@/libs/Status";
 
 import NodeRenderer from "@/components/NodeRenderer.vue";
@@ -266,11 +230,11 @@ import SkillDescription from "@/components/SkillDescription.vue";
 import ElemIcon from "@/components/ElemIcon.vue";
 
 import UnitSkillTable from "./UnitSkillTable.vue";
+import UnitSkinView from "./UnitSkinView.vue";
 
 import { Unit, RawSkin, SkinInfo, RawCostTable, CostTable, RawSkill, Rarity, RawSkillUnit, LinkBonusType } from "@/libs/Types";
 
 import { UnitData, SkillData } from "@/libs/DB";
-import { AssetsRoot, ImageExtension } from "@/libs/Const";
 
 import SkinData from "@/json/unit-skin.json";
 import CostData from "@/json/unit-cost.json";
@@ -293,6 +257,7 @@ interface SkillTable {
 		SkillBound,
 		SkillDescription,
 		UnitSkillTable,
+		UnitSkinView,
 	},
 })
 export default class UnitView extends Vue {
@@ -300,11 +265,6 @@ export default class UnitView extends Vue {
 	private costRarity: Rarity = "SS";
 
 	private skinIndex: number = 0;
-	private skinDisplay: boolean = this.imageExt === "webp";
-
-	private IsDamaged: boolean = false;
-	private IsSimplified: boolean = false;
-	private IsGoogle: boolean = false;
 
 	private linkCount: number = 5;
 	private linkBonusDiscount: boolean = false;
@@ -316,6 +276,10 @@ export default class UnitView extends Vue {
 	@Watch("$route")
 	private routeChanged () {
 		this.checkParams();
+	}
+
+	private GoBack () {
+		this.$router.back();
 	}
 
 	private checkParams () {
@@ -331,14 +295,6 @@ export default class UnitView extends Vue {
 
 	private get unit () {
 		return UnitData[this.unitId] || Unit.Empty;
-	}
-
-	private get AssetsRoot () {
-		return AssetsRoot;
-	}
-
-	private get imageExt () {
-		return ImageExtension();
 	}
 
 	private get LinkCountList () {
@@ -410,10 +366,6 @@ export default class UnitView extends Vue {
 		};
 	}
 
-	private get DisplayId () {
-		return ("00" + this.unit.id).substr(-3);
-	}
-
 	private get HasFormChange () {
 		const raw = this.SkillsRaw;
 		if (!raw) return false;
@@ -466,6 +418,7 @@ export default class UnitView extends Vue {
 
 		list.push({
 			t: this.unit.name,
+			offset: skin.offset,
 			D: skin.D,
 			S: skin.S,
 			X: skin.X,
@@ -495,58 +448,6 @@ export default class UnitView extends Vue {
 
 		this.Reset();
 		return list;
-	}
-
-	private get SkinImageURL () {
-		const skin = this.SkinList[this.skinIndex];
-		let list: string[] = [];
-
-		if (skin.isDef) {
-			list = [
-				AssetsRoot,
-				"/",
-				this.imageExt,
-				"/full/",
-				this.DisplayId,
-				this.IsDamaged ? "D" : "",
-				this.IsSimplified ? "_S" : "",
-				".",
-				this.imageExt,
-			];
-		} else if (skin.isPro) {
-			list = [
-				AssetsRoot,
-				"/",
-				this.imageExt,
-				"/full/",
-				this.DisplayId,
-				this.IsDamaged ? "D" : "",
-				"_P",
-				this.IsSimplified ? "S" : "",
-				".",
-				this.imageExt,
-			];
-		} else if (this.skinIndex) {
-			list = [
-				AssetsRoot,
-				"/",
-				this.imageExt,
-				"/full/",
-				this.DisplayId,
-				this.IsDamaged ? "D" : "",
-				"_",
-				this.skinIndex.toString(),
-				this.IsSimplified ? "S" : "",
-				".",
-				this.imageExt,
-			];
-		}
-
-		const ret = list.join("");
-		if (skin.G && this.IsGoogle)
-			return ret.replace(/full/g, "full-g");
-		else
-			return ret;
 	}
 
 	private get CostTable (): CostTable {
@@ -621,17 +522,9 @@ export default class UnitView extends Vue {
 
 	private Reset () {
 		this.skinIndex = 0;
-		this.IsDamaged = false;
-		this.IsSimplified = false;
 		this.skillLevel = 9;
 		this.formState = "normal";
 		this.costRarity = this.unit.rarity;
-	}
-
-	@Watch("skinIndex")
-	private SkinIndexWatch () {
-		this.IsDamaged = false;
-		this.IsSimplified = false;
 	}
 
 	private mounted () {
@@ -646,193 +539,9 @@ export default class UnitView extends Vue {
 }
 
 .unit-view {
-	.unit-skin-tabs {
-		border-bottom: 0;
-	}
-
-	.unit-full {
-		position: relative;
-		padding: 0;
-		overflow: hidden;
-
-		&.unit-full-collapse {
-			> .unit-full-bg {
-				padding-top: 52px !important;
-			}
-
-			> .skin-toggle,
-			> .unit-full-group,
-			> .unit-full-unit {
-				display: none;
-			}
-			> .unit-full-bg {
-				&::before {
-					height: 10rem;
-					transform: translateY(-50%) rotate(180deg);
-				}
-				&::after {
-					display: none;
-				}
-			}
-		}
-
-		.unit-skin-toggle {
-			position: absolute;
-			top: 10px;
-			left: 10px;
-			width: 32px;
-			height: 32px;
-			background-image: url($assetsRoot+"/display-icon.png");
-			background-repeat: no-repeat;
-			background-size: 32px 32px;
-			cursor: pointer;
-			z-index: 10;
-		}
-
-		.unit-skin-animated {
-			position: absolute;
-			top: 10px;
-			left: 60px;
-			width: 32px;
-			height: 32px;
-			background-image: url($assetsRoot+"/icon-animated.png");
-			background-repeat: no-repeat;
-			background-size: 32px 32px;
-			z-index: 10;
-		}
-
-		> .unit-full-bg {
-			padding-top: ratio(4, 3);
-			background-image: url($assetsRoot+"/bg/unit-bg.png");
-			background-repeat: no-repeat;
-			background-position: center;
-			background-size: cover;
-
-			&::before,
-			&::after {
-				content: "";
-				position: absolute;
-				left: 0;
-				top: 0;
-				width: 100%;
-				height: 100%;
-				transform-origin: 50% 50%;
-				background-image: url($assetsRoot+"/bg/unit-bg-net.png");
-				background-position: center bottom;
-				background-repeat: no-repeat;
-				background-size: 100%;
-			}
-			&::before {
-				transform: translateY(-20%) rotate(180deg) scale(1.1);
-			}
-			&::after {
-				transform: translateY(20%) scale(1.1);
-			}
-		}
-
-		> .unit-full-group {
-			position: absolute;
-			display: flex;
-			padding: 4%;
-			left: 0;
-			top: 0;
-			max-height: 40%;
-			text-align: left;
-			overflow: hidden;
-
-			> div {
-				flex: 1;
-				> img {
-					height: 100%;
-					opacity: 0.22;
-				}
-			}
-		}
-
-		> .unit-full-unit {
-			$margin: 4%;
-			position: absolute;
-			display: flex;
-			margin: $margin;
-			left: 0;
-			top: 0;
-			width: (100% - $margin * 2);
-			height: (100% - $margin * 2);
-
-			align-items: center;
-			justify-content: center;
-
-			> img {
-				position: absolute;
-				left: 0;
-				top: 0;
-				right: 0;
-				bottom: 0;
-				margin: auto;
-				max-width: 100%;
-				max-height: 100%;
-			}
-		}
-
-		> .skin-price {
-			position: absolute;
-			bottom: 10px;
-			right: 15px;
-			color: #fff;
-
-			> img {
-				height: 20px;
-			}
-		}
-
-		> .skin-toggle {
-			cursor: pointer;
-
-			&.skin-toggle-damaged {
-				position: absolute;
-				top: 10px;
-				right: 10px;
-				width: 64px;
-				height: 62px;
-				background-image: url($assetsRoot+"/damaged-icon.png");
-				background-repeat: no-repeat;
-				background-size: 128px 62px;
-
-				&[data-damaged="1"] {
-					background-position-x: -64px;
-				}
-			}
-			&.skin-toggle-simplified {
-				position: absolute;
-				top: 80px;
-				right: 28px;
-				width: 28px;
-				height: 28px;
-				background-image: url($assetsRoot+"/simplify-icon.png");
-				background-repeat: no-repeat;
-				background-position-x: -28px;
-				background-size: 56px 28px;
-
-				&[data-simplified="1"] {
-					background-position-x: 0;
-				}
-			}
-			&.skin-toggle-platform {
-				position: absolute;
-				top: 150px;
-				right: 28px;
-				width: 28px;
-				height: 28px;
-				background-image: url($assetsRoot+"/icon-platform.png");
-				background-repeat: no-repeat;
-				background-position-x: -28px;
-				background-size: 56px 28px;
-
-				&[data-platform="1"] {
-					background-position-x: 0;
-				}
-			}
-		}
+	.tab-box {
+		padding: 10px;
+		border: 1px solid #dee2e6;
 	}
 
 	.fulllink-table {
