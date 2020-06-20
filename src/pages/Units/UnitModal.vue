@@ -463,6 +463,7 @@ export default class UnitModal extends Vue {
 
 		list.push({
 			t: this.unit.name,
+			offset: skin.offset,
 			D: skin.D,
 			S: skin.S,
 			X: skin.X,

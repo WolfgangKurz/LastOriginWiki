@@ -58,6 +58,6 @@ const Router = new VueRouter({
 			return savedPosition;
 		else
 			return { x: 0, y: 0 };
-	}
+	},
 });
 export default Router;
