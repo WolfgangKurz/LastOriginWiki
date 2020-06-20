@@ -7,70 +7,70 @@
 			<b-btn-group class="ml-3 mb-2">
 				<b-button
 					variant="outline-danger"
-					:pressed="filterFlags.rarity.ss"
-					@click="filterFlags.rarity.ss = !filterFlags.rarity.ss"
+					:pressed="Filters.rarity.ss"
+					@click="Filters.rarity.ss = !Filters.rarity.ss"
 				>SS</b-button>
 				<b-button
 					variant="outline-danger"
-					:pressed="filterFlags.rarity.s"
-					@click="filterFlags.rarity.s = !filterFlags.rarity.s"
+					:pressed="Filters.rarity.s"
+					@click="Filters.rarity.s = !Filters.rarity.s"
 				>S</b-button>
 				<b-button
 					variant="outline-danger"
-					:pressed="filterFlags.rarity.a"
-					@click="filterFlags.rarity.a = !filterFlags.rarity.a"
+					:pressed="Filters.rarity.a"
+					@click="Filters.rarity.a = !Filters.rarity.a"
 				>A</b-button>
 				<b-button
 					variant="outline-danger"
-					:pressed="filterFlags.rarity.b"
-					@click="filterFlags.rarity.b = !filterFlags.rarity.b"
+					:pressed="Filters.rarity.b"
+					@click="Filters.rarity.b = !Filters.rarity.b"
 				>B</b-button>
 			</b-btn-group>
 			<b-btn-group class="ml-3 mb-2">
 				<b-button
 					variant="outline-success"
-					:pressed="filterFlags.type.light"
-					@click="filterFlags.type.light = !filterFlags.type.light"
+					:pressed="Filters.type.light"
+					@click="Filters.type.light = !Filters.type.light"
 				>경장형</b-button>
 				<b-button
 					variant="outline-success"
-					:pressed="filterFlags.type.air"
-					@click="filterFlags.type.air = !filterFlags.type.air"
+					:pressed="Filters.type.air"
+					@click="Filters.type.air = !Filters.type.air"
 				>기동형</b-button>
 				<b-button
 					variant="outline-success"
-					:pressed="filterFlags.type.heavy"
-					@click="filterFlags.type.heavy = !filterFlags.type.heavy"
+					:pressed="Filters.type.heavy"
+					@click="Filters.type.heavy = !Filters.type.heavy"
 				>중장형</b-button>
 			</b-btn-group>
 			<b-btn-group class="ml-3 mb-2">
 				<b-button
 					variant="outline-primary"
-					:pressed="filterFlags.role.attacker"
-					@click="filterFlags.role.attacker = !filterFlags.role.attacker"
+					:pressed="Filters.role.attacker"
+					@click="Filters.role.attacker = !Filters.role.attacker"
 				>공격기</b-button>
 				<b-button
 					variant="outline-primary"
-					:pressed="filterFlags.role.defender"
-					@click="filterFlags.role.defender = !filterFlags.role.defender"
+					:pressed="Filters.role.defender"
+					@click="Filters.role.defender = !Filters.role.defender"
 				>보호기</b-button>
 				<b-button
 					variant="outline-primary"
-					:pressed="filterFlags.role.supporter"
-					@click="filterFlags.role.supporter = !filterFlags.role.supporter"
+					:pressed="Filters.role.supporter"
+					@click="Filters.role.supporter = !Filters.role.supporter"
 				>지원기</b-button>
 			</b-btn-group>
 			<!--
 			<b-btn-group class="ml-3 mb-2">
 				<b-button
 					variant="outline-warning"
-					:pressed="filterFlags.body.bioroid"
-					@click="filterFlags.body.bioroid = !filterFlags.body.bioroid"
+					:pressed="Filters.body.bioroid"
+					@click="Filters.body.bioroid = !Filters.body.bioroid"
 				>바이오로이드</b-button>
 				<b-button
 					variant="outline-warning"
-					:pressed="filterFlags.body.ags"
-					@click="filterFlags.body.ags = !filterFlags.body.ags"
+					:pressed="Filters.body.ags"
+					@click="Filters.body.ags = !Filters.body.ags"
 				>AGS</b-button>
 			</b-btn-group>
 			-->
@@ -109,13 +109,13 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, Watch, PropSync, Ref } from "vue-property-decorator";
 
+import { UnitTableFilters } from "@/libs/Store";
+
 import UnitFace from "@/components/UnitFace.vue";
 
 import { UnitSimulationInfo } from "./Simulation";
 import { UnitData } from "@/libs/DB";
 import { Unit } from "@/libs/Types";
-
-import { CharFilterFlag } from "@/libs/State";
 
 interface UnitDict {
 	[key: number]: Unit;
@@ -142,26 +142,26 @@ export default class UnitSelectModal extends Vue {
 	private readonly empty = Unit.Empty;
 	private SelectedUnit: Unit = this.empty;
 
-	private filterFlags: CharFilterFlag = {
-		rarity: {
-			ss: true,
-			s: true,
-			a: true,
-			b: true,
+	private Filters: UnitTableFilters = {
+		Rarity: {
+			SS: true,
+			S: true,
+			A: true,
+			B: true,
 		},
-		type: {
-			light: true,
-			air: true,
-			heavy: true,
+		Type: {
+			Light: true,
+			Air: true,
+			Heavy: true,
 		},
-		role: {
-			attacker: true,
-			defender: true,
-			supporter: true,
+		Role: {
+			Attacker: true,
+			Defender: true,
+			Supporter: true,
 		},
-		body: {
-			bioroid: true,
-			ags: true,
+		Body: {
+			Bioroid: true,
+			AGS: true,
 		},
 	};
 
@@ -175,21 +175,21 @@ export default class UnitSelectModal extends Vue {
 		const list = Object.values(UnitData)
 			.filter(x => !this.list.some(y => y.id === x.id))
 			.filter(x => {
-				if (!this.filterFlags.rarity.ss && x.rarity === "SS") return false;
-				if (!this.filterFlags.rarity.s && x.rarity === "S") return false;
-				if (!this.filterFlags.rarity.a && x.rarity === "A") return false;
-				if (!this.filterFlags.rarity.b && x.rarity === "B") return false;
+				if (!this.Filters.Rarity.SS && x.rarity === "SS") return false;
+				if (!this.Filters.Rarity.S && x.rarity === "S") return false;
+				if (!this.Filters.Rarity.A && x.rarity === "A") return false;
+				if (!this.Filters.Rarity.B && x.rarity === "B") return false;
 
-				if (!this.filterFlags.type.light && x.type === "light") return false;
-				if (!this.filterFlags.type.air && x.type === "air") return false;
-				if (!this.filterFlags.type.heavy && x.type === "heavy") return false;
+				if (!this.Filters.Type.Light && x.type === "light") return false;
+				if (!this.Filters.Type.Air && x.type === "air") return false;
+				if (!this.Filters.Type.Heavy && x.type === "heavy") return false;
 
-				if (!this.filterFlags.role.attacker && x.role === "attacker") return false;
-				if (!this.filterFlags.role.defender && x.role === "defender") return false;
-				if (!this.filterFlags.role.supporter && x.role === "supporter") return false;
+				if (!this.Filters.Role.Attacker && x.role === "attacker") return false;
+				if (!this.Filters.Role.Defender && x.role === "defender") return false;
+				if (!this.Filters.Role.Supporter && x.role === "supporter") return false;
 				/*
-				if (!this.filterFlags.body.bioroid && x.body === "bio") return false;
-				if (!this.filterFlags.body.ags && x.body === "ags") return false;
+				if (!this.Filters.body.bioroid && x.body === "bio") return false;
+				if (!this.Filters.body.ags && x.body === "ags") return false;
 				*/
 				return true;
 			});

@@ -1,4 +1,4 @@
-return {
+module.exports = {
 	damage (...{ state, skill, unit, target, team, enemy }) {
 		let dmg = unit.atk; // 기본 공격력
 

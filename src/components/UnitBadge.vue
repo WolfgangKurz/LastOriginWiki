@@ -14,7 +14,11 @@ const roleName = {
 	defender: "보호기",
 	supporter: "지원기",
 };
-const typeList = ["light", "air", "heavy"];
+const typeList = [
+	"light",
+	"air",
+	"heavy",
+];
 
 @Component({})
 export default class UnitBadge extends Vue {
@@ -22,13 +26,13 @@ export default class UnitBadge extends Vue {
 		type: String,
 		default: "",
 	})
-	private type!: UnitType;
+	private type!: string;
 
 	@Prop({
 		type: String,
 		default: "",
 	})
-	private role!: UnitRole;
+	private role!: string;
 
 	@Prop({
 		type: String,
@@ -54,38 +58,40 @@ export default class UnitBadge extends Vue {
 	})
 	private size!: string;
 
-	private get Type () {
-		if (this.limit) {
-			if (this.limit.includes("+"))
-				return this.limit.substr(0, this.limit.indexOf("+"));
-			else if (typeList.includes(this.limit))
-				return this.limit;
-			else
-				return "";
-		}
-		return this.type;
+	private get Type (): UnitType {
+		return (() => {
+			if (this.limit) {
+				if (this.limit.includes("+"))
+					return this.limit.substr(0, this.limit.indexOf("+"));
+				else if (typeList.includes(this.limit))
+					return this.limit;
+				else
+					return "";
+			}
+			return this.type;
+		})().toLowerCase() as UnitType;
 	}
 
-	private get Role () {
-		if (this.limit) {
-			if (this.limit.includes("+"))
-				return this.limit.substr(this.limit.indexOf("+") + 1);
-			else if (!typeList.includes(this.limit))
-				return this.limit;
-			else
-				return "";
-		}
-		return this.role;
+	private get Role (): UnitRole {
+		return (() => {
+			if (this.limit) {
+				if (this.limit.includes("+"))
+					return this.limit.substr(this.limit.indexOf("+") + 1);
+				else if (!typeList.includes(this.limit))
+					return this.limit;
+				else
+					return "";
+			}
+			return this.role;
+		})().toLowerCase() as UnitRole;
 	}
 
 	private get TypeName () {
-		const type = this.Type as UnitType;
-		return typeName[type] || "???";
+		return typeName[this.Type] || "???";
 	}
 
 	private get RoleName () {
-		const role = this.Role as UnitRole;
-		return roleName[role] || "???";
+		return roleName[this.Role] || "???";
 	}
 
 	private render () {
