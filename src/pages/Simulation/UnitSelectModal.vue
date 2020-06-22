@@ -7,57 +7,57 @@
 			<b-btn-group class="ml-3 mb-2">
 				<b-button
 					variant="outline-danger"
-					:pressed="Filters.rarity.ss"
-					@click="Filters.rarity.ss = !Filters.rarity.ss"
+					:pressed="Filters.Rarity.SS"
+					@click="Filters.Rarity.SS = !Filters.Rarity.SS"
 				>SS</b-button>
 				<b-button
 					variant="outline-danger"
-					:pressed="Filters.rarity.s"
-					@click="Filters.rarity.s = !Filters.rarity.s"
+					:pressed="Filters.Rarity.S"
+					@click="Filters.Rarity.S = !Filters.Rarity.S"
 				>S</b-button>
 				<b-button
 					variant="outline-danger"
-					:pressed="Filters.rarity.a"
-					@click="Filters.rarity.a = !Filters.rarity.a"
+					:pressed="Filters.Rarity.A"
+					@click="Filters.Rarity.A = !Filters.Rarity.A"
 				>A</b-button>
 				<b-button
 					variant="outline-danger"
-					:pressed="Filters.rarity.b"
-					@click="Filters.rarity.b = !Filters.rarity.b"
+					:pressed="Filters.Rarity.B"
+					@click="Filters.Rarity.B = !Filters.Rarity.B"
 				>B</b-button>
 			</b-btn-group>
 			<b-btn-group class="ml-3 mb-2">
 				<b-button
 					variant="outline-success"
-					:pressed="Filters.type.light"
-					@click="Filters.type.light = !Filters.type.light"
+					:pressed="Filters.Type.Light"
+					@click="Filters.Type.Light = !Filters.Type.Light"
 				>경장형</b-button>
 				<b-button
 					variant="outline-success"
-					:pressed="Filters.type.air"
-					@click="Filters.type.air = !Filters.type.air"
+					:pressed="Filters.Type.Air"
+					@click="Filters.Type.Air = !Filters.Type.Air"
 				>기동형</b-button>
 				<b-button
 					variant="outline-success"
-					:pressed="Filters.type.heavy"
-					@click="Filters.type.heavy = !Filters.type.heavy"
+					:pressed="Filters.Type.Heavy"
+					@click="Filters.Type.Heavy = !Filters.Type.Heavy"
 				>중장형</b-button>
 			</b-btn-group>
 			<b-btn-group class="ml-3 mb-2">
 				<b-button
 					variant="outline-primary"
-					:pressed="Filters.role.attacker"
-					@click="Filters.role.attacker = !Filters.role.attacker"
+					:pressed="Filters.Role.Attacker"
+					@click="Filters.Role.Attacker = !Filters.Role.Attacker"
 				>공격기</b-button>
 				<b-button
 					variant="outline-primary"
-					:pressed="Filters.role.defender"
-					@click="Filters.role.defender = !Filters.role.defender"
+					:pressed="Filters.Role.Defender"
+					@click="Filters.Role.Defender = !Filters.Role.Defender"
 				>보호기</b-button>
 				<b-button
 					variant="outline-primary"
-					:pressed="Filters.role.supporter"
-					@click="Filters.role.supporter = !Filters.role.supporter"
+					:pressed="Filters.Role.Supporter"
+					@click="Filters.Role.Supporter = !Filters.Role.Supporter"
 				>지원기</b-button>
 			</b-btn-group>
 			<!--
