@@ -11,6 +11,10 @@
 			<b-collapse id="changelog20200623" visible>
 				<b-card-body>
 					<div>
+						<b-badge variant="warning">CS 페로</b-badge>의 3번째 패시브
+						<b-badge variant="info">상처 가르기</b-badge>의 설명 오타 수정
+					</div>
+					<div>
 						<b-badge variant="warning">쿠노이치 제로</b-badge>의
 						<b-badge variant="info">스킬 수치</b-badge>가 추가되었습니다.
 						공격력 배수 수치는 정확하지 않을 수 있습니다.
