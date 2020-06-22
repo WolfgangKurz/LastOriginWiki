@@ -67,7 +67,9 @@ interface SkinItem extends SkinInfo {
 	isPro: boolean;
 }
 
-@Component({})
+@Component({
+	name: "unit-skin-view",
+})
 export default class UnitSkinView extends Vue {
 	@Prop({
 		type: Object,
