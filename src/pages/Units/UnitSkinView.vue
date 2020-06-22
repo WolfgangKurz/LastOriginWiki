@@ -25,13 +25,13 @@
 		</div>
 
 		<div
-			v-if="(!skin.X && skin.D && !IsSimplified) || skin.X"
+			v-if="(!IsSimplified && skin.D) || (IsSimplified && skin.X)"
 			class="skin-toggle skin-toggle-damaged"
 			:data-damaged="IsDamaged ? 1 : 0"
 			@click="IsDamaged = !IsDamaged"
 		/>
 		<div
-			v-if="(!skin.X && skin.S && !IsDamaged) || skin.X"
+			v-if="(!IsDamaged && skin.S) || (IsDamaged && skin.X)"
 			class="skin-toggle skin-toggle-simplified"
 			:data-simplified="IsSimplified ? 1 : 0"
 			@click="IsSimplified = !IsSimplified"
@@ -115,6 +115,22 @@ export default class UnitSkinView extends Vue {
 	@Watch("index")
 	private IndexWatch () {
 		this.Reset();
+	}
+
+	@Watch("IsDamaged")
+	private IsDamagedWatch (value: boolean) {
+		if (value && this.IsSimplified && !this.skin.X)
+			this.IsSimplified = false;
+		else if (!value && this.IsSimplified && !this.skin.S)
+			this.IsSimplified = false;
+	}
+
+	@Watch("IsSimplified")
+	private IsSimplifiedWatch (value: boolean) {
+		if (value && this.IsDamaged && !this.skin.X)
+			this.IsDamaged = false;
+		else if (!value && this.IsDamaged && !this.skin.D)
+			this.IsDamaged = false;
 	}
 
 	private get AssetsRoot () {
@@ -276,6 +292,17 @@ export default class UnitSkinView extends Vue {
 
 		> img {
 			margin: auto;
+		}
+	}
+
+	&:not(.unit-full-collapsed) {
+		.unit-full-unit > img {
+			max-width: 100%;
+			max-height: 100%;
+		}
+	}
+	&.unit-full-collapsed {
+		.unit-full-unit > img {
 			height: 100%;
 		}
 	}
