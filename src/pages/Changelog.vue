@@ -11,6 +11,11 @@
 			<b-collapse id="changelog20200623" visible>
 				<b-card-body>
 					<div>
+						<b-badge variant="warning">쿠노이치 제로</b-badge>의
+						<b-badge variant="info">스킬 수치</b-badge>가 추가되었습니다.
+						공격력 배수 수치는 정확하지 않을 수 있습니다.
+					</div>
+					<div>
 						<b-badge variant="info">전투원보기</b-badge>의
 						<b-badge variant="info">스킨 상세 보기</b-badge>가 이미지를 제대로 표시하지 않는 문제가 수정되었습니다.
 					</div>
