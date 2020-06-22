@@ -7,8 +7,55 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200623>2020-06-23</b-card-header>
+			<b-collapse id="changelog20200623" visible>
+				<b-card-body>
+					<div>
+						<b-badge variant="info">전투원보기</b-badge>의
+						<b-badge variant="info">스킨 상세 보기</b-badge>가 이미지를 제대로 표시하지 않는 문제가 수정되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">쿠노이치 제로</b-badge>전투원 정보가 추가되었습니다.
+						해당 전투원은
+						<b-badge variant="danger">플레이스토어 버전 CG</b-badge>가 포함되어있으며,
+						스킬 정보가 온전하지 않습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">T-9 그렘린</b-badge>의
+						<b-badge variant="info">휴일의 그렘린</b-badge>스킨 정보가 추가되었습니다.
+						해당 스킨은
+						<b-badge variant="danger">플레이스토어 버전 CG</b-badge>가 포함되어있습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">GS-130 피닉스</b-badge>의
+						<b-badge variant="info">하계 전투복 피닉스</b-badge>스킨의 중파 이미지가 추가되었습니다.
+						해당 스킨은
+						<b-badge variant="danger">플레이스토어 버전 CG</b-badge>가 포함되어있습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">에키드나</b-badge>의
+						<b-badge variant="info">드림위버 웨딩 스페셜: 순백의 여제</b-badge>스킨 정보가 추가되었습니다.
+						해당 스킨은
+						<b-badge variant="danger">플레이스토어 버전 CG</b-badge>가 포함되어있습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">출력 강화 회로 베타</b-badge>장비 정보가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">분석 회로 베타</b-badge>장비 정보가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">회로 내구 강화 베타</b-badge>장비 정보가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">정밀형 관측 장비</b-badge>장비 정보가 추가되었습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200621>2020-06-21</b-card-header>
-			<b-collapse id="changelog20200621" visible>
+			<b-collapse id="changelog20200621">
 				<b-card-body>
 					<div>
 						<b-badge variant="info">유닛정보</b-badge>페이지가
@@ -390,7 +437,7 @@
 						<b-badge variant="danger">플레이스토어 버전 CG</b-badge>시험 추가
 					</div>
 					<div>
-						<b-badge variant="warning">세라피아스 앨리스</b-badge>
+						<b-badge variant="warning">세라피아스 앨리스</b-badge>의
 						<b-badge variant="info">기본 스킨</b-badge>,
 						<b-badge variant="info">밤의 여왕의 초대 (중파만)</b-badge>스킨,
 						<b-badge variant="danger">플레이스토어 버전 CG</b-badge>시험 추가
