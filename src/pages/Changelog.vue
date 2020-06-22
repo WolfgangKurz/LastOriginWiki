@@ -34,9 +34,17 @@
 					</div>
 					<div>
 						<b-badge variant="warning">에키드나</b-badge>의
-						<b-badge variant="info">드림위버 웨딩 스페셜: 순백의 여제</b-badge>스킨 정보가 추가되었습니다.
+						<b-badge variant="info">드림위버 웨딩 스페셜 : 순백의 여제</b-badge>스킨 정보가 추가되었습니다.
 						해당 스킨은
 						<b-badge variant="danger">플레이스토어 버전 CG</b-badge>가 포함되어있습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">펜리르</b-badge>의
+						<b-badge variant="info">봄맞이 펜리르</b-badge>스킨의 가격이 변경되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">로열 아스널</b-badge>의
+						<b-badge variant="info">드림위버 웨딩 스페셜 : 이 마음을 그대에게</b-badge>스킨의 가격이 변경되었습니다.
 					</div>
 					<div>
 						<b-badge variant="warning">출력 강화 회로 베타</b-badge>장비 정보가 추가되었습니다.
