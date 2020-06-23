@@ -53,7 +53,7 @@ function listMajors (auth) {
 	const sheets = google.sheets({ version: "v4", auth });
 	sheets.spreadsheets.values.get({
 		spreadsheetId: "1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4",
-		range: "UnitTable!A3:S",
+		range: "UnitTable!A3:T",
 	}, (err, res) => {
 		if (err) return console.log("The API returned an error: " + err);
 
@@ -64,12 +64,12 @@ function listMajors (auth) {
 				if (!row[1]) return;
 
 				const id = row[0];
-				const rarity = row[1];
-				const type = row[2];
-				const role = row[3];
-				const body = row[4];
-				const name = row[5];
-				const shortname = row[6];
+				const name = row[1];
+				const shortname = row[2];
+				const rarity = row[3];
+				const type = row[4];
+				const role = row[5];
+				const body = row[6];
 				const group = row[7];
 				const shortgroup = row[8];
 				const groupkey = row[9];
@@ -84,6 +84,8 @@ function listMajors (auth) {
 				const equip2 = row[16];
 				const equip3 = row[17];
 				const equip4 = row[18];
+
+				const drops = row[19];
 
 				const x = {
 					id: parseInt(id, 10),
@@ -103,6 +105,9 @@ function listMajors (auth) {
 						entry4: fl4,
 					},
 					equip: [equip1, equip2, equip3, equip4],
+					drops: !drops
+						? []
+						: drops.split("\n").map(d => d.split(",")),
 				};
 				if (pro)
 					x.promotions = pro.split(",");

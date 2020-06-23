@@ -83,57 +83,103 @@
 					</b-row>
 				</b-container>
 
-				<b-table-simple bordered fixed table-class="text-center table-unit-modal">
-					<b-thead head-variant="dark">
-						<b-tr>
-							<b-th colspan="4">
-								링크 보너스
-								<b-form-select
-									class="table-unit-link-select"
-									size="sm"
-									v-model="linkCount"
-									:options="LinkCountList"
-								/>
-							</b-th>
-						</b-tr>
-					</b-thead>
-					<b-tbody>
-						<b-tr>
-							<b-td>
-								HP
-								<span class="d-inline-block">
-									+
-									<b class="text-danger">{{LinkBonus.Value.HP}}</b>%
-								</span>
-							</b-td>
-							<b-td>
-								공격력
-								<span class="d-inline-block">
-									+
-									<b class="text-danger">{{LinkBonus.Value.Atk}}</b>%
-								</span>
-							</b-td>
-							<b-td>
-								<template v-if="!LinkBonus.IsHP">
-									{{LinkBonus.Per}}
-									<span class="d-inline-block">
-										+
-										<b class="text-danger">{{LinkBonus.Value.Per[0]}}</b>
-										<template v-if="LinkBonus.Value.Per[1]">%</template>
-									</span>
-								</template>
-								<b v-else class="text-secondary">-</b>
-							</b-td>
-							<b-td>
-								획득 경험치
-								<span class="d-inline-block">
-									+
-									<b class="text-danger">{{LinkBonus.Value.EXP}}</b>%
-								</span>
-							</b-td>
-						</b-tr>
-					</b-tbody>
-				</b-table-simple>
+				<b-row>
+					<b-col cols="12" md="4">
+						<b-table-simple bordered fixed table-class="text-center table-unit-modal">
+							<b-thead head-variant="dark">
+								<b-tr>
+									<b-th>
+										링크 보너스
+										<b-form-select
+											class="table-unit-link-select"
+											size="sm"
+											v-model="linkCount"
+											:options="LinkCountList"
+										/>
+									</b-th>
+								</b-tr>
+							</b-thead>
+							<b-tbody>
+								<b-tr>
+									<b-td>
+										HP
+										<span class="d-inline-block">
+											+
+											<b class="text-danger">{{LinkBonus.Value.HP}}</b>%
+										</span>
+									</b-td>
+								</b-tr>
+								<b-tr>
+									<b-td>
+										공격력
+										<span class="d-inline-block">
+											+
+											<b class="text-danger">{{LinkBonus.Value.Atk}}</b>%
+										</span>
+									</b-td>
+								</b-tr>
+								<b-tr>
+									<b-td>
+										<template v-if="!LinkBonus.IsHP">
+											{{LinkBonus.Per}}
+											<span class="d-inline-block">
+												+
+												<b class="text-danger">{{LinkBonus.Value.Per[0]}}</b>
+												<template v-if="LinkBonus.Value.Per[1]">%</template>
+											</span>
+										</template>
+										<b v-else class="text-secondary">-</b>
+									</b-td>
+								</b-tr>
+								<b-tr>
+									<b-td>
+										획득 경험치
+										<span class="d-inline-block">
+											+
+											<b class="text-danger">{{LinkBonus.Value.EXP}}</b>%
+										</span>
+									</b-td>
+								</b-tr>
+							</b-tbody>
+						</b-table-simple>
+					</b-col>
+					<b-col cols="12" md="8">
+						<b-table-simple bordered fixed table-class="text-center table-unit-modal">
+							<b-thead head-variant="dark">
+								<b-tr>
+									<b-th>획득처</b-th>
+								</b-tr>
+							</b-thead>
+							<b-tbody>
+								<b-tr>
+									<b-td>
+										<div v-for="(area, aindex) in unit.drops" :key="`unit-view-drop-${aindex}`">
+											<hr v-if="aindex > 0" class="my-1" />
+											<b-badge
+												v-for="drop in area"
+												:key="`unit-view-drop-${aindex}-${drop}`"
+												class="mx-1"
+												:variant="drop[0] === '*'
+													? 'primary'
+													: drop.includes('B')
+														? 'success'
+														: drop.includes('Ex')
+															? 'danger'
+															: 'warning'"
+											>
+												<template v-if="drop[0] === '*'">{{drop.substr(1)}} 클리어 보상</template>
+												<template v-else>{{drop}}</template>
+											</b-badge>
+										</div>
+										<template v-if="unit.drops.length === 0">
+											<span class="text-secondary">드랍 없음</span>
+										</template>
+									</b-td>
+								</b-tr>
+							</b-tbody>
+						</b-table-simple>
+					</b-col>
+				</b-row>
 
 				<b-row>
 					<b-col cols="12" sm="6">
@@ -350,7 +396,7 @@ export default class UnitView extends Vue {
 				HP: (this.unit.linkBonus.per === "hp" ? 125 : 100) * this.linkCount / 5,
 				Atk: 100 * this.linkCount / 5,
 				Per: [
-					LinkBonusValue[this.unit.linkBonus.per][0] * this.linkCount / 5,
+					parseFloat((LinkBonusValue[this.unit.linkBonus.per][0] * this.linkCount / 5).toFixed(4)),
 					LinkBonusValue[this.unit.linkBonus.per][1],
 				],
 				EXP: 20 * this.linkCount / 5,
@@ -575,7 +621,11 @@ export default class UnitView extends Vue {
 		}
 	}
 
-	.table-unit-link-select,
+	.table-unit-link-select {
+		margin-left: 5px;
+		width: 64px;
+		vertical-align: baseline;
+	}
 	.table-unit-level-select,
 	.table-unit-rarity-select {
 		margin-left: 5px;

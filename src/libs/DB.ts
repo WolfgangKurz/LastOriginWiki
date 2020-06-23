@@ -413,6 +413,7 @@ function CompileUnit () {
 					x.equip[2],
 					x.equip[3],
 				],
+				drops: x.drops,
 			};
 			units[x.id] = y;
 		});
