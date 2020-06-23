@@ -126,6 +126,7 @@ export interface RawUnit {
 	};
 
 	equip: [EquipType, EquipType, EquipType, EquipType];
+	drops: string[][];
 }
 export interface Unit {
 	id: number;
@@ -154,6 +155,7 @@ export interface Unit {
 	};
 
 	equip: [EquipType, EquipType, EquipType, EquipType];
+	drops: string[][];
 }
 /* eslint-disable-next-line @typescript-eslint/no-namespace */
 export namespace Unit {
@@ -175,6 +177,7 @@ export namespace Unit {
 			entry4: "acc",
 		},
 		equip: ["Chip", "Chip", "OS", "Public"],
+		drops: [],
 	};
 }
 

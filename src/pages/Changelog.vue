@@ -11,6 +11,14 @@
 			<b-collapse id="changelog20200623" visible>
 				<b-card-body>
 					<div>
+						전 전투원에
+						<b-badge variant="info">획득처</b-badge>가 추가되었습니다.
+						이벤트 드랍 및 제조는 포함되지 않았습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">쿠노이치 제로</b-badge>의 스탯 정보가 추가되었습니다.
+					</div>
+					<div>
 						<b-badge variant="warning">쿠노이치 제로</b-badge>의 1번째 스킬
 						<b-badge variant="info">은밀</b-badge>의 공격력 배수 수정
 					</div>
