@@ -11,6 +11,17 @@
 			<b-collapse id="changelog20200623" visible>
 				<b-card-body>
 					<div>
+						<b-badge variant="warning">쿠노이치 제로</b-badge>의 1번째 스킬
+						<b-badge variant="info">은밀</b-badge>의 공격력 배수 수정
+					</div>
+					<div>
+						<b-badge variant="warning">쿠노이치 제로</b-badge>의 2번째 스킬
+						<b-badge variant="info">뇌신 일섬</b-badge>의 행동력 계수 수정
+					</div>
+					<div>
+						<b-badge variant="warning">SS등급 보조 에너지 팩</b-badge>의 AP 증가치 수정
+					</div>
+					<div>
 						<b-badge variant="warning">CS 페로</b-badge>의 3번째 패시브
 						<b-badge variant="info">상처 가르기</b-badge>의 설명 오타 수정
 					</div>
