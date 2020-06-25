@@ -9,6 +9,8 @@ import {
 	Action, Unit, RawUnit, RawEquip, RawSkill,
 	UnitStatsRaw,
 } from "@/libs/Types";
+import EntitySource from "@/libs/EntitySource";
+
 import { ImageExtension, AssetsRoot } from "@/libs/Const";
 
 function parseLimit (limit: string | undefined) {
@@ -373,7 +375,8 @@ function CompileEquip () {
 			const y: Equip = {
 				name: x.name,
 				limit: parseLimit(x.limit),
-				source: x.source,
+				source: x.source
+					.map(y => y.map(z => new EntitySource(z))),
 				stats: x.stats.map(_ => parseStats(_)),
 			};
 			return y;
@@ -413,7 +416,8 @@ function CompileUnit () {
 					x.equip[2],
 					x.equip[3],
 				],
-				drops: x.drops,
+				source: x.source
+					.map(y => y.map(z => new EntitySource(z))),
 			};
 			units[x.id] = y;
 		});

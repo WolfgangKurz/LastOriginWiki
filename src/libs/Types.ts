@@ -1,3 +1,5 @@
+import EntitySource from "@/libs/EntitySource";
+
 export type LRarity = "ss" | "s" | "a" | "b";
 export type Rarity = "SS" | "S" | "A" | "B";
 
@@ -79,13 +81,13 @@ export interface Status {
 export interface RawEquip {
 	name: string;
 	limit?: string;
-	source: string;
+	source: string[][];
 	stats: string[];
 }
 export interface Equip {
 	name: string;
 	limit: Array<string | number> | null;
-	source: string;
+	source: EntitySource[][];
 
 	stats: Array<Status[]>;
 }
@@ -94,7 +96,7 @@ export namespace Equip {
 	export const Empty: Equip = {
 		name: "-",
 		limit: null,
-		source: "",
+		source: [],
 
 		stats: [],
 	};
@@ -126,7 +128,7 @@ export interface RawUnit {
 	};
 
 	equip: [EquipType, EquipType, EquipType, EquipType];
-	drops: string[][];
+	source: string[][];
 }
 export interface Unit {
 	id: number;
@@ -155,7 +157,7 @@ export interface Unit {
 	};
 
 	equip: [EquipType, EquipType, EquipType, EquipType];
-	drops: string[][];
+	source: EntitySource[][];
 }
 /* eslint-disable-next-line @typescript-eslint/no-namespace */
 export namespace Unit {
@@ -177,7 +179,7 @@ export namespace Unit {
 			entry4: "acc",
 		},
 		equip: ["Chip", "Chip", "OS", "Public"],
-		drops: [],
+		source: [],
 	};
 }
 

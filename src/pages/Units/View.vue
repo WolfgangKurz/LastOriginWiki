@@ -153,26 +153,17 @@
 							<b-tbody>
 								<b-tr>
 									<b-td>
-										<div v-for="(area, aindex) in unit.drops" :key="`unit-view-drop-${aindex}`">
+										<div v-for="(area, aindex) in unit.source" :key="`unit-view-source-${aindex}`">
 											<hr v-if="aindex > 0" class="my-1" />
-											<b-badge
-												v-for="drop in area"
-												:key="`unit-view-drop-${aindex}-${drop}`"
-												class="mx-1"
-												:variant="drop[0] === '*'
-													? 'primary'
-													: drop.includes('B')
-														? 'success'
-														: drop.includes('Ex')
-															? 'danger'
-															: 'warning'"
-											>
-												<template v-if="drop[0] === '*'">{{drop.substr(1)}} 클리어 보상</template>
-												<template v-else>{{drop}}</template>
-											</b-badge>
+											<source-badge
+												v-for="(source, sindex) in area"
+												:key="`unit-view-drop-${aindex}-${sindex}-${source}`"
+												:source="source"
+												detail
+											/>
 										</div>
-										<template v-if="unit.drops.length === 0">
-											<span class="text-secondary">드랍 없음</span>
+										<template v-if="unit.source.length === 0">
+											<span class="text-secondary">획득처 정보 없음 (제조 제외)</span>
 										</template>
 									</b-td>
 								</b-tr>
@@ -273,6 +264,7 @@ import UnitBadge from "@/components/UnitBadge.vue";
 import RarityBadge from "@/components/RarityBadge.vue";
 import SkillBound from "@/components/SkillBound.vue";
 import SkillDescription from "@/components/SkillDescription.vue";
+import SourceBadge from "@/components/SourceBadge.vue";
 import ElemIcon from "@/components/ElemIcon.vue";
 
 import UnitSkillTable from "./UnitSkillTable.vue";
@@ -302,6 +294,7 @@ interface SkillTable {
 		ElemIcon,
 		SkillBound,
 		SkillDescription,
+		SourceBadge,
 		UnitSkillTable,
 		UnitSkinView,
 	},
