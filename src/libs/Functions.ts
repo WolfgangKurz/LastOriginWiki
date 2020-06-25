@@ -7,3 +7,32 @@ export function FormatNumber (num: number): string {
 
 	return n;
 }
+
+export function ArrayUnique<T> (source: T[]): T[];
+export function ArrayUnique<T> (source: T[], comparer: (entity: T) => any): T[];
+export function ArrayUnique<T> (source: T[], comparer?: (entity: T) => any): T[] {
+	if (comparer) {
+		interface T2 {
+			key: string;
+			value: T;
+		}
+
+		return source
+			.reduce((acc, cur) => {
+				const key = comparer(cur);
+				if (!acc.some(x => x.key === key)) {
+					acc.push({
+						key: key,
+						value: cur,
+					});
+				}
+				return acc;
+			}, [] as T2[])
+			.map(x => x.value);
+	} else {
+		return source.reduce((acc, cur) => {
+			if (!acc.includes(cur)) acc.push(cur);
+			return acc;
+		}, [] as T[]);
+	}
+}

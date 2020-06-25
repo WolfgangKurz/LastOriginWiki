@@ -65,7 +65,9 @@ function listMajors (auth) {
 
 				const id = row[0];
 				const limit = row[1];
-				const source = row[2];
+				const source = !row[2]
+					? []
+					: row[2].split("\n").map(d => d.split(","));
 
 				if (limit) {
 					ret.push({

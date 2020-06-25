@@ -85,7 +85,7 @@ function listMajors (auth) {
 				const equip3 = row[17];
 				const equip4 = row[18];
 
-				const drops = row[19];
+				const source = row[19];
 
 				const x = {
 					id: parseInt(id, 10),
@@ -105,9 +105,9 @@ function listMajors (auth) {
 						entry4: fl4,
 					},
 					equip: [equip1, equip2, equip3, equip4],
-					drops: !drops
+					source: !source
 						? []
-						: drops.split("\n").map(d => d.split(",")),
+						: source.split("\n").map(d => d.split(",")),
 				};
 				if (pro)
 					x.promotions = pro.split(",");
