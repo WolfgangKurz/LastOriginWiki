@@ -1,14 +1,5 @@
 <template>
 	<b-aspect :aspect="Aspect" class="unit-full" :class="{ 'unit-full-collapsed' : collapsed }">
-		<b-alert
-			v-if="skin.A"
-			show
-			variant="info"
-			class="unit-skin-animated text-dark"
-			title="이 스킨은 움직입니다"
-			v-b-tooltip.hover.topright.v-light
-		>로비 애니메이션</b-alert>
-
 		<div class="unit-full-bg" />
 		<div class="unit-full-group">
 			<div>
@@ -23,6 +14,20 @@
 			<img :src="`${AssetsRoot}/tuna.png`" />
 			{{skin.price}}
 		</div>
+		<b-alert
+			v-if="skin.A"
+			show
+			variant="info"
+			class="unit-skin-animated text-dark"
+			title="이 스킨은 움직입니다"
+			v-b-tooltip.hover.topright.v-light
+		>로비 애니메이션</b-alert>
+		<div
+			v-if="unit.marry"
+			class="skin-marry"
+			title="서약 대사가 존재합니다"
+			v-b-tooltip.hover.topright.v-danger
+		/>
 
 		<div
 			v-if="(!IsSimplified && skin.D) || (IsSimplified && skin.X)"
@@ -307,16 +312,6 @@ export default class UnitSkinView extends Vue {
 		}
 	}
 
-	.unit-skin-animated {
-		position: absolute;
-		margin: 0;
-		padding: 6px 12px;
-		bottom: 10px;
-		left: 10px;
-		user-select: none;
-		z-index: 10;
-	}
-
 	.skin-toggle {
 		position: absolute;
 		background-repeat: no-repeat;
@@ -379,6 +374,26 @@ export default class UnitSkinView extends Vue {
 		z-index: 4;
 	}
 
+	.unit-skin-animated {
+		position: absolute;
+		margin: 0;
+		padding: 6px 12px;
+		bottom: 10px;
+		left: 10px;
+		user-select: none;
+		z-index: 10;
+	}
+	.skin-marry {
+		position: absolute;
+		bottom: 60px;
+		left: 10px;
+		width: 28px;
+		height: 24px;
+		background-image: url($assetsRoot+"/icon-marry.png");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 28px 24px;
+	}
 	.skin-price {
 		position: absolute;
 		padding: 1px 6px 3px;

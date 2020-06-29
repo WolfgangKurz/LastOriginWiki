@@ -7,8 +7,192 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200629>2020-06-29</b-card-header>
+			<b-collapse id="changelog20200629">
+				<b-card-body>
+					<div>
+						<b-badge variant="warning">멸망의 메이</b-badge>의
+						<b-badge variant="info">드림위버 웨딩 스페셜 : 5월의 신부</b-badge>스킨의
+						<b-badge variant="danger">로비 애니메이션</b-badge>여부와 가격이 변경되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">이그니스</b-badge>의
+						<b-badge variant="info">대마왕 뽀끄루의 첫 번째 심복</b-badge>스킨의
+						<b-badge variant="danger">로비 애니메이션</b-badge>여부와 가격이 변경되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">이그니스</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">샬럿</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">콘스탄챠 S2</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">바바리아나</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">P/A-00 그리폰</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">프레스터 요안나</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">T-14 미호</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">성벽의 하치코</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">C-77 레드후드</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">E-16 탈론페더</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">엠프리스</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">오베로니아 레아</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">바닐라 A1</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">T-8W 발키리</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">T-2 브라우니</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">블랙 리리스</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">AG-1 네레이드</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">화롯가의 포티아</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">아우로라</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">X-00 티아멧</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">아자젤</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">AG-2C 세이렌</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">P-29 린트블룸</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">로열 아스널</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">라비아타 프로토타입</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">스카디</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">멸망의 메이</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">트리아이나</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">닥터</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">시저스 리제</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">GS-130 피닉스</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">A-14B 스프리건</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">무적의 용</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">네오딤</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">펜리르</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">랜서 미나</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">캐럴라이나</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">보속의 마리아</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">블랙 웜 S9</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">쿠노이치 제로</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">럼버제인</b-badge>정보에
+						<b-badge variant="danger">서약 대사 존재 여부</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">모의전투</b-badge>레이아웃 변경
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200625>2020-06-25</b-card-header>
-			<b-collapse id="changelog20200625" visible>
+			<b-collapse id="changelog20200625">
 				<b-card-body>
 					<div>
 						전 전투원의
@@ -31,7 +215,7 @@
 						<b-badge variant="danger">Ex 맵 (~Ex)</b-badge>,
 						<b-badge variant="success">사이드 맵 (~B)</b-badge>,
 						<b-badge variant="warning">일반 맵</b-badge>,
-						<b-badge variant="secondary">한정(드랍 없음)</b-badge> 필터가 추가되었습니다.
+						<b-badge variant="secondary">한정(드랍 없음)</b-badge>필터가 추가되었습니다.
 					</div>
 					<div>
 						<b-badge variant="info">장비목록</b-badge>메뉴의 장비에 표시되는 획득처 중

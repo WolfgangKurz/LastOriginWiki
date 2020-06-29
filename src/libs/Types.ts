@@ -119,6 +119,7 @@ export interface RawUnit {
 	body: "Bioroid" | "AGS";
 
 	promotions?: Rarity[];
+	marry: boolean;
 
 	linkBonus: {
 		per: LinkBonusType;
@@ -148,6 +149,7 @@ export interface Unit {
 	body: UnitBody;
 
 	promotions?: Rarity[];
+	marry: boolean;
 
 	linkBonus: {
 		per: LinkBonusType;
@@ -172,6 +174,7 @@ export namespace Unit {
 		shortgroup: "",
 		groupkey: "",
 		body: "bio",
+		marry: false,
 		linkBonus: {
 			per: "acc",
 			skillPower: 0,

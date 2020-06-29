@@ -53,7 +53,7 @@ function listMajors (auth) {
 	const sheets = google.sheets({ version: "v4", auth });
 	sheets.spreadsheets.values.get({
 		spreadsheetId: "1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4",
-		range: "UnitTable!A3:T",
+		range: "UnitTable!A3:U",
 	}, (err, res) => {
 		if (err) return console.log("The API returned an error: " + err);
 
@@ -74,18 +74,19 @@ function listMajors (auth) {
 				const shortgroup = row[8];
 				const groupkey = row[9];
 				const pro = row[10];
+				const marry = row[11];
 
-				const linkBonus = row[11];
-				const flSkill = parseInt(row[12], 10);
-				const fl3 = row[13];
-				const fl4 = row[14];
+				const linkBonus = row[12];
+				const flSkill = parseInt(row[13], 10);
+				const fl3 = row[14];
+				const fl4 = row[15];
 
-				const equip1 = row[15];
-				const equip2 = row[16];
-				const equip3 = row[17];
-				const equip4 = row[18];
+				const equip1 = row[16];
+				const equip2 = row[17];
+				const equip3 = row[18];
+				const equip4 = row[19];
 
-				const source = row[19];
+				const source = row[20];
 
 				const x = {
 					id: parseInt(id, 10),
@@ -98,6 +99,7 @@ function listMajors (auth) {
 					group,
 					shortgroup,
 					groupkey,
+					marry: !!marry,
 					linkBonus: {
 						per: linkBonus,
 						skillPower: flSkill,
