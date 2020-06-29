@@ -1,7 +1,7 @@
 import VueRouter from "vue-router";
 
 import Home from "@/pages/Home.vue";
-import Simulation from "@/pages/Simulation.vue";
+import Simulator from "@/pages/Simulator.vue";
 
 import Units from "@/pages/Units.vue";
 import UnitView from "@/pages/Units/View.vue";
@@ -18,8 +18,8 @@ const Router = new VueRouter({
 		},
 
 		{
-			path: "/simulation",
-			component: Simulation,
+			path: "/simulator",
+			component: Simulator,
 		},
 
 		{

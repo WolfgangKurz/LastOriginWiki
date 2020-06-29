@@ -80,16 +80,16 @@
 			<b-col cols="8" class="mb-4">
 				<b-dropdown variant="outline-dark">
 					<template #button-content>
-						<template v-if="SelectedUnit.id === 0">전투원을 선택해주세요.</template>
+						<template v-if="SelectedUnit === null">전투원을 선택해주세요.</template>
 						<template v-else>
-							<unit-face :id="SelectedUnit.id" size="40" class="mr-2" />
-							{{SelectedUnit.name}}
+							<unit-face :id="SelectedUnit.Id" size="40" class="mr-2" />
+							{{SelectedUnit.Unit.name}}
 						</template>
 					</template>
 					<b-dropdown-item
 						v-for="unit in UnitList"
 						:key="`simulation-unit-select-modal-${unit.id}`"
-						@click="SelectUnit(unit)"
+						@click="SelectUnit(unit.id)"
 					>
 						<unit-face :id="unit.id" size="40" class="mr-2" />
 						<span class="d-inline-block mr-2">{{unit.name}}</span>
@@ -113,13 +113,8 @@ import { UnitTableFilters } from "@/libs/Store";
 
 import UnitFace from "@/components/UnitFace.vue";
 
-import { UnitSimulationInfo } from "./Simulation";
 import { UnitData } from "@/libs/DB";
-import { Unit } from "@/libs/Types";
-
-interface UnitDict {
-	[key: number]: Unit;
-}
+import { Unit } from "./Simulation/Unit";
 
 @Component({
 	components: {
@@ -137,10 +132,9 @@ export default class UnitSelectModal extends Vue {
 		type: Array,
 		default: () => [],
 	})
-	private list!: UnitSimulationInfo[];
+	private list!: Unit[];
 
-	private readonly empty = Unit.Empty;
-	private SelectedUnit: Unit = this.empty;
+	private SelectedUnit: Unit | null = null;
 
 	private Filters: UnitTableFilters = {
 		Rarity: {
@@ -168,12 +162,12 @@ export default class UnitSelectModal extends Vue {
 	@Watch("display", { immediate: true })
 	private DisplayWatch (value: boolean) {
 		if (!value)
-			this.SelectedUnit = this.empty;
+			this.SelectedUnit = null;
 	}
 
 	private get UnitList () {
 		const list = Object.values(UnitData)
-			.filter(x => !this.list.some(y => y.id === x.id))
+			.filter(x => !this.list.some(y => y && y.Id === x.id))
 			.filter(x => {
 				if (!this.Filters.Rarity.SS && x.rarity === "SS") return false;
 				if (!this.Filters.Rarity.S && x.rarity === "S") return false;
@@ -194,18 +188,20 @@ export default class UnitSelectModal extends Vue {
 				return true;
 			});
 
-		if (!list.includes(this.SelectedUnit))
-			this.SelectedUnit = this.empty;
+		const unit = this.SelectedUnit;
+		if (unit && !list.some(x => x.id === unit.Id))
+			this.SelectedUnit = null;
 
 		return list;
 	}
 
-	private SelectUnit (unit: Unit) {
-		this.SelectedUnit = unit;
+	private SelectUnit (unitId: number) {
+		this.SelectedUnit = new Unit().SetUnit(unitId);
 	}
 
-	private Select (unit: Unit) {
-		this.$emit("select", unit.id, unit);
+	private Select (unit: Unit | null) {
+		if (unit)
+			this.$emit("select", unit.Id, unit);
 	}
 }
 </script>

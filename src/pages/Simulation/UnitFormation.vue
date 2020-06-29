@@ -1,13 +1,13 @@
 <template>
-	<div class="formation" :data-unit="id" @click="OnClick">
-		<div v-if="id" @click="Detail()">
+	<div class="formation" :data-unit="(unit && unit.Id) || 0" @click="OnClick">
+		<div v-if="unit" :data-rarity="unit.Rarity" @click="Focus()">
 			<img :src="UnitFace" />
 
-			<rarity-badge :rarity="info.Rarity" class="unit-rarity" />
+			<rarity-badge :rarity="unit.Rarity" class="unit-rarity" />
 			<b-badge variant="danger" class="unit-remove p-1" @click="Remove($event)">&times;</b-badge>
 			<b-badge variant="warning" class="unit-level">
 				<small>LV.</small>
-				<span>{{info.Level}}</span>
+				<span>{{unit.Level}}</span>
 			</b-badge>
 		</div>
 	</div>
@@ -18,7 +18,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, Watch, PropSync } from "vue-property-decorator";
 
-import { UnitSimulationInfo } from "./Simulation";
+import { Unit } from "./Simulation/Unit";
 
 import RarityBadge from "@/components/RarityBadge.vue";
 import UnitFace from "@/components/UnitFace.vue";
@@ -30,22 +30,17 @@ import UnitFace from "@/components/UnitFace.vue";
 })
 export default class UnitSelectModal extends Vue {
 	@Prop({
-		default: 0,
-	})
-	private id!: number;
-
-	@Prop({
 		type: Object,
 		default: null,
 	})
-	private info!: UnitSimulationInfo;
+	private unit!: Unit;
 
 	private get UnitFace () {
-		return UnitFace.GetURL(this.id === null, this.id);
+		return UnitFace.GetURL(!this.unit, this.unit.Id);
 	}
 
-	private Detail () {
-		this.$emit("detail");
+	private Focus () {
+		this.$emit("focus");
 	}
 
 	private Remove ($event: Event) {
@@ -53,7 +48,7 @@ export default class UnitSelectModal extends Vue {
 	}
 
 	private OnClick () {
-		if (this.id === 0)
+		if (!this.unit)
 			this.$emit("add");
 	}
 }
@@ -71,12 +66,18 @@ div.formation {
 		background-size: contain;
 	}
 	> div {
-		padding: 4px;
+		padding: 5.5%;
 		height: 100%;
-		background-image: url($assetsRoot+"/simulation/GridUnit.png");
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: contain;
+
+		$rarities: SS, S, A, B;
+		@each $rarity in $rarities {
+			&[data-rarity="#{$rarity}"] {
+				background-image: url($assetsRoot+"/simulation/GridUnit_#{$rarity}.png");
+			}
+		}
 
 		> img {
 			max-width: 100%;
