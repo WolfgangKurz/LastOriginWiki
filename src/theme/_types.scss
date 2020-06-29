@@ -1,0 +1,17 @@
+@mixin vert-separator {
+	.vert-separator {
+		border-left: $hr-border-width solid $hr-border-color;
+	}
+
+	$breakpoints: $grid-breakpoints;
+	@each $breakpoint in map-keys($breakpoints) {
+		$infix: breakpoint-infix($breakpoint, $breakpoints);
+
+		@include media-breakpoint-up($breakpoint, $breakpoints) {
+			.vert-separator#{$infix} {
+				border-left: $hr-border-width solid $hr-border-color;
+			}
+		}
+	}
+}
+@include vert-separator();
