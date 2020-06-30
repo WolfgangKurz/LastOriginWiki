@@ -16,7 +16,7 @@ export function getScrollbarWidth () {
 }
 
 export const AssetsRoot = process.env.NODE_ENV === "development"
-	? "/assets/"
+	? "/assets"
 	: "https://lastorigin-wiki-assets.s3.ap-northeast-2.amazonaws.com";
 
 let webpAvailable = false;

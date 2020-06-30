@@ -1,249 +1,265 @@
 <template>
 	<div class="unit-view">
-		<b-row align-h="between" class="mb-2">
-			<b-col cols="auto">
-				<b-button variant="dark" @click="GoBack()">뒤로</b-button>
-			</b-col>
-			<b-col cols="auto">
-				<b-alert :class="`rarity-${unit.rarity}-force`" show>
-					<unit-face :id="unit.id" :size="30" type="mini" />
-					{{unit.name}}
-				</b-alert>
-			</b-col>
-		</b-row>
-
-		<!-- 스킨, 번호, 소속, 등급, 승급, 유형, 역할 -->
-		<b-tabs v-model="skinIndex" nav-class="unit-skin-tabs">
+		<b-tabs nav-class="unit-display-tabs mb-3" align="right">
 			<b-tab
-				v-for="(skin, index) in SkinList"
-				:key="`unit-skin-${index}`"
-				:title-link-class="index === skinIndex ? `rarity-${skin.isPro ? 'SS' : unit.rarity}-force text-dark` : 'text-dark'"
-				:active="index === 0"
+				title-link-class="text-dark"
+				:active="displayTab === 'information'"
+				@click="displayTab = 'information'"
 			>
-				<template #title>
-					<template v-if="skin.isPro">
-						<b-badge v-if="index === skinIndex" variant="light">SS 승급</b-badge>
-						<rarity-badge v-else rarity="SS">SS 승급</rarity-badge>
-						{{skin.t}}
-					</template>
-					<template v-else>{{skin.t}}</template>
-				</template>
+				<template #title>전투원 정보</template>
+			</b-tab>
+			<b-tab
+				title-link-class="text-dark"
+				:active="displayTab === 'dialogue'"
+				@click="displayTab = 'dialogue'"
+			>
+				<template #title>대사</template>
 			</b-tab>
 		</b-tabs>
-		<b-row>
-			<b-col cols="12" md="3">
-				<unit-skin-view
-					v-if="SkinList[skinIndex]"
-					:unit="unit"
-					:skin="SkinList[skinIndex]"
-					:index="skinIndex"
-					collapsed
-					detailable
-				/>
-			</b-col>
 
-			<b-col cols="12" md="9">
-				<b-container class="table-unit-modal mt-4 mb-3">
-					<b-row cols="2" cols-md="4" class="text-center">
-						<b-col class="bg-dark text-white">도감 번호</b-col>
-						<b-col>
-							<small>No.&nbsp;</small>
-							<strong>{{unit.id}}</strong>
-						</b-col>
-						<b-col class="bg-dark text-white">소속</b-col>
-						<b-col>
-							<span class="break-keep">{{unit.group}}</span>
-						</b-col>
-						<b-col class="bg-dark text-white">등급</b-col>
-						<b-col>
-							<rarity-badge :rarity="unit.rarity" size="medium">{{unit.rarity}} 등급</rarity-badge>
-						</b-col>
-						<b-col class="bg-dark text-white">승급</b-col>
-						<b-col>
-							<template v-if="unit.promotions">
-								<rarity-badge
-									v-for="pro in unit.promotions"
-									:key="`unit-promotion-${pro}`"
-									:rarity="pro"
-									size="medium"
-								>{{pro}} 승급</rarity-badge>
-							</template>
-							<template v-else>
-								<span class="text-secondary">승급 없음</span>
-							</template>
-						</b-col>
-						<b-col class="bg-dark text-white">유형</b-col>
-						<b-col>
-							<unit-badge :type="unit.type" size="large" transparent black />
-						</b-col>
-						<b-col class="bg-dark text-white">역할</b-col>
-						<b-col>
-							<unit-badge :role="unit.role" size="large" transparent black />
-						</b-col>
-					</b-row>
-				</b-container>
+		<template v-if="displayTab === 'information'">
+			<!-- 스킨, 번호, 소속, 등급, 승급, 유형, 역할 -->
+			<b-tabs v-model="skinIndex" nav-class="unit-skin-tabs">
+				<b-tab
+					v-for="(skin, index) in SkinList"
+					:key="`unit-skin-${index}`"
+					:title-link-class="index === skinIndex ? `rarity-${skin.isPro ? 'SS' : unit.rarity}-force text-dark` : 'text-dark'"
+					:active="index === 0"
+				>
+					<template #title>
+						<template v-if="skin.isPro">
+							<b-badge v-if="index === skinIndex" variant="light">SS 승급</b-badge>
+							<rarity-badge v-else rarity="SS">SS 승급</rarity-badge>
+							{{skin.t}}
+						</template>
+						<template v-else>{{skin.t}}</template>
+					</template>
+				</b-tab>
+			</b-tabs>
+			<b-row>
+				<b-col cols="12" md="3">
+					<unit-skin-view
+						v-if="SkinList[skinIndex]"
+						:unit="unit"
+						:skin="SkinList[skinIndex]"
+						:index="skinIndex"
+						collapsed
+						detailable
+					/>
+				</b-col>
 
-				<b-row>
-					<b-col cols="12" md="4">
-						<b-table-simple bordered fixed table-class="text-center table-unit-modal">
-							<b-thead head-variant="dark">
-								<b-tr>
-									<b-th>
-										링크 보너스
-										<b-form-select
-											class="table-unit-link-select"
-											size="sm"
-											v-model="linkCount"
-											:options="LinkCountList"
-										/>
-									</b-th>
-								</b-tr>
-							</b-thead>
-							<b-tbody>
-								<b-tr>
-									<b-td>
-										HP
-										<span class="d-inline-block">
-											+
-											<b class="text-danger">{{LinkBonus.Value.HP}}</b>%
-										</span>
-									</b-td>
-								</b-tr>
-								<b-tr>
-									<b-td>
-										공격력
-										<span class="d-inline-block">
-											+
-											<b class="text-danger">{{LinkBonus.Value.Atk}}</b>%
-										</span>
-									</b-td>
-								</b-tr>
-								<b-tr>
-									<b-td>
-										<template v-if="!LinkBonus.IsHP">
-											{{LinkBonus.Per}}
+				<b-col cols="12" md="9">
+					<b-container class="table-unit-modal mt-4 mb-3">
+						<b-row cols="2" cols-md="4" class="text-center">
+							<b-col class="bg-dark text-white">도감 번호</b-col>
+							<b-col>
+								<small>No.&nbsp;</small>
+								<strong>{{unit.id}}</strong>
+							</b-col>
+							<b-col class="bg-dark text-white">소속</b-col>
+							<b-col>
+								<span class="break-keep">{{unit.group}}</span>
+							</b-col>
+							<b-col class="bg-dark text-white">등급</b-col>
+							<b-col>
+								<rarity-badge :rarity="unit.rarity" size="medium">{{unit.rarity}} 등급</rarity-badge>
+							</b-col>
+							<b-col class="bg-dark text-white">승급</b-col>
+							<b-col>
+								<template v-if="unit.promotions">
+									<rarity-badge
+										v-for="pro in unit.promotions"
+										:key="`unit-promotion-${pro}`"
+										:rarity="pro"
+										size="medium"
+									>{{pro}} 승급</rarity-badge>
+								</template>
+								<template v-else>
+									<span class="text-secondary">승급 없음</span>
+								</template>
+							</b-col>
+							<b-col class="bg-dark text-white">유형</b-col>
+							<b-col>
+								<unit-badge :type="unit.type" size="large" transparent black />
+							</b-col>
+							<b-col class="bg-dark text-white">역할</b-col>
+							<b-col>
+								<unit-badge :role="unit.role" size="large" transparent black />
+							</b-col>
+						</b-row>
+					</b-container>
+
+					<b-row>
+						<b-col cols="12" md="4">
+							<b-table-simple bordered fixed table-class="text-center table-unit-modal">
+								<b-thead head-variant="dark">
+									<b-tr>
+										<b-th>
+											링크 보너스
+											<b-form-select
+												class="table-unit-link-select"
+												size="sm"
+												v-model="linkCount"
+												:options="LinkCountList"
+											/>
+										</b-th>
+									</b-tr>
+								</b-thead>
+								<b-tbody>
+									<b-tr>
+										<b-td>
+											HP
 											<span class="d-inline-block">
 												+
-												<b class="text-danger">{{LinkBonus.Value.Per[0]}}</b>
-												<template v-if="LinkBonus.Value.Per[1]">%</template>
+												<b class="text-danger">{{LinkBonus.Value.HP}}</b>%
 											</span>
-										</template>
-										<b v-else class="text-secondary">-</b>
-									</b-td>
-								</b-tr>
-								<b-tr>
-									<b-td>
-										획득 경험치
-										<span class="d-inline-block">
-											+
-											<b class="text-danger">{{LinkBonus.Value.EXP}}</b>%
-										</span>
-									</b-td>
-								</b-tr>
-							</b-tbody>
-						</b-table-simple>
-					</b-col>
-					<b-col cols="12" md="8">
-						<b-table-simple bordered fixed table-class="text-center table-unit-modal">
-							<b-thead head-variant="dark">
-								<b-tr>
-									<b-th>획득처</b-th>
-								</b-tr>
-							</b-thead>
-							<b-tbody>
-								<b-tr>
-									<b-td>
-										<div v-for="(area, aindex) in unit.source" :key="`unit-view-source-${aindex}`">
-											<hr v-if="aindex > 0" class="my-1" />
-											<source-badge
-												v-for="(source, sindex) in area"
-												:key="`unit-view-drop-${aindex}-${sindex}-${source}`"
-												:source="source"
-												detail
-											/>
-										</div>
-										<template v-if="unit.source.length === 0">
-											<span class="text-secondary">획득처 정보 없음 (제조 제외)</span>
-										</template>
-									</b-td>
-								</b-tr>
-							</b-tbody>
-						</b-table-simple>
-					</b-col>
-				</b-row>
+										</b-td>
+									</b-tr>
+									<b-tr>
+										<b-td>
+											공격력
+											<span class="d-inline-block">
+												+
+												<b class="text-danger">{{LinkBonus.Value.Atk}}</b>%
+											</span>
+										</b-td>
+									</b-tr>
+									<b-tr>
+										<b-td>
+											<template v-if="!LinkBonus.IsHP">
+												{{LinkBonus.Per}}
+												<span class="d-inline-block">
+													+
+													<b class="text-danger">{{LinkBonus.Value.Per[0]}}</b>
+													<template v-if="LinkBonus.Value.Per[1]">%</template>
+												</span>
+											</template>
+											<b v-else class="text-secondary">-</b>
+										</b-td>
+									</b-tr>
+									<b-tr>
+										<b-td>
+											획득 경험치
+											<span class="d-inline-block">
+												+
+												<b class="text-danger">{{LinkBonus.Value.EXP}}</b>%
+											</span>
+										</b-td>
+									</b-tr>
+								</b-tbody>
+							</b-table-simple>
+						</b-col>
+						<b-col cols="12" md="8">
+							<b-table-simple bordered fixed table-class="text-center table-unit-modal">
+								<b-thead head-variant="dark">
+									<b-tr>
+										<b-th>획득처</b-th>
+									</b-tr>
+								</b-thead>
+								<b-tbody>
+									<b-tr>
+										<b-td>
+											<div v-for="(area, aindex) in unit.source" :key="`unit-view-source-${aindex}`">
+												<hr v-if="aindex > 0" class="my-1" />
+												<source-badge
+													v-for="(source, sindex) in area"
+													:key="`unit-view-drop-${aindex}-${sindex}-${source}`"
+													:source="source"
+													detail
+												/>
+											</div>
+											<template v-if="unit.source.length === 0">
+												<span class="text-secondary">획득처 정보 없음 (제조 제외)</span>
+											</template>
+										</b-td>
+									</b-tr>
+								</b-tbody>
+							</b-table-simple>
+						</b-col>
+					</b-row>
 
-				<b-row>
-					<b-col cols="12" sm="6">
-						<b-table-simple bordered fixed table-class="text-center table-unit-modal">
-							<b-thead head-variant="dark">
-								<b-tr>
-									<b-th colspan="4">
-										소모 자원
-										<b-form-select
-											v-if="CostRarityList.length > 1"
-											class="table-unit-rarity-select"
-											size="sm"
-											v-model="costRarity"
-											:options="CostRarityList"
-										/>
-									</b-th>
-								</b-tr>
-								<b-tr>
-									<b-th>링크</b-th>
-									<b-th>부품</b-th>
-									<b-th>영양</b-th>
-									<b-th>전력</b-th>
-								</b-tr>
-							</b-thead>
-							<b-tbody>
-								<b-tr v-for="i in 6" :key="`unit-modal-cost-${i}`" class="text-center">
-									<b-th variant="dark">{{i - 1}}</b-th>
-									<b-td :class="CostDiscountClass(i - 1)">{{CostTable.components[i - 1]}}</b-td>
-									<b-td :class="CostDiscountClass(i - 1)">{{CostTable.nutritions[i - 1]}}</b-td>
-									<b-td :class="CostDiscountClass(i - 1)">{{CostTable.power[i - 1]}}</b-td>
-								</b-tr>
-							</b-tbody>
-						</b-table-simple>
-					</b-col>
-					<b-col cols="12" sm="6" class="fulllink-table">
-						<b-table-simple bordered fixed table-class="text-left table-unit-modal mt-sm-5">
-							<b-thead head-variant="dark">
-								<b-tr>
-									<b-th class="text-center">풀링크 보너스</b-th>
-								</b-tr>
-							</b-thead>
-							<b-tbody>
-								<b-tr>
-									<b-td>
-										출격 비용 -{{LinkBonus.Discount}}%
-										<b-checkbox class="float-right" v-model="linkBonusDiscount" />
-									</b-td>
-								</b-tr>
-								<b-tr>
-									<b-td>스킬 위력 +{{LinkBonus.SkillPower}}%</b-td>
-								</b-tr>
-								<b-tr>
-									<b-td>{{LinkBonus.Entry3}}</b-td>
-								</b-tr>
-								<b-tr>
-									<b-td>{{LinkBonus.Entry4}}</b-td>
-								</b-tr>
-								<b-tr>
-									<b-td>행동력 +{{LinkBonus.Speed}}</b-td>
-								</b-tr>
-							</b-tbody>
-						</b-table-simple>
-					</b-col>
-				</b-row>
-			</b-col>
-		</b-row>
-		<unit-skill-table
-			v-if="SkillsRaw"
-			:skills="SkillsRaw"
-			:skill-level.sync="skillLevel"
-			:form-state.sync="formState"
-			:rarity="unit.rarity"
-		/>
+					<b-row>
+						<b-col cols="12" sm="6">
+							<b-table-simple bordered fixed table-class="text-center table-unit-modal">
+								<b-thead head-variant="dark">
+									<b-tr>
+										<b-th colspan="4">
+											소모 자원
+											<b-form-select
+												v-if="CostRarityList.length > 1"
+												class="table-unit-rarity-select"
+												size="sm"
+												v-model="costRarity"
+												:options="CostRarityList"
+											/>
+										</b-th>
+									</b-tr>
+									<b-tr>
+										<b-th>링크</b-th>
+										<b-th>부품</b-th>
+										<b-th>영양</b-th>
+										<b-th>전력</b-th>
+									</b-tr>
+								</b-thead>
+								<b-tbody>
+									<b-tr v-for="i in 6" :key="`unit-modal-cost-${i}`" class="text-center">
+										<b-th variant="dark">{{i - 1}}</b-th>
+										<b-td :class="CostDiscountClass(i - 1)">{{CostTable.components[i - 1]}}</b-td>
+										<b-td :class="CostDiscountClass(i - 1)">{{CostTable.nutritions[i - 1]}}</b-td>
+										<b-td :class="CostDiscountClass(i - 1)">{{CostTable.power[i - 1]}}</b-td>
+									</b-tr>
+								</b-tbody>
+							</b-table-simple>
+						</b-col>
+						<b-col cols="12" sm="6" class="fulllink-table">
+							<b-table-simple bordered fixed table-class="text-left table-unit-modal mt-sm-5">
+								<b-thead head-variant="dark">
+									<b-tr>
+										<b-th class="text-center">풀링크 보너스</b-th>
+									</b-tr>
+								</b-thead>
+								<b-tbody>
+									<b-tr>
+										<b-td>
+											출격 비용 -{{LinkBonus.Discount}}%
+											<b-checkbox class="float-right" v-model="linkBonusDiscount" />
+										</b-td>
+									</b-tr>
+									<b-tr>
+										<b-td>스킬 위력 +{{LinkBonus.SkillPower}}%</b-td>
+									</b-tr>
+									<b-tr>
+										<b-td>{{LinkBonus.Entry3}}</b-td>
+									</b-tr>
+									<b-tr>
+										<b-td>{{LinkBonus.Entry4}}</b-td>
+									</b-tr>
+									<b-tr>
+										<b-td>행동력 +{{LinkBonus.Speed}}</b-td>
+									</b-tr>
+								</b-tbody>
+							</b-table-simple>
+						</b-col>
+					</b-row>
+				</b-col>
+			</b-row>
+			<unit-skill-table
+				v-if="SkillsRaw"
+				:skills="SkillsRaw"
+				:skill-level.sync="skillLevel"
+				:form-state.sync="formState"
+				:rarity="unit.rarity"
+			/>
+		</template>
+		<template v-if="displayTab === 'dialogue'">
+			<unit-dialogue
+				v-for="(skin, skinidx) in SkinList"
+				:key="`unit-view-skin-${skinidx}`"
+				:unit="unit"
+				:skin="skin"
+				:id="skinidx"
+			/>
+		</template>
 	</div>
 </template>
 
@@ -269,6 +285,7 @@ import ElemIcon from "@/components/ElemIcon.vue";
 
 import UnitSkillTable from "./UnitSkillTable.vue";
 import UnitSkinView from "./UnitSkinView.vue";
+import UnitDialogue from "./UnitDialogue.vue";
 
 import { Unit, RawSkin, SkinInfo, RawCostTable, CostTable, RawSkill, Rarity, RawSkillUnit, LinkBonusType } from "@/libs/Types";
 
@@ -297,6 +314,7 @@ interface SkillTable {
 		SourceBadge,
 		UnitSkillTable,
 		UnitSkinView,
+		UnitDialogue,
 	},
 })
 export default class UnitView extends Vue {
@@ -308,6 +326,8 @@ export default class UnitView extends Vue {
 	private linkCount: number = 5;
 	private linkBonusDiscount: boolean = false;
 	private formState: "normal" | "change" = "normal";
+
+	private displayTab: "information" | "dialogue" = "information";
 
 	private unitId: number = 0;
 	private skillLevel: number = 0;
