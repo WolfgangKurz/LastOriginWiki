@@ -54,7 +54,6 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Watch } from "vue-property-decorator";
 
-import { UnitSimulationInfo } from "./Simulation/Simulation";
 import UnitSelectModal from "./Simulation/UnitSelectModal.vue";
 import UnitFormation from "./Simulation/UnitFormation.vue";
 import UnitStatView from "./Simulation/UnitStatView.vue";

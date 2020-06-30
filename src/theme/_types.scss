@@ -15,3 +15,14 @@
 	}
 }
 @include vert-separator();
+
+@mixin no-focus-outline {
+	&:focus {
+		outline: none;
+	}
+}
+
+.nav-tabs .nav-link,
+.card-header[role="button"] {
+	@include no-focus-outline;
+}
