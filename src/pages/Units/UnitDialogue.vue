@@ -21,6 +21,7 @@ import Component from "vue-class-component";
 import { Prop, Watch, PropSync } from "vue-property-decorator";
 
 import { SkinInfo, Unit } from "@/libs/Types";
+import { UnitUid } from "@/libs/DB";
 
 import DialogueRow from "./DialogueRow.vue";
 
@@ -130,13 +131,14 @@ export default class UnitDialogue extends Vue {
 	}
 
 	private get unitId () {
+		const uid = UnitUid[this.unit.id] || "";
 		const postfix = this.skin.isDef
 			? ""
 			: this.skin.isPro
 				? "_PS1"
 				: "_NS" + this.id;
 
-		return `BR_Echidna${postfix}`;
+		return `${uid}${postfix}`;
 	}
 }
 </script>

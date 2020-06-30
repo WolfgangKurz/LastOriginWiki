@@ -160,6 +160,33 @@ function listMajors (auth) {
 		} else
 			console.log("No data found.");
 	});
+
+	sheets.spreadsheets.values.get({
+		spreadsheetId: "1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4",
+		range: "UnityIDList!A2:C",
+	}, (err, res) => {
+		if (err) return console.log("The API returned an error: " + err);
+
+		const ret = {};
+		const rows = res.data.values;
+		if (rows.length) {
+			rows.map((row) => {
+				if (!row[1]) return;
+
+				const id = parseInt(row[0], 10);
+				const uid = row[2];
+				if (!uid) return;
+
+				ret[id] = uid;
+			});
+
+			fs.writeFileSync(
+				path.resolve(__dirname, "..", "src", "json", "unit-uid.json"),
+				JSON.stringify(ret),
+			);
+		} else
+			console.log("No data found.");
+	});
 }
 
 fs.readFile("credentials.json", (err, content) => {

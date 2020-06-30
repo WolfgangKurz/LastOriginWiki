@@ -1,4 +1,5 @@
 import EquipDB from "@/json/equip.json";
+import UnitUidDB from "@/json/unit-uid.json";
 import UnitDB from "@/json/unit.json";
 import SkillDB from "@/json/unit-skill.json";
 import StatsDB from "@/json/unit-stats.json";
@@ -8,6 +9,7 @@ import {
 	Trigger, TriggerTypeArray, TriggerType,
 	Action, Unit, RawUnit, RawEquip, RawSkill,
 	UnitStatsRaw,
+	UnitUIDTable,
 } from "@/libs/Types";
 import EntitySource from "@/libs/EntitySource";
 
@@ -449,3 +451,5 @@ export const SkillData = CompileSkill();
 export const UnitStatsData: {
 	[key: number]: UnitStatsRaw;
 } = StatsDB;
+
+export const UnitUid: UnitUIDTable = UnitUidDB;
