@@ -175,7 +175,6 @@ export default class UnitDialogue extends Vue {
 			if (v.isDef) return "0";
 			return v.id.toString();
 		})(this.voice);
-		console.log(key);
 		if (key in UnitDialogueData[this.unit.id])
 			return true;
 
