@@ -7,6 +7,38 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200702>2020-07-02</b-card-header>
+			<b-collapse id="changelog20200702">
+				<b-card-body>
+					<div>
+						<b-badge variant="warning">시라유리</b-badge>의 3번째 패시브
+						<b-badge variant="info">정보전달</b-badge>의 적용 대상이 잘못되어있던 점을 수정했습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">라비아타 프로토타입</b-badge>의 대사 정보가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">콘스탄챠 S2</b-badge>의 대사 정보가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">세라피아스 앨리스</b-badge>의 대사 정보가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">바닐라 A1</b-badge>의 대사 정보가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">오베로니아 레아</b-badge>의 대사 정보가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">시저스 리제</b-badge>의 대사 정보가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">다프네</b-badge>의 대사 정보가 추가되었습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200629>2020-06-29</b-card-header>
 			<b-collapse id="changelog20200629">
 				<b-card-body>
