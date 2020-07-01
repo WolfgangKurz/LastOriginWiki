@@ -1,21 +1,28 @@
 <template>
 	<div class="unit-view">
-		<b-tabs nav-class="unit-display-tabs mb-3" align="right">
-			<b-tab
-				title-link-class="text-dark"
-				:active="displayTab === 'information'"
-				@click="displayTab = 'information'"
-			>
-				<template #title>전투원 정보</template>
-			</b-tab>
-			<b-tab
-				title-link-class="text-dark"
-				:active="displayTab === 'dialogue'"
-				@click="displayTab = 'dialogue'"
-			>
-				<template #title>대사</template>
-			</b-tab>
-		</b-tabs>
+		<b-row>
+			<b-col cols="auto">
+				<b-button variant="dark" @click="GoBack()">뒤로</b-button>
+			</b-col>
+			<b-col>
+				<b-tabs nav-class="unit-display-tabs mb-3" align="right">
+					<b-tab
+						title-link-class="text-dark"
+						:active="displayTab === 'information'"
+						@click="displayTab = 'information'"
+					>
+						<template #title>전투원 정보</template>
+					</b-tab>
+					<b-tab
+						title-link-class="text-dark"
+						:active="displayTab === 'dialogue'"
+						@click="displayTab = 'dialogue'"
+					>
+						<template #title>대사</template>
+					</b-tab>
+				</b-tabs>
+			</b-col>
+		</b-row>
 
 		<template v-if="displayTab === 'information'">
 			<!-- 스킨, 번호, 소속, 등급, 승급, 유형, 역할 -->
@@ -253,11 +260,11 @@
 		</template>
 		<template v-if="displayTab === 'dialogue'">
 			<unit-dialogue
-				v-for="(skin, skinidx) in SkinList"
-				:key="`unit-view-skin-${skinidx}`"
+				v-for="(voice, keyid) in VoiceList"
+				:key="`unit-view-text-voice-${keyid}`"
 				:unit="unit"
-				:skin="skin"
-				:id="skinidx"
+				:voice="voice"
+				:id="voice.id"
 			/>
 		</template>
 	</div>
@@ -300,6 +307,12 @@ interface SkillItem extends RawSkillUnit {
 }
 interface SkillTable {
 	[key: string]: SkillItem;
+}
+interface VoiceItem extends SkinInfo {
+	id: number;
+	isDef: boolean;
+	isPro: boolean;
+	isMarry: boolean;
 }
 
 @Component({
@@ -507,6 +520,28 @@ export default class UnitView extends Vue {
 
 		this.Reset();
 		return list;
+	}
+
+	private get VoiceList (): VoiceItem[] {
+		return [
+			{
+				id: 0,
+				...this.SkinList[0],
+				isMarry: false,
+			},
+			{
+				id: 0,
+				...this.SkinList[0],
+				isMarry: true,
+			},
+			...this.SkinList
+				.slice(1)
+				.map((x, i) => ({
+					id: i + 1,
+					...x,
+					isMarry: false,
+				})),
+		];
 	}
 
 	private get CostTable (): CostTable {

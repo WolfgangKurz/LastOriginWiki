@@ -1,6 +1,7 @@
 import EquipDB from "@/json/equip.json";
 import UnitUidDB from "@/json/unit-uid.json";
 import UnitDB from "@/json/unit.json";
+import UnitDialogueDB from "@/json/unit-dialogue.json";
 import SkillDB from "@/json/unit-skill.json";
 import StatsDB from "@/json/unit-stats.json";
 
@@ -8,8 +9,7 @@ import {
 	Equip, UnitType, UnitRole, Status,
 	Trigger, TriggerTypeArray, TriggerType,
 	Action, Unit, RawUnit, RawEquip, RawSkill,
-	UnitStatsRaw,
-	UnitUIDTable,
+	UnitStatsRaw, UnitUIDTable, UnitDialogueRaw,
 } from "@/libs/Types";
 import EntitySource from "@/libs/EntitySource";
 
@@ -453,3 +453,5 @@ export const UnitStatsData: {
 } = StatsDB;
 
 export const UnitUid: UnitUIDTable = UnitUidDB;
+
+export const UnitDialogueData = UnitDialogueDB as UnitDialogueRaw;

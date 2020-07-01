@@ -246,6 +246,51 @@ export namespace UnitStats {
 	};
 }
 
+export interface UnitDialogueRaw {
+	[key: number]: {
+		[key: string]: {
+			Join?: string;
+			SquadJoin?: string;
+			Leader?: string;
+			SortiePick?: string;
+			StageStart?: string;
+			Retreat?: string;
+			SearchStart?: string;
+			SearchEnd?: string;
+			BattleFocus?: string;
+			ActionApprove?: string;
+			SpSkill?: string;
+			Retire?: string;
+			Repair?: string;
+			Reinforce?: string;
+			ItemEquip?: string;
+			CoreLink?: string;
+			PresentGet?: string;
+			Login?: string;
+			// eslint-disable-next-line
+			Idle_01_01?: string;
+			// eslint-disable-next-line
+			Idle_01_02?: string;
+			// eslint-disable-next-line
+			Idle_01_03?: string;
+			// eslint-disable-next-line
+			SPIdle_01_01?: string;
+			// eslint-disable-next-line
+			Idle_02_01?: string;
+			// eslint-disable-next-line
+			Idle_03_01?: string;
+			// eslint-disable-next-line
+			Idle_04_01?: string;
+			// eslint-disable-next-line
+			SPIdle_02_01?: string;
+			Oath?: string;
+			// eslint-disable-next-line
+			OathIdle_01?: string;
+			MVP?: string;
+		};
+	};
+}
+
 interface SkinOffsetPart {
 	n: number;
 	d: number;

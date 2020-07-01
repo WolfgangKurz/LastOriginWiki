@@ -1,14 +1,4 @@
-<template>
-	<b-row class="dialogue-row">
-		<b-col :class="rowClass" cols="2">{{TypeName}}</b-col>
-		<b-col class="border">{{Dialogue}}</b-col>
-		<b-col class="border" cols="auto">
-			<audio :src="VoiceLink" type="audio/ogg" controls preload="auto" />
-		</b-col>
-	</b-row>
-</template>
-
-<script lang="ts">
+<script lang="tsx">
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, Watch, PropSync } from "vue-property-decorator";
@@ -86,7 +76,7 @@ export default class DialogueRow extends Vue {
 		return "secondary";
 	}
 
-	private get TypeName () {
+	private get TypeName (): string | JSX.Element | Array<string | JSX.Element> {
 		switch (this.type) {
 			case "Join": return "획득";
 
@@ -113,20 +103,30 @@ export default class DialogueRow extends Vue {
 			case "Idle_01_02": return "일반 터치 (2)";
 			case "Idle_01_03": return "일반 터치 (3)";
 			case "SPIdle_01_01": return "특정 터치";
-			case "Idle_02_01": return "일반 터치 (♥ 40)";
-			case "Idle_03_01": return "일반 터치 (♥ 70)";
-			case "Idle_04_01": return "일반 터치 (♥ 100)";
-			case "SPIdle_02_01": return "특정 터치 (♥ 100)";
+			case "Idle_02_01": return ["일반 터치", <b-badge variant="danger" class="float-right mt-1">♥ 40</b-badge>];
+			case "Idle_03_01": return ["일반 터치", <b-badge variant="danger" class="float-right mt-1">♥ 70</b-badge>];
+			case "Idle_04_01": return ["일반 터치", <b-badge variant="danger" class="float-right mt-1">♥ 100</b-badge>];
+			case "SPIdle_02_01": return ["특정 터치", <b-badge variant="danger" class="float-right mt-1">♥ 100</b-badge>];
 
 			case "Oath": return "서약";
 			case "OathIdle_01": return "서약 후 터치";
-			case "MVP": return "전투 MVP?";
+			case "MVP": return ["전투 MVP", <b-badge variant="warning" class="float-right mt-1">누락</b-badge>];
 		}
 		return "???";
 	}
 
 	private get VoiceLink () {
 		return `${AssetsRoot}/audio/${this.unitId}_${this.type}.ogg`;
+	}
+
+	private render () {
+		return <b-row class="dialogue-row">
+			<b-col class={this.rowClass} cols="2">{this.TypeName}</b-col>
+			<b-col class="border dialogue">{this.Dialogue}</b-col>
+			<b-col class="border" cols="auto">
+				<audio src={this.VoiceLink} type="audio/ogg" controls preload="auto" />
+			</b-col>
+		</b-row>;
 	}
 }
 </script>
@@ -153,6 +153,10 @@ export default class DialogueRow extends Vue {
 	> div:last-child,
 	audio {
 		vertical-align: middle;
+	}
+
+	.dialogue {
+		word-break: keep-all;
 	}
 }
 </style>
