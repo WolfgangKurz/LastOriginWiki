@@ -7,6 +7,18 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200703>2020-07-03</b-card-header>
+			<b-collapse id="changelog20200703">
+				<b-card-body>
+					<div>
+						<b-badge variant="warning">뽀끄루 대마왕</b-badge>의
+						<b-badge variant="warning">마법소녀!? 매지컬 뽀끄루</b-badge>스킨에
+						<b-badge variant="danger">로비 애니메이션 미리보기</b-badge>가 시험적으로 추가되었습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200702>2020-07-02</b-card-header>
 			<b-collapse id="changelog20200702">
 				<b-card-body>
