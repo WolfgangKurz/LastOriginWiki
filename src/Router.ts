@@ -7,7 +7,9 @@ import Units from "@/pages/Units.vue";
 import UnitView from "@/pages/Units/View.vue";
 
 import Equips from "@/pages/Equips.vue";
+
 import Changelog from "@/pages/Changelog.vue";
+import Test from "@/pages/Test.vue";
 
 const Router = new VueRouter({
 	mode: "history",
