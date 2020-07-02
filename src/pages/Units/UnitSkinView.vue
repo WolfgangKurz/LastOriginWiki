@@ -7,7 +7,10 @@
 			</div>
 		</div>
 		<div class="unit-full-unit">
-			<img :style="ImageStyle" :src="SkinImageURL" />
+			<template v-if="unit.id === 171 && index === 1">
+				<anim-viewer :style="ImageStyle" />
+			</template>
+			<img v-else :style="ImageStyle" :src="SkinImageURL" />
 		</div>
 
 		<div v-if="!(skin.isPro || skin.isDef) && skin.price" class="skin-price">
@@ -67,6 +70,8 @@ import { Prop, Emit, Watch } from "vue-property-decorator";
 import { Unit, SkinInfo } from "@/libs/Types";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 
+import AnimViewer from "@/components/AnimViewer.vue";
+
 interface SkinItem extends SkinInfo {
 	isDef: boolean;
 	isPro: boolean;
@@ -74,6 +79,9 @@ interface SkinItem extends SkinInfo {
 
 @Component({
 	name: "unit-skin-view",
+	components: {
+		AnimViewer,
+	},
 })
 export default class UnitSkinView extends Vue {
 	@Prop({
