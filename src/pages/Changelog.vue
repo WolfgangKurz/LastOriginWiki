@@ -11,6 +11,52 @@
 			<b-collapse id="changelog20200702">
 				<b-card-body>
 					<div>
+						<b-badge variant="warning">엘븐 포레스트메이커</b-badge>의
+						<rarity-badge rarity="S">S 승급</rarity-badge>정보가 추가되었습니다.
+						추가된 패시브 스킬의 수치 및 정확한 범위는 업데이트 이후에 갱신될 예정입니다.
+					</div>
+					<div>
+						<b-badge variant="warning">다크엘븐 포레스트레인저</b-badge>의
+						<rarity-badge rarity="S">S 승급</rarity-badge>정보가 추가되었습니다.
+						추가된 패시브 스킬의 수치 및 정확한 범위는 업데이트 이후에 갱신될 예정입니다.
+					</div>
+					<div>
+						<b-badge variant="warning">쿠노이치 제로</b-badge>의 1번째 패시브
+						<b-badge variant="info">허공 둔</b-badge>의 설명이 수정되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">블랙 리리스</b-badge>,
+						<b-badge variant="warning">신속의 칸</b-badge>,
+						<b-badge variant="warning">철혈의 레오나</b-badge>,
+						<b-badge variant="warning">불굴의 마리</b-badge>,
+						<b-badge variant="warning">멸망의 메이</b-badge>,
+						<b-badge variant="warning">GS-130 피닉스</b-badge>,
+						<b-badge variant="warning">T-50 PX 실키</b-badge>,
+						<b-badge variant="warning">C-77 레드후드</b-badge>,
+						<b-badge variant="warning">다크엘븐 포레스트레인저</b-badge>,
+						<b-badge variant="warning">엘븐 포레스트메이커</b-badge>,
+						<b-badge variant="warning">M-5 이프리트</b-badge>,
+						<b-badge variant="warning">럼버제인</b-badge>,
+						<b-badge variant="warning">SS급 출력 강화 회로</b-badge>,
+						<b-badge variant="warning">SS급 분석 회로</b-badge>,
+						<b-badge variant="warning">SS급 내 충격 회로</b-badge>,
+						<b-badge variant="warning">SS급 반응 강화 회로</b-badge>,
+						<b-badge variant="warning">SS급 회로 내구 강화</b-badge>,
+						<b-badge variant="warning">SS급 회로 최적화</b-badge>,
+						<b-badge variant="warning">SS급 연산 강화 회로</b-badge>,
+						<b-badge variant="warning">로열 아스널</b-badge>,
+						<b-badge variant="warning">베로니카</b-badge>,
+						<b-badge variant="warning">SS급 보조 에너지 팩</b-badge>,
+						<b-badge variant="warning">SS급 방어 역장</b-badge>의
+						교환소 정보가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">금란 S9</b-badge>,
+						<b-badge variant="warning">아르망 추기경</b-badge>,
+						<b-badge variant="warning">소완</b-badge>,
+						<b-badge variant="warning">신속의 칸</b-badge>의 서약 대사 여부가 추가되었습니다.
+					</div>
+					<div>
 						<b-badge variant="warning">시라유리</b-badge>의 3번째 패시브
 						<b-badge variant="info">정보전달</b-badge>의 적용 대상이 잘못되어있던 점을 수정했습니다.
 					</div>
@@ -1028,7 +1074,13 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 
-@Component({})
+import RarityBadge from "@/components/RarityBadge.vue";
+
+@Component({
+	components: {
+		RarityBadge,
+	},
+})
 export default class Changelog extends Vue {
 }
 </script>
