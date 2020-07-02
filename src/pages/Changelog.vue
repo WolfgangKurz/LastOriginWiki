@@ -11,6 +11,10 @@
 			<b-collapse id="changelog20200702">
 				<b-card-body>
 					<div>
+						<b-badge variant="warning">드론 08</b-badge>의 2번째 스킬
+						<b-badge variant="info">정밀 스캔</b-badge>의 설명이 누락된 문제가 수정되었습니다.
+					</div>
+					<div>
 						<b-badge variant="warning">엘븐 포레스트메이커</b-badge>의
 						<rarity-badge rarity="S">S 승급</rarity-badge>정보가 추가되었습니다.
 						추가된 패시브 스킬의 수치 및 정확한 범위는 업데이트 이후에 갱신될 예정입니다.
