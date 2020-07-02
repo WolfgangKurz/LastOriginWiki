@@ -57,7 +57,7 @@ module.exports = {
 	css: {
 		requireModuleExtension: true,
 		extract: {
-			filename: "css/[name].[contenthash:8].css",
+			filename: "css/[name].[contenthash:12].css",
 		},
 		loaderOptions: {
 			sass: {
