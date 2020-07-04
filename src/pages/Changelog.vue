@@ -7,6 +7,28 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200705>2020-07-05</b-card-header>
+			<b-collapse id="changelog20200705">
+				<b-card-body>
+					<div>
+						시험 추가 결과,
+						<b-badge variant="warning">성능 문제</b-badge>로
+						<b-badge variant="danger">로비 애니메이션 미리보기</b-badge>가 제거되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">시라유리</b-badge>의 스킬 이름 및 설명이 수정되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">아쿠아</b-badge>,
+						<b-badge variant="warning">공진의 알렉산드라</b-badge>,
+						<b-badge variant="warning">소완</b-badge>,
+						<b-badge variant="warning">아이언 애니</b-badge>,
+						<b-badge variant="warning">보속의 마리아</b-badge>의 대사 정보가 추가되었습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200703>2020-07-03</b-card-header>
 			<b-collapse id="changelog20200703">
 				<b-card-body>

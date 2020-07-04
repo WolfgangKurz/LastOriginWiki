@@ -120,10 +120,10 @@ export default class DialogueRow extends Vue {
 	}
 
 	private render () {
-		return <b-row class="dialogue-row">
-			<b-col class={this.rowClass} cols="2">{this.TypeName}</b-col>
-			<b-col class="border dialogue">{this.Dialogue}</b-col>
-			<b-col class="border" cols="auto">
+		return <b-row class="dialogue-row my-2 my-sm-0">
+			<b-col class={this.rowClass} cols="12" sm="2">{this.TypeName}</b-col>
+			<b-col class="border dialogue" cols="12" sm="">{this.Dialogue}</b-col>
+			<b-col class="border" cols="12" sm="auto">
 				<audio src={this.VoiceLink} type="audio/ogg" controls preload="auto" />
 			</b-col>
 		</b-row>;
@@ -133,6 +133,7 @@ export default class DialogueRow extends Vue {
 
 <style lang="scss">
 .row.dialogue-row {
+	$sm: map-get($grid-breakpoints, "sm");
 	margin: 0 0.25rem;
 
 	&:not(:first-child) > div:nth-child(2) {
@@ -143,7 +144,10 @@ export default class DialogueRow extends Vue {
 		&:not(:last-child) {
 			padding-top: 0.25rem;
 			padding-bottom: 0.25rem;
-			border-right: 0 !important;
+
+			@media (min-width: $sm) {
+				border-right: 0 !important;
+			}
 		}
 		&:last-child {
 			padding: 0;
@@ -152,7 +156,12 @@ export default class DialogueRow extends Vue {
 
 	> div:last-child,
 	audio {
+		width: 100%;
 		vertical-align: middle;
+
+		@media (min-width: $sm) {
+			width: auto;
+		}
 	}
 
 	.dialogue {
