@@ -161,6 +161,7 @@ export default class DialogueRow extends Vue {
 
 		@media (min-width: $sm) {
 			width: auto;
+			min-width: 300px;
 		}
 	}
 
