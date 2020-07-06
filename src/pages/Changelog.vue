@@ -7,6 +7,44 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200706>2020-07-06</b-card-header>
+			<b-collapse id="changelog20200706">
+				<b-card-body>
+					<div>
+						<b-badge variant="warning">라인리터</b-badge>의 스탯, 스킬 정보가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">엘븐 포레스트메이커</b-badge>,
+						<b-badge variant="warning">다엘븐 포레스트레인저</b-badge>의 승급 스탯 및 스킬 정보가 추가/수정되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">아르망 추기경</b-badge>,
+						<b-badge variant="warning">소완</b-badge>,
+						<b-badge variant="warning">금란 S7</b-badge>,
+						<b-badge variant="warning">신속의 칸</b-badge>의 서약 후 대사 오디오 파일이 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">소완</b-badge>의 서약 후 대사 텍스트가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">신속의 칸</b-badge>의
+						<b-badge variant="info">드림위버 웨딩 스페셜 : 사막에 핀 꽃</b-badge>스킨 정보가 추가되었습니다.
+						해당 스킨은
+						<b-badge variant="danger">플레이스토어 버전 CG</b-badge>가 포함되어있습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">베로니카</b-badge>의
+						<b-badge variant="info">이단 심문관 베로니카</b-badge>스킨 정보가 추가되었습니다.
+						해당 스킨은
+						<b-badge variant="danger">플레이스토어 버전 CG</b-badge>가 포함되어있습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">시라유리</b-badge>의 스킬 설명 일부가 수정되었습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200705>2020-07-05</b-card-header>
 			<b-collapse id="changelog20200705">
 				<b-card-body>
@@ -25,12 +63,8 @@
 						<b-badge variant="warning">아이언 애니</b-badge>,
 						<b-badge variant="warning">보속의 마리아</b-badge>의 대사 정보가 추가되었습니다.
 					</div>
-					<div>
-						전투원 대사의 모바일 환경 레이아웃이 개선되었습니다.
-					</div>
-					<div>
-						크롬 브라우저에서 전투원 대사의 오디오 플레이어가 표시되지 않는 문제가 수정되었습니다.
-					</div>
+					<div>전투원 대사의 모바일 환경 레이아웃이 개선되었습니다.</div>
+					<div>크롬 브라우저에서 전투원 대사의 오디오 플레이어가 표시되지 않는 문제가 수정되었습니다.</div>
 				</b-card-body>
 			</b-collapse>
 		</b-card>
