@@ -5,7 +5,7 @@ const readline = require("readline");
 const { google } = require("googleapis");
 
 const SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"];
-const TOKEN_PATH = "token.json";
+const TOKEN_PATH = path.join(__dirname, "token.json");
 
 function getNewToken (oAuth2Client, callback) {
 	const authUrl = oAuth2Client.generateAuthUrl({
@@ -92,7 +92,7 @@ function listMajors (auth) {
 	});
 }
 
-fs.readFile("credentials.json", (err, content) => {
+fs.readFile(path.join(__dirname, "credentials.json"), (err, content) => {
 	if (err) return console.log("Error loading client secret file:", err);
 	authorize(JSON.parse(content), listMajors);
 });
