@@ -25,6 +25,12 @@
 						<b-badge variant="warning">아이언 애니</b-badge>,
 						<b-badge variant="warning">보속의 마리아</b-badge>의 대사 정보가 추가되었습니다.
 					</div>
+					<div>
+						전투원 대사의 모바일 환경 레이아웃이 개선되었습니다.
+					</div>
+					<div>
+						크롬 브라우저에서 전투원 대사의 오디오 플레이어가 표시되지 않는 문제가 수정되었습니다.
+					</div>
 				</b-card-body>
 			</b-collapse>
 		</b-card>
