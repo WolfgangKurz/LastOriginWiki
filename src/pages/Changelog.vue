@@ -7,19 +7,12 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
-			<b-card-header v-b-toggle.changelog20200707>2020-07-07</b-card-header>
-			<b-collapse id="changelog20200707">
+			<b-card-header v-b-toggle.changelog20200706>2020-07-06</b-card-header>
+			<b-collapse id="changelog20200706">
 				<b-card-body>
 					<div>
 						<b-badge variant="warning">SS급 고속 학습 시스템</b-badge>의 수치 정보가 수정되었습니다.
 					</div>
-				</b-card-body>
-			</b-collapse>
-		</b-card>
-		<b-card class="mt-2" no-body>
-			<b-card-header v-b-toggle.changelog20200706>2020-07-06</b-card-header>
-			<b-collapse id="changelog20200706">
-				<b-card-body>
 					<div>
 						<b-badge variant="warning">라인리터</b-badge>의 스탯, 스킬 정보가 추가되었습니다.
 					</div>
