@@ -116,6 +116,12 @@ export default class EntitySource {
 		if (!this.IsApocrypha) return 0;
 		return parseInt(this.Parts[1], 10);
 	}
+
+	public get ApocryphaNumber () {
+		if (!this.IsApocrypha) return 0;
+		if (!this.Parts[2]) return 0;
+		return parseInt(this.Parts[2], 10);
+	}
 	// -------------- 외전
 
 	// -------------- 영전

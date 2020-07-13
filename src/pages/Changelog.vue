@@ -7,6 +7,74 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200714>2020-07-14</b-card-header>
+			<b-collapse id="changelog20200714">
+				<b-card-body>
+					<div>
+						<b-badge variant="warning">라인리터</b-badge>의 2번째 패시브
+						<b-badge variant="info">기병 참전</b-badge>의 적용 대상이 수정되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">다크엘븐 포레스트레인저</b-badge>의 승급시 치명타 증가량이 수정되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">포츈</b-badge>,
+						<b-badge variant="warning">다프네</b-badge>,
+						<b-badge variant="warning">P-49 슬레이프니르</b-badge>의 서약 후 대사 오디오 파일이 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">다프네</b-badge>의 서약 후 대사 텍스트가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">다크엘븐 포레스트레인저</b-badge>의
+						<b-badge variant="info">다크엘프 카우걸</b-badge>의 가격이 수정되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">다크엘븐 포레스트레인저</b-badge>의
+						<b-badge variant="info">다크엘프 카우걸</b-badge>에 소품 분리가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">SS급 소형 정찰 드론</b-badge>의 획득처 정보가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">미니 하치코</b-badge>의 획득처 정보가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">세라피아스 앨리스</b-badge>의
+						<b-badge variant="info">밤의 여왕의 초대</b-badge>에
+						<b-badge variant="danger">플레이스토어 버전 CG</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">오베로니아 레아</b-badge>의
+						<b-badge variant="info">오드리 문 컬렉션 &lt;어덜트 래빗&gt;</b-badge>에
+						<b-badge variant="danger">플레이스토어 버전 CG</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">공진의 알렉산드라</b-badge>의
+						<b-badge variant="info">조련사 알렉산드라</b-badge>에
+						<b-badge variant="danger">플레이스토어 버전 CG</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">블랙 리리스</b-badge>의
+						<b-badge variant="info">위험한 가족 : 유혹하는 메이드</b-badge>및
+						<b-badge variant="info">리리스의 본 목적을 벗어난 수영복</b-badge>에
+						<b-badge variant="danger">플레이스토어 버전 CG</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">샬럿</b-badge>의
+						<b-badge variant="info">프랑스 풍 보석 비키니</b-badge>및
+						<b-badge variant="info">조금 이상한 대행자</b-badge>에
+						<b-badge variant="danger">플레이스토어 버전 CG</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">다크엘븐 포레스트레인저</b-badge>의
+						<b-badge variant="info">다크엘프 카우걸</b-badge>에
+						<b-badge variant="danger">플레이스토어 버전 CG</b-badge>가 추가되었습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200706>2020-07-06</b-card-header>
 			<b-collapse id="changelog20200706">
 				<b-card-body>
@@ -18,7 +86,7 @@
 					</div>
 					<div>
 						<b-badge variant="warning">엘븐 포레스트메이커</b-badge>,
-						<b-badge variant="warning">다엘븐 포레스트레인저</b-badge>의 승급 스탯 및 스킬 정보가 추가/수정되었습니다.
+						<b-badge variant="warning">다크엘븐 포레스트레인저</b-badge>의 승급 스탯 및 스킬 정보가 추가/수정되었습니다.
 					</div>
 					<div>
 						<b-badge variant="warning">아르망 추기경</b-badge>,

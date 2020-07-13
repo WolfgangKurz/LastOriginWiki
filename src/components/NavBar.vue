@@ -20,7 +20,20 @@
 
 				<b-nav-item :active="IsUnits" href="/units" @click.prevent="GoTo('/units')">전투원정보</b-nav-item>
 				<b-nav-item :active="IsEquips" href="/equips" @click.prevent="GoTo('/equips')">장비정보</b-nav-item>
-				<b-nav-item :active="IsChangelog" href="/changelog" @click.prevent="GoTo('/changelog')">Changelog</b-nav-item>
+				<b-nav-item
+					disabled
+					:active="IsFacilities"
+					href="/facilities"
+					@click.prevent="GoTo('/facilities')"
+				>
+					설비정보
+					<b-badge variant="secondary">WIP</b-badge>
+				</b-nav-item>
+				<b-nav-item
+					:active="IsChangelog"
+					href="/changelog"
+					@click.prevent="GoTo('/changelog')"
+				>Changelog</b-nav-item>
 			</b-navbar-nav>
 		</b-collapse>
 	</b-navbar>
@@ -58,6 +71,10 @@ export default class NavBar extends Vue {
 
 	private get IsEquips () {
 		return this.pageLower === "/equips" || this.pageLower.startsWith("/equips/");
+	}
+
+	private get IsFacilities () {
+		return this.pageLower === "/facilities" || this.pageLower.startsWith("/facilities/");
 	}
 
 	private get IsChangelog () {

@@ -54,9 +54,12 @@ export default class SourceBadge extends Vue {
 				else
 					return "영원한 전장";
 			} else if (this.Source.IsApocrypha) {
-				if (this.detail)
-					return `${UnitData[this.Source.ApocryphaUnit].name} 외전`;
-				else
+				if (this.detail) {
+					if (this.Source.ApocryphaNumber)
+						return `${UnitData[this.Source.ApocryphaUnit].name} 외전 ${this.Source.ApocryphaNumber}부`;
+					else
+						return `${UnitData[this.Source.ApocryphaUnit].name} 외전`;
+				} else
 					return "외전";
 			} else if (this.Source.IsExchange) {
 				if (this.Source.IsEvent) {
