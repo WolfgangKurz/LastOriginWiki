@@ -340,8 +340,10 @@ function parseStats (list: string): Status[] {
 					case "barrier":
 					case "hit":
 					case "hp":
+					case "hp-atk":
 					case "mindmg":
 					case "off":
+					case "protect":
 					case "rand":
 					case "range":
 					case "resist":

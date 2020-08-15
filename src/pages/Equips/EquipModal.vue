@@ -12,8 +12,8 @@
 					<b-row cols="2">
 						<b-col class="bg-dark text-white">장비 유형</b-col>
 						<b-col>
-							{{EquipType}}
 							<b-badge v-if="isPrivate" variant="primary">전용장비</b-badge>
+							<template v-else>{{EquipType}}</template>
 						</b-col>
 						<b-col class="bg-dark text-white">장비 등급</b-col>
 						<b-col>
@@ -26,7 +26,7 @@
 							<template v-else>
 								<span v-for="limit in Limits" :key="`equip-limit-${limit}`">
 									<unit-badge v-if="typeof limit === 'string'" :limit="limit" />
-									<b-badge v-else variant="primary">{{UnitName(limit)}}</b-badge>
+									<b-badge v-else class="unit-name-badge" variant="primary">{{UnitName(limit)}}</b-badge>
 								</span>
 							</template>
 						</b-col>
@@ -228,6 +228,10 @@ export default class EquipModal extends Vue {
 .unknown-status {
 	user-select: none;
 	cursor: pointer;
+}
+.badge.unit-name-badge {
+	white-space: normal;
+	word-break: keep-all;
 }
 
 .table-equip-modal.container {

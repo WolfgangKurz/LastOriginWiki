@@ -48,6 +48,9 @@ export default class EntitySource {
 		switch (exc.item) {
 			case "FixMat": return "수복 자재";
 			case "FixTool": return "수복 공구";
+			case "WorldTreeSeed": return "세계수의 씨앗";
+			case "WorldTreeTwig": return "세계수의 가지";
+			case "WorldTreeLeaf": return "세계수의 잎";
 		}
 		return "???";
 	}
@@ -66,6 +69,8 @@ export default class EntitySource {
 		switch (this.Parts[1]) {
 			case "OrcaFix":
 				return "오르카호를 수복하라!";
+			case "FairyAria":
+				return "요정 마을의 아리아";
 		}
 		return this.Parts[1];
 	}
@@ -83,12 +88,18 @@ export default class EntitySource {
 	// -------------- 맵
 	public get IsSideMap () {
 		if (!this.IsMap) return false;
-		return this.Parts[0].includes("B");
+		if (this.IsEvent) // 이벤트 맵인 경우는 지역이 4번째에 위치
+			return this.Parts[3].includes("B");
+		else
+			return this.Parts[0].includes("B");
 	}
 
 	public get IsExMap () {
 		if (!this.IsMap) return false;
-		return this.Parts[0].includes("Ex");
+		if (this.IsEvent) // 이벤트 맵인 경우는 지역이 4번째에 위치
+			return this.Parts[3].includes("Ex");
+		else
+			return this.Parts[0].includes("Ex");
 	}
 
 	public get IsMap () {

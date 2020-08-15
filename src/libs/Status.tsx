@@ -26,6 +26,7 @@ const actName: Dict = {
 	barrier: "방어막",
 	hit: "지속피해",
 	hp: "체력",
+	"hp-atk": "공격력 비례 체력 감소",
 	mindmg: "피해 최소화",
 	off: "특정 효과 해제",
 	range: "사거리",
@@ -164,6 +165,10 @@ export function StatusText (context: Vue, status: Status): StatusTextType {
 						<unit-badge type={p0} />
 						<span>{actName[x.act]} {prefixNum(p1)}</span>
 					</span>;
+					break;
+
+				case "hp-atk":
+					disp = <span>공격력 {p0} 만큼 자신의 HP 감소</span>;
 					break;
 
 				case "hit":
