@@ -7,6 +7,83 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200815>2020-08-15</b-card-header>
+			<b-collapse id="changelog20200815" visible>
+				<b-card-body>
+					<div>
+						<b-badge variant="warning">스노우 페더</b-badge>전투원이 추가되었습니다.
+						스킬 정보는 이후에 추가될 예정입니다.
+					</div>
+					<div>
+						<b-badge variant="warning">생명의 세레스티아</b-badge>전투원이 추가되었습니다.
+						스킬 정보는 이후에 추가될 예정입니다.
+					</div>
+					<div>
+						<b-badge variant="warning">특수 대원용 가시 목걸이</b-badge>장비가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">레인저용 전투장비 세트</b-badge>장비가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">험지용 특수 프레임</b-badge>장비가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">요정</b-badge>이벤트 맵의 전투원/장비 드랍 정보가 추가되었습니다.
+					</div>
+					<div>
+						누락되어있던 <b-badge variant="warning">모든 전투원</b-badge>의 대사 오디오 파일이 추가되었습니다.
+						서약 후 대사, 스킨 대사가 모두 포함됩니다.
+						대사 텍스트는 추가되지 않았습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">AA-7 임펫</b-badge>의
+						<b-badge variant="info">한여름의 불장난</b-badge>스킨이 추가되었습니다.
+						<b-badge variant="danger">플레이스토어 버전 CG</b-badge>가 존재합니다.
+					</div>
+					<div>
+						<b-badge variant="warning">A-1 블러디 팬서</b-badge>의
+						<b-badge variant="info">한여름의 정면돌파</b-badge>스킨이 추가되었습니다.
+						<b-badge variant="danger">플레이스토어 버전 CG</b-badge>가 존재합니다.
+					</div>
+					<div>
+						<b-badge variant="warning">A-54 칼리스타</b-badge>의
+						<b-badge variant="info">한여름의 별</b-badge>스킨이 추가되었습니다.
+						<b-badge variant="danger">플레이스토어 버전 CG</b-badge>가 존재합니다.
+					</div>
+					<div>
+						<b-badge variant="warning">AG-1 네레이드</b-badge>의
+						<b-badge variant="info">한여름의 네리네리</b-badge>스킨이 추가되었습니다.
+						<b-badge variant="danger">플레이스토어 버전 CG</b-badge>가 존재합니다.
+					</div>
+					<div>
+						<b-badge variant="warning">P-22 하르페이아</b-badge>의
+						<b-badge variant="info">한여름의 마이애미</b-badge>스킨이 추가되었습니다.
+						<b-badge variant="danger">플레이스토어 버전 CG</b-badge>가 존재합니다.
+					</div>
+					<div>
+						<b-badge variant="warning">한여름의 데이트</b-badge>의
+						<b-badge variant="info">한여름의 데이트</b-badge>스킨이 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">아크로바틱 써니</b-badge>의
+						<b-badge variant="info">한여름의 커플 요가</b-badge>스킨이 추가되었습니다.
+						<b-badge variant="danger">플레이스토어 버전 CG</b-badge>가 존재합니다.
+					</div>
+					<div>
+						<b-badge variant="warning">럼버제인</b-badge>의
+						<b-badge variant="info">한여름의 삼림욕</b-badge>스킨이 추가되었습니다.
+						<b-badge variant="danger">플레이스토어 버전 CG</b-badge>가 존재합니다.
+					</div>
+					<div>
+						<b-badge variant="warning">C-77 홍련</b-badge>의
+						<b-badge variant="info">기본 스킨</b-badge> 및
+						<b-badge variant="info">드림위버 웨딩 스페셜 : 순백의 연꽃</b-badge>에
+						<b-badge variant="danger">플레이스토어 버전 CG</b-badge>가 추가되었습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200714>2020-07-14</b-card-header>
 			<b-collapse id="changelog20200714">
 				<b-card-body>

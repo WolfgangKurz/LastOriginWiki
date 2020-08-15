@@ -63,7 +63,7 @@ function listMajors (auth) {
 			rows.map((row) => {
 				if (row.every(x => !x || x.length === 0)) return;
 
-				const unit = row[0];
+				const unit = row[1];
 				const skin = row[2];
 				const offsets = row[3];
 				const price = /^[0-9]+$/.test(row[4]) ? parseInt(row[4], 10) : undefined;

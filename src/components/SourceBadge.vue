@@ -70,7 +70,7 @@ export default class SourceBadge extends Vue {
 					if (this.detail) {
 						return [
 							event,
-							` ${item} `/* 아이템 아이콘 컴포넌트 */,
+							` '${item}' `/* 아이템 아이콘 컴포넌트 */,
 							`${data.value}개`,
 						];
 					} else if (this.minimum)
