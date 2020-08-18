@@ -20,14 +20,9 @@
 
 				<b-nav-item :active="IsUnits" href="/units" @click.prevent="GoTo('/units')">전투원정보</b-nav-item>
 				<b-nav-item :active="IsEquips" href="/equips" @click.prevent="GoTo('/equips')">장비정보</b-nav-item>
-				<b-nav-item
-					disabled
-					:active="IsFacilities"
-					href="/facilities"
-					@click.prevent="GoTo('/facilities')"
-				>
+				<b-nav-item :active="IsFacilities" href="/facilities" @click.prevent="GoTo('/facilities')">
 					설비정보
-					<b-badge variant="secondary">WIP</b-badge>
+					<b-badge variant="primary">BETA</b-badge>
 				</b-nav-item>
 				<b-nav-item
 					:active="IsChangelog"

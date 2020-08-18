@@ -8,6 +8,8 @@ import UnitView from "@/pages/Units/View.vue";
 
 import Equips from "@/pages/Equips.vue";
 
+import Facilities from "@/pages/Facilities.vue";
+
 import Changelog from "@/pages/Changelog.vue";
 import Test from "@/pages/Test.vue";
 
@@ -45,6 +47,11 @@ const Router = new VueRouter({
 		{
 			path: "/equips/:rarity/:id",
 			component: Equips,
+		},
+
+		{
+			path: "/facilities/",
+			component: Facilities,
 		},
 
 		{
