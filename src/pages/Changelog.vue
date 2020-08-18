@@ -7,8 +7,37 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200817>2020-08-17</b-card-header>
+			<b-collapse id="changelog20200817" visible>
+				<b-card-body>
+					<div>
+						<b-badge variant="primary">설비정보</b-badge>메뉴가 추가되었습니다.
+						누락되었거나 부정확한 정보가 포함되어있을 수도 있습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">스노우 페더</b-badge>의 스킬 정보가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">생명의 세레스티아</b-badge>의 스킬 정보가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">AA-7 임펫</b-badge>의 S 승급 정보가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">K180 셀주크</b-badge>의 S 승급 정보가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">블랙 웜 S9</b-badge>의 스킬 정보가 수정되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">마법소녀 매지컬 모모</b-badge>의 스킬 오타가 수정되었습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200815>2020-08-15</b-card-header>
-			<b-collapse id="changelog20200815" visible>
+			<b-collapse id="changelog20200815">
 				<b-card-body>
 					<div>
 						<b-badge variant="warning">스노우 페더</b-badge>전투원이 추가되었습니다.
@@ -28,10 +57,11 @@
 						<b-badge variant="warning">험지용 특수 프레임</b-badge>장비가 추가되었습니다.
 					</div>
 					<div>
-						<b-badge variant="warning">요정</b-badge>이벤트 맵의 전투원/장비 드랍 정보가 추가되었습니다.
+						<b-badge variant="warning">요정 마을의 아리아</b-badge>이벤트 맵의 전투원/장비 드랍 정보가 추가되었습니다.
 					</div>
 					<div>
-						누락되어있던 <b-badge variant="warning">모든 전투원</b-badge>의 대사 오디오 파일이 추가되었습니다.
+						누락되어있던
+						<b-badge variant="warning">모든 전투원</b-badge>의 대사 오디오 파일이 추가되었습니다.
 						서약 후 대사, 스킨 대사가 모두 포함됩니다.
 						대사 텍스트는 추가되지 않았습니다.
 					</div>
@@ -61,7 +91,7 @@
 						<b-badge variant="danger">플레이스토어 버전 CG</b-badge>가 존재합니다.
 					</div>
 					<div>
-						<b-badge variant="warning">한여름의 데이트</b-badge>의
+						<b-badge variant="warning">커넥터 유미</b-badge>의
 						<b-badge variant="info">한여름의 데이트</b-badge>스킨이 추가되었습니다.
 					</div>
 					<div>
@@ -76,7 +106,7 @@
 					</div>
 					<div>
 						<b-badge variant="warning">C-77 홍련</b-badge>의
-						<b-badge variant="info">기본 스킨</b-badge> 및
+						<b-badge variant="info">기본 스킨</b-badge>및
 						<b-badge variant="info">드림위버 웨딩 스페셜 : 순백의 연꽃</b-badge>에
 						<b-badge variant="danger">플레이스토어 버전 CG</b-badge>가 추가되었습니다.
 					</div>

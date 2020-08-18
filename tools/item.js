@@ -53,7 +53,7 @@ function listMajors (auth) {
 	const sheets = google.sheets({ version: "v4", auth });
 	sheets.spreadsheets.values.get({
 		spreadsheetId: "1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4",
-		range: "UnitSkill!A2:K",
+		range: "ItemName!A2:C",
 	}, (err, res) => {
 		if (err) return console.log("The API returned an error: " + err);
 
@@ -61,30 +61,16 @@ function listMajors (auth) {
 		const rows = res.data.values;
 		if (rows.length) {
 			rows.map((row) => {
-				if (row.some(x => !x || x.length === 0)) return;
+				if (!row[0]) return;
 
-				const unit = row[1];
-				const slot = row[2];
-				const type = row[3];
-
-				const key = `${type}${slot}`;
-				if (!(unit in ret)) ret[unit] = {};
-
-				ret[unit][key] = {
-					key,
-					name: row[4],
-					icon: row[5],
-					range: parseInt(row[6], 10),
-					ap: /^[0-9]+$/.test(row[7]) ? parseInt(row[7], 10) : row[7],
-					target: row[8],
-					bound: row[9],
-					desc: row[10].split("\n"),
-					// effect: row[11].split("\n"),
+				ret[row[0]] = {
+					name: row[1],
+					simple: row[2],
 				};
 			});
 
 			fs.writeFileSync(
-				path.resolve(__dirname, "..", "src", "json", "unit-skill.json"),
+				path.resolve(__dirname, "..", "src", "json", "item-names.json"),
 				JSON.stringify(ret),
 			);
 		} else

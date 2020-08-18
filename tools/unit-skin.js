@@ -65,14 +65,15 @@ function listMajors (auth) {
 
 				const unit = row[1];
 				const skin = row[2];
-				const offsets = row[3];
-				const price = /^[0-9]+$/.test(row[4]) ? parseInt(row[4], 10) : undefined;
-				const P = !!row[5];
-				const A = !!row[6];
-				const D = !!row[7];
-				const S = !!row[8];
-				const X = !!row[9];
-				const G = !!row[10];
+				const artist = row[3];
+				const offsets = row[4];
+				const price = /^[0-9]+$/.test(row[5]) ? parseInt(row[5], 10) : undefined;
+				const P = !!row[6];
+				const A = !!row[7];
+				const D = !!row[8];
+				const S = !!row[9];
+				const X = !!row[10];
+				const G = !!row[11];
 
 				const offset = ((x) => {
 					const output = {
@@ -100,14 +101,14 @@ function listMajors (auth) {
 				})(offsets);
 
 				if (!(unit in ret))
-					ret[unit] = { offset, price, A, D, S, X, G };
+					ret[unit] = { artist, offset, price, A, D, S, X, G };
 				else if (P)
-					ret[unit].P = { t: skin, offset, price, A, D, S, X, G };
+					ret[unit].P = { t: skin, artist, offset, price, A, D, S, X, G };
 				else {
 					if (!("skins" in ret[unit]))
 						ret[unit].skins = [];
 
-					ret[unit].skins.push({ t: skin, offset, price, A, D, S, X, G });
+					ret[unit].skins.push({ t: skin, artist, offset, price, A, D, S, X, G });
 				}
 			});
 

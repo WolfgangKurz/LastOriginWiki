@@ -246,7 +246,7 @@ export namespace UnitStats {
 	};
 }
 
-export interface UnitDialogueRaw {
+export interface RawUnitDialogue {
 	[key: number]: {
 		[key: string]: {
 			Join?: string;
@@ -380,4 +380,46 @@ export interface RawSkill {
 	[key: number]: {
 		[key: string]: RawSkillUnit;
 	};
+}
+
+export interface RawFacility {
+	level: number;
+	requireRes: Array<{
+		type: "Components" | "Nutritions" | "Power";
+		value: number;
+	}>;
+	requireWorker: {
+		type: string;
+		level: number[];
+		count: number;
+	};
+	upgradeTime: number;
+	upgradeRes: {
+		Resins: number;
+		Paint: number;
+		Metal: number;
+		Material: null | {
+			type: "Material" | "Resource" | "Bioroid" | "Cafeteria" | "EXPCenter" | "Equipment" | "Facility" | "Creation";
+			grade: "Normal" | "Advanced" | "Special";
+			value: number;
+		};
+	};
+	result: string[][];
+}
+export interface RawFacilityEntry {
+	name: string;
+	size: number;
+	duration: number;
+	list: RawFacility[];
+}
+export interface RawFacilities {
+	[key: string]: RawFacilityEntry;
+}
+
+export interface RawItemName {
+	name: string;
+	simple: string;
+}
+export interface RawItemNames {
+	[key: string]: RawItemName;
 }
