@@ -7,8 +7,112 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200820>2020-08-20</b-card-header>
+			<b-collapse id="changelog20200820" visible>
+				<b-card-body>
+					<div>
+						<b-badge variant="warning">폭주 유도 시스템 OS</b-badge>장비가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">개량형 초정밀 조준기</b-badge>장비가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">Mr 알프레드</b-badge>의 스킬 정보가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">블랙 웜 S9</b-badge>의 스킬 정보가 수정되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">쿠노이치 제로</b-badge>의 스킬 정보가 수정되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">라인리터</b-badge>의 스킬 정보가 수정되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">요정 마을의 아리아</b-badge>이벤트 맵의 3부 전투원/장비 드랍 정보가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">샬럿</b-badge>의
+						<b-badge variant="info">프랑스 풍 보석 비키니</b-badge>스킨의
+						<b-badge variant="danger">원스토어 버전 CG</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">샬럿</b-badge>의
+						<b-badge variant="info">조금 이상한 대행자</b-badge>스킨의
+						로비 애니메이션 여부가 추가되었고, 가격 정보가 수정되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">소완</b-badge>의
+						<b-badge variant="info">술잔과 진솔한 이야기</b-badge>스킨의
+						로비 애니메이션 여부가 추가되었고, 가격 정보가 수정되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">T-50 PX 실키</b-badge>의
+						<b-badge variant="info">하계 전투복 실키</b-badge>스킨의
+						로비 애니메이션 여부가 추가되었고, 가격 정보가 수정되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">설비정보</b-badge>의 일부 설비의 시설 능력이 올바르지 않던 문제를 수정했습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200819>2020-08-19</b-card-header>
+			<b-collapse id="changelog20200819">
+				<b-card-body>
+					<div>
+						일부 스킨들에
+						<b-badge variant="success">일러스트레이터 정보</b-badge>와
+						<b-badge variant="stat-crit">스킨 아이템 정보</b-badge>를 추가했습니다.
+						해당 정보들은 확인되는 대로 추가될 예정입니다.
+					</div>
+					<div>
+						모든 전투원의 서약 대사 존재 여부를 갱신했습니다.
+						이제 서약 대사가 없으면 대사 정보가 없더라도 대사 목록에 표시되지 않습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">Mr 알프레드</b-badge>전투원이 추가되었습니다.
+						스킬 정보는 이후에 추가될 예정입니다.
+						<b-badge variant="info">로버트 몸체 원형</b-badge>스킨이 추가되었습니다.
+						<b-badge variant="success">일러스트레이터 정보</b-badge>가 존재합니다.
+					</div>
+					<div>
+						<b-badge variant="warning">블랙 웜 S9</b-badge>의 스킬 정보가 수정되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">퀵 카멜</b-badge>의
+						<b-badge variant="info">한여름의 위기일발</b-badge>스킨이 추가되었습니다.
+						<b-badge variant="danger">플레이스토어 버전 CG</b-badge>가 존재합니다.
+						<b-badge variant="success">일러스트레이터 정보</b-badge>가 존재합니다.
+						<b-badge variant="stat-crit">스킨 아이템 정보</b-badge>가 존재합니다.
+					</div>
+					<div>
+						<b-badge variant="warning">뽀끄루 대마왕</b-badge>의
+						<b-badge variant="info">한여름의 우정</b-badge>스킨이 추가되었습니다.
+						<b-badge variant="danger">플레이스토어 버전 CG</b-badge>가 존재합니다.
+						<b-badge variant="success">일러스트레이터 정보</b-badge>가 존재합니다.
+						<b-badge variant="stat-crit">스킨 아이템 정보</b-badge>가 존재합니다.
+					</div>
+					<div>
+						<b-badge variant="warning">럼버제인</b-badge>의
+						<b-badge variant="info">한여름의 삼림욕</b-badge>스킨의 중파 이미지가 추가되었습니다.
+						<b-badge variant="danger">플레이스토어 버전 CG</b-badge>가 존재합니다.
+						<b-badge variant="stat-crit">스킨 아이템 정보</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">블랙 웜 S9</b-badge>의
+						<b-badge variant="info">한여름의 흑백합</b-badge>스킨이 추가되었습니다.
+						<b-badge variant="danger">플레이스토어 버전 CG</b-badge>가 존재합니다.
+						<b-badge variant="success">일러스트레이터 정보</b-badge>가 존재합니다.
+						<b-badge variant="stat-crit">스킨 아이템 정보</b-badge>가 존재합니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200817>2020-08-17</b-card-header>
-			<b-collapse id="changelog20200817" visible>
+			<b-collapse id="changelog20200817">
 				<b-card-body>
 					<div>
 						<b-badge variant="primary">설비정보</b-badge>메뉴가 추가되었습니다.

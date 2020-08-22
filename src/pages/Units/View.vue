@@ -488,6 +488,7 @@ export default class UnitView extends Vue {
 		const skin = this.Skin;
 		if (!skin) return list;
 
+		// 캐릭터 기본 스킨
 		list.push({
 			t: this.unit.name,
 			offset: skin.offset,
@@ -498,6 +499,9 @@ export default class UnitView extends Vue {
 			G: skin.G,
 			isDef: true,
 			isPro: false,
+			artist: skin.artist,
+			name: "",
+			desc: "",
 		});
 
 		if (skin.skins) {
