@@ -219,7 +219,7 @@ export default class FacilityCard extends Vue {
 				return <b-tr>
 					<b-td class="bg-dark text-white">
 						{x.level - 1}
-						<span class="text-secondary"> -&gt; </span>
+						<span class="text-secondary"> → </span>
 						{x.level}
 					</b-td>
 					<b-td>
@@ -275,7 +275,7 @@ export default class FacilityCard extends Vue {
 					<b-tr>
 						<b-td class="bg-dark text-white" colspan="6">
 							{x.level - 1}
-							<span class="text-secondary"> -&gt; </span>
+							<span class="text-secondary"> → </span>
 							{x.level}
 						</b-td>
 					</b-tr>,

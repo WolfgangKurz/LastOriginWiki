@@ -89,9 +89,9 @@ export default class EntitySource {
 	public get IsSideMap () {
 		if (!this.IsMap) return false;
 		if (this.IsEvent) // 이벤트 맵인 경우는 지역이 4번째에 위치
-			return this.Parts[3].includes("B");
+			return this.Parts[3].includes("B") || this.Parts[3].includes("s");
 		else
-			return this.Parts[0].includes("B");
+			return this.Parts[0].includes("B") || this.Parts[0].includes("s");
 	}
 
 	public get IsExMap () {

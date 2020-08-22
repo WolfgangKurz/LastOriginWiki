@@ -123,6 +123,7 @@ export interface RawUnit {
 	body: "Bioroid" | "AGS";
 
 	promotions?: Rarity[];
+	craftable: boolean;
 	marry: boolean;
 
 	linkBonus: {
@@ -153,6 +154,7 @@ export interface Unit {
 	body: UnitBody;
 
 	promotions?: Rarity[];
+	craftable: boolean;
 	marry: boolean;
 
 	linkBonus: {
@@ -178,6 +180,7 @@ export namespace Unit {
 		shortgroup: "",
 		groupkey: "",
 		body: "bio",
+		craftable: false,
 		marry: false,
 		linkBonus: {
 			per: "acc",
@@ -325,6 +328,11 @@ export interface RawSkin {
 
 	skins?: SkinInfo[];
 	P?: SkinInfo;
+
+	artist: string;
+
+	name: string;
+	desc: string;
 }
 export interface SkinInfo {
 	t: string;
@@ -349,6 +357,15 @@ export interface SkinInfo {
 
 	/** Price */
 	price?: number;
+
+	/** Skin Artist */
+	artist: string;
+
+	/** Skin Item Name */
+	name: string;
+
+	/** Skin Item Description */
+	desc: string;
 }
 
 export interface CostTable {

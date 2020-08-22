@@ -461,6 +461,7 @@ export default class UnitModal extends Vue {
 		const skin = this.Skin;
 		if (!skin) return list;
 
+		// 캐릭터 기본 스킨
 		list.push({
 			t: this.unit.name,
 			offset: skin.offset,
@@ -471,6 +472,9 @@ export default class UnitModal extends Vue {
 			G: skin.G,
 			isDef: true,
 			isPro: false,
+			artist: skin.artist,
+			name: "",
+			desc: "",
 		});
 
 		if (skin.skins) {
@@ -676,7 +680,7 @@ export default class UnitModal extends Vue {
 			left: 10px;
 			width: 32px;
 			height: 32px;
-			background-image: url($assetsRoot+"/display-icon.png");
+			background-image: url($assetsRoot + "/display-icon.png");
 			background-repeat: no-repeat;
 			background-size: 32px 32px;
 			cursor: pointer;
@@ -689,7 +693,7 @@ export default class UnitModal extends Vue {
 			left: 60px;
 			width: 32px;
 			height: 32px;
-			background-image: url($assetsRoot+"/icon-animated.png");
+			background-image: url($assetsRoot + "/icon-animated.png");
 			background-repeat: no-repeat;
 			background-size: 32px 32px;
 			z-index: 10;
@@ -697,7 +701,7 @@ export default class UnitModal extends Vue {
 
 		> .unit-full-bg {
 			padding-top: ratio(4, 3);
-			background-image: url($assetsRoot+"/bg/unit-bg.png");
+			background-image: url($assetsRoot + "/bg/unit-bg.png");
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: cover;
@@ -711,7 +715,7 @@ export default class UnitModal extends Vue {
 				width: 100%;
 				height: 100%;
 				transform-origin: 50% 50%;
-				background-image: url($assetsRoot+"/bg/unit-bg-net.png");
+				background-image: url($assetsRoot + "/bg/unit-bg-net.png");
 				background-position: center bottom;
 				background-repeat: no-repeat;
 				background-size: 100%;
@@ -788,7 +792,7 @@ export default class UnitModal extends Vue {
 				right: 10px;
 				width: 64px;
 				height: 62px;
-				background-image: url($assetsRoot+"/damaged-icon.png");
+				background-image: url($assetsRoot + "/damaged-icon.png");
 				background-repeat: no-repeat;
 				background-size: 128px 62px;
 
@@ -802,7 +806,7 @@ export default class UnitModal extends Vue {
 				right: 28px;
 				width: 28px;
 				height: 28px;
-				background-image: url($assetsRoot+"/simplify-icon.png");
+				background-image: url($assetsRoot + "/simplify-icon.png");
 				background-repeat: no-repeat;
 				background-position-x: -28px;
 				background-size: 56px 28px;
@@ -817,7 +821,7 @@ export default class UnitModal extends Vue {
 				right: 28px;
 				width: 28px;
 				height: 28px;
-				background-image: url($assetsRoot+"/icon-platform.png");
+				background-image: url($assetsRoot + "/icon-platform.png");
 				background-repeat: no-repeat;
 				background-position-x: -28px;
 				background-size: 56px 28px;

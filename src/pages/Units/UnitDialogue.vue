@@ -167,7 +167,7 @@ export default class UnitDialogue extends Vue {
 
 	private get IsVoiceAvailable () {
 		if (!(this.unit.id in UnitDialogueData))
-			return true;
+			return (this.voice.isMarry && this.unit.marry) || !this.voice.isMarry;
 
 		const key = ((v) => {
 			if (v.isMarry) return "M";
