@@ -173,6 +173,7 @@
 													:key="`unit-view-drop-${aindex}-${sindex}-${source}`"
 													:source="source"
 													detail
+													linked
 												/>
 											</div>
 											<template v-if="unit.source.length === 0">
@@ -191,7 +192,7 @@
 								<b-thead head-variant="dark">
 									<b-tr>
 										<b-th colspan="4">
-											소모 자원
+											출격 비용
 											<b-form-select
 												v-if="CostRarityList.length > 1"
 												class="table-unit-rarity-select"
@@ -211,9 +212,13 @@
 								<b-tbody>
 									<b-tr v-for="i in 6" :key="`unit-modal-cost-${i}`" class="text-center">
 										<b-th variant="dark">{{i - 1}}</b-th>
-										<b-td :class="CostDiscountClass(i - 1)">{{CostTable.components[i - 1]}}</b-td>
-										<b-td :class="CostDiscountClass(i - 1)">{{CostTable.nutritions[i - 1]}}</b-td>
-										<b-td :class="CostDiscountClass(i - 1)">{{CostTable.power[i - 1]}}</b-td>
+										<b-td
+											:class="CostClass(i - 1, CostTable.components[i - 1])"
+										>{{CostTable.components[i - 1]}}</b-td>
+										<b-td
+											:class="CostClass(i - 1, CostTable.nutritions[i - 1])"
+										>{{CostTable.nutritions[i - 1]}}</b-td>
+										<b-td :class="CostClass(i - 1, CostTable.power[i - 1])">{{CostTable.power[i - 1]}}</b-td>
 									</b-tr>
 								</b-tbody>
 							</b-table-simple>
@@ -611,7 +616,8 @@ export default class UnitView extends Vue {
 		return ret;
 	}
 
-	private CostDiscountClass (level: number) {
+	private CostClass (level: number, value: number) {
+		if (value === 0) return "text-secondary";
 		if (this.linkBonusDiscount && level === 5)
 			return "text-primary";
 		else

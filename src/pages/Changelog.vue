@@ -7,8 +7,41 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200824>2020-08-24</b-card-header>
+			<b-collapse id="changelog20200824" visible>
+				<b-card-body>
+					<div>
+						<b-badge variant="warning">세계 정보</b-badge>메뉴가 추가되었습니다.
+						특정 맵의 전투원 드랍 및 장비 드랍 정보를 확인할 수 있습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">Mr 알프레드</b-badge>의
+						출격 비용의 정보가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">요정 마을의 아리아</b-badge>이벤트 맵의 누락된 3부 전투원/장비 드랍 정보가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">라비아타 프로토타입</b-badge>의
+						<b-badge variant="info">한겨울의 만찬 라비아타</b-badge>스킨의
+						<b-badge variant="stat-crit">스킨 아이템 정보</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">성벽의 하치코</b-badge>의
+						<b-badge variant="info">플라잉 하치코</b-badge>스킨의
+						<b-badge variant="stat-crit">스킨 아이템 정보</b-badge>가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">Mr 알프레드</b-badge>의
+						<b-badge variant="info">로버트 몸체 원형</b-badge>스킨의
+						<b-badge variant="stat-crit">스킨 아이템 정보</b-badge>가 추가되었습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200820>2020-08-20</b-card-header>
-			<b-collapse id="changelog20200820" visible>
+			<b-collapse id="changelog20200820">
 				<b-card-body>
 					<div>
 						<b-badge variant="warning">폭주 유도 시스템 OS</b-badge>장비가 추가되었습니다.

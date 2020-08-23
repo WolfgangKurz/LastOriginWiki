@@ -169,13 +169,13 @@ export default class UnitCard extends Vue {
 						&[data-role] {
 							background-image: url($assetsRoot+"/unit-role.png");
 							&[data-role="attacker"] {
-								background-position: 0px 0;
+								background-position-x: 0px;
 							}
 							&[data-role="defender"] {
-								background-position: -$basis 0;
+								background-position-x: -$basis;
 							}
 							&[data-role="supporter"] {
-								background-position: -($basis * 2) 0;
+								background-position-x: -($basis * 2);
 							}
 						}
 					}

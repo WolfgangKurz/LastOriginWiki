@@ -455,6 +455,14 @@ export interface MapNodeEntity {
 	name: string;
 	pos: [MapNodeX, MapNodeY]; // [x: number, y: number];
 	prev: [MapNodeX, MapNodeY] | undefined;
+	drops: {
+		reward: {
+			units: number[];
+			equips: string[];
+		};
+		units: number[];
+		equips: string[];
+	};
 }
 /* eslint-disable-next-line @typescript-eslint/no-namespace */
 export namespace MapNodeEntity {
@@ -463,5 +471,13 @@ export namespace MapNodeEntity {
 		type: "",
 		pos: [0, 0],
 		prev: undefined,
+		drops: {
+			reward: {
+				units: [],
+				equips: [],
+			},
+			units: [],
+			equips: [],
+		},
 	};
 }
