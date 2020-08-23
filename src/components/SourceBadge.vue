@@ -26,10 +26,21 @@ export default class SourceBadge extends Vue {
 	})
 	private minimum!: boolean;
 
+	@Prop({
+		type: Boolean,
+		default: false,
+	})
+	private linked!: boolean;
+
 	private get Source () {
 		return typeof this.source === "string"
 			? new EntitySource(this.source)
 			: this.source;
+	}
+
+	private Link (e: Event, link: string) {
+		e.preventDefault();
+		this.$router.push({ path: link });
 	}
 
 	private render () {
@@ -104,9 +115,27 @@ export default class SourceBadge extends Vue {
 			}
 		})();
 
-		return (typeof content === "string" && content) || (content.length > 0)
-			? <b-badge class="source-badge mx-1" variant={variant}>{content}</b-badge>
-			: <i />;
+		if ((typeof content === "string" && content) || (content.length > 0)) {
+			if (this.linked && this.Source.IsMap) {
+				const area = ((x) => {
+					if (!x.includes("-")) return x;
+
+					let ls = x.substr(0, x.indexOf("-"));
+					if (!ls.startsWith("Ev")) return ls;
+					ls = ls.substr(2);
+
+					if (!ls) return 1;
+					return ls;
+				})(this.Source.Map);
+				const link = `/worlds/${this.Source.EventId}/${area}/${this.Source.Map}`;
+
+				return <a href={link} onClick={(e: Event) => this.Link(e, link)}>
+					<b-badge class="source-badge mx-1" variant={variant}>{content}</b-badge>
+				</a>;
+			} else
+				return <b-badge class="source-badge mx-1" variant={variant}>{content}</b-badge>;
+		} else
+			return <i />;
 	}
 }
 </script>

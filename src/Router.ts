@@ -35,7 +35,7 @@ const Router = new VueRouter({
 		},
 
 		{
-			path: "/units/",
+			path: "/units",
 			component: Units,
 		},
 		{
@@ -44,7 +44,7 @@ const Router = new VueRouter({
 		},
 
 		{
-			path: "/equips/",
+			path: "/equips",
 			component: Equips,
 		},
 		{
@@ -53,7 +53,7 @@ const Router = new VueRouter({
 		},
 
 		{
-			path: "/facilities/",
+			path: "/facilities",
 			component: Facilities,
 		},
 
@@ -63,6 +63,10 @@ const Router = new VueRouter({
 		},
 		{
 			path: "/worlds/:world/:area",
+			component: WorldMap,
+		},
+		{
+			path: "/worlds/:world/:area/:node",
 			component: WorldMap,
 		},
 

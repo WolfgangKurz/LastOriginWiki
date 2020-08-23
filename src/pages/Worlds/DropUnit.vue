@@ -1,9 +1,9 @@
 <template>
-	<div class="drop-unit p-2">
-		<b-card class="text-left" bg-variant="dark" text-variant="light">
-			<unit-face class="float-left"  :id="id" size="48" type="mini"/>
+	<div class="drop-unit p-2 text-dark">
+		<b-card :class="`text-left rarity-${unit.rarity}`">
+			<unit-face class="float-left mr-2" :id="id" size="48" type="mini" />
 			<div>
-				<rarity-badge :rarity="unit.rarity" />
+				<b-badge variant="secondary" class="mr-1 bordered">{{unit.rarity}}</b-badge>
 				<span class="unit-info">
 					<i class="unit-type" :data-type="unit.type" />
 					<i class="unit-role" :data-role="unit.role" />
@@ -26,7 +26,6 @@ import { UnitData } from "@/libs/DB";
 
 @Component({
 	components: {
-		RarityBadge,
 		UnitFace,
 	},
 })
@@ -48,6 +47,9 @@ export default class DropUnit extends Vue {
 	user-select: none;
 	cursor: pointer;
 
+	.unit-face {
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+	}
 	span.unit-info {
 		opacity: 0.72;
 
@@ -56,11 +58,13 @@ export default class DropUnit extends Vue {
 			display: inline-block;
 			width: $basis;
 			height: $basis;
-			margin-left: 4px;
+			margin-right: 4px;
 			background-size: ($basis * 3) ($basis * 2);
 			background-position: 0 0;
 			background-repeat: no-repeat;
 			vertical-align: bottom;
+
+			background-position-y: -$basis;
 
 			&[data-type] {
 				background-image: url($assetsRoot + "/unit-type.png");
@@ -77,13 +81,13 @@ export default class DropUnit extends Vue {
 			&[data-role] {
 				background-image: url($assetsRoot + "/unit-role.png");
 				&[data-role="attacker"] {
-					background-position: 0px 0;
+					background-position-x: 0px;
 				}
 				&[data-role="defender"] {
-					background-position: -$basis 0;
+					background-position-x: -$basis;
 				}
 				&[data-role="supporter"] {
-					background-position: -($basis * 2) 0;
+					background-position-x: -($basis * 2);
 				}
 			}
 		}

@@ -5,8 +5,8 @@
 		:data-pos="`${node.pos[0]},${node.pos[1]}`"
 	>
 		<img :src="`${AssetsRoot}/world/mapicon_${node.pos[1]}.png`" />
-		<div class="name d-none d-sm-block">{{node.name}}</div>
-		<div class="name d-sm-none">{{shortName}}</div>
+		<div class="name d-none d-sm-block" :data-active="active ? 1 : 0">{{node.name}}</div>
+		<div class="name d-sm-none" :data-active="active ? 1 : 0">{{shortName}}</div>
 	</div>
 </template>
 
@@ -51,6 +51,12 @@ export default class MapNode extends Vue {
 	})
 	private node!: MapNodeEntity;
 
+	@Prop({
+		type: Boolean,
+		default: false,
+	})
+	private active!: boolean;
+
 	private get AssetsRoot () {
 		return AssetsRoot;
 	}
@@ -92,6 +98,10 @@ export default class MapNode extends Vue {
 		font-weight: bold;
 		font-size: 11px;
 		color: #fff;
+
+		&[data-active="1"] {
+			background-color: transparentize(map-get($theme-colors, "primary"), 0.4);
+		}
 	}
 }
 </style>

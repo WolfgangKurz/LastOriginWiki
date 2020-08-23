@@ -62,6 +62,11 @@ export default class EntitySource {
 		return this.Parts[0] === "Ev";
 	}
 
+	/** 이벤트 Id */
+	public get EventId () {
+		return this.Parts[1];
+	}
+
 	/** 이벤트 이름 */
 	public get EventName () {
 		if (!this.IsEvent) return "";
