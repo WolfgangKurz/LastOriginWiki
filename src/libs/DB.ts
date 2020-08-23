@@ -6,13 +6,14 @@ import SkillDB from "@/json/unit-skill.json";
 import StatsDB from "@/json/unit-stats.json";
 import FacilityDB from "@/json/facility.json";
 import ItemNamesDB from "@/json/item-names.json";
+import MapDB from "@/json/map.json";
 
 import {
 	Equip, UnitType, UnitRole, Status,
 	Trigger, TriggerTypeArray, TriggerType,
 	Action, Unit, RawUnit, RawEquip, RawSkill,
 	UnitStatsRaw, UnitUIDTable, RawUnitDialogue,
-	RawFacilities, RawItemNames,
+	RawFacilities, RawItemNames, Worlds,
 } from "@/libs/Types";
 import EntitySource from "@/libs/EntitySource";
 
@@ -465,3 +466,5 @@ export const UnitDialogueData = UnitDialogueDB as RawUnitDialogue;
 export const Facilities = FacilityDB as RawFacilities;
 
 export const ItemNames = ItemNamesDB as RawItemNames;
+
+export const MapData = MapDB as unknown as Worlds;

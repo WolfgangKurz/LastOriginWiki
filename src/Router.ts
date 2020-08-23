@@ -10,6 +10,9 @@ import Equips from "@/pages/Equips.vue";
 
 import Facilities from "@/pages/Facilities.vue";
 
+import Worlds from "@/pages/Worlds.vue";
+import WorldMap from "@/pages/Worlds/WorldMap.vue";
+
 import Changelog from "@/pages/Changelog.vue";
 import Test from "@/pages/Test.vue";
 
@@ -52,6 +55,15 @@ const Router = new VueRouter({
 		{
 			path: "/facilities/",
 			component: Facilities,
+		},
+
+		{
+			path: "/worlds",
+			component: Worlds,
+		},
+		{
+			path: "/worlds/:world/:area",
+			component: WorldMap,
 		},
 
 		{
