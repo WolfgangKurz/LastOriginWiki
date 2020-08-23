@@ -35,7 +35,7 @@ export default class SourceBadge extends Vue {
 	private render () {
 		const variant = (() => {
 			if (this.Source.IsLimited) return "secondary";
-			if (this.Source.IsEternalWar) return "light";
+			if (this.Source.IsEternalWar) return this.minimum ? "light" : "dark";
 			if (this.Source.IsSideMap) return "success";
 			if (this.Source.IsExMap) return "danger";
 			if (this.Source.IsMap) return "warning";

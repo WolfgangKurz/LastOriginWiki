@@ -75,17 +75,17 @@
 
 		<b-row class="mt-4" cols-xl="6" cols-lg="5" cols-md="4" cols-sm="3" cols="2">
 			<b-col v-for="group of EquipGroups" :key="`equip-${group.name}`" class="equip-item">
-				<b-card bg-variant="dark" text-variant="white" class="my-1 w-100">
+				<b-card bg-variant="dark" text-variant="white" class="my-1 w-100" no-body>
 					<b-card-header class="position-relative">
 						<equip-icon :name="`${group.name}_ss`" size="big" />
 						<div v-if="group.source.length > 0" class="equip-sources text-left">
-							<div
+							<source-badge
 								v-for="(source, sindex) in group.source"
 								:key="`equip-${group.name}-source-${sindex}-${source.source}`"
 								class="mb-1"
-							>
-								<source-badge :source="source" minimum />
-							</div>
+								:source="source"
+								minimum
+							/>
 						</div>
 					</b-card-header>
 
