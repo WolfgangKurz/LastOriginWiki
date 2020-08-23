@@ -269,7 +269,7 @@ export default class WorldMap extends Vue {
 #app > .container > .world-map {
 	.world-map-bg {
 		padding: 1em;
-		background-image: url($assetsRoot + "/world/Texture_Bg_01.png");
+		background-image: url($assetsRoot + "/world/bg.png");
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
