@@ -7,8 +7,20 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200826>2020-08-26</b-card-header>
+			<b-collapse id="changelog20200826" visible>
+				<b-card-body>
+					<div>
+						<b-badge variant="warning">모든 전투원</b-badge>의
+						<b-badge variant="stat-crit">스킨 아이템 정보</b-badge>및
+						<b-badge variant="success">일러스트레이터 정보</b-badge>가 추가되었습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200824>2020-08-24</b-card-header>
-			<b-collapse id="changelog20200824" visible>
+			<b-collapse id="changelog20200824">
 				<b-card-body>
 					<div>
 						<b-badge variant="warning">세계 정보</b-badge>메뉴가 추가되었습니다.
@@ -20,6 +32,10 @@
 					</div>
 					<div>
 						<b-badge variant="warning">요정 마을의 아리아</b-badge>이벤트 맵의 누락된 3부 전투원/장비 드랍 정보가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">스노우 페더</b-badge>에
+						<b-badge variant="danger">플레이스토어 버전 CG</b-badge>가 추가되었습니다.
 					</div>
 					<div>
 						<b-badge variant="warning">라비아타 프로토타입</b-badge>의
