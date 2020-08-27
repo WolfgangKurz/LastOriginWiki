@@ -46,7 +46,7 @@ export default class SourceBadge extends Vue {
 	private render () {
 		const variant = (() => {
 			if (this.Source.IsLimited) return "secondary";
-			if (this.Source.IsEternalWar) return this.minimum ? "light" : "dark";
+			if (this.Source.IsEndlessWar) return this.minimum ? "light" : "dark";
 			if (this.Source.IsSideMap) return "success";
 			if (this.Source.IsExMap) return "danger";
 			if (this.Source.IsMap) return "warning";
@@ -59,9 +59,9 @@ export default class SourceBadge extends Vue {
 		const content = (() => {
 			if (this.Source.IsLimited)
 				return "드랍 없음";
-			else if (this.Source.IsEternalWar) {
+			else if (this.Source.IsEndlessWar) {
 				if (this.detail)
-					return `영원한 전장 (${this.Source.EternalWarPrice} 광물)`;
+					return `영원한 전장 (${this.Source.EndlessWarPrice} 광물)`;
 				else
 					return "영원한 전장";
 			} else if (this.Source.IsApocrypha) {
