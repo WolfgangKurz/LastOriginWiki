@@ -7,8 +7,36 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200826>2020-08-27</b-card-header>
+			<b-collapse id="changelog20200827" visible>
+				<b-card-body>
+					<div>
+						<b-badge variant="warning">마이티R</b-badge>의
+						<rarity-badge border rarity="S">S 승급</rarity-badge>,
+						<rarity-badge border rarity="SS">SS 승급</rarity-badge>및
+						패시브 스킬 정보가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">다프네</b-badge>의 1번째 패시브
+						<b-badge variant="info">민감한 눈</b-badge>의 적용 범위가 수정되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">다프네</b-badge>의 2번째 패시브
+						<b-badge variant="info">대사 촉진</b-badge>의 적용 범위가 수정되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">세라피아스 앨리스</b-badge>의 1번째 액티브
+						<b-badge variant="info">찌르는 강철</b-badge>의 소모 AP가 수정되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">화롯가의 포티아</b-badge>의 대사 정보가 추가되었습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200826>2020-08-26</b-card-header>
-			<b-collapse id="changelog20200826" visible>
+			<b-collapse id="changelog20200826">
 				<b-card-body>
 					<div>
 						<b-badge variant="warning">모든 전투원</b-badge>의
@@ -421,12 +449,12 @@
 					</div>
 					<div>
 						<b-badge variant="warning">엘븐 포레스트메이커</b-badge>의
-						<rarity-badge rarity="S">S 승급</rarity-badge>정보가 추가되었습니다.
+						<rarity-badge border rarity="S">S 승급</rarity-badge>정보가 추가되었습니다.
 						추가된 패시브 스킬의 수치 및 정확한 범위는 업데이트 이후에 갱신될 예정입니다.
 					</div>
 					<div>
 						<b-badge variant="warning">다크엘븐 포레스트레인저</b-badge>의
-						<rarity-badge rarity="S">S 승급</rarity-badge>정보가 추가되었습니다.
+						<rarity-badge border rarity="S">S 승급</rarity-badge>정보가 추가되었습니다.
 						추가된 패시브 스킬의 수치 및 정확한 범위는 업데이트 이후에 갱신될 예정입니다.
 					</div>
 					<div>

@@ -23,8 +23,8 @@
 			<b-btn-group class="mx-1 mb-1">
 				<b-button
 					variant="outline-dark"
-					:pressed="Display.Type.EternalWar"
-					@click="Filter('Type', 'EternalWar')"
+					:pressed="Display.Type.EndlessWar"
+					@click="Filter('Type', 'EndlessWar')"
 				>영원한 전장</b-button>
 				<b-button
 					variant="outline-exchange"
@@ -133,7 +133,7 @@ interface DisplayType {
 		OS: boolean;
 		Public: boolean;
 		Private: boolean;
-		EternalWar: boolean;
+		EndlessWar: boolean;
 	};
 	Source: {
 		EventExchange: boolean;
@@ -162,7 +162,7 @@ export default class Equips extends Vue {
 			OS: true,
 			Public: true,
 			Private: true,
-			EternalWar: true,
+			EndlessWar: true,
 		},
 		Source: {
 			EventExchange: true,
@@ -282,7 +282,7 @@ export default class Equips extends Vue {
 
 				// 획득처
 				let filtered = [...sources];
-				if (!this.Display.Type.EternalWar) filtered = filtered.filter(x => !x.IsEternalWar);
+				if (!this.Display.Type.EndlessWar) filtered = filtered.filter(x => !x.IsEndlessWar);
 				if (!this.Display.Source.Exchange) filtered = filtered.filter(x => !(x.IsExchange && !x.IsEvent));
 				if (!this.Display.Source.Apocrypha) filtered = filtered.filter(x => !x.IsApocrypha);
 				if (!this.Display.Source.EventExchange) filtered = filtered.filter(x => !(x.IsEvent && x.IsExchange));

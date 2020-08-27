@@ -108,7 +108,7 @@ export default class EntitySource {
 	}
 
 	public get IsMap () {
-		return !this.IsEternalWar && !this.IsApocrypha && !this.IsExchange;
+		return !this.IsEndlessWar && !this.IsApocrypha && !this.IsExchange;
 	}
 
 	public get IsReward () {
@@ -141,12 +141,12 @@ export default class EntitySource {
 	// -------------- 외전
 
 	// -------------- 영전
-	public get IsEternalWar () {
-		return this.Parts[0] === "EternalWar";
+	public get IsEndlessWar () {
+		return this.Parts[0] === "EndlessWar";
 	}
 
-	public get EternalWarPrice () {
-		if (!this.IsEternalWar) return 0;
+	public get EndlessWarPrice () {
+		if (!this.IsEndlessWar) return 0;
 		return parseInt(this.Parts[1], 10);
 	}
 	// -------------- 영전
@@ -163,7 +163,7 @@ export default class EntitySource {
 		if (this.IsLimited)
 			output += "Limit";
 
-		if (this.IsEternalWar)
+		if (this.IsEndlessWar)
 			output += "EW";
 		else if (this.IsApocrypha)
 			output += "Apo";
