@@ -224,30 +224,69 @@
 							</b-table-simple>
 						</b-col>
 						<b-col cols="12" sm="6" class="fulllink-table">
-							<b-table-simple bordered fixed table-class="text-left table-unit-modal mt-sm-5">
+							<b-table-simple bordered fixed table-class="text-left table-unit-modal">
 								<b-thead head-variant="dark">
 									<b-tr>
-										<b-th class="text-center">풀링크 보너스</b-th>
+										<b-th class="text-center">
+											<elem-icon elem="fire" />
+											{{unit.resists.fire}} %
+										</b-th>
+										<b-th class="text-center">
+											<elem-icon elem="chill" />
+											{{unit.resists.chill}} %
+										</b-th>
+										<b-th class="text-center">
+											<elem-icon elem="thunder" />
+											{{unit.resists.thunder}} %
+										</b-th>
+									</b-tr>
+									<b-tr>
+										<b-th colspan="3" class="text-center">풀링크 보너스</b-th>
 									</b-tr>
 								</b-thead>
 								<b-tbody>
 									<b-tr>
-										<b-td>
-											출격 비용 -{{LinkBonus.Discount}}%
-											<b-checkbox class="float-right" v-model="linkBonusDiscount" />
+										<b-td colspan="3">
+											없음
+											<b-radio class="float-right" value v-model="linkBonus" />
 										</b-td>
 									</b-tr>
 									<b-tr>
-										<b-td>스킬 위력 +{{LinkBonus.SkillPower}}%</b-td>
+										<b-td colspan="3">
+											출격 비용 -{{LinkBonus.Discount}}%
+											<b-radio class="float-right" value="discount" v-model="linkBonus" />
+										</b-td>
 									</b-tr>
 									<b-tr>
-										<b-td>{{LinkBonus.Entry3}}</b-td>
+										<b-td colspan="3">
+											스킬 위력 +{{LinkBonus.SkillPower}}%
+											<b-radio class="float-right" value="skill" v-model="linkBonus" />
+										</b-td>
 									</b-tr>
 									<b-tr>
-										<b-td>{{LinkBonus.Entry4}}</b-td>
+										<b-td colspan="3">
+											{{LinkBonus.Entry3}}
+											<b-radio
+												v-if="unit.linkBonus.entry3 === 'buff'"
+												class="float-right"
+												value="buff"
+												v-model="linkBonus"
+											/>
+										</b-td>
 									</b-tr>
 									<b-tr>
-										<b-td>행동력 +{{LinkBonus.Speed}}</b-td>
+										<b-td colspan="3">
+											{{LinkBonus.Entry4}}
+											<b-radio
+												v-if="unit.linkBonus.entry4 === 'buff'"
+												class="float-right"
+												value="buff"
+												v-model="linkBonus"
+											/>
+										</b-td>
+									</b-tr>
+									<b-tr>
+										<b-td colspan="3">행동력 +{{LinkBonus.Speed}}</b-td>
 									</b-tr>
 								</b-tbody>
 							</b-table-simple>
@@ -261,6 +300,8 @@
 				:skill-level.sync="skillLevel"
 				:form-state.sync="formState"
 				:rarity="unit.rarity"
+				:buff-bonus="linkBonus === 'buff'"
+				:skill-bonus="linkBonus === 'skill' ? LinkBonus.SkillPower : 0"
 			/>
 		</template>
 		<template v-if="displayTab === 'dialogue'">
@@ -305,6 +346,7 @@ import { UnitData, SkillData } from "@/libs/DB";
 
 import SkinData from "@/json/unit-skin.json";
 import CostData from "@/json/unit-cost.json";
+import { UpdateTitle } from "@/libs/Functions";
 
 interface SkillItem extends RawSkillUnit {
 	index: number;
@@ -349,6 +391,8 @@ export default class UnitView extends Vue {
 
 	private unitId: number = 0;
 	private skillLevel: number = 0;
+
+	private linkBonus: "" | "discount" | "skill" | "buff" = "";
 
 	@Watch("$route")
 	private routeChanged () {
@@ -558,7 +602,7 @@ export default class UnitView extends Vue {
 		const key = `${this.costRarity}_${this.unit.type}_${this.unit.role}`;
 		let table = (CostData as unknown as RawCostTable)[key][this.unit.body];
 
-		if (this.linkBonusDiscount) {
+		if (this.linkBonus === "discount") {
 			const isSS = this.costRarity === "SS";
 			const _ = (x: number) => Math.ceil(x * (isSS ? 0.75 : 0.8));
 
@@ -618,7 +662,7 @@ export default class UnitView extends Vue {
 
 	private CostClass (level: number, value: number) {
 		if (value === 0) return "text-secondary";
-		if (this.linkBonusDiscount && level === 5)
+		if (this.linkBonus === "discount" && level === 5)
 			return "text-primary";
 		else
 			return "";
@@ -633,6 +677,7 @@ export default class UnitView extends Vue {
 
 	private mounted () {
 		this.checkParams();
+		UpdateTitle(`전투원정보 - ${this.unit.name}`);
 	}
 }
 </script>
@@ -648,9 +693,9 @@ export default class UnitView extends Vue {
 		border: 1px solid #dee2e6;
 	}
 
-	.fulllink-table {
-		padding-top: 0.55em;
-	}
+	// .fulllink-table {
+	//	padding-top: 0.55em;
+	// }
 
 	.table-unit-modal.container {
 		.col {

@@ -30,6 +30,7 @@ import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { Facilities as FacilitiesDB } from "@/libs/DB";
 
 import FacilityCard from "./Facilities/FacilityCard.vue";
+import { UpdateTitle } from "@/libs/Functions";
 
 @Component({
 	components: {
@@ -60,6 +61,7 @@ export default class Facilities extends Vue {
 
 	private mounted () {
 		this.checkParams();
+		UpdateTitle("시설정보");
 	}
 }
 </script>

@@ -52,7 +52,7 @@ function isNumeric (data: string) {
 function elemName (elem: string) {
 	switch (elem) {
 		case "fire": return "화염";
-		case "cold": return "냉기";
+		case "chill": return "냉기";
 		case "thunder": return "전기";
 		default: return elem;
 	}

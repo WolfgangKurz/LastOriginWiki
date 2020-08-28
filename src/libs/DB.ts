@@ -84,7 +84,7 @@ function validateAction (action: Action): number {
 	const percent = /^-?[0-9]+\.?[0-9]*%$/;
 
 	const body = ["light", "air", "heavy"];
-	const elems = ["all", "fire", "cold", "thunder"];
+	const elems = ["all", "fire", "chill", "thunder"];
 
 	const params = action.params
 		.map(x => x.endsWith("?") ? x.substr(0, x.length - 1) : x); // Remove unknown mark
@@ -417,6 +417,8 @@ function CompileUnit () {
 				promotions: x.promotions,
 				craftable: x.craftable,
 				marry: x.marry,
+
+				resists: { ...x.resists },
 
 				linkBonus: { ...x.linkBonus },
 

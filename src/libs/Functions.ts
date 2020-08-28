@@ -36,3 +36,7 @@ export function ArrayUnique<T> (source: T[], comparer?: (entity: T) => any): T[]
 		}, [] as T[]);
 	}
 }
+
+export function UpdateTitle (title: string) {
+	document.title = "멸망 전의 전술 교본" + (title ? ` - ${title}` : "");
+}
