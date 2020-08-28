@@ -7,8 +7,31 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
-			<b-card-header v-b-toggle.changelog20200826>2020-08-27</b-card-header>
-			<b-collapse id="changelog20200827" visible>
+			<b-card-header v-b-toggle.changelog20200829>2020-08-29</b-card-header>
+			<b-collapse id="changelog20200829" visible>
+				<b-card-body>
+					<div>
+						<b-badge variant="warning">모든 전투원</b-badge>의
+						<b-badge variant="stat-hp">속성 저항</b-badge>수치가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">모든 전투원</b-badge>의 스킬 설명에
+						<b-badge variant="stat-hp">속성 아이콘</b-badge>이 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">라인리터</b-badge>의 1번째 액티브
+						<b-badge variant="info">기사의 응시</b-badge>의 사거리가 수정되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">라인리터</b-badge>의 2번째 액티브
+						<b-badge variant="info">용기병의 화창</b-badge>의 사거리가 수정되었습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200827>2020-08-27</b-card-header>
+			<b-collapse id="changelog20200827">
 				<b-card-body>
 					<div>
 						<b-badge variant="warning">마이티R</b-badge>의
@@ -1512,6 +1535,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 
 import RarityBadge from "@/components/RarityBadge.vue";
+import { UpdateTitle } from "@/libs/Functions";
 
 @Component({
 	components: {
@@ -1519,6 +1543,9 @@ import RarityBadge from "@/components/RarityBadge.vue";
 	},
 })
 export default class Changelog extends Vue {
+	private mounted () {
+		UpdateTitle("Changelog");
+	}
 }
 </script>
 

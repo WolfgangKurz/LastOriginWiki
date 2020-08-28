@@ -43,6 +43,7 @@ import UnitsGroup from "./Units/Group.vue";
 
 import { Unit } from "@/libs/Types";
 import { UnitData } from "@/libs/DB";
+import { UpdateTitle } from "@/libs/Functions";
 
 @Component({
 	components: {
@@ -87,6 +88,7 @@ export default class Units extends Vue {
 
 	private mounted () {
 		this.checkParams();
+		UpdateTitle("전투원정보");
 	}
 }
 </script>

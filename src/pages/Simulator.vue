@@ -63,6 +63,7 @@ import { UnitStatsData } from "@/libs/DB";
 import { Unit, UnitStats, UnitStatsPoint } from "@/libs/Types";
 
 import Simulation from "./Simulation/Simulation/Simulation";
+import { UpdateTitle } from "@/libs/Functions";
 
 interface Dictionary<T> {
 	[key: string]: T;
@@ -150,6 +151,10 @@ export default class Simulator extends Vue {
 			if (g) data[i + 1] = g.Serialize();
 		}
 		alert(window.btoa(JSON.stringify(data)));
+	}
+
+	private mounted () {
+		UpdateTitle("모의전투");
 	}
 }
 </script>

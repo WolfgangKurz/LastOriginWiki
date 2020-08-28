@@ -30,6 +30,11 @@
 						v-model="skillLevelSync"
 						:options="SkillLevelList"
 					/>
+					<span class="text-secondary pl-2">|</span>
+					<div class="d-inline-block ml-2">
+						호감도 200
+						<b-checkbox class="d-inline-block mr-1" v-model="loveBonus" />
+					</div>
 				</b-th>
 				<b-th>AP &amp; 사거리 &amp; 범위</b-th>
 			</b-tr>
@@ -42,6 +47,10 @@
 						v-model="skillLevelSync"
 						:options="SkillLevelList"
 					/>
+					<div>
+						호감도 200
+						<b-checkbox class="d-inline-block mr-1" v-model="loveBonus" />
+					</div>
 				</b-th>
 			</b-tr>
 		</b-thead>
@@ -63,7 +72,13 @@
 							:key="`unit-modal-skill-desc-${lineIdx}`"
 							class="unit-modal-skill"
 						>
-							<skill-description :text="line" :level="skillLevelSync" />
+							<skill-description
+								:text="line"
+								:level="skillLevelSync"
+								:buff-bonus="buffBonus"
+								:skill-bonus="skillBonus"
+								:love-bonus="loveBonus"
+							/>
 						</div>
 					</b-td>
 					<b-th variant="dark" class="text-center">
@@ -84,7 +99,13 @@
 							:key="`unit-modal-skill-descrow-desc-${lineIdx}`"
 							class="unit-modal-skill"
 						>
-							<skill-description :text="line" :level="skillLevelSync" />
+							<skill-description
+								:text="line"
+								:level="skillLevelSync"
+								:buff-bonus="buffBonus"
+								:skill-bonus="skillBonus"
+								:love-bonus="loveBonus"
+							/>
 						</div>
 					</b-td>
 				</b-tr>
@@ -154,7 +175,20 @@ export default class UnitSkillTable extends Vue {
 	})
 	private rarity!: Rarity;
 
+	@Prop({
+		type: Boolean,
+		default: false,
+	})
+	private buffBonus!: boolean;
+
+	@Prop({
+		type: Number,
+		default: 0,
+	})
+	private skillBonus!: number;
+
 	private rarityList: Rarity[] = ["B", "A", "S", "SS"];
+	private loveBonus: boolean = false;
 
 	private get AssetsRoot () {
 		return AssetsRoot;
@@ -197,7 +231,7 @@ export default class UnitSkillTable extends Vue {
 
 	private get SkillLevelList () {
 		const ret = [];
-		for (let i = 0; i < 13; i++)
+		for (let i = 0; i < 10; i++)
 			ret.push({ value: i, text: `Lv. ${i + 1}` });
 
 		return ret;

@@ -6,7 +6,7 @@ function process (auth) {
 	const sheets = google.sheets({ version: "v4", auth });
 	sheets.spreadsheets.values.get({
 		spreadsheetId: "1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4",
-		range: "UnitTable!A3:V",
+		range: "UnitTable!A3:Y",
 	}, (err, res) => {
 		if (err) return console.log("The API returned an error: " + err);
 
@@ -30,17 +30,23 @@ function process (auth) {
 				const craftable = row[11];
 				const marry = row[12];
 
-				const linkBonus = row[13];
-				const flSkill = parseInt(row[14], 10);
-				const fl3 = row[15];
-				const fl4 = row[16];
+				const resists = {
+					fire: parseInt(row[13], 10),
+					chill: parseInt(row[14], 10),
+					thunder: parseInt(row[15], 10),
+				};
 
-				const equip1 = row[17];
-				const equip2 = row[18];
-				const equip3 = row[19];
-				const equip4 = row[20];
+				const linkBonus = row[16];
+				const flSkill = parseInt(row[17], 10);
+				const fl3 = row[18];
+				const fl4 = row[19];
 
-				const source = row[21];
+				const equip1 = row[20];
+				const equip2 = row[21];
+				const equip3 = row[22];
+				const equip4 = row[23];
+
+				const source = row[24];
 
 				const x = {
 					id: parseInt(id, 10),
@@ -55,6 +61,7 @@ function process (auth) {
 					groupkey,
 					craftable: !!craftable,
 					marry: !!marry,
+					resists,
 					linkBonus: {
 						per: linkBonus,
 						skillPower: flSkill,

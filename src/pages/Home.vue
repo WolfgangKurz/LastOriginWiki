@@ -44,6 +44,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 
 import { ImageExtension, AssetsRoot } from "@/libs/Const";
+import { UpdateTitle } from "@/libs/Functions";
 
 @Component({})
 export default class Home extends Vue {
@@ -53,6 +54,10 @@ export default class Home extends Vue {
 
 	private get imageExt () {
 		return ImageExtension();
+	}
+
+	private mounted () {
+		UpdateTitle("");
 	}
 }
 </script>

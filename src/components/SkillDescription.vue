@@ -4,10 +4,12 @@ import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
 import RarityBadge from "@/components/RarityBadge.vue";
+import ElemIcon from "@/components/ElemIcon.vue";
 
 @Component({
 	components: {
 		RarityBadge,
+		ElemIcon,
 	},
 })
 export default class SkillDescription extends Vue {
@@ -20,8 +22,27 @@ export default class SkillDescription extends Vue {
 	@Prop({
 		type: Number,
 		required: true,
+		validator: (x) => (x >= 1 && x <= 10),
 	})
-	private level!: number;
+	private level!: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
+
+	@Prop({
+		type: Boolean,
+		default: false,
+	})
+	private buffBonus!: boolean;
+
+	@Prop({
+		type: Number,
+		default: false,
+	})
+	private skillBonus!: number;
+
+	@Prop({
+		type: Boolean,
+		default: false,
+	})
+	private loveBonus!: boolean;
 
 	private matches (text: string): string[] {
 		const brackets = ["[]", "{}", "<>"];
@@ -102,9 +123,30 @@ export default class SkillDescription extends Vue {
 			} else
 				buffer += c;
 		}
-		if (buffer) part.push(buffer);
+		part.push(buffer);
 
 		return part;
+	}
+
+	private parseFlags (flags: string) {
+		const ret = {
+			skill: false,
+			icons: [] as JSX.Element[],
+		};
+		if (!flags) return ret;
+
+		flags.split(",")
+			.forEach(x => {
+				if (x === "@")
+					ret.skill = true;
+				else if (x === "#fire")
+					ret.icons.push(<elem-icon inline elem="fire" />);
+				else if (x === "#chill")
+					ret.icons.push(<elem-icon inline elem="chill" />);
+				else if (x === "#thunder")
+					ret.icons.push(<elem-icon inline elem="thunder" />);
+			});
+		return ret;
 	}
 
 	private compile (text: string, strip: boolean = false): Array<JSX.Element | string> {
@@ -118,24 +160,43 @@ export default class SkillDescription extends Vue {
 			.map(x => {
 				if (x[0] === "[") {
 					const part = this.valueMatches(x.substr(1, x.length - 2));
-					const prefix = this.compile(part[0], true);
-					const postfix = this.compile(part[2], true);
+					const { prefix, postfix, flags, oValue } = (() => {
+						if (part.length === 1) {
+							return {
+								flags: this.parseFlags(part[0]),
+								prefix: "",
+								postfix: "",
+								oValue: "",
+							};
+						}
+
+						const offset = part.length === 4 ? 1 : 0;
+						return {
+							flags: offset === 1 ? this.parseFlags(part[0]) : this.parseFlags(""),
+							prefix: this.compile(part[offset], true),
+							postfix: this.compile(part[offset + 2], true),
+							oValue: part[offset + 1],
+						};
+					})();
+
+					if (!oValue)
+						return <span>{flags.icons}</span>;
 
 					const func = ((x: string) => {
 						if (x === "F") return Math.floor;
 						else if (x === "R") return Math.round;
 						else if (x === "C") return Math.ceil;
 						else return (y: number) => y;
-					})(part[1][0]);
+					})(oValue[0]);
 
 					const basis = ((x) => {
 						if (funclist.includes(func))
 							return parseFloat(x.substr(1));
 						else
 							return parseFloat(x);
-					})(part[1].split("~")[0]);
+					})(oValue.split("~")[0]);
 
-					const incPart = part[1].split("~")[1].split("/");
+					const incPart = oValue.split("~")[1].split("/");
 					const inc = (lv: number) => {
 						let val = 0;
 
@@ -146,16 +207,22 @@ export default class SkillDescription extends Vue {
 							val += parseFloat(incPart[i % incPart.length]);
 						return val;
 					};
-					const value = func(basis + inc(this.level));
+					const value = func((basis + inc(
+						this.level +
+						(this.buffBonus && !flags.skill ? 2 : 0) +
+						(this.loveBonus && !flags.skill ? 1 : 0),
+					)) * (1 + (flags.skill ? this.skillBonus / 100 : 0)));
 
 					if (strip) {
-						return <span>
+						return <span class="subtree">
+							{flags.icons}
 							{prefix}
 							<span class="skill-value">{value.toFixed(10).replace(/\.?0+$/, "")}</span>
 							{postfix}
 						</span>;
 					} else {
 						return <rarity-badge rarity="S">
+							{flags.icons}
 							{prefix}
 							<span class="skill-value">{value.toFixed(10).replace(/\.?0+$/, "")}</span>
 							{postfix}
@@ -166,14 +233,14 @@ export default class SkillDescription extends Vue {
 						const sub = this.compile(x.substr(2, x.length - 3), true);
 
 						if (strip)
-							return <span>{sub}</span>;
+							return <span class="subtree">{sub}</span>;
 						else
 							return <rarity-badge rarity="B">{sub}</rarity-badge>;
 					} else {
 						const sub = this.compile(x.substr(1, x.length - 2), true);
 
 						if (strip)
-							return <span>{sub}</span>;
+							return <span class="subtree">{sub}</span>;
 						else
 							return <rarity-badge rarity="B">&lt;{sub}&gt;</rarity-badge>;
 					}
@@ -181,7 +248,7 @@ export default class SkillDescription extends Vue {
 					const sub = this.compile(x.substr(1, x.length - 2), true);
 
 					if (strip)
-						return <span>{sub}</span>;
+						return <span class="subtree">{sub}</span>;
 					else
 						return <b-badge variant="primary">{sub}</b-badge>;
 				}
@@ -201,6 +268,10 @@ export default class SkillDescription extends Vue {
 .skill-description {
 	.skill-value {
 		color: $danger;
+	}
+	.subtree {
+		padding: 0 2px;
+		background-color: transparentize(theme-color("danger"), 0.78);
 	}
 }
 </style>

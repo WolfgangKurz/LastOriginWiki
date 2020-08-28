@@ -111,7 +111,7 @@
 </template>
 
 <script lang="ts">
-import _ from "lodash";
+import _, { Dictionary } from "lodash";
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Watch } from "vue-property-decorator";
@@ -123,7 +123,7 @@ import EquipModal from "./Equips/EquipModal.vue";
 
 import EquipNameTable from "@/json/equip-names.json";
 import { EquipData } from "@/libs/DB";
-import { ArrayUnique } from "@/libs/Functions";
+import { ArrayUnique, UpdateTitle } from "@/libs/Functions";
 import { Equip, Rarity, EquipType } from "@/libs/Types";
 import EntitySource from "@/libs/EntitySource";
 
@@ -203,15 +203,19 @@ export default class Equips extends Vue {
 
 		if ("rarity" in params && ["SS", "S", "A", "B"].includes(params.rarity))
 			this.currentRarity = params.rarity as Rarity;
-
-		if ("id" in params)
-			this.modalEquip(params.id);
-		else
-			this.equipModalDisplay = false;
+		else {
+			if ("id" in params) {
+				this.modalEquip(params.id);
+				UpdateTitle(`장비정보 - ${this.EquipNames[this.selectedEquip]}`);
+			} else {
+				this.equipModalDisplay = false;
+				UpdateTitle("장비정보");
+			}
+		}
 	}
 
 	private get EquipNames () {
-		return EquipNameTable;
+		return EquipNameTable as Dictionary<string>;
 	}
 
 	private get EquipRarity () {

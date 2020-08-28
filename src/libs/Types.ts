@@ -126,6 +126,12 @@ export interface RawUnit {
 	craftable: boolean;
 	marry: boolean;
 
+	resists: {
+		fire: number;
+		chill: number;
+		thunder: number;
+	};
+
 	linkBonus: {
 		per: LinkBonusType;
 		skillPower: number;
@@ -157,6 +163,12 @@ export interface Unit {
 	craftable: boolean;
 	marry: boolean;
 
+	resists: {
+		fire: number;
+		chill: number;
+		thunder: number;
+	};
+
 	linkBonus: {
 		per: LinkBonusType;
 		skillPower: number;
@@ -182,6 +194,11 @@ export namespace Unit {
 		body: "bio",
 		craftable: false,
 		marry: false,
+		resists: {
+			fire: 0,
+			chill: 0,
+			thunder: 0,
+		},
 		linkBonus: {
 			per: "acc",
 			skillPower: 0,

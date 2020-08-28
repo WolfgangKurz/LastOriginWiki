@@ -15,6 +15,7 @@ import { Watch } from "vue-property-decorator";
 import WorldItem from "./Worlds/WorldItem.vue";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { UpdateTitle } from "@/libs/Functions";
 
 @Component({
 	components: {
@@ -28,6 +29,10 @@ export default class Worlds extends Vue {
 
 	private GoTo (path: string) {
 		this.$router.push({ path });
+	}
+
+	private mounted () {
+		UpdateTitle("세계정보");
 	}
 }
 </script>

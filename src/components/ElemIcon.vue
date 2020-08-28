@@ -1,5 +1,5 @@
 <template>
-	<div v-if="elem" class="elem-icon" :data-elem="elem" />
+	<div v-if="elem" class="elem-icon" :data-elem="elem" :data-inline="inline ? 1 : 0" />
 </template>
 
 <script lang="ts">
@@ -13,7 +13,13 @@ export default class ElemIcon extends Vue {
 		type: String,
 		default: "",
 	})
-	private elem!: "fire" | "thunder" | "cold" | "";
+	private elem!: "fire" | "thunder" | "chill" | "";
+
+	@Prop({
+		type: Boolean,
+		default: false,
+	})
+	private inline!: boolean;
 }
 </script>
 
@@ -38,8 +44,12 @@ export default class ElemIcon extends Vue {
 	&[data-elem="thunder"] {
 		background-position: -20.5px 0;
 	}
-	&[data-elem="cold"] {
+	&[data-elem="chill"] {
 		background-position: -41px 0;
+	}
+
+	&[data-inline="1"] {
+		margin: 0 2px 0 0;
 	}
 }
 </style>
