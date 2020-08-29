@@ -3,6 +3,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
+import { CurrentEvent, CurrentDate } from "@/libs/Const";
 import { UnitData } from "@/libs/DB";
 import EntitySource from "@/libs/EntitySource";
 
@@ -51,8 +52,15 @@ export default class SourceBadge extends Vue {
 			if (this.Source.IsExMap) return "danger";
 			if (this.Source.IsMap) return "warning";
 			if (this.Source.IsApocrypha) return "apocrypha";
-			if (this.Source.IsExchange && this.Source.IsEvent) return "event-exchange";
-			if (this.Source.IsExchange) return "exchange";
+			if (this.Source.IsExchange) {
+				return this.Source.IsEvent
+					? this.Source.EventId === CurrentEvent
+						? "event-exchange"
+						: "event-exchange-old"
+					: this.Source.ExchangeDate === CurrentDate
+						? "exchange"
+						: "exchange-old";
+			}
 			return "info";
 		})();
 
@@ -130,7 +138,7 @@ export default class SourceBadge extends Vue {
 				const link = `/worlds/${this.Source.EventId}/${area}/${this.Source.Map}`;
 
 				return <a href={link} onClick={(e: Event) => this.Link(e, link)}>
-					<b-badge class="source-badge mx-1" variant={variant}>{content}</b-badge>
+					<b-badge class="source-badge mx-1" variant={variant}>{content} 🔗</b-badge>
 				</a>;
 			} else
 				return <b-badge class="source-badge mx-1" variant={variant}>{content}</b-badge>;

@@ -37,3 +37,11 @@ export async function initWEBP () {
 export function ImageExtension () {
 	return webpAvailable ? "webp" : "png";
 }
+
+export const CurrentEvent = "FairyAria";
+export const CurrentDate = (() => {
+	const d = new Date();
+	const y = d.getUTCFullYear() % 100;
+	const m = d.getUTCMonth() + 1;
+	return `${y}/${m}`;
+})();

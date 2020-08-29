@@ -11,12 +11,32 @@
 			<b-collapse id="changelog20200829" visible>
 				<b-card-body>
 					<div>
+						<b-badge variant="warning">장비정보</b-badge>의 팝업이 표시되지 않던 문제를 수정했습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">장비정보</b-badge>의 드랍처를 눌러
+						<b-badge variant="warning">세계정보</b-badge>페이지로 갈 수 있도록 수정했습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">모든 전투원</b-badge>의 스킬 정보에 참조된 장비 및 전투원에 링크 및 툴팁이 추가되었습니다.
+					</div>
+					<div>
 						<b-badge variant="warning">모든 전투원</b-badge>의
 						<b-badge variant="stat-hp">속성 저항</b-badge>수치가 추가되었습니다.
 					</div>
 					<div>
+						<b-badge variant="warning">모든 전투원</b-badge>의
+						<b-badge variant="info">사거리 +1 풀링크 보너스</b-badge>를 확인할 수 있도록 추가했습니다.
+					</div>
+					<div>
 						<b-badge variant="warning">모든 전투원</b-badge>의 스킬 설명에
 						<b-badge variant="stat-hp">속성 아이콘</b-badge>이 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">모든 전투원</b-badge>의 스킬 설명의
+						<b-badge variant="primary">증가하는 수치</b-badge>와
+						<b-badge variant="danger">감소하는 수치</b-badge>,
+						<b-badge variant="info">그 외 수치</b-badge>색상 구분이 추가되었습니다.
 					</div>
 					<div>
 						<b-badge variant="warning">라인리터</b-badge>의 1번째 액티브
@@ -25,6 +45,14 @@
 					<div>
 						<b-badge variant="warning">라인리터</b-badge>의 2번째 액티브
 						<b-badge variant="info">용기병의 화창</b-badge>의 사거리가 수정되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">스파토이아</b-badge>의 2번째 액티브
+						<b-badge variant="info">CQB 돌입</b-badge>의 공격력 계수가 올바른 수치로 수정되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">레이시</b-badge>의 1번째 패시브
+						<b-badge variant="info">전자기 공명</b-badge>의 전기 속성 아군 목록이 수정되었습니다.
 					</div>
 				</b-card-body>
 			</b-collapse>

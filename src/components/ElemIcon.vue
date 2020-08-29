@@ -49,7 +49,7 @@ export default class ElemIcon extends Vue {
 	}
 
 	&[data-inline="1"] {
-		margin: 0 2px 0 0;
+		margin: -4px 2px -2px 0;
 	}
 }
 </style>
