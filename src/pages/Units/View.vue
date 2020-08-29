@@ -267,9 +267,9 @@
 										<b-td colspan="3">
 											{{LinkBonus.Entry3}}
 											<b-radio
-												v-if="unit.linkBonus.entry3 === 'buff'"
+												v-if="BonusSelectable(unit.linkBonus.entry3)"
 												class="float-right"
-												value="buff"
+												:value="unit.linkBonus.entry3"
 												v-model="linkBonus"
 											/>
 										</b-td>
@@ -278,9 +278,9 @@
 										<b-td colspan="3">
 											{{LinkBonus.Entry4}}
 											<b-radio
-												v-if="unit.linkBonus.entry4 === 'buff'"
+												v-if="BonusSelectable(unit.linkBonus.entry4)"
 												class="float-right"
-												value="buff"
+												:value="unit.linkBonus.entry4"
 												v-model="linkBonus"
 											/>
 										</b-td>
@@ -302,6 +302,7 @@
 				:rarity="unit.rarity"
 				:buff-bonus="linkBonus === 'buff'"
 				:skill-bonus="linkBonus === 'skill' ? LinkBonus.SkillPower : 0"
+				:range-bonus="linkBonus === 'range'"
 			/>
 		</template>
 		<template v-if="displayTab === 'dialogue'">
@@ -666,6 +667,10 @@ export default class UnitView extends Vue {
 			return "text-primary";
 		else
 			return "";
+	}
+
+	private BonusSelectable (bonus: string) {
+		return ["buff", "range"].includes(bonus);
 	}
 
 	private Reset () {

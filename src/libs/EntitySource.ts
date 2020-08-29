@@ -54,6 +54,12 @@ export default class EntitySource {
 		}
 		return "???";
 	}
+
+	public get ExchangeDate () {
+		if (!this.IsExchange || this.IsEvent) return "";
+
+		return `${this.Parts[1]}/${this.Parts[2]}`;
+	}
 	// -------------- 교환소
 
 	// -------------- 이벤트
@@ -64,7 +70,9 @@ export default class EntitySource {
 
 	/** 이벤트 Id */
 	public get EventId () {
-		return this.Parts[1];
+		if (this.IsEvent)
+			return this.Parts[1];
+		return "Story";
 	}
 
 	/** 이벤트 이름 */

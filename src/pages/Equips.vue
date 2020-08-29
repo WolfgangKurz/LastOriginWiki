@@ -74,31 +74,8 @@
 		</div>
 
 		<b-row class="mt-4" cols-xl="6" cols-lg="5" cols-md="4" cols-sm="3" cols="2">
-			<b-col v-for="group of EquipGroups" :key="`equip-${group.name}`" class="equip-item">
-				<b-card bg-variant="dark" text-variant="white" class="my-1 w-100" no-body>
-					<b-card-header class="position-relative">
-						<equip-icon :name="`${group.name}_ss`" size="big" />
-						<div v-if="group.source.length > 0" class="equip-sources text-left">
-							<source-badge
-								v-for="(source, sindex) in group.source"
-								:key="`equip-${group.name}-source-${sindex}-${source.source}`"
-								class="mb-1"
-								:source="source"
-								minimum
-							/>
-						</div>
-					</b-card-header>
-
-					<b-card-body>
-						<div class="equip-name">{{EquipNames[group.name] || group.name}}</div>
-					</b-card-body>
-
-					<a
-						href="#"
-						class="stretched-link equip-stretched"
-						@click.prevent="modalEquipRequest(group.name)"
-					/>
-				</b-card>
+			<b-col v-for="group of EquipGroups" :key="`equip-${group.name}`">
+				<equip-card class="w-100" :group="group" @click="modalEquipRequest" />
 			</b-col>
 		</b-row>
 
@@ -111,7 +88,7 @@
 </template>
 
 <script lang="ts">
-import _, { Dictionary } from "lodash";
+import _ from "lodash";
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Watch } from "vue-property-decorator";
@@ -119,9 +96,11 @@ import { Watch } from "vue-property-decorator";
 import EquipIcon from "@/components/EquipIcon.vue";
 import SourceBadge from "@/components/SourceBadge.vue";
 
+import EquipCard from "./Equips/EquipCard.vue";
 import EquipModal from "./Equips/EquipModal.vue";
 
 import EquipNameTable from "@/json/equip-names.json";
+import { CurrentEvent, CurrentDate } from "@/libs/Const";
 import { EquipData } from "@/libs/DB";
 import { ArrayUnique, UpdateTitle } from "@/libs/Functions";
 import { Equip, Rarity, EquipType } from "@/libs/Types";
@@ -152,6 +131,7 @@ interface DisplayType {
 		EquipIcon,
 		SourceBadge,
 
+		EquipCard,
 		EquipModal,
 	},
 })
@@ -203,18 +183,20 @@ export default class Equips extends Vue {
 
 		if ("rarity" in params && ["SS", "S", "A", "B"].includes(params.rarity))
 			this.currentRarity = params.rarity as Rarity;
-		else {
-			if ("id" in params) {
-				this.modalEquip(params.id);
-				UpdateTitle(`장비정보 - ${this.EquipNames[this.selectedEquip]}`);
-			} else {
-				this.equipModalDisplay = false;
-				UpdateTitle("장비정보");
-			}
+
+		if ("id" in params) {
+			this.modalEquip(params.id);
+			UpdateTitle(`장비정보 - ${this.EquipNames[this.selectedEquip]}`);
+		} else {
+			this.equipModalDisplay = false;
+			UpdateTitle("장비정보");
 		}
 	}
 
 	private get EquipNames () {
+		interface Dictionary<T> {
+			[key: string]: T;
+		}
 		return EquipNameTable as Dictionary<string>;
 	}
 
@@ -236,8 +218,13 @@ export default class Equips extends Vue {
 					for (const item of items) {
 						for (const area of item.source) {
 							for (const es of area) {
-								const hash = es.toString();
+								// 현재 이벤트 맵 드랍 / 교환소 대상일 경우에만
+								if (es.IsEvent && CurrentEvent !== es.EventId) continue;
 
+								// 현재 교환소 대상일 경우에만
+								if (!es.IsEvent && es.IsExchange && es.ExchangeDate !== CurrentDate) continue;
+
+								// const hash = es.toString();
 								if (es.IsMap) map = true;
 								list.push(es);
 							}
@@ -344,34 +331,8 @@ export default class Equips extends Vue {
 </script>
 
 <style lang="scss">
+/*
 #app > .container > .equips {
-	.equip-item {
-		.equip-sources {
-			position: absolute;
-			margin-left: -0.25em;
-			left: 4px;
-			top: 4px;
-			line-height: 0;
-
-			> .equip-source {
-				box-shadow: 0 0 4px #000;
-			}
-		}
-
-		.card-body {
-			padding: 0.5em;
-		}
-
-		.equip-name {
-			word-break: keep-all;
-		}
-		.equip-stretched {
-			margin: 0;
-			padding: 0;
-			width: 1px;
-			height: 1px;
-			overflow: hidden;
-		}
-	}
 }
+*/
 </style>

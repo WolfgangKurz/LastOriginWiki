@@ -89,6 +89,7 @@
 							:bound="skill.bound"
 							:ap="skill.ap"
 							:level="skillLevelSync + 1"
+							:range-bonus="rangeBonus"
 						/>
 					</b-th>
 				</b-tr>
@@ -186,6 +187,12 @@ export default class UnitSkillTable extends Vue {
 		default: 0,
 	})
 	private skillBonus!: number;
+
+	@Prop({
+		type: Boolean,
+		default: false,
+	})
+	private rangeBonus!: boolean;
 
 	private rarityList: Rarity[] = ["B", "A", "S", "SS"];
 	private loveBonus: boolean = false;

@@ -1,13 +1,31 @@
 <script lang="tsx">
+import { uniqueId } from "lodash";
+
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
+import { UnitData } from "@/libs/DB";
+import EquipNameTable from "@/json/equip-names.json";
+
+import UnitFace from "@/components/UnitFace.vue";
+import EquipIcon from "@/components/EquipIcon.vue";
 import RarityBadge from "@/components/RarityBadge.vue";
 import ElemIcon from "@/components/ElemIcon.vue";
+import UnitCard from "@/pages/Units/UnitCard.vue";
+import EquipCard from "@/pages/Equips/EquipCard.vue";
+
+interface Dictionary<T> {
+	[key: string]: T;
+}
+const EquipTable = EquipNameTable as Dictionary<string>;
 
 @Component({
 	components: {
+		UnitFace,
+		UnitCard,
+		EquipIcon,
+		EquipCard,
 		RarityBadge,
 		ElemIcon,
 	},
@@ -43,6 +61,11 @@ export default class SkillDescription extends Vue {
 		default: false,
 	})
 	private loveBonus!: boolean;
+
+	private Link (e: Event, link: string) {
+		if (e) e.preventDefault();
+		this.$router.push({ path: link });
+	}
 
 	private matches (text: string): string[] {
 		const brackets = ["[]", "{}", "<>"];
@@ -129,9 +152,16 @@ export default class SkillDescription extends Vue {
 	}
 
 	private parseFlags (flags: string) {
+		interface LinkType {
+			href: string;
+			display: JSX.Element;
+			tooltip: JSX.Element;
+		}
 		const ret = {
 			skill: false,
 			icons: [] as JSX.Element[],
+			link: null as (LinkType | null),
+			preload: [] as JSX.Element[],
 		};
 		if (!flags) return ret;
 
@@ -145,11 +175,39 @@ export default class SkillDescription extends Vue {
 					ret.icons.push(<elem-icon inline elem="chill" />);
 				else if (x === "#thunder")
 					ret.icons.push(<elem-icon inline elem="thunder" />);
+				else if (x[0] === "$") {
+					const uid = uniqueId("tooltip-target-");
+					const p = x.split(";");
+					if (p[0] === "$ch") {
+						const id = parseInt(p[1], 10);
+						const href = `/units/${id}`;
+						const unit = UnitData[id];
+						ret.link = {
+							href,
+							display: <rarity-badge id={uid} rarity="A">&lt;{unit.name}&gt; 🔗</rarity-badge>,
+							tooltip: <b-tooltip target={uid} placement="top" no-fade noninteractive custom-class="badge-tooltip">
+								<unit-card unit={unit} no-link />
+							</b-tooltip>,
+						};
+						ret.preload.push(<unit-face id={id} />);
+					} else if (p[0] === "$eq") {
+						const href = `/equips/SS/${p[1]}`;
+						const name = EquipTable[p[1]];
+						ret.link = {
+							href,
+							display: <rarity-badge id={uid} rarity="A">&lt;{name}&gt; 🔗</rarity-badge>,
+							tooltip: <b-tooltip target={uid} placement="top" no-fade noninteractive custom-class="badge-tooltip">
+								<equip-card group={{ name: p[1], source: [] }} no-link />
+							</b-tooltip>,
+						};
+						ret.preload.push(<equip-icon name={`${p[1]}_ss`} />);
+					}
+				}
 			});
 		return ret;
 	}
 
-	private compile (text: string, strip: boolean = false): Array<JSX.Element | string> {
+	private compile (text: string, strip: boolean = false): Array<JSX.Element[] | JSX.Element | string> {
 		if (!text) return [];
 
 		const funclist = [Math.floor, Math.round, Math.ceil];
@@ -179,8 +237,22 @@ export default class SkillDescription extends Vue {
 						};
 					})();
 
-					if (!oValue)
-						return <span>{flags.icons}</span>;
+					if (!oValue) {
+						const link = flags.link;
+						return link
+							? [
+								<a href={link.href} onClick={(e: Event) => this.Link(e, link.href)}>
+									{flags.icons}
+									{link.display}
+								</a>,
+								link.tooltip,
+								<div class="preload-area">{flags.preload}</div>,
+							]
+							: <span>
+								{flags.icons}
+								<div class="preload-area">{flags.preload}</div>
+							</span>;
+					}
 
 					const func = ((x: string) => {
 						if (x === "F") return Math.floor;
@@ -213,18 +285,37 @@ export default class SkillDescription extends Vue {
 						(this.loveBonus && !flags.skill ? 1 : 0),
 					)) * (1 + (flags.skill ? this.skillBonus / 100 : 0)));
 
+					const signF = (x: string | Array<string | JSX.Element | JSX.Element[]>) => {
+						if (Array.isArray(x)) {
+							let ret = "";
+							x.forEach(y => {
+								if (typeof y !== "string") return;
+								ret = ret || signF(y);
+							});
+							return ret;
+						}
+
+						if (x.length > 0) {
+							const c = x[x.length - 1];
+							if (c === "+") return "+";
+							else if (c === "-") return "-";
+						}
+						return "";
+					};
+					const sign = signF(prefix);
+
 					if (strip) {
 						return <span class="subtree">
 							{flags.icons}
 							{prefix}
-							<span class="skill-value">{value.toFixed(10).replace(/\.?0+$/, "")}</span>
+							<span class="skill-value" data-sign={sign}>{value.toFixed(10).replace(/\.?0+$/, "")}</span>
 							{postfix}
 						</span>;
 					} else {
 						return <rarity-badge rarity="S">
 							{flags.icons}
 							{prefix}
-							<span class="skill-value">{value.toFixed(10).replace(/\.?0+$/, "")}</span>
+							<span class="skill-value" data-sign={sign}>{value.toFixed(10).replace(/\.?0+$/, "")}</span>
 							{postfix}
 						</rarity-badge>;
 					}
@@ -267,11 +358,37 @@ export default class SkillDescription extends Vue {
 <style lang="scss">
 .skill-description {
 	.skill-value {
-		color: $danger;
+		color: $info;
+
+		&[data-sign="+"] {
+			color: $primary;
+		}
+		&[data-sign="-"] {
+			color: $danger;
+		}
 	}
 	.subtree {
 		padding: 0 2px;
 		background-color: transparentize(theme-color("danger"), 0.78);
+	}
+	.preload-area {
+		position: absolute;
+		display: inline-block;
+		left: 0;
+		top: 0;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		pointer-events: none;
+		opacity: 0.000001;
+	}
+}
+.tooltip.b-tooltip.badge-tooltip {
+	opacity: 1;
+
+	> .tooltip-inner,
+	> .tooltip-inner > * {
+		pointer-events: none;
 	}
 }
 </style>

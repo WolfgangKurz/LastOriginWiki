@@ -49,6 +49,7 @@
 								:key="`equip-modal-drop-${aindex}-${sindex}-${source}`"
 								:source="source"
 								detail
+								linked
 							/>
 						</div>
 						<template v-if="Sources.length === 0">

@@ -32,9 +32,9 @@
 			</template>
 		</div>
 
-		<a href="#" class="stretched-link equip-stretched" @click.prevent="OnClick()" />
+		<a v-if="!noLink" href="#" class="stretched-link equip-stretched" @click.prevent="OnClick()" />
 	</b-card>
-	<div v-else class="unit-card text-left clearfix" @click.prevent="OnClick()">
+	<div v-else class="unit-card text-left clearfix" @click.prevent="!noLink && OnClick()">
 		<unit-face :id="unit.id" class="unit-face float-left" />
 		<div class="unit-name">{{unit.name}}</div>
 		<div class="unit-flag">
@@ -86,6 +86,12 @@ export default class UnitCard extends Vue {
 		default: false,
 	})
 	private promoted!: boolean;
+
+	@Prop({
+		type: Boolean,
+		default: false,
+	})
+	private noLink!: boolean;
 
 	private get IdDisplay () {
 		return ("00" + this.unit.id).substr(-3);
@@ -155,7 +161,7 @@ export default class UnitCard extends Vue {
 						vertical-align: bottom;
 
 						&[data-type] {
-							background-image: url($assetsRoot+"/unit-type.png");
+							background-image: url($assetsRoot + "/unit-type.png");
 							&[data-type="light"] {
 								background-position-x: 0px;
 							}
@@ -167,7 +173,7 @@ export default class UnitCard extends Vue {
 							}
 						}
 						&[data-role] {
-							background-image: url($assetsRoot+"/unit-role.png");
+							background-image: url($assetsRoot + "/unit-role.png");
 							&[data-role="attacker"] {
 								background-position-x: 0px;
 							}

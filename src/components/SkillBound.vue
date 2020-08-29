@@ -42,6 +42,12 @@ export default class SkillBound extends Vue {
 	})
 	private passive!: boolean;
 
+	@Prop({
+		type: Boolean,
+		default: false,
+	})
+	private rangeBonus!: boolean;
+
 	private get IsGlobal () {
 		return this.Bound.global;
 	}
@@ -156,8 +162,9 @@ export default class SkillBound extends Vue {
 
 	private get rangeCells () {
 		const ranges: JSX.Element[] = [];
+		const range = Math.min(this.range + (this.rangeBonus ? 1 : 0), 6);
 
-		for (let i = 0; i < this.range; i++)
+		for (let i = 0; i < range; i++)
 			ranges.push(<span class="range" data-pos={i + 1} />);
 
 		return ranges;
@@ -196,7 +203,11 @@ export default class SkillBound extends Vue {
 			<div class="skill-range">
 				{this.rangeBack}
 				{this.rangeCells}
-				<div class="skill-range-circle">{this.range}</div>
+				{
+					this.rangeBonus && this.range > 0
+						? <div class="skill-range-circle bonused">{this.range + 1}</div>
+						: <div class="skill-range-circle">{this.range}</div>
+				}
 			</div>
 
 			<div class="skill-ap">
@@ -221,6 +232,8 @@ export default class SkillBound extends Vue {
 	$w: 14px;
 	$h: ($w / 38) * 34;
 
+	$highlited: #00efef;
+
 	display: inline-block;
 	width: 120px;
 	text-shadow: 0 0 3px #000, 0 0 2px #000, 0 0 2px #000;
@@ -234,7 +247,7 @@ export default class SkillBound extends Vue {
 		width: $w;
 		height: $h;
 
-		background-image: url($assetsRoot+"/skill-parallelogram.png");
+		background-image: url($assetsRoot + "/skill-parallelogram.png");
 		background-repeat: no-repeat;
 		background-size: ($w * 9) $h;
 
@@ -298,13 +311,17 @@ export default class SkillBound extends Vue {
 			float: right;
 			width: 24px;
 			height: 24px;
-			background-image: url($assetsRoot+"/range-circle.png");
+			background-image: url($assetsRoot + "/range-circle.png");
 			background-repeat: no-repeat;
 			background-size: 24px 24px;
 			line-height: 22px;
 			text-align: center;
 			font-size: 13px;
 			color: #ffd91c;
+
+			&.bonused {
+				color: $highlited;
+			}
 		}
 	}
 
@@ -314,7 +331,7 @@ export default class SkillBound extends Vue {
 		line-height: 125%;
 		font-weight: bold;
 		font-size: 16px;
-		color: #00efef;
+		color: $highlited;
 
 		> div {
 			color: #fff;
@@ -359,14 +376,14 @@ export default class SkillBound extends Vue {
 		padding-left: 10px;
 		font-size: 11px;
 		text-align: left;
-		color: #00efef;
+		color: $highlited;
 	}
 	.team-text {
 		float: left;
 		padding-left: 76px;
 		font-size: 11px;
 		text-align: left;
-		color: #00efef;
+		color: $highlited;
 	}
 	.global-text + .team-text {
 		padding-left: 24px;
