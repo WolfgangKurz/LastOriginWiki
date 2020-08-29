@@ -162,7 +162,7 @@ export default class SkillBound extends Vue {
 
 	private get rangeCells () {
 		const ranges: JSX.Element[] = [];
-		const range = Math.min(this.range + (this.rangeBonus ? 1 : 0), 6);
+		const range = Math.min(this.range + (this.range > 0 && this.rangeBonus ? 1 : 0), 6);
 
 		for (let i = 0; i < range; i++)
 			ranges.push(<span class="range" data-pos={i + 1} />);
