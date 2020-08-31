@@ -7,8 +7,43 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200831>2020-08-31</b-card-header>
+			<b-collapse id="changelog20200831" visible>
+				<b-card-body>
+					<div>
+						<b-badge variant="warning">장비정보</b-badge>의 필터 기능을 개선했습니다.
+						추가로,
+						<b-badge variant="secondary">드랍 없음</b-badge>표시가
+						<b-badge variant="secondary">획득처 없음</b-badge>으로 명칭 변경되었고, 기준이 변경되었습니다.
+						자세한 내용은
+						<b-badge variant="warning">장비정보</b-badge>의 상단 알림을 확인해주세요.
+					</div>
+					<div>
+						<b-badge variant="warning">마이티R</b-badge>의 스킬 수치 및 설명을 수정했습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">마이티R</b-badge>의
+						<rarity-badge border rarity="SS">SS 승급 스킨</rarity-badge>
+						<b-badge variant="info">특수 전투원 마이티R</b-badge>스킨이 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">라비아타 프로토타입</b-badge>의
+						<b-badge variant="info">혼자만의 휴가</b-badge>스킨이 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">라비아타 프로토타입</b-badge>의
+						<b-badge variant="info">과거 혼자만의 휴가</b-badge>스킨이 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">블랙 웜 S9</b-badge>의
+						<b-badge variant="info">한여름의 흑백합</b-badge>스킨의 중파 이미지가 추가되었습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200829>2020-08-29</b-card-header>
-			<b-collapse id="changelog20200829" visible>
+			<b-collapse id="changelog20200829">
 				<b-card-body>
 					<div>
 						<b-badge variant="warning">장비정보</b-badge>의 팝업이 표시되지 않던 문제를 수정했습니다.

@@ -116,7 +116,7 @@ export default class EntitySource {
 	}
 
 	public get IsMap () {
-		return !this.IsEndlessWar && !this.IsApocrypha && !this.IsExchange;
+		return !this.IsEndlessWar && !this.IsApocrypha && !this.IsExchange && !this.IsLimited;
 	}
 
 	public get IsReward () {
