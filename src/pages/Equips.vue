@@ -1,5 +1,18 @@
 <template>
 	<div class="equips">
+		<div class="text-center mb-3">
+			<b-alert variant="warning" show>
+				"오르카호를 수복하라!" 이전 이벤트 정보가 입력되지 않았습니다.
+				드랍처 및 교환소 정보를 입력하지 않아 일부 장비가
+				<b-badge variant="secondary">한정</b-badge>으로 분류 및 표시될 수 있습니다.
+				<br />또, 장비 좌측 상단의
+				<b-badge variant="secondary">획득처 없음</b-badge>표시는
+				<b-badge variant="danger">현재 진행중인 이벤트</b-badge>및
+				<b-badge variant="exchange">현재 기간 교환소</b-badge>기준입니다.
+				이전 이벤트 또는 기간에 드랍/교환 가능했던 장비어도 현재 획득처가 없다면 표시됩니다.
+			</b-alert>
+		</div>
+
 		<b-btn-group class="mx-2 mb-2">
 			<b-button
 				variant="outline-secondary"
@@ -44,10 +57,20 @@
 					@click="Filter('Source', 'EventExchange')"
 				>이벤트 교환소</b-button>
 				<b-button
+					variant="outline-event-exchange"
+					:pressed="Display.Source.OldEventExchange"
+					@click="Filter('Source', 'OldEventExchange')"
+				>지난 이벤트 교환소</b-button>
+				<b-button
 					variant="outline-warning"
 					:pressed="Display.Source.EventMap"
 					@click="Filter('Source', 'EventMap')"
 				>이벤트 맵</b-button>
+				<b-button
+					variant="outline-warning"
+					:pressed="Display.Source.OldEventMap"
+					@click="Filter('Source', 'OldEventMap')"
+				>지난 이벤트 맵</b-button>
 			</b-btn-group>
 			<b-btn-group class="mx-1 mb-1">
 				<b-button
@@ -116,12 +139,14 @@ interface DisplayType {
 	};
 	Source: {
 		EventExchange: boolean;
+		OldEventExchange: boolean;
 		Exchange: boolean;
 		Apocrypha: boolean;
 		Limited: boolean;
 		ExMap: boolean;
 		SideMap: boolean;
 		EventMap: boolean;
+		OldEventMap: boolean;
 		Map: boolean;
 	};
 }
@@ -146,12 +171,14 @@ export default class Equips extends Vue {
 		},
 		Source: {
 			EventExchange: true,
+			OldEventExchange: true,
 			Exchange: true,
 			Apocrypha: true,
 			Limited: true,
 			ExMap: true,
 			SideMap: true,
 			EventMap: true,
+			OldEventMap: true,
 			Map: true,
 		},
 	};
@@ -186,7 +213,7 @@ export default class Equips extends Vue {
 
 		if ("id" in params) {
 			this.modalEquip(params.id);
-			UpdateTitle(`장비정보 - ${this.EquipNames[this.selectedEquip]}`);
+			UpdateTitle(["장비정보", `${this.EquipNames[this.selectedEquip]}`]);
 		} else {
 			this.equipModalDisplay = false;
 			UpdateTitle("장비정보");
@@ -274,13 +301,19 @@ export default class Equips extends Vue {
 				// 획득처
 				let filtered = [...sources];
 				if (!this.Display.Type.EndlessWar) filtered = filtered.filter(x => !x.IsEndlessWar);
+
 				if (!this.Display.Source.Exchange) filtered = filtered.filter(x => !(x.IsExchange && !x.IsEvent));
 				if (!this.Display.Source.Apocrypha) filtered = filtered.filter(x => !x.IsApocrypha);
-				if (!this.Display.Source.EventExchange) filtered = filtered.filter(x => !(x.IsEvent && x.IsExchange));
-				if (!this.Display.Source.EventMap) filtered = filtered.filter(x => !(x.IsEvent && !x.IsExchange));
-				if (!this.Display.Source.ExMap) filtered = filtered.filter(x => !x.IsExMap);
-				if (!this.Display.Source.SideMap) filtered = filtered.filter(x => !x.IsSideMap);
-				if (!this.Display.Source.Map) filtered = filtered.filter(x => !(x.IsMap && !x.IsExMap && !x.IsSideMap));
+				if (!this.Display.Source.EventExchange) filtered = filtered.filter(x => !(x.IsEvent && x.IsExchange && x.EventId === CurrentEvent));
+				if (!this.Display.Source.OldEventExchange)
+					filtered = filtered.filter(x => !(x.IsEvent && x.IsExchange && x.EventId !== CurrentEvent));
+
+				if (!this.Display.Source.EventMap) filtered = filtered.filter(x => !(x.IsEvent && !x.IsExchange && x.EventId === CurrentEvent));
+				if (!this.Display.Source.OldEventMap) filtered = filtered.filter(x => !(x.IsEvent && !x.IsExchange && x.EventId !== CurrentEvent));
+				if (!this.Display.Source.ExMap) filtered = filtered.filter(x => !(x.IsExMap && !x.IsEvent && !x.IsExchange));
+				if (!this.Display.Source.SideMap) filtered = filtered.filter(x => !(x.IsSideMap && !x.IsEvent && !x.IsExchange));
+				if (!this.Display.Source.Map)
+					filtered = filtered.filter(x => !(x.IsMap && !x.IsExMap && !x.IsSideMap && !x.IsEvent && !x.IsExchange));
 				if (!this.Display.Source.Limited) filtered = filtered.filter(x => !x.IsLimited);
 
 				return filtered.length > 0;

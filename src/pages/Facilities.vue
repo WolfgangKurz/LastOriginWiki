@@ -1,5 +1,5 @@
 <template>
-	<div class="chars">
+	<div class="facilities">
 		<div class="text-center mb-3">
 			<b-alert variant="warning" show>
 				시설 정보가 많이 부족합니다.
@@ -61,7 +61,7 @@ export default class Facilities extends Vue {
 
 	private mounted () {
 		this.checkParams();
-		UpdateTitle("시설정보");
+		UpdateTitle("설비정보");
 	}
 }
 </script>

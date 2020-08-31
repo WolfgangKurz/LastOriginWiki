@@ -682,7 +682,7 @@ export default class UnitView extends Vue {
 
 	private mounted () {
 		this.checkParams();
-		UpdateTitle(`전투원정보 - ${this.unit.name}`);
+		UpdateTitle(["전투원정보", `${this.unit.name}`]);
 	}
 }
 </script>

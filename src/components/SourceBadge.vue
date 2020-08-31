@@ -66,7 +66,7 @@ export default class SourceBadge extends Vue {
 
 		const content = (() => {
 			if (this.Source.IsLimited)
-				return "드랍 없음";
+				return "획득처 없음";
 			else if (this.Source.IsEndlessWar) {
 				if (this.detail)
 					return `영원한 전장 (${this.Source.EndlessWarPrice} 광물)`;
