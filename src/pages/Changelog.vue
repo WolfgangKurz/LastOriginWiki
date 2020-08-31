@@ -19,6 +19,12 @@
 						<b-badge variant="warning">장비정보</b-badge>의 상단 알림을 확인해주세요.
 					</div>
 					<div>
+						<b-badge variant="warning">C-33 안드바리</b-badge>전투원이 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">드리아드</b-badge>전투원이 추가되었습니다.
+					</div>
+					<div>
 						<b-badge variant="warning">마이티R</b-badge>의 스킬 수치 및 설명을 수정했습니다.
 					</div>
 					<div>
