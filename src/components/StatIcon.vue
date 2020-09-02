@@ -11,8 +11,17 @@ export default class StatIcon extends Vue {
 	})
 	private stat!: string;
 
+	@Prop({
+		type: Boolean,
+		default: false,
+	})
+	private inline!: boolean;
+
 	private render () {
-		return <div class="stat-icon" data-stat={this.stat} />;
+		const list = ["atk", "def", "hp", "acc", "eva", "crit", "spd"];
+		if (!list.includes(this.stat)) return <i />;
+
+		return <div class="stat-icon" data-stat={this.stat} data-inline={this.inline ? 1 : 0} />;
 	}
 }
 </script>
@@ -28,7 +37,7 @@ export default class StatIcon extends Vue {
 	height: $size;
 	vertical-align: bottom;
 
-	background-image: url($assetsRoot+"/simulation/stats.png");
+	background-image: url($assetsRoot + "/simulation/stats.png");
 	background-repeat: no-repeat;
 	background-size: ($size * 7) $size;
 	background-position: $size 0;
@@ -38,6 +47,10 @@ export default class StatIcon extends Vue {
 		&[data-stat="#{$stat}"] {
 			background-position: (-$size * (index($stat-list, $stat) - 1)) 0;
 		}
+	}
+
+	&[data-inline="1"] {
+		margin-right: 0;
 	}
 }
 </style>

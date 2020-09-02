@@ -2,7 +2,7 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
-import { Rarity } from "@/libs/Types";
+import { Rarity, LRarity } from "@/libs/Types";
 
 @Component({})
 export default class RarityBadge extends Vue {
@@ -10,7 +10,7 @@ export default class RarityBadge extends Vue {
 		type: String,
 		required: true,
 	})
-	private rarity!: Rarity;
+	private rarity!: LRarity | Rarity;
 
 	@Prop({
 		type: String,
@@ -26,7 +26,7 @@ export default class RarityBadge extends Vue {
 
 	private render () {
 		return <b-badge variant="light" class={["rarity-badge", this.border ? "bordered" : ""]} data-rarity={this.rarity} data-size={this.size}>
-			{this.$slots.default || this.rarity}
+			{this.$slots.default || this.rarity.toUpperCase()}
 		</b-badge>;
 	}
 }
@@ -46,16 +46,20 @@ export default class RarityBadge extends Vue {
 		margin-right: 0 !important;
 	}
 
-	&[data-rarity="B"] {
+	&[data-rarity="B"],
+	&[data-rarity="b"] {
 		background-color: #e2f0d9;
 	}
-	&[data-rarity="A"] {
+	&[data-rarity="A"],
+	&[data-rarity="a"] {
 		background-color: #deebf7;
 	}
-	&[data-rarity="S"] {
+	&[data-rarity="S"],
+	&[data-rarity="s"] {
 		background-color: #fff2cc;
 	}
-	&[data-rarity="SS"] {
+	&[data-rarity="SS"],
+	&[data-rarity="ss"] {
 		background-color: #fce391;
 	}
 

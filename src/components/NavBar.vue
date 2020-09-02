@@ -13,10 +13,12 @@
 			<b-navbar-nav class="mr-auto">
 				<b-nav-item :active="IsRoot" href="/" @click.prevent="GoTo('/')">홈</b-nav-item>
 
+				<!--
 				<b-nav-item :active="IsSimulation" href="/simulator" @click.prevent="GoTo('/simulator')">
 					모의전투
 					<b-badge variant="warning">α</b-badge>
 				</b-nav-item>
+				-->
 
 				<b-nav-item :active="IsUnits" href="/units" @click.prevent="GoTo('/units')">전투원정보</b-nav-item>
 				<b-nav-item :active="IsEquips" href="/equips" @click.prevent="GoTo('/equips')">장비정보</b-nav-item>

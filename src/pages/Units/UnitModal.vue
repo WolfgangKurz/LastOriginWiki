@@ -375,6 +375,9 @@ export default class UnitModal extends Vue {
 			spd: [0.1, false],
 		};
 		const FullLinkBonusTable = {
+			"": "없음",
+			discount: "출격 자원 감소",
+			skill: "스킬 위력 +x%",
 			acc: "적중 +75%",
 			buff: "버프/디버프 효과 Lv+2",
 			crit: "치명타 +20%",
@@ -382,6 +385,7 @@ export default class UnitModal extends Vue {
 			eva: "회피 +" + (isAirDef ? 20 : 15) + "%",
 			hp: "HP +20%",
 			range: "사거리 +1",
+			spd: "행동력 +x",
 		};
 
 		return {
