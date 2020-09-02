@@ -8,7 +8,7 @@
 
 		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200902>2020-09-02</b-card-header>
-			<b-collapse id="changelog20200902">
+			<b-collapse id="changelog20200902" visible>
 				<b-card-body>
 					<div>일부 장비의 효과 수치가 % 수치가 아닌 일반 수치로 작성되어있던 점을 수정했습니다.</div>
 					<div>
