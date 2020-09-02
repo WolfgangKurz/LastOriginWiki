@@ -1,7 +1,7 @@
 import VueRouter from "vue-router";
 
 import Home from "@/pages/Home.vue";
-import Simulator from "@/pages/Simulator.vue";
+// import Simulator from "@/pages/Simulator.vue";
 
 import Units from "@/pages/Units.vue";
 import UnitView from "@/pages/Units/View.vue";
@@ -14,7 +14,6 @@ import Worlds from "@/pages/Worlds.vue";
 import WorldMap from "@/pages/Worlds/WorldMap.vue";
 
 import Changelog from "@/pages/Changelog.vue";
-import Test from "@/pages/Test.vue";
 
 const Router = new VueRouter({
 	mode: "history",
@@ -23,12 +22,12 @@ const Router = new VueRouter({
 			path: "/",
 			component: Home,
 		},
-
+		/*
 		{
 			path: "/simulator",
 			component: Simulator,
 		},
-
+		*/
 		{
 			path: "/changelog",
 			component: Changelog,
@@ -40,6 +39,10 @@ const Router = new VueRouter({
 		},
 		{
 			path: "/units/:id",
+			component: UnitView,
+		},
+		{
+			path: "/units/stats/:stats",
 			component: UnitView,
 		},
 

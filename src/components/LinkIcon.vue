@@ -1,6 +1,7 @@
 <template>
 	<div class="link-icon" @click="linkedSync = !linkedSync">
-		<unit-face v-if="linkedSync" :id="id" />
+		<unit-face v-if="valueSync" :id="id" />
+		<div v-if="valueSync >0 && valueSync < 1" class="link-partial">{{Percent}}%</div>
 	</div>
 </template>
 
@@ -17,17 +18,21 @@ import UnitFace from "@/components/UnitFace.vue";
 	},
 })
 export default class StatIcon extends Vue {
-	@PropSync("linked", {
-		type: Boolean,
-		default: false,
+	@PropSync("value", {
+		type: Number,
+		default: 0,
 	})
-	private linkedSync!: boolean;
+	private valueSync!: number;
 
 	@Prop({
 		type: Number,
 		required: true,
 	})
 	private id!: number;
+
+	private get Percent () {
+		return Math.floor(this.valueSync * 100);
+	}
 }
 </script>
 
@@ -43,7 +48,7 @@ export default class StatIcon extends Vue {
 	width: $size;
 	height: $size;
 
-	background-image: url($assetsRoot+"/simulation/LinkBack.png");
+	background-image: url($assetsRoot + "/simulation/LinkBack.png");
 	background-repeat: no-repeat;
 	background-size: $size $size;
 
@@ -53,6 +58,20 @@ export default class StatIcon extends Vue {
 	> img {
 		width: ($size - $padding * 2);
 	}
+	> div {
+		position: absolute;
+		display: flex;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		justify-content: center;
+		align-items: center;
+		text-shadow: 0 0 4px $black;
+		font-size: $size;
+		font-weight: bold;
+		color: $danger;
+	}
 
 	&::after {
 		content: "";
@@ -61,7 +80,7 @@ export default class StatIcon extends Vue {
 		top: 2px;
 		width: 34px;
 		height: 9px;
-		background-image: url($assetsRoot+"/simulation/LinkTop.png");
+		background-image: url($assetsRoot + "/simulation/LinkTop.png");
 		background-repeat: no-repeat;
 		background-size: 34px 9px;
 	}

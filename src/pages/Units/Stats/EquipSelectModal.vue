@@ -33,7 +33,6 @@
 						<span class="d-inline-block mr-2">{{EquipNames[group]}}</span>
 					</b-dropdown-item>
 				</b-dropdown>
-				<!--  :options="UnitList" -->
 			</b-col>
 			<b-col v-if="StatusList" cols="12" class="mb-3">
 				<b-list-group class="text-left">
@@ -68,8 +67,10 @@ import { Prop, Watch, PropSync, Ref } from "vue-property-decorator";
 import NodeRenderer from "@/components/NodeRenderer.vue";
 import RarityBadge from "@/components/RarityBadge.vue";
 import EquipIcon from "@/components/EquipIcon.vue";
+import ElemIcon from "@/components/ElemIcon.vue";
 
 import EquipNameTable from "@/json/equip-names.json";
+
 import { EquipData, UnitData } from "@/libs/DB";
 import { Equip, LRarity, EquipType } from "@/libs/Types";
 import { StatusText } from "@/libs/Status";
@@ -79,6 +80,7 @@ import { StatusText } from "@/libs/Status";
 		NodeRenderer,
 		RarityBadge,
 		EquipIcon,
+		ElemIcon,
 	},
 })
 export default class EquipSelectModal extends Vue {
@@ -105,6 +107,12 @@ export default class EquipSelectModal extends Vue {
 		default: "",
 	})
 	private type!: EquipType;
+
+	@Prop({
+		type: Number,
+		default: 0,
+	})
+	private target!: number;
 
 	private SelectedEquipGroup: string = "";
 	private rarity: LRarity = "ss";
@@ -162,11 +170,47 @@ export default class EquipSelectModal extends Vue {
 				const first = _.first(group[x]);
 				if (!first) return false;
 
-				if (baseType === "chip" && this.type === "Chip") return true;
-				if (baseType === "os" && this.type === "OS") return true;
-				if (baseType === "item" && this.type === "Public") return true;
+				if (this.target && first.limit) {
+					const u = UnitData[this.target];
+					let ret = false;
 
-				return false;
+					for (const y of first.limit) {
+						if (typeof y === "number") {
+							if (y === u.id) {
+								ret = true;
+								break;
+							}
+						} else {
+							const _ = y.split("+")
+								.map(z => {
+									switch (z) {
+										case "light":
+										case "air":
+										case "heavy":
+											return u.type === z;
+										case "attacker":
+										case "defender":
+										case "supporter":
+											return u.role === z;
+									}
+									return false;
+								})
+								.every(z => z);
+
+							if (_) {
+								ret = true;
+								break;
+							}
+						}
+					}
+					if (!ret) return false;
+				}
+
+				if (baseType !== "chip" && this.type === "Chip") return false;
+				if (baseType !== "os" && this.type === "OS") return false;
+				if (baseType !== "item" && this.type === "Public") return false;
+
+				return true;
 			});
 	}
 
@@ -184,7 +228,7 @@ export default class EquipSelectModal extends Vue {
 
 	private Select (group: string) {
 		if (group === "")
-			this.$emit("select", "", "ss", 0);
+			this.$emit("select", "", "ss", 10);
 		else
 			this.$emit("select", group, this.rarity, this.equipLevel);
 	}

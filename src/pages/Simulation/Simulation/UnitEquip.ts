@@ -11,7 +11,7 @@ export namespace UnitEquip {
 	export const Empty: UnitEquip = {
 		Type: "Chip",
 		Name: "",
-		Level: 0,
-		Rarity: "b",
+		Level: 10,
+		Rarity: "ss",
 	};
 }

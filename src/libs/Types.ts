@@ -15,7 +15,7 @@ export const TriggerTypeArray: string[] = ["attack", "flood", "kill", "pos", "ro
 export type TriggerType = "attack" | "flood" | "kill" | "pos" | "round" | "wave" | "unit" | "scout" | "barrier" | "hdmg" | "mdmg";
 
 export type LinkBonusType = "acc" | "crit" | "def" | "eva" | "hp" | "skill" | "spd";
-export type FullLinkBonusType = "acc" | "buff" | "crit" | "eva" | "hp" | "range";
+export type FullLinkBonusType = "" | "discount" | "skill" | "acc" | "buff" | "crit" | "eva" | "hp" | "range" | "spd";
 
 export interface Trigger {
 	inv: boolean;

@@ -7,8 +7,28 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200902>2020-09-02</b-card-header>
+			<b-collapse id="changelog20200902">
+				<b-card-body>
+					<div>일부 장비의 효과 수치가 % 수치가 아닌 일반 수치로 작성되어있던 점을 수정했습니다.</div>
+					<div>
+						<b-badge variant="warning">모의전투</b-badge>메뉴가 삭제되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">각 전투원</b-badge>페이지에
+						<b-badge variant="danger">스테이터스</b-badge>탭이 추가되었습니다.
+						기존
+						<b-badge variant="warning">모의전투</b-badge>메뉴의 스테이터스 및 장비 시뮬레이션 기능입니다.
+						<br />해당 탭에서 수정하는 스테이터스 및 장비는 저장되지 않으며, 상단의 URL을 통해 보관해야 합니다.
+						<br />아직 스킬 및 버프 목록 시뮬레이션은 포함되지 않았으며, 확률 값이 합 연산으로 표시되고 있습니다.
+						이 점 유의해서 사용해주시기 바랍니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200831>2020-08-31</b-card-header>
-			<b-collapse id="changelog20200831" visible>
+			<b-collapse id="changelog20200831">
 				<b-card-body>
 					<div>
 						<b-badge variant="warning">장비정보</b-badge>의 필터 기능을 개선했습니다.

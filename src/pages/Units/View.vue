@@ -1,7 +1,7 @@
 <template>
 	<div class="unit-view">
 		<b-row>
-			<b-col cols="auto">
+			<b-col cols="12" md="auto" class="text-left">
 				<b-button variant="dark" @click="GoBack()">뒤로</b-button>
 			</b-col>
 			<b-col>
@@ -10,16 +10,20 @@
 						title-link-class="text-dark"
 						:active="displayTab === 'information'"
 						@click="displayTab = 'information'"
-					>
-						<template #title>전투원 정보</template>
-					</b-tab>
+						title="전투원 정보"
+					/>
 					<b-tab
 						title-link-class="text-dark"
 						:active="displayTab === 'dialogue'"
 						@click="displayTab = 'dialogue'"
-					>
-						<template #title>대사</template>
-					</b-tab>
+						title="대사"
+					/>
+					<b-tab
+						title-link-class="text-dark"
+						:active="displayTab === 'status'"
+						@click="displayTab = 'status'"
+						title="스테이터스"
+					/>
 				</b-tabs>
 			</b-col>
 		</b-row>
@@ -314,6 +318,7 @@
 				:id="voice.id"
 			/>
 		</template>
+		<unit-stats v-if="displayTab === 'status'" :unit="unit" :serialized="statusSerialized" />
 	</div>
 </template>
 
@@ -340,10 +345,11 @@ import ElemIcon from "@/components/ElemIcon.vue";
 import UnitSkillTable from "./UnitSkillTable.vue";
 import UnitSkinView from "./UnitSkinView.vue";
 import UnitDialogue from "./UnitDialogue.vue";
+import UnitStats from "./UnitStats.vue";
 
 import { Unit, RawSkin, SkinInfo, RawCostTable, CostTable, RawSkill, Rarity, RawSkillUnit, LinkBonusType } from "@/libs/Types";
-
 import { UnitData, SkillData } from "@/libs/DB";
+import { Unit as SimUnit } from "@/pages/Simulation/Simulation/Unit";
 
 import SkinData from "@/json/unit-skin.json";
 import CostData from "@/json/unit-cost.json";
@@ -376,6 +382,7 @@ interface VoiceItem extends SkinInfo {
 		UnitSkillTable,
 		UnitSkinView,
 		UnitDialogue,
+		UnitStats,
 	},
 })
 export default class UnitView extends Vue {
@@ -388,12 +395,14 @@ export default class UnitView extends Vue {
 	private linkBonusDiscount: boolean = false;
 	private formState: "normal" | "change" = "normal";
 
-	private displayTab: "information" | "dialogue" = "information";
+	private displayTab: "information" | "dialogue" | "status" = "information";
 
 	private unitId: number = 0;
 	private skillLevel: number = 0;
 
 	private linkBonus: "" | "discount" | "skill" | "buff" = "";
+
+	private statusSerialized: string | null = null;
 
 	@Watch("$route")
 	private routeChanged () {
@@ -407,12 +416,32 @@ export default class UnitView extends Vue {
 	private checkParams () {
 		const params = this.$route.params;
 
-		if ("id" in params) {
-			this.unitId = parseInt(params.id, 10);
+		if ("stats" in params) {
+			try {
+				const _ = params.stats;
+				const u = new SimUnit();
+				const json = window.atob(_);
+
+				u.Deserialize(json);
+				localStorage.setItem(`unit-stats-${u.Id}`, json);
+				u.$destroy();
+
+				this.$router.replace(`/units/${u.Id}`);
+				this.displayTab = "status";
+			} catch (e) {
+				// TODO : 올바르지 않은 공유 문자열 주소
+			}
+			return;
+		} else if (!("id" in params)) {
+			this.$router.replace("/units");
 			return;
 		}
 
-		this.$router.push("/units");
+		const id = params.id;
+		if (/^[0-9]+$/.test(id)) {
+			this.unitId = parseInt(params.id, 10);
+			UpdateTitle(["전투원정보", `${this.unit.name}`]);
+		}
 	}
 
 	private get unit () {
@@ -456,6 +485,9 @@ export default class UnitView extends Vue {
 			spd: [0.1, false],
 		};
 		const FullLinkBonusTable = {
+			"": "없음",
+			discount: "출격 자원 감소",
+			skill: "스킬 위력 +x%",
 			acc: "적중 +75%",
 			buff: "버프/디버프 효과 Lv+2",
 			crit: "치명타 +20%",
@@ -463,6 +495,7 @@ export default class UnitView extends Vue {
 			eva: "회피 +" + (isDef ? 20 : 15) + "%",
 			hp: "HP +20%",
 			range: "사거리 +1",
+			spd: "행동력 +x",
 		};
 
 		return {
@@ -682,7 +715,6 @@ export default class UnitView extends Vue {
 
 	private mounted () {
 		this.checkParams();
-		UpdateTitle(["전투원정보", `${this.unit.name}`]);
 	}
 }
 </script>
