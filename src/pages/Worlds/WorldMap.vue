@@ -61,14 +61,16 @@
 										:key="`worlds-${world}-${area}-drop-reward-${i}`"
 										class="drop-unit"
 										:href="UnitPage(reward)"
+										@click.prevent="GoTo(UnitPage(reward))"
 									>
 										<drop-unit :id="reward" />
 									</a>
 									<a
 										v-else
+										:key="`worlds-${world}-${area}-drop-reward-${i}`"
 										class="drop-equip"
 										:href="EquipPage(reward.name, reward.rarity)"
-										:key="`worlds-${world}-${area}-drop-reward-${i}`"
+										@click.prevent="GoTo(EquipPage(reward.name, reward.rarity))"
 									>
 										<drop-equip :name="reward.name" :rarity="reward.rarity" />
 									</a>

@@ -18,7 +18,7 @@ function process (auth) {
 
 				const id = row[0];
 				const limit = row[1];
-				const upgrade = row[2] || undefined;
+				const upgrade = parseInt(row[2], 10) || undefined;
 				const source = !row[3]
 					? []
 					: row[3].split("\n").map(d => d.split(","));
