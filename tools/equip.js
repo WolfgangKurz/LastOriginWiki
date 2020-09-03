@@ -6,7 +6,7 @@ function process (auth) {
 	const sheets = google.sheets({ version: "v4", auth });
 	sheets.spreadsheets.values.get({
 		spreadsheetId: "1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4",
-		range: "Equipment!D3:Q",
+		range: "Equipment!D3:R",
 	}, (err, res) => {
 		if (err) return console.log("The API returned an error: " + err);
 
