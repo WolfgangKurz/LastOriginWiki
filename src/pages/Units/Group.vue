@@ -136,6 +136,7 @@ export default class UnitsGroup extends Vue {
 		vertical-align: middle;
 		word-break: keep-all;
 		justify-content: center;
+		justify-items: center;
 
 		> img {
 			width: 96px;

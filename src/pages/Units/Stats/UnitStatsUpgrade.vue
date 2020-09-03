@@ -14,21 +14,24 @@
 					:key="`simulation-edit-stat-${key}`"
 					class="align-items-center my-2"
 				>
-					<b-col lg="4" cols="12" class="text-left">
+					<b-col lg="5" cols="12" class="text-left">
 						<span class="stat-label">
 							<stat-icon :stat="key" />
 							<strong>{{StatList[key].name}}</strong>
 						</span>
 						<span class="d-inline-block">
 							<small class="text-secondary">Lv.</small>
-							<span class="stat-level">{{unit.Stats[key]}}</span>
+							<span class="stat-level">
+								<b-input class="stat-input" v-model="unit.Stats[key]" size="xs" min="0" max="300" number />
+							</span>
 						</span>
 					</b-col>
-					<b-col lg="8" cols="12">
+					<b-col lg="7" cols="12">
 						<b-input
 							class="progress-stat"
 							type="range"
-							v-model.number="unit.Stats[key]"
+							v-model="unit.Stats[key]"
+							number
 							min="0"
 							max="300"
 						/>
@@ -95,5 +98,10 @@ span.stat-label {
 	display: inline-block;
 	width: 80px;
 	text-align: left;
+}
+input.stat-input {
+	display: inline-block;
+	margin-left: 0.25rem;
+	width: 4rem;
 }
 </style>

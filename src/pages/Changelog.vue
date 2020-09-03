@@ -7,8 +7,58 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200903>2020-09-03</b-card-header>
+			<b-collapse id="changelog20200903" visible>
+				<b-card-body>
+					<div>
+						<b-badge variant="exchange">20년 09월 교환소</b-badge>정보를 추가했습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">마법소녀 매지컬 모모</b-badge>와
+						<b-badge variant="warning">마법소녀 매지컬 백토</b-badge>의
+						서약 대사 여부가 갱신되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">드리아드</b-badge>의 행동력이 수정되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">스노우 페더</b-badge>의 1번째 패시브
+						<b-badge variant="info">날개짓</b-badge>의 설명이 수정되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">C-77 레드후드</b-badge>의 1번째 패시브
+						<b-badge variant="info">물러서지마라!</b-badge>의 설명이 수정되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">마이티R</b-badge>의 2번째 액티브
+						<b-badge variant="info">스프린트</b-badge>의 공격 유형이
+						<b-badge variant="danger">보호 무시</b-badge>로 변경되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">T-8W 발키리</b-badge>의
+						<rarity-badge rarity="SS" border>SS승급</rarity-badge>정보가 추가되었습니다.
+						<br />3번째 패시브
+						<b-badge variant="info">발할라로 이끄는 자</b-badge>스킬의 수치는 실제 업데이트 전까지 패치 노트에 작성된 고정된 수치로 표시됩니다.
+					</div>
+					<div>
+						<b-badge variant="warning">T-13 알비스</b-badge>의 1번째 패시브
+						<b-badge variant="info">못 지나갈걸?</b-badge>의 적용 범위가 갱신되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">GS-10 샌드걸</b-badge>의 1번째 패시브
+						<b-badge variant="info">지상군 호위</b-badge>의 수치 및 적용 범위가 갱신되었습니다.
+						<br />갱신된 수치는 실제 업데이트 전까지 임시로 표시되며, 업데이트 전 수치도 같이 표시됩니다.
+					</div>
+					<div>
+						<b-badge variant="warning">전투원 스테이터스</b-badge>의
+						<b-badge variant="info">전투원 강화</b-badge>수치를 직접 입력할 수 있도록 수정했습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200902>2020-09-02</b-card-header>
-			<b-collapse id="changelog20200902" visible>
+			<b-collapse id="changelog20200902">
 				<b-card-body>
 					<div>일부 장비의 효과 수치가 % 수치가 아닌 일반 수치로 작성되어있던 점을 수정했습니다.</div>
 					<div>

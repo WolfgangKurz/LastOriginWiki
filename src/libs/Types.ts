@@ -81,6 +81,7 @@ export interface Status {
 export interface RawEquip {
 	name: string;
 	limit?: string;
+	upgrade: number | undefined;
 	source: string[][];
 	stats: string[];
 }
@@ -88,6 +89,7 @@ export interface Equip {
 	name: string;
 	limit: Array<string | number> | null;
 	source: EntitySource[][];
+	upgrade: number | null;
 
 	stats: Array<Status[]>;
 }
@@ -97,6 +99,7 @@ export namespace Equip {
 		name: "-",
 		limit: null,
 		source: [],
+		upgrade: null,
 
 		stats: [],
 	};

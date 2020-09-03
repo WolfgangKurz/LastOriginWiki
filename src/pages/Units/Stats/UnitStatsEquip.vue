@@ -11,7 +11,7 @@
 				/>
 			</div>
 		</b-card-header>
-		<b-collapse id="collapse_equip" visible>
+		<b-collapse id="collapse_equip">
 			<b-card-body>
 				<b-row cols="1" cols-lg="2">
 					<b-col v-for="(equip, idx) in unit.Equips" :key="`unit-stats-equip-icon-${idx}`">
