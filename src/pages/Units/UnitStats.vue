@@ -124,7 +124,7 @@
 							</b-button>
 							<div class="input-prepend">Lv.</div>
 						</b-input-group-prepend>
-						<b-input class="pl-5" v-model.number="sUnit.Level" />
+						<b-input class="pl-5" v-model="sUnit.Level" number />
 						<b-input-group-append>
 							<b-dropdown :variant="`rarity-${sUnit.Rarity}`" class="border-left">
 								<template #button-content>{{sUnit.Rarity}}</template>

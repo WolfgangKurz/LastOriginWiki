@@ -385,6 +385,7 @@ function CompileEquip () {
 				limit: parseLimit(x.limit),
 				source: x.source
 					.map(y => y.map(z => new EntitySource(z))),
+				upgrade: x.upgrade || null,
 				stats: x.stats.map(_ => parseStats(_)),
 			};
 			return y;
