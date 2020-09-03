@@ -1,8 +1,14 @@
 <template>
-	<b-modal v-model="displaySync" centered hide-footer :title="EquipName(name)">
+	<b-modal
+		v-model="displaySync"
+		centered
+		hide-footer
+		:title="EquipName(name)"
+		content-class="equip-modal"
+	>
 		<b-container class="table-equip-modal mt-4 mb-3">
 			<b-row cols="1" cols-md="2">
-				<b-col>
+				<b-col class="icon-container">
 					<div class="position-relative d-inline-block">
 						<equip-icon :name="`${name}_${lRarity}`" size="large" />
 						<equip-level :level="level" />
@@ -26,7 +32,9 @@
 							<template v-else>
 								<span v-for="limit in Limits" :key="`equip-limit-${limit}`">
 									<unit-badge v-if="typeof limit === 'string'" :limit="limit" />
-									<b-badge v-else class="unit-name-badge" variant="primary">{{UnitName(limit)}}</b-badge>
+									<a v-else :href="`/units/${limit}`" @click.prevent="GoTo(`/units/${limit}`)">
+										<b-badge class="unit-name-badge" variant="primary">{{UnitName(limit)}} 🔗</b-badge>
+									</a>
 								</span>
 							</template>
 						</b-col>
@@ -58,11 +66,41 @@
 					</b-td>
 				</b-tr>
 				<b-tr>
-					<b-th variant="dark">강화 레벨 (+{{level}})</b-th>
+					<b-th variant="dark">강화 레벨 +{{level}}</b-th>
 				</b-tr>
 				<b-tr>
 					<b-td>
-						<b-form-input type="range" min="0" max="10" v-model="level" />
+						<b-input type="range" min="0" max="10" v-model="level" number />
+					</b-td>
+				</b-tr>
+				<b-tr>
+					<b-th variant="dark">
+						0 -&gt; {{level}}
+						<span class="pl-2">강화 비용</span>
+					</b-th>
+				</b-tr>
+				<b-tr>
+					<b-td>
+						<span v-if="level === 0" class="text-secondary">강화 없음</span>
+						<template v-else>
+							<span class="px-2">
+								<div class="d-inline-block px-2">
+									<img class="res-icon" :src="`${AssetsRoot}/res-component.png`" />
+									<img class="res-icon" :src="`${AssetsRoot}/res-nutrition.png`" />
+									<img class="res-icon" :src="`${AssetsRoot}/res-power.png`" />
+								</div>
+								<div class="d-inline-block">각 자원 총 {{UpgradeCostText}}</div>
+							</span>
+							<hr class="d-sm-none" />
+							<span class="d-none d-sm-inline text-secondary">|</span>
+							<span class="px-2">
+								<img
+									class="upmodule-icon"
+									:src="`${AssetsRoot}/${imageExt}/equips/item_upgrademodule.${imageExt}`"
+								/>
+								{{Math.ceil(UpgradeCost / 400)}}개 필요
+							</span>
+						</template>
 					</b-td>
 				</b-tr>
 			</b-tbody>
@@ -89,6 +127,8 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, Watch, PropSync } from "vue-property-decorator";
 
+import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { FormatNumber } from "@/libs/Functions";
 import { StatusText } from "@/libs/Status";
 
 import NodeRenderer from "@/components/NodeRenderer.vue";
@@ -143,6 +183,14 @@ export default class EquipModal extends Vue {
 		this.level = 10;
 	}
 
+	private get AssetsRoot () {
+		return AssetsRoot;
+	}
+
+	private get imageExt () {
+		return ImageExtension();
+	}
+
 	private get lRarity (): LRarity {
 		return this.raritySync.toLowerCase() as LRarity;
 	}
@@ -194,6 +242,38 @@ export default class EquipModal extends Vue {
 		return type;
 	}
 
+	/** 1 레벨 강화당 상승하는 필요치 배율 */
+	private get UpgradeIncrementals () {
+		return {
+			B: 3 / 4,
+			A: 5 / 6,
+			S: 10 / 17,
+			SS: 11 / 20,
+		};
+	}
+
+	private get UpgradeCost () {
+		const equip = this.Equip;
+		if (!equip) return 0;
+
+		const base = equip.upgrade || 0;
+		const per = this.UpgradeIncrementals[this.raritySync];
+		const lv = this.level;
+
+		let sum = 0;
+		for (let i = 0; i < lv; i++)
+			sum += Math.floor(base * (1 + per * i));
+		return sum;
+	}
+
+	private get UpgradeCostText () {
+		return FormatNumber(this.UpgradeCost);
+	}
+
+	private GoTo (path: string) {
+		this.$router.push({ path });
+	}
+
 	private EquipName (name: string) {
 		interface SSDict {
 			[key: string]: string;
@@ -226,34 +306,52 @@ export default class EquipModal extends Vue {
 </script>
 
 <style lang="scss">
-.unknown-status {
-	user-select: none;
-	cursor: pointer;
-}
-.badge.unit-name-badge {
-	white-space: normal;
-	word-break: keep-all;
-}
+.equip-modal {
+	.unknown-status {
+		user-select: none;
+		cursor: pointer;
+	}
+	.badge.unit-name-badge {
+		white-space: normal;
+		word-break: keep-all;
+	}
 
-.table-equip-modal.container {
-	margin-bottom: 0 !important;
+	.table-equip-modal.container {
+		margin-bottom: 0 !important;
 
-	.col {
-		margin-bottom: -1px;
-		padding: 0.75rem;
-		border: 1px solid #dee2e6;
-		&.bg-dark {
-			border-color: #454d55;
-			font-weight: bold;
-		}
-		&.nested {
-			padding: 0;
-			border: 0;
+		.col {
+			margin-bottom: -1px;
+			padding: 0.75rem;
+			border: 1px solid #dee2e6;
 
-			> .row {
-				margin: 0;
+			&.icon-container {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			&.bg-dark {
+				border-color: #454d55;
+				font-weight: bold;
+			}
+			&.nested {
+				padding: 0;
+				border: 0;
+
+				> .row {
+					margin: 0;
+				}
 			}
 		}
+	}
+
+	.res-icon {
+		width: 24px;
+		margin-right: 0.125em;
+	}
+	.upmodule-icon {
+		width: 32px;
+		margin-right: 0.25em;
 	}
 }
 </style>

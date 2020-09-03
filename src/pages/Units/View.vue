@@ -298,6 +298,14 @@
 					</b-row>
 				</b-col>
 			</b-row>
+
+			<b-alert v-if="unit.hasLimited[0]" variant="primary" show>
+				<div>이 전투원은 다음 전용장비를 갖고 있습니다.</div>
+				<a :href="LimitedEquipURL" @click.prevent="GoTo(LimitedEquipURL)">
+					<drop-equip class="limited-item-card" :name="unit.hasLimited[1]" :rarity="unit.hasLimited[0]" />
+				</a>
+			</b-alert>
+
 			<unit-skill-table
 				v-if="SkillsRaw"
 				:skills="SkillsRaw"
@@ -341,6 +349,7 @@ import SkillBound from "@/components/SkillBound.vue";
 import SkillDescription from "@/components/SkillDescription.vue";
 import SourceBadge from "@/components/SourceBadge.vue";
 import ElemIcon from "@/components/ElemIcon.vue";
+import DropEquip from "@/pages/Worlds/DropEquip.vue";
 
 import UnitSkillTable from "./UnitSkillTable.vue";
 import UnitSkinView from "./UnitSkinView.vue";
@@ -379,6 +388,7 @@ interface VoiceItem extends SkinInfo {
 		SkillBound,
 		SkillDescription,
 		SourceBadge,
+		DropEquip,
 		UnitSkillTable,
 		UnitSkinView,
 		UnitDialogue,
@@ -411,6 +421,10 @@ export default class UnitView extends Vue {
 
 	private GoBack () {
 		this.$router.back();
+	}
+
+	private GoTo (path: string) {
+		this.$router.push({ path });
 	}
 
 	private checkParams () {
@@ -446,6 +460,12 @@ export default class UnitView extends Vue {
 
 	private get unit () {
 		return UnitData[this.unitId] || Unit.Empty;
+	}
+
+	private get LimitedEquipURL () {
+		const unit = this.unit;
+		if (!unit.hasLimited[0]) return "";
+		return `/equips/${unit.hasLimited[0]}/${unit.hasLimited[1]}`;
 	}
 
 	private get LinkCountList () {
@@ -783,6 +803,12 @@ export default class UnitView extends Vue {
 		&:last-child {
 			border-bottom: 0;
 		}
+	}
+
+	.limited-item-card {
+		display: inline-block;
+		width: 100%;
+		max-width: 20rem;
 	}
 }
 

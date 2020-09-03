@@ -181,6 +181,8 @@ export interface Unit {
 
 	equip: [EquipType, EquipType, EquipType, EquipType];
 	source: EntitySource[][];
+
+	hasLimited: [string, string];
 }
 /* eslint-disable-next-line @typescript-eslint/no-namespace */
 export namespace Unit {
@@ -210,6 +212,7 @@ export namespace Unit {
 		},
 		equip: ["Chip", "Chip", "OS", "Public"],
 		source: [],
+		hasLimited: ["", ""],
 	};
 }
 

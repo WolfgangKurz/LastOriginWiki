@@ -271,6 +271,13 @@ export default class Equips extends Vue {
 				return {
 					name: x,
 					source,
+					sourceRaw: group[x].reduce(
+						(p, c) => [
+							...p,
+							...c.source.reduce((p2, c2) => [...p2, ...c2], []),
+						],
+						[] as EntitySource[],
+					),
 				};
 			})
 			.filter(y => {
@@ -279,7 +286,7 @@ export default class Equips extends Vue {
 				if (group[x].length === 0) return false;
 
 				const sources = ArrayUnique(
-					y.source,
+					y.sourceRaw,
 					x => x.toString(),
 				);
 
@@ -299,24 +306,28 @@ export default class Equips extends Vue {
 				if (!types.includes(baseType)) return false;
 
 				// 획득처
-				let filtered = [...sources];
-				if (!this.Display.Type.EndlessWar) filtered = filtered.filter(x => !x.IsEndlessWar);
+				sources
+					.filter(x => x.IsEvent && x.IsExchange)
+					.forEach(x => {
+						console.log(y.name, x.EventId, CurrentEvent);
+					});
 
-				if (!this.Display.Source.Exchange) filtered = filtered.filter(x => !(x.IsExchange && !x.IsEvent));
-				if (!this.Display.Source.Apocrypha) filtered = filtered.filter(x => !x.IsApocrypha);
-				if (!this.Display.Source.EventExchange) filtered = filtered.filter(x => !(x.IsEvent && x.IsExchange && x.EventId === CurrentEvent));
-				if (!this.Display.Source.OldEventExchange)
-					filtered = filtered.filter(x => !(x.IsEvent && x.IsExchange && x.EventId !== CurrentEvent));
+				if (this.Display.Type.EndlessWar && sources.some(x => x.IsEndlessWar)) return true;
 
-				if (!this.Display.Source.EventMap) filtered = filtered.filter(x => !(x.IsEvent && !x.IsExchange && x.EventId === CurrentEvent));
-				if (!this.Display.Source.OldEventMap) filtered = filtered.filter(x => !(x.IsEvent && !x.IsExchange && x.EventId !== CurrentEvent));
-				if (!this.Display.Source.ExMap) filtered = filtered.filter(x => !(x.IsExMap && !x.IsEvent && !x.IsExchange));
-				if (!this.Display.Source.SideMap) filtered = filtered.filter(x => !(x.IsSideMap && !x.IsEvent && !x.IsExchange));
-				if (!this.Display.Source.Map)
-					filtered = filtered.filter(x => !(x.IsMap && !x.IsExMap && !x.IsSideMap && !x.IsEvent && !x.IsExchange));
-				if (!this.Display.Source.Limited) filtered = filtered.filter(x => !x.IsLimited);
+				if (this.Display.Source.Exchange && sources.some(x => x.IsExchange && !x.IsEvent)) return true;
+				if (this.Display.Source.Apocrypha && sources.some(x => x.IsApocrypha)) return true;
+				if (this.Display.Source.EventExchange && sources.some(x => x.IsEvent && x.IsExchange && x.EventId === CurrentEvent)) return true;
+				if (this.Display.Source.OldEventExchange && sources.some(x => x.IsEvent && x.IsExchange && x.EventId !== CurrentEvent)) return true;
 
-				return filtered.length > 0;
+				if (this.Display.Source.EventMap && sources.some(x => x.IsEvent && !x.IsExchange && x.EventId === CurrentEvent)) return true;
+				if (this.Display.Source.OldEventMap && sources.some(x => x.IsEvent && !x.IsExchange && x.EventId !== CurrentEvent)) return true;
+
+				if (this.Display.Source.ExMap && sources.some(x => x.IsMap && x.IsExMap && !x.IsEvent && !x.IsExchange)) return true;
+				if (this.Display.Source.SideMap && sources.some(x => x.IsMap && x.IsSideMap && !x.IsEvent && !x.IsExchange)) return true;
+				if (this.Display.Source.Map && sources.some(x => x.IsMap && !x.IsExMap && !x.IsSideMap && !x.IsEvent)) return true;
+				if (this.Display.Source.Limited && sources.some(x => x.IsLimited)) return true;
+
+				return false;
 			})
 			.map(x => ({
 				name: x.name,

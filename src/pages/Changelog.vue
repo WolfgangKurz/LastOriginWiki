@@ -7,8 +7,28 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200904>2020-09-04</b-card-header>
+			<b-collapse id="changelog20200904" visible>
+				<b-card-body>
+					<div>
+						<b-badge variant="warning">장비정보</b-badge>의 필터 기능이 제대로 작동하지 않던 문제를 수정했습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">장비정보</b-badge>의 팝업에
+						<b-badge variant="info">강화 비용</b-badge>표시가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">전투원 정보</b-badge>페이지에
+						<b-badge variant="danger">전용 장비</b-badge>표시를 추가했습니다.
+						<br />전투원이
+						<b-badge variant="danger">전용 장비</b-badge>를 갖고 있을 때에만 표시됩니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200903>2020-09-03</b-card-header>
-			<b-collapse id="changelog20200903" visible>
+			<b-collapse id="changelog20200903">
 				<b-card-body>
 					<div>
 						<b-badge variant="exchange">20년 09월 교환소</b-badge>정보를 추가했습니다.

@@ -431,6 +431,20 @@ function CompileUnit () {
 				],
 				source: x.source
 					.map(y => y.map(z => new EntitySource(z))),
+
+				// 이 전투원 id로 장착이 제한된 장비
+				hasLimited: (() => {
+					const eq = EquipData.find(y => y.limit && y.limit.some(z => z === x.id));
+					if (!eq) return ["", ""];
+
+					const reg = /_([abs]+)$/.exec(eq.name);
+					if (!reg) return ["", ""];
+
+					return [
+						reg[1].toUpperCase(),
+						eq.name.replace(`_${reg[1]}`, ""),
+					];
+				})() as [string, string],
 			};
 			units[x.id] = y;
 		});
