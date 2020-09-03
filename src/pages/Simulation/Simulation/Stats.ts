@@ -173,11 +173,14 @@ export interface Stat {
 	/** 코어 링크로 오른 추가 수치 */
 	linked: number;
 
-	/** 풀링크 보너스로 오른 수치 배율 */
+	/** 풀링크 보너스로 오른 수치 */
 	fullLinkBonus: number;
 
 	/** 장비로 오른 수치 (% 수치만) */
 	equipedRatio: number;
+
+	/** 풀링크 보너스로 오른 수치 (% 수치) */
+	fullLinkBonusRatio: number;
 }
 // eslint-disable-next-line
 export namespace Stat {
@@ -189,6 +192,7 @@ export namespace Stat {
 		linked: 0,
 		fullLinkBonus: 0,
 		equipedRatio: 0,
+		fullLinkBonusRatio: 0,
 	};
 }
 

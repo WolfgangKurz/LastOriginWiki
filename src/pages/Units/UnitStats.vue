@@ -368,9 +368,19 @@ export default class UnitStatus extends Vue {
 		value += stat.pointed + stat.equiped;
 		value += stat.linked;
 
-		if (buffed) value += value * stat.equipedRatio + (buffType ? stat.fullLinkBonus : 0);
+		if (buffed) {
+			value += value * stat.equipedRatio;
+			if (buffType) {
+				value += stat.fullLinkBonus;
+				value *= 1 + (stat.fullLinkBonusRatio / 100);
+			}
+		}
+		if (!buffType) {
+			value += stat.fullLinkBonus;
+			value *= 1 + (stat.fullLinkBonusRatio / 100);
+		}
 
-		return value + (!buffType ? stat.fullLinkBonus : 0);
+		return value;
 	}
 
 	private NumValue (value: number, rounded?: boolean, literal?: boolean) {
