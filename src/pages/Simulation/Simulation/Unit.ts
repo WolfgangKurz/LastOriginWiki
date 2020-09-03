@@ -395,7 +395,9 @@ export class Unit extends Vue {
 
 			// 풀링크
 			if (this.LinkSum === 5) {
-				if (key === "spd" && this.fullLinkBonus === "spd")
+				if (key === "hp" && this.fullLinkBonus === "hp")
+					output[key].fullLinkBonusRatio = 20;
+				else if (key === "spd" && this.fullLinkBonus === "spd")
 					output[key].fullLinkBonus = this.LinkBonus.Speed;
 				else if (key === "eva" && this.fullLinkBonus === "eva")
 					output[key].fullLinkBonus = this.LinkBonus.Entry3.key === "eva" ? this.LinkBonus.Entry3.value : this.LinkBonus.Entry4.value;
@@ -514,12 +516,14 @@ export class Unit extends Vue {
 		const equipTypes = ["Chip", "OS", "Public", "Private"];
 		const rarityList = ["B", "A", "S", "SS"];
 		const lrarityList = ["b", "a", "s", "ss"];
+		const fullLinkList = ["", "discount", "skill", "acc", "buff", "crit", "eva", "hp", "range", "spd"];
 
 		if (
 			!("id" in json) || typeof json.id !== "number" ||
 			!("rarity" in json) || !rarityList.includes(json.rarity) ||
 			!("level" in json) || typeof json.level !== "number" ||
 			!("links" in json) || !Array.isArray(json.links) || !json.links.every((y: any) => typeof y === "number") ||
+			!("fulllink" in json) || !fullLinkList.includes(json.fulllink) ||
 			!("stats" in json) || typeof json.stats !== "object" ||
 			!Object.keys(json.stats).every(y => statList.includes(y) && typeof json.stats[y] === "number") ||
 			!("equips" in json) || !Array.isArray(json.equips) ||
@@ -540,6 +544,8 @@ export class Unit extends Vue {
 		for (let i = 0; i < 5; i++)
 			this.$set(this.Linked, i, json.links[i]);
 
+		this.FullLinkBonus = json.fulllink;
+
 		for (const key in this.Stats) {
 			if (key in json.stats)
 				this.$set(this.Stats, key, json.stats[key]);
@@ -557,6 +563,7 @@ export class Unit extends Vue {
 			rarity: this.Rarity,
 			level: this.Level,
 			links: this.Linked,
+			fulllink: this.fullLinkBonus,
 			stats: this.Stats,
 			equips: this.Equips,
 		};
