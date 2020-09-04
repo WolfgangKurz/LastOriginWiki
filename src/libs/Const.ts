@@ -51,5 +51,6 @@ export const WorldNames: Dictionary<string> = {
 	Story: "메인스토리",
 	SupremeDinner: "지고의 저녁식사",
 	Rioboros: "리오보로스의 유산",
+	OrcaFix: "오르카호를 수복하라!",
 	FairyAria: "요정 마을의 아리아",
 };
