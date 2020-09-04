@@ -161,6 +161,7 @@ import CostData from "@/json/unit-cost.json";
 import { Unit, CostTable, RawCostTable } from "@/libs/Types";
 import { UnitStatsData, EquipData } from "@/libs/DB";
 import { FormatNumber } from "@/libs/Functions";
+import { Dictionary } from "@/libs/Interface";
 
 import { Unit as SimUnit } from "@/pages/Simulation/Simulation/Unit";
 import { StatList, StatType, Stat, UnitStat, StatListTable } from "@/pages/Simulation/Simulation/Stats";
@@ -307,9 +308,6 @@ export default class UnitStatus extends Vue {
 	}
 
 	private get UnitStats () {
-		interface Dictionary<T> {
-			[key: string]: T;
-		}
 		interface ResultType {
 			name: string;
 			final: number;

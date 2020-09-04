@@ -160,6 +160,7 @@ import { Unit } from "./Simulation/Unit";
 
 import { UnitStatsData } from "@/libs/DB";
 import { FormatNumber } from "@/libs/Functions";
+import { Dictionary } from "@/libs/Interface";
 
 import RarityBadge from "@/components/RarityBadge.vue";
 import EquipSelectModal from "./EquipSelectModal.vue";
@@ -167,10 +168,6 @@ import EquipSelectModal from "./EquipSelectModal.vue";
 import StatIcon from "./StatIcon.vue";
 import LinkIcon from "./LinkIcon.vue";
 import ItemSlot from "./ItemSlot.vue";
-
-interface Dictionary<T> {
-	[key: string]: T;
-}
 
 @Component({
 	components: {

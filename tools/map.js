@@ -7,6 +7,11 @@ const equip = require("../src/json/equip.json");
 
 class EntitySource {
 	constructor (source) {
+		this.normalPostfix = "";
+		this.sidePostfix = "B";
+		this.exPostfix = "Ex";
+		this.clgPostfix = "C";
+
 		this.source = source;
 	}
 
@@ -94,17 +99,17 @@ class EntitySource {
 	get IsSideMap () {
 		if (!this.IsMap) return false;
 		if (this.IsEvent) // 이벤트 맵인 경우는 지역이 4번째에 위치
-			return this.Parts[3].includes("B");
+			return this.Parts[3].includes(this.sidePostfix);
 		else
-			return this.Parts[0].includes("B");
+			return this.Parts[0].includes(this.sidePostfix);
 	}
 
 	get IsExMap () {
 		if (!this.IsMap) return false;
 		if (this.IsEvent) // 이벤트 맵인 경우는 지역이 4번째에 위치
-			return this.Parts[3].includes("Ex");
+			return this.Parts[3].includes(this.exPostfix);
 		else
-			return this.Parts[0].includes("Ex");
+			return this.Parts[0].includes(this.exPostfix);
 	}
 
 	get IsMap () {
@@ -157,6 +162,22 @@ class EntitySource {
 	}
 	// -------------- 한정
 
+	setNormalPostfix (postfix) {
+		if (postfix) this.normalPostfix = postfix;
+	}
+
+	setSidePostfix (postfix) {
+		if (postfix) this.sidePostfix = postfix;
+	}
+
+	setExPostfix (postfix) {
+		if (postfix) this.exPostfix = postfix;
+	}
+
+	setChallengePostfix (postfix) {
+		if (postfix) this.clgPostfix = postfix;
+	}
+
 	toString () {
 		let output = "";
 
@@ -188,7 +209,7 @@ class EntitySource {
 	}
 }
 
-const BuildDrops = (name, id, map, node, type) => {
+const BuildDrops = (name, id, map, node, type, postfix) => {
 	const reward = {
 		units: [],
 		equips: [],
@@ -200,6 +221,11 @@ const BuildDrops = (name, id, map, node, type) => {
 		x.source.forEach(y => {
 			y.forEach(z => {
 				const source = new EntitySource(z);
+				if (type === "N") source.setNormalPostfix(postfix);
+				else if (type === "B") source.setSidePostfix(postfix);
+				else if (type === "Ex") source.setExPostfix(postfix);
+				else if (type === "C") source.setChallengePostfix(postfix);
+
 				if (!source.IsMap) return;
 
 				if (type === "N" && (source.IsSideMap || source.IsExMap)) return;
@@ -228,6 +254,11 @@ const BuildDrops = (name, id, map, node, type) => {
 		x.source.forEach(y => {
 			y.forEach(z => {
 				const source = new EntitySource(z);
+				if (type === "N") source.setNormalPostfix(postfix);
+				else if (type === "B") source.setSidePostfix(postfix);
+				else if (type === "Ex") source.setExPostfix(postfix);
+				else if (type === "C") source.setChallengePostfix(postfix);
+
 				if (!source.IsMap) return;
 
 				if (type === "N" && (source.IsSideMap || source.IsExMap)) return;
@@ -259,6 +290,10 @@ const BuildDrops = (name, id, map, node, type) => {
 		S: 1,
 		A: 2,
 		B: 3,
+		ss: 0,
+		s: 1,
+		a: 2,
+		b: 3,
 	};
 	return {
 		reward: {
@@ -269,7 +304,11 @@ const BuildDrops = (name, id, map, node, type) => {
 			r[unit.find(_ => _.id === x).rarity] -
 			r[unit.find(_ => _.id === y).rarity],
 		),
-		equips,
+		equips: equips.sort((a, b) => {
+			const _a = a.substr(a.lastIndexOf("_") + 1);
+			const _b = b.substr(b.lastIndexOf("_") + 1);
+			return r[_a] - r[_b];
+		}),
 	};
 };
 
@@ -300,7 +339,7 @@ function process (auth) {
 						name: `${prefix}-${i + 1}${postfix[0]}`,
 						pos: [i, 1],
 						prev: i > 0 ? ret[id][map][i - 1].pos : undefined,
-						drops: BuildDrops(`${prefix}-${i + 1}${postfix[0]}`, id, map, i, "N"),
+						drops: BuildDrops(`${prefix}-${i + 1}${postfix[0]}`, id, map, i, "N", postfix[0]),
 					});
 				}
 
@@ -329,7 +368,7 @@ function process (auth) {
 											: ret[id][map][
 												ret[id][map].findIndex(y => y.type === "N" && y.name === `${prefix}-${i}${postfix[0]}`)
 											].pos,
-									drops: BuildDrops(`${prefix}-${i}${postfix[1]}`, id, map, i, "B"),
+									drops: BuildDrops(`${prefix}-${i}${postfix[1]}`, id, map, i, "B", postfix[1]),
 								});
 							}
 						} else {
@@ -342,7 +381,7 @@ function process (auth) {
 									: ret[id][map][
 										ret[id][map].findIndex(y => y.type === "N" && y.name === `${prefix}-${x}${postfix[0]}`)
 									].pos,
-								drops: BuildDrops(`${prefix}-${x}${postfix[1]}`, id, map, x, "B"),
+								drops: BuildDrops(`${prefix}-${x}${postfix[1]}`, id, map, x, "B", postfix[1]),
 							});
 						}
 					});
@@ -358,26 +397,46 @@ function process (auth) {
 						}
 
 						if (x.includes("~")) {
-							const p = x.split("~").map(_ => parseInt(_));
+							let p = x.split("~");
+							let base;
+
+							if (p[0].includes(">")) {
+								base = parseInt(p[0].substr(p[0].indexOf(">") + 1));
+								p = p.map(_ => _.includes(">") ? parseInt(_.substr(0, _.indexOf(">"))) : parseInt(_, 10));
+							} else {
+								p = p.map(_ => parseInt(_, 10));
+								base = p[0];
+							}
+
 							for (let i = p[0]; i <= p[1]; i++) {
 								ret[id][map].push({
 									type: "Ex",
 									name: `${prefix}-${i}${postfix[2]}`,
-									pos: [i - 1, 2],
+									pos: [base + (i - p[0]) - 1, 2],
 									prev: i > p[0]
 										? ret[id][map][
 											ret[id][map].length - 1
 										].pos
 										: undefined,
-									drops: BuildDrops(`${prefix}-${i}${postfix[2]}`, id, map, i, "Ex"),
+									drops: BuildDrops(`${prefix}-${i}${postfix[2]}`, id, map, i, "Ex", postfix[2]),
 								});
 							}
 						} else {
+							let p;
+							let base;
+							if (x.includes(">")) {
+								base = parseInt(x.substr(x.indexOf(">") + 1), 10);
+								p = x.substr(0, x.indexOf(">"));
+							} else {
+								p = parseInt(x, 10);
+								base = p;
+							}
+
 							ret[id][map].push({
 								type: "Ex",
 								name: `${prefix}-${x}${postfix[2]}`,
-								pos: [parseInt(x) - 1, 2],
-								drops: BuildDrops(`${prefix}-${x}${postfix[2]}`, id, map, x, "Ex"),
+								pos: [base - 1, 2],
+								drops: BuildDrops(`${prefix}-${p}${postfix[2]}`, id, map, x, "Ex", postfix[2]),
 							});
 						}
 					});
@@ -393,7 +452,7 @@ function process (auth) {
 							type: "C",
 							name: `${prefix}-${p[0]}${postfix[3]}`,
 							pos: p.slice(1),
-							drops: BuildDrops(`${prefix}-${p[0]}${postfix[3]}`, id, map, p[0], "C"),
+							drops: BuildDrops(`${prefix}-${p[0]}${postfix[3]}`, id, map, p[0], "C", postfix[3]),
 						});
 					});
 				})(C || "");

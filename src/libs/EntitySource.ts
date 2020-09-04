@@ -1,3 +1,5 @@
+import { WorldNames } from "@/libs/Const";
+
 export default class EntitySource {
 	public readonly source: string;
 
@@ -79,13 +81,7 @@ export default class EntitySource {
 	public get EventName () {
 		if (!this.IsEvent) return "";
 
-		switch (this.Parts[1]) {
-			case "OrcaFix":
-				return "오르카호를 수복하라!";
-			case "FairyAria":
-				return "요정 마을의 아리아";
-		}
-		return this.Parts[1];
+		return (this.Parts[1] in WorldNames) ? WorldNames[this.Parts[1]] : this.Parts[1];
 	}
 
 	/** 부수를 포함한 이벤트 이름 */

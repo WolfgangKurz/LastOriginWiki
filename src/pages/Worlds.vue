@@ -2,8 +2,12 @@
 	<div class="worlds text-left">
 		<h2>세계 정보</h2>
 
-		<world-item name="전투 지도" :areas="8" :disabled="[8]" wid="Story" @goto="GoTo" />
 		<world-item name="요정 마을의 아리아" event :areas="3" wid="FairyAria" @goto="GoTo" />
+		<hr />
+
+		<world-item name="전투 지도" :areas="8" :disabled="[8]" wid="Story" @goto="GoTo" />
+		<world-item name="지고의 저녁식사" event :areas="1" wid="SupremeDinner" @goto="GoTo" />
+		<world-item name="리오보로스의 유산" event :areas="3" wid="Rioboros" @goto="GoTo" />
 	</div>
 </template>
 
