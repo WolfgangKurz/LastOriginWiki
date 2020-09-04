@@ -128,7 +128,7 @@ import MapNode from "./MapNode.vue";
 import DropUnit from "./DropUnit.vue";
 import DropEquip from "./DropEquip.vue";
 
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot, WorldNames } from "@/libs/Const";
 import { MapNodeEntity, MapNodeX, MapNodeY } from "@/libs/Types";
 import { MapData } from "@/libs/DB";
 
@@ -155,11 +155,7 @@ export default class WorldMap extends Vue {
 	}
 
 	private get WorldName () {
-		switch (this.world) {
-			case "Story": return "메인스토리";
-			case "FairyAria": return "요정 마을의 아리아";
-		}
-		return this.world;
+		return (this.world in WorldNames ? WorldNames[this.world] : this.world);
 	}
 
 	private get UnitDrops () {

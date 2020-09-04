@@ -128,6 +128,7 @@ import { EquipData } from "@/libs/DB";
 import { ArrayUnique, UpdateTitle } from "@/libs/Functions";
 import { Equip, Rarity, EquipType } from "@/libs/Types";
 import EntitySource from "@/libs/EntitySource";
+import { Dictionary } from "@/libs/Interface";
 
 interface DisplayType {
 	Type: {
@@ -221,9 +222,6 @@ export default class Equips extends Vue {
 	}
 
 	private get EquipNames () {
-		interface Dictionary<T> {
-			[key: string]: T;
-		}
 		return EquipNameTable as Dictionary<string>;
 	}
 

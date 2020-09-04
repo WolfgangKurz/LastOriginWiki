@@ -61,13 +61,10 @@ import UnitEditModal from "./Simulation/UnitEditModal.vue";
 
 import { UnitStatsData } from "@/libs/DB";
 import { Unit, UnitStats, UnitStatsPoint } from "@/libs/Types";
+import { UpdateTitle } from "@/libs/Functions";
+import { Dictionary } from "@/libs/Interface";
 
 import Simulation from "./Simulation/Simulation/Simulation";
-import { UpdateTitle } from "@/libs/Functions";
-
-interface Dictionary<T> {
-	[key: string]: T;
-}
 
 @Component({
 	components: {
