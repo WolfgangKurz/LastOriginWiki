@@ -11,6 +11,11 @@
 			<b-collapse id="changelog20200904" visible>
 				<b-card-body>
 					<div>
+						<b-badge variant="event-old">지고의 저녁식사</b-badge>및
+						<b-badge variant="event-old">리오보로스의 유산</b-badge>이벤트의
+						드랍 정보, <b-badge variant="warning">세계 정보</b-badge>를 추가했습니다.
+					</div>
+					<div>
 						<b-badge variant="warning">장비정보</b-badge>의 필터 기능이 제대로 작동하지 않던 문제를 수정했습니다.
 					</div>
 					<div>
