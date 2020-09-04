@@ -11,8 +11,8 @@
 			<b-collapse id="changelog20200904" visible>
 				<b-card-body>
 					<div>
-						<b-badge variant="event-old">지고의 저녁식사</b-badge>및
-						<b-badge variant="event-old">리오보로스의 유산</b-badge>이벤트의
+						<b-badge variant="event-exchange-old">지고의 저녁식사</b-badge>및
+						<b-badge variant="event-exchange-old">리오보로스의 유산</b-badge>이벤트의
 						드랍 정보, <b-badge variant="warning">세계 정보</b-badge>를 추가했습니다.
 					</div>
 					<div>
