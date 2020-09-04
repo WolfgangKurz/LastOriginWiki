@@ -304,12 +304,6 @@ export default class Equips extends Vue {
 				if (!types.includes(baseType)) return false;
 
 				// 획득처
-				sources
-					.filter(x => x.IsEvent && x.IsExchange)
-					.forEach(x => {
-						console.log(y.name, x.EventId, CurrentEvent);
-					});
-
 				if (this.Display.Type.EndlessWar && sources.some(x => x.IsEndlessWar)) return true;
 
 				if (this.Display.Source.Exchange && sources.some(x => x.IsExchange && !x.IsEvent)) return true;
