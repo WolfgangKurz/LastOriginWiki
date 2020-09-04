@@ -14,9 +14,6 @@ import { BootstrapVue, LayoutPlugin, ModalPlugin, CardPlugin } from "bootstrap-v
 import Router from "./Router";
 import App from "./App.vue";
 
-$("<div>").prop("id", "app")
-	.appendTo($("body"));
-
 Vue.config.productionTip = false;
 
 Vue.use(VueRouter);
