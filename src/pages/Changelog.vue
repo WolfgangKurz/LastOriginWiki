@@ -7,13 +7,47 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200906>2020-09-06</b-card-header>
+			<b-collapse id="changelog20200906" visible>
+				<b-card-body>
+					<div>
+						<b-badge variant="warning">장비정보</b-badge>의 필터가 올바르게 작동하지 않던 문제를 수정했습니다.
+						<br />
+						<b-badge variant="exchange-old">이전 교환소</b-badge>필터가 추가되었습니다.
+						<br />
+						<b-badge variant="stat-acc">전용장비</b-badge>를 장착할 수 있는 전투원 표시가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">세계정보</b-badge>의 레이아웃 및 디자인이 변경되었습니다.
+						<br />
+						<b-badge variant="warning">구역 정보</b-badge>페이지에
+						<a href="https://lastoriginmap.github.io/index.html" target="_blank">
+							<b-badge variant="primary">철충 지도</b-badge>사이트
+						</a>로 이동할 수 있는 버튼이 추가되었습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200905>2020-09-05</b-card-header>
+			<b-collapse id="changelog20200905">
+				<b-card-body>
+					<div>
+						<b-badge variant="warning">블랙 리리스</b-badge>의 대사 정보가 추가되었습니다.
+					</div>
+					<div>대사가 있는 전투원의 추가된 스킨 대사가 목록에 표시되지 않는 문제가 수정되었습니다.</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200904>2020-09-04</b-card-header>
-			<b-collapse id="changelog20200904" visible>
+			<b-collapse id="changelog20200904">
 				<b-card-body>
 					<div>
 						<b-badge variant="event-exchange-old">지고의 저녁식사</b-badge>및
 						<b-badge variant="event-exchange-old">리오보로스의 유산</b-badge>이벤트의
-						드랍 정보, <b-badge variant="warning">세계 정보</b-badge>를 추가했습니다.
+						드랍 정보,
+						<b-badge variant="warning">세계 정보</b-badge>를 추가했습니다.
 					</div>
 					<div>
 						<b-badge variant="warning">장비정보</b-badge>의 필터 기능이 제대로 작동하지 않던 문제를 수정했습니다.

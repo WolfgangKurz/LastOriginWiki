@@ -10,20 +10,29 @@
 						title-link-class="text-dark"
 						:active="displayTab === 'information'"
 						@click="displayTab = 'information'"
-						title="전투원 정보"
-					/>
+					>
+						<template #title>
+							<b-icon-person-lines-fill class="mr-1" />전투원정보
+						</template>
+					</b-tab>
 					<b-tab
 						title-link-class="text-dark"
 						:active="displayTab === 'dialogue'"
 						@click="displayTab = 'dialogue'"
-						title="대사"
-					/>
+					>
+						<template #title>
+							<b-icon-chat-left-quote class="mr-1" />대사
+						</template>
+					</b-tab>
 					<b-tab
 						title-link-class="text-dark"
 						:active="displayTab === 'status'"
 						@click="displayTab = 'status'"
-						title="스테이터스"
-					/>
+					>
+						<template #title>
+							<b-icon-calculator class="mr-1" />스테이터스
+						</template>
+					</b-tab>
 				</b-tabs>
 			</b-col>
 		</b-row>
@@ -410,7 +419,7 @@ export default class UnitView extends Vue {
 	private unitId: number = 0;
 	private skillLevel: number = 0;
 
-	private linkBonus: "" | "discount" | "skill" | "buff" = "";
+	private linkBonus: "" | "discount" | "skill" | "buff" | "range" = "";
 
 	private statusSerialized: string | null = null;
 
@@ -593,16 +602,10 @@ export default class UnitView extends Vue {
 
 		// 캐릭터 기본 스킨
 		list.push({
+			...skin,
 			t: this.unit.name,
-			offset: skin.offset,
-			D: skin.D,
-			S: skin.S,
-			X: skin.X,
-			A: skin.A,
-			G: skin.G,
 			isDef: true,
 			isPro: false,
-			artist: skin.artist,
 			name: "",
 			desc: "",
 		});

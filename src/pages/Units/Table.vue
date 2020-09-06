@@ -79,14 +79,14 @@
 			</b-btn-group>
 		</div>
 
-		<b-row class="mb-4 mx-4">
-			<b-col>
+		<div class="mb-4 mx-4">
+			<b-input-group>
 				<b-input v-model="SearchText" placeholder="전투원 검색" />
-			</b-col>
-			<b-col cols="auto">
-				<b-button variant="danger" @click="SearchText = ''">지우기</b-button>
-			</b-col>
-		</b-row>
+				<b-input-group-append>
+					<b-button variant="danger" @click="SearchText = ''">지우기</b-button>
+				</b-input-group-append>
+			</b-input-group>
+		</div>
 
 		<template v-for="type in TypeList">
 			<b-table-simple

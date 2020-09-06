@@ -467,16 +467,10 @@ export default class UnitModal extends Vue {
 
 		// 캐릭터 기본 스킨
 		list.push({
+			...skin,
 			t: this.unit.name,
-			offset: skin.offset,
-			D: skin.D,
-			S: skin.S,
-			X: skin.X,
-			A: skin.A,
-			G: skin.G,
 			isDef: true,
 			isPro: false,
-			artist: skin.artist,
 			name: "",
 			desc: "",
 		});

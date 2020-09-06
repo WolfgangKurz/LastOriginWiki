@@ -1,24 +1,16 @@
 <template>
-	<b-card class="world-item mt-4" text-variant="light" bg-variant="dark" no-body>
-		<b-card-header>
-			<img v-if="event" class="event-text" :src="`${AssetsRoot}/world/event.png`" />
-			{{name}}
-		</b-card-header>
-		<b-card-body>
-			<b-row cols="2" cols-md="4" cols-lg="8">
-				<a
-					v-for="i in areas"
-					:key="`worlds-${wid}-${i}`"
-					class="area-name"
-					:href="`/worlds/${wid}/${i}`"
-					:data-disabled="disabled.includes(i) ? 1 : 0"
-					@click.prevent="!disabled.includes(i) && GoTo(`/worlds/${wid}/${i}`)"
-				>
-					<img :src="`${AssetsRoot}/world/areaname-y.png`" />
-					<span>제 {{i}}구역</span>
-				</a>
-			</b-row>
-		</b-card-body>
+	<b-card class="world-item mb-4" text-variant="light" bg-variant="dark">
+		<b-row class="text-left">
+			<b-col cols="auto">
+				<img :src="`${AssetsRoot}/world/icons/${wid}_1.png`" />
+			</b-col>
+			<b-col>
+				<div class="world-item-name">{{Name}}</div>
+				<hr class="my-1" />
+				<div class="world-item-desc">{{Description}}</div>
+			</b-col>
+		</b-row>
+		<a v-if="linked" :href="`/worlds/${wid}`" class="stretched-link" @click.prevent="Click" />
 	</b-card>
 </template>
 
@@ -27,16 +19,10 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Emit, Prop } from "vue-property-decorator";
 
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot, WorldNames } from "@/libs/Const";
 
 @Component({})
 export default class WorldItem extends Vue {
-	@Prop({
-		type: Number,
-		required: true,
-	})
-	private areas!: number;
-
 	@Prop({
 		type: String,
 		required: true,
@@ -44,66 +30,57 @@ export default class WorldItem extends Vue {
 	private wid!: string;
 
 	@Prop({
-		type: String,
-		default: "지역",
-	})
-	private name!: string;
-
-	@Prop({
 		type: Boolean,
 		default: false,
 	})
-	private event!: boolean;
-
-	@Prop({
-		type: Array,
-		default: () => [],
-		validator: (x) => Array.isArray(x) && x.every(y => typeof y === "number"),
-	})
-	private disabled!: number[];
+	private linked!: boolean;
 
 	private get AssetsRoot () {
 		return AssetsRoot;
 	}
 
-	@Emit("goto")
-	private GoTo (destination: string) {
-		return undefined;
+	private get Name () {
+		return WorldNames[this.wid] || this.wid;
+	}
+
+	private get Description () {
+		switch (this.wid) {
+			case "Story": return "";
+			case "SupremeDinner": return "소완으로 인해 혼란에 빠진 오르카 안에선 무슨 일이?";
+			case "Rioboros": return "리오보로스의 유산을 찾아 떠나는 모험!";
+			case "FullMoonNocturne": return "마법 소녀들과 함께 뽀끄루 대마왕을 물리쳐주세요!";
+			case "HalloweenPanic": return "과거에 얽매이지 마. 지금을 즐기는 거야!";
+			case "SaintOrca": return "연말 파티를 준비하는 사령관에게 뻗쳐오는 마수는?";
+			case "ChocolateQueen": return "티아멧은 '초코 여왕'과 얽힌 멸망 전 인류의 일그러짐과 마주하는데..";
+			case "FairyAria": return "가벼운 마음으로 요정 마을로 향한 사령관에게...?";
+		}
+		return this.wid;
+	}
+
+	private Click () {
+		this.$emit("goto", `/worlds/${this.wid}`);
 	}
 }
 </script>
 
 <style lang="scss">
 .world-item {
-	.event-text {
-		float: right;
-		height: 24px;
-	}
-	.area-name {
-		position: relative;
-		display: inline-block;
-
-		&[data-disabled="1"] {
-			filter: grayscale(1);
-		}
-
-		> img {
+	.card-body {
+		img {
 			width: 100%;
+			max-width: 6rem;
 		}
-		> span {
-			position: absolute;
-			display: inline-flex;
-			padding-bottom: 4px;
-			left: 0;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			justify-content: center;
-			align-items: center;
-			text-align: center;
-			font-weight: 500;
-			font-size: 24px;
-			color: #000;
+
+		.world-item-name {
+			font-size: 1.25rem;
+		}
+		.world-item-desc {
+			word-break: keep-all;
+			font-size: 0.875rem;
+			opacity: 0.875;
+		}
+		hr {
+			border-top-color: rgba(255, 255, 255, 0.1);
 		}
 	}
 }

@@ -46,6 +46,7 @@ export default class SourceBadge extends Vue {
 
 	private render () {
 		const variant = (() => {
+			if (this.Source.IsPrivateItem) return "stat-acc";
 			if (this.Source.IsLimited) return "secondary";
 			if (this.Source.IsEndlessWar) return this.minimum ? "light" : "dark";
 			if (this.Source.IsSideMap) return "success";
@@ -65,7 +66,10 @@ export default class SourceBadge extends Vue {
 		})();
 
 		const content = (() => {
-			if (this.Source.IsLimited)
+			if (this.Source.IsPrivateItem) {
+				const unit = UnitData[this.Source.PrivateId];
+				return `${unit.name}`;
+			} else if (this.Source.IsLimited)
 				return "획득처 없음";
 			else if (this.Source.IsEndlessWar) {
 				if (this.detail)

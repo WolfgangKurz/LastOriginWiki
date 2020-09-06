@@ -17,6 +17,12 @@
 			</b-card-body>
 		</b-collapse>
 	</b-card>
+	<b-card v-else class="mt-2 text-left unit-dialogue-empty" no-body>
+		<b-card-header>
+			{{voice.t}}
+			<b-badge variant="secondary" class="ml-3">보이스 없는 스킨</b-badge>
+		</b-card-header>
+	</b-card>
 </template>
 
 <script lang="ts">
@@ -166,6 +172,7 @@ export default class UnitDialogue extends Vue {
 	}
 
 	private get IsVoiceAvailable () {
+		/*
 		if (!(this.unit.id in UnitDialogueData))
 			return (this.voice.isMarry && this.unit.marry) || !this.voice.isMarry;
 
@@ -179,6 +186,8 @@ export default class UnitDialogue extends Vue {
 			return true;
 
 		return false;
+		*/
+		return this.voice.V;
 	}
 
 	private get IsNotSet () {
@@ -200,4 +209,7 @@ export default class UnitDialogue extends Vue {
 </script>
 
 <style lang="scss">
+.unit-dialogue-empty {
+	opacity: 0.5;
+}
 </style>

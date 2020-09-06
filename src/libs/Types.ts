@@ -334,6 +334,9 @@ export interface RawSkin {
 	/** Skin Price */
 	price?: number;
 
+	/** Has Voice */
+	V: boolean;
+
 	/** Damaaged */
 	D: boolean;
 
@@ -362,6 +365,9 @@ export interface SkinInfo {
 
 	/** Offset */
 	offset: SkinOffset;
+
+	/** Has Voice */
+	V: boolean;
 
 	/** Damaaged */
 	D: boolean;

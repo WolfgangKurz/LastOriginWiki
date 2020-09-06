@@ -7,19 +7,25 @@
 					class="btn btn-outline-info"
 					:class="{ active: DisplayType === 'table' }"
 					@click="DisplayType = 'table'"
-				>테이블 보기</button>
+				>
+					<b-icon-table class="mr-1" />테이블 보기
+				</button>
 				<button
 					type="button"
 					class="btn btn-outline-info"
 					:class="{ active: DisplayType === 'list' }"
 					@click="DisplayType = 'list'"
-				>목록 보기</button>
+				>
+					<b-icon-grid-3x3-gap-fill class="mr-1" />목록 보기
+				</button>
 				<button
 					type="button"
 					class="btn btn-outline-info"
 					:class="{ active: DisplayType === 'group' }"
 					@click="DisplayType = 'group'"
-				>그룹별 보기</button>
+				>
+					<b-icon-tags-fill class="mr-1" />그룹별 보기
+				</button>
 			</div>
 		</div>
 
