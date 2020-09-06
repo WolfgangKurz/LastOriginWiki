@@ -11,6 +11,10 @@
 			<b-collapse id="changelog20200906" visible>
 				<b-card-body>
 					<div>
+						<b-badge variant="warning">트리아이나</b-badge>의 2번째 액티브
+						<b-badge variant="info">사이클론 스트림</b-badge>의 받는 피해 증가 수치가 누락된 문제를 수정했습니다.
+					</div>
+					<div>
 						<b-badge variant="warning">장비정보</b-badge>의 필터가 올바르게 작동하지 않던 문제를 수정했습니다.
 						<br />
 						<b-badge variant="exchange-old">이전 교환소</b-badge>필터가 추가되었습니다.
