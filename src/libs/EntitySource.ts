@@ -11,6 +11,17 @@ export default class EntitySource {
 		return this.source.split(":");
 	}
 
+	// -------------- SourceBadge 컴포넌트 사용
+	/** 전용 장비 여부 */
+	public get IsPrivateItem () {
+		return this.Parts[0] === "Private";
+	}
+
+	/** 전용 장비 사용 가능 전투원 */
+	public get PrivateId () {
+		return parseInt(this.Parts[1], 10);
+	}
+
 	// -------------- 교환소
 	/** 교환소 교환 획득 여부 */
 	public get IsExchange () {
@@ -112,7 +123,7 @@ export default class EntitySource {
 	}
 
 	public get IsMap () {
-		return !this.IsEndlessWar && !this.IsApocrypha && !this.IsExchange && !this.IsLimited;
+		return !this.IsEndlessWar && !this.IsApocrypha && !this.IsExchange && !this.IsLimited && !this.IsPrivateItem;
 	}
 
 	public get IsReward () {
@@ -163,6 +174,9 @@ export default class EntitySource {
 
 	public toString () {
 		let output = "";
+
+		if (this.IsPrivateItem)
+			output += "Private";
 
 		if (this.IsLimited)
 			output += "Limit";

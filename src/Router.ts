@@ -11,7 +11,8 @@ import Equips from "@/pages/Equips.vue";
 import Facilities from "@/pages/Facilities.vue";
 
 import Worlds from "@/pages/Worlds.vue";
-import WorldMap from "@/pages/Worlds/WorldMap.vue";
+import WorldAreaView from "@/pages/Worlds/WorldAreaView.vue";
+import WorldMapView from "@/pages/Worlds/WorldMapView.vue";
 
 import Changelog from "@/pages/Changelog.vue";
 
@@ -65,12 +66,16 @@ const Router = new VueRouter({
 			component: Worlds,
 		},
 		{
+			path: "/worlds/:world",
+			component: WorldAreaView,
+		},
+		{
 			path: "/worlds/:world/:area",
-			component: WorldMap,
+			component: WorldMapView,
 		},
 		{
 			path: "/worlds/:world/:area/:node",
-			component: WorldMap,
+			component: WorldMapView,
 		},
 
 		{

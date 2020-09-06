@@ -2,7 +2,7 @@
 	<div class="equips">
 		<div class="text-center mb-3">
 			<b-alert variant="warning" show>
-				"오르카호를 수복하라!" 이전 이벤트 정보가 입력되지 않았습니다.
+				"만월의 야상곡", "할로윈 파크 패닉!", "세인트 오르카의 비밀작전", "이상한 나라의 초코여왕" 이벤트 정보가 입력되지 않았습니다.
 				드랍처 및 교환소 정보를 입력하지 않아 일부 장비가
 				<b-badge variant="secondary">한정</b-badge>으로 분류 및 표시될 수 있습니다.
 				<br />또, 장비 좌측 상단의
@@ -13,7 +13,7 @@
 			</b-alert>
 		</div>
 
-		<b-btn-group class="mx-2 mb-2">
+		<b-btn-group class="mx-2">
 			<b-button
 				variant="outline-secondary"
 				:pressed="Display.Type.Chip"
@@ -31,7 +31,7 @@
 				@click="Filter('Type', 'Private')"
 			>전용장비</b-button>
 		</b-btn-group>
-
+		<hr class="my-2" />
 		<div clas="mx-1 mb-1">
 			<b-btn-group class="mx-1 mb-1">
 				<b-button
@@ -40,15 +40,20 @@
 					@click="Filter('Type', 'EndlessWar')"
 				>영원한 전장</b-button>
 				<b-button
+					variant="outline-apocrypha"
+					:pressed="Display.Source.Apocrypha"
+					@click="Filter('Source', 'Apocrypha')"
+				>외전</b-button>
+				<b-button
 					variant="outline-exchange"
 					:pressed="Display.Source.Exchange"
 					@click="Filter('Source', 'Exchange')"
 				>교환소</b-button>
 				<b-button
-					variant="outline-apocrypha"
-					:pressed="Display.Source.Apocrypha"
-					@click="Filter('Source', 'Apocrypha')"
-				>외전</b-button>
+					variant="outline-exchange-old"
+					:pressed="Display.Source.OldExchange"
+					@click="Filter('Source', 'OldExchange')"
+				>지난 교환소</b-button>
 			</b-btn-group>
 			<b-btn-group class="mx-1 mb-1">
 				<b-button
@@ -57,7 +62,7 @@
 					@click="Filter('Source', 'EventExchange')"
 				>이벤트 교환소</b-button>
 				<b-button
-					variant="outline-event-exchange"
+					variant="outline-event-exchange-old"
 					:pressed="Display.Source.OldEventExchange"
 					@click="Filter('Source', 'OldEventExchange')"
 				>지난 이벤트 교환소</b-button>
@@ -142,6 +147,7 @@ interface DisplayType {
 		EventExchange: boolean;
 		OldEventExchange: boolean;
 		Exchange: boolean;
+		OldExchange: boolean;
 		Apocrypha: boolean;
 		Limited: boolean;
 		ExMap: boolean;
@@ -174,6 +180,7 @@ export default class Equips extends Vue {
 			EventExchange: true,
 			OldEventExchange: true,
 			Exchange: true,
+			OldExchange: true,
 			Apocrypha: true,
 			Limited: true,
 			ExMap: true,
@@ -241,6 +248,11 @@ export default class Equips extends Vue {
 					let map = false;
 
 					for (const item of items) {
+						if (item.limit && item.limit.every(y => typeof y === "number")) {
+							item.limit
+								.forEach(y => list.push(new EntitySource(`Private:${y}`)));
+						}
+
 						for (const area of item.source) {
 							for (const es of area) {
 								// 현재 이벤트 맵 드랍 / 교환소 대상일 경우에만
@@ -258,11 +270,19 @@ export default class Equips extends Vue {
 
 					// 맵 한군데서만 드랍
 					const output = ArrayUnique(list, y => y.toString());
-					if (output.length === 1 && output[0].IsMap)
+					const exceptPrivate = output.filter(y => !y.IsPrivateItem);
+					if (exceptPrivate.length === 1 && exceptPrivate[0].IsMap)
 						return output;
-					else if (output.length === 0 && !map)
-						return [new EntitySource("Limited")];
-					else
+					else if (exceptPrivate.length === 0 && !map) {
+						return [
+							...(
+								output.length !== exceptPrivate.length
+									? [...output.filter(y => y.IsPrivateItem)]
+									: []
+							),
+							new EntitySource("Limited"),
+						];
+					} else
 						return output;
 				})(group[x]);
 
@@ -271,6 +291,11 @@ export default class Equips extends Vue {
 					source,
 					sourceRaw: group[x].reduce(
 						(p, c) => [
+							...(
+								c.limit && c.limit.every(y => typeof y === "number")
+									? c.limit.map(y => new EntitySource(`Private:${y}`))
+									: []
+							),
 							...p,
 							...c.source.reduce((p2, c2) => [...p2, ...c2], []),
 						],
@@ -290,23 +315,22 @@ export default class Equips extends Vue {
 
 				// 전용장비
 				const first = group[x][0];
-				if (
-					first.limit &&
-					first.limit.every(y => typeof y === "number") &&
-					!this.Display.Type.Private
-				) return false;
-
-				// 그 외 유형
-				const types = [];
-				if (this.Display.Type.Chip) types.push("chip");
-				if (this.Display.Type.OS) types.push("os");
-				if (this.Display.Type.Public) types.push("item");
-				if (!types.includes(baseType)) return false;
+				if (first.limit && first.limit.every(y => typeof y === "number")) { // 전용 장비임
+					if (!this.Display.Type.Private) return false; // 전용 장비 필터가 꺼짐
+				} else { // 그 외 유형
+					const types = [];
+					if (this.Display.Type.Chip) types.push("chip");
+					if (this.Display.Type.OS) types.push("os");
+					if (this.Display.Type.Public) types.push("item");
+					if (!types.includes(baseType)) return false;
+				}
 
 				// 획득처
 				if (this.Display.Type.EndlessWar && sources.some(x => x.IsEndlessWar)) return true;
 
-				if (this.Display.Source.Exchange && sources.some(x => x.IsExchange && !x.IsEvent)) return true;
+				if (this.Display.Source.Exchange && sources.some(x => x.IsExchange && !x.IsEvent && x.ExchangeDate === CurrentDate)) return true;
+				if (this.Display.Source.OldExchange && sources.some(x => x.IsExchange && !x.IsEvent && x.ExchangeDate !== CurrentDate)) return true;
+
 				if (this.Display.Source.Apocrypha && sources.some(x => x.IsApocrypha)) return true;
 				if (this.Display.Source.EventExchange && sources.some(x => x.IsEvent && x.IsExchange && x.EventId === CurrentEvent)) return true;
 				if (this.Display.Source.OldEventExchange && sources.some(x => x.IsEvent && x.IsExchange && x.EventId !== CurrentEvent)) return true;
@@ -323,9 +347,14 @@ export default class Equips extends Vue {
 			})
 			.map(x => ({
 				name: x.name,
-				source: x.source.length === 1 && x.source[0].IsMap
-					? x.source
-					: x.source.filter(y => !y.IsMap),
+				source: ((y) => {
+					const m = y.filter(z => !z.IsPrivateItem);
+
+					if (m.length === 1 && m[0].IsMap)
+						return y;
+					else
+						return y.filter(z => z.IsPrivateItem || !z.IsMap);
+				})(x.source),
 			}));
 	}
 

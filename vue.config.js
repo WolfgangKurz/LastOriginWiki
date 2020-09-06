@@ -15,6 +15,8 @@ module.exports = {
 		// 스크립트 preload, prefetch 태그 삽입 무시
 		config.plugins.delete("preload");
 		config.plugins.delete("prefetch");
+		config.plugins.delete("preload-app");
+		config.plugins.delete("prefetch-app");
 
 		// 소스맵 형식 (기본값은 cheap-module-eval-source-map)
 		if (process.env.NODE_ENV === "development")

@@ -2,7 +2,9 @@
 	<div class="world-map text-left">
 		<b-row>
 			<b-col cols="auto">
-				<b-button variant="dark" @click="GoTo('/worlds/')">뒤로</b-button>
+				<b-button variant="dark" @click="GoTo(`/worlds/${world}`)">
+					<b-icon-arrow-left class="mr-1" />구역 목록으로
+				</b-button>
 			</b-col>
 		</b-row>
 		<hr />
@@ -11,6 +13,18 @@
 			<b-card-header>
 				{{WorldName}}
 				<b-badge class="ml-2" variant="warning">제 {{area}}구역</b-badge>
+
+				<div class="float-right">
+					<a
+						:href="`https://lastoriginmap.github.io/area.html?areanum=${EnemyMapAreaId}`"
+						target="_blank"
+					>
+						<b-button size="sm" variant="primary">
+							철충 지도
+							<b-icon-link-45deg class="ml-1" />
+						</b-button>
+					</a>
+				</div>
 			</b-card-header>
 
 			<div class="world-map-bg">
@@ -131,6 +145,7 @@ import DropEquip from "./DropEquip.vue";
 import { AssetsRoot, WorldNames } from "@/libs/Const";
 import { MapNodeEntity, MapNodeX, MapNodeY } from "@/libs/Types";
 import { MapData } from "@/libs/DB";
+import { UpdateTitle } from "@/libs/Functions";
 
 @Component({
 	components: {
@@ -139,7 +154,7 @@ import { MapData } from "@/libs/DB";
 		DropEquip,
 	},
 })
-export default class WorldMap extends Vue {
+export default class WorldMapView extends Vue {
 	private world: string = "";
 	private area: string = "";
 
@@ -152,6 +167,20 @@ export default class WorldMap extends Vue {
 
 	private get AssetsRoot () {
 		return AssetsRoot;
+	}
+
+	private get EnemyMapAreaId (): string {
+		switch (this.world) {
+			case "Story": return `${this.area}`;
+			case "SupremeDinner": return `Ev1${this.area}`;
+			case "Rioboros": return `Ev2${this.area}`;
+			case "FullMoonNocturne": return `Ev3${this.area}`;
+			case "HalloweenPanic": return `Ev4${this.area}`;
+			case "SaintOrca": return `Ev5${this.area}`;
+			case "ChocolateQueen": return `Ev6${this.area}`;
+			case "FairyAria": return `Ev7${this.area}`;
+		}
+		return "";
 	}
 
 	private get WorldName () {
@@ -237,8 +266,11 @@ export default class WorldMap extends Vue {
 	private checkParams () {
 		const params = this.$route.params;
 
-		if (!("world" in params) || !("area" in params)) {
-			this.$router.replace("/worlds/");
+		if (!("area" in params)) {
+			if (!("world" in params))
+				this.$router.replace("/worlds/");
+			else
+				this.$router.replace(`/worlds/${params.world}`);
 			return;
 		}
 
@@ -259,6 +291,7 @@ export default class WorldMap extends Vue {
 
 	private mounted () {
 		this.checkParams();
+		UpdateTitle(["세계정보", this.WorldName, `제 ${this.area}구역`]);
 	}
 }
 </script>
