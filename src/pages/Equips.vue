@@ -343,6 +343,9 @@ export default class Equips extends Vue {
 				if (this.Display.Source.Map && sources.some(x => x.IsMap && !x.IsExMap && !x.IsSideMap && !x.IsEvent)) return true;
 				if (this.Display.Source.Limited && sources.some(x => x.IsLimited)) return true;
 
+				if (this.Display.Source.Exchange)
+					console.log(x, y, sources);
+
 				return false;
 			})
 			.map(x => ({
