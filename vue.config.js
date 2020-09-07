@@ -105,7 +105,7 @@ module.exports = {
 		loaderOptions: {
 			sass: {
 				// CSS 전역 기본값
-				prependData,
+				additionalData: prependData,
 			},
 		},
 	},
