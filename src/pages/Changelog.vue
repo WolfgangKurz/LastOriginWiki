@@ -26,6 +26,9 @@
 					<div>
 						<b-badge variant="warning">마법소녀 매지컬 백토</b-badge>의 서약 후 보이스 오디오 파일이 추가되었습니다.
 					</div>
+					<div>
+						<b-badge variant="warning">전략 폭격 장비</b-badge>의 수치에 공격력이 누락된 점이 수정되었습니다.
+					</div>
 				</b-card-body>
 			</b-collapse>
 		</b-card>
