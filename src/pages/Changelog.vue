@@ -7,8 +7,31 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200907>2020-09-07</b-card-header>
+			<b-collapse id="changelog20200907" visible>
+				<b-card-body>
+					<div>
+						<b-badge variant="warning">T-8W 발키리</b-badge>의 3번째 패시브
+						<b-badge variant="info">발할라로 이끄는 자</b-badge>의 상세 수치가 입력되었습니다.<br/>
+						<b-badge variant="warning">T-8W 발키리</b-badge>의 SS 승급 스테이터스가 입력되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">GS-10 샌드걸</b-badge>의 2번째 액티브
+						<b-badge variant="info">AT 미사일</b-badge>및 1번째 패시브
+						<b-badge variant="info">지상군 호위</b-badge>의 상세 수치가 입력되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">마법소녀 매지컬 모모</b-badge>의 서약 후 보이스 오디오 파일이 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">마법소녀 매지컬 백토</b-badge>의 서약 후 보이스 오디오 파일이 추가되었습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200906>2020-09-06</b-card-header>
-			<b-collapse id="changelog20200906" visible>
+			<b-collapse id="changelog20200906">
 				<b-card-body>
 					<div>
 						<b-badge variant="warning">트리아이나</b-badge>의 2번째 액티브
