@@ -7,8 +7,19 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200909>2020-09-09</b-card-header>
+			<b-collapse id="changelog20200909" visible>
+				<b-card-body>
+					<div>
+						<b-badge variant="warning">프로스트 서펀트</b-badge>의 2번째 패시브
+						<b-badge variant="info">불굴의 소방관</b-badge>의 설명이 잘못 해석될 수 있는 부분을 수정했습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200907>2020-09-07</b-card-header>
-			<b-collapse id="changelog20200907" visible>
+			<b-collapse id="changelog20200907">
 				<b-card-body>
 					<div>
 						<b-badge variant="warning">T-8W 발키리</b-badge>의 3번째 패시브
