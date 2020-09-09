@@ -4,6 +4,7 @@
 			<img class="heading-icon" :src="`${AssetsRoot}/icon.png`" />
 			멸망 전의 전술 교본
 		</h2>
+		<div class="mb-4 text-secondary">{{BuildTime}}에 빌드됨</div>
 
 		<b-alert v-if="imageExt === 'png'" variant="danger" show>
 			현재
@@ -46,6 +47,8 @@ import Component from "vue-class-component";
 import { ImageExtension, AssetsRoot } from "@/libs/Const";
 import { UpdateTitle } from "@/libs/Functions";
 
+import BuildTime from "@/buildtime";
+
 @Component({})
 export default class Home extends Vue {
 	private get AssetsRoot () {
@@ -54,6 +57,13 @@ export default class Home extends Vue {
 
 	private get imageExt () {
 		return ImageExtension();
+	}
+
+	private get BuildTime () {
+		if (process.env.NODE_ENV === "development")
+			return "Development Mode";
+		else
+			return BuildTime;
 	}
 
 	private mounted () {

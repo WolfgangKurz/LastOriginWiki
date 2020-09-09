@@ -1,11 +1,29 @@
 const path = require("path");
 const os = require("os");
+const fs = require("fs");
 
 const prependData = [
 	`$NODE_ENV: "${process.env.NODE_ENV}";`,
 	"@import \"@/theme.scss\";",
 	"@import \"@/theme/_base\";",
 ].join("\n") + "\n";
+
+fs.writeFileSync(
+	path.resolve(__dirname, "src", "buildtime.ts"),
+	(() => {
+		const pad = (x, y) => x.toString().padStart(y, "0");
+
+		const dt = new Date();
+		const y = dt.getUTCFullYear();
+		const m = dt.getUTCMonth() + 1;
+		const d = dt.getUTCDate();
+		const h = dt.getUTCHours();
+		const i = dt.getUTCMinutes();
+		const s = dt.getUTCSeconds();
+		return `export default "UTC ${pad(y, 4)}-${pad(m, 2)}-${pad(d, 2)} ${pad(h, 2)}:${pad(i, 2)}:${pad(s, 2)}";\n`;
+	})(),
+	{ encoding: "utf-8" },
+);
 
 module.exports = {
 	chainWebpack: config => {
