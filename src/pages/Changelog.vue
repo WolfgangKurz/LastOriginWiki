@@ -7,8 +7,39 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200910>2020-09-10</b-card-header>
+			<b-collapse id="changelog20200910" visible>
+				<b-card-body>
+					<div>
+						<b-badge variant="warning">프로스트 서펀트</b-badge>의 1번째 액티브
+						<b-badge variant="info">고압 분사</b-badge>의 스킬 범위가 수정되었습니다. (AP 소모는 업데이트 이후 갱신 예정)
+					</div>
+					<div>
+						<b-badge variant="warning">프로스트 서펀트</b-badge>의 1번째 패시브
+						<b-badge variant="info">긴급 구조</b-badge>의 설명이 수정되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">프로스트 서펀트</b-badge>의 2번째 패시브
+						<b-badge variant="info">불굴의 소방관</b-badge>의 설명이 수정되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">켈베로스</b-badge>의
+						<rarity-badge rarity="SS" border />승급 정보가 추가되었습니다.
+						<br />3번째 패시브
+						<b-badge variant="info">호위 지원 강화</b-badge>의 설명이 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">미스 세이프티</b-badge>의
+						<rarity-badge rarity="A" border />승급 정보가 추가되었습니다.
+						<br />1번째 패시브
+						<b-badge variant="info">유인책</b-badge>의 설명이 추가되었습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200909>2020-09-09</b-card-header>
-			<b-collapse id="changelog20200909" visible>
+			<b-collapse id="changelog20200909">
 				<b-card-body>
 					<div>
 						<b-badge variant="warning">프로스트 서펀트</b-badge>의 2번째 패시브
@@ -23,7 +54,8 @@
 				<b-card-body>
 					<div>
 						<b-badge variant="warning">T-8W 발키리</b-badge>의 3번째 패시브
-						<b-badge variant="info">발할라로 이끄는 자</b-badge>의 상세 수치가 입력되었습니다.<br/>
+						<b-badge variant="info">발할라로 이끄는 자</b-badge>의 상세 수치가 입력되었습니다.
+						<br />
 						<b-badge variant="warning">T-8W 발키리</b-badge>의 SS 승급 스테이터스가 입력되었습니다.
 					</div>
 					<div>
