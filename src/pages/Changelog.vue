@@ -11,6 +11,9 @@
 			<b-collapse id="changelog20200910" visible>
 				<b-card-body>
 					<div>
+						<b-badge variant="warning">장비정보</b-badge>의 일부 장비가 목록에 표시되지 않는 문제를 수정했습니다.
+					</div>
+					<div>
 						<b-badge variant="warning">프로스트 서펀트</b-badge>의 1번째 액티브
 						<b-badge variant="info">고압 분사</b-badge>의 스킬 범위가 수정되었습니다. (AP 소모는 업데이트 이후 갱신 예정)
 					</div>
