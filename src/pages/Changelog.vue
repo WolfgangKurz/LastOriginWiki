@@ -7,8 +7,25 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200911>2020-09-11</b-card-header>
+			<b-collapse id="changelog20200911" visible>
+				<b-card-body>
+					<div>
+						신규 전투원
+						<b-badge variant="warning">징벌의 사디어스</b-badge>의 정보가 추가되었습니다.<br/>
+						일러스트, 스킬 및 스테이터스 정보는 업데이트 이후에 갱신됩니다.
+					</div>
+					<div>
+						<b-badge variant="warning">스노우 페더</b-badge>,
+						<b-badge variant="warning">생명의 세레스티아</b-badge>,
+						<b-badge variant="warning">드리아드</b-badge>의 스테이터스 정보가 입력되었습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200910>2020-09-10</b-card-header>
-			<b-collapse id="changelog20200910" visible>
+			<b-collapse id="changelog20200910">
 				<b-card-body>
 					<div>
 						<b-badge variant="warning">장비정보</b-badge>의 일부 장비가 목록에 표시되지 않는 문제를 수정했습니다.
