@@ -131,7 +131,7 @@ export default class APIUnitBadge extends Vue {
 		if (!this.SelectedUnit) return "";
 
 		const loc = window.location;
-		return `${loc.origin}/api/${this.isSD ? "sd" : "unit"}/${this.SelectedUnit.id}`;
+		return `${loc.origin}/api/${this.isSD ? "sd" : "unit"}/${this.SelectedUnit.shortname}`;
 	}
 
 	private get UnitList () {
