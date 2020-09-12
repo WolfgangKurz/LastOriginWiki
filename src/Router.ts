@@ -1,5 +1,7 @@
 import VueRouter from "vue-router";
 
+import CommonPage404 from "@/pages/Common/404.vue";
+
 import Home from "@/pages/Home.vue";
 // import Simulator from "@/pages/Simulator.vue";
 
@@ -16,9 +18,16 @@ import WorldMapView from "@/pages/Worlds/WorldMapView.vue";
 
 import Changelog from "@/pages/Changelog.vue";
 
+import APIPage from "@/pages/API.vue";
+
 const Router = new VueRouter({
 	mode: "history",
 	routes: [
+		{
+			path: "*",
+			component: CommonPage404,
+		},
+
 		{
 			path: "/",
 			component: Home,
@@ -81,6 +90,11 @@ const Router = new VueRouter({
 		{
 			path: "/changelog",
 			component: Changelog,
+		},
+
+		{
+			path: "/api",
+			component: APIPage,
 		},
 	],
 

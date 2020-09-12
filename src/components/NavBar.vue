@@ -29,6 +29,11 @@
 					href="/changelog"
 					@click.prevent="GoTo('/changelog')"
 				>Changelog</b-nav-item>
+
+				<b-nav-item-dropdown right>
+					<template #button-content>기타</template>
+					<b-dropdown-item href="/api" @click.prevent="GoTo('/api')">API</b-dropdown-item>
+				</b-nav-item-dropdown>
 			</b-navbar-nav>
 		</b-collapse>
 	</b-navbar>
