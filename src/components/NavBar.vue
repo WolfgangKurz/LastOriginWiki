@@ -32,7 +32,7 @@
 
 				<b-nav-item-dropdown right>
 					<template #button-content>기타</template>
-					<b-dropdown-item href="/api" @click.prevent="GoTo('/api')">API</b-dropdown-item>
+					<b-dropdown-item href="/eapi" @click.prevent="GoTo('/eapi')">API</b-dropdown-item>
 				</b-nav-item-dropdown>
 			</b-navbar-nav>
 		</b-collapse>

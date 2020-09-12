@@ -93,7 +93,7 @@ const Router = new VueRouter({
 		},
 
 		{
-			path: "/api",
+			path: "/eapi",
 			component: APIPage,
 		},
 	],
