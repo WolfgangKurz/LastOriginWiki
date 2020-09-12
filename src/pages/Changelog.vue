@@ -7,8 +7,19 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200913>2020-09-13</b-card-header>
+			<b-collapse id="changelog20200913" visible>
+				<b-card-body>
+					<div>
+						<b-badge variant="warning">신속의 칸</b-badge>의 1번째 패시브
+						<b-badge variant="info">굶주린 늑대</b-badge>의 설명을 일부 수정했습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200912>2020-09-12</b-card-header>
-			<b-collapse id="changelog20200912" visible>
+			<b-collapse id="changelog20200912">
 				<b-card-body>
 					<div>
 						<b-badge variant="warning">C-33 안드바리</b-badge>의 1번째 패시브
