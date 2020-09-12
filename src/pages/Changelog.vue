@@ -7,13 +7,28 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200912>2020-09-12</b-card-header>
+			<b-collapse id="changelog20200912" visible>
+				<b-card-body>
+					<div>
+						<b-badge variant="warning">C-33 안드바리</b-badge>의 1번째 패시브
+						<b-badge variant="info">의젓한 여동생</b-badge>의 세부 설명을 추가했습니다.
+					</div>
+					<div>
+						외부 사이트에서 사용 가능한
+						<b-badge variant="warning">API</b-badge>메뉴가 추가되었습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200911>2020-09-11</b-card-header>
-			<b-collapse id="changelog20200911" visible>
+			<b-collapse id="changelog20200911">
 				<b-card-body>
 					<div>
 						신규 전투원
-						<b-badge variant="warning">징벌의 사디어스</b-badge>의 정보가 추가되었습니다.<br/>
-						일러스트, 스킬 및 스테이터스 정보는 업데이트 이후에 갱신됩니다.
+						<b-badge variant="warning">징벌의 사디어스</b-badge>의 정보가 추가되었습니다.
+						<br />일러스트, 스킬 및 스테이터스 정보는 업데이트 이후에 갱신됩니다.
 					</div>
 					<div>
 						<b-badge variant="warning">스노우 페더</b-badge>,
