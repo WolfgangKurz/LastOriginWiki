@@ -7,8 +7,26 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200915>2020-09-15</b-card-header>
+			<b-collapse id="changelog20200915" visible>
+				<b-card-body>
+					<div>
+						<b-badge variant="warning">장비정보</b-badge>페이지의 필터 기능이 개선되었습니다.
+						<br />장비의
+						<b-badge variant="primary">효과</b-badge>를 기준으로 필터하는 기능이 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">기타</b-badge>메뉴에
+						<b-badge variant="warning">BGM</b-badge>메뉴가 추가되었습니다.
+						<br />사용처가 불분명한 BGM이 있을 수도 있습니다.
+						<br />목록에 없는 과거 이벤트의 BGM들은 이후에 추가될 예정입니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200914>2020-09-14</b-card-header>
-			<b-collapse id="changelog20200914" visible>
+			<b-collapse id="changelog20200914">
 				<b-card-body>
 					<div>
 						<b-badge variant="warning">징벌의 사디어스</b-badge>의 일러스트 및 스킬 수치가 입력되었습니다.

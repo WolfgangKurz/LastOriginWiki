@@ -1,16 +1,13 @@
 import { Status } from "@/libs/Types";
 import { UnitData } from "@/libs/DB";
+import { Dictionary } from "@/libs/Interface";
 
 export interface StatusTextType {
 	unknown: boolean;
 	display: Array<JSX.Element | JSX.Element[]>;
 }
 
-interface Dict {
-	[key: string]: string;
-}
-
-const actName: Dict = {
+const actName: Dictionary<string> = {
 	acc: "적중",
 	armorpierce: "방어 관통",
 	atk: "공격력",
@@ -22,7 +19,7 @@ const actName: Dict = {
 	dp: "방어막/피해감소 무시",
 	eva: "회피",
 	exp: "획득 경험치",
-	fdmg: "받는 피해",
+	dr: "받는 피해",
 	barrier: "방어막",
 	hit: "지속피해",
 	hp: "체력",
@@ -35,11 +32,6 @@ const actName: Dict = {
 	skill: "n번 스킬",
 	spd: "행동력",
 	stun: "행동 불가",
-};
-const roleName: Dict = {
-	attacker: "공격기",
-	defender: "보호기",
-	supporter: "지원기",
 };
 
 function prefixNum (data: string) {
@@ -58,7 +50,7 @@ function elemName (elem: string) {
 	}
 }
 function effectName (data: string) {
-	const pmTable: Dict = {
+	const pmTable: Dictionary<string> = {
 		acc: "적중",
 		armorpierce: "방어 관통",
 		atk: "공격력",
@@ -75,11 +67,9 @@ function effectName (data: string) {
 		resist2: "속성 저항",
 		spd: "행동력",
 	};
-	const cTable: Dict = {
+	const cTable: Dictionary<string> = {
 		barrier: "방어막",
 		dp: "방어막/피해감소 무시",
-		dr: "받는 피해 감소",
-		fdmg: "받는 피해 증가",
 		hit: "지속피해",
 		mindmg: "피해 최소화",
 		resist3: "효과 무효",
@@ -136,7 +126,6 @@ export function StatusText (context: Vue, status: Status): StatusTextType {
 				case "dp":
 				case "eva":
 				case "exp":
-				case "fdmg":
 				case "barrier":
 				case "hp":
 				case "range":
@@ -145,7 +134,10 @@ export function StatusText (context: Vue, status: Status): StatusTextType {
 					break;
 
 				case "dr":
-					disp = <span>받는 피해 {p0} 감소</span>;
+					if (p0[0] === "-")
+						disp = <span>받는 피해 {p0.substr(1)} 증가</span>;
+					else
+						disp = <span>받는 피해 {p0} 감소</span>;
 					break;
 
 				case "acc":

@@ -13,93 +13,164 @@
 			</b-alert>
 		</div>
 
-		<b-btn-group class="mx-2">
-			<b-button
-				variant="outline-secondary"
-				:pressed="Display.Type.Chip"
-				@click="Filter('Type', 'Chip')"
-			>칩</b-button>
-			<b-button variant="outline-secondary" :pressed="Display.Type.OS" @click="Filter('Type', 'OS')">OS</b-button>
-			<b-button
-				variant="outline-secondary"
-				:pressed="Display.Type.Public"
-				@click="Filter('Type', 'Public')"
-			>보조장비</b-button>
-			<b-button
-				variant="outline-secondary"
-				:pressed="Display.Type.Private"
-				@click="Filter('Type', 'Private')"
-			>전용장비</b-button>
-		</b-btn-group>
-		<hr class="my-2" />
-		<div clas="mx-1 mb-1">
-			<b-btn-group class="mx-1 mb-1">
-				<b-button
-					variant="outline-dark"
-					:pressed="Display.Type.EndlessWar"
-					@click="Filter('Type', 'EndlessWar')"
-				>영원한 전장</b-button>
-				<b-button
-					variant="outline-apocrypha"
-					:pressed="Display.Source.Apocrypha"
-					@click="Filter('Source', 'Apocrypha')"
-				>외전</b-button>
-				<b-button
-					variant="outline-exchange"
-					:pressed="Display.Source.Exchange"
-					@click="Filter('Source', 'Exchange')"
-				>교환소</b-button>
-				<b-button
-					variant="outline-exchange-old"
-					:pressed="Display.Source.OldExchange"
-					@click="Filter('Source', 'OldExchange')"
-				>지난 교환소</b-button>
-			</b-btn-group>
-			<b-btn-group class="mx-1 mb-1">
-				<b-button
-					variant="outline-event-exchange"
-					:pressed="Display.Source.EventExchange"
-					@click="Filter('Source', 'EventExchange')"
-				>이벤트 교환소</b-button>
-				<b-button
-					variant="outline-event-exchange-old"
-					:pressed="Display.Source.OldEventExchange"
-					@click="Filter('Source', 'OldEventExchange')"
-				>지난 이벤트 교환소</b-button>
-				<b-button
-					variant="outline-warning"
-					:pressed="Display.Source.EventMap"
-					@click="Filter('Source', 'EventMap')"
-				>이벤트 맵</b-button>
-				<b-button
-					variant="outline-warning"
-					:pressed="Display.Source.OldEventMap"
-					@click="Filter('Source', 'OldEventMap')"
-				>지난 이벤트 맵</b-button>
-			</b-btn-group>
-			<b-btn-group class="mx-1 mb-1">
-				<b-button
-					variant="outline-danger"
-					:pressed="Display.Source.ExMap"
-					@click="Filter('Source', 'ExMap')"
-				>Ex 맵</b-button>
-				<b-button
-					variant="outline-success"
-					:pressed="Display.Source.SideMap"
-					@click="Filter('Source', 'SideMap')"
-				>사이드 맵</b-button>
-				<b-button
-					variant="outline-warning"
-					:pressed="Display.Source.Map"
-					@click="Filter('Source', 'Map')"
-				>일반 맵</b-button>
-				<b-button
-					variant="outline-secondary"
-					:pressed="Display.Source.Limited"
-					@click="Filter('Source', 'Limited')"
-				>한정</b-button>
-			</b-btn-group>
+		<div class="mb-2 text-left clearfix">
+			<div class="float-right">
+				<b-checkbox v-model="displayFilters">필터 표시</b-checkbox>
+			</div>
+			총 {{EquipGroups.length}} 개의 장비
 		</div>
+
+		<b-collapse :visible="displayFilters">
+			<b-card class="text-left">
+				<b-row>
+					<b-col class="filter-label" md="auto" cols="12">장비 유형 :</b-col>
+					<b-col md cols="12">
+						<b-btn-group class="mx-1">
+							<b-button
+								variant="outline-secondary"
+								:pressed="Display.Type.Chip"
+								@click="Filter('Type', 'Chip')"
+							>칩</b-button>
+							<b-button
+								variant="outline-secondary"
+								:pressed="Display.Type.OS"
+								@click="Filter('Type', 'OS')"
+							>OS</b-button>
+							<b-button
+								variant="outline-secondary"
+								:pressed="Display.Type.Public"
+								@click="Filter('Type', 'Public')"
+							>보조장비</b-button>
+							<b-button
+								variant="outline-secondary"
+								:pressed="Display.Type.Private"
+								@click="Filter('Type', 'Private')"
+							>전용장비</b-button>
+						</b-btn-group>
+					</b-col>
+				</b-row>
+				<hr class="my-2" />
+				<b-row>
+					<b-col class="filter-label" md="auto" cols="12">장비 획득처 :</b-col>
+					<b-col md cols="12">
+						<div clas="mx-1 mb-1">
+							<b-btn-group class="mx-1 mb-1">
+								<b-button
+									variant="outline-secondary"
+									:pressed="Display.Source.Limited"
+									@click="Filter('Source', 'Limited')"
+								>한정</b-button>
+							</b-btn-group>
+							<b-btn-group class="mx-1 mb-1">
+								<b-button
+									variant="outline-dark"
+									:pressed="Display.Type.EndlessWar"
+									@click="Filter('Type', 'EndlessWar')"
+								>영원한 전장</b-button>
+							</b-btn-group>
+							<b-btn-group class="mx-1 mb-1">
+								<b-button
+									variant="outline-apocrypha"
+									:pressed="Display.Source.Apocrypha"
+									@click="Filter('Source', 'Apocrypha')"
+								>외전</b-button>
+							</b-btn-group>
+							<b-btn-group class="mx-1 mb-1">
+								<b-button
+									variant="outline-exchange"
+									:pressed="Display.Source.Exchange"
+									@click="Filter('Source', 'Exchange')"
+								>교환소</b-button>
+								<b-button
+									variant="outline-exchange-old"
+									:pressed="Display.Source.OldExchange"
+									@click="Filter('Source', 'OldExchange')"
+								>지난 교환소</b-button>
+							</b-btn-group>
+							<b-btn-group class="mx-1 mb-1">
+								<b-button
+									variant="outline-danger"
+									:pressed="Display.Source.ExMap"
+									@click="Filter('Source', 'ExMap')"
+								>Ex 맵</b-button>
+								<b-button
+									variant="outline-success"
+									:pressed="Display.Source.SideMap"
+									@click="Filter('Source', 'SideMap')"
+								>사이드 맵</b-button>
+								<b-button
+									variant="outline-warning"
+									:pressed="Display.Source.Map"
+									@click="Filter('Source', 'Map')"
+								>일반 맵</b-button>
+							</b-btn-group>
+							<b-btn-group class="mx-1 mb-1">
+								<b-button
+									variant="outline-warning"
+									:pressed="Display.Source.EventMap"
+									@click="Filter('Source', 'EventMap')"
+								>이벤트 맵</b-button>
+								<b-button
+									variant="outline-event-exchange"
+									:pressed="Display.Source.EventExchange"
+									@click="Filter('Source', 'EventExchange')"
+								>이벤트 교환소</b-button>
+							</b-btn-group>
+							<b-btn-group class="mx-1 mb-1">
+								<b-button
+									variant="outline-warning"
+									:pressed="Display.Source.OldEventMap"
+									@click="Filter('Source', 'OldEventMap')"
+								>지난 이벤트 맵</b-button>
+								<b-button
+									variant="outline-event-exchange-old"
+									:pressed="Display.Source.OldEventExchange"
+									@click="Filter('Source', 'OldEventExchange')"
+								>지난 이벤트 교환소</b-button>
+							</b-btn-group>
+						</div>
+					</b-col>
+				</b-row>
+				<hr class="my-2" />
+				<b-row>
+					<b-col class="filter-label" md="auto" cols="12">장비 효과 :</b-col>
+					<b-col md cols="12">
+						<div class="clearfix">
+							<div class="float-right">
+								<b-checkbox v-model="displayEquipEffects">장비 효과 목록 표시</b-checkbox>
+							</div>
+
+							<b-button-group class="d-block mb-1">
+								<b-button variant="primary" @click="FillEquipEffectFilters">모두 선택</b-button>
+								<b-button variant="danger" @click="ClearEquipEffectFilters">모두 선택 해제</b-button>
+							</b-button-group>
+						</div>
+						<!-- <b-select :options="EquipEffects" /> -->
+						<b-collapse :visible="displayEquipEffects">
+							<template v-for="(entity, idx) in EquipEffects">
+								<b-btn-group v-if="Array.isArray(entity)" :key="`equip-effect-${idx}`" class="mr-1 mb-1">
+									<b-button
+										v-for="subentity in entity"
+										:key="`equip-effect-${idx}-${subentity.value}`"
+										variant="outline-secondary"
+										:pressed="Display.Effects.includes(subentity.value)"
+										@click="EffectFilterToggle(subentity.value)"
+									>{{subentity.text}}</b-button>
+								</b-btn-group>
+								<b-button
+									v-else
+									:key="`equip-effect-${entity.value}`"
+									class="mr-1 mb-1"
+									variant="outline-secondary"
+									:pressed="Display.Effects.includes(entity.value)"
+									@click="EffectFilterToggle(entity.value)"
+								>{{entity.text}}</b-button>
+							</template>
+						</b-collapse>
+					</b-col>
+				</b-row>
+			</b-card>
+		</b-collapse>
 
 		<b-row class="mt-4" cols-xl="6" cols-lg="5" cols-md="4" cols-sm="3" cols="2">
 			<b-col v-for="group of EquipGroups" :key="`equip-${group.name}`">
@@ -135,28 +206,7 @@ import { Equip, Rarity, EquipType } from "@/libs/Types";
 import EntitySource from "@/libs/EntitySource";
 import { Dictionary } from "@/libs/Interface";
 
-interface DisplayType {
-	Type: {
-		Chip: boolean;
-		OS: boolean;
-		Public: boolean;
-		Private: boolean;
-		EndlessWar: boolean;
-	};
-	Source: {
-		EventExchange: boolean;
-		OldEventExchange: boolean;
-		Exchange: boolean;
-		OldExchange: boolean;
-		Apocrypha: boolean;
-		Limited: boolean;
-		ExMap: boolean;
-		SideMap: boolean;
-		EventMap: boolean;
-		OldEventMap: boolean;
-		Map: boolean;
-	};
-}
+import StoreModule, { EquipDisplayType } from "@/libs/Store";
 
 @Component({
 	components: {
@@ -168,33 +218,23 @@ interface DisplayType {
 	},
 })
 export default class Equips extends Vue {
-	private Display: DisplayType = {
-		Type: {
-			Chip: true,
-			OS: true,
-			Public: true,
-			Private: true,
-			EndlessWar: true,
-		},
-		Source: {
-			EventExchange: true,
-			OldEventExchange: true,
-			Exchange: true,
-			OldExchange: true,
-			Apocrypha: true,
-			Limited: true,
-			ExMap: true,
-			SideMap: true,
-			EventMap: true,
-			OldEventMap: true,
-			Map: true,
-		},
-	};
-
 	private selectedEquip: string = "";
 	private currentRarity: Rarity = "SS";
 
 	private equipModalDisplay: boolean = false;
+
+	private displayFilters: boolean = false;
+	private displayEquipEffects: boolean = false;
+
+	// Vuex -----
+	private get Display () {
+		return StoreModule.EquipDisplayFilter;
+	}
+
+	private set Display (value: EquipDisplayType) {
+		StoreModule.setEquipDisplayFilter(value);
+	}
+	// Vuex -----
 
 	@Watch("$route")
 	private routeChanged () {
@@ -234,6 +274,107 @@ export default class Equips extends Vue {
 
 	private get EquipRarity () {
 		return ["ss", "s", "a", "b"];
+	}
+
+	private get EquipEffects () {
+		const actName: Dictionary<string> = {
+			acc: "적중",
+			armorpierce: "방어 관통",
+			atk: "공격력",
+			ap: "AP",
+			chance: "효과 발동",
+			crit: "치명타",
+			def: "방어력",
+			dmg: "피해량",
+			dp: "방어막/피해감소 무시",
+			eva: "회피",
+			exp: "획득 경험치",
+			dr: "받는 피해",
+			barrier: "방어막",
+			hit: "지속피해",
+			hp: "체력",
+			"hp-atk": "공격력 비례 체력 감소",
+			mindmg: "피해 최소화",
+			off: "특정 효과 해제",
+			range: "사거리",
+			revive: "전투 속행",
+			scout: "정찰 활성화",
+			skill: "n번 스킬",
+			spd: "행동력",
+			stun: "행동 불가",
+		};
+		const func = (x: string) => ({
+			value: x,
+			text: (() => {
+				switch (x) {
+					case "+atk":
+					case "+armorpierce":
+					case "+ap":
+					case "+chance":
+					case "+crit":
+					case "+def":
+					case "+dp":
+					case "+eva":
+					case "+exp":
+					case "-dr": // dr은 sign이 반대
+					case "+barrier":
+					case "+hp":
+					case "+range":
+					case "+spd":
+						return `${actName[x.substr(1)]} 증가`;
+
+					case "-atk":
+					case "-armorpierce":
+					case "-ap":
+					case "-chance":
+					case "-crit":
+					case "-def":
+					case "-dp":
+					case "-eva":
+					case "-exp":
+					case "+dr": // dr은 sign이 반대
+					case "-barrier":
+					case "-hp":
+					case "-range":
+					case "-spd":
+						return `${actName[x.substr(1)]} 감소`;
+
+					case "+acc": return "적중 증가";
+					case "-acc": return "적중 감소";
+
+					case "counter": return "반격";
+					case "+dmg": return "대타입 피해량 증가";
+					case "-dmg": return "대타입 피해량 감소";
+					case "hp-atk": return "공격력 비례 체력 감소";
+					case "hit1": return "지속 고정 피해";
+					case "hit2": return "지속 속성 피해";
+
+					case "+resist1": return "효과 저항 증가";
+					case "-resist1": return "효과 저항 감소";
+					case "+resist2": return "속성 저항 증가";
+					case "-resist2": return "속성 저항 감소";
+					case "resist3": return "스테이터스 감소 무효";
+
+					case "revive": return "전투 속행";
+
+					case "off1": return "스테이터스 감소 해제";
+					case "off2": return "해로운 효과 해제";
+
+					case "scout": return "정찰";
+					case "stun": return "스킬 사용 불가";
+
+					case "skill": return "스킬 강화";
+					default: return "?";
+				}
+			})(),
+		});
+
+		return StoreModule.equipEffectFilterList
+			.map(x =>
+				Array.isArray(x)
+					? x.map(y => func(y))
+					: func(x),
+			);
 	}
 
 	private get EquipGroups () {
@@ -306,7 +447,8 @@ export default class Equips extends Vue {
 			.filter(y => {
 				const x = y.name;
 				const baseType = x.substr(0, x.indexOf("_"));
-				if (group[x].length === 0) return false;
+				const grp = group[x];
+				if (grp.length === 0) return false;
 
 				const sources = ArrayUnique(
 					y.sourceRaw,
@@ -314,7 +456,7 @@ export default class Equips extends Vue {
 				);
 
 				// 전용장비
-				const first = group[x][0];
+				const first = grp[0];
 				if (first.limit && first.limit.every(y => typeof y === "number")) { // 전용 장비임
 					if (!this.Display.Type.Private) return false; // 전용 장비 필터가 꺼짐
 				} else { // 그 외 유형
@@ -324,6 +466,9 @@ export default class Equips extends Vue {
 					if (this.Display.Type.Public) types.push("item");
 					if (!types.includes(baseType)) return false;
 				}
+
+				// 효과 필터
+				if (grp.every(x => !this.HasFilteredEffect(x))) return false;
 
 				// 획득처
 				if (this.Display.Type.EndlessWar && sources.some(x => x.IsEndlessWar)) return true;
@@ -360,6 +505,101 @@ export default class Equips extends Vue {
 			}));
 	}
 
+	private HasFilteredEffect (eq: Equip) {
+		const isNumeric = (data: string) => {
+			return /^[0-9]+\.?[0-9]*%?$/.test(data);
+		};
+
+		return eq.stats
+			.some(y => y
+				.some(z => z.actions.some(a => {
+					let sign = "";
+					let target = a.act;
+					const p = a.params;
+					const p0 = p.length > 0 ? p[0] : "";
+					const p1 = p.length > 1 ? p[1] : "";
+					const p2 = p.length > 2 ? p[2] : "";
+
+					switch (a.act) {
+						case "atk":
+						case "armorpierce":
+						case "ap":
+						case "chance":
+						case "crit":
+						case "def":
+						case "dp":
+						case "eva":
+						case "exp":
+						case "barrier":
+						case "hp":
+						case "range":
+						case "spd":
+						case "dr":
+						case "dmg":
+							sign = p0[0] === "-" ? "-" : "+";
+							break;
+
+						case "acc":
+							if (a.params.length === 1)
+								sign = p0[0] === "-" ? "-" : "+";
+							else if (a.params.length === 2)
+								sign = p1[0] === "-" ? "-" : "+";
+							break;
+
+						case "resist":
+							if (a.params.length === 1) {
+								if (isNumeric(p0)) { // 효과 저항 증감
+									sign = p0[0] === "-" ? "-" : "+";
+									target = "resist1";
+								} else { // 속성 저항 증감
+									sign = p0[0] === "-" ? "-" : "+";
+									target = "resist3";
+								}
+							} else if (a.params.length === 2) { // 효과 감소 무효
+								sign = p1[0] === "-" ? "-" : "+";
+								target = "resist2";
+							}
+							break;
+
+						case "hit":
+							if (p.length === 1)
+								target = "hit1"; // 지속 고정 피해
+							else
+								target = "hit2"; // 지속 속성 피해
+							break;
+
+						case "off":
+							if (p.length === 2)
+								target = "off1";
+							else if (isNumeric(p0))
+								target = "off2";
+							else if (p.length >= 1)
+								target = "off1";
+							else
+								target = "off2";
+							break;
+					}
+
+					return this.Display.Effects.includes(sign + target);
+				})),
+			);
+	}
+
+	private EffectFilterToggle (value: string) {
+		if (this.Display.Effects.includes(value))
+			this.Display.Effects.splice(this.Display.Effects.indexOf(value), 1);
+		else
+			this.Display.Effects.push(value);
+	}
+
+	private FillEquipEffectFilters () {
+		StoreModule.FillEquipDisplayFilter();
+	}
+
+	private ClearEquipEffectFilters () {
+		StoreModule.ClearEquipDisplayFilter();
+	}
+
 	private EquipBase (name: string) {
 		return Object.values(EquipData).filter(x => x.name.startsWith(name))[0];
 	}
@@ -374,19 +614,17 @@ export default class Equips extends Vue {
 			this.$router.push({ path: `/equips/${this.currentRarity}/${name}` });
 	}
 
-	private Filter (category: keyof DisplayType, type: string) {
+	private Filter (category: keyof EquipDisplayType, type: string) {
 		switch (category) {
 			case "Type":
-				{
-					const key = type as keyof DisplayType["Type"];
+				((key) => {
 					this.Display.Type[key] = !this.Display.Type[key];
-				}
+				})(type as keyof EquipDisplayType["Type"]);
 				break;
 			case "Source":
-				{
-					const key = type as keyof DisplayType["Source"];
+				((key) => {
 					this.Display.Source[key] = !this.Display.Source[key];
-				}
+				})(type as keyof EquipDisplayType["Source"]);
 				break;
 		}
 	}
@@ -398,8 +636,14 @@ export default class Equips extends Vue {
 </script>
 
 <style lang="scss">
-/*
 #app > .container > .equips {
+	.filter-label {
+		width: 120px;
+		flex: 0 0 auto;
+
+		& + div .btn {
+			word-break: keep-all;
+		}
+	}
 }
-*/
 </style>

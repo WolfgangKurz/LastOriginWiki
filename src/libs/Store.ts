@@ -30,6 +30,30 @@ export interface UnitTableFilters {
 }
 export type UnitListOrder = "dict" | "name" | "rarity";
 
+export interface EquipDisplayType {
+	Type: {
+		Chip: boolean;
+		OS: boolean;
+		Public: boolean;
+		Private: boolean;
+		EndlessWar: boolean;
+	};
+	Source: {
+		EventExchange: boolean;
+		OldEventExchange: boolean;
+		Exchange: boolean;
+		OldExchange: boolean;
+		Apocrypha: boolean;
+		Limited: boolean;
+		ExMap: boolean;
+		SideMap: boolean;
+		EventMap: boolean;
+		OldEventMap: boolean;
+		Map: boolean;
+	};
+	Effects: string[];
+}
+
 @Module()
 class StoreModule extends VuexModule {
 	private unitDisplayType: UnitDisplayType = "table";
@@ -64,6 +88,65 @@ class StoreModule extends VuexModule {
 	private unitListSortAsShortName: boolean = false;
 
 	private unitGroupMerge: boolean = false;
+
+	public readonly equipEffectFilterList: Array<string | string[]> = [
+		["+atk", "-atk"],
+		"+armorpierce", // ["+armorpierce", "-armorpierce"],
+		"+ap", // ["+ap", "-ap"],
+		"+chance", // ["+chance", "-chance"],
+		["+crit", "-crit"],
+		["+def", "-def"],
+		"+dp", // ["+dp", "-dp"],
+		["+eva", "-eva"],
+		"+exp", // ["+exp", "-exp"],
+		"+barrier", // ["+barrier", "-barrier"],
+		"+hp", // ["+hp", "-hp"],
+		["+range", "-range"],
+		["+spd", "-spd"],
+		["+dr", "-dr"],
+		["+acc", "-acc"],
+		"counter",
+		["+dmg", "-dmg"],
+		"hp-atk",
+		"hit1", // "hit2",
+		["+resist1", "+resist2"], // ["+resist1", "-resist1", "+resist2", "-resist2"], "resist3",
+		"revive",
+		"off1", "off2",
+		"scout", "stun", "skill",
+	];
+	// resist1 : 효과 저항 증감
+	// resist2 : 속성 저항 증감
+	// resist3 : 스테이터스 감소 무효
+	// off1 : 스테이터스 감소 해제
+	// off2 : 해로운 효과 해제 (모든)
+
+	public readonly equipEffectFilterListFlatten = this.equipEffectFilterList
+		.map(x => typeof x === "string" ? [x] : x)
+		.reduce((p, c) => [...p, ...c], []);
+
+	private equipDisplayFilter: EquipDisplayType = {
+		Type: {
+			Chip: true,
+			OS: true,
+			Public: true,
+			Private: true,
+			EndlessWar: true,
+		},
+		Source: {
+			EventExchange: true,
+			OldEventExchange: true,
+			Exchange: true,
+			OldExchange: true,
+			Apocrypha: true,
+			Limited: true,
+			ExMap: true,
+			SideMap: true,
+			EventMap: true,
+			OldEventMap: true,
+			Map: true,
+		},
+		Effects: this.equipEffectFilterListFlatten,
+	};
 
 	public get UnitDisplayType (): UnitDisplayType {
 		return this.unitDisplayType;
@@ -135,6 +218,25 @@ class StoreModule extends VuexModule {
 	@Mutation
 	public setUnitGroupMerge (value: boolean) {
 		this.unitGroupMerge = value;
+	}
+
+	public get EquipDisplayFilter (): EquipDisplayType {
+		return this.equipDisplayFilter;
+	}
+
+	@Mutation
+	public setEquipDisplayFilter (value: EquipDisplayType) {
+		this.equipDisplayFilter = value;
+	}
+
+	@Action
+	public FillEquipDisplayFilter () {
+		this.equipDisplayFilter.Effects = this.equipEffectFilterListFlatten;
+	}
+
+	@Action
+	public ClearEquipDisplayFilter () {
+		this.equipDisplayFilter.Effects = [];
 	}
 }
 
