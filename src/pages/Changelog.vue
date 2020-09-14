@@ -7,9 +7,25 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
-			<b-card-header v-b-toggle.changelog20200913>2020-09-13</b-card-header>
-			<b-collapse id="changelog20200913" visible>
+			<b-card-header v-b-toggle.changelog20200914>2020-09-14</b-card-header>
+			<b-collapse id="changelog20200914" visible>
 				<b-card-body>
+					<div>
+						<b-badge variant="warning">징벌의 사디어스</b-badge>의 일러스트 및 스킬 수치가 입력되었습니다.
+						<br />제가 사디어스를 못먹어서 수치가 정확한지는 모르겠습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">바닐라 A1</b-badge>의
+						<b-badge variant="info">바닐라의 휴일</b-badge>스킨이 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">GS-10 샌드걸</b-badge>의
+						<b-badge variant="info">도시 암살자 샌드걸</b-badge>스킨이 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">생명의 세레스티아</b-badge>의
+						<b-badge variant="info">세레스티아 카우걸</b-badge>스킨이 추가되었습니다.
+					</div>
 					<div>
 						<b-badge variant="warning">신속의 칸</b-badge>의 1번째 패시브
 						<b-badge variant="info">굶주린 늑대</b-badge>의 설명을 일부 수정했습니다.
