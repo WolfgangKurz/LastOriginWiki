@@ -27,6 +27,11 @@
 						<b-badge variant="info">세레스티아 카우걸</b-badge>스킨이 추가되었습니다.
 					</div>
 					<div>
+						<b-badge variant="warning">라비아타 프로토타입</b-badge>의
+						<b-badge variant="info">혼자만의 휴가</b-badge>,
+						<b-badge variant="info">과거 혼자만의 휴가</b-badge>스킨의 중파 이미지가 추가되었습니다.
+					</div>
+					<div>
 						<b-badge variant="warning">신속의 칸</b-badge>의 1번째 패시브
 						<b-badge variant="info">굶주린 늑대</b-badge>의 설명을 일부 수정했습니다.
 					</div>
