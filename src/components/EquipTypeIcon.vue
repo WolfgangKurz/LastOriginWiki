@@ -28,7 +28,7 @@ export default class EquipTypeIcon extends Vue {
 	$size: 20px;
 
 	display: inline-block;
-	margin: 0 0.25rem;
+	margin: 0 0.25em;
 	width: $size;
 	height: $size;
 	background-image: url($assetsRoot + "/icon-equip.png");
