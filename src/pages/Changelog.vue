@@ -15,6 +15,18 @@
 						<br />제가 사디어스를 못먹어서 수치가 정확한지는 모르겠습니다.
 					</div>
 					<div>
+						<b-badge variant="warning">켈베로스</b-badge>의 3번째 패시브
+						<b-badge variant="info">호위 지원 강화</b-badge>의 수치가 입력되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">미스세이프티</b-badge>의 1번째 패시브
+						<b-badge variant="info">유인책</b-badge>의 수치가 입력되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">징벌의 사디어스</b-badge>의 일러스트 및 스킬 수치가 입력되었습니다.
+						<br />제가 사디어스를 못먹어서 수치가 정확한지는 모르겠습니다.
+					</div>
+					<div>
 						<b-badge variant="warning">바닐라 A1</b-badge>의
 						<b-badge variant="info">바닐라의 휴일</b-badge>스킨이 추가되었습니다.
 					</div>
