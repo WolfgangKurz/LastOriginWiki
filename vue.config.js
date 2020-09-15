@@ -43,45 +43,46 @@ module.exports = {
 			config.set("devtool", "none");
 
 		// Cache-Group 설정
-		if (false)
-			config.optimization.splitChunks({
-				cacheGroups: {
-					// default: false,
-					/*
-					components: {
-						name: "components",
-						chunks: "all",
-						test: /[\\/]src[\\/]components[\\/]/,
-						reuseExistingChunk: true,
-						enforce: true,
-					},
-					vendors: {
-						name: "vendors",
-						chunks: "all",
-						test: /[\\/]node_modules[\\/]/,
-						enforce: true,
-						reuseExistingChunk: true,
-					},
-					*/
-					db: {
-						name: "db",
-						chunks: "all",
-						test: /[\\/]src[\\/]json[\\/]/,
-						reuseExistingChunk: true,
-						enforce: true,
-					},
-					/*
-					common: {
-						name: "common",
-						chunks: "all",
-						minChunks: 40,
-						reuseExistingChunk: true,
-						enforce: true,
-					},
-					*/
-				},
-				automaticNameDelimiter: "-",
-			});
+		// if (false) {
+		// 	config.optimization.splitChunks({
+		// 		cacheGroups: {
+		// 		// default: false,
+		// 		/*
+		// 			components: {
+		// 				name: "components",
+		// 				chunks: "all",
+		// 				test: /[\\/]src[\\/]components[\\/]/,
+		// 				reuseExistingChunk: true,
+		// 				enforce: true,
+		// 			},
+		// 			vendors: {
+		// 				name: "vendors",
+		// 				chunks: "all",
+		// 				test: /[\\/]node_modules[\\/]/,
+		// 				enforce: true,
+		// 				reuseExistingChunk: true,
+		// 			},
+		// 			*/
+		// 			db: {
+		// 				name: "db",
+		// 				chunks: "all",
+		// 				test: /[\\/]src[\\/]json[\\/]/,
+		// 				reuseExistingChunk: true,
+		// 				enforce: true,
+		// 			},
+		// 		/*
+		// 			common: {
+		// 				name: "common",
+		// 				chunks: "all",
+		// 				minChunks: 40,
+		// 				reuseExistingChunk: true,
+		// 				enforce: true,
+		// 			},
+		// 			*/
+		// 		},
+		// 		automaticNameDelimiter: "-",
+		// 	});
+		// }
 
 		// Webpack entrypoint size 워닝 무시
 		config.performance.hints(false);
