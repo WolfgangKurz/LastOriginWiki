@@ -5,10 +5,10 @@ module.exports = {
 		jquery: true,
 	},
 	extends: [
+		"eslint:recommended",
 		"plugin:vue/essential",
 		"@vue/standard",
 		"@vue/typescript/recommended",
-		"eslint:recommended",
 	],
 	ignorePatterns: [
 		"/**/node_modules/*",
@@ -62,6 +62,8 @@ module.exports = {
 
 		"no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
 		"no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
+
+		"@typescript-eslint/explicit-module-boundary-types": "off",
 
 		camelcase: "warn",
 		"@typescript-eslint/camelcase": "off",
