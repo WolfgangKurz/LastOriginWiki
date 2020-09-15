@@ -7,8 +7,33 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200916>2020-09-16</b-card-header>
+			<b-collapse id="changelog20200916" visible>
+				<b-card-body>
+					<div>
+						<b-badge variant="warning">전투원 스테이터스</b-badge>의
+						<b-badge variant="info">효과 저항</b-badge>이 독립 시행으로 계산되는 점을 반영하여
+						수치를 합산하지 않고 여러 줄에 나눠 표시하도록 수정했습니다.
+						<br />
+						<b-badge variant="warning">장비 선택 창</b-badge>의
+						<b-badge variant="info">장비 삭제</b-badge>버튼의 명칭이
+						<b-badge variant="info">장비 해제</b-badge>로 변경되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">장비목록</b-badge>의 획득처 필터 목록에
+						<b-badge variant="primary">외부 통신 요청</b-badge>이 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">기타</b-badge>메뉴에 외부 사이트인
+						<b-badge variant="warning">지역별 철충 지도</b-badge>링크가 추가되었습니다.
+					</div>
+					<div>진행중인 이벤트 정보가 갱신되었습니다. (이벤트 없음)</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200915>2020-09-15</b-card-header>
-			<b-collapse id="changelog20200915" visible>
+			<b-collapse id="changelog20200915">
 				<b-card-body>
 					<div>
 						<b-badge variant="warning">장비정보</b-badge>페이지의 필터 기능이 개선되었습니다.
@@ -191,7 +216,7 @@
 						<b-badge variant="warning">세계정보</b-badge>의 레이아웃 및 디자인이 변경되었습니다.
 						<br />
 						<b-badge variant="warning">구역 정보</b-badge>페이지에
-						<a href="https://lastoriginmap.github.io/index.html" target="_blank">
+						<a href="https://lastoriginmap.github.io/" target="_blank">
 							<b-badge variant="primary">철충 지도</b-badge>사이트
 						</a>로 이동할 수 있는 버튼이 추가되었습니다.
 					</div>

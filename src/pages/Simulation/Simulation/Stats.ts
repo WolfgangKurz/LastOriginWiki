@@ -158,6 +158,9 @@ export const StatList: StatListTable = {
 };
 
 export interface Stat {
+	/** 독립 시행 수치 여부 */
+	isIndependent: boolean;
+
 	/** 레벨 기반 스탯 수치 */
 	base: number;
 
@@ -181,10 +184,14 @@ export interface Stat {
 
 	/** 풀링크 보너스로 오른 수치 (% 수치) */
 	fullLinkBonusRatio: number;
+
+	/** 독립 시행 수치 목록 */
+	independentValues: number[];
 }
 // eslint-disable-next-line
 export namespace Stat {
 	export const Empty: Stat = {
+		isIndependent: false,
 		base: 0,
 		pointed: 0,
 		equiped: 0,
@@ -193,6 +200,7 @@ export namespace Stat {
 		fullLinkBonus: 0,
 		equipedRatio: 0,
 		fullLinkBonusRatio: 0,
+		independentValues: [],
 	};
 }
 
@@ -221,7 +229,10 @@ export namespace UnitStat {
 		"dmg.heavy": Stat.Empty,
 
 		dr: Stat.Empty,
-		resist: Stat.Empty,
+		resist: {
+			...Stat.Empty,
+			isIndependent: true,
+		},
 		off: Stat.Empty,
 		"-acc": Stat.Empty,
 		"-eva": Stat.Empty,

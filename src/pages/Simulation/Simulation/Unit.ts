@@ -283,7 +283,10 @@ export class Unit extends Vue {
 			"dmg.heavy": { ...Stat.Empty },
 
 			dr: { ...Stat.Empty },
-			resist: { ...Stat.Empty },
+			resist: {
+				...Stat.Empty,
+				isIndependent: true,
+			},
 			off: { ...Stat.Empty },
 			"-acc": { ...Stat.Empty },
 			"-eva": { ...Stat.Empty },
@@ -300,6 +303,7 @@ export class Unit extends Vue {
 
 			let value = 0;
 			let valueP = 0;
+			const independentValues: number[] = [];
 			this.Equips // TODO : 분리
 				.filter(x => x.Name)
 				.forEach(x => {
@@ -322,13 +326,16 @@ export class Unit extends Vue {
 								const val = perc
 									? input.substr(0, input.length - 1)
 									: input;
+								const fVal = parseFloat(val);
 
 								// 고정 수치거나
 								// % 수치인데 원래 % 수치인 경우
 								if (!perc || (perc && StatList[key].postfix === "%"))
-									value += parseFloat(val);
+									value += fVal;
 								else
-									valueP += parseFloat(val);
+									valueP += fVal;
+
+								return fVal;
 							};
 
 							if (act.act === "off") {
@@ -350,7 +357,7 @@ export class Unit extends Vue {
 
 								if (p.length === 1) {
 									if (isNumeric(p0) && key === "resist")
-										calc(p0);
+										independentValues.push(calc(p0));
 									else if (key === p0)
 										calc(p1);
 									else
@@ -385,6 +392,9 @@ export class Unit extends Vue {
 
 			output[key].equiped = parseFloat(value.toFixed(8));
 			output[key].equipedRatio = parseFloat((valueP * 0.01).toFixed(8));
+
+			if (output[key].isIndependent)
+				output[key].independentValues = independentValues;
 
 			if (key === "hp")
 				output[key].linkBonus = (linkBonus.IsHP ? 125 : 100) * this.LinkSum / 5;

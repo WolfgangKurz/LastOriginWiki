@@ -46,6 +46,7 @@ export default class SourceBadge extends Vue {
 
 	private render () {
 		const variant = (() => {
+			if (this.Source.IsChallenge) return "primary";
 			if (this.Source.IsPrivateItem) return "stat-acc";
 			if (this.Source.IsLimited) return "secondary";
 			if (this.Source.IsEndlessWar) return this.minimum ? "light" : "dark";
@@ -71,7 +72,14 @@ export default class SourceBadge extends Vue {
 				return `${unit.name}`;
 			} else if (this.Source.IsLimited)
 				return "획득처 없음";
-			else if (this.Source.IsEndlessWar) {
+			else if (this.Source.IsChallenge) {
+				const text = this.Source.IsReward ? "최종 보상" : "클리어 보상";
+
+				if (this.detail)
+					return `외부 통신 요청 (${this.Source.ChallengeName}, ${this.Source.ChallengeDifficulty}) ${text}`.trim();
+				else
+					return "외부 통신 요청";
+			} else if (this.Source.IsEndlessWar) {
 				if (this.detail)
 					return `영원한 전장 (${this.Source.EndlessWarPrice} 광물)`;
 				else

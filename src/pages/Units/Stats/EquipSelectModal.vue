@@ -50,7 +50,7 @@
 			<b-col cols="12">
 				<b-btn-group>
 					<b-button variant="primary" @click="Select(SelectedEquipGroup)">장비 선택</b-button>
-					<b-button variant="secondary" @click="Select('')">장비 삭제</b-button>
+					<b-button variant="secondary" @click="Select('')">장비 해제</b-button>
 				</b-btn-group>
 			</b-col>
 		</b-row>

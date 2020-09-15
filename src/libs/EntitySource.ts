@@ -105,6 +105,31 @@ export default class EntitySource {
 	}
 	// -------------- 이벤트
 
+	// -------------- 외부 통신 요청
+	/** 외부 통신 요청의 보상 여부 */
+	public get IsChallenge () {
+		return this.Parts[0] === "Challenge" || this.Parts[0] === "*Challenge";
+	}
+
+	/** 외부 통신 요청의 챌린지 이름 */
+	public get ChallengeName () {
+		if (!this.IsChallenge) return "";
+
+		switch (this.Parts[1]) {
+			case "PushPullFire": return "밀고, 당기고, 불질러!";
+			case "CreatorAndCreature": return "설계자와 피조물";
+			default: return this.Parts[1];
+		}
+	}
+
+	/** 외부 통신 요청의 챌린지 난이도 (1~4) */
+	public get ChallengeDifficulty () {
+		if (!this.IsChallenge) return 0;
+		const difficulty = ["", "NORMAL", "HARD", "VERY HARD", "EXETREAM"];
+		return difficulty[parseInt(this.Parts[2], 10)];
+	}
+	// -------------- 외부 통신 요청
+
 	// -------------- 맵
 	/** 사이드 스테이지 여부 */
 	public get IsSideMap () {
@@ -126,13 +151,16 @@ export default class EntitySource {
 
 	/** 맵 보상 여부 */
 	public get IsMap () {
-		return !this.IsEndlessWar && !this.IsApocrypha && !this.IsExchange && !this.IsLimited && !this.IsPrivateItem;
+		return ![this.IsEndlessWar, this.IsApocrypha, this.IsExchange, this.IsLimited, this.IsPrivateItem, this.IsChallenge].some(x => x);
 	}
 
 	/** 클리어 보상 여부 */
 	public get IsReward () {
 		if (this.IsEvent)
 			return this.Parts[3][0] === "*";
+		else if (this.IsChallenge)
+			return this.Parts[0][0] === "*";
+
 		return this.Parts[0][0] === "*";
 	}
 
@@ -191,7 +219,12 @@ export default class EntitySource {
 		if (this.IsLimited)
 			output.push("Limit");
 
-		if (this.IsEndlessWar)
+		if (this.IsChallenge) {
+			if (this.IsReward)
+				output.push("*Challenge:" + this.ChallengeName + ":" + this.ChallengeDifficulty);
+			else
+				output.push("Challenge:" + this.ChallengeName + ":" + this.ChallengeDifficulty);
+		} else if (this.IsEndlessWar)
 			output.push("EW");
 		else if (this.IsApocrypha)
 			output.push("Apo:" + this.ApocryphaUnit + ":" + this.ApocryphaNumber);
