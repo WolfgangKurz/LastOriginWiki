@@ -91,7 +91,23 @@
 										<div class="status-col-head">{{StatList[key].name}}</div>
 
 										<div
-											v-if="UnitStats.final[key].value !== UnitStats.base[key].value || !BaseStatList.includes(key)"
+											v-if="key in UnitStats.non"
+											class="status-col-value"
+											:data-real="UnitStats.non[key].list.length === 0 ? 0 : 1"
+										>
+											<div v-if="UnitStats.non[key].list.length === 0">0%</div>
+											<template v-else>
+												<div
+													v-for="(chance, chanceIdx) in UnitStats.non[key].list"
+													:key="`unit-status-stat-${key}-${chanceIdx}`"
+												>
+													{{chance}}
+													{{UnitStats.non[key].postfix}}
+												</div>
+											</template>
+										</div>
+										<div
+											v-else-if="UnitStats.final[key].value !== UnitStats.base[key].value || !BaseStatList.includes(key)"
 											class="status-col-value"
 											data-real="1"
 											:data-value="UnitStats.final[key].value"
@@ -314,6 +330,7 @@ export default class UnitStatus extends Vue {
 			added: number;
 			rounded: boolean;
 			value: string;
+			list?: number[];
 			postfix: string;
 		}
 		interface ResultContainer {
@@ -330,10 +347,24 @@ export default class UnitStatus extends Vue {
 		for (const k in StatList) {
 			const key = k as StatType;
 			const stat = StatList[key];
+			const sStat = this.sUnit.StatData[key];
+
+			if (sStat.isIndependent) {
+				output.non[key] = {
+					name: stat.name,
+					final: 0,
+					added: 0,
+					rounded: stat.rounded || false,
+					value: "",
+					postfix: stat.postfix || "",
+					list: sStat.independentValues,
+				};
+				continue;
+			}
 
 			(() => {
-				const final = this.FinalValue(this.sUnit.StatData[key], key, false);
-				const added = final - this.sUnit.StatData[key].base;
+				const final = this.FinalValue(sStat, key, false);
+				const added = final - sStat.base;
 				output.base[key] = {
 					name: stat.name,
 					final,
@@ -344,8 +375,8 @@ export default class UnitStatus extends Vue {
 				};
 			})();
 			(() => {
-				const final = this.FinalValue(this.sUnit.StatData[key], key, true);
-				const added = final - this.sUnit.StatData[key].base;
+				const final = this.FinalValue(sStat, key, true);
+				const added = final - sStat.base;
 				output.final[key] = {
 					name: stat.name,
 					final,

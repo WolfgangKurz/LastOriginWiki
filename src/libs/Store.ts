@@ -50,6 +50,7 @@ export interface EquipDisplayType {
 		EventMap: boolean;
 		OldEventMap: boolean;
 		Map: boolean;
+		Challenge: boolean;
 	};
 	Effects: string[];
 }
@@ -144,6 +145,7 @@ class StoreModule extends VuexModule {
 			EventMap: true,
 			OldEventMap: true,
 			Map: true,
+			Challenge: true,
 		},
 		Effects: this.equipEffectFilterListFlatten,
 	};

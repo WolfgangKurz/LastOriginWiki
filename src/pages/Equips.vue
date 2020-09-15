@@ -128,6 +128,11 @@
 									@click="Filter('Source', 'OldEventExchange')"
 								>지난 이벤트 교환소</b-button>
 							</b-btn-group>
+							<b-button
+								variant="outline-primary"
+								:pressed="Display.Source.Challenge"
+								@click="Filter('Source', 'Challenge')"
+							>외부 통신 요청</b-button>
 						</div>
 					</b-col>
 				</b-row>

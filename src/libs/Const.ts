@@ -39,7 +39,7 @@ export function ImageExtension () {
 	return webpAvailable ? "webp" : "png";
 }
 
-export const CurrentEvent = "FairyAria";
+export const CurrentEvent = "";
 export const CurrentDate = (() => {
 	const d = new Date();
 	const y = d.getUTCFullYear() % 100;
@@ -51,6 +51,10 @@ export const WorldNames: Dictionary<string> = {
 	Story: "메인스토리",
 	SupremeDinner: "지고의 저녁식사",
 	Rioboros: "리오보로스의 유산",
+	FullMoonNocturne: "만월의 야상곡",
+	HalloweenPanic: "할로윈 파크 패닉",
+	SaintOrca: "세인트 오르카의 비밀작전",
+	ChocolateQueen: "이상한 나라의 초코 여왕",
 	OrcaFix: "오르카호를 수복하라!",
 	FairyAria: "요정 마을의 아리아",
 };
