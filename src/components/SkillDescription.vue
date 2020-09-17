@@ -277,11 +277,15 @@ export default class SkillDescription extends Vue {
 							val += parseFloat(incPart[i % incPart.length]);
 						return val;
 					};
-					const value = func((basis + inc(
-						this.level +
-						(this.buffBonus && !flags.skill ? 2 : 0) +
-						(this.loveBonus && !flags.skill ? 1 : 0),
-					)) * (1 + (flags.skill ? this.skillBonus / 100 : 0)));
+					const value = func(
+						basis +
+						inc(
+							this.level +
+							(this.buffBonus && !flags.skill ? 2 : 0) +
+							(this.loveBonus && !flags.skill ? 1 : 0),
+						) +
+						(flags.skill ? this.skillBonus / 100 : 0),
+					);
 
 					const signF = (x: string | Array<string | JSX.Element | JSX.Element[]>) => {
 						if (Array.isArray(x)) {

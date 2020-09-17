@@ -7,8 +7,34 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200917>2020-09-17</b-card-header>
+			<b-collapse id="changelog20200917" visible>
+				<b-card-body>
+					<div>
+						<b-badge variant="warning">전투원 스킬</b-badge>의
+						<b-badge variant="info">스킬 위력</b-badge>이
+						공격력 배수의 합연산이 아닌 최종 값의 곱연산으로 계산되던 문제를 수정했습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">마법소녀 매지컬 모모</b-badge>의
+						<rarity-badge rarity="SS">SS 승급</rarity-badge>정보가 추가되었습니다.
+						<br />
+						<b-badge variant="info">성장형 마법소녀</b-badge>스킬의 상세 정보가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">라인리터</b-badge>의 이름이
+						<b-badge variant="warning">AT72 라인리터</b-badge>로 변경되었습니다.
+						<br />
+						<rarity-badge rarity="SS">SS 승급</rarity-badge>정보가 추가되었습니다.
+						<br />
+						<b-badge variant="info">기병 돌격</b-badge>스킬의 정보가 추가되었으며, 상세 수치는 업데이트 후 갱신됩니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200916>2020-09-16</b-card-header>
-			<b-collapse id="changelog20200916" visible>
+			<b-collapse id="changelog20200916">
 				<b-card-body>
 					<div>
 						<b-badge variant="warning">전투원 스테이터스</b-badge>의
