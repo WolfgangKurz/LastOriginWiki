@@ -43,7 +43,7 @@ function process (auth) {
 
 			fs.writeFileSync(
 				path.resolve(__dirname, "..", "src", "json", "equip.json"),
-				JSON.stringify(ret),
+				JSON.stringify(ret, null, 2),
 			);
 		} else
 			console.log("No data found.");
@@ -66,7 +66,7 @@ function process (auth) {
 
 			fs.writeFileSync(
 				path.resolve(__dirname, "..", "src", "json", "equip-names.json"),
-				JSON.stringify(ret),
+				JSON.stringify(ret, null, 2),
 			);
 		} else
 			console.log("No data found.");

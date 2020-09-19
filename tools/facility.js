@@ -78,7 +78,7 @@ function process (auth) {
 
 			fs.writeFileSync(
 				path.resolve(__dirname, "..", "src", "json", "facility.json"),
-				JSON.stringify(ret),
+				JSON.stringify(ret, null, 2),
 			);
 		} else
 			console.log("No data found.");
