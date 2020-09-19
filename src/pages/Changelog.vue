@@ -7,8 +7,28 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200920>2020-09-20</b-card-header>
+			<b-collapse id="changelog20200920" visible>
+				<b-card-body>
+					<div>
+						<b-badge variant="warning">프로스트 서펀트</b-badge>의 1번째 패시브
+						<b-badge variant="info">긴급 구조</b-badge>의 AP 수치가 입력되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">프로스트 서펀트</b-badge>의 2번째 패시브
+						<b-badge variant="info">불굴의 소방관</b-badge>의 전투 속행 수치가 입력되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">마법소녀 매지컬 모모</b-badge>의 2번째 액티브
+						<b-badge variant="info">모모찬바라</b-badge>의
+						<b-badge variant="danger">급소찌르기</b-badge>확률이 추가되었습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200917>2020-09-17</b-card-header>
-			<b-collapse id="changelog20200917" visible>
+			<b-collapse id="changelog20200917">
 				<b-card-body>
 					<div>
 						<b-badge variant="warning">전투원 스킬</b-badge>의
