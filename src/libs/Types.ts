@@ -510,3 +510,16 @@ export namespace MapNodeEntity {
 		},
 	};
 }
+
+export interface ExpEntity {
+	waves: number[];
+	enemies: number;
+}
+export interface ExpRaw {
+	map: {
+		[key: string]: {
+			[key: string]: ExpEntity;
+		};
+	};
+	table: number[];
+}

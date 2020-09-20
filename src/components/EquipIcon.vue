@@ -17,7 +17,7 @@ export default class EquipIcon extends Vue {
 		type: String,
 		default: "normal",
 	})
-	private size!: "normal" | "big" | "large";
+	private size!: "small" | "normal" | "big" | "large";
 
 	private get Icon () {
 		const imageExt = ImageExtension();
@@ -43,6 +43,11 @@ div.equip-icon {
 		display: block;
 		width: 48px;
 		height: 48px;
+	}
+
+	&[data-size="small"] img {
+		width: 40px;
+		height: 40px;
 	}
 
 	&[data-size="big"] img {

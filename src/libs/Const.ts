@@ -1,5 +1,4 @@
 import webpChecker from "webp-checker";
-import { Dictionary } from "@/libs/Interface";
 
 export function getScrollbarWidth () {
 	const div = document.createElement("div");
@@ -47,7 +46,7 @@ export const CurrentDate = (() => {
 	return `${y}/${m}`;
 })();
 
-export const WorldNames: Dictionary<string> = {
+export const WorldNames: Record<string, string> = {
 	Story: "메인스토리",
 	SupremeDinner: "지고의 저녁식사",
 	Rioboros: "리오보로스의 유산",

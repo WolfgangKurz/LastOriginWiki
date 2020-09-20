@@ -32,6 +32,10 @@
 
 				<b-nav-item-dropdown right>
 					<template #button-content>기타</template>
+					<b-dropdown-item href="/exp" @click.prevent="GoTo('/exp')">
+						경험치 계산기
+						<!--/목록-->
+					</b-dropdown-item>
 					<b-dropdown-item href="/bgm" @click.prevent="GoTo('/bgm')">BGM</b-dropdown-item>
 					<b-dropdown-item href="/eapi" @click.prevent="GoTo('/eapi')">API</b-dropdown-item>
 					<b-dropdown-divider />

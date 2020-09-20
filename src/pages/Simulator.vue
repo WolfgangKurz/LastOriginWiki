@@ -62,7 +62,6 @@ import UnitEditModal from "./Simulation/UnitEditModal.vue";
 import { UnitStatsData } from "@/libs/DB";
 import { Unit, UnitStats, UnitStatsPoint } from "@/libs/Types";
 import { UpdateTitle } from "@/libs/Functions";
-import { Dictionary } from "@/libs/Interface";
 
 import Simulation from "./Simulation/Simulation/Simulation";
 
@@ -142,7 +141,7 @@ export default class Simulator extends Vue {
 	}
 
 	private ExportAlias () {
-		const data: Dictionary<any> = {};
+		const data: Record<string, any> = {};
 		for (let i = 0; i < this.Simulator.Grid.length; i++) {
 			const g = this.Simulator.Grid[i];
 			if (g) data[i + 1] = g.Serialize();

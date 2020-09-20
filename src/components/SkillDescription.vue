@@ -6,7 +6,6 @@ import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
 import { UnitData } from "@/libs/DB";
-import { Dictionary } from "@/libs/Interface";
 import EquipNameTable from "@/json/equip-names.json";
 
 import UnitFace from "@/components/UnitFace.vue";
@@ -16,7 +15,7 @@ import ElemIcon from "@/components/ElemIcon.vue";
 import UnitCard from "@/pages/Units/UnitCard.vue";
 import EquipCard from "@/pages/Equips/EquipCard.vue";
 
-const EquipTable = EquipNameTable as Dictionary<string>;
+const EquipTable = EquipNameTable as Record<string, string>;
 
 @Component({
 	components: {

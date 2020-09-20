@@ -7,13 +7,14 @@ import StatsDB from "@/json/unit-stats.json";
 import FacilityDB from "@/json/facility.json";
 import ItemNamesDB from "@/json/item-names.json";
 import MapDB from "@/json/map.json";
+import ExpDB from "@/json/exp.json";
 
 import {
 	Equip, UnitType, UnitRole, Status,
 	Trigger, TriggerTypeArray, TriggerType,
 	Action, Unit, RawUnit, RawEquip, RawSkill,
 	UnitStatsRaw, UnitUIDTable, RawUnitDialogue,
-	RawFacilities, RawItemNames, Worlds,
+	RawFacilities, RawItemNames, Worlds, ExpRaw,
 } from "@/libs/Types";
 import EntitySource from "@/libs/EntitySource";
 
@@ -471,17 +472,10 @@ function CompileSkill () {
 	return table;
 }
 export const SkillData = CompileSkill();
-
-export const UnitStatsData: {
-	[key: number]: UnitStatsRaw;
-} = StatsDB;
-
+export const UnitStatsData: Record<number, UnitStatsRaw> = StatsDB;
 export const UnitUid: UnitUIDTable = UnitUidDB;
-
-export const UnitDialogueData = UnitDialogueDB as RawUnitDialogue;
-
+export const UnitDialogueData: RawUnitDialogue = UnitDialogueDB;
 export const Facilities = FacilityDB as RawFacilities;
-
-export const ItemNames = ItemNamesDB as RawItemNames;
-
+export const ItemNames: RawItemNames = ItemNamesDB;
 export const MapData = MapDB as unknown as Worlds;
+export const ExpData: ExpRaw = ExpDB;
