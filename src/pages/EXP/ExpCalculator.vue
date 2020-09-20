@@ -193,12 +193,12 @@
 
 							<b-badge v-if="skills.alexandra.use" class="ml-1" variant="success">
 								모범 교사
-								lv.{{skills.alexandra.level}}
+								lv.{{skills.alexandra.level + 1}}
 								x{{AsRounded(skills.alexandra.bonus[skills.alexandra.level])}}
 							</b-badge>
 							<b-badge v-if="skills.tommywalker.use" class="ml-1" variant="success">
 								잔해 재활용
-								lv.{{skills.tommywalker.level}}
+								lv.{{skills.tommywalker.level + 1}}
 								x{{AsRounded(skills.tommywalker.bonus[skills.tommywalker.level])}}
 								x{{sortieArea.enemies}}
 							</b-badge>
@@ -237,12 +237,12 @@
 
 							<b-badge v-if="skills.alexandra.use" class="ml-1" variant="success">
 								모범 교사
-								lv.{{skills.alexandra.level}}
+								lv.{{skills.alexandra.level + 1}}
 								x{{AsRounded(skills.alexandra.bonus[skills.alexandra.level])}}
 							</b-badge>
 							<b-badge v-if="skills.tommywalker.use" class="ml-1" variant="success">
 								잔해 재활용
-								lv.{{skills.tommywalker.level}}
+								lv.{{skills.tommywalker.level + 1}}
 								x{{AsRounded(skills.tommywalker.bonus[skills.tommywalker.level])}}
 								x{{sortieArea.enemies}}
 							</b-badge>
