@@ -13,6 +13,8 @@
 					<div>
 						<b-badge variant="warning">기타</b-badge>메뉴에
 						<b-badge variant="warning">경험치 계산기</b-badge>페이지가 추가되었습니다.
+						<br />
+						<b-badge variant="success">장비/스킬 보너스</b-badge>연산이 잘못되어있던 점을 수정했습니다.
 					</div>
 					<div>
 						<b-badge variant="warning">프로스트 서펀트</b-badge>의 1번째 패시브
