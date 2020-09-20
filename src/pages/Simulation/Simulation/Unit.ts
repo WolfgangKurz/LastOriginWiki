@@ -287,7 +287,10 @@ export class Unit extends Vue {
 				...Stat.Empty,
 				isIndependent: true,
 			},
-			off: { ...Stat.Empty },
+			off: {
+				...Stat.Empty,
+				isIndependent: true,
+			},
 			"-acc": { ...Stat.Empty },
 			"-eva": { ...Stat.Empty },
 			"-range": { ...Stat.Empty },
@@ -341,7 +344,7 @@ export class Unit extends Vue {
 							if (act.act === "off") {
 								if (act.params.length === 1) {
 									if (isNumeric(act.params[0]) && key === "off")
-										calc(act.params[0]);
+										independentValues.push(calc(act.params[0])); // calc(act.params[0]);
 									else if (!isNumeric(act.params[0]) && act.params[0] === key)
 										calc("100%");
 									else
