@@ -3,13 +3,13 @@
 		<h2>세계 정보</h2>
 		<hr />
 
-		<h4>메인스토리 / 현재 진행중인 이벤트</h4>
+		<h4>메인스토리 / 현재 진행중인 / 곧 진행될 이벤트</h4>
 		<b-row cols="1" cols-lg="2">
 			<b-col>
 				<world-item linked wid="Story" @goto="GoTo" />
 			</b-col>
 			<b-col>
-				<world-item linked wid="FairyAria" @goto="GoTo" />
+				<world-item linked wid="FullMoonNocturne" @goto="GoTo" />
 			</b-col>
 		</b-row>
 
@@ -22,6 +22,9 @@
 			</b-col>
 			<b-col>
 				<world-item linked wid="Rioboros" @goto="GoTo" />
+			</b-col>
+			<b-col>
+				<world-item linked wid="FairyAria" @goto="GoTo" />
 			</b-col>
 		</b-row>
 	</div>

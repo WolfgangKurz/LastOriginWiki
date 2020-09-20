@@ -146,11 +146,13 @@
 					<div class="ml-2 mb-2">
 						<b-card no-body>
 							<h4 class="m-2 p-1 clearfix">
-								<span v-for="(wave, waveIdx) in sortieArea.waves" :key="`exp-calc-wave-${waveIdx}`">
+								<span v-for="(waveData, waveIdx) in sortieArea" :key="`exp-calc-explist-wave-${waveIdx}`">
 									<b-icon-arrow-right v-if="waveIdx !== 0" class="mx-2" />
-									<b-badge variant="stat-hp">{{FormatNumber(wave)}}</b-badge>
+									<b-badge variant="stat-hp">
+										{{FormatNumber(waveData.exp)}} EXP,
+										{{FormatNumber(waveData.enemies)}} 철충
+									</b-badge>
 								</span>
-								<b-badge class="float-right" variant="stat-eva">{{FormatNumber(sortieArea.enemies)}} 철충들</b-badge>
 							</h4>
 						</b-card>
 					</div>
@@ -163,6 +165,7 @@
 					<div class="ml-2 mb-2">
 						<b-input v-model.number="destLevel" />
 					</div>
+					<hr />
 
 					<div class="mb-1">이벤트 보너스</div>
 					<div class="ml-2 mb-2">
@@ -174,6 +177,12 @@
 							<b-col cols="auto" class="pl-0">%</b-col>
 						</b-row>
 					</div>
+					<hr />
+
+					<div class="mb-1">리더 보너스</div>
+					<div class="ml-2 mb-2">
+						<b-checkbox v-model="isLeader">리더 경험치 1.2배</b-checkbox>
+					</div>
 				</b-col>
 				<b-col cols="12" lg="8">
 					<div class="mb-1">
@@ -181,8 +190,10 @@
 					</div>
 					<div class="ml-4 mb-2">
 						<template v-if="hasSumValues">
-							<div class="mt-2">장비/스킬 보너스 :</div>
-							<h5 class="ml-4">
+							<div class="mt-2">장비/스킬 보너스</div>
+							<h5 v-for="(waveData, wave) in sortieArea" :key="`exp-calc-bonus-wave-${wave}`">
+								<b-badge variant="warning">{{wave + 1}} 웨이브 {{FormatNumber(waveData.enemies)}} 철충</b-badge>
+
 								<b-badge
 									v-for="(equip, equipIdx) in UsingExpEquips"
 									:key="`exp-calc-equip-${equipIdx}-ret`"
@@ -207,17 +218,15 @@
 								<b-badge v-if="skills.tommywalker.use" class="ml-1" variant="success">
 									잔해 재활용
 									lv.{{skills.tommywalker.level + 1}}
-									x{{AsRounded(skills.tommywalker.bonus[skills.tommywalker.level])}}
-									x{{sortieArea.enemies}}
+									x{{AsRounded(1 + (skills.tommywalker.bonus[skills.tommywalker.level] - 1) * waveData.enemies)}}
 								</b-badge>
 							</h5>
 							<hr />
 						</template>
 
-						<div class="mt-2">리더 :</div>
-						<h5 class="ml-4">
-							<b-badge variant="warning">전투당 {{FormatNumber(waveSum)}}</b-badge>
-							<b-badge class="ml-1" variant="info">리더 x1.2</b-badge>
+						<h5 v-for="(waveData, wave) in sortieArea" :key="`exp-calc-result-wave-${wave}`">
+							<b-badge variant="warning">{{wave + 1}} 웨이브 {{FormatNumber(waveData.exp)}} EXP</b-badge>
+							<b-badge v-if="isLeader" class="ml-1" variant="info">리더 x1.2</b-badge>
 
 							<b-badge v-if="CoreLinks>0" class="ml-1" variant="primary">코어링크 x{{1 + CoreLinks * 0.04}}</b-badge>
 
@@ -225,7 +234,7 @@
 								v-show="hasSumValues"
 								class="mx-1"
 								variant="success"
-							>장비/스킬 보너스 x{{AsRounded(sumBonusValue)}}</b-badge>
+							>장비/스킬 보너스 x{{AsRounded(SumBonusValue(wave))}}</b-badge>
 
 							<b-badge
 								v-if="eventMultiply>0"
@@ -234,41 +243,15 @@
 							>이벤트 보너스 x{{AsRounded(eventMultiply / 100 + 1)}}</b-badge>
 
 							<b-icon-arrow-right class="mx-1" />
-							<b-badge variant="dark">{{FormatNumber(ResultExp(waveSum, true))}} EXP</b-badge>
+							<b-badge variant="dark">{{FormatNumber(ResultExp(wave))}} EXP</b-badge>
 						</h5>
-						<h5 class="ml-4">
-							<b-badge variant="warning">필요 경험치 {{FormatNumber(requiredExp)}}</b-badge>
-							<b-icon-arrow-right class="mx-1" />
-							<b-badge variant="dark">{{FormatNumber(ResultCount(waveSum, true))}} 회</b-badge>
-						</h5>
-
 						<hr />
-
-						<div class="mt-2">일반 :</div>
-						<h5 class="ml-4">
-							<b-badge variant="warning">전투당 {{FormatNumber(waveSum)}}</b-badge>
-
-							<b-badge v-if="CoreLinks>0" class="ml-1" variant="primary">코어링크 x{{1+CoreLinks*0.04}}</b-badge>
-
-							<b-badge
-								v-show="hasSumValues"
-								class="mx-1"
-								variant="success"
-							>장비/스킬 보너스 x{{AsRounded(sumBonusValue)}}</b-badge>
-
-							<b-badge
-								v-if="eventMultiply>0"
-								class="mx-1"
-								variant="primary"
-							>이벤트 보너스 x{{AsRounded(eventMultiply / 100 + 1)}}</b-badge>
-
-							<b-icon-arrow-right class="mx-1" />
-							<b-badge variant="dark">{{FormatNumber(ResultExp(waveSum, false))}} EXP</b-badge>
-						</h5>
-						<h5 class="ml-4">
+						<h5>
 							<b-badge variant="warning">필요 경험치 {{FormatNumber(requiredExp)}}</b-badge>
+							<span class="px-1">&divide;</span>
+							<b-badge variant="warning">총 경험치 {{FormatNumber(sumExp)}}</b-badge>
 							<b-icon-arrow-right class="mx-1" />
-							<b-badge variant="dark">{{FormatNumber(ResultCount(waveSum, false))}} 회</b-badge>
+							<b-badge variant="dark">{{FormatNumber(resultCount)}} 회</b-badge>
 						</h5>
 					</div>
 				</b-col>
@@ -319,9 +302,10 @@ export default class EXP extends Vue {
 	private destLevel: number = 100;
 	private eventMultiply: number = 0;
 	private CoreLinks: number = 0;
+	private isLeader: boolean = true;
 
 	private unitRarity: Rarity = "SS";
-	private sortieArea: ExpEntity = FormSelectFirst(this.areaList)?.value ?? { waves: [], enemies: 0 };
+	private sortieArea: ExpEntity[] = FormSelectFirst(this.areaList)?.value ?? [];
 
 	private skills: Record<string, ExpSkillItem> = {
 		alexandra: {
@@ -445,9 +429,9 @@ export default class EXP extends Vue {
 	}
 
 	private get areaList () {
-		const ret: FormSelectData<ExpEntity> = [];
+		const ret: FormSelectData<ExpEntity[]> = [];
 		Object.keys(this.MapData).forEach(x => {
-			const grp: FormSelectItem<ExpEntity>[] = [];
+			const grp: FormSelectItem<ExpEntity[]>[] = [];
 
 			Object.keys(this.MapData[x]).forEach(y => {
 				const z = y.endsWith("Ex")
@@ -465,10 +449,6 @@ export default class EXP extends Vue {
 			});
 		});
 		return ret;
-	}
-
-	private get waveSum () {
-		return this.sortieArea.waves.reduce((p, c) => p + c, 0);
 	}
 
 	private get requiredExp () {
@@ -500,7 +480,18 @@ export default class EXP extends Vue {
 			this.UsingExpEquips.length > 0;
 	}
 
-	private get sumBonusValue () {
+	private get sumExp () {
+		return this.sortieArea
+			.map((x, i) => i)
+			.reduce((p, c) => p + this.ResultExp(c), 0);
+	}
+
+	private get resultCount () {
+		const exp = this.sumExp;
+		return Math.max(0, Math.ceil(this.requiredExp / exp));
+	}
+
+	private SumBonusValue (wave: number) {
 		let sumValue = 1;
 
 		this.UsingExpEquips
@@ -510,14 +501,9 @@ export default class EXP extends Vue {
 			sumValue += this.skills.alexandra.bonus[this.skills.alexandra.level] - 1;
 
 		if (this.skills.tommywalker.use)
-			sumValue += (this.skills.tommywalker.bonus[this.skills.tommywalker.level] - 1) * this.sortieArea.enemies;
+			sumValue += (this.skills.tommywalker.bonus[this.skills.tommywalker.level] - 1) * this.sortieArea[wave].enemies;
 
 		return sumValue;
-	}
-
-	private ResultCount (value: number, isLeader: boolean) {
-		const exp = this.ResultExp(value, isLeader);
-		return Math.max(0, Math.ceil(this.requiredExp / exp));
 	}
 
 	private ExpBonusMultiply (value: string) {
@@ -536,13 +522,13 @@ export default class EXP extends Vue {
 		return x;
 	}
 
-	private ResultExp (value: number, isLeader: boolean) {
-		let exp = value;
+	private ResultExp (wave: number) {
+		let exp = this.sortieArea[wave].exp;
 
 		// {[(웨이브 경험치 X 리더 보너스) X 장비 및 스킬에 의한 상승량 총합] X 이벤트 경험치} X 링크 보너스 + 시설 경험치
-		exp *= (isLeader ? 1.2 : 1);
+		exp *= (this.isLeader ? 1.2 : 1);
 
-		exp *= this.sumBonusValue;
+		exp *= this.SumBonusValue(wave);
 		exp *= this.eventMultiply * 0.01 + 1;
 		exp *= 1 + this.CoreLinks * 0.04;
 
