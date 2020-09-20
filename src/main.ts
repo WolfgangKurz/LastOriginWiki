@@ -3,9 +3,10 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import "./plugins/bootstrap-vue";
 
+import "./plugins/mixin";
+
 import { initWEBP } from "@/libs/Const";
 import Checkbox from "@/components/Checkbox.vue";
-
 
 import Router from "./Router";
 import App from "./App.vue";

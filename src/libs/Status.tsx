@@ -1,13 +1,12 @@
 import { Status } from "@/libs/Types";
 import { UnitData } from "@/libs/DB";
-import { Dictionary } from "@/libs/Interface";
 
 export interface StatusTextType {
 	unknown: boolean;
 	display: Array<JSX.Element | JSX.Element[]>;
 }
 
-const actName: Dictionary<string> = {
+const actName: Record<string, string> = {
 	acc: "적중",
 	armorpierce: "방어 관통",
 	atk: "공격력",
@@ -50,7 +49,7 @@ function elemName (elem: string) {
 	}
 }
 function effectName (data: string) {
-	const pmTable: Dictionary<string> = {
+	const pmTable: Record<string, string> = {
 		acc: "적중",
 		armorpierce: "방어 관통",
 		atk: "공격력",
@@ -67,7 +66,7 @@ function effectName (data: string) {
 		resist2: "속성 저항",
 		spd: "행동력",
 	};
-	const cTable: Dictionary<string> = {
+	const cTable: Record<string, string> = {
 		barrier: "방어막",
 		dp: "방어막/피해감소 무시",
 		hit: "지속피해",

@@ -28,7 +28,6 @@ import { Prop } from "vue-property-decorator";
 
 import EquipNameTable from "@/json/equip-names.json";
 import EntitySource from "@/libs/EntitySource";
-import { Dictionary } from "@/libs/Interface";
 
 import EquipIcon from "@/components/EquipIcon.vue";
 import SourceBadge from "@/components/SourceBadge.vue";
@@ -56,7 +55,7 @@ export default class EquipCard extends Vue {
 	private noLink!: boolean;
 
 	private get EquipNames () {
-		return EquipNameTable as Dictionary<string>;
+		return EquipNameTable as Record<string, string>;
 	}
 
 	private Click () {

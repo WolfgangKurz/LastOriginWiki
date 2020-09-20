@@ -209,7 +209,6 @@ import { EquipData } from "@/libs/DB";
 import { ArrayUnique, UpdateTitle } from "@/libs/Functions";
 import { Equip, Rarity, EquipType } from "@/libs/Types";
 import EntitySource from "@/libs/EntitySource";
-import { Dictionary } from "@/libs/Interface";
 
 import StoreModule, { EquipDisplayType } from "@/libs/Store";
 
@@ -274,7 +273,7 @@ export default class Equips extends Vue {
 	}
 
 	private get EquipNames () {
-		return EquipNameTable as Dictionary<string>;
+		return EquipNameTable as Record<string, string>;
 	}
 
 	private get EquipRarity () {
@@ -282,7 +281,7 @@ export default class Equips extends Vue {
 	}
 
 	private get EquipEffects () {
-		const actName: Dictionary<string> = {
+		const actName: Record<string, string> = {
 			acc: "적중",
 			armorpierce: "방어 관통",
 			atk: "공격력",

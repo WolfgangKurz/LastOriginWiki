@@ -18,6 +18,7 @@ import WorldMapView from "@/pages/Worlds/WorldMapView.vue";
 
 import Changelog from "@/pages/Changelog.vue";
 
+import EXPPage from "@/pages/EXP.vue";
 import BGMPage from "@/pages/BGM.vue";
 import APIPage from "@/pages/API.vue";
 
@@ -93,6 +94,10 @@ const Router = new VueRouter({
 			component: Changelog,
 		},
 
+		{
+			path: "/exp",
+			component: EXPPage,
+		},
 		{
 			path: "/bgm",
 			component: BGMPage,

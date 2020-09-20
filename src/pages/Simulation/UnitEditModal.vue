@@ -160,7 +160,6 @@ import { Unit } from "./Simulation/Unit";
 
 import { UnitStatsData } from "@/libs/DB";
 import { FormatNumber } from "@/libs/Functions";
-import { Dictionary } from "@/libs/Interface";
 
 import RarityBadge from "@/components/RarityBadge.vue";
 import EquipSelectModal from "./EquipSelectModal.vue";
@@ -248,7 +247,7 @@ export default class UnitEditModal extends Vue {
 	private get FinalValues () {
 		if (!this.unit) return [];
 
-		const output: Dictionary<string> = {};
+		const output: Record<string, string> = {};
 
 		for (const k in StatList) {
 			const key = k as StatType;

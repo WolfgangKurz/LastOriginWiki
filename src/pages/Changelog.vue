@@ -11,6 +11,10 @@
 			<b-collapse id="changelog20200920" visible>
 				<b-card-body>
 					<div>
+						<b-badge variant="warning">기타</b-badge>메뉴에
+						<b-badge variant="warning">경험치 계산기</b-badge>페이지가 추가되었습니다.
+					</div>
+					<div>
 						<b-badge variant="warning">프로스트 서펀트</b-badge>의 1번째 패시브
 						<b-badge variant="info">긴급 구조</b-badge>의 AP 수치가 입력되었습니다.
 					</div>
