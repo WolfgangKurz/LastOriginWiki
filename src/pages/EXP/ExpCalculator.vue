@@ -163,12 +163,57 @@
 					<div class="ml-2 mb-2">
 						<b-input v-model.number="destLevel" />
 					</div>
+
+					<div class="mb-1">이벤트 보너스</div>
+					<div class="ml-2 mb-2">
+						<b-row class="align-items-center">
+							<b-col cols="auto" class="pr-0">+</b-col>
+							<b-col>
+								<b-input v-model.number="eventMultiply" />
+							</b-col>
+							<b-col cols="auto" class="pl-0">%</b-col>
+						</b-row>
+					</div>
 				</b-col>
 				<b-col cols="12" lg="8">
 					<div class="mb-1">
 						<b-icon-calculator class="mr-1" />계산 결과 (전투원 경험치)
 					</div>
 					<div class="ml-4 mb-2">
+						<template v-if="hasSumValues">
+							<div class="mt-2">장비/스킬 보너스 :</div>
+							<h5 class="ml-4">
+								<b-badge
+									v-for="(equip, equipIdx) in UsingExpEquips"
+									:key="`exp-calc-equip-${equipIdx}-ret`"
+									class="ml-1"
+									variant="danger"
+								>
+									{{equip.rarity}}
+									{{EquipNames[equip.name]}}
+									+{{equip.level}}
+									x{{AsRounded(equip.bonus[equip.level])}}
+									<template
+										v-if="equip.count > 0"
+									>x{{equip.count}}</template>
+								</b-badge>
+
+								<b-badge v-if="skills.alexandra.use" class="ml-1" variant="success">
+									모범 교사
+									lv.{{skills.alexandra.level + 1}}
+									x{{AsRounded(skills.alexandra.bonus[skills.alexandra.level])}}
+								</b-badge>
+
+								<b-badge v-if="skills.tommywalker.use" class="ml-1" variant="success">
+									잔해 재활용
+									lv.{{skills.tommywalker.level + 1}}
+									x{{AsRounded(skills.tommywalker.bonus[skills.tommywalker.level])}}
+									x{{sortieArea.enemies}}
+								</b-badge>
+							</h5>
+							<hr />
+						</template>
+
 						<div class="mt-2">리더 :</div>
 						<h5 class="ml-4">
 							<b-badge variant="warning">전투당 {{FormatNumber(waveSum)}}</b-badge>
@@ -177,31 +222,16 @@
 							<b-badge v-if="CoreLinks>0" class="ml-1" variant="primary">코어링크 x{{1 + CoreLinks * 0.04}}</b-badge>
 
 							<b-badge
-								v-for="(equip, equipIdx) in UsingExpEquips"
-								:key="`exp-calc-equip-${equipIdx}-ret`"
-								class="ml-1"
-								variant="danger"
-							>
-								{{equip.rarity}}
-								{{EquipNames[equip.name]}}
-								+{{equip.level}}
-								x{{AsRounded(equip.bonus[equip.level])}}
-								<template
-									v-if="equip.count > 0"
-								>x{{equip.count}}</template>
-							</b-badge>
+								v-show="hasSumValues"
+								class="mx-1"
+								variant="success"
+							>장비/스킬 보너스 x{{AsRounded(sumBonusValue)}}</b-badge>
 
-							<b-badge v-if="skills.alexandra.use" class="ml-1" variant="success">
-								모범 교사
-								lv.{{skills.alexandra.level + 1}}
-								x{{AsRounded(skills.alexandra.bonus[skills.alexandra.level])}}
-							</b-badge>
-							<b-badge v-if="skills.tommywalker.use" class="ml-1" variant="success">
-								잔해 재활용
-								lv.{{skills.tommywalker.level + 1}}
-								x{{AsRounded(skills.tommywalker.bonus[skills.tommywalker.level])}}
-								x{{sortieArea.enemies}}
-							</b-badge>
+							<b-badge
+								v-if="eventMultiply>0"
+								class="mx-1"
+								variant="primary"
+							>이벤트 보너스 x{{AsRounded(eventMultiply / 100 + 1)}}</b-badge>
 
 							<b-icon-arrow-right class="mx-1" />
 							<b-badge variant="dark">{{FormatNumber(ResultExp(waveSum, true))}} EXP</b-badge>
@@ -221,31 +251,16 @@
 							<b-badge v-if="CoreLinks>0" class="ml-1" variant="primary">코어링크 x{{1+CoreLinks*0.04}}</b-badge>
 
 							<b-badge
-								v-for="(equip, equipIdx) in UsingExpEquips"
-								:key="`exp-calc-equip-${equipIdx}-ret`"
-								class="ml-1"
-								variant="danger"
-							>
-								{{equip.rarity}}
-								{{EquipNames[equip.name]}}
-								+{{equip.level}}
-								x{{AsRounded(equip.bonus[equip.level])}}
-								<template
-									v-if="equip.count > 0"
-								>x{{equip.count}}</template>
-							</b-badge>
+								v-show="hasSumValues"
+								class="mx-1"
+								variant="success"
+							>장비/스킬 보너스 x{{AsRounded(sumBonusValue)}}</b-badge>
 
-							<b-badge v-if="skills.alexandra.use" class="ml-1" variant="success">
-								모범 교사
-								lv.{{skills.alexandra.level + 1}}
-								x{{AsRounded(skills.alexandra.bonus[skills.alexandra.level])}}
-							</b-badge>
-							<b-badge v-if="skills.tommywalker.use" class="ml-1" variant="success">
-								잔해 재활용
-								lv.{{skills.tommywalker.level + 1}}
-								x{{AsRounded(skills.tommywalker.bonus[skills.tommywalker.level])}}
-								x{{sortieArea.enemies}}
-							</b-badge>
+							<b-badge
+								v-if="eventMultiply>0"
+								class="mx-1"
+								variant="primary"
+							>이벤트 보너스 x{{AsRounded(eventMultiply / 100 + 1)}}</b-badge>
 
 							<b-icon-arrow-right class="mx-1" />
 							<b-badge variant="dark">{{FormatNumber(ResultExp(waveSum, false))}} EXP</b-badge>
@@ -302,6 +317,7 @@ export default class EXP extends Vue {
 	private baseLevel: number = 1;
 	private baseEXP: number = 0;
 	private destLevel: number = 100;
+	private eventMultiply: number = 0;
 	private CoreLinks: number = 0;
 
 	private unitRarity: Rarity = "SS";
@@ -478,6 +494,27 @@ export default class EXP extends Vue {
 		return Math.max(0, destExp - startExp);
 	}
 
+	private get hasSumValues () {
+		return this.skills.alexandra.use ||
+			this.skills.tommywalker.use ||
+			this.UsingExpEquips.length > 0;
+	}
+
+	private get sumBonusValue () {
+		let sumValue = 1;
+
+		this.UsingExpEquips
+			.forEach(x => (sumValue += (x.bonus[x.level] - 1) * (x.count > 0 ? x.count : 1)));
+
+		if (this.skills.alexandra.use)
+			sumValue += this.skills.alexandra.bonus[this.skills.alexandra.level] - 1;
+
+		if (this.skills.tommywalker.use)
+			sumValue += (this.skills.tommywalker.bonus[this.skills.tommywalker.level] - 1) * this.sortieArea.enemies;
+
+		return sumValue;
+	}
+
 	private ResultCount (value: number, isLeader: boolean) {
 		const exp = this.ResultExp(value, isLeader);
 		return Math.max(0, Math.ceil(this.requiredExp / exp));
@@ -501,14 +538,13 @@ export default class EXP extends Vue {
 
 	private ResultExp (value: number, isLeader: boolean) {
 		let exp = value;
+
+		// {[(웨이브 경험치 X 리더 보너스) X 장비 및 스킬에 의한 상승량 총합] X 이벤트 경험치} X 링크 보너스 + 시설 경험치
 		exp *= (isLeader ? 1.2 : 1);
+
+		exp *= this.sumBonusValue;
+		exp *= this.eventMultiply * 0.01 + 1;
 		exp *= 1 + this.CoreLinks * 0.04;
-
-		this.UsingExpEquips.forEach(x => (exp *= 1 + (x.bonus[x.level] - 1) * (x.count > 0 ? 1 + x.count : 1)));
-
-		if (this.skills.alexandra.use) exp *= this.skills.alexandra.bonus[this.skills.alexandra.level];
-		if (this.skills.tommywalker.use)
-			exp *= (this.skills.tommywalker.bonus[this.skills.tommywalker.level] - 1) * this.sortieArea.enemies + 1;
 
 		return Math.floor(exp);
 	}
