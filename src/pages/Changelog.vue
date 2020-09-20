@@ -7,8 +7,26 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200921>2020-09-21</b-card-header>
+			<b-collapse id="changelog20200921" visible>
+				<b-card-body>
+					<div>
+						<b-badge variant="warning">경험치 계산기</b-badge>의 토미워커 스킬 보너스 계산이 잘못되어있던 점을 수정했습니다.
+						<br />경험치 계산이 모든 웨이브 경험치/철충 수 총합으로 계산되던 것을 각 웨이브별 계산으로 수정했습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">만월의 야상곡</b-badge>의 전투원/장비 획득처 정보가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">전투원 스테이터스</b-badge>의
+						<b-badge variant="info">효과 해제</b-badge>를 독립 시행으로 변경했습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200920>2020-09-20</b-card-header>
-			<b-collapse id="changelog20200920" visible>
+			<b-collapse id="changelog20200920">
 				<b-card-body>
 					<div>
 						<b-badge variant="warning">기타</b-badge>메뉴에
