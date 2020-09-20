@@ -233,7 +233,10 @@ export namespace UnitStat {
 			...Stat.Empty,
 			isIndependent: true,
 		},
-		off: Stat.Empty,
+		off: {
+			...Stat.Empty,
+			isIndependent: true,
+		},
 		"-acc": Stat.Empty,
 		"-eva": Stat.Empty,
 		"-range": Stat.Empty,
