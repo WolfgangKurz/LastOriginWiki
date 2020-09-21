@@ -16,14 +16,14 @@ const req = async (url) => new Promise((resolve, reject) => {
 });
 
 (async () => {
-	for (let area = 1; area <= 7; area++) {
-		const url = "https://lastoriginmap.github.io/data/data-area" + area + ".min.json";
+	for (let area = 31; area <= 31; area++) {
+		const url = "https://lastoriginmap.github.io/data/data-areaEv" + area + ".min.json";
 
 		const json = await req(url);
 
 		json.stage.sort((a0, b0) => {
-			const a = a0.title;
-			const b = b0.title;
+			const a = a0.name || a0.title;
+			const b = b0.name || b0.title;
 
 			if (a.includes("Ex")) {
 				if (b.includes("Ex"))

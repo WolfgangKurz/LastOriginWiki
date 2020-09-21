@@ -267,6 +267,7 @@ import Component from "vue-class-component";
 
 import EquipNameTable from "@/json/equip-names.json";
 
+import { WorldNames } from "@/libs/Const";
 import { EquipData, ExpData } from "@/libs/DB";
 import { Equip, ExpEntity, Rarity } from "@/libs/Types";
 import { FormSelectItem, FormSelectGroup, FormSelectData, FormSelectFirst } from "@/libs/FormSelect";
@@ -433,18 +434,24 @@ export default class EXP extends Vue {
 		Object.keys(this.MapData).forEach(x => {
 			const grp: FormSelectItem<ExpEntity[]>[] = [];
 
+			const prefix = this.MapData[x].type ? x.substr(2) || "1" : x;
+
 			Object.keys(this.MapData[x]).forEach(y => {
+				if (y === "type") return;
+
 				const z = y.endsWith("Ex")
 					? y.substr(0, y.length - 2) + "2"
 					: y;
 
 				grp.push({
-					text: `${x}-${y} (${x}${z})`,
-					value: this.MapData[x][y],
+					text: `${x}-${y} (${prefix}${z})`,
+					value: this.MapData[x][y] as ExpEntity[],
 				});
 			});
 			ret.push({
-				label: `${x} 구역`,
+				label: this.MapData[x].type
+					? `${WorldNames[this.MapData[x].type]} ${prefix} 구역`
+					: `${x} 구역`,
 				options: grp,
 			});
 		});

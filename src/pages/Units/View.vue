@@ -179,18 +179,25 @@
 								<b-tbody>
 									<b-tr>
 										<b-td>
-											<div v-for="(area, aindex) in unit.source" :key="`unit-view-source-${aindex}`">
-												<hr v-if="aindex > 0" class="my-1" />
-												<source-badge
-													v-for="(source, sindex) in area"
-													:key="`unit-view-drop-${aindex}-${sindex}-${source}`"
-													:source="source"
-													detail
-													linked
-												/>
-											</div>
 											<template v-if="unit.source.length === 0">
-												<span class="text-secondary">획득처 정보 없음 (제조 제외)</span>
+												<b-badge v-if="unit.craftable" variant="dark">제조 가능</b-badge>
+												<span v-else class="text-secondary">획득처 정보 없음 (제조 불가)</span>
+											</template>
+											<template v-else>
+												<b-badge v-if="unit.craftable" variant="dark">
+													<b-icon-hammer class="mr-1" />제조 가능
+												</b-badge>
+
+												<div v-for="(area, aindex) in unit.source" :key="`unit-view-source-${aindex}`">
+													<hr v-if="unit.craftable || aindex > 0" class="my-1" />
+													<source-badge
+														v-for="(source, sindex) in area"
+														:key="`unit-view-drop-${aindex}-${sindex}-${source}`"
+														:source="source"
+														detail
+														linked
+													/>
+												</div>
 											</template>
 										</b-td>
 									</b-tr>

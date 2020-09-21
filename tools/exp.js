@@ -6,7 +6,7 @@ function process (auth) {
 	const sheets = google.sheets({ version: "v4", auth });
 	sheets.spreadsheets.values.get({
 		spreadsheetId: "1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4",
-		range: "EXP!A2:S",
+		range: "EXP!A2:T",
 	}, (err, res) => {
 		if (err) return console.log("The API returned an error: " + err);
 
@@ -19,14 +19,16 @@ function process (auth) {
 			};
 
 			rows.map((row) => {
-				if (!row[0]) return;
+				if (!row[1]) return;
 
-				const [world, map] = row;
+				const [type, world, map] = row;
 
-				const wave = row.slice(2, 2 + 8);
-				const enemies = row.slice(2 + 8, 2 + 8 + 8);
+				const wave = row.slice(3, 3 + 8);
+				const enemies = row.slice(3 + 8, 3 + 8 + 8);
 
-				if (!(world in ret.map)) ret.map[world] = {};
+				if (!(world in ret.map))
+					ret.map[world] = { type };
+
 				ret.map[world][map] = wave
 					.filter(x => x)
 					.map((x, i) => ({
@@ -35,10 +37,10 @@ function process (auth) {
 					}));
 			});
 			rows.map((row) => {
-				if (!row[2 + 8 + 8]) return;
+				if (!row[3 + 8 + 8]) return;
 
 				ret.table.push(
-					parseInt(row[2 + 8 + 8], 10),
+					parseInt(row[3 + 8 + 8], 10),
 				);
 			});
 

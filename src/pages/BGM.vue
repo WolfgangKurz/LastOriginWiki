@@ -52,7 +52,7 @@ export default class BGM extends Vue {
 
 			Battle_01: "전투 1",
 			Battle_02: "전투 2",
-			Battle_03: "전투 3",
+			Battle_03: "전투 3 (만월의 야상곡 전투)",
 			Battle_04: "전투 4",
 			Battle_Boss_01: "보스 전투 1",
 			Battle_Boss_02: "보스 전투 2",

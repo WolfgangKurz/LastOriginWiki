@@ -32,8 +32,7 @@
 					/>
 					<span class="text-secondary pl-2">|</span>
 					<div class="d-inline-block ml-2">
-						호감도 200
-						<b-checkbox class="d-inline-block mr-1" v-model="loveBonus" />
+						<b-checkbox class="d-inline-block mr-1" v-model="loveBonus">호감도 200</b-checkbox>
 					</div>
 				</b-th>
 				<b-th>AP &amp; 사거리 &amp; 범위</b-th>
@@ -48,8 +47,7 @@
 						:options="SkillLevelList"
 					/>
 					<div>
-						호감도 200
-						<b-checkbox class="d-inline-block mr-1" v-model="loveBonus" />
+						<b-checkbox class="d-inline-block mr-1" v-model="loveBonus">호감도 200</b-checkbox>
 					</div>
 				</b-th>
 			</b-tr>
