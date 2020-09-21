@@ -14,6 +14,9 @@
 						<b-badge variant="warning">S등급 백신 처리</b-badge>장비의 정확한 수치가 입력되었습니다.
 					</div>
 					<div>
+						<b-badge variant="warning">AL 팬텀</b-badge>의 서약 대사 음성이 추가되었습니다.
+					</div>
+					<div>
 						<b-badge variant="warning">마법소녀 매지컬 모모</b-badge>의 2번째 액티브
 						<b-badge variant="info">모모찬바라</b-badge>의
 						<b-badge variant="danger">급소찌르기</b-badge>확률이 수정되었습니다.
