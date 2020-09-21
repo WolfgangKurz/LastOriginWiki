@@ -518,7 +518,9 @@ export interface ExpEntity {
 export interface ExpRaw {
 	map: {
 		[key: string]: {
-			[key: string]: ExpEntity[];
+			[key: string]: ExpEntity[] | string;
+
+			type: string;
 		};
 	};
 	table: number[];

@@ -11,8 +11,26 @@
 			<b-collapse id="changelog20200921" visible>
 				<b-card-body>
 					<div>
+						<b-badge variant="warning">S등급 백신 처리</b-badge>장비의 정확한 수치가 입력되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">마법소녀 매지컬 모모</b-badge>의 2번째 액티브
+						<b-badge variant="info">모모찬바라</b-badge>의
+						<b-badge variant="danger">급소찌르기</b-badge>확률이 수정되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">마법소녀 매지컬 모모</b-badge>의 3번째 패시브
+						<b-badge variant="info">성장형 마법소녀</b-badge>의 설명이 수정되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">AT72 라인리터</b-badge>의 3번째 패시브
+						<b-badge variant="info">기병 돌격</b-badge>의 상세 수치가 입력되었습니다.
+					</div>
+					<div>
 						<b-badge variant="warning">경험치 계산기</b-badge>의 토미워커 스킬 보너스 계산이 잘못되어있던 점을 수정했습니다.
 						<br />경험치 계산이 모든 웨이브 경험치/철충 수 총합으로 계산되던 것을 각 웨이브별 계산으로 수정했습니다.
+						<br />
+						<b-badge variant="warning">만월의 야상곡</b-badge>의 전투 지역 경험치가 추가되었습니다.
 					</div>
 					<div>
 						<b-badge variant="warning">만월의 야상곡</b-badge>의 전투원/장비 획득처 정보가 추가되었습니다.
