@@ -16,7 +16,7 @@ import UnitFace from "@/components/UnitFace.vue";
 	},
 })
 export default class StoryViewer extends Vue {
-	private readonly BaseURL = "https://lastorigin-wiki-assets.s3.ap-northeast-2.amazonaws.com/story/";
+	private readonly BaseURL = AssetsRoot + "/story/";
 
 	private world: string = "";
 	private area: string = "";

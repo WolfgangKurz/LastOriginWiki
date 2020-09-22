@@ -7,8 +7,24 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200922>2020-09-22</b-card-header>
+			<b-collapse id="changelog20200922" visible>
+				<b-card-body>
+					<div>
+						<b-badge variant="warning">세계정보</b-badge>의 지역 지도에
+						<b-badge variant="danger">이야기 보기</b-badge>기능을 추가했습니다.
+						<br />이 기능은 시험 적용된 상태로,
+						<b-badge variant="info">[1-1] 비상 상황</b-badge>만 제공됩니다.
+					</div>
+					<div>
+						<b-badge variant="warning">징벌의 사디어스</b-badge>의 대사가 재생되지 않던 문제가 수정되었습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200921>2020-09-21</b-card-header>
-			<b-collapse id="changelog20200921" visible>
+			<b-collapse id="changelog20200921">
 				<b-card-body>
 					<div>
 						<b-badge variant="warning">S등급 백신 처리</b-badge>장비의 정확한 수치가 입력되었습니다.
