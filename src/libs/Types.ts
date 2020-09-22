@@ -105,10 +105,6 @@ export namespace Equip {
 	};
 }
 
-export interface UnitUIDTable {
-	[key: number]: string;
-}
-
 export interface RawUnit {
 	id: number;
 	rarity: Rarity;

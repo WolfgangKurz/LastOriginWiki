@@ -14,9 +14,8 @@ import {
 	Equip, UnitType, UnitRole, Status,
 	Trigger, TriggerTypeArray, TriggerType,
 	Action, Unit, RawUnit, RawEquip, RawSkill,
-	UnitStatsRaw, UnitUIDTable, RawUnitDialogue,
-	RawFacilities, RawItemNames, Worlds, ExpRaw,
-	StoryRaw,
+	UnitStatsRaw, RawUnitDialogue, RawFacilities,
+	RawItemNames, Worlds, ExpRaw, StoryRaw,
 } from "@/libs/Types";
 import EntitySource from "@/libs/EntitySource";
 
@@ -475,7 +474,7 @@ function CompileSkill () {
 }
 export const SkillData = CompileSkill();
 export const UnitStatsData: Record<number, UnitStatsRaw> = StatsDB;
-export const UnitUid: UnitUIDTable = UnitUidDB;
+export const UnitUid: Record<number, string> = UnitUidDB;
 export const UnitDialogueData: RawUnitDialogue = UnitDialogueDB;
 export const Facilities = FacilityDB as RawFacilities;
 export const ItemNames: RawItemNames = ItemNamesDB;
