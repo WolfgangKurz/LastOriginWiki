@@ -8,6 +8,7 @@ import FacilityDB from "@/json/facility.json";
 import ItemNamesDB from "@/json/item-names.json";
 import MapDB from "@/json/map.json";
 import ExpDB from "@/json/exp.json";
+import StoryDB from "@/json/story.json";
 
 import {
 	Equip, UnitType, UnitRole, Status,
@@ -15,6 +16,7 @@ import {
 	Action, Unit, RawUnit, RawEquip, RawSkill,
 	UnitStatsRaw, UnitUIDTable, RawUnitDialogue,
 	RawFacilities, RawItemNames, Worlds, ExpRaw,
+	StoryRaw,
 } from "@/libs/Types";
 import EntitySource from "@/libs/EntitySource";
 
@@ -479,3 +481,4 @@ export const Facilities = FacilityDB as RawFacilities;
 export const ItemNames: RawItemNames = ItemNamesDB;
 export const MapData = MapDB as unknown as Worlds;
 export const ExpData: ExpRaw = ExpDB;
+export const StoryData: StoryRaw[] = StoryDB;

@@ -16,6 +16,9 @@ import Worlds from "@/pages/Worlds.vue";
 import WorldAreaView from "@/pages/Worlds/WorldAreaView.vue";
 import WorldMapView from "@/pages/Worlds/WorldMapView.vue";
 
+import Story from "@/pages/Story.vue";
+import StoryViewer from "@/pages/Story/StoryViewer.vue";
+
 import Changelog from "@/pages/Changelog.vue";
 
 import EXPPage from "@/pages/EXP.vue";
@@ -87,6 +90,15 @@ const Router = new VueRouter({
 		{
 			path: "/worlds/:world/:area/:node",
 			component: WorldMapView,
+		},
+
+		{
+			path: "/story/:world/:area",
+			component: Story,
+		},
+		{
+			path: "/story/:world/:area/:loc/:spec",
+			component: StoryViewer,
 		},
 
 		{

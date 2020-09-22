@@ -12,10 +12,18 @@
 		<b-card no-body bg-variant="dark" text-variant="light">
 			<b-card-header>
 				{{WorldName}}
-				<b-badge class="ml-2" variant="warning">제 {{area}}구역</b-badge>
+				<h5 class="m-0 d-inline-block">
+					<b-badge class="ml-2" variant="warning">제 {{area}}구역 :: {{AreaName}}</b-badge>
+				</h5>
 
 				<div class="float-right">
+					<b-button size="sm" variant="light" @click="GoTo(`/story/${world}/${area}`)">
+						이야기 보기
+						<b-icon-chat-left-quote class="ml-1" />
+					</b-button>
+
 					<a
+						class="ml-2"
 						:href="`https://lastoriginmap.github.io/area.html?areanum=${EnemyMapAreaId}`"
 						target="_blank"
 					>
@@ -184,7 +192,15 @@ export default class WorldMapView extends Vue {
 	}
 
 	private get WorldName () {
-		return (this.world in WorldNames ? WorldNames[this.world] : this.world);
+		return this.world in WorldNames
+			? WorldNames[this.world]
+			: this.world;
+	}
+
+	private get AreaName (): string {
+		return (this.world in MapData) && (this.area in MapData[this.world])
+			? MapData[this.world][this.area].title || `${this.area} 구역`
+			: "???";
 	}
 
 	private get UnitDrops () {
@@ -236,7 +252,7 @@ export default class WorldMapView extends Vue {
 		const world = MapData[this.world];
 		if (!world) return ret;
 
-		const area = world[this.area]?.filter(x => x.pos[1] === y);
+		const area = world[this.area]?.list.filter(x => x.pos[1] === y);
 		if (!area) return ret;
 
 		for (const n of area) ret[n.pos[0]] = n;
