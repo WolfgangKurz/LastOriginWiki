@@ -272,48 +272,42 @@ export namespace UnitStats {
 	};
 }
 
+export interface RawUnitDialogueEntity {
+	Join?: string;
+	SquadJoin?: string;
+	Leader?: string;
+	SortiePick?: string;
+	StageStart?: string;
+	Retreat?: string;
+	SearchStart?: string;
+	SearchEnd?: string;
+	BattleFocus?: string;
+	ActionApprove?: string;
+	SpSkill?: string;
+	Retire?: string;
+	Repair?: string;
+	Reinforce?: string;
+	ItemEquip?: string;
+	CoreLink?: string;
+	PresentGet?: string;
+	Login?: string;
+	/* eslint-disable camelcase */
+	Idle_01_01?: string;
+	Idle_01_02?: string;
+	Idle_01_03?: string;
+	SPIdle_01_01?: string;
+	Idle_02_01?: string;
+	Idle_03_01?: string;
+	Idle_04_01?: string;
+	SPIdle_02_01?: string;
+	Oath?: string;
+	OathIdle_01?: string;
+	MVP?: string;
+	/* eslint-enable camelcase */
+}
 export interface RawUnitDialogue {
-	[key: number]: {
-		[key: string]: {
-			Join?: string;
-			SquadJoin?: string;
-			Leader?: string;
-			SortiePick?: string;
-			StageStart?: string;
-			Retreat?: string;
-			SearchStart?: string;
-			SearchEnd?: string;
-			BattleFocus?: string;
-			ActionApprove?: string;
-			SpSkill?: string;
-			Retire?: string;
-			Repair?: string;
-			Reinforce?: string;
-			ItemEquip?: string;
-			CoreLink?: string;
-			PresentGet?: string;
-			Login?: string;
-			// eslint-disable-next-line
-			Idle_01_01?: string;
-			// eslint-disable-next-line
-			Idle_01_02?: string;
-			// eslint-disable-next-line
-			Idle_01_03?: string;
-			// eslint-disable-next-line
-			SPIdle_01_01?: string;
-			// eslint-disable-next-line
-			Idle_02_01?: string;
-			// eslint-disable-next-line
-			Idle_03_01?: string;
-			// eslint-disable-next-line
-			Idle_04_01?: string;
-			// eslint-disable-next-line
-			SPIdle_02_01?: string;
-			Oath?: string;
-			// eslint-disable-next-line
-			OathIdle_01?: string;
-			MVP?: string;
-		};
+	[key: number]: { // Unit
+		[key: string]: RawUnitDialogueEntity; // Skin
 	};
 }
 
