@@ -30,7 +30,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, Watch, PropSync } from "vue-property-decorator";
 
-import { SkinInfo, Unit } from "@/libs/Types";
+import { RawUnitDialogueEntity, SkinInfo, Unit } from "@/libs/Types";
 import { UnitUid, UnitDialogueData } from "@/libs/DB";
 
 import DialogueRow from "./DialogueRow.vue";
@@ -72,7 +72,7 @@ export default class UnitDialogue extends Vue {
 		return `dialogue-${this.uid}`;
 	}
 
-	private get TypeList () {
+	private get TypeList (): Array<keyof RawUnitDialogueEntity> {
 		if (this.unit.id in UnitDialogueData) {
 			const key = ((v) => {
 				if (v.isMarry) return "M";
@@ -83,7 +83,7 @@ export default class UnitDialogue extends Vue {
 
 			if (key in UnitDialogueData[this.unit.id]) {
 				const diag = UnitDialogueData[this.unit.id][key];
-				return Object.keys(diag);
+				return Object.keys(diag) as Array<keyof RawUnitDialogueEntity>;
 			}
 		}
 
@@ -121,7 +121,7 @@ export default class UnitDialogue extends Vue {
 			"Oath",
 			"OathIdle_01",
 			"MVP",
-		];
+		] as Array<keyof RawUnitDialogueEntity>;
 	}
 
 	private get Dialogue () {
