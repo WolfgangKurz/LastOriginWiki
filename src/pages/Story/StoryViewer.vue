@@ -195,6 +195,9 @@ export default class StoryViewer extends Vue {
 						case "comment":
 							ret.push(<b-alert class="mx-4 text-center" variant="success" show>{plain(node)}</b-alert>);
 							break;
+						case "situation":
+							ret.push(<b-alert class="mx-4 text-center" variant="danger" show>{plain(node)}</b-alert>);
+							break;
 						case "scene":
 							{
 								const bg = node.getAttribute("bg");
