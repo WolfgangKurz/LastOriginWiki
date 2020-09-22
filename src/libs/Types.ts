@@ -472,7 +472,10 @@ export interface RawItemNames {
 
 export interface Worlds {
 	[key: string]: {
-		[key: string]: MapNodeEntity[];
+		[key: string]: {
+			title: string;
+			list: MapNodeEntity[];
+		};
 	};
 }
 
@@ -524,4 +527,15 @@ export interface ExpRaw {
 		};
 	};
 	table: number[];
+}
+
+export interface StoryRaw {
+	area: string;
+	map: number;
+	loc: number;
+	spec: number;
+	title: string;
+	face: number;
+	bg: string;
+	desc: string;
 }

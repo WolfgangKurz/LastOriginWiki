@@ -16,8 +16,11 @@
 				<b-card :class="classNames(i)" text-variant="light" bg-variant="dark">
 					<img :src="`${AssetsRoot}/world/icons/${wid}_${i}.png`" />
 					<div
-						:class="['world-area-name', Areas[1].includes(i) ? 'text-secondary' : 'text-warning']"
+						:class="['world-area-number', Areas[1].includes(i) ? 'text-secondary' : 'text-warning']"
 					>제 {{i}}구역</div>
+					<div
+						:class="['world-area-name', Areas[1].includes(i) ? 'text-secondary' : '']"
+					>{{AreaNames[i]}}</div>
 
 					<a
 						v-if="!Areas[1].includes(i)"
@@ -37,6 +40,7 @@ import Component from "vue-class-component";
 import { Watch } from "vue-property-decorator";
 
 import { AssetsRoot, ImageExtension, WorldNames } from "@/libs/Const";
+import { MapData } from "@/libs/DB";
 import { UpdateTitle } from "@/libs/Functions";
 
 import WorldItem from "./WorldItem.vue";
@@ -60,6 +64,14 @@ export default class WorldArea extends Vue {
 
 	private get Name () {
 		return WorldNames[this.wid] || this.wid;
+	}
+
+	private get AreaNames (): string[] {
+		const ret: string[] = [];
+		Object
+			.keys(MapData[this.wid])
+			.forEach(x => (ret[parseInt(x, 10)] = MapData[this.wid][x].title));
+		return ret;
 	}
 
 	private get Description () {

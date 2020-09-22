@@ -316,7 +316,7 @@ function process (auth) {
 	const sheets = google.sheets({ version: "v4", auth });
 	sheets.spreadsheets.values.get({
 		spreadsheetId: "1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4",
-		range: "World!A2:H",
+		range: "World!A2:I",
 	}, (err, res) => {
 		if (err) return console.log("The API returned an error: " + err);
 
@@ -326,19 +326,22 @@ function process (auth) {
 			rows.map((row) => {
 				if (!row[0]) return;
 
-				const [id, map, prefix, postf, maps, B, Ex, C] = row;
+				const [id, map, title, prefix, postf, maps, B, Ex, C] = row;
 				const postfix = postf.split(",");
 				while (postfix.length < 4) postfix.push(""); // 기본, B, Ex, C
 
 				if (!(id in ret)) ret[id] = {};
 
-				ret[id][map] = [];
+				ret[id][map] = {
+					title: title || `${map} 구역`,
+					list: [],
+				};
 				for (let i = 0; i < maps; i++) {
-					ret[id][map].push({
+					ret[id][map].list.push({
 						type: "N",
 						name: `${prefix}-${i + 1}${postfix[0]}`,
 						pos: [i, 1],
-						prev: i > 0 ? ret[id][map][i - 1].pos : undefined,
+						prev: i > 0 ? ret[id][map].list[i - 1].pos : undefined,
 						drops: BuildDrops(`${prefix}-${i + 1}${postfix[0]}`, id, map, i, "N", postfix[0]),
 					});
 				}
@@ -355,31 +358,31 @@ function process (auth) {
 						if (x.includes("~")) {
 							const p = x.split("~").map(_ => parseInt(_));
 							for (let i = p[0]; i <= p[1]; i++) {
-								ret[id][map].push({
+								ret[id][map].list.push({
 									type: "B",
 									name: `${prefix}-${i}${postfix[1]}`,
 									pos: [i - 1, 0],
 									prev: i > p[0]
-										? ret[id][map][
-											ret[id][map].length - 1
+										? ret[id][map].list[
+											ret[id][map].list.length - 1
 										].pos
 										: sep
 											? undefined
-											: ret[id][map][
-												ret[id][map].findIndex(y => y.type === "N" && y.name === `${prefix}-${i}${postfix[0]}`)
+											: ret[id][map].list[
+												ret[id][map].list.findIndex(y => y.type === "N" && y.name === `${prefix}-${i}${postfix[0]}`)
 											].pos,
 									drops: BuildDrops(`${prefix}-${i}${postfix[1]}`, id, map, i, "B", postfix[1]),
 								});
 							}
 						} else {
-							ret[id][map].push({
+							ret[id][map].list.push({
 								type: "B",
 								name: `${prefix}-${x}${postfix[1]}`,
 								pos: [parseInt(x) - 1, 0],
 								prev: sep
 									? undefined
-									: ret[id][map][
-										ret[id][map].findIndex(y => y.type === "N" && y.name === `${prefix}-${x}${postfix[0]}`)
+									: ret[id][map].list[
+										ret[id][map].list.findIndex(y => y.type === "N" && y.name === `${prefix}-${x}${postfix[0]}`)
 									].pos,
 								drops: BuildDrops(`${prefix}-${x}${postfix[1]}`, id, map, x, "B", postfix[1]),
 							});
@@ -409,13 +412,13 @@ function process (auth) {
 							}
 
 							for (let i = p[0]; i <= p[1]; i++) {
-								ret[id][map].push({
+								ret[id][map].list.push({
 									type: "Ex",
 									name: `${prefix}-${i}${postfix[2]}`,
 									pos: [base + (i - p[0]) - 1, 2],
 									prev: i > p[0]
-										? ret[id][map][
-											ret[id][map].length - 1
+										? ret[id][map].list[
+											ret[id][map].list.length - 1
 										].pos
 										: undefined,
 									drops: BuildDrops(`${prefix}-${i}${postfix[2]}`, id, map, i, "Ex", postfix[2]),
@@ -432,7 +435,7 @@ function process (auth) {
 								base = p;
 							}
 
-							ret[id][map].push({
+							ret[id][map].list.push({
 								type: "Ex",
 								name: `${prefix}-${x}${postfix[2]}`,
 								pos: [base - 1, 2],
@@ -448,7 +451,7 @@ function process (auth) {
 						const p = x.split("_").map(_ => parseInt(_));
 						if (p.length !== 3) return;
 
-						ret[id][map].push({
+						ret[id][map].list.push({
 							type: "C",
 							name: `${prefix}-${p[0]}${postfix[3]}`,
 							pos: p.slice(1),
@@ -467,4 +470,4 @@ function process (auth) {
 	});
 }
 
-require("./auth")(process);
+require("./dbsheet/auth")(process);

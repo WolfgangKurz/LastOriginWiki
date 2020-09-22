@@ -73,4 +73,4 @@ function process (auth) {
 	});
 }
 
-require("./auth")(process);
+require("./dbsheet/auth")(process);
