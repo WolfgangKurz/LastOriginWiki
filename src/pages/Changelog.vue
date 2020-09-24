@@ -7,8 +7,32 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200924>2020-09-24</b-card-header>
+			<b-collapse id="changelog20200924" visible>
+				<b-card-body>
+					<div>
+						<b-badge variant="warning">마법소녀 매지컬 모모</b-badge>의 3번째 패시브
+						<b-badge variant="info">성장형 마법소녀</b-badge>의 설명을 수정했습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">쿠노이치 제로</b-badge>의 1번째 액티브
+						<b-badge variant="info">은밀</b-badge>과 2번째 액티브
+						<b-badge variant="info">뇌신 일섬</b-badge>의 사거리 및 설명을 수정했습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">아크로바틱 써니</b-badge>의 2번째 액티브
+						<b-badge variant="info">전격등장 타이거!</b-badge>의 대상 적중 감소 수치가 입력되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">징벌의 사디어스</b-badge>의 1번째 액티브
+						<b-badge variant="info">테이져 캐논</b-badge>의 고전압 상태일 때의 대상 전기 저항 감소 수치가 입력되었습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200922>2020-09-22</b-card-header>
-			<b-collapse id="changelog20200922" visible>
+			<b-collapse id="changelog20200922">
 				<b-card-body>
 					<div>
 						<b-badge variant="warning">세계정보</b-badge>의 지역 지도에
