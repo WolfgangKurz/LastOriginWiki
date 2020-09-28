@@ -7,8 +7,29 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20200924>2020-09-28</b-card-header>
+			<b-collapse id="changelog20200928" visible>
+				<b-card-body>
+					<div>
+						신규 전투원 <b-badge variant="warning">와쳐 MQ-20</b-badge>의 정보가 추가되었습니다.
+					</div>
+					<div>
+						신규 전투원 <b-badge variant="warning">쿠노이치 카엔</b-badge>의 정보가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">MH-4 테티스</b-badge>의
+						<b-badge variant="info">소악마인가? 소정령인가?</b-badge>스킨 정보가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">무적의 용</b-badge>의
+						<b-badge variant="info">모피를 걸친 드래곤</b-badge>스킨 정보가 추가되었습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200924>2020-09-24</b-card-header>
-			<b-collapse id="changelog20200924" visible>
+			<b-collapse id="changelog20200924">
 				<b-card-body>
 					<div>
 						<b-badge variant="warning">마법소녀 매지컬 모모</b-badge>의 3번째 패시브
