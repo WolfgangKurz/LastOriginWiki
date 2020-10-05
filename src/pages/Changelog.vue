@@ -7,8 +7,31 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20201005>2020-10-05</b-card-header>
+			<b-collapse id="changelog20201005" visible>
+				<b-card-body>
+					<div>
+						<b-badge variant="exchange">20년 10월 교환소</b-badge> 정보가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">X-05 에밀리</b-badge>및
+						<b-badge variant="warning">오드리 드림위버</b-badge>의 서약 대사 여부가 갱신되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">T-10 님프</b-badge>의
+						<b-badge variant="info">호수의 요정</b-badge>스킨의
+						<b-badge variant="danger">로비 애니메이션</b-badge> 정보 및 가격 정보가 갱신되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">AG-1 네레이드</b-badge>의 2번째 액티브
+						<b-badge variant="info">무차별 난사</b-badge>의 정보가 수정되었습니다. (보호 무시 추가)
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20200924>2020-09-28</b-card-header>
-			<b-collapse id="changelog20200928" visible>
+			<b-collapse id="changelog20200928">
 				<b-card-body>
 					<div>
 						신규 전투원 <b-badge variant="warning">와쳐 MQ-20</b-badge>의 정보가 추가되었습니다.

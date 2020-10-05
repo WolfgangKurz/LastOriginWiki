@@ -20,5 +20,5 @@ const PerPoint: StatTable = {
 	acc: 1.5,
 	eva: 0.4,
 	crit: 0.4,
-	spd: 0,
+	spd: 1.5,
 };
