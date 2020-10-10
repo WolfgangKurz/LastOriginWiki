@@ -6,7 +6,7 @@ function process (auth) {
 	const sheets = google.sheets({ version: "v4", auth });
 	sheets.spreadsheets.values.get({
 		spreadsheetId: "157bUt9DvleYvOsliq2ixpn0-50Xs87EiMHFB2m-KW3w",
-		range: "Story!A2:H",
+		range: "Story!A2:I",
 	}, (err, res) => {
 		if (err) return console.log("The API returned an error: " + err);
 
@@ -16,18 +16,19 @@ function process (auth) {
 			rows.map((row) => {
 				if (!row[0]) return;
 
-				const [area, map, loc, spec, title, face, bg, desc] = row;
+				const [area, map, loc, spec, title, face, bg, desc, filename] = row;
 				const specs = spec.split(",");
 
 				ret.push({
 					area,
 					map: parseInt(map, 10),
-					loc: parseInt(loc, 10),
+					loc,
 					spec: (specs.includes("OP") ? 1 : 0) | (specs.includes("ED") ? 2 : 0),
 					title,
 					face: parseInt(face, 10),
 					bg,
 					desc,
+					filename,
 				});
 			});
 

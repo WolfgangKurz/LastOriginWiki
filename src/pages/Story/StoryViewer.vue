@@ -4,6 +4,8 @@ import Component from "vue-class-component";
 import { Watch } from "vue-property-decorator";
 
 import { StoryRaw } from "@/libs/Types";
+import { StoryRowData } from "@/libs/Story";
+
 import { MapData, StoryData, UnitUid } from "@/libs/DB";
 import { AssetsRoot, WorldNames } from "@/libs/Const";
 import { UpdateTitle } from "@/libs/Functions";
@@ -23,7 +25,7 @@ export default class StoryViewer extends Vue {
 	private loc: string = "";
 	private spec: string = "";
 
-	private storyData: string[] = [];
+	private storyData: StoryRowData[] = [];
 
 	@Watch("$route")
 	private routeChanged () {
@@ -75,7 +77,7 @@ export default class StoryViewer extends Vue {
 			.filter(x => x.area === this.world)
 			.filter(x => x.map.toString() === this.area)
 			.filter(x => x.loc.toString() === this.loc)
-			.filter(x => x.spec === spec);
+			.filter(x => (x.spec & spec) > 0);
 
 		return ret.length ? ret[0] : null;
 	}
@@ -90,12 +92,14 @@ export default class StoryViewer extends Vue {
 		const x = new Promise((resolve, reject) => {
 			if (!this.Story) return reject(new Error("Story not set"));
 
+			const spec = this.spec === "OP" ? 1 : this.spec === "ED" ? 2 : 3;
+
 			const xhr = new XMLHttpRequest();
-			xhr.open("GET", this.BaseURL + `${this.world}-${this.area}-${this.loc}-${this.spec}.txt`);
+			xhr.open("GET", this.BaseURL + `Script_${this.Story.filename}_${spec}.json`);
 			xhr.send();
 			xhr.addEventListener("readystatechange", (e) => {
 				if (xhr.readyState === 4 && xhr.status === 200) {
-					this.storyData = xhr.responseText.split("\n\n");
+					this.storyData = JSON.parse(xhr.responseText) as StoryRowData[];
 					resolve();
 				}
 			});
@@ -105,130 +109,163 @@ export default class StoryViewer extends Vue {
 	private get Parsed () {
 		const ret: JSX.Element[] = [];
 
-		const plain = (node: Node): string => {
-			const ret: string[] = [];
-			node.childNodes.forEach(x => {
-				if (x.nodeType === Node.COMMENT_NODE)
-					return;
+		const parseBuffer: string[] = [];
+		const parseMode: string[] = [];
+		let parseDepth = 0;
+		let parsePhase = 0;
+		let parseColor = "";
 
-				if (x.nodeType === Node.TEXT_NODE) ret.push((x as Text).wholeText);
-				else ret.push(plain(x));
-			});
-			return ret.join(" ");
-		};
+		function parseText (text: string): Array<JSX.Element | string> {
+			const ret: Array<JSX.Element | string> = [];
 
-		this.storyData.forEach(line => {
-			const dom = new DOMParser();
-			const parsed = dom.parseFromString(`<x>${line}</x>`, "text/xml");
+			for (let i = 0; i < text.length; i++) {
+				const c = text[i];
 
-			let teller = "";
-			let tellerId = 0;
-			const selects: Array<{
-				text: string;
-				to: string;
-			}> = [];
+				switch (parsePhase) {
+					case 0: // Idle
+						if (c === "[") {
+							if (parseBuffer.length > 0) {
+								const text = parseBuffer.join("")
+									.split(/(\{[0-9]+\})/g)
+									.filter(x => typeof x === "string")
+									.map(x => x === "{0}"
+										? <b-badge class="badge-text" variant="light">사령관</b-badge>
+										: x,
+									);
+								parseBuffer.splice(0, parseBuffer.length);
 
-			parsed.childNodes[0].childNodes.forEach(_node => {
-				if (_node.nodeType === Node.COMMENT_NODE) return;
-
-				if (_node.nodeType === Node.TEXT_NODE) {
-					const node = _node as Text;
-
-					if (node.textContent?.trim()) {
-						ret.push(<div class="story-dialogue">
-							<div class="story-dialogue-teller">
-								<unit-face id={tellerId} size="60" />
-								{teller}
-							</div>
-							<div class="story-dialogue-text">
-								{
-									node.textContent
-										.split("\n")
-										.filter(x => x)
-										.map(x => <div>{
-											x.split(/(\$player)|(\[\[[^\]]+\]\])/g)
-												.filter(y => typeof y === "string")
-												.map(y => {
-													if (y === "$player")
-														return <b-badge class="badge-text" variant="light">사령관</b-badge>;
-													else if (y.startsWith("[["))
-														return <span class="text-warning">{y.substring(2, y.length - 2)}</span>;
-													else
-														return y;
-												})
-										}</div>)
-								}
-							</div>
-						</div>);
-					}
-				} else {
-					const node = _node as Element;
-					switch (node.nodeName) {
-						case "title":
-							ret.push(<h1 class="text-center">{plain(node)}</h1>);
-							break;
-						case "loc":
-							ret.push(<h3 class="text-center">
-								<b-badge variant="dark">{plain(node)}</b-badge>
-							</h3>);
-							break;
-						case "teller":
-							{
-								teller = plain(node);
-
-								const face = node.getAttribute("face");
-								if (face) {
-									const unit = Object.keys(UnitUid)
-										.map(x => {
-											const id = parseInt(x, 10);
-											return { key: id, value: UnitUid[id] };
-										})
-										.find(x => x.value === face);
-
-									if (!unit)
-										tellerId = 0;
-									else
-										tellerId = unit.key;
-								}
+								if (parseColor)
+									ret.push(<span style={{ color: "#" + parseColor }}>{text}</span>);
+								else
+									ret.push(...text);
 							}
-							break;
-						case "comment":
-							ret.push(<b-alert class="mx-4 text-center" variant="success" show>{plain(node)}</b-alert>);
-							break;
-						case "situation":
-							ret.push(<b-alert class="mx-4 text-center" variant="danger" show>{plain(node)}</b-alert>);
-							break;
-						case "scene":
-							{
-								const bg = node.getAttribute("bg");
-								if (bg) {
-									ret.push(<div class="story-scene text-center">
-										<img src={`${AssetsRoot}/story/${bg}.jpg`} />
-									</div>);
-								}
-							}
-							break;
-						case "select":
-							{
-								const content = plain(node);
-								const to = node.getAttribute("to");
-								if (!to) return;
 
-								selects.push({ text: content, to });
+							parsePhase = 1;
+						} else
+							parseBuffer.push(c);
+						break;
+					case 1: // Tag Parsing
+						if (c === "]") {
+							const tag = parseBuffer.join("");
+							parseBuffer.splice(0, parseBuffer.length);
+							parsePhase = 0;
+
+							if (tag === "-")
+								parseColor = "";
+							else if (parseMode[parseMode.length - 1] === "c")
+								parseColor = tag;
+							else if (tag[0] === "/") {
+								const ctag = tag.substr(1);
+								while (parseMode.pop() !== ctag);
+							} else {
+								parseMode.push(tag);
+								parseDepth++;
 							}
-							break;
-						case "flag":
-							ret.push(<div class="text-right text-warning pr-4" id={node.id}>
-								<b-icon-flag-fill class="mr-2" />선택지 도착점
-							</div>);
-							break;
+						} else
+							parseBuffer.push(c);
+						break;
+				}
+			}
+			if (parseBuffer.length > 0) {
+				const text = parseBuffer.join("")
+					.split(/(\{[0-9]+\})/g)
+					.filter(x => typeof x === "string")
+					.map(x => x === "{0}"
+						? <b-badge class="badge-text" variant="light">사령관</b-badge>
+						: x,
+					);
+				parseBuffer.splice(0, parseBuffer.length);
+
+				if (parseColor)
+					ret.push(<span style={{ color: "#" + parseColor }}>{text}</span>);
+				else
+					ret.push(...text);
+			}
+			return ret;
+		}
+
+		const labels: Record<number, string[]> = {};
+		this.storyData.forEach((row, rowIdx) => {
+			if ("selection" in row) {
+				row.selection.forEach((x, i) => {
+					if (x.to === -1) x.to = rowIdx + 1;
+
+					if (!(x.to in labels)) labels[x.to] = [];
+
+					if (!labels[x.to].includes(x.text))
+						labels[x.to].push(x.text);
+				});
+			}
+		});
+
+		this.storyData.forEach((row, rowIdx) => {
+			if (rowIdx in labels) {
+				ret.push(<div class="text-right text-warning pr-4" id={`script_${rowIdx}`}>
+					<b-icon-flag-fill class="mr-2" />
+					{labels[rowIdx].map(x => <b-badge variant="warning" class="mr-1">{x}</b-badge>)}
+					선택 시
+				</div>);
+			}
+
+			if ("title" in row) {
+				ret.push(<h1 class="text-center">{row.title}</h1>);
+				ret.push(<h3 class="text-center">{row.loc}</h3>);
+			} else if ("text" in row) {
+				const tellerElems = [];
+				const teller = row.teller;
+				if (teller) {
+					if (typeof teller !== "string") {
+						if ("face" in teller) {
+							const unit = Object.keys(UnitUid)
+								.map(x => {
+									const id = parseInt(x, 10);
+									return { key: id, value: UnitUid[id] };
+								})
+								.find(x => x.value === teller.face);
+
+							tellerElems.push(<unit-face id={unit ? unit.key : 0} size="60" />);
+						} else
+							tellerElems.push(<img src={`${this.BaseURL}${teller.image}.png`} width="60" />);
+
+						tellerElems.push(teller.name);
+					} else {
+						tellerElems.push(<unit-face id={0} size="60" />);
+						tellerElems.push(teller);
 					}
 				}
-			});
 
-			if (selects.length > 0) {
+				ret.push(<div class="story-dialogue">
+					<div class="story-dialogue-teller">{tellerElems}</div>
+					<div class="story-dialogue-text">{row.text.map(x => <div>{parseText(x)}</div>)}</div>
+				</div>);
+			} else if ("effect" in row)
+				ret.push(<b-alert class="mx-4 text-center" variant="danger" show>{row.effect}</b-alert>);
+			else if ("comment" in row)
+				ret.push(<b-alert class="mx-4 text-center" variant="success" show>{row.comment}</b-alert>);
+			else if ("bgm" in row) {
+				ret.push(<b-alert class="mx-4 text-center" variant="warning" show>
+					<div>BGM : {row.bgm} ♪</div>
+					<audio src={`${AssetsRoot}/bgm/${row.bgm}.ogg`} type="audio/ogg" controls preload="auto" />
+				</b-alert>);
+			} else if ("bg" in row) {
+				if (row.bg === "BG_Black")
+					ret.push(<b-alert class="mx-4 text-center" variant="success" show>검은 화면</b-alert>);
+				else if (row.bg === "#N/A" || row.bg === "None") {
+					// Do noting
+				} else {
+					ret.push(<div class="story-scene text-center">
+						<img src={`${AssetsRoot}/story/${row.bg}.jpg`} />
+						<br />
+						<small>{row.bg}</small>
+					</div>);
+				}
+			} else if ("img" in row) {
+				ret.push(<div class="story-scene text-center">
+					<img src={`${AssetsRoot}/story/${row.img}.png`} />
+				</div>);
+			} else if ("selection" in row) {
 				ret.push(<div class="text-center">
-					{selects.map(x => <b-button
+					{row.selection.map(x => <b-button
 						class="mx-1"
 						variant="warning"
 						onClick={() => this.ScrollTo(x.to)}
@@ -242,8 +279,8 @@ export default class StoryViewer extends Vue {
 		return ret;
 	}
 
-	private ScrollTo (id: string) {
-		const target = this.$el.querySelector<HTMLDivElement>(`#${id}`);
+	private ScrollTo (id: number) {
+		const target = this.$el.querySelector<HTMLDivElement>(`#script_${id}`);
 		if (!target) return;
 
 		let y = 0;

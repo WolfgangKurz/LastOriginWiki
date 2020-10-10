@@ -66,6 +66,7 @@ export default class BGM extends Vue {
 			Christmas_01: "세인트 오르카의 비밀작전?",
 			Christmas_02: "세인트 오르카의 비밀작전 로비",
 			Forest_of_Elves: "요정 마을의 아리아?",
+			Valentine: "발렌타인데이",
 		};
 	}
 

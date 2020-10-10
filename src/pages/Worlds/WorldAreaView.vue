@@ -11,7 +11,7 @@
 
 		<world-item :wid="wid" />
 
-		<b-row class="justify-content-center" cols="2" cols-md="3" cols-lg="5">
+		<b-row class="justify-content-center" cols="2" cols-md="3" cols-lg="4">
 			<b-col v-for="i in Areas[0]" :key="`world-area-${wid}-${i}`">
 				<b-card :class="classNames(i)" text-variant="light" bg-variant="dark">
 					<img :src="`${AssetsRoot}/world/icons/${wid}_${i}.png`" />
@@ -22,12 +22,16 @@
 						:class="['world-area-name', Areas[1].includes(i) ? 'text-secondary' : '']"
 					>{{AreaNames[i]}}</div>
 
-					<a
-						v-if="!Areas[1].includes(i)"
-						:href="`/worlds/${wid}/${i}`"
-						class="stretched-link"
-						@click.prevent="GoTo(`/worlds/${wid}/${i}`)"
-					/>
+					<b-btn-group v-if="!Areas[1].includes(i)" class="mt-2">
+						<b-button variant="warning" @click="GoTo(`/worlds/${wid}/${i}`)">
+							<b-icon-download class="mr-1" />
+							드랍
+						</b-button>
+						<b-button variant="light" @click="GoTo(`/story/${wid}/${i}`)">
+							<b-icon-chat-left-quote class="mr-1" />
+							이야기
+						</b-button>
+					</b-btn-group>
 				</b-card>
 			</b-col>
 		</b-row>

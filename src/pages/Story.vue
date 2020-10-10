@@ -2,8 +2,8 @@
 	<div class="story-area text-left">
 		<b-row>
 			<b-col cols="auto">
-				<b-button variant="dark" @click="GoTo(`/worlds/${world}/${area}`)">
-					<b-icon-arrow-left class="mr-1" />지도 정보로
+				<b-button variant="dark" @click="GoTo(`/worlds/${world}`)">
+					<b-icon-arrow-left class="mr-1" />구역 목록으로
 				</b-button>
 			</b-col>
 		</b-row>
@@ -27,6 +27,17 @@
 			</b-row>
 		</b-card>
 
+		<b-tabs nav-class="unit-display-tabs mb-3" align="right">
+			<b-tab title-link-class="text-dark" :active="displayTab === 'general'" @click="displayTab = 'general'">
+				<template #title>메인 스테이지</template>
+			</b-tab>
+			<b-tab title-link-class="text-dark" :active="displayTab === 'side'" @click="displayTab = 'side'">
+				<template #title>사이드 스테이지</template>
+			</b-tab>
+			<b-tab title-link-class="text-dark" :active="displayTab === 'ex'" @click="displayTab = 'ex'">
+				<template #title>Ex 스테이지</template>
+			</b-tab>
+		</b-tabs>
 		<div
 			v-for="story in Stories"
 			:key="`story-${story.area}-${story.map}-${story.loc}`"
@@ -44,16 +55,18 @@
 					</div>
 
 					<div class="story-enterance">
-						<b-button
-							v-if="(story.spec & 1) !== 0"
-							variant="warning"
-							@click="GoTo(`/story/${world}/${area}/${story.loc}/OP`)"
-						>OP</b-button>
-						<b-button
-							v-if="(story.spec & 2) !== 0"
-							variant="warning"
-							@click="GoTo(`/story/${world}/${area}/${story.loc}/ED`)"
-						>ED</b-button>
+						<b-button-group class="bg-dark">
+							<b-button
+								v-if="(story.spec & 1) !== 0"
+								variant="outline-warning"
+								@click="GoTo(`/story/${world}/${area}/${story.loc}/OP`)"
+							>OP</b-button>
+							<b-button
+								v-if="(story.spec & 2) !== 0"
+								variant="outline-warning"
+								@click="GoTo(`/story/${world}/${area}/${story.loc}/ED`)"
+							>ED</b-button>
+						</b-button-group>
 					</div>
 				</div>
 				<br />
@@ -83,6 +96,8 @@ import UnitFace from "@/components/UnitFace.vue";
 export default class Story extends Vue {
 	private world: string = "";
 	private area: string = "";
+
+	private displayTab: "general" | "side" | "ex" = "general";
 
 	@Watch("$route")
 	private routeChanged () {
@@ -119,6 +134,11 @@ export default class Story extends Vue {
 
 	private get Stories (): StoryRaw[] {
 		return StoryData
+			.filter(x =>
+				(this.displayTab === "side" && x.loc.endsWith("B")) ||
+				(this.displayTab === "ex" && x.loc.endsWith("Ex")) ||
+				(this.displayTab === "general" && !x.loc.endsWith("B") && !x.loc.endsWith("Ex")),
+			)
 			.filter(x => x.area === this.world && x.map.toString() === this.area);
 	}
 
