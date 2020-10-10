@@ -17,11 +17,6 @@
 				</h5>
 
 				<div class="float-right">
-					<b-button size="sm" variant="light" @click="GoTo(`/story/${world}/${area}`)">
-						이야기 보기
-						<b-icon-chat-left-quote class="ml-1" />
-					</b-button>
-
 					<a
 						class="ml-2"
 						:href="`https://lastoriginmap.github.io/area.html?areanum=${EnemyMapAreaId}`"

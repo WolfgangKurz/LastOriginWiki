@@ -522,10 +522,11 @@ export interface ExpRaw {
 export interface StoryRaw {
 	area: string;
 	map: number;
-	loc: number;
+	loc: string;
 	spec: number;
 	title: string;
 	face: number;
 	bg: string;
 	desc: string;
+	filename: string;
 }

@@ -7,8 +7,33 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20201005>2020-10-11</b-card-header>
+			<b-collapse id="changelog20201011" visible>
+				<b-card-body>
+					<div>
+						<b-badge variant="warning">모든 전투원</b-badge>의
+						<b-badge variant="danger">1레벨 스테이터스 정보</b-badge>가 입력되었습니다.<br />
+						<b-badge variant="warning">모든 전투원</b-badge>의
+						<b-badge variant="danger">100레벨 스테이터스 정보</b-badge>가 입력되었습니다.<br />
+						<b-badge variant="warning">모든 전투원</b-badge>의
+						<b-badge variant="danger">승급 후 스테이터스 정보</b-badge>가 입력되었습니다.<br />
+						<b-badge variant="warning">모든 전투원</b-badge>의
+						<b-badge variant="danger">기본/승급 후 출격 소모 자원 정보</b-badge>가 입력되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">메인스토리</b-badge>의 모든 이야기가 추가되었습니다.<br />
+						모든 이야기를 확인하지 못해 일부 이미지가 표시되지 않을 수도 있습니다.<br />
+						일부 효과가 입력되지 않았거나 코드명으로 표시될 수도 있습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">발렌타인데이</b-badge>BGM이 추가되었습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20201005>2020-10-05</b-card-header>
-			<b-collapse id="changelog20201005" visible>
+			<b-collapse id="changelog20201005">
 				<b-card-body>
 					<div>
 						<b-badge variant="exchange">20년 10월 교환소</b-badge> 정보가 추가되었습니다.
