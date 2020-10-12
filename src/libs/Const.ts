@@ -38,7 +38,7 @@ export function ImageExtension () {
 	return webpAvailable ? "webp" : "png";
 }
 
-export const CurrentEvent = "";
+export const CurrentEvent = "BlurryMemory";
 export const CurrentDate = (() => {
 	const d = new Date();
 	const y = d.getUTCFullYear() % 100;
@@ -56,4 +56,5 @@ export const WorldNames: Record<string, string> = {
 	ChocolateQueen: "이상한 나라의 초코 여왕",
 	OrcaFix: "오르카호를 수복하라!",
 	FairyAria: "요정 마을의 아리아",
+	BlurryMemory: "흐린 기억 속의 나라",
 };

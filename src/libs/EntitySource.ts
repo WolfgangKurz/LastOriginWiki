@@ -64,6 +64,7 @@ export default class EntitySource {
 			case "WorldTreeSeed": return "세계수의 씨앗";
 			case "WorldTreeTwig": return "세계수의 가지";
 			case "WorldTreeLeaf": return "세계수의 잎";
+			case "PositiveClue": return "결정적인 단서";
 		}
 		return "???";
 	}
