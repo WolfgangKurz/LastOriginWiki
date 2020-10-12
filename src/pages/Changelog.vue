@@ -7,8 +7,48 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
-			<b-card-header v-b-toggle.changelog20201005>2020-10-11</b-card-header>
-			<b-collapse id="changelog20201011" visible>
+			<b-card-header v-b-toggle.changelog20201012>2020-10-12</b-card-header>
+			<b-collapse id="changelog20201012" visible>
+				<b-card-body>
+					<div>
+						신규 전투원 <b-badge variant="warning">EB-48G 흐레스벨그</b-badge>,
+						<b-badge variant="warning">AL 레이스</b-badge>의 스테이터스, 스킬을 포함한 모든 정보가 추가되었습니다.
+					</div>
+					<div>
+						신규 장비 <b-badge variant="warning">개량형 고속 학습 시스템</b-badge>,
+						<b-badge variant="warning">연산 강화 회로 베타</b-badge>,
+						<b-badge variant="warning">내 충격 회로 베타</b-badge>가 추가되었습니다.
+						<br />
+						또, 미실장 장비인 <b-badge variant="warning">반응 강화 회로 베타</b-badge> 및 각종 베타 장비들의
+						<rarity-badge rarity="B">B</rarity-badge>,
+						<rarity-badge rarity="A">A</rarity-badge>,
+						<rarity-badge rarity="S">S</rarity-badge> 등급 정보도 추가되었습니다.
+						<br />
+						다음 업데이트에는 <b-badge variant="warning">대 경장 전투 시스템</b-badge>,
+						<b-badge variant="warning">대 기동 전투 시스템</b-badge>,
+						<b-badge variant="warning">대 중장 전투 시스템</b-badge>의 베타 장비 정보가 추가될 예정입니다.
+					</div>
+					<div>
+						<b-badge variant="warning">바닐라 A1</b-badge>의
+						<b-badge variant="info">바닐라의 휴일</b-badge>스킨의 중파 일러스트가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">아우로라</b-badge>의
+						<b-badge variant="info">당신만의 바텐더</b-badge>스킨 정보가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">쿠노이치 제로</b-badge>의
+						<b-badge variant="info">흐트러진 꽃</b-badge>스킨 정보가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="info">흐린 기억 속의 나라</b-badge>이벤트 드랍처 정보가 추가되었습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20201011>2020-10-11</b-card-header>
+			<b-collapse id="changelog20201011">
 				<b-card-body>
 					<div>
 						<b-badge variant="warning">모든 전투원</b-badge>의
