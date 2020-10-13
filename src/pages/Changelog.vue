@@ -16,6 +16,9 @@
 					<div>
 						세계 정보에 <b-badge variant="info">흐린 기억 속의 나라</b-badge>가 표시되지 않던 문제를 수정했습니다.
 					</div>
+					<div>
+						BGM 메뉴에 추가된 BGM이 추가되었습니다.
+					</div>
 				</b-card-body>
 			</b-collapse>
 		</b-card>

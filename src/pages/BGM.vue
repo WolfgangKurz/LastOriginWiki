@@ -47,6 +47,7 @@ export default class BGM extends Vue {
 			Talk_03: "대화 3",
 			Talk_04: "대화 4",
 			Talk_05: "대화 5",
+			Talk_06: "대화 6",
 
 			Thrill_01: "대화 (전율) 1",
 
@@ -67,6 +68,10 @@ export default class BGM extends Vue {
 			Christmas_02: "세인트 오르카의 비밀작전 로비",
 			Forest_of_Elves: "요정 마을의 아리아?",
 			Valentine: "발렌타인데이",
+
+			Mystic: "흐린 기억 속의 나라 1",
+			Noire_01: "흐린 기억 속의 나라 2",
+			Noire_02: "흐린 기억 속의 나라 3",
 		};
 	}
 
