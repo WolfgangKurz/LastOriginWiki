@@ -5,9 +5,9 @@
 				<img :src="`${AssetsRoot}/world/icons/${wid}_1.png`" />
 			</b-col>
 			<b-col>
-				<div class="world-item-name">{{Name}}</div>
+				<div class="world-item-name">{{ Name }}</div>
 				<hr class="my-1" />
-				<div class="world-item-desc">{{Description}}</div>
+				<div class="world-item-desc">{{ Description }}</div>
 			</b-col>
 		</b-row>
 		<a v-if="linked" :href="`/worlds/${wid}`" class="stretched-link" @click.prevent="Click" />
@@ -53,6 +53,7 @@ export default class WorldItem extends Vue {
 			case "SaintOrca": return "연말 파티를 준비하는 사령관에게 뻗쳐오는 마수는?";
 			case "ChocolateQueen": return "티아멧은 '초코 여왕'과 얽힌 멸망 전 인류의 일그러짐과 마주하는데..";
 			case "FairyAria": return "가벼운 마음으로 요정 마을로 향한 사령관에게...?";
+			case "BlurryMemory": return "왓슨, 드디어 대단원이야!";
 		}
 		return this.wid;
 	}
