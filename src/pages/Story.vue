@@ -119,7 +119,7 @@ export default class Story extends Vue {
 	}
 
 	private get Description () {
-		return WorldDescriptions[this.world] || this.world;
+		return WorldDescriptions[this.world] !== undefined ? WorldDescriptions[this.world] : this.world;
 	}
 
 	private get Stories (): StoryRaw[] {
