@@ -182,6 +182,7 @@ export default class WorldMapView extends Vue {
 			case "SaintOrca": return `Ev5${this.area}`;
 			case "ChocolateQueen": return `Ev6${this.area}`;
 			case "FairyAria": return `Ev7${this.area}`;
+			case "BlurryMemory": return `Ev8${this.area}`;
 		}
 		return "";
 	}

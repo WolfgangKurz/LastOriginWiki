@@ -2,9 +2,7 @@
 	<div class="world-area text-left">
 		<b-row>
 			<b-col cols="auto">
-				<b-button variant="dark" @click="GoTo('/worlds/')">
-					<b-icon-arrow-left class="mr-1" />세계 정보로
-				</b-button>
+				<b-button variant="dark" @click="GoTo('/worlds/')"> <b-icon-arrow-left class="mr-1" />세계 정보로 </b-button>
 			</b-col>
 		</b-row>
 		<hr />
@@ -15,12 +13,8 @@
 			<b-col v-for="i in Areas[0]" :key="`world-area-${wid}-${i}`">
 				<b-card :class="classNames(i)" text-variant="light" bg-variant="dark">
 					<img :src="`${AssetsRoot}/world/icons/${wid}_${i}.png`" />
-					<div
-						:class="['world-area-number', Areas[1].includes(i) ? 'text-secondary' : 'text-warning']"
-					>제 {{i}}구역</div>
-					<div
-						:class="['world-area-name', Areas[1].includes(i) ? 'text-secondary' : '']"
-					>{{AreaNames[i]}}</div>
+					<div :class="['world-area-number', Areas[1].includes(i) ? 'text-secondary' : 'text-warning']">제 {{ i }}구역</div>
+					<div :class="['world-area-name', Areas[1].includes(i) ? 'text-secondary' : '']">{{ AreaNames[i] }}</div>
 
 					<b-btn-group v-if="!Areas[1].includes(i)" class="mt-2">
 						<b-button variant="warning" @click="GoTo(`/worlds/${wid}/${i}`)">
@@ -88,6 +82,7 @@ export default class WorldArea extends Vue {
 			case "SaintOrca": return "연말 파티를 준비하는 사령관에게 뻗쳐오는 마수는?";
 			case "ChocolateQueen": return "티아멧은 '초코 여왕'과 얽힌 멸망 전 인류의 일그러짐과 마주하는데..";
 			case "FairyAria": return "가벼운 마음으로 요정 마을로 향한 사령관에게...?";
+			case "BlurryMemory": return "왓슨, 드디어 대단원이야!";
 		}
 		return this.wid;
 	}
@@ -102,6 +97,7 @@ export default class WorldArea extends Vue {
 			case "SaintOrca": return [2, []];
 			case "ChocolateQueen": return [2, []];
 			case "FairyAria": return [3, []];
+			case "BlurryMemory": return [2, [2]];
 		}
 		return [0, []];
 	}
