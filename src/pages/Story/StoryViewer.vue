@@ -1,4 +1,5 @@
 <script lang="tsx">
+import _ from "lodash";
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Watch } from "vue-property-decorator";
@@ -6,7 +7,7 @@ import { Watch } from "vue-property-decorator";
 import { StoryRaw } from "@/libs/Types";
 import { StoryRowData } from "@/libs/Story";
 
-import { MapData, StoryData, UnitUid } from "@/libs/DB";
+import { MapData, StoryData, UnitData } from "@/libs/DB";
 import { AssetsRoot, WorldNames } from "@/libs/Const";
 import { UpdateTitle } from "@/libs/Functions";
 
@@ -216,14 +217,9 @@ export default class StoryViewer extends Vue {
 				if (teller) {
 					if (typeof teller !== "string") {
 						if ("face" in teller) {
-							const unit = Object.keys(UnitUid)
-								.map(x => {
-									const id = parseInt(x, 10);
-									return { key: id, value: UnitUid[id] };
-								})
-								.find(x => x.value === teller.face);
+							const unit = _(UnitData).find(x => x.uid === teller.face);
 
-							tellerElems.push(<unit-face id={unit ? unit.key : 0} size="60" />);
+							tellerElems.push(<unit-face id={unit ? unit.id : 0} size="60" />);
 						} else
 							tellerElems.push(<img src={`${this.BaseURL}${teller.image}.png`} width="60" />);
 
