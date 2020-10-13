@@ -107,6 +107,7 @@ export namespace Equip {
 
 export interface RawUnit {
 	id: number;
+	uid: string;
 	rarity: Rarity;
 
 	type: "Light" | "Air" | "Defender";
@@ -143,6 +144,7 @@ export interface RawUnit {
 }
 export interface Unit {
 	id: number;
+	uid: string;
 
 	rarity: Rarity;
 
@@ -184,6 +186,7 @@ export interface Unit {
 export namespace Unit {
 	export const Empty: Unit = {
 		id: 0,
+		uid: "",
 		rarity: "B",
 		type: "light",
 		role: "attacker",

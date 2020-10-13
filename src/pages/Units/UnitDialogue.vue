@@ -31,7 +31,7 @@ import Component from "vue-class-component";
 import { Prop, Watch, PropSync } from "vue-property-decorator";
 
 import { RawUnitDialogueEntity, SkinInfo, Unit } from "@/libs/Types";
-import { UnitUid, UnitDialogueData } from "@/libs/DB";
+import { UnitDialogueData } from "@/libs/DB";
 
 import DialogueRow from "./DialogueRow.vue";
 
@@ -195,7 +195,7 @@ export default class UnitDialogue extends Vue {
 	}
 
 	private get unitId () {
-		const uid = UnitUid[this.unit.id] || "";
+		const uid = this.unit.uid || "";
 		const postfix = (() => {
 			if (this.voice.isMarry) return "_Marriage";
 			if (this.voice.isDef) return "";

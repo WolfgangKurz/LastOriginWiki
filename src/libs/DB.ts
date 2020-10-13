@@ -1,5 +1,4 @@
 import EquipDB from "@/json/equip.json";
-import UnitUidDB from "@/json/unit-uid.json";
 import UnitDB from "@/json/unit.json";
 import UnitDialogueDB from "@/json/unit-dialogue.json";
 import SkillDB from "@/json/unit-skill.json";
@@ -404,6 +403,7 @@ function CompileUnit () {
 		.forEach(x => {
 			const y: Unit = {
 				id: x.id,
+				uid: x.uid,
 
 				name: x.name,
 				shortname: x.shortname,
@@ -474,7 +474,6 @@ function CompileSkill () {
 }
 export const SkillData = CompileSkill();
 export const UnitStatsData: Record<number, UnitStatsRaw> = StatsDB;
-export const UnitUid: Record<number, string> = UnitUidDB;
 export const UnitDialogueData: RawUnitDialogue = UnitDialogueDB;
 export const Facilities = FacilityDB as RawFacilities;
 export const ItemNames: RawItemNames = ItemNamesDB;

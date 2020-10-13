@@ -9,7 +9,7 @@
 				<world-item linked wid="Story" @goto="GoTo" />
 			</b-col>
 			<b-col>
-				<world-item linked wid="FullMoonNocturne" @goto="GoTo" />
+				<world-item linked wid="BlurryMemory" @goto="GoTo" />
 			</b-col>
 		</b-row>
 
@@ -22,6 +22,9 @@
 			</b-col>
 			<b-col>
 				<world-item linked wid="Rioboros" @goto="GoTo" />
+			</b-col>
+			<b-col>
+				<world-item linked wid="FullMoonNocturne" @goto="GoTo" />
 			</b-col>
 			<b-col>
 				<world-item linked wid="FairyAria" @goto="GoTo" />
@@ -61,6 +64,8 @@ export default class Worlds extends Vue {
 </script>
 
 <style lang="scss">
+/*
 #app > .container > .worlds {
 }
+*/
 </style>

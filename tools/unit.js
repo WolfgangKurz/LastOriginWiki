@@ -6,7 +6,7 @@ function process (auth) {
 	const sheets = google.sheets({ version: "v4", auth });
 	sheets.spreadsheets.values.get({
 		spreadsheetId: "1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4",
-		range: "UnitTable!A3:Y",
+		range: "UnitTable!A3:Z",
 	}, (err, res) => {
 		if (err) return console.log("The API returned an error: " + err);
 
@@ -16,40 +16,20 @@ function process (auth) {
 			rows.map((row) => {
 				if (!row[1]) return;
 
-				const id = row[0];
-				const name = row[1];
-				const shortname = row[2];
-				const rarity = row[3];
-				const type = row[4];
-				const role = row[5];
-				const body = row[6];
-				const group = row[7];
-				const shortgroup = row[8];
-				const groupkey = row[9];
-				const pro = row[10];
-				const craftable = row[11];
-				const marry = row[12];
+				const [id, name, shortname, uid, rarity, type, role, body, group, shortgroup, groupkey, pro, craftable, marry, ..._] = row;
 
 				const resists = {
-					fire: parseInt(row[13], 10),
-					chill: parseInt(row[14], 10),
-					thunder: parseInt(row[15], 10),
+					fire: parseInt(row[14], 10),
+					chill: parseInt(row[15], 10),
+					thunder: parseInt(row[16], 10),
 				};
 
-				const linkBonus = row[16];
-				const flSkill = parseInt(row[17], 10);
-				const fl3 = row[18];
-				const fl4 = row[19];
-
-				const equip1 = row[20];
-				const equip2 = row[21];
-				const equip3 = row[22];
-				const equip4 = row[23];
-
-				const source = row[24];
+				const [linkBonus, flSkill_, fl3, fl4, equip1, equip2, equip3, equip4, source] = row.slice(17);
+				const flSkill = parseInt(flSkill_, 10);
 
 				const x = {
 					id: parseInt(id, 10),
+					uid,
 					rarity,
 					type,
 					role,
@@ -125,25 +105,35 @@ function process (auth) {
 
 	sheets.spreadsheets.values.get({
 		spreadsheetId: "1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4",
-		range: "UnityIDList!A2:C",
+		range: "Reference!D4:AM39",
 	}, (err, res) => {
 		if (err) return console.log("The API returned an error: " + err);
 
 		const ret = {};
 		const rows = res.data.values;
 		if (rows.length) {
-			rows.map((row) => {
-				if (!row[1]) return;
+			rows.map((row, idx) => {
+				row = row.map(x => parseInt(x, 10));
+				const role = ["attacker", "defender", "supporter"][idx % 3];
+				const type = ["light", "air", "heavy"][Math.floor(idx / 3) % 3];
+				const rarity = ["B", "A", "S", "SS"][Math.floor(idx / 9)];
 
-				const id = parseInt(row[0], 10);
-				const uid = row[2];
-				if (!uid) return;
-
-				ret[id] = uid;
+				ret[`${rarity}_${type}_${role}`] = {
+					bio: {
+						components: row.slice(0, 6),
+						nutritions: row.slice(6, 12),
+						power: row.slice(12, 18),
+					},
+					ags: {
+						components: row.slice(18, 24),
+						nutritions: row.slice(24, 30),
+						power: row.slice(30, 36),
+					},
+				};
 			});
 
 			fs.writeFileSync(
-				path.resolve(__dirname, "..", "src", "json", "unit-uid.json"),
+				path.resolve(__dirname, "..", "src", "json", "unit-cost.json"),
 				JSON.stringify(ret, null, 2),
 			);
 		} else

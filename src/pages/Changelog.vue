@@ -7,8 +7,21 @@
 		<hr />
 
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20201013>2020-10-13</b-card-header>
+			<b-collapse id="changelog20201013" visible>
+				<b-card-body>
+					<div>
+						전투원 정보의 <b-badge variant="info">출격 소모 자원</b-badge>이 잘못 표기되던 문제를 수정했습니다.
+					</div>
+					<div>
+						세계 정보에 <b-badge variant="info">흐린 기억 속의 나라</b-badge>가 표시되지 않던 문제를 수정했습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20201012>2020-10-12</b-card-header>
-			<b-collapse id="changelog20201012" visible>
+			<b-collapse id="changelog20201012">
 				<b-card-body>
 					<div>
 						신규 전투원 <b-badge variant="warning">EB-48G 흐레스벨그</b-badge>,
@@ -95,7 +108,7 @@
 			</b-collapse>
 		</b-card>
 		<b-card class="mt-2" no-body>
-			<b-card-header v-b-toggle.changelog20200924>2020-09-28</b-card-header>
+			<b-card-header v-b-toggle.changelog20200928>2020-09-28</b-card-header>
 			<b-collapse id="changelog20200928">
 				<b-card-body>
 					<div>
