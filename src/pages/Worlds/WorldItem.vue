@@ -44,7 +44,7 @@ export default class WorldItem extends Vue {
 	}
 
 	private get Description () {
-		return WorldDescriptions[this.wid] || this.wid;
+		return WorldDescriptions[this.wid] !== undefined ? WorldDescriptions[this.wid] : this.wid;
 	}
 
 	private Click () {
