@@ -152,7 +152,11 @@ export default class EntitySource {
 
 	/** 맵 보상 여부 */
 	public get IsMap () {
-		return ![this.IsEndlessWar, this.IsApocrypha, this.IsExchange, this.IsLimited, this.IsPrivateItem, this.IsChallenge].some(x => x);
+		return ![
+			this.IsEndlessWar, this.IsApocrypha, this.IsExchange,
+			this.IsLimited, this.IsPrivateItem, this.IsChallenge,
+			this.IsUninstalled,
+		].some(x => x);
 	}
 
 	/** 클리어 보상 여부 */
@@ -211,8 +215,53 @@ export default class EntitySource {
 	}
 	// -------------- 한정
 
+	// -------------- 미실장
+	public get IsUninstalled () {
+		return this.Parts[0] === "Uninstalled";
+	}
+	// -------------- 미실장
+
+	public toShort () {
+		const output: string[] = [];
+
+		if (this.IsUninstalled)
+			output.push("Uninstalled");
+
+		if (this.IsPrivateItem)
+			output.push("Private");
+
+		if (this.IsUninstalled)
+			output.push("Uninstalled");
+
+		if (this.IsLimited)
+			output.push("Limit");
+
+		if (this.IsChallenge)
+			output.push("Challenge");
+		else if (this.IsEndlessWar)
+			output.push("EW");
+		else if (this.IsApocrypha)
+			output.push("Apo");
+		else if (this.IsExchange) {
+			if (this.IsMonthly)
+				output.push("MExc");
+			else if (this.IsEvent)
+				output.push("EExc");
+			else
+				output.push("Exc");
+		} else if (this.IsEvent)
+			output.push("Ev");
+		else
+			output.push(this.Map);
+
+		return output.join(",");
+	}
+
 	public toString () {
 		const output: string[] = [];
+
+		if (this.IsUninstalled)
+			output.push("Uninstalled");
 
 		if (this.IsPrivateItem)
 			output.push("Private:" + this.PrivateId);

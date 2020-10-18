@@ -1,3 +1,5 @@
+import { Decimal } from "decimal.js";
+
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Watch } from "vue-property-decorator";
@@ -7,6 +9,8 @@ import { UnitData, UnitStatsData, EquipData, SkillData } from "@/libs/DB";
 
 import { UnitEquip } from "./UnitEquip";
 import { UnitStat, UnitPoint, Stat, StatPointValue, StatType, StatList } from "./Stats";
+import { BuffEffect, BUFFEFFECT_TYPE } from "@/libs/Equips/BuffEffect";
+import { BUFF_ATTR_TYPE } from "@/libs/Equips/Enums";
 
 type LinkData = [number, number, number, number, number];
 
@@ -296,105 +300,160 @@ export class Unit extends Vue {
 			"-range": { ...Stat.Empty },
 		};
 
-		const isNumeric = (data: string) => /^[0-9]+\.?[0-9]*%?$/.test(data);
-
 		for (const k in output) {
 			const key = k as StatType;
 
 			// 스탯 포인트로 올린 수치
 			output[key].pointed += parseFloat((this.Stats[key] * StatPointValue[key]).toFixed(8));
 
-			let value = 0;
-			let valueP = 0;
+			debugger;
+			let value = new Decimal(0);
+			let valueP = new Decimal(0);
 			const independentValues: number[] = [];
 			this.Equips // TODO : 분리
-				.filter(x => x.Name)
+				.filter(x => x.Key)
 				.forEach(x => {
-					const name = `${x.Name}_${x.Rarity}`;
 					const level = x.Level;
 
-					const equip = EquipData.find(x => x.name === name);
+					const equip = EquipData.find(y => y.fullKey === x.FullKey);
 					if (!equip) return;
 
-					const stats = equip.stats[level];
-					for (const stat of stats) {
-						// if (stat.on.length > 0) continue;
+					const calc = (src: string | number) => {
+						const { p, v } = (() => {
+							if (typeof src === "string" && src.endsWith("%"))
+								return { p: true, v: new Decimal(src.substr(0, src.length - 1)) };
+							else
+								return { p: false, v: new Decimal(src) };
+						})();
 
-						for (const act of stat.actions) {
-							if (act.rand) continue;
-							if (act.act !== key && !["off", "resist", "dmg"].includes(act.act)) continue;
+						// % 수치가 아닌 경우
+						// 본래 수치가 %로 계산하는 경우
+						if (!p || (p && StatList[key].postfix === "%"))
+							value = value.add(v);
+						else
+							valueP = valueP.add(v);
 
-							const calc = (input: string) => {
-								const perc = input.endsWith("%");
-								const val = perc
-									? input.substr(0, input.length - 1)
-									: input;
-								const fVal = parseFloat(val);
-
-								// 고정 수치거나
-								// % 수치인데 원래 % 수치인 경우
-								if (!perc || (perc && StatList[key].postfix === "%"))
-									value += fVal;
-								else
-									valueP += fVal;
-
-								return fVal;
-							};
-
-							if (act.act === "off") {
-								if (act.params.length === 1) {
-									if (isNumeric(act.params[0]) && key === "off")
-										independentValues.push(calc(act.params[0])); // calc(act.params[0]);
-									else if (!isNumeric(act.params[0]) && act.params[0] === key)
-										calc("100%");
-									else
-										continue;
-								} else if (act.params[0] === key)
-									calc(act.params[1]);
-								else
-									continue;
-							} else if (act.act === "resist") {
-								const p = act.params;
-								const p0 = p.length > 0 ? p[0] : "";
-								const p1 = p.length > 1 ? p[1] : "";
-
-								if (p.length === 1) {
-									if (isNumeric(p0) && key === "resist")
-										independentValues.push(calc(p0));
-									else if (key === p0)
-										calc(p1);
-									else
-										continue;
-								} else {
-									if (p0 === "all") {
-										if (key === "resist.fire")
-											calc(p1);
-										else if (key === "resist.chill")
-											calc(p1);
-										else if (key === "resist.thunder")
-											calc(p1);
-										else
-											continue;
-									} else if (key === `resist.${p0}`)
-										calc(p1);
+						return v.toNumber();
+					};
+					const procValue = (stat: BuffEffect) => {
+						switch (key) {
+							case "atk":
+								if ("attack" in stat)
+									calc(stat.attack.base);
+								break;
+							case "hp":
+								if ("hp" in stat)
+									calc(stat.hp.base);
+								break;
+							case "def":
+								if ("defense" in stat)
+									calc(stat.defense.base);
+								break;
+							case "acc":
+								if ("accuracy" in stat)
+									calc(stat.accuracy.base);
+								break;
+							case "crit":
+								if ("critical" in stat)
+									calc(stat.critical.base);
+								break;
+							case "eva":
+								if ("evade" in stat)
+									calc(stat.evade.base);
+								break;
+							case "spd":
+								if ("turnSpeed" in stat)
+									calc(stat.turnSpeed.base);
+								break;
+							case "armorpierce":
+								if ("penetration" in stat)
+									calc(stat.penetration.base);
+								break;
+							case "dr":
+								if ("damage_reduce" in stat)
+									calc(stat.damage_reduce.base);
+								break;
+							case "range":
+								if ("range" in stat)
+									calc(stat.range.base);
+								break;
+							case "-acc":
+								if ("off" in stat) {
+									if (typeof stat.off === "object" && "target" in stat.off) {
+										if (
+											(stat.off.type === BUFFEFFECT_TYPE.STAT_RATING_RATIO || stat.off.type === BUFFEFFECT_TYPE.STAT_RATING_VALUE) &&
+											stat.off.target === BUFF_ATTR_TYPE.DEBUFF
+										)
+											calc(stat.chance || "100%");
+									}
 								}
-							} else if (act.act === "dmg") {
-								if (
-									(key === "dmg.light" && act.params[0] === "light") ||
-									(key === "dmg.air" && act.params[0] === "air") ||
-									(key === "dmg.heavy" && act.params[0] === "heavy")
-								)
-									calc(act.params[1]);
-								else
-									continue;
-							} else
-								calc(act.params[0]);
+								break;
+							case "-eva":
+								if ("off" in stat) {
+									if (typeof stat.off === "object" && "target" in stat.off) {
+										if (
+											(stat.off.type === BUFFEFFECT_TYPE.STAT_AVOID_RATIO || stat.off.type === BUFFEFFECT_TYPE.STAT_AVOID_VALUE) &&
+											stat.off.target === BUFF_ATTR_TYPE.DEBUFF
+										)
+											calc(stat.chance || "100%");
+									}
+								}
+								break;
+							case "-range":
+								if ("off" in stat) {
+									if (typeof stat.off === "object" && "target" in stat.off) {
+										if (
+											(stat.off.type === BUFFEFFECT_TYPE.STAT_RANGE_VALUE) &&
+											stat.off.target === BUFF_ATTR_TYPE.DEBUFF
+										)
+											calc(stat.chance || "100%");
+									}
+								}
+								break;
+							case "resist.fire":
+								if ("resist" in stat) {
+									if ("elem" in stat.resist && stat.resist.elem === "fire")
+										calc(stat.resist.value.base);
+								}
+								break;
+							case "resist.chill":
+								if ("resist" in stat) {
+									if ("elem" in stat.resist && stat.resist.elem === "chill")
+										calc(stat.resist.value.base);
+								}
+								break;
+							case "resist.thunder":
+								if ("resist" in stat) {
+									if ("elem" in stat.resist && stat.resist.elem === "thunder")
+										calc(stat.resist.value.base);
+								}
+								break;
+							case "resist":
+								if ("resist" in stat) {
+									if ("type" in stat.resist && stat.resist.type === "debuff")
+										independentValues.push(calc(stat.chance || "100%"));
+								}
+								break;
+							case "off":
+								if ("off" in stat) {
+									if (typeof stat.off === "number" && stat.off === BUFF_ATTR_TYPE.DEBUFF)
+										independentValues.push(calc(stat.chance || "100%"));
+								}
+								break;
 						}
-					}
+					};
+
+					const stats = equip.stats[level];
+					stats.forEach(stat => {
+						if ("buffs" in stat)
+							stat.buffs.forEach(buff => procValue(buff.value));
+						else
+							procValue(stat);
+					});
 				});
 
-			output[key].equiped = parseFloat(value.toFixed(8));
-			output[key].equipedRatio = parseFloat((valueP * 0.01).toFixed(8));
+			output[key].equiped = value.toNumber();
+			output[key].equipedRatio = valueP.div(100).toNumber();
 
 			if (output[key].isIndependent)
 				output[key].independentValues = independentValues;
@@ -412,13 +471,19 @@ export class Unit extends Vue {
 					output[key].fullLinkBonusRatio = 20;
 				else if (key === "spd" && this.fullLinkBonus === "spd")
 					output[key].fullLinkBonus = this.LinkBonus.Speed;
-				else if (key === "eva" && this.fullLinkBonus === "eva")
-					output[key].fullLinkBonus = this.LinkBonus.Entry3.key === "eva" ? this.LinkBonus.Entry3.value : this.LinkBonus.Entry4.value;
-				else if (key === "acc" && this.fullLinkBonus === "acc")
-					output[key].fullLinkBonus = this.LinkBonus.Entry3.key === "acc" ? this.LinkBonus.Entry3.value : this.LinkBonus.Entry4.value;
-				else if (key === "crit" && this.fullLinkBonus === "crit")
-					output[key].fullLinkBonus = this.LinkBonus.Entry3.key === "crit" ? this.LinkBonus.Entry3.value : this.LinkBonus.Entry4.value;
-				else if (key === "range" && this.fullLinkBonus === "range")
+				else if (key === "eva" && this.fullLinkBonus === "eva") {
+					output[key].fullLinkBonus = this.LinkBonus.Entry3.key === "eva"
+						? this.LinkBonus.Entry3.value
+						: this.LinkBonus.Entry4.value;
+				} else if (key === "acc" && this.fullLinkBonus === "acc") {
+					output[key].fullLinkBonus = this.LinkBonus.Entry3.key === "acc"
+						? this.LinkBonus.Entry3.value
+						: this.LinkBonus.Entry4.value;
+				} else if (key === "crit" && this.fullLinkBonus === "crit") {
+					output[key].fullLinkBonus = this.LinkBonus.Entry3.key === "crit"
+						? this.LinkBonus.Entry3.value
+						: this.LinkBonus.Entry4.value;
+				} else if (key === "range" && this.fullLinkBonus === "range")
 					output[key].fullLinkBonus = 1;
 			}
 

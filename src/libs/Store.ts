@@ -51,6 +51,7 @@ export interface EquipDisplayType {
 		OldEventMap: boolean;
 		Map: boolean;
 		Challenge: boolean;
+		Uninstalled: boolean;
 	};
 	Effects: string[];
 }
@@ -146,6 +147,7 @@ class StoreModule extends VuexModule {
 			OldEventMap: true,
 			Map: true,
 			Challenge: true,
+			Uninstalled: true,
 		},
 		Effects: this.equipEffectFilterListFlatten,
 	};

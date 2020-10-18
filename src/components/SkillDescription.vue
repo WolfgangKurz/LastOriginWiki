@@ -5,8 +5,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
-import { UnitData } from "@/libs/DB";
-import EquipNameTable from "@/json/equip-names.json";
+import { EquipData, UnitData } from "@/libs/DB";
 
 import UnitFace from "@/components/UnitFace.vue";
 import EquipIcon from "@/components/EquipIcon.vue";
@@ -14,8 +13,7 @@ import RarityBadge from "@/components/RarityBadge.vue";
 import ElemIcon from "@/components/ElemIcon.vue";
 import UnitCard from "@/pages/Units/UnitCard.vue";
 import EquipCard from "@/pages/Equips/EquipCard.vue";
-
-const EquipTable = EquipNameTable as Record<string, string>;
+import { Equip } from '@/libs/Types';
 
 @Component({
 	components: {
@@ -188,16 +186,29 @@ export default class SkillDescription extends Vue {
 						};
 						ret.preload.push(<unit-face id={id} />);
 					} else if (p[0] === "$eq") {
-						const href = `/equips/SS/${p[1]}`;
-						const name = EquipTable[p[1]];
+						const rarities = ["B", "A", "S", "SS"];
+						const type = {
+							Chip: "Chip",
+							OS: "System",
+							Item: "Sub",
+						};
+						const equips = EquipData
+							.filter(y => `${type[y.type]}_${y.key}` === p[1])
+							.sort((a, b) => rarities.indexOf(b.rarity) - rarities.indexOf(a.rarity));
+
+						let equip: Equip | null = null;
+						if (equips.length) equip = equips[0];
+
+						const href = `/equips/${equip ? equip.fullKey : p[1]}`;
+						const name = equip ? equip.name.replace(/ (RE|MP|SP|EX)$/, "") : p[1];
 						ret.link = {
 							href,
 							display: <rarity-badge id={uid} rarity="A">&lt;{name}&gt; 🔗</rarity-badge>,
 							tooltip: <b-tooltip target={uid} placement="top" no-fade noninteractive custom-class="badge-tooltip">
-								<equip-card group={{ name: p[1], source: [] }} no-link />
+								<equip-card equip={equip} no-link />
 							</b-tooltip>,
 						};
-						ret.preload.push(<equip-icon name={`${p[1]}_ss`} />);
+						ret.preload.push(<equip-icon id={equip ? equip.fullKey : p[1]} />);
 					}
 				}
 			});

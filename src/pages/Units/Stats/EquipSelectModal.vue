@@ -16,41 +16,40 @@
 			<b-col cols="8" class="mb-4">
 				<b-dropdown variant="outline-dark">
 					<template #button-content>
-						<template v-if="SelectedEquipGroup === ''">장비를 선택해주세요.</template>
+						<template v-if="!SelectedEquip.key">장비를 선택해주세요.</template>
 						<template v-else>
-							<equip-icon :name="`${SelectedEquipGroup}_${rarity}`" size="40" class="mr-2" />
-							{{EquipNames[SelectedEquipGroup]}}
-							<rarity-badge class="ml-1" :rarity="rarity.toUpperCase()" border />
-							<b-badge v-if="equipLevel > 0" variant="info">+ {{equipLevel}}</b-badge>
+							<equip-icon :id="SelectedEquip.fullKey" size="40" class="mr-2" />
+							{{ SelectedEquipName }}
+							<rarity-badge class="ml-1" :rarity="SelectedEquip.rarity" border />
+							<b-badge v-if="equipLevel > 0" variant="info">+ {{ equipLevel }}</b-badge>
 						</template>
 					</template>
 					<b-dropdown-item
 						v-for="group in EquipGroups"
-						:key="`simulation-equip-select-modal-${group}`"
-						@click="SelectEquipGroup(group)"
+						:key="`simulation-equip-select-modal-${group.baseKey}`"
+						@click="SelectEquipGroup(group.baseKey)"
 					>
-						<equip-icon :name="`${group}_ss`" size="40" class="mr-2" />
-						<span class="d-inline-block mr-2">{{EquipNames[group]}}</span>
+						<equip-icon :id="group.fullKey" size="40" class="mr-2" />
+						<span class="d-inline-block mr-2">{{ group.name }}</span>
 					</b-dropdown-item>
 				</b-dropdown>
 			</b-col>
-			<b-col v-if="StatusList" cols="12" class="mb-3">
+			<b-col v-if="EffectList" cols="12" class="mb-3">
 				<b-list-group class="text-left">
-					<b-list-group-item v-for="(status, idx) in StatusList" :key="`status-line-${idx}`">
-						<node-renderer :elem="status.display" />
-						<div
-							v-if="status.unknown"
-							class="unknown-status float-right"
-							title="정확하지 않을 수 있습니다"
-							v-b-tooltip.hover.left
-						>&#x26A0;</div>
+					<b-list-group-item v-for="(status, idx) in EffectList" :key="`status-line-${idx}`">
+						<node-renderer :elem="status" />
+						<!--
+						<div v-if="status.unknown" class="unknown-status float-right" title="정확하지 않을 수 있습니다" v-b-tooltip.hover.left>
+							&#x26A0;
+						</div>
+						-->
 					</b-list-group-item>
 				</b-list-group>
 			</b-col>
 			<b-col cols="12">
 				<b-btn-group>
-					<b-button variant="primary" @click="Select(SelectedEquipGroup)">장비 선택</b-button>
-					<b-button variant="secondary" @click="Select('')">장비 해제</b-button>
+					<b-button variant="primary" @click="Select(SelectedEquip)">장비 선택</b-button>
+					<b-button variant="secondary" @click="Select(null)">장비 해제</b-button>
 				</b-btn-group>
 			</b-col>
 		</b-row>
@@ -64,16 +63,14 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, Watch, PropSync, Ref } from "vue-property-decorator";
 
+import { EquipData, UnitData } from "@/libs/DB";
+import { Equip, Rarity, EquipType } from "@/libs/Types";
+import EquipStatus from "@/libs/Equips/EquipStatus";
+
 import NodeRenderer from "@/components/NodeRenderer.vue";
 import RarityBadge from "@/components/RarityBadge.vue";
 import EquipIcon from "@/components/EquipIcon.vue";
 import ElemIcon from "@/components/ElemIcon.vue";
-
-import EquipNameTable from "@/json/equip-names.json";
-
-import { EquipData, UnitData } from "@/libs/DB";
-import { Equip, LRarity, EquipType } from "@/libs/Types";
-import { StatusText } from "@/libs/Status";
 
 @Component({
 	components: {
@@ -91,14 +88,14 @@ export default class EquipSelectModal extends Vue {
 	private displaySync!: boolean;
 
 	@Prop({
-		type: String,
-		default: "",
+		type: Object,
+		default: null,
 	})
-	private name!: string;
+	private equip!: Equip;
 
 	@Prop({
 		type: Number,
-		default: 0,
+		default: 10,
 	})
 	private level!: number;
 
@@ -114,22 +111,24 @@ export default class EquipSelectModal extends Vue {
 	})
 	private target!: number;
 
-	private SelectedEquipGroup: string = "";
-	private rarity: LRarity = "ss";
+	private rarity: Rarity = "SS";
+	private SelectedEquip: Equip = Equip.Empty;
 	private equipLevel: number = 10;
 
 	@Watch("display", { immediate: true })
 	private DisplayWatch (value: boolean) {
-		if (!value) {
-			this.SelectedEquipGroup = "";
-			this.rarity = "ss";
-		} else if (this.name) {
-			const name = this.name.substr(0, this.name.lastIndexOf("_"));
-			const rarity = this.name.substr(this.name.lastIndexOf("_") + 1) as LRarity;
-			this.SelectedEquipGroup = name;
-			this.rarity = rarity || "ss";
+		if (!value)
+			this.SelectedEquip = Equip.Empty;
+		else if (this.equip) {
+			this.SelectedEquip = this.equip;
 			this.equipLevel = this.level;
 		}
+	}
+
+	@Watch("rarity")
+	private DisplayRarity () {
+		const e = this.SelectedEquip;
+		this.SelectEquipGroup(`${e.type}_${e.key}`);
 	}
 
 	private get LevelList () {
@@ -142,33 +141,33 @@ export default class EquipSelectModal extends Vue {
 	}
 
 	private get RarityList () {
-		const list = (["ss", "s", "a", "b"] as LRarity[])
-			.map(x => ({ value: x, text: x.toUpperCase() }));
+		const list = (["SS", "S", "A", "B"] as Rarity[])
+			.map(x => ({ value: x, text: x }));
 
-		const name = this.SelectedEquipGroup;
-		if (name === "") return list;
+		if (!this.SelectedEquip.key) return list;
+
+		const key = this.SelectedEquip.key;
+		const type = this.SelectedEquip.type;
+
+		const base = `${type}_${key}_T`;
+		const rarityList = ["", "B", "A", "S", "SS"];
 
 		const rarities = EquipData
-			.filter(x => name === x.name.substr(0, x.name.lastIndexOf("_")))
-			.map(x => x.name.substr(x.name.lastIndexOf("_") + 1));
+			.filter(x => x.key === key && x.type === type)
+			.map(x => x.rarity)
+			.map(x => ({ value: x, text: x }));
 
-		const output = list.filter(x => rarities.includes(x.value));
-		if (!output.some(x => x.value === this.rarity)) this.rarity = output[0].value;
-		return output;
-	}
-
-	private get EquipNames () {
-		return EquipNameTable;
+		return rarities;
 	}
 
 	private get EquipGroups () {
-		const group = _.groupBy(EquipData, (x) => x.name.substr(0, x.name.lastIndexOf("_")));
-		return _
-			.keys(group)
-			.filter(x => {
-				const baseType = x.substr(0, x.indexOf("_"));
-				const first = _.first(group[x]);
-				if (!first) return false;
+		const group = _.groupBy(EquipData, (x) => `${x.type}_${x.key}`);
+		return Object.keys(group)
+			.map(x => group[x])
+			.filter(x_ => {
+				const first = x_[0];
+				const type = first.type;
+				const key = first.key;
 
 				if (this.target && first.limit) {
 					const u = UnitData[this.target];
@@ -206,31 +205,72 @@ export default class EquipSelectModal extends Vue {
 					if (!ret) return false;
 				}
 
-				if (baseType !== "chip" && this.type === "Chip") return false;
-				if (baseType !== "os" && this.type === "OS") return false;
-				if (baseType !== "item" && this.type === "Public") return false;
+				if (type !== "Chip" && this.type === "Chip") return false;
+				if (type !== "OS" && this.type === "OS") return false;
+				if (type !== "Item" && this.type === "Public") return false;
 
 				return true;
+			})
+			.map(x_ => {
+				const rarityList = ["", "B", "A", "S", "SS"];
+				const last = [...x_].sort((a, b) => rarityList.indexOf(b.rarity) - rarityList.indexOf(a.rarity))[0];
+				const type = {
+					Chip: "Chip",
+					OS: "System",
+					Item: "Sub",
+				}[last.type];
+				const key = last.key;
+				const rarityIdx = rarityList.indexOf(last.rarity);
+
+				return {
+					fullKey: `${type}_${key}_T${rarityIdx}`,
+					baseKey: `${type}_${key}`,
+					name: last.name.replace(/ (RE|MP|SP|EX)$/, ""),
+				};
 			});
 	}
 
-	private get StatusList () {
-		if (!this.SelectedEquipGroup) return null;
+	private get EffectList () {
+		if (!this.SelectedEquip.key) return null;
 
-		const equip = EquipData.filter(x => x.name === `${this.SelectedEquipGroup}_${this.rarity}`)[0];
-		const stat = equip.stats[this.equipLevel];
-		return stat.map(x => StatusText(this, x));
+		const stats = this.SelectedEquip.stats[this.equipLevel];
+		return stats.reduce((p, c) => [...p, ...EquipStatus(this, c)], [] as JSX.Element[]);
+	}
+
+	private get SelectedEquipName () {
+		if (!this.SelectedEquip.key) return "";
+		return this.SelectedEquip.name.replace(/ (RE|MP|SP|EX)$/, "");
 	}
 
 	private SelectEquipGroup (group: string) {
-		this.SelectedEquipGroup = group;
+		const rarityList = ["", "B", "A", "S", "SS"];
+		const grp = EquipData
+			.filter(x => {
+				const type = {
+					Chip: "Chip",
+					OS: "System",
+					Item: "Sub",
+				}[x.type];
+				return `${type}_${x.key}` === group;
+			})
+			.sort((a, b) => rarityList.indexOf(b.rarity) - rarityList.indexOf(a.rarity));
+
+		if (grp.length === 0) return;
+		if (this.SelectedEquip) {
+			const rarity = this.rarity;
+			const match = grp.find(x => x.rarity === rarity);
+			if (match)
+				this.SelectedEquip = match;
+			else
+				this.SelectedEquip = grp[0];
+		}
 	}
 
-	private Select (group: string) {
-		if (group === "")
-			this.$emit("select", "", "ss", 10);
+	private Select (equip: Equip | null) {
+		if (!equip)
+			this.$emit("select", Equip.Empty, 10);
 		else
-			this.$emit("select", group, this.rarity, this.equipLevel);
+			this.$emit("select", equip, this.equipLevel);
 	}
 }
 </script>

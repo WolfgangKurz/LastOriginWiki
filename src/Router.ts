@@ -66,7 +66,7 @@ const Router = new VueRouter({
 			component: Equips,
 		},
 		{
-			path: "/equips/:rarity/:id",
+			path: "/equips/:id",
 			component: Equips,
 		},
 

@@ -1,7 +1,7 @@
 <template>
-	<div class="item-slot" :data-type="type" :data-name="name" v-on="$listeners">
-		<div v-if="name" class="equip">
-			<equip-icon :name="`${name}_${rarity}`" />
+	<div class="item-slot" :data-type="type" :data-key="fullKey" v-on="$listeners">
+		<div v-if="valid" class="equip">
+			<equip-icon :id="fullKey" />
 			<equip-level :level="level" :size="10" />
 		</div>
 	</div>
@@ -12,7 +12,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, PropSync } from "vue-property-decorator";
 
-import { LRarity } from "@/libs/Types";
+import { Rarity } from "@/libs/Types";
 
 import EquipIcon from "@/components/EquipIcon.vue";
 import EquipLevel from "@/pages/Equips/EquipLevel.vue";
@@ -28,13 +28,7 @@ export default class ItemSlot extends Vue {
 		type: String,
 		default: "",
 	})
-	private name!: string;
-
-	@Prop({
-		type: String,
-		default: "ss",
-	})
-	private rarity!: LRarity;
+	private fullKey!: string;
 
 	@Prop({
 		type: String,
@@ -47,6 +41,10 @@ export default class ItemSlot extends Vue {
 		default: 0,
 	})
 	private level!: number;
+
+	private get valid () {
+		return !this.fullKey.startsWith("_");
+	}
 }
 </script>
 

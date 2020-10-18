@@ -8,12 +8,12 @@ export function FormatNumber (num: number): string {
 	return n;
 }
 
-export function ArrayUnique<T> (source: T[]): T[];
-export function ArrayUnique<T> (source: T[], comparer: (entity: T) => any): T[];
-export function ArrayUnique<T> (source: T[], comparer?: (entity: T) => any): T[] {
+export function ArrayUnique<T, K> (source: T[]): T[];
+export function ArrayUnique<T, K> (source: T[], comparer: (entity: T) => K): T[];
+export function ArrayUnique<T, K> (source: T[], comparer?: (entity: T) => K): T[] {
 	if (comparer) {
-		interface T2 {
-			key: string;
+		interface KeyValuePair {
+			key: K;
 			value: T;
 		}
 
@@ -27,7 +27,7 @@ export function ArrayUnique<T> (source: T[], comparer?: (entity: T) => any): T[]
 					});
 				}
 				return acc;
-			}, [] as T2[])
+			}, [] as KeyValuePair[])
 			.map(x => x.value);
 	} else {
 		return source.reduce((acc, cur) => {

@@ -1,10 +1,10 @@
 <template>
 	<div class="drop-equip p-2 text-dark">
 		<b-card :class="`rarity-${rarity}`">
-			<equip-icon class="float-left mr-2" :name="`${name}_${rarityLower}`" />
+			<equip-icon class="float-left mr-2" :name="equip.fullKey" />
 			<div class="text-left">
-				<b-badge variant="secondary">{{rarity}}</b-badge>
-				{{EquipNames[name] || name}}
+				<b-badge variant="secondary">{{equip.rarity}}</b-badge>
+				{{equip.name}}
 			</div>
 		</b-card>
 	</div>
@@ -15,11 +15,10 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Watch, Prop } from "vue-property-decorator";
 
-import EquipNameTable from "@/json/equip-names.json";
 import EquipIcon from "@/components/EquipIcon.vue";
 import RarityBadge from "@/components/RarityBadge.vue";
 
-import { UnitData } from "@/libs/DB";
+import { Equip } from "@/libs/Types";
 
 @Component({
 	components: {
@@ -28,24 +27,10 @@ import { UnitData } from "@/libs/DB";
 })
 export default class DropEquip extends Vue {
 	@Prop({
-		type: String,
+		type: Object,
 		required: true,
 	})
-	private name!: string;
-
-	@Prop({
-		type: String,
-		default: "SS",
-	})
-	private rarity!: string;
-
-	private get rarityLower () {
-		return this.rarity.toLowerCase();
-	}
-
-	private get EquipNames () {
-		return EquipNameTable;
-	}
+	private equip!: Equip;
 }
 </script>
 

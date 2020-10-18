@@ -355,8 +355,6 @@ import { Prop, Watch, PropSync } from "vue-property-decorator";
 
 import StoreModule from "@/libs/Store";
 
-import { StatusText } from "@/libs/Status";
-
 import NodeRenderer from "@/components/NodeRenderer.vue";
 import UnitFace from "@/components/UnitFace.vue";
 import UnitBadge from "@/components/UnitBadge.vue";

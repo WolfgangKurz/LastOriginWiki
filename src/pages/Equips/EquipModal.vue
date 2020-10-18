@@ -1,16 +1,17 @@
 <template>
-	<b-modal
-		v-model="displaySync"
-		centered
-		hide-footer
-		:title="EquipName(name)"
-		content-class="equip-modal"
-	>
-		<b-container class="table-equip-modal mt-4 mb-3">
+	<b-modal v-if="equip && target" v-model="displaySync" centered hide-footer content-class="equip-modal">
+		<template #modal-title>
+			<div class="text-left">
+				{{ target.name }}
+				<div style="font-size: 60%">{{ target.fullKey }}</div>
+			</div>
+		</template>
+
+		<b-container class="table-equip-modal mb-3">
 			<b-row cols="1" cols-md="2">
 				<b-col class="icon-container">
 					<div class="position-relative d-inline-block">
-						<equip-icon :name="`${name}_${lRarity}`" size="large" />
+						<equip-icon :id="`${target.fullKey}`" size="large" />
 						<equip-level :level="level" />
 					</div>
 				</b-col>
@@ -19,12 +20,12 @@
 						<b-col class="bg-dark text-white">장비 유형</b-col>
 						<b-col>
 							<b-badge v-if="isPrivate" variant="primary">전용장비</b-badge>
-							<template v-else>{{EquipType}}</template>
+							<template v-else>{{ EquipType }}</template>
 						</b-col>
 						<b-col class="bg-dark text-white">장비 등급</b-col>
 						<b-col>
-							<template v-if="RarityList.length === 1">{{raritySync.toUpperCase()}}</template>
-							<b-form-select v-else v-model="raritySync" size="sm" :options="RarityList" />
+							<template v-if="RarityList.length === 1">{{ rarity }}</template>
+							<b-form-select v-else v-model="rarity" size="sm" :options="RarityList" />
 						</b-col>
 						<b-col class="bg-dark text-white">장착 제한</b-col>
 						<b-col>
@@ -33,7 +34,7 @@
 								<span v-for="limit in Limits" :key="`equip-limit-${limit}`">
 									<unit-badge v-if="typeof limit === 'string'" :limit="limit" />
 									<a v-else :href="`/units/${limit}`" @click.prevent="GoTo(`/units/${limit}`)">
-										<b-badge class="unit-name-badge" variant="primary">{{UnitName(limit)}} 🔗</b-badge>
+										<b-badge class="unit-name-badge" variant="primary">{{ UnitName(limit) }} 🔗</b-badge>
 									</a>
 								</span>
 							</template>
@@ -66,7 +67,7 @@
 					</b-td>
 				</b-tr>
 				<b-tr>
-					<b-th variant="dark">강화 레벨 +{{level}}</b-th>
+					<b-th variant="dark">강화 레벨 +{{ level }}</b-th>
 				</b-tr>
 				<b-tr>
 					<b-td>
@@ -75,7 +76,7 @@
 				</b-tr>
 				<b-tr>
 					<b-th variant="dark">
-						0 -&gt; {{level}}
+						0 -&gt; {{ level }}
 						<span class="pl-2">강화 비용</span>
 					</b-th>
 				</b-tr>
@@ -89,16 +90,13 @@
 									<img class="res-icon" :src="`${AssetsRoot}/res-nutrition.png`" />
 									<img class="res-icon" :src="`${AssetsRoot}/res-power.png`" />
 								</div>
-								<div class="d-inline-block">각 자원 총 {{UpgradeCostText}}</div>
+								<div class="d-inline-block">각 자원 총 {{ UpgradeCostText }}</div>
 							</span>
 							<hr class="d-sm-none" />
 							<span class="d-none d-sm-inline text-secondary">|</span>
 							<span class="px-2">
-								<img
-									class="upmodule-icon"
-									:src="`${AssetsRoot}/${imageExt}/equips/item_upgrademodule.${imageExt}`"
-								/>
-								{{Math.ceil(UpgradeCost / 400)}}개 필요
+								<img class="upmodule-icon" :src="`${AssetsRoot}/${imageExt}/equips/Chip_Enchant_T4.${imageExt}`" />
+								{{ Math.ceil(UpgradeCost / 400) }}개 필요
 							</span>
 						</template>
 					</b-td>
@@ -108,13 +106,10 @@
 
 		<b-list-group class="text-left" v-if="StatusList">
 			<b-list-group-item v-for="(status, idx) in StatusList" :key="`status-line-${idx}`">
-				<node-renderer :elem="status.display" />
-				<div
-					v-if="status.unknown"
-					class="unknown-status float-right"
-					title="정확하지 않을 수 있습니다"
-					v-b-tooltip.hover.left
-				>&#x26A0;</div>
+				<node-renderer :elem="status" />
+				<!--
+				<div v-if="status.unknown" class="unknown-status float-right" title="정확하지 않을 수 있습니다" v-b-tooltip.hover.left>&#x26A0;</div>
+				-->
 			</b-list-group-item>
 		</b-list-group>
 	</b-modal>
@@ -129,7 +124,7 @@ import { Prop, Watch, PropSync } from "vue-property-decorator";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { FormatNumber } from "@/libs/Functions";
-import { StatusText } from "@/libs/Status";
+import EquipStatus from "@/libs/Equips/EquipStatus";
 
 import NodeRenderer from "@/components/NodeRenderer.vue";
 import UnitBadge from "@/components/UnitBadge.vue";
@@ -140,10 +135,8 @@ import ElemIcon from "@/components/ElemIcon.vue";
 import EquipIcon from "@/components/EquipIcon.vue";
 import EquipLevel from "./EquipLevel.vue";
 
-import { Rarity, LRarity } from "@/libs/Types";
+import { Rarity, Equip } from "@/libs/Types";
 import { EquipData, UnitData } from "@/libs/DB";
-
-import EquipNameTable from "@/json/equip-names.json";
 
 @Component({
 	components: {
@@ -164,18 +157,15 @@ export default class EquipModal extends Vue {
 	})
 	private displaySync!: boolean;
 
-	@PropSync("rarity", {
-		type: String,
-		default: "SS",
-	})
-	private raritySync!: Rarity;
-
 	@Prop({
-		type: String,
 		required: true,
+		validator (v: any) {
+			return typeof v === "object" || v === null;
+		},
 	})
-	private name!: string;
+	private equip!: Equip;
 
+	private rarity: Rarity = "SS";
 	private level: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 = 10;
 
 	@Watch("name")
@@ -191,55 +181,39 @@ export default class EquipModal extends Vue {
 		return ImageExtension();
 	}
 
-	private get lRarity (): LRarity {
-		return this.raritySync.toLowerCase() as LRarity;
-	}
-
-	private get Equip () {
-		return EquipData.find(x => x.name === `${this.name}_${this.lRarity}`) || null;
+	private get target () {
+		if (!this.equip) return null;
+		return EquipData.find(x => x.type === this.equip.type && x.key === this.equip.key && x.rarity === this.rarity) || null;
 	}
 
 	private get RarityList () {
-		const list = (["ss", "s", "a", "b"] as LRarity[])
-			.filter((x) => _.some(EquipData, (y) => y.name.startsWith(this.name) && y.name.endsWith("_" + x)))
-			.map((x) => x.toUpperCase() as Rarity);
-
-		if (!list.includes(this.raritySync))
-			this.raritySync = (list[0] || "SS") as Rarity;
-
-		return list.map(x => ({ value: x, text: x }));
+		if (!this.equip) return [];
+		return EquipData
+			.filter(x => x.key === this.equip.key && x.type === this.equip.type)
+			.map(x => x.rarity);
 	}
 
 	private get Sources () {
-		const equip = this.Equip;
-		if (!equip) return [];
-		return equip.source;
+		if (!this.target) return [];
+		return this.target.source;
 	}
 
 	private get isPrivate () {
-		const equip = this.Equip;
-		if (!equip) return false;
-
-		return equip.limit && equip.limit.every(y => typeof y === "number");
+		if (!this.target) return false;
+		return this.target.limit && this.target.limit.every(y => typeof y === "number");
 	}
 
 	private get EquipType () {
-		interface SSDict {
-			[key: string]: string;
-		}
+		if (!this.equip) return "???";
 
-		const equip = this.Equip;
-		if (!equip) return "???";
-
-		const typeTable: SSDict = {
-			chip: "칩",
-			os: "OS",
-			item: "보조장비",
+		const typeTable: Record<string, string> = {
+			Chip: "칩",
+			OS: "OS",
+			Item: "보조장비",
 		};
 
-		let type = equip.name.substr(0, equip.name.indexOf("_"));
-		type = typeTable[type] || "???";
-		return type;
+		const type = this.equip.type;
+		return typeTable[type] || "???";
 	}
 
 	/** 1 레벨 강화당 상승하는 필요치 배율 */
@@ -253,11 +227,10 @@ export default class EquipModal extends Vue {
 	}
 
 	private get UpgradeCost () {
-		const equip = this.Equip;
-		if (!equip) return 0;
+		if (!this.equip) return 0;
 
-		const base = equip.upgrade || 0;
-		const per = this.UpgradeIncrementals[this.raritySync];
+		const base = this.equip.upgrade;
+		const per = this.UpgradeIncrementals[this.rarity];
 		const lv = this.level;
 
 		let sum = 0;
@@ -274,29 +247,17 @@ export default class EquipModal extends Vue {
 		this.$router.push({ path });
 	}
 
-	private EquipName (name: string) {
-		interface SSDict {
-			[key: string]: string;
-		}
-
-		if (name in EquipNameTable)
-			return (EquipNameTable as SSDict)[name];
-		return name;
-	}
-
 	private get Limits () {
-		const equip = this.Equip;
-		if (!equip) return ["???"];
+		if (!this.equip) return ["???"];
 
-		return equip.limit || [];
+		return this.equip.limit || [];
 	}
 
 	private get StatusList () {
-		const equip = this.Equip;
-		if (!equip) return null;
+		if (!this.equip) return null;
 
-		const stat = equip.stats[this.level];
-		return stat.map(x => StatusText(this, x));
+		const stat = this.equip.stats[this.level];
+		return stat.reduce((p, c) => [...p, ...EquipStatus(this, c)], [] as JSX.Element[]);
 	}
 
 	private UnitName (idx: number) {

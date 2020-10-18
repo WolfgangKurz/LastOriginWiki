@@ -46,6 +46,7 @@ export default class SourceBadge extends Vue {
 
 	private render () {
 		const variant = (() => {
+			if (this.Source.IsUninstalled) return this.minimum ? "black" : "light";
 			if (this.Source.IsChallenge) return "primary";
 			if (this.Source.IsPrivateItem) return "stat-acc";
 			if (this.Source.IsLimited) return "secondary";
@@ -67,7 +68,9 @@ export default class SourceBadge extends Vue {
 		})();
 
 		const content = (() => {
-			if (this.Source.IsPrivateItem) {
+			if (this.Source.IsUninstalled)
+				return "미구현";
+			else if (this.Source.IsPrivateItem) {
 				const unit = UnitData[this.Source.PrivateId];
 				return `${unit.name}`;
 			} else if (this.Source.IsLimited)
@@ -150,10 +153,10 @@ export default class SourceBadge extends Vue {
 				const link = `/worlds/${this.Source.EventId}/${area}/${this.Source.Map}`;
 
 				return <a href={link} onClick={(e: Event) => this.Link(e, link)}>
-					<b-badge class="source-badge mx-1" variant={variant}>{content} 🔗</b-badge>
+					<b-badge class="source-badge mx-1" variant={variant} data-source={this.Source.toString()}>{content} 🔗</b-badge>
 				</a>;
 			} else
-				return <b-badge class="source-badge mx-1" variant={variant}>{content}</b-badge>;
+				return <b-badge class="source-badge mx-1" variant={variant} data-source={this.Source.toString()}>{content}</b-badge>;
 		} else
 			return <i />;
 	}
