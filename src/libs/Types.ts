@@ -1,6 +1,6 @@
 import EntitySource from "@/libs/EntitySource";
+import { EquipStat } from "@/libs/Equips/Equip";
 
-export type LRarity = "ss" | "s" | "a" | "b";
 export type Rarity = "SS" | "S" | "A" | "B";
 
 export type EquipType = "Chip" | "OS" | "Public" | "Private";
@@ -63,44 +63,52 @@ export interface TriggerHDmg extends Trigger {
 	params: [];
 }
 
-export interface Action {
-	repeats: number;
-	act: string;
-	params: string[];
-
-	next?: Action;
-	rand?: true;
-}
-
-export interface Status {
-	on: Trigger[];
-	actions: Action[];
-}
-
 
 export interface RawEquip {
+	available: boolean;
+	rarity: Rarity;
+	type: "Chip" | "OS" | "Item";
+	key: string;
+	fullKey: string;
+
 	name: string;
+	desc: string;
+
 	limit?: string;
-	upgrade: number | undefined;
+	upgrade: number;
 	source: string[][];
 	stats: string[];
 }
 export interface Equip {
+	available: boolean;
+	rarity: Rarity;
+	type: "Chip" | "OS" | "Item";
+	key: string;
+	fullKey: string;
+
 	name: string;
+	desc: string;
+
 	limit: Array<string | number> | null;
 	source: EntitySource[][];
-	upgrade: number | null;
-
-	stats: Array<Status[]>;
+	upgrade: number;
+	stats: EquipStat[][];
 }
 /* eslint-disable-next-line @typescript-eslint/no-namespace */
 export namespace Equip {
 	export const Empty: Equip = {
-		name: "-",
+		available: false,
+		rarity: "B",
+		type: "Chip",
+		key: "",
+
+		fullKey: "__T1",
+		name: "",
+		desc: "",
+
 		limit: null,
 		source: [],
-		upgrade: null,
-
+		upgrade: 0,
 		stats: [],
 	};
 }

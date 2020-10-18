@@ -1,7 +1,8 @@
 <template>
 	<b-card no-body class="exp-calculator">
 		<b-card-header>
-			<b-icon-calculator class="mr-1" />경험치 계산기
+			<b-icon-calculator class="mr-1" />
+			경험치 계산기
 		</b-card-header>
 		<b-card-body body-class="text-left">
 			<b-row>
@@ -42,19 +43,14 @@
 				<b-col cols="12" class="mb-1">장비 보너스</b-col>
 
 				<template v-for="(equip, equipIdx) in ExpEquips">
-					<b-col
-						cols="12"
-						lg="7"
-						:key="`exp-calc-equip-${equipIdx}-0`"
-						:data-invalid="equip.use ? 0 : 1"
-					>
+					<b-col cols="12" lg="7" :key="`exp-calc-equip-${equipIdx}-0`" :data-invalid="equip.use ? 0 : 1">
 						<div class="ml-2">
 							<b-row>
 								<b-col cols="12" md="auto" class="mb-2">
 									<b-checkbox v-model="equip.use">
 										<span>
 											<equip-icon :name="`${equip.name}_${equip.rarity.toLowerCase()}`" size="small" />
-											<strong class="ml-2 py-1">{{EquipNames[equip.name]}}</strong>
+											<strong class="ml-2 py-1">{{ EquipNames[equip.name] }}</strong>
 										</span>
 									</b-checkbox>
 								</b-col>
@@ -70,19 +66,10 @@
 							</b-row>
 						</div>
 					</b-col>
-					<b-col
-						cols="12"
-						lg="5"
-						:key="`exp-calc-equip-${equipIdx}-1`"
-						class="pl-4 mb-4"
-						:data-invalid="equip.use ? 0 : 1"
-					>
+					<b-col cols="12" lg="5" :key="`exp-calc-equip-${equipIdx}-1`" class="pl-4 mb-4" :data-invalid="equip.use ? 0 : 1">
 						<span class="pl-4">
-							경험치 x{{AsRounded(equip.bonus[equip.level])}}
-							<span
-								v-if="equip.count>0"
-								class="pl-2"
-							>x {{equip.count}}</span>
+							경험치 x{{ AsRounded(equip.bonus[equip.level]) }}
+							<span v-if="equip.count > 0" class="pl-2">x {{ equip.count }}</span>
 						</span>
 					</b-col>
 				</template>
@@ -109,7 +96,7 @@
 					</div>
 				</b-col>
 				<b-col cols="12" lg="5" class="pl-4 mb-4" :data-invalid="skills.alexandra.use ? 0 : 1">
-					<span class="pl-4">경험치 x{{AsRounded(skills.alexandra.bonus[skills.alexandra.level])}}</span>
+					<span class="pl-4">경험치 x{{ AsRounded(skills.alexandra.bonus[skills.alexandra.level]) }}</span>
 				</b-col>
 
 				<b-col cols="12" lg="7" :data-invalid="skills.tommywalker.use ? 0 : 1">
@@ -130,7 +117,7 @@
 					</div>
 				</b-col>
 				<b-col cols="12" lg="5" class="pl-4 mb-4" :data-invalid="skills.tommywalker.use ? 0 : 1">
-					<span class="pl-4">경험치 x{{AsRounded(skills.tommywalker.bonus[skills.tommywalker.level])}}</span>
+					<span class="pl-4">경험치 x{{ AsRounded(skills.tommywalker.bonus[skills.tommywalker.level]) }}</span>
 				</b-col>
 			</b-row>
 
@@ -149,8 +136,7 @@
 								<span v-for="(waveData, waveIdx) in sortieArea" :key="`exp-calc-explist-wave-${waveIdx}`">
 									<b-icon-arrow-right v-if="waveIdx !== 0" class="mx-2" />
 									<b-badge variant="stat-hp">
-										{{FormatNumber(waveData.exp)}} EXP,
-										{{FormatNumber(waveData.enemies)}} 철충
+										{{ FormatNumber(waveData.exp) }} EXP, {{ FormatNumber(waveData.enemies) }} 철충
 									</b-badge>
 								</span>
 							</h4>
@@ -185,14 +171,12 @@
 					</div>
 				</b-col>
 				<b-col cols="12" lg="8">
-					<div class="mb-1">
-						<b-icon-calculator class="mr-1" />계산 결과 (전투원 경험치)
-					</div>
+					<div class="mb-1"><b-icon-calculator class="mr-1" />계산 결과 (전투원 경험치)</div>
 					<div class="ml-4 mb-2">
 						<template v-if="hasSumValues">
 							<div class="mt-2">장비/스킬 보너스</div>
 							<h5 v-for="(waveData, wave) in sortieArea" :key="`exp-calc-bonus-wave-${wave}`">
-								<b-badge variant="warning">{{wave + 1}} 웨이브 {{FormatNumber(waveData.enemies)}} 철충</b-badge>
+								<b-badge variant="warning">{{ wave + 1 }} 웨이브 {{ FormatNumber(waveData.enemies) }} 철충</b-badge>
 
 								<b-badge
 									v-for="(equip, equipIdx) in UsingExpEquips"
@@ -200,58 +184,49 @@
 									class="ml-1"
 									variant="danger"
 								>
-									{{equip.rarity}}
-									{{EquipNames[equip.name]}}
-									+{{equip.level}}
-									x{{AsRounded(equip.bonus[equip.level])}}
-									<template
-										v-if="equip.count > 0"
-									>x{{equip.count}}</template>
+									{{ equip.rarity }}
+									{{ EquipNames[equip.name] }}
+									+{{ equip.level }} x{{ AsRounded(equip.bonus[equip.level]) }}
+									<template v-if="equip.count > 0">x{{ equip.count }}</template>
 								</b-badge>
 
 								<b-badge v-if="skills.alexandra.use" class="ml-1" variant="success">
-									모범 교사
-									lv.{{skills.alexandra.level + 1}}
-									x{{AsRounded(skills.alexandra.bonus[skills.alexandra.level])}}
+									모범 교사 lv.{{ skills.alexandra.level + 1 }} x{{ AsRounded(skills.alexandra.bonus[skills.alexandra.level]) }}
 								</b-badge>
 
 								<b-badge v-if="skills.tommywalker.use" class="ml-1" variant="success">
-									잔해 재활용
-									lv.{{skills.tommywalker.level + 1}}
-									x{{AsRounded(1 + (skills.tommywalker.bonus[skills.tommywalker.level] - 1) * waveData.enemies)}}
+									잔해 재활용 lv.{{ skills.tommywalker.level + 1 }} x{{
+										AsRounded(1 + (skills.tommywalker.bonus[skills.tommywalker.level] - 1) * waveData.enemies)
+									}}
 								</b-badge>
 							</h5>
 							<hr />
 						</template>
 
 						<h5 v-for="(waveData, wave) in sortieArea" :key="`exp-calc-result-wave-${wave}`">
-							<b-badge variant="warning">{{wave + 1}} 웨이브 {{FormatNumber(waveData.exp)}} EXP</b-badge>
+							<b-badge variant="warning">{{ wave + 1 }} 웨이브 {{ FormatNumber(waveData.exp) }} EXP</b-badge>
 							<b-badge v-if="isLeader" class="ml-1" variant="info">리더 x1.2</b-badge>
 
-							<b-badge v-if="CoreLinks>0" class="ml-1" variant="primary">코어링크 x{{1 + CoreLinks * 0.04}}</b-badge>
+							<b-badge v-if="CoreLinks > 0" class="ml-1" variant="primary">코어링크 x{{ 1 + CoreLinks * 0.04 }}</b-badge>
 
-							<b-badge
-								v-show="hasSumValues"
-								class="mx-1"
-								variant="success"
-							>장비/스킬 보너스 x{{AsRounded(SumBonusValue(wave))}}</b-badge>
+							<b-badge v-show="hasSumValues" class="mx-1" variant="success"
+								>장비/스킬 보너스 x{{ AsRounded(SumBonusValue(wave)) }}</b-badge
+							>
 
-							<b-badge
-								v-if="eventMultiply>0"
-								class="mx-1"
-								variant="primary"
-							>이벤트 보너스 x{{AsRounded(eventMultiply / 100 + 1)}}</b-badge>
+							<b-badge v-if="eventMultiply > 0" class="mx-1" variant="primary"
+								>이벤트 보너스 x{{ AsRounded(eventMultiply / 100 + 1) }}</b-badge
+							>
 
 							<b-icon-arrow-right class="mx-1" />
-							<b-badge variant="dark">{{FormatNumber(ResultExp(wave))}} EXP</b-badge>
+							<b-badge variant="dark">{{ FormatNumber(ResultExp(wave)) }} EXP</b-badge>
 						</h5>
 						<hr />
 						<h5>
-							<b-badge variant="warning">필요 경험치 {{FormatNumber(requiredExp)}}</b-badge>
+							<b-badge variant="warning">필요 경험치 {{ FormatNumber(requiredExp) }}</b-badge>
 							<span class="px-1">&divide;</span>
-							<b-badge variant="warning">총 경험치 {{FormatNumber(sumExp)}}</b-badge>
+							<b-badge variant="warning">총 경험치 {{ FormatNumber(sumExp) }}</b-badge>
 							<b-icon-arrow-right class="mx-1" />
-							<b-badge variant="dark">{{FormatNumber(resultCount)}} 회</b-badge>
+							<b-badge variant="dark">{{ FormatNumber(resultCount) }} 회</b-badge>
 						</h5>
 					</div>
 				</b-col>
@@ -264,8 +239,6 @@
 import _ from "lodash";
 import Vue from "vue";
 import Component from "vue-class-component";
-
-import EquipNameTable from "@/json/equip-names.json";
 
 import { WorldNames } from "@/libs/Const";
 import { EquipData, ExpData } from "@/libs/DB";
@@ -325,7 +298,9 @@ export default class EXP extends Vue {
 		},
 	};
 
-	private ExpEquips: ExpEquipItem[] = ((): ExpEquipItem[] => {
+	private ExpEquips: ExpEquipItem[] = [];
+	/*
+	((): ExpEquipItem[] => {
 		const group = _.groupBy(EquipData, (x) => x.name.substr(0, x.name.lastIndexOf("_")));
 		return _
 			.keys(group)
@@ -366,6 +341,7 @@ export default class EXP extends Vue {
 				return Array.isArray(c) ? [...p, ...c] : [...p, c as ExpEquipItem];
 			}, []) as ExpEquipItem[];
 	})();
+	*/
 
 	private get MapData () {
 		return ExpData.map;
@@ -373,10 +349,6 @@ export default class EXP extends Vue {
 
 	private get LevelTable () {
 		return ExpData.table;
-	}
-
-	private get EquipNames () {
-		return EquipNameTable as Record<string, string>;
 	}
 
 	private get UsingExpEquips () {

@@ -1,17 +1,19 @@
-import { EquipType, LRarity } from "@/libs/Types";
+import { EquipType, Rarity } from "@/libs/Types";
 
 export interface UnitEquip {
+	FullKey: string;
 	Type: EquipType;
-	Name: string;
+	Key: string;
+	Rarity: Rarity;
 	Level: number; // 0 ~ 10
-	Rarity: LRarity;
 }
 // eslint-disable-next-line
 export namespace UnitEquip {
 	export const Empty: UnitEquip = {
+		FullKey: "__T1",
 		Type: "Chip",
-		Name: "",
+		Key: "",
+		Rarity: "SS",
 		Level: 10,
-		Rarity: "ss",
 	};
 }

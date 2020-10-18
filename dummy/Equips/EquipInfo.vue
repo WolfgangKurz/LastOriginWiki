@@ -74,15 +74,16 @@ import Component from "vue-class-component";
 import { Prop, Watch } from "vue-property-decorator";
 
 import { StatusText } from "@/libs/Status";
+import { EquipData, UnitData } from "@/libs/DB";
+import { Rarity } from "@/libs/Types";
+
+import EquipLevel from "./EquipLevel.vue";
 
 import NodeRenderer from "@/components/NodeRenderer.vue";
 import UnitBadge from "@/components/UnitBadge.vue";
 
 import ElemIcon from "@/components/ElemIcon.vue";
 import EquipIcon from "@/components/EquipIcon.vue";
-import EquipLevel from "@/components/EquipLevel.vue";
-import { EquipData, UnitData } from "@/libs/DB";
-import { LRarity } from "@/libs/Types";
 
 @Component({
 	components: {
@@ -101,7 +102,7 @@ export default class EquipInfo extends Vue {
 	})
 	private name!: string;
 
-	private rarity: LRarity = "ss";
+	private rarity: Rarity = "SS";
 	private level: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 = 10;
 
 	@Watch("name")
@@ -117,11 +118,11 @@ export default class EquipInfo extends Vue {
 		const equip = this.Equip;
 		if (!equip) return [];
 
-		const list = (["ss", "s", "a", "b"] as LRarity[])
+		const list = (["SS", "S", "A", "B"] as Rarity[])
 			.filter((x) => _.some(EquipData, (y) => y.name.startsWith(this.name) && y.name.endsWith("_" + x)));
 
 		if (!list.includes(this.rarity))
-			this.rarity = _.first(list) || "ss";
+			this.rarity = _.first(list) || "SS";
 
 		return list;
 	}

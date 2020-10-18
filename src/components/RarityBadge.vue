@@ -2,7 +2,7 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
-import { Rarity, LRarity } from "@/libs/Types";
+import { Rarity } from "@/libs/Types";
 
 @Component({})
 export default class RarityBadge extends Vue {
@@ -10,7 +10,7 @@ export default class RarityBadge extends Vue {
 		type: String,
 		required: true,
 	})
-	private rarity!: LRarity | Rarity;
+	private rarity!: Rarity;
 
 	@Prop({
 		type: String,

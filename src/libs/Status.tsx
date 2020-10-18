@@ -1,3 +1,4 @@
+/*
 import { Status } from "@/libs/Types";
 import { UnitData } from "@/libs/DB";
 
@@ -69,8 +70,10 @@ function effectName (data: string) {
 	const cTable: Record<string, string> = {
 		barrier: "방어막",
 		dp: "방어막/피해감소 무시",
+		dpr: "방어막/피해감소 무시",
 		hit: "지속피해",
 		mindmg: "피해 최소화",
+		guard: "보호",
 		resist3: "효과 무효",
 		revive: "전투 속행",
 		scout: "정찰",
@@ -158,6 +161,19 @@ export function StatusText (context: Vue, status: Status): StatusTextType {
 					</span>;
 					break;
 
+				case "dpr":
+					disp = <span>{name} ({prefixNum(p0)} 확률)</span>;
+					break;
+
+				case "guard":
+					if (p0 === "row")
+						disp = <span>열 보호</span>;
+					else if (p0 === "col")
+						disp = <span>행 보호</span>;
+					else
+						disp = <span>{p0} 보호</span>;
+					break;
+
 				case "hp-atk":
 					disp = <span>공격력 {p0} 만큼 자신의 HP 감소</span>;
 					break;
@@ -206,8 +222,12 @@ export function StatusText (context: Vue, status: Status): StatusTextType {
 					disp = <span>{name}</span>;
 					break;
 
+				case "silence":
+					disp = <span>스킬 사용 불가 ({p0} 확률)</span>;
+					break;
+
 				case "stun":
-					disp = <span>스킬 사용 불가 ({p0})</span>;
+					disp = <span>행동 불가 ({p0} 확률)</span>;
 					break;
 
 				case "skill":
@@ -297,3 +317,4 @@ export function StatusText (context: Vue, status: Status): StatusTextType {
 		});
 	return { unknown, display };
 }
+*/

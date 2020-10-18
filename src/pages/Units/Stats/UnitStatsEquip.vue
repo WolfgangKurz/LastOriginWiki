@@ -3,12 +3,7 @@
 		<b-card-header v-b-toggle.collapse_equip>
 			장비 장착
 			<div class="float-right">
-				<equip-type-icon
-					v-for="(equip, idx) in unit.Equips"
-					:key="`unit-stats-equip-icon-${idx}`"
-					:type="equip.Type"
-					:active="!!equip.Name"
-				/>
+				<equip-type-icon v-for="(equip, idx) in unit.Equips" :key="`unit-stats-equip-icon-${idx}`" :type="equip.Type" :active="!!equip.Key" />
 			</div>
 		</b-card-header>
 		<b-collapse id="collapse_equip">
@@ -18,16 +13,15 @@
 						<item-slot
 							class="float-left mr-2"
 							:type="equip.Type"
-							:name="equip.Name"
-							:rarity="equip.Rarity"
+							:full-key="equip.FullKey"
 							:level="equip.Level"
 							@click="EquipSelecting = idx + 1"
 						/>
-						<template v-if="equip.Name">
-							<strong>{{EquipNames[equip.Name]}}</strong>
+						<template v-if="equip.Key">
+							<strong>{{ EquipName(equip.FullKey) }}</strong>
 							<div>
 								<rarity-badge class="mr-2" :rarity="equip.Rarity" />
-								<b-badge v-if="equip.Level>0" variant="info">+{{equip.Level}}</b-badge>
+								<b-badge v-if="equip.Level > 0" variant="info">+{{ equip.Level }}</b-badge>
 							</div>
 						</template>
 						<template v-else>
@@ -40,10 +34,10 @@
 
 				<equip-select-modal
 					v-if="unit"
-					:target="unit.id"
+					:target="unit.Id"
 					:display.sync="EquipSelectDisplay"
 					:type="EquipSelectDisplay ? unit.Equips[EquipSelecting - 1].Type : ''"
-					:name="EquipSelectDisplay ? unit.Equips[EquipSelecting - 1].Name + '_' + unit.Equips[EquipSelecting - 1].Rarity : ''"
+					:equip="EquipSelectDisplay ? FindEquip(unit.Equips[EquipSelecting - 1].FullKey) : EmptyEquip"
 					:level="EquipSelectDisplay ? unit.Equips[EquipSelecting - 1].Level : 10"
 					@select="EquipSelect"
 				/>
@@ -57,8 +51,8 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
-import EquipNameTable from "@/json/equip-names.json";
-import { LRarity } from "@/libs/Types";
+import { EquipData } from "@/libs/DB";
+import { Equip, Rarity } from "@/libs/Types";
 
 import StatIcon from "@/components/StatIcon.vue";
 import ItemSlot from "@/components/ItemSlot.vue";
@@ -89,6 +83,10 @@ export default class UnitStatsEquip extends Vue {
 
 	private EquipSelecting: number = 0;
 
+	private get EmptyEquip () {
+		return Equip.Empty;
+	}
+
 	private get EquipSelectDisplay () {
 		return this.EquipSelecting > 0;
 	}
@@ -98,18 +96,33 @@ export default class UnitStatsEquip extends Vue {
 			this.EquipSelecting = 0;
 	}
 
-	private EquipSelect (group: string, rarity: LRarity, level: number) {
+	private EquipName (key: string) {
+		const eq = EquipData.find(x => x.fullKey === key);
+		if (eq) return eq.name;
+		return key;
+	}
+
+	private FindEquip (key: string) {
+		return EquipData.find(x => x.fullKey === key) || Equip.Empty;
+	}
+
+	private EquipSelect (equip: Equip, level: number) {
 		if (!this.unit) return;
 
 		const index = this.EquipSelecting - 1;
-		this.unit.Equips[index].Name = group;
-		this.unit.Equips[index].Rarity = rarity;
-		this.unit.Equips[index].Level = level;
+		this.$set(
+			this.unit.Equips,
+			index,
+			{
+				FullKey: equip.fullKey,
+				Type: equip.type !== "Item" ? equip.type : (equip.limit ? "Private" : "Public"),
+				Key: equip.key,
+				Rarity: equip.rarity,
+				// Name: equip.name,
+				Level: level,
+			},
+		);
 		this.EquipSelecting = 0;
-	}
-
-	private get EquipNames () {
-		return EquipNameTable;
 	}
 }
 </script>

@@ -1,11 +1,11 @@
 <template>
 	<b-card bg-variant="dark" text-variant="white" class="my-1 equip-card" no-body>
 		<b-card-header class="position-relative">
-			<equip-icon :name="`${group.name}_ss`" size="big" />
-			<div v-if="group.source.length > 0" class="equip-sources text-left">
+			<equip-icon :id="`${equip.fullKey}`" size="big" />
+			<div v-if="Sources.length > 0" class="equip-sources text-left">
 				<source-badge
-					v-for="(source, sindex) in group.source"
-					:key="`equip-${group.name}-source-${sindex}-${source.source}`"
+					v-for="(source, sindex) in Sources"
+					:key="`equip-${equip.fullKey}-source-${sindex}-${source.source}`"
 					class="mb-1"
 					:source="source"
 					minimum
@@ -14,7 +14,7 @@
 		</b-card-header>
 
 		<b-card-body>
-			<div class="equip-name">{{EquipNames[group.name] || group.name}}</div>
+			<div class="equip-name">{{ Name }}</div>
 		</b-card-body>
 
 		<a v-if="!noLink" href="#" class="stretched-link equip-stretched" @click.prevent="Click" />
@@ -26,7 +26,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
-import EquipNameTable from "@/json/equip-names.json";
+import { Equip } from "@/libs/Types";
 import EntitySource from "@/libs/EntitySource";
 
 import EquipIcon from "@/components/EquipIcon.vue";
@@ -43,10 +43,13 @@ export default class EquipCard extends Vue {
 		type: Object,
 		required: true,
 	})
-	private group!: {
-		name: string;
-		source: EntitySource[];
-	};
+	private equip!: Equip;
+
+	@Prop({
+		type: Array,
+		default: () => [],
+	})
+	private source!: EntitySource[];
 
 	@Prop({
 		type: Boolean,
@@ -54,12 +57,16 @@ export default class EquipCard extends Vue {
 	})
 	private noLink!: boolean;
 
-	private get EquipNames () {
-		return EquipNameTable as Record<string, string>;
+	private get Name () {
+		return this.equip.name.replace(/ (RE|MP|SP|EX)$/, "");
+	}
+
+	private get Sources () {
+		return this.source.reduce((p, c) => [...p, c], [] as EntitySource[]);
 	}
 
 	private Click () {
-		this.$emit("click", this.group.name);
+		this.$emit("click", this.equip.fullKey);
 	}
 }
 </script>
