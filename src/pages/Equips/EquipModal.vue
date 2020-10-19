@@ -248,15 +248,14 @@ export default class EquipModal extends Vue {
 	}
 
 	private get Limits () {
-		if (!this.equip) return ["???"];
-
-		return this.equip.limit || [];
+		if (!this.target) return ["???"];
+		return this.target.limit || [];
 	}
 
 	private get StatusList () {
-		if (!this.equip) return null;
+		if (!this.target) return null;
 
-		const stat = this.equip.stats[this.level];
+		const stat = this.target.stats[this.level];
 		return stat.reduce((p, c) => [...p, ...EquipStatus(this, c)], [] as JSX.Element[]);
 	}
 
