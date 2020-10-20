@@ -13,7 +13,7 @@ export default class ElemIcon extends Vue {
 		type: String,
 		default: "",
 	})
-	private elem!: "fire" | "thunder" | "chill" | "";
+	private elem!: "fire" | "ice" | "lightning" | "";
 
 	@Prop({
 		type: Boolean,
@@ -41,11 +41,11 @@ export default class ElemIcon extends Vue {
 	&[data-elem="fire"] {
 		background-position: 0 0;
 	}
-	&[data-elem="thunder"] {
-		background-position: -20.5px 0;
-	}
-	&[data-elem="chill"] {
+	&[data-elem="ice"] {
 		background-position: -41px 0;
+	}
+	&[data-elem="lightning"] {
+		background-position: -20.5px 0;
 	}
 
 	&[data-inline="1"] {

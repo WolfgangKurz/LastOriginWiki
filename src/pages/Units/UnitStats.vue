@@ -15,11 +15,11 @@
 						<unit-face :id="unit.id" size="52" />
 					</div>
 					<strong class="pt-1">
-						{{unit.name}}
-						<b-badge class="ml-1" variant="secondary">{{sUnit.Rarity}}</b-badge>
+						{{ unit.name }}
+						<b-badge class="ml-1" variant="secondary">{{ sUnit.Rarity }}</b-badge>
 					</strong>
 					<div>
-						<small>{{unit.group}}・{{UnitType}}・{{UnitRole}}</small>
+						<small>{{ unit.group }}・{{ UnitType }}・{{ UnitRole }}</small>
 					</div>
 					<div class="clearfix" />
 				</b-col>
@@ -29,21 +29,21 @@
 					<b-row>
 						<b-col cols="4">
 							<img class="res-icon" :src="`${AssetsRoot}/res-component.png`" />
-							<span
-								:class="`text-${sUnit.FullLinkBonus === 'discount' ? 'primary' : 'dark'}`"
-							>{{CostTable.components[sUnit.LinkCount]}}</span>
+							<span :class="`text-${sUnit.FullLinkBonus === 'Discount' ? 'primary' : 'dark'}`">{{
+								CostTable.metal[sUnit.LinkCount]
+							}}</span>
 						</b-col>
 						<b-col cols="4">
 							<img class="res-icon" :src="`${AssetsRoot}/res-nutrition.png`" />
-							<span
-								:class="`text-${sUnit.FullLinkBonus === 'discount' ? 'primary' : 'dark'}`"
-							>{{CostTable.nutritions[sUnit.LinkCount]}}</span>
+							<span :class="`text-${sUnit.FullLinkBonus === 'Discount' ? 'primary' : 'dark'}`">{{
+								CostTable.nutrient[sUnit.LinkCount]
+							}}</span>
 						</b-col>
 						<b-col cols="4">
 							<img class="res-icon" :src="`${AssetsRoot}/res-power.png`" />
-							<span
-								:class="`text-${sUnit.FullLinkBonus === 'discount' ? 'primary' : 'dark'}`"
-							>{{CostTable.power[sUnit.LinkCount]}}</span>
+							<span :class="`text-${sUnit.FullLinkBonus === 'Discount' ? 'primary' : 'dark'}`">{{
+								CostTable.power[sUnit.LinkCount]
+							}}</span>
 						</b-col>
 					</b-row>
 				</b-col>
@@ -54,20 +54,16 @@
 			<b-col cols="12" md="6" class="mb-2">
 				<b-card class="unit-stat-display" bg-variant="dark">
 					<b-row>
-						<b-col v-for="resist in ResistList" :key="`unit-stats-resist=${resist}`" cols="4">
+						<b-col v-for="(statKey, resist) in ResistList" :key="`unit-stats-resist=${resist}`" cols="4">
 							<div class="status-col">
 								<div class="status-col-icon">
 									<elem-icon inline :elem="resist" />
 								</div>
 								<div class="status-col-content">
-									<div class="status-col-head">{{StatList[`resist.${resist}`].name}}</div>
-									<div
-										class="status-col-value"
-										:data-value="UnitStats.final[`resist.${resist}`].value"
-										:data-type="resist"
-									>
-										{{UnitStats.final[`resist.${resist}`].value}}
-										{{UnitStats.final[`resist.${resist}`].postfix}}
+									<div class="status-col-head">{{ StatName[statKey] }}</div>
+									<div class="status-col-value" :data-value="UnitStats.final[statKey].value" :data-type="resist">
+										{{ UnitStats.final[statKey].value }}
+										{{ StatPostfix[statKey] }}
 									</div>
 								</div>
 							</div>
@@ -75,20 +71,15 @@
 					</b-row>
 					<hr />
 					<template v-for="(entity, idx) in StatRows">
-						<hr v-if="entity === false" :key="`unit-status-stat-row-${idx}`" />
+						<hr v-if="typeof entity === 'boolean'" :key="`unit-status-stat-row-${idx}`" />
 						<b-row v-else :key="`unit-status-stat-row-${idx}`">
-							<b-col
-								v-for="key in entity.list"
-								:key="`unit-status-stat-${key}`"
-								class="mt-3"
-								:cols="entity.size"
-							>
+							<b-col v-for="key in entity.list" :key="`unit-status-stat-${key}`" class="mt-3" :cols="entity.size">
 								<div class="status-col">
 									<div class="status-col-icon">
 										<stat-icon inline :stat="key" />
 									</div>
 									<div class="status-col-content">
-										<div class="status-col-head">{{StatList[key].name}}</div>
+										<div class="status-col-head">{{ StatName[key] }}</div>
 
 										<div
 											v-if="key in UnitStats.non"
@@ -101,8 +92,8 @@
 													v-for="(chance, chanceIdx) in UnitStats.non[key].list"
 													:key="`unit-status-stat-${key}-${chanceIdx}`"
 												>
-													{{chance}}
-													{{UnitStats.non[key].postfix}}
+													{{ chance }}
+													{{ StatPostfix[key] }}
 												</div>
 											</template>
 										</div>
@@ -112,8 +103,8 @@
 											data-real="1"
 											:data-value="UnitStats.final[key].value"
 										>
-											{{UnitStats.final[key].value}}
-											{{UnitStats.final[key].postfix}}
+											{{ UnitStats.final[key].value }}
+											{{ StatPostfix[key] }}
 										</div>
 										<div
 											v-if="BaseStatList.includes(key)"
@@ -121,8 +112,8 @@
 											data-real="0"
 											:data-value="UnitStats.base[key].value"
 										>
-											{{UnitStats.base[key].value}}
-											{{UnitStats.base[key].postfix}}
+											{{ UnitStats.base[key].value }}
+											{{ StatPostfix[key] }}
 										</div>
 									</div>
 								</div>
@@ -143,12 +134,13 @@
 						<b-input class="pl-5" v-model="sUnit.Level" number />
 						<b-input-group-append>
 							<b-dropdown :variant="`rarity-${sUnit.Rarity}`" class="border-left">
-								<template #button-content>{{sUnit.Rarity}}</template>
+								<template #button-content>{{ sUnit.Rarity }}</template>
 								<b-dropdown-item
 									v-for="rarity in UnitRarities"
-									:key="`unit-status-rarity-${rarity}`"
-									@click="sUnit.Rarity = rarity"
-								>{{rarity}}</b-dropdown-item>
+									:key="`unit-status-rarity-${rarity.value}`"
+									@click="sUnit.Rarity = rarity.value"
+									>{{ rarity.text }}</b-dropdown-item
+								>
 							</b-dropdown>
 							<b-button variant="secondary" @click="sUnit.Level = 100">
 								<b-icon-chevron-double-up />
@@ -166,6 +158,8 @@
 </template>
 
 <script lang="ts">
+import { Decimal } from "decimal.js";
+
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
@@ -174,12 +168,15 @@ import { AssetsRoot } from "@/libs/Const";
 
 import CostData from "@/json/unit-cost.json";
 
-import { Unit, CostTable, RawCostTable } from "@/libs/Types";
-import { UnitStatsData, EquipData } from "@/libs/DB";
-import { FormatNumber } from "@/libs/Functions";
+import { ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/libs/Types/Enums";
+import UnitData, { Unit } from "@/libs/DB/Unit";
+import UnitStatsData from "@/libs/DB/UnitStats";
+import EquipData from "@/libs/DB/Equip";
+
+import { FormatNumber, GetRequireResource } from "@/libs/Functions";
 
 import { Unit as SimUnit } from "@/pages/Simulation/Simulation/Unit";
-import { StatList, StatType, Stat, UnitStat, StatListTable } from "@/pages/Simulation/Simulation/Stats";
+import { StatType, Stat, UnitStat, StatListTable, RatioStats, LiteralStats } from "@/pages/Simulation/Simulation/Stats";
 
 import UnitFace from "@/components/UnitFace.vue";
 import ElemIcon from "@/components/ElemIcon.vue";
@@ -233,104 +230,135 @@ export default class UnitStatus extends Vue {
 		return AssetsRoot;
 	}
 
-	private get StatRows () {
+	private get StatRows (): Array<boolean | { size: number; list: StatType[]; }> {
 		return [
 			{
 				size: 3,
-				list: ["hp", "atk", "def", "acc"],
+				list: ["HP", "ATK", "DEF", "ACC"],
 			},
 			{
 				size: 3,
-				list: ["eva", "crit", "spd"],
+				list: ["EV", "Cri", "SPD"],
 			},
 			false,
 
 			{
 				size: 4,
-				list: ["armorpierce", "range"],
+				list: ["armor_pierce", "Range"],
 			},
 			{
 				size: 4,
-				list: ["dmg.light", "dmg.air", "dmg.heavy"],
+				list: ["damage.light", "damage.air", "damage.heavy"],
 			},
 			false,
 
 			{
 				size: 4,
-				list: ["dr", "resist", "off"],
+				list: ["damage_reduce", "Resist", "off"],
 			},
 			{
 				size: 4,
-				list: ["-acc", "-eva", "-range"],
+				list: ["off.-ACC", "off.-EV", "off.-Range"],
 			},
 		];
 	}
 
 	private get UnitType () {
 		return {
-			light: "경장",
-			air: "기동",
-			heavy: "중장",
+			[ACTOR_CLASS.TROOPER]: "경장",
+			[ACTOR_CLASS.MOBILITY]: "기동",
+			[ACTOR_CLASS.ARMORED]: "중장",
+			[ACTOR_CLASS.__MAX__]: "",
 		}[this.unit.type];
 	}
 
 	private get UnitRole () {
 		return {
-			attacker: "공격기",
-			defender: "보호기",
-			supporter: "지원기",
+			[ROLE_TYPE.ATTACKER]: "공격기",
+			[ROLE_TYPE.DEFENDER]: "보호기",
+			[ROLE_TYPE.SUPPORTER]: "지원기",
+			[ROLE_TYPE.__MAX__]: "",
 		}[this.unit.role];
 	}
 
-	private get CostTable (): CostTable {
-		type CostCell = [number, number, number, number, number, number];
-		const key = `${this.sUnit.Rarity}_${this.unit.type}_${this.unit.role}`;
-		const costData = CostData as unknown as RawCostTable;
-		let table = costData[key][this.unit.body];
-
-		if (this.sUnit.FullLinkBonus === "discount") {
-			const isSS = this.sUnit.Rarity === "SS";
-			const _ = (x: number) => Math.ceil(x * (isSS ? 0.75 : 0.8));
-
-			table = JSON.parse(JSON.stringify(table));
-			table.components[5] = _(table.components[5]);
-			table.nutritions[5] = _(table.nutritions[5]);
-			table.power[5] = _(table.power[5]);
-		}
-		return table;
-	}
-
-	private get StatList () {
-		return StatList;
+	private get CostTable () {
+		return GetRequireResource(
+			this.sUnit.Rarity,
+			this.sUnit.Unit.type,
+			this.sUnit.Unit.role,
+			this.sUnit.Unit.body,
+			this.sUnit.FullLinkBonus === "Discount",
+		);
 	}
 
 	private get UnitRarities () {
-		const order = {
-			B: 1,
-			A: 2,
-			S: 3,
-			SS: 4,
+		const rarities: Record<ACTOR_GRADE, string> = {
+			[ACTOR_GRADE.B]: "B",
+			[ACTOR_GRADE.A]: "A",
+			[ACTOR_GRADE.S]: "S",
+			[ACTOR_GRADE.SS]: "S",
 		};
-		return [this.unit.rarity, ...this.unit.promotions || []].sort((a, b) => order[a] - order[b]);
+
+		return [this.unit.rarity, ...this.unit.promotions || []]
+			.sort()
+			.map(x => ({
+				value: x,
+				text: rarities[x],
+			}));
 	}
 
-	private get ResistList () {
-		return ["fire", "chill", "thunder"];
+	private get ResistList (): Record<string, StatType> {
+		return {
+			fire: "resist.fire",
+			ice: "resist.ice",
+			lightning: "resist.lightning",
+		};
 	}
 
-	private get BaseStatList () {
-		return ["atk", "def", "hp", "acc", "eva", "crit", "spd"];
+	private get BaseStatList (): StatType[] {
+		return ["ATK", "DEF", "HP", "ACC", "EV", "Cri", "SPD"];
+	}
+
+	private get StatName (): Record<StatType, string> {
+		return {
+			"resist.fire": "화염 저항",
+			"resist.ice": "냉기 저항",
+			"resist.lightning": "번개 저항",
+			ATK: "공격력",
+			DEF: "방어력",
+			HP: "체력",
+			ACC: "적중률",
+			EV: "회피율",
+			Cri: "치명타",
+			SPD: "행동력",
+			armor_pierce: "방어 관통",
+			Range: "사거리",
+			"damage.light": "대경장 피해량",
+			"damage.air": "대기동 피해량",
+			"damage.heavy": "대중장 피해량",
+			damage_reduce: "받는 피해 감소",
+			Resist: "효과 저항",
+			off: "효과 해제",
+			"off.-ACC": "적중 감소 해제",
+			"off.-EV": "회피 감소 해제",
+			"off.-Range": "사거리 감소 해제",
+		};
+	}
+
+	private get StatPostfix (): Record<StatType, string> {
+		const ret = {} as Record<StatType, string>;
+		(Object.keys(UnitStat.Empty) as StatType[])
+			.forEach(x => (ret[x] = RatioStats.includes(x) ? "%" : ""));
+		return ret;
 	}
 
 	private get UnitStats () {
 		interface ResultType {
-			name: string;
+			key: string;
 			final: number;
 			added: number;
-			rounded: boolean;
 			value: string;
-			list?: number[];
-			postfix: string;
+			list: number[];
 		}
 		interface ResultContainer {
 			base: Record<string, ResultType>;
@@ -343,49 +371,44 @@ export default class UnitStatus extends Vue {
 			final: {},
 			non: {},
 		};
-		for (const k in StatList) {
-			const key = k as StatType;
-			const stat = StatList[key];
+		const keys = Object.keys(this.sUnit.StatData) as StatType[];
+		keys.forEach(key => {
 			const sStat = this.sUnit.StatData[key];
 
 			if (sStat.isIndependent) {
 				output.non[key] = {
-					name: stat.name,
+					key,
 					final: 0,
 					added: 0,
-					rounded: stat.rounded || false,
 					value: "",
-					postfix: stat.postfix || "",
 					list: sStat.independentValues,
 				};
-				continue;
+				return;
 			}
 
 			(() => {
 				const final = this.FinalValue(sStat, key, false);
 				const added = final - sStat.base;
 				output.base[key] = {
-					name: stat.name,
+					key,
 					final,
 					added,
-					rounded: stat.rounded || false,
-					value: this.NumValue(final, !!stat.rounded, !!stat.literal),
-					postfix: stat.postfix || "",
+					value: this.NumValue(final, key),
+					list: [],
 				};
 			})();
 			(() => {
 				const final = this.FinalValue(sStat, key, true);
 				const added = final - sStat.base;
 				output.final[key] = {
-					name: stat.name,
+					key,
 					final,
 					added,
-					rounded: stat.rounded || false,
-					value: this.NumValue(final, !!stat.rounded, !!stat.literal),
-					postfix: stat.postfix || "",
+					value: this.NumValue(final, key),
+					list: [],
 				};
 			})();
-		}
+		});
 
 		return output;
 	}
@@ -411,24 +434,22 @@ export default class UnitStatus extends Vue {
 		return value;
 	}
 
-	private NumValue (value: number, rounded?: boolean, literal?: boolean) {
-		const normalized = ((v) => {
-			const fixed = v.toFixed(8);
-			return parseFloat(
-				fixed.substr(0, fixed.length - 6),
-			); // 2자리만 남기고
-		})(value);
+	private NumValue (value: number, key: StatType) {
+		const ratio = RatioStats.includes(key);
+		const literal = LiteralStats.includes(key);
 
-		if (rounded)
-			return (!literal && normalized >= 0 ? "+" : "") + FormatNumber(Math.round(normalized));
-		else {
-			const integer = FormatNumber(Math.floor(normalized));
-			const float = ((x: number) => {
-				const y = x.toString();
-				if (!y.includes(".")) return "";
-				return y.substr(y.indexOf("."));
-			})(normalized);
-			return (!literal && normalized >= 0 ? "+" : "") + integer + float;
+		if (ratio && literal)
+			return value.toString();
+		else if (ratio && !literal)
+			return `${value > 0 ? "+" : ""}${value}`;
+		else if (!ratio && literal) {
+			return new Decimal(value)
+				.floor()
+				.toString();
+		} else {
+			return (value > 0 ? "+" : "") + new Decimal(value)
+				.floor()
+				.toString();
 		}
 	}
 

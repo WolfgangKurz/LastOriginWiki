@@ -4,13 +4,17 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Watch } from "vue-property-decorator";
 
-import { Rarity, RawSkillUnit, FullLinkBonusType } from "@/libs/Types";
-import { UnitData, UnitStatsData, EquipData, SkillData } from "@/libs/DB";
+import { RawSkillUnit } from "@/libs/Types";
+import { SkillData } from "@/libs/DB";
 
 import { UnitEquip } from "./UnitEquip";
-import { UnitStat, UnitPoint, Stat, StatPointValue, StatType, StatList } from "./Stats";
+import { UnitStat, UnitPoint, Stat, StatPointValue, StatType, RatioStats } from "./Stats";
 import { BuffEffect, BUFFEFFECT_TYPE } from "@/libs/Equips/BuffEffect";
-import { BUFF_ATTR_TYPE } from "@/libs/Equips/Enums";
+
+import { ACTOR_CLASS, ACTOR_GRADE, BUFF_ATTR_TYPE, ROLE_TYPE } from "@/libs/Types/Enums";
+import UnitData, { FullLinkBonusType } from "@/libs/DB/Unit";
+import UnitStatsData from "@/libs/DB/UnitStats";
+import EquipData from "@/libs/DB/Equip";
 
 type LinkData = [number, number, number, number, number];
 
@@ -26,7 +30,7 @@ interface SkillTable {
 export class Unit extends Vue {
 	private id: number = -1;
 	private level: number = 1;
-	private rarity: Rarity = "B"; // 기본 등급
+	private rarity: ACTOR_GRADE = ACTOR_GRADE.B; // 기본 등급
 
 	private linked: LinkData = [0, 0, 0, 0, 0];
 	private fullLinkBonus: FullLinkBonusType = "";
@@ -61,7 +65,7 @@ export class Unit extends Vue {
 		return this.rarity;
 	}
 
-	public set Rarity (value: Rarity) {
+	public set Rarity (value: ACTOR_GRADE) {
 		this.rarity = value;
 	}
 
@@ -107,106 +111,106 @@ export class Unit extends Vue {
 
 		const unit = this.Unit;
 
-		const hasEva = unit.linkBonus.entry3 === "eva" || unit.linkBonus.entry4 === "eva";
-		const isAirDef = unit.type === "air" && unit.role === "defender";
+		const hasEva = unit.fullLinkBonus.bonus3 === "EV" || unit.fullLinkBonus.bonus4 === "EV";
+		const isAirDef = unit.type === ACTOR_CLASS.AIR && unit.role === ROLE_TYPE.DEFENDER;
 
 		const LinkBonusTable: BonusTable = {
-			acc: {
-				key: "acc",
+			ACC: {
+				key: "ACC",
 				name: "적중",
 				value: 35,
 				ratio: false,
 				postfix: "%",
 			},
-			crit: {
-				key: "crit",
+			Cri: {
+				key: "Cri",
 				name: "치명타",
 				value: 10,
 				ratio: false,
 				postfix: "%",
 			},
-			def: {
-				key: "def",
+			DEF: {
+				key: "DEF",
 				name: "방어력",
 				value: 15,
 				ratio: true,
 				postfix: "%",
 				rounded: true,
 			},
-			eva: {
-				key: "eva",
+			EV: {
+				key: "EV",
 				name: "회피",
 				value: 10,
 				ratio: false,
 				postfix: "%",
 			},
-			hp: {
-				key: "hp",
+			HP: {
+				key: "HP",
 				name: "HP",
 				value: 100,
 				ratio: true,
 				postfix: "%",
 				rounded: true,
 			},
-			skill: {
-				key: "skill",
+			Skill: {
+				key: "Skill",
 				name: "스킬 위력",
 				value: 10,
 				ratio: true,
 				postfix: "%",
 				rounded: true,
 			},
-			spd: {
-				key: "spd",
+			SPD: {
+				key: "SPD",
 				name: "행동력",
 				ratio: false,
 				value: 0.1,
 			},
 		};
 		const FullLinkBonusTable: BonusTable = {
-			acc: {
-				key: "acc",
+			ACC: {
+				key: "ACC",
 				name: "적중",
 				value: 75,
 				ratio: false,
 				postfix: "%",
 			},
-			buff: {
-				key: "buff",
+			Buff: {
+				key: "Buff",
 				name: "버프/디버프 효과 Lv",
 				value: 2,
 				ratio: false,
 			},
-			crit: {
-				key: "crit",
+			Cri: {
+				key: "Cri",
 				name: "치명타",
 				value: 20,
 				ratio: false,
 				postfix: "%",
 			},
-			def: {
-				key: "def",
+			DEF: {
+				key: "DEF",
 				name: "방어력",
 				value: 20,
 				ratio: true,
 				postfix: "%",
 			},
-			eva: {
-				key: "eva",
+			EV: {
+				key: "EV",
 				name: "회피",
 				value: isAirDef ? 20 : 15,
 				ratio: false,
 				postfix: "%",
 			},
-			hp: {
-				key: "hp",
+			HP: {
+				key: "HP",
 				name: "HP",
 				value: 20,
 				ratio: true,
 				postfix: "%",
 			},
-			range: {
-				key: "range",
+			Range: {
+				key: "Range",
 				name: "사거리",
 				ratio: false,
 				value: 1,
@@ -214,26 +218,34 @@ export class Unit extends Vue {
 		};
 
 		return {
-			IsHP: unit.linkBonus.per === "hp",
-			Per: LinkBonusTable[unit.linkBonus.per],
+			IsHP: unit.linkBonus === "HP",
+			Per: LinkBonusTable[unit.linkBonus],
 			Value: {
-				HP: (unit.linkBonus.per === "hp" ? 125 : 100) * this.LinkCount / 5,
-				Atk: 100 * this.LinkCount / 5,
+				HP: Decimal.mul(unit.linkBonus === "HP" ? 125 : 100, this.LinkCount)
+					.div(5)
+					.toNumber(),
+				Atk: Decimal.mul(100, this.LinkCount)
+					.div(5)
+					.toNumber(),
 				Per: {
-					...LinkBonusTable[unit.linkBonus.per],
-					value: LinkBonusTable[unit.linkBonus.per].value * this.LinkCount / 5,
+					...LinkBonusTable[unit.linkBonus],
+					value: Decimal.mul(LinkBonusTable[unit.linkBonus].value, this.LinkCount)
+						.div(5)
+						.toNumber(),
 				},
-				EXP: 20 * this.LinkCount / 5,
+				EXP: Decimal.mul(20, this.LinkCount)
+					.div(5)
+					.toNumber(),
 			},
 
-			Discount: unit.rarity === "SS" ? 25 : 20,
-			SkillPower: unit.linkBonus.skillPower,
-			Entry3: FullLinkBonusTable[unit.linkBonus.entry3],
-			entry3: unit.linkBonus.entry3,
-			Entry4: FullLinkBonusTable[unit.linkBonus.entry4],
-			entry4: unit.linkBonus.entry4,
-			Speed: unit.type === "air" && unit.role === "defender"
-				? (unit.rarity === "SS" && hasEva ? 0.2 : 0.15)
+			Discount: unit.rarity === ACTOR_GRADE.SS ? 25 : 20,
+			SkillPower: unit.fullLinkBonus.bonus2,
+			Bonus3: FullLinkBonusTable[unit.fullLinkBonus.bonus3],
+			bonus3: unit.fullLinkBonus.bonus3,
+			Bonus4: FullLinkBonusTable[unit.fullLinkBonus.bonus4],
+			bonus4: unit.fullLinkBonus.bonus4,
+			Speed: unit.type === ACTOR_CLASS.AIR && unit.role === ROLE_TYPE.DEFENDER
+				? (unit.rarity === ACTOR_GRADE.SS && hasEva ? 0.2 : 0.15)
 				: 0.1,
 		};
 	}
@@ -257,37 +269,36 @@ export class Unit extends Vue {
 	public get StatData () {
 		if (this.Id === 0) return UnitStat.Empty;
 
-		const data = UnitStatsData[this.Id][this.Rarity];
+		const data = UnitStatsData.find(x => x.id === this.Id && x.rarity === this.Rarity);
 		if (!data) return UnitStat.Empty; // 잘못된 요청 (존재하지 않는 스탯 데이터)
 
 		const linkBonus = this.LinkBonus;
 		const levelValue = (value: number[], level: number) => {
 			return value[0] + (value[1] - value[0]) * (level - 1) / 99;
 		};
-		const unit = this.Unit;
 
 		const output: UnitStat = {
-			"resist.fire": { ...Stat.Empty, base: unit.resists.fire },
-			"resist.chill": { ...Stat.Empty, base: unit.resists.chill },
-			"resist.thunder": { ...Stat.Empty, base: unit.resists.thunder },
+			"resist.fire": { ...Stat.Empty, base: data.Resist.fire },
+			"resist.ice": { ...Stat.Empty, base: data.Resist.ice },
+			"resist.lightning": { ...Stat.Empty, base: data.Resist.lightning },
 
-			atk: { ...Stat.Empty, base: levelValue(data.atk, this.Level) },
-			def: { ...Stat.Empty, base: levelValue(data.def, this.Level) },
-			hp: { ...Stat.Empty, base: levelValue(data.hp, this.Level) },
-			acc: { ...Stat.Empty, base: data.acc },
-			eva: { ...Stat.Empty, base: data.eva },
-			crit: { ...Stat.Empty, base: data.crit },
-			spd: { ...Stat.Empty, base: data.spd },
+			ATK: { ...Stat.Empty, base: levelValue(data.ATK, this.Level) },
+			DEF: { ...Stat.Empty, base: levelValue(data.DEF, this.Level) },
+			HP: { ...Stat.Empty, base: levelValue(data.HP, this.Level) },
+			ACC: { ...Stat.Empty, base: data.ACC },
+			EV: { ...Stat.Empty, base: data.EV },
+			Cri: { ...Stat.Empty, base: data.Cri },
+			SPD: { ...Stat.Empty, base: data.SPD },
 
-			armorpierce: { ...Stat.Empty },
-			range: { ...Stat.Empty },
+			armor_pierce: { ...Stat.Empty },
+			Range: { ...Stat.Empty },
 
-			"dmg.light": { ...Stat.Empty },
-			"dmg.air": { ...Stat.Empty },
-			"dmg.heavy": { ...Stat.Empty },
+			"damage.light": { ...Stat.Empty },
+			"damage.air": { ...Stat.Empty },
+			"damage.heavy": { ...Stat.Empty },
 
-			dr: { ...Stat.Empty },
-			resist: {
+			damage_reduce: { ...Stat.Empty },
+			Resist: {
 				...Stat.Empty,
 				isIndependent: true,
 			},
@@ -295,9 +306,9 @@ export class Unit extends Vue {
 				...Stat.Empty,
 				isIndependent: true,
 			},
-			"-acc": { ...Stat.Empty },
-			"-eva": { ...Stat.Empty },
-			"-range": { ...Stat.Empty },
+			"off.-ACC": { ...Stat.Empty },
+			"off.-EV": { ...Stat.Empty },
+			"off.-Range": { ...Stat.Empty },
 		};
 
 		for (const k in output) {
@@ -328,7 +339,7 @@ export class Unit extends Vue {
 
 						// % 수치가 아닌 경우
 						// 본래 수치가 %로 계산하는 경우
-						if (!p || (p && StatList[key].postfix === "%"))
+						if (!p || (p && RatioStats.includes(key)))
 							value = value.add(v);
 						else
 							valueP = valueP.add(v);
@@ -337,47 +348,47 @@ export class Unit extends Vue {
 					};
 					const procValue = (stat: BuffEffect) => {
 						switch (key) {
-							case "atk":
+							case "ATK":
 								if ("attack" in stat)
 									calc(stat.attack.base);
 								break;
-							case "hp":
+							case "HP":
 								if ("hp" in stat)
 									calc(stat.hp.base);
 								break;
-							case "def":
+							case "DEF":
 								if ("defense" in stat)
 									calc(stat.defense.base);
 								break;
-							case "acc":
+							case "ACC":
 								if ("accuracy" in stat)
 									calc(stat.accuracy.base);
 								break;
-							case "crit":
+							case "Cri":
 								if ("critical" in stat)
 									calc(stat.critical.base);
 								break;
-							case "eva":
+							case "EV":
 								if ("evade" in stat)
 									calc(stat.evade.base);
 								break;
-							case "spd":
+							case "SPD":
 								if ("turnSpeed" in stat)
 									calc(stat.turnSpeed.base);
 								break;
-							case "armorpierce":
+							case "armor_pierce":
 								if ("penetration" in stat)
 									calc(stat.penetration.base);
 								break;
-							case "dr":
+							case "damage_reduce":
 								if ("damage_reduce" in stat)
 									calc(stat.damage_reduce.base);
 								break;
-							case "range":
+							case "Range":
 								if ("range" in stat)
 									calc(stat.range.base);
 								break;
-							case "-acc":
+							case "off.-ACC":
 								if ("off" in stat) {
 									if (typeof stat.off === "object" && "target" in stat.off) {
 										if (
@@ -388,7 +399,7 @@ export class Unit extends Vue {
 									}
 								}
 								break;
-							case "-eva":
+							case "off.-EV":
 								if ("off" in stat) {
 									if (typeof stat.off === "object" && "target" in stat.off) {
 										if (
@@ -399,7 +410,7 @@ export class Unit extends Vue {
 									}
 								}
 								break;
-							case "-range":
+							case "off.-Range":
 								if ("off" in stat) {
 									if (typeof stat.off === "object" && "target" in stat.off) {
 										if (
@@ -416,19 +427,19 @@ export class Unit extends Vue {
 										calc(stat.resist.value.base);
 								}
 								break;
-							case "resist.chill":
+							case "resist.ice":
 								if ("resist" in stat) {
 									if ("elem" in stat.resist && stat.resist.elem === "chill")
 										calc(stat.resist.value.base);
 								}
 								break;
-							case "resist.thunder":
+							case "resist.lightning":
 								if ("resist" in stat) {
 									if ("elem" in stat.resist && stat.resist.elem === "thunder")
 										calc(stat.resist.value.base);
 								}
 								break;
-							case "resist":
+							case "Resist":
 								if ("resist" in stat) {
 									if ("type" in stat.resist && stat.resist.type === "debuff")
 										independentValues.push(calc(stat.chance || "100%"));
@@ -458,36 +469,44 @@ export class Unit extends Vue {
 			if (output[key].isIndependent)
 				output[key].independentValues = independentValues;
 
-			if (key === "hp")
-				output[key].linkBonus = (linkBonus.IsHP ? 125 : 100) * this.LinkSum / 5;
-			else if (key === "atk")
-				output[key].linkBonus = 100 * this.LinkSum / 5;
-			else if (key === this.Unit.linkBonus.per)
-				output[key].linkBonus = linkBonus.Per.value * this.LinkSum / 5;
+			// 링크 보너스
+			if (key === "HP") {
+				output[key].linkBonus = Decimal.mul(linkBonus.IsHP ? 125 : 100, this.LinkSum)
+					.div(5)
+					.toNumber();
+			} else if (key === "ATK") {
+				output[key].linkBonus = Decimal.mul(100, this.LinkSum)
+					.div(5)
+					.toNumber();
+			} else if (key === this.Unit.linkBonus) {
+				output[key].linkBonus = Decimal.mul(linkBonus.Per.value, this.LinkSum)
+					.div(5)
+					.toNumber();
+			}
 
-			// 풀링크
+			// 풀링크 보너스
 			if (this.LinkSum === 5) {
-				if (key === "hp" && this.fullLinkBonus === "hp")
+				if (key === "HP" && this.fullLinkBonus === "HP")
 					output[key].fullLinkBonusRatio = 20;
-				else if (key === "spd" && this.fullLinkBonus === "spd")
+				else if (key === "SPD" && this.fullLinkBonus === "SPD")
 					output[key].fullLinkBonus = this.LinkBonus.Speed;
-				else if (key === "eva" && this.fullLinkBonus === "eva") {
-					output[key].fullLinkBonus = this.LinkBonus.Entry3.key === "eva"
-						? this.LinkBonus.Entry3.value
-						: this.LinkBonus.Entry4.value;
-				} else if (key === "acc" && this.fullLinkBonus === "acc") {
-					output[key].fullLinkBonus = this.LinkBonus.Entry3.key === "acc"
-						? this.LinkBonus.Entry3.value
-						: this.LinkBonus.Entry4.value;
-				} else if (key === "crit" && this.fullLinkBonus === "crit") {
-					output[key].fullLinkBonus = this.LinkBonus.Entry3.key === "crit"
-						? this.LinkBonus.Entry3.value
-						: this.LinkBonus.Entry4.value;
-				} else if (key === "range" && this.fullLinkBonus === "range")
+				else if (key === "EV" && this.fullLinkBonus === "EV") {
+					output[key].fullLinkBonus = this.LinkBonus.Bonus3.key === "eva"
+						? this.LinkBonus.Bonus3.value
+						: this.LinkBonus.Bonus4.value;
+				} else if (key === "ACC" && this.fullLinkBonus === "ACC") {
+					output[key].fullLinkBonus = this.LinkBonus.Bonus3.key === "acc"
+						? this.LinkBonus.Bonus3.value
+						: this.LinkBonus.Bonus4.value;
+				} else if (key === "Cri" && this.fullLinkBonus === "Cri") {
+					output[key].fullLinkBonus = this.LinkBonus.Bonus3.key === "crit"
+						? this.LinkBonus.Bonus3.value
+						: this.LinkBonus.Bonus4.value;
+				} else if (key === "Range" && this.fullLinkBonus === "Range")
 					output[key].fullLinkBonus = 1;
 			}
 
-			if (key === "hp" || key === "atk" || (key === this.Unit.linkBonus.per && linkBonus.Per.ratio))
+			if (key === "HP" || key === "ATK" || (key === this.Unit.linkBonus && linkBonus.Per.ratio))
 				output[key].linked = (output[key].base + output[key].pointed + output[key].equiped) * output[key].linkBonus / 100;
 			else
 				output[key].linked = output[key].linkBonus;
