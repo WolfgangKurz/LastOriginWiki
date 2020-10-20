@@ -15,15 +15,11 @@
 			</b-col>
 		</b-row>
 
-		<b-container
-			v-for="(list, group) in GroupList"
-			:key="`unit-group-${group}`"
-			class="unit-group mb-3"
-		>
+		<b-container v-for="(list, group) in GroupList" :key="`unit-group-${group}`" class="unit-group mb-3">
 			<b-row class="text-center">
 				<b-col class="bg-dark text-white" cols="12" lg="2" md="3">
 					<img :src="`${AssetsRoot}/${imageExt}/group/${GroupKeyTable[group]}.${imageExt}`" />
-					<div>{{group}}</div>
+					<div>{{ group }}</div>
 				</b-col>
 				<b-col cols="12" lg="10" md="9">
 					<b-row cols="2" cols-xl="5" cols-lg="4" cols-md="3" cols-sm="3">
@@ -47,8 +43,7 @@ import StoreModule, { UnitListOrder } from "@/libs/Store";
 
 import UnitCard from "./UnitCard.vue";
 
-import { UnitData } from "@/libs/DB";
-import { Unit, Rarity, UnitType, UnitRole } from "@/libs/Types";
+import UnitData, { Unit } from "@/libs/DB/Unit";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 
 @Component({

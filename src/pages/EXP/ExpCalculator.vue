@@ -50,7 +50,7 @@
 									<b-checkbox v-model="equip.use">
 										<span>
 											<equip-icon :name="`${equip.name}_${equip.rarity.toLowerCase()}`" size="small" />
-											<strong class="ml-2 py-1">{{ EquipNames[equip.name] }}</strong>
+											<strong class="ml-2 py-1">{{ equip.name }}</strong>
 										</span>
 									</b-checkbox>
 								</b-col>
@@ -241,8 +241,10 @@ import Vue from "vue";
 import Component from "vue-class-component";
 
 import { WorldNames } from "@/libs/Const";
-import { EquipData, ExpData } from "@/libs/DB";
-import { Equip, ExpEntity, Rarity } from "@/libs/Types";
+
+import EquipData, { Equip } from "@/libs/DB/Equip";
+import { ExpData } from "@/libs/DB";
+import { ExpEntity, Rarity } from "@/libs/Types";
 import { FormSelectItem, FormSelectGroup, FormSelectData, FormSelectFirst } from "@/libs/FormSelect";
 
 import UnitFace from "@/components/UnitFace.vue";

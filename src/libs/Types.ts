@@ -150,14 +150,6 @@ export interface RawSkill {
 	};
 }
 
-export interface RawItemName {
-	name: string;
-	simple: string;
-}
-export interface RawItemNames {
-	[key: string]: RawItemName;
-}
-
 export interface Worlds {
 	[key: string]: {
 		[key: string]: {

@@ -2,30 +2,31 @@ import Vuex from "vuex";
 import Vue from "vue";
 
 import { VuexModule, Module, Mutation, Action } from "vuex-class-modules";
+import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/libs/Types/Enums";
 
 Vue.use(Vuex);
 
 export type UnitDisplayType = "table" | "list" | "group";
 export interface UnitTableFilters {
 	Rarity: {
-		SS: boolean;
-		S: boolean;
-		A: boolean;
-		B: boolean;
+		[ACTOR_GRADE.B]: boolean;
+		[ACTOR_GRADE.A]: boolean;
+		[ACTOR_GRADE.S]: boolean;
+		[ACTOR_GRADE.SS]: boolean;
 	};
 	Type: {
-		Light: boolean;
-		Air: boolean;
-		Heavy: boolean;
+		[ACTOR_CLASS.LIGHT]: boolean;
+		[ACTOR_CLASS.AIR]: boolean;
+		[ACTOR_CLASS.HEAVY]: boolean;
 	};
 	Role: {
-		Attacker: boolean;
-		Defender: boolean;
-		Supporter: boolean;
+		[ROLE_TYPE.ATTACKER]: boolean;
+		[ROLE_TYPE.DEFENDER]: boolean;
+		[ROLE_TYPE.SUPPORTER]: boolean;
 	};
 	Body: {
-		Bioroid: boolean;
-		AGS: boolean;
+		[ACTOR_BODY_TYPE.BIOROID]: boolean;
+		[ACTOR_BODY_TYPE.AGS]: boolean;
 	};
 }
 export type UnitListOrder = "dict" | "name" | "rarity";
@@ -64,24 +65,24 @@ class StoreModule extends VuexModule {
 	private unitTablePromotions: boolean = false;
 	private unitTableFilter: UnitTableFilters = {
 		Rarity: {
-			SS: true,
-			S: true,
-			A: true,
-			B: true,
+			[ACTOR_GRADE.B]: true,
+			[ACTOR_GRADE.A]: true,
+			[ACTOR_GRADE.S]: true,
+			[ACTOR_GRADE.SS]: true,
 		},
 		Type: {
-			Light: true,
-			Air: true,
-			Heavy: true,
+			[ACTOR_CLASS.LIGHT]: true,
+			[ACTOR_CLASS.AIR]: true,
+			[ACTOR_CLASS.HEAVY]: true,
 		},
 		Role: {
-			Attacker: true,
-			Defender: true,
-			Supporter: true,
+			[ROLE_TYPE.ATTACKER]: true,
+			[ROLE_TYPE.DEFENDER]: true,
+			[ROLE_TYPE.SUPPORTER]: true,
 		},
 		Body: {
-			Bioroid: true,
-			AGS: true,
+			[ACTOR_BODY_TYPE.BIOROID]: true,
+			[ACTOR_BODY_TYPE.AGS]: true,
 		},
 	};
 

@@ -5,7 +5,9 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
-import { EquipData, UnitData } from "@/libs/DB";
+import { ITEM_TYPE } from "@/libs/Types/Enums";
+import UnitData from "@/libs/DB/Unit";
+import EquipData, { Equip } from "@/libs/DB/Equip";
 
 import UnitFace from "@/components/UnitFace.vue";
 import EquipIcon from "@/components/EquipIcon.vue";
@@ -13,7 +15,6 @@ import RarityBadge from "@/components/RarityBadge.vue";
 import ElemIcon from "@/components/ElemIcon.vue";
 import UnitCard from "@/pages/Units/UnitCard.vue";
 import EquipCard from "@/pages/Equips/EquipCard.vue";
-import { Equip } from '@/libs/Types';
 
 @Component({
 	components: {
@@ -186,15 +187,14 @@ export default class SkillDescription extends Vue {
 						};
 						ret.preload.push(<unit-face id={id} />);
 					} else if (p[0] === "$eq") {
-						const rarities = ["B", "A", "S", "SS"];
 						const type = {
-							Chip: "Chip",
-							OS: "System",
-							Item: "Sub",
-						};
+							[ITEM_TYPE.CHIP]: "Chip",
+							[ITEM_TYPE.SPCHIP]: "System",
+							[ITEM_TYPE.SUBEQ]: "Sub",
+						} as Record<ITEM_TYPE, string>;
 						const equips = EquipData
 							.filter(y => `${type[y.type]}_${y.key}` === p[1])
-							.sort((a, b) => rarities.indexOf(b.rarity) - rarities.indexOf(a.rarity));
+							.sort((a, b) => b.rarity - a.rarity);
 
 						let equip: Equip | null = null;
 						if (equips.length) equip = equips[0];

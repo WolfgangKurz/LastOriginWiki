@@ -47,8 +47,7 @@ import UnitsTable from "./Units/Table.vue";
 import UnitsNormal from "./Units/Normal.vue";
 import UnitsGroup from "./Units/Group.vue";
 
-import { Unit } from "@/libs/Types";
-import { UnitData } from "@/libs/DB";
+import UnitData, { Unit } from "@/libs/DB/Unit";
 import { UpdateTitle } from "@/libs/Functions";
 
 @Component({

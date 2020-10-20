@@ -1,5 +1,7 @@
 import { ACTOR_GRADE } from "@/libs/Types/Enums";
 
+import Data from "@/json/unit-stats.json";
+
 export interface UnitStats {
 	id: number;
 	rarity: ACTOR_GRADE;
@@ -58,6 +60,4 @@ export namespace UnitStats {
 		SPD: 0,
 	};
 }
-
-import Data from "@/json/unit-stats.json";
 export default Data as UnitStats[];

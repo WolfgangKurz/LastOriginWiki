@@ -141,8 +141,9 @@ import ElemIcon from "@/components/ElemIcon.vue";
 import EquipIcon from "@/components/EquipIcon.vue";
 import EquipLevel from "./EquipLevel.vue";
 
-import { Rarity, Equip } from "@/libs/Types";
-import { EquipData, UnitData } from "@/libs/DB";
+import { ACTOR_GRADE } from "@/libs/Types/Enums";
+import EquipData, { Equip } from "@/libs/DB/Equip";
+import UnitData from "@/libs/DB/Unit";
 
 @Component({
 	components: {
@@ -171,7 +172,7 @@ export default class EquipModal extends Vue {
 	})
 	private equip!: Equip;
 
-	private rarity: Rarity = "SS";
+	private rarity: ACTOR_GRADE = ACTOR_GRADE.SS;
 	private level: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 = 10;
 
 	@Watch("name")
@@ -225,10 +226,10 @@ export default class EquipModal extends Vue {
 	/** 1 레벨 강화당 상승하는 필요치 배율 */
 	private get UpgradeIncrementals () {
 		return {
-			B: 3 / 4,
-			A: 5 / 6,
-			S: 10 / 17,
-			SS: 11 / 20,
+			[ACTOR_GRADE.B]: 3 / 4,
+			[ACTOR_GRADE.A]: 5 / 6,
+			[ACTOR_GRADE.S]: 10 / 17,
+			[ACTOR_GRADE.SS]: 11 / 20,
 		};
 	}
 

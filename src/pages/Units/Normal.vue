@@ -51,10 +51,9 @@ import { Prop, PropSync, Emit } from "vue-property-decorator";
 
 import StoreModule, { UnitListOrder } from "@/libs/Store";
 
-import UnitCard from "./UnitCard.vue";
+import UnitData, { Unit } from "@/libs/DB/Unit";
 
-import { UnitData } from "@/libs/DB";
-import { Unit } from "@/libs/Types";
+import UnitCard from "./UnitCard.vue";
 
 interface UnitDict {
 	[key: number]: Unit;
@@ -130,12 +129,11 @@ export default class UnitsNormal extends Vue {
 				else
 					list.sort((x, y) => x.name < y.name ? -1 : 1);
 			} else if (this.Order === "rarity") {
-				const rarities = { SS: 0, S: 1, A: 2, B: 3 };
 				if (this.ShortName) {
 					list.sort((x, y) =>
-						rarities[x.rarity] < rarities[y.rarity]
+						x.rarity < y.rarity
 							? -1
-							: rarities[x.rarity] > rarities[y.rarity]
+							: x.rarity > y.rarity
 								? 1
 								: x.shortname < y.shortname
 									? -1
@@ -143,9 +141,9 @@ export default class UnitsNormal extends Vue {
 					);
 				} else {
 					list.sort((x, y) =>
-						rarities[x.rarity] < rarities[y.rarity]
+						x.rarity < y.rarity
 							? -1
-							: rarities[x.rarity] > rarities[y.rarity]
+							: x.rarity > y.rarity
 								? 1
 								: x.name < y.name
 									? -1

@@ -1,6 +1,9 @@
 import EntitySource from "@/libs/EntitySource";
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ITEM_TYPE, ROLE_TYPE } from "@/libs/Types/Enums";
 
+import Data from "@/json/unit.json";
+import EquipData from "@/libs/DB/Equip";
+
 export type LinkBonusType = "Skill" | "ACC" | "Cri" | "SPD" | "DEF" | "EV" | "HP";
 export type FullLinkBonusType = "" | "HP" | "Buff" | "Range" | "ACC" | "Cri" | "EV" | "SPD" | "Discount";
 export type FullLinkBonusSkill = 15 | 20 | 25;
@@ -105,9 +108,6 @@ export namespace Unit {
 		hasLimited: ["", ""],
 	};
 }
-
-import Data from "@/json/unit.json";
-import EquipData from "@/libs/DB/Equip";
 function Compile (): Unit[] {
 	return (Data as RawUnit[]).map(x => ({
 		id: x.id,

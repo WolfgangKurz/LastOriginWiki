@@ -26,7 +26,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
-import { Equip } from "@/libs/Types";
+import { Equip } from "@/libs/DB/Equip";
 import EntitySource from "@/libs/EntitySource";
 
 import EquipIcon from "@/components/EquipIcon.vue";

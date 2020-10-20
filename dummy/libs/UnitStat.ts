@@ -1,4 +1,4 @@
-import { UnitStatsPoint, LinkBonusType } from "@/libs/Types";
+import { UnitStatsPoint } from "@/libs/DB/UnitStats";
 
 export interface StatInfo {
 	from: number;
@@ -14,11 +14,11 @@ type StatTable = {
 };
 
 const PerPoint: StatTable = {
-	atk: 1.5,
-	def: 1.25,
-	hp: 8,
-	acc: 1.5,
-	eva: 0.4,
-	crit: 0.4,
-	spd: 1.5,
+	ATK: 1.5,
+	DEF: 1.25,
+	HP: 8,
+	ACC: 1.5,
+	EV: 0.4,
+	Cri: 0.4,
+	SPD: 1.5,
 };

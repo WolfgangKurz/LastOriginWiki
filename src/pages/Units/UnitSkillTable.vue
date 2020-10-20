@@ -127,8 +127,10 @@ import SkillDescription from "@/components/SkillDescription.vue";
 import ElemIcon from "@/components/ElemIcon.vue";
 import { RawSkill, Rarity, RawSkillUnit } from "@/libs/Types";
 
-import { UnitData, SkillData } from "@/libs/DB";
+import { SkillData } from "@/libs/DB";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
+
+import UnitData from "@/libs/DB/Unit";
 
 import SkinData from "@/json/unit-skin.json";
 import CostData from "@/json/unit-cost.json";

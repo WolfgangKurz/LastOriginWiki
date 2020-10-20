@@ -2,7 +2,6 @@
 import Vue from "vue";
 import { Prop, Component } from "vue-property-decorator";
 
-import { Equip } from "@/libs/Types";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 
 @Component({})

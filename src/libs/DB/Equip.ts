@@ -1,11 +1,13 @@
 import EntitySource from "@/libs/EntitySource";
 import { EquipStat } from "@/libs/Equips/Equip";
-import { Rarity } from "@/libs/Types";
+
+import Data from "@/json/equip.json";
+import { ACTOR_GRADE, ITEM_TYPE } from "@/libs/Types/Enums";
 
 interface RawEquip {
 	available: boolean;
-	rarity: Rarity;
-	type: "Chip" | "OS" | "Item";
+	rarity: ACTOR_GRADE;
+	type: ITEM_TYPE;
 	key: string;
 	fullKey: string;
 
@@ -20,8 +22,8 @@ interface RawEquip {
 }
 export interface Equip {
 	available: boolean;
-	rarity: Rarity;
-	type: "Chip" | "OS" | "Item";
+	rarity: ACTOR_GRADE;
+	type: ITEM_TYPE;
 	key: string;
 	fullKey: string;
 
@@ -38,8 +40,8 @@ export interface Equip {
 export namespace Equip {
 	export const Empty: Equip = {
 		available: false,
-		rarity: "B",
-		type: "Chip",
+		rarity: ACTOR_GRADE.B,
+		type: ITEM_TYPE.CHIP,
 		key: "",
 
 		fullKey: "__T1",
@@ -66,8 +68,6 @@ function parseLimit (limit: string | undefined) {
 		})
 		.filter(x => x !== null) as Array<string | number> | null;
 }
-
-import Data from "@/json/equip.json";
 function Compile () {
 	return (Data as RawEquip[]).map(x => ({
 		available: x.available,

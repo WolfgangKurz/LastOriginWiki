@@ -2,37 +2,40 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
-import { UnitRole, UnitType } from "@/libs/Types";
 
-const typeName = {
-	light: "경장",
-	air: "기동",
-	heavy: "중장",
+import { ACTOR_CLASS, ROLE_TYPE } from "@/libs/Types/Enums";
+
+const typeName: Record<ACTOR_CLASS, string> = {
+	[ACTOR_CLASS.LIGHT]: "경장",
+	[ACTOR_CLASS.AIR]: "기동",
+	[ACTOR_CLASS.HEAVY]: "중장",
+	[ACTOR_CLASS.__MAX__]: "",
 };
-const roleName = {
-	attacker: "공격기",
-	defender: "보호기",
-	supporter: "지원기",
+const roleName: Record<ROLE_TYPE, string> = {
+	[ROLE_TYPE.ATTACKER]: "공격기",
+	[ROLE_TYPE.DEFENDER]: "보호기",
+	[ROLE_TYPE.SUPPORTER]: "지원기",
+	[ROLE_TYPE.__MAX__]: "",
 };
 const typeList = [
-	"light",
-	"air",
-	"heavy",
+	"Light",
+	"Air",
+	"Heavy",
 ];
 
 @Component({})
 export default class UnitBadge extends Vue {
 	@Prop({
-		type: String,
-		default: "",
+		type: Number,
+		default: ACTOR_CLASS.__MAX__,
 	})
-	private type!: string;
+	private type!: ACTOR_CLASS;
 
 	@Prop({
-		type: String,
-		default: "",
+		type: Number,
+		default: ROLE_TYPE.__MAX__,
 	})
-	private role!: string;
+	private role!: ROLE_TYPE;
 
 	@Prop({
 		type: String,
@@ -58,32 +61,38 @@ export default class UnitBadge extends Vue {
 	})
 	private size!: string;
 
-	private get Type (): UnitType {
-		return (() => {
-			if (this.limit) {
-				if (this.limit.includes("+"))
-					return this.limit.substr(0, this.limit.indexOf("+"));
-				else if (typeList.includes(this.limit))
-					return this.limit;
-				else
-					return "";
-			}
-			return this.type;
-		})().toLowerCase() as UnitType;
+	private get Type (): ACTOR_CLASS {
+		const table: Record<string, ACTOR_CLASS> = {
+			Light: ACTOR_CLASS.LIGHT,
+			Air: ACTOR_CLASS.AIR,
+			Heavy: ACTOR_CLASS.HEAVY,
+		};
+		if (this.limit) {
+			if (this.limit.includes("+"))
+				return table[this.limit.split("+")[0]];
+			else if (typeList.includes(this.limit))
+				return table[this.limit];
+			else
+				return ACTOR_CLASS.__MAX__;
+		}
+		return this.type;
 	}
 
-	private get Role (): UnitRole {
-		return (() => {
-			if (this.limit) {
-				if (this.limit.includes("+"))
-					return this.limit.substr(this.limit.indexOf("+") + 1);
-				else if (!typeList.includes(this.limit))
-					return this.limit;
-				else
-					return "";
-			}
-			return this.role;
-		})().toLowerCase() as UnitRole;
+	private get Role (): ROLE_TYPE {
+		const table: Record<string, ROLE_TYPE> = {
+			Attacker: ROLE_TYPE.ATTACKER,
+			Defender: ROLE_TYPE.DEFENDER,
+			Supporter: ROLE_TYPE.SUPPORTER,
+		};
+		if (this.limit) {
+			if (this.limit.includes("+"))
+				return table[this.limit.split("+")[0]];
+			else if (!typeList.includes(this.limit))
+				return table[this.limit];
+			else
+				return ROLE_TYPE.__MAX__;
+		}
+		return this.role;
 	}
 
 	private get TypeName () {
@@ -136,24 +145,24 @@ export default class UnitBadge extends Vue {
 		}
 	}
 
-	&[data-type="light"] > i {
+	&[data-type="0"] > i {
 		background-position-x: 0;
 	}
-	&[data-type="air"] > i {
-		background-position-x: -$w;
-	}
-	&[data-type="heavy"] > i {
+	&[data-type="1"] > i {
 		background-position-x: -($w * 2);
+	}
+	&[data-type="2"] > i {
+		background-position-x: -$w;
 	}
 
 	&[data-type=""] {
-		&[data-role="attacker"] > i {
-			background-position-x: 0;
-		}
-		&[data-role="defender"] > i {
+		&[data-role="0"] > i {
 			background-position-x: -$w;
 		}
-		&[data-role="supporter"] > i {
+		&[data-role="1"] > i {
+			background-position-x: 0;
+		}
+		&[data-role="2"] > i {
 			background-position-x: -($w * 2);
 		}
 	}
@@ -169,14 +178,14 @@ export default class UnitBadge extends Vue {
 	> i {
 		display: inline-block;
 		margin: 0 3px 0 0;
-		background-image: url($assetsRoot+"/unit-type.png");
+		background-image: url($assetsRoot + "/unit-type.png");
 		background-position: 0 0;
 		background-repeat: no-repeat;
 		vertical-align: bottom;
 	}
 	&[data-type=""] {
 		&:not([data-role=""]) > i {
-			background-image: url($assetsRoot+"/unit-role.png");
+			background-image: url($assetsRoot + "/unit-role.png");
 		}
 		&[data-role=""] > i {
 			display: none;
