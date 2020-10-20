@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 /**
  * 유닛이 위치한 열
  */
@@ -166,7 +165,7 @@ export enum ITEM_TYPE {
 	/** 보조 장비 */
 	SUBEQ,
 
-	/** 전용 장비 */
+	/** 전용 장비..? 혹은 코어 링크 */
 	PCITEM,
 
 	/** 소모품 */
@@ -271,6 +270,16 @@ export enum ROLE_TYPE {
 	__MAX__ = 3,
 }
 
+/** 전투원 등급 */
+export enum ACTOR_GRADE {
+	// D = 0,
+	// C = 1,
+	B = 2,
+	A = 3,
+	S = 4,
+	SS = 5,
+}
+
 /** 설명 텍스트 값 출력 방식 */
 export enum NUM_OUTPUTTYPE {
 	/** 값을 그대로 출력 (실수 수치인 경우) */
@@ -326,4 +335,120 @@ export enum BUFF_ANNOUNCE_TYPE {
 	INSTANT = 3,
 
 	__MAX__ = 4,
+}
+
+/** 설비 종류 */
+export enum FACILITY_TYPE_CATEGORY {
+	/** 전투 결과 분석실 */
+	TRAINIG_SUPPORT = 0,
+
+	/** 합성수지 생산소 */
+	WOOD_MAKING = 1,
+
+	/** 도료 생산소 */
+	STONE_MAKING = 2,
+
+	/** 철재 생산소 */
+	IRON_MAKING = 3,
+
+	/** 보호기 바이오로이드 제작실 */
+	TANKER_MAKING = 4,
+
+	/** 공격기 바이오로이드 제작실 */
+	NUKER_MAKING = 5,
+
+	/** 지원기 바이오로이드 제작실 */
+	SUPPORTER_MAKING = 6,
+
+	/** 영양 생산 지원실 */
+	NUTRIENT_MAKING = 7,
+
+	/** 부품 생산 지원실 */
+	METAL_MAKING = 8,
+
+	/** 전력 생산 지원실 */
+	POWER_MAKING = 9,
+
+	/** 장비 강화 효율 연구실 */
+	EQUIP_REIN = 10,
+
+	/** 장비 분해 효율 연구실 */
+	EQUIP_DISASSEMBLE = 11,
+
+	/** 설비 부품 제작실 */
+	FACILITY_PARTS_MAKING = 12,
+
+	/** 제작 핵심 부품 생산소 */
+	MATERIAL_MAKING = 13,
+
+	/** 카페테리아  */
+	CAFETERIA = 14,
+
+	__MAX__ = 15,
+}
+
+/** 설비 패시브 기능 종류 */
+export enum PASSIVE_BUFF_TYPE {
+	/** 패시브 없음 */
+	NONE = 0,
+
+	/** 전투 경험치 증가 */
+	STAGE_EXP_UP = 1,
+
+	/** 장비 강화 비용 감소 */
+	ENCHANTCOST_DOWN = 2,
+
+	/** 장비 분해 비용 증가 */
+	DISASSEMBLE_UP = 3,
+
+	/** 영양 생산 증가 */
+	NUTRIENT_CHANGE_UP = 4,
+
+	/** 부품 생산 증가 */
+	METAL_CHANGE_UP = 5,
+
+	/** 전력 생산 증가 */
+	POWER_CHANGE_UP = 6,
+
+	/** 설비 부품 생산 시간 감소 */
+	FACILITY_MAKING_TIME_DOWN = 7,
+
+	__MAX__ = 8,
+}
+
+/** 설비 생산품 종류 */
+export enum PRODUCE_TYPE {
+	/** 생산품 없음 */
+	NONE = 0,
+
+	/** 소모품 생산 */
+	ITEM_CONSUMABLE = 1,
+
+	/** 전투원 생산 */
+	FACILITY_TYPE_BIOROID = 2,
+
+	__MAX__ = 3,
+}
+
+/** 필요한 전투원 구분 */
+export enum REQUIRED_COMBATANT_TYPE {
+	/** 구분 없음 */
+	NONE = 0,
+
+	/** 전투원 유형 (경장/기동/중장) */
+	ACTOR_TYPE = 1,
+
+	/** 전투원 역할 (공격/보호/지원) */
+	ROLE_TYPE = 2,
+
+	/** 전투원 몸체 (바이오로이드/AGS) */
+	ACTOR_BODY_TYPE = 3,
+
+	/** 전투원 등급 */
+	GRADE_TYPE = 4,
+
+	/** 특정 전투원 */
+	SPECIFIC_COMBAT = 5,
+
+	__MAX__ = 6,
 }

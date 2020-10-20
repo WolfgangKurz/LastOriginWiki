@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import { BUFF_ATTR_TYPE } from "./Enums";
+import { BUFF_ATTR_TYPE } from "@/libs/Types/Enums";
 
 /** 버프로 작동하는 수치 변동 종류 */
 export enum BUFFEFFECT_TYPE {

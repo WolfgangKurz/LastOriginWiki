@@ -1,15 +1,8 @@
 <template>
-	<b-modal
-		v-model="displaySync"
-		centered
-		hide-footer
-		size="lg"
-		modal-class="unit-modal"
-		:header-class="`rarity-${unit.rarity}`"
-	>
+	<b-modal v-model="displaySync" centered hide-footer size="lg" modal-class="unit-modal" :header-class="`rarity-${unit.rarity}`">
 		<template #modal-title>
 			<unit-face :id="unit.id" :size="30" type="mini" />
-			{{unit.name}}
+			{{ unit.name }}
 		</template>
 
 		<!-- 스킨, 번호, 소속, 등급, 승급, 유형, 역할 -->
@@ -27,18 +20,14 @@
 								<template #title>
 									<template v-if="skin.isPro">
 										<rarity-badge rarity="SS">SS 승급</rarity-badge>
-										{{skin.t}}
+										{{ skin.t }}
 									</template>
-									<template v-else>{{skin.t}}</template>
+									<template v-else>{{ skin.t }}</template>
 								</template>
 							</b-tab>
 						</b-tabs>
 
-						<div
-							v-if="SkinList[skinIndex]"
-							class="unit-full"
-							:class="{ 'unit-full-collapse': !skinDisplay }"
-						>
+						<div v-if="SkinList[skinIndex]" class="unit-full" :class="{ 'unit-full-collapse': !skinDisplay }">
 							<div class="unit-skin-toggle" @click="skinDisplay = !skinDisplay" />
 							<div
 								v-if="SkinList[skinIndex].A"
@@ -57,12 +46,9 @@
 								<img :src="SkinImageURL" />
 							</div>
 
-							<div
-								v-if="!(SkinList[skinIndex].isPro || SkinList[skinIndex].isDef) &&  SkinList[skinIndex].price"
-								class="skin-price"
-							>
+							<div v-if="!(SkinList[skinIndex].isPro || SkinList[skinIndex].isDef) && SkinList[skinIndex].price" class="skin-price">
 								<img :src="`${AssetsRoot}/tuna.png`" />
-								{{SkinList[skinIndex].price}}
+								{{ SkinList[skinIndex].price }}
 							</div>
 
 							<div
@@ -94,25 +80,22 @@
 				<b-col class="bg-dark text-white">도감 번호</b-col>
 				<b-col>
 					<small>No.&nbsp;</small>
-					<strong>{{unit.id}}</strong>
+					<strong>{{ unit.id }}</strong>
 				</b-col>
 				<b-col class="bg-dark text-white">소속</b-col>
 				<b-col>
-					<span class="break-keep">{{unit.group}}</span>
+					<span class="break-keep">{{ unit.group }}</span>
 				</b-col>
 				<b-col class="bg-dark text-white">등급</b-col>
 				<b-col>
-					<rarity-badge :rarity="unit.rarity" size="medium">{{unit.rarity}} 등급</rarity-badge>
+					<rarity-badge :rarity="unit.rarity" size="medium">{{ unit.rarity }} 등급</rarity-badge>
 				</b-col>
 				<b-col class="bg-dark text-white">승급</b-col>
 				<b-col>
 					<template v-if="unit.promotions">
-						<rarity-badge
-							v-for="pro in unit.promotions"
-							:key="`unit-${unit.id}-promotion-${pro}`"
-							:rarity="pro"
-							size="medium"
-						>{{pro}} 승급</rarity-badge>
+						<rarity-badge v-for="pro in unit.promotions" :key="`unit-${unit.id}-promotion-${pro}`" :rarity="pro" size="medium"
+							>{{ pro }} 승급</rarity-badge
+						>
 					</template>
 					<template v-else>
 						<span class="text-secondary">승급 없음</span>
@@ -134,12 +117,7 @@
 				<b-tr>
 					<b-th colspan="4">
 						링크 보너스
-						<b-form-select
-							class="table-unit-link-select"
-							size="sm"
-							v-model="linkCount"
-							:options="LinkCountList"
-						/>
+						<b-form-select class="table-unit-link-select" size="sm" v-model="linkCount" :options="LinkCountList" />
 					</b-th>
 				</b-tr>
 			</b-thead>
@@ -149,22 +127,24 @@
 						HP
 						<span class="d-inline-block">
 							+
-							<b class="text-danger">{{LinkBonus.Value.HP}}</b>%
+							<b class="text-danger">{{ LinkBonus.Value.HP }}</b
+							>%
 						</span>
 					</b-td>
 					<b-td>
 						공격력
 						<span class="d-inline-block">
 							+
-							<b class="text-danger">{{LinkBonus.Value.Atk}}</b>%
+							<b class="text-danger">{{ LinkBonus.Value.Atk }}</b
+							>%
 						</span>
 					</b-td>
 					<b-td>
 						<template v-if="!LinkBonus.IsHP">
-							{{LinkBonus.Per}}
+							{{ LinkBonus.Per }}
 							<span class="d-inline-block">
 								+
-								<b class="text-danger">{{LinkBonus.Value.Per[0]}}</b>
+								<b class="text-danger">{{ LinkBonus.Value.Per[0] }}</b>
 								<template v-if="LinkBonus.Value.Per[1]">%</template>
 							</span>
 						</template>
@@ -174,7 +154,8 @@
 						획득 경험치
 						<span class="d-inline-block">
 							+
-							<b class="text-danger">{{LinkBonus.Value.EXP}}</b>%
+							<b class="text-danger">{{ LinkBonus.Value.EXP }}</b
+							>%
 						</span>
 					</b-td>
 				</b-tr>
@@ -206,10 +187,10 @@
 					</b-thead>
 					<b-tbody>
 						<b-tr v-for="i in 6" :key="`unit-modal-cost-${i}`" class="text-center">
-							<b-th variant="dark">{{i - 1}}</b-th>
-							<b-td :class="CostDiscountClass(i - 1)">{{CostTable.components[i - 1]}}</b-td>
-							<b-td :class="CostDiscountClass(i - 1)">{{CostTable.nutritions[i - 1]}}</b-td>
-							<b-td :class="CostDiscountClass(i - 1)">{{CostTable.power[i - 1]}}</b-td>
+							<b-th variant="dark">{{ i - 1 }}</b-th>
+							<b-td :class="CostDiscountClass(i - 1)">{{ CostTable.metal[i - 1] }}</b-td>
+							<b-td :class="CostDiscountClass(i - 1)">{{ CostTable.nutrient[i - 1] }}</b-td>
+							<b-td :class="CostDiscountClass(i - 1)">{{ CostTable.power[i - 1] }}</b-td>
 						</b-tr>
 					</b-tbody>
 				</b-table-simple>
@@ -224,38 +205,34 @@
 					<b-tbody>
 						<b-tr>
 							<b-td>
-								출격 비용 -{{LinkBonus.Discount}}%
+								출격 비용 -{{ LinkBonus.Discount }}%
 								<b-checkbox class="float-right" v-model="linkBonusDiscount" />
 							</b-td>
 						</b-tr>
 						<b-tr>
-							<b-td>스킬 위력 +{{LinkBonus.SkillPower}}%</b-td>
+							<b-td>스킬 위력 +{{ LinkBonus.SkillPower }}%</b-td>
 						</b-tr>
 						<b-tr>
-							<b-td>{{LinkBonus.Entry3}}</b-td>
+							<b-td>{{ LinkBonus.Bonus3 }}</b-td>
 						</b-tr>
 						<b-tr>
-							<b-td>{{LinkBonus.Entry4}}</b-td>
+							<b-td>{{ LinkBonus.Bonus4 }}</b-td>
 						</b-tr>
 						<b-tr>
-							<b-td>행동력 +{{LinkBonus.Speed}}</b-td>
+							<b-td>행동력 +{{ LinkBonus.Speed }}</b-td>
 						</b-tr>
 					</b-tbody>
 				</b-table-simple>
 			</b-col>
 		</b-row>
 
-		<unit-skill-table
-			:skills="SkillsRaw"
-			:skill-level.sync="skillLevel"
-			:form-state.sync="formState"
-			:rarity="unit.rarity"
-		/>
+		<unit-skill-table :skills="SkillsRaw" :skill-level.sync="skillLevel" :form-state.sync="formState" :rarity="unit.rarity" />
 	</b-modal>
 </template>
 
 <script lang="tsx">
 import _ from "lodash";
+import { Decimal } from "decimal.js";
 
 import Vue from "vue";
 import Component from "vue-class-component";
@@ -271,13 +248,16 @@ import ElemIcon from "@/components/ElemIcon.vue";
 
 import UnitSkillTable from "./UnitSkillTable.vue";
 
-import { Unit, RawSkin, SkinInfo, RawCostTable, CostTable, RawSkill, Rarity, RawSkillUnit, LinkBonusType } from "@/libs/Types";
+import { ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/libs/Types/Enums";
+import { RawSkin, SkinInfo, RawCostTable, RawSkill, Rarity, RawSkillUnit, LinkBonusType } from "@/libs/Types";
 
-import { UnitData, SkillData } from "@/libs/DB";
+import { SkillData } from "@/libs/DB";
+import RequireResource from "@/libs/DB/RequireResource";
+import UnitData, { Unit } from "@/libs/DB/Unit";
+
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 
 import SkinData from "@/json/unit-skin.json";
-import CostData from "@/json/unit-cost.json";
 
 interface SkillItem extends RawSkillUnit {
 	index: number;
@@ -312,8 +292,14 @@ export default class UnitModal extends Vue {
 	})
 	private unit!: Unit;
 
-	private rarityList: Rarity[] = ["B", "A", "S", "SS"];
-	private costRarity: Rarity = "SS";
+	private rarityList: Record<ACTOR_GRADE, Rarity> = {
+		[ACTOR_GRADE.B]: "B",
+		[ACTOR_GRADE.A]: "A",
+		[ACTOR_GRADE.S]: "S",
+		[ACTOR_GRADE.SS]: "SS",
+	};
+
+	private costRarity: ACTOR_GRADE = ACTOR_GRADE.SS;
 
 	private skinIndex: number = 0;
 	private skinDisplay: boolean = this.imageExt === "webp";
@@ -342,69 +328,77 @@ export default class UnitModal extends Vue {
 
 	private get LinkBonus () {
 		interface LinkBonusValueTable {
-			acc: [number, boolean];
-			crit: [number, boolean];
-			def: [number, boolean];
-			eva: [number, boolean];
-			hp: [number, boolean];
-			skill: [number, boolean];
-			spd: [number, boolean];
+			ACC: [number, boolean];
+			Cri: [number, boolean];
+			DEF: [number, boolean];
+			EV: [number, boolean];
+			HP: [number, boolean];
+			Skill: [number, boolean];
+			SPD: [number, boolean];
 		}
 
-		const hasEva = this.unit.linkBonus.entry3 === "eva" || this.unit.linkBonus.entry4 === "eva";
-		const isAirDef = this.unit.type === "air" && this.unit.role === "defender";
+		const hasEva = this.unit.fullLinkBonus.bonus3 === "EV" || this.unit.fullLinkBonus.bonus4 === "EV";
+		const isAirDef = this.unit.type === ACTOR_CLASS.AIR && this.unit.role === ROLE_TYPE.DEFENDER;
 
 		const LinkBonusTable = {
-			acc: "적중",
-			crit: "치명타",
-			def: "방어력",
-			eva: "회피",
-			hp: "HP",
-			skill: "스킬 위력",
-			spd: "행동력",
+			ACC: "적중",
+			Cri: "치명타",
+			DEF: "방어력",
+			EV: "회피",
+			HP: "HP",
+			Skill: "스킬 위력",
+			SPD: "행동력",
 		};
 		const LinkBonusValue: LinkBonusValueTable = {
-			acc: [35, true],
-			crit: [10, true],
-			def: [15, true],
-			eva: [10, true],
-			hp: [0, true],
-			skill: [10, true],
-			spd: [0.1, false],
+			ACC: [35, true],
+			Cri: [10, true],
+			DEF: [15, true],
+			EV: [10, true],
+			HP: [0, true],
+			Skill: [10, true],
+			SPD: [0.1, false],
 		};
 		const FullLinkBonusTable = {
 			"": "없음",
-			discount: "출격 자원 감소",
-			skill: "스킬 위력 +x%",
-			acc: "적중 +75%",
-			buff: "버프/디버프 효과 Lv+2",
-			crit: "치명타 +20%",
-			def: "방어력 +20%",
-			eva: "회피 +" + (isAirDef ? 20 : 15) + "%",
-			hp: "HP +20%",
-			range: "사거리 +1",
-			spd: "행동력 +x",
+			Cost: "출격 자원 감소",
+			Skill: "스킬 위력 +x%",
+			ACC: "적중 +75%",
+			Buff: "버프/디버프 효과 Lv+2",
+			Cri: "치명타 +20%",
+			DEF: "방어력 +20%",
+			EV: "회피 +" + (isAirDef ? 20 : 15) + "%",
+			HP: "HP +20%",
+			Range: "사거리 +1",
+			SPD: "행동력 +x",
 		};
 
 		return {
-			IsHP: this.unit.linkBonus.per === "hp",
-			Per: LinkBonusTable[this.unit.linkBonus.per],
+			IsHP: this.unit.linkBonus === "HP",
+			Per: LinkBonusTable[this.unit.linkBonus],
 			Value: {
-				HP: (this.unit.linkBonus.per === "hp" ? 125 : 100) * this.linkCount / 5,
-				Atk: 100 * this.linkCount / 5,
+				HP: Decimal.mul(this.unit.linkBonus === "HP" ? 125 : 100, this.linkCount)
+					.div(5)
+					.toNumber(),
+				Atk: Decimal.mul(100, this.linkCount)
+					.div(5)
+					.toNumber(),
 				Per: [
-					LinkBonusValue[this.unit.linkBonus.per][0] * this.linkCount / 5,
-					LinkBonusValue[this.unit.linkBonus.per][1],
+					Decimal.mul(LinkBonusValue[this.unit.linkBonus][0], this.linkCount)
+						.div(5)
+						.toNumber(),
+					LinkBonusValue[this.unit.linkBonus][1],
 				],
-				EXP: 20 * this.linkCount / 5,
+				EXP: Decimal.mul(20, this.linkCount)
+					.div(5)
+					.toNumber(),
 			},
 
-			Discount: this.unit.rarity === "SS" ? 25 : 20,
-			SkillPower: this.unit.linkBonus.skillPower,
-			Entry3: FullLinkBonusTable[this.unit.linkBonus.entry3],
-			Entry4: FullLinkBonusTable[this.unit.linkBonus.entry4],
-			Speed: this.unit.type === "air" && this.unit.role === "defender"
-				? (this.unit.rarity === "SS" && hasEva ? 0.2 : 0.15)
+			Discount: this.unit.rarity === ACTOR_GRADE.SS ? 25 : 20,
+			SkillPower: this.unit.fullLinkBonus.bonus2,
+			Bonus3: FullLinkBonusTable[this.unit.fullLinkBonus.bonus3],
+			Bonus4: FullLinkBonusTable[this.unit.fullLinkBonus.bonus4],
+			Speed: isAirDef
+				? (this.unit.rarity === ACTOR_GRADE.SS && hasEva ? 0.2 : 0.15)
 				: 0.1,
 		};
 	}
@@ -436,10 +430,6 @@ export default class UnitModal extends Vue {
 		}
 
 		return list;
-	}
-
-	private get rarityIndex () {
-		return this.rarityList.indexOf(this.unit.rarity);
 	}
 
 	private get Skin () {
@@ -547,19 +537,23 @@ export default class UnitModal extends Vue {
 			return ret;
 	}
 
-	private get CostTable (): CostTable {
-		type CostCell = [number, number, number, number, number, number];
-		const key = `${this.costRarity}_${this.unit.type}_${this.unit.role}`;
-		let table = (CostData as unknown as RawCostTable)[key][this.unit.body];
+	private get CostTable () {
+		const table = (() => {
+			const o = RequireResource[this.costRarity][this.unit.type][this.unit.role][this.unit.body];
+			return {
+				metal: [...o.metal],
+				nutrient: [...o.nutrient],
+				power: [...o.power],
+			};
+		})();
 
 		if (this.linkBonusDiscount) {
-			const isSS = this.costRarity === "SS";
-			const _ = (x: number) => Math.ceil(x * (isSS ? 0.75 : 0.8));
+			const isSS = this.costRarity === ACTOR_GRADE.SS;
+			const discount = (x: number) => Math.ceil(x * (isSS ? 0.75 : 0.8));
 
-			table = JSON.parse(JSON.stringify(table));
-			table.components[5] = _(table.components[5]);
-			table.nutritions[5] = _(table.nutritions[5]);
-			table.power[5] = _(table.power[5]);
+			table.metal[5] = discount(table.metal[5]);
+			table.nutrient[5] = discount(table.nutrient[5]);
+			table.power[5] = discount(table.power[5]);
 		}
 		return table;
 	}

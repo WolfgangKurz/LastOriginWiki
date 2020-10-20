@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import { BUFFEFFECT_TYPE } from "@/libs/Equips/BuffEffect";
-import { UNIT_POSITION } from "./Enums";
+import { UNIT_POSITION } from "@/libs/Types/Enums";
 
 /** 발동 조건 */
 export enum BUFFEFFECT_TRIGGER_TYPE {

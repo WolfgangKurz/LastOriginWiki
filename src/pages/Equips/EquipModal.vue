@@ -51,8 +51,13 @@
 				</b-tr>
 				<b-tr>
 					<b-td>
+						<b-badge v-if="target.craftable" variant="dark">
+							<b-icon-hammer class="mr-1" />
+							제조 가능
+						</b-badge>
+
 						<div v-for="(area, aindex) in Sources" :key="`equip-modal-source-${aindex}`">
-							<hr v-if="aindex > 0" class="my-1" />
+							<hr v-if="(target && target.craftable) || aindex > 0" class="my-1" />
 							<source-badge
 								v-for="(source, sindex) in area"
 								:key="`equip-modal-drop-${aindex}-${sindex}-${source}`"
@@ -62,7 +67,8 @@
 							/>
 						</div>
 						<template v-if="Sources.length === 0">
-							<span class="text-secondary">획득처 정보 없음 (제조 제외)</span>
+							<b-badge v-if="target.craftable" variant="dark">제조 가능</b-badge>
+							<span v-else class="text-secondary">획득처 정보 없음 (제조 불가)</span>
 						</template>
 					</b-td>
 				</b-tr>

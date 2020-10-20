@@ -2,7 +2,7 @@
 import { BuffEffect } from "@/libs/Equips/BuffEffect";
 import { BuffErase } from "@/libs/Equips/BuffErase";
 import { BuffTrigger } from "@/libs/Equips/BuffTrigger";
-import { ACTOR_BODY_TYPE, ACTOR_CLASS, BUFF_OVERLAP_TYPE, NUM_OUTPUTTYPE, ROLE_TYPE } from "@/libs/Equips/Enums";
+import { ACTOR_BODY_TYPE, ACTOR_CLASS, BUFF_OVERLAP_TYPE, NUM_OUTPUTTYPE, ROLE_TYPE } from "@/libs/Types/Enums";
 
 export type EquipStat = EquipStatStatic | EquipStatBuff;
 

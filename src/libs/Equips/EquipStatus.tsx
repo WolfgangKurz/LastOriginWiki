@@ -1,11 +1,10 @@
-import Vue from "vue";
+import Vue, { CreateElement } from "vue";
 import { Decimal } from "decimal.js";
 
 import { BuffEffect, BuffEffectValue, BUFFEFFECT_TYPE } from "@/libs/Equips/BuffEffect";
 import { BuffTrigger } from "@/libs/Equips/BuffTrigger";
-import { ACTOR_BODY_TYPE, ACTOR_CLASS, BUFF_ATTR_TYPE, NUM_OUTPUTTYPE, ROLE_TYPE, UNIT_POSITION } from "@/libs/Equips/Enums";
+import { ACTOR_BODY_TYPE, ACTOR_CLASS, BUFF_ATTR_TYPE, NUM_OUTPUTTYPE, ROLE_TYPE, UNIT_POSITION } from "@/libs/Types/Enums";
 import { EquipStat } from "@/libs/Equips/Equip";
-import { CreateElement } from "vue/types/umd";
 import { BuffErase } from "@/libs/Equips/BuffErase";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { ArrayUnique } from "@/libs/Functions";
