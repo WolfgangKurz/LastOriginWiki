@@ -1,4 +1,6 @@
-type FactilityProduct = FactilityProductItem | FacilityProductType | FacilityProductUnit;
+import Data from "@/json/facility.json";
+
+export type FactilityProduct = FactilityProductItem | FacilityProductType | FacilityProductUnit;
 interface FactilityProductItem {
 	item: "Wood_Material" | "Stone_Material" | "Iron_Material" | "TestItem_5" | "TestItem_4" | "TestItem_8" |
 	"Favor_Candy" | "Favor_Chocolate" | "Favor_Cake" | "Favor_MaxExpand_Lv1";
@@ -15,6 +17,11 @@ interface FacilityProductUnit {
 	count: number;
 }
 
+export interface FacilityUpgradeRequiredMaterial {
+	type: "Cafe" | "Equip" | "FacilityPartsMaking" | "Matrial" | "PcMaking" | "Resource" | "StuffMaking" | "Training";
+	grade: "T1" | "T2" | "T3";
+	value: number;
+}
 export interface FacilityLevel {
 	level: number;
 	cost: number[];
@@ -30,11 +37,7 @@ export interface FacilityLevel {
 		Stone: number;
 		Iron: number;
 
-		Material: null | {
-			type: "Cafe" | "Equip" | "FacilityPartsMaking" | "Matrial" | "PcMaking" | "Resource" | "StuffMaking" | "Training";
-			grade: "T1" | "T2" | "T3";
-			value: number;
-		};
+		Material: FacilityUpgradeRequiredMaterial | null;
 	};
 	produceItem: FactilityProduct[];
 }
@@ -47,6 +50,4 @@ export interface FacilityEntity {
 export interface Facility {
 	[key: string]: FacilityEntity;
 }
-
-import Data from "@/json/facility.json";
 export default Data as Facility;

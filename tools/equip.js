@@ -10,6 +10,18 @@ function process (auth) {
 	}, (err, res) => {
 		if (err) return console.log("The API returned an error: " + err);
 
+		const rarities = {
+			B: 2,
+			A: 3,
+			S: 4,
+			SS: 5,
+		};
+		const types = {
+			Chip: 0,
+			OS: 1,
+			Item: 2,
+		};
+
 		const ret = [];
 		const rows = res.data.values;
 		if (rows.length) {
@@ -17,8 +29,8 @@ function process (auth) {
 				if (!row[4] || row[4] === "__T0") return;
 
 				const available = row[0] === "1";
-				const rarity = row[1];
-				const type = row[2];
+				const rarity = rarities[row[1]];
+				const type = types[row[2]];
 				const key = row[3];
 				const fullKey = row[4];
 

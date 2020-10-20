@@ -51,8 +51,8 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
-import { EquipData } from "@/libs/DB";
-import { Equip, Rarity } from "@/libs/Types";
+import { ITEM_TYPE } from "@/libs/Types/Enums";
+import EquipData, { Equip } from "@/libs/DB/Equip";
 
 import StatIcon from "@/components/StatIcon.vue";
 import ItemSlot from "@/components/ItemSlot.vue";
@@ -62,7 +62,6 @@ import RarityBadge from "@/components/RarityBadge.vue";
 import EquipSelectModal from "./EquipSelectModal.vue";
 
 import { Unit } from "@/pages/Simulation/Simulation/Unit";
-import { StatList } from "@/pages/Simulation/Simulation/Stats";
 
 @Component({
 	components: {
@@ -115,7 +114,7 @@ export default class UnitStatsEquip extends Vue {
 			index,
 			{
 				FullKey: equip.fullKey,
-				Type: equip.type !== "Item" ? equip.type : (equip.limit ? "Private" : "Public"),
+				Type: equip.type !== ITEM_TYPE.SUBEQ ? equip.type : (equip.limit ? "Private" : "Public"),
 				Key: equip.key,
 				Rarity: equip.rarity,
 				// Name: equip.name,

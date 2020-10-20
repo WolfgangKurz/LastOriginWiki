@@ -63,8 +63,10 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, Watch, PropSync, Ref } from "vue-property-decorator";
 
-import { EquipData, UnitData } from "@/libs/DB";
-import { Equip, Rarity, EquipType } from "@/libs/Types";
+import { ACTOR_CLASS, ACTOR_GRADE, ITEM_TYPE, ROLE_TYPE } from "@/libs/Types/Enums";
+import UnitData, { Unit } from "@/libs/DB/Unit";
+import EquipData, { Equip } from "@/libs/DB/Equip";
+
 import EquipStatus from "@/libs/Equips/EquipStatus";
 
 import NodeRenderer from "@/components/NodeRenderer.vue";
@@ -100,10 +102,10 @@ export default class EquipSelectModal extends Vue {
 	private level!: number;
 
 	@Prop({
-		type: String,
-		default: "",
+		type: Number,
+		default: ITEM_TYPE.CHIP,
 	})
-	private type!: EquipType;
+	private type!: ITEM_TYPE;
 
 	@Prop({
 		type: Number,
@@ -111,7 +113,7 @@ export default class EquipSelectModal extends Vue {
 	})
 	private target!: number;
 
-	private rarity: Rarity = "SS";
+	private rarity: ACTOR_GRADE = ACTOR_GRADE.SS;
 	private SelectedEquip: Equip = Equip.Empty;
 	private equipLevel: number = 10;
 
@@ -141,8 +143,18 @@ export default class EquipSelectModal extends Vue {
 	}
 
 	private get RarityList () {
-		const list = (["SS", "S", "A", "B"] as Rarity[])
-			.map(x => ({ value: x, text: x }));
+		const table = {
+			[ACTOR_GRADE.B]: "B",
+			[ACTOR_GRADE.A]: "A",
+			[ACTOR_GRADE.S]: "S",
+			[ACTOR_GRADE.SS]: "SS",
+		};
+		const list = [
+			ACTOR_GRADE.B,
+			ACTOR_GRADE.A,
+			ACTOR_GRADE.S,
+			ACTOR_GRADE.SS,
+		].map(x => ({ value: x, text: table[x] }));
 
 		if (!this.SelectedEquip.key) return list;
 
@@ -183,14 +195,12 @@ export default class EquipSelectModal extends Vue {
 							const _ = y.split("+")
 								.map(z => {
 									switch (z) {
-										case "light":
-										case "air":
-										case "heavy":
-											return u.type === z;
-										case "attacker":
-										case "defender":
-										case "supporter":
-											return u.role === z;
+										case "light": return u.type === ACTOR_CLASS.LIGHT;
+										case "air": return u.type === ACTOR_CLASS.AIR;
+										case "heavy": return u.type === ACTOR_CLASS.HEAVY;
+										case "attacker": return u.role === ROLE_TYPE.ATTACKER;
+										case "defender": return u.role === ROLE_TYPE.DEFENDER;
+										case "supporter": return u.role === ROLE_TYPE.SUPPORTER;
 									}
 									return false;
 								})
@@ -205,25 +215,24 @@ export default class EquipSelectModal extends Vue {
 					if (!ret) return false;
 				}
 
-				if (type !== "Chip" && this.type === "Chip") return false;
-				if (type !== "OS" && this.type === "OS") return false;
-				if (type !== "Item" && this.type === "Public") return false;
+				if (type !== ITEM_TYPE.CHIP && this.type === ITEM_TYPE.CHIP) return false;
+				if (type !== ITEM_TYPE.SPCHIP && this.type === ITEM_TYPE.SPCHIP) return false;
+				if (type !== ITEM_TYPE.SUBEQ && this.type === ITEM_TYPE.SUBEQ) return false;
 
 				return true;
 			})
 			.map(x_ => {
 				const rarityList = ["", "B", "A", "S", "SS"];
-				const last = [...x_].sort((a, b) => rarityList.indexOf(b.rarity) - rarityList.indexOf(a.rarity))[0];
-				const type = {
-					Chip: "Chip",
-					OS: "System",
-					Item: "Sub",
-				}[last.type];
+				const last = [...x_].sort((a, b) => b.rarity - a.rarity)[0];
+				const type = ({
+					[ITEM_TYPE.CHIP]: "Chip",
+					[ITEM_TYPE.SPCHIP]: "System",
+					[ITEM_TYPE.SUBEQ]: "Sub",
+				} as Record<ITEM_TYPE, string>)[last.type];
 				const key = last.key;
-				const rarityIdx = rarityList.indexOf(last.rarity);
 
 				return {
-					fullKey: `${type}_${key}_T${rarityIdx}`,
+					fullKey: `${type}_${key}_T${last.rarity - 1}`,
 					baseKey: `${type}_${key}`,
 					name: last.name.replace(/ (RE|MP|SP|EX)$/, ""),
 				};
@@ -243,17 +252,16 @@ export default class EquipSelectModal extends Vue {
 	}
 
 	private SelectEquipGroup (group: string) {
-		const rarityList = ["", "B", "A", "S", "SS"];
 		const grp = EquipData
 			.filter(x => {
-				const type = {
-					Chip: "Chip",
-					OS: "System",
-					Item: "Sub",
-				}[x.type];
+				const type = ({
+					[ITEM_TYPE.CHIP]: "Chip",
+					[ITEM_TYPE.SPCHIP]: "System",
+					[ITEM_TYPE.SUBEQ]: "Sub",
+				} as Record<ITEM_TYPE, string>)[x.type];
 				return `${type}_${x.key}` === group;
 			})
-			.sort((a, b) => rarityList.indexOf(b.rarity) - rarityList.indexOf(a.rarity));
+			.sort((a, b) => b.rarity - a.rarity);
 
 		if (grp.length === 0) return;
 		if (this.SelectedEquip) {

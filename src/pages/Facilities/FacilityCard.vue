@@ -3,10 +3,11 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
-import { UnitData, ItemNames } from "@/libs/DB";
+import UnitData from "@/libs/DB/Unit";
+import { FacilityEntity, FacilityUpgradeRequiredMaterial, FactilityProduct } from "@/libs/DB/Facility";
+import ConsumableData from "@/libs/DB/Consumable";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
-import { RawFacilityEntry } from "@/libs/Types";
 
 import UnitBadge from "@/components/UnitBadge.vue";
 import RarityBadge from "@/components/RarityBadge.vue";
@@ -30,7 +31,7 @@ export default class FacilityCard extends Vue {
 		type: Object,
 		required: true,
 	})
-	private facility!: RawFacilityEntry;
+	private facility!: FacilityEntity;
 
 	private level: number = 0;
 
@@ -75,25 +76,7 @@ export default class FacilityCard extends Vue {
 		}
 	}
 
-	private ResVariant (res: "Components" | "Nutritions" | "Power") {
-		switch (res) {
-			case "Components": return "warning";
-			case "Nutritions": return "success";
-			case "Power": return "primary";
-		}
-		return "";
-	}
-
-	private ResDisplay (res: "Components" | "Nutritions" | "Power") {
-		switch (res) {
-			case "Components": return "부품";
-			case "Nutritions": return "영양";
-			case "Power": return "전력";
-		}
-		return "";
-	}
-
-	private WorkerType (type: string) {
+	private CombatantType (type: string) {
 		return type.split(",")
 			.map(x => {
 				return x.split("+")
@@ -115,64 +98,71 @@ export default class FacilityCard extends Vue {
 			});
 	}
 
-	private Results (result: string[][]) {
+	private Results (key: string, result: FactilityProduct[]) {
 		type T = string | JSX.Element;
 		type U = T | T[];
-		type Dict<P> = { [key: string]: P };
-
-		const UnitRole: Dict<string> = {
-			Attacker: "공격기",
-			Defender: "보호기",
-			Supporter: "지원기",
-		};
-
-		const parseResult = (line: string): U => {
-			const part = line.split(":");
-			switch (part[0]) {
-				case "BioroidR":
-					return [<rarity-badge rarity={part[2]}>{part[2]} {UnitRole[part[1]]} 바이오로이드</rarity-badge>, <small> ({part[3]}%)</small>];
-				case "Item":
-					if (parseFloat(part[2]) === 100)
-						return <b-badge variant="secondary">{ItemNames[part[1]].name} {part[3]}개</b-badge>;
-					else
-						return [<b-badge variant="secondary">{ItemNames[part[1]].name} {part[3]}개</b-badge>, <small> ({part[2]}%)</small>];
-
-				case "ComponentsR":
-					return <b-badge variant="warning">부품 회복량 +{part[1]}%</b-badge>;
-				case "NutritionsR":
-					return <b-badge variant="success">영양 회복량 +{part[1]}%</b-badge>;
-				case "PowerR":
-					return <b-badge variant="primary">전력 회복량 +{part[1]}%</b-badge>;
-
-				case "BattleEXP":
-					return <b-badge variant="warning">전투 경험치 +{part[1]}%</b-badge>;
-
-				case "FacilityTime":
-					return <b-badge variant="apocrypha">설비 부품 제작 시간 -{part[1]}%</b-badge>;
-
-				case "EquipUpgradeBonus":
-					return <b-badge variant="exchange">장비 강화 소모 자원 -{part[1]}%</b-badge>;
-				case "EquipDisassembleBonus":
-					return <b-badge variant="exchange">장비 분해 자원 +{part[1]}%</b-badge>;
-			}
-			return line;
-		};
+		type Dict<P> = { [key: string]: P; };
 
 		const conds: Array<U | U[]> = [];
 		result.forEach((x, i) => {
 			if (i > 0) conds.push(<hr class="my-1" />);
 
 			const list: U[] = [];
-			x.forEach((y, j) => {
-				if (j > 0) {
+			if ("item" in x) {
+				const item = ConsumableData.find(y => y.name === x.item) || { name: x.item };
+
+				if (x.chance === 100)
+					list.push(<b-badge variant="secondary">{item.name} {x.count}개</b-badge>);
+				else {
 					list.push(
-						<div>
-							<small class="text-danger"><strong>OR</strong></small>
-						</div>,
+						<b-badge variant="secondary">{item.name} {x.count}개</b-badge>,
+						<small> ({x.chance}%)</small>,
 					);
 				}
-				list.push(parseResult(y));
-			});
+			} else if ("type" in x) {
+				switch (x.type) {
+					case "facilityParts":
+						list.push(<b-badge variant="apocrypha">설비 부품 제작 시간 -{x.bonus}%</b-badge>);
+						break;
+					case "nutrient":
+						list.push(<b-badge variant="success">영양 회복량 +{x.bonus}%</b-badge>);
+						break;
+					case "metal":
+						list.push(<b-badge variant="warning">부품 회복량 +{x.bonus}%</b-badge>);
+						break;
+					case "power":
+						list.push(<b-badge variant="primary">전력 회복량 +{x.bonus}%</b-badge>);
+						break;
+					case "equipCost":
+						list.push(<b-badge variant="exchange">장비 강화 소모 자원 -{x.bonus}%</b-badge>);
+						break;
+					case "equipDisassemble":
+						list.push(<b-badge variant="exchange">장비 분해 자원 +{x.bonus}%</b-badge>);
+						break;
+					case "exp":
+						list.push(<b-badge variant="warning">전투 경험치 +{x.bonus}%</b-badge>);
+						break;
+				}
+			} else if ("grade" in x) {
+				const UnitRole: Dict<string> = {
+					Attacker: "공격기",
+					Defender: "보호기",
+					Supporter: "지원기",
+					"": "???",
+				};
+
+				const target = key.startsWith("NukerMaking")
+					? "Attacker"
+					: key.startsWith("TankerMaking")
+						? "Defender"
+						: key.startsWith("SupporterMaking")
+							? "Supporter"
+							: "";
+				list.push(
+					<rarity-badge rarity={x.grade}>{x.grade} {UnitRole[target]} 바이오로이드</rarity-badge>,
+					<small> ({x.chance}%)</small>,
+				);
+			}
 			conds.push(list);
 		});
 
@@ -184,38 +174,40 @@ export default class FacilityCard extends Vue {
 		const level = this.level;
 		const entry = facility.list[level];
 
+		function getUpgradeRequired (m: FacilityUpgradeRequiredMaterial | null) {
+			if (!m) return "";
+
+			const GradeTable = {
+				T1: "일반",
+				T2: "고급",
+				T3: "특수",
+			};
+			const VariantTable = {
+				T1: "white",
+				T2: "info",
+				T3: "event-exchange",
+			};
+			const TypeTable = {
+				Matrial: "자재 시설품",
+				Resource: "자원 시설품",
+				PcMaking: "바이오로이드 제작실 시설품",
+				Cafe: "카페테리아 시설품",
+				Training: "전투 분석실 시설품",
+				Equip: "장비 연구실 시설품",
+				FacilityPartsMaking: "설비 부품 제작지원실 시설품",
+				StuffMaking: "제작 핵심 부품 생산소 시설품",
+			};
+			const grade = GradeTable[m.grade];
+			const variant = VariantTable[m.grade];
+			const type = TypeTable[m.type];
+
+			return <b-badge variant={variant}>{type} ({grade}) x{m.value}</b-badge>;
+		}
+
 		const UpgradeTable = facility.list
 			.filter((x, i) => i > 0)
 			.map(x => {
-				const Material = ((m) => {
-					if (!m) return "";
-
-					const GradeTable = {
-						Normal: "일반",
-						Advanced: "고급",
-						Special: "특수",
-					};
-					const VariantTable = {
-						Normal: "white",
-						Advanced: "info",
-						Special: "event-exchange",
-					};
-					const TypeTable = {
-						Material: "자재 시설품",
-						Resource: "자원 시설품",
-						Bioroid: "바이오로이드 제작실 시설품",
-						Cafeteria: "카페테리아 시설품",
-						EXPCenter: "전투 분석실 시설품",
-						Equipment: "장비 연구실 시설품",
-						Facility: "설비 부품 제작지원실 시설품",
-						Creation: "제작 핵심 부품 생산소 시설품",
-					};
-					const grade = GradeTable[m.grade];
-					const variant = VariantTable[m.grade];
-					const type = TypeTable[m.type];
-
-					return <b-badge variant={variant}>{type} ({grade}) x{m.value}</b-badge>;
-				})(x.upgradeRes.Material);
+				const Material = getUpgradeRequired(x.upgradeRequired.Material);
 				return <b-tr>
 					<b-td class="bg-dark text-white">
 						{x.level - 1}
@@ -224,15 +216,15 @@ export default class FacilityCard extends Vue {
 					</b-td>
 					<b-td>
 						<item-icon item="resin" />
-						{x.upgradeRes.Resins}
+						{x.upgradeRequired.Wood}
 					</b-td>
 					<b-td>
 						<item-icon item="paint" />
-						{x.upgradeRes.Paint}
+						{x.upgradeRequired.Stone}
 					</b-td>
 					<b-td>
 						<item-icon item="metal" />
-						{x.upgradeRes.Metal}
+						{x.upgradeRequired.Iron}
 					</b-td>
 					<b-td>{Material}</b-td>
 					<b-td>{this.TimeFormat(x.upgradeTime)}</b-td>
@@ -241,36 +233,7 @@ export default class FacilityCard extends Vue {
 		const UpgradeTableMd = facility.list
 			.filter((x, i) => i > 0)
 			.map(x => {
-				const Material = ((m) => {
-					if (!m) return <span class="text-secondary">-</span>;
-
-					const GradeTable = {
-						Normal: "일반",
-						Advanced: "고급",
-						Special: "특수",
-					};
-					const VariantTable = {
-						Normal: "white",
-						Advanced: "info",
-						Special: "event-exchange",
-					};
-					const TypeTable = {
-						Material: "자재 시설품",
-						Resource: "자원 시설품",
-						Bioroid: "바이오로이드 제작실 시설품",
-						Cafeteria: "카페테리아 시설품",
-						EXPCenter: "전투 분석실 시설품",
-						Equipment: "장비 연구실 시설품",
-						Facility: "설비 부품 제작지원실 시설품",
-						Creation: "제작 핵심 부품 생산소 시설품",
-					};
-					const grade = GradeTable[m.grade];
-					const variant = VariantTable[m.grade];
-					const type = TypeTable[m.type];
-
-					return <b-badge variant={variant}>{type} ({grade}) x{m.value}</b-badge>;
-				})(x.upgradeRes.Material);
-
+				const Material = getUpgradeRequired(x.upgradeRequired.Material);
 				return [
 					<b-tr>
 						<b-td class="bg-dark text-white" colspan="6">
@@ -287,15 +250,15 @@ export default class FacilityCard extends Vue {
 					<b-tr>
 						<b-td class="border-left" colspan="2">
 							<item-icon item="resin" />
-							{x.upgradeRes.Resins}
+							{x.upgradeRequired.Wood}
 						</b-td>
 						<b-td colspan="2">
 							<item-icon item="paint" />
-							{x.upgradeRes.Paint}
+							{x.upgradeRequired.Stone}
 						</b-td>
 						<b-td class="border-right" colspan="2">
 							<item-icon item="metal" />
-							{x.upgradeRes.Metal}
+							{x.upgradeRequired.Iron}
 						</b-td>
 					</b-tr>,
 					<b-tr>
@@ -311,19 +274,6 @@ export default class FacilityCard extends Vue {
 					</b-tr>,
 				];
 			});
-		const levels = (() => {
-			type T = string | JSX.Element;
-			const list: T[] = [];
-			entry.requireWorker.level
-				.forEach((x, i) => {
-					if (i > 0) list.push(" / ");
-					list.push(<span>
-						<small>Lv.</small>
-						{x}
-					</span>);
-				});
-			return list;
-		})();
 
 		return <b-card no-body class="facility-card">
 			<b-card-header>{facility.name}</b-card-header>
@@ -358,34 +308,35 @@ export default class FacilityCard extends Vue {
 
 								<b-col class="bg-dark text-white">편성 조건</b-col>
 								<b-col>
-									{entry.requireWorker.count}명<br />
-									{levels}
+									{entry.requiredCombatant.count}명<br />
+									<span>
+										<small>Lv.</small>
+										{entry.requiredCombatant.level}
+									</span>
 								</b-col>
 								<b-col class="bg-dark text-white">필요 자원</b-col>
 								<b-col>
 									{
-										entry.requireRes.length === 0
+										entry.cost.every(res => res === 0)
 											? <span class="text-secondary">자원 소모 없음</span>
-											: entry.requireRes
-												.map((res, resIdx) =>
-													<b-badge
-														key={`facility-${this.id}-reqres-${resIdx}`}
-														variant={this.ResVariant(res.type)}
-													>{this.ResDisplay(res.type)} {res.value}</b-badge>,
-												)
+											: [
+												<b-badge key={`facility-${this.id}-reqres-0`} variant="warning">부품 {entry.cost[0]}</b-badge>,
+												<b-badge key={`facility-${this.id}-reqres-1`} variant="success">영양 {entry.cost[1]}</b-badge>,
+												<b-badge key={`facility-${this.id}-reqres-2`} variant="primary">전력 {entry.cost[2]}</b-badge>,
+											]
 									}
 								</b-col>
 
 								<b-col class="bg-dark text-white">편성 제한</b-col>
 								<b-col>
 									{
-										entry.requireWorker.type
-											? this.WorkerType(entry.requireWorker.type)
+										entry.requiredCombatant.type
+											? this.CombatantType(entry.requiredCombatant.type)
 											: <span class="text-secondary">제한 없음</span>
 									}
 								</b-col>
 								<b-col class="bg-dark text-white">시설 능력</b-col>
-								<b-col>{this.Results(entry.result)}</b-col>
+								<b-col>{this.Results(this.id, entry.produceItem)}</b-col>
 							</b-row>
 						</b-container>
 

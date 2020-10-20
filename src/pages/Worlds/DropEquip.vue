@@ -18,7 +18,7 @@ import { Watch, Prop } from "vue-property-decorator";
 import EquipIcon from "@/components/EquipIcon.vue";
 import RarityBadge from "@/components/RarityBadge.vue";
 
-import { Equip } from "@/libs/Types";
+import { Equip } from "@/libs/DB/Equip";
 
 @Component({
 	components: {

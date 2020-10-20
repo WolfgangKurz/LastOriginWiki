@@ -6,7 +6,7 @@ function process (auth) {
 	const sheets = google.sheets({ version: "v4", auth });
 	sheets.spreadsheets.values.get({
 		spreadsheetId: "1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4",
-		range: "Facilities의 사본!A3:AA",
+		range: "Facilities!A3:AA",
 	}, (err, res) => {
 		if (err) return console.log("The API returned an error: " + err);
 

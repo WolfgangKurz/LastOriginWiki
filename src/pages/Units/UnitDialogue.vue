@@ -1,7 +1,7 @@
 <template>
 	<b-card v-if="IsVoiceAvailable" class="mt-2 text-left" no-body>
 		<b-card-header v-b-toggle:[CollapseKey]>
-			{{voice.t}}
+			{{ voice.t }}
 			<strong v-if="voice.isMarry" class="text-danger pl-4">♥ 서약</strong>
 			<b-badge v-if="IsNotSet" variant="warning" class="ml-3">대사 정보 없음</b-badge>
 		</b-card-header>
@@ -19,7 +19,7 @@
 	</b-card>
 	<b-card v-else class="mt-2 text-left unit-dialogue-empty" no-body>
 		<b-card-header>
-			{{voice.t}}
+			{{ voice.t }}
 			<b-badge variant="secondary" class="ml-3">보이스 없는 스킨</b-badge>
 		</b-card-header>
 	</b-card>
@@ -30,8 +30,10 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, Watch, PropSync } from "vue-property-decorator";
 
-import { RawUnitDialogueEntity, SkinInfo, Unit } from "@/libs/Types";
+import { RawUnitDialogueEntity, SkinInfo } from "@/libs/Types";
 import { UnitDialogueData } from "@/libs/DB";
+
+import { Unit } from "@/libs/DB/Unit";
 
 import DialogueRow from "./DialogueRow.vue";
 

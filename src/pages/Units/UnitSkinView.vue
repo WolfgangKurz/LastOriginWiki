@@ -13,7 +13,7 @@
 
 			<div v-if="!(skin.isPro || skin.isDef) && skin.price" class="skin-price">
 				<img :src="`${AssetsRoot}/tuna.png`" />
-				{{skin.price}}
+				{{ skin.price }}
 			</div>
 			<b-alert
 				v-if="skin.A"
@@ -22,13 +22,9 @@
 				class="unit-skin-animated text-dark"
 				title="이 스킨은 움직입니다"
 				v-b-tooltip.hover.topright.v-light
-			>로비 애니메이션</b-alert>
-			<div
-				v-if="unit.marry"
-				class="skin-marry"
-				title="서약 대사가 존재합니다"
-				v-b-tooltip.hover.topright.v-danger
-			/>
+				>로비 애니메이션</b-alert
+			>
+			<div v-if="unit.marry" class="skin-marry" title="서약 대사가 존재합니다" v-b-tooltip.hover.topright.v-danger />
 
 			<div
 				v-if="(!IsSimplified && skin.D) || (IsSimplified && skin.X)"
@@ -42,29 +38,22 @@
 				:data-simplified="IsSimplified ? 1 : 0"
 				@click="IsSimplified = !IsSimplified"
 			/>
-			<div
-				v-if="skin.G"
-				class="skin-toggle skin-toggle-platform"
-				:data-platform="IsGoogle ? 1 : 0"
-				@click="IsGoogle = !IsGoogle"
-			/>
+			<div v-if="skin.G" class="skin-toggle skin-toggle-platform" :data-platform="IsGoogle ? 1 : 0" @click="IsGoogle = !IsGoogle" />
 
 			<div v-if="detailable" class="skin-detail" @click="ShowDetail()" />
 
 			<b-modal v-model="DetailDisplay" centered hide-footer size="xl" modal-class="unit-skin-modal">
-				<template #modal-title>{{skin.t}}</template>
+				<template #modal-title>{{ skin.t }}</template>
 
 				<unit-skin-view :unit="unit" :skin="skin" :index="index" />
 			</b-modal>
 		</b-aspect>
 
 		<template v-if="collapsed">
-			<b-alert variant="primary" show v-if="skin.artist">일러스트레이터 : {{skin.artist}}</b-alert>
-			<b-card
-				v-if="skin.name"
-				:header="skin.name"
-				:class="{ 'mb-2': true, 'skin-name-desc': true, 'mt-2': !skin.artist }"
-			>{{skin.desc}}</b-card>
+			<b-alert variant="primary" show v-if="skin.artist">일러스트레이터 : {{ skin.artist }}</b-alert>
+			<b-card v-if="skin.name" :header="skin.name" :class="{ 'mb-2': true, 'skin-name-desc': true, 'mt-2': !skin.artist }">{{
+				skin.desc
+			}}</b-card>
 		</template>
 	</div>
 </template>
@@ -75,7 +64,9 @@ import Component from "vue-class-component";
 
 import { Prop, Emit, Watch } from "vue-property-decorator";
 
-import { Unit, SkinInfo } from "@/libs/Types";
+import { Unit } from "@/libs/DB/Unit";
+
+import { SkinInfo } from "@/libs/Types";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 
 interface SkinItem extends SkinInfo {

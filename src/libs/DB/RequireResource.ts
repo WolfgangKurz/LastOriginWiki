@@ -1,5 +1,7 @@
 import { ACTOR_BODY_TYPE, ROLE_TYPE, ACTOR_CLASS, ACTOR_GRADE } from "@/libs/Types/Enums";
 
+import Data from "@/json/require-resource.json";
+
 type RequireResourceDataDatum = [number, number, number, number, number, number];
 type RequireResourceData = {
 	metal: RequireResourceDataDatum;
@@ -18,6 +20,4 @@ type RequireResourceGrade = {
 export type RequireResource = {
 	[key in ACTOR_GRADE]: RequireResourceGrade;
 };
-
-import Data from "@/json/require-resource.json";
 export default Data as RequireResource;

@@ -7,7 +7,9 @@ import { Watch } from "vue-property-decorator";
 import { StoryRaw } from "@/libs/Types";
 import { StoryRowData } from "@/libs/Story";
 
-import { MapData, StoryData, UnitData } from "@/libs/DB";
+import UnitData from "@/libs/DB/Unit";
+import { MapData, StoryData } from "@/libs/DB";
+
 import { AssetsRoot, WorldNames } from "@/libs/Const";
 import { UpdateTitle } from "@/libs/Functions";
 

@@ -27,7 +27,7 @@ import { Route } from "vue-router";
 import StoreModule, { UnitDisplayType } from "@/libs/Store";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
-import { Facilities as FacilitiesDB } from "@/libs/DB";
+import FacilitiesDB from "@/libs/DB/Facility";
 
 import FacilityCard from "./Facilities/FacilityCard.vue";
 import { UpdateTitle } from "@/libs/Functions";

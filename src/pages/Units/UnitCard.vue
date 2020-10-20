@@ -60,7 +60,8 @@ import Component from "vue-class-component";
 import UnitFace from "@/components/UnitFace.vue";
 import RarityBadge from "@/components/RarityBadge.vue";
 import { Prop, Emit } from "vue-property-decorator";
-import { Unit } from "@/libs/Types";
+
+import { Unit } from "@/libs/DB/Unit";
 
 @Component({
 	components: {

@@ -8,7 +8,7 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 
-import { EquipData, ExpData } from "@/libs/DB";
+import { ExpData } from "@/libs/DB";
 
 import ExpCalculator from "@/pages/EXP/ExpCalculator.vue";
 

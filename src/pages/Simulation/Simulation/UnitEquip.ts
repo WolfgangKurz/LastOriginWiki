@@ -1,19 +1,19 @@
-import { EquipType, Rarity } from "@/libs/Types";
+import { ACTOR_GRADE, ITEM_TYPE } from "@/libs/Types/Enums";
 
 export interface UnitEquip {
 	FullKey: string;
-	Type: EquipType;
+	Type: ITEM_TYPE;
 	Key: string;
-	Rarity: Rarity;
+	Rarity: ACTOR_GRADE;
 	Level: number; // 0 ~ 10
 }
 // eslint-disable-next-line
 export namespace UnitEquip {
 	export const Empty: UnitEquip = {
 		FullKey: "__T1",
-		Type: "Chip",
+		Type: ITEM_TYPE.CHIP,
 		Key: "",
-		Rarity: "SS",
+		Rarity: ACTOR_GRADE.SS,
 		Level: 10,
 	};
 }

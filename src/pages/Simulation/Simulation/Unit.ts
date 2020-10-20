@@ -11,7 +11,7 @@ import { UnitEquip } from "./UnitEquip";
 import { UnitStat, UnitPoint, Stat, StatPointValue, StatType, RatioStats } from "./Stats";
 import { BuffEffect, BUFFEFFECT_TYPE } from "@/libs/Equips/BuffEffect";
 
-import { ACTOR_CLASS, ACTOR_GRADE, BUFF_ATTR_TYPE, ROLE_TYPE } from "@/libs/Types/Enums";
+import { ACTOR_CLASS, ACTOR_GRADE, BUFF_ATTR_TYPE, ITEM_TYPE, ROLE_TYPE } from "@/libs/Types/Enums";
 import UnitData, { FullLinkBonusType } from "@/libs/DB/Unit";
 import UnitStatsData from "@/libs/DB/UnitStats";
 import EquipData from "@/libs/DB/Equip";
@@ -391,10 +391,10 @@ export class Unit extends Vue {
 							case "off.-ACC":
 								if ("off" in stat) {
 									if (typeof stat.off === "object" && "target" in stat.off) {
-										if (
-											(stat.off.type === BUFFEFFECT_TYPE.STAT_RATING_RATIO || stat.off.type === BUFFEFFECT_TYPE.STAT_RATING_VALUE) &&
-											stat.off.target === BUFF_ATTR_TYPE.DEBUFF
-										)
+										if ((
+											stat.off.type === BUFFEFFECT_TYPE.STAT_RATING_RATIO ||
+											stat.off.type === BUFFEFFECT_TYPE.STAT_RATING_VALUE
+										) && stat.off.target === BUFF_ATTR_TYPE.DEBUFF)
 											calc(stat.chance || "100%");
 									}
 								}
@@ -402,10 +402,10 @@ export class Unit extends Vue {
 							case "off.-EV":
 								if ("off" in stat) {
 									if (typeof stat.off === "object" && "target" in stat.off) {
-										if (
-											(stat.off.type === BUFFEFFECT_TYPE.STAT_AVOID_RATIO || stat.off.type === BUFFEFFECT_TYPE.STAT_AVOID_VALUE) &&
-											stat.off.target === BUFF_ATTR_TYPE.DEBUFF
-										)
+										if ((
+											stat.off.type === BUFFEFFECT_TYPE.STAT_AVOID_RATIO ||
+											stat.off.type === BUFFEFFECT_TYPE.STAT_AVOID_VALUE
+										) && stat.off.target === BUFF_ATTR_TYPE.DEBUFF)
 											calc(stat.chance || "100%");
 									}
 								}
@@ -555,7 +555,7 @@ export class Unit extends Vue {
 			.fill(0)
 			.map((x, i) => ({
 				...UnitEquip.Empty,
-				Type: (this.Unit && this.Unit.equip[i]) || "Chip",
+				Type: (this.Unit && this.Unit.equip[i]) || ITEM_TYPE.CHIP,
 			}));
 
 		return this;

@@ -3,8 +3,9 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
+import UnitData from "@/libs/DB/Unit";
+
 import { CurrentEvent, CurrentDate } from "@/libs/Const";
-import { UnitData } from "@/libs/DB";
 import EntitySource from "@/libs/EntitySource";
 
 @Component({})

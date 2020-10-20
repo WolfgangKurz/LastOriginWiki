@@ -2,61 +2,21 @@
 	<b-card class="api-unit-badge" header="전투원 뱃지">
 		<!-- 필터 -->
 		<div class="mb-3">
-			<b-btn-group class="ml-3 mb-2">
-				<b-button
-					variant="outline-danger"
-					:pressed="Filters.Rarity.SS"
-					@click="Filters.Rarity.SS = !Filters.Rarity.SS"
-				>SS</b-button>
-				<b-button
-					variant="outline-danger"
-					:pressed="Filters.Rarity.S"
-					@click="Filters.Rarity.S = !Filters.Rarity.S"
-				>S</b-button>
-				<b-button
-					variant="outline-danger"
-					:pressed="Filters.Rarity.A"
-					@click="Filters.Rarity.A = !Filters.Rarity.A"
-				>A</b-button>
-				<b-button
-					variant="outline-danger"
-					:pressed="Filters.Rarity.B"
-					@click="Filters.Rarity.B = !Filters.Rarity.B"
-				>B</b-button>
+			<b-btn-group class="mx-2 mb-2">
+				<b-button variant="outline-danger" :pressed="Filters.Rarity[5]" @click="Filters.Rarity[5] = !Filters.Rarity[5]">SS</b-button>
+				<b-button variant="outline-danger" :pressed="Filters.Rarity[4]" @click="Filters.Rarity[4] = !Filters.Rarity[4]">S</b-button>
+				<b-button variant="outline-danger" :pressed="Filters.Rarity[3]" @click="Filters.Rarity[3] = !Filters.Rarity[3]">A</b-button>
+				<b-button variant="outline-danger" :pressed="Filters.Rarity[2]" @click="Filters.Rarity[2] = !Filters.Rarity[2]">B</b-button>
 			</b-btn-group>
-			<b-btn-group class="ml-3 mb-2">
-				<b-button
-					variant="outline-success"
-					:pressed="Filters.Type.Light"
-					@click="Filters.Type.Light = !Filters.Type.Light"
-				>경장형</b-button>
-				<b-button
-					variant="outline-success"
-					:pressed="Filters.Type.Air"
-					@click="Filters.Type.Air = !Filters.Type.Air"
-				>기동형</b-button>
-				<b-button
-					variant="outline-success"
-					:pressed="Filters.Type.Heavy"
-					@click="Filters.Type.Heavy = !Filters.Type.Heavy"
-				>중장형</b-button>
+			<b-btn-group class="mx-2 mb-2">
+				<b-button variant="outline-success" :pressed="Filters.Type[0]" @click="Filters.Type[0] = !Filters.Type[0]">경장형</b-button>
+				<b-button variant="outline-success" :pressed="Filters.Type[2]" @click="Filters.Type[2] = !Filters.Type[2]">기동형</b-button>
+				<b-button variant="outline-success" :pressed="Filters.Type[1]" @click="Filters.Type[1] = !Filters.Type[1]">중장형</b-button>
 			</b-btn-group>
-			<b-btn-group class="ml-3 mb-2">
-				<b-button
-					variant="outline-primary"
-					:pressed="Filters.Role.Attacker"
-					@click="Filters.Role.Attacker = !Filters.Role.Attacker"
-				>공격기</b-button>
-				<b-button
-					variant="outline-primary"
-					:pressed="Filters.Role.Defender"
-					@click="Filters.Role.Defender = !Filters.Role.Defender"
-				>보호기</b-button>
-				<b-button
-					variant="outline-primary"
-					:pressed="Filters.Role.Supporter"
-					@click="Filters.Role.Supporter = !Filters.Role.Supporter"
-				>지원기</b-button>
+			<b-btn-group class="mx-2 mb-2">
+				<b-button variant="outline-primary" :pressed="Filters.Role[1]" @click="Filters.Role[1] = !Filters.Role[1]">공격기</b-button>
+				<b-button variant="outline-primary" :pressed="Filters.Role[0]" @click="Filters.Role[0] = !Filters.Role[0]">보호기</b-button>
+				<b-button variant="outline-primary" :pressed="Filters.Role[2]" @click="Filters.Role[2] = !Filters.Role[2]">지원기</b-button>
 			</b-btn-group>
 		</div>
 
@@ -65,16 +25,12 @@
 				<template v-if="SelectedUnit === null">전투원을 선택해주세요.</template>
 				<template v-else>
 					<unit-face :id="SelectedUnit.id" size="40" class="mr-2" />
-					{{SelectedUnit.name}}
+					{{ SelectedUnit.name }}
 				</template>
 			</template>
-			<b-dropdown-item
-				v-for="unit in UnitList"
-				:key="`simulation-unit-select-modal-${unit.id}`"
-				@click="SelectedUnit = unit"
-			>
+			<b-dropdown-item v-for="unit in UnitList" :key="`simulation-unit-select-modal-${unit.id}`" @click="SelectedUnit = unit">
 				<unit-face :id="unit.id" size="40" class="mr-2" />
-				<span class="d-inline-block mr-2">{{unit.name}}</span>
+				<span class="d-inline-block mr-2">{{ unit.name }}</span>
 			</b-dropdown-item>
 		</b-dropdown>
 		<b-check class="d-inline-block mx-2" v-model="isSD">SD 아이콘</b-check>
@@ -88,9 +44,9 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 
-import { UnitData } from "@/libs/DB";
 import { UnitTableFilters } from "@/libs/Store";
-import { Unit } from "@/libs/Types";
+import UnitData, { Unit } from "@/libs/DB/Unit";
+import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/libs/Types/Enums";
 
 import UnitFace from "@/components/UnitFace.vue";
 
@@ -106,24 +62,24 @@ export default class APIUnitBadge extends Vue {
 
 	private Filters: UnitTableFilters = {
 		Rarity: {
-			SS: true,
-			S: true,
-			A: true,
-			B: true,
+			[ACTOR_GRADE.B]: true,
+			[ACTOR_GRADE.A]: true,
+			[ACTOR_GRADE.S]: true,
+			[ACTOR_GRADE.SS]: true,
 		},
 		Type: {
-			Light: true,
-			Air: true,
-			Heavy: true,
+			[ACTOR_CLASS.LIGHT]: true,
+			[ACTOR_CLASS.AIR]: true,
+			[ACTOR_CLASS.HEAVY]: true,
 		},
 		Role: {
-			Attacker: true,
-			Defender: true,
-			Supporter: true,
+			[ROLE_TYPE.ATTACKER]: true,
+			[ROLE_TYPE.DEFENDER]: true,
+			[ROLE_TYPE.SUPPORTER]: true,
 		},
 		Body: {
-			Bioroid: true,
-			AGS: true,
+			[ACTOR_BODY_TYPE.BIOROID]: true,
+			[ACTOR_BODY_TYPE.AGS]: true,
 		},
 	};
 
@@ -137,18 +93,18 @@ export default class APIUnitBadge extends Vue {
 	private get UnitList () {
 		const list = Object.values(UnitData)
 			.filter(x => {
-				if (!this.Filters.Rarity.SS && x.rarity === "SS") return false;
-				if (!this.Filters.Rarity.S && x.rarity === "S") return false;
-				if (!this.Filters.Rarity.A && x.rarity === "A") return false;
-				if (!this.Filters.Rarity.B && x.rarity === "B") return false;
+				if (!this.Filters.Rarity[ACTOR_GRADE.SS] && x.rarity === ACTOR_GRADE.SS) return false;
+				if (!this.Filters.Rarity[ACTOR_GRADE.S] && x.rarity === ACTOR_GRADE.S) return false;
+				if (!this.Filters.Rarity[ACTOR_GRADE.A] && x.rarity === ACTOR_GRADE.A) return false;
+				if (!this.Filters.Rarity[ACTOR_GRADE.B] && x.rarity === ACTOR_GRADE.B) return false;
 
-				if (!this.Filters.Type.Light && x.type === "light") return false;
-				if (!this.Filters.Type.Air && x.type === "air") return false;
-				if (!this.Filters.Type.Heavy && x.type === "heavy") return false;
+				if (!this.Filters.Type[ACTOR_CLASS.LIGHT] && x.type === ACTOR_CLASS.LIGHT) return false;
+				if (!this.Filters.Type[ACTOR_CLASS.AIR] && x.type === ACTOR_CLASS.AIR) return false;
+				if (!this.Filters.Type[ACTOR_CLASS.HEAVY] && x.type === ACTOR_CLASS.HEAVY) return false;
 
-				if (!this.Filters.Role.Attacker && x.role === "attacker") return false;
-				if (!this.Filters.Role.Defender && x.role === "defender") return false;
-				if (!this.Filters.Role.Supporter && x.role === "supporter") return false;
+				if (!this.Filters.Role[ROLE_TYPE.ATTACKER] && x.role === ROLE_TYPE.ATTACKER) return false;
+				if (!this.Filters.Role[ROLE_TYPE.DEFENDER] && x.role === ROLE_TYPE.DEFENDER) return false;
+				if (!this.Filters.Role[ROLE_TYPE.SUPPORTER] && x.role === ROLE_TYPE.SUPPORTER) return false;
 				/*
 				if (!this.Filters.body.bioroid && x.body === "bio") return false;
 				if (!this.Filters.body.ags && x.body === "ags") return false;

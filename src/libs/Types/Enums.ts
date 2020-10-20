@@ -452,3 +452,9 @@ export enum REQUIRED_COMBATANT_TYPE {
 
 	__MAX__ = 6,
 }
+
+export enum ITEM_USE_TYPE {
+	CREATE = 0,
+	USE = 1,
+	__MAX__ = 2,
+}

@@ -2,80 +2,30 @@
 	<div class="unit-table">
 		<div class="mb-2">
 			<b-btn-group class="mx-2 mb-2">
-				<b-button
-					variant="outline-secondary"
-					:pressed="IncludePromotions"
-					@click="IncludePromotions = !IncludePromotions"
-				>승급 후 등급 포함</b-button>
+				<b-button variant="outline-secondary" :pressed="IncludePromotions" @click="IncludePromotions = !IncludePromotions"
+					>승급 후 등급 포함</b-button
+				>
 			</b-btn-group>
 
 			<b-btn-group class="mx-2 mb-2">
-				<b-button
-					variant="outline-danger"
-					:pressed="Filters.Rarity.SS"
-					@click="Filters.Rarity.SS = !Filters.Rarity.SS"
-				>SS</b-button>
-				<b-button
-					variant="outline-danger"
-					:pressed="Filters.Rarity.S"
-					@click="Filters.Rarity.S = !Filters.Rarity.S"
-				>S</b-button>
-				<b-button
-					variant="outline-danger"
-					:pressed="Filters.Rarity.A"
-					@click="Filters.Rarity.A = !Filters.Rarity.A"
-				>A</b-button>
-				<b-button
-					variant="outline-danger"
-					:pressed="Filters.Rarity.B"
-					@click="Filters.Rarity.B = !Filters.Rarity.B"
-				>B</b-button>
+				<b-button variant="outline-danger" :pressed="Filters.Rarity[5]" @click="Filters.Rarity[5] = !Filters.Rarity[5]">SS</b-button>
+				<b-button variant="outline-danger" :pressed="Filters.Rarity[4]" @click="Filters.Rarity[4] = !Filters.Rarity[4]">S</b-button>
+				<b-button variant="outline-danger" :pressed="Filters.Rarity[3]" @click="Filters.Rarity[3] = !Filters.Rarity[3]">A</b-button>
+				<b-button variant="outline-danger" :pressed="Filters.Rarity[2]" @click="Filters.Rarity[2] = !Filters.Rarity[2]">B</b-button>
 			</b-btn-group>
 			<b-btn-group class="mx-2 mb-2">
-				<b-button
-					variant="outline-success"
-					:pressed="Filters.Type.Light"
-					@click="Filters.Type.Light = !Filters.Type.Light"
-				>경장형</b-button>
-				<b-button
-					variant="outline-success"
-					:pressed="Filters.Type.Air"
-					@click="Filters.Type.Air = !Filters.Type.Air"
-				>기동형</b-button>
-				<b-button
-					variant="outline-success"
-					:pressed="Filters.Type.Heavy"
-					@click="Filters.Type.Heavy = !Filters.Type.Heavy"
-				>중장형</b-button>
+				<b-button variant="outline-success" :pressed="Filters.Type[0]" @click="Filters.Type[0] = !Filters.Type[0]">경장형</b-button>
+				<b-button variant="outline-success" :pressed="Filters.Type[2]" @click="Filters.Type[2] = !Filters.Type[2]">기동형</b-button>
+				<b-button variant="outline-success" :pressed="Filters.Type[1]" @click="Filters.Type[1] = !Filters.Type[1]">중장형</b-button>
 			</b-btn-group>
 			<b-btn-group class="mx-2 mb-2">
-				<b-button
-					variant="outline-primary"
-					:pressed="Filters.Role.Attacker"
-					@click="Filters.Role.Attacker = !Filters.Role.Attacker"
-				>공격기</b-button>
-				<b-button
-					variant="outline-primary"
-					:pressed="Filters.Role.Defender"
-					@click="Filters.Role.Defender = !Filters.Role.Defender"
-				>보호기</b-button>
-				<b-button
-					variant="outline-primary"
-					:pressed="Filters.Role.Supporter"
-					@click="Filters.Role.Supporter = !Filters.Role.Supporter"
-				>지원기</b-button>
+				<b-button variant="outline-primary" :pressed="Filters.Role[1]" @click="Filters.Role[1] = !Filters.Role[1]">공격기</b-button>
+				<b-button variant="outline-primary" :pressed="Filters.Role[0]" @click="Filters.Role[0] = !Filters.Role[0]">보호기</b-button>
+				<b-button variant="outline-primary" :pressed="Filters.Role[2]" @click="Filters.Role[2] = !Filters.Role[2]">지원기</b-button>
 			</b-btn-group>
 			<b-btn-group class="mx-2 mb-2">
-				<b-button
-					variant="outline-warning"
-					:pressed="Filters.Body.Bioroid"
-					@click="Filters.Body.Bioroid = !Filters.Body.Bioroid"
-				>바이오로이드</b-button>
-				<b-button
-					variant="outline-warning"
-					:pressed="Filters.Body.AGS"
-					@click="Filters.Body.AGS = !Filters.Body.AGS"
-				>AGS</b-button>
+				<b-button variant="outline-warning" :pressed="Filters.Body[0]" @click="Filters.Body[0] = !Filters.Body[0]">바이오로이드</b-button>
+				<b-button variant="outline-warning" :pressed="Filters.Body[1]" @click="Filters.Body[1] = !Filters.Body[1]">AGS</b-button>
 			</b-btn-group>
 		</div>
 
@@ -89,12 +39,7 @@
 		</div>
 
 		<template v-for="type in TypeList">
-			<b-table-simple
-				v-if="Filters.Type[type]"
-				:key="`unit-table-body-${type}`"
-				class="unit-table mb-3"
-				small
-			>
+			<b-table-simple v-if="Filters.Type[type]" :key="`unit-table-body-${type}`" class="unit-table mb-3" small>
 				<b-thead head-variant="dark">
 					<b-tr>
 						<b-th colspan="4">
@@ -113,7 +58,7 @@
 				<b-tbody>
 					<template v-for="rarity in RarityList">
 						<b-tr v-if="Filters.Rarity[rarity]" :key="`unit-table-body-${type}-${rarity}`">
-							<b-th :class="`rarity-${rarity}`">{{rarity}}</b-th>
+							<b-th :class="`rarity-${rarity}`">{{ rarity }}</b-th>
 
 							<template v-for="role in RoleList">
 								<b-td v-if="Filters.Role[role]" :key="`unit-table-body-${type}-${rarity}-${role}`">
@@ -149,8 +94,8 @@ import UnitFace from "@/components/UnitFace.vue";
 import UnitBadge from "@/components/UnitBadge.vue";
 import UnitCard from "./UnitCard.vue";
 
-import { UnitData } from "@/libs/DB";
-import { Unit, Rarity, UnitType, UnitRole } from "@/libs/Types";
+import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/libs/Types/Enums";
+import UnitData, { Unit } from "@/libs/DB/Unit";
 
 @Component({
 	components: {
@@ -188,27 +133,40 @@ export default class UnitsTable extends Vue {
 	// Vuex -----
 
 	private get RarityList (): (keyof UnitTableFilters["Rarity"])[] {
-		return ["B", "A", "S", "SS"];
+		return [
+			ACTOR_GRADE.B,
+			ACTOR_GRADE.A,
+			ACTOR_GRADE.S,
+			ACTOR_GRADE.SS,
+		];
 	}
 
 	private get TypeList (): (keyof UnitTableFilters["Type"])[] {
-		return ["Light", "Air", "Heavy"];
+		return [
+			ACTOR_CLASS.LIGHT,
+			ACTOR_CLASS.AIR,
+			ACTOR_CLASS.HEAVY,
+		];
 	}
 
 	private get RoleList (): (keyof UnitTableFilters["Role"])[] {
-		return ["Attacker", "Defender", "Supporter"];
+		return [
+			ROLE_TYPE.ATTACKER,
+			ROLE_TYPE.DEFENDER,
+			ROLE_TYPE.SUPPORTER,
+		];
 	}
 
-	private UnitList (rarity: Rarity, type: UnitType, role: UnitRole) {
+	private UnitList (rarity: ACTOR_GRADE, type: ACTOR_CLASS, role: ROLE_TYPE) {
 		if (this.IncludePromotions) {
 			return _.filter(UnitData, (x) => {
 				const rarityMatch = x.rarity === rarity || (typeof x.promotions !== "undefined" && x.promotions.includes(rarity));
 				return (
 					rarityMatch &&
-					x.type === type.toLowerCase() &&
-					x.role === role.toLowerCase() && (
-						(x.body === "bio" && this.Filters.Body.Bioroid) ||
-						(x.body === "ags" && this.Filters.Body.AGS)
+					x.type === type &&
+					x.role === role && (
+						(x.body === ACTOR_BODY_TYPE.BIOROID && this.Filters.Body[ACTOR_BODY_TYPE.BIOROID]) ||
+						(x.body === ACTOR_BODY_TYPE.AGS && this.Filters.Body[ACTOR_BODY_TYPE.AGS])
 					)
 				);
 			});
@@ -217,10 +175,10 @@ export default class UnitsTable extends Vue {
 				.filter(x => x.name.includes(this.SearchText))
 				.filter(x => (
 					x.rarity === rarity &&
-					x.type === type.toLowerCase() &&
-					x.role === role.toLowerCase() && (
-						(x.body === "bio" && this.Filters.Body.Bioroid) ||
-						(x.body === "ags" && this.Filters.Body.AGS)
+					x.type === type &&
+					x.role === role && (
+						(x.body === ACTOR_BODY_TYPE.BIOROID && this.Filters.Body[ACTOR_BODY_TYPE.BIOROID]) ||
+						(x.body === ACTOR_BODY_TYPE.AGS && this.Filters.Body[ACTOR_BODY_TYPE.AGS])
 					)
 				));
 		}

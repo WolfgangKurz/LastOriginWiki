@@ -9,7 +9,7 @@ export type EquipStat = EquipStatStatic | EquipStatBuff;
 export type EquipStatStatic = BuffEffect & {
 	isBuff: undefined;
 	chance: undefined;
-}
+};
 export interface EquipStatBuff {
 	on: BuffTrigger;
 	if: BuffTrigger;

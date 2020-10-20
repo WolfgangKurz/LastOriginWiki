@@ -173,13 +173,15 @@ import SourceBadge from "@/components/SourceBadge.vue";
 import EquipCard from "./Equips/EquipCard.vue";
 import EquipModal from "./Equips/EquipModal.vue";
 
+import EquipData, { Equip } from "@/libs/DB/Equip";
+
 import { CurrentEvent, CurrentDate } from "@/libs/Const";
-import { EquipData } from "@/libs/DB";
 import { ArrayUnique, UpdateTitle } from "@/libs/Functions";
-import { Equip, Rarity, EquipType } from "@/libs/Types";
+import { Rarity } from "@/libs/Types";
 import EntitySource from "@/libs/EntitySource";
 
 import StoreModule, { EquipDisplayType } from "@/libs/Store";
+import { ITEM_TYPE } from '@/libs/Types/Enums';
 
 @Component({
 	components: {
@@ -341,8 +343,7 @@ export default class Equips extends Vue {
 		return Object.keys(group)
 			.map(x => group[x])
 			.map(x_ => {
-				const rarities = ["", "B", "A", "S", "SS"];
-				const last = [...x_].sort((a, b) => rarities.indexOf(b.rarity) - rarities.indexOf(a.rarity))[0];
+				const last = [...x_].sort((a, b) => b.rarity - a.rarity)[0];
 
 				const source = ((items) => {
 					const list: EntitySource[] = [];
@@ -432,9 +433,9 @@ export default class Equips extends Vue {
 					if (!this.Display.Type.Private) return false; // 전용 장비 필터가 꺼짐
 				} else { // 그 외 유형
 					const types = [];
-					if (this.Display.Type.Chip) types.push("Chip");
-					if (this.Display.Type.OS) types.push("OS");
-					if (this.Display.Type.Public) types.push("Item");
+					if (this.Display.Type.Chip) types.push(ITEM_TYPE.CHIP);
+					if (this.Display.Type.OS) types.push(ITEM_TYPE.SPCHIP);
+					if (this.Display.Type.Public) types.push(ITEM_TYPE.SUBEQ);
 					if (!types.includes(last.type)) return false;
 				}
 

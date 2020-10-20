@@ -3,13 +3,13 @@
 		<b-card :class="`text-left rarity-${unit.rarity}`">
 			<unit-face class="float-left mr-2" :id="id" size="48" type="mini" />
 			<div>
-				<b-badge variant="secondary" class="mr-1 bordered">{{unit.rarity}}</b-badge>
+				<b-badge variant="secondary" class="mr-1 bordered">{{ unit.rarity }}</b-badge>
 				<span class="unit-info">
 					<i class="unit-type" :data-type="unit.type" />
 					<i class="unit-role" :data-role="unit.role" />
 				</span>
 			</div>
-			<div class="float-left">{{unit.name}}</div>
+			<div class="float-left">{{ unit.name }}</div>
 		</b-card>
 	</div>
 </template>
@@ -22,7 +22,7 @@ import { Watch, Prop } from "vue-property-decorator";
 import UnitFace from "@/components/UnitFace.vue";
 import RarityBadge from "@/components/RarityBadge.vue";
 
-import { UnitData } from "@/libs/DB";
+import UnitData from "@/libs/DB/Unit";
 
 @Component({
 	components: {
