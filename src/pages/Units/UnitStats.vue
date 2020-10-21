@@ -16,7 +16,7 @@
 					</div>
 					<strong class="pt-1">
 						{{ unit.name }}
-						<b-badge class="ml-1" variant="secondary">{{ sUnit.Rarity }}</b-badge>
+						<b-badge class="ml-1" variant="secondary">{{ RarityName[sUnit.Rarity] }}</b-badge>
 					</strong>
 					<div>
 						<small>{{ unit.group }}・{{ UnitType }}・{{ UnitRole }}</small>
@@ -133,8 +133,8 @@
 						</b-input-group-prepend>
 						<b-input class="pl-5" v-model="sUnit.Level" number />
 						<b-input-group-append>
-							<b-dropdown :variant="`rarity-${sUnit.Rarity}`" class="border-left">
-								<template #button-content>{{ sUnit.Rarity }}</template>
+							<b-dropdown :variant="`rarity-${RarityName[sUnit.Rarity]}`" class="border-left">
+								<template #button-content>{{ RarityName[sUnit.Rarity] }}</template>
 								<b-dropdown-item
 									v-for="rarity in UnitRarities"
 									:key="`unit-status-rarity-${rarity.value}`"
@@ -291,19 +291,21 @@ export default class UnitStatus extends Vue {
 		);
 	}
 
-	private get UnitRarities () {
-		const rarities: Record<ACTOR_GRADE, string> = {
+	private get RarityName (): Record<ACTOR_GRADE, string> {
+		return {
 			[ACTOR_GRADE.B]: "B",
 			[ACTOR_GRADE.A]: "A",
 			[ACTOR_GRADE.S]: "S",
-			[ACTOR_GRADE.SS]: "S",
+			[ACTOR_GRADE.SS]: "SS",
 		};
+	}
 
+	private get UnitRarities () {
 		return [this.unit.rarity, ...this.unit.promotions || []]
 			.sort()
 			.map(x => ({
 				value: x,
-				text: rarities[x],
+				text: this.RarityName[x],
 			}));
 	}
 
@@ -388,7 +390,7 @@ export default class UnitStatus extends Vue {
 
 			(() => {
 				const final = this.FinalValue(sStat, key, false);
-				const added = final - sStat.base;
+				const added = Decimal.sub(final, sStat.base).toNumber();
 				output.base[key] = {
 					key,
 					final,
@@ -399,7 +401,7 @@ export default class UnitStatus extends Vue {
 			})();
 			(() => {
 				const final = this.FinalValue(sStat, key, true);
-				const added = final - sStat.base;
+				const added = Decimal.sub(final, sStat.base).toNumber();
 				output.final[key] = {
 					key,
 					final,
@@ -415,23 +417,28 @@ export default class UnitStatus extends Vue {
 
 	private FinalValue (stat: Stat, key: StatType, buffed: boolean) {
 		const buffType = !this.BaseStatList.includes(key);
-		let value = stat.base;
-		value += stat.pointed + stat.equiped;
-		value += stat.linked;
+		let value = new Decimal(stat.base)
+			.add(stat.pointed)
+			.add(stat.equiped)
+			.add(stat.linked);
 
 		if (buffed) {
-			value += value * stat.equipedRatio;
+			value = value.add(value.mul(stat.equipedRatio));
 			if (buffType) {
-				value += stat.fullLinkBonus;
-				value *= 1 + (stat.fullLinkBonusRatio / 100);
+				value = value.add(stat.fullLinkBonus);
+				value = value.mul(
+					Decimal.div(stat.fullLinkBonusRatio, 100).add(1),
+				);
 			}
 		}
 		if (!buffType) {
-			value += stat.fullLinkBonus;
-			value *= 1 + (stat.fullLinkBonusRatio / 100);
+			value = value.add(stat.fullLinkBonus);
+			value = value.mul(
+				Decimal.div(stat.fullLinkBonusRatio, 100).add(1),
+			);
 		}
 
-		return value;
+		return value.toNumber();
 	}
 
 	private NumValue (value: number, key: StatType) {
@@ -441,14 +448,14 @@ export default class UnitStatus extends Vue {
 		if (ratio && literal)
 			return value.toString();
 		else if (ratio && !literal)
-			return `${value > 0 ? "+" : ""}${value}`;
+			return `${value >= 0 ? "+" : ""}${value}`;
 		else if (!ratio && literal) {
 			return new Decimal(value)
-				.floor()
+				.toNumber()
 				.toString();
 		} else {
-			return (value > 0 ? "+" : "") + new Decimal(value)
-				.floor()
+			return (value >= 0 ? "+" : "") + new Decimal(value)
+				.toNumber()
 				.toString();
 		}
 	}
@@ -548,10 +555,10 @@ export default class UnitStatus extends Vue {
 			&[data-type="fire"] {
 				color: $red;
 			}
-			&[data-type="chill"] {
+			&[data-type="ice"] {
 				color: lighten($cyan, 20%);
 			}
-			&[data-type="thunder"] {
+			&[data-type="lightning"] {
 				color: $yellow;
 			}
 

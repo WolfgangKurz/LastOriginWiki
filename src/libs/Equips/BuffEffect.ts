@@ -189,7 +189,7 @@ interface BuffEffect_TurnSpeed {
 type BuffEffect_Resist = BuffEffect_Resist_Elem | BuffEffect_Resist_Debuff;
 interface BuffEffect_Resist_Elem {
 	resist: {
-		elem: "fire" | "chill" | "thunder";
+		elem: "fire" | "ice" | "lightning";
 		value: BuffEffectValue_Percent;
 	};
 }
@@ -240,7 +240,7 @@ interface BuffEffect_Damage_Physics {
 }
 interface BuffEffect_Damage_Elem {
 	damage: {
-		elem: "fire" | "chill" | "thunder";
+		elem: "fire" | "ice" | "lightning";
 		damage: BuffEffectValue;
 	};
 }
@@ -264,7 +264,7 @@ interface BuffEffect_DamageAdd_Physics {
 }
 interface BuffEffect_DamageAdd_Elem {
 	damage_add: {
-		elem: "fire" | "chill" | "thunder";
+		elem: "fire" | "ice" | "lightning";
 		damage: BuffEffectValue_Percent;
 	}
 }
@@ -308,7 +308,7 @@ interface BuffEffect_FixedDamage_Physics {
 /** 고정 속성 피해 */
 interface BuffEffect_FixedDamage_Elem {
 	fixed_damage: {
-		elem: "fire" | "chill" | "thunder";
+		elem: "fire" | "ice" | "lightning";
 		damage: BuffEffectValue_Literal;
 	};
 }
@@ -319,7 +319,7 @@ interface BuffEffect_AtkFixedDamage_Physics {
 /** 공격자 공격력 % 속성 피해 */
 interface BuffEffect_AtkFixedDamage_Elem {
 	fixed_damage: {
-		elem: "fire" | "chill" | "thunder";
+		elem: "fire" | "ice" | "lightning";
 		damage: BuffEffectValue_Percent;
 	};
 }

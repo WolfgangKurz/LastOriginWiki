@@ -58,7 +58,7 @@
 				<b-tbody>
 					<template v-for="rarity in RarityList">
 						<b-tr v-if="Filters.Rarity[rarity]" :key="`unit-table-body-${type}-${rarity}`">
-							<b-th :class="`rarity-${rarity}`">{{ rarity }}</b-th>
+							<b-th :class="`rarity-${RarityName[rarity]}`">{{ RarityName[rarity] }}</b-th>
 
 							<template v-for="role in RoleList">
 								<b-td v-if="Filters.Role[role]" :key="`unit-table-body-${type}-${rarity}-${role}`">
@@ -131,6 +131,15 @@ export default class UnitsTable extends Vue {
 		StoreModule.setUnitTableFilter(value);
 	}
 	// Vuex -----
+
+	private get RarityName () {
+		return {
+			[ACTOR_GRADE.B]: "B",
+			[ACTOR_GRADE.A]: "A",
+			[ACTOR_GRADE.S]: "S",
+			[ACTOR_GRADE.SS]: "SS",
+		};
+	}
 
 	private get RarityList (): (keyof UnitTableFilters["Rarity"])[] {
 		return [

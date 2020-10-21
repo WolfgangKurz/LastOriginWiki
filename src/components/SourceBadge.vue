@@ -72,8 +72,9 @@ export default class SourceBadge extends Vue {
 			if (this.Source.IsUninstalled)
 				return "미구현";
 			else if (this.Source.IsPrivateItem) {
-				const unit = UnitData[this.Source.PrivateId];
-				return `${unit.name}`;
+				const unit = UnitData.find(x => x.id === this.Source.PrivateId);
+				if (unit) return `${unit.name}`;
+				return `Unit${this.Source.PrivateId}`;
 			} else if (this.Source.IsLimited)
 				return "획득처 없음";
 			else if (this.Source.IsChallenge) {

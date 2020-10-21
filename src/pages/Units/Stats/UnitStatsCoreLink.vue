@@ -38,27 +38,27 @@
 								</b-list-group-item>
 								<b-list-group-item>
 									출격 비용 -{{unit.LinkBonus.Discount}}%
-									<b-radio class="float-right" value="discount" v-model="unit.FullLinkBonus" />
+									<b-radio class="float-right" value="Discount" v-model="unit.FullLinkBonus" />
 								</b-list-group-item>
 								<b-list-group-item>
 									스킬 위력 +{{unit.LinkBonus.SkillPower}}%
-									<b-radio class="float-right" value="skill" v-model="unit.FullLinkBonus" />
+									<b-radio class="float-right" value="Skill" v-model="unit.FullLinkBonus" />
 								</b-list-group-item>
 								<b-list-group-item>
-									{{unit.LinkBonus.Entry3.name}}
-									{{NumValue(unit.LinkBonus.Entry3.value, false, false)}}
-									{{unit.LinkBonus.Entry3.ratio ? "%" : ""}}
-									<b-radio class="float-right" :value="unit.LinkBonus.entry3" v-model="unit.FullLinkBonus" />
+									{{unit.LinkBonus.Bonus3.name}}
+									{{NumValue(unit.LinkBonus.Bonus3.value, false, false)}}
+									{{unit.LinkBonus.Bonus3.ratio ? "%" : ""}}
+									<b-radio class="float-right" :value="unit.LinkBonus.bonus3" v-model="unit.FullLinkBonus" />
 								</b-list-group-item>
 								<b-list-group-item>
-									{{unit.LinkBonus.Entry4.name}}
-									{{NumValue(unit.LinkBonus.Entry4.value, false, false)}}
-									{{unit.LinkBonus.Entry4.ratio ? "%" : ""}}
-									<b-radio class="float-right" :value="unit.LinkBonus.entry4" v-model="unit.FullLinkBonus" />
+									{{unit.LinkBonus.Bonus4.name}}
+									{{NumValue(unit.LinkBonus.Bonus4.value, false, false)}}
+									{{unit.LinkBonus.Bonus4.ratio ? "%" : ""}}
+									<b-radio class="float-right" :value="unit.LinkBonus.bonus4" v-model="unit.FullLinkBonus" />
 								</b-list-group-item>
 								<b-list-group-item>
 									행동력 +{{unit.LinkBonus.Speed}}
-									<b-radio class="float-right" value="spd" v-model="unit.FullLinkBonus" />
+									<b-radio class="float-right" value="SPD" v-model="unit.FullLinkBonus" />
 								</b-list-group-item>
 							</b-list-group>
 						</b-col>

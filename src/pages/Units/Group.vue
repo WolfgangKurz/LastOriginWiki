@@ -79,12 +79,8 @@ export default class UnitsGroup extends Vue {
 	}
 
 	private get GroupKeyTable () {
-		interface SSDict {
-			[key: string]: string;
-		}
-
-		const g = _.groupBy(UnitData, x => x.group);
-		const r: SSDict = {};
+		const g = _.groupBy(UnitData, x => this.Merge ? x.shortgroup : x.group);
+		const r: Record<string, string> = {};
 		for (const k in g)
 			r[k] = g[k][0].groupkey;
 
@@ -92,10 +88,6 @@ export default class UnitsGroup extends Vue {
 	}
 
 	private get GroupList () {
-		interface SUDict {
-			[key: string]: Unit[];
-		}
-
 		let g: _.Dictionary<Unit[]>;
 		const list = _(UnitData)
 			.filter(x => x.name.includes(this.SearchText));
@@ -105,7 +97,7 @@ export default class UnitsGroup extends Vue {
 		else
 			g = list.groupBy(x => x.group).toJSON();
 
-		const r: SUDict = {};
+		const r: Record<string, Unit[]> = {};
 		Object.keys(g)
 			.sort()
 			.forEach(k => (r[k] = g[k]));

@@ -12,7 +12,7 @@ import { UnitStat, UnitPoint, Stat, StatPointValue, StatType, RatioStats } from 
 import { BuffEffect, BUFFEFFECT_TYPE } from "@/libs/Equips/BuffEffect";
 
 import { ACTOR_CLASS, ACTOR_GRADE, BUFF_ATTR_TYPE, ITEM_TYPE, ROLE_TYPE } from "@/libs/Types/Enums";
-import UnitData, { FullLinkBonusType } from "@/libs/DB/Unit";
+import UnitData, { FullLinkBonusType, Unit as Unit_ } from "@/libs/DB/Unit";
 import UnitStatsData from "@/libs/DB/UnitStats";
 import EquipData from "@/libs/DB/Equip";
 
@@ -41,7 +41,7 @@ export class Unit extends Vue {
 
 	// #region Getters
 	public get Unit () {
-		return UnitData[this.id];
+		return UnitData.find(x => x.id === this.id) || Unit_.Empty;
 	}
 
 	public get Id () {
@@ -429,20 +429,20 @@ export class Unit extends Vue {
 								break;
 							case "resist.ice":
 								if ("resist" in stat) {
-									if ("elem" in stat.resist && stat.resist.elem === "chill")
+									if ("elem" in stat.resist && stat.resist.elem === "ice")
 										calc(stat.resist.value.base);
 								}
 								break;
 							case "resist.lightning":
 								if ("resist" in stat) {
-									if ("elem" in stat.resist && stat.resist.elem === "thunder")
+									if ("elem" in stat.resist && stat.resist.elem === "lightning")
 										calc(stat.resist.value.base);
 								}
 								break;
 							case "Resist":
 								if ("resist" in stat) {
 									if ("type" in stat.resist && stat.resist.type === "debuff")
-										independentValues.push(calc(stat.chance || "100%"));
+										independentValues.push(calc(stat.resist.value.base));
 								}
 								break;
 							case "off":
@@ -549,7 +549,7 @@ export class Unit extends Vue {
 
 	public SetUnit (id: number) {
 		this.id = id;
-		this.rarity = (this.Unit && this.Unit.rarity) || "B";
+		this.rarity = (this.Unit && this.Unit.rarity) || ACTOR_GRADE.B;
 		this.stats = UnitPoint.Empty; // 투자 포인트 초기화
 		this.equips = new Array(4)
 			.fill(0)

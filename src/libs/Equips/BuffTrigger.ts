@@ -74,7 +74,7 @@ interface BuffTrigger_After {
 
 /** 본인 회피 제외 */
 type BuffTrigger_Damaged = "damaged" | {
-	damaged: "fire" | "chill" | "thunder";
+	damaged: "fire" | "ice" | "lightning";
 };
 /** 대상 회피 제외 */
 type BuffTrigger_AttackSuccess = "attack_success";

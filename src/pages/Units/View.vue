@@ -143,33 +143,38 @@
 							<b-table-simple bordered fixed table-class="text-center table-unit-modal">
 								<b-thead head-variant="dark">
 									<b-tr>
-										<b-th>획득처</b-th>
+										<b-th v-b-toggle.unit-drop-header>
+											획득처
+											<b-icon-arrows-expand class="ml-2" />
+										</b-th>
 									</b-tr>
 								</b-thead>
 								<b-tbody>
 									<b-tr>
-										<b-td>
-											<template v-if="unit.source.length === 0">
-												<b-badge v-if="unit.craftable" variant="dark">제조 가능</b-badge>
-												<span v-else class="text-secondary">획득처 정보 없음 (제조 불가)</span>
-											</template>
-											<template v-else>
-												<b-badge v-if="unit.craftable" variant="dark">
-													<b-icon-hammer class="mr-1" />
-													제조 가능
-												</b-badge>
+										<b-td class="p-0">
+											<b-collapse id="unit-drop-header" class="p-3">
+												<template v-if="unit.source.length === 0">
+													<b-badge v-if="unit.craftable" variant="dark">제조 가능</b-badge>
+													<span v-else class="text-secondary">획득처 정보 없음 (제조 불가)</span>
+												</template>
+												<template v-else>
+													<b-badge v-if="unit.craftable" variant="dark">
+														<b-icon-hammer class="mr-1" />
+														제조 가능
+													</b-badge>
 
-												<div v-for="(area, aindex) in unit.source" :key="`unit-view-source-${aindex}`">
-													<hr v-if="unit.craftable || aindex > 0" class="my-1" />
-													<source-badge
-														v-for="(source, sindex) in area"
-														:key="`unit-view-drop-${aindex}-${sindex}-${source}`"
-														:source="source"
-														detail
-														linked
-													/>
-												</div>
-											</template>
+													<div v-for="(area, aindex) in unit.source" :key="`unit-view-source-${aindex}`">
+														<hr v-if="unit.craftable || aindex > 0" class="my-1" />
+														<source-badge
+															v-for="(source, sindex) in area"
+															:key="`unit-view-drop-${aindex}-${sindex}-${source}`"
+															:source="source"
+															detail
+															linked
+														/>
+													</div>
+												</template>
+											</b-collapse>
 										</b-td>
 									</b-tr>
 								</b-tbody>

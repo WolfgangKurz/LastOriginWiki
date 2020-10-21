@@ -3,13 +3,15 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
+import { ITEM_TYPE } from "@/libs/Types/Enums";
+
 @Component({})
 export default class EquipTypeIcon extends Vue {
 	@Prop({
-		type: String,
-		default: "chip",
+		type: Number,
+		default: ITEM_TYPE.CHIP,
 	})
-	private type!: "chip" | "os" | "public" | "Chip" | "OS" | "Public";
+	private type!: ITEM_TYPE;
 
 	@Prop({
 		type: Boolean,
@@ -36,15 +38,11 @@ export default class EquipTypeIcon extends Vue {
 	background-size: ($size * 3) ($size * 2);
 	vertical-align: middle;
 
-	$types: Chip, OS, Public;
+	$types: 0, 1, 2;
 	@each $type in $types {
 		$idx: index($types, $type) - 1;
-		$lType: to-lower-case($type);
 
 		&[data-type="#{$type}"] {
-			background-position-x: -($idx * $size);
-		}
-		&[data-type="#{$lType}"] {
 			background-position-x: -($idx * $size);
 		}
 	}
