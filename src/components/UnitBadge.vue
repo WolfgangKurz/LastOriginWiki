@@ -114,9 +114,9 @@ export default class UnitBadge extends Vue {
 		>
 			<i />
 			{
-				this.Type && this.Role
+				this.Type < ACTOR_CLASS.__MAX__ && this.Role < ROLE_TYPE.__MAX__
 					? `${this.TypeName} ${this.RoleName}`
-					: this.Type
+					: this.Type < ACTOR_CLASS.__MAX__
 						? `${this.TypeName}형`
 						: this.RoleName
 			}

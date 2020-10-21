@@ -67,7 +67,7 @@ export default class Home extends Vue {
 	}
 
 	private mounted () {
-		UpdateTitle([]);
+		UpdateTitle();
 	}
 }
 </script>

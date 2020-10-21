@@ -11,6 +11,7 @@ import UnitView from "@/pages/Units/View.vue";
 import Equips from "@/pages/Equips.vue";
 
 import Facilities from "@/pages/Facilities.vue";
+import FacilityView from "@/pages/Facilities/FacilityView.vue";
 
 import Worlds from "@/pages/Worlds.vue";
 import WorldAreaView from "@/pages/Worlds/WorldAreaView.vue";
@@ -73,6 +74,10 @@ const Router = new VueRouter({
 		{
 			path: "/facilities",
 			component: Facilities,
+		},
+		{
+			path: "/facilities/:key",
+			component: FacilityView,
 		},
 
 		{

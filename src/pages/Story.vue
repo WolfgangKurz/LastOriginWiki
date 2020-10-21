@@ -154,7 +154,7 @@ export default class Story extends Vue {
 
 	private mounted () {
 		this.checkParams();
-		UpdateTitle(["이야기", this.Name, this.Area]);
+		UpdateTitle("이야기", this.Name, this.Area);
 	}
 }
 </script>

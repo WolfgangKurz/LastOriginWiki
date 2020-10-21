@@ -173,6 +173,7 @@ import SourceBadge from "@/components/SourceBadge.vue";
 import EquipCard from "./Equips/EquipCard.vue";
 import EquipModal from "./Equips/EquipModal.vue";
 
+import { ITEM_TYPE } from "@/libs/Types/Enums";
 import EquipData, { Equip } from "@/libs/DB/Equip";
 
 import { CurrentEvent, CurrentDate } from "@/libs/Const";
@@ -181,7 +182,6 @@ import { Rarity } from "@/libs/Types";
 import EntitySource from "@/libs/EntitySource";
 
 import StoreModule, { EquipDisplayType } from "@/libs/Store";
-import { ITEM_TYPE } from '@/libs/Types/Enums';
 
 @Component({
 	components: {
@@ -226,7 +226,7 @@ export default class Equips extends Vue {
 
 		if ("id" in params) {
 			this.modalEquip(params.id);
-			UpdateTitle(["장비정보", `${this.selectedEquip ? this.selectedEquip.name : "???"}`]);
+			UpdateTitle("장비정보", `${this.selectedEquip ? this.selectedEquip.name : "???"}`);
 		} else {
 			this.equipModalDisplay = false;
 			UpdateTitle("장비정보");

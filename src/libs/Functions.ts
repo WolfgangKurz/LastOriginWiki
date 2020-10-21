@@ -40,11 +40,8 @@ export function ArrayUnique<T, K> (source: T[], comparer?: (entity: T) => K): T[
 	}
 }
 
-export function UpdateTitle (title: string | string[]) {
-	if (typeof title === "string")
-		document.title = [title, "멸망 전의 전술 교본"].join(" - ");
-	else
-		document.title = [...title, "멸망 전의 전술 교본"].join(" - ");
+export function UpdateTitle (...title: string[]) {
+	document.title = [...title, "멸망 전의 전술 교본"].join(" - ");
 }
 
 export function GetRequireResource (rarity: ACTOR_GRADE, type: ACTOR_CLASS, role: ROLE_TYPE, body: ACTOR_BODY_TYPE, discount: boolean = false) {

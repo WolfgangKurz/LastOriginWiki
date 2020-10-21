@@ -114,7 +114,7 @@ export default class WorldArea extends Vue {
 
 	private mounted () {
 		this.checkParams();
-		UpdateTitle(["세계정보", this.Name]);
+		UpdateTitle("세계정보", this.Name);
 	}
 }
 </script>

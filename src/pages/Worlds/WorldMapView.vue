@@ -303,7 +303,7 @@ export default class WorldMapView extends Vue {
 
 	private mounted () {
 		this.checkParams();
-		UpdateTitle(["세계정보", this.WorldName, `제 ${this.area}구역`]);
+		UpdateTitle("세계정보", this.WorldName, `제 ${this.area}구역`);
 	}
 }
 </script>
