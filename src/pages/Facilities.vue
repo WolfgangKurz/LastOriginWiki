@@ -1,20 +1,10 @@
 <template>
 	<div class="facilities">
-		<div class="text-center mb-3">
-			<b-alert variant="warning" show>
-				시설 정보가 많이 부족합니다.
-				오류가 있거나 존재하지 않는 데이터의 제보를 받습니다.<br/>
-				레이아웃 개선점도 환영합니다.
-			</b-alert>
-		</div>
-
-		<facility-card
-			v-for="(fac, key) in Facilities"
-			:key="`facility-${key}`"
-			class="mb-4"
-			:id="key"
-			:facility="fac"
-		/>
+		<b-row cols="5" cols-md="4" cols-sm="3">
+			<b-col v-for="[fac, key] in Facilities" :key="`facility-${key}`">
+				<facility-card class="mb-4" :id="key" :facility="fac" @click="GoTo(`/facilities/${key}`)" />
+			</b-col>
+		</b-row>
 	</div>
 </template>
 
@@ -27,7 +17,7 @@ import { Route } from "vue-router";
 import StoreModule, { UnitDisplayType } from "@/libs/Store";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
-import FacilitiesDB from "@/libs/DB/Facility";
+import FacilityData, { FacilityEntity } from "@/libs/DB/Facility";
 
 import FacilityCard from "./Facilities/FacilityCard.vue";
 import { UpdateTitle } from "@/libs/Functions";
@@ -42,12 +32,18 @@ export default class Facilities extends Vue {
 	// Vuex -----
 
 	private get Facilities () {
-		return FacilitiesDB;
+		return Object.keys(FacilityData)
+			.map(key => [FacilityData[key], key] as [FacilityEntity, string])
+			.sort((a, b) => (a[1] < b[1] ? -1 : a[1] > b[1] ? 1 : 0));
 	}
 
 	public FacilityImage (id: string): string {
 		const ext = ImageExtension();
 		return `${AssetsRoot}/${ext}/facility/${id}_5.${ext}`;
+	}
+
+	private GoTo (path: string) {
+		this.$router.push({ path });
 	}
 
 	@Watch("$route")
@@ -57,6 +53,9 @@ export default class Facilities extends Vue {
 
 	private checkParams () {
 		const params = this.$route.params;
+
+		if ("key" in params)
+			this.$router.replace("/facilities/" + params.key);
 	}
 
 	private mounted () {

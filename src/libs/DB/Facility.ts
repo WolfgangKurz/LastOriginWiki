@@ -43,6 +43,7 @@ export interface FacilityLevel {
 }
 export interface FacilityEntity {
 	name: string;
+	image: string;
 	size: number;
 	duration: number;
 	list: FacilityLevel[];

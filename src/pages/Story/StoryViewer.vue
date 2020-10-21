@@ -295,9 +295,9 @@ export default class StoryViewer extends Vue {
 		this.checkParams();
 
 		if (!this.Story)
-			UpdateTitle(["이야기", this.Name, this.Area]);
+			UpdateTitle("이야기", this.Name, this.Area);
 		else
-			UpdateTitle(["이야기", this.Name, this.Area, `[${this.Story.map}-${this.Story.loc}]`, this.Story.title]);
+			UpdateTitle("이야기", this.Name, this.Area, `[${this.Story.map}-${this.Story.loc}]`, this.Story.title);
 	}
 
 	private render () {

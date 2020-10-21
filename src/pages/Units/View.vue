@@ -57,7 +57,7 @@
 							</b-col>
 							<b-col class="bg-dark text-white">등급</b-col>
 							<b-col>
-								<rarity-badge :rarity="unit.rarity" size="medium">{{ unit.rarity }} 등급</rarity-badge>
+								<rarity-badge :rarity="unit.rarity" size="medium">{{ RarityName[unit.rarity] }} 등급</rarity-badge>
 							</b-col>
 							<b-col class="bg-dark text-white">승급</b-col>
 							<b-col>
@@ -441,12 +441,21 @@ export default class UnitView extends Vue {
 		const id = params.id;
 		if (/^[0-9]+$/.test(id)) {
 			this.unitId = parseInt(params.id, 10);
-			UpdateTitle(["전투원정보", `${this.unit.name}`]);
+			UpdateTitle("전투원정보", `${this.unit.name}`);
 		}
 	}
 
 	private get unit () {
-		return UnitData[this.unitId] || Unit.Empty;
+		return UnitData.find(x => x.id === this.unitId) || Unit.Empty;
+	}
+
+	private get RarityName () {
+		return {
+			[ACTOR_GRADE.B]: "B",
+			[ACTOR_GRADE.A]: "A",
+			[ACTOR_GRADE.S]: "S",
+			[ACTOR_GRADE.SS]: "SS",
+		};
 	}
 
 	private get LimitedEquipURL () {
@@ -549,15 +558,22 @@ export default class UnitView extends Vue {
 	}
 
 	private get CostRarityList () {
+		const rarityTable: Record<string, ACTOR_GRADE> = {
+			B: ACTOR_GRADE.B,
+			A: ACTOR_GRADE.A,
+			S: ACTOR_GRADE.S,
+			SS: ACTOR_GRADE.SS,
+		};
+
 		const list = [{
 			value: this.unit.rarity,
-			text: `${this.unit.rarity} 등급`,
+			text: `${this.RarityName[this.unit.rarity]} 등급`,
 		}];
 
 		if (this.unit.promotions) {
 			list.push(...this.unit.promotions.map(x => (
 				{
-					value: x,
+					value: rarityTable[x],
 					text: `${x} 승급`,
 				}),
 			));
@@ -700,7 +716,7 @@ export default class UnitView extends Vue {
 	}
 
 	private BonusSelectable (bonus: string) {
-		return ["buff", "range"].includes(bonus);
+		return ["Buff", "Range"].includes(bonus);
 	}
 
 	private Reset () {

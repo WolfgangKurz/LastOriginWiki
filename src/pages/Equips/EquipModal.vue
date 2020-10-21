@@ -24,7 +24,7 @@
 						</b-col>
 						<b-col class="bg-dark text-white">장비 등급</b-col>
 						<b-col>
-							<template v-if="RarityList.length === 1">{{ rarity }}</template>
+							<template v-if="RarityList.length === 1">{{ RarityDisplay[rarity] }}</template>
 							<b-form-select v-else v-model="rarity" size="sm" :options="RarityList" />
 						</b-col>
 						<b-col class="bg-dark text-white">장착 제한</b-col>
@@ -141,7 +141,7 @@ import ElemIcon from "@/components/ElemIcon.vue";
 import EquipIcon from "@/components/EquipIcon.vue";
 import EquipLevel from "./EquipLevel.vue";
 
-import { ACTOR_GRADE } from "@/libs/Types/Enums";
+import { ACTOR_GRADE, ITEM_TYPE } from "@/libs/Types/Enums";
 import EquipData, { Equip } from "@/libs/DB/Equip";
 import UnitData from "@/libs/DB/Unit";
 
@@ -197,7 +197,10 @@ export default class EquipModal extends Vue {
 		if (!this.equip) return [];
 		return EquipData
 			.filter(x => x.key === this.equip.key && x.type === this.equip.type)
-			.map(x => x.rarity);
+			.map(x => ({
+				value: x.rarity,
+				text: this.RarityDisplay[x.rarity],
+			}));
 	}
 
 	private get Sources () {
@@ -213,14 +216,23 @@ export default class EquipModal extends Vue {
 	private get EquipType () {
 		if (!this.equip) return "???";
 
-		const typeTable: Record<string, string> = {
-			Chip: "칩",
-			OS: "OS",
-			Item: "보조장비",
-		};
+		const typeTable = {
+			[ITEM_TYPE.CHIP]: "칩",
+			[ITEM_TYPE.SPCHIP]: "OS",
+			[ITEM_TYPE.SUBEQ]: "보조장비",
+		} as Record<ITEM_TYPE, string>;
 
 		const type = this.equip.type;
 		return typeTable[type] || "???";
+	}
+
+	private get RarityDisplay () {
+		return {
+			[ACTOR_GRADE.B]: "B",
+			[ACTOR_GRADE.A]: "A",
+			[ACTOR_GRADE.S]: "S",
+			[ACTOR_GRADE.SS]: "SS",
+		};
 	}
 
 	/** 1 레벨 강화당 상승하는 필요치 배율 */
