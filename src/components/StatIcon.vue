@@ -18,7 +18,7 @@ export default class StatIcon extends Vue {
 	private inline!: boolean;
 
 	private render () {
-		const list = ["atk", "def", "hp", "acc", "eva", "crit", "spd"];
+		const list = ["ATK", "DEF", "HP", "ACC", "EV", "Cri", "SPD"];
 		if (!list.includes(this.stat)) return <i />;
 
 		return <div class="stat-icon" data-stat={this.stat} data-inline={this.inline ? 1 : 0} />;
@@ -42,7 +42,7 @@ export default class StatIcon extends Vue {
 	background-size: ($size * 7) $size;
 	background-position: $size 0;
 
-	$stat-list: atk, def, hp, acc, eva, crit, spd;
+	$stat-list: ATK, DEF, HP, ACC, EV, Cri, SPD;
 	@each $stat in $stat-list {
 		&[data-stat="#{$stat}"] {
 			background-position: (-$size * (index($stat-list, $stat) - 1)) 0;

@@ -2,15 +2,24 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
+
 import { Rarity } from "@/libs/Types";
+import { ACTOR_GRADE } from "@/libs/Types/Enums";
+
+const rarityTable: Record<ACTOR_GRADE, string> = {
+	[ACTOR_GRADE.B]: "B",
+	[ACTOR_GRADE.A]: "A",
+	[ACTOR_GRADE.S]: "S",
+	[ACTOR_GRADE.SS]: "SS",
+};
 
 @Component({})
 export default class RarityBadge extends Vue {
 	@Prop({
-		type: String,
+		type: [String, Number],
 		required: true,
 	})
-	private rarity!: Rarity;
+	private rarity!: Rarity | ACTOR_GRADE;
 
 	@Prop({
 		type: String,
@@ -25,8 +34,12 @@ export default class RarityBadge extends Vue {
 	private border!: boolean;
 
 	private render () {
-		return <b-badge variant="light" class={["rarity-badge", this.border ? "bordered" : ""]} data-rarity={this.rarity} data-size={this.size}>
-			{this.$slots.default || this.rarity.toUpperCase()}
+		const rarity = typeof this.rarity === "string"
+			? this.rarity
+			: rarityTable[this.rarity];
+
+		return <b-badge variant="light" class={["rarity-badge", this.border ? "bordered" : ""]} data-rarity={rarity} data-size={this.size}>
+			{this.$slots.default || rarity}
 		</b-badge>;
 	}
 }

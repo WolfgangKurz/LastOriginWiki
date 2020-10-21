@@ -168,9 +168,9 @@ export default class SkillDescription extends Vue {
 				else if (x === "#fire")
 					ret.icons.push(<elem-icon inline elem="fire" />);
 				else if (x === "#chill")
-					ret.icons.push(<elem-icon inline elem="chill" />);
+					ret.icons.push(<elem-icon inline elem="ice" />);
 				else if (x === "#thunder")
-					ret.icons.push(<elem-icon inline elem="thunder" />);
+					ret.icons.push(<elem-icon inline elem="lightning" />);
 				else if (x[0] === "$") {
 					const uid = uniqueId("tooltip-target-");
 					const p = x.split(";");

@@ -36,7 +36,7 @@
 					v-if="unit"
 					:target="unit.Id"
 					:display.sync="EquipSelectDisplay"
-					:type="EquipSelectDisplay ? unit.Equips[EquipSelecting - 1].Type : ''"
+					:type="EquipSelectDisplay ? unit.Equips[EquipSelecting - 1].Type : 0"
 					:equip="EquipSelectDisplay ? FindEquip(unit.Equips[EquipSelecting - 1].FullKey) : EmptyEquip"
 					:level="EquipSelectDisplay ? unit.Equips[EquipSelecting - 1].Level : 10"
 					@select="EquipSelect"
@@ -114,7 +114,7 @@ export default class UnitStatsEquip extends Vue {
 			index,
 			{
 				FullKey: equip.fullKey,
-				Type: equip.type !== ITEM_TYPE.SUBEQ ? equip.type : (equip.limit ? "Private" : "Public"),
+				Type: equip.type,
 				Key: equip.key,
 				Rarity: equip.rarity,
 				// Name: equip.name,

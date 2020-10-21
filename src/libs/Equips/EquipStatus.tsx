@@ -95,6 +95,10 @@ function integer (value: BuffEffectValue, level: number = 0) {
 		.toNumber();
 	return val + p;
 }
+function percent (value: BuffEffectValue, ifTrue: string = "", ifFalse: string = "") {
+	const p = typeof value.base === "string" && value.base.endsWith("%") ? "%" : "";
+	return p ? ifTrue : ifFalse;
+}
 
 function convertBuff (name: string) {
 	if (name.startsWith("Effect_BUFF_Flood_N_")) return "침수";
@@ -154,12 +158,12 @@ function getTriggerText (trigger: BuffTrigger) {
 						<elem-icon elem={trigger.damaged} class="mr-1 mb-0" />,
 						"화염 속성 피격 시",
 					];
-				case "chill":
+				case "ice":
 					return [
 						<elem-icon elem={trigger.damaged} class="mr-1 mb-0" />,
 						"냉기 속성 피격 시",
 					];
-				case "thunder":
+				case "lightning":
 					return [
 						<elem-icon elem={trigger.damaged} class="mr-1 mb-0" />,
 						"전기 속성 피격 시",
@@ -382,13 +386,13 @@ function getBuffEffectTypeText (type: BUFFEFFECT_TYPE, target: BUFF_ATTR_TYPE) {
 		case BUFFEFFECT_TYPE.STAT_RESICE_VALUE: // 16
 		case BUFFEFFECT_TYPE.STAT_RESICE_RATIO: // 17
 			return [
-				<elem-icon elem="chill" class="mr-1" />,
+				<elem-icon elem="ice" class="mr-1" />,
 				"냉기 저항" + p,
 			];
 		case BUFFEFFECT_TYPE.STAT_RESLIGHTNING_VALUE: // 18
 		case BUFFEFFECT_TYPE.STAT_RESLIGHTNING_RATIO: // 19
 			return [
-				<elem-icon elem="thunder" class="mr-1" />,
+				<elem-icon elem="lightning" class="mr-1" />,
 				"전기 저항" + p,
 			];
 		case BUFFEFFECT_TYPE.STAGE_AP_VALUE: // 20
@@ -597,12 +601,12 @@ function getBuffText (stat: BuffEffect) {
 						<elem-icon elem={stat.resist.elem} class="mr-1" />,
 						"화염 저항 " + positive(stat.resist.value),
 					];
-				case "chill":
+				case "ice":
 					return [
 						<elem-icon elem={stat.resist.elem} class="mr-1" />,
 						"냉기 저항 " + positive(stat.resist.value),
 					];
-				case "thunder":
+				case "lightning":
 					return [
 						<elem-icon elem={stat.resist.elem} class="mr-1" />,
 						"전기 저항 " + positive(stat.resist.value),
@@ -636,12 +640,12 @@ function getBuffText (stat: BuffEffect) {
 						<elem-icon elem={stat.damage.elem} class="mr-1" />,
 						`추가 화염 피해 ${literal(stat.damage.damage)}`,
 					];
-				case "chill":
+				case "ice":
 					return [
 						<elem-icon elem={stat.damage.elem} class="mr-1" />,
 						`추가 냉기 피해 ${literal(stat.damage.damage)}`,
 					];
-				case "thunder":
+				case "lightning":
 					return [
 						<elem-icon elem={stat.damage.elem} class="mr-1" />,
 						`추가 번개 피해 ${literal(stat.damage.damage)}`,
@@ -669,12 +673,12 @@ function getBuffText (stat: BuffEffect) {
 						<elem-icon elem={stat.damage_add.elem} class="mr-1" />,
 						`화염 속성 피해량 ${positive(stat.damage_add.damage)}`,
 					];
-				case "chill":
+				case "ice":
 					return [
 						<elem-icon elem={stat.damage_add.elem} class="mr-1" />,
 						`냉기 속성 피해량 ${positive(stat.damage_add.damage)}`,
 					];
-				case "thunder":
+				case "lightning":
 					return [
 						<elem-icon elem={stat.damage_add.elem} class="mr-1" />,
 						`전기 속성 피해량 ${positive(stat.damage_add.damage)}`,
@@ -713,25 +717,25 @@ function getBuffText (stat: BuffEffect) {
 			switch (stat.fixed_damage.elem) {
 				case "fire":
 					return [
-						`공격력 ${literal(stat.fixed_damage.damage)} 지속`,
+						`${percent(stat.fixed_damage.damage, "공격력 ", "")}${literal(stat.fixed_damage.damage)} 지속`,
 						<elem-icon elem={stat.fixed_damage.elem} class="mr-1" />,
 						"화염 피해",
 					];
-				case "chill":
+				case "ice":
 					return [
-						`공격력 ${literal(stat.fixed_damage.damage)} 지속`,
+						`${percent(stat.fixed_damage.damage, "공격력 ", "")}${literal(stat.fixed_damage.damage)} 지속`,
 						<elem-icon elem={stat.fixed_damage.elem} class="mr-1" />,
 						"냉기 피해",
 					];
-				case "thunder":
+				case "lightning":
 					return [
-						`공격력 ${literal(stat.fixed_damage.damage)} 지속`,
+						`${percent(stat.fixed_damage.damage, "공격력 ", "")}${literal(stat.fixed_damage.damage)} 지속`,
 						<elem-icon elem={stat.fixed_damage.elem} class="mr-1" />,
 						"전기 피해",
 					];
 			}
 		} else
-			return `공격력 ${literal(stat.fixed_damage)} 지속 고정 피해`;
+			return `${percent(stat.fixed_damage, "공격력 ", "")}${literal(stat.fixed_damage)} 지속 고정 피해`;
 	} else if ("provoke" in stat)
 		return "도발";
 	else if ("attack_support" in stat)

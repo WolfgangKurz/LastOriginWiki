@@ -12,7 +12,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, PropSync } from "vue-property-decorator";
 
-import { Rarity } from "@/libs/Types";
+import { ITEM_TYPE } from "@/libs/Types/Enums";
 
 import EquipIcon from "@/components/EquipIcon.vue";
 import EquipLevel from "@/pages/Equips/EquipLevel.vue";
@@ -31,10 +31,10 @@ export default class ItemSlot extends Vue {
 	private fullKey!: string;
 
 	@Prop({
-		type: String,
-		default: "Chip",
+		type: Number,
+		default: ITEM_TYPE.CHIP,
 	})
-	private type!: string;
+	private type!: ITEM_TYPE;
 
 	@Prop({
 		type: Number,
@@ -82,7 +82,7 @@ export default class ItemSlot extends Vue {
 		z-index: 0;
 	}
 
-	$list: Chip, OS, Public;
+	$list: 0, 1, 2;
 	@each $type in $list {
 		&[data-type="#{$type}"]::before {
 			background-image: url($assetsRoot+"/simulation/Item#{$type}.png");

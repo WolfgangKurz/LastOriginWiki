@@ -20,9 +20,13 @@
 						<b-col class="bg-dark text-white">장비 유형</b-col>
 						<b-col>
 							<b-badge v-if="isPrivate" variant="primary">전용장비</b-badge>
-							<template v-else>{{ EquipType }}</template>
+							<div>
+								<b-badge variant="success">{{ EquipType }}</b-badge>
+							</div>
 						</b-col>
-						<b-col class="bg-dark text-white">장비 등급</b-col>
+						<div>
+							<b-col class="bg-dark text-white">장비 등급</b-col>
+						</div>
 						<b-col>
 							<template v-if="RarityList.length === 1">{{ RarityDisplay[rarity] }}</template>
 							<b-form-select v-else v-model="rarity" size="sm" :options="RarityList" />
@@ -47,29 +51,38 @@
 		<b-table-simple bordered fixed table-class="text-center">
 			<b-tbody>
 				<b-tr>
-					<b-th variant="dark">획득처</b-th>
+					<b-td class="break-keep">{{ target.desc }}</b-td>
+				</b-tr>
+
+				<b-tr>
+					<b-th variant="dark" v-b-toggle.equip-drop-header>
+						획득처
+						<b-icon-arrows-expand class="ml-2" />
+					</b-th>
 				</b-tr>
 				<b-tr>
-					<b-td>
-						<b-badge v-if="target.craftable" variant="dark">
-							<b-icon-hammer class="mr-1" />
-							제조 가능
-						</b-badge>
+					<b-td class="p-0">
+						<b-collapse id="equip-drop-header" class="p-3">
+							<b-badge v-if="target.craftable" variant="dark">
+								<b-icon-hammer class="mr-1" />
+								제조 가능
+							</b-badge>
 
-						<div v-for="(area, aindex) in Sources" :key="`equip-modal-source-${aindex}`">
-							<hr v-if="(target && target.craftable) || aindex > 0" class="my-1" />
-							<source-badge
-								v-for="(source, sindex) in area"
-								:key="`equip-modal-drop-${aindex}-${sindex}-${source}`"
-								:source="source"
-								detail
-								linked
-							/>
-						</div>
-						<template v-if="Sources.length === 0">
-							<b-badge v-if="target.craftable" variant="dark">제조 가능</b-badge>
-							<span v-else class="text-secondary">획득처 정보 없음 (제조 불가)</span>
-						</template>
+							<div v-for="(area, aindex) in Sources" :key="`equip-modal-source-${aindex}`">
+								<hr v-if="(target && target.craftable) || aindex > 0" class="my-1" />
+								<source-badge
+									v-for="(source, sindex) in area"
+									:key="`equip-modal-drop-${aindex}-${sindex}-${source}`"
+									:source="source"
+									detail
+									linked
+								/>
+							</div>
+							<template v-if="Sources.length === 0">
+								<b-badge v-if="target.craftable" variant="dark">제조 가능</b-badge>
+								<span v-else class="text-secondary">획득처 정보 없음 (제조 불가)</span>
+							</template>
+						</b-collapse>
 					</b-td>
 				</b-tr>
 				<b-tr>
@@ -279,7 +292,9 @@ export default class EquipModal extends Vue {
 	}
 
 	private UnitName (idx: number) {
-		return UnitData[idx].name;
+		const char = UnitData.find(x => x.id === idx);
+		if (char) return char.name;
+		return `Unit${idx}`;
 	}
 }
 </script>
