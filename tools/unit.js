@@ -52,6 +52,12 @@ function process (auth) {
 			치명타: "Cri",
 			회피: "EV",
 		};
+		const rarityTable = {
+			B: 2,
+			A: 3,
+			S: 4,
+			SS: 5,
+		};
 
 		const ret = [];
 		const rows = res.data.values;
@@ -107,7 +113,7 @@ function process (auth) {
 						: source.split("\n").map(d => d.split(",")),
 				};
 				if (pro)
-					x.promotions = pro.split(",");
+					x.promotions = pro.split(",").map(y => rarityTable[y]);
 
 				ret.push(x);
 			});
@@ -173,43 +179,6 @@ function process (auth) {
 
 			fs.writeFileSync(
 				path.resolve(__dirname, "..", "src", "json", "unit-stats.json"),
-				JSON.stringify(ret, null, 2),
-			);
-		} else
-			console.log("No data found.");
-	});
-
-	sheets.spreadsheets.values.get({
-		spreadsheetId: "1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4",
-		range: "Reference!D4:AM39",
-	}, (err, res) => {
-		if (err) return console.log("The API returned an error: " + err);
-
-		const ret = {};
-		const rows = res.data.values;
-		if (rows.length) {
-			rows.map((row, idx) => {
-				row = row.map(x => parseInt(x, 10));
-				const role = ["attacker", "defender", "supporter"][idx % 3];
-				const type = ["light", "air", "heavy"][Math.floor(idx / 3) % 3];
-				const rarity = ["B", "A", "S", "SS"][Math.floor(idx / 9)];
-
-				ret[`${rarity}_${type}_${role}`] = {
-					bio: {
-						components: row.slice(0, 6),
-						nutritions: row.slice(6, 12),
-						power: row.slice(12, 18),
-					},
-					ags: {
-						components: row.slice(18, 24),
-						nutritions: row.slice(24, 30),
-						power: row.slice(30, 36),
-					},
-				};
-			});
-
-			fs.writeFileSync(
-				path.resolve(__dirname, "..", "src", "json", "unit-cost.json"),
 				JSON.stringify(ret, null, 2),
 			);
 		} else

@@ -62,7 +62,7 @@
 						<rarity-badge
 							v-if="skill.isPassive && skill.index > rarityIndex"
 							:rarity="rarityList[skill.index]"
-						>{{rarityList[skill.index]}} 승급 스킬</rarity-badge>
+						>{{RarityName[rarityList[skill.index]]}} 승급 스킬</rarity-badge>
 					</b-td>
 					<b-td class="text-left d-none d-md-table-cell">
 						<div
@@ -125,8 +125,9 @@ import SkillBound from "@/components/SkillBound.vue";
 import SkillDescription from "@/components/SkillDescription.vue";
 
 import ElemIcon from "@/components/ElemIcon.vue";
-import { RawSkill, Rarity, RawSkillUnit } from "@/libs/Types";
+import { RawSkill, RawSkillUnit } from "@/libs/Types";
 
+import { ACTOR_GRADE } from "@/libs/Types/Enums";
 import { SkillData } from "@/libs/DB";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 
@@ -170,11 +171,11 @@ export default class UnitSkillTable extends Vue {
 	private formStateSync!: "normal" | "change";
 
 	@Prop({
-		type: String,
+		type: Number,
 		required: true,
-		validator: (x) => ["B", "A", "S", "SS"].includes(x),
+		validator: (x) => [ACTOR_GRADE.B, ACTOR_GRADE.A, ACTOR_GRADE.S, ACTOR_GRADE.SS].includes(x),
 	})
-	private rarity!: Rarity;
+	private rarity!: ACTOR_GRADE;
 
 	@Prop({
 		type: Boolean,
@@ -194,7 +195,7 @@ export default class UnitSkillTable extends Vue {
 	})
 	private rangeBonus!: boolean;
 
-	private rarityList: Rarity[] = ["B", "A", "S", "SS"];
+	private rarityList: ACTOR_GRADE[] = [ACTOR_GRADE.B, ACTOR_GRADE.A, ACTOR_GRADE.S, ACTOR_GRADE.SS];
 	private loveBonus: boolean = false;
 
 	private get AssetsRoot () {
@@ -214,6 +215,15 @@ export default class UnitSkillTable extends Vue {
 
 	private get rarityIndex () {
 		return this.rarityList.indexOf(this.rarity);
+	}
+
+	private get RarityName () {
+		return {
+			[ACTOR_GRADE.B]: "B",
+			[ACTOR_GRADE.A]: "A",
+			[ACTOR_GRADE.S]: "S",
+			[ACTOR_GRADE.SS]: "SS",
+		};
 	}
 
 	/**
