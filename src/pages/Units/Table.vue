@@ -68,7 +68,7 @@
 										class="unit-list-item"
 										:unit="unit"
 										horizontal
-										:promoted="unit.rarity !== rarity"
+										:rarity="rarity"
 										@click="modalUnit(unit)"
 									/>
 								</b-td>
@@ -168,17 +168,17 @@ export default class UnitsTable extends Vue {
 
 	private UnitList (rarity: ACTOR_GRADE, type: ACTOR_CLASS, role: ROLE_TYPE) {
 		if (this.IncludePromotions) {
-			return _.filter(UnitData, (x) => {
-				const rarityMatch = x.rarity === rarity || (typeof x.promotions !== "undefined" && x.promotions.includes(rarity));
-				return (
-					rarityMatch &&
-					x.type === type &&
-					x.role === role && (
-						(x.body === ACTOR_BODY_TYPE.BIOROID && this.Filters.Body[ACTOR_BODY_TYPE.BIOROID]) ||
-						(x.body === ACTOR_BODY_TYPE.AGS && this.Filters.Body[ACTOR_BODY_TYPE.AGS])
-					)
-				);
-			});
+			return UnitData
+				.filter((x) => {
+					const rarityMatch = x.rarity === rarity || (x.promotions && x.promotions.includes(rarity));
+					return rarityMatch &&
+						x.type === type &&
+						x.role === role &&
+						(
+							(x.body === ACTOR_BODY_TYPE.BIOROID && this.Filters.Body[ACTOR_BODY_TYPE.BIOROID]) ||
+							(x.body === ACTOR_BODY_TYPE.AGS && this.Filters.Body[ACTOR_BODY_TYPE.AGS])
+						);
+				});
 		} else {
 			return _(UnitData)
 				.filter(x => x.name.includes(this.SearchText))

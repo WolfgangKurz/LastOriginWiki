@@ -21,14 +21,14 @@
 		</b-card-title>
 
 		<div class="unit-badges">
-			<b-badge v-if="unit.body === 'ags'" variant="info" class="ml-1">AGS</b-badge>
-			<template v-if="unit.promotions">
+			<b-badge v-if="unit.body === 1" variant="info" class="ml-1">AGS</b-badge>
+			<template v-if="leftPromotions">
 				<rarity-badge
-					v-for="pro in unit.promotions"
+					v-for="pro in leftPromotions"
 					:key="`unit-table-unit-${unit.id}-pro-${pro}`"
 					class="ml-1"
 					:rarity="pro"
-				>{{pro}} 승급</rarity-badge>
+				>{{RarityName[pro]}} 승급</rarity-badge>
 			</template>
 		</div>
 
@@ -38,16 +38,16 @@
 		<unit-face :id="unit.id" class="unit-face float-left" />
 		<div class="unit-name">{{unit.name}}</div>
 		<div class="unit-flag">
-			<b-badge v-if="unit.body === 'ags'" variant="info" class="mr-1">AGS</b-badge>
-			<b-badge v-if="promoted" variant="danger" class="mr-1">승급 후</b-badge>
+			<b-badge v-if="unit.body === 1" variant="info" class="mr-1">AGS</b-badge>
+			<b-badge v-if="isPromoted" variant="danger" class="mr-1">승급 후</b-badge>
 
-			<div v-if="!promoted && unit.promotions" class="float-right">
+			<div v-if="leftPromotions" class="float-right">
 				<rarity-badge
-					v-for="pro in unit.promotions"
+					v-for="pro in leftPromotions"
 					:key="`unit-table-unit-${unit.id}-pro-${pro}`"
 					:rarity="pro"
 					class="ml-1"
-				>{{pro}} 승급</rarity-badge>
+				>{{RarityName[pro]}} 승급</rarity-badge>
 			</div>
 		</div>
 	</div>
@@ -62,6 +62,7 @@ import RarityBadge from "@/components/RarityBadge.vue";
 import { Prop, Emit } from "vue-property-decorator";
 
 import { Unit } from "@/libs/DB/Unit";
+import { ACTOR_GRADE } from "@/libs/Types/Enums";
 
 @Component({
 	components: {
@@ -83,10 +84,10 @@ export default class UnitCard extends Vue {
 	private horizontal!: boolean;
 
 	@Prop({
-		type: Boolean,
-		default: false,
+		type: Number,
+		default: ACTOR_GRADE.B,
 	})
-	private promoted!: boolean;
+	private rarity!: ACTOR_GRADE;
 
 	@Prop({
 		type: Boolean,
@@ -100,6 +101,23 @@ export default class UnitCard extends Vue {
 
 	private get UnitFaceUrl () {
 		return UnitFace.GetURL(!this.unit.group, this.unit.id);
+	}
+
+	private get RarityName () {
+		return {
+			[ACTOR_GRADE.B]: "B",
+			[ACTOR_GRADE.A]: "A",
+			[ACTOR_GRADE.S]: "S",
+			[ACTOR_GRADE.SS]: "SS",
+		};
+	}
+
+	private get isPromoted () {
+		return (this.unit.promotions || []).includes(this.rarity);
+	}
+
+	private get leftPromotions () {
+		return (this.unit.promotions || []).filter(x => x > this.rarity);
 	}
 
 	@Emit("click")
