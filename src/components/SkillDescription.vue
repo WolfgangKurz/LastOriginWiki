@@ -6,7 +6,7 @@ import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
 import { ITEM_TYPE } from "@/libs/Types/Enums";
-import UnitData from "@/libs/DB/Unit";
+import UnitData, { Unit } from "@/libs/DB/Unit";
 import EquipData, { Equip } from "@/libs/DB/Equip";
 
 import UnitFace from "@/components/UnitFace.vue";
@@ -177,10 +177,10 @@ export default class SkillDescription extends Vue {
 					if (p[0] === "$ch") {
 						const id = parseInt(p[1], 10);
 						const href = `/units/${id}`;
-						const unit = UnitData[id];
+						const unit = UnitData.find(x => x.id === id) || Unit.Empty;
 						ret.link = {
 							href,
-							display: <rarity-badge id={uid} rarity="A">&lt;{unit.name}&gt; 🔗</rarity-badge>,
+							display: <rarity-badge id={uid} rarity="A">{unit.name} 🔗</rarity-badge>,
 							tooltip: <b-tooltip target={uid} placement="top" no-fade noninteractive custom-class="badge-tooltip">
 								<unit-card unit={unit} no-link />
 							</b-tooltip>,
@@ -203,7 +203,7 @@ export default class SkillDescription extends Vue {
 						const name = equip ? equip.name.replace(/ (RE|MP|SP|EX)$/, "") : p[1];
 						ret.link = {
 							href,
-							display: <rarity-badge id={uid} rarity="A">&lt;{name}&gt; 🔗</rarity-badge>,
+							display: <rarity-badge id={uid} rarity="A">{name} 🔗</rarity-badge>,
 							tooltip: <b-tooltip target={uid} placement="top" no-fade noninteractive custom-class="badge-tooltip">
 								<equip-card equip={equip} no-link />
 							</b-tooltip>,

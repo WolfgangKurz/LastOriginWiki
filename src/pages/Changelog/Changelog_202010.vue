@@ -1,16 +1,22 @@
 <template>
 	<div>
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20201023>2020-10-23</b-card-header>
+			<b-collapse id="changelog20201023" visible>
+				<b-card-body>
+					<div>전투원의 스킬 설명에서 참조되는 전투원이 잘못 표시되던 문제가 수정되었습니다.</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20201022>2020-10-22</b-card-header>
-			<b-collapse id="changelog20201022" visible>
+			<b-collapse id="changelog20201022">
 				<b-card-body>
 					<div>
 						<b-badge variant="warning">T-14 미호</b-badge>의 3번째 패시브 <b-badge variant="info">전위 추가 지원</b-badge>의 정보가
 						추가되었습니다.
 					</div>
-					<div>
-						<b-badge variant="warning">장비 분해 효율 연구실</b-badge> 설비의 효과가 표시되지 않던 문제를 수정했습니다.
-					</div>
+					<div><b-badge variant="warning">장비 분해 효율 연구실</b-badge> 설비의 효과가 표시되지 않던 문제를 수정했습니다.</div>
 					<div>
 						모든 설비 정보를 갱신했습니다.<br />
 						각 설비 정보는 페이지 로드 시간을 개선하기 위해 개별 페이지로 변경되었습니다.<br />
