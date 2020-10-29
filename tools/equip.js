@@ -6,7 +6,7 @@ function process (auth) {
 	const sheets = google.sheets({ version: "v4", auth });
 	sheets.spreadsheets.values.get({
 		spreadsheetId: "1V_hVRBcvg5tYwPQOLHxcsFxwvDOJrWJYfmZ65AVCd7E",
-		range: "Equipment!A3:V",
+		range: "Equipment!A3:X",
 	}, (err, res) => {
 		if (err) return console.log("The API returned an error: " + err);
 
@@ -36,15 +36,25 @@ function process (auth) {
 
 				const name = row[5];
 				const desc = row[6];
-				const craftable = !!row[7];
-				const limit = row[8];
+				const icon = row[7];
+				const craftable = !!row[8];
+				const limit = row[9];
 
-				const upgrade = parseInt(row[9], 10);
-				const source = !row[10]
-					? []
-					: (row[10] || "")
-						.split("\n")
-						.map(d => d.split(","));
+				const upgrade = parseInt(row[10], 10);
+				const source = [
+					...(!row[11]
+						? []
+						: (row[11] || "")
+							.split("\n")
+							.map(d => d.split(","))
+					),
+					...(!row[12]
+						? []
+						: (row[12] || "")
+							.split("\n")
+							.map(d => d.split(","))
+					),
+				];
 
 				ret.push({
 					available,
@@ -55,12 +65,13 @@ function process (auth) {
 					fullKey,
 					name,
 					desc,
+					icon,
 					craftable,
 
 					limit,
 					upgrade,
 					source,
-					stats: row.filter((x, i) => i >= 11),
+					stats: row.filter((x, i) => i >= 13),
 				});
 			});
 

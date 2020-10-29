@@ -1,10 +1,10 @@
 <template>
-	<div class="drop-equip p-2 text-dark">
-		<b-card :class="`rarity-${RarityName[equip.rarity]}`">
-			<equip-icon class="float-left mr-2" :image="equip.icon" />
+	<div class="drop-item p-2 text-dark">
+		<b-card bg-variant="secondary" text-variant="white">
+			<equip-icon class="float-left mr-2" :image="item.icon" />
 			<div class="text-left">
-				<b-badge variant="secondary">{{ RarityName[equip.rarity] }}</b-badge>
-				{{ equip.name }}
+				{{ item.name }}
+				<b-badge v-if="count > 1" variant="dark">x{{ count }}</b-badge>
 			</div>
 		</b-card>
 	</div>
@@ -17,34 +17,30 @@ import { Watch, Prop } from "vue-property-decorator";
 
 import EquipIcon from "@/components/EquipIcon.vue";
 
-import { Equip } from "@/libs/DB/Equip";
-import { ACTOR_GRADE } from "@/libs/Types/Enums";
+import { Consumable } from "@/libs/DB/Consumable";
 
 @Component({
 	components: {
 		EquipIcon,
 	},
 })
-export default class DropEquip extends Vue {
+export default class DropItem extends Vue {
 	@Prop({
 		type: Object,
 		required: true,
 	})
-	private equip!: Equip;
+	private item!: Consumable;
 
-	private get RarityName () {
-		return {
-			[ACTOR_GRADE.B]: "B",
-			[ACTOR_GRADE.A]: "A",
-			[ACTOR_GRADE.S]: "S",
-			[ACTOR_GRADE.SS]: "SS",
-		};
-	}
+	@Prop({
+		type: Number,
+		default: 1,
+	})
+	private count!: number;
 }
 </script>
 
 <style lang="scss">
-.drop-equip {
+.drop-item {
 	word-break: keep-all;
 	user-select: none;
 	cursor: pointer;

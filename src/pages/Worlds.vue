@@ -5,11 +5,8 @@
 
 		<h4>메인스토리 / 현재 진행중인 / 곧 진행될 이벤트</h4>
 		<b-row cols="1" cols-lg="2">
-			<b-col>
-				<world-item linked wid="Story" @goto="GoTo" />
-			</b-col>
-			<b-col>
-				<world-item linked wid="BlurryMemory" @goto="GoTo" />
+			<b-col v-for="item in Tops" :key="`worlds-top-${item}`">
+				<world-item linked :wid="item" @goto="GoTo" />
 			</b-col>
 		</b-row>
 
@@ -17,17 +14,8 @@
 
 		<h4>지난 이벤트</h4>
 		<b-row cols="1" cols-lg="2">
-			<b-col>
-				<world-item linked wid="SupremeDinner" @goto="GoTo" />
-			</b-col>
-			<b-col>
-				<world-item linked wid="Rioboros" @goto="GoTo" />
-			</b-col>
-			<b-col>
-				<world-item linked wid="FullMoonNocturne" @goto="GoTo" />
-			</b-col>
-			<b-col>
-				<world-item linked wid="FairyAria" @goto="GoTo" />
+			<b-col v-for="item in List" :key="`worlds-list-${item}`">
+				<world-item linked :wid="item" @goto="GoTo" />
 			</b-col>
 		</b-row>
 	</div>
@@ -40,7 +28,7 @@ import { Watch } from "vue-property-decorator";
 
 import WorldItem from "./Worlds/WorldItem.vue";
 
-import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { AssetsRoot, ImageExtension, WorldNames } from "@/libs/Const";
 import { UpdateTitle } from "@/libs/Functions";
 
 @Component({
@@ -51,6 +39,15 @@ import { UpdateTitle } from "@/libs/Functions";
 export default class Worlds extends Vue {
 	private get AssetsRoot () {
 		return AssetsRoot;
+	}
+
+	private get Tops () {
+		return ["", "Ev8"];
+	}
+
+	private get List () {
+		return Object.keys(WorldNames)
+			.filter(x => !x.startsWith("EvA") && !this.Tops.includes(x));
 	}
 
 	private GoTo (path: string) {

@@ -1,12 +1,8 @@
 <template>
-	<div
-		class="map-node"
-		:data-hidden="node.type === '' ? 1 : 0"
-		:data-pos="`${node.pos[0]},${node.pos[1]}`"
-	>
-		<img :src="`${AssetsRoot}/world/mapicon_${node.pos[1]}.png`" />
-		<div class="name d-none d-sm-block" :data-active="active ? 1 : 0">{{node.name}}</div>
-		<div class="name d-sm-none" :data-active="active ? 1 : 0">{{shortName}}</div>
+	<div class="map-node" :data-hidden="!node.text ? 1 : 0" :data-pos="`${node.offset}`">
+		<img :src="`${AssetsRoot}/world/mapicon_${Math.floor(node.offset / 8)}.png`" />
+		<div class="name d-none d-sm-block" :data-active="active ? 1 : 0">{{ node.text }}</div>
+		<div class="name d-sm-none" :data-active="active ? 1 : 0">{{ shortName }}</div>
 	</div>
 </template>
 
@@ -16,38 +12,14 @@ import Component from "vue-class-component";
 import { Watch, Prop } from "vue-property-decorator";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
-import { MapNodeEntity } from "@/libs/Types";
+import { MapNodeEntity } from "@/libs/DB/Map";
 
 @Component({})
 export default class MapNode extends Vue {
 	@Prop({
 		type: Object,
 		required: true,
-		validator: (x: MapNodeEntity) => {
-			if (x.type === "") return true; // Empty Node
-
-			if (!["N", "B", "Ex", "C"].includes(x.type)) return false;
-			if (!x.name) return false;
-
-			if (
-				!Array.isArray(x.pos) ||
-				(x.pos.length as number) !== 2 ||
-				typeof x.pos[0] !== "number" ||
-				typeof x.pos[1] !== "number"
-			) return false;
-
-			if (
-				x.prev !== undefined &&
-				(
-					!Array.isArray(x.prev) ||
-					(x.prev.length as number) !== 2 ||
-					typeof x.prev[0] !== "number" ||
-					typeof x.prev[1] !== "number"
-				)
-			) return false;
-
-			return true;
-		},
+		validator: (x: MapNodeEntity) => (x.offset >= 0 && x.offset < 24),
 	})
 	private node!: MapNodeEntity;
 
@@ -62,7 +34,7 @@ export default class MapNode extends Vue {
 	}
 
 	private get shortName () {
-		const name = this.node.name;
+		const name = this.node.text;
 		return name.includes("-")
 			? name.substr(name.indexOf("-") + 1)
 			: name;

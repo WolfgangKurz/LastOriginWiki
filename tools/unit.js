@@ -6,7 +6,7 @@ function process (auth) {
 	const sheets = google.sheets({ version: "v4", auth });
 	sheets.spreadsheets.values.get({
 		spreadsheetId: "1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4",
-		range: "UnitTable!A3:W",
+		range: "UnitTable!A3:X",
 	}, (err, res) => {
 		if (err) return console.log("The API returned an error: " + err);
 
@@ -73,7 +73,7 @@ function process (auth) {
 					pro, craftable, marry,
 					linkBonus, flSkill_, fl3, fl4,
 					equip1, equip2, equip3, equip4,
-					source,
+					source, source1,
 				] = row;
 				const flSkill = parseInt(flSkill_, 10);
 
@@ -108,9 +108,16 @@ function process (auth) {
 						equipTable[equip3],
 						equipTable[equip4],
 					],
-					source: !source
-						? []
-						: source.split("\n").map(d => d.split(",")),
+					source: [
+						...(!source
+							? []
+							: source.split("\n").map(d => d.split(","))
+						),
+						...(!source1
+							? []
+							: source1.split("\n").map(d => d.split(","))
+						),
+					],
 				};
 				if (pro)
 					x.promotions = pro.split(",").map(y => rarityTable[y]);

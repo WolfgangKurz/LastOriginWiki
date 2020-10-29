@@ -10,7 +10,7 @@ export default class EquipIcon extends Vue {
 		type: String,
 		required: true,
 	})
-	private id!: string;
+	private image!: string;
 
 	@Prop({
 		type: String,
@@ -20,7 +20,7 @@ export default class EquipIcon extends Vue {
 
 	private get Icon () {
 		const imageExt = ImageExtension();
-		return `${AssetsRoot}/${imageExt}/equips/${this.id}.${imageExt}`;
+		return `${AssetsRoot}/${imageExt}/item/${this.image}.${imageExt}`;
 	}
 
 	private render () {

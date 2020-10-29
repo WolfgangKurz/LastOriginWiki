@@ -11,7 +11,7 @@
 			<b-row cols="1" cols-md="2">
 				<b-col class="icon-container">
 					<div class="position-relative d-inline-block">
-						<equip-icon :id="`${target.fullKey}`" size="large" />
+						<equip-icon :image="`${target.icon}`" size="large" />
 						<equip-level :level="level" />
 					</div>
 				</b-col>
@@ -114,7 +114,7 @@
 							<hr class="d-sm-none" />
 							<span class="d-none d-sm-inline text-secondary">|</span>
 							<span class="px-2">
-								<img class="upmodule-icon" :src="`${AssetsRoot}/${imageExt}/equips/Chip_Enchant_T4.${imageExt}`" />
+								<img class="upmodule-icon" :src="`${AssetsRoot}/${imageExt}/item/UI_Icon_Equip_ChipSet_T4.${imageExt}`" />
 								{{ Math.ceil(UpgradeCost / 400) }}개 필요
 							</span>
 						</template>

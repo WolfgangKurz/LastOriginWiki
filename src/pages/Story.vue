@@ -82,9 +82,11 @@ import Component from "vue-class-component";
 import { Watch } from "vue-property-decorator";
 
 import { AssetsRoot, ImageExtension, WorldDescriptions, WorldNames } from "@/libs/Const";
-import { MapData, StoryData } from "@/libs/DB";
+import { StoryData } from "@/libs/DB";
 import { UpdateTitle } from "@/libs/Functions";
 import { StoryRaw } from "@/libs/Types";
+
+import MapData from "@/libs/DB/Map";
 
 import UnitFace from "@/components/UnitFace.vue";
 

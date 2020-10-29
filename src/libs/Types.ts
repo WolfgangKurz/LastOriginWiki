@@ -150,50 +150,6 @@ export interface RawSkill {
 	};
 }
 
-export interface Worlds {
-	[key: string]: {
-		[key: string]: {
-			title: string;
-			list: MapNodeEntity[];
-		};
-	};
-}
-
-export type MapNodeX = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7;
-export type MapNodeY = 0 | 1 | 2;
-
-export interface MapNodeEntity {
-	type: "" | "N" | "B" | "Ex" | "C";
-	name: string;
-	pos: [MapNodeX, MapNodeY]; // [x: number, y: number];
-	prev: [MapNodeX, MapNodeY] | undefined;
-	drops: {
-		reward: {
-			units: number[];
-			equips: string[];
-		};
-		units: number[];
-		equips: string[];
-	};
-}
-/* eslint-disable-next-line @typescript-eslint/no-namespace */
-export namespace MapNodeEntity {
-	export const Empty: MapNodeEntity = {
-		name: "",
-		type: "",
-		pos: [0, 0],
-		prev: undefined,
-		drops: {
-			reward: {
-				units: [],
-				equips: [],
-			},
-			units: [],
-			equips: [],
-		},
-	};
-}
-
 export interface ExpEntity {
 	exp: number;
 	enemies: number;

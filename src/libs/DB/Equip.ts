@@ -13,6 +13,7 @@ interface RawEquip {
 
 	name: string;
 	desc: string;
+	icon: string;
 	craftable: boolean;
 
 	limit?: string;
@@ -29,6 +30,7 @@ export interface Equip {
 
 	name: string;
 	desc: string;
+	icon: string;
 	craftable: boolean;
 
 	limit: Array<string | number> | null;
@@ -47,6 +49,7 @@ export namespace Equip {
 		fullKey: "__T1",
 		name: "",
 		desc: "",
+		icon: "none",
 		craftable: false,
 
 		limit: null,
@@ -68,7 +71,7 @@ function parseLimit (limit: string | undefined) {
 		})
 		.filter(x => x !== null) as Array<string | number> | null;
 }
-function Compile () {
+function Compile (): Equip[] {
 	return (Data as RawEquip[]).map(x => ({
 		available: x.available,
 		rarity: x.rarity,
@@ -78,6 +81,7 @@ function Compile () {
 
 		name: x.name,
 		desc: x.desc,
+		icon: x.icon,
 		craftable: x.craftable,
 
 		upgrade: x.upgrade,
