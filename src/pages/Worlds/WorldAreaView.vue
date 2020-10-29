@@ -10,13 +10,13 @@
 		<world-item :wid="wid" />
 
 		<b-row class="justify-content-center" cols="2" cols-md="3" cols-lg="4">
-			<b-col v-for="i in Areas[0]" :key="`world-area-${wid}-${i}`">
-				<b-card :class="classNames(i)" text-variant="light" bg-variant="dark">
+			<b-col v-for="i in Areas" :key="`world-area-${wid}-${i}`">
+				<b-card class="world-area text-center mt-4" text-variant="light" bg-variant="dark">
 					<img :src="`${AssetsRoot}/world/icons/${wid}_${i}.png`" />
-					<div :class="['world-area-number', Areas[1].includes(i) ? 'text-secondary' : 'text-warning']">제 {{ i }}구역</div>
-					<div :class="['world-area-name', Areas[1].includes(i) ? 'text-secondary' : '']">{{ AreaNames[i] }}</div>
+					<div class="world-area-number text-warning">제 {{ i }}구역</div>
+					<div class="world-area-name">{{ AreaNames[i] }}</div>
 
-					<b-btn-group v-if="!Areas[1].includes(i)" class="mt-2">
+					<b-btn-group class="mt-2">
 						<b-button variant="warning" @click="GoTo(`/worlds/${wid}/${i}`)">
 							<b-icon-download class="mr-1" />
 							드랍
@@ -38,8 +38,9 @@ import Component from "vue-class-component";
 import { Watch } from "vue-property-decorator";
 
 import { AssetsRoot, ImageExtension, WorldDescriptions, WorldNames } from "@/libs/Const";
-import { MapData } from "@/libs/DB";
 import { UpdateTitle } from "@/libs/Functions";
+
+import MapData from "@/libs/DB/Map";
 
 import WorldItem from "./WorldItem.vue";
 
@@ -76,25 +77,8 @@ export default class WorldArea extends Vue {
 		return WorldDescriptions[this.wid] !== undefined ? WorldDescriptions[this.wid] : this.wid;
 	}
 
-	private get Areas (): [number, number[]] {
-		switch (this.wid) {
-			case "Story": return [8, [8]];
-			case "SupremeDinner": return [1, []];
-			case "Rioboros": return [3, []];
-			case "FullMoonNocturne": return [1, []];
-			case "HalloweenPanic": return [1, []];
-			case "SaintOrca": return [2, []];
-			case "ChocolateQueen": return [2, []];
-			case "FairyAria": return [3, []];
-			case "BlurryMemory": return [2, [2]];
-		}
-		return [0, []];
-	}
-
-	private classNames (i: number) {
-		const ret = ["world-area", "text-center", "mt-4"];
-		if (this.Areas[1].includes(i)) ret.push("disabled");
-		return ret;
+	private get Areas (): number {
+		return Object.keys(MapData[this.wid] || {}).length;
 	}
 
 	private GoTo (path: string) {

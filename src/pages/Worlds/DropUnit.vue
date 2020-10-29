@@ -1,9 +1,9 @@
 <template>
 	<div class="drop-unit p-2 text-dark">
-		<b-card :class="`text-left rarity-${unit.rarity}`">
-			<unit-face class="float-left mr-2" :id="id" size="48" type="mini" />
+		<b-card :class="`text-left rarity-${RarityName[unit.rarity]}`">
+			<unit-face class="float-left mr-2" :id="unit.id" size="48" type="mini" />
 			<div>
-				<b-badge variant="secondary" class="mr-1 bordered">{{ unit.rarity }}</b-badge>
+				<b-badge variant="secondary" class="mr-1 bordered">{{ RarityName[unit.rarity] }}</b-badge>
 				<span class="unit-info">
 					<i class="unit-type" :data-type="unit.type" />
 					<i class="unit-role" :data-role="unit.role" />
@@ -22,7 +22,8 @@ import { Watch, Prop } from "vue-property-decorator";
 import UnitFace from "@/components/UnitFace.vue";
 import RarityBadge from "@/components/RarityBadge.vue";
 
-import UnitData from "@/libs/DB/Unit";
+import UnitData, { Unit } from "@/libs/DB/Unit";
+import { ACTOR_GRADE } from "@/libs/Types/Enums";
 
 @Component({
 	components: {
@@ -31,13 +32,25 @@ import UnitData from "@/libs/DB/Unit";
 })
 export default class DropUnit extends Vue {
 	@Prop({
-		type: Number,
+		type: [String, Number],
 		required: true,
 	})
-	private id!: number;
+	private id!: number | string;
 
 	private get unit () {
-		return UnitData[this.id];
+		if (typeof this.id === "number")
+			return UnitData.find(x => x.id === this.id) || Unit.Empty;
+		else
+			return UnitData.find(x => x.uid === this.id) || Unit.Empty;
+	}
+
+	private get RarityName () {
+		return {
+			[ACTOR_GRADE.B]: "B",
+			[ACTOR_GRADE.A]: "A",
+			[ACTOR_GRADE.S]: "S",
+			[ACTOR_GRADE.SS]: "SS",
+		};
 	}
 }
 </script>

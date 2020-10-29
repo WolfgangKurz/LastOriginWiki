@@ -2,10 +2,8 @@
 	<div class="equips">
 		<div class="text-center mb-3">
 			<b-alert variant="warning" show>
-				"만월의 야상곡", "할로윈 파크 패닉!", "세인트 오르카의 비밀작전", "이상한 나라의 초코여왕" 이벤트 정보가 입력되지 않았습니다. 드랍처
-				및 교환소 정보를 입력하지 않아 일부 장비가
-				<b-badge variant="secondary">한정</b-badge>으로 분류 및 표시될 수 있습니다. <br />또, 장비 좌측 상단의
-				<b-badge variant="secondary">획득처 없음</b-badge>표시는 <b-badge variant="danger">현재 진행중인 이벤트</b-badge>및
+				일부 이벤트의 교환소 정보가 이력되지 않았습니다.<br />
+				장비 좌측 상단의 <b-badge variant="secondary">획득처 없음</b-badge>표시는 <b-badge variant="danger">현재 진행중인 이벤트</b-badge>및
 				<b-badge variant="exchange">현재 기간 교환소</b-badge>기준입니다. 이전 이벤트 또는 기간에 드랍/교환 가능했던 장비어도 현재 획득처가
 				없다면 표시됩니다.
 			</b-alert>

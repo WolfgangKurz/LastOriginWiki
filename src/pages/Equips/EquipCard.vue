@@ -1,7 +1,7 @@
 <template>
 	<b-card bg-variant="dark" text-variant="white" class="my-1 equip-card" no-body>
 		<b-card-header class="position-relative">
-			<equip-icon :id="`${equip.fullKey}`" size="big" />
+			<equip-icon :image="`${equip.icon}`" size="big" />
 			<div v-if="Sources.length > 0" class="equip-sources text-left">
 				<source-badge
 					v-for="(source, sindex) in Sources"

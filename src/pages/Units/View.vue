@@ -287,10 +287,10 @@
 				</b-col>
 			</b-row>
 
-			<b-alert v-if="unit.hasLimited[0]" variant="primary" show>
+			<b-alert v-if="unit.hasLimited" variant="primary" show>
 				<div>이 전투원은 다음 전용장비를 갖고 있습니다.</div>
 				<a :href="LimitedEquipURL" @click.prevent="GoTo(LimitedEquipURL)">
-					<drop-equip class="limited-item-card" :name="unit.hasLimited[1]" :rarity="unit.hasLimited[0]" />
+					<drop-equip class="limited-item-card" :equip="LimitedEquip" />
 				</a>
 			</b-alert>
 
@@ -342,6 +342,7 @@ import { SkillData } from "@/libs/DB";
 
 import { ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/libs/Types/Enums";
 import UnitData, { Unit } from "@/libs/DB/Unit";
+import EquipData from "@/libs/DB/Equip";
 import UnitStatsData, { UnitStats as UnitStats_ } from "@/libs/DB/UnitStats";
 import RequireResource from "@/libs/DB/RequireResource";
 
@@ -445,7 +446,19 @@ export default class UnitView extends Vue {
 
 		const id = params.id;
 		if (/^[0-9]+$/.test(id)) {
-			this.unitId = parseInt(params.id, 10);
+			const iid = parseInt(params.id, 10);
+			const unit = UnitData.find(x => x.id === iid);
+			if (!unit)
+				this.$router.replace("/units");
+			else
+				this.$router.replace("/units/" + unit.uid);
+		} else {
+			const unit = UnitData.find(x => x.uid === id);
+			if (!unit) {
+				this.$router.replace("/units");
+				return;
+			}
+			this.unitId = unit.id;
 			UpdateTitle("전투원정보", `${this.unit.name}`);
 		}
 	}
@@ -463,10 +476,17 @@ export default class UnitView extends Vue {
 		};
 	}
 
+	private get LimitedEquip () {
+		if (this.unit.hasLimited)
+			return EquipData.find(x => x.fullKey === this.unit.hasLimited) || null;
+		else
+			return null;
+	}
+
 	private get LimitedEquipURL () {
 		const unit = this.unit;
-		if (!unit.hasLimited[0]) return "";
-		return `/equips/${unit.hasLimited[0]}/${unit.hasLimited[1]}`;
+		if (!unit.hasLimited) return "";
+		return `/equips/${unit.hasLimited}`;
 	}
 
 	private get LinkCountList () {

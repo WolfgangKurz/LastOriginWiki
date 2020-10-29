@@ -2,26 +2,20 @@
 	<div class="world-map text-left">
 		<b-row>
 			<b-col cols="auto">
-				<b-button variant="dark" @click="GoTo(`/worlds/${world}`)">
-					<b-icon-arrow-left class="mr-1" />구역 목록으로
-				</b-button>
+				<b-button variant="dark" @click="GoTo(`/worlds/${world}`)"> <b-icon-arrow-left class="mr-1" />구역 목록으로 </b-button>
 			</b-col>
 		</b-row>
 		<hr />
 
 		<b-card no-body bg-variant="dark" text-variant="light">
 			<b-card-header>
-				{{WorldName}}
+				{{ WorldName }}
 				<h5 class="m-0 d-inline-block">
-					<b-badge class="ml-2" variant="warning">제 {{area}}구역 :: {{AreaName}}</b-badge>
+					<b-badge class="ml-2" variant="warning">제 {{ area }}구역 :: {{ AreaName }}</b-badge>
 				</h5>
 
 				<div class="float-right">
-					<a
-						class="ml-2"
-						:href="`https://lastoriginmap.github.io/area.html?areanum=${EnemyMapAreaId}`"
-						target="_blank"
-					>
+					<a class="ml-2" :href="`https://lastoriginmap.github.io/area.html?areanum=${EnemyMapAreaId}`" target="_blank">
 						<b-button size="sm" variant="primary">
 							철충 지도
 							<b-icon-link-45deg class="ml-1" />
@@ -31,28 +25,28 @@
 			</b-card-header>
 
 			<div class="world-map-bg">
-				<div v-for="(row, rowIdx) in NodeRows" :key="`worlds-${world}-${area}-${rowIdx}`">
-					<template v-for="(node, idx) in row">
+				<div>
+					<template v-for="(node, nodeIdx) in NodeList">
 						<a
-							:key="`worlds-${world}-${area}-${rowIdx}-${idx}`"
-							:href="node.type ? `/worlds/${world}/${area}/${node.name}` : undefined"
-							@click.prevent="node.type && SelectNode(node)"
+							:data-pos="node.offset"
+							:key="`worlds-${world}-${area}-${nodeIdx}-n`"
+							:href="node.text ? `/worlds/${world}/${area}/${node.text}` : undefined"
+							@click.prevent="node.text && SelectNode(node)"
 						>
 							<map-node :node="node" :active="selected === node" />
 						</a>
 						<div
-							:key="`worlds-${world}-${area}-${rowIdx}-${idx}-prev-1`"
-							:data-y="node.pos[1]"
-							:data-pos="`${node.pos[0]},${node.pos[1]}`"
+							:key="`worlds-${world}-${area}-${nodeIdx}-p1`"
+							:data-pos="node.offset"
 							:data-dir="1"
-							:data-hidden="!node.prev || (rowIdx !== node.prev[1]) ? 1 : 0"
+							:data-hidden="isHidden(node, true) ? 1 : 0"
 						/>
 						<div
-							:key="`worlds-${world}-${area}-${rowIdx}-${idx}-prev-2`"
-							:data-y="node.pos[1]"
-							:data-pos="`${node.pos[0]},${node.pos[1]}`"
+							v-if="Math.floor(node.offset / 8) < 2"
+							:key="`worlds-${world}-${area}-${nodeIdx}-p2`"
+							:data-pos="node.offset"
 							:data-dir="2"
-							:data-hidden="!node.prev || (rowIdx === node.prev[1]) ? 1 : 0"
+							:data-hidden="isHidden(node, false) ? 1 : 0"
 						/>
 					</template>
 				</div>
@@ -63,7 +57,7 @@
 			<b-card-header>
 				드랍 정보
 				<template v-if="selected">
-					<b-badge class="ml-2" variant="warning">{{selected.name}}</b-badge>
+					<b-badge class="ml-2" variant="warning">{{ selected.text }}</b-badge>
 				</template>
 			</b-card-header>
 			<b-card-body>
@@ -73,23 +67,39 @@
 						<b-card text-variant="dark" header="클리어 보상" class="mb-4">
 							<b-row cols="1" cols-md="2" cols-lg="4">
 								<template v-for="(reward, i) in RewardDrops">
+									<span v-if="'cash' in reward" :key="`worlds-${world}-${area}-drop-r-${i}`">
+										<drop-res res="cash" :count="reward.cash" :am="!!reward.am" />
+									</span>
+									<span v-else-if="'metal' in reward" :key="`worlds-${world}-${area}-drop-r-${i}`">
+										<drop-res res="metal" :count="reward.metal" :am="!!reward.am" />
+									</span>
+									<span v-else-if="'nutrient' in reward" :key="`worlds-${world}-${area}-drop-r-${i}`">
+										<drop-res res="nutrient" :count="reward.nutrient" :am="!!reward.am" />
+									</span>
+									<span v-else-if="'power' in reward" :key="`worlds-${world}-${area}-drop-r-${i}`">
+										<drop-res res="power" :count="reward.power" :am="!!reward.am" />
+									</span>
 									<a
-										v-if="typeof reward === 'number'"
-										:key="`worlds-${world}-${area}-drop-reward-${i}`"
+										v-else-if="'unit' in reward"
+										:key="`worlds-${world}-${area}-drop-r-${i}`"
 										class="drop-unit"
-										:href="UnitPage(reward)"
-										@click.prevent="GoTo(UnitPage(reward))"
+										:href="UnitPage(reward.unit.uid)"
+										@click.prevent="GoTo(UnitPage(reward.unit.uid))"
 									>
-										<drop-unit :id="reward" />
+										<drop-unit :id="reward.unit.uid" />
 									</a>
 									<a
-										v-else
-										:key="`worlds-${world}-${area}-drop-reward-${i}`"
+										v-else-if="'equip' in reward && 'count' in reward"
+										:key="`worlds-${world}-${area}-drop-r-${i}`"
 										class="drop-equip"
-										:href="EquipPage(reward.name, reward.rarity)"
-										@click.prevent="GoTo(EquipPage(reward.name, reward.rarity))"
+										:href="EquipPage(reward.equip)"
+										@click.prevent="GoTo(EquipPage(reward.equip))"
 									>
-										<drop-equip :name="reward.name" :rarity="reward.rarity" />
+										<drop-equip :equip="reward.equip" />
+										<template v-if="reward.count > 1">x{{ reward.count }}</template>
+									</a>
+									<a v-else :key="`worlds-${world}-${area}-drop-r-${i}`" class="drop-equip">
+										<drop-item :item="reward.consumable" :count="reward.count" :am="!!reward.am" />
 									</a>
 								</template>
 							</b-row>
@@ -105,27 +115,28 @@
 										class="drop-unit"
 										v-for="(unit, i) in UnitDrops"
 										:key="`worlds-${world}-${area}-drop-unit-${i}`"
-										:href="UnitPage(unit)"
+										:href="UnitPage(unit.uid)"
 									>
-										<drop-unit :id="unit" />
+										<drop-unit :id="unit.uid" />
 									</a>
 								</template>
 							</b-row>
 						</b-card>
 					</b-col>
 					<b-col cols="12" md="6" class="mt-md-0 mt-4">
-						<b-card text-variant="dark" header="획득 가능 장비">
-							<b-row cols="1" :cols-lg="EquipDrops.length === 0 ? 1 : 2" class="text-center px-2">
-								<div v-if="EquipDrops.length === 0" class="text-center pt-4 pb-4 text-secondary">드랍 정보 없음</div>
-								<template v-else>
+						<b-card text-variant="dark" header="획득 가능 물품">
+							<b-row cols="1" :cols-lg="ItemDrops.length === 0 ? 1 : 2" class="text-center px-2">
+								<div v-if="ItemDrops.length === 0" class="text-center pt-4 pb-4 text-secondary">드랍 정보 없음</div>
+								<template v-else v-for="(item, i) in ItemDrops">
 									<a
+										v-if="'rarity' in item"
+										:key="`worlds-${world}-${area}-drop-item-${i}`"
 										class="drop-equip"
-										:href="EquipPage(equip.name, equip.rarity)"
-										v-for="(equip, i) in EquipDrops"
-										:key="`worlds-${world}-${area}-drop-equip-${i}`"
+										:href="EquipPage(item)"
 									>
-										<drop-equip :name="equip.name" :rarity="equip.rarity" />
+										<drop-equip :equip="item" />
 									</a>
+									<drop-item v-else :key="`worlds-${world}-${area}-drop-item-${i}`" :item="item" />
 								</template>
 							</b-row>
 						</b-card>
@@ -144,17 +155,37 @@ import { Watch } from "vue-property-decorator";
 import MapNode from "./MapNode.vue";
 import DropUnit from "./DropUnit.vue";
 import DropEquip from "./DropEquip.vue";
+import DropItem from "./DropItem.vue";
+import DropRes from "./DropRes.vue";
 
 import { AssetsRoot, WorldNames } from "@/libs/Const";
-import { MapNodeEntity, MapNodeX, MapNodeY } from "@/libs/Types";
-import { MapData } from "@/libs/DB";
 import { UpdateTitle } from "@/libs/Functions";
+
+import UnitData, { Unit } from "@/libs/DB/Unit";
+import EquipData, { Equip } from "@/libs/DB/Equip";
+import MapData, { MapNodeEntity, MapReward } from "@/libs/DB/Map";
+import ConsumableData, { Consumable } from "@/libs/DB/Consumable";
+
+type RewardDropTypeBase =
+	{ unit: Unit; } |
+	{ equip: Equip, count: number; } |
+	{ consumable: Consumable, count: number; } |
+	{ cash: number; } |
+	{ metal: number; } |
+	{ nutrient: number; } |
+	{ power: number; };
+
+type RewardDropType = RewardDropTypeBase & {
+	am?: true;
+};
 
 @Component({
 	components: {
 		MapNode,
 		DropUnit,
 		DropEquip,
+		DropItem,
+		DropRes,
 	},
 })
 export default class WorldMapView extends Vue {
@@ -173,18 +204,19 @@ export default class WorldMapView extends Vue {
 	}
 
 	private get EnemyMapAreaId (): string {
-		switch (this.world) {
-			case "Story": return `${this.area}`;
-			case "SupremeDinner": return `Ev1${this.area}`;
-			case "Rioboros": return `Ev2${this.area}`;
-			case "FullMoonNocturne": return `Ev3${this.area}`;
-			case "HalloweenPanic": return `Ev4${this.area}`;
-			case "SaintOrca": return `Ev5${this.area}`;
-			case "ChocolateQueen": return `Ev6${this.area}`;
-			case "FairyAria": return `Ev7${this.area}`;
-			case "BlurryMemory": return `Ev8${this.area}`;
-		}
-		return "";
+		return this.area;
+		// switch (this.world) {
+		// 	case "": return `${this.area}`;
+		// 	case "Ev1": return `Ev1${this.area}`;
+		// 	case "Ev2": return `Ev2${this.area}`;
+		// 	case "Ev3": return `Ev3${this.area}`;
+		// 	case "Ev4": return `Ev4${this.area}`;
+		// 	case "EvaintOrca": return `Ev5${this.area}`;
+		// 	case "ChocolateQueen": return `Ev6${this.area}`;
+		// 	case "FairyAria": return `Ev7${this.area}`;
+		// 	case "BlurryMemory": return `Ev8${this.area}`;
+		// }
+		// return "";
 	}
 
 	private get WorldName () {
@@ -201,74 +233,118 @@ export default class WorldMapView extends Vue {
 
 	private get UnitDrops () {
 		if (!this.selected) return [];
-		return this.selected.drops.units;
-	}
-
-	private get EquipDrops () {
-		if (!this.selected) return [];
-		return this.selected.drops.equips
+		return this.selected.drops
+			.filter(x => x.startsWith("Char_"))
 			.map(x => {
-				return {
-					name: x.substr(0, x.lastIndexOf("_")),
-					rarity: x.substr(x.lastIndexOf("_") + 1).toUpperCase(),
-				};
-			});
+				const k = x.replace(/Char_(.+)_N/, "$1");
+				return UnitData.find(y => y.uid === k);
+			})
+			.filter(x => x)
+			.sort((a, b) => {
+				return (b as Unit).rarity - (a as Unit).rarity;
+			}) as Unit[];
 	}
 
-	private get RewardDrops () {
+	private get ItemDrops () {
 		if (!this.selected) return [];
-		return [
-			...this.selected.drops.reward.units,
-			...this.selected.drops.reward.equips
+		return (
+			this.selected.drops
+				.filter(x => !x.startsWith("Char_"))
 				.map(x => {
-					return {
-						name: x.substr(0, x.lastIndexOf("_")),
-						rarity: x.substr(x.lastIndexOf("_") + 1).toUpperCase(),
-					};
-				}),
-		];
+					if (x.startsWith("Equip_")) {
+						const k = x.substr(6);
+						const eq = EquipData.find(y => y.fullKey === k);
+						if (eq) return eq;
+					} else {
+						const cs = ConsumableData.find(y => y.key === x);
+						if (cs) return cs;
+					}
+					return null;
+				})
+				.filter(x => x) as Array<Equip | Consumable>
+		); // .sort((a, b) => b.rarity - a.rarity);
 	}
 
-	private get NodeRows () {
-		return new Array(3)
-			.fill(0)
-			.map((x, i) => this.Nodes(i));
+	private get RewardDrops (): RewardDropType[] {
+		if (!this.selected) return [];
+
+		const f = (x: MapReward) => {
+			if (typeof x === "string") {
+				const k = x.replace(/Char_(.+)_N/, "$1");
+				const u = UnitData.find(y => y.uid === k);
+				if (u) return { unit: u };
+				return null;
+			}
+
+			if (("cash" in x) || ("metal" in x) || ("nutrient" in x) || ("power" in x))
+				return x;
+
+			if ("count" in x) {
+				const i = x.item;
+				if (i.startsWith("Equip_")) {
+					const k = i.substr(6);
+					const eq = EquipData.find(y => y.fullKey === k);
+					if (eq) return { equip: eq, count: x.count };
+				} else {
+					const cs = ConsumableData.find(y => y.key === i);
+					if (cs) return { consumable: cs, count: x.count };
+				}
+				return null;
+			}
+
+			return null;
+		};
+
+		return [
+			...this.selected.reward_f.map(x => f(x)),
+			...this.selected.reward_am.map(x => ({ ...f(x), am: true })),
+		].filter(x => x) as RewardDropType[];
 	}
 
-	private Nodes (y: number) {
-		const ret: MapNodeEntity[] = new Array(8)
+	private get NodeList () {
+		const ret: MapNodeEntity[] = new Array(24)
 			.fill(MapNodeEntity.Empty)
-			.map((x: MapNodeEntity, i) => {
-				return {
-					...x,
-					pos: [i, y] as [MapNodeX, MapNodeY],
-				};
-			});
+			.map((x: MapNodeEntity, i) => ({ ...x, offset: i }));
 
 		const world = MapData[this.world];
 		if (!world) return ret;
 
-		const area = world[this.area]?.list.filter(x => x.pos[1] === y);
+		const area = world[this.area]?.list;
 		if (!area) return ret;
 
-		for (const n of area) ret[n.pos[0]] = n;
+		for (const n of area) ret[n.offset] = n;
 		return ret;
+	}
+
+	private isHidden (node: MapNodeEntity, diffs: boolean) {
+		if (node.prev !== null) {
+			const oy = Math.floor(node.offset / 8);
+			const py = Math.floor(node.prev / 8);
+
+			if (oy === py && node.prev >= node.offset)
+				return true;
+
+			return diffs
+				? oy !== py
+				: oy === py;
+		}
+		return true;
 	}
 
 	private SelectNode (node: MapNodeEntity) {
 		this.selected = node;
 		this.$router.push({
-			path: `/worlds/${this.world}/${this.area}/${node.name}`,
+			path: `/worlds/${this.world}/${this.area}/${node.text}`,
 			hash: "#drops",
 		});
 	}
 
-	private UnitPage (id: number) {
+	private UnitPage (id: number | string) {
 		return `/units/${id}`;
 	}
 
-	private EquipPage (id: string, rarity: string) {
-		return `/equips/${rarity}/${id}`;
+	private EquipPage (equip: Equip) {
+		return `/equips/${equip.fullKey}`;
 	}
 
 	private GoTo (path: string) {
@@ -290,13 +366,7 @@ export default class WorldMapView extends Vue {
 		this.area = params.area;
 
 		if ("node" in params) {
-			const found = this.NodeRows
-				.reduce((p, c) => {
-					p.push(...c);
-					return p;
-				}, [])
-				.find(y => y.name === params.node);
-
+			const found = this.NodeList.find(y => y.text === params.node);
 			this.selected = found || null;
 		}
 	}
@@ -330,20 +400,21 @@ export default class WorldMapView extends Vue {
 
 			display: grid;
 			grid-template-columns: $cols;
-			grid-template-rows: 2fr 1fr;
+			grid-template-rows: 2fr 1fr 2fr 1fr 2fr;
 
-			&:last-child {
-				grid-template-rows: 1fr;
-			}
+			// &:last-child {
+			// 	grid-template-rows: 1fr;
+			// }
 
 			@for $i from 1 through 8 {
 				@for $j from 1 through 3 {
 					$x: (($i - 1) * 2) + 1;
 					$x1: ($i - 1) * 2;
+					$offset: ($i - 1) + ($j - 1) * 8;
 
-					> [data-pos="#{$i - 1},#{$j - 1}"] {
+					> [data-pos="#{$offset}"] {
 						grid-column: (($i - 1) * 2) + 1;
-						grid-row: 1;
+						grid-row: ($j * 2 - 1);
 
 						&[data-dir="0"],
 						&[data-dir="1"] {
@@ -354,7 +425,7 @@ export default class WorldMapView extends Vue {
 							}
 						}
 						&[data-dir="2"] {
-							grid-row: 2;
+							grid-row: ($j * 2);
 						}
 					}
 				}
@@ -374,15 +445,18 @@ export default class WorldMapView extends Vue {
 					visibility: hidden;
 				}
 
-				&[data-y="0"]::before {
-					background-color: #98fd28;
+				@mixin offsetColor($offset, $color) {
+					$selectors: ();
+					@for $i from 0 to 8 {
+						$selectors: append($selectors, '&[data-pos="#{$i + $offset}"]::before', comma);
+					}
+					#{$selectors} {
+						background-color: $color;
+					}
 				}
-				&[data-y="1"]::before {
-					background-color: #ffce22;
-				}
-				&[data-y="2"]::before {
-					background-color: #ff2d5b;
-				}
+				@include offsetColor(0, #98fd28);
+				@include offsetColor(8, #ffce22);
+				@include offsetColor(16, #ff2d5b);
 
 				&[data-dir="1"]::before {
 					margin: 0 5%;

@@ -70,7 +70,7 @@ export interface Unit {
 	equip: [ITEM_TYPE, ITEM_TYPE, ITEM_TYPE, ITEM_TYPE];
 	source: EntitySource[][];
 
-	hasLimited: [string, string];
+	hasLimited: string;
 }
 /* eslint-disable-next-line @typescript-eslint/no-namespace */
 export namespace Unit {
@@ -105,7 +105,7 @@ export namespace Unit {
 			ITEM_TYPE.SUBEQ,
 		],
 		source: [],
-		hasLimited: ["", ""],
+		hasLimited: "",
 	};
 }
 function Compile (): Unit[] {
@@ -144,16 +144,10 @@ function Compile (): Unit[] {
 		// 이 전투원 id로 장착이 제한된 장비
 		hasLimited: (() => {
 			const eq = EquipData.find(y => y.limit && y.limit.some(z => z === x.id));
-			if (!eq) return ["", ""];
+			if (!eq) return "";
 
-			const reg = /_([abs]+)$/.exec(eq.name);
-			if (!reg) return ["", ""];
-
-			return [
-				reg[1].toUpperCase(),
-				eq.name.replace(`_${reg[1]}`, ""),
-			];
-		})() as [string, string],
+			return eq.fullKey;
+		})(),
 	}));
 }
 export default Compile();

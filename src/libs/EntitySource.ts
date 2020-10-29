@@ -30,7 +30,7 @@ export default class EntitySource {
 
 	/** 월간 교환소 획득 여부 (전투원/장비 탭) */
 	public get IsMonthly () {
-		return this.IsExchange && this.Parts.length === 3;
+		return this.IsExchange && this.Parts.length === 4;
 	}
 
 	/** 월간 교환소 정보 (전투원/장비 탭) */
@@ -100,9 +100,12 @@ export default class EntitySource {
 	public get FullEventName () {
 		if (!this.IsEvent) return "";
 
-		const part = this.Parts[2];
-		if (part) return `${this.EventName} (${part}부)`;
-		return this.EventName; // 부수가 없으면 이벤트 이름 그대로
+		if (this.Parts.length === 4) {
+			const part = this.Parts[2];
+			if (part) return `${this.EventName} (${part}부)`;
+			return this.EventName; // 부수가 없으면 이벤트 이름 그대로
+		} else
+			return this.EventName;
 	}
 	// -------------- 이벤트
 
@@ -135,18 +138,22 @@ export default class EntitySource {
 	/** 사이드 스테이지 여부 */
 	public get IsSideMap () {
 		if (!this.IsMap) return false;
-		if (this.IsEvent) // 이벤트 맵인 경우는 지역이 4번째에 위치
-			return this.Parts[3].includes("B") || this.Parts[3].includes("s");
-		else
+		if (this.IsEvent) { // 이벤트 맵인 경우는 지역이 4번째에 위치
+			return this.Parts.length === 4
+				? this.Parts[3].includes("B") || this.Parts[3].includes("s")
+				: this.Parts[2].includes("B") || this.Parts[2].includes("s");
+		} else
 			return this.Parts[0].includes("B") || this.Parts[0].includes("s");
 	}
 
 	/** Ex 스테이지 여부 */
 	public get IsExMap () {
 		if (!this.IsMap) return false;
-		if (this.IsEvent) // 이벤트 맵인 경우는 지역이 4번째에 위치
-			return this.Parts[3].includes("Ex");
-		else
+		if (this.IsEvent) { // 이벤트 맵인 경우는 지역이 4번째에 위치
+			return this.Parts.length === 4
+				? this.Parts[3].includes("Ex")
+				: this.Parts[2].includes("Ex");
+		} else
 			return this.Parts[0].includes("Ex");
 	}
 
@@ -161,9 +168,11 @@ export default class EntitySource {
 
 	/** 클리어 보상 여부 */
 	public get IsReward () {
-		if (this.IsEvent)
-			return this.Parts[3][0] === "*";
-		else if (this.IsChallenge)
+		if (this.IsEvent) {
+			return this.Parts.length === 4
+				? this.Parts[3][0] === "*"
+				: this.Parts[2][0] === "*";
+		} else if (this.IsChallenge)
 			return this.Parts[0][0] === "*";
 
 		return this.Parts[0][0] === "*";
@@ -171,7 +180,7 @@ export default class EntitySource {
 
 	/** 맵 이름 */
 	public get Map () {
-		const index = this.IsEvent ? 3 : 0;
+		const index = this.IsEvent ? this.Parts.length - 1 : 0;
 		return this.IsReward ? this.Parts[index].substr(1) : this.Parts[index];
 	}
 	// -------------- 맵

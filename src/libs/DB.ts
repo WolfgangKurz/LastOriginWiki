@@ -1,12 +1,11 @@
 import UnitDialogueDB from "@/json/unit-dialogue.json";
 import SkillDB from "@/json/unit-skill.json";
-import MapDB from "@/json/map.json";
 import ExpDB from "@/json/exp.json";
 import StoryDB from "@/json/story.json";
 
 import {
 	RawSkill, RawUnitDialogue,
-	Worlds, ExpRaw, StoryRaw,
+	ExpRaw, StoryRaw,
 } from "@/libs/Types";
 
 import { ImageExtension, AssetsRoot } from "@/libs/Const";
@@ -31,6 +30,5 @@ function CompileSkill () {
 }
 export const SkillData = CompileSkill();
 export const UnitDialogueData: RawUnitDialogue = UnitDialogueDB;
-export const MapData = MapDB as unknown as Worlds;
 export const ExpData: ExpRaw = ExpDB;
 export const StoryData: StoryRaw[] = StoryDB;

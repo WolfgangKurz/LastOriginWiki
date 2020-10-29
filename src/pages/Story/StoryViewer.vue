@@ -8,7 +8,8 @@ import { StoryRaw } from "@/libs/Types";
 import { StoryRowData } from "@/libs/Story";
 
 import UnitData from "@/libs/DB/Unit";
-import { MapData, StoryData } from "@/libs/DB";
+import MapData from "@/libs/DB/Map";
+import { StoryData } from "@/libs/DB";
 
 import { AssetsRoot, WorldNames } from "@/libs/Const";
 import { UpdateTitle } from "@/libs/Functions";

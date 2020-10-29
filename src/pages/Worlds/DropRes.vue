@@ -1,0 +1,84 @@
+<template>
+	<div class="drop-item p-2 text-dark">
+		<b-card :bg-variant="am ? 'warning' : 'secondary'" :text-variant="am ? 'dark' : 'white'">
+			<equip-icon class="float-left mr-2" :image="Icon" />
+			<div class="text-left">
+				{{ Name }}
+				<b-badge v-if="count > 1" variant="dark">x{{ FormatNumber(count) }}</b-badge>
+			</div>
+		</b-card>
+	</div>
+</template>
+
+<script lang="ts">
+import Vue from "vue";
+import Component from "vue-class-component";
+import { Watch, Prop } from "vue-property-decorator";
+
+import EquipIcon from "@/components/EquipIcon.vue";
+
+import { Consumable } from "@/libs/DB/Consumable";
+import { FormatNumber } from "@/libs/Functions";
+
+@Component({
+	components: {
+		EquipIcon,
+	},
+})
+export default class DropRes extends Vue {
+	@Prop({
+		type: String,
+		required: true,
+	})
+	private res!: string;
+
+	@Prop({
+		type: Number,
+		default: 1,
+	})
+	private count!: number;
+
+	@Prop({
+		type: Boolean,
+		default: false,
+	})
+	private am!: boolean;
+
+	private get Icon () {
+		switch (this.res) {
+			case "metal": return "UI_Icon_Currency_Metal";
+			case "nutrient": return "UI_Icon_Currency_Nutrient";
+			case "power": return "UI_Icon_Currency_Power";
+			case "cash": return "UI_Icon_TunaCan_T1";
+			default: return "none";
+		}
+	}
+
+	private get Name () {
+		switch (this.res) {
+			case "metal": return "부품";
+			case "nutrient": return "영양";
+			case "power": return "전력";
+			case "cash": return "참치";
+			default: return "???";
+		}
+	}
+
+	private FormatNumber (num: number): string {
+		return FormatNumber(num);
+	}
+}
+</script>
+
+<style lang="scss">
+.drop-item {
+	word-break: keep-all;
+	user-select: none;
+	cursor: pointer;
+
+	.equip-icon {
+		background-color: transparentize(#000, 0.8);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+	}
+}
+</style>
