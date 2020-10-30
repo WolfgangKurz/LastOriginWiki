@@ -2,6 +2,8 @@ const fs = require("fs");
 const path = require("path");
 const { google } = require("googleapis");
 
+const unitData = require("../src/json/unit.json");
+
 function process (auth) {
 	const sheets = google.sheets({ version: "v4", auth });
 	sheets.spreadsheets.values.get({
@@ -16,7 +18,7 @@ function process (auth) {
 			rows.map((row) => {
 				if (row.some(x => !x || x.length === 0)) return;
 
-				const unit = row[1];
+				const unit = unitData.find(y => y.id === parseInt(row[1], 10)).uid;
 				const slot = row[2];
 				const type = row[3];
 

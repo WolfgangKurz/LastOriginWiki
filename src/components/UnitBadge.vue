@@ -18,9 +18,9 @@ const roleName: Record<ROLE_TYPE, string> = {
 	[ROLE_TYPE.__MAX__]: "",
 };
 const typeList = [
-	"Light",
-	"Air",
-	"Heavy",
+	"light",
+	"air",
+	"heavy",
 ];
 
 @Component({})
@@ -61,17 +61,21 @@ export default class UnitBadge extends Vue {
 	})
 	private size!: string;
 
+	private get Limit () {
+		return this.limit.toLowerCase();
+	}
+
 	private get Type (): ACTOR_CLASS {
 		const table: Record<string, ACTOR_CLASS> = {
-			Light: ACTOR_CLASS.LIGHT,
-			Air: ACTOR_CLASS.AIR,
-			Heavy: ACTOR_CLASS.HEAVY,
+			light: ACTOR_CLASS.LIGHT,
+			air: ACTOR_CLASS.AIR,
+			heavy: ACTOR_CLASS.HEAVY,
 		};
-		if (this.limit) {
-			if (this.limit.includes("+"))
-				return table[this.limit.split("+")[0]];
-			else if (typeList.includes(this.limit))
-				return table[this.limit];
+		if (this.Limit) {
+			if (this.Limit.includes("+"))
+				return table[this.Limit.split("+")[0]];
+			else if (typeList.includes(this.Limit))
+				return table[this.Limit];
 			else
 				return ACTOR_CLASS.__MAX__;
 		}
@@ -80,15 +84,15 @@ export default class UnitBadge extends Vue {
 
 	private get Role (): ROLE_TYPE {
 		const table: Record<string, ROLE_TYPE> = {
-			Attacker: ROLE_TYPE.ATTACKER,
-			Defender: ROLE_TYPE.DEFENDER,
-			Supporter: ROLE_TYPE.SUPPORTER,
+			attacker: ROLE_TYPE.ATTACKER,
+			defender: ROLE_TYPE.DEFENDER,
+			supporter: ROLE_TYPE.SUPPORTER,
 		};
-		if (this.limit) {
-			if (this.limit.includes("+"))
-				return table[this.limit.split("+")[0]];
-			else if (!typeList.includes(this.limit))
-				return table[this.limit];
+		if (this.Limit) {
+			if (this.Limit.includes("+"))
+				return table[this.Limit.split("+")[0]];
+			else if (!typeList.includes(this.Limit))
+				return table[this.Limit];
 			else
 				return ROLE_TYPE.__MAX__;
 		}

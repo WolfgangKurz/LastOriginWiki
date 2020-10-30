@@ -33,7 +33,7 @@
 						</b-col>
 						<b-col class="bg-dark text-white">장착 제한</b-col>
 						<b-col>
-							<span v-if="Limits.length === 0" class="text-secondary">-</span>
+							<span v-if="Limits.length === 0" class="text-secondary">제한 없음</span>
 							<template v-else>
 								<span v-for="limit in Limits" :key="`equip-limit-${limit}`">
 									<unit-badge v-if="typeof limit === 'string'" :limit="limit" />
@@ -46,91 +46,115 @@
 					</b-row>
 				</b-col>
 			</b-row>
+			<b-row class="mt-1">
+				<b-col class="break-keep white-pre-line">{{ target.desc }}</b-col>
+			</b-row>
 		</b-container>
 
-		<b-table-simple bordered fixed table-class="text-center">
-			<b-tbody>
-				<b-tr>
-					<b-td class="break-keep">{{ target.desc }}</b-td>
-				</b-tr>
+		<b-tabs nav-class="unit-display-tabs mt-2">
+			<b-tab title-link-class="text-dark" :active="displayTab === 'info'" @click="displayTab = 'info'">
+				<template #title>
+					<b-icon-receipt class="mr-1" />
+					장비 효과
+				</template>
+			</b-tab>
+			<b-tab title-link-class="text-dark" :active="displayTab === 'drop'" @click="displayTab = 'drop'">
+				<template #title>
+					<b-icon-basket-fill class="mr-1" />
+					획득처
+				</template>
+			</b-tab>
+			<b-tab title-link-class="text-dark" :active="displayTab === 'enchant'" @click="displayTab = 'enchant'">
+				<template #title>
+					<b-icon-cpu-fill class="mr-1" />
+					강화
+				</template>
+			</b-tab>
+		</b-tabs>
 
-				<b-tr>
-					<b-th variant="dark" v-b-toggle.equip-drop-header>
-						획득처
-						<b-icon-arrows-expand class="ml-2" />
-					</b-th>
-				</b-tr>
-				<b-tr>
-					<b-td class="p-0">
-						<b-collapse id="equip-drop-header" class="p-3">
+		<template v-if="displayTab === 'info'">
+			<b-table-simple bordered fixed table-class="text-center">
+				<b-tbody>
+					<b-tr>
+						<b-th variant="dark">강화 레벨 +{{ level }}</b-th>
+					</b-tr>
+					<b-tr>
+						<b-td>
+							<b-input type="range" min="0" max="10" v-model="level" number />
+						</b-td>
+					</b-tr>
+				</b-tbody>
+			</b-table-simple>
+
+			<b-list-group v-if="StatusList" class="text-left">
+				<b-list-group-item v-for="(status, idx) in StatusList" :key="`status-line-${idx}`">
+					<node-renderer :elem="status" />
+					<!--
+				<div v-if="status.unknown" class="unknown-status float-right" title="정확하지 않을 수 있습니다" v-b-tooltip.hover.left>&#x26A0;</div>
+				-->
+				</b-list-group-item>
+			</b-list-group>
+		</template>
+
+		<template v-if="displayTab === 'drop'">
+			<b-container>
+				<b-row>
+					<b-col class="text-center pt-2">
+						<b-badge v-if="target.craftable" variant="dark">
+							<b-icon-hammer class="mr-1" />
+							제조 {{ CraftTime }}
+						</b-badge>
+
+						<div v-for="(area, aindex) in Sources" :key="`equip-modal-source-${aindex}`">
+							<hr v-if="(target && target.craftable) || aindex > 0" class="my-1" />
+							<source-badge
+								v-for="(source, sindex) in area"
+								:key="`equip-modal-drop-${aindex}-${sindex}-${source}`"
+								:source="source"
+								detail
+								linked
+							/>
+						</div>
+						<template v-if="Sources.length === 0">
 							<b-badge v-if="target.craftable" variant="dark">
 								<b-icon-hammer class="mr-1" />
-								제조 가능
+								제조 {{ CraftTime }}
 							</b-badge>
+							<span v-else class="text-secondary">획득처 정보 없음 (제조 불가)</span>
+						</template>
+					</b-col>
+				</b-row>
+			</b-container>
+		</template>
 
-							<div v-for="(area, aindex) in Sources" :key="`equip-modal-source-${aindex}`">
-								<hr v-if="(target && target.craftable) || aindex > 0" class="my-1" />
-								<source-badge
-									v-for="(source, sindex) in area"
-									:key="`equip-modal-drop-${aindex}-${sindex}-${source}`"
-									:source="source"
-									detail
-									linked
-								/>
-							</div>
-							<template v-if="Sources.length === 0">
-								<b-badge v-if="target.craftable" variant="dark">제조 가능</b-badge>
-								<span v-else class="text-secondary">획득처 정보 없음 (제조 불가)</span>
-							</template>
-						</b-collapse>
-					</b-td>
-				</b-tr>
+		<b-table-simple v-if="displayTab === 'enchant'" bordered table-class="text-center">
+			<b-tbody>
 				<b-tr>
-					<b-th variant="dark">강화 레벨 +{{ level }}</b-th>
-				</b-tr>
-				<b-tr>
-					<b-td>
-						<b-input type="range" min="0" max="10" v-model="level" number />
-					</b-td>
-				</b-tr>
-				<b-tr>
+					<b-th variant="dark">레벨</b-th>
+					<b-th variant="dark">강화 비용</b-th>
 					<b-th variant="dark">
-						0 -&gt; {{ level }}
-						<span class="pl-2">강화 비용</span>
+						<img class="upmodule-icon" :src="`${AssetsRoot}/${imageExt}/item/UI_Icon_Equip_ChipSet_T4.${imageExt}`" />
+					</b-th>
+					<b-th variant="dark">총 비용</b-th>
+					<b-th variant="dark">
+						<img class="upmodule-icon" :src="`${AssetsRoot}/${imageExt}/item/UI_Icon_Equip_ChipSet_T4.${imageExt}`" />
 					</b-th>
 				</b-tr>
-				<b-tr>
+				<b-tr v-for="lv of 10" :key="`equip-modal-enchant-${lv}`">
+					<b-th variant="dark">+{{ lv }}</b-th>
+					<b-td>{{ UpgradeCostText(lv) }}</b-td>
 					<b-td>
-						<span v-if="level === 0" class="text-secondary">강화 없음</span>
-						<template v-else>
-							<span class="px-2">
-								<div class="d-inline-block px-2">
-									<img class="res-icon" :src="`${AssetsRoot}/res-component.png`" />
-									<img class="res-icon" :src="`${AssetsRoot}/res-nutrition.png`" />
-									<img class="res-icon" :src="`${AssetsRoot}/res-power.png`" />
-								</div>
-								<div class="d-inline-block">각 자원 총 {{ UpgradeCostText }}</div>
-							</span>
-							<hr class="d-sm-none" />
-							<span class="d-none d-sm-inline text-secondary">|</span>
-							<span class="px-2">
-								<img class="upmodule-icon" :src="`${AssetsRoot}/${imageExt}/item/UI_Icon_Equip_ChipSet_T4.${imageExt}`" />
-								{{ Math.ceil(UpgradeCost / 400) }}개 필요
-							</span>
-						</template>
+						<span class="text-secondary">x</span>
+						{{ Math.ceil(UpgradeCost(lv) / 400) }}
+					</b-td>
+					<b-td>{{ UpgradeCostText(lv, true) }}</b-td>
+					<b-td>
+						<span class="text-secondary">x</span>
+						{{ Math.ceil(UpgradeCost(lv, true) / 400) }}
 					</b-td>
 				</b-tr>
 			</b-tbody>
 		</b-table-simple>
-
-		<b-list-group class="text-left" v-if="StatusList">
-			<b-list-group-item v-for="(status, idx) in StatusList" :key="`status-line-${idx}`">
-				<node-renderer :elem="status" />
-				<!--
-				<div v-if="status.unknown" class="unknown-status float-right" title="정확하지 않을 수 있습니다" v-b-tooltip.hover.left>&#x26A0;</div>
-				-->
-			</b-list-group-item>
-		</b-list-group>
 	</b-modal>
 </template>
 
@@ -188,9 +212,12 @@ export default class EquipModal extends Vue {
 	private rarity: ACTOR_GRADE = ACTOR_GRADE.SS;
 	private level: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 = 10;
 
-	@Watch("name")
-	private WatchName () {
+	private displayTab: "info" | "drop" | "enchant" = "info";
+
+	@Watch("equip")
+	private WatchEquip () {
 		this.level = 10;
+		this.displayTab = "info";
 	}
 
 	private get AssetsRoot () {
@@ -203,7 +230,24 @@ export default class EquipModal extends Vue {
 
 	private get target () {
 		if (!this.equip) return null;
-		return EquipData.find(x => x.type === this.equip.type && x.key === this.equip.key && x.rarity === this.rarity) || null;
+		return EquipData.find(x => x.type === this.equip.type && x.key === this.equip.key && x.rarity === this.rarity) || (() => {
+			const typeTable: Record<ITEM_TYPE, string> = {
+				[ITEM_TYPE.CHIP]: "Chip",
+				[ITEM_TYPE.SPCHIP]: "System",
+				[ITEM_TYPE.SUBEQ]: "Sub",
+
+				[ITEM_TYPE.PCITEM]: "",
+				[ITEM_TYPE.CONSUMABLE]: "",
+				[ITEM_TYPE.MATERIAL]: "",
+				[ITEM_TYPE.__MAX__]: "",
+			};
+
+			const found = EquipData.filter(x => x.type === this.equip.type && x.key === this.equip.key);
+			if (found.length === 0) return null;
+			const eq = found.sort((a, b) => (b.rarity - a.rarity))[0];
+			this.rarity = eq.rarity;
+			return eq;
+		})();
 	}
 
 	private get RarityList () {
@@ -248,6 +292,18 @@ export default class EquipModal extends Vue {
 		};
 	}
 
+	private get CraftTime () {
+		if (!this.target) return "-";
+
+		const duration = this.target.craftable;
+		if (!duration) return "-";
+
+		const h = Math.floor(duration / 3600);
+		const m = Math.floor(duration / 60) % 60;
+		const s = duration % 60;
+		return `${("0" + h).substr(-2)}:${("0" + m).substr(-2)}:${("0" + s).substr(-2)}`;
+	}
+
 	/** 1 레벨 강화당 상승하는 필요치 배율 */
 	private get UpgradeIncrementals () {
 		return {
@@ -258,21 +314,23 @@ export default class EquipModal extends Vue {
 		};
 	}
 
-	private get UpgradeCost () {
+	private UpgradeCost (level: number, sum: boolean = false) {
 		if (!this.equip) return 0;
 
 		const base = this.equip.upgrade;
 		const per = this.UpgradeIncrementals[this.rarity];
-		const lv = this.level;
 
-		let sum = 0;
-		for (let i = 0; i < lv; i++)
-			sum += Math.floor(base * (1 + per * i));
-		return sum;
+		if (sum) {
+			let v = 0;
+			for (let i = 0; i <= level; i++)
+				v += Math.floor(base * (per * i));
+			return v;
+		}
+		return Math.floor(base * (per * level));
 	}
 
-	private get UpgradeCostText () {
-		return FormatNumber(this.UpgradeCost);
+	private UpgradeCostText (level: number, sum: boolean = false) {
+		return FormatNumber(this.UpgradeCost(level, sum));
 	}
 
 	private GoTo (path: string) {
@@ -310,6 +368,10 @@ export default class EquipModal extends Vue {
 		word-break: keep-all;
 	}
 
+	.white-pre-line {
+		white-space: pre-line;
+	}
+
 	.table-equip-modal.container {
 		margin-bottom: 0 !important;
 
@@ -340,12 +402,12 @@ export default class EquipModal extends Vue {
 	}
 
 	.res-icon {
-		width: 24px;
 		margin-right: 0.125em;
+		width: 24px;
 	}
 	.upmodule-icon {
+		margin: 0;
 		width: 32px;
-		margin-right: 0.25em;
 	}
 }
 </style>

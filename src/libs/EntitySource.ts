@@ -1,4 +1,4 @@
-import { WorldNames } from "@/libs/Const";
+import { WorldNames, ApocryphaUnit, ChallengeStage } from "@/libs/Const";
 
 export default class EntitySource {
 	public readonly source: string;
@@ -30,7 +30,7 @@ export default class EntitySource {
 
 	/** 월간 교환소 획득 여부 (전투원/장비 탭) */
 	public get IsMonthly () {
-		return this.IsExchange && this.Parts.length === 4;
+		return this.IsExchange && this.Parts.length === 3;
 	}
 
 	/** 월간 교환소 정보 (전투원/장비 탭) */
@@ -112,25 +112,22 @@ export default class EntitySource {
 	// -------------- 외부 통신 요청
 	/** 외부 통신 요청의 보상 여부 */
 	public get IsChallenge () {
-		return this.Parts[0] === "Challenge" || this.Parts[0] === "*Challenge";
+		return this.Parts[0].startsWith("Cha") || this.Parts[0].startsWith("*Cha");
 	}
 
 	/** 외부 통신 요청의 챌린지 이름 */
 	public get ChallengeName () {
 		if (!this.IsChallenge) return "";
 
-		switch (this.Parts[1]) {
-			case "PushPullFire": return "밀고, 당기고, 불질러!";
-			case "CreatorAndCreature": return "설계자와 피조물";
-			default: return this.Parts[1];
-		}
+		const id = this.Parts[0].replace(/^\*?(Cha[0-9]+)-.+$/, "$1");
+		return ChallengeStage[id] || id;
 	}
 
 	/** 외부 통신 요청의 챌린지 난이도 (1~4) */
 	public get ChallengeDifficulty () {
 		if (!this.IsChallenge) return 0;
 		const difficulty = ["", "NORMAL", "HARD", "VERY HARD", "EXETREAM"];
-		return difficulty[parseInt(this.Parts[2], 10)];
+		return difficulty[parseInt(this.Parts[0].replace(/^\*?Cha[0-9]+-(.+)$/, "$1"), 10)];
 	}
 	// -------------- 외부 통신 요청
 
@@ -188,20 +185,17 @@ export default class EntitySource {
 	// -------------- 외전
 	/** 외전 획득 여부 */
 	public get IsApocrypha () {
-		return this.Parts[0] === "Apo";
+		return this.Parts[0].startsWith("S") || this.Parts[0].startsWith("*S");
 	}
 
 	/** 외전 대상 전투원 */
 	public get ApocryphaUnit () {
 		if (!this.IsApocrypha) return 0;
-		return parseInt(this.Parts[1], 10);
-	}
 
-	/** n 번째 외전 */
-	public get ApocryphaNumber () {
-		if (!this.IsApocrypha) return 0;
-		if (!this.Parts[2]) return 0;
-		return parseInt(this.Parts[2], 10);
+		if (this.Parts[0][0] === "*")
+			return ApocryphaUnit[this.Parts[0].substr(1)];
+		else
+			return ApocryphaUnit[this.Parts[0]];
 	}
 	// -------------- 외전
 
@@ -286,7 +280,7 @@ export default class EntitySource {
 		} else if (this.IsEndlessWar)
 			output.push("EW");
 		else if (this.IsApocrypha)
-			output.push("Apo:" + this.ApocryphaUnit + ":" + this.ApocryphaNumber);
+			output.push("Apo:" + this.ApocryphaUnit);
 		else if (this.IsExchange) {
 			if (this.IsMonthly)
 				output.push("MExc:" + this.ExchangeDate);

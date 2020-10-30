@@ -3,6 +3,7 @@ import Vue from "vue";
 
 import { VuexModule, Module, Mutation, Action } from "vuex-class-modules";
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/libs/Types/Enums";
+import { BuffEffectInfo, BuffEffectList } from "@/libs/Equips/BuffEffect";
 
 Vue.use(Vuex);
 
@@ -31,13 +32,21 @@ export interface UnitTableFilters {
 }
 export type UnitListOrder = "dict" | "name" | "rarity";
 
+export interface EffectFilterListItemSingle extends BuffEffectInfo {
+	selected: boolean;
+}
+export interface EffectFilterListItemPM extends BuffEffectInfo {
+	pmType: 1 | -1;
+	selected: boolean;
+}
+export type EffectFilterListType = Array<EffectFilterListItemSingle | EffectFilterListItemPM[]>;
+
 export interface EquipDisplayType {
 	Type: {
 		Chip: boolean;
 		OS: boolean;
 		Public: boolean;
 		Private: boolean;
-		EndlessWar: boolean;
 	};
 	Source: {
 		EventExchange: boolean;
@@ -53,8 +62,9 @@ export interface EquipDisplayType {
 		Map: boolean;
 		Challenge: boolean;
 		Uninstalled: boolean;
+		EndlessWar: boolean;
 	};
-	Effects: string[];
+	Effects: EffectFilterListType;
 }
 
 @Module()
@@ -62,7 +72,7 @@ class StoreModule extends VuexModule {
 	private unitDisplayType: UnitDisplayType = "table";
 	private unitSearchText: string = "";
 
-	private unitTablePromotions: boolean = false;
+	private unitTablePromotionFilter: number = 0;
 	private unitTableFilter: UnitTableFilters = {
 		Rarity: {
 			[ACTOR_GRADE.B]: true,
@@ -92,40 +102,52 @@ class StoreModule extends VuexModule {
 
 	private unitGroupMerge: boolean = false;
 
-	public readonly equipEffectFilterList: Array<string | string[]> = [
-		["+atk", "-atk"],
-		"+armorpierce", // ["+armorpierce", "-armorpierce"],
-		"+ap", // ["+ap", "-ap"],
-		"+chance", // ["+chance", "-chance"],
-		["+crit", "-crit"],
-		["+def", "-def"],
-		"+dp", // ["+dp", "-dp"],
-		["+eva", "-eva"],
-		"+exp", // ["+exp", "-exp"],
-		"+barrier", // ["+barrier", "-barrier"],
-		"+hp", // ["+hp", "-hp"],
-		["+range", "-range"],
-		["+spd", "-spd"],
-		["+dr", "-dr"],
-		["+acc", "-acc"],
-		"counter",
-		["+dmg", "-dmg"],
-		"hp-atk",
-		"hit1", // "hit2",
-		["+resist1", "+resist2"], // ["+resist1", "-resist1", "+resist2", "-resist2"], "resist3",
-		"revive",
-		"off1", "off2",
-		"scout", "stun", "skill",
-	];
-	// resist1 : 효과 저항 증감
-	// resist2 : 속성 저항 증감
-	// resist3 : 스테이터스 감소 무효
-	// off1 : 스테이터스 감소 해제
-	// off2 : 해로운 효과 해제 (모든)
+	public readonly equipEffectFilterList = BuffEffectList();
+
+	public readonly equipSourceFilterList: Record<keyof EquipDisplayType["Source"], boolean> = {
+		EventExchange: true,
+		OldEventExchange: true,
+		Exchange: true,
+		OldExchange: true,
+		Apocrypha: true,
+		Limited: true,
+		ExMap: true,
+		SideMap: true,
+		EventMap: true,
+		OldEventMap: true,
+		Map: true,
+		Challenge: true,
+		Uninstalled: true,
+		EndlessWar: true,
+	};
+
+	public readonly equipSourceFilterListCleared: Record<keyof EquipDisplayType["Source"], boolean> = {
+		EventExchange: false,
+		OldEventExchange: false,
+		Exchange: false,
+		OldExchange: false,
+		Apocrypha: false,
+		Limited: false,
+		ExMap: false,
+		SideMap: false,
+		EventMap: false,
+		OldEventMap: false,
+		Map: false,
+		Challenge: false,
+		Uninstalled: false,
+		EndlessWar: false,
+	};
 
 	public readonly equipEffectFilterListFlatten = this.equipEffectFilterList
-		.map(x => typeof x === "string" ? [x] : x)
-		.reduce((p, c) => [...p, ...c], []);
+		.map(x => {
+			if (x.pm) {
+				return [
+					{ ...x, pmType: 1, selected: true },
+					{ ...x, pmType: -1, selected: true },
+				];
+			} else
+				return { ...x, selected: true };
+		}) as EffectFilterListType;
 
 	private equipDisplayFilter: EquipDisplayType = {
 		Type: {
@@ -133,23 +155,8 @@ class StoreModule extends VuexModule {
 			OS: true,
 			Public: true,
 			Private: true,
-			EndlessWar: true,
 		},
-		Source: {
-			EventExchange: true,
-			OldEventExchange: true,
-			Exchange: true,
-			OldExchange: true,
-			Apocrypha: true,
-			Limited: true,
-			ExMap: true,
-			SideMap: true,
-			EventMap: true,
-			OldEventMap: true,
-			Map: true,
-			Challenge: true,
-			Uninstalled: true,
-		},
+		Source: this.equipSourceFilterList,
 		Effects: this.equipEffectFilterListFlatten,
 	};
 
@@ -171,13 +178,13 @@ class StoreModule extends VuexModule {
 		this.unitSearchText = value;
 	}
 
-	public get UnitTablePromotions (): boolean {
-		return this.unitTablePromotions;
+	public get UnitTablePromotionFilter (): number {
+		return this.unitTablePromotionFilter;
 	}
 
 	@Mutation
-	public setUnitTablePromotions (value: boolean) {
-		this.unitTablePromotions = value;
+	public setUnitTablePromotionFilter (value: number) {
+		this.unitTablePromotionFilter = value;
 	}
 
 	public get UnitTableFilter (): UnitTableFilters {
@@ -235,13 +242,33 @@ class StoreModule extends VuexModule {
 	}
 
 	@Action
-	public FillEquipDisplayFilter () {
-		this.equipDisplayFilter.Effects = this.equipEffectFilterListFlatten;
+	public FillEquipDisplayEffectFilter () {
+		this.equipDisplayFilter.Effects.forEach(x => {
+			if (Array.isArray(x))
+				x.forEach(y => (y.selected = true));
+			else
+				x.selected = true;
+		});
 	}
 
 	@Action
-	public ClearEquipDisplayFilter () {
-		this.equipDisplayFilter.Effects = [];
+	public ClearEquipDisplayEffectFilter () {
+		this.equipDisplayFilter.Effects.forEach(x => {
+			if (Array.isArray(x))
+				x.forEach(y => (y.selected = false));
+			else
+				x.selected = false;
+		});
+	}
+
+	@Action
+	public FillEquipDisplaySourceFilter () {
+		this.equipDisplayFilter.Source = this.equipSourceFilterList;
+	}
+
+	@Action
+	public ClearEquipDisplaySourceFilter () {
+		this.equipDisplayFilter.Source = this.equipSourceFilterListCleared;
 	}
 }
 

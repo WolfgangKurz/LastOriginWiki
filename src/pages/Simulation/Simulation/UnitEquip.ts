@@ -4,6 +4,7 @@ export interface UnitEquip {
 	FullKey: string;
 	Type: ITEM_TYPE;
 	Key: string;
+	Icon: string;
 	Rarity: ACTOR_GRADE;
 	Level: number; // 0 ~ 10
 }
@@ -13,6 +14,7 @@ export namespace UnitEquip {
 		FullKey: "__T1",
 		Type: ITEM_TYPE.CHIP,
 		Key: "",
+		Icon: "none",
 		Rarity: ACTOR_GRADE.SS,
 		Level: 10,
 	};

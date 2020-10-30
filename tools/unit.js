@@ -93,7 +93,7 @@ function process (auth) {
 					shortgroup,
 					groupkey,
 
-					craftable: !!craftable,
+					craftable: !craftable ? false : parseInt(craftable, 10),
 					marry: !!marry,
 
 					linkBonus: linkBonusTable[linkBonus],
@@ -150,11 +150,10 @@ function process (auth) {
 		const rows = res.data.values;
 		if (rows.length) {
 			rows.map((row) => {
-				if (!row[1]) return;
+				if (!row[0]) return;
 
-				const id = parseInt(row[0], 10);
+				const id = parseInt(row[1], 10);
 				const rarity = row[2];
-				if (!rarity) return;
 
 				const HP = [parseFloat(row[3]), parseFloat(row[4])];
 				const ATK = [parseFloat(row[5]), parseFloat(row[6])];

@@ -3,7 +3,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
-import UnitData from "@/libs/DB/Unit";
+import UnitData, { Unit } from "@/libs/DB/Unit";
 
 import { CurrentEvent, CurrentDate } from "@/libs/Const";
 import EntitySource from "@/libs/EntitySource";
@@ -81,7 +81,7 @@ export default class SourceBadge extends Vue {
 				const text = this.Source.IsReward ? "최종 보상" : "클리어 보상";
 
 				if (this.detail)
-					return `외부 통신 요청 (${this.Source.ChallengeName}, ${this.Source.ChallengeDifficulty}) ${text}`.trim();
+					return `외부 통신 요청 (${this.Source.ChallengeName} ${this.Source.ChallengeDifficulty}) ${text}`.trim();
 				else
 					return "외부 통신 요청";
 			} else if (this.Source.IsEndlessWar) {
@@ -90,11 +90,10 @@ export default class SourceBadge extends Vue {
 				else
 					return "영원한 전장";
 			} else if (this.Source.IsApocrypha) {
+				const text = this.Source.IsReward ? "클리어 보상" : "";
 				if (this.detail) {
-					if (this.Source.ApocryphaNumber)
-						return `${UnitData[this.Source.ApocryphaUnit].name} 외전 ${this.Source.ApocryphaNumber}부`;
-					else
-						return `${UnitData[this.Source.ApocryphaUnit].name} 외전`;
+					const unit = UnitData.find(x => x.uid === this.Source.ApocryphaUnit) || Unit.Empty;
+					return `${unit.name} 외전 ${text}`.trim();
 				} else
 					return "외전";
 			} else if (this.Source.IsExchange) {
@@ -127,6 +126,10 @@ export default class SourceBadge extends Vue {
 
 					if (this.detail)
 						return `${event} ${this.Source.Map} ${text}`.trim();
+					else if (this.minimum && this.Source.IsExMap)
+						return "이벤트 Ex";
+					else if (this.minimum && this.Source.IsSideMap)
+						return "이벤트 B";
 					else if (this.minimum)
 						return "이벤트";
 					else

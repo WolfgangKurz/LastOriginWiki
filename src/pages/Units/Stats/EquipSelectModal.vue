@@ -18,7 +18,7 @@
 					<template #button-content>
 						<template v-if="!SelectedEquip.key">장비를 선택해주세요.</template>
 						<template v-else>
-							<equip-icon :id="SelectedEquip.fullKey" size="40" class="mr-2" />
+							<equip-icon :image="SelectedEquip.icon" size="40" class="mr-2" />
 							{{ SelectedEquipName }}
 							<rarity-badge class="ml-1" :rarity="SelectedEquip.rarity" border />
 							<b-badge v-if="equipLevel > 0" variant="info">+ {{ equipLevel }}</b-badge>
@@ -29,7 +29,7 @@
 						:key="`simulation-equip-select-modal-${group.baseKey}`"
 						@click="SelectEquipGroup(group.baseKey)"
 					>
-						<equip-icon :id="group.fullKey" size="40" class="mr-2" />
+						<equip-icon :image="group.icon" size="40" class="mr-2" />
 						<span class="d-inline-block mr-2">{{ group.name }}</span>
 					</b-dropdown-item>
 				</b-dropdown>
@@ -182,7 +182,8 @@ export default class EquipSelectModal extends Vue {
 				const key = first.key;
 
 				if (this.target && first.limit) {
-					const u = UnitData[this.target];
+					const u = UnitData.find(x => x.id === this.target);
+					if (!u) return false;
 					let ret = false;
 
 					for (const y of first.limit) {
@@ -235,6 +236,7 @@ export default class EquipSelectModal extends Vue {
 					fullKey: `${type}_${key}_T${last.rarity - 1}`,
 					baseKey: `${type}_${key}`,
 					name: last.name.replace(/ (RE|MP|SP|EX)$/, ""),
+					icon: last.icon,
 				};
 			});
 	}
