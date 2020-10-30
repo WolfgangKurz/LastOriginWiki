@@ -13,6 +13,7 @@
 						<item-slot
 							class="float-left mr-2"
 							:type="equip.Type"
+							:icon="equip.Icon"
 							:full-key="equip.FullKey"
 							:level="equip.Level"
 							@click="EquipSelecting = idx + 1"
@@ -116,6 +117,7 @@ export default class UnitStatsEquip extends Vue {
 				FullKey: equip.fullKey,
 				Type: equip.type,
 				Key: equip.key,
+				Icon: equip.icon,
 				Rarity: equip.rarity,
 				// Name: equip.name,
 				Level: level,

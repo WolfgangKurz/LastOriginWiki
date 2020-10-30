@@ -2,10 +2,10 @@
 	<div class="equips">
 		<div class="text-center mb-3">
 			<b-alert variant="warning" show>
-				일부 이벤트의 교환소 정보가 이력되지 않았습니다.<br />
+				일부 이벤트의 교환소 정보가 입력되지 않았습니다.<br />
 				장비 좌측 상단의 <b-badge variant="secondary">획득처 없음</b-badge>표시는 <b-badge variant="danger">현재 진행중인 이벤트</b-badge>및
-				<b-badge variant="exchange">현재 기간 교환소</b-badge>기준입니다. 이전 이벤트 또는 기간에 드랍/교환 가능했던 장비어도 현재 획득처가
-				없다면 표시됩니다.
+				<b-badge variant="exchange">현재 기간 교환소</b-badge>기준입니다.<br />
+				이전 이벤트 또는 기간에 드랍/교환 가능했던 장비어도 현재 획득처가 없다면 표시됩니다.
 			</b-alert>
 		</div>
 
@@ -35,76 +35,94 @@
 				<b-row>
 					<b-col class="filter-label" md="auto" cols="12">장비 획득처 :</b-col>
 					<b-col md cols="12">
-						<div clas="mx-1 mb-1">
+						<div class="clearfix">
+							<div class="float-right">
+								<b-checkbox v-model="displayEquipSources">장비 획득처 목록 표시</b-checkbox>
+							</div>
+
+							<b-button-group class="float-left d-block mb-1">
+								<b-button variant="primary" @click="FillEquipSourceFilters">모두 선택</b-button>
+								<b-button variant="danger" @click="ClearEquipSourceFilters">모두 선택 해제</b-button>
+							</b-button-group>
+						</div>
+
+						<b-collapse :visible="displayEquipSources">
 							<b-btn-group class="mx-1 mb-1">
-								<b-button variant="outline-secondary" :pressed="Display.Source.Limited" @click="Filter('Source', 'Limited')"
-									>한정</b-button
-								>
+								<b-button variant="outline-secondary" :pressed="Display.Source.Limited" @click="Filter('Source', 'Limited')">
+									한정
+								</b-button>
 							</b-btn-group>
 							<b-btn-group class="mx-1 mb-1">
-								<b-button variant="outline-dark" :pressed="Display.Type.EndlessWar" @click="Filter('Type', 'EndlessWar')"
-									>영원한 전장</b-button
-								>
+								<b-button variant="outline-dark" :pressed="Display.Source.EndlessWar" @click="Filter('Source', 'EndlessWar')">
+									영원한 전장
+								</b-button>
 							</b-btn-group>
 							<b-btn-group class="mx-1 mb-1">
-								<b-button variant="outline-apocrypha" :pressed="Display.Source.Apocrypha" @click="Filter('Source', 'Apocrypha')"
-									>외전</b-button
-								>
+								<b-button variant="outline-apocrypha" :pressed="Display.Source.Apocrypha" @click="Filter('Source', 'Apocrypha')">
+									외전
+								</b-button>
 							</b-btn-group>
 							<b-btn-group class="mx-1 mb-1">
-								<b-button variant="outline-exchange" :pressed="Display.Source.Exchange" @click="Filter('Source', 'Exchange')"
-									>교환소</b-button
-								>
+								<b-button variant="outline-exchange" :pressed="Display.Source.Exchange" @click="Filter('Source', 'Exchange')">
+									교환소
+								</b-button>
 								<b-button
 									variant="outline-exchange-old"
 									:pressed="Display.Source.OldExchange"
 									@click="Filter('Source', 'OldExchange')"
-									>지난 교환소</b-button
 								>
+									지난 교환소
+								</b-button>
 							</b-btn-group>
 							<b-btn-group class="mx-1 mb-1">
-								<b-button variant="outline-danger" :pressed="Display.Source.ExMap" @click="Filter('Source', 'ExMap')">Ex 맵</b-button>
-								<b-button variant="outline-success" :pressed="Display.Source.SideMap" @click="Filter('Source', 'SideMap')"
-									>사이드 맵</b-button
-								>
-								<b-button variant="outline-warning" :pressed="Display.Source.Map" @click="Filter('Source', 'Map')">일반 맵</b-button>
+								<b-button variant="outline-danger" :pressed="Display.Source.ExMap" @click="Filter('Source', 'ExMap')">
+									Ex 맵
+								</b-button>
+								<b-button variant="outline-success" :pressed="Display.Source.SideMap" @click="Filter('Source', 'SideMap')">
+									사이드 맵
+								</b-button>
+								<b-button variant="outline-warning" :pressed="Display.Source.Map" @click="Filter('Source', 'Map')">
+									일반 맵
+								</b-button>
 							</b-btn-group>
 							<b-btn-group class="mx-1 mb-1">
-								<b-button variant="outline-warning" :pressed="Display.Source.EventMap" @click="Filter('Source', 'EventMap')"
-									>이벤트 맵</b-button
-								>
+								<b-button variant="outline-warning" :pressed="Display.Source.EventMap" @click="Filter('Source', 'EventMap')">
+									이벤트 맵
+								</b-button>
 								<b-button
 									variant="outline-event-exchange"
 									:pressed="Display.Source.EventExchange"
 									@click="Filter('Source', 'EventExchange')"
-									>이벤트 교환소</b-button
 								>
+									이벤트 교환소
+								</b-button>
 							</b-btn-group>
 							<b-btn-group class="mx-1 mb-1">
-								<b-button variant="outline-warning" :pressed="Display.Source.OldEventMap" @click="Filter('Source', 'OldEventMap')"
-									>지난 이벤트 맵</b-button
-								>
+								<b-button variant="outline-warning" :pressed="Display.Source.OldEventMap" @click="Filter('Source', 'OldEventMap')">
+									지난 이벤트 맵
+								</b-button>
 								<b-button
 									variant="outline-event-exchange-old"
 									:pressed="Display.Source.OldEventExchange"
 									@click="Filter('Source', 'OldEventExchange')"
-									>지난 이벤트 교환소</b-button
 								>
+									지난 이벤트 교환소
+								</b-button>
 							</b-btn-group>
 							<b-btn-group class="mx-1 mb-1">
-								<b-button variant="outline-primary" :pressed="Display.Source.Challenge" @click="Filter('Source', 'Challenge')"
-									>외부 통신 요청</b-button
-								>
+								<b-button variant="outline-primary" :pressed="Display.Source.Challenge" @click="Filter('Source', 'Challenge')">
+									외부 통신 요청
+								</b-button>
 							</b-btn-group>
 							<b-btn-group class="mx-1 mb-1">
-								<b-button variant="outline-black" :pressed="Display.Source.Uninstalled" @click="Filter('Source', 'Uninstalled')"
-									>미구현</b-button
-								>
+								<b-button variant="outline-black" :pressed="Display.Source.Uninstalled" @click="Filter('Source', 'Uninstalled')">
+									미구현
+								</b-button>
 							</b-btn-group>
-						</div>
+						</b-collapse>
 					</b-col>
 				</b-row>
-				<template v-if="false">
+				<template>
 					<hr class="my-2" />
 					<b-row>
 						<b-col class="filter-label" md="auto" cols="12">장비 효과 :</b-col>
@@ -114,33 +132,35 @@
 									<b-checkbox v-model="displayEquipEffects">장비 효과 목록 표시</b-checkbox>
 								</div>
 
-								<b-button-group class="d-block mb-1">
+								<b-button-group class="float-left d-block mb-1">
 									<b-button variant="primary" @click="FillEquipEffectFilters">모두 선택</b-button>
 									<b-button variant="danger" @click="ClearEquipEffectFilters">모두 선택 해제</b-button>
 								</b-button-group>
 							</div>
 							<!-- <b-select :options="EquipEffects" /> -->
 							<b-collapse :visible="displayEquipEffects">
-								<template v-for="(entity, idx) in EquipEffects">
-									<b-btn-group v-if="Array.isArray(entity)" :key="`equip-effect-${idx}`" class="mr-1 mb-1">
+								<template v-for="entity in EquipEffects">
+									<b-btn-group v-if="Array.isArray(entity)" :key="`equip-effect-${entity[0].type}`" class="mr-1 mb-1">
 										<b-button
 											v-for="subentity in entity"
-											:key="`equip-effect-${idx}-${subentity.value}`"
+											:key="`equip-effect-${subentity.type}-${subentity.pmType}`"
 											variant="outline-secondary"
-											:pressed="Display.Effects.includes(subentity.value)"
-											@click="EffectFilterToggle(subentity.value)"
-											>{{ subentity.text }}</b-button
+											:pressed="subentity.selected"
+											@click="subentity.selected = !subentity.selected"
 										>
+											{{ subentity.text + (subentity.pmType > 0 ? " 증가" : " 감소") }}
+										</b-button>
 									</b-btn-group>
 									<b-button
 										v-else
-										:key="`equip-effect-${entity.value}`"
+										:key="`equip-effect-${entity.type}`"
 										class="mr-1 mb-1"
 										variant="outline-secondary"
-										:pressed="Display.Effects.includes(entity.value)"
-										@click="EffectFilterToggle(entity.value)"
-										>{{ entity.text }}</b-button
+										:pressed="entity.selected"
+										@click="entity.selected = !entity.selected"
 									>
+										{{ entity.text }}
+									</b-button>
 								</template>
 							</b-collapse>
 						</b-col>
@@ -173,13 +193,14 @@ import EquipModal from "./Equips/EquipModal.vue";
 
 import { ITEM_TYPE } from "@/libs/Types/Enums";
 import EquipData, { Equip } from "@/libs/DB/Equip";
+import { BuffEffect, BuffEffectValue, BUFFEFFECT_TYPE } from "@/libs/Equips/BuffEffect";
 
 import { CurrentEvent, CurrentDate } from "@/libs/Const";
 import { ArrayUnique, UpdateTitle } from "@/libs/Functions";
 import { Rarity } from "@/libs/Types";
 import EntitySource from "@/libs/EntitySource";
 
-import StoreModule, { EquipDisplayType } from "@/libs/Store";
+import StoreModule, { EffectFilterListItemPM, EffectFilterListItemSingle, EffectFilterListType, EquipDisplayType } from "@/libs/Store";
 
 @Component({
 	components: {
@@ -196,6 +217,7 @@ export default class Equips extends Vue {
 	private equipModalDisplay: boolean = false;
 
 	private displayFilters: boolean = false;
+	private displayEquipSources: boolean = false;
 	private displayEquipEffects: boolean = false;
 
 	// Vuex -----
@@ -233,107 +255,6 @@ export default class Equips extends Vue {
 
 	private get EquipRarity () {
 		return ["ss", "s", "a", "b"];
-	}
-
-	private get EquipEffects () {
-		const actName: Record<string, string> = {
-			acc: "적중",
-			armorpierce: "방어 관통",
-			atk: "공격력",
-			ap: "AP",
-			chance: "효과 발동",
-			crit: "치명타",
-			def: "방어력",
-			dmg: "피해량",
-			dp: "방어막/피해감소 무시",
-			eva: "회피",
-			exp: "획득 경험치",
-			dr: "받는 피해",
-			barrier: "방어막",
-			hit: "지속피해",
-			hp: "체력",
-			"hp-atk": "공격력 비례 체력 감소",
-			mindmg: "피해 최소화",
-			off: "특정 효과 해제",
-			range: "사거리",
-			revive: "전투 속행",
-			scout: "정찰 활성화",
-			skill: "n번 스킬",
-			spd: "행동력",
-			stun: "행동 불가",
-		};
-		const func = (x: string) => ({
-			value: x,
-			text: (() => {
-				switch (x) {
-					case "+atk":
-					case "+armorpierce":
-					case "+ap":
-					case "+chance":
-					case "+crit":
-					case "+def":
-					case "+dp":
-					case "+eva":
-					case "+exp":
-					case "-dr": // dr은 sign이 반대
-					case "+barrier":
-					case "+hp":
-					case "+range":
-					case "+spd":
-						return `${actName[x.substr(1)]} 증가`;
-
-					case "-atk":
-					case "-armorpierce":
-					case "-ap":
-					case "-chance":
-					case "-crit":
-					case "-def":
-					case "-dp":
-					case "-eva":
-					case "-exp":
-					case "+dr": // dr은 sign이 반대
-					case "-barrier":
-					case "-hp":
-					case "-range":
-					case "-spd":
-						return `${actName[x.substr(1)]} 감소`;
-
-					case "+acc": return "적중 증가";
-					case "-acc": return "적중 감소";
-
-					case "counter": return "반격";
-					case "+dmg": return "대타입 피해량 증가";
-					case "-dmg": return "대타입 피해량 감소";
-					case "hp-atk": return "공격력 비례 체력 감소";
-					case "hit1": return "지속 고정 피해";
-					case "hit2": return "지속 속성 피해";
-
-					case "+resist1": return "효과 저항 증가";
-					case "-resist1": return "효과 저항 감소";
-					case "+resist2": return "속성 저항 증가";
-					case "-resist2": return "속성 저항 감소";
-					case "resist3": return "스테이터스 감소 무효";
-
-					case "revive": return "전투 속행";
-
-					case "off1": return "스테이터스 감소 해제";
-					case "off2": return "해로운 효과 해제";
-
-					case "scout": return "정찰";
-					case "stun": return "스킬 사용 불가";
-
-					case "skill": return "스킬 강화";
-					default: return "?";
-				}
-			})(),
-		});
-
-		return StoreModule.equipEffectFilterList
-			.map(x =>
-				Array.isArray(x)
-					? x.map(y => func(y))
-					: func(x),
-			);
 	}
 
 	private get EquipGroups () {
@@ -441,7 +362,7 @@ export default class Equips extends Vue {
 				if (x.equips.every(y => !this.HasFilteredEffect(y))) return false;
 
 				// 획득처
-				if (this.Display.Type.EndlessWar && sources.some(y => y.IsEndlessWar)) return true;
+				if (this.Display.Source.EndlessWar && sources.some(y => y.IsEndlessWar)) return true;
 
 				if (this.Display.Source.Exchange && sources.some(y => y.IsExchange && !y.IsEvent && y.ExchangeDate === CurrentDate)) return true;
 				if (this.Display.Source.OldExchange && sources.some(y => y.IsExchange && !y.IsEvent && y.ExchangeDate !== CurrentDate)) return true;
@@ -459,6 +380,8 @@ export default class Equips extends Vue {
 
 				if (this.Display.Source.Limited && sources.some(y => y.IsLimited)) return true;
 				if (this.Display.Source.Limited && sources.length === 0) return true;
+
+				if (this.Display.Source.Challenge && sources.some(y => y.IsChallenge)) return true;
 
 				if (this.Display.Source.Uninstalled && sources.some(y => y.IsUninstalled)) return true;
 
@@ -478,102 +401,150 @@ export default class Equips extends Vue {
 			}));
 	}
 
+	private isPositiveBuffEffectValue (v: BuffEffectValue) {
+		if (typeof v.base === "number") return v.base >= 0;
+		return !v.base.startsWith("-");
+	}
+
+	private isPositiveBuffEffect (stat: BuffEffect): boolean {
+		// 증감 값인 경우
+		const p = this.isPositiveBuffEffectValue;
+
+		if ("attack" in stat) return p(stat.attack);
+		if ("defense" in stat) return p(stat.defense);
+		if ("hp" in stat) return p(stat.hp);
+		if ("accuracy" in stat) return p(stat.accuracy);
+		if ("critical" in stat) return p(stat.critical);
+		if ("evade" in stat) return p(stat.evade);
+		if ("turnSpeed" in stat) return p(stat.turnSpeed);
+		if ("ap" in stat) return p(stat.ap);
+
+		if ("resist" in stat) return p(stat.resist.value);
+		if ("damage_multiply" in stat) return p(stat.damage_multiply.value);
+		if ("damage_by_hp" in stat) return p(stat.damage_by_hp.damage);
+		if ("damage_add" in stat) {
+			if ("elem" in stat.damage_add)
+				return p(stat.damage_add.damage);
+			else
+				return p(stat.damage_add);
+		}
+		if ("range" in stat) return p(stat.range);
+		if ("penetration" in stat) return p(stat.penetration);
+		if ("invokeChance" in stat) return p(stat.invokeChance);
+		if ("exp" in stat) return p(stat.exp);
+
+		return true;
+	}
+
+	private isBuffEffectValid (stat: BuffEffect): boolean {
+		const found = StoreModule.equipEffectFilterListFlatten
+			.find(z =>
+				Array.isArray(z)
+					? z[0].type.includes(stat.type)
+					: z.type.includes(stat.type),
+			);
+		if (!found) return false;
+
+		// 증감 값인 경우
+		const p = this.isPositiveBuffEffectValue;
+		if (Array.isArray(found)) {
+			if ("attack" in stat) return p(stat.attack) ? found[0].selected : found[1].selected;
+			if ("defense" in stat) return p(stat.defense) ? found[0].selected : found[1].selected;
+			if ("hp" in stat) return p(stat.hp) ? found[0].selected : found[1].selected;
+			if ("accuracy" in stat) return p(stat.accuracy) ? found[0].selected : found[1].selected;
+			if ("critical" in stat) return p(stat.critical) ? found[0].selected : found[1].selected;
+			if ("evade" in stat) return p(stat.evade) ? found[0].selected : found[1].selected;
+			if ("turnSpeed" in stat) return p(stat.turnSpeed) ? found[0].selected : found[1].selected;
+			if ("ap" in stat) return p(stat.ap) ? found[0].selected : found[1].selected;
+
+			if ("resist" in stat) return p(stat.resist.value) ? found[0].selected : found[1].selected;
+			if ("damage_multiply" in stat) return p(stat.damage_multiply.value) ? found[0].selected : found[1].selected;
+			if ("damage_by_hp" in stat) return p(stat.damage_by_hp.damage) ? found[0].selected : found[1].selected;
+			if ("damage_add" in stat) {
+				if ("elem" in stat.damage_add)
+					return p(stat.damage_add.damage) ? found[0].selected : found[1].selected;
+				else
+					return p(stat.damage_add) ? found[0].selected : found[1].selected;
+			}
+			if ("range" in stat) return p(stat.range) ? found[0].selected : found[1].selected;
+			if ("penetration" in stat) return p(stat.penetration) ? found[0].selected : found[1].selected;
+			if ("invokeChance" in stat) return p(stat.invokeChance) ? found[0].selected : found[1].selected;
+			if ("exp" in stat) return p(stat.exp) ? found[0].selected : found[1].selected;
+
+			return false;
+		} else
+			return found.selected;
+	}
+
+	private get EquipEffects () {
+		const ret: EffectFilterListType = [];
+
+		StoreModule.equipEffectFilterListFlatten
+			.forEach(x => {
+				if (Array.isArray(x)) {
+					// 증감치
+					const part: EffectFilterListItemPM[] = [];
+
+					// 증가치
+					let f = EquipData.some(eq => eq.stats.some(row => row.some(es => {
+						if ("type" in es)
+							return x[0].type.includes(es.type) && this.isPositiveBuffEffect(es);
+						else
+							return es.buffs.some(b => x[0].type.includes(b.value.type) && this.isPositiveBuffEffect(b.value));
+					})));
+					if (f) part.push(x[0]);
+
+					// 감소치
+					f = EquipData.some(eq => eq.stats.some(row => row.some(es => {
+						if ("type" in es)
+							return x[1].type.includes(es.type) && !this.isPositiveBuffEffect(es);
+						else
+							return es.buffs.some(b => x[1].type.includes(b.value.type) && !this.isPositiveBuffEffect(b.value));
+					})));
+					if (f) part.push(x[1]);
+
+					if (part.length > 0)
+						ret.push(part);
+				} else {
+					// 상수치
+					return EquipData.some(eq => eq.stats.some(row => row.some(es => {
+						if ("type" in es)
+							return x.type.includes(es.type);
+						else
+							return es.buffs.some(b => x.type.includes(b.value.type));
+					})));
+				}
+			});
+		return ret;
+	}
+
 	private HasFilteredEffect (eq: Equip) {
 		const isNumeric = (data: string) => {
 			return /^[0-9]+\.?[0-9]*%?$/.test(data);
 		};
 
-		return true;
-		/*
-		eq.stats
-			.some(y => y
-				.some(z => z.actions.some(a => {
-					let sign = "";
-					let target = a.act;
-					const p = a.params;
-					const p0 = p.length > 0 ? p[0] : "";
-					const p1 = p.length > 1 ? p[1] : "";
-					const p2 = p.length > 2 ? p[2] : "";
-
-					switch (a.act) {
-						case "atk":
-						case "armorpierce":
-						case "ap":
-						case "chance":
-						case "crit":
-						case "def":
-						case "dp":
-						case "eva":
-						case "exp":
-						case "barrier":
-						case "hp":
-						case "range":
-						case "spd":
-						case "dr":
-						case "dmg":
-							sign = p0[0] === "-" ? "-" : "+";
-							break;
-
-						case "acc":
-							if (a.params.length === 1)
-								sign = p0[0] === "-" ? "-" : "+";
-							else if (a.params.length === 2)
-								sign = p1[0] === "-" ? "-" : "+";
-							break;
-
-						case "resist":
-							if (a.params.length === 1) {
-								if (isNumeric(p0)) { // 효과 저항 증감
-									sign = p0[0] === "-" ? "-" : "+";
-									target = "resist1";
-								} else { // 속성 저항 증감
-									sign = p0[0] === "-" ? "-" : "+";
-									target = "resist3";
-								}
-							} else if (a.params.length === 2) { // 효과 감소 무효
-								sign = p1[0] === "-" ? "-" : "+";
-								target = "resist2";
-							}
-							break;
-
-						case "hit":
-							if (p.length === 1)
-								target = "hit1"; // 지속 고정 피해
-							else
-								target = "hit2"; // 지속 속성 피해
-							break;
-
-						case "off":
-							if (p.length === 2)
-								target = "off1";
-							else if (isNumeric(p0))
-								target = "off2";
-							else if (p.length >= 1)
-								target = "off1";
-							else
-								target = "off2";
-							break;
-					}
-
-					return this.Display.Effects.includes(sign + target);
-				})),
-			);
-		*/
-	}
-
-	private EffectFilterToggle (value: string) {
-		if (this.Display.Effects.includes(value))
-			this.Display.Effects.splice(this.Display.Effects.indexOf(value), 1);
-		else
-			this.Display.Effects.push(value);
+		return eq.stats.some(x => x.some(stat => {
+			if ("type" in stat)
+				return this.isBuffEffectValid(stat);
+			else
+				return stat.buffs.some(y => this.isBuffEffectValid(y.value));
+		}));
 	}
 
 	private FillEquipEffectFilters () {
-		StoreModule.FillEquipDisplayFilter();
+		StoreModule.FillEquipDisplayEffectFilter();
 	}
 
 	private ClearEquipEffectFilters () {
-		StoreModule.ClearEquipDisplayFilter();
+		StoreModule.ClearEquipDisplayEffectFilter();
+	}
+
+	private FillEquipSourceFilters () {
+		StoreModule.FillEquipDisplaySourceFilter();
+	}
+
+	private ClearEquipSourceFilters () {
+		StoreModule.ClearEquipDisplaySourceFilter();
 	}
 
 	private EquipBase (name: string) {

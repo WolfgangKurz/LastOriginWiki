@@ -1,8 +1,73 @@
 <template>
 	<div>
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20201031>2020-10-31</b-card-header>
+			<b-collapse id="changelog20201031" visible>
+				<b-card-body>
+					<div><b-badge variant="warning">포이</b-badge>, <b-badge variant="warning">자비로운 리앤</b-badge>의 정보가 추가되었습니다.</div>
+					<div>
+						<b-badge variant="warning">블랙 리리스</b-badge>의 3번째 패시브 <b-badge variant="info">스토킹</b-badge>의 수치가 잘못
+						입력되어있던 점을 수정했습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">캐럴라이나</b-badge>의 1번째 액티브 <b-badge variant="info">브레스트 버스터</b-badge>의 설명을 일부
+						수정했습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">다크엘븐 포레스트레인져</b-badge>의 2번째 패시브 <b-badge variant="info">숲의 도움</b-badge>의
+						누락된 수치를 수정했습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">징벌의 사디어스</b-badge>의 3번째 패시브 <b-badge variant="info">가드 오브 시티즌</b-badge> 스킬명
+						수정을 반영했습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">마법소녀 매지컬 모모</b-badge>의 2번째 액티브 <b-badge variant="info">모모찬바라</b-badge>의 급소
+						찌르기 확률과 피해량을 추가/수정했습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">P/A-00 그리폰</b-badge>의 2번째 패시브 <b-badge variant="info">연계 폭격</b-badge>의 지원 대상에
+						<b-badge variant="warning">무적의 용</b-badge>이 누락된 점을 수정했습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">GS-130 피닉스</b-badge>의 <b-badge variant="info">하계 전투복 피닉스</b-badge>의 가격 인상을
+						반영했습니다.
+					</div>
+					<div><b-badge variant="warning">T-14 미호</b-badge>의 능력치 변동을 반영했습니다.</div>
+					<div>
+						<b-badge variant="warning">세계 정보</b-badge>에 모든 이벤트 정보가 추가되었습니다.<br />
+						<b-badge variant="info">할로윈 파크 패닉</b-badge>의 경우 지역 연결이 다른 이벤트와 다르게 구성되어있어 지역 연결 선이
+						비정상적으로 보이고 있습니다.<br />
+						이 부분은 이후에 수정하도록 하겠습니다.
+					</div>
+					<div><b-badge variant="warning">세계 정보</b-badge>의 드랍 정보에 참치와 자원, 소모품 정보를 추가했습니다.</div>
+					<div>일부 전투원의 전투원 정보 페이지가 표시되지 않던 문제를 수정했습니다.</div>
+					<div>일부 전투원의 스테이터스 편집 페이지에서 장비 장착이 불가능하던 문제를 수정했습니다.</div>
+					<div>일부 전투원의 대사 파일이 업로드되지 않은 문제를 수정했습니다.</div>
+					<div>일부 전투원의 서약 대사가 없어도 서약 대사가 표시되는 문제를 수정했습니다.</div>
+					<div>
+						<b-badge variant="warning">모든 전투원</b-badge> 및 <b-badge variant="warning">모든 장비</b-badge>의 제조 시간 표시가
+						추가되었습니다.<br />
+						해당 표시는 획득처의
+						<b-badge variant="dark">
+							<b-icon-hammer class="mr-1" />
+							제조 가능
+						</b-badge>
+						을 대체합니다.
+					</div>
+					<div>
+						<b-badge variant="warning">장비 정보</b-badge> 페이지의 <b-badge variant="info">장비 획득처 필터</b-badge>를 접을 수 있도록
+						수정했습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">장비 정보</b-badge> 페이지의 <b-badge variant="info">장비 효과 필터</b-badge>를 다시 추가했습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20201023>2020-10-23</b-card-header>
-			<b-collapse id="changelog20201023" visible>
+			<b-collapse id="changelog20201023">
 				<b-card-body>
 					<div>전투원의 스킬 설명에서 참조되는 전투원이 잘못 표시되던 문제가 수정되었습니다.</div>
 				</b-card-body>

@@ -38,7 +38,7 @@ export function ImageExtension () {
 	return webpAvailable ? "webp" : "png";
 }
 
-export const CurrentEvent = "BlurryMemory";
+export const CurrentEvent = "Ev8";
 export const CurrentDate = (() => {
 	const d = new Date();
 	const y = d.getUTCFullYear() % 100;
@@ -47,7 +47,7 @@ export const CurrentDate = (() => {
 })();
 
 export const WorldNames: Record<string, string> = {
-	"": "메인스토리",
+	Story: "메인스토리",
 	Ev1: "지고의 저녁식사",
 	Ev2: "리오보로스의 유산",
 	Ev3: "만월의 야상곡",
@@ -59,7 +59,7 @@ export const WorldNames: Record<string, string> = {
 	Ev8: "흐린 기억 속의 나라",
 };
 export const WorldDescriptions: Record<string, string> = {
-	"": "",
+	Story: "",
 	Ev1: "소완으로 인해 혼란에 빠진 오르카 안에선 무슨 일이?",
 	Ev2: "리오보로스의 유산을 찾아 떠나는 모험!",
 	Ev3: "마법 소녀들과 함께 뽀끄루 대마왕을 물리쳐주세요!",
@@ -68,4 +68,22 @@ export const WorldDescriptions: Record<string, string> = {
 	Ev6: "티아멧은 '초코 여왕'과 얽힌 멸망 전 인류의 일그러짐과 마주하는데..",
 	Ev7: "가벼운 마음으로 요정 마을로 향한 사령관에게...?",
 	Ev8: "왓슨, 드디어 대단원이야!",
+};
+
+export const ApocryphaUnit: Record<string, string> = {
+	"S1-1": "AGS_Rampart",
+	"S1-2": "3P_ConstantiaS2",
+	"S2-1": "3P_Sowan",
+	"S5-1": "DS_Faucre",
+	"S6-1": "DS_Baekto",
+	"S7-1": "3P_Fenrir",
+	"S8-1": "PECS_Circe",
+	"S9-1": "3P_Hachiko",
+	"S10-1": "AGS_Rampart",
+	"S11-1": "3P_Aurora",
+};
+export const ChallengeStage: Record<string, string> = {
+	Cha1: "밀고, 당기고, 불질러!",
+	Cha2: "설계자와 피조물",
+	Cha3: "실패작의 폭주",
 };

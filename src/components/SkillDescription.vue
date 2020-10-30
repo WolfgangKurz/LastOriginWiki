@@ -175,9 +175,9 @@ export default class SkillDescription extends Vue {
 					const uid = uniqueId("tooltip-target-");
 					const p = x.split(";");
 					if (p[0] === "$ch") {
-						const id = parseInt(p[1], 10);
+						const id = p[1];
 						const href = `/units/${id}`;
-						const unit = UnitData.find(x => x.id === id) || Unit.Empty;
+						const unit = UnitData.find(x => x.uid === id) || Unit.Empty;
 						ret.link = {
 							href,
 							display: <rarity-badge id={uid} rarity="A">{unit.name} 🔗</rarity-badge>,
@@ -185,7 +185,7 @@ export default class SkillDescription extends Vue {
 								<unit-card unit={unit} no-link />
 							</b-tooltip>,
 						};
-						ret.preload.push(<unit-face id={id} />);
+						ret.preload.push(<unit-face id={unit.id} />);
 					} else if (p[0] === "$eq") {
 						const type = {
 							[ITEM_TYPE.CHIP]: "Chip",

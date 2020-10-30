@@ -63,7 +63,7 @@
 							<b-col>
 								<template v-if="unit.promotions">
 									<rarity-badge v-for="pro in unit.promotions" :key="`unit-promotion-${pro}`" :rarity="pro" size="medium"
-										>{{ pro }} 승급</rarity-badge
+										>{{ RarityName[pro] }} 승급</rarity-badge
 									>
 								</template>
 								<template v-else>
@@ -154,13 +154,16 @@
 										<b-td class="p-0">
 											<b-collapse id="unit-drop-header" class="p-3">
 												<template v-if="unit.source.length === 0">
-													<b-badge v-if="unit.craftable" variant="dark">제조 가능</b-badge>
+													<b-badge v-if="unit.craftable" variant="dark">
+														<b-icon-hammer class="mr-1" />
+														제조 {{ CraftTime }}
+													</b-badge>
 													<span v-else class="text-secondary">획득처 정보 없음 (제조 불가)</span>
 												</template>
 												<template v-else>
 													<b-badge v-if="unit.craftable" variant="dark">
 														<b-icon-hammer class="mr-1" />
-														제조 가능
+														제조 {{ CraftTime }}
 													</b-badge>
 
 													<div v-for="(area, aindex) in unit.source" :key="`unit-view-source-${aindex}`">
@@ -575,6 +578,16 @@ export default class UnitView extends Vue {
 		};
 	}
 
+	private get CraftTime () {
+		const duration = this.unit.craftable;
+		if (!duration) return "-";
+
+		const h = Math.floor(duration / 3600);
+		const m = Math.floor(duration / 60) % 60;
+		const s = duration % 60;
+		return `${("0" + h).substr(-2)}:${("0" + m).substr(-2)}:${("0" + s).substr(-2)}`;
+	}
+
 	private get HasFormChange () {
 		const raw = this.SkillsRaw;
 		if (!raw) return false;
@@ -667,11 +680,13 @@ export default class UnitView extends Vue {
 				...this.SkinList[0],
 				isMarry: false,
 			},
-			{
-				id: 0,
-				...this.SkinList[0],
-				isMarry: true,
-			},
+			...(this.unit.marry
+				? [{
+					id: 0,
+					...this.SkinList[0],
+					isMarry: true,
+				}]
+				: []),
 			...this.SkinList
 				.slice(1)
 				.map((x, i) => ({
@@ -690,7 +705,7 @@ export default class UnitView extends Vue {
 	 * 형태 전환 전/후를 모두 포함한 스킬 목록
 	 */
 	private get SkillsRaw () {
-		const table = SkillData[this.unit.id] as SkillTable;
+		const table = SkillData[this.unit.uid] as (SkillTable | undefined);
 		if (table) {
 			Object.keys(table)
 				.forEach(x => {

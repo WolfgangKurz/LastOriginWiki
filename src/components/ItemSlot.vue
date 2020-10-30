@@ -1,7 +1,7 @@
 <template>
 	<div class="item-slot" :data-type="type" :data-key="fullKey" v-on="$listeners">
 		<div v-if="valid" class="equip">
-			<equip-icon :id="fullKey" />
+			<equip-icon :image="icon" />
 			<equip-level :level="level" :size="10" />
 		</div>
 	</div>
@@ -24,6 +24,12 @@ import EquipLevel from "@/pages/Equips/EquipLevel.vue";
 	},
 })
 export default class ItemSlot extends Vue {
+	@Prop({
+		type: String,
+		default: "",
+	})
+	private icon!: string;
+
 	@Prop({
 		type: String,
 		default: "",

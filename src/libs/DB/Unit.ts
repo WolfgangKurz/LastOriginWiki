@@ -26,7 +26,7 @@ interface RawUnit {
 	shortgroup: string;
 	groupkey: string;
 
-	craftable: boolean;
+	craftable: false | number;
 	marry: boolean;
 
 	linkBonus: LinkBonusType;
@@ -57,7 +57,7 @@ export interface Unit {
 	shortgroup: string;
 	groupkey: string;
 
-	craftable: boolean;
+	craftable: false | number;
 	marry: boolean;
 
 	linkBonus: LinkBonusType;

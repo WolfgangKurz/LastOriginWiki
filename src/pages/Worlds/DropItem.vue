@@ -1,10 +1,13 @@
 <template>
 	<div class="drop-item p-2 text-dark">
-		<b-card bg-variant="secondary" text-variant="white">
+		<b-card :bg-variant="variant" :text-variant="text">
 			<equip-icon class="float-left mr-2" :image="item.icon" />
 			<div class="text-left">
 				{{ item.name }}
-				<b-badge v-if="count > 1" variant="dark">x{{ count }}</b-badge>
+				<b-badge v-if="count > 1" variant="dark" class="ml-1">x{{ count }}</b-badge>
+				<div v-if="chance < 100">
+					<b-badge :variant="variant">({{ chance }}%)</b-badge>
+				</div>
 			</div>
 		</b-card>
 	</div>
@@ -36,6 +39,24 @@ export default class DropItem extends Vue {
 		default: 1,
 	})
 	private count!: number;
+
+	@Prop({
+		type: Number,
+		default: 100,
+	})
+	private chance!: number;
+
+	@Prop({
+		type: String,
+		default: "secondary",
+	})
+	private variant!: string;
+
+	@Prop({
+		type: String,
+		default: "light",
+	})
+	private text!: string;
 }
 </script>
 

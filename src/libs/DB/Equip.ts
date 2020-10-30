@@ -14,7 +14,7 @@ interface RawEquip {
 	name: string;
 	desc: string;
 	icon: string;
-	craftable: boolean;
+	craftable: false | number;
 
 	limit?: string;
 	upgrade: number;
@@ -31,7 +31,7 @@ export interface Equip {
 	name: string;
 	desc: string;
 	icon: string;
-	craftable: boolean;
+	craftable: false | number;
 
 	limit: Array<string | number> | null;
 	source: EntitySource[][];

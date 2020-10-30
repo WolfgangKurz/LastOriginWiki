@@ -421,7 +421,7 @@ function getBuffEffectTypeText (type: BUFFEFFECT_TYPE, target: BUFF_ATTR_TYPE) {
 		case BUFFEFFECT_TYPE.STAGE_REFLECTLIGHTNIG_RATIO_DEFENDER: // 32
 			return "STAGE_REFLECTLIGHTNIG_RATIO_DEFENDER" + p; // 사용처 없음, 알 수 없음
 		case BUFFEFFECT_TYPE.STAGE_IMMUNESHIELD_TIME: // 33
-			return "피해 무효"; // 피해 무효화
+			return "피해 무효화"; // 피해 무효화
 		case BUFFEFFECT_TYPE.STAGE_SHIELD_VALUE: // 34
 			return "피해 최소화"; // value 이하 피해 1로 적용
 		case BUFFEFFECT_TYPE.STAGE_SHIELD_VALUE_LIMITED: // 35

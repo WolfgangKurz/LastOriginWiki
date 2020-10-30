@@ -15,6 +15,7 @@ import UnitBadge from "@/components/UnitBadge.vue";
 import RarityBadge from "@/components/RarityBadge.vue";
 import ItemIcon from "@/components/ItemIcon.vue";
 import UnitCard from "@/pages/Units/UnitCard.vue";
+import DropItem from "@/pages/Worlds/DropItem.vue";
 import FacilityIcon from "./FacilityIcon.vue";
 
 @Component({
@@ -23,6 +24,7 @@ import FacilityIcon from "./FacilityIcon.vue";
 		RarityBadge,
 		ItemIcon,
 		UnitCard,
+		DropItem,
 		FacilityIcon,
 	},
 })
@@ -116,13 +118,9 @@ export default class FacilityView extends Vue {
 				const item = ConsumableData.find(y => y.key === x.item) || { name: x.item };
 
 				if (x.chance === 100)
-					list.push(<b-badge class="mx-1" variant="secondary">{item.name} {x.count}개</b-badge>);
-				else {
-					list.push(
-						<b-badge class="mx-1" variant="secondary">{item.name} {x.count}개</b-badge>,
-						<small> ({x.chance}%)</small>,
-					);
-				}
+					list.push(<drop-item item={item} count={x.count} />);
+				else
+					list.push(<drop-item item={item} count={x.count} chance={x.chance} />);
 			} else if ("type" in x) {
 				switch (x.type) {
 					case "facilityParts":
@@ -183,31 +181,39 @@ export default class FacilityView extends Vue {
 		function getUpgradeRequired (m: FacilityUpgradeRequiredMaterial | null) {
 			if (!m) return <small class="text-secondary">없음</small>;
 
-			const GradeTable = {
-				T1: "일반",
-				T2: "고급",
-				T3: "특수",
-			};
+			// const GradeTable = {
+			// 	T1: "일반",
+			// 	T2: "고급",
+			// 	T3: "특수",
+			// };
 			const VariantTable = {
 				T1: "white",
 				T2: "info",
 				T3: "event-exchange",
 			};
-			const TypeTable = {
-				Matrial: "자재 시설품",
-				Resource: "자원 시설품",
-				PcMaking: "바이오로이드 제작실 시설품",
-				Cafe: "카페테리아 시설품",
-				Training: "전투 분석실 시설품",
-				Equip: "장비 연구실 시설품",
-				FacilityPartsMaking: "설비 부품 제작지원실 시설품",
-				StuffMaking: "제작 핵심 부품 생산소 시설품",
+			const TextVariantTable = {
+				T1: "dark",
+				T2: "light",
+				T3: "light",
 			};
-			const grade = GradeTable[m.grade];
+			// const TypeTable = {
+			// 	Matrial: "자재 시설품",
+			// 	Resource: "자원 시설품",
+			// 	PcMaking: "바이오로이드 제작실 시설품",
+			// 	Cafe: "카페테리아 시설품",
+			// 	Training: "전투 분석실 시설품",
+			// 	Equip: "장비 연구실 시설품",
+			// 	FacilityPartsMaking: "설비 부품 제작지원실 시설품",
+			// 	StuffMaking: "제작 핵심 부품 생산소 시설품",
+			// };
+			// const grade = GradeTable[m.grade];
 			const variant = VariantTable[m.grade];
-			const type = TypeTable[m.type];
+			const text = TextVariantTable[m.grade];
+			// const type = TypeTable[m.type];
 
-			return <b-badge class="mx-1" variant={variant}>{type} ({grade}) x{m.value}</b-badge>;
+			const item = ConsumableData.find(x => x.key === `${m.type}_Parts_${m.grade}`);
+			return <drop-item item={item} count={m.value} variant={variant} text={text} />;
+			// return <b-badge class="mx-1" variant={variant}>{type} ({grade}) x{m.value}</b-badge>;
 		}
 
 		const UpgradeTable = facility.list
@@ -221,15 +227,15 @@ export default class FacilityView extends Vue {
 						{x.level}
 					</b-td>
 					<b-td>
-						<item-icon item="resin" />
+						<item-icon item="UI_Icon_Consumable_Wood_Material" />
 						{x.upgradeRequired.Wood}
 					</b-td>
 					<b-td>
-						<item-icon item="paint" />
+						<item-icon item="UI_Icon_Consumable_Stone_Material" />
 						{x.upgradeRequired.Stone}
 					</b-td>
 					<b-td>
-						<item-icon item="metal" />
+						<item-icon item="UI_Icon_Consumable_Iron_Material" />
 						{x.upgradeRequired.Iron}
 					</b-td>
 					<b-td>{Material}</b-td>

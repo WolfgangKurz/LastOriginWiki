@@ -2,11 +2,13 @@
 	<div class="unit-table">
 		<div class="mb-2">
 			<b-btn-group class="mx-2 mb-2">
-				<b-button variant="outline-secondary" :pressed="IncludePromotions" @click="IncludePromotions = !IncludePromotions"
-					>승급 후 등급 포함</b-button
-				>
+				<b-button variant="outline-secondary" :pressed="PromotionFilter === 0" @click="PromotionFilter = 0"> 승급 보지 않기 </b-button>
+				<b-button variant="outline-secondary" :pressed="PromotionFilter === 1" @click="PromotionFilter = 1"> 승급 후 등급 보기 </b-button>
+				<b-button variant="outline-secondary" :pressed="PromotionFilter === 2" @click="PromotionFilter = 2"> 승급만 보기 </b-button>
 			</b-btn-group>
+		</div>
 
+		<div class="mb-2">
 			<b-btn-group class="mx-2 mb-2">
 				<b-button variant="outline-danger" :pressed="Filters.Rarity[5]" @click="Filters.Rarity[5] = !Filters.Rarity[5]">SS</b-button>
 				<b-button variant="outline-danger" :pressed="Filters.Rarity[4]" @click="Filters.Rarity[4] = !Filters.Rarity[4]">S</b-button>
@@ -115,12 +117,12 @@ export default class UnitsTable extends Vue {
 		StoreModule.setUnitSearchText(value);
 	}
 
-	private get IncludePromotions () {
-		return StoreModule.UnitTablePromotions;
+	private get PromotionFilter () {
+		return StoreModule.UnitTablePromotionFilter;
 	}
 
-	private set IncludePromotions (value: boolean) {
-		StoreModule.setUnitTablePromotions(value);
+	private set PromotionFilter (value: number) {
+		StoreModule.setUnitTablePromotionFilter(value);
 	}
 
 	private get Filters () {
@@ -167,10 +169,11 @@ export default class UnitsTable extends Vue {
 	}
 
 	private UnitList (rarity: ACTOR_GRADE, type: ACTOR_CLASS, role: ROLE_TYPE) {
-		if (this.IncludePromotions) {
+		if (this.PromotionFilter === 1 || this.PromotionFilter === 2) {
 			return UnitData
 				.filter((x) => {
-					const rarityMatch = x.rarity === rarity || (x.promotions && x.promotions.includes(rarity));
+					const rarityMatch = (this.PromotionFilter === 1 && x.rarity === rarity) ||
+						(x.promotions && x.promotions.includes(rarity));
 					return rarityMatch &&
 						x.type === type &&
 						x.role === role &&
