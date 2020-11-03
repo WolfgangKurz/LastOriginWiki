@@ -596,13 +596,6 @@ export default class UnitView extends Vue {
 	}
 
 	private get CostRarityList () {
-		const rarityTable: Record<string, ACTOR_GRADE> = {
-			B: ACTOR_GRADE.B,
-			A: ACTOR_GRADE.A,
-			S: ACTOR_GRADE.S,
-			SS: ACTOR_GRADE.SS,
-		};
-
 		const list = [{
 			value: this.unit.rarity,
 			text: `${this.RarityName[this.unit.rarity]} 등급`,
@@ -611,8 +604,8 @@ export default class UnitView extends Vue {
 		if (this.unit.promotions) {
 			list.push(...this.unit.promotions.map(x => (
 				{
-					value: rarityTable[x],
-					text: `${x} 승급`,
+					value: x,
+					text: `${this.RarityName[x]} 승급`,
 				}),
 			));
 		}

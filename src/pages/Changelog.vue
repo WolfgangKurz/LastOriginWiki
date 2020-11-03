@@ -20,6 +20,7 @@ import Component from "vue-class-component";
 import RarityBadge from "@/components/RarityBadge.vue";
 import { UpdateTitle } from "@/libs/Functions";
 
+import Changelog202011 from "@/pages/Changelog/Changelog_202011.vue";
 import Changelog202010 from "@/pages/Changelog/Changelog_202010.vue";
 import Changelog202009 from "@/pages/Changelog/Changelog_202009.vue";
 import Changelog202008 from "@/pages/Changelog/Changelog_202008.vue";
@@ -30,6 +31,7 @@ import Changelog202005 from "@/pages/Changelog/Changelog_202005.vue";
 @Component({
 	components: {
 		RarityBadge,
+		"changelog-202011": Changelog202011,
 		"changelog-202010": Changelog202010,
 		"changelog-202009": Changelog202009,
 		"changelog-202008": Changelog202008,
@@ -39,10 +41,10 @@ import Changelog202005 from "@/pages/Changelog/Changelog_202005.vue";
 	},
 })
 export default class Changelog extends Vue {
-	private displayDate: string = "202010";
+	private displayDate: string = "202011";
 
 	private get DisplayDates () {
-		return ["202010", "202009", "202008", "202007", "202006", "202005"]
+		return ["202011", "202010", "202009", "202008", "202007", "202006", "202005"]
 			.map(x => ({
 				value: x,
 				text: x.replace(/([0-9]{4})([0-9]{2})/, "$1년 $2월"),
