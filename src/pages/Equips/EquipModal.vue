@@ -19,14 +19,13 @@
 					<b-row cols="2">
 						<b-col class="bg-dark text-white">장비 유형</b-col>
 						<b-col>
+							<b-badge v-if="isUninstalled" variant="black">미구현</b-badge>
 							<b-badge v-if="isPrivate" variant="primary">전용장비</b-badge>
 							<div>
 								<b-badge variant="success">{{ EquipType }}</b-badge>
 							</div>
 						</b-col>
-						<div>
-							<b-col class="bg-dark text-white">장비 등급</b-col>
-						</div>
+						<b-col class="bg-dark text-white">장비 등급</b-col>
 						<b-col>
 							<template v-if="RarityList.length === 1">{{ RarityDisplay[rarity] }}</template>
 							<b-form-select v-else v-model="rarity" size="sm" :options="RarityList" />
@@ -266,6 +265,11 @@ export default class EquipModal extends Vue {
 	private get isPrivate () {
 		if (!this.target) return false;
 		return this.target.limit && this.target.limit.every(y => typeof y === "number");
+	}
+
+	private get isUninstalled () {
+		if (!this.target) return false;
+		return !this.target.available;
 	}
 
 	private get EquipType () {

@@ -1,8 +1,26 @@
 <template>
 	<div>
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20201109>2020-11-09</b-card-header>
+			<b-collapse id="changelog20201109" visible>
+				<b-card-body>
+					<div>
+						<b-badge variant="warning">적 정보</b-badge>메뉴에 이름으로 검색하는 기능이 추가되었습니다.<br />
+						적의 HP 스테이터스가 올바른 수치로 표시되지 않던 문제가 수정되었습니다.<br />
+						적의 HP, 공격력, 방어력에 소숫점 아래 수치가 표시되던 문제가 수정되었습니다.<br />
+						적 스킬에 소숫점 아래 수치가 표시되던 문제가 수정되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">세계 정보</b-badge>의 적 정보가 정상적으로 표시되지 않던 문제가 수정되었습니다.<br />
+						일부 적이 표시되지 않던 문제가 수정되었습니다.
+					</div>
+					<div>2020-11-08일 사용자 참여로 추가된 대사들이 반영되었습니다.</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20201108>2020-11-08</b-card-header>
-			<b-collapse id="changelog20201108" visible>
+			<b-collapse id="changelog20201108">
 				<b-card-body>
 					<div>
 						<b-badge variant="warning">적 정보</b-badge>메뉴가 추가되었습니다.<br />

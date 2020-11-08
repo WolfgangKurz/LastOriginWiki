@@ -19,6 +19,15 @@
 			</b-btn-group>
 		</div>
 
+		<div class="mb-4 mx-4">
+			<b-input-group>
+				<b-input v-model="searchKeyword" placeholder="적 검색" />
+				<b-input-group-append>
+					<b-button variant="danger" @click="searchKeyword = ''">지우기</b-button>
+				</b-input-group-append>
+			</b-input-group>
+		</div>
+
 		<b-alert v-if="Filters.UsedOnly" variant="success" show>
 			영원한 전장에서 사용되는 적은 실제 사용 여부와 상관 없이 사용된 적 표시에 나타납니다.
 		</b-alert>
@@ -61,6 +70,8 @@ export default class EnemyPage extends Vue {
 	private enemyModalDisplay: boolean = false;
 
 	private selectedEnemy: Enemy | null = null;
+
+	private searchKeyword: string = "";
 
 	// Vuex -----
 	private get Filters () {
@@ -105,6 +116,8 @@ export default class EnemyPage extends Vue {
 
 				if (this.Filters.BossOnly && !x.isBoss) return false;
 				if (this.Filters.UsedOnly && !this.UsedEnemies.includes(x.id)) return false;
+
+				if (this.searchKeyword && !x.name.includes(this.searchKeyword)) return false;
 				return true;
 			})
 			.reduce((p, c) => {

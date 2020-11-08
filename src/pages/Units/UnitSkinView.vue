@@ -210,7 +210,7 @@ export default class UnitSkinView extends Vue {
 				this.DisplayId,
 				this.IsDamaged ? "D" : "",
 				"_",
-				this.index.toString(),
+				(this.skin.sid || 0).toString(),
 				this.IsSimplified ? "S" : "",
 				".",
 				this.imageExt,
