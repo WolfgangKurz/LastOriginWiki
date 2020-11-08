@@ -54,7 +54,7 @@
 			<b-col cols="12" md="6" class="mb-2">
 				<b-card class="unit-stat-display" bg-variant="dark">
 					<b-row>
-						<b-col v-for="(statKey, resist) in ResistList" :key="`unit-stats-resist=${resist}`" cols="4">
+						<b-col v-for="(statKey, resist) in ResistList" :key="`unit-stats-resist-${resist}`" cols="4">
 							<div class="status-col">
 								<div class="status-col-icon">
 									<elem-icon inline :elem="resist" />

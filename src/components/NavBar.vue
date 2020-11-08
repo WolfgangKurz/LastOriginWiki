@@ -22,6 +22,7 @@
 
 				<b-nav-item :active="IsUnits" href="/units" @click.prevent="GoTo('/units')">전투원정보</b-nav-item>
 				<b-nav-item :active="IsEquips" href="/equips" @click.prevent="GoTo('/equips')">장비정보</b-nav-item>
+				<b-nav-item :active="IsEnemy" href="/enemy" @click.prevent="GoTo('/enemy')">적 정보</b-nav-item>
 				<b-nav-item :active="IsFacilities" href="/facilities" @click.prevent="GoTo('/facilities')">설비정보</b-nav-item>
 				<b-nav-item :active="IsWorlds" href="/worlds" @click.prevent="GoTo('/worlds')">세계정보</b-nav-item>
 				<b-nav-item
@@ -81,6 +82,10 @@ export default class NavBar extends Vue {
 
 	private get IsEquips () {
 		return this.pageLower === "/equips" || this.pageLower.startsWith("/equips/");
+	}
+
+	private get IsEnemy () {
+		return this.pageLower === "/enemy" || this.pageLower.startsWith("/enemy/");
 	}
 
 	private get IsFacilities () {

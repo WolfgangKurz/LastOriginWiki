@@ -8,8 +8,8 @@
 			<template v-else>
 				<b-badge variant="light" style="font-size: 100%">제 {{ EWNo - 1 }}차 영원한 전장</b-badge>가 종료되었습니다.
 				<b-badge variant="light" style="font-size: 100%">제 {{ EWNo }}차 영원한 전장</b-badge>은
-				<b-badge variant="danger" style="font-size: 100%">{{ NextEW }}</b-badge
-				>에 시작합니다.
+				<b-badge variant="danger" style="font-size: 100%">{{ LeftEW - 14 + 1 }}</b-badge
+				>일 후에 시작합니다.
 			</template>
 		</b-alert>
 
@@ -30,6 +30,17 @@
 			<i>멸망 전의 전술 교본</i>은 전투원과 장비, 설비의 정보를 볼 수 있는 정보 사이트입니다.<br />
 			각종 패시브 스킬과 장비 효과가 적용된 후의 실질적인 스테이터스 수치를 계산하기 위한 시뮬레이터를 목표로 개발중에 있습니다.
 		</p>
+		<hr />
+
+		<b-alert variant="success" show>
+			현재 대사 텍스트가 입력되지 않은 전투원이 매우 많습니다. 입력해야하는 대사 분량이 너무 많아 개발자 혼자 작업할 수가 없어 발생한
+			문제입니다.<br />
+			이 문제를 해결하고자 현재
+			<a href="https://docs.google.com/spreadsheets/d/1TrLn5czFe2Ww1xg4HiFsDzZDcnphxV3AqP_DgNqaU00" target="_blank">전투원 대사 DB</a>의 기여를
+			받고 있습니다. 많은 참여 부탁드립니다.
+		</b-alert>
+		<hr />
+
 		<b-alert variant="warning" show>시뮬레이터 (전투원 스테이터스 계산기) 기능은 현재 일부만 이용할 수 있습니다.</b-alert>
 		<hr />
 
@@ -37,7 +48,7 @@
 			사이트 개발:
 			<a href="mailto:wolfgangkurzdev@gmail.com">wolfgangkurzdev@gmail.com</a>
 		</p>
-		<p>정보에 오류가 있는 경우 정확한 수치가 표시된 스크린샷과 함께 메일 주시면 최대한 빠르게 확인하겠습니다.</p>
+		<p>정보에 오류가 있는 경우, 스크린샷과 함께 메일 주시면 최대한 빠르게 확인하겠습니다.</p>
 		<hr />
 
 		<p>
@@ -92,7 +103,7 @@ export default class Home extends Vue {
 
 	private get NextEW () {
 		const date = new Date();
-		date.setDate(date.getDate() - this.EWCount + 14);
+		date.setDate(date.getDate() - this.EWCount + 14 - 1);
 		return `${date.getMonth() + 1}월 ${date.getDate()}일`;
 	}
 

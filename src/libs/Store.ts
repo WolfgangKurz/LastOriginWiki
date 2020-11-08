@@ -32,6 +32,21 @@ export interface UnitTableFilters {
 }
 export type UnitListOrder = "dict" | "name" | "rarity";
 
+export interface EnemyFilters {
+	Type: {
+		[ACTOR_CLASS.LIGHT]: boolean;
+		[ACTOR_CLASS.AIR]: boolean;
+		[ACTOR_CLASS.HEAVY]: boolean;
+	};
+	Role: {
+		[ROLE_TYPE.ATTACKER]: boolean;
+		[ROLE_TYPE.DEFENDER]: boolean;
+		[ROLE_TYPE.SUPPORTER]: boolean;
+	};
+	BossOnly: boolean;
+	UsedOnly: boolean;
+}
+
 export interface EffectFilterListItemSingle extends BuffEffectInfo {
 	selected: boolean;
 }
@@ -94,6 +109,21 @@ class StoreModule extends VuexModule {
 			[ACTOR_BODY_TYPE.BIOROID]: true,
 			[ACTOR_BODY_TYPE.AGS]: true,
 		},
+	};
+
+	private enemyFilter: EnemyFilters = {
+		Type: {
+			[ACTOR_CLASS.LIGHT]: true,
+			[ACTOR_CLASS.AIR]: true,
+			[ACTOR_CLASS.HEAVY]: true,
+		},
+		Role: {
+			[ROLE_TYPE.ATTACKER]: true,
+			[ROLE_TYPE.DEFENDER]: true,
+			[ROLE_TYPE.SUPPORTER]: true,
+		},
+		BossOnly: false,
+		UsedOnly: true,
 	};
 
 	private unitListOrder: UnitListOrder = "dict";
@@ -230,6 +260,15 @@ class StoreModule extends VuexModule {
 	@Mutation
 	public setUnitGroupMerge (value: boolean) {
 		this.unitGroupMerge = value;
+	}
+
+	public get EnemyFilter (): EnemyFilters {
+		return this.enemyFilter;
+	}
+
+	@Mutation
+	public setEnemyFilter (value: EnemyFilters) {
+		this.enemyFilter = value;
 	}
 
 	public get EquipDisplayFilter (): EquipDisplayType {
