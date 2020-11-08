@@ -320,6 +320,86 @@ export enum TARGET_TYPE {
 	__MAX__ = 8,
 }
 
+/** 적용 대상 부차 유형 */
+export enum TARGET_SUB_TYPE {
+	/** 살아있는 대상 */
+	ALIVE = 0,
+
+	/** 사망한 대상? */
+	DEAD = 1,
+
+	__MAX__ = 2,
+}
+
+/** 스킬 레벨 적용 방식 */
+export enum SKILL_LEVEL_TYPE {
+	NORMAL = 0,
+
+	DEADLY = 1,
+
+	__MAX__ = 2,
+}
+
+/** 스킬의 유형 */
+export enum SKILL_TYPE {
+	/** 액티브 스킬 */
+	ACTIVE = 0,
+
+	/** 패시브 스킬 */
+	PASSIVE = 1,
+
+	__MAX__ = 2,
+}
+
+/** 스킬의 부차 유형 */
+export enum SKILL_SUB_TYPE {
+	NORMAL = 0,
+	__MAX__ = 1,
+}
+
+/** 스킬의 슬롯 위치 */
+export enum SKILL_SLOT_TYPE {
+	/** 슬롯에 존재하지 않음 */
+	NONE = 0,
+
+	SLOT_1 = 1,
+	SLOT_2 = 2,
+	SLOT_3 = 3,
+	SLOT_4 = 4,
+	SLOT_5 = 5,
+
+	__MAX__ = 6,
+}
+
+/** 스킬의 속성 */
+export enum SKILL_ATTR {
+	/** 물리 피해 */
+	NONE = 0,
+	PHYSICS = 0,
+
+	FIRE = 1,
+
+	CHILL = 2,
+	ICE = 2,
+
+	LIGHTNING = 3,
+	THUNDER = 3,
+}
+
+/** 다대상 공격의 작동 방식 */
+export enum MULTI_ATTACK_TYPE {
+	/** 특별한 작동 없음 */
+	MULTIPLE = 0,
+
+	/** 폭발 (?) */
+	EXPLOSION = 1,
+
+	/** 관통 */
+	PIERCING = 2,
+
+	__MAX__ = 3,
+}
+
 /** 버프 표시 유형 */
 export enum BUFF_ANNOUNCE_TYPE {
 	/** 표시하지 않음 */
@@ -457,4 +537,19 @@ export enum ITEM_USE_TYPE {
 	CREATE = 0,
 	USE = 1,
 	__MAX__ = 2,
+}
+
+export enum MONSTER_TYPE {
+	NORMAL = 0,
+	BOSS = 1,
+	__MAX__ = 2,
+}
+
+export enum MONSTER_SUB_TYPE {
+	NORMAL = 0,
+	BOSS = 1,
+	NIGHTCHICK = 2,
+	SHIELD = 3,
+	BEETLE = 4,
+	__MAX__ = 5,
 }

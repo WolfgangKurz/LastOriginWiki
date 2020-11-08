@@ -32,7 +32,7 @@
 			</template>
 		</div>
 
-		<a v-if="!noLink" href="#" class="stretched-link equip-stretched" @click.prevent="OnClick()" />
+		<a v-if="!noLink" href="#" class="stretched-link unit-stretched" @click.prevent="OnClick()" />
 	</b-card>
 	<div v-else class="unit-card text-left clearfix" @click.prevent="!noLink && OnClick()">
 		<unit-face :id="unit.id" class="unit-face float-left" />

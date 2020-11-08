@@ -19,15 +19,25 @@ interface MapRewardPower {
 }
 export type MapReward = MapRewardChar | MapRewardItem | MapRewardCash | MapRewardMetal | MapRewardNutrient | MapRewardPower;
 
+export interface MapEnemyData {
+	id: string;
+	lv: number;
+}
+
+export type MapWave = Array<MapEnemyData | null>;
+
 export interface MapNodeEntity {
 	prev: number | null;
 	offset: number;
 	text: string;
+
 	drops: string[];
-	// eslint-disable-next-line camelcase
+	/* eslint-disable camelcase */
 	reward_f: MapReward[];
-	// eslint-disable-next-line camelcase
 	reward_am: MapReward[];
+	/* eslint-enable camelcase */
+
+	enemy: MapWave[];
 }
 /* eslint-disable-next-line @typescript-eslint/no-namespace */
 export namespace MapNodeEntity {
@@ -38,6 +48,7 @@ export namespace MapNodeEntity {
 		drops: [],
 		reward_f: [],
 		reward_am: [],
+		enemy: [],
 	};
 }
 

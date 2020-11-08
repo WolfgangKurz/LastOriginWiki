@@ -10,6 +10,8 @@ import UnitView from "@/pages/Units/View.vue";
 
 import Equips from "@/pages/Equips.vue";
 
+import Enemy from "@/pages/Enemy.vue";
+
 import Facilities from "@/pages/Facilities.vue";
 import FacilityView from "@/pages/Facilities/FacilityView.vue";
 
@@ -69,6 +71,15 @@ const Router = new VueRouter({
 		{
 			path: "/equips/:id",
 			component: Equips,
+		},
+
+		{
+			path: "/enemy",
+			component: Enemy,
+		},
+		{
+			path: "/enemy/:id",
+			component: Enemy,
 		},
 
 		{

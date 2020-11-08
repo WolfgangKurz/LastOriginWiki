@@ -18,8 +18,8 @@
 
 					<b-btn-group class="mt-2">
 						<b-button variant="warning" @click="GoTo(`/worlds/${wid}/${i}`)">
-							<b-icon-download class="mr-1" />
-							드랍
+							<b-icon-compass class="mr-1" />
+							지도
 						</b-button>
 						<b-button variant="light" @click="GoTo(`/story/${wid}/${i}`)">
 							<b-icon-chat-left-quote class="mr-1" />

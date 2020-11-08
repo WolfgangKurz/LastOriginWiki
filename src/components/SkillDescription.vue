@@ -48,7 +48,7 @@ export default class SkillDescription extends Vue {
 
 	@Prop({
 		type: Number,
-		default: false,
+		default: 0,
 	})
 	private skillBonus!: number;
 

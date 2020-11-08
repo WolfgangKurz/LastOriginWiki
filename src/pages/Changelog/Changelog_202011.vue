@@ -1,8 +1,35 @@
 <template>
 	<div>
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20201108>2020-11-08</b-card-header>
+			<b-collapse id="changelog20201108" visible>
+				<b-card-body>
+					<div>
+						<b-badge variant="warning">적 정보</b-badge>메뉴가 추가되었습니다.<br />
+						적의 스킬과 설명, 스테이터스, 등장 스테이지를 확인할 수 있습니다.<br />
+						적 스킬의 버프 목록은 아직 준비중입니다.
+					</div>
+					<div>
+						<b-badge variant="warning">세계 정보</b-badge>메뉴가 수정되었습니다.<br />
+						<b-badge variant="info">클리어 보상</b-badge>과 <b-badge variant="info">드랍 정보</b-badge>가 별도의 탭으로 분리되었습니다.<br />
+						적 정보가 추가되었습니다. 적을 클릭하면 해당 적 정보 팝업이 바로 표시됩니다.<br />
+						<b-badge variant="info">클리어 보상</b-badge>과 <b-badge variant="info">드랍 정보</b-badge>의 소모품을 클릭하면 해당 소모품의
+						설명을 확인할 수 있습니다.
+					</div>
+					<div>
+						현재 대사 텍스트가 입력되지 않은 전투원이 매우 많습니다.<br />
+						입력해야하는 대사 분량이 너무 많아 개발자 혼자 작업할 수가 없어 발생한 문제로, 이 문제를 해결하고자 현재
+						<a href="https://docs.google.com/spreadsheets/d/1TrLn5czFe2Ww1xg4HiFsDzZDcnphxV3AqP_DgNqaU00" target="_blank">
+							전투원 대사 DB </a
+						>의 기여를 받고 있습니다.<br />
+						많은 참여 부탁드립니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20201102>2020-11-02</b-card-header>
-			<b-collapse id="changelog20201102" visible>
+			<b-collapse id="changelog20201102">
 				<b-card-body>
 					<div>
 						<b-badge variant="warning">스파르탄 캡틴</b-badge>, <b-badge variant="warning">스파르탄 어썰트</b-badge>,
@@ -22,9 +49,7 @@
 						<b-badge variant="warning">P-49 슬레이프니르</b-badge>의 2번째 액티브 <b-badge variant="info">한계돌파</b-badge>에 반격 효과
 						해제 설명을 추가했습니다.
 					</div>
-					<div>
-						일부 전투원의 스킨 정보가 잘못 기입되어있던 문제를 수정했습니다.
-					</div>
+					<div>일부 전투원의 스킨 정보가 잘못 기입되어있던 문제를 수정했습니다.</div>
 				</b-card-body>
 			</b-collapse>
 		</b-card>

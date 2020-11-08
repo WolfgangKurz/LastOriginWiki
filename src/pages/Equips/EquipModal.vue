@@ -51,11 +51,11 @@
 			</b-row>
 		</b-container>
 
-		<b-tabs nav-class="unit-display-tabs mt-2">
+		<b-tabs nav-class="equip-display-tabs mt-2">
 			<b-tab title-link-class="text-dark" :active="displayTab === 'info'" @click="displayTab = 'info'">
 				<template #title>
 					<b-icon-receipt class="mr-1" />
-					장비 효과
+					장비효과
 				</template>
 			</b-tab>
 			<b-tab title-link-class="text-dark" :active="displayTab === 'drop'" @click="displayTab = 'drop'">
@@ -67,7 +67,7 @@
 			<b-tab title-link-class="text-dark" :active="displayTab === 'enchant'" @click="displayTab = 'enchant'">
 				<template #title>
 					<b-icon-cpu-fill class="mr-1" />
-					강화
+					강화비용
 				</template>
 			</b-tab>
 		</b-tabs>
@@ -159,8 +159,6 @@
 </template>
 
 <script lang="ts">
-import _ from "lodash";
-
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, Watch, PropSync } from "vue-property-decorator";

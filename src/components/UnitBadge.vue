@@ -159,7 +159,7 @@ export default class UnitBadge extends Vue {
 		background-position-x: -$w;
 	}
 
-	&[data-type=""] {
+	&[data-type="3"] {
 		&[data-role="0"] > i {
 			background-position-x: -$w;
 		}
@@ -187,7 +187,7 @@ export default class UnitBadge extends Vue {
 		background-repeat: no-repeat;
 		vertical-align: bottom;
 	}
-	&[data-type=""] {
+	&[data-type="3"] {
 		&:not([data-role=""]) > i {
 			background-image: url($assetsRoot + "/unit-role.png");
 		}
