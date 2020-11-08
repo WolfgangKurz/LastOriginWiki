@@ -3,7 +3,7 @@
 		<b-card-header v-b-toggle:[CollapseKey]>
 			{{ voice.t }}
 			<strong v-if="voice.isMarry" class="text-danger pl-4">♥ 서약</strong>
-			<b-badge v-if="IsNotSet" variant="warning" class="ml-3">대사 정보 없음</b-badge>
+			<b-badge v-if="IsNotSet" variant="warning" class="ml-3">일부 대사 없음</b-badge>
 		</b-card-header>
 		<b-collapse :id="CollapseKey">
 			<b-card-body>
@@ -75,7 +75,7 @@ export default class UnitDialogue extends Vue {
 	}
 
 	private get TypeList (): Array<keyof RawUnitDialogueEntity> {
-		if (this.unit.id in UnitDialogueData) {
+		if (this.unit.uid in UnitDialogueData) {
 			const key = ((v) => {
 				if (v.isMarry) return "M";
 				if (v.isPro) return "P";
@@ -83,8 +83,8 @@ export default class UnitDialogue extends Vue {
 				return v.id.toString();
 			})(this.voice);
 
-			if (key in UnitDialogueData[this.unit.id]) {
-				const diag = UnitDialogueData[this.unit.id][key];
+			if (key in UnitDialogueData[this.unit.uid]) {
+				const diag = UnitDialogueData[this.unit.uid][key];
 				return Object.keys(diag) as Array<keyof RawUnitDialogueEntity>;
 			}
 		}
@@ -127,7 +127,7 @@ export default class UnitDialogue extends Vue {
 	}
 
 	private get Dialogue () {
-		if (this.unit.id in UnitDialogueData) {
+		if (this.unit.uid in UnitDialogueData) {
 			const key = ((v) => {
 				if (v.isMarry) return "M";
 				if (v.isPro) return "P";
@@ -135,8 +135,8 @@ export default class UnitDialogue extends Vue {
 				return v.id.toString();
 			})(this.voice);
 
-			if (key in UnitDialogueData[this.unit.id]) {
-				const diag = UnitDialogueData[this.unit.id][key];
+			if (key in UnitDialogueData[this.unit.uid]) {
+				const diag = UnitDialogueData[this.unit.uid][key];
 				return diag;
 			}
 		}
@@ -193,7 +193,11 @@ export default class UnitDialogue extends Vue {
 	}
 
 	private get IsNotSet () {
-		return !(this.unit.id in UnitDialogueData);
+		function HasEmpty (d: RawUnitDialogueEntity) {
+			return Object.keys(d).some(x => !d[x as keyof RawUnitDialogueEntity]);
+		}
+
+		return !(this.unit.uid in UnitDialogueData) || HasEmpty(this.Dialogue);
 	}
 
 	private get unitId () {

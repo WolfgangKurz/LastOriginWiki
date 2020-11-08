@@ -44,19 +44,22 @@
 		<b-table-simple bordered fixed table-class="mt-2 text-center">
 			<b-tbody>
 				<b-tr>
-					<b-th variant="dark">레벨</b-th>
-				</b-tr>
-				<b-tr>
-					<b-td>
+					<b-td variant="dark">
 						<b-input-group>
 							<b-input-group-prepend>
 								<b-button variant="secondary" @click="currentLevel = 1">
 									<b-icon-chevron-double-down />
 								</b-button>
+								<b-button variant="secondary" @click="() => (currentLevel = Math.max(currentLevel - 1, 1))">
+									<b-icon-chevron-down />
+								</b-button>
 								<div class="input-prepend">Lv.</div>
 							</b-input-group-prepend>
 							<b-input class="pl-5" v-model="currentLevel" number />
 							<b-input-group-append>
+								<b-button variant="secondary" @click="() => (currentLevel = Math.min(currentLevel + 1, 100))">
+									<b-icon-chevron-up />
+								</b-button>
 								<b-button variant="secondary" @click="currentLevel = 100">
 									<b-icon-chevron-double-up />
 								</b-button>
@@ -92,7 +95,7 @@
 										<span class="status-col-head">HP</span>
 									</b-td>
 									<b-td>
-										<div class="status-col-value">{{ StatValue(target.hp) }}</div>
+										<div class="status-col-value">{{ StatValue(target.hp, true) }}</div>
 									</b-td>
 									<b-td class="text-left" />
 									<b-td />
@@ -209,11 +212,11 @@
 
 		<b-card class="border text-center mt-3" header="등장 스테이지" body-class="p-2">
 			<div v-for="(area, aindex) in Sources" :key="`unit-view-source-${aindex}`">
-				<hr v-if="aindex > 0" />
+				<hr v-if="aindex > 0" class="my-2" />
 				<source-badge v-for="(source, sindex) in area" :key="`unit-view-drop-${aindex}-${sindex}-${source}`" :source="source" detail linked />
 			</div>
 			<template v-if="isEWEnemy">
-				<hr v-if="Sources.length > 0" />
+				<hr v-if="Sources.length > 0" class="my-2" />
 				<b-badge variant="dark">영원한 전장</b-badge>
 			</template>
 			<div v-else-if="Object.keys(Sources).length === 0" class="secondary">등장 없음</div>
@@ -287,8 +290,8 @@ export default class EquipModal extends Vue {
 
 	private displayTab: "desc" | string = "skill1";
 
-	@Watch("enemy")
-	private WatchEnemy () {
+	@Watch("displaySync")
+	private WatchDisplay () {
 		this.currentLevel = this.level;
 		this.displayTab = "skill1";
 
@@ -373,15 +376,37 @@ export default class EquipModal extends Vue {
 	private Description (skill: EnemySkill) {
 		if (!this.target) return "";
 
-		const v = Decimal.mul(this.StatValue(this.target.atk), skill.rate).toNumber();
+		const v = Decimal.mul(
+			this.StatValue(this.target.atk),
+			skill.rate,
+		)
+			.floor()
+			.toNumber();
 
 		let t = skill.desc.toString();
 		t = t.replace(/\{0\}/g, `[@::${v}~0: (${skill.rate}배)]`);
 		return t;
 	}
 
-	private StatValue (stat: [number, number]) {
-		return Decimal.add(stat[0], Decimal.mul(stat[1], this.currentLevel - 1)).toNumber();
+	private StatValue (stat: [number, number], floorPer: boolean = false) {
+		if (floorPer) {
+			return Decimal.add(
+				stat[0],
+				Decimal.mul(
+					Decimal.floor(stat[1]),
+					this.currentLevel - 1,
+				),
+			)
+				.floor()
+				.toNumber();
+		} else {
+			return Decimal.add(
+				stat[0],
+				Decimal.mul(stat[1], this.currentLevel - 1),
+			)
+				.floor()
+				.toNumber();
+		}
 	}
 
 	private GoTo (path: string) {
@@ -483,7 +508,7 @@ export default class EquipModal extends Vue {
 
 	.input-prepend {
 		position: absolute;
-		margin-left: 4.5em;
+		margin-left: 7.75em;
 		line-height: 2.75em;
 		font-weight: bold;
 		font-size: 90%;

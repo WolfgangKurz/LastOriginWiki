@@ -34,7 +34,7 @@ export interface RawUnitDialogueEntity {
 	/* eslint-enable camelcase */
 }
 export interface RawUnitDialogue {
-	[key: number]: { // Unit
+	[key: string]: { // Unit
 		[key: string]: RawUnitDialogueEntity; // Skin
 	};
 }
@@ -50,6 +50,9 @@ export interface SkinOffset {
 	google: SkinOffsetPart;
 }
 export interface RawSkin {
+	/** Skin ID */
+	sid: null | number;
+
 	/** Offset */
 	offset: SkinOffset;
 
@@ -83,6 +86,9 @@ export interface RawSkin {
 	desc: string;
 }
 export interface SkinInfo {
+	/** Skin ID */
+	sid: null | number;
+
 	t: string;
 
 	/** Offset */

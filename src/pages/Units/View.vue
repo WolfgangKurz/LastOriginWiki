@@ -627,8 +627,8 @@ export default class UnitView extends Vue {
 			[key: string]: RawSkin;
 		}
 
-		if (this.unit.id in SkinData)
-			return (SkinData as unknown as SkinTable)[this.unit.id];
+		if (this.unit.uid in SkinData)
+			return (SkinData as unknown as SkinTable)[this.unit.uid];
 		return null;
 	}
 

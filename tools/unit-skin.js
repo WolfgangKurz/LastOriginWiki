@@ -6,7 +6,7 @@ function process (auth) {
 	const sheets = google.sheets({ version: "v4", auth });
 	sheets.spreadsheets.values.get({
 		spreadsheetId: "1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4",
-		range: "UnitSkin!A2:O",
+		range: "UnitSkin!A2:P",
 	}, (err, res) => {
 		if (err) return console.log("The API returned an error: " + err);
 
@@ -16,20 +16,21 @@ function process (auth) {
 			rows.map((row) => {
 				if (row.every(x => !x || x.length === 0)) return;
 
-				const unit = row[0];
+				const uid = row[0];
 				const skin = row[2];
-				const artist = row[3];
-				const offsets = row[4];
-				const price = /^[0-9]+$/.test(row[5]) ? parseInt(row[5], 10) : undefined;
-				const V = !!row[6];
-				const P = !!row[7];
-				const A = !!row[8];
-				const D = !!row[9];
-				const S = !!row[10];
-				const X = !!row[11];
-				const G = !!row[12];
-				const name = row[13];
-				const desc = row[14];
+				const skinId = parseInt(row[3], 10);
+				const artist = row[4];
+				const offsets = row[5];
+				const price = /^[0-9]+$/.test(row[6]) ? parseInt(row[6], 10) : undefined;
+				const V = !!row[7];
+				const P = !!row[8];
+				const A = !!row[9];
+				const D = !!row[10];
+				const S = !!row[11];
+				const X = !!row[12];
+				const G = !!row[13];
+				const name = row[14];
+				const desc = row[15];
 
 				const offset = ((x) => {
 					const output = {
@@ -56,15 +57,15 @@ function process (auth) {
 					return output;
 				})(offsets);
 
-				if (!(unit in ret))
-					ret[unit] = { artist, offset, price, V, A, D, S, X, G, name, desc };
+				if (!(uid in ret))
+					ret[uid] = { sid: skinId, artist, offset, price, V, A, D, S, X, G, name, desc };
 				else if (P)
-					ret[unit].P = { t: skin, artist, offset, price, V, A, D, S, X, G, name, desc };
+					ret[uid].P = { sid: skinId, t: skin, artist, offset, price, V, A, D, S, X, G, name, desc };
 				else {
-					if (!("skins" in ret[unit]))
-						ret[unit].skins = [];
+					if (!("skins" in ret[uid]))
+						ret[uid].skins = [];
 
-					ret[unit].skins.push({ t: skin, artist, offset, price, V, A, D, S, X, G, name, desc });
+					ret[uid].skins.push({ sid: skinId, t: skin, artist, offset, price, V, A, D, S, X, G, name, desc });
 				}
 			});
 
