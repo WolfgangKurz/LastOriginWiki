@@ -3,7 +3,7 @@
 		<b-card-header v-b-toggle.collapse_corelink>
 			코어링크
 			<div class="float-right">
-				<b-badge pill :variant="previewClass">{{linkPercent}}%</b-badge>
+				<b-badge pill :variant="previewClass">{{ linkPercent }}%</b-badge>
 			</div>
 		</b-card-header>
 		<b-collapse id="collapse_corelink">
@@ -36,29 +36,13 @@
 									없음
 									<b-radio class="float-right" value v-model="unit.FullLinkBonus" />
 								</b-list-group-item>
-								<b-list-group-item>
-									출격 비용 -{{unit.LinkBonus.Discount}}%
-									<b-radio class="float-right" value="Discount" v-model="unit.FullLinkBonus" />
-								</b-list-group-item>
-								<b-list-group-item>
-									스킬 위력 +{{unit.LinkBonus.SkillPower}}%
-									<b-radio class="float-right" value="Skill" v-model="unit.FullLinkBonus" />
-								</b-list-group-item>
-								<b-list-group-item>
-									{{unit.LinkBonus.Bonus3.name}}
-									{{NumValue(unit.LinkBonus.Bonus3.value, false, false)}}
-									{{unit.LinkBonus.Bonus3.ratio ? "%" : ""}}
-									<b-radio class="float-right" :value="unit.LinkBonus.bonus3" v-model="unit.FullLinkBonus" />
-								</b-list-group-item>
-								<b-list-group-item>
-									{{unit.LinkBonus.Bonus4.name}}
-									{{NumValue(unit.LinkBonus.Bonus4.value, false, false)}}
-									{{unit.LinkBonus.Bonus4.ratio ? "%" : ""}}
-									<b-radio class="float-right" :value="unit.LinkBonus.bonus4" v-model="unit.FullLinkBonus" />
-								</b-list-group-item>
-								<b-list-group-item>
-									행동력 +{{unit.LinkBonus.Speed}}
-									<b-radio class="float-right" value="SPD" v-model="unit.FullLinkBonus" />
+
+								<b-list-group-item v-for="(fl, flIdx) in FullLinkBonus" :key="`unit-stats-corelink-fulllinkbonus-${flIdx}`">
+									{{ fl.Name }}
+									<span class="d-inline-block">
+										{{ fl.Prefix + fl.Value + fl.Postfix }}
+									</span>
+									<b-radio class="float-right" :value="fl.Key" v-model="unit.FullLinkBonus" />
 								</b-list-group-item>
 							</b-list-group>
 						</b-col>
@@ -77,6 +61,7 @@ import { Prop } from "vue-property-decorator";
 import { FormatNumber } from "@/libs/Functions";
 
 import { Unit } from "@/pages/Simulation/Simulation/Unit";
+import { GetLinkBonus } from "@/libs/DB/Unit";
 
 @Component({})
 export default class UnitStatsCoreLink extends Vue {
@@ -95,6 +80,10 @@ export default class UnitStatsCoreLink extends Vue {
 		if (sum === 0) return "secondary";
 		if (sum === 5) return "primary";
 		return this.unit.Linked.some(x => x > 0 && x < 1) ? "warning" : "success";
+	}
+
+	private get FullLinkBonus () {
+		return this.unit.Unit.fullLinkBonus.map(x => GetLinkBonus(x, 1));
 	}
 
 	private get list () {

@@ -149,13 +149,13 @@ export default class EquipSelectModal extends Vue {
 			[ACTOR_GRADE.S]: "S",
 			[ACTOR_GRADE.SS]: "SS",
 		};
+
 		const list = [
 			ACTOR_GRADE.B,
 			ACTOR_GRADE.A,
 			ACTOR_GRADE.S,
 			ACTOR_GRADE.SS,
 		].map(x => ({ value: x, text: table[x] }));
-
 		if (!this.SelectedEquip.key) return list;
 
 		const key = this.SelectedEquip.key;
@@ -167,7 +167,7 @@ export default class EquipSelectModal extends Vue {
 		const rarities = EquipData
 			.filter(x => x.key === key && x.type === type)
 			.map(x => x.rarity)
-			.map(x => ({ value: x, text: x }));
+			.map(x => ({ value: x, text: table[x] }));
 
 		return rarities;
 	}
@@ -278,7 +278,7 @@ export default class EquipSelectModal extends Vue {
 
 	private Select (equip: Equip | null) {
 		if (!equip)
-			this.$emit("select", Equip.Empty, 10);
+			this.$emit("select", { ...Equip.Empty, type: this.type }, 10);
 		else
 			this.$emit("select", equip, this.equipLevel);
 	}
