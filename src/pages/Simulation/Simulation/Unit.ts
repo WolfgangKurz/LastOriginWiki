@@ -119,14 +119,14 @@ export class Unit extends Vue {
 				key: "ACC",
 				name: "적중",
 				value: 35,
-				ratio: false,
+				ratio: true,
 				postfix: "%",
 			},
 			Cri: {
 				key: "Cri",
 				name: "치명타",
 				value: 10,
-				ratio: false,
+				ratio: true,
 				postfix: "%",
 			},
 			DEF: {
@@ -172,7 +172,7 @@ export class Unit extends Vue {
 				key: "ACC",
 				name: "적중",
 				value: 75,
-				ratio: false,
+				ratio: true,
 				postfix: "%",
 			},
 			Buff: {
@@ -185,7 +185,7 @@ export class Unit extends Vue {
 				key: "Cri",
 				name: "치명타",
 				value: 20,
-				ratio: false,
+				ratio: true,
 				postfix: "%",
 			},
 			DEF: {
@@ -199,7 +199,7 @@ export class Unit extends Vue {
 				key: "EV",
 				name: "회피",
 				value: isAirDef ? 20 : 15,
-				ratio: false,
+				ratio: true,
 				postfix: "%",
 			},
 			HP: {
@@ -317,7 +317,6 @@ export class Unit extends Vue {
 			// 스탯 포인트로 올린 수치
 			output[key].pointed += parseFloat((this.Stats[key] * StatPointValue[key]).toFixed(8));
 
-			debugger;
 			let value = new Decimal(0);
 			let valueP = new Decimal(0);
 			const independentValues: number[] = [];
@@ -491,15 +490,15 @@ export class Unit extends Vue {
 				else if (key === "SPD" && this.fullLinkBonus === "SPD")
 					output[key].fullLinkBonus = this.LinkBonus.Speed;
 				else if (key === "EV" && this.fullLinkBonus === "EV") {
-					output[key].fullLinkBonus = this.LinkBonus.Bonus3.key === "eva"
+					output[key].fullLinkBonus = this.LinkBonus.Bonus3.key === "EV"
 						? this.LinkBonus.Bonus3.value
 						: this.LinkBonus.Bonus4.value;
 				} else if (key === "ACC" && this.fullLinkBonus === "ACC") {
-					output[key].fullLinkBonus = this.LinkBonus.Bonus3.key === "acc"
+					output[key].fullLinkBonus = this.LinkBonus.Bonus3.key === "ACC"
 						? this.LinkBonus.Bonus3.value
 						: this.LinkBonus.Bonus4.value;
 				} else if (key === "Cri" && this.fullLinkBonus === "Cri") {
-					output[key].fullLinkBonus = this.LinkBonus.Bonus3.key === "crit"
+					output[key].fullLinkBonus = this.LinkBonus.Bonus3.key === "Cri"
 						? this.LinkBonus.Bonus3.value
 						: this.LinkBonus.Bonus4.value;
 				} else if (key === "Range" && this.fullLinkBonus === "Range")
