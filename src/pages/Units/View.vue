@@ -82,59 +82,34 @@
 					</b-container>
 
 					<b-row>
-						<b-col cols="12" md="4">
+						<b-col cols="12" sm="4">
 							<b-table-simple bordered fixed table-class="text-center table-unit-modal">
 								<b-thead head-variant="dark">
 									<b-tr>
-										<b-th>
-											링크 보너스
-											<b-form-select class="table-unit-link-select" size="sm" v-model="linkCount" :options="LinkCountList" />
+										<b-th colspan="4">
+											출격 비용
+											<b-form-select
+												v-if="CostRarityList.length > 1"
+												class="table-unit-rarity-select"
+												size="sm"
+												v-model="costRarity"
+												:options="CostRarityList"
+											/>
 										</b-th>
+									</b-tr>
+									<b-tr>
+										<b-th>링크</b-th>
+										<b-th>부품</b-th>
+										<b-th>영양</b-th>
+										<b-th>전력</b-th>
 									</b-tr>
 								</b-thead>
 								<b-tbody>
-									<b-tr>
-										<b-td>
-											HP
-											<span class="d-inline-block">
-												+
-												<b class="text-danger">{{ LinkBonus.Value.HP }}</b
-												>%
-											</span>
-										</b-td>
-									</b-tr>
-									<b-tr>
-										<b-td>
-											공격력
-											<span class="d-inline-block">
-												+
-												<b class="text-danger">{{ LinkBonus.Value.Atk }}</b
-												>%
-											</span>
-										</b-td>
-									</b-tr>
-									<b-tr>
-										<b-td>
-											<template v-if="!LinkBonus.IsHP">
-												{{ LinkBonus.Per }}
-												<span class="d-inline-block">
-													+
-													<b class="text-danger">{{ LinkBonus.Value.Per[0] }}</b>
-													<template v-if="LinkBonus.Value.Per[1]">%</template>
-												</span>
-											</template>
-											<b v-else class="text-secondary">-</b>
-										</b-td>
-									</b-tr>
-									<b-tr>
-										<b-td>
-											획득 경험치
-											<span class="d-inline-block">
-												+
-												<b class="text-danger">{{ LinkBonus.Value.EXP }}</b
-												>%
-											</span>
-										</b-td>
+									<b-tr v-for="i in 6" :key="`unit-modal-cost-${i}`" class="text-center">
+										<b-th variant="dark">{{ i - 1 }}</b-th>
+										<b-td :class="CostClass(i - 1, CostTable.metal[i - 1])">{{ CostTable.metal[i - 1] }}</b-td>
+										<b-td :class="CostClass(i - 1, CostTable.nutrient[i - 1])">{{ CostTable.nutrient[i - 1] }}</b-td>
+										<b-td :class="CostClass(i - 1, CostTable.power[i - 1])">{{ CostTable.power[i - 1] }}</b-td>
 									</b-tr>
 								</b-tbody>
 							</b-table-simple>
@@ -186,34 +161,25 @@
 					</b-row>
 
 					<b-row>
-						<b-col cols="12" sm="6">
+						<b-col cols="12" md="6">
 							<b-table-simple bordered fixed table-class="text-center table-unit-modal">
 								<b-thead head-variant="dark">
 									<b-tr>
-										<b-th colspan="4">
-											출격 비용
-											<b-form-select
-												v-if="CostRarityList.length > 1"
-												class="table-unit-rarity-select"
-												size="sm"
-												v-model="costRarity"
-												:options="CostRarityList"
-											/>
+										<b-th>
+											링크 보너스
+											<b-form-select class="table-unit-link-select" size="sm" v-model="linkCount" :options="LinkCountList" />
 										</b-th>
-									</b-tr>
-									<b-tr>
-										<b-th>링크</b-th>
-										<b-th>부품</b-th>
-										<b-th>영양</b-th>
-										<b-th>전력</b-th>
 									</b-tr>
 								</b-thead>
 								<b-tbody>
-									<b-tr v-for="i in 6" :key="`unit-modal-cost-${i}`" class="text-center">
-										<b-th variant="dark">{{ i - 1 }}</b-th>
-										<b-td :class="CostClass(i - 1, CostTable.metal[i - 1])">{{ CostTable.metal[i - 1] }}</b-td>
-										<b-td :class="CostClass(i - 1, CostTable.nutrient[i - 1])">{{ CostTable.nutrient[i - 1] }}</b-td>
-										<b-td :class="CostClass(i - 1, CostTable.power[i - 1])">{{ CostTable.power[i - 1] }}</b-td>
+									<b-tr v-for="(lb, lbIdx) in LinkBonus" :key="`unit-linkbonus-row-${lbIdx}`">
+										<b-td>
+											{{ lb.Name }}
+											<span class="d-inline-block">
+												{{ lb.Prefix }}<b class="text-danger">{{ lb.Value }}</b
+												>{{ lb.Postfix }}
+											</span>
+										</b-td>
 									</b-tr>
 								</b-tbody>
 							</b-table-simple>
@@ -246,42 +212,15 @@
 											<b-radio class="float-right" value v-model="linkBonus" />
 										</b-td>
 									</b-tr>
-									<b-tr>
+									<b-tr v-for="(fl, flIdx) in FullLinkBonus" :key="`unit-fulllinkbonus-row-${flIdx}`">
 										<b-td colspan="3">
-											출격 비용 -{{ LinkBonus.Discount }}%
-											<b-radio class="float-right" value="Discount" v-model="linkBonus" />
+											{{ fl.Name }}
+											<span class="d-inline-block">
+												{{ fl.Prefix }}<b class="text-danger">{{ fl.Value }}</b
+												>{{ fl.Postfix }}
+											</span>
+											<b-radio v-if="BonusSelectable(fl.Key)" class="float-right" :value="fl.Key" v-model="linkBonus" />
 										</b-td>
-									</b-tr>
-									<b-tr>
-										<b-td colspan="3">
-											스킬 위력 +{{ LinkBonus.SkillPower }}%
-											<b-radio class="float-right" value="Skill" v-model="linkBonus" />
-										</b-td>
-									</b-tr>
-									<b-tr>
-										<b-td colspan="3">
-											{{ LinkBonus.Bonus3 }}
-											<b-radio
-												v-if="BonusSelectable(unit.fullLinkBonus.bonus3)"
-												class="float-right"
-												:value="unit.fullLinkBonus.bonus3"
-												v-model="linkBonus"
-											/>
-										</b-td>
-									</b-tr>
-									<b-tr>
-										<b-td colspan="3">
-											{{ LinkBonus.Bonus4 }}
-											<b-radio
-												v-if="BonusSelectable(unit.fullLinkBonus.bonus4)"
-												class="float-right"
-												:value="unit.fullLinkBonus.bonus4"
-												v-model="linkBonus"
-											/>
-										</b-td>
-									</b-tr>
-									<b-tr>
-										<b-td colspan="3">행동력 +{{ LinkBonus.Speed }}</b-td>
 									</b-tr>
 								</b-tbody>
 							</b-table-simple>
@@ -303,9 +242,9 @@
 				:skill-level.sync="skillLevel"
 				:form-state.sync="formState"
 				:rarity="unit.rarity"
-				:buff-bonus="linkBonus === 'Buff'"
-				:skill-bonus="linkBonus === 'Skill' ? LinkBonus.SkillPower : 0"
-				:range-bonus="linkBonus === 'Range'"
+				:buff-bonus="linkBonus.startsWith('Buff_')"
+				:skill-bonus="SkillPowerBonus"
+				:range-bonus="linkBonus.startsWith('Range_')"
 			/>
 		</template>
 		<template v-if="displayTab === 'dialogue'">
@@ -353,7 +292,7 @@ import { RawSkin, SkinInfo, RawCostTable, RawSkill, Rarity, RawSkillUnit } from 
 import { SkillData } from "@/libs/DB";
 
 import { ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/libs/Types/Enums";
-import UnitData, { Unit } from "@/libs/DB/Unit";
+import UnitData, { GetLinkBonus, LinkBonusType, Unit } from "@/libs/DB/Unit";
 import EquipData from "@/libs/DB/Equip";
 import UnitStatsData, { UnitStats as UnitStats_ } from "@/libs/DB/UnitStats";
 import RequireResource from "@/libs/DB/RequireResource";
@@ -415,7 +354,7 @@ export default class UnitView extends Vue {
 	private unitId: number = 0;
 	private skillLevel: number = 0;
 
-	private linkBonus: "" | "Discount" | "Skill" | "Buff" | "Range" = "";
+	private linkBonus: LinkBonusType = "";
 
 	private statusSerialized: string | null = null;
 
@@ -502,7 +441,10 @@ export default class UnitView extends Vue {
 	}
 
 	private get LinkCountList () {
-		return [0, 1, 2, 3, 4, 5];
+		return [0, 1, 2, 3, 4, 5].map(x => ({
+			value: x,
+			text: `${x} 링크`,
+		}));
 	}
 
 	private get CurrentResists () {
@@ -511,80 +453,35 @@ export default class UnitView extends Vue {
 	}
 
 	private get LinkBonus () {
-		interface LinkBonusValueTable {
-			ACC: [number, boolean];
-			Cri: [number, boolean];
-			DEF: [number, boolean];
-			EV: [number, boolean];
-			HP: [number, boolean];
-			Skill: [number, boolean];
-			SPD: [number, boolean];
-		}
+		return this.unit.linkBonus.map(x => GetLinkBonus(x, this.linkCount));
+	}
 
-		const hasEva = this.unit.fullLinkBonus.bonus3 === "EV" || this.unit.fullLinkBonus.bonus4 === "EV";
-		const isDef = this.unit.role === ROLE_TYPE.DEFENDER;
+	private get FullLinkBonus () {
+		return this.unit.fullLinkBonus.map(x => GetLinkBonus(x, 1));
+	}
 
-		const LinkBonusTable = {
-			ACC: "적중",
-			Cri: "치명타",
-			DEF: "방어력",
-			EV: "회피",
-			HP: "HP",
-			Skill: "스킬 위력",
-			SPD: "행동력",
-		};
-		const LinkBonusValue: LinkBonusValueTable = {
-			ACC: [35, true],
-			Cri: [10, true],
-			DEF: [15, true],
-			EV: [10, true],
-			HP: [0, true],
-			Skill: [10, true],
-			SPD: [0.1, false],
-		};
-		const FullLinkBonusTable = {
-			"": "없음",
-			Discount: "출격 자원 감소",
-			Skill: "스킬 위력 +x%",
-			ACC: "적중 +75%",
-			Buff: "버프/디버프 효과 Lv+2",
-			Cri: "치명타 +20%",
-			DEF: "방어력 +20%",
-			EV: "회피 +" + (isDef ? 20 : 15) + "%",
-			HP: "HP +20%",
-			Range: "사거리 +1",
-			SPD: "행동력 +x",
-		};
+	private get SkillPowerBonus () {
+		let bonus = new Decimal(0);
 
-		return {
-			IsHP: this.unit.linkBonus === "HP",
-			Per: LinkBonusTable[this.unit.linkBonus],
-			Value: {
-				HP: Decimal.mul(this.unit.linkBonus === "HP" ? 125 : 100, this.linkCount)
-					.div(5)
-					.toNumber(),
-				Atk: Decimal.mul(100, this.linkCount)
-					.div(5)
-					.toNumber(),
-				Per: [
-					Decimal.mul(LinkBonusValue[this.unit.linkBonus][0], this.linkCount)
-						.div(5)
-						.toNumber(),
-					LinkBonusValue[this.unit.linkBonus][1],
-				],
-				EXP: Decimal.mul(20, this.linkCount)
-					.div(5)
-					.toNumber(),
-			},
+		if (this.linkBonus === "Skill_2") bonus = bonus.add(2);
+		if (this.linkBonus === "Skill_5") bonus = bonus.add(5);
+		if (this.linkBonus === "Skill_10") bonus = bonus.add(10);
+		if (this.linkBonus === "Skill_15") bonus = bonus.add(15);
+		if (this.linkBonus === "Skill_20") bonus = bonus.add(20);
+		if (this.linkBonus === "Skill_25") bonus = bonus.add(25);
+		if (this.linkBonus === "Skill_30") bonus = bonus.add(30);
+		if (this.linkBonus === "Skill_35") bonus = bonus.add(35);
 
-			Discount: this.unit.rarity === ACTOR_GRADE.SS ? 25 : 20,
-			SkillPower: this.unit.fullLinkBonus.bonus2,
-			Bonus3: FullLinkBonusTable[this.unit.fullLinkBonus.bonus3],
-			Bonus4: FullLinkBonusTable[this.unit.fullLinkBonus.bonus4],
-			Speed: this.unit.type === ACTOR_CLASS.AIR && this.unit.role === ROLE_TYPE.DEFENDER
-				? (this.unit.rarity === ACTOR_GRADE.SS && hasEva ? 0.2 : 0.15)
-				: 0.1,
-		};
+		if (this.unit.linkBonus.includes("Skill_2")) bonus = bonus.add(2);
+		if (this.unit.linkBonus.includes("Skill_5")) bonus = bonus.add(2);
+		if (this.unit.linkBonus.includes("Skill_10")) bonus = bonus.add(2);
+		if (this.unit.linkBonus.includes("Skill_15")) bonus = bonus.add(2);
+		if (this.unit.linkBonus.includes("Skill_20")) bonus = bonus.add(2);
+		if (this.unit.linkBonus.includes("Skill_25")) bonus = bonus.add(2);
+		if (this.unit.linkBonus.includes("Skill_30")) bonus = bonus.add(2);
+		if (this.unit.linkBonus.includes("Skill_35")) bonus = bonus.add(2);
+
+		return bonus.toNumber();
 	}
 
 	private get CraftTime () {
@@ -700,7 +597,13 @@ export default class UnitView extends Vue {
 	}
 
 	private get CostTable () {
-		return GetRequireResource(this.costRarity, this.unit.type, this.unit.role, this.unit.body, this.linkBonus === "Discount");
+		return GetRequireResource(
+			this.costRarity,
+			this.unit.type,
+			this.unit.role,
+			this.unit.body,
+			this.linkBonus,
+		);
 	}
 
 	/**
@@ -751,14 +654,20 @@ export default class UnitView extends Vue {
 
 	private CostClass (level: number, value: number) {
 		if (value === 0) return "text-secondary";
-		if (this.linkBonus === "Discount" && level === 5)
+		if (this.linkBonus.startsWith("Cost_") && level === 5)
 			return "text-primary";
 		else
 			return "";
 	}
 
-	private BonusSelectable (bonus: string) {
-		return ["Buff", "Range"].includes(bonus);
+	private BonusSelectable (bonus: LinkBonusType) {
+		const list: LinkBonusType[] = [
+			"Cost_20", "Cost_25", "Cost_30", "Cost_35",
+			"Buff_1", "Buff_2", "Buff_3",
+			"Range_1",
+			"Skill_2", "Skill_5", "Skill_10", "Skill_15", "Skill_20", "Skill_25", "Skill_30", "Skill_35",
+		];
+		return list.includes(bonus);
 	}
 
 	private Reset () {
@@ -818,7 +727,7 @@ export default class UnitView extends Vue {
 
 	.table-unit-link-select {
 		margin-left: 5px;
-		width: 64px;
+		width: 96px;
 		vertical-align: baseline;
 	}
 	.table-unit-level-select,

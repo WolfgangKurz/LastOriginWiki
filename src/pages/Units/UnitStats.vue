@@ -29,19 +29,19 @@
 					<b-row>
 						<b-col cols="4">
 							<img class="res-icon" :src="`${AssetsRoot}/res-component.png`" />
-							<span :class="`text-${sUnit.FullLinkBonus === 'Discount' ? 'primary' : 'dark'}`">{{
+							<span :class="`text-${sUnit.FullLinkBonus.startsWith('Cost_') ? 'primary' : 'dark'}`">{{
 								CostTable.metal[sUnit.LinkCount]
 							}}</span>
 						</b-col>
 						<b-col cols="4">
 							<img class="res-icon" :src="`${AssetsRoot}/res-nutrition.png`" />
-							<span :class="`text-${sUnit.FullLinkBonus === 'Discount' ? 'primary' : 'dark'}`">{{
+							<span :class="`text-${sUnit.FullLinkBonus.startsWith('Cost_') ? 'primary' : 'dark'}`">{{
 								CostTable.nutrient[sUnit.LinkCount]
 							}}</span>
 						</b-col>
 						<b-col cols="4">
 							<img class="res-icon" :src="`${AssetsRoot}/res-power.png`" />
-							<span :class="`text-${sUnit.FullLinkBonus === 'Discount' ? 'primary' : 'dark'}`">{{
+							<span :class="`text-${sUnit.FullLinkBonus.startsWith('Cost_') ? 'primary' : 'dark'}`">{{
 								CostTable.power[sUnit.LinkCount]
 							}}</span>
 						</b-col>
@@ -287,7 +287,7 @@ export default class UnitStatus extends Vue {
 			this.sUnit.Unit.type,
 			this.sUnit.Unit.role,
 			this.sUnit.Unit.body,
-			this.sUnit.FullLinkBonus === "Discount",
+			this.sUnit.FullLinkBonus,
 		);
 	}
 
@@ -377,6 +377,8 @@ export default class UnitStatus extends Vue {
 		keys.forEach(key => {
 			const sStat = this.sUnit.StatData[key];
 
+			const floor = ["HP", "ATK", "DEF", "Range"].includes(key);
+
 			if (sStat.isIndependent) {
 				output.non[key] = {
 					key,
@@ -389,7 +391,7 @@ export default class UnitStatus extends Vue {
 			}
 
 			(() => {
-				const final = this.FinalValue(sStat, key, false);
+				const final = this.FinalValue(sStat, key, false, floor);
 				const added = Decimal.sub(final, sStat.base).toNumber();
 				output.base[key] = {
 					key,
@@ -400,7 +402,7 @@ export default class UnitStatus extends Vue {
 				};
 			})();
 			(() => {
-				const final = this.FinalValue(sStat, key, true);
+				const final = this.FinalValue(sStat, key, true, floor);
 				const added = Decimal.sub(final, sStat.base).toNumber();
 				output.final[key] = {
 					key,
@@ -415,7 +417,7 @@ export default class UnitStatus extends Vue {
 		return output;
 	}
 
-	private FinalValue (stat: Stat, key: StatType, buffed: boolean) {
+	private FinalValue (stat: Stat, key: StatType, buffed: boolean, floor: boolean = false) {
 		const buffType = !this.BaseStatList.includes(key);
 		let value = new Decimal(stat.base)
 			.add(stat.pointed)
@@ -438,7 +440,10 @@ export default class UnitStatus extends Vue {
 			);
 		}
 
-		return value.toNumber();
+		if (floor)
+			return value.floor().toNumber();
+		else
+			return value.toNumber();
 	}
 
 	private NumValue (value: number, key: StatType) {

@@ -11,8 +11,8 @@ import { UnitEquip } from "./UnitEquip";
 import { UnitStat, UnitPoint, Stat, StatPointValue, StatType, RatioStats } from "./Stats";
 import { BuffEffect, BUFFEFFECT_TYPE } from "@/libs/Equips/BuffEffect";
 
-import { ACTOR_CLASS, ACTOR_GRADE, BUFF_ATTR_TYPE, ITEM_TYPE, ROLE_TYPE } from "@/libs/Types/Enums";
-import UnitData, { FullLinkBonusType, Unit as Unit_ } from "@/libs/DB/Unit";
+import { ACTOR_GRADE, BUFF_ATTR_TYPE, ITEM_TYPE, ROLE_TYPE } from "@/libs/Types/Enums";
+import UnitData, { GetLinkBonus, LinkBonusType, Unit as Unit_ } from "@/libs/DB/Unit";
 import UnitStatsData from "@/libs/DB/UnitStats";
 import EquipData from "@/libs/DB/Equip";
 
@@ -33,7 +33,7 @@ export class Unit extends Vue {
 	private rarity: ACTOR_GRADE = ACTOR_GRADE.B; // 기본 등급
 
 	private linked: LinkData = [0, 0, 0, 0, 0];
-	private fullLinkBonus: FullLinkBonusType = "";
+	private fullLinkBonus: LinkBonusType = "";
 
 	private stats: UnitPoint = UnitPoint.Empty;
 	private equips: UnitEquip[] = new Array(4).fill(UnitEquip.Empty);
@@ -98,163 +98,14 @@ export class Unit extends Vue {
 
 	/** 현재 링크 보너스 정보 */
 	public get LinkBonus () {
-		interface BonusTable {
-			[key: string]: {
-				key: string;
-				name: string;
-				value: number;
-				ratio: boolean;
-				postfix?: string;
-				rounded?: boolean;
-			};
-		}
-
-		const unit = this.Unit;
-
-		const hasEva = unit.fullLinkBonus.bonus3 === "EV" || unit.fullLinkBonus.bonus4 === "EV";
-		const isAirDef = unit.type === ACTOR_CLASS.AIR && unit.role === ROLE_TYPE.DEFENDER;
-
-		const LinkBonusTable: BonusTable = {
-			ACC: {
-				key: "ACC",
-				name: "적중",
-				value: 35,
-				ratio: true,
-				postfix: "%",
-			},
-			Cri: {
-				key: "Cri",
-				name: "치명타",
-				value: 10,
-				ratio: true,
-				postfix: "%",
-			},
-			DEF: {
-				key: "DEF",
-				name: "방어력",
-				value: 15,
-				ratio: true,
-				postfix: "%",
-				rounded: true,
-			},
-			EV: {
-				key: "EV",
-				name: "회피",
-				value: 10,
-				ratio: false,
-				postfix: "%",
-			},
-			HP: {
-				key: "HP",
-				name: "HP",
-				value: 100,
-				ratio: true,
-				postfix: "%",
-				rounded: true,
-			},
-			Skill: {
-				key: "Skill",
-				name: "스킬 위력",
-				value: 10,
-				ratio: true,
-				postfix: "%",
-				rounded: true,
-			},
-			SPD: {
-				key: "SPD",
-				name: "행동력",
-				ratio: false,
-				value: 0.1,
-			},
-		};
-		const FullLinkBonusTable: BonusTable = {
-			ACC: {
-				key: "ACC",
-				name: "적중",
-				value: 75,
-				ratio: true,
-				postfix: "%",
-			},
-			Buff: {
-				key: "Buff",
-				name: "버프/디버프 효과 Lv",
-				value: 2,
-				ratio: false,
-			},
-			Cri: {
-				key: "Cri",
-				name: "치명타",
-				value: 20,
-				ratio: true,
-				postfix: "%",
-			},
-			DEF: {
-				key: "DEF",
-				name: "방어력",
-				value: 20,
-				ratio: true,
-				postfix: "%",
-			},
-			EV: {
-				key: "EV",
-				name: "회피",
-				value: isAirDef ? 20 : 15,
-				ratio: true,
-				postfix: "%",
-			},
-			HP: {
-				key: "HP",
-				name: "HP",
-				value: 20,
-				ratio: true,
-				postfix: "%",
-			},
-			Range: {
-				key: "Range",
-				name: "사거리",
-				ratio: false,
-				value: 1,
-			},
-		};
-
-		return {
-			IsHP: unit.linkBonus === "HP",
-			Per: LinkBonusTable[unit.linkBonus],
-			Value: {
-				HP: Decimal.mul(unit.linkBonus === "HP" ? 125 : 100, this.LinkCount)
-					.div(5)
-					.toNumber(),
-				Atk: Decimal.mul(100, this.LinkCount)
-					.div(5)
-					.toNumber(),
-				Per: {
-					...LinkBonusTable[unit.linkBonus],
-					value: Decimal.mul(LinkBonusTable[unit.linkBonus].value, this.LinkCount)
-						.div(5)
-						.toNumber(),
-				},
-				EXP: Decimal.mul(20, this.LinkCount)
-					.div(5)
-					.toNumber(),
-			},
-
-			Discount: unit.rarity === ACTOR_GRADE.SS ? 25 : 20,
-			SkillPower: unit.fullLinkBonus.bonus2,
-			Bonus3: FullLinkBonusTable[unit.fullLinkBonus.bonus3],
-			bonus3: unit.fullLinkBonus.bonus3,
-			Bonus4: FullLinkBonusTable[unit.fullLinkBonus.bonus4],
-			bonus4: unit.fullLinkBonus.bonus4,
-			Speed: unit.type === ACTOR_CLASS.AIR && unit.role === ROLE_TYPE.DEFENDER
-				? (unit.rarity === ACTOR_GRADE.SS && hasEva ? 0.2 : 0.15)
-				: 0.1,
-		};
+		return this.Unit.linkBonus.map(x => GetLinkBonus(x, this.LinkCount));
 	}
 
 	public get FullLinkBonus () {
 		return this.fullLinkBonus;
 	}
 
-	public set FullLinkBonus (value: FullLinkBonusType) {
+	public set FullLinkBonus (value: LinkBonusType) {
 		this.fullLinkBonus = value;
 	}
 
@@ -469,45 +320,28 @@ export class Unit extends Vue {
 				output[key].independentValues = independentValues;
 
 			// 링크 보너스
-			if (key === "HP") {
-				output[key].linkBonus = Decimal.mul(linkBonus.IsHP ? 125 : 100, this.LinkSum)
-					.div(5)
-					.toNumber();
-			} else if (key === "ATK") {
-				output[key].linkBonus = Decimal.mul(100, this.LinkSum)
-					.div(5)
-					.toNumber();
-			} else if (key === this.Unit.linkBonus) {
-				output[key].linkBonus = Decimal.mul(linkBonus.Per.value, this.LinkSum)
-					.div(5)
-					.toNumber();
-			}
+			const bonus = this.LinkBonus.find(x => x.Key.startsWith(key + "_"));
+			if (bonus) output[key].linkBonus = bonus.Value;
 
 			// 풀링크 보너스
-			if (this.LinkSum === 5) {
-				if (key === "HP" && this.fullLinkBonus === "HP")
-					output[key].fullLinkBonusRatio = 20;
-				else if (key === "SPD" && this.fullLinkBonus === "SPD")
-					output[key].fullLinkBonus = this.LinkBonus.Speed;
-				else if (key === "EV" && this.fullLinkBonus === "EV") {
-					output[key].fullLinkBonus = this.LinkBonus.Bonus3.key === "EV"
-						? this.LinkBonus.Bonus3.value
-						: this.LinkBonus.Bonus4.value;
-				} else if (key === "ACC" && this.fullLinkBonus === "ACC") {
-					output[key].fullLinkBonus = this.LinkBonus.Bonus3.key === "ACC"
-						? this.LinkBonus.Bonus3.value
-						: this.LinkBonus.Bonus4.value;
-				} else if (key === "Cri" && this.fullLinkBonus === "Cri") {
-					output[key].fullLinkBonus = this.LinkBonus.Bonus3.key === "Cri"
-						? this.LinkBonus.Bonus3.value
-						: this.LinkBonus.Bonus4.value;
-				} else if (key === "Range" && this.fullLinkBonus === "Range")
-					output[key].fullLinkBonus = 1;
+			if (this.LinkSum === 5 && this.fullLinkBonus && this.fullLinkBonus.startsWith(key + "_")) {
+				const bonus = GetLinkBonus(this.fullLinkBonus, 1);
+
+				const ratioStat = ["ACC", "Cri", "EV"].includes(key);
+
+				if (bonus.Postfix === "%" && !ratioStat)
+					output[key].fullLinkBonusRatio = bonus.Value;
+				else
+					output[key].fullLinkBonus = bonus.Value;
 			}
 
-			if (key === "HP" || key === "ATK" || (key === this.Unit.linkBonus && linkBonus.Per.ratio))
-				output[key].linked = (output[key].base + output[key].pointed + output[key].equiped) * output[key].linkBonus / 100;
-			else
+			if (key === "HP" || key === "ATK" || (bonus && bonus.Postfix === "%")) {
+				output[key].linked = new Decimal(output[key].base)
+					.add(output[key].pointed)
+					.add(output[key].equiped)
+					.mul(Decimal.div(output[key].linkBonus, 100))
+					.toNumber();
+			} else
 				output[key].linked = output[key].linkBonus;
 		}
 

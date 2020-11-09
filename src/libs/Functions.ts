@@ -1,5 +1,7 @@
 import RequireResource from "@/libs/DB/RequireResource";
+import { LinkBonusType } from "@/libs/DB/Unit";
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/libs/Types/Enums";
+import Decimal from "decimal.js";
 
 export function FormatNumber (num: number): string {
 	if (num === 0) return num.toString();
@@ -44,7 +46,7 @@ export function UpdateTitle (...title: string[]) {
 	document.title = [...title, "멸망 전의 전술 교본"].join(" - ");
 }
 
-export function GetRequireResource (rarity: ACTOR_GRADE, type: ACTOR_CLASS, role: ROLE_TYPE, body: ACTOR_BODY_TYPE, discount: boolean = false) {
+export function GetRequireResource (rarity: ACTOR_GRADE, type: ACTOR_CLASS, role: ROLE_TYPE, body: ACTOR_BODY_TYPE, fullLinkBonus: LinkBonusType) {
 	const table = (() => {
 		const o = RequireResource[rarity][type][role][body];
 		return {
@@ -54,13 +56,30 @@ export function GetRequireResource (rarity: ACTOR_GRADE, type: ACTOR_CLASS, role
 		};
 	})();
 
-	if (discount) {
-		const isSS = rarity === ACTOR_GRADE.SS;
-		const discount = (x: number) => Math.ceil(x * (isSS ? 0.75 : 0.8));
+	const discount = (x: number) => {
+		switch (fullLinkBonus) {
+			case "Cost_20":
+				return Decimal.mul(x, 0.8)
+					.ceil()
+					.toNumber();
+			case "Cost_25":
+				return Decimal.mul(x, 0.75)
+					.ceil()
+					.toNumber();
+			case "Cost_30":
+				return Decimal.mul(x, 0.7)
+					.ceil()
+					.toNumber();
+			case "Cost_35":
+				return Decimal.mul(x, 0.65)
+					.ceil()
+					.toNumber();
+		}
+		return x;
+	};
 
-		table.metal[5] = discount(table.metal[5]);
-		table.nutrient[5] = discount(table.nutrient[5]);
-		table.power[5] = discount(table.power[5]);
-	}
+	table.metal[5] = discount(table.metal[5]);
+	table.nutrient[5] = discount(table.nutrient[5]);
+	table.power[5] = discount(table.power[5]);
 	return table;
 }

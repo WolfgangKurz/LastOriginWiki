@@ -1,8 +1,17 @@
 <template>
 	<div>
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20201109>2020-11-10</b-card-header>
+			<b-collapse id="changelog20201110" visible>
+				<b-card-body>
+					<div><b-badge variant="warning">골타리온 XIII세</b-badge>의 링크 보너스 정보가 잘못 표시되던 문제를 수정했습니다.</div>
+					<div><b-badge variant="warning">전투원 스테이터스</b-badge>의 수치가 비정상적으로 표시되던 문제를 수정했습니다.</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20201109>2020-11-09</b-card-header>
-			<b-collapse id="changelog20201109" visible>
+			<b-collapse id="changelog20201109">
 				<b-card-body>
 					<div>
 						신규 전투원 <b-badge variant="warning">이터니티</b-badge>, <b-badge variant="warning">골타리온 XIII세</b-badge>의 정보가
