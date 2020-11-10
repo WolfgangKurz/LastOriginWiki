@@ -2,28 +2,13 @@
 	<div class="chars">
 		<div class="text-center mb-3">
 			<div class="btn-group">
-				<button
-					type="button"
-					class="btn btn-outline-info"
-					:class="{ active: DisplayType === 'table' }"
-					@click="DisplayType = 'table'"
-				>
+				<button type="button" class="btn btn-outline-info" :class="{ active: DisplayType === 'table' }" @click="DisplayType = 'table'">
 					<b-icon-table class="mr-1" />테이블 보기
 				</button>
-				<button
-					type="button"
-					class="btn btn-outline-info"
-					:class="{ active: DisplayType === 'list' }"
-					@click="DisplayType = 'list'"
-				>
+				<button type="button" class="btn btn-outline-info" :class="{ active: DisplayType === 'list' }" @click="DisplayType = 'list'">
 					<b-icon-grid-3x3-gap-fill class="mr-1" />목록 보기
 				</button>
-				<button
-					type="button"
-					class="btn btn-outline-info"
-					:class="{ active: DisplayType === 'group' }"
-					@click="DisplayType = 'group'"
-				>
+				<button type="button" class="btn btn-outline-info" :class="{ active: DisplayType === 'group' }" @click="DisplayType = 'group'">
 					<b-icon-tags-fill class="mr-1" />그룹별 보기
 				</button>
 			</div>
@@ -49,6 +34,7 @@ import UnitsGroup from "./Units/Group.vue";
 
 import UnitData, { Unit } from "@/libs/DB/Unit";
 import { UpdateTitle } from "@/libs/Functions";
+import { SetMeta } from "@/libs/Meta";
 
 @Component({
 	components: {
@@ -93,6 +79,9 @@ export default class Units extends Vue {
 
 	private mounted () {
 		this.checkParams();
+
+		SetMeta(["description", "twitter:description"], "전투원의 목록을 표시합니다. 원하는 전투원을 찾기 위해 검색할 수 있습니다.");
+		SetMeta(["twitter:image", "og:image"], null);
 		UpdateTitle("전투원정보");
 	}
 }

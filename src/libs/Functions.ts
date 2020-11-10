@@ -1,5 +1,6 @@
 import RequireResource from "@/libs/DB/RequireResource";
 import { LinkBonusType } from "@/libs/DB/Unit";
+import { SetMeta } from "@/libs/Meta";
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/libs/Types/Enums";
 import Decimal from "decimal.js";
 
@@ -44,6 +45,7 @@ export function ArrayUnique<T, K> (source: T[], comparer?: (entity: T) => K): T[
 
 export function UpdateTitle (...title: string[]) {
 	document.title = [...title, "멸망 전의 전술 교본"].join(" - ");
+	SetMeta(["twitter:title", "og:title"], document.title);
 }
 
 export function GetRequireResource (rarity: ACTOR_GRADE, type: ACTOR_CLASS, role: ROLE_TYPE, body: ACTOR_BODY_TYPE, fullLinkBonus: LinkBonusType) {

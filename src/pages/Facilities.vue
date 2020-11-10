@@ -21,6 +21,7 @@ import FacilityData, { FacilityEntity } from "@/libs/DB/Facility";
 
 import FacilityCard from "./Facilities/FacilityCard.vue";
 import { UpdateTitle } from "@/libs/Functions";
+import { SetMeta } from "@/libs/Meta";
 
 @Component({
 	components: {
@@ -60,6 +61,10 @@ export default class Facilities extends Vue {
 
 	private mounted () {
 		this.checkParams();
+
+		SetMeta(["description", "twitter:description"], "기지 설비의 목록을 표시합니다.");
+		SetMeta(["twitter:image", "og:image"], null);
+
 		UpdateTitle("설비정보");
 	}
 }

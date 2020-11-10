@@ -11,8 +11,8 @@
 				</b-thead>
 				<b-tbody>
 					<b-tr v-for="(desc, name) in BGMList" :key="`bgm-list-${name}`">
-						<b-th>{{name}}</b-th>
-						<b-td>{{desc}}</b-td>
+						<b-th>{{ name }}</b-th>
+						<b-td>{{ desc }}</b-td>
 						<b-td class="player-cell">
 							<audio :src="`${AssetsRoot}/bgm/${name}.ogg`" type="audio/ogg" controls loop preload="auto" />
 						</b-td>
@@ -30,6 +30,7 @@ import Component from "vue-class-component";
 import { UpdateTitle } from "@/libs/Functions";
 
 import { AssetsRoot } from "@/libs/Const";
+import { SetMeta } from "@/libs/Meta";
 
 @Component({})
 export default class BGM extends Vue {
@@ -76,6 +77,10 @@ export default class BGM extends Vue {
 	}
 
 	private mounted () {
+		SetMeta(["description", "twitter:description"], "라스트오리진(LastOrigin)에 사용된 BGM 목록과 플레이어입니다.");
+		SetMeta("keywords", ",BGM,OST", true);
+		SetMeta(["twitter:image", "og:image"], null);
+
 		UpdateTitle("BGM");
 	}
 }

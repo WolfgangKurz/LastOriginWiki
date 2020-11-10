@@ -12,6 +12,7 @@ import RarityBadge from "@/components/RarityBadge.vue";
 import { UpdateTitle } from "@/libs/Functions";
 
 import APIUnitBadge from "@/pages/API/APIUnitBadge.vue";
+import { SetMeta } from "@/libs/Meta";
 
 @Component({
 	components: {
@@ -22,12 +23,14 @@ import APIUnitBadge from "@/pages/API/APIUnitBadge.vue";
 })
 export default class API extends Vue {
 	private mounted () {
+		SetMeta(["description", "twitter:description"], "멸망 전의 전술 교본 외부에서 사용할 수 있는 API 목록입니다.");
+		SetMeta("keywords", ",API", true);
+		SetMeta(["twitter:image", "og:image"], null);
+
 		UpdateTitle("API");
 	}
 }
 </script>
 
 <style lang="scss">
-#app > .container > .api {
-}
 </style>

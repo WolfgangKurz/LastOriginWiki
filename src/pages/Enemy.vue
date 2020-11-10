@@ -57,8 +57,9 @@ import EnemyData, { Enemy } from "@/libs/DB/Enemy";
 import MapData from "@/libs/DB/Map";
 
 import { UpdateTitle } from "@/libs/Functions";
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { ACTOR_CLASS, ROLE_TYPE } from "@/libs/Types/Enums";
+import { SetMeta } from "@/libs/Meta";
 
 @Component({
 	components: {
@@ -157,9 +158,21 @@ export default class EnemyPage extends Vue {
 
 		if ("id" in params) {
 			this.modalEnemy(params.id);
+
+			if (this.selectedEnemy) {
+				const en = this.selectedEnemy;
+				SetMeta(["description", "twitter:description"], `${en.name}의 정보입니다. 스테이터스와 스킬, 등장 스테이지를 확인할 수 있습니다.`);
+				SetMeta("keywords", `,${en.name}`, true);
+				SetMeta(["twitter:image", "og:image"], `${AssetsRoot}/${ImageExtension()}/tbar/${en.icon}.${ImageExtension()}`);
+			}
+
 			UpdateTitle("적 정보", `${this.selectedEnemy ? this.selectedEnemy.name : "???"}`);
 		} else {
 			this.enemyModalDisplay = false;
+
+			SetMeta(["description", "twitter:description"], "적의 목록을 표시합니다. 원하는 적을 찾기 위해 검색할 수 있습니다.");
+			SetMeta(["twitter:image", "og:image"], null);
+
 			UpdateTitle("적 정보");
 		}
 	}

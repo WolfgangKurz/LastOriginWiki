@@ -1,8 +1,17 @@
 <template>
 	<div>
 		<b-card class="mt-2" no-body>
-			<b-card-header v-b-toggle.changelog20201109>2020-11-10</b-card-header>
-			<b-collapse id="changelog20201110" visible>
+			<b-card-header v-b-toggle.changelog20201111>2020-11-11</b-card-header>
+			<b-collapse id="changelog20201111" visible>
+				<b-card-body>
+					<div>장비의 강화 비용이 올바르지 않은 값으로 표시되던 문제가 수정되었습니다.</div>
+					<div>사이트에 SEO 정보를 추가했습니다.</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20201110>2020-11-10</b-card-header>
+			<b-collapse id="changelog20201110">
 				<b-card-body>
 					<div>일부 전투원의 페이지가 열리지 않는 문제를 수정했습니다.</div>
 

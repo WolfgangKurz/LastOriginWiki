@@ -30,6 +30,7 @@ import WorldItem from "./Worlds/WorldItem.vue";
 
 import { AssetsRoot, ImageExtension, WorldNames } from "@/libs/Const";
 import { UpdateTitle } from "@/libs/Functions";
+import { SetMeta } from "@/libs/Meta";
 
 @Component({
 	components: {
@@ -55,6 +56,8 @@ export default class Worlds extends Vue {
 	}
 
 	private mounted () {
+		SetMeta(["description", "twitter:description"], "세계 목록을 표시합니다. 현재 진행중이거나 진행될 예정인 이벤트도 확인할 수 있습니다.");
+		SetMeta(["twitter:image", "og:image"], null);
 		UpdateTitle("세계정보");
 	}
 }

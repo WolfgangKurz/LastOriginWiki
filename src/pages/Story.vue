@@ -89,6 +89,7 @@ import { StoryRaw } from "@/libs/Types";
 import MapData from "@/libs/DB/Map";
 
 import UnitFace from "@/components/UnitFace.vue";
+import { SetMeta } from "@/libs/Meta";
 
 @Component({
 	components: {
@@ -156,6 +157,9 @@ export default class Story extends Vue {
 
 	private mounted () {
 		this.checkParams();
+		SetMeta(["description", "twitter:description"], `${this.Name}의 제 ${this.area}구역의 이야기 목록을 표시합니다.`);
+		SetMeta("keywords", `,${this.Name},${this.Area}`, true);
+		SetMeta(["twitter:image", "og:image"], `${AssetsRoot}/world/icons/${this.world}_${this.area}.png`);
 		UpdateTitle("이야기", this.Name, this.Area);
 	}
 }

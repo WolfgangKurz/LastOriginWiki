@@ -27,6 +27,7 @@ import Changelog202008 from "@/pages/Changelog/Changelog_202008.vue";
 import Changelog202007 from "@/pages/Changelog/Changelog_202007.vue";
 import Changelog202006 from "@/pages/Changelog/Changelog_202006.vue";
 import Changelog202005 from "@/pages/Changelog/Changelog_202005.vue";
+import { SetMeta } from "@/libs/Meta";
 
 @Component({
 	components: {
@@ -52,6 +53,9 @@ export default class Changelog extends Vue {
 	}
 
 	private mounted () {
+		SetMeta(["description", "twitter:description"], "멸망 전의 전술 교본 사이트의 변경 내역입니다.");
+		SetMeta(["twitter:image", "og:image"], null);
+
 		UpdateTitle("Changelog");
 	}
 }
