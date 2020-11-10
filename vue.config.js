@@ -26,6 +26,11 @@ fs.writeFileSync(
 );
 
 module.exports = {
+	configureWebpack: {
+		devServer: {
+			disableHostCheck: true,
+		},
+	},
 	chainWebpack: config => {
 		// import 경로 alias 정의
 		config.resolve.alias.set("@", path.resolve(__dirname, "src"));

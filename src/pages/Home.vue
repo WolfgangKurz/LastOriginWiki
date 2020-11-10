@@ -27,7 +27,7 @@
 		</b-alert>
 
 		<p>
-			<i>멸망 전의 전술 교본</i>은 전투원과 장비, 설비의 정보를 볼 수 있는 정보 사이트입니다.<br />
+			<i>멸망 전의 전술 교본</i>은 전투원과 장비, 설비, 적 및 세계 정보를 볼 수 있는 정보 사이트입니다.<br />
 			각종 패시브 스킬과 장비 효과가 적용된 후의 실질적인 스테이터스 수치를 계산하기 위한 시뮬레이터를 목표로 개발중에 있습니다.
 		</p>
 		<hr />
@@ -67,6 +67,7 @@ import { ImageExtension, AssetsRoot } from "@/libs/Const";
 import { UpdateTitle } from "@/libs/Functions";
 
 import BuildTime from "@/buildtime";
+import { SetMeta } from "@/libs/Meta";
 
 @Component({})
 export default class Home extends Vue {
@@ -108,6 +109,9 @@ export default class Home extends Vue {
 	}
 
 	private mounted () {
+		SetMeta(["description", "twitter:description"], null);
+		SetMeta(["twitter:image", "og:image"], null);
+
 		UpdateTitle();
 	}
 }

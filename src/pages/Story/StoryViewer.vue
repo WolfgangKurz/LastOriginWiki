@@ -15,6 +15,7 @@ import { AssetsRoot, WorldNames } from "@/libs/Const";
 import { UpdateTitle } from "@/libs/Functions";
 
 import UnitFace from "@/components/UnitFace.vue";
+import { SetMeta } from "@/libs/Meta";
 
 @Component({
 	components: {
@@ -139,7 +140,7 @@ export default class StoryViewer extends Vue {
 								parseBuffer.splice(0, parseBuffer.length);
 
 								if (parseColor)
-									ret.push(<span style={{ color: "#" + parseColor }}>{text}</span>);
+									ret.push(<span style={ { color: "#" + parseColor } }>{ text }</span>);
 								else
 									ret.push(...text);
 							}
@@ -181,7 +182,7 @@ export default class StoryViewer extends Vue {
 				parseBuffer.splice(0, parseBuffer.length);
 
 				if (parseColor)
-					ret.push(<span style={{ color: "#" + parseColor }}>{text}</span>);
+					ret.push(<span style={ { color: "#" + parseColor } }>{ text }</span>);
 				else
 					ret.push(...text);
 			}
@@ -204,16 +205,16 @@ export default class StoryViewer extends Vue {
 
 		this.storyData.forEach((row, rowIdx) => {
 			if (rowIdx in labels) {
-				ret.push(<div class="text-right text-warning pr-4" id={`script_${rowIdx}`}>
+				ret.push(<div class="text-right text-warning pr-4" id={ `script_${rowIdx}` }>
 					<b-icon-flag-fill class="mr-2" />
-					{labels[rowIdx].map(x => <b-badge variant="warning" class="mr-1">{x}</b-badge>)}
+					{ labels[rowIdx].map(x => <b-badge variant="warning" class="mr-1">{ x }</b-badge>) }
 					선택 시
 				</div>);
 			}
 
 			if ("title" in row) {
-				ret.push(<h1 class="text-center">{row.title}</h1>);
-				ret.push(<h3 class="text-center">{row.loc}</h3>);
+				ret.push(<h1 class="text-center">{ row.title }</h1>);
+				ret.push(<h3 class="text-center">{ row.loc }</h3>);
 			} else if ("text" in row) {
 				const tellerElems = [];
 				const teller = row.teller;
@@ -222,29 +223,29 @@ export default class StoryViewer extends Vue {
 						if ("face" in teller) {
 							const unit = _(UnitData).find(x => x.uid === teller.face);
 
-							tellerElems.push(<unit-face id={unit ? unit.id : 0} size="60" />);
+							tellerElems.push(<unit-face id={ unit ? unit.id : 0 } size="60" />);
 						} else
-							tellerElems.push(<img src={`${this.BaseURL}${teller.image}.png`} width="60" />);
+							tellerElems.push(<img src={ `${this.BaseURL}${teller.image}.png` } width="60" />);
 
 						tellerElems.push(teller.name);
 					} else {
-						tellerElems.push(<unit-face id={0} size="60" />);
+						tellerElems.push(<unit-face id={ 0 } size="60" />);
 						tellerElems.push(teller);
 					}
 				}
 
 				ret.push(<div class="story-dialogue">
-					<div class="story-dialogue-teller">{tellerElems}</div>
-					<div class="story-dialogue-text">{row.text.map(x => <div>{parseText(x)}</div>)}</div>
+					<div class="story-dialogue-teller">{ tellerElems }</div>
+					<div class="story-dialogue-text">{ row.text.map(x => <div>{ parseText(x) }</div>) }</div>
 				</div>);
 			} else if ("effect" in row)
-				ret.push(<b-alert class="mx-4 text-center" variant="danger" show>{row.effect}</b-alert>);
+				ret.push(<b-alert class="mx-4 text-center" variant="danger" show>{ row.effect }</b-alert>);
 			else if ("comment" in row)
-				ret.push(<b-alert class="mx-4 text-center" variant="success" show>{row.comment}</b-alert>);
+				ret.push(<b-alert class="mx-4 text-center" variant="success" show>{ row.comment }</b-alert>);
 			else if ("bgm" in row) {
 				ret.push(<b-alert class="mx-4 text-center" variant="warning" show>
-					<div>BGM : {row.bgm} ♪</div>
-					<audio src={`${AssetsRoot}/bgm/${row.bgm}.ogg`} type="audio/ogg" controls preload="auto" />
+					<div>BGM : { row.bgm } ♪</div>
+					<audio src={ `${AssetsRoot}/bgm/${row.bgm}.ogg` } type="audio/ogg" controls preload="auto" />
 				</b-alert>);
 			} else if ("bg" in row) {
 				if (row.bg === "BG_Black")
@@ -253,22 +254,22 @@ export default class StoryViewer extends Vue {
 					// Do noting
 				} else {
 					ret.push(<div class="story-scene text-center">
-						<img src={`${AssetsRoot}/story/${row.bg}.jpg`} />
+						<img src={ `${AssetsRoot}/story/${row.bg}.jpg` } />
 						<br />
-						<small>{row.bg}</small>
+						<small>{ row.bg }</small>
 					</div>);
 				}
 			} else if ("img" in row) {
 				ret.push(<div class="story-scene text-center">
-					<img src={`${AssetsRoot}/story/${row.img}.png`} />
+					<img src={ `${AssetsRoot}/story/${row.img}.png` } />
 				</div>);
 			} else if ("selection" in row) {
 				ret.push(<div class="text-center">
-					{row.selection.map(x => <b-button
+					{ row.selection.map(x => <b-button
 						class="mx-1"
 						variant="warning"
-						onClick={() => this.ScrollTo(x.to)}
-					>{x.text}</b-button>)}
+						onClick={ () => this.ScrollTo(x.to) }
+					>{ x.text }</b-button>) }
 				</div>);
 			}
 
@@ -297,15 +298,20 @@ export default class StoryViewer extends Vue {
 
 		if (!this.Story)
 			UpdateTitle("이야기", this.Name, this.Area);
-		else
+		else {
+			SetMeta(["description", "twitter:description"], `${this.Name}의 제 ${this.area}구역의 ${this.Story.title} 이야기를 표시합니다.`);
+			SetMeta("keywords", `,${this.Name},${this.Area},${this.Story.title}`, true);
+			SetMeta(["twitter:image", "og:image"], `${AssetsRoot}/world/icons/${this.world}_${this.area}.png`);
+
 			UpdateTitle("이야기", this.Name, this.Area, `[${this.Story.map}-${this.Story.loc}]`, this.Story.title);
+		}
 	}
 
 	private render () {
 		return <div class="story-viewer text-left">
 			<b-row>
 				<b-col cols="auto">
-					<b-button variant="dark" onClick={() => this.GoTo(`/story/${this.world}/${this.area}`)}>
+					<b-button variant="dark" onClick={ () => this.GoTo(`/story/${this.world}/${this.area}`) }>
 						<b-icon-arrow-left class="mr-1" />이야기 목록으로
 					</b-button>
 				</b-col>
@@ -318,8 +324,8 @@ export default class StoryViewer extends Vue {
 						? [
 							<b-alert class="mb-2" variant="light" show>
 								<h4 class="m-0">
-									<b-badge class="mr-3" variant="dark">{this.Story.map}-{this.Story.loc}</b-badge>
-									{this.Story.title}
+									<b-badge class="mr-3" variant="dark">{ this.Story.map }-{ this.Story.loc }</b-badge>
+									{ this.Story.title }
 								</h4>
 							</b-alert>,
 							<hr />,

@@ -302,6 +302,8 @@ import { Unit as SimUnit } from "@/pages/Simulation/Simulation/Unit";
 import SkinData from "@/json/unit-skin.json";
 import CostData from "@/json/unit-cost.json";
 import { GetRequireResource, UpdateTitle } from "@/libs/Functions";
+import { SetMeta } from "@/libs/Meta";
+import { AssetsRoot, ImageExtension } from "@/libs/Const";
 
 interface SkillItem extends RawSkillUnit {
 	index: number;
@@ -410,6 +412,30 @@ export default class UnitView extends Vue {
 				return;
 			}
 			this.unitId = unit.id;
+
+			const typeName: Record<ACTOR_CLASS, string> = {
+				[ACTOR_CLASS.LIGHT]: "경장",
+				[ACTOR_CLASS.AIR]: "기동",
+				[ACTOR_CLASS.HEAVY]: "중장",
+				[ACTOR_CLASS.__MAX__]: "",
+			};
+			const roleName: Record<ROLE_TYPE, string> = {
+				[ROLE_TYPE.ATTACKER]: "공격기",
+				[ROLE_TYPE.DEFENDER]: "보호기",
+				[ROLE_TYPE.SUPPORTER]: "지원기",
+				[ROLE_TYPE.__MAX__]: "",
+			};
+
+			SetMeta(
+				["description", "twitter:description"],
+				`${this.RarityName[this.unit.rarity]}급 ${typeName[this.unit.type]} ${roleName[this.unit.role]} ${this.unit.name}의 정보입니다. ` +
+				"기본 정보, 링크/풀링크 보너스, 스킬 정보, 대사를 확인할 수 있으며, 스테이터스 계산기를 이용할 수 있습니다.",
+			);
+			SetMeta(
+				["twitter:image", "og:image"],
+				`${AssetsRoot}/${ImageExtension()}/full/${("00" + this.unit.id).substr(-3)}.${ImageExtension()}`,
+			);
+			SetMeta("keywords", (this.unit.name === this.unit.shortname ? `,${this.unit.name}` : `,${this.unit.name},${this.unit.shortname}`), true);
 			UpdateTitle("전투원정보", `${this.unit.name}`);
 		}
 	}

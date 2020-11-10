@@ -43,6 +43,7 @@ import { UpdateTitle } from "@/libs/Functions";
 import MapData from "@/libs/DB/Map";
 
 import WorldItem from "./WorldItem.vue";
+import { SetMeta } from "@/libs/Meta";
 
 @Component({
 	components: {
@@ -98,6 +99,9 @@ export default class WorldArea extends Vue {
 
 	private mounted () {
 		this.checkParams();
+		SetMeta(["description", "twitter:description"], `${this.Name}의 구역 목록을 표시합니다. 구역의 지도 정보와 이야기를 선택하여 확인할 수 있습니다.`);
+		SetMeta(["twitter:image", "og:image"], `${AssetsRoot}/world/icons/${this.wid}_1.png`);
+		SetMeta("keywords", `,${this.Name}`, true);
 		UpdateTitle("세계정보", this.Name);
 	}
 }

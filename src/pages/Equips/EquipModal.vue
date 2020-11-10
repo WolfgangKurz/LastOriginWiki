@@ -178,6 +178,7 @@ import EquipLevel from "./EquipLevel.vue";
 import { ACTOR_GRADE, ITEM_TYPE } from "@/libs/Types/Enums";
 import EquipData, { Equip } from "@/libs/DB/Equip";
 import UnitData from "@/libs/DB/Unit";
+import Decimal from "decimal.js";
 
 @Component({
 	components: {
@@ -309,26 +310,33 @@ export default class EquipModal extends Vue {
 	/** 1 레벨 강화당 상승하는 필요치 배율 */
 	private get UpgradeIncrementals () {
 		return {
-			[ACTOR_GRADE.B]: 3 / 4,
-			[ACTOR_GRADE.A]: 5 / 6,
-			[ACTOR_GRADE.S]: 10 / 17,
-			[ACTOR_GRADE.SS]: 11 / 20,
+			[ACTOR_GRADE.B]: Decimal.div(3, 4),
+			[ACTOR_GRADE.A]: Decimal.div(5, 6),
+			[ACTOR_GRADE.S]: Decimal.div(10, 17),
+			[ACTOR_GRADE.SS]: Decimal.div(11, 20),
 		};
 	}
 
 	private UpgradeCost (level: number, sum: boolean = false) {
-		if (!this.equip) return 0;
+		if (!this.target) return 0;
 
-		const base = this.equip.upgrade;
+		const base = this.target.upgrade;
 		const per = this.UpgradeIncrementals[this.rarity];
 
 		if (sum) {
-			let v = 0;
-			for (let i = 0; i <= level; i++)
-				v += Math.floor(base * (per * i));
-			return v;
+			let v = new Decimal(0);
+			for (let i = 1; i <= level; i++)
+				v = v.add(this.UpgradeCost(i, false));
+
+			return v
+				.floor()
+				.toNumber();
 		}
-		return Math.floor(base * (per * level));
+		return Decimal.mul(per, level - 1)
+			.add(1)
+			.mul(base)
+			.floor()
+			.toNumber();
 	}
 
 	private UpgradeCostText (level: number, sum: boolean = false) {

@@ -226,6 +226,7 @@ import EquipData, { Equip } from "@/libs/DB/Equip";
 import MapData, { MapNodeEntity, MapReward, MapEnemyData } from "@/libs/DB/Map";
 import EnemyData, { Enemy } from "@/libs/DB/Enemy";
 import ConsumableData, { Consumable } from "@/libs/DB/Consumable";
+import { SetMeta } from "@/libs/Meta";
 
 type RewardDropTypeBase =
 	{ unit: Unit; } |
@@ -467,6 +468,9 @@ export default class WorldMapView extends Vue {
 
 	private mounted () {
 		this.checkParams();
+		SetMeta(["description", "twitter:description"], `${this.WorldName}의 제 ${this.area}구역 정보를 표시합니다. 지역의 클리어 보상과 드랍 정보, 적 정보를 확인할 수 있습니다.`);
+		SetMeta("keywords", `,${this.WorldName}`, true);
+		SetMeta(["twitter:image", "og:image"], `${AssetsRoot}/world/icons/${this.world}_${this.area}.png`);
 		UpdateTitle("세계정보", this.WorldName, `제 ${this.area}구역`);
 	}
 }

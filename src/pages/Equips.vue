@@ -191,16 +191,17 @@ import SourceBadge from "@/components/SourceBadge.vue";
 import EquipCard from "./Equips/EquipCard.vue";
 import EquipModal from "./Equips/EquipModal.vue";
 
-import { ITEM_TYPE } from "@/libs/Types/Enums";
+import { ACTOR_GRADE, ITEM_TYPE } from "@/libs/Types/Enums";
 import EquipData, { Equip } from "@/libs/DB/Equip";
 import { BuffEffect, BuffEffectValue, BUFFEFFECT_TYPE } from "@/libs/Equips/BuffEffect";
 
-import { CurrentEvent, CurrentDate } from "@/libs/Const";
+import { CurrentEvent, CurrentDate, AssetsRoot, ImageExtension } from "@/libs/Const";
 import { ArrayUnique, UpdateTitle } from "@/libs/Functions";
 import { Rarity } from "@/libs/Types";
 import EntitySource from "@/libs/EntitySource";
 
 import StoreModule, { EffectFilterListItemPM, EffectFilterListItemSingle, EffectFilterListType, EquipDisplayType } from "@/libs/Store";
+import { SetMeta } from "@/libs/Meta";
 
 @Component({
 	components: {
@@ -246,15 +247,44 @@ export default class Equips extends Vue {
 
 		if ("id" in params) {
 			this.modalEquip(params.id);
+
+			if (this.selectedEquip) {
+				const eq = this.selectedEquip;
+				const RarityName = {
+					[ACTOR_GRADE.B]: "B",
+					[ACTOR_GRADE.A]: "A",
+					[ACTOR_GRADE.S]: "S",
+					[ACTOR_GRADE.SS]: "SS",
+				};
+				const typeNames = {
+					[ITEM_TYPE.CHIP]: "칩",
+					[ITEM_TYPE.SPCHIP]: "OS",
+					[ITEM_TYPE.SUBEQ]: "보조장비",
+					[ITEM_TYPE.PCITEM]: "코어링크",
+					[ITEM_TYPE.CONSUMABLE]: "소모품",
+					[ITEM_TYPE.MATERIAL]: "재료",
+					[ITEM_TYPE.__MAX__]: "???",
+				};
+
+				SetMeta(
+					["description", "twitter:description"],
+					`${RarityName[eq.rarity]}급 ${typeNames[eq.type]} ${eq.name}의 정보입니다. 레벨별 효과, 획득처, 강화 비용을 확인할 수 있습니다.`,
+				);
+				SetMeta("keywords", `,${eq.name}`, true);
+				SetMeta(
+					["twitter:image", "og:image"],
+					`${AssetsRoot}/${ImageExtension()}/item/${eq.icon}.${ImageExtension()}`,
+				);
+			}
+
 			UpdateTitle("장비정보", `${this.selectedEquip ? this.selectedEquip.name : "???"}`);
 		} else {
 			this.equipModalDisplay = false;
+
+			SetMeta(["description", "twitter:description"], "장비의 목록을 표시합니다. 원하는 장비를 찾기 위해 검색할 수 있습니다.");
+			SetMeta(["twitter:image", "og:image"], null);
 			UpdateTitle("장비정보");
 		}
-	}
-
-	private get EquipRarity () {
-		return ["ss", "s", "a", "b"];
 	}
 
 	private get EquipGroups () {

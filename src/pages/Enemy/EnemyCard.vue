@@ -3,7 +3,7 @@
 		class="enemy-card position-relative my-1"
 		:bg-variant="enemy.isBoss ? 'danger' : 'dark'"
 		text-variant="white"
-		:img-src="`${AssetsRoot}/png/tbar/${enemy.icon}.png`"
+		:img-src="`${AssetsRoot}/${imageExt}/tbar/${enemy.icon}.${imageExt}`"
 	>
 		<b-card-title>
 			<div class="enemy-info">
@@ -28,7 +28,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Emit, Prop } from "vue-property-decorator";
 
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { Enemy } from "@/libs/DB/Enemy";
 
 import RarityBadge from "@/components/RarityBadge.vue";
@@ -47,6 +47,10 @@ export default class EnemyCard extends Vue {
 
 	private get AssetsRoot () {
 		return AssetsRoot;
+	}
+
+	private get imageExt () {
+		return ImageExtension();
 	}
 
 	@Emit("click")
