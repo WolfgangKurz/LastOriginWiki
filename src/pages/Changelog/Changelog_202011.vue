@@ -4,8 +4,12 @@
 			<b-card-header v-b-toggle.changelog20201109>2020-11-10</b-card-header>
 			<b-collapse id="changelog20201110" visible>
 				<b-card-body>
+					<div>일부 전투원의 페이지가 열리지 않는 문제를 수정했습니다.</div>
+
 					<div><b-badge variant="warning">골타리온 XIII세</b-badge>의 링크 보너스 정보가 잘못 표시되던 문제를 수정했습니다.</div>
+					<div><b-badge variant="warning">골타리온 XIII세</b-badge>의 일러스트레이터 정보가 잘못 기입되어있던 점을 수정했습니다.</div>
 					<div><b-badge variant="warning">전투원 스테이터스</b-badge>의 수치가 비정상적으로 표시되던 문제를 수정했습니다.</div>
+					<div><b-badge variant="warning">전투원 스테이터스</b-badge>에서 장비를 해제하면 장비 유형이 칩으로 변경되던 문제를 수정했습니다.</div>
 				</b-card-body>
 			</b-collapse>
 		</b-card>
