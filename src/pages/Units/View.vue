@@ -40,7 +40,7 @@
 			</b-tabs>
 			<b-row>
 				<b-col cols="12" md="3">
-					<unit-skin-view v-if="SkinList[skinIndex]" :unit="unit" :skin="SkinList[skinIndex]" :index="skinIndex" collapsed detailable />
+					<unit-skin-view v-if="SkinList[skinIndex]" :unit="unit" :skin="SkinList[skinIndex]" collapsed detailable />
 				</b-col>
 
 				<b-col cols="12" md="9">
@@ -165,29 +165,6 @@
 							<b-table-simple bordered fixed table-class="text-center table-unit-modal">
 								<b-thead head-variant="dark">
 									<b-tr>
-										<b-th>
-											링크 보너스
-											<b-form-select class="table-unit-link-select" size="sm" v-model="linkCount" :options="LinkCountList" />
-										</b-th>
-									</b-tr>
-								</b-thead>
-								<b-tbody>
-									<b-tr v-for="(lb, lbIdx) in LinkBonus" :key="`unit-linkbonus-row-${lbIdx}`">
-										<b-td>
-											{{ lb.Name }}
-											<span class="d-inline-block">
-												{{ lb.Prefix }}<b class="text-danger">{{ lb.Value }}</b
-												>{{ lb.Postfix }}
-											</span>
-										</b-td>
-									</b-tr>
-								</b-tbody>
-							</b-table-simple>
-						</b-col>
-						<b-col cols="12" sm="6" class="fulllink-table">
-							<b-table-simple bordered fixed table-class="text-left table-unit-modal">
-								<b-thead head-variant="dark">
-									<b-tr>
 										<b-th class="text-center">
 											<elem-icon elem="fire" />
 											{{ CurrentResists.fire }} %
@@ -202,18 +179,41 @@
 										</b-th>
 									</b-tr>
 									<b-tr>
-										<b-th colspan="3" class="text-center">풀링크 보너스</b-th>
+										<b-th colspan="3">
+											링크 보너스
+											<b-form-select class="table-unit-link-select" size="sm" v-model="linkCount" :options="LinkCountList" />
+										</b-th>
+									</b-tr>
+								</b-thead>
+								<b-tbody>
+									<b-tr v-for="(lb, lbIdx) in LinkBonus" :key="`unit-linkbonus-row-${lbIdx}`">
+										<b-td colspan="3">
+											{{ lb.Name }}
+											<span class="d-inline-block">
+												{{ lb.Prefix }}<b class="text-danger">{{ lb.Value }}</b
+												>{{ lb.Postfix }}
+											</span>
+										</b-td>
+									</b-tr>
+								</b-tbody>
+							</b-table-simple>
+						</b-col>
+						<b-col cols="12" sm="6" class="fulllink-table">
+							<b-table-simple bordered fixed table-class="text-left table-unit-modal">
+								<b-thead head-variant="dark">
+									<b-tr>
+										<b-th class="text-center">풀링크 보너스</b-th>
 									</b-tr>
 								</b-thead>
 								<b-tbody>
 									<b-tr>
-										<b-td colspan="3">
+										<b-td>
 											없음
 											<b-radio class="float-right" value v-model="linkBonus" />
 										</b-td>
 									</b-tr>
 									<b-tr v-for="(fl, flIdx) in FullLinkBonus" :key="`unit-fulllinkbonus-row-${flIdx}`">
-										<b-td colspan="3">
+										<b-td>
 											{{ fl.Name }}
 											<span class="d-inline-block">
 												{{ fl.Prefix }}<b class="text-danger">{{ fl.Value }}</b
