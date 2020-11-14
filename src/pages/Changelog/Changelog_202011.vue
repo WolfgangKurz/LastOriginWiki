@@ -1,8 +1,16 @@
 <template>
 	<div>
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20201115>2020-11-15</b-card-header>
+			<b-collapse id="changelog20201115" visible>
+				<b-card-body>
+					<div>2020-11-15 03:00:00 까지의 사용자 참여로 추가된 대사들이 반영되었습니다.</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20201111>2020-11-11</b-card-header>
-			<b-collapse id="changelog20201111" visible>
+			<b-collapse id="changelog20201111">
 				<b-card-body>
 					<div>장비의 강화 비용이 올바르지 않은 값으로 표시되던 문제가 수정되었습니다.</div>
 					<div>사이트에 SEO 정보를 추가했습니다.</div>

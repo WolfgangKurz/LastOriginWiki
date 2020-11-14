@@ -45,7 +45,7 @@
 			<b-modal v-model="DetailDisplay" centered hide-footer size="xl" modal-class="unit-skin-modal">
 				<template #modal-title>{{ skin.t }}</template>
 
-				<unit-skin-view :unit="unit" :skin="skin" :index="index" />
+				<unit-skin-view :unit="unit" :skin="skin" />
 			</b-modal>
 		</b-aspect>
 
@@ -89,12 +89,6 @@ export default class UnitSkinView extends Vue {
 		required: true,
 	})
 	private unit!: Unit;
-
-	@Prop({
-		type: Number,
-		required: true,
-	})
-	private index!: number;
 
 	@Prop({
 		type: Boolean,
@@ -148,10 +142,6 @@ export default class UnitSkinView extends Vue {
 		return ImageExtension();
 	}
 
-	private get DisplayId () {
-		return ("00" + this.unit.id).substr(-3);
-	}
-
 	private get Aspect () {
 		return this.collapsed ? "2:5" : "4:3";
 	}
@@ -173,55 +163,17 @@ export default class UnitSkinView extends Vue {
 	}
 
 	private get SkinImageURL () {
-		const skin = this.skin;
-		let list: string[] = [];
+		const skinId = this.skin.isDef ? 0 : this.skin.sid;
+		const ext = this.imageExt;
 
-		if (skin.isDef) {
-			list = [
-				AssetsRoot,
-				"/",
-				this.imageExt,
-				"/full/",
-				this.DisplayId,
-				this.IsDamaged ? "D" : "",
-				this.IsSimplified ? "_S" : "",
-				".",
-				this.imageExt,
-			];
-		} else if (skin.isPro) {
-			list = [
-				AssetsRoot,
-				"/",
-				this.imageExt,
-				"/full/",
-				this.DisplayId,
-				this.IsDamaged ? "D" : "",
-				"_P",
-				this.IsSimplified ? "S" : "",
-				".",
-				this.imageExt,
-			];
-		} else if (this.index) {
-			list = [
-				AssetsRoot,
-				"/",
-				this.imageExt,
-				"/full/",
-				this.DisplayId,
-				this.IsDamaged ? "D" : "",
-				"_",
-				(this.skin.sid || 0).toString(),
-				this.IsSimplified ? "S" : "",
-				".",
-				this.imageExt,
-			];
-		}
+		const postfix = (() => {
+			const ret: string[] = [];
+			if (this.IsDamaged) ret.push("D");
+			if (this.IsSimplified) ret.push("S");
+			return (ret.length > 0 ? "_" : "") + ret.join("");
+		})();
 
-		const ret = list.join("");
-		if (skin.G && this.IsGoogle)
-			return ret.replace(/full/g, "full-g");
-		else
-			return ret;
+		return `${AssetsRoot}/${ext}/full/${this.unit.uid}_${skinId}_${this.skin.G && this.IsGoogle ? "G" : "O"}${postfix}.${ext}`;
 	}
 
 	private Reset () {
