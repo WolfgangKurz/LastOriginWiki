@@ -37,9 +37,9 @@ export default class SkillDescription extends Vue {
 	@Prop({
 		type: Number,
 		required: true,
-		validator: (x) => (x >= 1 && x <= 10),
+		validator: (x) => (x >= 0 && x < 10),
 	})
-	private level!: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
+	private level!: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 
 	@Prop({
 		type: Boolean,
@@ -181,12 +181,12 @@ export default class SkillDescription extends Vue {
 						const unit = UnitData.find(x => x.uid === id) || Unit.Empty;
 						ret.link = {
 							href,
-							display: <rarity-badge id={ uid } rarity="A">{ unit.name } 🔗</rarity-badge>,
-							tooltip: <b-tooltip target={ uid } placement="top" no-fade noninteractive custom-class="badge-tooltip">
-								<unit-card unit={ unit } no-link />
+							display: <rarity-badge id={uid} rarity="A">{unit.name} 🔗</rarity-badge>,
+							tooltip: <b-tooltip target={uid} placement="top" no-fade noninteractive custom-class="badge-tooltip">
+								<unit-card unit={unit} no-link />
 							</b-tooltip>,
 						};
-						ret.preload.push(<unit-face id={ unit.id } />);
+						ret.preload.push(<unit-face id={unit.id} />);
 					} else if (p[0] === "$eq") {
 						const type = {
 							[ITEM_TYPE.CHIP]: "Chip",
@@ -204,12 +204,12 @@ export default class SkillDescription extends Vue {
 						const name = equip ? equip.name.replace(/ (RE|MP|SP|EX)$/, "") : p[1];
 						ret.link = {
 							href,
-							display: <rarity-badge id={ uid } rarity="A">{ name } 🔗</rarity-badge>,
-							tooltip: <b-tooltip target={ uid } placement="top" no-fade noninteractive custom-class="badge-tooltip">
-								<equip-card equip={ equip } no-link />
+							display: <rarity-badge id={uid} rarity="A">{name} 🔗</rarity-badge>,
+							tooltip: <b-tooltip target={uid} placement="top" no-fade noninteractive custom-class="badge-tooltip">
+								<equip-card equip={equip} no-link />
 							</b-tooltip>,
 						};
-						ret.preload.push(<equip-icon id={ equip ? equip.fullKey : p[1] } />);
+						ret.preload.push(<equip-icon id={equip ? equip.fullKey : p[1]} />);
 					}
 				}
 			});
@@ -250,16 +250,16 @@ export default class SkillDescription extends Vue {
 						const link = flags.link;
 						return link
 							? [
-								<a href={ link.href } onClick={ (e: Event) => this.Link(e, link.href) }>
-									{ flags.icons }
-									{ link.display }
+								<a href={link.href} onClick={(e: Event) => this.Link(e, link.href)}>
+									{flags.icons}
+									{link.display}
 								</a>,
 								link.tooltip,
-								<div class="preload-area">{ flags.preload }</div>,
+								<div class="preload-area">{flags.preload}</div>,
 							]
 							: <span>
-								{ flags.icons }
-								<div class="preload-area">{ flags.preload }</div>
+								{flags.icons}
+								<div class="preload-area">{flags.preload}</div>
 							</span>;
 					}
 
@@ -323,17 +323,17 @@ export default class SkillDescription extends Vue {
 
 					if (strip) {
 						return <span class="subtree">
-							{ flags.icons }
-							{ prefix }
-							<span class="skill-value" data-sign={ sign }>{ value.toFixed(10).replace(/\.?0+$/, "") }</span>
-							{ postfix }
+							{flags.icons}
+							{prefix}
+							<span class="skill-value" data-sign={sign}>{value.toFixed(10).replace(/\.?0+$/, "")}</span>
+							{postfix}
 						</span>;
 					} else {
 						return <rarity-badge rarity="S">
-							{ flags.icons }
-							{ prefix }
-							<span class="skill-value" data-sign={ sign }>{ value.toFixed(10).replace(/\.?0+$/, "") }</span>
-							{ postfix }
+							{flags.icons}
+							{prefix}
+							<span class="skill-value" data-sign={sign}>{value.toFixed(10).replace(/\.?0+$/, "")}</span>
+							{postfix}
 						</rarity-badge>;
 					}
 				} else if (x[0] === "<") {
@@ -341,24 +341,24 @@ export default class SkillDescription extends Vue {
 						const sub = this.compile(x.substr(2, x.length - 3), true);
 
 						if (strip)
-							return <span class="subtree">{ sub }</span>;
+							return <span class="subtree">{sub}</span>;
 						else
-							return <rarity-badge rarity="B">{ sub }</rarity-badge>;
+							return <rarity-badge rarity="B">{sub}</rarity-badge>;
 					} else {
 						const sub = this.compile(x.substr(1, x.length - 2), true);
 
 						if (strip)
-							return <span class="subtree">{ sub }</span>;
+							return <span class="subtree">{sub}</span>;
 						else
-							return <rarity-badge rarity="B">&lt;{ sub }&gt;</rarity-badge>;
+							return <rarity-badge rarity="B">&lt;{sub}&gt;</rarity-badge>;
 					}
 				} else if (x[0] === "{") {
 					const sub = this.compile(x.substr(1, x.length - 2), true);
 
 					if (strip)
-						return <span class="subtree">{ sub }</span>;
+						return <span class="subtree">{sub}</span>;
 					else
-						return <b-badge variant="primary">{ sub }</b-badge>;
+						return <b-badge variant="primary">{sub}</b-badge>;
 				}
 
 				return x;
@@ -367,7 +367,7 @@ export default class SkillDescription extends Vue {
 
 	private render () {
 		const list = this.compile(this.text);
-		return <span class="skill-description">{ list }</span>;
+		return <span class="skill-description">{list}</span>;
 	}
 }
 </script>

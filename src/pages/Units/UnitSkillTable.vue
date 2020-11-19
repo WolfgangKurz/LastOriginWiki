@@ -242,14 +242,15 @@ export default class UnitSkillTable extends Vue {
 
 	private get BuffList () {
 		const output: Record<string, JSX.Element[]> = {};
+		const level = this.skillLevelSync + (this.loveBonus ? 1 : 0) + (this.buffBonus ? 2 : 0);
 
 		Object.keys(this.skills)
 			.forEach(key => {
 				const skill = this.skills[key];
 				if (!skill) return null;
 
-				const stat = skill.buffs[Math.min(this.skillLevelSync - 1, 9)];
-				output[key] = stat.reduce((p, c) => [...p, ...BuffStatus(this, c)], [] as JSX.Element[]);
+				const stat = skill.buffs[this.skillLevelSync];
+				output[key] = stat.reduce((p, c) => [...p, ...BuffStatus(this, c, level)], [] as JSX.Element[]);
 			});
 
 		return output;

@@ -12,9 +12,7 @@ export default class NodeRenderer extends Vue {
 	private elem!: JSX.Element | JSX.Element[];
 
 	private render () {
-		return Array.isArray(this.elem)
-			? <span>{this.elem}</span>
-			: this.elem;
+		return <span>{[this.elem]}</span>;
 	}
 }
 </script>

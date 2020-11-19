@@ -597,7 +597,7 @@ function getBuffEffectTypeText (type: BUFFEFFECT_TYPE, target: BUFF_ATTR_TYPE) {
 	return "???";
 }
 
-function getBuffText (stat: BuffEffect) {
+function getBuffText (stat: BuffEffect, level?: number) {
 	if ("_comment" in stat)
 		return stat._comment;
 	else if ("off" in stat) {
@@ -620,46 +620,46 @@ function getBuffText (stat: BuffEffect) {
 		} else
 			return getBuffEffectTypeText(stat.off.type, BUFF_ATTR_TYPE.NO_MATTER) + " 해제";
 	} else if ("attack" in stat)
-		return "공격력 " + positive(stat.attack);
+		return "공격력 " + positive(stat.attack, level);
 	else if ("defense" in stat)
-		return "방어력 " + positive(stat.defense);
+		return "방어력 " + positive(stat.defense, level);
 	else if ("hp" in stat)
-		return "체력 " + positive(stat.hp);
+		return "체력 " + positive(stat.hp, level);
 	else if ("accuracy" in stat)
-		return "명중률 " + positive(stat.accuracy);
+		return "명중률 " + positive(stat.accuracy, level);
 	else if ("critical" in stat)
-		return "치명타 " + positive(stat.critical);
+		return "치명타 " + positive(stat.critical, level);
 	else if ("evade" in stat)
-		return "회피 " + positive(stat.evade);
+		return "회피 " + positive(stat.evade, level);
 	else if ("turnSpeed" in stat)
-		return "행동력 " + positive(stat.turnSpeed);
+		return "행동력 " + positive(stat.turnSpeed, level);
 	else if ("ap" in stat)
-		return "AP " + positive(stat.ap);
+		return "AP " + positive(stat.ap, level);
 	else if ("ap_set" in stat)
-		return "AP " + positive(stat.ap_set) + "로 변경";
+		return "AP " + positive(stat.ap_set, level) + "로 변경";
 	else if ("resist" in stat) {
 		if ("elem" in stat.resist) {
 			switch (stat.resist.elem) {
 				case "fire":
 					return [
 						<elem-icon elem={stat.resist.elem} class="mr-1" />,
-						"화염 저항 " + positive(stat.resist.value),
+						"화염 저항 " + positive(stat.resist.value, level),
 					];
 				case "ice":
 					return [
 						<elem-icon elem={stat.resist.elem} class="mr-1" />,
-						"냉기 저항 " + positive(stat.resist.value),
+						"냉기 저항 " + positive(stat.resist.value, level),
 					];
 				case "lightning":
 					return [
 						<elem-icon elem={stat.resist.elem} class="mr-1" />,
-						"전기 저항 " + positive(stat.resist.value),
+						"전기 저항 " + positive(stat.resist.value, level),
 					];
 			}
 		} else {
 			switch (stat.resist.type) {
 				case "debuff":
-					return "효과 저항 " + positive(stat.resist.value);
+					return "효과 저항 " + positive(stat.resist.value, level);
 			}
 		}
 	} else if ("ap_stop" in stat)
@@ -667,71 +667,71 @@ function getBuffText (stat: BuffEffect) {
 	else if ("scout" in stat)
 		return "정찰 활성화";
 	else if ("counter" in stat)
-		return `${literal(stat.counter)} 위력으로 반격`;
+		return `${literal(stat.counter, level)} 위력으로 반격`;
 	else if ("damage_immune" in stat)
-		return `피해 무효 ${integer(stat.damage_immune)} 회`;
+		return `${integer(stat.damage_immune, level)} 이하 피해 무효`;
 	else if ("damage_minimize" in stat)
-		return `${integer(stat.damage_minimize)} 이하 피해 최소화`;
+		return `${integer(stat.damage_minimize, level)} 이하 피해 최소화`;
 	else if ("damage_reduce" in stat)
-		return `받는 피해 ${literal(stat.damage_reduce)} 감소`;
+		return `받는 피해 ${literal(stat.damage_reduce, level)} 감소`;
 	else if ("damage_increase" in stat)
-		return `받는 피해 ${literal(stat.damage_increase)} 증가`;
+		return `받는 피해 ${literal(stat.damage_increase, level)} 증가`;
 	else if ("damage" in stat) {
 		if ("elem" in stat.damage) {
 			switch (stat.damage.elem) {
 				case "fire":
 					return [
 						<elem-icon elem={stat.damage.elem} class="mr-1" />,
-						`추가 화염 피해 ${literal(stat.damage.damage)}`,
+						`추가 화염 피해 ${literal(stat.damage.damage, level)}`,
 					];
 				case "ice":
 					return [
 						<elem-icon elem={stat.damage.elem} class="mr-1" />,
-						`추가 냉기 피해 ${literal(stat.damage.damage)}`,
+						`추가 냉기 피해 ${literal(stat.damage.damage, level)}`,
 					];
 				case "lightning":
 					return [
 						<elem-icon elem={stat.damage.elem} class="mr-1" />,
-						`추가 번개 피해 ${literal(stat.damage.damage)}`,
+						`추가 번개 피해 ${literal(stat.damage.damage, level)}`,
 					];
 			}
 		} else
-			return `추가 피해 ${literal(stat.damage)}`;
+			return `추가 피해 ${literal(stat.damage, level)}`;
 	} else if ("damage_multiply" in stat) {
 		switch (stat.damage_multiply.target) {
 			case "light":
-				return `대경장 피해량 ${positive(stat.damage_multiply.value)}`;
+				return `대경장 피해량 ${positive(stat.damage_multiply.value, level)}`;
 			case "air":
-				return `대기동 피해량 ${positive(stat.damage_multiply.value)}`;
+				return `대기동 피해량 ${positive(stat.damage_multiply.value, level)}`;
 			case "heavy":
-				return `대중장 피해량 ${positive(stat.damage_multiply.value)}`;
+				return `대중장 피해량 ${positive(stat.damage_multiply.value, level)}`;
 		}
 	} else if ("damage_by_hp" in stat) {
 		const target = (stat.damage_by_hp.target === "target" ? "대상" : "자신");
-		return `${target}의 HP가 낮을 수록 피해량 ${literal(stat.damage_by_hp.damage)} 증가`;
+		return `${target}의 HP가 낮을 수록 피해량 ${literal(stat.damage_by_hp.damage, level)} 증가`;
 	} else if ("damage_add" in stat) {
 		if ("elem" in stat.damage_add) {
 			switch (stat.damage_add.elem) {
 				case "fire":
 					return [
 						<elem-icon elem={stat.damage_add.elem} class="mr-1" />,
-						`화염 속성 피해량 ${positive(stat.damage_add.damage)}`,
+						`화염 속성 피해량 ${positive(stat.damage_add.damage, level)}`,
 					];
 				case "ice":
 					return [
 						<elem-icon elem={stat.damage_add.elem} class="mr-1" />,
-						`냉기 속성 피해량 ${positive(stat.damage_add.damage)}`,
+						`냉기 속성 피해량 ${positive(stat.damage_add.damage, level)}`,
 					];
 				case "lightning":
 					return [
 						<elem-icon elem={stat.damage_add.elem} class="mr-1" />,
-						`전기 속성 피해량 ${positive(stat.damage_add.damage)}`,
+						`전기 속성 피해량 ${positive(stat.damage_add.damage, level)}`,
 					];
 			}
 		} else
-			return `피해량 ${positive(stat.damage_add)}`;
+			return `피해량 ${positive(stat.damage_add, level)}`;
 	} else if ("barrier" in stat)
-		return `방어막 ${positive(stat.barrier)}`;
+		return `방어막 ${positive(stat.barrier, level)}`;
 	else if ("guard" in stat) {
 		switch (stat.guard) {
 			case "col":
@@ -744,16 +744,16 @@ function getBuffText (stat: BuffEffect) {
 	} else if ("position" in stat) {
 		switch (stat.position.type) {
 			case "pull":
-				return `${integer(stat.position.range)}칸 당기기`;
+				return `${integer(stat.position.range, level)}칸 당기기`;
 			case "push":
-				return `${integer(stat.position.range)}칸 밀기`;
+				return `${integer(stat.position.range, level)}칸 밀기`;
 		}
 	} else if ("next_crit" in stat)
-		return `다음 공격까지 치명타 ${positive(stat.next_crit)}`;
+		return `다음 공격까지 치명타 ${positive(stat.next_crit, level)}`;
 	else if ("range" in stat)
-		return `사거리 ${pinteger(stat.range)}`;
+		return `사거리 ${pinteger(stat.range, level)}`;
 	else if ("penetration" in stat)
-		return `방어 관통 ${positive(stat.penetration)}`;
+		return `방어 관통 ${positive(stat.penetration, level)}`;
 	else if ("metamolphosis" in stat)
 		return "변신";
 	else if ("fixed_damage" in stat) {
@@ -761,50 +761,50 @@ function getBuffText (stat: BuffEffect) {
 			switch (stat.fixed_damage.elem) {
 				case "fire":
 					return [
-						`${percent(stat.fixed_damage.damage, "공격력 ", "")}${literal(stat.fixed_damage.damage)} 지속`,
+						`${percent(stat.fixed_damage.damage, "공격력 ", "")}${literal(stat.fixed_damage.damage, level)} 지속`,
 						<elem-icon elem={stat.fixed_damage.elem} class="mr-1" />,
 						"화염 피해",
 					];
 				case "ice":
 					return [
-						`${percent(stat.fixed_damage.damage, "공격력 ", "")}${literal(stat.fixed_damage.damage)} 지속`,
+						`${percent(stat.fixed_damage.damage, "공격력 ", "")}${literal(stat.fixed_damage.damage, level)} 지속`,
 						<elem-icon elem={stat.fixed_damage.elem} class="mr-1" />,
 						"냉기 피해",
 					];
 				case "lightning":
 					return [
-						`${percent(stat.fixed_damage.damage, "공격력 ", "")}${literal(stat.fixed_damage.damage)} 지속`,
+						`${percent(stat.fixed_damage.damage, "공격력 ", "")}${literal(stat.fixed_damage.damage, level)} 지속`,
 						<elem-icon elem={stat.fixed_damage.elem} class="mr-1" />,
 						"전기 피해",
 					];
 			}
 		} else
-			return `${percent(stat.fixed_damage, "공격력 ", "")}${literal(stat.fixed_damage)} 지속 고정 피해`;
+			return `${percent(stat.fixed_damage, "공격력 ", "")}${literal(stat.fixed_damage, level)} 지속 고정 피해`;
 	} else if ("provoke" in stat)
 		return "도발";
 	else if ("attack_support" in stat)
-		return `${literal(stat.attack_support)} 확률로 공격 지원`;
+		return `${literal(stat.attack_support, level)} 확률로 공격 지원`;
 	else if ("immovable" in stat)
 		return "이동 불가";
 	else if ("skill_disable" in stat)
 		return "스킬 사용 불가";
 	else if ("revive" in stat) {
 		if (typeof stat.revive.base === "string")
-			return `최대 HP의 ${literal(stat.revive)}로 전투 속행`;
+			return `최대 HP의 ${literal(stat.revive, level)}로 전투 속행`;
 		else
-			return `${literal(stat.revive)}HP로 전투 속행`;
+			return `${literal(stat.revive, level)}HP로 전투 속행`;
 	} else if ("attack_target" in stat)
 		return "표식 지정";
 	else if ("invokeChance" in stat)
-		return `효과 발동 ${positive(stat.invokeChance)}`;
+		return `효과 발동 ${positive(stat.invokeChance, level)}`;
 	else if ("summon_remove" in stat)
 		return "소환물 제거";
 	else if ("penetration_force" in stat)
 		return "방어막 / 피해 감소 무시";
 	else if ("exp" in stat)
-		return `획득 경험치 ${positive(stat.exp)}`;
+		return `획득 경험치 ${positive(stat.exp, level)}`;
 	else if ("collaborate" in stat)
-		return `협동 공격 : ${stat.collaborate.with}의 ${stat.collaborate.skill}번째 스킬`;
+		return `협동 공격 : ${convertBuff(stat.collaborate.with)}의 ${stat.collaborate.skill}번째 액티브 스킬`;
 
 	return "???";
 }
@@ -862,7 +862,7 @@ function formatDesc (type: NUM_OUTPUTTYPE, template: string, value: string, shor
 	}
 }
 
-export default function BuffStatus (context: Vue, stat: BuffStat): JSX.Element[] {
+export default function BuffStatus (context: Vue, stat: BuffStat, level?: number): JSX.Element[] {
 	if (!h) h = context.$createElement;
 
 	const elems: JSX.Element[] = [];
@@ -884,7 +884,7 @@ export default function BuffStatus (context: Vue, stat: BuffStat): JSX.Element[]
 
 					<div class="pl-3">
 						<div class="float-left">
-							{getBuffText(buff.value)}
+							{getBuffText(buff.value, level)}
 							{getChanceText(buff.value.chance)}
 						</div>
 						<div class="float-right">
@@ -902,7 +902,7 @@ export default function BuffStatus (context: Vue, stat: BuffStat): JSX.Element[]
 		if (stat.chance !== "0%") {
 			elems.push(<div class="clearfix">
 				<div class="float-left">
-					{getBuffText(stat)}
+					{getBuffText(stat, level)}
 					{getChanceText(stat.chance)}
 				</div>
 			</div>);
