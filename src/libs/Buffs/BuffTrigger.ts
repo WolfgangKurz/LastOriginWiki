@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import { BUFFEFFECT_TYPE } from "@/libs/Equips/BuffEffect";
+import { BUFFEFFECT_TYPE } from "@/libs/Buffs/BuffEffect";
 import { UNIT_POSITION } from "@/libs/Types/Enums";
 
 /** 발동 조건 */

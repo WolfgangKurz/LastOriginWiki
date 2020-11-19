@@ -3,7 +3,7 @@ import Vue from "vue";
 
 import { VuexModule, Module, Mutation, Action } from "vuex-class-modules";
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/libs/Types/Enums";
-import { BuffEffectInfo, BuffEffectList } from "@/libs/Equips/BuffEffect";
+import { BuffEffectInfo, BuffEffectList } from "@/libs/Buffs/BuffEffect";
 
 Vue.use(Vuex);
 

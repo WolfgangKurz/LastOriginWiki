@@ -1,16 +1,16 @@
 /* eslint-disable camelcase */
-import { BuffEffect } from "@/libs/Equips/BuffEffect";
-import { BuffErase } from "@/libs/Equips/BuffErase";
-import { BuffTrigger } from "@/libs/Equips/BuffTrigger";
+import { BuffEffect } from "@/libs/Buffs/BuffEffect";
+import { BuffErase } from "@/libs/Buffs/BuffErase";
+import { BuffTrigger } from "@/libs/Buffs/BuffTrigger";
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, BUFF_OVERLAP_TYPE, NUM_OUTPUTTYPE, ROLE_TYPE } from "@/libs/Types/Enums";
 
-export type EquipStat = EquipStatStatic | EquipStatBuff;
+export type BuffStat = BuffStatStatic | BuffStatBuff;
 
-export type EquipStatStatic = BuffEffect & {
+export type BuffStatStatic = BuffEffect & {
 	isBuff: undefined;
 	chance: undefined;
 };
-export interface EquipStatBuff {
+export interface BuffStatBuff {
 	on: BuffTrigger;
 	if: BuffTrigger;
 

@@ -1,5 +1,5 @@
 import EntitySource from "@/libs/EntitySource";
-import { EquipStat } from "@/libs/Equips/Equip";
+import { BuffStat } from "@/libs/Buffs/Buffs";
 
 import Data from "@/json/equip.json";
 import { ACTOR_GRADE, ITEM_TYPE } from "@/libs/Types/Enums";
@@ -36,7 +36,7 @@ export interface Equip {
 	limit: Array<string | number> | null;
 	source: EntitySource[][];
 	upgrade: number;
-	stats: EquipStat[][];
+	stats: BuffStat[][];
 }
 /* eslint-disable-next-line @typescript-eslint/no-namespace */
 export namespace Equip {
@@ -87,7 +87,7 @@ function Compile (): Equip[] {
 		upgrade: x.upgrade,
 		limit: parseLimit(x.limit),
 		source: x.source.map(y => y.map(z => new EntitySource(z))),
-		stats: x.stats.map(y => JSON.parse(y) as EquipStat[]),
+		stats: x.stats.map(y => JSON.parse(y) as BuffStat[]),
 	}));
 }
 export default Compile();

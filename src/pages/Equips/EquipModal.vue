@@ -164,7 +164,7 @@ import { Prop, Watch, PropSync } from "vue-property-decorator";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { FormatNumber } from "@/libs/Functions";
-import EquipStatus from "@/libs/Equips/EquipStatus";
+import BuffStatus from "@/libs/Buffs/BuffStatus";
 
 import NodeRenderer from "@/components/NodeRenderer.vue";
 import UnitBadge from "@/components/UnitBadge.vue";
@@ -356,7 +356,7 @@ export default class EquipModal extends Vue {
 		if (!this.target) return null;
 
 		const stat = this.target.stats[this.level];
-		return stat.reduce((p, c) => [...p, ...EquipStatus(this, c)], [] as JSX.Element[]);
+		return stat.reduce((p, c) => [...p, ...BuffStatus(this, c)], [] as JSX.Element[]);
 	}
 
 	private UnitName (idx: number) {

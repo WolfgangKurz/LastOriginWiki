@@ -4,27 +4,23 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Watch } from "vue-property-decorator";
 
-import { RawSkillUnit } from "@/libs/Types";
-import { SkillData } from "@/libs/DB";
-
 import { UnitEquip } from "./UnitEquip";
 import { UnitStat, UnitPoint, Stat, StatPointValue, StatType, RatioStats } from "./Stats";
-import { BuffEffect, BUFFEFFECT_TYPE } from "@/libs/Equips/BuffEffect";
+import { BuffEffect, BUFFEFFECT_TYPE } from "@/libs/Buffs/BuffEffect";
 
 import { ACTOR_GRADE, BUFF_ATTR_TYPE, ITEM_TYPE, ROLE_TYPE } from "@/libs/Types/Enums";
 import UnitData, { GetLinkBonus, LinkBonusType, Unit as Unit_ } from "@/libs/DB/Unit";
 import UnitStatsData from "@/libs/DB/UnitStats";
 import EquipData from "@/libs/DB/Equip";
+import SkillData, { SkillEntity, SkillSlotKey } from "@/libs/DB/Skill";
 
 type LinkData = [number, number, number, number, number];
 
-interface SkillItem extends RawSkillUnit {
+interface SkillItem extends SkillEntity {
 	index: number;
 	isPassive: boolean;
 }
-interface SkillTable {
-	[key: string]: SkillItem;
-}
+type SkillTable = Record<SkillSlotKey, SkillItem>;
 
 @Component({})
 export class Unit extends Vue {
@@ -352,10 +348,11 @@ export class Unit extends Vue {
 	 * 형태 전환 전/후를 모두 포함한 스킬 목록
 	 */
 	private get SkillsRaw () {
-		const table = SkillData[this.Id] as SkillTable;
+		const table = SkillData[this.Unit.uid] as SkillTable;
 		if (table) {
 			Object.keys(table)
-				.forEach(x => {
+				.forEach(xk => {
+					const x = xk as SkillSlotKey;
 					const y = /(passive|active)([0-9]+)/.exec(table[x].key);
 					if (!y) return;
 
@@ -370,14 +367,13 @@ export class Unit extends Vue {
 	 * 현재 선택 형태에 맞춘 스킬 목록
 	 */
 	public get SkillList () {
-		const output: SkillTable = {};
 		const raw = this.SkillsRaw;
 		if (!raw) return [];
 
 		const keys = Object.keys(raw);
 		return keys
 			.filter(x => !x.startsWith("F"))
-			.map(x => raw[x]);
+			.map(x => raw[x as SkillSlotKey]);
 	}
 
 	public SetUnit (id: number) {
