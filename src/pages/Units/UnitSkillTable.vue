@@ -5,18 +5,12 @@
 				<b-th colspan="3">
 					스킬 정보
 					<b-btn-group v-if="HasFormChange" class="ml-2">
-						<b-button
-							variant="outline-warning"
-							:pressed="formStateSync === 'normal'"
-							size="sm"
-							@click="formStateSync = 'normal'"
-						>Normal</b-button>
-						<b-button
-							variant="outline-warning"
-							:pressed="formStateSync === 'change'"
-							size="sm"
-							@click="formStateSync = 'change'"
-						>F.Change</b-button>
+						<b-button variant="outline-warning" :pressed="formStateSync === 'normal'" size="sm" @click="formStateSync = 'normal'"
+							>Normal</b-button
+						>
+						<b-button variant="outline-warning" :pressed="formStateSync === 'change'" size="sm" @click="formStateSync = 'change'"
+							>F.Change</b-button
+						>
 					</b-btn-group>
 				</b-th>
 			</b-tr>
@@ -24,12 +18,7 @@
 				<b-th>이름</b-th>
 				<b-th class="d-md-table-cell d-none">
 					설명 및 수치
-					<b-form-select
-						class="table-unit-level-select"
-						size="sm"
-						v-model="skillLevelSync"
-						:options="SkillLevelList"
-					/>
+					<b-form-select class="table-unit-level-select" size="sm" v-model="skillLevelSync" :options="SkillLevelList" />
 					<span class="text-secondary pl-2">|</span>
 					<div class="d-inline-block ml-2">
 						<b-checkbox class="d-inline-block mr-1" v-model="loveBonus">호감도 200</b-checkbox>
@@ -40,12 +29,7 @@
 			<b-tr class="d-md-none d-table-row">
 				<b-th colspan="2">
 					설명 및 수치
-					<b-form-select
-						class="table-unit-level-select"
-						size="sm"
-						v-model="skillLevelSync"
-						:options="SkillLevelList"
-					/>
+					<b-form-select class="table-unit-level-select" size="sm" v-model="skillLevelSync" :options="SkillLevelList" />
 					<div>
 						<b-checkbox class="d-inline-block mr-1" v-model="loveBonus">호감도 200</b-checkbox>
 					</div>
@@ -57,19 +41,14 @@
 				<b-tr :key="`unit-modal-skill-${idx}`">
 					<b-td>
 						<img class="skill-icon" :src="skill.icon" />
-						<div class="text-bold">{{skill.name}}</div>
+						<div class="text-bold">{{ skill.name }}</div>
 
-						<rarity-badge
-							v-if="skill.isPassive && skill.index > rarityIndex"
-							:rarity="rarityList[skill.index]"
-						>{{RarityName[rarityList[skill.index]]}} 승급 스킬</rarity-badge>
+						<rarity-badge v-if="skill.isPassive && skill.index > rarityIndex" :rarity="rarityList[skill.index]"
+							>{{ RarityName[rarityList[skill.index]] }} 승급 스킬</rarity-badge
+						>
 					</b-td>
 					<b-td class="text-left d-none d-md-table-cell">
-						<div
-							v-for="(line, lineIdx) in skill.desc"
-							:key="`unit-modal-skill-desc-${lineIdx}`"
-							class="unit-modal-skill"
-						>
+						<div v-for="(line, lineIdx) in skill.desc" :key="`unit-modal-skill-desc-${lineIdx}`" class="unit-modal-skill">
 							<skill-description
 								:text="line"
 								:level="skillLevelSync"
@@ -78,6 +57,12 @@
 								:love-bonus="loveBonus"
 							/>
 						</div>
+
+						<b-list-group v-if="BuffList[skill.key].length > 0" class="text-left mt-2">
+							<b-list-group-item v-for="(status, idx) in BuffList[skill.key]" :key="`status-line-${idx}`">
+								<node-renderer :elem="status" />
+							</b-list-group-item>
+						</b-list-group>
 					</b-td>
 					<b-th variant="dark" class="text-center">
 						<skill-bound
@@ -93,11 +78,7 @@
 				</b-tr>
 				<b-tr :key="`unit-modal-skill-descrow-${idx}`" class="d-table-row d-md-none">
 					<b-td class="text-left" colspan="2">
-						<div
-							v-for="(line, lineIdx) in skill.desc"
-							:key="`unit-modal-skill-descrow-desc-${lineIdx}`"
-							class="unit-modal-skill"
-						>
+						<div v-for="(line, lineIdx) in skill.desc" :key="`unit-modal-skill-descrow-desc-${lineIdx}`" class="unit-modal-skill">
 							<skill-description
 								:text="line"
 								:level="skillLevelSync"
@@ -106,6 +87,12 @@
 								:love-bonus="loveBonus"
 							/>
 						</div>
+
+						<b-list-group v-if="BuffList[skill.key].length > 0" class="text-left mt-2">
+							<b-list-group-item v-for="(status, idx) in BuffList[skill.key]" :key="`status-line-${idx}`">
+								<node-renderer :elem="status" />
+							</b-list-group-item>
+						</b-list-group>
 					</b-td>
 				</b-tr>
 			</template>
@@ -120,35 +107,34 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, Watch, PropSync } from "vue-property-decorator";
 
+import NodeRenderer from "@/components/NodeRenderer.vue";
 import RarityBadge from "@/components/RarityBadge.vue";
 import SkillBound from "@/components/SkillBound.vue";
 import SkillDescription from "@/components/SkillDescription.vue";
 
 import ElemIcon from "@/components/ElemIcon.vue";
-import { RawSkill, RawSkillUnit } from "@/libs/Types";
+import EquipIcon from "@/components/EquipIcon.vue";
 
 import { ACTOR_GRADE } from "@/libs/Types/Enums";
-import { SkillData } from "@/libs/DB";
+import SkillData, { SkillEntity, RawSkillEntity } from "@/libs/DB/Skill";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import BuffStatus from "@/libs/Buffs/BuffStatus";
 
-import UnitData from "@/libs/DB/Unit";
-
-import SkinData from "@/json/unit-skin.json";
-import CostData from "@/json/unit-cost.json";
-
-interface SkillItem extends RawSkillUnit {
+interface SkillItem extends SkillEntity {
 	index: number;
 	isPassive: boolean;
 }
-interface SkillTable {
-	[key: string]: SkillItem;
-}
+type SkillTable = Record<string, SkillItem>;
 
 @Component({
 	components: {
+		NodeRenderer,
 		RarityBadge,
 		SkillBound,
 		SkillDescription,
+
+		ElemIcon,
+		EquipIcon,
 	},
 })
 export default class UnitSkillTable extends Vue {
@@ -195,7 +181,7 @@ export default class UnitSkillTable extends Vue {
 	})
 	private rangeBonus!: boolean;
 
-	private rarityList: ACTOR_GRADE[] = [ACTOR_GRADE.B, ACTOR_GRADE.A, ACTOR_GRADE.S, ACTOR_GRADE.SS];
+	private rarityList: ACTOR_GRADE[] = [0, 0, ACTOR_GRADE.B, ACTOR_GRADE.A, ACTOR_GRADE.S, ACTOR_GRADE.SS];
 	private loveBonus: boolean = false;
 
 	private get AssetsRoot () {
@@ -252,6 +238,21 @@ export default class UnitSkillTable extends Vue {
 			ret.push({ value: i, text: `Lv. ${i + 1}` });
 
 		return ret;
+	}
+
+	private get BuffList () {
+		const output: Record<string, JSX.Element[]> = {};
+
+		Object.keys(this.skills)
+			.forEach(key => {
+				const skill = this.skills[key];
+				if (!skill) return null;
+
+				const stat = skill.buffs[Math.min(this.skillLevelSync - 1, 9)];
+				output[key] = stat.reduce((p, c) => [...p, ...BuffStatus(this, c)], [] as JSX.Element[]);
+			});
+
+		return output;
 	}
 }
 </script>

@@ -288,8 +288,8 @@ import UnitSkinView from "./UnitSkinView.vue";
 import UnitDialogue from "./UnitDialogue.vue";
 import UnitStats from "./UnitStats.vue";
 
-import { RawSkin, SkinInfo, RawCostTable, RawSkill, Rarity, RawSkillUnit } from "@/libs/Types";
-import { SkillData } from "@/libs/DB";
+import { RawSkin, SkinInfo, RawCostTable, Rarity } from "@/libs/Types";
+import SkillData, { SkillEntity } from "@/libs/DB/Skill";
 
 import { ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/libs/Types/Enums";
 import UnitData, { GetLinkBonus, LinkBonusType, Unit } from "@/libs/DB/Unit";
@@ -305,13 +305,11 @@ import { GetRequireResource, UpdateTitle } from "@/libs/Functions";
 import { SetMeta } from "@/libs/Meta";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 
-interface SkillItem extends RawSkillUnit {
+interface SkillItem extends SkillEntity {
 	index: number;
 	isPassive: boolean;
 }
-interface SkillTable {
-	[key: string]: SkillItem;
-}
+type SkillTable = Record<string, SkillItem>;
 interface VoiceItem extends SkinInfo {
 	id: number;
 	isDef: boolean;
@@ -636,17 +634,17 @@ export default class UnitView extends Vue {
 	 * 형태 전환 전/후를 모두 포함한 스킬 목록
 	 */
 	private get SkillsRaw () {
-		const table = SkillData[this.unit.uid] as (SkillTable | undefined);
-		if (table) {
-			Object.keys(table)
-				.forEach(x => {
-					const y = /(passive|active)([0-9]+)/.exec(table[x].key);
-					if (!y) return;
+		const table = SkillData[this.unit.uid] as SkillTable;
+		if (!table) return undefined;
 
-					table[x].index = parseInt(y[2], 10);
-					table[x].isPassive = y[1].includes("passive");
-				});
-		}
+		Object.keys(table)
+			.forEach(x => {
+				const y = /(passive|active)([0-9]+)/.exec(table[x].key);
+				if (!y) return;
+
+				table[x].index = parseInt(y[2], 10);
+				table[x].isPassive = y[1].includes("passive");
+			});
 		return table;
 	}
 

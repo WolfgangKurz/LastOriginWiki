@@ -1,11 +1,14 @@
 import Vue, { CreateElement } from "vue";
 import { Decimal } from "decimal.js";
 
-import { BuffEffect, BuffEffectValue, BUFFEFFECT_TYPE } from "@/libs/Equips/BuffEffect";
-import { BuffTrigger } from "@/libs/Equips/BuffTrigger";
+import BuffData from "@/json/buffs.json";
+import UnitData from "@/libs/DB/Unit";
+
+import { BuffEffect, BuffEffectValue, BUFFEFFECT_TYPE } from "@/libs/Buffs/BuffEffect";
+import { BuffTrigger } from "@/libs/Buffs/BuffTrigger";
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, BUFF_ATTR_TYPE, NUM_OUTPUTTYPE, ROLE_TYPE, UNIT_POSITION } from "@/libs/Types/Enums";
-import { EquipStat } from "@/libs/Equips/Equip";
-import { BuffErase } from "@/libs/Equips/BuffErase";
+import { BuffStat } from "@/libs/Buffs/Buffs";
+import { BuffErase } from "@/libs/Buffs/BuffErase";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { ArrayUnique } from "@/libs/Functions";
 
@@ -101,8 +104,17 @@ function percent (value: BuffEffectValue, ifTrue: string = "", ifFalse: string =
 }
 
 function convertBuff (name: string) {
+	if (name.startsWith("Char_")) {
+		const key = name.replace(/Char_(.+)_N/, "$1");
+		const unit = UnitData.find(x => x.uid === key);
+		if (!unit) return "???";
+
+		return `"${unit.name}"`;
+	}
+
 	if (name.startsWith("Effect_BUFF_Flood_N_")) return "침수";
-	return name;
+	return `"${(BuffData as Record<string, string>)[name]}"` ||
+		"???";
 }
 
 function getTriggerText (trigger: BuffTrigger) {
@@ -169,24 +181,56 @@ function getTriggerText (trigger: BuffTrigger) {
 						"전기 속성 피격 시",
 					];
 			}
-		} else if ("hp>=" in trigger)
-			return "체력 " + trigger["hp>="] + "이상일 때";
-		else if ("hp<=" in trigger)
-			return "체력 " + trigger["hp<="] + "이하일 때";
-		else if ("hp>" in trigger)
-			return "체력 " + trigger["hp>"] + "초과일 때";
-		else if ("hp<" in trigger)
-			return "체력 " + trigger["hp<"] + "미만일 때";
-		else if ("in_squad" in trigger) {
+		} else if ("hp>=" in trigger) {
+			if (typeof trigger["hp>="] === "string")
+				return "체력 " + trigger["hp>="] + "이상일 때";
+			else {
+				const target = {
+					self: "자신의",
+					target: "대상의",
+				}[trigger["hp>="].target];
+				return target + " 체력이 " + trigger["hp>="].value + "이상일 때";
+			}
+		} else if ("hp<=" in trigger) {
+			if (typeof trigger["hp<="] === "string")
+				return "체력 " + trigger["hp<="] + "이하일 때";
+			else {
+				const target = {
+					self: "자신의",
+					target: "대상의",
+				}[trigger["hp<="].target];
+				return target + " 체력이 " + trigger["hp<="].value + "이하일 때";
+			}
+		} else if ("hp>" in trigger) {
+			if (typeof trigger["hp>"] === "string")
+				return "체력 " + trigger["hp>"] + "초과일 때";
+			else {
+				const target = {
+					self: "자신의",
+					target: "대상의",
+				}[trigger["hp>"].target];
+				return target + " 체력이 " + trigger["hp>"].value + "초과일 때";
+			}
+		} else if ("hp<" in trigger) {
+			if (typeof trigger["hp<"] === "string")
+				return "체력 " + trigger["hp<"] + "미만일 때";
+			else {
+				const target = {
+					self: "자신의",
+					target: "대상의",
+				}[trigger["hp<"].target];
+				return target + " 체력이 " + trigger["hp<"].value + "미만일 때";
+			}
+		} else if ("in_squad" in trigger) {
 			if (typeof trigger.in_squad === "string")
-				return "아군에 " + trigger.in_squad + "이(가) 존재할 때";
+				return "아군에 " + convertBuff(trigger.in_squad) + "이(가) 존재할 때";
 			else
-				return "아군중에 " + trigger.in_squad.join(" 또는 ") + "이(가) 존재할 때";
+				return "아군중에 " + trigger.in_squad.map(convertBuff).join(" 또는 ") + "이(가) 존재할 때";
 		} else if ("in_enemy" in trigger) {
 			if (typeof trigger.in_enemy === "string")
-				return "적에 " + trigger.in_enemy + "이(가) 존재할 때";
+				return "적에 " + convertBuff(trigger.in_enemy) + "이(가) 존재할 때";
 			else
-				return "적 중에 " + trigger.in_enemy.join(" 또는 ") + "이(가) 존재할 때";
+				return "적 중에 " + trigger.in_enemy.map(convertBuff).join(" 또는 ") + "이(가) 존재할 때";
 		} else if ("pos" in trigger) {
 			if (typeof trigger.pos === "number") {
 				switch (trigger.pos) {
@@ -286,18 +330,18 @@ function getTriggerText (trigger: BuffTrigger) {
 
 					if (typeof select[0] === "number") {
 						// BuffTrigger_On_BuffTypeExists
-						return target + " " + select.join(",") + func;
+						return target + " " + select.join(", ") + func;
 					} else {
 						// BuffTrigger_On_BuffExists
-						return target + " " + select.join(",") + func;
+						return target + " " + select.join(", ") + func;
 					}
 				}
 			}
 		} else if ("target" in trigger) {
 			if (trigger.target.length === 1)
-				return "대상이 " + trigger.target[0] + "일 때";
+				return "대상이 " + convertBuff(trigger.target[0]) + "일 때";
 			else
-				return "대상이 " + trigger.target.join(",") + " 중 하나일 때";
+				return "대상이 " + trigger.target.map(convertBuff).join(", ") + " 중 하나일 때";
 		} else if ("unitCount" in trigger) {
 			const filters = typeof trigger.unitCount.filter === "string"
 				? [trigger.unitCount.filter]
@@ -818,7 +862,7 @@ function formatDesc (type: NUM_OUTPUTTYPE, template: string, value: string, shor
 	}
 }
 
-export default function EquipStatus (context: Vue, stat: EquipStat): JSX.Element[] {
+export default function BuffStatus (context: Vue, stat: BuffStat): JSX.Element[] {
 	if (!h) h = context.$createElement;
 
 	const elems: JSX.Element[] = [];
@@ -831,34 +875,38 @@ export default function EquipStatus (context: Vue, stat: EquipStat): JSX.Element
 			const on = getTriggerText(stat.on);
 			const apply = getTriggerText(stat.if);
 
-			elems.push(<div class="clearfix" title={formatDesc(buff.desc.type, buff.desc.desc, buff.desc.value)}>
-				<div>
-					<img class="mr-1" width="25" src={`${AssetsRoot}/${ext}/buff/${buff.icon}.${ext}`} />
-					<strong class="align-middle">{formatDesc(buff.desc.type, buff.desc.desc, buff.desc.value, true)}</strong>
-				</div>
+			if (buff.value.chance !== "0%") {
+				elems.push(<div class="clearfix" title={formatDesc(buff.desc.type, buff.desc.desc, buff.desc.value)}>
+					<div>
+						<img class="mr-1" width="25" src={`${AssetsRoot}/${ext}/buff/${buff.icon}.${ext}`} />
+						<strong class="align-middle">{formatDesc(buff.desc.type, buff.desc.desc, buff.desc.value, true)}</strong>
+					</div>
 
-				<div class="pl-3">
-					<div class="float-left">
-						{getBuffText(buff.value)}
-						{getChanceText(buff.value.chance)}
+					<div class="pl-3">
+						<div class="float-left">
+							{getBuffText(buff.value)}
+							{getChanceText(buff.value.chance)}
+						</div>
+						<div class="float-right">
+							{target ? <b-badge variant="stat-def" class="ml-1">{target}</b-badge> : _e()}
+							{on ? <b-badge variant="danger" class="ml-1">{on}</b-badge> : _e()}
+							{apply ? <b-badge variant="danger" class="ml-1">{apply}</b-badge> : _e()}
+							{erase ? <b-badge variant="warning" class="ml-1">{erase}</b-badge> : _e()}
+							{stat.maxStack > 0 ? <b-badge variant="dark" class="ml-1">최대 {stat.maxStack} 중첩</b-badge> : _e()}
+						</div>
 					</div>
-					<div class="float-right">
-						{target ? <b-badge variant="stat-def" class="ml-1">{target}</b-badge> : _e()}
-						{on ? <b-badge variant="danger" class="ml-1">{on}</b-badge> : _e()}
-						{apply ? <b-badge variant="danger" class="ml-1">{apply}</b-badge> : _e()}
-						{erase ? <b-badge variant="warning" class="ml-1">{erase}</b-badge> : _e()}
-						{stat.maxStack > 0 ? <b-badge variant="dark" class="ml-1">최대 {stat.maxStack} 중첩</b-badge> : _e()}
-					</div>
-				</div>
-			</div>);
+				</div>);
+			}
 		});
 	} else {
-		elems.push(<div class="clearfix">
-			<div class="float-left">
-				{getBuffText(stat)}
-				{getChanceText(stat.chance)}
-			</div>
-		</div>);
+		if (stat.chance !== "0%") {
+			elems.push(<div class="clearfix">
+				<div class="float-left">
+					{getBuffText(stat)}
+					{getChanceText(stat.chance)}
+				</div>
+			</div>);
+		}
 	}
 
 	return elems;

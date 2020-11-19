@@ -193,7 +193,7 @@ import EquipModal from "./Equips/EquipModal.vue";
 
 import { ACTOR_GRADE, ITEM_TYPE } from "@/libs/Types/Enums";
 import EquipData, { Equip } from "@/libs/DB/Equip";
-import { BuffEffect, BuffEffectValue, BUFFEFFECT_TYPE } from "@/libs/Equips/BuffEffect";
+import { BuffEffect, BuffEffectValue, BUFFEFFECT_TYPE } from "@/libs/Buffs/BuffEffect";
 
 import { CurrentEvent, CurrentDate, AssetsRoot, ImageExtension } from "@/libs/Const";
 import { ArrayUnique, UpdateTitle } from "@/libs/Functions";

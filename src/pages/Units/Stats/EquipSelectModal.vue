@@ -67,7 +67,7 @@ import { ACTOR_CLASS, ACTOR_GRADE, ITEM_TYPE, ROLE_TYPE } from "@/libs/Types/Enu
 import UnitData, { Unit } from "@/libs/DB/Unit";
 import EquipData, { Equip } from "@/libs/DB/Equip";
 
-import EquipStatus from "@/libs/Equips/EquipStatus";
+import EquipStatus from "@/libs/Buffs/BuffStatus";
 
 import NodeRenderer from "@/components/NodeRenderer.vue";
 import RarityBadge from "@/components/RarityBadge.vue";

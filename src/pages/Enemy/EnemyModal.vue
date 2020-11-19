@@ -233,7 +233,7 @@ import { Prop, Watch, PropSync } from "vue-property-decorator";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { ArrayUnique, FormatNumber } from "@/libs/Functions";
-import EquipStatus from "@/libs/Equips/EquipStatus";
+import EquipStatus from "@/libs/Buffs/BuffStatus";
 
 import NodeRenderer from "@/components/NodeRenderer.vue";
 import UnitBadge from "@/components/UnitBadge.vue";

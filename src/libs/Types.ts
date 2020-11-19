@@ -137,25 +137,6 @@ export interface RawCostTable {
 	};
 }
 
-export interface RawSkillUnit {
-	key: string;
-	name: string;
-	icon: string;
-	range: number;
-	ap: number;
-	target: "enemy";
-	bound: "single" | string;
-	desc: string[];
-}
-export interface RawSkill {
-	[key: string]: {
-		[key: string]: RawSkillUnit;
-	};
-	[key: number]: {
-		[key: string]: RawSkillUnit;
-	};
-}
-
 export interface ExpEntity {
 	exp: number;
 	enemies: number;
