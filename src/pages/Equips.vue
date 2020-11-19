@@ -537,12 +537,13 @@ export default class Equips extends Vue {
 						ret.push(part);
 				} else {
 					// 상수치
-					return EquipData.some(eq => eq.stats.some(row => row.some(es => {
+					const f = EquipData.some(eq => eq.stats.some(row => row.some(es => {
 						if ("type" in es)
 							return x.type.includes(es.type);
 						else
 							return es.buffs.some(b => x.type.includes(b.value.type));
 					})));
+					if (f) ret.push(x);
 				}
 			});
 		return ret;
