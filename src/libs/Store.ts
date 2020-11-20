@@ -2,13 +2,13 @@ import Vuex from "vuex";
 import Vue from "vue";
 
 import { VuexModule, Module, Mutation, Action } from "vuex-class-modules";
-import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/libs/Types/Enums";
+import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE, TARGET_TYPE } from "@/libs/Types/Enums";
 import { BuffEffectInfo, BuffEffectList } from "@/libs/Buffs/BuffEffect";
 
 Vue.use(Vuex);
 
 export type UnitDisplayType = "table" | "list" | "group";
-export interface UnitTableFilters {
+export interface UnitDisplayFilters {
 	Rarity: {
 		[ACTOR_GRADE.B]: boolean;
 		[ACTOR_GRADE.A]: boolean;
@@ -29,6 +29,8 @@ export interface UnitTableFilters {
 		[ACTOR_BODY_TYPE.BIOROID]: boolean;
 		[ACTOR_BODY_TYPE.AGS]: boolean;
 	};
+	EffectTarget: EffectFilterTargetType[];
+	Effects: EffectFilterListType;
 }
 export type UnitListOrder = "dict" | "name" | "rarity";
 
@@ -55,6 +57,7 @@ export interface EffectFilterListItemPM extends BuffEffectInfo {
 	selected: boolean;
 }
 export type EffectFilterListType = Array<EffectFilterListItemSingle | EffectFilterListItemPM[]>;
+export type EffectFilterTargetType = "self" | "team" | "enemy";
 
 export interface EquipDisplayType {
 	Type: {
@@ -87,8 +90,20 @@ class StoreModule extends VuexModule {
 	private unitDisplayType: UnitDisplayType = "table";
 	private unitSearchText: string = "";
 
-	private unitTablePromotionFilter: number = 0;
-	private unitTableFilter: UnitTableFilters = {
+	public readonly unitEffectFilterList = BuffEffectList();
+	public readonly unitEffectFilterListFlatten = this.unitEffectFilterList
+		.map(x => {
+			if (x.pm) {
+				return [
+					{ ...x, pmType: 1, selected: true },
+					{ ...x, pmType: -1, selected: true },
+				];
+			} else
+				return { ...x, selected: true };
+		}) as EffectFilterListType;
+
+	private unitDisplayPromotionFilter: number = 0;
+	private unitDisplayFilter: UnitDisplayFilters = {
 		Rarity: {
 			[ACTOR_GRADE.B]: true,
 			[ACTOR_GRADE.A]: true,
@@ -109,30 +124,16 @@ class StoreModule extends VuexModule {
 			[ACTOR_BODY_TYPE.BIOROID]: true,
 			[ACTOR_BODY_TYPE.AGS]: true,
 		},
-	};
-
-	private enemyFilter: EnemyFilters = {
-		Type: {
-			[ACTOR_CLASS.LIGHT]: true,
-			[ACTOR_CLASS.AIR]: true,
-			[ACTOR_CLASS.HEAVY]: true,
-		},
-		Role: {
-			[ROLE_TYPE.ATTACKER]: true,
-			[ROLE_TYPE.DEFENDER]: true,
-			[ROLE_TYPE.SUPPORTER]: true,
-		},
-		BossOnly: false,
-		UsedOnly: true,
+		EffectTarget: ["self", "team", "enemy"],
+		Effects: this.unitEffectFilterListFlatten,
 	};
 
 	private unitListOrder: UnitListOrder = "dict";
-	private unitListDictionaryInterpolation: boolean = false;
 	private unitListSortAsShortName: boolean = false;
 
-	private unitGroupMerge: boolean = false;
+	private unitDisplayEffectTarget: TARGET_TYPE = TARGET_TYPE.__MAX__; // 구분 없음
 
-	public readonly equipEffectFilterList = BuffEffectList();
+	private unitGroupMerge: boolean = false;
 
 	public readonly equipSourceFilterList: Record<keyof EquipDisplayType["Source"], boolean> = {
 		EventExchange: true,
@@ -168,6 +169,7 @@ class StoreModule extends VuexModule {
 		EndlessWar: false,
 	};
 
+	public readonly equipEffectFilterList = BuffEffectList();
 	public readonly equipEffectFilterListFlatten = this.equipEffectFilterList
 		.map(x => {
 			if (x.pm) {
@@ -190,6 +192,21 @@ class StoreModule extends VuexModule {
 		Effects: this.equipEffectFilterListFlatten,
 	};
 
+	private enemyFilter: EnemyFilters = {
+		Type: {
+			[ACTOR_CLASS.LIGHT]: true,
+			[ACTOR_CLASS.AIR]: true,
+			[ACTOR_CLASS.HEAVY]: true,
+		},
+		Role: {
+			[ROLE_TYPE.ATTACKER]: true,
+			[ROLE_TYPE.DEFENDER]: true,
+			[ROLE_TYPE.SUPPORTER]: true,
+		},
+		BossOnly: false,
+		UsedOnly: true,
+	};
+
 	public get UnitDisplayType (): UnitDisplayType {
 		return this.unitDisplayType;
 	}
@@ -208,22 +225,22 @@ class StoreModule extends VuexModule {
 		this.unitSearchText = value;
 	}
 
-	public get UnitTablePromotionFilter (): number {
-		return this.unitTablePromotionFilter;
+	public get UnitDisplayPromotionFilter (): number {
+		return this.unitDisplayPromotionFilter;
 	}
 
 	@Mutation
-	public setUnitTablePromotionFilter (value: number) {
-		this.unitTablePromotionFilter = value;
+	public setUnitDisplayPromotionFilter (value: number) {
+		this.unitDisplayPromotionFilter = value;
 	}
 
-	public get UnitTableFilter (): UnitTableFilters {
-		return this.unitTableFilter;
+	public get UnitDisplayFilter (): UnitDisplayFilters {
+		return this.unitDisplayFilter;
 	}
 
 	@Mutation
-	public setUnitTableFilter (value: UnitTableFilters) {
-		this.unitTableFilter = value;
+	public setUnitDisplayFilter (value: UnitDisplayFilters) {
+		this.unitDisplayFilter = value;
 	}
 
 	public get UnitListOrder (): UnitListOrder {
@@ -235,15 +252,6 @@ class StoreModule extends VuexModule {
 		this.unitListOrder = value;
 	}
 
-	public get UnitListDictionaryInterpolation (): boolean {
-		return this.unitListDictionaryInterpolation;
-	}
-
-	@Mutation
-	public setUnitListDictionaryInterpolation (value: boolean) {
-		this.unitListDictionaryInterpolation = value;
-	}
-
 	public get UnitListSortAsShortName (): boolean {
 		return this.unitListSortAsShortName;
 	}
@@ -253,6 +261,35 @@ class StoreModule extends VuexModule {
 		this.unitListSortAsShortName = value;
 	}
 
+	public get UnitEffectTarget (): TARGET_TYPE {
+		return this.unitDisplayEffectTarget;
+	}
+
+	@Mutation
+	public setUnitDisplayEffectTarget (value: TARGET_TYPE) {
+		this.unitDisplayEffectTarget = value;
+	}
+
+	@Action
+	public FillUnitDisplayEffectFilter () {
+		this.unitDisplayFilter.Effects.forEach(x => {
+			if (Array.isArray(x))
+				x.forEach(y => (y.selected = true));
+			else
+				x.selected = true;
+		});
+	}
+
+	@Action
+	public ClearUnitDisplayEffectFilter () {
+		this.unitDisplayFilter.Effects.forEach(x => {
+			if (Array.isArray(x))
+				x.forEach(y => (y.selected = false));
+			else
+				x.selected = false;
+		});
+	}
+
 	public get UnitGroupMerge (): boolean {
 		return this.unitGroupMerge;
 	}
@@ -260,15 +297,6 @@ class StoreModule extends VuexModule {
 	@Mutation
 	public setUnitGroupMerge (value: boolean) {
 		this.unitGroupMerge = value;
-	}
-
-	public get EnemyFilter (): EnemyFilters {
-		return this.enemyFilter;
-	}
-
-	@Mutation
-	public setEnemyFilter (value: EnemyFilters) {
-		this.enemyFilter = value;
 	}
 
 	public get EquipDisplayFilter (): EquipDisplayType {
@@ -308,6 +336,15 @@ class StoreModule extends VuexModule {
 	@Action
 	public ClearEquipDisplaySourceFilter () {
 		this.equipDisplayFilter.Source = this.equipSourceFilterListCleared;
+	}
+
+	public get EnemyFilter (): EnemyFilters {
+		return this.enemyFilter;
+	}
+
+	@Mutation
+	public setEnemyFilter (value: EnemyFilters) {
+		this.enemyFilter = value;
 	}
 }
 

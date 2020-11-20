@@ -2,7 +2,7 @@
 import { BuffEffect } from "@/libs/Buffs/BuffEffect";
 import { BuffErase } from "@/libs/Buffs/BuffErase";
 import { BuffTrigger } from "@/libs/Buffs/BuffTrigger";
-import { ACTOR_BODY_TYPE, ACTOR_CLASS, BUFF_OVERLAP_TYPE, NUM_OUTPUTTYPE, ROLE_TYPE } from "@/libs/Types/Enums";
+import { ACTOR_BODY_TYPE, ACTOR_CLASS, BUFF_ATTR_TYPE, BUFF_OVERLAP_TYPE, NUM_OUTPUTTYPE, ROLE_TYPE } from "@/libs/Types/Enums";
 
 export type BuffStat = BuffStatStatic | BuffStatBuff;
 
@@ -28,6 +28,7 @@ export interface BuffStatBuff {
 		erase: BuffErase;
 		value: BuffEffect;
 		overlap: BUFF_OVERLAP_TYPE;
+		attr: BUFF_ATTR_TYPE;
 	}>,
 
 	maxStack: number;

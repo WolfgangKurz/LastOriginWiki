@@ -8,8 +8,8 @@ export interface RawSkillEntity {
 	icon: string;
 	range: number;
 	ap: number;
-	target: "enemy";
-	bound: "single" | string;
+	target: "enemy" | "team";
+	bound: "self" | "single" | "around" | "fill" | "global" | string;
 	buffs: string;
 	desc: string[];
 }
@@ -21,8 +21,8 @@ export interface SkillEntity {
 
 	range: number;
 	ap: number;
-	target: "enemy";
-	bound: "single" | string;
+	target: "enemy" | "team";
+	bound: "self" | "single" | "around" | "fill" | "global" | string;
 
 	buffs: BuffStat[][];
 	desc: string[];

@@ -146,7 +146,7 @@ export default class SkillBound extends Vue {
 		const rangeGrid: JSX.Element[] = [];
 
 		for (let i = 0; i < 6; i++)
-			rangeGrid.push(<span class="grid" data-pos={i + 1} />);
+			rangeGrid.push(<span class="grid" data-pos={ i + 1 } />);
 
 		return rangeGrid;
 	}
@@ -155,7 +155,7 @@ export default class SkillBound extends Vue {
 		const grids: JSX.Element[] = [];
 
 		for (let i = 0; i < 9; i++)
-			grids.push(<span class="grid" data-pos={i + 1} />);
+			grids.push(<span class="grid" data-pos={ i + 1 } />);
 
 		return grids;
 	}
@@ -165,7 +165,7 @@ export default class SkillBound extends Vue {
 		const range = Math.min(this.range + (this.range > 0 && this.rangeBonus ? 1 : 0), 6);
 
 		for (let i = 0; i < range; i++)
-			ranges.push(<span class="range" data-pos={i + 1} />);
+			ranges.push(<span class="range" data-pos={ i + 1 } />);
 
 		return ranges;
 	}
@@ -184,44 +184,44 @@ export default class SkillBound extends Vue {
 			const c = t[i];
 
 			if (c === "@")
-				targets.push(<span class={["target", "target-25", this.target]} data-pos={t[++i]} />);
+				targets.push(<span class={ ["target", "target-25", this.target] } data-pos={ t[++i] } />);
 			else if (c === "#")
-				targets.push(<span class={["target", "target-50", this.target]} data-pos={t[++i]} />);
+				targets.push(<span class={ ["target", "target-50", this.target] } data-pos={ t[++i] } />);
 			else if (c === "$")
-				targets.push(<span class={["target", "target-75", this.target]} data-pos={t[++i]} />);
+				targets.push(<span class={ ["target", "target-75", this.target] } data-pos={ t[++i] } />);
 
 			else if (c === "^")
-				targets.push(<span class={["target", "target-25", this.target]} data-pos={t[++i]} />);
+				targets.push(<span class={ ["target", "target-25", this.target] } data-pos={ t[++i] } />);
 			else if (c === "&")
-				targets.push(<span class={["target", "target-50", this.target]} data-pos={t[++i]} />);
+				targets.push(<span class={ ["target", "target-50", this.target] } data-pos={ t[++i] } />);
 
 			else
-				targets.push(<span class={["target", this.target]} data-pos={c} />);
+				targets.push(<span class={ ["target", this.target] } data-pos={ c } />);
 		}
 
-		return <div class="skill-bound" data-passive={this.passive ? 1 : 0}>
+		return <div class="skill-bound" data-passive={ this.passive ? 1 : 0 }>
 			<div class="skill-range">
-				{this.rangeBack}
-				{this.rangeCells}
+				{ this.rangeBack }
+				{ this.rangeCells }
 				{
 					this.rangeBonus && this.range > 0
-						? <div class="skill-range-circle bonused">{this.range + 1}</div>
-						: <div class="skill-range-circle">{this.range}</div>
+						? <div class="skill-range-circle bonused">{ this.range + 1 }</div>
+						: <div class="skill-range-circle">{ this.range }</div>
 				}
 			</div>
 
 			<div class="skill-ap">
-				<div>AP</div> {this.AP}
+				<div>AP</div> { this.AP }
 			</div>
 
 			<div class="skill-grid">
-				{this.gridBack}
-				{this.IsGlobal ? "" : <span class="offset" data-pos={offset} />}
-				{targets}
+				{ this.gridBack }
+				{ this.IsGlobal ? "" : <span class="offset" data-pos={ offset } /> }
+				{ targets }
 			</div>
 
-			{this.IsGlobal ? <div class="global-text">고정 범위</div> : ""}
-			{this.target === "team" ? <div class="team-text">아군 대상</div> : ""}
+			{ this.IsGlobal ? <div class="global-text">고정 범위</div> : "" }
+			{ this.target === "team" ? <div class="team-text">{ this.bound === "self" ? "본인 대상" : "아군 대상" }</div> : "" }
 		</div>;
 	}
 }

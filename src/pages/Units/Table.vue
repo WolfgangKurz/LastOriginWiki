@@ -8,38 +8,6 @@
 			</b-btn-group>
 		</div>
 
-		<div class="mb-2">
-			<b-btn-group class="mx-2 mb-2">
-				<b-button variant="outline-danger" :pressed="Filters.Rarity[5]" @click="Filters.Rarity[5] = !Filters.Rarity[5]">SS</b-button>
-				<b-button variant="outline-danger" :pressed="Filters.Rarity[4]" @click="Filters.Rarity[4] = !Filters.Rarity[4]">S</b-button>
-				<b-button variant="outline-danger" :pressed="Filters.Rarity[3]" @click="Filters.Rarity[3] = !Filters.Rarity[3]">A</b-button>
-				<b-button variant="outline-danger" :pressed="Filters.Rarity[2]" @click="Filters.Rarity[2] = !Filters.Rarity[2]">B</b-button>
-			</b-btn-group>
-			<b-btn-group class="mx-2 mb-2">
-				<b-button variant="outline-success" :pressed="Filters.Type[0]" @click="Filters.Type[0] = !Filters.Type[0]">경장형</b-button>
-				<b-button variant="outline-success" :pressed="Filters.Type[2]" @click="Filters.Type[2] = !Filters.Type[2]">기동형</b-button>
-				<b-button variant="outline-success" :pressed="Filters.Type[1]" @click="Filters.Type[1] = !Filters.Type[1]">중장형</b-button>
-			</b-btn-group>
-			<b-btn-group class="mx-2 mb-2">
-				<b-button variant="outline-primary" :pressed="Filters.Role[1]" @click="Filters.Role[1] = !Filters.Role[1]">공격기</b-button>
-				<b-button variant="outline-primary" :pressed="Filters.Role[0]" @click="Filters.Role[0] = !Filters.Role[0]">보호기</b-button>
-				<b-button variant="outline-primary" :pressed="Filters.Role[2]" @click="Filters.Role[2] = !Filters.Role[2]">지원기</b-button>
-			</b-btn-group>
-			<b-btn-group class="mx-2 mb-2">
-				<b-button variant="outline-warning" :pressed="Filters.Body[0]" @click="Filters.Body[0] = !Filters.Body[0]">바이오로이드</b-button>
-				<b-button variant="outline-warning" :pressed="Filters.Body[1]" @click="Filters.Body[1] = !Filters.Body[1]">AGS</b-button>
-			</b-btn-group>
-		</div>
-
-		<div class="mb-4 mx-4">
-			<b-input-group>
-				<b-input v-model="SearchText" placeholder="전투원 검색" />
-				<b-input-group-append>
-					<b-button variant="danger" @click="SearchText = ''">지우기</b-button>
-				</b-input-group-append>
-			</b-input-group>
-		</div>
-
 		<template v-for="type in TypeList">
 			<b-table-simple v-if="Filters.Type[type]" :key="`unit-table-body-${type}`" class="unit-table mb-3" small>
 				<b-thead head-variant="dark">
@@ -89,7 +57,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, PropSync, Emit } from "vue-property-decorator";
 
-import StoreModule, { UnitTableFilters } from "@/libs/Store";
+import StoreModule, { EffectFilterListType, EffectFilterTargetType, UnitDisplayFilters } from "@/libs/Store";
 
 import RarityBadge from "@/components/RarityBadge.vue";
 import UnitFace from "@/components/UnitFace.vue";
@@ -98,6 +66,9 @@ import UnitCard from "./UnitCard.vue";
 
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/libs/Types/Enums";
 import UnitData, { Unit } from "@/libs/DB/Unit";
+import SkillData, { SkillSlotKey } from "@/libs/DB/Skill";
+import { BuffEffect } from "@/libs/Buffs/BuffEffect";
+import { isBuffEffectValid, isPositiveBuffEffectValue } from "@/libs/Buffs/Helper";
 
 @Component({
 	components: {
@@ -118,19 +89,19 @@ export default class UnitsTable extends Vue {
 	}
 
 	private get PromotionFilter () {
-		return StoreModule.UnitTablePromotionFilter;
+		return StoreModule.UnitDisplayPromotionFilter;
 	}
 
 	private set PromotionFilter (value: number) {
-		StoreModule.setUnitTablePromotionFilter(value);
+		StoreModule.setUnitDisplayPromotionFilter(value);
 	}
 
 	private get Filters () {
-		return StoreModule.UnitTableFilter;
+		return StoreModule.UnitDisplayFilter;
 	}
 
-	private set Filters (value: UnitTableFilters) {
-		StoreModule.setUnitTableFilter(value);
+	private set Filters (value: UnitDisplayFilters) {
+		StoreModule.setUnitDisplayFilter(value);
 	}
 	// Vuex -----
 
@@ -143,7 +114,7 @@ export default class UnitsTable extends Vue {
 		};
 	}
 
-	private get RarityList (): (keyof UnitTableFilters["Rarity"])[] {
+	private get RarityList (): (keyof UnitDisplayFilters["Rarity"])[] {
 		return [
 			ACTOR_GRADE.B,
 			ACTOR_GRADE.A,
@@ -152,7 +123,7 @@ export default class UnitsTable extends Vue {
 		];
 	}
 
-	private get TypeList (): (keyof UnitTableFilters["Type"])[] {
+	private get TypeList (): (keyof UnitDisplayFilters["Type"])[] {
 		return [
 			ACTOR_CLASS.LIGHT,
 			ACTOR_CLASS.AIR,
@@ -160,12 +131,38 @@ export default class UnitsTable extends Vue {
 		];
 	}
 
-	private get RoleList (): (keyof UnitTableFilters["Role"])[] {
+	private get RoleList (): (keyof UnitDisplayFilters["Role"])[] {
 		return [
 			ROLE_TYPE.ATTACKER,
 			ROLE_TYPE.DEFENDER,
 			ROLE_TYPE.SUPPORTER,
 		];
+	}
+
+	private HasFilteredEffect (unit: Unit, validator: (stat: BuffEffect) => boolean) {
+		const isNumeric = (data: string) => {
+			return /^[0-9]+\.?[0-9]*%?$/.test(data);
+		};
+		const _ = <T extends unknown> (__: T | undefined) => __ as T;
+
+		const skills = SkillData[unit.uid];
+
+		return Object.keys(skills).some(ss => {
+			const __ = _(skills[ss as SkillSlotKey]);
+			const target: EffectFilterTargetType = __.target === "enemy"
+				? "enemy"
+				: __.bound === "self"
+					? "self"
+					: "team";
+
+			if (!this.Filters.EffectTarget.includes(target)) return false;
+			return __.buffs.some(row => row.some(es => {
+				if ("type" in es)
+					return validator(es);
+				else
+					return es.buffs.some(y => validator(y.value));
+			}));
+		});
 	}
 
 	private UnitList (rarity: ACTOR_GRADE, type: ACTOR_CLASS, role: ROLE_TYPE) {
@@ -180,7 +177,8 @@ export default class UnitsTable extends Vue {
 						(
 							(x.body === ACTOR_BODY_TYPE.BIOROID && this.Filters.Body[ACTOR_BODY_TYPE.BIOROID]) ||
 							(x.body === ACTOR_BODY_TYPE.AGS && this.Filters.Body[ACTOR_BODY_TYPE.AGS])
-						);
+						) &&
+						this.HasFilteredEffect(x, (b) => isBuffEffectValid(b, StoreModule.unitEffectFilterListFlatten));
 				});
 		} else {
 			return _(UnitData)
@@ -191,7 +189,8 @@ export default class UnitsTable extends Vue {
 					x.role === role && (
 						(x.body === ACTOR_BODY_TYPE.BIOROID && this.Filters.Body[ACTOR_BODY_TYPE.BIOROID]) ||
 						(x.body === ACTOR_BODY_TYPE.AGS && this.Filters.Body[ACTOR_BODY_TYPE.AGS])
-					)
+					) &&
+					this.HasFilteredEffect(x, (b) => isBuffEffectValid(b, StoreModule.unitEffectFilterListFlatten))
 				));
 		}
 	}

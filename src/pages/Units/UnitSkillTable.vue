@@ -21,7 +21,8 @@
 					<b-form-select class="table-unit-level-select" size="sm" v-model="skillLevelSync" :options="SkillLevelList" />
 					<span class="text-secondary pl-2">|</span>
 					<div class="d-inline-block ml-2">
-						<b-checkbox class="d-inline-block mr-1" v-model="loveBonus">호감도 200</b-checkbox>
+						<b-checkbox class="d-inline-block mr-2" v-model="loveBonus">호감도 200</b-checkbox>
+						<b-checkbox class="d-inline-block mr-2" v-model="displayBuffList">버프 보기</b-checkbox>
 					</div>
 				</b-th>
 				<b-th>AP &amp; 사거리 &amp; 범위</b-th>
@@ -31,7 +32,8 @@
 					설명 및 수치
 					<b-form-select class="table-unit-level-select" size="sm" v-model="skillLevelSync" :options="SkillLevelList" />
 					<div>
-						<b-checkbox class="d-inline-block mr-1" v-model="loveBonus">호감도 200</b-checkbox>
+						<b-checkbox class="d-inline-block mr-2" v-model="loveBonus">호감도 200</b-checkbox>
+						<b-checkbox class="d-inline-block mr-2" v-model="displayBuffList">버프 보기</b-checkbox>
 					</div>
 				</b-th>
 			</b-tr>
@@ -43,13 +45,16 @@
 						<img class="skill-icon" :src="skill.icon" />
 						<div class="text-bold">{{ skill.name }}</div>
 
-						<rarity-badge v-if="skill.isPassive && skill.index > rarityIndex" :rarity="rarityList[skill.index]"
+						<b-badge v-if="skill.index === 7" variant="info">더미</b-badge>
+						<rarity-badge v-else-if="skill.isPassive && skill.index > rarityIndex" :rarity="rarityList[skill.index]"
 							>{{ RarityName[rarityList[skill.index]] }} 승급 스킬</rarity-badge
 						>
 					</b-td>
 					<b-td class="text-left d-none d-md-table-cell">
 						<div v-for="(line, lineIdx) in skill.desc" :key="`unit-modal-skill-desc-${lineIdx}`" class="unit-modal-skill">
+							<span v-if="!line" class="text-secondary">설명 없음</span>
 							<skill-description
+								v-else
 								:text="line"
 								:level="skillLevelSync"
 								:buff-bonus="buffBonus"
@@ -58,7 +63,7 @@
 							/>
 						</div>
 
-						<b-list-group v-if="BuffList[skill.key].length > 0" class="text-left mt-2">
+						<b-list-group v-if="displayBuffList && BuffList[skill.key].length > 0" class="text-left mt-2">
 							<b-list-group-item v-for="(status, idx) in BuffList[skill.key]" :key="`status-line-${idx}`">
 								<node-renderer :elem="status" />
 							</b-list-group-item>
@@ -79,7 +84,9 @@
 				<b-tr :key="`unit-modal-skill-descrow-${idx}`" class="d-table-row d-md-none">
 					<b-td class="text-left" colspan="2">
 						<div v-for="(line, lineIdx) in skill.desc" :key="`unit-modal-skill-descrow-desc-${lineIdx}`" class="unit-modal-skill">
+							<span v-if="!line" class="text-secondary">설명 없음</span>
 							<skill-description
+								v-else
 								:text="line"
 								:level="skillLevelSync"
 								:buff-bonus="buffBonus"
@@ -88,7 +95,7 @@
 							/>
 						</div>
 
-						<b-list-group v-if="BuffList[skill.key].length > 0" class="text-left mt-2">
+						<b-list-group v-if="displayBuffList && BuffList[skill.key].length > 0" class="text-left mt-2">
 							<b-list-group-item v-for="(status, idx) in BuffList[skill.key]" :key="`status-line-${idx}`">
 								<node-renderer :elem="status" />
 							</b-list-group-item>
@@ -183,6 +190,7 @@ export default class UnitSkillTable extends Vue {
 
 	private rarityList: ACTOR_GRADE[] = [0, 0, ACTOR_GRADE.B, ACTOR_GRADE.A, ACTOR_GRADE.S, ACTOR_GRADE.SS];
 	private loveBonus: boolean = false;
+	private displayBuffList: boolean = false;
 
 	private get AssetsRoot () {
 		return AssetsRoot;

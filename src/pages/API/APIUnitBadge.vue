@@ -44,7 +44,7 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 
-import { UnitTableFilters } from "@/libs/Store";
+import { UnitDisplayFilters } from "@/libs/Store";
 import UnitData, { Unit } from "@/libs/DB/Unit";
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/libs/Types/Enums";
 
@@ -60,7 +60,7 @@ export default class APIUnitBadge extends Vue {
 
 	private isSD: boolean = false;
 
-	private Filters: UnitTableFilters = {
+	private Filters: UnitDisplayFilters = {
 		Rarity: {
 			[ACTOR_GRADE.B]: true,
 			[ACTOR_GRADE.A]: true,
@@ -81,6 +81,8 @@ export default class APIUnitBadge extends Vue {
 			[ACTOR_BODY_TYPE.BIOROID]: true,
 			[ACTOR_BODY_TYPE.AGS]: true,
 		},
+		Effects: [],
+		EffectTarget: [],
 	};
 
 	private get badgeURL () {
