@@ -107,14 +107,14 @@ function convertBuff (name: string) {
 	if (name.startsWith("Char_")) {
 		const key = name.replace(/Char_(.+)_N/, "$1");
 		const unit = UnitData.find(x => x.uid === key);
-		if (!unit) return "???";
+		if (!unit) return key;
 
 		return `"${unit.name}"`;
 	}
 
 	if (name.startsWith("Effect_BUFF_Flood_N_")) return "침수";
-	return `"${(BuffData as Record<string, string>)[name]}"` ||
-		"???";
+	return (BuffData as Record<string, string>)[name] ||
+		name;
 }
 
 function getTriggerText (trigger: BuffTrigger) {
@@ -167,17 +167,17 @@ function getTriggerText (trigger: BuffTrigger) {
 			switch (trigger.damaged) {
 				case "fire":
 					return [
-						<elem-icon elem={trigger.damaged} class="mr-1 mb-0" />,
+						<elem-icon elem={ trigger.damaged } class="mr-1 mb-0" />,
 						"화염 속성 피격 시",
 					];
 				case "ice":
 					return [
-						<elem-icon elem={trigger.damaged} class="mr-1 mb-0" />,
+						<elem-icon elem={ trigger.damaged } class="mr-1 mb-0" />,
 						"냉기 속성 피격 시",
 					];
 				case "lightning":
 					return [
-						<elem-icon elem={trigger.damaged} class="mr-1 mb-0" />,
+						<elem-icon elem={ trigger.damaged } class="mr-1 mb-0" />,
 						"전기 속성 피격 시",
 					];
 			}
@@ -254,8 +254,10 @@ function getTriggerText (trigger: BuffTrigger) {
 		} else if ("on" in trigger) {
 			if ("func" in trigger.on && Array.isArray(trigger.on.select)) {
 				const select = typeof trigger.on.select[0] === "string"
+					// BuffTrigger_On_BuffKey
 					? ArrayUnique((trigger.on.select as string[]).map(x => convertBuff(x)))
-					: ArrayUnique(trigger.on.select as BUFFEFFECT_TYPE[]);
+					// BuffTrigger_On_BuffEffectType
+					: ArrayUnique((trigger.on.select as BUFFEFFECT_TYPE[]).map(x => getBuffEffectTypeText(x, trigger.on.attr)));
 
 				if (select.length === 1) {
 					const func = {
@@ -264,13 +266,7 @@ function getTriggerText (trigger: BuffTrigger) {
 						UNFILLED: "가 아닐 때",
 					}[trigger.on.func];
 
-					if (typeof select[0] === "number") {
-						// BuffTrigger_On_BuffEffectType
-						return getBuffEffectTypeText(select[0], BUFF_ATTR_TYPE.NO_MATTER) + func;
-					} else {
-						// BuffTrigger_On_BuffKey
-						return select[0] + func;
-					}
+					return ["\"", select[0], `" ${func}`];
 				} else {
 					const func = {
 						OR: " 중 하나일 때",
@@ -278,29 +274,33 @@ function getTriggerText (trigger: BuffTrigger) {
 						UNFILLED: "가 하나라도 아닐 때",
 					}[trigger.on.func];
 
-					if (typeof select[0] === "number") {
-						// BuffTrigger_On_BuffEffectType
-						return select.join(", ") + func;
-					} else {
-						// BuffTrigger_On_BuffKey
-						return select.join(", ") + func;
+					const out: Array<string | Array<string | JSX.Element>> = [];
+					for (let i = 0; i < select.length; i++) {
+						if (i > 0) out.push(", ");
+						out.push("\"", select[i], "\"");
 					}
+					out.push(func);
+					return out;
 				}
 			} else if ("target" in trigger.on && "stack" in trigger.on) {
+				const select = ArrayUnique((trigger.on.select as string[]).map(x => convertBuff(x)));
+
 				// BuffTrigger_On_BuffStack
 				const target = {
 					self: "자신에게",
 					target: "대상에게",
 				}[trigger.on.target];
 
-				if (trigger.on.select.length === 1)
-					return `${target} ${trigger.on.select[0]}가 ${trigger.on.stack}개일 때`;
+				if (select.length === 1)
+					return [`${target} "`, select[0], `"가 ${trigger.on.stack}개일 때`];
 				else
-					return `${target} ${trigger.on.select.join(",")}의 갯수 합이 ${trigger.on.stack}개일 때`;
+					return [`${target} "`, select.join(","), `"의 갯수 합이 ${trigger.on.stack}개일 때`];
 			} else if ("target" in trigger.on && "func" in trigger.on) {
 				const select = typeof trigger.on.select[0] === "string"
+					// BuffTrigger_On_BuffExists
 					? ArrayUnique((trigger.on.select as string[]).map(x => convertBuff(x)))
-					: ArrayUnique(trigger.on.select as BUFFEFFECT_TYPE[]);
+					// BuffTrigger_On_BuffTypeExists
+					: ArrayUnique((trigger.on.select as BUFFEFFECT_TYPE[]).map(x => getBuffEffectTypeText(x, trigger.on.attr)));
 
 				const target = {
 					self: "자신에게",
@@ -314,13 +314,7 @@ function getTriggerText (trigger: BuffTrigger) {
 						UNFILLED: "가 아닐 때",
 					}[trigger.on.func];
 
-					if (typeof select[0] === "number") {
-						// BuffTrigger_On_BuffTypeExists
-						return target + " " + select[0] + func;
-					} else {
-						// BuffTrigger_On_BuffExists
-						return target + " " + select[0] + func;
-					}
+					return [`${target} "`, select[0], `" ${func}`];
 				} else {
 					const func = {
 						OR: " 중 하나일 때",
@@ -392,7 +386,7 @@ function getChanceText (chance: string | undefined) {
 	if (!chance) chance = "100%";
 
 	if (chance === "100%") return _e();
-	return <b-badge variant="success" class="ml-3">{chance} 확률</b-badge>;
+	return <b-badge variant="success" class="ml-3">{ chance } 확률</b-badge>;
 }
 
 function getBuffEffectTypeText (type: BUFFEFFECT_TYPE, target: BUFF_ATTR_TYPE) {
@@ -642,17 +636,17 @@ function getBuffText (stat: BuffEffect, level?: number) {
 			switch (stat.resist.elem) {
 				case "fire":
 					return [
-						<elem-icon elem={stat.resist.elem} class="mr-1" />,
+						<elem-icon elem={ stat.resist.elem } class="mr-1" />,
 						"화염 저항 " + positive(stat.resist.value, level),
 					];
 				case "ice":
 					return [
-						<elem-icon elem={stat.resist.elem} class="mr-1" />,
+						<elem-icon elem={ stat.resist.elem } class="mr-1" />,
 						"냉기 저항 " + positive(stat.resist.value, level),
 					];
 				case "lightning":
 					return [
-						<elem-icon elem={stat.resist.elem} class="mr-1" />,
+						<elem-icon elem={ stat.resist.elem } class="mr-1" />,
 						"전기 저항 " + positive(stat.resist.value, level),
 					];
 			}
@@ -681,17 +675,17 @@ function getBuffText (stat: BuffEffect, level?: number) {
 			switch (stat.damage.elem) {
 				case "fire":
 					return [
-						<elem-icon elem={stat.damage.elem} class="mr-1" />,
+						<elem-icon elem={ stat.damage.elem } class="mr-1" />,
 						`추가 화염 피해 ${literal(stat.damage.damage, level)}`,
 					];
 				case "ice":
 					return [
-						<elem-icon elem={stat.damage.elem} class="mr-1" />,
+						<elem-icon elem={ stat.damage.elem } class="mr-1" />,
 						`추가 냉기 피해 ${literal(stat.damage.damage, level)}`,
 					];
 				case "lightning":
 					return [
-						<elem-icon elem={stat.damage.elem} class="mr-1" />,
+						<elem-icon elem={ stat.damage.elem } class="mr-1" />,
 						`추가 번개 피해 ${literal(stat.damage.damage, level)}`,
 					];
 			}
@@ -714,17 +708,17 @@ function getBuffText (stat: BuffEffect, level?: number) {
 			switch (stat.damage_add.elem) {
 				case "fire":
 					return [
-						<elem-icon elem={stat.damage_add.elem} class="mr-1" />,
+						<elem-icon elem={ stat.damage_add.elem } class="mr-1" />,
 						`화염 속성 피해량 ${positive(stat.damage_add.damage, level)}`,
 					];
 				case "ice":
 					return [
-						<elem-icon elem={stat.damage_add.elem} class="mr-1" />,
+						<elem-icon elem={ stat.damage_add.elem } class="mr-1" />,
 						`냉기 속성 피해량 ${positive(stat.damage_add.damage, level)}`,
 					];
 				case "lightning":
 					return [
-						<elem-icon elem={stat.damage_add.elem} class="mr-1" />,
+						<elem-icon elem={ stat.damage_add.elem } class="mr-1" />,
 						`전기 속성 피해량 ${positive(stat.damage_add.damage, level)}`,
 					];
 			}
@@ -762,19 +756,19 @@ function getBuffText (stat: BuffEffect, level?: number) {
 				case "fire":
 					return [
 						`${percent(stat.fixed_damage.damage, "공격력 ", "")}${literal(stat.fixed_damage.damage, level)} 지속`,
-						<elem-icon elem={stat.fixed_damage.elem} class="mr-1" />,
+						<elem-icon elem={ stat.fixed_damage.elem } class="mr-1" />,
 						"화염 피해",
 					];
 				case "ice":
 					return [
 						`${percent(stat.fixed_damage.damage, "공격력 ", "")}${literal(stat.fixed_damage.damage, level)} 지속`,
-						<elem-icon elem={stat.fixed_damage.elem} class="mr-1" />,
+						<elem-icon elem={ stat.fixed_damage.elem } class="mr-1" />,
 						"냉기 피해",
 					];
 				case "lightning":
 					return [
 						`${percent(stat.fixed_damage.damage, "공격력 ", "")}${literal(stat.fixed_damage.damage, level)} 지속`,
-						<elem-icon elem={stat.fixed_damage.elem} class="mr-1" />,
+						<elem-icon elem={ stat.fixed_damage.elem } class="mr-1" />,
 						"전기 피해",
 					];
 			}
@@ -782,6 +776,8 @@ function getBuffText (stat: BuffEffect, level?: number) {
 			return `${percent(stat.fixed_damage, "공격력 ", "")}${literal(stat.fixed_damage, level)} 지속 고정 피해`;
 	} else if ("provoke" in stat)
 		return "도발";
+	else if ("stun" in stat)
+		return "행동 불능";
 	else if ("attack_support" in stat)
 		return `${literal(stat.attack_support, level)} 확률로 공격 지원`;
 	else if ("immovable" in stat)
@@ -806,7 +802,7 @@ function getBuffText (stat: BuffEffect, level?: number) {
 	else if ("collaborate" in stat)
 		return `협동 공격 : ${convertBuff(stat.collaborate.with)}의 ${stat.collaborate.skill}번째 액티브 스킬`;
 
-	return "???";
+	return JSON.stringify(stat); // "???";
 }
 
 function getEraseText (erase: BuffErase) {
@@ -845,20 +841,28 @@ function formatDesc (type: NUM_OUTPUTTYPE, template: string, value: string, shor
 	if (shortize)
 		template = template.replace(/:.+$/, "").trim();
 
-	if (type === NUM_OUTPUTTYPE.INTEGER) {
-		return template.replace(
-			/\{0\}/g,
-			new Decimal(value)
-				.toNumber()
-				.toString(),
-		);
+	if (value.startsWith("Char_")) {
+		const key = value.replace(/Char_(.+)_N/, "$1");
+		const unit = UnitData.find(x => x.uid === key);
+		if (!unit) return `${template} - ${key}`;
+
+		return `${template} - ${unit.name}`;
 	} else {
-		return template.replace(
-			/\{0\}/g,
-			Decimal.mul(value, 100)
-				.toNumber()
-				.toString(),
-		);
+		if (type === NUM_OUTPUTTYPE.INTEGER) {
+			return template.replace(
+				/\{0\}/g,
+				new Decimal(value)
+					.toNumber()
+					.toString(),
+			);
+		} else {
+			return template.replace(
+				/\{0\}/g,
+				Decimal.mul(value, 100)
+					.toNumber()
+					.toString(),
+			);
+		}
 	}
 }
 
@@ -876,23 +880,23 @@ export default function BuffStatus (context: Vue, stat: BuffStat, level?: number
 			const apply = getTriggerText(stat.if);
 
 			if (buff.value.chance !== "0%") {
-				elems.push(<div class="clearfix" title={formatDesc(buff.desc.type, buff.desc.desc, buff.desc.value)}>
+				elems.push(<div class="clearfix" title={ formatDesc(buff.desc.type, buff.desc.desc, buff.desc.value) }>
 					<div>
-						<img class="mr-1" width="25" src={`${AssetsRoot}/${ext}/buff/${buff.icon}.${ext}`} />
-						<strong class="align-middle">{formatDesc(buff.desc.type, buff.desc.desc, buff.desc.value, true)}</strong>
+						<img class="mr-1" width="25" src={ `${AssetsRoot}/${ext}/buff/${buff.icon}.${ext}` } />
+						<strong class="align-middle">{ formatDesc(buff.desc.type, buff.desc.desc, buff.desc.value, true) }</strong>
 					</div>
 
 					<div class="pl-3">
 						<div class="float-left">
-							{getBuffText(buff.value, level)}
-							{getChanceText(buff.value.chance)}
+							{ getBuffText(buff.value, level) }
+							{ getChanceText(buff.value.chance) }
 						</div>
 						<div class="float-right">
-							{target ? <b-badge variant="stat-def" class="ml-1">{target}</b-badge> : _e()}
-							{on ? <b-badge variant="danger" class="ml-1">{on}</b-badge> : _e()}
-							{apply ? <b-badge variant="danger" class="ml-1">{apply}</b-badge> : _e()}
-							{erase ? <b-badge variant="warning" class="ml-1">{erase}</b-badge> : _e()}
-							{stat.maxStack > 0 ? <b-badge variant="dark" class="ml-1">최대 {stat.maxStack} 중첩</b-badge> : _e()}
+							{ target ? <b-badge variant="stat-def" class="ml-1">{ target }</b-badge> : _e() }
+							{ on ? <b-badge variant="danger" class="ml-1">{ on }</b-badge> : _e() }
+							{ apply ? <b-badge variant="danger" class="ml-1">{ apply }</b-badge> : _e() }
+							{ erase ? <b-badge variant="warning" class="ml-1">{ erase }</b-badge> : _e() }
+							{ stat.maxStack > 0 ? <b-badge variant="dark" class="ml-1">최대 { stat.maxStack } 중첩</b-badge> : _e() }
 						</div>
 					</div>
 				</div>);
@@ -902,8 +906,8 @@ export default function BuffStatus (context: Vue, stat: BuffStat, level?: number
 		if (stat.chance !== "0%") {
 			elems.push(<div class="clearfix">
 				<div class="float-left">
-					{getBuffText(stat, level)}
-					{getChanceText(stat.chance)}
+					{ getBuffText(stat, level) }
+					{ getChanceText(stat.chance) }
 				</div>
 			</div>);
 		}

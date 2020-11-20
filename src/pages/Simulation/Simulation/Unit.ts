@@ -94,7 +94,9 @@ export class Unit extends Vue {
 
 	/** 현재 링크 보너스 정보 */
 	public get LinkBonus () {
-		return this.Unit.linkBonus.map(x => GetLinkBonus(x, this.LinkCount));
+		return this.Unit.linkBonus
+			.filter(x => x)
+			.map(x => GetLinkBonus(x, this.LinkCount));
 	}
 
 	public get FullLinkBonus () {

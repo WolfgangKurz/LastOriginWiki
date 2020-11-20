@@ -122,50 +122,48 @@
 						</b-collapse>
 					</b-col>
 				</b-row>
-				<template>
-					<hr class="my-2" />
-					<b-row>
-						<b-col class="filter-label" md="auto" cols="12">장비 효과 :</b-col>
-						<b-col md cols="12">
-							<div class="clearfix">
-								<div class="float-right">
-									<b-checkbox v-model="displayEquipEffects">장비 효과 목록 표시</b-checkbox>
-								</div>
-
-								<b-button-group class="float-left d-block mb-1">
-									<b-button variant="primary" @click="FillEquipEffectFilters">모두 선택</b-button>
-									<b-button variant="danger" @click="ClearEquipEffectFilters">모두 선택 해제</b-button>
-								</b-button-group>
+				<hr class="my-2" />
+				<b-row>
+					<b-col class="filter-label" md="auto" cols="12">장비 효과 :</b-col>
+					<b-col md cols="12">
+						<div class="clearfix">
+							<div class="float-right">
+								<b-checkbox v-model="displayEquipEffects">장비 효과 목록 표시</b-checkbox>
 							</div>
-							<!-- <b-select :options="EquipEffects" /> -->
-							<b-collapse :visible="displayEquipEffects">
-								<template v-for="entity in EquipEffects">
-									<b-btn-group v-if="Array.isArray(entity)" :key="`equip-effect-${entity[0].type}`" class="mr-1 mb-1">
-										<b-button
-											v-for="subentity in entity"
-											:key="`equip-effect-${subentity.type}-${subentity.pmType}`"
-											variant="outline-secondary"
-											:pressed="subentity.selected"
-											@click="subentity.selected = !subentity.selected"
-										>
-											{{ subentity.text + (subentity.pmType > 0 ? " 증가" : " 감소") }}
-										</b-button>
-									</b-btn-group>
+
+							<b-button-group class="float-left d-block mb-1">
+								<b-button variant="primary" @click="FillEquipEffectFilters">모두 선택</b-button>
+								<b-button variant="danger" @click="ClearEquipEffectFilters">모두 선택 해제</b-button>
+							</b-button-group>
+						</div>
+						<!-- <b-select :options="EquipEffects" /> -->
+						<b-collapse :visible="displayEquipEffects">
+							<template v-for="entity in EquipEffects">
+								<b-btn-group v-if="Array.isArray(entity)" :key="`equip-effect-${entity[0].type}`" class="mr-1 mb-1">
 									<b-button
-										v-else
-										:key="`equip-effect-${entity.type}`"
-										class="mr-1 mb-1"
+										v-for="subentity in entity"
+										:key="`equip-effect-${subentity.type}-${subentity.pmType}`"
 										variant="outline-secondary"
-										:pressed="entity.selected"
-										@click="entity.selected = !entity.selected"
+										:pressed="subentity.selected"
+										@click="subentity.selected = !subentity.selected"
 									>
-										{{ entity.text }}
+										{{ subentity.text + (subentity.pmType > 0 ? " 증가" : " 감소") }}
 									</b-button>
-								</template>
-							</b-collapse>
-						</b-col>
-					</b-row>
-				</template>
+								</b-btn-group>
+								<b-button
+									v-else
+									:key="`equip-effect-${entity.type}`"
+									class="mr-1 mb-1"
+									variant="outline-secondary"
+									:pressed="entity.selected"
+									@click="entity.selected = !entity.selected"
+								>
+									{{ entity.text }}
+								</b-button>
+							</template>
+						</b-collapse>
+					</b-col>
+				</b-row>
 			</b-card>
 		</b-collapse>
 
@@ -202,6 +200,7 @@ import EntitySource from "@/libs/EntitySource";
 
 import StoreModule, { EffectFilterListItemPM, EffectFilterListItemSingle, EffectFilterListType, EquipDisplayType } from "@/libs/Store";
 import { SetMeta } from "@/libs/Meta";
+import { isBuffEffectValid, isPositiveBuffEffect, isPositiveBuffEffectValue } from "@/libs/Buffs/Helper";
 
 @Component({
 	components: {
@@ -389,7 +388,8 @@ export default class Equips extends Vue {
 				}
 
 				// 효과 필터
-				if (x.equips.every(y => !this.HasFilteredEffect(y))) return false;
+				if (x.equips.every(y => !this.HasFilteredEffect(y, (b) => isBuffEffectValid(b, StoreModule.equipEffectFilterListFlatten))))
+					return false;
 
 				// 획득처
 				if (this.Display.Source.EndlessWar && sources.some(y => y.IsEndlessWar)) return true;
@@ -431,81 +431,6 @@ export default class Equips extends Vue {
 			}));
 	}
 
-	private isPositiveBuffEffectValue (v: BuffEffectValue) {
-		if (typeof v.base === "number") return v.base >= 0;
-		return !v.base.startsWith("-");
-	}
-
-	private isPositiveBuffEffect (stat: BuffEffect): boolean {
-		// 증감 값인 경우
-		const p = this.isPositiveBuffEffectValue;
-
-		if ("attack" in stat) return p(stat.attack);
-		if ("defense" in stat) return p(stat.defense);
-		if ("hp" in stat) return p(stat.hp);
-		if ("accuracy" in stat) return p(stat.accuracy);
-		if ("critical" in stat) return p(stat.critical);
-		if ("evade" in stat) return p(stat.evade);
-		if ("turnSpeed" in stat) return p(stat.turnSpeed);
-		if ("ap" in stat) return p(stat.ap);
-
-		if ("resist" in stat) return p(stat.resist.value);
-		if ("damage_multiply" in stat) return p(stat.damage_multiply.value);
-		if ("damage_by_hp" in stat) return p(stat.damage_by_hp.damage);
-		if ("damage_add" in stat) {
-			if ("elem" in stat.damage_add)
-				return p(stat.damage_add.damage);
-			else
-				return p(stat.damage_add);
-		}
-		if ("range" in stat) return p(stat.range);
-		if ("penetration" in stat) return p(stat.penetration);
-		if ("invokeChance" in stat) return p(stat.invokeChance);
-		if ("exp" in stat) return p(stat.exp);
-
-		return true;
-	}
-
-	private isBuffEffectValid (stat: BuffEffect): boolean {
-		const found = StoreModule.equipEffectFilterListFlatten
-			.find(z =>
-				Array.isArray(z)
-					? z[0].type.includes(stat.type)
-					: z.type.includes(stat.type),
-			);
-		if (!found) return false;
-
-		// 증감 값인 경우
-		const p = this.isPositiveBuffEffectValue;
-		if (Array.isArray(found)) {
-			if ("attack" in stat) return p(stat.attack) ? found[0].selected : found[1].selected;
-			if ("defense" in stat) return p(stat.defense) ? found[0].selected : found[1].selected;
-			if ("hp" in stat) return p(stat.hp) ? found[0].selected : found[1].selected;
-			if ("accuracy" in stat) return p(stat.accuracy) ? found[0].selected : found[1].selected;
-			if ("critical" in stat) return p(stat.critical) ? found[0].selected : found[1].selected;
-			if ("evade" in stat) return p(stat.evade) ? found[0].selected : found[1].selected;
-			if ("turnSpeed" in stat) return p(stat.turnSpeed) ? found[0].selected : found[1].selected;
-			if ("ap" in stat) return p(stat.ap) ? found[0].selected : found[1].selected;
-
-			if ("resist" in stat) return p(stat.resist.value) ? found[0].selected : found[1].selected;
-			if ("damage_multiply" in stat) return p(stat.damage_multiply.value) ? found[0].selected : found[1].selected;
-			if ("damage_by_hp" in stat) return p(stat.damage_by_hp.damage) ? found[0].selected : found[1].selected;
-			if ("damage_add" in stat) {
-				if ("elem" in stat.damage_add)
-					return p(stat.damage_add.damage) ? found[0].selected : found[1].selected;
-				else
-					return p(stat.damage_add) ? found[0].selected : found[1].selected;
-			}
-			if ("range" in stat) return p(stat.range) ? found[0].selected : found[1].selected;
-			if ("penetration" in stat) return p(stat.penetration) ? found[0].selected : found[1].selected;
-			if ("invokeChance" in stat) return p(stat.invokeChance) ? found[0].selected : found[1].selected;
-			if ("exp" in stat) return p(stat.exp) ? found[0].selected : found[1].selected;
-
-			return false;
-		} else
-			return found.selected;
-	}
-
 	private get EquipEffects () {
 		const ret: EffectFilterListType = [];
 
@@ -518,18 +443,18 @@ export default class Equips extends Vue {
 					// 증가치
 					let f = EquipData.some(eq => eq.stats.some(row => row.some(es => {
 						if ("type" in es)
-							return x[0].type.includes(es.type) && this.isPositiveBuffEffect(es);
+							return x[0].type.includes(es.type) && isPositiveBuffEffect(es);
 						else
-							return es.buffs.some(b => x[0].type.includes(b.value.type) && this.isPositiveBuffEffect(b.value));
+							return es.buffs.some(b => x[0].type.includes(b.value.type) && isPositiveBuffEffect(b.value));
 					})));
 					if (f) part.push(x[0]);
 
 					// 감소치
 					f = EquipData.some(eq => eq.stats.some(row => row.some(es => {
 						if ("type" in es)
-							return x[1].type.includes(es.type) && !this.isPositiveBuffEffect(es);
+							return x[1].type.includes(es.type) && !isPositiveBuffEffect(es);
 						else
-							return es.buffs.some(b => x[1].type.includes(b.value.type) && !this.isPositiveBuffEffect(b.value));
+							return es.buffs.some(b => x[1].type.includes(b.value.type) && !isPositiveBuffEffect(b.value));
 					})));
 					if (f) part.push(x[1]);
 
@@ -549,16 +474,16 @@ export default class Equips extends Vue {
 		return ret;
 	}
 
-	private HasFilteredEffect (eq: Equip) {
+	private HasFilteredEffect (eq: Equip, validator: (stat: BuffEffect) => boolean) {
 		const isNumeric = (data: string) => {
 			return /^[0-9]+\.?[0-9]*%?$/.test(data);
 		};
 
 		return eq.stats.some(x => x.some(stat => {
 			if ("type" in stat)
-				return this.isBuffEffectValid(stat);
+				return validator(stat);
 			else
-				return stat.buffs.some(y => this.isBuffEffectValid(y.value));
+				return stat.buffs.some(y => validator(y.value));
 		}));
 	}
 

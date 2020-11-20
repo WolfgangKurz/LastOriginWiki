@@ -6,15 +6,6 @@
 			</b-btn-group>
 		</div>
 
-		<b-row class="mb-4 mx-4">
-			<b-col>
-				<b-input v-model="SearchText" placeholder="전투원 검색" />
-			</b-col>
-			<b-col cols="auto">
-				<b-button variant="danger" @click="SearchText = ''">지우기</b-button>
-			</b-col>
-		</b-row>
-
 		<b-container v-for="(list, group) in GroupList" :key="`unit-group-${group}`" class="unit-group mb-3">
 			<b-row class="text-center">
 				<b-col class="bg-dark text-white" cols="12" lg="2" md="3">
@@ -39,12 +30,15 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, PropSync, Emit } from "vue-property-decorator";
 
-import StoreModule, { UnitListOrder } from "@/libs/Store";
+import StoreModule, { EffectFilterTargetType, UnitDisplayFilters, UnitListOrder } from "@/libs/Store";
 
 import UnitCard from "./UnitCard.vue";
 
 import UnitData, { Unit } from "@/libs/DB/Unit";
+import SkillData, { SkillSlotKey } from "@/libs/DB/Skill";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { BuffEffect } from "@/libs/Buffs/BuffEffect";
+import { isBuffEffectValid } from "@/libs/Buffs/Helper";
 
 @Component({
 	components: {
@@ -68,6 +62,14 @@ export default class UnitsGroup extends Vue {
 	private set Merge (value: boolean) {
 		StoreModule.setUnitGroupMerge(value);
 	}
+
+	private get Filters () {
+		return StoreModule.UnitDisplayFilter;
+	}
+
+	private set Filters (value: UnitDisplayFilters) {
+		StoreModule.setUnitDisplayFilter(value);
+	}
 	// Vuex -----
 
 	private get AssetsRoot () {
@@ -87,10 +89,37 @@ export default class UnitsGroup extends Vue {
 		return r;
 	}
 
+	private HasFilteredEffect (unit: Unit, validator: (stat: BuffEffect) => boolean) {
+		const isNumeric = (data: string) => {
+			return /^[0-9]+\.?[0-9]*%?$/.test(data);
+		};
+		const _ = <T extends unknown> (__: T | undefined) => __ as T;
+
+		const skills = SkillData[unit.uid];
+
+		return Object.keys(skills).some(ss => {
+			const __ = _(skills[ss as SkillSlotKey]);
+			const target: EffectFilterTargetType = __.target === "enemy"
+				? "enemy"
+				: __.bound === "self"
+					? "self"
+					: "team";
+
+			if (!this.Filters.EffectTarget.includes(target)) return false;
+			return __.buffs.some(row => row.some(es => {
+				if ("type" in es)
+					return validator(es);
+				else
+					return es.buffs.some(y => validator(y.value));
+			}));
+		});
+	}
+
 	private get GroupList () {
 		let g: _.Dictionary<Unit[]>;
 		const list = _(UnitData)
-			.filter(x => x.name.includes(this.SearchText));
+			.filter(x => x.name.includes(this.SearchText))
+			.filter(x => this.HasFilteredEffect(x, (b) => isBuffEffectValid(b, StoreModule.unitEffectFilterListFlatten)));
 
 		if (this.Merge)
 			g = list.groupBy(x => x.shortgroup).toJSON();

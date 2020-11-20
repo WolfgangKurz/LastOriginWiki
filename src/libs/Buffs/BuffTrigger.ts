@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import { BUFFEFFECT_TYPE } from "@/libs/Buffs/BuffEffect";
-import { UNIT_POSITION } from "@/libs/Types/Enums";
+import { BUFF_ATTR_TYPE, UNIT_POSITION } from "@/libs/Types/Enums";
 
 /** 발동 조건 */
 export enum BUFFEFFECT_TRIGGER_TYPE {
@@ -178,34 +178,39 @@ interface BuffTrigger_On_BuffEffectType {
 	on: {
 		func: BuffTrigger_On_Function;
 		select: BUFFEFFECT_TYPE[];
-	}
+		attr: BUFF_ATTR_TYPE;
+	};
 }
 interface BuffTrigger_On_BuffKey {
 	on: {
 		func: BuffTrigger_On_Function;
 		select: string[];
-	}
+		attr: BUFF_ATTR_TYPE;
+	};
 }
 interface BuffTrigger_On_BuffStack {
 	on: {
 		target: "self" | "target";
 		select: string[];
 		stack: number;
-	}
+		attr: BUFF_ATTR_TYPE;
+	};
 }
 interface BuffTrigger_On_BuffTypeExists {
 	on: {
 		target: "self" | "target";
 		func: BuffTrigger_On_Function;
 		select: BUFFEFFECT_TYPE[];
-	}
+		attr: BUFF_ATTR_TYPE;
+	};
 }
 interface BuffTrigger_On_BuffExists {
 	on: {
 		target: "self" | "target";
 		func: BuffTrigger_On_Function;
 		select: string[];
-	}
+		attr: BUFF_ATTR_TYPE;
+	};
 }
 
 /** 대상이 유닛 목록 중 하나일 때 */

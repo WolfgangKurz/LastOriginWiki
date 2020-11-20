@@ -477,7 +477,9 @@ export default class UnitView extends Vue {
 	}
 
 	private get LinkBonus () {
-		return this.unit.linkBonus.map(x => GetLinkBonus(x, this.linkCount));
+		return this.unit.linkBonus
+			.filter(x => x)
+			.map(x => GetLinkBonus(x, this.linkCount));
 	}
 
 	private get FullLinkBonus () {

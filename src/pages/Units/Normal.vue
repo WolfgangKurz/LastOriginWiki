@@ -7,36 +7,12 @@
 		</b-btn-group>
 
 		<b-btn-group class="mx-2 mb-2">
-			<b-button
-				variant="outline-secondary"
-				:pressed="DictIntp"
-				:disabled="Order !== 'dict'"
-				@click="DictIntp = !DictIntp"
-			>빈 도감번호 채우기</b-button>
-			<b-button
-				variant="outline-secondary"
-				:pressed="ShortName"
-				:disabled="Order === 'dict'"
-				@click="ShortName = !ShortName"
-			>짧은 이름으로 정렬</b-button>
+			<b-button variant="outline-secondary" :pressed="ShortName" :disabled="Order === 'dict'" @click="ShortName = !ShortName"
+				>짧은 이름으로 정렬</b-button
+			>
 		</b-btn-group>
 
-		<b-row class="mb-4 mx-4">
-			<b-col>
-				<b-input v-model="SearchText" placeholder="전투원 검색" />
-			</b-col>
-			<b-col cols="auto">
-				<b-button variant="danger" @click="SearchText = ''">지우기</b-button>
-			</b-col>
-		</b-row>
-
-		<b-row
-			cols="2"
-			cols-lg="5"
-			:cols-xl="DictIntp ? 5 : 6"
-			:cols-md="DictIntp ? 5 : 4"
-			:cols-sm="DictIntp ? 2 : 3"
-		>
+		<b-row cols="2" cols-lg="5" :cols-xl="6" :cols-md="4" :cols-sm="3">
 			<b-col v-for="unit in UnitList" :key="`unit-normal-unit-${unit.id}`" class="mt-3">
 				<unit-card :unit="unit" :class="{ invalid: !unit.group }" @click="modalUnit(unit)" />
 			</b-col>
@@ -49,11 +25,15 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, PropSync, Emit } from "vue-property-decorator";
 
-import StoreModule, { UnitListOrder } from "@/libs/Store";
+import StoreModule, { UnitListOrder, UnitDisplayFilters, EffectFilterTargetType } from "@/libs/Store";
 
 import UnitData, { Unit } from "@/libs/DB/Unit";
+import SkillData, { SkillSlotKey } from "@/libs/DB/Skill";
 
 import UnitCard from "./UnitCard.vue";
+import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/libs/Types/Enums";
+import { BuffEffect } from "@/libs/Buffs/BuffEffect";
+import { isBuffEffectValid } from "@/libs/Buffs/Helper";
 
 interface UnitDict {
 	[key: number]: Unit;
@@ -82,14 +62,6 @@ export default class UnitsNormal extends Vue {
 		StoreModule.setUnitListOrder(value);
 	}
 
-	private get DictIntp () {
-		return StoreModule.UnitListDictionaryInterpolation;
-	}
-
-	private set DictIntp (value: boolean) {
-		StoreModule.setUnitListDictionaryInterpolation(value);
-	}
-
 	private get ShortName () {
 		return StoreModule.UnitListSortAsShortName;
 	}
@@ -97,63 +69,101 @@ export default class UnitsNormal extends Vue {
 	private set ShortName (value: boolean) {
 		StoreModule.setUnitListSortAsShortName(value);
 	}
+
+	private get Filters () {
+		return StoreModule.UnitDisplayFilter;
+	}
+
+	private set Filters (value: UnitDisplayFilters) {
+		StoreModule.setUnitDisplayFilter(value);
+	}
 	// Vuex -----
 
-	private get UnitList (): Unit[] {
-		if (this.DictIntp) {
-			return new Array(Object.values(UnitData).reduce((x, y) => Math.max(x, y.id), 0))
-				.fill(0)
-				.map((_, x) => x + 1)
-				.map<Unit>(x => {
-					return (x in UnitData)
-						? UnitData[x]
-						: {
-							...Unit.Empty,
-							id: x,
-						};
-				})
-				.filter(x => x.name.includes(this.SearchText));
-		} else {
-			const list = Object.values(UnitData)
-				.map(x => {
-					return {
-						...x,
-						id000: ("00" + x.id).substr(-3),
-					};
-				})
-				.filter(x => x.name.includes(this.SearchText));
+	private HasFilteredEffect (unit: Unit, validator: (stat: BuffEffect) => boolean) {
+		const isNumeric = (data: string) => {
+			return /^[0-9]+\.?[0-9]*%?$/.test(data);
+		};
+		const _ = <T extends unknown> (__: T | undefined) => __ as T;
 
-			if (this.Order === "name") {
-				if (this.ShortName)
-					list.sort((x, y) => x.shortname < y.shortname ? -1 : 1);
+		const skills = SkillData[unit.uid];
+
+		return Object.keys(skills).some(ss => {
+			const __ = _(skills[ss as SkillSlotKey]);
+			const target: EffectFilterTargetType = __.target === "enemy"
+				? "enemy"
+				: __.bound === "self"
+					? "self"
+					: "team";
+
+			if (!this.Filters.EffectTarget.includes(target)) return false;
+			return __.buffs.some(row => row.some(es => {
+				if ("type" in es)
+					return validator(es);
 				else
-					list.sort((x, y) => x.name < y.name ? -1 : 1);
-			} else if (this.Order === "rarity") {
-				if (this.ShortName) {
-					list.sort((x, y) =>
-						x.rarity < y.rarity
-							? -1
-							: x.rarity > y.rarity
-								? 1
-								: x.shortname < y.shortname
-									? -1
-									: 1,
-					);
-				} else {
-					list.sort((x, y) =>
-						x.rarity < y.rarity
-							? -1
-							: x.rarity > y.rarity
-								? 1
-								: x.name < y.name
-									? -1
-									: 1,
-					);
-				}
-			}
+					return es.buffs.some(y => validator(y.value));
+			}));
+		});
+	}
 
-			return list;
+	private get UnitList (): Unit[] {
+		const rarity = [
+			this.Filters.Rarity[ACTOR_GRADE.B] ? ACTOR_GRADE.B : -1,
+			this.Filters.Rarity[ACTOR_GRADE.A] ? ACTOR_GRADE.A : -1,
+			this.Filters.Rarity[ACTOR_GRADE.S] ? ACTOR_GRADE.S : -1,
+			this.Filters.Rarity[ACTOR_GRADE.SS] ? ACTOR_GRADE.SS : -1,
+		].filter(x => x > -1);
+		const type = [
+			this.Filters.Type[ACTOR_CLASS.LIGHT] ? ACTOR_CLASS.LIGHT : -1,
+			this.Filters.Type[ACTOR_CLASS.AIR] ? ACTOR_CLASS.AIR : -1,
+			this.Filters.Type[ACTOR_CLASS.HEAVY] ? ACTOR_CLASS.HEAVY : -1,
+		].filter(x => x > -1);
+		const role = [
+			this.Filters.Role[ROLE_TYPE.ATTACKER] ? ROLE_TYPE.ATTACKER : -1,
+			this.Filters.Role[ROLE_TYPE.DEFENDER] ? ROLE_TYPE.DEFENDER : -1,
+			this.Filters.Role[ROLE_TYPE.SUPPORTER] ? ROLE_TYPE.SUPPORTER : -1,
+		].filter(x => x > -1);
+		const body = [
+			this.Filters.Body[ACTOR_BODY_TYPE.BIOROID] ? ACTOR_BODY_TYPE.BIOROID : -1,
+			this.Filters.Body[ACTOR_BODY_TYPE.AGS] ? ACTOR_BODY_TYPE.AGS : -1,
+		].filter(x => x > -1);
+
+		const list = Object.values(UnitData)
+			.map(x => {
+				return {
+					...x,
+					id000: ("00" + x.id).substr(-3),
+				};
+			})
+			.filter(x => x.name.includes(this.SearchText) &&
+				rarity.includes(x.rarity) &&
+				type.includes(x.type) &&
+				role.includes(x.role) &&
+				body.includes(x.body) &&
+				this.HasFilteredEffect(x, (b) => isBuffEffectValid(b, StoreModule.unitEffectFilterListFlatten)),
+			);
+
+		if (this.Order === "name") {
+			if (this.ShortName)
+				list.sort((x, y) => x.shortname < y.shortname ? -1 : 1);
+			else
+				list.sort((x, y) => x.name < y.name ? -1 : 1);
+		} else if (this.Order === "rarity") {
+			if (this.ShortName) {
+				list.sort((x, y) =>
+					x.rarity !== y.rarity
+						? y.rarity - x.rarity
+						: x.shortname < y.shortname ? -1 : 1,
+				);
+			} else {
+				list.sort((x, y) =>
+					x.rarity !== y.rarity
+						? y.rarity - x.rarity
+						: x.name < y.name ? -1 : 1,
+				);
+			}
 		}
+
+		return list;
 	}
 
 	private modalUnit (unit: Unit) {

@@ -1,8 +1,35 @@
 <template>
 	<div>
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20201121>2020-11-21</b-card-header>
+			<b-collapse id="changelog20201120" visible>
+				<b-card-body>
+					<div>
+						<b-badge variant="warning">불굴의 마리</b-badge> 및 <b-badge variant="warning">A-87 밴시</b-badge>의 서약 보이스가
+						추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">LRL</b-badge>의 <b-badge variant="info">교대 복귀자 보급품 1호</b-badge>스킨 정보가
+						추가되었습니다.<br />
+						로비 애니메이션이 포함된 스킨이라 일러스트는 준비하지 못했습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">A-87 밴시</b-badge>의 <b-badge variant="info">한여름의 냥냥어택</b-badge>스킨의 가격 정보를
+						갱신했습니다.
+					</div>
+					<div>2020-11-21 03:40:00 까지의 사용자 참여로 추가된 대사들이 반영되었습니다.</div>
+					<div>전투원 스킬 효과 필터가 추가되었습니다.</div>
+					<div>
+						전투원 스킬 정보에 <b-badge variant="info">버프 보기</b-badge> 옵션이 추가되었습니다.<br />
+						해당 옵션을 사용하면 인게임에서 사용되는 버프의 정보를 확인할 수 있습니다.<br />
+						효과의 조건 등이 올바르지 않게 표시되는 경우, 개발자 이메일로 알려주시기 바랍니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20201115>2020-11-15</b-card-header>
-			<b-collapse id="changelog20201115" visible>
+			<b-collapse id="changelog20201115">
 				<b-card-body>
 					<div>2020-11-15 03:00:00 까지의 사용자 참여로 추가된 대사들이 반영되었습니다.</div>
 				</b-card-body>
@@ -27,7 +54,9 @@
 					<div><b-badge variant="warning">골타리온 XIII세</b-badge>의 링크 보너스 정보가 잘못 표시되던 문제를 수정했습니다.</div>
 					<div><b-badge variant="warning">골타리온 XIII세</b-badge>의 일러스트레이터 정보가 잘못 기입되어있던 점을 수정했습니다.</div>
 					<div><b-badge variant="warning">전투원 스테이터스</b-badge>의 수치가 비정상적으로 표시되던 문제를 수정했습니다.</div>
-					<div><b-badge variant="warning">전투원 스테이터스</b-badge>에서 장비를 해제하면 장비 유형이 칩으로 변경되던 문제를 수정했습니다.</div>
+					<div>
+						<b-badge variant="warning">전투원 스테이터스</b-badge>에서 장비를 해제하면 장비 유형이 칩으로 변경되던 문제를 수정했습니다.
+					</div>
 				</b-card-body>
 			</b-collapse>
 		</b-card>
