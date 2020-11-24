@@ -1,6 +1,16 @@
 <template>
 	<div>
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20201125>2020-11-25</b-card-header>
+			<b-collapse id="changelog20201124" visible>
+				<b-card-body>
+					<div>
+						스킬의 적용 영역이 상하 반전으로 적용되던 문제를 수정했습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20201124>2020-11-24</b-card-header>
 			<b-collapse id="changelog20201124" visible>
 				<b-card-body>

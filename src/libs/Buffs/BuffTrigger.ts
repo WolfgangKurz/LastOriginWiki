@@ -218,11 +218,14 @@ interface BuffTrigger_Target {
 	target: string[];
 }
 
-type BuffTrigger_UnitCount_Types = "enemy" | "squad" | "all" | "bioroid" | "ags";
+type BuffTrigger_UnitCount_Types = "enemy" | "squad" | "all" |
+	"bioroid" | "ags" |
+	"light" | "air" | "heavy" |
+	"attacker" | "defender" | "supporter";
 interface BuffTrigger_UnitCount {
 	unitCount: {
 		filter: BuffTrigger_UnitCount_Types | Array<BuffTrigger_UnitCount_Types>;
-		count: number;
+		count: number | number[];
 	};
 }
 
