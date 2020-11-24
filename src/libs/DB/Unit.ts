@@ -39,6 +39,12 @@ interface RawUnit {
 	groupkey: string;
 
 	craftable: false | number;
+	favor: {
+		present: number;
+		clear: number;
+		death: number;
+		assistant: number;
+	};
 	marry: boolean;
 
 	linkBonus: LinkBonusType[];
@@ -66,6 +72,12 @@ export interface Unit {
 	groupkey: string;
 
 	craftable: false | number;
+	favor: {
+		present: number;
+		clear: number;
+		death: number;
+		assistant: number;
+	};
 	marry: boolean;
 
 	linkBonus: LinkBonusType[];
@@ -94,6 +106,12 @@ export namespace Unit {
 		groupkey: "",
 
 		craftable: false,
+		favor: {
+			present: 0,
+			clear: 0,
+			death: 0,
+			assistant: 0,
+		},
 		marry: false,
 
 		linkBonus: ["HP_20", "ATK_20", "ACC_5", "Exp_5"],
@@ -127,6 +145,7 @@ function Compile (): Unit[] {
 
 		promotions: x.promotions,
 		craftable: x.craftable,
+		favor: x.favor,
 		marry: x.marry,
 
 		linkBonus: x.linkBonus,

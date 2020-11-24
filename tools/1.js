@@ -23,7 +23,7 @@ const req = async (url) => new Promise((resolve, reject) => {
 });
 
 (async () => {
-	for (let area = 1; area <= 7; area++) {
+	for (let area = 1; area <= 8; area++) {
 		const url = "https://lastoriginmap.github.io/data/data-area" + area + ".min.json";
 
 		const json = await req(url);

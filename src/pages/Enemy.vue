@@ -93,7 +93,7 @@ export default class EnemyPage extends Vue {
 		Object.keys(MapData).forEach(x =>
 			Object.keys(MapData[x]).forEach(y =>
 				MapData[x][y].list.forEach(z =>
-					z.enemy.forEach(w => w.filter(e => e).forEach(e => e && (ret[e.id] = null))),
+					z.enemy && z.enemy.forEach(w => w.filter(e => e).forEach(e => e && (ret[e.id] = null))),
 				),
 			),
 		);

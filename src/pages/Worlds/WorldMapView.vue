@@ -382,7 +382,7 @@ export default class WorldMapView extends Vue {
 
 	private get Waves () {
 		if (!this.selected) return [];
-		return this.selected.enemy;
+		return this.selected.enemy || [];
 	}
 
 	private get CurrentWave (): Array<WaveEnemyInfo | null> {

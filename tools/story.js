@@ -25,7 +25,7 @@ function process (auth) {
 					loc,
 					spec: (specs.includes("OP") ? 1 : 0) | (specs.includes("ED") ? 2 : 0),
 					title,
-					face: parseInt(face, 10),
+					face,
 					bg,
 					desc,
 					filename,

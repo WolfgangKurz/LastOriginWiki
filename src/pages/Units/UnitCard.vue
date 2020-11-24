@@ -35,7 +35,7 @@
 		<a v-if="!noLink" href="#" class="stretched-link unit-stretched" @click.prevent="OnClick()" />
 	</b-card>
 	<div v-else class="unit-card text-left clearfix" @click.prevent="!noLink && OnClick()">
-		<unit-face :id="unit.id" class="unit-face float-left" />
+		<unit-face :uid="unit.uid" class="unit-face float-left" />
 		<div class="unit-name">{{unit.name}}</div>
 		<div class="unit-flag">
 			<b-badge v-if="unit.body === 1" variant="info" class="mr-1">AGS</b-badge>
@@ -100,7 +100,7 @@ export default class UnitCard extends Vue {
 	}
 
 	private get UnitFaceUrl () {
-		return UnitFace.GetURL(!this.unit.group, this.unit.id);
+		return UnitFace.GetURL(this.unit.uid);
 	}
 
 	private get RarityName () {

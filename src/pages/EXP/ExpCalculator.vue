@@ -84,7 +84,7 @@
 							<b-col cols="12" md="auto" class="mb-2">
 								<b-checkbox v-model="skills.alexandra.use">
 									<span>
-										<unit-face :id="11" size="40" />
+										<unit-face uid="3P_Alexandra" size="40" />
 										<strong class="ml-2 py-1">공진의 알렉산드라 [모범 교사]</strong>
 									</span>
 								</b-checkbox>
@@ -105,7 +105,7 @@
 							<b-col cols="12" md="auto" class="mb-2">
 								<b-checkbox v-model="skills.tommywalker.use">
 									<span>
-										<unit-face :id="107" size="40" />
+										<unit-face uid="PECS_TommyWalker" size="40" />
 										<strong class="ml-2 py-1">토미 워커 [잔해 재활용]</strong>
 									</span>
 								</b-checkbox>

@@ -1,12 +1,12 @@
 const fs = require("fs");
 const path = require("path");
-const { google } = require("googleapis");
+const { google, plus_v1 } = require("googleapis");
 
 function process (auth) {
 	const sheets = google.sheets({ version: "v4", auth });
 	sheets.spreadsheets.values.get({
 		spreadsheetId: "1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4",
-		range: "UnitTable!A3:AC",
+		range: "UnitTable!A3:AG",
 	}, (err, res) => {
 		if (err) return console.log("The API returned an error: " + err);
 
@@ -121,7 +121,9 @@ function process (auth) {
 					name, shortname, uid,
 					rarity, type, role, body,
 					group, shortgroup, groupkey,
-					pro, craftable, marry,
+					pro, craftable,
+					favor1, favor2, favor3, favor4,
+					marry,
 					lb1, lb2, lb3, lb4,
 					fl1, fl2, fl3, fl4, fl5,
 					equip1, equip2, equip3, equip4,
@@ -130,6 +132,12 @@ function process (auth) {
 
 				const lb = [lb1, lb2, lb3, lb4];
 				const fl = [fl1, fl2, fl3, fl4, fl5];
+				const favor = {
+					present: parseInt(favor1, 10),
+					clear: parseInt(favor2, 10),
+					death: parseInt(favor3, 10),
+					assistant: parseInt(favor4, 10),
+				};
 
 				const x = {
 					id: parseInt(id, 10),
@@ -148,6 +156,7 @@ function process (auth) {
 					groupkey,
 
 					craftable: !craftable ? false : parseInt(craftable, 10),
+					favor,
 					marry: !!marry,
 
 					linkBonus: lb.map(lb => linkBonusTable[lb]),

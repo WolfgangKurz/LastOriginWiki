@@ -1,6 +1,6 @@
 <template>
 	<div class="link-icon" @click="linkedSync = !linkedSync">
-		<unit-face v-if="valueSync" :id="id" />
+		<unit-face v-if="valueSync" :uid="uid" />
 		<div v-if="valueSync >0 && valueSync < 1" class="link-partial">{{Percent}}%</div>
 	</div>
 </template>
@@ -25,10 +25,10 @@ export default class StatIcon extends Vue {
 	private valueSync!: number;
 
 	@Prop({
-		type: Number,
+		type: String,
 		required: true,
 	})
-	private id!: number;
+	private uid!: string;
 
 	private get Percent () {
 		return Math.floor(this.valueSync * 100);

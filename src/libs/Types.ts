@@ -158,7 +158,7 @@ export interface StoryRaw {
 	loc: string;
 	spec: number;
 	title: string;
-	face: number;
+	face: string;
 	bg: string;
 	desc: string;
 	filename: string;

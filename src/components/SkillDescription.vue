@@ -186,7 +186,7 @@ export default class SkillDescription extends Vue {
 								<unit-card unit={unit} no-link />
 							</b-tooltip>,
 						};
-						ret.preload.push(<unit-face id={unit.id} />);
+						ret.preload.push(<unit-face uid={unit.uid} />);
 					} else if (p[0] === "$eq") {
 						const type = {
 							[ITEM_TYPE.CHIP]: "Chip",

@@ -6,7 +6,7 @@ function process (auth) {
 	const sheets = google.sheets({ version: "v4", auth });
 	sheets.spreadsheets.values.get({
 		spreadsheetId: "1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4",
-		range: "Consumable!A2:D",
+		range: "Consumable!A2:E",
 	}, (err, res) => {
 		if (err) return console.log("The API returned an error: " + err);
 
@@ -16,12 +16,13 @@ function process (auth) {
 			rows.map((row) => {
 				if (!row[0]) return;
 
-				const [key, name, icon, desc] = row;
+				const [key, name, icon, desc, func] = row;
 				ret.push({
 					key,
 					name,
 					icon,
 					desc,
+					func,
 				});
 			});
 

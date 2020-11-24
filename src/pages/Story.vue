@@ -47,7 +47,7 @@
 				<div class="story-banner">
 					<img class="story-banner-image" :src="`${AssetsRoot}/story/Banner_${story.bg}.png`" />
 					<div class="story-info">
-						<unit-face :id="story.face" />
+						<unit-face :uid="story.face" />
 						<div class="story-text">
 							<div class="story-loc">{{story.map}}-{{story.loc}}</div>
 							<div class="story-name">{{story.title}}</div>

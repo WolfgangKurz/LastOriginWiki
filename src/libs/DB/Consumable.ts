@@ -5,5 +5,6 @@ export interface Consumable {
 	name: string;
 	icon: string;
 	desc: string;
+	func: string;
 }
 export default Data as Consumable[];

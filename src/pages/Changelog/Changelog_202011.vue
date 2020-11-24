@@ -1,8 +1,43 @@
 <template>
 	<div>
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20201124>2020-11-24</b-card-header>
+			<b-collapse id="changelog20201124" visible>
+				<b-card-body>
+					<div>
+						신규 전투원 <b-badge variant="warning">해체자 아자즈</b-badge> 및 <b-badge variant="warning">레모네이드 알파</b-badge>의
+						정보가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">AT72 라인리터</b-badge>의 1번 액티브 <b-badge variant="info">기사의 응시</b-badge> 및 2번 액티브
+						<b-badge variant="info">용기병의 화창</b-badge>의 공격력 계수가 수정되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">엘븐 포레스트메이커</b-badge>의 스킨 <b-badge variant="info">화이트 드레스</b-badge>스킨이
+						추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">다크엘븐 포레스트레인져</b-badge>의 스킨 <b-badge variant="info">초콜릿 드레스</b-badge>스킨이
+						추가되었습니다.
+					</div>
+					<div>
+						전투원 정보에 각 상황별 <b-badge variant="danger">♥ 호감도</b-badge> 증감치가 추가되었습니다.<br />
+						선물의 호감도 증가치는 배수로 표시되며, 각 선물의 기본 호감도 증가치에 곱해져서 증가됩니다.<br />
+						ex) <b-badge variant="danger">수제케이크 ♥ 기본 호감도 +5.00</b-badge> x <b-badge variant="info">LRL 배수 2.00배</b-badge> =
+						<b-badge variant="success">10.00 증가</b-badge>
+					</div>
+					<div>신규 적 정보가 추가되었습니다.</div>
+					<div>8지역 세계 정보가 추가되었습니다.</div>
+					<div>
+						소모품 정보 팝업에서 <b-badge variant="danger">♥ 호감도</b-badge>, <b-badge variant="danger">♥ 호감도 상한</b-badge>,
+						<b-badge variant="warning">전투원 경험치</b-badge>, <b-badge variant="success">스킬 경험치</b-badge> 표시가 추가되었습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20201121>2020-11-21</b-card-header>
-			<b-collapse id="changelog20201120" visible>
+			<b-collapse id="changelog20201120">
 				<b-card-body>
 					<div>
 						<b-badge variant="warning">불굴의 마리</b-badge> 및 <b-badge variant="warning">A-87 밴시</b-badge>의 서약 보이스가

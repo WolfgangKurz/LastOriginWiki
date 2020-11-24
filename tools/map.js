@@ -39,16 +39,22 @@ function process (auth) {
 
 				const data = JSON.parse(rawdata);
 				data.forEach(x => {
-					const area_ = fs.readFileSync(
-						path.join(
-							__dirname,
-							"area",
-							id === "Story"
-								? map + ".json"
-								: `${id.toLowerCase()}-${map}.json`,
-						),
-						{ encoding: "utf-8" },
-					);
+					let area_;
+
+					try {
+						area_ = fs.readFileSync(
+							path.join(
+								__dirname,
+								"area",
+								id === "Story"
+									? map + ".json"
+									: `${id.toLowerCase()}-${map}.json`,
+							),
+							{ encoding: "utf-8" },
+						);
+					} catch {
+						return;
+					}
 					const area = JSON.parse(area_.toString());
 					const node = area.stage.find(y => {
 						let v = x.text.replace(/Ev([0-9]*)-(.+)/, "$1-$2");

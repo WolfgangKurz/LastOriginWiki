@@ -12,7 +12,7 @@
 			<b-row>
 				<b-col cols="12" md="6">
 					<div class="mr-2 float-left">
-						<unit-face :id="unit.id" size="52" />
+						<unit-face :uid="unit.uid" size="52" />
 					</div>
 					<strong class="pt-1">
 						{{ unit.name }}
