@@ -7,6 +7,7 @@ import EquipIcon from "@/components/EquipIcon.vue";
 
 import { Consumable } from "@/libs/DB/Consumable";
 import { _e } from "@/libs/Buffs/BuffStatus";
+import { FormatNumber } from "@/libs/Functions";
 
 @Component({
 	components: {
@@ -158,6 +159,44 @@ export default class DropItem extends Vue {
 		return parseText(this.item.desc);
 	}
 
+	private get FunctionBadge () {
+		if (["TestFunction_04", "GiveFavor_02", "GiveFavor_03"].includes(this.item.func)) { // 호감도
+			const favorTable: Record<string, number> = {
+				TestFunction_04: 1,
+				GiveFavor_02: 2.5,
+				GiveFavor_03: 5,
+			};
+			return <b-badge variant="danger">♥ 기본 호감도 +{ favorTable[this.item.func].toFixed(2) }</b-badge>;
+		} else if (["MaxFavor_Expand_Lv1"].includes(this.item.func)) { // 호감도 상한
+			const favorLimitTable: Record<string, number> = {
+				MaxFavor_Expand_Lv1: 10,
+			};
+			return <b-badge variant="danger">♥ 호감도 상한 +{ favorLimitTable[this.item.func].toFixed(2) }</b-badge>;
+		} else if (this.item.func === "Consumable_CommanderDiary") { // 사령관의 일지
+			return [
+				<b-badge variant="warning">전투원 경험치 +15,000,000</b-badge>,
+				<b-badge variant="success" class="mx-1">스킬 경험치 +284,000</b-badge>,
+				<b-badge variant="danger">♥ 호감도 +200.00</b-badge>,
+			];
+		} else if (["TacticRecord_01", "TacticRecord_02", "TacticRecord_03"].includes(this.item.func)) { // 경험치 교본
+			const expTable: Record<string, number> = {
+				TacticRecord_01: 3000,
+				TacticRecord_02: 100000,
+				TacticRecord_03: 1000000,
+			};
+			return <b-badge variant="warning">전투원 경험치 +{ FormatNumber(expTable[this.item.func]) }</b-badge>;
+		} else if (["TrainingManual_01", "TrainingManual_02", "TrainingManual_03"].includes(this.item.func)) { // 스킬 교본
+			const expTable: Record<string, number> = {
+				TrainingManual_01: 1000,
+				TrainingManual_02: 10000,
+				TrainingManual_03: 100000,
+			};
+			return <b-badge variant="success">스킬 경험치 +{ FormatNumber(expTable[this.item.func]) }</b-badge>;
+		}
+
+		return null;
+	}
+
 	private render () {
 		return <div class="drop-item p-2 text-dark">
 			<b-card bg-variant={ this.variant } text-variant={ this.text }>
@@ -200,7 +239,10 @@ export default class DropItem extends Vue {
 					<h5 class="mt-1">{ this.item.name }</h5>
 				</div>
 				<template slot="modal-footer">
-					<div class="text-left desc-text p-2">{ this.ParsedDesc }</div>
+					<div class="text-left desc-text p-2">
+						{ this.ParsedDesc }
+						{ this.FunctionBadge ? <div>{ this.FunctionBadge }</div> : _e() }
+					</div>
 				</template>
 			</b-modal>
 		</div>;

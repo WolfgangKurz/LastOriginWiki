@@ -37,7 +37,7 @@ export interface MapNodeEntity {
 	reward_am: MapReward[];
 	/* eslint-enable camelcase */
 
-	enemy: MapWave[];
+	enemy?: MapWave[];
 }
 /* eslint-disable-next-line @typescript-eslint/no-namespace */
 export namespace MapNodeEntity {
@@ -48,7 +48,7 @@ export namespace MapNodeEntity {
 		drops: [],
 		reward_f: [],
 		reward_am: [],
-		enemy: [],
+		// enemy: [],
 	};
 }
 

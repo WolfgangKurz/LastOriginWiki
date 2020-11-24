@@ -1,7 +1,7 @@
 <template>
 	<div class="drop-unit p-2 text-dark">
 		<b-card :class="`text-left rarity-${RarityName[unit.rarity]}`">
-			<unit-face class="float-left mr-2" :id="unit.id" size="48" type="mini" />
+			<unit-face class="float-left mr-2" :uid="unit.uid" size="48" type="mini" />
 			<div>
 				<b-badge variant="secondary" class="mr-1 bordered">{{ RarityName[unit.rarity] }}</b-badge>
 				<span class="unit-info">

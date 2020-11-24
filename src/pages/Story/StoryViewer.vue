@@ -223,13 +223,13 @@ export default class StoryViewer extends Vue {
 						if ("face" in teller) {
 							const unit = _(UnitData).find(x => x.uid === teller.face);
 
-							tellerElems.push(<unit-face id={ unit ? unit.id : 0 } size="60" />);
+							tellerElems.push(<unit-face uid={ unit ? unit.uid : "" } size="60" />);
 						} else
 							tellerElems.push(<img src={ `${this.BaseURL}${teller.image}.png` } width="60" />);
 
 						tellerElems.push(teller.name);
 					} else {
-						tellerElems.push(<unit-face id={ 0 } size="60" />);
+						tellerElems.push(<unit-face uid="" size="60" />);
 						tellerElems.push(teller);
 					}
 				}

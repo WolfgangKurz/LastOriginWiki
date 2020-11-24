@@ -81,6 +81,43 @@
 						</b-row>
 					</b-container>
 
+					<b-table-simple bordered fixed table-class="text-center table-unit-modal">
+						<b-thead head-variant="dark">
+							<b-tr>
+								<b-th>선물</b-th>
+								<b-th>웨이브 승리</b-th>
+								<b-th class="d-none d-md-table-cell">사망</b-th>
+								<b-th class="d-none d-md-table-cell">부관</b-th>
+							</b-tr>
+						</b-thead>
+						<b-tbody>
+							<b-tr class="text-center">
+								<b-td>{{ unit.favor.present.toFixed(2) }}배</b-td>
+								<b-td>
+									<b-badge variant="danger">♥ 호감도 +{{ Favor.clear }}</b-badge>
+								</b-td>
+								<b-td class="d-none d-md-table-cell">
+									<b-badge variant="danger">♥ 호감도 -{{ Favor.death }}</b-badge>
+								</b-td>
+								<b-td class="d-none d-md-table-cell">
+									<b-badge variant="danger">♥ 호감도 +{{ Favor.assistant }}</b-badge>
+								</b-td>
+							</b-tr>
+							<b-tr class="d-md-none">
+								<b-th class="bg-dark text-white">사망</b-th>
+								<b-th class="bg-dark text-white">부관</b-th>
+							</b-tr>
+							<b-tr class="d-md-none text-center">
+								<b-td>
+									<b-badge variant="danger">♥ 호감도 -{{ Favor.death }}</b-badge>
+								</b-td>
+								<b-td>
+									<b-badge variant="danger">♥ 호감도 +{{ Favor.assistant }}</b-badge>
+								</b-td>
+							</b-tr>
+						</b-tbody>
+					</b-table-simple>
+
 					<b-row>
 						<b-col cols="12" sm="4">
 							<b-table-simple bordered fixed table-class="text-center table-unit-modal">
@@ -518,6 +555,14 @@ export default class UnitView extends Vue {
 		const m = Math.floor(duration / 60) % 60;
 		const s = duration % 60;
 		return `${("0" + h).substr(-2)}:${("0" + m).substr(-2)}:${("0" + s).substr(-2)}`;
+	}
+
+	private get Favor () {
+		return {
+			clear: Decimal.mul(this.unit.favor.clear, 0.05).toNumber(),
+			death: Decimal.mul(this.unit.favor.death, 2).toNumber(),
+			assistant: Decimal.mul(this.unit.favor.assistant, 1).toNumber(),
+		};
 	}
 
 	private get HasFormChange () {

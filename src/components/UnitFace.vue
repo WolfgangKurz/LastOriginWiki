@@ -3,15 +3,16 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
+import UnitData from "@/libs/DB/Unit";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 
 @Component({})
 export default class UnitFace extends Vue {
 	@Prop({
-		type: Number,
+		type: String,
 		required: true,
 	})
-	private id!: number;
+	private uid!: string;
 
 	@Prop({
 		type: [Number, String],
@@ -25,19 +26,19 @@ export default class UnitFace extends Vue {
 	})
 	private type!: string;
 
-	public static GetURL (invalid: boolean, id: number): string {
+	public static GetURL (uid: string): string {
 		const ext = ImageExtension();
-		return invalid
-			? `${AssetsRoot}/transparent.png`
-			: `${AssetsRoot}/${ext}/face/${("00" + id).substr(-3)}.${ext}`;
+		return UnitData.some(x => x.uid === uid)
+			? `${AssetsRoot}/${ext}/face/${uid}.${ext}`
+			: `${AssetsRoot}/transparent.png`;
 	}
 
 	private render () {
-		const path = UnitFace.GetURL(this.id === 0, this.id);
+		const path = UnitFace.GetURL(this.uid);
 		if (this.size)
-			return <img class="unit-face" data-type={this.type} src={path} width={this.size} height={this.size} />;
+			return <img class="unit-face" data-type={ this.type } src={ path } width={ this.size } height={ this.size } />;
 		else
-			return <img class="unit-face" data-type={this.type} src={path} />;
+			return <img class="unit-face" data-type={ this.type } src={ path } />;
 	}
 }
 </script>

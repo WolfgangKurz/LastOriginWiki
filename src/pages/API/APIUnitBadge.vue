@@ -24,12 +24,12 @@
 			<template #button-content>
 				<template v-if="SelectedUnit === null">전투원을 선택해주세요.</template>
 				<template v-else>
-					<unit-face :id="SelectedUnit.id" size="40" class="mr-2" />
+					<unit-face :uid="SelectedUnit.uid" size="40" class="mr-2" />
 					{{ SelectedUnit.name }}
 				</template>
 			</template>
 			<b-dropdown-item v-for="unit in UnitList" :key="`simulation-unit-select-modal-${unit.id}`" @click="SelectedUnit = unit">
-				<unit-face :id="unit.id" size="40" class="mr-2" />
+				<unit-face :uid="unit.uid" size="40" class="mr-2" />
 				<span class="d-inline-block mr-2">{{ unit.name }}</span>
 			</b-dropdown-item>
 		</b-dropdown>

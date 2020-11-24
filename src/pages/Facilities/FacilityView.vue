@@ -3,7 +3,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
-import { ACTOR_GRADE } from "@/libs/Types/Enums";
+import { ACTOR_GRADE, ROLE_TYPE } from "@/libs/Types/Enums";
 import UnitData from "@/libs/DB/Unit";
 import FacilityData, { FacilityEntity, FacilityUpgradeRequiredMaterial, FactilityProduct } from "@/libs/DB/Facility";
 import ConsumableData from "@/libs/DB/Consumable";
@@ -69,12 +69,20 @@ export default class FacilityView extends Vue {
 				return x.split("+")
 					.map(y => {
 						switch (y) {
-							case "Bioroid": return <b-badge class="mx-1" variant="info">바이오로이드</b-badge>;
-							case "AGS": return <b-badge class="mx-1" variant="info">AGS</b-badge>;
+							case "Bioroid":
+								return <b-badge class="mx-1" variant="info">바이오로이드</b-badge>;
+							case "AGS":
+								return <b-badge class="mx-1" variant="info">AGS</b-badge>;
 							case "Attacker":
 							case "Defender":
-							case "Supporter":
-								return <unit-badge role={ y } />;
+							case "Supporter": {
+								const roleTable = {
+									Attacker: ROLE_TYPE.ATTACKER,
+									Defender: ROLE_TYPE.DEFENDER,
+									Supporter: ROLE_TYPE.SUPPORTER,
+								};
+								return <unit-badge role={ roleTable[y] } />;
+							}
 							default:
 								if (/^[0-9]+$/.test(y)) {
 									const rarities: Record<ACTOR_GRADE, string> = {
