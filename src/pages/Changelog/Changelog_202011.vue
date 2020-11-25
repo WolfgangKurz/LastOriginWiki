@@ -2,11 +2,13 @@
 	<div>
 		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20201125>2020-11-25</b-card-header>
-			<b-collapse id="changelog20201124" visible>
+			<b-collapse id="changelog20201125" visible>
 				<b-card-body>
 					<div>
-						스킬의 적용 영역이 상하 반전으로 적용되던 문제를 수정했습니다.
+						<b-badge variant="warning">레모네이드 알파</b-badge>의 3번째 패시브
+						<b-badge variant="info">케스토스 히마스: 중장갑 OS</b-badge>의 수치가 올바르지 않게 표시되던 문제를 수정했습니다.
 					</div>
+					<div>스킬의 적용 영역이 상하 반전으로 적용되던 문제를 수정했습니다.</div>
 				</b-card-body>
 			</b-collapse>
 		</b-card>
