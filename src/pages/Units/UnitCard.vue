@@ -181,25 +181,25 @@ export default class UnitCard extends Vue {
 
 						&[data-type] {
 							background-image: url($assetsRoot + "/unit-type.png");
-							&[data-type="light"] {
+							&[data-type="0"] {
 								background-position-x: 0px;
 							}
-							&[data-type="air"] {
+							&[data-type="2"] {
 								background-position-x: -$basis;
 							}
-							&[data-type="heavy"] {
+							&[data-type="1"] {
 								background-position-x: -($basis * 2);
 							}
 						}
 						&[data-role] {
 							background-image: url($assetsRoot + "/unit-role.png");
-							&[data-role="attacker"] {
+							&[data-role="1"] {
 								background-position-x: 0px;
 							}
-							&[data-role="defender"] {
+							&[data-role="0"] {
 								background-position-x: -$basis;
 							}
-							&[data-role="supporter"] {
+							&[data-role="2"] {
 								background-position-x: -($basis * 2);
 							}
 						}

@@ -68,7 +68,7 @@
 					</template>
 
 					<b-card-body id="drops" class="p-0">
-						<div v-if="!selected" class="text-center pt-4 pb-4 text-secondary">위 지도에서 지역을 선택해주세요.</div>
+						<div v-if="!selected" class="text-center py-4 text-secondary">위 지도에서 지역을 선택해주세요.</div>
 						<b-row v-else>
 							<b-col v-if="RewardDrops.length > 0" cols="12">
 								<b-row cols="1" cols-md="2" cols-lg="4">
@@ -120,12 +120,12 @@
 					</template>
 
 					<b-card-body id="drops" class="p-0">
-						<div v-if="!selected" class="text-center pt-4 pb-4 text-secondary">위 지도에서 지역을 선택해주세요.</div>
+						<div v-if="!selected" class="text-center py-4 text-secondary">위 지도에서 지역을 선택해주세요.</div>
 						<b-row v-else>
 							<b-col cols="12" md="6">
 								<b-card text-variant="dark" header="실종 대원 목록">
 									<b-row cols="1" :cols-lg="UnitDrops.length === 0 ? 1 : 2" class="text-center px-2">
-										<div v-if="UnitDrops.length === 0" class="text-center pt-4 pb-4 text-secondary">드랍 정보 없음</div>
+										<div v-if="UnitDrops.length === 0" class="text-center py-4 text-secondary">드랍 정보 없음</div>
 										<template v-else>
 											<a
 												class="drop-unit"
@@ -142,7 +142,7 @@
 							<b-col cols="12" md="6" class="mt-md-0 mt-4">
 								<b-card text-variant="dark" header="획득 가능 물품">
 									<b-row cols="1" :cols-lg="ItemDrops.length === 0 ? 1 : 2" class="text-center px-2">
-										<div v-if="ItemDrops.length === 0" class="text-center pt-4 pb-4 text-secondary">드랍 정보 없음</div>
+										<div v-if="ItemDrops.length === 0" class="text-center py-4 text-secondary">드랍 정보 없음</div>
 										<template v-else v-for="(item, i) in ItemDrops">
 											<a
 												v-if="'rarity' in item"
@@ -167,8 +167,11 @@
 					</template>
 
 					<b-card-body class="p-0 text-center">
-						<div v-if="!selected" class="pt-4 pb-4 text-secondary">위 지도에서 지역을 선택해주세요.</div>
+						<div v-if="!selected" class="py-4 text-secondary">위 지도에서 지역을 선택해주세요.</div>
 						<template v-else>
+							<div class="mb-2">
+								<b-badge variant="danger">총 경험치 {{ TotalExp }}</b-badge>
+							</div>
 							<a
 								v-for="(wave, waveIdx) in Waves"
 								:key="`worlds-${world}-${area}-wave-button-${waveIdx}`"
@@ -180,7 +183,10 @@
 								<img width="42" :src="`${AssetsRoot}/${ImageExt}/tbar/TbarIcon_MP_NightChick_RV.${ImageExt}`" />
 							</a>
 
-							<div class="mt-4">
+							<div class="mt-3">
+								<div class="mb-2">
+									<b-badge variant="warning">웨이브 경험치 {{ CurrentWaveExp }}</b-badge>
+								</div>
 								<div class="enemy-grid">
 									<template v-for="(enemy, pos) in CurrentWave">
 										<div :key="`worlds-${world}-${area}-wave-enemy-${pos}`">
@@ -197,6 +203,65 @@
 
 								<enemy-modal :enemy="selectedEnemy" :display.sync="enemyModalDisplay" :level="selectedEnemyLevel" />
 							</div>
+						</template>
+					</b-card-body>
+				</b-tab>
+				<b-tab title-link-class="text-dark" :active="CurrentTab === 'search'" @click="CurrentTab = 'search'">
+					<template #title>
+						<b-icon-search class="mr-1" />
+						탐사 정보
+					</template>
+
+					<b-card-body class="p-0 text-center">
+						<div v-if="SearchInfo === null" class="py-4 text-secondary">위 지도에서 지역을 선택해주세요.</div>
+						<div v-else-if="SearchInfo === false" class="py-4 text-secondary">탐사할 수 없는 지역입니다.</div>
+						<template v-else>
+							<b-row cols="1" cols-lg="2">
+								<b-col>
+									<b-card text-variant="dark" header="탐색 조건">
+										<b-table-simple class="border-bottom">
+											<b-tbody>
+												<b-tr>
+													<b-td> 필요 평균 레벨</b-td>
+													<b-td>
+														<b-badge variant="warning">Lv. {{ SearchInfo.unitsLv }} 이상</b-badge>
+													</b-td>
+												</b-tr>
+												<b-tr>
+													<b-td> 스쿼드 구성 인원</b-td>
+													<b-td>
+														<b-badge variant="warning">{{ SearchInfo.units }} 이상</b-badge>
+													</b-td>
+												</b-tr>
+											</b-tbody>
+										</b-table-simple>
+										<div>
+											<b-badge variant="warning">탐색 소요 시간</b-badge>
+											<h3>{{ SearchTime }}</h3>
+										</div>
+									</b-card>
+								</b-col>
+								<b-col>
+									<b-card class="mt-2 mt-lg-0" text-variant="dark" header="탐색 완료 보상">
+										<b-row cols="2" cols-md="3">
+											<drop-res res="metal" :count="SearchInfo.metal" />
+											<drop-res res="nutrient" :count="SearchInfo.nutrient" />
+											<drop-res res="power" :count="SearchInfo.power" />
+										</b-row>
+									</b-card>
+									<b-card class="mt-2" text-variant="dark" header="추가 획득 가능">
+										<div v-if="SearchInfo.items.length === 0" class="py-4 text-secondary">추가 획득 가능 물품 없음</div>
+										<b-row cols="2">
+											<drop-item
+												v-for="(item, i) in SearchInfo.items"
+												:key="`worlds-${world}-${area}-search-item-${i}`"
+												:item="GetConsumable(item.item)"
+												:count="item.count"
+											/>
+										</b-row>
+									</b-card>
+								</b-col>
+							</b-row>
 						</template>
 					</b-card-body>
 				</b-tab>
@@ -219,7 +284,7 @@ import DropRes from "./DropRes.vue";
 import EnemyModal from "@/pages/Enemy/EnemyModal.vue";
 
 import { AssetsRoot, ImageExtension, WorldNames } from "@/libs/Const";
-import { UpdateTitle } from "@/libs/Functions";
+import { FormatNumber, UpdateTitle } from "@/libs/Functions";
 
 import UnitData, { Unit } from "@/libs/DB/Unit";
 import EquipData, { Equip } from "@/libs/DB/Equip";
@@ -262,7 +327,7 @@ export default class WorldMapView extends Vue {
 
 	private selected: MapNodeEntity | null = null;
 
-	private CurrentTab: "reward" | "drop" | "enemy" = "reward";
+	private CurrentTab: "reward" | "drop" | "enemy" | "search" = "reward";
 
 	private selectedWave: number = 0;
 
@@ -382,14 +447,14 @@ export default class WorldMapView extends Vue {
 
 	private get Waves () {
 		if (!this.selected) return [];
-		return this.selected.enemy || [];
+		return this.selected.wave || [];
 	}
 
 	private get CurrentWave (): Array<WaveEnemyInfo | null> {
 		if (!this.selected)
 			return new Array(9).fill(null);
 
-		return this.Waves[this.selectedWave]
+		return this.Waves[this.selectedWave].enemy
 			.map(x => {
 				if (!x) return null;
 
@@ -401,6 +466,31 @@ export default class WorldMapView extends Vue {
 					...x,
 				};
 			});
+	}
+
+	private get CurrentWaveExp () {
+		if (!this.selected) return 0;
+		return FormatNumber(this.Waves[this.selectedWave].exp);
+	}
+
+	private get TotalExp () {
+		if (!this.selected) return 0;
+		return FormatNumber(this.Waves.reduce((p, c) => (p + c.exp || 0), 0));
+	}
+
+	private get SearchInfo () {
+		if (!this.selected) return null;
+		return this.selected.search || false;
+	}
+
+	private get SearchTime () {
+		if (!this.SearchInfo) return "";
+		const t = this.SearchInfo.time;
+
+		const h = Math.floor(t / 3600);
+		const m = Math.floor(t / 60) % 60;
+		const s = t % 60;
+		return `${("0" + h).substr(-2)}:${("0" + m).substr(-2)}:${("0" + s).substr(-2)}`;
 	}
 
 	private isHidden (node: MapNodeEntity, diffs: boolean) {
@@ -426,6 +516,10 @@ export default class WorldMapView extends Vue {
 			path: `/worlds/${this.world}/${this.area}/${node.text}`,
 			hash: "#drops",
 		});
+	}
+
+	private GetConsumable (item: string) {
+		return ConsumableData.find(y => y.key === item);
 	}
 
 	private UnitPage (id: number | string) {

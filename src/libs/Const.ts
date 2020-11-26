@@ -38,7 +38,7 @@ export function ImageExtension () {
 	return webpAvailable ? "webp" : "png";
 }
 
-export const CurrentEvent = "Ev8";
+export const CurrentEvent = "Ev4";
 export const CurrentDate = (() => {
 	const d = new Date();
 	const y = d.getUTCFullYear() % 100;

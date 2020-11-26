@@ -344,7 +344,7 @@ export default class EquipModal extends Vue {
 		Object.keys(MapData).forEach(x =>
 			Object.keys(MapData[x]).forEach(y =>
 				MapData[x][y].list.forEach(z =>
-					z.enemy && z.enemy.forEach(w => w.filter(e => e && e.id === this.targetId).forEach(e => {
+					z.wave && z.wave.forEach(w => w.enemy.filter(e => e && e.id === this.targetId).forEach(e => {
 						if (!keys.includes(x)) keys.push(x);
 						const idx = keys.indexOf(x);
 

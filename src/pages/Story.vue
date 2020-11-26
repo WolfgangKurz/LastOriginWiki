@@ -2,9 +2,7 @@
 	<div class="story-area text-left">
 		<b-row>
 			<b-col cols="auto">
-				<b-button variant="dark" @click="GoTo(`/worlds/${world}`)">
-					<b-icon-arrow-left class="mr-1" />구역 목록으로
-				</b-button>
+				<b-button variant="dark" @click="GoTo(`/worlds/${world}`)"> <b-icon-arrow-left class="mr-1" />구역 목록으로 </b-button>
 			</b-col>
 		</b-row>
 		<hr />
@@ -16,13 +14,13 @@
 				</b-col>
 				<b-col>
 					<div class="world-item-name">
-						{{Name}}
+						{{ Name }}
 						<h5 class="m-0 d-inline-block">
-							<b-badge class="ml-2" variant="warning">제 {{area}}구역 :: {{Area}}</b-badge>
+							<b-badge class="ml-2" variant="warning">제 {{ area }}구역 :: {{ Area }}</b-badge>
 						</h5>
 					</div>
 					<hr class="my-1" />
-					<div class="world-item-desc">{{Description}}</div>
+					<div class="world-item-desc">{{ Description }}</div>
 				</b-col>
 			</b-row>
 		</b-card>
@@ -38,39 +36,40 @@
 				<template #title>Ex 스테이지</template>
 			</b-tab>
 		</b-tabs>
-		<div
-			v-for="story in Stories"
-			:key="`story-${story.area}-${story.map}-${story.loc}`"
-			class="story-map-banner text-center"
-		>
+		<div v-for="story in Stories" :key="`story-${story.area}-${story.map}-${story.loc}`" class="story-map-banner text-center">
 			<b-card class="story-map d-inline-flex text-left mt-4" text-variant="light" bg-variant="dark">
 				<div class="story-banner">
 					<img class="story-banner-image" :src="`${AssetsRoot}/story/Banner_${story.bg}.png`" />
 					<div class="story-info">
-						<unit-face :uid="story.face" />
+						<unit-face :uid="story.face" :skin="story.skin" />
+
 						<div class="story-text">
-							<div class="story-loc">{{story.map}}-{{story.loc}}</div>
-							<div class="story-name">{{story.title}}</div>
+							<div class="story-loc">{{ story.map }}-{{ story.loc }}</div>
+							<div class="story-name">{{ story.title }}</div>
 						</div>
 					</div>
 
 					<div class="story-enterance">
-						<b-button-group class="bg-dark">
+						<b-button-group>
 							<b-button
 								v-if="(story.spec & 1) !== 0"
-								variant="outline-warning"
+								variant="warning"
 								@click="GoTo(`/story/${world}/${area}/${story.loc}/OP`)"
-							>OP</b-button>
+							>
+								OP
+							</b-button>
 							<b-button
 								v-if="(story.spec & 2) !== 0"
-								variant="outline-warning"
+								variant="warning"
 								@click="GoTo(`/story/${world}/${area}/${story.loc}/ED`)"
-							>ED</b-button>
+							>
+								ED
+							</b-button>
 						</b-button-group>
 					</div>
 				</div>
 				<br />
-				{{story.desc}}
+				{{ story.desc }}
 			</b-card>
 		</div>
 	</div>
@@ -89,11 +88,13 @@ import { StoryRaw } from "@/libs/Types";
 import MapData from "@/libs/DB/Map";
 
 import UnitFace from "@/components/UnitFace.vue";
+import EquipIcon from "@/components/EquipIcon.vue";
 import { SetMeta } from "@/libs/Meta";
 
 @Component({
 	components: {
 		UnitFace,
+		EquipIcon,
 	},
 })
 export default class Story extends Vue {

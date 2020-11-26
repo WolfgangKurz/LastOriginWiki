@@ -8,11 +8,13 @@ export interface StoryRowDataTitle {
 
 export interface StoryRowDataText {
 	teller?: string | {
-		face: string;
-		name: string;
-	} | {
 		image: string;
-		name: string;
+		char: string;
+		skin: 0;
+	} | {
+		image: null;
+		char: string;
+		skin: number;
 	};
 	text: string[];
 }

@@ -24,12 +24,27 @@ export interface MapEnemyData {
 	lv: number;
 }
 
-export type MapWave = Array<MapEnemyData | null>;
+export interface MapWave {
+	exp: number;
+	enemy: Array<MapEnemyData | null>;
+}
+
+export interface MapSearch {
+	time: number;
+	metal: number;
+	nutrient: number;
+	power: number;
+	units: number;
+	unitsLv: number;
+	items: MapRewardItem[];
+}
 
 export interface MapNodeEntity {
 	prev: number | null;
 	offset: number;
 	text: string;
+
+	search: MapSearch | null;
 
 	drops: string[];
 	/* eslint-disable camelcase */
@@ -37,7 +52,7 @@ export interface MapNodeEntity {
 	reward_am: MapReward[];
 	/* eslint-enable camelcase */
 
-	enemy?: MapWave[];
+	wave?: MapWave[];
 }
 /* eslint-disable-next-line @typescript-eslint/no-namespace */
 export namespace MapNodeEntity {
@@ -45,10 +60,11 @@ export namespace MapNodeEntity {
 		prev: null,
 		offset: 0,
 		text: "",
+		search: null,
 		drops: [],
 		reward_f: [],
 		reward_am: [],
-		// enemy: [],
+		// wave: [],
 	};
 }
 
