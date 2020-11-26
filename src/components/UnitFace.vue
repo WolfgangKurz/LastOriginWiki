@@ -15,6 +15,12 @@ export default class UnitFace extends Vue {
 	private uid!: string;
 
 	@Prop({
+		type: Number,
+		default: 0,
+	})
+	private skin!: number;
+
+	@Prop({
 		type: [Number, String],
 		default: undefined,
 	})
@@ -26,15 +32,15 @@ export default class UnitFace extends Vue {
 	})
 	private type!: string;
 
-	public static GetURL (uid: string): string {
+	public static GetURL (uid: string, skin: number = 0): string {
 		const ext = ImageExtension();
 		return UnitData.some(x => x.uid === uid)
-			? `${AssetsRoot}/${ext}/face/${uid}.${ext}`
+			? `${AssetsRoot}/${ext}/face/${uid}_${skin}.${ext}`
 			: `${AssetsRoot}/transparent.png`;
 	}
 
 	private render () {
-		const path = UnitFace.GetURL(this.uid);
+		const path = UnitFace.GetURL(this.uid, this.skin);
 		if (this.size)
 			return <img class="unit-face" data-type={ this.type } src={ path } width={ this.size } height={ this.size } />;
 		else

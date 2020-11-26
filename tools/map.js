@@ -67,10 +67,11 @@ function process (auth) {
 					});
 					if (!node) throw new Error(`${id}-${map} ${x.text}`);
 
-					x.enemy = [];
-					node.wave.forEach(wave => {
-						x.enemy.push(
-							wave.enemylist.map(e => {
+					x.wave = [];
+					node.wave.forEach((wave, widx) => {
+						x.wave.push({
+							exp: x.exp[widx],
+							enemy: wave.enemylist.map(e => {
 								if (!e.index || e.level === 0) return null;
 
 								const enemy = enemies.find(z => z.id === e.index);
@@ -145,8 +146,9 @@ function process (auth) {
 								if (!f) return { id: e.index, lv: e.level };
 								return { id: f.id, lv: e.level };
 							}),
-						);
+						});
 					});
+					delete x.exp;
 				});
 
 				ret[id][map] = {

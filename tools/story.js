@@ -6,7 +6,7 @@ function process (auth) {
 	const sheets = google.sheets({ version: "v4", auth });
 	sheets.spreadsheets.values.get({
 		spreadsheetId: "157bUt9DvleYvOsliq2ixpn0-50Xs87EiMHFB2m-KW3w",
-		range: "Story!A2:I",
+		range: "Story!A2:J",
 	}, (err, res) => {
 		if (err) return console.log("The API returned an error: " + err);
 
@@ -16,7 +16,7 @@ function process (auth) {
 			rows.map((row) => {
 				if (!row[0]) return;
 
-				const [area, map, loc, spec, title, face, bg, desc, filename] = row;
+				const [area, map, loc, spec, title, face, skin, bg, desc, filename] = row;
 				const specs = spec.split(",");
 
 				ret.push({
@@ -26,6 +26,7 @@ function process (auth) {
 					spec: (specs.includes("OP") ? 1 : 0) | (specs.includes("ED") ? 2 : 0),
 					title,
 					face,
+					skin: parseInt(skin, 10),
 					bg,
 					desc,
 					filename,

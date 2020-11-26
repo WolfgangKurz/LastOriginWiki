@@ -220,14 +220,19 @@ export default class StoryViewer extends Vue {
 				const teller = row.teller;
 				if (teller) {
 					if (typeof teller !== "string") {
-						if ("face" in teller) {
-							const unit = _(UnitData).find(x => x.uid === teller.face);
+						if (teller.image === null) {
+							const unit = UnitData.find(x => x.uid === teller.char);
 
-							tellerElems.push(<unit-face uid={ unit ? unit.uid : "" } size="60" />);
-						} else
-							tellerElems.push(<img src={ `${this.BaseURL}${teller.image}.png` } width="60" />);
-
-						tellerElems.push(teller.name);
+							tellerElems.push(
+								<unit-face uid={ unit ? unit.uid : "" } skin={teller.skin} size="60" />,
+								unit ? unit.name : teller.char,
+							);
+						} else {
+							tellerElems.push(
+								<img src={ `${this.BaseURL}${teller.image}.png` } width="60" />,
+								teller.char,
+							);
+						}
 					} else {
 						tellerElems.push(<unit-face uid="" size="60" />);
 						tellerElems.push(teller);

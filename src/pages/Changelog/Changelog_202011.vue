@@ -1,8 +1,32 @@
 <template>
 	<div>
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20201127>2020-11-27</b-card-header>
+			<b-collapse id="changelog20201127" visible>
+				<b-card-body>
+					<div>
+						<b-badge variant="warning">세계 정보</b-badge>의 지도가 수정되었습니다.<br />
+						<b-icon-bug-fill class="mr-1" />적 정보에 총 경험치, 웨이브 경험치가 추가되었습니다.<br />
+						<b-icon-search class="mr-1" />탐사 정보가 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">전투원정보</b-badge>의 목록 보기, 그룹별 보기의 전투원 유형/역할이 잘못 표시되던 문제를
+						수정했습니다.<br />
+						<b-badge variant="info">D-엔터 빌런즈</b-badge>와 <b-badge variant="info">D-엔터테인먼트 II</b-badge>가 바뀌어있던 문제를
+						수정했습니다.
+					</div>
+					<div>
+						현재 진행중인 이벤트를 "할로윈 파크 패닉"으로 변경했습니다.
+					</div>
+					<div>
+						8지역 이야기가 정상적으로 표시되지 않던 문제를 수정했습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20201125>2020-11-25</b-card-header>
-			<b-collapse id="changelog20201125" visible>
+			<b-collapse id="changelog20201125">
 				<b-card-body>
 					<div>
 						<b-badge variant="warning">레모네이드 알파</b-badge>의 3번째 패시브
@@ -14,7 +38,7 @@
 		</b-card>
 		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20201124>2020-11-24</b-card-header>
-			<b-collapse id="changelog20201124" visible>
+			<b-collapse id="changelog20201124">
 				<b-card-body>
 					<div>
 						신규 전투원 <b-badge variant="warning">해체자 아자즈</b-badge> 및 <b-badge variant="warning">레모네이드 알파</b-badge>의

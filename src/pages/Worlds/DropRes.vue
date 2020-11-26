@@ -1,10 +1,10 @@
 <template>
-	<div class="drop-item p-2 text-dark">
+	<div class="drop-item p-2 text-dark" :data-count="count">
 		<b-card :bg-variant="am ? 'warning' : 'secondary'" :text-variant="am ? 'dark' : 'white'">
 			<equip-icon class="float-left mr-2" :image="Icon" />
 			<div class="text-left">
 				{{ Name }}
-				<b-badge v-if="count > 1" variant="dark">x{{ FormatNumber(count) }}</b-badge>
+				<b-badge v-if="count !== 1" variant="dark">x{{ FormatNumber(count) }}</b-badge>
 			</div>
 		</b-card>
 	</div>
@@ -75,6 +75,10 @@ export default class DropRes extends Vue {
 	word-break: keep-all;
 	user-select: none;
 	cursor: pointer;
+
+	&[data-count="0"] {
+		opacity: 0.68;
+	}
 
 	.equip-icon {
 		background-color: transparentize(#000, 0.8);
