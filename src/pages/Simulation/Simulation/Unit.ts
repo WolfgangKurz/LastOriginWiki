@@ -121,7 +121,6 @@ export class Unit extends Vue {
 		const data = UnitStatsData.find(x => x.id === this.Id && x.rarity === this.Rarity);
 		if (!data) return UnitStat.Empty; // 잘못된 요청 (존재하지 않는 스탯 데이터)
 
-		const linkBonus = this.LinkBonus;
 		const levelValue = (value: number[], level: number) => {
 			return value[0] + (value[1] - value[0]) * (level - 1) / 99;
 		};
@@ -317,6 +316,8 @@ export class Unit extends Vue {
 			if (output[key].isIndependent)
 				output[key].independentValues = independentValues;
 
+			const ratioStat = ["ACC", "Cri", "EV"].includes(key);
+
 			// 링크 보너스
 			const bonus = this.LinkBonus.find(x => x.Key.startsWith(key + "_"));
 			if (bonus) output[key].linkBonus = bonus.Value;
@@ -325,15 +326,13 @@ export class Unit extends Vue {
 			if (this.LinkSum === 5 && this.fullLinkBonus && this.fullLinkBonus.startsWith(key + "_")) {
 				const bonus = GetLinkBonus(this.fullLinkBonus, 1);
 
-				const ratioStat = ["ACC", "Cri", "EV"].includes(key);
-
 				if (bonus.Postfix === "%" && !ratioStat)
 					output[key].fullLinkBonusRatio = bonus.Value;
 				else
 					output[key].fullLinkBonus = bonus.Value;
 			}
 
-			if (key === "HP" || key === "ATK" || (bonus && bonus.Postfix === "%")) {
+			if (key === "HP" || key === "ATK" || (bonus && bonus.Postfix === "%" && !ratioStat)) {
 				output[key].linked = new Decimal(output[key].base)
 					.add(output[key].pointed)
 					.add(output[key].equiped)

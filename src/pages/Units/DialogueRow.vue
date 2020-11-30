@@ -52,6 +52,10 @@ export default class DialogueRow extends Vue {
 			case "BattleFocus": return "primary";
 			case "ActionApprove": return "primary";
 			case "SpSkill": return "primary";
+			case "SpSkill_2": return "primary";
+			case "SpSkill_3": return "primary";
+			case "SpSkill_4": return "primary";
+			case "SpSkill_5": return "primary";
 			case "Retire": return "primary";
 			case "Repair": return "primary";
 			case "Reinforce": return "primary";
@@ -91,6 +95,10 @@ export default class DialogueRow extends Vue {
 			case "BattleFocus": return "전투 내 선택";
 			case "ActionApprove": return "전투 지시";
 			case "SpSkill": return "액티브 스킬";
+			case "SpSkill_2": return "액티브 스킬 (2)";
+			case "SpSkill_3": return "액티브 스킬 (3)";
+			case "SpSkill_4": return "액티브 스킬 (4)";
+			case "SpSkill_5": return "액티브 스킬 (5)";
 			case "Retire": return "전투 불능";
 			case "Repair": return "수복";
 			case "Reinforce": return "전투원 강화";
