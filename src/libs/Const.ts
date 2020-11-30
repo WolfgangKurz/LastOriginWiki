@@ -81,6 +81,7 @@ export const ApocryphaUnit: Record<string, string> = {
 	"S9-1": "3P_Hachiko",
 	"S10-1": "AGS_Rampart",
 	"S11-1": "3P_Aurora",
+	"S12-1": "3P_CSPerrault",
 };
 export const ChallengeStage: Record<string, string> = {
 	Cha1: "밀고, 당기고, 불질러!",
