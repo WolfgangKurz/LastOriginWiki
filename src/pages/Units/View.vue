@@ -19,7 +19,7 @@
 			</b-col>
 		</b-row>
 
-		<template v-if="displayTab === 'information'">
+		<div v-show="displayTab === 'information'">
 			<!-- 스킨, 번호, 소속, 등급, 승급, 유형, 역할 -->
 			<b-tabs v-model="skinIndex" nav-class="unit-skin-tabs">
 				<b-tab
@@ -283,8 +283,8 @@
 				:skill-bonus="SkillPowerBonus"
 				:range-bonus="linkBonus.startsWith('Range_')"
 			/>
-		</template>
-		<template v-if="displayTab === 'dialogue'">
+		</div>
+		<div v-show="displayTab === 'dialogue'">
 			<b-alert variant="success" show>
 				현재 대사 텍스트가 입력되지 않은 전투원이 매우 많습니다. 입력해야하는 대사 분량이 너무 많아 개발자 혼자 작업할 수가 없어 발생한
 				문제입니다.<br />
@@ -295,8 +295,8 @@
 			<hr />
 
 			<unit-dialogue v-for="(voice, keyid) in VoiceList" :key="`unit-view-text-voice-${keyid}`" :unit="unit" :voice="voice" :id="voice.id" />
-		</template>
-		<unit-stats v-if="displayTab === 'status'" :unit="unit" :serialized="statusSerialized" />
+		</div>
+		<unit-stats v-show="displayTab === 'status'" :unit="unit" :serialized="statusSerialized" />
 	</div>
 </template>
 

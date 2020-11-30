@@ -12,6 +12,12 @@ export interface RawUnitDialogueEntity {
 	BattleFocus?: string;
 	ActionApprove?: string;
 	SpSkill?: string;
+	/* eslint-disable camelcase */
+	SpSkill_2?: string;
+	SpSkill_3?: string;
+	SpSkill_4?: string;
+	SpSkill_5?: string;
+	/* eslint-enable camelcase */
 	Retire?: string;
 	Repair?: string;
 	Reinforce?: string;
