@@ -1,7 +1,9 @@
 import Data from "@/json/enemy.json";
+import { BuffStat } from "@/libs/Buffs/Buffs";
 import { ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE, SKILL_ATTR } from "@/libs/Types/Enums";
 
 export interface EnemySkill {
+	key: string;
 	name: string;
 	icon: string;
 	desc: string;
@@ -11,6 +13,7 @@ export interface EnemySkill {
 	range: number;
 	ap: number;
 	grid: string;
+	buffs: BuffStat[];
 }
 
 interface RawEnemy {

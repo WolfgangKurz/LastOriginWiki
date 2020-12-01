@@ -38,6 +38,12 @@ interface RawUnit {
 	shortgroup: string;
 	groupkey: string;
 
+	introduce: string;
+	height: string;
+	weight: string;
+	weapon1: string;
+	weapon2: string;
+
 	craftable: false | number;
 	favor: {
 		present: number;
@@ -70,6 +76,12 @@ export interface Unit {
 	group: string;
 	shortgroup: string;
 	groupkey: string;
+
+	introduce: string;
+	height: string;
+	weight: string;
+	weapon1: string;
+	weapon2: string;
 
 	craftable: false | number;
 	favor: {
@@ -105,6 +117,12 @@ export namespace Unit {
 		shortgroup: "",
 		groupkey: "",
 
+		introduce: "",
+		height: "",
+		weight: "",
+		weapon1: "",
+		weapon2: "",
+
 		craftable: false,
 		favor: {
 			present: 0,
@@ -137,6 +155,12 @@ function Compile (): Unit[] {
 		group: x.group,
 		shortgroup: x.shortgroup,
 		groupkey: x.groupkey,
+
+		introduce: x.introduce,
+		height: x.height,
+		weight: x.weight,
+		weapon1: x.weapon1,
+		weapon2: x.weapon2,
 
 		rarity: x.rarity,
 		body: x.body,

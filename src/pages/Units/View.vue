@@ -6,20 +6,35 @@
 			</b-col>
 			<b-col>
 				<b-tabs nav-class="unit-display-tabs mb-3" align="right">
+					<b-tab title-link-class="text-dark" :active="displayTab === 'texts'" @click="displayTab = 'texts'">
+						<template #title>
+							<b-icon-person-square class="mr-1" />
+							기본정보
+						</template>
+					</b-tab>
 					<b-tab title-link-class="text-dark" :active="displayTab === 'information'" @click="displayTab = 'information'">
-						<template #title> <b-icon-person-lines-fill class="mr-1" />전투원정보 </template>
+						<template #title>
+							<b-icon-lightning-fill class="mr-1" />
+							링크/스킬
+						</template>
 					</b-tab>
 					<b-tab title-link-class="text-dark" :active="displayTab === 'dialogue'" @click="displayTab = 'dialogue'">
-						<template #title> <b-icon-chat-left-quote class="mr-1" />대사 </template>
+						<template #title>
+							<b-icon-chat-text-fill class="mr-1" />
+							대사
+						</template>
 					</b-tab>
 					<b-tab title-link-class="text-dark" :active="displayTab === 'status'" @click="displayTab = 'status'">
-						<template #title> <b-icon-calculator class="mr-1" />스테이터스 </template>
+						<template #title>
+							<b-icon-calculator class="mr-1" />
+							스테이터스
+						</template>
 					</b-tab>
 				</b-tabs>
 			</b-col>
 		</b-row>
 
-		<div v-show="displayTab === 'information'">
+		<div v-show="displayTab === 'texts'">
 			<!-- 스킨, 번호, 소속, 등급, 승급, 유형, 역할 -->
 			<b-tabs v-model="skinIndex" nav-class="unit-skin-tabs">
 				<b-tab
@@ -38,13 +53,25 @@
 					</template>
 				</b-tab>
 			</b-tabs>
+
 			<b-row>
 				<b-col cols="12" md="3">
 					<unit-skin-view v-if="SkinList[skinIndex]" :unit="unit" :skin="SkinList[skinIndex]" collapsed detailable />
 				</b-col>
 
 				<b-col cols="12" md="9">
-					<b-container class="table-unit-modal mt-4 mb-3">
+					<b-card no-body bg-variant="dark" text-variant="light" class="mt-4 introduce-text p-3">
+						{{ unit.introduce }}
+					</b-card>
+
+					<b-alert v-if="unit.hasLimited" variant="primary" show class="mt-3">
+						<div>이 전투원은 다음 전용장비를 갖고 있습니다.</div>
+						<a :href="LimitedEquipURL" @click.prevent="GoTo(LimitedEquipURL)">
+							<drop-equip class="limited-item-card" :equip="LimitedEquip" />
+						</a>
+					</b-alert>
+
+					<b-container class="table-unit-modal mt-3 mb-3">
 						<b-row cols="2" cols-md="4" class="text-center">
 							<b-col class="bg-dark text-white">도감 번호</b-col>
 							<b-col>
@@ -78,6 +105,14 @@
 							<b-col>
 								<unit-badge :role="unit.role" size="large" transparent black />
 							</b-col>
+							<b-col class="bg-dark text-white">키</b-col>
+							<b-col>{{ unit.height }}</b-col>
+							<b-col class="bg-dark text-white">몸무게</b-col>
+							<b-col>{{ unit.weight }}</b-col>
+							<b-col class="bg-dark text-white">전투 스타일</b-col>
+							<b-col>{{ unit.weapon1 }}</b-col>
+							<b-col class="bg-dark text-white">무기</b-col>
+							<b-col>{{ unit.weapon2 }}</b-col>
 						</b-row>
 					</b-container>
 
@@ -118,160 +153,147 @@
 						</b-tbody>
 					</b-table-simple>
 
-					<b-row>
-						<b-col cols="12" sm="4">
-							<b-table-simple bordered fixed table-class="text-center table-unit-modal">
-								<b-thead head-variant="dark">
-									<b-tr>
-										<b-th colspan="4">
-											출격 비용
-											<b-form-select
-												v-if="CostRarityList.length > 1"
-												class="table-unit-rarity-select"
-												size="sm"
-												v-model="costRarity"
-												:options="CostRarityList"
+					<b-table-simple bordered fixed table-class="text-center table-unit-modal">
+						<b-thead head-variant="dark">
+							<b-tr>
+								<b-th>획득처</b-th>
+							</b-tr>
+						</b-thead>
+						<b-tbody>
+							<b-tr>
+								<b-td class="px-0 py-1 drop-list">
+									<template v-if="unit.source.length === 1">
+										<b-badge v-if="unit.craftable" variant="dark">
+											<b-icon-hammer class="mr-1" />
+											제조 {{ CraftTime }}
+										</b-badge>
+										<span v-else class="text-secondary">획득처 정보 없음 (제조 불가)</span>
+									</template>
+									<template v-else>
+										<b-badge v-if="unit.craftable" variant="dark" class="my-1">
+											<b-icon-hammer class="mr-1" />
+											제조 시간 {{ CraftTime }}
+										</b-badge>
+
+										<div v-for="(area, aindex) in unit.source" :key="`unit-view-source-${aindex}`">
+											<hr v-if="unit.craftable || aindex > 0" class="my-1" />
+											<source-badge
+												v-for="(source, sindex) in area"
+												:key="`unit-view-drop-${aindex}-${sindex}-${source}`"
+												class="my-1"
+												:source="source"
+												detail
+												linked
 											/>
-										</b-th>
-									</b-tr>
-									<b-tr>
-										<b-th>링크</b-th>
-										<b-th>부품</b-th>
-										<b-th>영양</b-th>
-										<b-th>전력</b-th>
-									</b-tr>
-								</b-thead>
-								<b-tbody>
-									<b-tr v-for="i in 6" :key="`unit-modal-cost-${i}`" class="text-center">
-										<b-th variant="dark">{{ i - 1 }}</b-th>
-										<b-td :class="CostClass(i - 1, CostTable.metal[i - 1])">{{ CostTable.metal[i - 1] }}</b-td>
-										<b-td :class="CostClass(i - 1, CostTable.nutrient[i - 1])">{{ CostTable.nutrient[i - 1] }}</b-td>
-										<b-td :class="CostClass(i - 1, CostTable.power[i - 1])">{{ CostTable.power[i - 1] }}</b-td>
-									</b-tr>
-								</b-tbody>
-							</b-table-simple>
-						</b-col>
-						<b-col cols="12" md="8">
-							<b-table-simple bordered fixed table-class="text-center table-unit-modal">
-								<b-thead head-variant="dark">
-									<b-tr>
-										<b-th v-b-toggle.unit-drop-header>
-											획득처
-											<b-icon-arrows-expand class="ml-2" />
-										</b-th>
-									</b-tr>
-								</b-thead>
-								<b-tbody>
-									<b-tr>
-										<b-td class="p-0">
-											<b-collapse id="unit-drop-header" class="p-3">
-												<template v-if="unit.source.length === 0">
-													<b-badge v-if="unit.craftable" variant="dark">
-														<b-icon-hammer class="mr-1" />
-														제조 {{ CraftTime }}
-													</b-badge>
-													<span v-else class="text-secondary">획득처 정보 없음 (제조 불가)</span>
-												</template>
-												<template v-else>
-													<b-badge v-if="unit.craftable" variant="dark">
-														<b-icon-hammer class="mr-1" />
-														제조 {{ CraftTime }}
-													</b-badge>
-
-													<div v-for="(area, aindex) in unit.source" :key="`unit-view-source-${aindex}`">
-														<hr v-if="unit.craftable || aindex > 0" class="my-1" />
-														<source-badge
-															v-for="(source, sindex) in area"
-															:key="`unit-view-drop-${aindex}-${sindex}-${source}`"
-															:source="source"
-															detail
-															linked
-														/>
-													</div>
-												</template>
-											</b-collapse>
-										</b-td>
-									</b-tr>
-								</b-tbody>
-							</b-table-simple>
-						</b-col>
-					</b-row>
-
-					<b-row>
-						<b-col cols="12" md="6">
-							<b-table-simple bordered fixed table-class="text-center table-unit-modal">
-								<b-thead head-variant="dark">
-									<b-tr>
-										<b-th class="text-center">
-											<elem-icon elem="fire" />
-											{{ CurrentResists.fire }} %
-										</b-th>
-										<b-th class="text-center">
-											<elem-icon elem="ice" />
-											{{ CurrentResists.ice }} %
-										</b-th>
-										<b-th class="text-center">
-											<elem-icon elem="lightning" />
-											{{ CurrentResists.lightning }} %
-										</b-th>
-									</b-tr>
-									<b-tr>
-										<b-th colspan="3">
-											링크 보너스
-											<b-form-select class="table-unit-link-select" size="sm" v-model="linkCount" :options="LinkCountList" />
-										</b-th>
-									</b-tr>
-								</b-thead>
-								<b-tbody>
-									<b-tr v-for="(lb, lbIdx) in LinkBonus" :key="`unit-linkbonus-row-${lbIdx}`">
-										<b-td colspan="3">
-											{{ lb.Name }}
-											<span class="d-inline-block">
-												{{ lb.Prefix }}<b class="text-danger">{{ lb.Value }}</b
-												>{{ lb.Postfix }}
-											</span>
-										</b-td>
-									</b-tr>
-								</b-tbody>
-							</b-table-simple>
-						</b-col>
-						<b-col cols="12" sm="6" class="fulllink-table">
-							<b-table-simple bordered fixed table-class="text-left table-unit-modal">
-								<b-thead head-variant="dark">
-									<b-tr>
-										<b-th class="text-center">풀링크 보너스</b-th>
-									</b-tr>
-								</b-thead>
-								<b-tbody>
-									<b-tr>
-										<b-td>
-											없음
-											<b-radio class="float-right" value v-model="linkBonus" />
-										</b-td>
-									</b-tr>
-									<b-tr v-for="(fl, flIdx) in FullLinkBonus" :key="`unit-fulllinkbonus-row-${flIdx}`">
-										<b-td>
-											{{ fl.Name }}
-											<span class="d-inline-block">
-												{{ fl.Prefix }}<b class="text-danger">{{ fl.Value }}</b
-												>{{ fl.Postfix }}
-											</span>
-											<b-radio v-if="BonusSelectable(fl.Key)" class="float-right" :value="fl.Key" v-model="linkBonus" />
-										</b-td>
-									</b-tr>
-								</b-tbody>
-							</b-table-simple>
-						</b-col>
-					</b-row>
+										</div>
+									</template>
+								</b-td>
+							</b-tr>
+						</b-tbody>
+					</b-table-simple>
 				</b-col>
 			</b-row>
+		</div>
 
-			<b-alert v-if="unit.hasLimited" variant="primary" show>
-				<div>이 전투원은 다음 전용장비를 갖고 있습니다.</div>
-				<a :href="LimitedEquipURL" @click.prevent="GoTo(LimitedEquipURL)">
-					<drop-equip class="limited-item-card" :equip="LimitedEquip" />
-				</a>
-			</b-alert>
+		<div v-show="displayTab === 'information'">
+			<b-row>
+				<b-col cols="12" md="4">
+					<b-table-simple bordered fixed table-class="text-center table-unit-modal">
+						<b-thead head-variant="dark">
+							<b-tr>
+								<b-th class="text-center">
+									<elem-icon elem="fire" />
+									{{ CurrentResists.fire }} %
+								</b-th>
+								<b-th class="text-center">
+									<elem-icon elem="ice" />
+									{{ CurrentResists.ice }} %
+								</b-th>
+								<b-th class="text-center">
+									<elem-icon elem="lightning" />
+									{{ CurrentResists.lightning }} %
+								</b-th>
+							</b-tr>
+							<b-tr>
+								<b-th colspan="3">
+									링크 보너스
+									<b-form-select class="table-unit-link-select" size="sm" v-model="linkCount" :options="LinkCountList" />
+								</b-th>
+							</b-tr>
+						</b-thead>
+						<b-tbody>
+							<b-tr v-for="(lb, lbIdx) in LinkBonus" :key="`unit-linkbonus-row-${lbIdx}`">
+								<b-td colspan="3">
+									{{ lb.Name }}
+									<span class="d-inline-block">
+										{{ lb.Prefix }}<b class="text-danger">{{ lb.Value }}</b
+										>{{ lb.Postfix }}
+									</span>
+								</b-td>
+							</b-tr>
+						</b-tbody>
+					</b-table-simple>
+				</b-col>
+				<b-col cols="12" md="4" class="fulllink-table">
+					<b-table-simple bordered fixed table-class="text-left table-unit-modal">
+						<b-thead head-variant="dark">
+							<b-tr>
+								<b-th class="text-center">풀링크 보너스</b-th>
+							</b-tr>
+						</b-thead>
+						<b-tbody>
+							<b-tr>
+								<b-td>
+									없음
+									<b-radio class="float-right" value v-model="linkBonus" />
+								</b-td>
+							</b-tr>
+							<b-tr v-for="(fl, flIdx) in FullLinkBonus" :key="`unit-fulllinkbonus-row-${flIdx}`">
+								<b-td>
+									{{ fl.Name }}
+									<span class="d-inline-block">
+										{{ fl.Prefix }}<b class="text-danger">{{ fl.Value }}</b
+										>{{ fl.Postfix }}
+									</span>
+									<b-radio v-if="BonusSelectable(fl.Key)" class="float-right" :value="fl.Key" v-model="linkBonus" />
+								</b-td>
+							</b-tr>
+						</b-tbody>
+					</b-table-simple>
+				</b-col>
+				<b-col cols="12" md="4">
+					<b-table-simple bordered fixed table-class="text-center table-unit-modal">
+						<b-thead head-variant="dark">
+							<b-tr>
+								<b-th colspan="4">
+									출격 비용
+									<b-form-select
+										v-if="CostRarityList.length > 1"
+										class="table-unit-rarity-select"
+										size="sm"
+										v-model="costRarity"
+										:options="CostRarityList"
+									/>
+								</b-th>
+							</b-tr>
+							<b-tr>
+								<b-th>링크</b-th>
+								<b-th>부품</b-th>
+								<b-th>영양</b-th>
+								<b-th>전력</b-th>
+							</b-tr>
+						</b-thead>
+						<b-tbody>
+							<b-tr v-for="i in 6" :key="`unit-modal-cost-${i}`" class="text-center">
+								<b-th variant="dark">{{ i - 1 }}</b-th>
+								<b-td :class="CostClass(i - 1, CostTable.metal[i - 1])">{{ CostTable.metal[i - 1] }}</b-td>
+								<b-td :class="CostClass(i - 1, CostTable.nutrient[i - 1])">{{ CostTable.nutrient[i - 1] }}</b-td>
+								<b-td :class="CostClass(i - 1, CostTable.power[i - 1])">{{ CostTable.power[i - 1] }}</b-td>
+							</b-tr>
+						</b-tbody>
+					</b-table-simple>
+				</b-col>
+			</b-row>
 
 			<unit-skill-table
 				v-if="SkillsRaw"
@@ -386,7 +408,7 @@ export default class UnitView extends Vue {
 	private linkCount: number = 5;
 	private formState: "normal" | "change" = "normal";
 
-	private displayTab: "information" | "dialogue" | "status" = "information";
+	private displayTab: "texts" | "information" | "dialogue" | "status" = "texts";
 
 	private unitId: number = 0;
 	private skillLevel: number = 0;
@@ -536,13 +558,13 @@ export default class UnitView extends Vue {
 		if (this.linkBonus === "Skill_35") bonus = bonus.add(35);
 
 		if (this.unit.linkBonus.includes("Skill_2")) bonus = bonus.add(2);
-		if (this.unit.linkBonus.includes("Skill_5")) bonus = bonus.add(2);
-		if (this.unit.linkBonus.includes("Skill_10")) bonus = bonus.add(2);
-		if (this.unit.linkBonus.includes("Skill_15")) bonus = bonus.add(2);
-		if (this.unit.linkBonus.includes("Skill_20")) bonus = bonus.add(2);
-		if (this.unit.linkBonus.includes("Skill_25")) bonus = bonus.add(2);
-		if (this.unit.linkBonus.includes("Skill_30")) bonus = bonus.add(2);
-		if (this.unit.linkBonus.includes("Skill_35")) bonus = bonus.add(2);
+		if (this.unit.linkBonus.includes("Skill_5")) bonus = bonus.add(5);
+		if (this.unit.linkBonus.includes("Skill_10")) bonus = bonus.add(10);
+		if (this.unit.linkBonus.includes("Skill_15")) bonus = bonus.add(15);
+		if (this.unit.linkBonus.includes("Skill_20")) bonus = bonus.add(20);
+		if (this.unit.linkBonus.includes("Skill_25")) bonus = bonus.add(25);
+		if (this.unit.linkBonus.includes("Skill_30")) bonus = bonus.add(30);
+		if (this.unit.linkBonus.includes("Skill_35")) bonus = bonus.add(35);
 
 		return bonus.toNumber();
 	}
@@ -768,6 +790,10 @@ export default class UnitView extends Vue {
 	// .fulllink-table {
 	//	padding-top: 0.55em;
 	// }
+	.introduce-text {
+		word-break: keep-all;
+		white-space: pre-line;
+	}
 
 	.table-unit-modal.container {
 		.col {
@@ -817,6 +843,14 @@ export default class UnitView extends Vue {
 
 		&:last-child {
 			border-bottom: 0;
+		}
+	}
+
+	.drop-list {
+		line-height: 1;
+		a {
+			display: inline-block;
+			line-height: 1;
 		}
 	}
 

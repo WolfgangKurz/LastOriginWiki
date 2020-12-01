@@ -1,6 +1,21 @@
 <template>
 	<div>
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20201201>2020-12-02</b-card-header>
+			<b-collapse id="changelog20201202" visible>
+				<b-card-body>
+					<div><b-badge variant="warning">세계정보</b-badge>의 지역에 지역 이름 및 설명이 추가되었습니다.</div>
+					<div>
+						<b-badge variant="warning">전투원 페이지</b-badge>의 상단 탭 구성을 변경했습니다.<br />
+						<b-badge variant="info">기본정보</b-badge>는 전투원의 소개글과 기존의 도감 정보, 전용 장비, 호감도 정보, 획득처 정보를
+						포함합니다. 도감 정보에 전투원의 키와 몸무게, 사용 무기 정보가 추가되었습니다.<br />
+						<b-badge variant="info">링크/스킬</b-badge>은 링크 보너스, 풀링크 보너스, 출격 자원, 스킬 정보를 포함합니다.
+					</div>
+					<div><b-badge variant="warning">적 정보</b-badge> 팝업의 스킬 정보에 버프 정보가 추가되었습니다.</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20201201>2020-12-01</b-card-header>
 			<b-collapse id="changelog20201201" visible>
 				<b-card-body>

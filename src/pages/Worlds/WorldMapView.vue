@@ -53,14 +53,16 @@
 			</div>
 		</b-card>
 
+		<b-card v-if="selected" class="mt-3" bg-variant="dark" text-variant="light">
+			<h5>
+				<b-badge variant="warning" class="mr-2 selected-node-badge">{{ selected.text }}</b-badge>
+				{{ selected.name }}
+			</h5>
+			<div>{{ selected.desc }}</div>
+		</b-card>
+
 		<b-card class="mt-2" no-body>
 			<b-tabs card>
-				<template #tabs-start>
-					<div v-if="selected" class="mx-2">
-						<b-badge variant="warning">{{ selected.text }}</b-badge>
-					</div>
-				</template>
-
 				<b-tab title-link-class="text-dark" :active="CurrentTab === 'reward'" @click="CurrentTab = 'reward'">
 					<template #title>
 						<b-icon-award-fill class="mr-1" />
@@ -664,6 +666,11 @@ export default class WorldMapView extends Vue {
 			border: none !important;
 			outline: none !important;
 		}
+	}
+
+	.selected-node-badge {
+		position: relative;
+		top: -0.125rem;
 	}
 
 	.drop-unit,
