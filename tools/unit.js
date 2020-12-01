@@ -1,12 +1,12 @@
 const fs = require("fs");
 const path = require("path");
-const { google, plus_v1 } = require("googleapis");
+const { google } = require("googleapis");
 
 function process (auth) {
 	const sheets = google.sheets({ version: "v4", auth });
 	sheets.spreadsheets.values.get({
 		spreadsheetId: "1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4",
-		range: "UnitTable!A3:AG",
+		range: "UnitTable!A3:AL",
 	}, (err, res) => {
 		if (err) return console.log("The API returned an error: " + err);
 
@@ -121,6 +121,8 @@ function process (auth) {
 					name, shortname, uid,
 					rarity, type, role, body,
 					group, shortgroup, groupkey,
+					introduce,
+					height, weight, weapon1, weapon2,
 					pro, craftable,
 					favor1, favor2, favor3, favor4,
 					marry,
@@ -154,6 +156,12 @@ function process (auth) {
 					group,
 					shortgroup,
 					groupkey,
+
+					introduce,
+					height,
+					weight,
+					weapon1,
+					weapon2,
 
 					craftable: !craftable ? false : parseInt(craftable, 10),
 					favor,

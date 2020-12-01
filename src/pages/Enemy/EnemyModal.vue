@@ -1,5 +1,5 @@
 <template>
-	<b-modal v-if="enemy && target" v-model="displaySync" centered hide-footer content-class="enemy-modal">
+	<b-modal v-if="enemy && target" v-model="displaySync" size="lg" centered hide-footer content-class="enemy-modal">
 		<template #modal-title>
 			<div class="text-left">
 				{{ target.name }}
@@ -195,13 +195,14 @@
 							<skill-description :text="Description(skill)" :level="1" />
 						</div>
 
-						<!-- <b-list-group v-if="StatusList" class="text-left">
-							<b-list-group-item v-for="(status, idx) in StatusList" :key="`status-line-${idx}`">
+						<div class="clearfix" />
+						<hr />
+
+						<b-list-group v-if="BuffList[skill.key].length > 0" class="text-left mt-2">
+							<b-list-group-item v-for="(status, idx) in BuffList[skill.key]" :key="`enemy-status-line-${idx}`">
 								<node-renderer :elem="status" />
 							</b-list-group-item>
-						</b-list-group> -->
-						<hr />
-						<div class="mt-2 text-center text-secondary">세부 버프 목록은 준비중!</div>
+						</b-list-group>
 					</b-col>
 				</b-row>
 			</template>
@@ -233,7 +234,7 @@ import { Prop, Watch, PropSync } from "vue-property-decorator";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { ArrayUnique, FormatNumber } from "@/libs/Functions";
-import EquipStatus from "@/libs/Buffs/BuffStatus";
+import BuffStatus from "@/libs/Buffs/BuffStatus";
 
 import NodeRenderer from "@/components/NodeRenderer.vue";
 import UnitBadge from "@/components/UnitBadge.vue";
@@ -413,18 +414,19 @@ export default class EquipModal extends Vue {
 		this.$router.push({ path });
 	}
 
-	// private get StatusList () {
-	// 	if (!this.target) return null;
+	private get BuffList () {
+		const output: Record<string, JSX.Element[]> = {};
+		const level = 1;
 
-	// 	const stat = this.target.stats[this.currentLevel];
-	// 	return stat.reduce((p, c) => [...p, ...EquipStatus(this, c)], [] as JSX.Element[]);
-	// }
+		this.Skills.forEach(skill => {
+			if (!skill) return null;
 
-	// private UnitName (idx: number) {
-	// 	const char = UnitData.find(x => x.id === idx);
-	// 	if (char) return char.name;
-	// 	return `Unit${ idx; }`;
-	// }
+			const stat = skill.buffs;
+			output[skill.key] = stat.reduce((p, c) => [...p, ...BuffStatus(this, c, level)], [] as JSX.Element[]);
+		});
+
+		return output;
+	}
 }
 </script>
 
@@ -438,9 +440,12 @@ export default class EquipModal extends Vue {
 	.info-tab-button svg {
 		width: 100%;
 		height: 100%;
+		max-width: 56px;
+		max-height: 56px;
 	}
 	.skill-icon {
 		width: 100%;
+		max-width: 56px;
 	}
 
 	.white-pre-line {
@@ -517,6 +522,11 @@ export default class EquipModal extends Vue {
 	}
 
 	.status-col {
+		> table {
+			margin: auto;
+			width: auto;
+		}
+
 		.status-col-head,
 		.status-col-value {
 			line-height: 1.2em;
