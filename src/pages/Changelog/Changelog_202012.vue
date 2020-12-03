@@ -4,6 +4,7 @@
 			<b-card-header v-b-toggle.changelog20201203>2020-12-03</b-card-header>
 			<b-collapse id="changelog20201203" visible>
 				<b-card-body>
+					<div>2020년 12월 교환소 정보가 갱신되었습니다.</div>
 					<div>일부 버프 이름이 갱신되었습니다.</div>
 					<div><b-badge variant="warning">8-8</b-badge>의 적 정보가 정확하지 않던 문제를 수정했습니다.</div>
 					<div>
