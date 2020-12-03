@@ -401,7 +401,7 @@ export function BuffEffectList () {
 	ret.push({ pm: false, text: "피해 무효화", type: [BUFFEFFECT_TYPE.STAGE_IMMUNESHIELD_TIME] });
 	ret.push({ pm: false, text: "피해 최소화", type: [BUFFEFFECT_TYPE.STAGE_SHIELD_VALUE] });
 	ret.push({ pm: false, text: "받는 피해 감소", type: [BUFFEFFECT_TYPE.STAGE_SHIELD_RATIO] });
-	ret.push({ pm: false, text: "보호막", type: [BUFFEFFECT_TYPE.STAGE_IMMUNESHIELD_VALUE] });
+	ret.push({ pm: false, text: "방어막", type: [BUFFEFFECT_TYPE.STAGE_IMMUNESHIELD_VALUE] });
 	ret.push({ pm: false, text: "추가 물리 피해", type: [BUFFEFFECT_TYPE.STAGE_DAMAGEPHYSICS_RATIO, BUFFEFFECT_TYPE.STAGE_DAMAGEPHYSICS_VALUE] });
 	ret.push({ pm: false, text: "추가 화염 피해", type: [BUFFEFFECT_TYPE.STAGE_DAMAGEFIRE_RATIO, BUFFEFFECT_TYPE.STAGE_DAMAGEFIRE_VALUE] });
 	ret.push({ pm: false, text: "추가 냉기 피해", type: [BUFFEFFECT_TYPE.STAGE_DAMAGEICE_RATIO, BUFFEFFECT_TYPE.STAGE_DAMAGEICE_VALUE] });

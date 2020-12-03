@@ -63,6 +63,11 @@
 							/>
 						</div>
 
+						<div v-if="BuffRates[skill.key].some((x) => x !== 100)">
+							<b-badge variant="danger">{{ BuffRates[skill.key][skillLevelSync] }}% 확률로 버프 발동</b-badge>
+							<small class="text-secondary ml-1">- 호감도 및 버프/디버프 효과 증가로 변동되지 않음, 효과 발동에 영향 받음</small>
+						</div>
+
 						<b-list-group v-if="displayBuffList && BuffList[skill.key].length > 0" class="text-left mt-2">
 							<b-list-group-item v-for="(status, idx) in BuffList[skill.key]" :key="`status-line-${idx}`">
 								<node-renderer :elem="status" />
@@ -93,6 +98,11 @@
 								:skill-bonus="skillBonus"
 								:love-bonus="loveBonus"
 							/>
+						</div>
+
+						<div v-if="BuffRates[skill.key].some((x) => x !== 100)">
+							<b-badge variant="danger">{{ BuffRates[skill.key][skillLevelSync] }}% 확률로 버프 발동</b-badge>
+							<small class="text-secondary ml-1">- 호감도 및 버프/디버프 효과 증가로 변동되지 않음, 효과 발동에 영향 받음</small>
 						</div>
 
 						<b-list-group v-if="displayBuffList && BuffList[skill.key].length > 0" class="text-left mt-2">
@@ -126,6 +136,7 @@ import { ACTOR_GRADE } from "@/libs/Types/Enums";
 import SkillData, { SkillEntity, RawSkillEntity } from "@/libs/DB/Skill";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import BuffStatus from "@/libs/Buffs/BuffStatus";
+import Decimal from "decimal.js";
 
 interface SkillItem extends SkillEntity {
 	index: number;
@@ -259,6 +270,21 @@ export default class UnitSkillTable extends Vue {
 
 				const stat = skill.buffs[this.skillLevelSync];
 				output[key] = stat.reduce((p, c) => [...p, ...BuffStatus(this, c, level)], [] as JSX.Element[]);
+			});
+
+		return output;
+	}
+
+	private get BuffRates () {
+		const output: Record<string, number[]> = {};
+		const level = this.skillLevelSync;
+
+		Object.keys(this.skills)
+			.forEach(key => {
+				const skill = this.skills[key];
+				if (!skill) return null;
+
+				output[key] = skill.buffRate.map(x => Decimal.mul(x, 100).toNumber());
 			});
 
 		return output;

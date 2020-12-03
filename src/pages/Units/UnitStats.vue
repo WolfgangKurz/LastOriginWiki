@@ -29,21 +29,15 @@
 					<b-row>
 						<b-col cols="4">
 							<img class="res-icon" :src="`${AssetsRoot}/res-component.png`" />
-							<span :class="`text-${sUnit.FullLinkBonus.startsWith('Cost_') ? 'primary' : 'dark'}`">{{
-								CostTable.metal[sUnit.LinkCount]
-							}}</span>
+							<span :class="`text-${IsCostDiscount ? 'primary' : 'dark'}`">{{ CostTable.metal[sUnit.LinkCount] }}</span>
 						</b-col>
 						<b-col cols="4">
 							<img class="res-icon" :src="`${AssetsRoot}/res-nutrition.png`" />
-							<span :class="`text-${sUnit.FullLinkBonus.startsWith('Cost_') ? 'primary' : 'dark'}`">{{
-								CostTable.nutrient[sUnit.LinkCount]
-							}}</span>
+							<span :class="`text-${IsCostDiscount ? 'primary' : 'dark'}`">{{ CostTable.nutrient[sUnit.LinkCount] }}</span>
 						</b-col>
 						<b-col cols="4">
 							<img class="res-icon" :src="`${AssetsRoot}/res-power.png`" />
-							<span :class="`text-${sUnit.FullLinkBonus.startsWith('Cost_') ? 'primary' : 'dark'}`">{{
-								CostTable.power[sUnit.LinkCount]
-							}}</span>
+							<span :class="`text-${IsCostDiscount ? 'primary' : 'dark'}`">{{ CostTable.power[sUnit.LinkCount] }}</span>
 						</b-col>
 					</b-row>
 				</b-col>
@@ -287,8 +281,14 @@ export default class UnitStatus extends Vue {
 			this.sUnit.Unit.type,
 			this.sUnit.Unit.role,
 			this.sUnit.Unit.body,
-			this.sUnit.FullLinkBonus,
+			this.sUnit.LinkSum === 5
+				? this.sUnit.FullLinkBonus
+				: "",
 		);
+	}
+
+	private get IsCostDiscount () {
+		return this.sUnit.LinkSum === 5 && this.sUnit.FullLinkBonus.startsWith("Cost_");
 	}
 
 	private get RarityName (): Record<ACTOR_GRADE, string> {

@@ -96,7 +96,7 @@ export class Unit extends Vue {
 	public get LinkBonus () {
 		return this.Unit.linkBonus
 			.filter(x => x)
-			.map(x => GetLinkBonus(x, this.LinkCount));
+			.map(x => GetLinkBonus(x, this.LinkSum));
 	}
 
 	public get FullLinkBonus () {

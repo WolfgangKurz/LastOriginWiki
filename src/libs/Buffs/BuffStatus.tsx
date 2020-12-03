@@ -469,7 +469,7 @@ function getBuffEffectTypeText (type: BUFFEFFECT_TYPE, target: BUFF_ATTR_TYPE) {
 		case BUFFEFFECT_TYPE.STAGE_SHIELD_RATIO_LIMITED: // 37
 			return "STAGE_SHIELD_RATIO_LIMITED" + p; // 사용처 없음, 알 수 없음
 		case BUFFEFFECT_TYPE.STAGE_IMMUNESHIELD_VALUE: // 38
-			return "보호막"; // 보호막
+			return "방어막"; // 방어막
 		case BUFFEFFECT_TYPE.STAGE_DAMAGEPHYSICS_RATIO: // 39
 		case BUFFEFFECT_TYPE.STAGE_DAMAGEPHYSICS_VALUE: // 40
 			return "추가 물리 피해";

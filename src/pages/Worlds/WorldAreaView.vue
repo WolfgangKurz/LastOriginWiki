@@ -9,7 +9,7 @@
 
 		<world-item :wid="wid" />
 
-		<b-row class="justify-content-center" cols="2" cols-md="3" cols-lg="4">
+		<b-row class="justify-content-center" cols="1" cols-sm="2" cols-md="3" cols-lg="4">
 			<b-col v-for="i in Areas" :key="`world-area-${wid}-${i}`">
 				<b-card class="world-area text-center mt-4" text-variant="light" bg-variant="dark">
 					<img :src="`${AssetsRoot}/world/icons/${wid}_${i}.png`" />
