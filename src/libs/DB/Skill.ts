@@ -10,6 +10,7 @@ export interface RawSkillEntity {
 	ap: number;
 	target: "enemy" | "team";
 	bound: "self" | "single" | "around" | "fill" | "global" | string;
+	buffRate: number[];
 	buffs: string;
 	desc: string[];
 }
@@ -23,6 +24,7 @@ export interface SkillEntity {
 	ap: number;
 	target: "enemy" | "team";
 	bound: "self" | "single" | "around" | "fill" | "global" | string;
+	buffRate: number[];
 
 	buffs: BuffStat[][];
 	desc: string[];

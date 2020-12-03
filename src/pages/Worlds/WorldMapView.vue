@@ -26,29 +26,7 @@
 
 			<div class="world-map-bg">
 				<div>
-					<template v-for="(node, nodeIdx) in NodeList">
-						<a
-							:data-pos="node.offset"
-							:key="`worlds-${world}-${area}-${nodeIdx}-n`"
-							:href="node.text ? `/worlds/${world}/${area}/${node.text}` : undefined"
-							@click.prevent="node.text && SelectNode(node)"
-						>
-							<map-node :node="node" :active="selected === node" />
-						</a>
-						<div
-							:key="`worlds-${world}-${area}-${nodeIdx}-p1`"
-							:data-pos="node.offset"
-							:data-dir="1"
-							:data-hidden="isHidden(node, true) ? 1 : 0"
-						/>
-						<div
-							v-if="Math.floor(node.offset / 8) < 2"
-							:key="`worlds-${world}-${area}-${nodeIdx}-p2`"
-							:data-pos="node.offset"
-							:data-dir="2"
-							:data-hidden="isHidden(node, false) ? 1 : 0"
-						/>
-					</template>
+					<world-map-grid :nodes="NodeList" :selected.sync="selected" :world="world" :area="area" @select="NodeChange" />
 				</div>
 			</div>
 		</b-card>
@@ -277,7 +255,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Watch } from "vue-property-decorator";
 
-import MapNode from "./MapNode.vue";
+import WorldMapGrid from "./WorldMapGrid.vue";
 import DropUnit from "./DropUnit.vue";
 import DropEquip from "./DropEquip.vue";
 import DropItem from "./DropItem.vue";
@@ -314,7 +292,7 @@ interface WaveEnemyInfo extends MapEnemyData {
 
 @Component({
 	components: {
-		MapNode,
+		WorldMapGrid,
 		DropUnit,
 		DropEquip,
 		DropItem,
@@ -495,27 +473,11 @@ export default class WorldMapView extends Vue {
 		return `${("0" + h).substr(-2)}:${("0" + m).substr(-2)}:${("0" + s).substr(-2)}`;
 	}
 
-	private isHidden (node: MapNodeEntity, diffs: boolean) {
-		if (node.prev !== null) {
-			const oy = Math.floor(node.offset / 8);
-			const py = Math.floor(node.prev / 8);
-
-			if (oy === py && node.prev >= node.offset)
-				return true;
-
-			return diffs
-				? oy !== py
-				: oy === py;
-		}
-		return true;
-	}
-
-	private SelectNode (node: MapNodeEntity) {
-		this.selected = node;
+	private NodeChange () {
 		this.selectedWave = 0;
 
 		this.$router.push({
-			path: `/worlds/${this.world}/${this.area}/${node.text}`,
+			path: `/worlds/${this.world}/${this.area}/${this.selected ? this.selected.text : ""}`,
 			hash: "#drops",
 		});
 	}
@@ -582,85 +544,6 @@ export default class WorldMapView extends Vue {
 		background-size: cover;
 		background-color: #171717;
 		overflow-x: auto;
-
-		> div {
-			$cols: ();
-			@for $i from 1 through 8 {
-				$cols: append($cols, auto);
-				@if $i < 8 {
-					$cols: append($cols, minmax(10px, 1fr));
-				}
-			}
-
-			display: grid;
-			grid-template-columns: $cols;
-			grid-template-rows: 2fr 1fr 2fr 1fr 2fr;
-
-			// &:last-child {
-			// 	grid-template-rows: 1fr;
-			// }
-
-			@for $i from 1 through 8 {
-				@for $j from 1 through 3 {
-					$x: (($i - 1) * 2) + 1;
-					$x1: ($i - 1) * 2;
-					$offset: ($i - 1) + ($j - 1) * 8;
-
-					> [data-pos="#{$offset}"] {
-						grid-column: (($i - 1) * 2) + 1;
-						grid-row: ($j * 2 - 1);
-
-						&[data-dir="0"],
-						&[data-dir="1"] {
-							@if $x1 == 0 {
-								display: none;
-							} @else {
-								grid-column: ($i - 1) * 2;
-							}
-						}
-						&[data-dir="2"] {
-							grid-row: ($j * 2);
-						}
-					}
-				}
-			}
-			> [data-dir] {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-
-				&::before {
-					content: "";
-					display: block;
-					width: 100%;
-					height: 3px;
-				}
-				&[data-hidden="1"] {
-					visibility: hidden;
-				}
-
-				@mixin offsetColor($offset, $color) {
-					$selectors: ();
-					@for $i from 0 to 8 {
-						$selectors: append($selectors, '&[data-pos="#{$i + $offset}"]::before', comma);
-					}
-					#{$selectors} {
-						background-color: $color;
-					}
-				}
-				@include offsetColor(0, #98fd28);
-				@include offsetColor(8, #ffce22);
-				@include offsetColor(16, #ff2d5b);
-
-				&[data-dir="1"]::before {
-					margin: 0 5%;
-				}
-				&[data-dir="2"]::before {
-					width: 50%;
-					transform: rotate(90deg);
-				}
-			}
-		} // > div
 
 		a:focus {
 			border: none !important;

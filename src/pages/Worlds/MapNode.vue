@@ -45,7 +45,8 @@ export default class MapNode extends Vue {
 <style lang="scss">
 .map-node {
 	position: relative;
-	margin-bottom: 1em;
+	display: inline-block;
+	margin: 0 2px 1em;
 	text-align: center;
 	z-index: 3;
 
