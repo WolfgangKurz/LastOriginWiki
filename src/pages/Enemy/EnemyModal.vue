@@ -175,7 +175,7 @@
 				</b-col>
 				<b-col :class="['info-tab-button', 'mt-1', displayTab === 'desc' ? 'border border-bottom-0' : 'border-bottom']">
 					<a href="#" class="text-dark" @click.prevent="displayTab = 'desc'">
-						<b-icon-info-circle-fill />
+						<b-icon-info-circle-fill class="my-2" />
 					</a>
 				</b-col>
 			</b-row>
@@ -188,11 +188,24 @@
 						<small class="ml-1">Lv.1</small>
 
 						<div class="float-md-right bg-dark ml-md-2 mt-2 mt-md-0 p-2 text-center">
-							<skill-bound target="enemy" :ap="skill.ap" :level="1" :passive="skill.passive" :range="skill.range" :bound="skill.grid" />
+							<skill-bound :target="skill.target" :levels="skill.buff" :level="1" :passive="skill.passive" />
 						</div>
 
-						<div class="mt-3 skill-desc break-keep white-pre-line">
-							<skill-description :text="Description(skill)" :level="1" />
+						<div class="mt-3 skill-desc">
+							<div>
+								<elem-icon :elem="skill.buff.type" class="mr-1" />
+								<b-badge v-if="skill.buff.dismiss_guard" variant="warning" class="mr-1">보호 무시</b-badge>
+								<b-badge v-if="skill.buff.target_ground" variant="danger" class="mr-1">땅 찍기</b-badge>
+								<b-badge v-if="skill.buff.acc_bonus" variant="success" class="mr-1">
+									적중 보정
+									{{ (skill.buff.acc_bonus > 0 ? "+" : "") + skill.buff.acc_bonus }}%
+								</b-badge>
+							</div>
+							<hr class="my-1" />
+
+							<div class="break-keep white-pre-line">
+								<skill-description :text="Description(skill)" :level="1" />
+							</div>
 						</div>
 
 						<div class="clearfix" />
@@ -264,7 +277,7 @@ import MapData from "@/libs/DB/Map";
 		SkillDescription,
 	},
 })
-export default class EquipModal extends Vue {
+export default class SummonModal extends Vue {
 	@PropSync("display", {
 		type: Boolean,
 		default: false,
@@ -304,8 +317,7 @@ export default class EquipModal extends Vue {
 	}
 
 	private get imageExt () {
-		// return ImageExtension();
-		return "png";
+		return ImageExtension();
 	}
 
 	private get target () {
@@ -379,13 +391,13 @@ export default class EquipModal extends Vue {
 
 		const v = Decimal.mul(
 			this.StatValue(this.target.atk),
-			skill.rate,
+			skill.buff.rate,
 		)
 			.floor()
 			.toNumber();
 
 		let t = skill.desc.toString();
-		t = t.replace(/\{0\}/g, `[@::${v}~0: (${skill.rate}배)]`);
+		t = t.replace(/\{0\}/g, `[@::${v}~0: (${skill.buff.rate}배)]`);
 		return t;
 	}
 
@@ -410,19 +422,13 @@ export default class EquipModal extends Vue {
 		}
 	}
 
-	private GoTo (path: string) {
-		this.$router.push({ path });
-	}
-
 	private get BuffList () {
 		const output: Record<string, JSX.Element[]> = {};
-		const level = 1;
-
 		this.Skills.forEach(skill => {
 			if (!skill) return null;
 
-			const stat = skill.buffs;
-			output[skill.key] = stat.reduce((p, c) => [...p, ...BuffStatus(this, c, level)], [] as JSX.Element[]);
+			const stat = skill.buff.buffs;
+			output[skill.key] = stat.reduce((p, c) => [...p, ...BuffStatus(this, c, 1)], [] as JSX.Element[]);
 		});
 
 		return output;

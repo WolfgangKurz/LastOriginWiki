@@ -844,6 +844,9 @@ export default class UnitView extends Vue {
 		&:last-child {
 			border-bottom: 0;
 		}
+		&:empty {
+			display: none;
+		}
 	}
 
 	.drop-list {

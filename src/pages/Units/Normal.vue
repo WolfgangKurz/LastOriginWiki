@@ -91,12 +91,12 @@ export default class UnitsNormal extends Vue {
 			const __ = _(skills[ss as SkillSlotKey]);
 			const target: EffectFilterTargetType = __.target === "enemy"
 				? "enemy"
-				: __.bound === "self"
+				: __.levels.some(l => l.grid === "self")
 					? "self"
 					: "team";
 
 			if (!this.Filters.EffectTarget.includes(target)) return false;
-			return __.buffs.some(row => row.some(es => {
+			return __.levels.some(l => l.buffs.some(es => {
 				if ("type" in es)
 					return validator(es);
 				else
