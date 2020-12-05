@@ -1,4 +1,5 @@
 <script lang="tsx">
+import { SkillEntryData } from "@/libs/DB/Skill";
 import _ from "lodash";
 import Vue from "vue";
 import Component from "vue-class-component";
@@ -13,22 +14,10 @@ export default class SkillBound extends Vue {
 	private target!: "team" | "enemy";
 
 	@Prop({
-		type: String,
+		type: [Object, Array],
 		required: true,
 	})
-	private bound!: "single" | "self" | "global" | string;
-
-	@Prop({
-		type: Number,
-		default: 0,
-	})
-	private range!: number;
-
-	@Prop({
-		type: [Number, String],
-		default: 0,
-	})
-	private ap!: number | string;
+	private levels!: SkillEntryData | SkillEntryData[];
 
 	@Prop({
 		type: Number,
@@ -52,93 +41,48 @@ export default class SkillBound extends Vue {
 		return this.Bound.global;
 	}
 
+	private get Skill () {
+		if (Array.isArray(this.levels))
+			return this.levels[this.level - 1];
+		else
+			return this.levels;
+	}
+
 	private get AP () {
-		if (typeof this.ap === "number")
-			return this.ap;
+		return this.Skill.ap;
+	}
 
-		let match = 0;
-		const aps = this.ap.split("\n");
-
-		aps.forEach(x => {
-			if (x.includes(":")) {
-				const lv = x.substr(0, x.indexOf(":"));
-				if (lv.includes("~")) {
-					const from = parseInt(lv.substr(0, lv.indexOf("~")), 10);
-					const to = (() => {
-						const ilv = parseInt(lv.substr(lv.indexOf("~") + 1), 10);
-						if (ilv >= 10) return 13;
-						else return ilv;
-					})();
-
-					if (this.level < from || to < this.level) // 범위 밖
-						return;
-				} else {
-					const ilv = parseInt(lv, 10);
-					if (ilv < 10 && this.level !== ilv) return;
-					else if (ilv >= 10 && this.level < 10) return;
-				}
-
-				match = parseInt(x.substr(x.indexOf(":") + 1), 10);
-			} else
-				match = parseInt(x, 10);
-		});
-
-		return match;
+	private get Range () {
+		return this.Skill.range;
 	}
 
 	private get Bound () {
-		let match = "";
+		let match = this.Skill.grid;
 		let offset = 5;
 		let global = false;
-		const bounds = this.bound.split("\n");
 
-		bounds.forEach(x => {
-			if (x.includes(":")) {
-				const lv = x.substr(0, x.indexOf(":"));
-				if (lv.includes("~")) {
-					const from = parseInt(lv.substr(0, lv.indexOf("~")), 10);
-					const to = (() => {
-						const ilv = parseInt(lv.substr(lv.indexOf("~") + 1), 10);
-						if (ilv >= 10) return 13;
-						else return ilv;
-					})();
-
-					if (this.level < from || to < this.level) // 범위 밖
-						return;
-				} else {
-					const ilv = parseInt(lv, 10);
-					if (ilv < 10 && this.level !== ilv) return;
-					else if (ilv >= 10 && this.level < 10) return;
-				}
-
-				match = x.substr(x.indexOf(":") + 1);
-			} else
-				match = x;
-
-			if (match === "single" || match === "self") {
-				offset = 5;
-				match = "5";
-			} else if (match === "global") {
-				offset = 5;
-				match = "123456789";
+		if (match === "single" || match === "self") {
+			offset = 5;
+			match = "5";
+		} else if (match === "global") {
+			offset = 5;
+			match = "123456789";
+			global = true;
+		} else if (match === "fill") {
+			offset = 5;
+			match = "123456789";
+		} else if (match === "around") {
+			offset = 5;
+			match = "12346789";
+		} else if (match.includes(">")) {
+			const from = match.substr(0, match.indexOf(">"));
+			if (from === "F")
 				global = true;
-			} else if (match === "fill") {
-				offset = 5;
-				match = "123456789";
-			} else if (match === "around") {
-				offset = 5;
-				match = "12346789";
-			} else if (match.includes(">")) {
-				const from = match.substr(0, match.indexOf(">"));
-				if (from === "F")
-					global = true;
-				else
-					offset = parseInt(from, 10);
+			else
+				offset = parseInt(from, 10);
 
-				match = match.substr(match.indexOf(">") + 1);
-			}
-		});
-
+			match = match.substr(match.indexOf(">") + 1);
+		}
 		return { match, offset, global };
 	}
 
@@ -162,7 +106,7 @@ export default class SkillBound extends Vue {
 
 	private get rangeCells () {
 		const ranges: JSX.Element[] = [];
-		const range = Math.min(this.range + (this.range > 0 && this.rangeBonus ? 1 : 0), 6);
+		const range = Math.min(this.Range + (this.Range > 0 && this.rangeBonus ? 1 : 0), 6);
 
 		for (let i = 0; i < range; i++)
 			ranges.push(<span class="range" data-pos={ i + 1 } />);
@@ -204,9 +148,9 @@ export default class SkillBound extends Vue {
 				{ this.rangeBack }
 				{ this.rangeCells }
 				{
-					this.rangeBonus && this.range > 0
-						? <div class="skill-range-circle bonused">{ this.range + 1 }</div>
-						: <div class="skill-range-circle">{ this.range }</div>
+					this.rangeBonus && this.Range > 0
+						? <div class="skill-range-circle bonused">{ this.Range + 1 }</div>
+						: <div class="skill-range-circle">{ this.Range }</div>
 				}
 			</div>
 
@@ -221,7 +165,7 @@ export default class SkillBound extends Vue {
 			</div>
 
 			{ this.IsGlobal ? <div class="global-text">고정 범위</div> : "" }
-			{ this.target === "team" ? <div class="team-text">{ this.bound === "self" ? "본인 대상" : "아군 대상" }</div> : "" }
+			{ this.target === "team" ? <div class="team-text">{ this.Skill.grid === "self" ? "본인 대상" : "아군 대상" }</div> : "" }
 		</div>;
 	}
 }

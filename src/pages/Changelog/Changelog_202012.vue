@@ -1,8 +1,20 @@
 <template>
 	<div>
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20201205>2020-12-05</b-card-header>
+			<b-collapse id="changelog20201205" visible>
+				<b-card-body>
+					<div>
+						전투원/적 스킬 정보에 <b-badge variant="warning">보호 무시</b-badge>, <b-badge variant="danger">땅 찍기</b-badge>,
+						<b-badge variant="success">적중 보정</b-badge>, <b-badge variant="dark">소환물</b-badge> 정보가 추가되었습니다.<br/>
+						소환물은 뱃지를 눌러 자세한 정보를 확인할 수 있습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20201203>2020-12-03</b-card-header>
-			<b-collapse id="changelog20201203" visible>
+			<b-collapse id="changelog20201203">
 				<b-card-body>
 					<div>2020년 12월 교환소 정보가 갱신되었습니다.</div>
 					<div>일부 버프 이름이 갱신되었습니다.</div>

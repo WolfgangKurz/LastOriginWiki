@@ -8,7 +8,7 @@ function process (auth) {
 	const sheets = google.sheets({ version: "v4", auth });
 	sheets.spreadsheets.values.get({
 		spreadsheetId: "14OedgRcIIyF772ak-r5U5A9Nu5y58deGgCp6x_mqqiE",
-		range: "UnitSkill!A2:L",
+		range: "UnitSkill!A2:H",
 	}, (err, res) => {
 		if (err) return console.log("The API returned an error: " + err);
 
@@ -29,13 +29,9 @@ function process (auth) {
 					key,
 					name: row[3],
 					icon: row[4],
-					range: parseInt(row[5], 10),
-					ap: /^[0-9]+$/.test(row[6]) ? parseInt(row[6], 10) : row[6],
-					target: row[7],
-					bound: row[8],
-					buffRate: row[9].split(",").map(x => parseFloat(x)),
-					buffs: row[10],
-					desc: (row[11] || "").split("\n"),
+					target: row[5],
+					buffs: row[6],
+					desc: (row[7] || "").split("\n"),
 					// effect: row[11].split("\n"),
 				};
 			});

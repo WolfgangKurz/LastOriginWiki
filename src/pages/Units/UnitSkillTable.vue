@@ -43,7 +43,10 @@
 				<b-tr :key="`unit-modal-skill-${idx}`">
 					<b-td>
 						<img class="skill-icon" :src="skill.icon" />
-						<div class="text-bold">{{ skill.name }}</div>
+						<div class="text-bold">
+							{{ skill.name }}<br />
+							<elem-icon :elem="skill.levels[skillLevelSync].type" />
+						</div>
 
 						<b-badge v-if="skill.index === 7" variant="info">더미</b-badge>
 						<rarity-badge v-else-if="skill.isPassive && skill.index > rarityIndex" :rarity="rarityList[skill.index]"
@@ -51,6 +54,20 @@
 						>
 					</b-td>
 					<b-td class="text-left d-none d-md-table-cell">
+						<div class="unit-modal-skill">
+							<b-badge v-if="skill.levels[skillLevelSync].dismiss_guard" variant="warning" class="mr-1">보호 무시</b-badge>
+							<b-badge v-if="skill.levels[skillLevelSync].target_ground" variant="danger" class="mr-1">땅 찍기</b-badge>
+							<b-badge v-if="skill.levels[skillLevelSync].acc_bonus" variant="success" class="mr-1">
+								적중 보정
+								{{ (skill.levels[skillLevelSync].acc_bonus > 0 ? "+" : "") + skill.levels[skillLevelSync].acc_bonus }}%
+							</b-badge>
+							<summon-badge
+								v-if="skill.levels[skillLevelSync].summon"
+								:summon="SummonChar(skill.levels[skillLevelSync].summon)"
+								class="mr-1"
+							/>
+						</div>
+
 						<div v-for="(line, lineIdx) in skill.desc" :key="`unit-modal-skill-desc-${lineIdx}`" class="unit-modal-skill">
 							<span v-if="!line" class="text-secondary">설명 없음</span>
 							<skill-description
@@ -77,10 +94,8 @@
 					<b-th variant="dark" class="text-center">
 						<skill-bound
 							:passive="skill.isPassive"
-							:range="skill.range"
+							:levels="skill.levels"
 							:target="skill.target"
-							:bound="skill.bound"
-							:ap="skill.ap"
 							:level="skillLevelSync + 1"
 							:range-bonus="rangeBonus"
 						/>
@@ -88,6 +103,20 @@
 				</b-tr>
 				<b-tr :key="`unit-modal-skill-descrow-${idx}`" class="d-table-row d-md-none">
 					<b-td class="text-left" colspan="2">
+						<div class="unit-modal-skill">
+							<b-badge v-if="skill.levels[skillLevelSync].dismiss_guard" variant="warning" class="mr-1">보호 무시</b-badge>
+							<b-badge v-if="skill.levels[skillLevelSync].target_ground" variant="danger" class="mr-1">땅 찍기</b-badge>
+							<b-badge v-if="skill.levels[skillLevelSync].acc_bonus" variant="success" class="mr-1">
+								적중 보정
+								{{ (skill.levels[skillLevelSync].acc_bonus > 0 ? "+" : "") + skill.levels[skillLevelSync].acc_bonus }}%
+							</b-badge>
+							<summon-badge
+								v-if="skill.levels[skillLevelSync].summon"
+								:summon="SummonChar(skill.levels[skillLevelSync].summon)"
+								class="mr-1"
+							/>
+						</div>
+
 						<div v-for="(line, lineIdx) in skill.desc" :key="`unit-modal-skill-descrow-desc-${lineIdx}`" class="unit-modal-skill">
 							<span v-if="!line" class="text-secondary">설명 없음</span>
 							<skill-description
@@ -131,9 +160,11 @@ import SkillDescription from "@/components/SkillDescription.vue";
 
 import ElemIcon from "@/components/ElemIcon.vue";
 import EquipIcon from "@/components/EquipIcon.vue";
+import SummonBadge from "./SummonBadge.vue";
 
 import { ACTOR_GRADE } from "@/libs/Types/Enums";
-import SkillData, { SkillEntity, RawSkillEntity } from "@/libs/DB/Skill";
+import SkillData, { SkillEntity, RawSkillEntity, SkillSummonInfo } from "@/libs/DB/Skill";
+import SummonData from "@/libs/DB/Summon";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import BuffStatus from "@/libs/Buffs/BuffStatus";
 import Decimal from "decimal.js";
@@ -153,6 +184,7 @@ type SkillTable = Record<string, SkillItem>;
 
 		ElemIcon,
 		EquipIcon,
+		SummonBadge,
 	},
 })
 export default class UnitSkillTable extends Vue {
@@ -268,7 +300,7 @@ export default class UnitSkillTable extends Vue {
 				const skill = this.skills[key];
 				if (!skill) return null;
 
-				const stat = skill.buffs[this.skillLevelSync];
+				const stat = skill.levels[this.skillLevelSync].buffs;
 				output[key] = stat.reduce((p, c) => [...p, ...BuffStatus(this, c, level)], [] as JSX.Element[]);
 			});
 
@@ -277,17 +309,22 @@ export default class UnitSkillTable extends Vue {
 
 	private get BuffRates () {
 		const output: Record<string, number[]> = {};
-		const level = this.skillLevelSync;
-
 		Object.keys(this.skills)
 			.forEach(key => {
 				const skill = this.skills[key];
 				if (!skill) return null;
 
-				output[key] = skill.buffRate.map(x => Decimal.mul(x, 100).toNumber());
+				output[key] = skill.levels.map(x => x.buff_rate);
 			});
 
 		return output;
+	}
+
+	private SummonChar (summon: SkillSummonInfo | null) {
+		if (!summon) return undefined;
+
+		const target = SummonData.find(x => x.id === summon.char);
+		return target;
 	}
 }
 </script>

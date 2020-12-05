@@ -302,19 +302,19 @@ export enum TARGET_TYPE {
 	/** 지정한 아군 */
 	OUR = 1,
 
-	/** 범위 내 아군 */
+	/** 범위 내 아군 (땅찍기) */
 	OUR_GRID = 2,
 
 	/** 지정한 적군 */
 	ENEMY = 3,
 
-	/** 범위 내 적군 */
+	/** 범위 내 적군 (땅찍기) */
 	ENEMY_GRID = 4,
 
-	/** 아군 전체 (사용처 없음) */
+	/** 아군/적군 구분 없는 지정 전투원 */
 	ALL_UNIT = 5,
 
-	/** 적군 전체 (사용처 없음) */
+	/** 아군/적군 구분 없는 땅 찍기 */
 	ALL_GRID = 6,
 
 	/** 시스템 효과? */
@@ -555,4 +555,17 @@ export enum MONSTER_SUB_TYPE {
 	SHIELD = 3,
 	BEETLE = 4,
 	__MAX__ = 5,
+}
+
+export enum SUMMON_TYPE {
+	INSTALLATION = 0,
+	ENVIRONMENTAL = 1,
+	AUTOPILOT = 2,
+	__MAX__ = 3,
+}
+
+export enum INSTALL_POS_TYPE {
+	PC = 0,
+	MONSTER = 1,
+	__MAX__ = 2,
 }
