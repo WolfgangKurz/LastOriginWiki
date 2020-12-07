@@ -2,6 +2,8 @@ const fs = require("fs");
 const path = require("path");
 const { google } = require("googleapis");
 
+const Decimal = require("decimal.js").Decimal;
+
 function process (auth) {
 	const sheets = google.sheets({ version: "v4", auth });
 	sheets.spreadsheets.values.get({
@@ -135,10 +137,10 @@ function process (auth) {
 				const lb = [lb1, lb2, lb3, lb4];
 				const fl = [fl1, fl2, fl3, fl4, fl5];
 				const favor = {
-					present: parseInt(favor1, 10),
-					clear: parseInt(favor2, 10),
-					death: parseInt(favor3, 10),
-					assistant: parseInt(favor4, 10),
+					present: new Decimal(favor1).toNumber(),
+					clear: new Decimal(favor2).toNumber(),
+					death: new Decimal(favor3).toNumber(),
+					assistant: new Decimal(favor4).toNumber(),
 				};
 
 				const x = {

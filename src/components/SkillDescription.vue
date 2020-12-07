@@ -209,7 +209,7 @@ export default class SkillDescription extends Vue {
 								<equip-card equip={equip} no-link />
 							</b-tooltip>,
 						};
-						ret.preload.push(<equip-icon id={equip ? equip.fullKey : p[1]} />);
+						ret.preload.push(<equip-icon image={equip ? equip.fullKey : p[1]} />);
 					}
 				}
 			});

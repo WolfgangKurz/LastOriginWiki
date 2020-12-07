@@ -1,8 +1,36 @@
 <template>
 	<div>
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20201207>2020-12-07</b-card-header>
+			<b-collapse id="changelog20201207" visible>
+				<b-card-body>
+					<div>모든 전투원의 호감도 수치가 잘못 표기된 문제를 수정했습니다.</div>
+					<div>신규 전투원 <b-badge variant="warning">천공의 엘라</b-badge>의 정보가 추가되었습니다.</div>
+					<div>신규 장비 <b-badge variant="warning">개량형 니트로 EX 3500</b-badge>의 정보가 추가되었습니다.</div>
+					<div>
+						<b-badge variant="warning">AT72 라인리터</b-badge>의 스킨 <b-badge variant="info">RheinTiger 모델</b-badge>스킨이
+						추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">징벌의 사디어스</b-badge>의 스킨 <b-badge variant="info">뇌전룡 의상</b-badge>스킨이
+						추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">자비로운 리앤</b-badge>의 스킨 <b-badge variant="info">데이트 복장</b-badge>스킨이 추가되었습니다.
+					</div>
+					<div>
+						<b-badge variant="warning">쿠노이치 제로</b-badge>의 스킨 <b-badge variant="info">흐트러진 꽃</b-badge>스킨의 중파 일러스트가
+						추가되었습니다.
+					</div>
+					<div>일부 적의 정보가 갱신되었습니다.</div>
+					<div>소모품 정보가 갱신되었습니다.</div>
+					<div>2020-12-07 15:36:17 까지의 사용자 참여로 추가된 대사들이 반영되었습니다.</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20201206>2020-12-06</b-card-header>
-			<b-collapse id="changelog20201206" visible>
+			<b-collapse id="changelog20201206">
 				<b-card-body>
 					<div>
 						<b-badge variant="warning">세계 정보</b-badge>의 드랍 정보에 <b-badge variant="dark">웨이브 별 드랍 정보</b-badge>버튼이
@@ -14,7 +42,7 @@
 		</b-card>
 		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20201205>2020-12-05</b-card-header>
-			<b-collapse id="changelog20201205" visible>
+			<b-collapse id="changelog20201205">
 				<b-card-body>
 					<div>
 						전투원/적 스킬 정보에 <b-badge variant="warning">보호 무시</b-badge>, <b-badge variant="danger">땅 찍기</b-badge>,
