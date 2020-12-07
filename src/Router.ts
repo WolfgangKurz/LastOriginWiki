@@ -17,7 +17,7 @@ import FacilityView from "@/pages/Facilities/FacilityView.vue";
 
 import Worlds from "@/pages/Worlds.vue";
 import WorldAreaView from "@/pages/Worlds/WorldAreaView.vue";
-import WorldMapView from "@/pages/Worlds/WorldMapView.vue";
+import WorldMapView from "@/pages/Worlds/WorldMapView";
 
 import Story from "@/pages/Story.vue";
 import StoryViewer from "@/pages/Story/StoryViewer.vue";

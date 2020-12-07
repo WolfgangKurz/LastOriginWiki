@@ -5,6 +5,7 @@
 			<div class="text-left">
 				<b-badge variant="secondary">{{ RarityName[equip.rarity] }}</b-badge>
 				{{ equip.name }}
+				<small v-if="chance < 100" class="pl-1 text-bold">({{ chance }}%)</small>
 			</div>
 		</b-card>
 	</div>
@@ -31,6 +32,12 @@ export default class DropEquip extends Vue {
 		required: true,
 	})
 	private equip!: Equip;
+
+	@Prop({
+		type: Number,
+		default: 100,
+	})
+	private chance!: number;
 
 	private get RarityName () {
 		return {

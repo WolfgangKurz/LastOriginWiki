@@ -23,10 +23,16 @@ export interface MapEnemyData {
 	id: string;
 	lv: number;
 }
+export interface MapWaveDrop {
+	id: string;
+	chance: number;
+	count?: number;
+}
 
 export interface MapWave {
 	exp: number;
 	enemy: Array<MapEnemyData | null>;
+	drops: MapWaveDrop[];
 }
 
 export interface MapSearch {
@@ -49,7 +55,7 @@ export interface MapNodeEntity {
 
 	search: MapSearch | null;
 
-	drops: string[];
+	// drops: string[];
 	/* eslint-disable camelcase */
 	reward_f: MapReward[];
 	reward_am: MapReward[];
@@ -66,7 +72,6 @@ export namespace MapNodeEntity {
 		offset: 0,
 		text: "",
 		search: null,
-		drops: [],
 		reward_f: [],
 		reward_am: [],
 		// wave: [],

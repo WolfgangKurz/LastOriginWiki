@@ -1,12 +1,24 @@
 <template>
 	<div>
 		<b-card class="mt-2" no-body>
+			<b-card-header v-b-toggle.changelog20201206>2020-12-06</b-card-header>
+			<b-collapse id="changelog20201206" visible>
+				<b-card-body>
+					<div>
+						<b-badge variant="warning">세계 정보</b-badge>의 드랍 정보에 <b-badge variant="dark">웨이브 별 드랍 정보</b-badge>버튼이
+						추가되었습니다.<br />
+						웨이브 별 드랍 정보에서는 각 웨이브의 전투원/장비/소모품의 드랍 확률도 확인할 수 있습니다.
+					</div>
+				</b-card-body>
+			</b-collapse>
+		</b-card>
+		<b-card class="mt-2" no-body>
 			<b-card-header v-b-toggle.changelog20201205>2020-12-05</b-card-header>
 			<b-collapse id="changelog20201205" visible>
 				<b-card-body>
 					<div>
 						전투원/적 스킬 정보에 <b-badge variant="warning">보호 무시</b-badge>, <b-badge variant="danger">땅 찍기</b-badge>,
-						<b-badge variant="success">적중 보정</b-badge>, <b-badge variant="dark">소환물</b-badge> 정보가 추가되었습니다.<br/>
+						<b-badge variant="success">적중 보정</b-badge>, <b-badge variant="dark">소환물</b-badge> 정보가 추가되었습니다.<br />
 						소환물은 뱃지를 눌러 자세한 정보를 확인할 수 있습니다.
 					</div>
 				</b-card-body>
