@@ -1,0 +1,61 @@
+#app > .container > .world-map {
+	.world-map-bg {
+		padding: 1em;
+		background-image: url($assetsRoot + "/world/bg.png");
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-color: #171717;
+		overflow-x: auto;
+
+		a:focus {
+			border: none !important;
+			outline: none !important;
+		}
+	}
+
+	.selected-node-badge {
+		position: relative;
+		top: -0.125rem;
+	}
+
+	.drop-unit,
+	.drop-equip {
+		text-decoration: none;
+	}
+
+	.wave-button {
+		display: inline-block;
+		margin: 0.25em 0.5em;
+
+		.current-map-marker {
+			position: absolute;
+			transform: scale(0.7);
+		}
+	}
+
+	.enemy-grid {
+		$gap: 0.75em;
+
+		display: inline-grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+		gap: $gap;
+
+		> div {
+			position: relative;
+			padding: 1em;
+			border-radius: 8px;
+			line-height: 120%;
+			background-color: $gray-500;
+
+			&:empty {
+				background-color: $gray-300;
+			}
+		}
+		img {
+			max-width: 100px;
+			max-height: 100px;
+		}
+	}
+}

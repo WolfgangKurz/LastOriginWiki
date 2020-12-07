@@ -10,6 +10,7 @@
 				</span>
 			</div>
 			<div class="float-left">{{ unit.name }}</div>
+			<small v-if="chance < 100" class="ml-1 text-bold">({{ chance }}%)</small>
 		</b-card>
 	</div>
 </template>
@@ -36,6 +37,12 @@ export default class DropUnit extends Vue {
 		required: true,
 	})
 	private id!: number | string;
+
+	@Prop({
+		type: Number,
+		default: 100,
+	})
+	private chance!: number;
 
 	private get unit () {
 		if (typeof this.id === "number")

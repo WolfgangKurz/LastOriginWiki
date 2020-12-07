@@ -146,9 +146,11 @@ function process (auth) {
 								if (!f) return { id: e.index, lv: e.level };
 								return { id: f.id, lv: e.level };
 							}),
+							drops: x.drops[widx],
 						});
 					});
 					delete x.exp;
+					delete x.drops;
 				});
 
 				ret[id][map] = {
