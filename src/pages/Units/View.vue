@@ -581,7 +581,7 @@ export default class UnitView extends Vue {
 
 	private get Favor () {
 		return {
-			clear: Decimal.mul(this.unit.favor.clear, 0.05).toNumber(),
+			clear: this.unit.favor.clear,
 			death: Decimal.mul(this.unit.favor.death, 2).toNumber(),
 			assistant: Decimal.mul(this.unit.favor.assistant, 1).toNumber(),
 		};
