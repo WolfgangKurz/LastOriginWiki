@@ -178,7 +178,6 @@
 </template>
 
 <script lang="ts">
-import _ from "lodash";
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Watch } from "vue-property-decorator";
@@ -194,7 +193,7 @@ import EquipData, { Equip } from "@/libs/DB/Equip";
 import { BuffEffect, BuffEffectValue, BUFFEFFECT_TYPE } from "@/libs/Buffs/BuffEffect";
 
 import { CurrentEvent, CurrentDate, AssetsRoot, ImageExtension } from "@/libs/Const";
-import { ArrayUnique, UpdateTitle } from "@/libs/Functions";
+import { ArrayUnique, groupBy, UpdateTitle } from "@/libs/Functions";
 import { Rarity } from "@/libs/Types";
 import EntitySource from "@/libs/EntitySource";
 
@@ -287,7 +286,7 @@ export default class Equips extends Vue {
 	}
 
 	private get EquipGroups () {
-		const group = _.groupBy(EquipData, (x) => `${x.type}_${x.key}`);
+		const group = groupBy(EquipData, (x) => `${x.type}_${x.key}`);
 		return Object.keys(group)
 			.map(x => group[x])
 			.map(x_ => {

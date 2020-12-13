@@ -126,12 +126,12 @@ export default class SourceBadge extends Vue {
 
 					if (this.detail)
 						return `${event} ${this.Source.Map} ${text}`.trim();
-					else if (this.minimum && this.Source.IsExMap)
-						return "이벤트 Ex";
-					else if (this.minimum && this.Source.IsSideMap)
-						return "이벤트 B";
+					// else if (this.minimum && this.Source.IsExMap)
+					// 	return "이벤트 Ex";
+					// else if (this.minimum && this.Source.IsSideMap)
+					// 	return "이벤트 B";
 					else if (this.minimum)
-						return "이벤트";
+						return this.Source.Map; // "이벤트";
 					else
 						return event;
 				} else {

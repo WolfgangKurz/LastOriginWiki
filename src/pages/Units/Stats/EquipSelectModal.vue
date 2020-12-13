@@ -57,8 +57,6 @@
 </template>
 
 <script lang="ts">
-import _ from "lodash";
-
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, Watch, PropSync, Ref } from "vue-property-decorator";
@@ -73,6 +71,7 @@ import NodeRenderer from "@/components/NodeRenderer.vue";
 import RarityBadge from "@/components/RarityBadge.vue";
 import EquipIcon from "@/components/EquipIcon.vue";
 import ElemIcon from "@/components/ElemIcon.vue";
+import { groupBy } from "@/libs/Functions";
 
 @Component({
 	components: {
@@ -173,7 +172,7 @@ export default class EquipSelectModal extends Vue {
 	}
 
 	private get EquipGroups () {
-		const group = _.groupBy(EquipData, (x) => `${x.type}_${x.key}`);
+		const group = groupBy(EquipData, (x) => `${x.type}_${x.key}`);
 		return Object.keys(group)
 			.map(x => group[x])
 			.filter(x_ => {

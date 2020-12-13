@@ -43,6 +43,40 @@ export function ArrayUnique<T, K> (source: T[], comparer?: (entity: T) => K): T[
 	}
 }
 
+export function groupBy<K extends keyof any, T> (data: T[] | Record<K, T>, selector: (value: T) => K): Record<K, T[]> {
+	const ret = {} as Record<K, T[]>;
+	if (Array.isArray(data)) {
+		data.forEach(v => {
+			const key = selector(v);
+			if (!(key in ret)) ret[key] = [];
+			ret[key].push(v);
+		});
+	} else {
+		(Object.keys(data) as K[])
+			.forEach(k => {
+				const key = selector(data[k]);
+				if (!(key in ret)) ret[key] = [];
+				ret[key].push(data[k]);
+			});
+	}
+	return ret;
+}
+
+export function First<T> (value: T | T[]): T {
+	if (!Array.isArray(value)) return value;
+	return value[0];
+}
+export function Last<T> (value: T | T[]): T {
+	if (!Array.isArray(value)) return value;
+	return value[value.length - 1];
+}
+
+let uniqueCounter = 0;
+export function UniqueID (prefix?: string) {
+	++uniqueCounter;
+	return prefix ? `${prefix}${uniqueCounter}` : uniqueCounter.toString();
+}
+
 export function UpdateTitle (...title: string[]) {
 	document.title = [...title, "멸망 전의 전술 교본"].join(" - ");
 	SetMeta(["twitter:title", "og:title"], document.title);

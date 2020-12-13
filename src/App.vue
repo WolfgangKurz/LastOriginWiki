@@ -43,17 +43,19 @@ export default class App extends Vue {
 // @import "assets/font/SpoqaHanSans-kr.css";
 @import "https://lastorigin-wiki-assets.s3.ap-northeast-2.amazonaws.com/font/SpoqaHanSans-kr.css";
 
-.navbar-brand > img {
-	width: 32px;
-	height: 32px;
-}
-html body {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	font-family: "Spoqa Han Sans", sans-serif;
-	font-weight: 400;
-	font-size: 16px;
+html,
+body {
 	text-align: center;
+
+	&,
+	body .popover,
+	body .tooltip {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		font-family: "Spoqa Han Sans", sans-serif;
+		font-weight: 400;
+		font-size: 16px;
+	}
 }
 
 .btn-group > .btn.active + .btn.active,

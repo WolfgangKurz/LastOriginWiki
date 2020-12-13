@@ -4,12 +4,27 @@
 		<p><i>멸망 전의 전술 교본</i> 사이트의 변경 기록을 작성한 문서입니다.</p>
 		<hr />
 
-		<div class="text-right">
+		<!-- <div class="text-right">
 			<b-form-select size="sm" v-model="displayDate" :options="DisplayDates" />
 		</div>
-		<hr />
+		<hr /> -->
 
-		<component :is="`changelog-${displayDate}`" />
+		<!-- <component :is="`changelog-${displayDate}`" /> -->
+		<changelog-202012 />
+		<hr />
+		<changelog-202011 />
+		<hr />
+		<changelog-202010 />
+		<hr />
+		<changelog-202009 />
+		<hr />
+		<changelog-202008 />
+		<hr />
+		<changelog-202007 />
+		<hr />
+		<changelog-202006 />
+		<hr />
+		<changelog-202005 />
 	</div>
 </template>
 

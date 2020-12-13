@@ -11,18 +11,9 @@ import { BuffStat } from "@/libs/Buffs/Buffs";
 import { BuffErase } from "@/libs/Buffs/BuffErase";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { ArrayUnique } from "@/libs/Functions";
+import { _e } from "@/libs/VNode";
 
 let h: CreateElement | undefined;
-
-/** `<!---->` 노드를 반환합니다. */
-export function _e (): JSX.Element {
-	return {
-		isRootInsert: true,
-		isStatic: false,
-		isComment: true,
-		text: "",
-	};
-}
 
 function positive (value: BuffEffectValue, level: number = 0) {
 	const p = typeof value.base === "string" && value.base.endsWith("%") ? "%" : "";

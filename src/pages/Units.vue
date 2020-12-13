@@ -11,6 +11,9 @@
 				<button type="button" class="btn btn-outline-info" :class="{ active: DisplayType === 'group' }" @click="DisplayType = 'group'">
 					<b-icon-tags-fill class="mr-1" />그룹별 보기
 				</button>
+				<button type="button" class="btn btn-outline-info" :class="{ active: DisplayType === 'time' }" @click="DisplayType = 'time'">
+					<b-icon-hammer class="mr-1" />제조 시간
+				</button>
 			</div>
 		</div>
 
@@ -150,6 +153,7 @@
 		<units-table v-if="DisplayType === 'table'" />
 		<units-normal v-else-if="DisplayType === 'list'" />
 		<units-group v-else-if="DisplayType === 'group'" />
+		<units-time-table v-else-if="DisplayType === 'time'" />
 	</div>
 </template>
 
@@ -164,6 +168,7 @@ import StoreModule, { EffectFilterListType, UnitDisplayType, UnitDisplayFilters,
 import UnitsTable from "./Units/Table.vue";
 import UnitsNormal from "./Units/Normal.vue";
 import UnitsGroup from "./Units/Group.vue";
+import UnitsTimeTable from "./Units/TimeTable.vue";
 
 import UnitData, { Unit } from "@/libs/DB/Unit";
 import SkillData, { SkillSlotKey } from "@/libs/DB/Skill";
@@ -178,6 +183,7 @@ import { isPositiveBuffEffect } from "@/libs/Buffs/Helper";
 		UnitsTable,
 		UnitsNormal,
 		UnitsGroup,
+		UnitsTimeTable,
 	},
 })
 export default class Units extends Vue {

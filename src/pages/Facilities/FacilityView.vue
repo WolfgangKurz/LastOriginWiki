@@ -271,15 +271,15 @@ export default class FacilityView extends Vue {
 					</b-tr>,
 					<b-tr>
 						<b-td class="border-left" colspan="2">
-							<item-icon item="resin" />
+							<item-icon item="UI_Icon_Consumable_Wood_Material" />
 							{ x.upgradeRequired.Wood }
 						</b-td>
 						<b-td colspan="2">
-							<item-icon item="paint" />
+							<item-icon item="UI_Icon_Consumable_Stone_Material" />
 							{ x.upgradeRequired.Stone }
 						</b-td>
 						<b-td class="border-right" colspan="2">
-							<item-icon item="metal" />
+							<item-icon item="UI_Icon_Consumable_Iron_Material" />
 							{ x.upgradeRequired.Iron }
 						</b-td>
 					</b-tr>,

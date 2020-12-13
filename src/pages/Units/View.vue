@@ -177,12 +177,13 @@
 
 										<div v-for="(area, aindex) in unit.source" :key="`unit-view-source-${aindex}`">
 											<hr v-if="unit.craftable || aindex > 0" class="my-1" />
+											<h6 v-if="area.length > 0 && area[0].EventName">{{ area[0].EventName }}</h6>
 											<source-badge
 												v-for="(source, sindex) in area"
 												:key="`unit-view-drop-${aindex}-${sindex}-${source}`"
 												class="my-1"
 												:source="source"
-												detail
+												minimum
 												linked
 											/>
 										</div>
@@ -323,7 +324,6 @@
 </template>
 
 <script lang="tsx">
-import _ from "lodash";
 import { Decimal } from "decimal.js";
 
 import Vue from "vue";

@@ -17,7 +17,13 @@
 			<img class="heading-icon" :src="`${AssetsRoot}/icon.png`" />
 			멸망 전의 전술 교본
 		</h2>
-		<div class="mb-4 text-secondary">{{ BuildTime }}에 빌드됨</div>
+		<div class="mb-4 text-secondary">{{ BuildTime }}에 빌드, 버전 {{ BuildVersion }}</div>
+
+		<p>
+			<i>멸망 전의 전술 교본</i>은 전투원과 장비, 설비, 적 및 세계 정보를 볼 수 있는 정보 사이트입니다.<br />
+			각종 패시브 스킬과 장비 효과가 적용된 후의 실질적인 스테이터스 수치를 계산하기 위한 시뮬레이터를 목표로 개발중에 있습니다.
+		</p>
+		<hr />
 
 		<b-alert v-if="imageExt === 'png'" variant="danger" show>
 			현재
@@ -26,12 +32,6 @@
 			<strong>"닫음"</strong> 상태가 됩니다.
 		</b-alert>
 
-		<p>
-			<i>멸망 전의 전술 교본</i>은 전투원과 장비, 설비, 적 및 세계 정보를 볼 수 있는 정보 사이트입니다.<br />
-			각종 패시브 스킬과 장비 효과가 적용된 후의 실질적인 스테이터스 수치를 계산하기 위한 시뮬레이터를 목표로 개발중에 있습니다.
-		</p>
-		<hr />
-
 		<b-alert variant="success" show>
 			현재 대사 텍스트가 입력되지 않은 전투원이 매우 많습니다. 입력해야하는 대사 분량이 너무 많아 개발자 혼자 작업할 수가 없어 발생한
 			문제입니다.<br />
@@ -39,9 +39,6 @@
 			<a href="https://docs.google.com/spreadsheets/d/1TrLn5czFe2Ww1xg4HiFsDzZDcnphxV3AqP_DgNqaU00" target="_blank">전투원 대사 DB</a>의 기여를
 			받고 있습니다. 많은 참여 부탁드립니다.
 		</b-alert>
-		<hr />
-
-		<b-alert variant="warning" show>시뮬레이터 (전투원 스테이터스 계산기) 기능은 현재 일부만 이용할 수 있습니다.</b-alert>
 		<hr />
 
 		<p>
@@ -66,7 +63,7 @@ import Component from "vue-class-component";
 import { ImageExtension, AssetsRoot } from "@/libs/Const";
 import { UpdateTitle } from "@/libs/Functions";
 
-import BuildTime from "@/buildtime";
+import BuildInfo from "@/buildtime";
 import { SetMeta } from "@/libs/Meta";
 
 @Component({})
@@ -80,10 +77,19 @@ export default class Home extends Vue {
 	}
 
 	private get BuildTime () {
-		if (process.env.NODE_ENV === "development")
-			return "Development Mode";
-		else
-			return BuildTime;
+		const pad = (x: number, y: number) => x.toString().padStart(y, "0");
+		const dt = new Date(BuildInfo.time);
+		const y = dt.getFullYear();
+		const m = dt.getMonth() + 1;
+		const d = dt.getDate();
+		const h = dt.getHours();
+		const i = dt.getMinutes();
+		const s = dt.getSeconds();
+		return `${pad(y, 4)}-${pad(m, 2)}-${pad(d, 2)} ${pad(h, 2)}:${pad(i, 2)}:${pad(s, 2)}`;
+	}
+
+	private get BuildVersion () {
+		return BuildInfo.build;
 	}
 
 	private get EWCount () {
