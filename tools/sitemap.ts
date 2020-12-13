@@ -44,7 +44,7 @@ Unit.forEach((x: any) => {
 
 xml += "<url><loc>http://lo.swaytwig.com/equips</loc></url>";
 Equip.forEach((x: any) => {
-	xml += `<url><loc>http://lo.swaytwig.com/units/${x.fullKey}</loc><image:image><image:loc>${AssetsRoot}/${ext}/item/UI_Icon_Equip_${x.fullKey}.${ext}</image:loc></image:image></url>`;
+	xml += `<url><loc>http://lo.swaytwig.com/equips/${x.fullKey}</loc><image:image><image:loc>${AssetsRoot}/${ext}/item/UI_Icon_Equip_${x.fullKey}.${ext}</image:loc></image:image></url>`;
 });
 
 xml += "<url><loc>http://lo.swaytwig.com/enemy</loc></url>";
