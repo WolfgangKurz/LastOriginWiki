@@ -1,6 +1,7 @@
 const path = require("path");
 const os = require("os");
 const fs = require("fs");
+const requireFromString = require("require-from-string");
 
 const prependData = [
 	`$NODE_ENV: "${process.env.NODE_ENV}";`,
@@ -8,22 +9,31 @@ const prependData = [
 	"@import \"@/theme/_base\";",
 ].join("\n") + "\n";
 
-fs.writeFileSync(
-	path.resolve(__dirname, "src", "buildtime.ts"),
-	(() => {
-		const pad = (x, y) => x.toString().padStart(y, "0");
+(() => {
+	const dest = path.resolve(__dirname, "src", "buildtime.ts");
 
-		const dt = new Date();
-		const y = dt.getUTCFullYear();
-		const m = dt.getUTCMonth() + 1;
-		const d = dt.getUTCDate();
-		const h = dt.getUTCHours();
-		const i = dt.getUTCMinutes();
-		const s = dt.getUTCSeconds();
-		return `export default "UTC ${pad(y, 4)}-${pad(m, 2)}-${pad(d, 2)} ${pad(h, 2)}:${pad(i, 2)}:${pad(s, 2)}";\n`;
-	})(),
-	{ encoding: "utf-8" },
-);
+	let prev = requireFromString(
+		fs.readFileSync(dest, { encoding: "utf-8" })
+			.toString()
+			.replace("export default ", "module.exports = "),
+	);
+	if (typeof prev === "string")
+		prev = { time: prev, build: 0 };
+
+	if (isNaN(prev.build)) prev.build = 0;
+
+	fs.writeFileSync(
+		dest,
+		(() => {
+			const dt = new Date();
+			return `// eslint-disable-next-line\nexport default ${JSON.stringify({
+				time: dt.getTime(),
+				build: prev.build + 1,
+			})}`;
+		})(),
+		{ encoding: "utf-8" },
+	);
+})();
 
 module.exports = {
 	configureWebpack: {
@@ -34,6 +44,7 @@ module.exports = {
 	chainWebpack: config => {
 		// import 경로 alias 정의
 		config.resolve.alias.set("@", path.resolve(__dirname, "src"));
+		config.resolve.alias.set("@@", path.resolve(__dirname, "node_modules"));
 
 		// 스크립트 preload, prefetch 태그 삽입 무시
 		config.plugins.delete("preload");
@@ -48,58 +59,85 @@ module.exports = {
 			config.set("devtool", "none");
 
 		// Cache-Group 설정
+		const dbCacheGroups = (() => {
+			const ret = {};
+			fs.readdirSync(path.join(__dirname, "src", "json"))
+				.filter(f => f.endsWith(".json"))
+				.forEach(f => {
+					const k = path.basename(f, path.extname(f));
+					ret[`db_${k}`] = {
+						name: `chunk-db-${k}`,
+						test: new RegExp(`[\\\\/]src[\\\\/]json[\\\\/]${f.replace(/\./g, "\\.")}`),
+						chunks: "all",
+						priority: -5,
+						minChunks: 1,
+						reuseExistingChunk: true,
+						enforce: true,
+					};
+				});
+			return ret;
+		})();
 		config.optimization.splitChunks({
+			automaticNameDelimiter: "-",
 			cacheGroups: {
-				// default: false,
-				/*
-				components: {
-					name: "components",
-					chunks: "all",
-					test: /[\\/]src[\\/]components[\\/]/,
-					reuseExistingChunk: true,
-					enforce: true,
-				},
 				vendors: {
-					name: "vendors",
-					chunks: "all",
+					name: "chunk-vendors",
 					test: /[\\/]node_modules[\\/]/,
-					enforce: true,
+					priority: -10,
+					chunks: "initial",
 					reuseExistingChunk: true,
 				},
-				*/
-				...(() => {
-					const ret = {};
-					fs.readdirSync(path.resolve(__dirname, "src", "json"))
-						.forEach(f => {
-							const name = path.basename(f, path.extname(f));
-							ret[name] = {
-								name: `db-${name}`,
-								chunks: "all",
-								test: new RegExp(`[\\/]src[\\/]json[\\/]${name}.json`),
-								reuseExistingChunk: true,
-								enforce: true,
-							};
-						});
-					return ret;
-				})(),
+				common: {
+					name: "chunk-common",
+					minChunks: 2,
+					priority: -20,
+					chunks: "initial",
+					reuseExistingChunk: true,
+				},
+				components: {
+					name: "chunk-components",
+					test: /[\\/]src[\\/]components[\\/]/,
+					priority: -10,
+					chunks: "all",
+					reuseExistingChunk: true,
+					enforce: true,
+				},
+				libs: {
+					name: "chunk-libs",
+					test: /[\\/]src[\\/]libs[\\/]/,
+					priority: -10,
+					chunks: "all",
+					reuseExistingChunk: true,
+					enforce: true,
+				},
+				bootstrap: {
+					name: "chunk-bootstrap",
+					test: /[\\/]src[\\/]vbootstrap[\\/]/,
+					priority: -10,
+					chunks: "all",
+					reuseExistingChunk: true,
+					enforce: true,
+				},
+				...dbCacheGroups,
 				// db: {
-				// 	name: "db",
-				// 	chunks: "all",
+				// 	name: "chunk-db",
 				// 	test: /[\\/]src[\\/]json[\\/]/,
+				// 	chunks: "initial",
+				// 	priority: -20,
 				// 	reuseExistingChunk: true,
 				// 	enforce: true,
 				// },
-				/*
-				common: {
-					name: "common",
-					chunks: "all",
-					minChunks: 40,
-					reuseExistingChunk: true,
-					enforce: true,
-				},
-				*/
 			},
-			automaticNameDelimiter: "-",
+		});
+		config.plugin("html-app").tap((args) => {
+			args[0].chunks.push(
+				"chunk-components",
+				"chunk-libs",
+				"chunk-bootstrap",
+				// "chunk-db",
+				...Object.keys(dbCacheGroups).map(x => dbCacheGroups[x].name),
+			);
+			return args;
 		});
 
 		// Webpack entrypoint size 워닝 무시
@@ -119,8 +157,8 @@ module.exports = {
 			.plugin("fork-ts-checker")
 			.tap(args => {
 				if (args.length > 0) {
-					args[0].workers = Math.floor(os.cpus().length / 4);
-					args[0].memoryLimit = 2048;
+					args[0].workers = Math.floor(os.cpus().length / 2);
+					args[0].memoryLimit = 4096;
 				}
 				return args;
 			});

@@ -1,1 +1,2 @@
-export default "UTC 2020-12-07 13:02:31";
+// eslint-disable-next-line
+export default {"time":1607870649912,"build":8066}
