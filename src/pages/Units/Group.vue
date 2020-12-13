@@ -25,7 +25,6 @@
 </template>
 
 <script lang="ts">
-import _ from "lodash";
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, PropSync, Emit } from "vue-property-decorator";
@@ -39,6 +38,7 @@ import SkillData, { SkillSlotKey } from "@/libs/DB/Skill";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { BuffEffect } from "@/libs/Buffs/BuffEffect";
 import { isBuffEffectValid } from "@/libs/Buffs/Helper";
+import { groupBy } from "@/libs/Functions";
 
 @Component({
 	components: {
@@ -81,7 +81,7 @@ export default class UnitsGroup extends Vue {
 	}
 
 	private get GroupKeyTable () {
-		const g = _.groupBy(UnitData, x => this.Merge ? x.shortgroup : x.group);
+		const g = groupBy(UnitData, x => this.Merge ? x.shortgroup : x.group);
 		const r: Record<string, string> = {};
 		for (const k in g)
 			r[k] = g[k][0].groupkey;
@@ -116,16 +116,11 @@ export default class UnitsGroup extends Vue {
 	}
 
 	private get GroupList () {
-		let g: _.Dictionary<Unit[]>;
-		const list = _(UnitData)
+		const list = UnitData
 			.filter(x => x.name.includes(this.SearchText))
 			.filter(x => this.HasFilteredEffect(x, (b) => isBuffEffectValid(b, StoreModule.unitEffectFilterListFlatten)));
 
-		if (this.Merge)
-			g = list.groupBy(x => x.shortgroup).toJSON();
-		else
-			g = list.groupBy(x => x.group).toJSON();
-
+		const g = groupBy(list, x => this.Merge ? x.shortgroup : x.group);
 		const r: Record<string, Unit[]> = {};
 		Object.keys(g)
 			.sort()

@@ -6,7 +6,6 @@ import { Watch } from "vue-property-decorator";
 
 import WorldMapGrid from "./WorldMapGrid.vue";
 import WorldMapSearchInfo from "./Sub/WorldMapSearchInfo.vue";
-import WaveDropInfo from "./Sub/WaveDropInfo";
 
 import DropUnit from "./DropUnit.vue";
 import DropEquip from "./DropEquip.vue";
@@ -24,7 +23,7 @@ import MapData, { MapNodeEntity, MapReward, MapEnemyData } from "@/libs/DB/Map";
 import EnemyData, { Enemy } from "@/libs/DB/Enemy";
 import ConsumableData, { Consumable } from "@/libs/DB/Consumable";
 import { SetMeta } from "@/libs/Meta";
-import { _e } from "@/libs/Buffs/BuffStatus";
+import { _e } from "@/libs/VNode";
 
 type RewardDropTypeBase =
 	{ unit: Unit; } |
@@ -47,7 +46,6 @@ interface WaveEnemyInfo extends MapEnemyData {
 	components: {
 		WorldMapGrid,
 		WorldMapSearchInfo,
-		WaveDropInfo,
 
 		DropUnit,
 		DropEquip,
@@ -71,7 +69,6 @@ export default class WorldMapView extends Vue {
 	private selectedEnemyLevel: number = 1;
 
 	private enemyModalDisplay: boolean = false;
-	private waveDropModalDisplay: boolean = false;
 
 	@Watch("$route")
 	private routeChanged () {
@@ -422,25 +419,15 @@ export default class WorldMapView extends Vue {
 							드랍 정보
 						</template>
 
-						{ this.selected
-							? <div class="text-center mb-2">
-								<b-button variant="dark" onClick={ () => (this.waveDropModalDisplay = true) }>웨이브 별 드랍 정보</b-button>
-								<wave-drop-info
-									display={ this.waveDropModalDisplay }
-									{ ...{ on: { "update:display": ($v: boolean) => (this.waveDropModalDisplay = $v) } } }
-
-									world={ this.world }
-									area={ this.area }
-									waves={ this.Waves }
-									name={ this.selected.text }
-								/>
-							</div>
-							: _e() }
-
 						<b-card-body id="drops" class="p-0">
 							{ !this.selected
 								? <div class="text-center py-4 text-secondary">위 지도에서 지역을 선택해주세요.</div>
 								: <b-row>
+									<b-col cols="12">
+										<b-alert show variant="warning">
+											<b-badge variant="dark">웨이브 별 드랍 정보</b-badge> 기능은 저작권자 <i>(주)스마트조이</i>의 요청으로 삭제되었습니다.
+										</b-alert>
+									</b-col>
 									<b-col cols="12" md="6">
 										<b-card text-variant="dark" header="실종 대원 목록">
 											<b-row cols="1" cols-lg={ this.UnitDrops.length === 0 ? 1 : 2 } class="text-center px-2">

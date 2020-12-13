@@ -7,7 +7,7 @@ import { BuffEffectInfo, BuffEffectList } from "@/libs/Buffs/BuffEffect";
 
 Vue.use(Vuex);
 
-export type UnitDisplayType = "table" | "list" | "group";
+export type UnitDisplayType = "table" | "list" | "group" | "time";
 export interface UnitDisplayFilters {
 	Rarity: {
 		[ACTOR_GRADE.B]: boolean;

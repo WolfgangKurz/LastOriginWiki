@@ -1,5 +1,4 @@
 <script lang="tsx">
-import _ from "lodash";
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Watch } from "vue-property-decorator";
@@ -94,7 +93,7 @@ export default class StoryViewer extends Vue {
 	private loadStory () {
 		this.storyData = [];
 
-		const x = new Promise((resolve, reject) => {
+		const x = new Promise<void>((resolve, reject) => {
 			if (!this.Story) return reject(new Error("Story not set"));
 
 			const spec = this.spec === "OP" ? 1 : this.spec === "ED" ? 2 : 3;

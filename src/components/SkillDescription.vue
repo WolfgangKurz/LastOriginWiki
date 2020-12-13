@@ -1,6 +1,4 @@
 <script lang="tsx">
-import { uniqueId } from "lodash";
-
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
@@ -16,6 +14,7 @@ import ElemIcon from "@/components/ElemIcon.vue";
 import UnitCard from "@/pages/Units/UnitCard.vue";
 import EquipCard from "@/pages/Equips/EquipCard.vue";
 import Decimal from "decimal.js";
+import { UniqueID } from "@/libs/Functions";
 
 @Component({
 	components: {
@@ -173,7 +172,7 @@ export default class SkillDescription extends Vue {
 				else if (x === "#thunder")
 					ret.icons.push(<elem-icon inline elem="lightning" />);
 				else if (x[0] === "$") {
-					const uid = uniqueId("tooltip-target-");
+					const uid = UniqueID("tooltip-target-");
 					const p = x.split(";");
 					if (p[0] === "$ch") {
 						const id = p[1];
@@ -182,7 +181,7 @@ export default class SkillDescription extends Vue {
 						ret.link = {
 							href,
 							display: <rarity-badge id={uid} rarity="A">{unit.name} 🔗</rarity-badge>,
-							tooltip: <b-tooltip target={uid} placement="top" no-fade noninteractive custom-class="badge-tooltip">
+							tooltip: <b-tooltip target={uid} placement="top" noninteractive custom-class="badge-tooltip">
 								<unit-card unit={unit} no-link />
 							</b-tooltip>,
 						};
@@ -205,7 +204,7 @@ export default class SkillDescription extends Vue {
 						ret.link = {
 							href,
 							display: <rarity-badge id={uid} rarity="A">{name} 🔗</rarity-badge>,
-							tooltip: <b-tooltip target={uid} placement="top" no-fade noninteractive custom-class="badge-tooltip">
+							tooltip: <b-tooltip target={uid} placement="top" noninteractive custom-class="badge-tooltip">
 								<equip-card equip={equip} no-link />
 							</b-tooltip>,
 						};

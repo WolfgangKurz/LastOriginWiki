@@ -147,8 +147,6 @@
 </template>
 
 <script lang="ts">
-import _ from "lodash";
-
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, Watch, PropSync } from "vue-property-decorator";

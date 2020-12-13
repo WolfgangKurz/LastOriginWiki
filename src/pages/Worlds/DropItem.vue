@@ -6,8 +6,8 @@ import { Watch, Prop } from "vue-property-decorator";
 import EquipIcon from "@/components/EquipIcon.vue";
 
 import { Consumable } from "@/libs/DB/Consumable";
-import { _e } from "@/libs/Buffs/BuffStatus";
 import { FormatNumber } from "@/libs/Functions";
+import { _e } from "@/libs/VNode";
 
 @Component({
 	components: {

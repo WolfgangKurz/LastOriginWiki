@@ -52,7 +52,6 @@
 </template>
 
 <script lang="ts">
-import _ from "lodash";
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, PropSync, Emit } from "vue-property-decorator";
@@ -181,7 +180,7 @@ export default class UnitsTable extends Vue {
 						this.HasFilteredEffect(x, (b) => isBuffEffectValid(b, StoreModule.unitEffectFilterListFlatten));
 				});
 		} else {
-			return _(UnitData)
+			return UnitData
 				.filter(x => x.name.includes(this.SearchText))
 				.filter(x => (
 					x.rarity === rarity &&

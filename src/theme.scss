@@ -1,10 +1,13 @@
-$baseRoot: null;
-$assetsRoot: null;
+$baseRoot: "https://lastorigin-wiki-assets.s3.ap-northeast-2.amazonaws.com" !default;
+$assetsRoot: $baseRoot + "/" !default;
+$__theme__loaded: false !default;
+$mode: "PUB" !default;
 
-@if ($NODE_ENV == "development") {
-	$baseRoot: "/" !global;
-	$assetsRoot: $baseRoot + "assets" !global;
-} @else {
-	$baseRoot: "https://lastorigin-wiki-assets.s3.ap-northeast-2.amazonaws.com" !global;
-	$assetsRoot: $baseRoot + "/publish/assets" !global;
+@if ($__theme__loaded == false) {
+	@if ($NODE_ENV == "development") {
+		$baseRoot: "http://localhost:5500/assets" !global;
+		$assetsRoot: $baseRoot + "/" !global;
+		$mode: "DEV" !global;
+	}
+	$__theme__loaded: true !global;
 }

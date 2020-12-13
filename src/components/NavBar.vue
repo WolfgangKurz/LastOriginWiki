@@ -25,11 +25,10 @@
 				<b-nav-item :active="IsEnemy" href="/enemy" @click.prevent="GoTo('/enemy')">적 정보</b-nav-item>
 				<b-nav-item :active="IsFacilities" href="/facilities" @click.prevent="GoTo('/facilities')">설비정보</b-nav-item>
 				<b-nav-item :active="IsWorlds" href="/worlds" @click.prevent="GoTo('/worlds')">세계정보</b-nav-item>
-				<b-nav-item
-					:active="IsChangelog"
-					href="/changelog"
-					@click.prevent="GoTo('/changelog')"
-				>Changelog</b-nav-item>
+				<b-nav-item :active="IsChangelog" href="/changelog" @click.prevent="GoTo('/changelog')">
+					Changelog
+					<b-badge variant="primary">U</b-badge>
+				</b-nav-item>
 
 				<b-nav-item-dropdown right>
 					<template #button-content>기타</template>
@@ -116,6 +115,10 @@ export default class NavBar extends Vue {
 </script>
 
 <style lang="scss" scoped>
+.navbar-brand > img {
+	width: 32px;
+	height: 32px;
+}
 .navbar-nav .nav-item {
 	padding: 0 10px;
 }
