@@ -73,6 +73,7 @@
 							<skill-description
 								v-else
 								:text="line"
+								:rates="GetRates(skill)"
 								:level="skillLevelSync"
 								:buff-bonus="buffBonus"
 								:skill-bonus="skillBonus"
@@ -122,6 +123,7 @@
 							<skill-description
 								v-else
 								:text="line"
+								:rates="GetRates(skill)"
 								:level="skillLevelSync"
 								:buff-bonus="buffBonus"
 								:skill-bonus="skillBonus"
@@ -316,6 +318,10 @@ export default class UnitSkillTable extends Vue {
 			});
 
 		return output;
+	}
+
+	private GetRates (skill: SkillItem) {
+		return skill.levels.map(x => x.rate);
 	}
 
 	private SummonChar (summon: SkillSummonInfo | null) {

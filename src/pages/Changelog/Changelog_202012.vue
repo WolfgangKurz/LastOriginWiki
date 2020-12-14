@@ -1,5 +1,17 @@
 <template>
 	<div>
+		<changelog-item title="Build 7204" date="2020-12-14">
+			<template #bugfix>
+				<li>적 스킬의 버프 수치가 스킬 레벨 2 수치로 표시되던 문제를 수정했습니다.</li>
+				<li>소환물의 버프 수치가 스킬 레벨 2 수치로 표시되던 문제를 수정했습니다.</li>
+				<li>전투원의 웨이브 승리 호감도 변동 수치가 잘못 표시되던 문제를 수정했습니다.</li>
+			</template>
+			<template #update>
+				<li>변경된 시설 수치가 반영되었습니다.</li>
+				<li>변경된 전투원 스킬 공격력 계수가 반영되었습니다.</li>
+			</template>
+		</changelog-item>
+
 		<changelog-item title="Build 7186" date="2020-12-14">
 			<template #bugfix>
 				<li>전투원 일러스트의 배경, 스킬 범위 등의 이미지가 표시되지 않던 문제를 수정했습니다.</li>
@@ -14,8 +26,6 @@
 			</template>
 			<template #bugfix>
 				<li>일부 적의 정보를 보려고 하면 페이지가 작동하지 않던 문제를 수정했습니다.</li>
-				<li>적 스킬의 버프 수치가 스킬 레벨 2 수치로 표시되던 문제를 수정했습니다.</li>
-				<li>전투원의 웨이브 승리 호감도 변동 수치가 잘못 표시되던 문제를 수정했습니다.</li>
 				<li>
 					<b-badge variant="warning">생명의 세레스티아</b-badge>의 스킨 <b-badge variant="info">세레스티아 카우걸</b-badge>의 중파 정보가
 					누락되어있던 점을 수정했습니다.
