@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<changelog-item title="Build 7184" date="2020-12-14">
+		<changelog-item title="Build 7185" date="2020-12-14">
 			<template #site>
 				<li>Changelog의 디자인을 변경했습니다.</li>
 				<li>빌드 번호를 추가했습니다.</li>
@@ -39,7 +39,7 @@
 				</li>
 			</template>
 			<template #dialogue>
-				<li><b-badge variant="light">KST 2020-12-07 15:36:17</b-badge>까지의 사용자 참여로 추가된 대사들이 반영되었습니다.</li>
+				<li><b-badge variant="light">KST 2020-12-14 02:19:27</b-badge>까지의 사용자 참여로 추가된 대사들이 반영되었습니다.</li>
 			</template>
 		</changelog-item>
 
