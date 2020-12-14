@@ -184,7 +184,7 @@
 							<small class="ml-1">Lv.1</small>
 
 							<div class="float-md-right bg-dark ml-md-2 mt-2 mt-md-0 p-2 text-center">
-								<skill-bound :target="skill.target" :levels="skill.buff" :level="1" :passive="skill.passive" />
+								<skill-bound :target="skill.target" :levels="skill.buff" :level="0" :passive="skill.passive" />
 							</div>
 
 							<div class="mt-3 skill-desc">
@@ -200,7 +200,7 @@
 								<hr class="my-1" />
 
 								<div class="break-keep white-pre-line">
-									<skill-description :text="Description(skill)" :level="1" />
+									<skill-description :text="Description(skill)" :level="0" :rates="GetRates(skill)" />
 								</div>
 							</div>
 
@@ -326,6 +326,12 @@ export default class SummonBadge extends Vue {
 		let t = skill.desc.toString();
 		t = t.replace(/\{0\}/g, `[@::${v}~0: (${skill.buff.rate}배)]`);
 		return t;
+	}
+
+	private GetRates (skill: SummonSkill) {
+		if (!this.summon) return [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+		return new Array(10).fill(skill.buff.rate);
 	}
 
 	private StatValue (stat: [number, number], floorPer: boolean = false) {
