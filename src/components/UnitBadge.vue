@@ -182,14 +182,14 @@ export default class UnitBadge extends Vue {
 	> i {
 		display: inline-block;
 		margin: 0 3px 0 0;
-		background-image: url($assetsRoot + "/unit-type.png");
+		background-image: url($assetsRoot + "unit-type.png");
 		background-position: 0 0;
 		background-repeat: no-repeat;
 		vertical-align: bottom;
 	}
 	&[data-type="3"] {
 		&:not([data-role=""]) > i {
-			background-image: url($assetsRoot + "/unit-role.png");
+			background-image: url($assetsRoot + "unit-role.png");
 		}
 		&[data-role=""] > i {
 			display: none;

@@ -48,7 +48,7 @@ export default class StatIcon extends Vue {
 	width: $size;
 	height: $size;
 
-	background-image: url($assetsRoot + "/simulation/LinkBack.png");
+	background-image: url($assetsRoot + "simulation/LinkBack.png");
 	background-repeat: no-repeat;
 	background-size: $size $size;
 
@@ -80,7 +80,7 @@ export default class StatIcon extends Vue {
 		top: 2px;
 		width: 34px;
 		height: 9px;
-		background-image: url($assetsRoot + "/simulation/LinkTop.png");
+		background-image: url($assetsRoot + "simulation/LinkTop.png");
 		background-repeat: no-repeat;
 		background-size: 34px 9px;
 	}

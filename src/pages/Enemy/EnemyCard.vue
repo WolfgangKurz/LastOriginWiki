@@ -110,7 +110,7 @@ export default class EnemyCard extends Vue {
 						vertical-align: bottom;
 
 						&[data-type] {
-							background-image: url($assetsRoot + "/unit-type.png");
+							background-image: url($assetsRoot + "unit-type.png");
 							&[data-type="light"] {
 								background-position-x: 0px;
 							}
@@ -122,7 +122,7 @@ export default class EnemyCard extends Vue {
 							}
 						}
 						&[data-role] {
-							background-image: url($assetsRoot + "/unit-role.png");
+							background-image: url($assetsRoot + "unit-role.png");
 							&[data-role="attacker"] {
 								background-position-x: 0px;
 							}

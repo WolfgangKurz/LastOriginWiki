@@ -1,5 +1,11 @@
 <template>
 	<div>
+		<changelog-item title="Build 7186" date="2020-12-14">
+			<template #bugfix>
+				<li>전투원 일러스트의 배경, 스킬 범위 등의 이미지가 표시되지 않던 문제를 수정했습니다.</li>
+			</template>
+		</changelog-item>
+
 		<changelog-item title="Build 7185" date="2020-12-14">
 			<template #site>
 				<li>Changelog의 디자인을 변경했습니다.</li>
