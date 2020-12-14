@@ -1,5 +1,11 @@
 <template>
 	<div>
+		<changelog-item title="Build 7207" date="2020-12-14">
+			<template #bugfix>
+				<li>일부 전투원의 스킬의 계수/설명이 누락된 문제를 수정했습니다.</li>
+			</template>
+		</changelog-item>
+
 		<changelog-item title="Build 7204" date="2020-12-14">
 			<template #bugfix>
 				<li>적 스킬의 버프 수치가 스킬 레벨 2 수치로 표시되던 문제를 수정했습니다.</li>
