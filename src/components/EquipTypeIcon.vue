@@ -33,7 +33,7 @@ export default class EquipTypeIcon extends Vue {
 	margin: 0 0.25em;
 	width: $size;
 	height: $size;
-	background-image: url($assetsRoot + "/icon-equip.png");
+	background-image: url($assetsRoot + "icon-equip.png");
 	background-repeat: no-repeat;
 	background-size: ($size * 3) ($size * 2);
 	vertical-align: middle;

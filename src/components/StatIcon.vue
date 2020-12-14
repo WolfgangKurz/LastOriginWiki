@@ -37,7 +37,7 @@ export default class StatIcon extends Vue {
 	height: $size;
 	vertical-align: bottom;
 
-	background-image: url($assetsRoot + "/simulation/stats.png");
+	background-image: url($assetsRoot + "simulation/stats.png");
 	background-repeat: no-repeat;
 	background-size: ($size * 7) $size;
 	background-position: $size 0;

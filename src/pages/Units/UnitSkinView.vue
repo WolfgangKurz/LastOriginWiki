@@ -200,7 +200,7 @@ export default class UnitSkinView extends Vue {
 			top: 0;
 			right: 0;
 			bottom: 0;
-			background-image: url($assetsRoot + "/bg/unit-bg.png");
+			background-image: url($assetsRoot + "bg/unit-bg.png");
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: cover;
@@ -214,7 +214,7 @@ export default class UnitSkinView extends Vue {
 				width: 100%;
 				height: 100%;
 				transform-origin: 50% 50%;
-				background-image: url($assetsRoot + "/bg/unit-bg-net.png");
+				background-image: url($assetsRoot + "bg/unit-bg-net.png");
 				background-position: center bottom;
 				background-repeat: no-repeat;
 				background-size: 100%;
@@ -279,7 +279,7 @@ export default class UnitSkinView extends Vue {
 				right: 0px;
 				width: 64px;
 				height: 62px;
-				background-image: url($assetsRoot + "/damaged-icon.png");
+				background-image: url($assetsRoot + "damaged-icon.png");
 				background-size: 128px 62px;
 
 				&[data-damaged="1"] {
@@ -291,7 +291,7 @@ export default class UnitSkinView extends Vue {
 				right: 18px;
 				width: 28px;
 				height: 28px;
-				background-image: url($assetsRoot + "/simplify-icon.png");
+				background-image: url($assetsRoot + "simplify-icon.png");
 				background-position-x: -28px;
 				background-size: 56px 28px;
 
@@ -304,7 +304,7 @@ export default class UnitSkinView extends Vue {
 				right: 18px;
 				width: 28px;
 				height: 28px;
-				background-image: url($assetsRoot + "/icon-platform.png");
+				background-image: url($assetsRoot + "icon-platform.png");
 				background-position-x: -28px;
 				background-size: 56px 28px;
 
@@ -320,7 +320,7 @@ export default class UnitSkinView extends Vue {
 			bottom: 10px;
 			width: 22px;
 			height: 22px;
-			background-image: url($assetsRoot + "/icon-detail.png");
+			background-image: url($assetsRoot + "icon-detail.png");
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: 22px 22px;
@@ -344,7 +344,7 @@ export default class UnitSkinView extends Vue {
 			left: 5px;
 			width: 38px;
 			height: 34px;
-			background-image: url($assetsRoot + "/icon-marry.png");
+			background-image: url($assetsRoot + "icon-marry.png");
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: 38px 34px;

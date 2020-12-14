@@ -111,7 +111,7 @@ export default class FacilityIcon extends Vue {
 		margin-bottom: 3px;
 		width: 56px;
 		height: 17px;
-		background-image: url($assetsRoot + "/facility-size-dots.png");
+		background-image: url($assetsRoot + "facility-size-dots.png");
 		background-size: 56px 51px;
 		background-repeat: no-repeat;
 		vertical-align: middle;

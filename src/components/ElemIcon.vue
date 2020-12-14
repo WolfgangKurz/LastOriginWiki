@@ -31,7 +31,7 @@ export default class ElemIcon extends Vue {
 	margin: 0 4px 4px 0;
 	width: 20px;
 	height: 17px;
-	background-image: url($assetsRoot + "/elem-type.png");
+	background-image: url($assetsRoot + "elem-type.png");
 	background-size: 82px 17.5px;
 	background-position: 0 0;
 	background-repeat: no-repeat;

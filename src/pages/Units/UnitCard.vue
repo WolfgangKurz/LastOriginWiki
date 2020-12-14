@@ -180,7 +180,7 @@ export default class UnitCard extends Vue {
 						vertical-align: bottom;
 
 						&[data-type] {
-							background-image: url($assetsRoot + "/unit-type.png");
+							background-image: url($assetsRoot + "unit-type.png");
 							&[data-type="0"] {
 								background-position-x: 0px;
 							}
@@ -192,7 +192,7 @@ export default class UnitCard extends Vue {
 							}
 						}
 						&[data-role] {
-							background-image: url($assetsRoot + "/unit-role.png");
+							background-image: url($assetsRoot + "unit-role.png");
 							&[data-role="1"] {
 								background-position-x: 0px;
 							}

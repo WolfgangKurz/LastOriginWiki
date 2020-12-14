@@ -190,7 +190,7 @@ export default class SkillBound extends Vue {
 		width: $w;
 		height: $h;
 
-		background-image: url($assetsRoot + "/skill-parallelogram.png");
+		background-image: url($assetsRoot + "skill-parallelogram.png");
 		background-repeat: no-repeat;
 		background-size: ($w * 9) $h;
 
@@ -254,7 +254,7 @@ export default class SkillBound extends Vue {
 			float: right;
 			width: 24px;
 			height: 24px;
-			background-image: url($assetsRoot + "/range-circle.png");
+			background-image: url($assetsRoot + "range-circle.png");
 			background-repeat: no-repeat;
 			background-size: 24px 24px;
 			line-height: 22px;
