@@ -1,5 +1,18 @@
 <template>
 	<div>
+		<changelog-item title="Build 7218" date="2020-12-16">
+			<template #new>
+				<li>
+					<b-badge variant="warning">전투원정보</b-badge>의 필터에 <b-badge variant="secondary">스킬 속성 필터</b-badge>가
+					추가되었습니다.<br />
+					해당 속성의 스킬을 가진 전투원이 필터됩니다.
+				</li>
+				<li>
+					<b-badge variant="warning">전투원정보</b-badge>의 스킬 효과 필터 목록을 유형별로 구분했습니다.
+				</li>
+			</template>
+		</changelog-item>
+
 		<changelog-item title="Build 7209" date="2020-12-15">
 			<template #bugfix>
 				<li>일부 전투원의 스킬의 계수가 올바르지 않던 문제를 수정했습니다.</li>

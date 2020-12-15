@@ -21,7 +21,7 @@ export const AssetsRoot = process.env.NODE_ENV === "development"
 
 let webpAvailable = false;
 export async function initWEBP () {
-	return new Promise((resolve) => {
+	return new Promise<void>((resolve) => {
 		webpChecker({
 			disableGlobal: true,
 			injectBodyClass: false,
@@ -57,6 +57,7 @@ export const WorldNames: Record<string, string> = {
 	EvA0: "오르카호를 수복하라!",
 	Ev7: "요정 마을의 아리아",
 	Ev8: "흐린 기억 속의 나라",
+	Ev9: "낙원으로부터 온 초대장",
 };
 export const WorldDescriptions: Record<string, string> = {
 	Story: "",
@@ -68,6 +69,7 @@ export const WorldDescriptions: Record<string, string> = {
 	Ev6: "티아멧은 '초코 여왕'과 얽힌 멸망 전 인류의 일그러짐과 마주하는데..",
 	Ev7: "가벼운 마음으로 요정 마을로 향한 사령관에게...?",
 	Ev8: "왓슨, 드디어 대단원이야!",
+	Ev9: "<2020년 12월 21일 점검 후 시작>",
 };
 
 export const ApocryphaUnit: Record<string, string> = {

@@ -31,7 +31,7 @@ import UnitData, { Unit } from "@/libs/DB/Unit";
 import SkillData, { SkillSlotKey } from "@/libs/DB/Skill";
 
 import UnitCard from "./UnitCard.vue";
-import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/libs/Types/Enums";
+import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE, SKILL_ATTR } from "@/libs/Types/Enums";
 import { BuffEffect } from "@/libs/Buffs/BuffEffect";
 import { isBuffEffectValid } from "@/libs/Buffs/Helper";
 
@@ -126,6 +126,12 @@ export default class UnitsNormal extends Vue {
 			this.Filters.Body[ACTOR_BODY_TYPE.BIOROID] ? ACTOR_BODY_TYPE.BIOROID : -1,
 			this.Filters.Body[ACTOR_BODY_TYPE.AGS] ? ACTOR_BODY_TYPE.AGS : -1,
 		].filter(x => x > -1);
+		const elem = [
+			this.Filters.Elem[SKILL_ATTR.PHYSICS] ? SKILL_ATTR.PHYSICS : -1,
+			this.Filters.Elem[SKILL_ATTR.FIRE] ? SKILL_ATTR.FIRE : -1,
+			this.Filters.Elem[SKILL_ATTR.ICE] ? SKILL_ATTR.ICE : -1,
+			this.Filters.Elem[SKILL_ATTR.LIGHTNING] ? SKILL_ATTR.LIGHTNING : -1,
+		].filter(x => x > -1);
 
 		const list = Object.values(UnitData)
 			.map(x => {
@@ -134,13 +140,17 @@ export default class UnitsNormal extends Vue {
 					id000: ("00" + x.id).substr(-3),
 				};
 			})
-			.filter(x => x.name.includes(this.SearchText) &&
-				rarity.includes(x.rarity) &&
-				type.includes(x.type) &&
-				role.includes(x.role) &&
-				body.includes(x.body) &&
-				this.HasFilteredEffect(x, (b) => isBuffEffectValid(b, StoreModule.unitEffectFilterListFlatten)),
-			);
+			.filter(x => {
+				const skill = Object.keys(SkillData[x.uid]).map(z => SkillData[x.uid][z as SkillSlotKey]);
+
+				return x.name.includes(this.SearchText) &&
+					rarity.includes(x.rarity) &&
+					type.includes(x.type) &&
+					role.includes(x.role) &&
+					body.includes(x.body) &&
+					elem.some(y => skill.some(z => z && z.levels[0].type === y)) &&
+					this.HasFilteredEffect(x, (b) => isBuffEffectValid(b, StoreModule.unitEffectFilterListFlatten));
+			});
 
 		if (this.Order === "name") {
 			if (this.ShortName)

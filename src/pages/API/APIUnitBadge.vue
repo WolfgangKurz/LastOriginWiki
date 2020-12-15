@@ -46,7 +46,7 @@ import Component from "vue-class-component";
 
 import { UnitDisplayFilters } from "@/libs/Store";
 import UnitData, { Unit } from "@/libs/DB/Unit";
-import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/libs/Types/Enums";
+import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE, SKILL_ATTR } from "@/libs/Types/Enums";
 
 import UnitFace from "@/components/UnitFace.vue";
 
@@ -80,6 +80,12 @@ export default class APIUnitBadge extends Vue {
 		Body: {
 			[ACTOR_BODY_TYPE.BIOROID]: true,
 			[ACTOR_BODY_TYPE.AGS]: true,
+		},
+		Elem: {
+			[SKILL_ATTR.PHYSICS]: true,
+			[SKILL_ATTR.FIRE]: true,
+			[SKILL_ATTR.ICE]: true,
+			[SKILL_ATTR.LIGHTNING]: true,
 		},
 		Effects: [],
 		EffectTarget: [],
