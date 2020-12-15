@@ -63,7 +63,7 @@ import UnitFace from "@/components/UnitFace.vue";
 import UnitBadge from "@/components/UnitBadge.vue";
 import UnitCard from "./UnitCard.vue";
 
-import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/libs/Types/Enums";
+import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE, SKILL_ATTR } from "@/libs/Types/Enums";
 import UnitData, { Unit } from "@/libs/DB/Unit";
 import SkillData, { SkillSlotKey } from "@/libs/DB/Skill";
 import { BuffEffect } from "@/libs/Buffs/BuffEffect";
@@ -165,9 +165,18 @@ export default class UnitsTable extends Vue {
 	}
 
 	private UnitList (rarity: ACTOR_GRADE, type: ACTOR_CLASS, role: ROLE_TYPE) {
+		const elem = [
+			this.Filters.Elem[SKILL_ATTR.PHYSICS] ? SKILL_ATTR.PHYSICS : -1,
+			this.Filters.Elem[SKILL_ATTR.FIRE] ? SKILL_ATTR.FIRE : -1,
+			this.Filters.Elem[SKILL_ATTR.ICE] ? SKILL_ATTR.ICE : -1,
+			this.Filters.Elem[SKILL_ATTR.LIGHTNING] ? SKILL_ATTR.LIGHTNING : -1,
+		].filter(x => x > -1);
+
 		if (this.PromotionFilter === 1 || this.PromotionFilter === 2) {
 			return UnitData
 				.filter((x) => {
+					const skill = Object.keys(SkillData[x.uid]).map(z => SkillData[x.uid][z as SkillSlotKey]);
+
 					const rarityMatch = (this.PromotionFilter === 1 && x.rarity === rarity) ||
 						(x.promotions && x.promotions.includes(rarity));
 					return rarityMatch &&
@@ -177,20 +186,25 @@ export default class UnitsTable extends Vue {
 							(x.body === ACTOR_BODY_TYPE.BIOROID && this.Filters.Body[ACTOR_BODY_TYPE.BIOROID]) ||
 							(x.body === ACTOR_BODY_TYPE.AGS && this.Filters.Body[ACTOR_BODY_TYPE.AGS])
 						) &&
+						elem.some(y => skill.some(z => z && z.levels[0].type === y)) &&
 						this.HasFilteredEffect(x, (b) => isBuffEffectValid(b, StoreModule.unitEffectFilterListFlatten));
 				});
 		} else {
 			return UnitData
 				.filter(x => x.name.includes(this.SearchText))
-				.filter(x => (
-					x.rarity === rarity &&
-					x.type === type &&
-					x.role === role && (
-						(x.body === ACTOR_BODY_TYPE.BIOROID && this.Filters.Body[ACTOR_BODY_TYPE.BIOROID]) ||
-						(x.body === ACTOR_BODY_TYPE.AGS && this.Filters.Body[ACTOR_BODY_TYPE.AGS])
-					) &&
-					this.HasFilteredEffect(x, (b) => isBuffEffectValid(b, StoreModule.unitEffectFilterListFlatten))
-				));
+				.filter(x => {
+					const skill = Object.keys(SkillData[x.uid]).map(z => SkillData[x.uid][z as SkillSlotKey]);
+
+					return x.rarity === rarity &&
+						x.type === type &&
+						x.role === role &&
+						(
+							(x.body === ACTOR_BODY_TYPE.BIOROID && this.Filters.Body[ACTOR_BODY_TYPE.BIOROID]) ||
+							(x.body === ACTOR_BODY_TYPE.AGS && this.Filters.Body[ACTOR_BODY_TYPE.AGS])
+						) &&
+						elem.some(y => skill.some(z => z && z.levels[0].type === y)) &&
+						this.HasFilteredEffect(x, (b) => isBuffEffectValid(b, StoreModule.unitEffectFilterListFlatten));
+				});
 		}
 	}
 

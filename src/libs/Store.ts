@@ -2,8 +2,8 @@ import Vuex from "vuex";
 import Vue from "vue";
 
 import { VuexModule, Module, Mutation, Action } from "vuex-class-modules";
-import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE, TARGET_TYPE } from "@/libs/Types/Enums";
-import { BuffEffectInfo, BuffEffectList } from "@/libs/Buffs/BuffEffect";
+import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE, SKILL_ATTR, TARGET_TYPE } from "@/libs/Types/Enums";
+import { BuffEffectInfo, BuffEffectList, BuffEffectListGroupKeys } from "@/libs/Buffs/BuffEffect";
 
 Vue.use(Vuex);
 
@@ -28,6 +28,12 @@ export interface UnitDisplayFilters {
 	Body: {
 		[ACTOR_BODY_TYPE.BIOROID]: boolean;
 		[ACTOR_BODY_TYPE.AGS]: boolean;
+	};
+	Elem: {
+		[SKILL_ATTR.PHYSICS]: boolean;
+		[SKILL_ATTR.FIRE]: boolean;
+		[SKILL_ATTR.ICE]: boolean;
+		[SKILL_ATTR.LIGHTNING]: boolean;
 	};
 	EffectTarget: EffectFilterTargetType[];
 	Effects: EffectFilterListType;
@@ -91,7 +97,9 @@ class StoreModule extends VuexModule {
 	private unitSearchText: string = "";
 
 	public readonly unitEffectFilterList = BuffEffectList();
-	public readonly unitEffectFilterListFlatten = this.unitEffectFilterList
+	public readonly unitEffectFilterListFlatten = Object.keys(this.unitEffectFilterList)
+		.map(x => this.unitEffectFilterList[x as BuffEffectListGroupKeys])
+		.reduce((p, c) => [...p, ...c], [])
 		.map(x => {
 			if (x.pm) {
 				return [
@@ -123,6 +131,12 @@ class StoreModule extends VuexModule {
 		Body: {
 			[ACTOR_BODY_TYPE.BIOROID]: true,
 			[ACTOR_BODY_TYPE.AGS]: true,
+		},
+		Elem: {
+			[SKILL_ATTR.PHYSICS]: true,
+			[SKILL_ATTR.FIRE]: true,
+			[SKILL_ATTR.ICE]: true,
+			[SKILL_ATTR.LIGHTNING]: true,
 		},
 		EffectTarget: ["self", "team", "enemy"],
 		Effects: this.unitEffectFilterListFlatten,
@@ -170,7 +184,9 @@ class StoreModule extends VuexModule {
 	};
 
 	public readonly equipEffectFilterList = BuffEffectList();
-	public readonly equipEffectFilterListFlatten = this.equipEffectFilterList
+	public readonly equipEffectFilterListFlatten = Object.keys(this.equipEffectFilterList)
+		.map(x => this.equipEffectFilterList[x as BuffEffectListGroupKeys])
+		.reduce((p, c) => [...p, ...c], [])
 		.map(x => {
 			if (x.pm) {
 				return [

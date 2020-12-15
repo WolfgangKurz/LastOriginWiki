@@ -381,84 +381,107 @@ export interface BuffEffectInfo {
 	type: BUFFEFFECT_TYPE[];
 }
 
-export function BuffEffectList () {
-	const ret: BuffEffectInfo[] = [];
-	ret.push({ pm: true, text: "공격력", type: [BUFFEFFECT_TYPE.STAT_ATK_VALUE, BUFFEFFECT_TYPE.STAT_ATK_RATIO] });
-	ret.push({ pm: true, text: "방어력", type: [BUFFEFFECT_TYPE.STAT_DEF_VALUE, BUFFEFFECT_TYPE.STAT_DEF_RATIO] });
-	ret.push({ pm: true, text: "HP", type: [BUFFEFFECT_TYPE.STAT_HP_VALUE, BUFFEFFECT_TYPE.STAT_HP_RATIO] });
-	ret.push({ pm: true, text: "적중", type: [BUFFEFFECT_TYPE.STAT_RATING_VALUE, BUFFEFFECT_TYPE.STAT_RATING_RATIO] });
-	ret.push({ pm: true, text: "치명타", type: [BUFFEFFECT_TYPE.STAT_CRITICAL_VALUE, BUFFEFFECT_TYPE.STAT_CRITICAL_RATIO] });
-	ret.push({ pm: true, text: "회피", type: [BUFFEFFECT_TYPE.STAT_AVOID_VALUE, BUFFEFFECT_TYPE.STAT_AVOID_RATIO] });
-	ret.push({ pm: true, text: "행동력", type: [BUFFEFFECT_TYPE.STAT_SPEED_VALUE, BUFFEFFECT_TYPE.STAT_SPEED_RATIO] });
-	ret.push({ pm: true, text: "화염 저항", type: [BUFFEFFECT_TYPE.STAT_RESFIRE_VALUE, BUFFEFFECT_TYPE.STAT_RESFIRE_RATIO] });
-	ret.push({ pm: true, text: "냉기 저항", type: [BUFFEFFECT_TYPE.STAT_RESICE_VALUE, BUFFEFFECT_TYPE.STAT_RESICE_RATIO] });
-	ret.push({ pm: true, text: "전기 저항", type: [BUFFEFFECT_TYPE.STAT_RESLIGHTNING_VALUE, BUFFEFFECT_TYPE.STAT_RESLIGHTNING_RATIO] });
-	ret.push({ pm: true, text: "AP", type: [BUFFEFFECT_TYPE.STAGE_AP_VALUE] });
-	ret.push({ pm: false, text: "AP 변경", type: [BUFFEFFECT_TYPE.STAGE_AP_SHIFT] });
-	ret.push({ pm: false, text: "행동 불능", type: [BUFFEFFECT_TYPE.STAGE_AP_STOP] });
-	ret.push({ pm: false, text: "정찰", type: [BUFFEFFECT_TYPE.UI_INFO_NEXTENEMY] });
-	ret.push({ pm: false, text: "반격", type: [BUFFEFFECT_TYPE.STAGE_REFLECTPHYSICS_RATIO_DEFENDER] });
-	ret.push({ pm: false, text: "피해 무효화", type: [BUFFEFFECT_TYPE.STAGE_IMMUNESHIELD_TIME] });
-	ret.push({ pm: false, text: "피해 최소화", type: [BUFFEFFECT_TYPE.STAGE_SHIELD_VALUE] });
-	ret.push({ pm: false, text: "받는 피해 감소", type: [BUFFEFFECT_TYPE.STAGE_SHIELD_RATIO] });
-	ret.push({ pm: false, text: "방어막", type: [BUFFEFFECT_TYPE.STAGE_IMMUNESHIELD_VALUE] });
-	ret.push({ pm: false, text: "추가 물리 피해", type: [BUFFEFFECT_TYPE.STAGE_DAMAGEPHYSICS_RATIO, BUFFEFFECT_TYPE.STAGE_DAMAGEPHYSICS_VALUE] });
-	ret.push({ pm: false, text: "추가 화염 피해", type: [BUFFEFFECT_TYPE.STAGE_DAMAGEFIRE_RATIO, BUFFEFFECT_TYPE.STAGE_DAMAGEFIRE_VALUE] });
-	ret.push({ pm: false, text: "추가 냉기 피해", type: [BUFFEFFECT_TYPE.STAGE_DAMAGEICE_RATIO, BUFFEFFECT_TYPE.STAGE_DAMAGEICE_VALUE] });
-	ret.push({ pm: false, text: "추가 전기 피해", type: [BUFFEFFECT_TYPE.STAGE_DAMAGELIGHTNING_RATIO, BUFFEFFECT_TYPE.STAGE_DAMAGELIGHTNING_VALUE] });
-	ret.push({ pm: false, text: "받는 피해 증가", type: [BUFFEFFECT_TYPE.STAGE_ADDDAMAGE_RATIO] });
-	ret.push({ pm: false, text: "행 보호", type: [BUFFEFFECT_TYPE.STAGE_BLOCK_LINE] });
-	ret.push({ pm: false, text: "뒤로 밀기", type: [BUFFEFFECT_TYPE.STAGE_MOVE_BACK] });
-	ret.push({ pm: false, text: "앞으로 당기기", type: [BUFFEFFECT_TYPE.STAGE_MOVE_FRONT] });
-	ret.push({ pm: true, text: "다음 공격까지 치명타", type: [BUFFEFFECT_TYPE.STAGE_CRITICAL_NEXTATTACK] });
-	ret.push({ pm: true, text: "사거리", type: [BUFFEFFECT_TYPE.STAT_RANGE_VALUE] });
-	ret.push({ pm: true, text: "방어 관통", type: [BUFFEFFECT_TYPE.STAGE_DEFPIERCE_RATIO] });
-	ret.push({ pm: true, text: "대경장 피해량", type: [BUFFEFFECT_TYPE.STAGE_TROOPERTYPEDMGBONUS_RATIO] });
-	ret.push({ pm: true, text: "대중장 피해량", type: [BUFFEFFECT_TYPE.STAGE_ARMOREDTYPEDMGBONUS_RATIO] });
-	ret.push({ pm: true, text: "대기동 피해량", type: [BUFFEFFECT_TYPE.STAGE_MOBILITYTYPEDMGBONUS_RATIO] });
-	ret.push({ pm: false, text: "고정 지속 피해", type: [BUFFEFFECT_TYPE.STAGE_PHYSICS_DOT] });
-	ret.push({ pm: false, text: "고정 지속 화염 피해", type: [BUFFEFFECT_TYPE.STAGE_FIRE_DOT] });
-	ret.push({ pm: false, text: "고정 지속 냉기 피해", type: [BUFFEFFECT_TYPE.STAGE_ICE_DOT] });
-	ret.push({ pm: false, text: "고정 지속 전기 피해", type: [BUFFEFFECT_TYPE.STAGE_LIGHTNING_DOT] });
-	ret.push({
-		pm: false,
-		text: "버프 해제",
-		type: [
-			BUFFEFFECT_TYPE.STAGE_REMOVE_BUFF_ENUM, BUFFEFFECT_TYPE.STAGE_REMOVE_BUFF,
-			BUFFEFFECT_TYPE.STAGE_REMOVE_DEBUFF, BUFFEFFECT_TYPE.STAGE_REMOVE_BUFF_KEY_ALL_ATTRTYPE,
-			BUFFEFFECT_TYPE.STAGE_REMOVE_ALL_BUFF, BUFFEFFECT_TYPE.STAGE_REMOVE_ALL_DEBUFF,
+export type BuffEffectListGroupKeys = "stats" | "damageAdd" | "damageReduce" | "guard" | "speedAp" | "offPierce" |
+	"resist" | "damage" | "etcBuff" | "etcDebuff";
+export function BuffEffectList (): Record<BuffEffectListGroupKeys, BuffEffectInfo[]> {
+	const dict: Record<BuffEffectListGroupKeys, BuffEffectInfo[]> = {
+		stats: [
+			{ pm: true, text: "공격력", type: [BUFFEFFECT_TYPE.STAT_ATK_VALUE, BUFFEFFECT_TYPE.STAT_ATK_RATIO] },
+			{ pm: true, text: "방어력", type: [BUFFEFFECT_TYPE.STAT_DEF_VALUE, BUFFEFFECT_TYPE.STAT_DEF_RATIO] },
+			{ pm: true, text: "HP", type: [BUFFEFFECT_TYPE.STAT_HP_VALUE, BUFFEFFECT_TYPE.STAT_HP_RATIO] },
+			{ pm: true, text: "적중", type: [BUFFEFFECT_TYPE.STAT_RATING_VALUE, BUFFEFFECT_TYPE.STAT_RATING_RATIO] },
+			{ pm: true, text: "치명타", type: [BUFFEFFECT_TYPE.STAT_CRITICAL_VALUE, BUFFEFFECT_TYPE.STAT_CRITICAL_RATIO] },
+			{ pm: true, text: "회피", type: [BUFFEFFECT_TYPE.STAT_AVOID_VALUE, BUFFEFFECT_TYPE.STAT_AVOID_RATIO] },
 		],
-	});
-	ret.push({ pm: false, text: "공격력 비례 고정 피해", type: [BUFFEFFECT_TYPE.STAGE_PHYSICS_DAMAGE_APPLY] });
-	ret.push({ pm: false, text: "공격력 비례 고정 화염 피해", type: [BUFFEFFECT_TYPE.STAGE_FIRE_DAMAGE_APPLY] });
-	ret.push({ pm: false, text: "공격력 비례 고정 냉기 피해", type: [BUFFEFFECT_TYPE.STAGE_ICE_DAMAGE_APPLY] });
-	ret.push({ pm: false, text: "공격력 비례 고정 전기 피해", type: [BUFFEFFECT_TYPE.STAGE_LIGHTNING_DAMAGE_APPLY] });
-	ret.push({ pm: false, text: "도발", type: [BUFFEFFECT_TYPE.STAGE_PROVOKE] });
-	ret.push({ pm: false, text: "열 보호", type: [BUFFEFFECT_TYPE.STAGE_BLOCK_ROW] });
-	ret.push({ pm: false, text: "지정 대상 보호", type: [BUFFEFFECT_TYPE.STAGE_BLOCK_CHARACTER] });
-	ret.push({ pm: false, text: "공격 지원", type: [BUFFEFFECT_TYPE.STAGE_SUPPORT_ATTACK] });
-	ret.push({ pm: false, text: "이동 불가", type: [BUFFEFFECT_TYPE.STAGE_SNARE] });
-	ret.push({ pm: false, text: "스킬 사용 불가", type: [BUFFEFFECT_TYPE.STAGE_SEAL_SKILL] });
-	ret.push({ pm: true, text: "HP가 낮을수록 피해량", type: [BUFFEFFECT_TYPE.STAGE_DAMAGEAMP_BYHP_ME] });
-	ret.push({ pm: true, text: "대상의 HP가 낮을수록 피해량", type: [BUFFEFFECT_TYPE.STAGE_DAMAGEAMP_BYHP_OPP] });
-	ret.push({ pm: false, text: "전투 속행", type: [BUFFEFFECT_TYPE.STAGE_RESURRECT, BUFFEFFECT_TYPE.STAGE_RESURRECT_RATIO] });
-	ret.push({ pm: true, text: "피해량", type: [BUFFEFFECT_TYPE.STAGE_DAMAGEPHYSICS_RATIO_INS] });
-	ret.push({ pm: true, text: "화염 속성 피해량", type: [BUFFEFFECT_TYPE.STAGE_DAMAGEFIRE_RATIO_INS] });
-	ret.push({ pm: true, text: "냉기 속성 피해량", type: [BUFFEFFECT_TYPE.STAGE_DAMAGEICE_RATIO_INS] });
-	ret.push({ pm: true, text: "전기 속성 피해량", type: [BUFFEFFECT_TYPE.STAGE_DAMAGELIGHTNING_RATIO_INS] });
-	ret.push({ pm: false, text: "표식", type: [BUFFEFFECT_TYPE.STAGE_MARKING] });
-	ret.push({ pm: true, text: "효과 저항", type: [BUFFEFFECT_TYPE.STAGE_DEBUFF_RATEUP, BUFFEFFECT_TYPE.STAGE_DEBUFF_PERDOWN] });
-	ret.push({ pm: true, text: "효과 발동", type: [BUFFEFFECT_TYPE.STAGE_BUFFEFFECTRATE_CHANGE] });
-	ret.push({ pm: false, text: "소환물 제거", type: [BUFFEFFECT_TYPE.REMOVE_SUMMON_INSTENV] });
-	ret.push({ pm: false, text: "방어막 / 피해 감소 무시", type: [BUFFEFFECT_TYPE.BARRIER_PIERCE] });
-	ret.push({ pm: true, text: "경험치", type: [BUFFEFFECT_TYPE.STAGE_EXP_UP] });
-	ret.push({
-		pm: false,
-		text: "협동 공격",
-		type: [
-			BUFFEFFECT_TYPE.STAGE_TOGETHER_ATTACK_ACTIVE_SKILL_1,
-			BUFFEFFECT_TYPE.STAGE_TOGETHER_ATTACK_ACTIVE_SKILL_2,
+		damageAdd: [
+			{ pm: true, text: "대경장 피해량", type: [BUFFEFFECT_TYPE.STAGE_TROOPERTYPEDMGBONUS_RATIO] },
+			{ pm: true, text: "대중장 피해량", type: [BUFFEFFECT_TYPE.STAGE_ARMOREDTYPEDMGBONUS_RATIO] },
+			{ pm: true, text: "대기동 피해량", type: [BUFFEFFECT_TYPE.STAGE_MOBILITYTYPEDMGBONUS_RATIO] },
+			{ pm: true, text: "HP가 낮을수록 피해량", type: [BUFFEFFECT_TYPE.STAGE_DAMAGEAMP_BYHP_ME] },
+			{ pm: true, text: "대상의 HP가 낮을수록 피해량", type: [BUFFEFFECT_TYPE.STAGE_DAMAGEAMP_BYHP_OPP] },
+			{ pm: false, text: "받는 피해 증가", type: [BUFFEFFECT_TYPE.STAGE_ADDDAMAGE_RATIO] },
+			{ pm: true, text: "피해량", type: [BUFFEFFECT_TYPE.STAGE_DAMAGEPHYSICS_RATIO_INS] },
+			{ pm: true, text: "화염 속성 피해량", type: [BUFFEFFECT_TYPE.STAGE_DAMAGEFIRE_RATIO_INS] },
+			{ pm: true, text: "냉기 속성 피해량", type: [BUFFEFFECT_TYPE.STAGE_DAMAGEICE_RATIO_INS] },
+			{ pm: true, text: "전기 속성 피해량", type: [BUFFEFFECT_TYPE.STAGE_DAMAGELIGHTNING_RATIO_INS] },
 		],
-	});
-	return ret;
+		damageReduce: [
+			{ pm: false, text: "받는 피해 감소", type: [BUFFEFFECT_TYPE.STAGE_SHIELD_RATIO] },
+			{ pm: false, text: "피해 무효화", type: [BUFFEFFECT_TYPE.STAGE_IMMUNESHIELD_TIME] },
+			{ pm: false, text: "피해 최소화", type: [BUFFEFFECT_TYPE.STAGE_SHIELD_VALUE] },
+			{ pm: false, text: "방어막", type: [BUFFEFFECT_TYPE.STAGE_IMMUNESHIELD_VALUE] },
+			{ pm: false, text: "전투 속행", type: [BUFFEFFECT_TYPE.STAGE_RESURRECT, BUFFEFFECT_TYPE.STAGE_RESURRECT_RATIO] },
+		],
+		guard: [
+			{ pm: false, text: "행 보호", type: [BUFFEFFECT_TYPE.STAGE_BLOCK_LINE] },
+			{ pm: false, text: "열 보호", type: [BUFFEFFECT_TYPE.STAGE_BLOCK_ROW] },
+			{ pm: false, text: "지정 대상 보호", type: [BUFFEFFECT_TYPE.STAGE_BLOCK_CHARACTER] },
+		],
+		speedAp: [
+			{ pm: true, text: "AP", type: [BUFFEFFECT_TYPE.STAGE_AP_VALUE] },
+			{ pm: false, text: "AP 변경", type: [BUFFEFFECT_TYPE.STAGE_AP_SHIFT] },
+			{ pm: true, text: "행동력", type: [BUFFEFFECT_TYPE.STAT_SPEED_VALUE, BUFFEFFECT_TYPE.STAT_SPEED_RATIO] },
+			{ pm: false, text: "행동 불능", type: [BUFFEFFECT_TYPE.STAGE_AP_STOP] },
+			{ pm: false, text: "스킬 사용 불가", type: [BUFFEFFECT_TYPE.STAGE_SEAL_SKILL] },
+		],
+		offPierce: [
+			{
+				pm: false,
+				text: "버프 해제",
+				type: [
+					BUFFEFFECT_TYPE.STAGE_REMOVE_BUFF_ENUM, BUFFEFFECT_TYPE.STAGE_REMOVE_BUFF,
+					BUFFEFFECT_TYPE.STAGE_REMOVE_DEBUFF, BUFFEFFECT_TYPE.STAGE_REMOVE_BUFF_KEY_ALL_ATTRTYPE,
+					BUFFEFFECT_TYPE.STAGE_REMOVE_ALL_BUFF, BUFFEFFECT_TYPE.STAGE_REMOVE_ALL_DEBUFF,
+				],
+			},
+			{ pm: true, text: "방어 관통", type: [BUFFEFFECT_TYPE.STAGE_DEFPIERCE_RATIO] },
+			{ pm: false, text: "방어막 / 피해 감소 무시", type: [BUFFEFFECT_TYPE.BARRIER_PIERCE] },
+		],
+		resist: [
+			{ pm: true, text: "화염 저항", type: [BUFFEFFECT_TYPE.STAT_RESFIRE_VALUE, BUFFEFFECT_TYPE.STAT_RESFIRE_RATIO] },
+			{ pm: true, text: "냉기 저항", type: [BUFFEFFECT_TYPE.STAT_RESICE_VALUE, BUFFEFFECT_TYPE.STAT_RESICE_RATIO] },
+			{ pm: true, text: "전기 저항", type: [BUFFEFFECT_TYPE.STAT_RESLIGHTNING_VALUE, BUFFEFFECT_TYPE.STAT_RESLIGHTNING_RATIO] },
+			{ pm: true, text: "효과 저항", type: [BUFFEFFECT_TYPE.STAGE_DEBUFF_RATEUP, BUFFEFFECT_TYPE.STAGE_DEBUFF_PERDOWN] },
+		],
+		damage: [
+			{ pm: false, text: "추가 물리 피해", type: [BUFFEFFECT_TYPE.STAGE_DAMAGEPHYSICS_RATIO, BUFFEFFECT_TYPE.STAGE_DAMAGEPHYSICS_VALUE] },
+			{ pm: false, text: "추가 화염 피해", type: [BUFFEFFECT_TYPE.STAGE_DAMAGEFIRE_RATIO, BUFFEFFECT_TYPE.STAGE_DAMAGEFIRE_VALUE] },
+			{ pm: false, text: "추가 냉기 피해", type: [BUFFEFFECT_TYPE.STAGE_DAMAGEICE_RATIO, BUFFEFFECT_TYPE.STAGE_DAMAGEICE_VALUE] },
+			{ pm: false, text: "추가 전기 피해", type: [BUFFEFFECT_TYPE.STAGE_DAMAGELIGHTNING_RATIO, BUFFEFFECT_TYPE.STAGE_DAMAGELIGHTNING_VALUE] },
+			{ pm: false, text: "고정 지속 피해", type: [BUFFEFFECT_TYPE.STAGE_PHYSICS_DOT] },
+			{ pm: false, text: "고정 지속 화염 피해", type: [BUFFEFFECT_TYPE.STAGE_FIRE_DOT] },
+			{ pm: false, text: "고정 지속 냉기 피해", type: [BUFFEFFECT_TYPE.STAGE_ICE_DOT] },
+			{ pm: false, text: "고정 지속 전기 피해", type: [BUFFEFFECT_TYPE.STAGE_LIGHTNING_DOT] },
+			{ pm: false, text: "공격력 비례 고정 피해", type: [BUFFEFFECT_TYPE.STAGE_PHYSICS_DAMAGE_APPLY] },
+			{ pm: false, text: "공격력 비례 고정 화염 피해", type: [BUFFEFFECT_TYPE.STAGE_FIRE_DAMAGE_APPLY] },
+			{ pm: false, text: "공격력 비례 고정 냉기 피해", type: [BUFFEFFECT_TYPE.STAGE_ICE_DAMAGE_APPLY] },
+			{ pm: false, text: "공격력 비례 고정 전기 피해", type: [BUFFEFFECT_TYPE.STAGE_LIGHTNING_DAMAGE_APPLY] },
+		],
+		etcBuff: [
+			{ pm: false, text: "정찰", type: [BUFFEFFECT_TYPE.UI_INFO_NEXTENEMY] },
+			{ pm: false, text: "반격", type: [BUFFEFFECT_TYPE.STAGE_REFLECTPHYSICS_RATIO_DEFENDER] },
+			{ pm: true, text: "다음 공격까지 치명타", type: [BUFFEFFECT_TYPE.STAGE_CRITICAL_NEXTATTACK] },
+			{ pm: true, text: "사거리", type: [BUFFEFFECT_TYPE.STAT_RANGE_VALUE] },
+			{ pm: false, text: "공격 지원", type: [BUFFEFFECT_TYPE.STAGE_SUPPORT_ATTACK] },
+			{ pm: true, text: "효과 발동", type: [BUFFEFFECT_TYPE.STAGE_BUFFEFFECTRATE_CHANGE] },
+			{ pm: true, text: "경험치", type: [BUFFEFFECT_TYPE.STAGE_EXP_UP] },
+			{
+				pm: false,
+				text: "협동 공격",
+				type: [
+					BUFFEFFECT_TYPE.STAGE_TOGETHER_ATTACK_ACTIVE_SKILL_1,
+					BUFFEFFECT_TYPE.STAGE_TOGETHER_ATTACK_ACTIVE_SKILL_2,
+				],
+			},
+		],
+		etcDebuff: [
+			{ pm: false, text: "표식", type: [BUFFEFFECT_TYPE.STAGE_MARKING] },
+			{ pm: false, text: "도발", type: [BUFFEFFECT_TYPE.STAGE_PROVOKE] },
+			{ pm: false, text: "이동 불가", type: [BUFFEFFECT_TYPE.STAGE_SNARE] },
+			{ pm: false, text: "뒤로 밀기", type: [BUFFEFFECT_TYPE.STAGE_MOVE_BACK] },
+			{ pm: false, text: "앞으로 당기기", type: [BUFFEFFECT_TYPE.STAGE_MOVE_FRONT] },
+			{ pm: false, text: "소환물 제거", type: [BUFFEFFECT_TYPE.REMOVE_SUMMON_INSTENV] },
+		],
+	};
+	return dict;
 }
