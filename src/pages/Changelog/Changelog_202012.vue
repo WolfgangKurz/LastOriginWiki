@@ -1,5 +1,15 @@
 <template>
 	<div>
+		<changelog-item title="Build 7209" date="2020-12-15">
+			<template #bugfix>
+				<li>일부 전투원의 스킬의 계수가 올바르지 않던 문제를 수정했습니다.</li>
+				<li>일부 전투원의 스킬의 계수가 "스킬 위력"에 영향을 받지 않던 문제를 수정했습니다.</li>
+			</template>
+			<template #update>
+				<li>전투원의 스킬 계수를 표시하는 뱃지의 배경 색상을 진하게 변경했습니다.</li>
+			</template>
+		</changelog-item>
+
 		<changelog-item title="Build 7207" date="2020-12-14">
 			<template #bugfix>
 				<li>일부 전투원의 스킬의 계수/설명이 누락된 문제를 수정했습니다.</li>
