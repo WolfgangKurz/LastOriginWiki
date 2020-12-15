@@ -334,7 +334,7 @@ export default class SkillDescription extends Vue {
 							{ postfix }
 						</span>;
 					} else {
-						return <rarity-badge rarity="S">
+						return <rarity-badge rarity={ flags.skill ? "SS" : "S" }>
 							{ flags.icons }
 							{ prefix }
 							<span class="skill-value" data-sign={ sign }>{ value.toFixed(10).replace(/\.?0+$/, "") }</span>
