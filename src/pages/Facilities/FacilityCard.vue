@@ -70,7 +70,4 @@ export default class FacilityCard extends Vue {
 }
 </script>
 
-<style lang="scss">
-.card.facility-card {
-}
-</style>
+<style lang="scss"></style>

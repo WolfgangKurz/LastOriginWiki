@@ -138,29 +138,40 @@
 						</div>
 						<!-- <b-select :options="EquipEffects" /> -->
 						<b-collapse :visible="displayEquipEffects">
-							<template v-for="entity in EquipEffects">
-								<b-btn-group v-if="Array.isArray(entity)" :key="`equip-effect-${entity[0].type}`" class="mr-1 mb-1">
-									<b-button
-										v-for="subentity in entity"
-										:key="`equip-effect-${subentity.type}-${subentity.pmType}`"
-										variant="outline-secondary"
-										:pressed="subentity.selected"
-										@click="subentity.selected = !subentity.selected"
-									>
-										{{ subentity.text + (subentity.pmType > 0 ? " 증가" : " 감소") }}
-									</b-button>
-								</b-btn-group>
-								<b-button
-									v-else
-									:key="`equip-effect-${entity.type}`"
-									class="mr-1 mb-1"
-									variant="outline-secondary"
-									:pressed="entity.selected"
-									@click="entity.selected = !entity.selected"
-								>
-									{{ entity.text }}
-								</b-button>
-							</template>
+							<b-table-simple small striped borderless>
+								<b-tbody>
+									<b-tr v-for="(group, gkey) in EquipEffects" :key="`equip-effect-group-${gkey}`">
+										<b-td class="align-middle pr-2">
+											<span class="effect-group-name">{{ EffectGroupNames[gkey] }} :</span>
+										</b-td>
+										<b-td>
+											<template v-for="entity in group">
+												<b-btn-group v-if="Array.isArray(entity)" :key="`equip-effect-${entity[0].type}`" class="mr-1 mb-1">
+													<b-button
+														v-for="subentity in entity"
+														:key="`equip-effect-${subentity.type}-${subentity.pmType}`"
+														variant="outline-secondary"
+														:pressed="subentity.selected"
+														@click="subentity.selected = !subentity.selected"
+													>
+														{{ subentity.text + (subentity.pmType > 0 ? " 증가" : " 감소") }}
+													</b-button>
+												</b-btn-group>
+												<b-button
+													v-else
+													:key="`equip-effect-${entity.type}`"
+													class="mr-1 mb-1"
+													variant="outline-secondary"
+													:pressed="entity.selected"
+													@click="entity.selected = !entity.selected"
+												>
+													{{ entity.text }}
+												</b-button>
+											</template>
+										</b-td>
+									</b-tr>
+								</b-tbody>
+							</b-table-simple>
 						</b-collapse>
 					</b-col>
 				</b-row>
@@ -190,7 +201,7 @@ import EquipModal from "./Equips/EquipModal.vue";
 
 import { ACTOR_GRADE, ITEM_TYPE } from "@/libs/Types/Enums";
 import EquipData, { Equip } from "@/libs/DB/Equip";
-import { BuffEffect, BuffEffectValue, BUFFEFFECT_TYPE } from "@/libs/Buffs/BuffEffect";
+import { BuffEffect, BuffEffectListGroupKeys, BuffEffectValue, BUFFEFFECT_TYPE } from "@/libs/Buffs/BuffEffect";
 
 import { CurrentEvent, CurrentDate, AssetsRoot, ImageExtension } from "@/libs/Const";
 import { ArrayUnique, groupBy, UpdateTitle } from "@/libs/Functions";
@@ -283,6 +294,22 @@ export default class Equips extends Vue {
 			SetMeta(["twitter:image", "og:image"], null);
 			UpdateTitle("장비정보");
 		}
+	}
+
+	private get EffectGroupNames (): Record<string, string> {
+		const ret: Record<BuffEffectListGroupKeys, string> = {
+			stats: "스테이터스",
+			damageAdd: "피해 증가",
+			damageReduce: "피해 감소",
+			guard: "보호",
+			speedAp: "AP / 행동",
+			offPierce: "효과 해제 / 무시",
+			resist: "효과 / 속성 저항",
+			damage: "추가 / 고정 피해",
+			etcBuff: "그 외 버프",
+			etcDebuff: "그 외 디버프",
+		};
+		return ret;
 	}
 
 	private get EquipGroups () {
@@ -470,7 +497,19 @@ export default class Equips extends Vue {
 					if (f) ret.push(x);
 				}
 			});
-		return ret;
+
+		const dict: Record<string, EffectFilterListType> = {};
+		const filters = StoreModule.unitEffectFilterList;
+		ret.forEach(b => {
+			Object.keys(filters).forEach(x => {
+				const k = x as BuffEffectListGroupKeys;
+				if (filters[k].some(y => Array.isArray(b) ? y.text === b[0].text : y.text === b.text)) {
+					if (!(x in dict)) dict[x] = [];
+					dict[x].push(b);
+				}
+			});
+		});
+		return dict;
 	}
 
 	private HasFilteredEffect (eq: Equip, validator: (stat: BuffEffect) => boolean) {

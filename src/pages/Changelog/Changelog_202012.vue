@@ -1,5 +1,28 @@
 <template>
 	<div>
+		<changelog-item title="Build 7301" date="2020-12-19">
+			<template #new>
+				<li><b-badge variant="warning">장비정보</b-badge>의 장비 효과 필터 목록을 유형별로 구분했습니다.</li>
+			</template>
+			<template #update>
+				<li>
+					<b-badge variant="warning">전투원정보</b-badge>의 스킬 효과 필터의 기능이 개선되었습니다.<br />
+					이제 <b-badge variant="info">자신</b-badge>, <b-badge variant="info">아군</b-badge>, <b-badge variant="info">적군</b-badge> 필터가
+					실제 버프의 적용 대상을 기준으로 적용됩니다.
+				</li>
+				<li>
+					전투원 스킬 정보의 버프 정보가 개선되었습니다.<br />
+					버프의 적용 대상에 <b-badge variant="stat-def">아군</b-badge>, <b-badge variant="stat-def">적군</b-badge> 여부가
+					추가되었습니다.<br />
+					이제 <b-badge variant="danger">아군 또는 적군이 n체일 때</b-badge> 조건의 전투원 유형이 표시됩니다.
+				</li>
+				<li>
+					<b-badge variant="warning">세계정보</b-badge>의 <b-badge variant="secondary">탐사 정보</b-badge>의
+					<b-badge variant="secondary">추가 획득 가능</b-badge> 소모품의 획득 확률 표시가 추가되었습니다.
+				</li>
+			</template>
+		</changelog-item>
+
 		<changelog-item title="Build 7218" date="2020-12-16">
 			<template #new>
 				<li>
@@ -7,9 +30,7 @@
 					추가되었습니다.<br />
 					해당 속성의 스킬을 가진 전투원이 필터됩니다.
 				</li>
-				<li>
-					<b-badge variant="warning">전투원정보</b-badge>의 스킬 효과 필터 목록을 유형별로 구분했습니다.
-				</li>
+				<li><b-badge variant="warning">전투원정보</b-badge>의 스킬 효과 필터 목록을 유형별로 구분했습니다.</li>
 			</template>
 		</changelog-item>
 

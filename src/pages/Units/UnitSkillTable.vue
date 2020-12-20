@@ -56,7 +56,13 @@
 					<b-td class="text-left d-none d-md-table-cell">
 						<div class="unit-modal-skill">
 							<b-badge v-if="skill.levels[skillLevelSync].dismiss_guard" variant="warning" class="mr-1">보호 무시</b-badge>
-							<b-badge v-if="skill.levels[skillLevelSync].target_ground" variant="danger" class="mr-1">땅 찍기</b-badge>
+							<b-badge
+								v-if="skill.levels[skillLevelSync].target_ground && !skill.isPassive"
+								variant="danger"
+								class="mr-1"
+								title="땅 찍기"
+								>그리드 지정</b-badge
+							>
 							<b-badge v-if="skill.levels[skillLevelSync].acc_bonus" variant="success" class="mr-1">
 								적중 보정
 								{{ (skill.levels[skillLevelSync].acc_bonus > 0 ? "+" : "") + skill.levels[skillLevelSync].acc_bonus }}%
@@ -68,17 +74,19 @@
 							/>
 						</div>
 
-						<div v-for="(line, lineIdx) in skill.desc" :key="`unit-modal-skill-desc-${lineIdx}`" class="unit-modal-skill">
-							<span v-if="!line" class="text-secondary">설명 없음</span>
-							<skill-description
-								v-else
-								:text="line"
-								:rates="GetRates(skill)"
-								:level="skillLevelSync"
-								:buff-bonus="buffBonus"
-								:skill-bonus="skillBonus"
-								:love-bonus="loveBonus"
-							/>
+						<div>
+							<div v-for="(line, lineIdx) in skill.desc" :key="`unit-modal-skill-desc-${lineIdx}`" class="unit-modal-skill">
+								<span v-if="!line" class="text-secondary">설명 없음</span>
+								<skill-description
+									v-else
+									:text="line"
+									:rates="GetRates(skill)"
+									:level="skillLevelSync"
+									:buff-bonus="buffBonus"
+									:skill-bonus="skillBonus"
+									:love-bonus="loveBonus"
+								/>
+							</div>
 						</div>
 
 						<div v-if="BuffRates[skill.key].some((x) => x !== 100)">
@@ -86,11 +94,7 @@
 							<small class="text-secondary ml-1">- 호감도 및 버프/디버프 효과 증가로 변동되지 않음, 효과 발동에 영향 받음</small>
 						</div>
 
-						<b-list-group v-if="displayBuffList && BuffList[skill.key].length > 0" class="text-left mt-2">
-							<b-list-group-item v-for="(status, idx) in BuffList[skill.key]" :key="`status-line-${idx}`">
-								<node-renderer :elem="status" />
-							</b-list-group-item>
-						</b-list-group>
+						<buff-list v-if="displayBuffList && BuffList[skill.key].length > 0" :list="BuffList[skill.key]" :level="ComputedLevel" />
 					</b-td>
 					<b-th variant="dark" class="text-center">
 						<skill-bound
@@ -106,7 +110,13 @@
 					<b-td class="text-left" colspan="2">
 						<div class="unit-modal-skill">
 							<b-badge v-if="skill.levels[skillLevelSync].dismiss_guard" variant="warning" class="mr-1">보호 무시</b-badge>
-							<b-badge v-if="skill.levels[skillLevelSync].target_ground" variant="danger" class="mr-1">땅 찍기</b-badge>
+							<b-badge
+								v-if="skill.levels[skillLevelSync].target_ground && !skill.levels[skillLevelSync].passive"
+								variant="danger"
+								class="mr-1"
+								title="땅 찍기"
+								>그리드 지정</b-badge
+							>
 							<b-badge v-if="skill.levels[skillLevelSync].acc_bonus" variant="success" class="mr-1">
 								적중 보정
 								{{ (skill.levels[skillLevelSync].acc_bonus > 0 ? "+" : "") + skill.levels[skillLevelSync].acc_bonus }}%
@@ -136,11 +146,7 @@
 							<small class="text-secondary ml-1">- 호감도 및 버프/디버프 효과 증가로 변동되지 않음, 효과 발동에 영향 받음</small>
 						</div>
 
-						<b-list-group v-if="displayBuffList && BuffList[skill.key].length > 0" class="text-left mt-2">
-							<b-list-group-item v-for="(status, idx) in BuffList[skill.key]" :key="`status-line-${idx}`">
-								<node-renderer :elem="status" />
-							</b-list-group-item>
-						</b-list-group>
+						<buff-list v-if="displayBuffList && BuffList[skill.key].length > 0" :list="BuffList[skill.key]" :level="ComputedLevel" />
 					</b-td>
 				</b-tr>
 			</template>
@@ -153,10 +159,10 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, Watch, PropSync } from "vue-property-decorator";
 
-import NodeRenderer from "@/components/NodeRenderer.vue";
 import RarityBadge from "@/components/RarityBadge.vue";
 import SkillBound from "@/components/SkillBound.vue";
 import SkillDescription from "@/components/SkillDescription.vue";
+import BuffList from "@/components/BuffList";
 
 import ElemIcon from "@/components/ElemIcon.vue";
 import EquipIcon from "@/components/EquipIcon.vue";
@@ -166,7 +172,7 @@ import { ACTOR_GRADE } from "@/libs/Types/Enums";
 import SkillData, { SkillEntity, RawSkillEntity, SkillSummonInfo } from "@/libs/DB/Skill";
 import SummonData from "@/libs/DB/Summon";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
-import BuffStatus from "@/libs/Buffs/BuffStatus";
+import { BuffStat } from "@/libs/Buffs/Buffs";
 import Decimal from "decimal.js";
 
 interface SkillItem extends SkillEntity {
@@ -177,10 +183,10 @@ type SkillTable = Record<string, SkillItem>;
 
 @Component({
 	components: {
-		NodeRenderer,
 		RarityBadge,
 		SkillBound,
 		SkillDescription,
+		BuffList,
 
 		ElemIcon,
 		EquipIcon,
@@ -291,9 +297,13 @@ export default class UnitSkillTable extends Vue {
 		return ret;
 	}
 
-	private get BuffList () {
-		const output: Record<string, JSX.Element[]> = {};
+	private get ComputedLevel () {
 		const level = this.skillLevelSync + (this.loveBonus ? 1 : 0) + (this.buffBonus ? 2 : 0);
+		return level;
+	}
+
+	private get BuffList () {
+		const output: Record<string, BuffStat[]> = {};
 
 		Object.keys(this.skills)
 			.forEach(key => {
@@ -301,7 +311,7 @@ export default class UnitSkillTable extends Vue {
 				if (!skill) return null;
 
 				const stat = skill.levels[this.skillLevelSync].buffs;
-				output[key] = stat.reduce((p, c) => [...p, ...BuffStatus(this, c, level)], [] as JSX.Element[]);
+				output[key] = stat;
 			});
 
 		return output;

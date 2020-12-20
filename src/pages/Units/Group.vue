@@ -39,6 +39,7 @@ import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { BuffEffect } from "@/libs/Buffs/BuffEffect";
 import { isBuffEffectValid } from "@/libs/Buffs/Helper";
 import { groupBy } from "@/libs/Functions";
+import { TARGET_TYPE } from "@/libs/Types/Enums";
 
 @Component({
 	components: {
@@ -99,14 +100,17 @@ export default class UnitsGroup extends Vue {
 
 		return Object.keys(skills).some(ss => {
 			const __ = _(skills[ss as SkillSlotKey]);
-			const target: EffectFilterTargetType = __.target === "enemy"
-				? "enemy"
-				: __.levels.some(l => l.grid === "self")
-					? "self"
-					: "team";
 
-			if (!this.Filters.EffectTarget.includes(target)) return false;
 			return __.levels.some(l => l.buffs.some(es => {
+				if ("target" in es) {
+					const target: EffectFilterTargetType = es.target === TARGET_TYPE.SELF
+						? "self"
+						: es.target === TARGET_TYPE.OUR || es.target === TARGET_TYPE.OUR_GRID
+							? "team"
+							: "enemy";
+					if (!this.Filters.EffectTarget.includes(target)) return false;
+				}
+
 				if ("type" in es)
 					return validator(es);
 				else

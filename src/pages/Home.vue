@@ -17,7 +17,9 @@
 			<img class="heading-icon" :src="`${AssetsRoot}/icon.png`" />
 			멸망 전의 전술 교본
 		</h2>
-		<div class="mb-4 text-secondary">{{ BuildTime }}에 빌드, 버전 {{ BuildVersion }}</div>
+		<div class="mb-4 text-secondary">
+			<div>Build {{ BuildVersion }}, 빌드 시간 {{ BuildTime }}</div>
+		</div>
 
 		<p>
 			<i>멸망 전의 전술 교본</i>은 전투원과 장비, 설비, 적 및 세계 정보를 볼 수 있는 정보 사이트입니다.<br />
@@ -41,11 +43,10 @@
 		</b-alert>
 		<hr />
 
-		<p>
-			사이트 개발:
-			<a href="mailto:wolfgangkurzdev@gmail.com">wolfgangkurzdev@gmail.com</a>
-		</p>
+		<p>사이트 개발: <a href="mailto:wolfgangkurzdev@gmail.com">wolfgangkurzdev@gmail.com</a></p>
 		<p>정보에 오류가 있는 경우, 스크린샷과 함께 메일 주시면 최대한 빠르게 확인하겠습니다.</p>
+		<p><strong>특정 데이터의 게시 중단 요청</strong>은 위 메일 주소로 메일을 보내주시기 바랍니다.</p>
+		<p>게시 중단 요청은 저작권자인 <i>(주)스마트조이</i>의 요청 외에는 응답하거나 시행하지 않습니다.</p>
 		<hr />
 
 		<p>
@@ -65,6 +66,7 @@ import { UpdateTitle } from "@/libs/Functions";
 
 import BuildInfo from "@/buildtime";
 import { SetMeta } from "@/libs/Meta";
+import BootstrapVue from "bootstrap-vue";
 
 @Component({})
 export default class Home extends Vue {

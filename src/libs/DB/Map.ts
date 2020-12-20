@@ -2,8 +2,9 @@ import Data from "@/json/map.json";
 
 type MapRewardChar = string;
 interface MapRewardItem {
-	count: number;
 	item: string;
+	count: number;
+	chance: number;
 }
 interface MapRewardCash {
 	cash: number;
@@ -25,7 +26,7 @@ export interface MapEnemyData {
 }
 export interface MapWaveDrop {
 	id: string;
-	chance: number;
+	// chance: number;
 	count?: number;
 }
 
