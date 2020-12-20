@@ -6,7 +6,7 @@ import UnitData from "@/libs/DB/Unit";
 
 import { BuffEffect, BuffEffectValue, BUFFEFFECT_TYPE } from "@/libs/Buffs/BuffEffect";
 import { BuffTrigger } from "@/libs/Buffs/BuffTrigger";
-import { ACTOR_BODY_TYPE, ACTOR_CLASS, BUFF_ATTR_TYPE, NUM_OUTPUTTYPE, ROLE_TYPE, UNIT_POSITION } from "@/libs/Types/Enums";
+import { ACTOR_BODY_TYPE, ACTOR_CLASS, BUFF_ATTR_TYPE, NUM_OUTPUTTYPE, ROLE_TYPE, TARGET_TYPE, UNIT_POSITION } from "@/libs/Types/Enums";
 import { BuffStat } from "@/libs/Buffs/Buffs";
 import { BuffErase } from "@/libs/Buffs/BuffErase";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
@@ -332,26 +332,38 @@ function getTriggerText (trigger: BuffTrigger) {
 				? [trigger.unitCount.filter]
 				: trigger.unitCount.filter;
 			const count = trigger.unitCount.count;
+			const type = trigger.unitCount.type;
+
+			const _classes = ["경장형", "중장형", "기동형"];
+			const typeText = type.length === 3
+				? ""
+				: type.map(x => _classes[x]).join("/");
 
 			if (filters.includes("all")) {
 				if (filters.includes("bioroid"))
-					return `아군과 적의 바이오로이드가 ${count}명일 때`;
+					return `아군과 적의 ${typeText} 바이오로이드가 ${count}명일 때`;
 				else if (filters.includes("ags"))
-					return `아군과 적의 AGS가 ${count}기일 때`;
+					return `아군과 적의 ${typeText} AGS가 ${count}기일 때`;
+				else if (typeText)
+					return `아군과 적의 ${typeText}이 ${count}체일 때`;
 				else
 					return `아군과 적이 ${count}체일 때`;
 			} else if (filters.includes("squad")) {
 				if (filters.includes("bioroid"))
-					return `아군의 바이오로이드가 ${count}명일 때`;
+					return `아군의 ${typeText} 바이오로이드가 ${count}명일 때`;
 				else if (filters.includes("ags"))
-					return `아군의 AGS가 ${count}기일 때`;
+					return `아군의 ${typeText} AGS가 ${count}기일 때`;
+				else if (typeText)
+					return `아군의 ${typeText}이 ${count}체일 때`;
 				else
 					return `아군이 ${count}체일 때`;
 			} else if (filters.includes("enemy")) {
 				if (filters.includes("bioroid"))
-					return `적의 바이오로이드가 ${count}명일 때`;
+					return `적의 ${typeText} 바이오로이드가 ${count}명일 때`;
 				else if (filters.includes("ags"))
-					return `적의 AGS가 ${count}기일 때`;
+					return `적의 ${typeText} AGS가 ${count}기일 때`;
+				else if (typeText)
+					return `적의 ${typeText}이 ${count}체일 때`;
 				else
 					return `적이 ${count}체일 때`;
 			}
@@ -409,19 +421,19 @@ function getBuffEffectTypeText (type: BUFFEFFECT_TYPE, target: BUFF_ATTR_TYPE) {
 		case BUFFEFFECT_TYPE.STAT_RESFIRE_VALUE: // 14
 		case BUFFEFFECT_TYPE.STAT_RESFIRE_RATIO: // 15
 			return [
-				<elem-icon elem="fire" class="mr-1" />,
+				<elem-icon elem="fire" class="mr-1 mb-0" />,
 				"화염 저항" + p,
 			];
 		case BUFFEFFECT_TYPE.STAT_RESICE_VALUE: // 16
 		case BUFFEFFECT_TYPE.STAT_RESICE_RATIO: // 17
 			return [
-				<elem-icon elem="ice" class="mr-1" />,
+				<elem-icon elem="ice" class="mr-1 mb-0" />,
 				"냉기 저항" + p,
 			];
 		case BUFFEFFECT_TYPE.STAT_RESLIGHTNING_VALUE: // 18
 		case BUFFEFFECT_TYPE.STAT_RESLIGHTNING_RATIO: // 19
 			return [
-				<elem-icon elem="lightning" class="mr-1" />,
+				<elem-icon elem="lightning" class="mr-1 mb-0" />,
 				"전기 저항" + p,
 			];
 		case BUFFEFFECT_TYPE.STAGE_AP_VALUE: // 20
@@ -627,17 +639,17 @@ function getBuffText (stat: BuffEffect, level?: number) {
 			switch (stat.resist.elem) {
 				case "fire":
 					return [
-						<elem-icon elem={ stat.resist.elem } class="mr-1" />,
+						<elem-icon elem={ stat.resist.elem } class="mr-1 mb-0" />,
 						"화염 저항 " + positive(stat.resist.value, level),
 					];
 				case "ice":
 					return [
-						<elem-icon elem={ stat.resist.elem } class="mr-1" />,
+						<elem-icon elem={ stat.resist.elem } class="mr-1 mb-0" />,
 						"냉기 저항 " + positive(stat.resist.value, level),
 					];
 				case "lightning":
 					return [
-						<elem-icon elem={ stat.resist.elem } class="mr-1" />,
+						<elem-icon elem={ stat.resist.elem } class="mr-1 mb-0" />,
 						"전기 저항 " + positive(stat.resist.value, level),
 					];
 			}
@@ -666,17 +678,17 @@ function getBuffText (stat: BuffEffect, level?: number) {
 			switch (stat.damage.elem) {
 				case "fire":
 					return [
-						<elem-icon elem={ stat.damage.elem } class="mr-1" />,
+						<elem-icon elem={ stat.damage.elem } class="mr-1 mb-0" />,
 						`추가 화염 피해 ${literal(stat.damage.damage, level)}`,
 					];
 				case "ice":
 					return [
-						<elem-icon elem={ stat.damage.elem } class="mr-1" />,
+						<elem-icon elem={ stat.damage.elem } class="mr-1 mb-0" />,
 						`추가 냉기 피해 ${literal(stat.damage.damage, level)}`,
 					];
 				case "lightning":
 					return [
-						<elem-icon elem={ stat.damage.elem } class="mr-1" />,
+						<elem-icon elem={ stat.damage.elem } class="mr-1 mb-0" />,
 						`추가 번개 피해 ${literal(stat.damage.damage, level)}`,
 					];
 			}
@@ -699,17 +711,17 @@ function getBuffText (stat: BuffEffect, level?: number) {
 			switch (stat.damage_add.elem) {
 				case "fire":
 					return [
-						<elem-icon elem={ stat.damage_add.elem } class="mr-1" />,
+						<elem-icon elem={ stat.damage_add.elem } class="mr-1 mb-0" />,
 						`화염 속성 피해량 ${positive(stat.damage_add.damage, level)}`,
 					];
 				case "ice":
 					return [
-						<elem-icon elem={ stat.damage_add.elem } class="mr-1" />,
+						<elem-icon elem={ stat.damage_add.elem } class="mr-1 mb-0" />,
 						`냉기 속성 피해량 ${positive(stat.damage_add.damage, level)}`,
 					];
 				case "lightning":
 					return [
-						<elem-icon elem={ stat.damage_add.elem } class="mr-1" />,
+						<elem-icon elem={ stat.damage_add.elem } class="mr-1 mb-0" />,
 						`전기 속성 피해량 ${positive(stat.damage_add.damage, level)}`,
 					];
 			}
@@ -747,19 +759,19 @@ function getBuffText (stat: BuffEffect, level?: number) {
 				case "fire":
 					return [
 						`${percent(stat.fixed_damage.damage, "공격력 ", "")}${literal(stat.fixed_damage.damage, level)} 지속`,
-						<elem-icon elem={ stat.fixed_damage.elem } class="mr-1" />,
+						<elem-icon elem={ stat.fixed_damage.elem } class="mr-1 mb-0" />,
 						"화염 피해",
 					];
 				case "ice":
 					return [
 						`${percent(stat.fixed_damage.damage, "공격력 ", "")}${literal(stat.fixed_damage.damage, level)} 지속`,
-						<elem-icon elem={ stat.fixed_damage.elem } class="mr-1" />,
+						<elem-icon elem={ stat.fixed_damage.elem } class="mr-1 mb-0" />,
 						"냉기 피해",
 					];
 				case "lightning":
 					return [
 						`${percent(stat.fixed_damage.damage, "공격력 ", "")}${literal(stat.fixed_damage.damage, level)} 지속`,
-						<elem-icon elem={ stat.fixed_damage.elem } class="mr-1" />,
+						<elem-icon elem={ stat.fixed_damage.elem } class="mr-1 mb-0" />,
 						"전기 피해",
 					];
 			}
@@ -816,16 +828,22 @@ function getEraseText (erase: BuffErase) {
 		return "영구";
 }
 
-function getTargetText (body: ACTOR_BODY_TYPE[], cls: ACTOR_CLASS[], role: ROLE_TYPE[]) {
+function getTargetText (body: ACTOR_BODY_TYPE[], cls: ACTOR_CLASS[], role: ROLE_TYPE[], target: TARGET_TYPE) {
 	const _bodies = ["바이오로이드", "AGS"];
 	const _classes = ["경장형", "중장형", "기동형"];
 	const _roles = ["보호기", "공격기", "지원기"];
+
+	const targetSide = target === TARGET_TYPE.SELF
+		? "본인"
+		: target === TARGET_TYPE.OUR || target === TARGET_TYPE.OUR_GRID
+			? "아군"
+			: "적군";
 
 	const b = body.length === 2 ? "" : _bodies[body[0]];
 	const c = cls.length === 3 ? "" : cls.map(x => _classes[x]).join("/");
 	const r = role.length === 3 ? "" : role.map(x => _roles[x]).join("/");
 
-	return [b, c, r].filter(x => x).join(", ");
+	return [b, c, r].filter(x => x).join("/") + ` ${targetSide}`;
 }
 
 function formatDesc (type: NUM_OUTPUTTYPE, template: string, value: string, shortize: boolean = false) {
@@ -866,7 +884,7 @@ export default function BuffStatus (context: Vue, stat: BuffStat, level?: number
 		const ext = ImageExtension();
 		stat.buffs.forEach(buff => {
 			const erase = getEraseText(buff.erase);
-			const target = getTargetText(stat.body, stat.class, stat.role);
+			const target = getTargetText(stat.body, stat.class, stat.role, stat.target);
 			const on = getTriggerText(stat.on);
 			const apply = getTriggerText(stat.if);
 

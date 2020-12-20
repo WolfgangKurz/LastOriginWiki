@@ -1,5 +1,5 @@
 <template>
-	<div class="drop-item p-2 text-dark" :data-count="count">
+	<div class="drop-res p-2 text-dark" :data-count="count">
 		<b-card :bg-variant="am ? 'warning' : 'secondary'" :text-variant="am ? 'dark' : 'white'">
 			<equip-icon class="float-left mr-2" :image="Icon" />
 			<div class="text-left">
@@ -71,10 +71,10 @@ export default class DropRes extends Vue {
 </script>
 
 <style lang="scss">
-.drop-item {
+.drop-res {
 	word-break: keep-all;
 	user-select: none;
-	cursor: pointer;
+	// cursor: pointer;
 
 	&[data-count="0"] {
 		opacity: 0.68;

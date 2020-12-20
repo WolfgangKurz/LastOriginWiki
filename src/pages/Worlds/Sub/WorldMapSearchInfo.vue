@@ -44,6 +44,7 @@
 								:key="`worlds-${world}-${area}-search-item-${i}`"
 								:item="GetConsumable(item.item)"
 								:count="item.count"
+								:chance="item.chance"
 							/>
 						</b-row>
 					</b-card>

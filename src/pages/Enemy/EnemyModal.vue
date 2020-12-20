@@ -195,7 +195,7 @@
 							<div>
 								<elem-icon :elem="skill.buff.type" class="mr-1" />
 								<b-badge v-if="skill.buff.dismiss_guard" variant="warning" class="mr-1">보호 무시</b-badge>
-								<b-badge v-if="skill.buff.target_ground" variant="danger" class="mr-1">땅 찍기</b-badge>
+								<b-badge v-if="skill.buff.target_ground" variant="danger" class="mr-1" title="땅 찍기">그리드 지정</b-badge>
 								<b-badge v-if="skill.buff.acc_bonus" variant="success" class="mr-1">
 									적중 보정
 									{{ (skill.buff.acc_bonus > 0 ? "+" : "") + skill.buff.acc_bonus }}%
@@ -211,11 +211,7 @@
 						<div class="clearfix" />
 						<hr />
 
-						<b-list-group v-if="BuffList[skill.key].length > 0" class="text-left mt-2">
-							<b-list-group-item v-for="(status, idx) in BuffList[skill.key]" :key="`enemy-status-line-${idx}`">
-								<node-renderer :elem="status" />
-							</b-list-group-item>
-						</b-list-group>
+						<buff-list v-if="BuffList[skill.key].length > 0" :list="BuffList[skill.key]" />
 					</b-col>
 				</b-row>
 			</template>
@@ -247,9 +243,8 @@ import { Prop, Watch, PropSync } from "vue-property-decorator";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { ArrayUnique, FormatNumber } from "@/libs/Functions";
-import BuffStatus from "@/libs/Buffs/BuffStatus";
+import { BuffStat } from "@/libs/Buffs/Buffs";
 
-import NodeRenderer from "@/components/NodeRenderer.vue";
 import UnitBadge from "@/components/UnitBadge.vue";
 import RarityBadge from "@/components/RarityBadge.vue";
 import SourceBadge from "@/components/SourceBadge.vue";
@@ -258,6 +253,7 @@ import StatIcon from "@/components/StatIcon.vue";
 
 import SkillBound from "@/components/SkillBound.vue";
 import SkillDescription from "@/components/SkillDescription.vue";
+import BuffList from "@/components/BuffList";
 
 import { ACTOR_GRADE, ITEM_TYPE } from "@/libs/Types/Enums";
 import EnemyData, { Enemy, EnemySkill } from "@/libs/DB/Enemy";
@@ -266,7 +262,6 @@ import MapData from "@/libs/DB/Map";
 
 @Component({
 	components: {
-		NodeRenderer,
 		UnitBadge,
 		RarityBadge,
 		SourceBadge,
@@ -275,6 +270,7 @@ import MapData from "@/libs/DB/Map";
 
 		SkillBound,
 		SkillDescription,
+		BuffList,
 	},
 })
 export default class SummonModal extends Vue {
@@ -429,12 +425,12 @@ export default class SummonModal extends Vue {
 	}
 
 	private get BuffList () {
-		const output: Record<string, JSX.Element[]> = {};
+		const output: Record<string, BuffStat[]> = {};
 		this.Skills.forEach(skill => {
 			if (!skill) return null;
 
 			const stat = skill.buff.buffs;
-			output[skill.key] = stat.reduce((p, c) => [...p, ...BuffStatus(this, c, 1)], [] as JSX.Element[]);
+			output[skill.key] = stat;
 		});
 
 		return output;

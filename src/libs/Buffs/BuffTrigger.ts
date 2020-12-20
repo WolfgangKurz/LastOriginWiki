@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import { BUFFEFFECT_TYPE } from "@/libs/Buffs/BuffEffect";
-import { BUFF_ATTR_TYPE, UNIT_POSITION } from "@/libs/Types/Enums";
+import { ACTOR_CLASS, BUFF_ATTR_TYPE, UNIT_POSITION } from "@/libs/Types/Enums";
 
 /** 발동 조건 */
 export enum BUFFEFFECT_TRIGGER_TYPE {
@@ -225,6 +225,7 @@ type BuffTrigger_UnitCount_Types = "enemy" | "squad" | "all" |
 interface BuffTrigger_UnitCount {
 	unitCount: {
 		filter: BuffTrigger_UnitCount_Types | Array<BuffTrigger_UnitCount_Types>;
+		type: ACTOR_CLASS[];
 		count: number | number[];
 	};
 }

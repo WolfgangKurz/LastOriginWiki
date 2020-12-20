@@ -111,12 +111,9 @@ export default class WorldMapView extends Vue {
 					return UnitData.find(y => y.uid === k);
 				})
 				.filter(x => x)
-				.sort((a, b) => {
-					return (b as Unit).rarity - (a as Unit).rarity;
-				})
 				.forEach(x => ret.push(x as Unit));
 		});
-		return ret;
+		return ret.sort((a, b) => ((b as Unit).rarity - (a as Unit).rarity));
 	}
 
 	private get ItemDrops () {
@@ -145,7 +142,11 @@ export default class WorldMapView extends Vue {
 				.forEach(x => ret.push(x as (Equip | Consumable)));
 		});
 		// (); .sort((a, b) => b.rarity - a.rarity);
-		return ret;
+		return ret.sort((a, b) => {
+			if (("rarity" in a) && !("rarity" in b)) return -1;
+			else if (!("rarity" in a) && ("rarity" in b)) return 1;
+			return 0;
+		});
 	}
 
 	private get RewardDrops (): RewardDropType[] {
@@ -423,11 +424,6 @@ export default class WorldMapView extends Vue {
 							{ !this.selected
 								? <div class="text-center py-4 text-secondary">위 지도에서 지역을 선택해주세요.</div>
 								: <b-row>
-									<b-col cols="12">
-										<b-alert show variant="warning">
-											<b-badge variant="dark">웨이브 별 드랍 정보</b-badge> 기능은 저작권자 <i>(주)스마트조이</i>의 요청으로 삭제되었습니다.
-										</b-alert>
-									</b-col>
 									<b-col cols="12" md="6">
 										<b-card text-variant="dark" header="실종 대원 목록">
 											<b-row cols="1" cols-lg={ this.UnitDrops.length === 0 ? 1 : 2 } class="text-center px-2">

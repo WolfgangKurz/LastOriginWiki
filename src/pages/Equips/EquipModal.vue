@@ -85,14 +85,7 @@
 				</b-tbody>
 			</b-table-simple>
 
-			<b-list-group v-if="StatusList" class="text-left">
-				<b-list-group-item v-for="(status, idx) in StatusList" :key="`status-line-${idx}`">
-					<node-renderer :elem="status" />
-					<!--
-				<div v-if="status.unknown" class="unknown-status float-right" title="정확하지 않을 수 있습니다" v-b-tooltip.hover.left>&#x26A0;</div>
-				-->
-				</b-list-group-item>
-			</b-list-group>
+			<buff-list v-if="StatusList" :list="StatusList" />
 		</template>
 
 		<template v-if="displayTab === 'drop'">
@@ -165,12 +158,11 @@ import { Prop, Watch, PropSync } from "vue-property-decorator";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { FormatNumber } from "@/libs/Functions";
-import BuffStatus from "@/libs/Buffs/BuffStatus";
 
-import NodeRenderer from "@/components/NodeRenderer.vue";
 import UnitBadge from "@/components/UnitBadge.vue";
 import UnitFace from "@/components/UnitFace.vue";
 import SourceBadge from "@/components/SourceBadge.vue";
+import BuffList from "@/components/BuffList";
 
 import ElemIcon from "@/components/ElemIcon.vue";
 import EquipIcon from "@/components/EquipIcon.vue";
@@ -183,10 +175,10 @@ import Decimal from "decimal.js";
 
 @Component({
 	components: {
-		NodeRenderer,
 		UnitBadge,
 		UnitFace,
 		SourceBadge,
+		BuffList,
 
 		ElemIcon,
 		EquipIcon,
@@ -357,7 +349,7 @@ export default class EquipModal extends Vue {
 		if (!this.target) return null;
 
 		const stat = this.target.stats[this.level];
-		return stat.reduce((p, c) => [...p, ...BuffStatus(this, c)], [] as JSX.Element[]);
+		return stat;
 	}
 
 	private UnitName (idx: number) {
