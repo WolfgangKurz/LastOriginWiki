@@ -99,7 +99,7 @@
 
 						<div v-for="(area, aindex) in Sources" :key="`equip-modal-source-${aindex}`">
 							<hr v-if="(target && target.craftable) || aindex > 0" class="my-1" />
-							<h6 v-if="area.length > 0 && area[0].EventName">{{ area[0].EventName }}</h6>
+							<h6 v-if="area.length > 0 && area[0].EventName" style="font-weight: bold">{{ area[0].EventName }}</h6>
 							<source-badge
 								v-for="(source, sindex) in area"
 								:key="`equip-modal-drop-${aindex}-${sindex}-${source}`"

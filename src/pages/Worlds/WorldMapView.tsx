@@ -243,7 +243,7 @@ export default class WorldMapView extends Vue {
 
 		this.$router.push({
 			path: `/worlds/${this.world}/${this.area}/${this.selected ? this.selected.text : ""}`,
-			hash: "#drops",
+			// hash: "#drops",
 		});
 	}
 

@@ -221,9 +221,16 @@
 		</b-container>
 
 		<b-card class="border text-center mt-3" header="등장 스테이지" body-class="p-2">
-			<div v-for="(area, aindex) in Sources" :key="`unit-view-source-${aindex}`">
-				<hr v-if="aindex > 0" class="my-2" />
-				<source-badge v-for="(source, sindex) in area" :key="`unit-view-drop-${aindex}-${sindex}-${source}`" :source="source" detail linked />
+			<div v-for="(area, aindex) in Sources" :key="`enemy-modal-source-${aindex}`">
+				<hr v-if="(target && target.craftable) || aindex > 0" class="my-2" />
+				<h6 v-if="area.length > 0 && area[0].EventName" style="font-weight: bold">{{ area[0].EventName }}</h6>
+				<source-badge
+					v-for="(source, sindex) in area"
+					:key="`enemy-modal-source-badge-${aindex}-${sindex}-${source}`"
+					:source="source"
+					minimum
+					linked
+				/>
 			</div>
 			<template v-if="isEWEnemy">
 				<hr v-if="Sources.length > 0" class="my-2" />
@@ -257,6 +264,7 @@ import BuffList from "@/components/BuffList";
 
 import { ACTOR_GRADE, ITEM_TYPE } from "@/libs/Types/Enums";
 import EnemyData, { Enemy, EnemySkill } from "@/libs/DB/Enemy";
+import EntitySource from "@/libs/EntitySource";
 import UnitData from "@/libs/DB/Unit";
 import MapData from "@/libs/DB/Map";
 
@@ -273,7 +281,7 @@ import MapData from "@/libs/DB/Map";
 		BuffList,
 	},
 })
-export default class SummonModal extends Vue {
+export default class EnemyModal extends Vue {
 	@PropSync("display", {
 		type: Boolean,
 		default: false,
@@ -370,7 +378,7 @@ export default class SummonModal extends Vue {
 		);
 
 		ret.forEach((x, i) => (ret[i] = ArrayUnique(x)));
-		return ret;
+		return ret.map(x => x.map(y => new EntitySource(y)));
 	}
 
 	private get RarityDisplay () {
@@ -385,7 +393,7 @@ export default class SummonModal extends Vue {
 	private GetRates (skill: EnemySkill) {
 		if (!this.target) return [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-		return new Array(10).fill(skill.buff.rate);
+		return new Array(10).fill(skill.buff.rate * this.StatValue(this.target.atk));
 	}
 
 	private Description (skill: EnemySkill) {

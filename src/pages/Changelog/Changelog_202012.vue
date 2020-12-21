@@ -1,5 +1,25 @@
 <template>
 	<div>
+		<changelog-item title="Build 7331" date="2020-12-21">
+			<template #bugfix>
+				<li>적 정보에서 스킬의 피해량이 잘못 표시되던 문제를 수정했습니다.</li>
+				<li>기존 세계 정보의 일부 잘못되어있 적 배치 및 배치된 적 정보가 수정되었습니다.</li>
+				<li>
+					<b-badge variant="warning">쿠노이치 카엔</b-badge>의 2번째 액티브 <b-badge variant="info">오의 [화신강림]</b-badge>의 피해량
+					수치가 잘못되어있던 점을 수정했습니다.
+				</li>
+				<li>스킬의 범위에 표시되는 위력이 50%, 25%일 때 올바르지 않은 색상으로 표시되던 문제가 수정되었습니다.</li>
+				<li>전투원의 링크 보너스의 스킬 위력이 스킬 설명에 반영되지 않던 문제가 수정되었습니다.</li>
+			</template>
+			<template #update>
+				<li>이벤트 <b-badge variant="warning">낙원으로부터 온 초대장</b-badge>의 적 정보가 추가되었습니다.</li>
+				<li>
+					<b-badge variant="warning">세계정보</b-badge>에서 맵을 선택할 때 주소에 <b-badge variant="secondary">#drops</b-badge>가 추가되던
+					것을 삭제했습니다.
+				</li>
+			</template>
+		</changelog-item>
+
 		<changelog-item title="Build 7325" date="2020-12-21">
 			<template #new>
 				<li>새 이벤트 <b-badge variant="warning">낙원으로부터 온 초대장</b-badge>의 정보가 추가되었습니다.</li>
@@ -12,8 +32,12 @@
 			</template>
 			<template #skin>
 				<li><b-badge variant="warning">포이</b-badge>의 스킨 <b-badge variant="danger">우유 도둑 포이</b-badge>의 정보가 추가되었습니다.</li>
-				<li><b-badge variant="warning">A-6 이오</b-badge>의 스킨 <b-badge variant="danger">한 겨울의 약속</b-badge>의 정보가 추가되었습니다.</li>
-				<li><b-badge variant="warning">A-6 이오</b-badge>의 스킨 <b-badge variant="danger">한 겨울의 약속</b-badge>의 정보가 추가되었습니다.</li>
+				<li>
+					<b-badge variant="warning">A-6 이오</b-badge>의 스킨 <b-badge variant="danger">한 겨울의 약속</b-badge>의 정보가 추가되었습니다.
+				</li>
+				<li>
+					<b-badge variant="warning">A-6 이오</b-badge>의 스킨 <b-badge variant="danger">한 겨울의 약속</b-badge>의 정보가 추가되었습니다.
+				</li>
 				<li><b-badge variant="warning">이터니티</b-badge>의 기본 스킨의 중파 일러스트가 추가되었습니다.</li>
 			</template>
 		</changelog-item>
@@ -136,20 +160,16 @@
 				<li>신규 장비 <b-badge variant="warning">개량형 니트로 EX 3500</b-badge>의 정보가 추가되었습니다.</li>
 			</template>
 			<template #skin>
-				<li>
-					<b-badge variant="warning">AT72 라인리터</b-badge>의 스킨 <b-badge variant="info">RheinTiger 모델</b-badge>이 추가되었습니다.
-				</li>
-				<li>
-					<b-badge variant="warning">징벌의 사디어스</b-badge>의 스킨 <b-badge variant="info">뇌전룡 의상</b-badge>이 추가되었습니다.
-				</li>
+				<li><b-badge variant="warning">AT72 라인리터</b-badge>의 스킨 <b-badge variant="info">RheinTiger 모델</b-badge>이 추가되었습니다.</li>
+				<li><b-badge variant="warning">징벌의 사디어스</b-badge>의 스킨 <b-badge variant="info">뇌전룡 의상</b-badge>이 추가되었습니다.</li>
 				<li><b-badge variant="warning">자비로운 리앤</b-badge>의 스킨 <b-badge variant="info">데이트 복장</b-badge>이 추가되었습니다.</li>
 				<li>
 					<b-badge variant="warning">쿠노이치 제로</b-badge>의 스킨 <b-badge variant="info">흐트러진 꽃</b-badge>의 중파 일러스트가
 					추가되었습니다.
 				</li>
 				<li>
-					<b-badge variant="warning">AG-1 네레이드</b-badge>의 스킨 <b-badge variant="info">한여름의 네리네리</b-badge>의 로비
-					애니메이션 여부가 수정되었습니다.
+					<b-badge variant="warning">AG-1 네레이드</b-badge>의 스킨 <b-badge variant="info">한여름의 네리네리</b-badge>의 로비 애니메이션
+					여부가 수정되었습니다.
 				</li>
 			</template>
 			<template #update>
