@@ -553,14 +553,14 @@ export default class UnitView extends Vue {
 		if (this.linkBonus === "Skill_30") bonus = bonus.add(30);
 		if (this.linkBonus === "Skill_35") bonus = bonus.add(35);
 
-		if (this.unit.linkBonus.includes("Skill_2")) bonus = bonus.add(2);
-		if (this.unit.linkBonus.includes("Skill_5")) bonus = bonus.add(5);
-		if (this.unit.linkBonus.includes("Skill_10")) bonus = bonus.add(10);
-		if (this.unit.linkBonus.includes("Skill_15")) bonus = bonus.add(15);
-		if (this.unit.linkBonus.includes("Skill_20")) bonus = bonus.add(20);
-		if (this.unit.linkBonus.includes("Skill_25")) bonus = bonus.add(25);
-		if (this.unit.linkBonus.includes("Skill_30")) bonus = bonus.add(30);
-		if (this.unit.linkBonus.includes("Skill_35")) bonus = bonus.add(35);
+		if (this.unit.linkBonus.includes("Skill_2")) bonus = bonus.add(Decimal.mul(2, this.linkCount));
+		if (this.unit.linkBonus.includes("Skill_5")) bonus = bonus.add(Decimal.mul(5, this.linkCount));
+		if (this.unit.linkBonus.includes("Skill_10")) bonus = bonus.add(Decimal.mul(10, this.linkCount));
+		if (this.unit.linkBonus.includes("Skill_15")) bonus = bonus.add(Decimal.mul(15, this.linkCount));
+		if (this.unit.linkBonus.includes("Skill_20")) bonus = bonus.add(Decimal.mul(20, this.linkCount));
+		if (this.unit.linkBonus.includes("Skill_25")) bonus = bonus.add(Decimal.mul(25, this.linkCount));
+		if (this.unit.linkBonus.includes("Skill_30")) bonus = bonus.add(Decimal.mul(30, this.linkCount));
+		if (this.unit.linkBonus.includes("Skill_35")) bonus = bonus.add(Decimal.mul(35, this.linkCount));
 
 		return bonus.toNumber();
 	}

@@ -133,10 +133,10 @@ export default class SkillBound extends Vue {
 			else if (c === "$")
 				targets.push(<span class={ ["target", "target-75", this.target] } data-pos={ t[++i] } />);
 
-			else if (c === "^")
-				targets.push(<span class={ ["target", "target-25", this.target] } data-pos={ t[++i] } />);
-			else if (c === "&")
-				targets.push(<span class={ ["target", "target-50", this.target] } data-pos={ t[++i] } />);
+			// else if (c === "^")
+			// 	targets.push(<span class={ ["target", "target-25", this.target] } data-pos={ t[++i] } />);
+			// else if (c === "&")
+			// 	targets.push(<span class={ ["target", "target-50", this.target] } data-pos={ t[++i] } />);
 
 			else
 				targets.push(<span class={ ["target", this.target] } data-pos={ c } />);
@@ -192,7 +192,7 @@ export default class SkillBound extends Vue {
 
 		background-image: url($assetsRoot + "skill-parallelogram.png");
 		background-repeat: no-repeat;
-		background-size: ($w * 9) $h;
+		background-size: ($w * 10) $h;
 
 		&.offset {
 			background-position-x: -$w;
@@ -208,15 +208,17 @@ export default class SkillBound extends Vue {
 		&.target {
 			background-position-x: -($w * 2);
 		}
-		&.target-75,
-		&.target-50 {
+		&.target-75 {
 			background-position-x: -($w * 3);
 		}
-		&.target-25 {
+		&.target-50 {
 			background-position-x: -($w * 4);
 		}
-		&.range {
+		&.target-25 {
 			background-position-x: -($w * 5);
+		}
+		&.range {
+			background-position-x: -($w * 6);
 		}
 		/*
 		&.target.team {
