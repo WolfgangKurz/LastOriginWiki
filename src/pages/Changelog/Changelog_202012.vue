@@ -1,5 +1,23 @@
 <template>
 	<div>
+		<changelog-item title="Build 7323" date="2020-12-21">
+			<template #new>
+				<li>새 이벤트 <b-badge variant="warning">낙원으로부터 온 초대장</b-badge>의 정보가 추가되었습니다.</li>
+				<li>새 전투원 <b-badge variant="warning">레나 더 챔피언</b-badge>의 정보가 추가되었습니다.</li>
+				<li>새 이벤트 <b-badge variant="warning">메리</b-badge>의 정보가 추가되었습니다.</li>
+			</template>
+			<template #update>
+				<li><b-badge variant="warning">A-6 이오</b-badge>의 S, SS 승급 정보가 추가되었습니다.</li>
+				<li><b-badge variant="warning">랜서 미나</b-badge>의 S, SS 승급 정보가 추가되었습니다.</li>
+			</template>
+			<template #skin>
+				<li><b-badge variant="warning">포이</b-badge>의 스킨 <b-badge variant="danger">우유 도둑 포이</b-badge>의 정보가 추가되었습니다.</li>
+				<li><b-badge variant="warning">A-6 이오</b-badge>의 스킨 <b-badge variant="danger">한 겨울의 약속</b-badge>의 정보가 추가되었습니다.</li>
+				<li><b-badge variant="warning">A-6 이오</b-badge>의 스킨 <b-badge variant="danger">한 겨울의 약속</b-badge>의 정보가 추가되었습니다.</li>
+				<li><b-badge variant="warning">이터니티</b-badge>의 기본 스킨의 중파 일러스트가 추가되었습니다.</li>
+			</template>
+		</changelog-item>
+
 		<changelog-item title="Build 7301" date="2020-12-19">
 			<template #new>
 				<li><b-badge variant="warning">장비정보</b-badge>의 장비 효과 필터 목록을 유형별로 구분했습니다.</li>
@@ -119,18 +137,18 @@
 			</template>
 			<template #skin>
 				<li>
-					<b-badge variant="warning">AT72 라인리터</b-badge>의 스킨 <b-badge variant="info">RheinTiger 모델</b-badge>스킨이 추가되었습니다.
+					<b-badge variant="warning">AT72 라인리터</b-badge>의 스킨 <b-badge variant="info">RheinTiger 모델</b-badge>이 추가되었습니다.
 				</li>
 				<li>
-					<b-badge variant="warning">징벌의 사디어스</b-badge>의 스킨 <b-badge variant="info">뇌전룡 의상</b-badge>스킨이 추가되었습니다.
+					<b-badge variant="warning">징벌의 사디어스</b-badge>의 스킨 <b-badge variant="info">뇌전룡 의상</b-badge>이 추가되었습니다.
 				</li>
-				<li><b-badge variant="warning">자비로운 리앤</b-badge>의 스킨 <b-badge variant="info">데이트 복장</b-badge>스킨이 추가되었습니다.</li>
+				<li><b-badge variant="warning">자비로운 리앤</b-badge>의 스킨 <b-badge variant="info">데이트 복장</b-badge>이 추가되었습니다.</li>
 				<li>
-					<b-badge variant="warning">쿠노이치 제로</b-badge>의 스킨 <b-badge variant="info">흐트러진 꽃</b-badge>스킨의 중파 일러스트가
+					<b-badge variant="warning">쿠노이치 제로</b-badge>의 스킨 <b-badge variant="info">흐트러진 꽃</b-badge>의 중파 일러스트가
 					추가되었습니다.
 				</li>
 				<li>
-					<b-badge variant="warning">AG-1 네레이드</b-badge>의 스킨 <b-badge variant="info">한여름의 네리네리</b-badge>스킨의 로비
+					<b-badge variant="warning">AG-1 네레이드</b-badge>의 스킨 <b-badge variant="info">한여름의 네리네리</b-badge>의 로비
 					애니메이션 여부가 수정되었습니다.
 				</li>
 			</template>

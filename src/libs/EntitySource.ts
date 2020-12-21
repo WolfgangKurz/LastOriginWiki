@@ -65,6 +65,9 @@ export default class EntitySource {
 			case "WorldTreeTwig": return "세계수의 가지";
 			case "WorldTreeLeaf": return "세계수의 잎";
 			case "PositiveClue": return "결정적인 단서";
+			case "Battery4FM": return "대형 배터리";
+			case "BatteryFC-1": return "중형 배터리";
+			case "BatteryAA": return "소형 배터리";
 		}
 		return "???";
 	}
