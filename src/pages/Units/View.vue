@@ -162,13 +162,9 @@
 						<b-tbody>
 							<b-tr>
 								<b-td class="px-0 py-1 drop-list">
-									<template v-if="unit.source.length === 1">
-										<b-badge v-if="unit.craftable" variant="dark">
-											<b-icon-hammer class="mr-1" />
-											제조 {{ CraftTime }}
-										</b-badge>
-										<span v-else class="text-secondary">획득처 정보 없음 (제조 불가)</span>
-									</template>
+									<span v-if="unit.source.length === 0 && !unit.craftable" class="text-secondary">
+										획득처 정보 없음 (제조 불가)
+									</span>
 									<template v-else>
 										<b-badge v-if="unit.craftable" variant="dark" class="my-1">
 											<b-icon-hammer class="mr-1" />
@@ -177,7 +173,7 @@
 
 										<div v-for="(area, aindex) in unit.source" :key="`unit-view-source-${aindex}`">
 											<hr v-if="unit.craftable || aindex > 0" class="my-1" />
-											<h6 v-if="area.length > 0 && area[0].EventName" style="font-weight:bold">{{ area[0].EventName }}</h6>
+											<h6 v-if="area.length > 0 && area[0].EventName" style="font-weight: bold">{{ area[0].EventName }}</h6>
 											<source-badge
 												v-for="(source, sindex) in area"
 												:key="`unit-view-drop-${aindex}-${sindex}-${source}`"

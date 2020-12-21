@@ -69,7 +69,7 @@ export const WorldDescriptions: Record<string, string> = {
 	Ev6: "티아멧은 '초코 여왕'과 얽힌 멸망 전 인류의 일그러짐과 마주하는데..",
 	Ev7: "가벼운 마음으로 요정 마을로 향한 사령관에게...?",
 	Ev8: "왓슨, 드디어 대단원이야!",
-	Ev9: "<2020년 12월 21일 점검 후 시작>",
+	Ev9: "당신이 바라는 욕망은 무엇인가요?",
 };
 
 export const ApocryphaUnit: Record<string, string> = {
