@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<changelog-item title="Build 7323" date="2020-12-21">
+		<changelog-item title="Build 7325" date="2020-12-21">
 			<template #new>
 				<li>새 이벤트 <b-badge variant="warning">낙원으로부터 온 초대장</b-badge>의 정보가 추가되었습니다.</li>
 				<li>새 전투원 <b-badge variant="warning">레나 더 챔피언</b-badge>의 정보가 추가되었습니다.</li>
