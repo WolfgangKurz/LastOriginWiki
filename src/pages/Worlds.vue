@@ -9,7 +9,14 @@
 				<world-item linked :wid="item" @goto="GoTo" />
 			</b-col>
 		</b-row>
+		<hr />
 
+		<h4>외전 / 외부 통신 요청</h4>
+		<b-row cols="1" cols-lg="2">
+			<b-col v-for="item in SupCha" :key="`worlds-list-${item}`">
+				<world-item linked :wid="item" @goto="GoTo" />
+			</b-col>
+		</b-row>
 		<hr />
 
 		<h4>지난 이벤트</h4>
@@ -46,9 +53,15 @@ export default class Worlds extends Vue {
 		return ["Story", "Ev9"];
 	}
 
+	private get SupCha () {
+		return ["Sup1", "Cha"];
+	}
+
 	private get List () {
 		return Object.keys(WorldNames)
-			.filter(x => !x.startsWith("EvA") && !this.Tops.includes(x));
+			.filter(x => !x.startsWith("EvA") &&
+				!this.Tops.includes(x) &&
+				!this.SupCha.includes(x));
 	}
 
 	private GoTo (path: string) {

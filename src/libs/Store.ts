@@ -77,7 +77,7 @@ export interface EquipDisplayType {
 		OldEventExchange: boolean;
 		Exchange: boolean;
 		OldExchange: boolean;
-		Apocrypha: boolean;
+		Supplementary: boolean;
 		Limited: boolean;
 		ExMap: boolean;
 		SideMap: boolean;
@@ -154,7 +154,7 @@ class StoreModule extends VuexModule {
 		OldEventExchange: true,
 		Exchange: true,
 		OldExchange: true,
-		Apocrypha: true,
+		Supplementary: true,
 		Limited: true,
 		ExMap: true,
 		SideMap: true,
@@ -171,7 +171,7 @@ class StoreModule extends VuexModule {
 		OldEventExchange: false,
 		Exchange: false,
 		OldExchange: false,
-		Apocrypha: false,
+		Supplementary: false,
 		Limited: false,
 		ExMap: false,
 		SideMap: false,

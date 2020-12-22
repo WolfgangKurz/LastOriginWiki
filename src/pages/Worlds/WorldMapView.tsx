@@ -14,7 +14,7 @@ import DropRes from "./DropRes.vue";
 
 import EnemyModal from "@/pages/Enemy/EnemyModal.vue";
 
-import { AssetsRoot, ImageExtension, WorldNames } from "@/libs/Const";
+import { AssetsRoot, ImageExtension, SupplementaryUnit, WorldNames } from "@/libs/Const";
 import { FormatNumber, UpdateTitle } from "@/libs/Functions";
 
 import UnitData, { Unit } from "@/libs/DB/Unit";
@@ -185,7 +185,7 @@ export default class WorldMapView extends Vue {
 		].filter(x => x) as RewardDropType[];
 	}
 
-	private get NodeList () {
+	private get NodeMap () {
 		const ret: MapNodeEntity[] = new Array(24)
 			.fill(MapNodeEntity.Empty)
 			.map((x: MapNodeEntity, i) => ({ ...x, offset: i }));
@@ -197,6 +197,23 @@ export default class WorldMapView extends Vue {
 		if (!area) return ret;
 
 		for (const n of area) ret[n.offset] = n;
+		return ret;
+	}
+
+	private get NodeList () {
+		const ret: MapNodeEntity[] = [];
+
+		const world = MapData[this.world];
+		if (!world) return ret;
+
+		const area = world[this.area]?.list;
+		if (!area) return ret;
+
+		if (this.world === "Sup1")
+			area.filter(n => n.text in SupplementaryUnit).forEach(n => ret.push(n));
+		else
+			area.forEach(n => ret.push(n));
+
 		return ret;
 	}
 
@@ -236,6 +253,12 @@ export default class WorldMapView extends Vue {
 	private get SearchInfo () {
 		if (!this.selected) return null;
 		return this.selected.search || false;
+	}
+
+	private SupplementaryName (text: string) {
+		const unit = UnitData.find(x => x.uid === SupplementaryUnit[text]);
+		if (!unit) return "???";
+		return unit.name;
 	}
 
 	private NodeChange () {
@@ -317,16 +340,42 @@ export default class WorldMapView extends Vue {
 
 				<div class="world-map-bg">
 					<div>
-						<world-map-grid
-							nodes={ this.NodeList }
-							world={ this.world }
-							area={ this.area }
-							onSelect={ () => this.NodeChange() }
+						{ this.world === "Sup1"
+							? this.NodeList.map(x => <b-button
+								class="m-2"
+								variant={ this.selected === x ? "primary" : "light" }
+								onClick={ (e: Event) => {
+									// this.NodeChange();
+									this.selected = x;
+									e.preventDefault();
+								} }
+							>
+								<b-badge variant="danger" class="mr-1">{ this.SupplementaryName(x.text) }</b-badge>
+								{ x.name }
+							</b-button>)
+							: this.world === "Cha"
+								? this.NodeList.map(x => <b-button
+									class="m-2"
+									variant={ this.selected === x ? "warning" : "light" }
+									onClick={ (e: Event) => {
+										// this.NodeChange();
+										this.selected = x;
+										e.preventDefault();
+									} }
+								>
+									{ x.name.replace(/.+\(([^)]+)\)$/, "$1") }
+								</b-button>)
+								: <world-map-grid
+									nodes={ this.NodeMap }
+									world={ this.world }
+									area={ this.area }
+									onSelect={ () => this.NodeChange() }
 
-							// selected$sync={ this.selected }
-							selected={ this.selected }
-							{ ...{ on: { "update:selected": ($v: MapNodeEntity | null) => (this.selected = $v) } } }
-						/>
+									// selected$sync={ this.selected }
+									selected={ this.selected }
+									{ ...{ on: { "update:selected": ($v: MapNodeEntity | null) => (this.selected = $v) } } }
+								/>
+						}
 					</div>
 				</div>
 			</b-card>
@@ -353,64 +402,133 @@ export default class WorldMapView extends Vue {
 							{ !this.selected
 								? <div class="text-center py-4 text-secondary">위 지도에서 지역을 선택해주세요.</div>
 								: <b-row>
-									{ this.RewardDrops.length > 0
-										? <b-col cols="12">
-											<b-row cols="1" cols-md="2" cols-lg="4">
-												{ this.RewardDrops.map((reward, i) => (() => {
-													if ("cash" in reward) {
-														return <span key={ `worlds-${this.world}-${this.area}-drop-r-${i}` }>
-															<drop-res res="cash" count={ reward.cash } am={ !!reward.am } />
-														</span>;
-													}
-													if ("metal" in reward) {
-														return <span key={ `worlds-${this.world}-${this.area}-drop-r-${i}` }>
-															<drop-res res="metal" count={ reward.metal } am={ !!reward.am } />
-														</span>;
-													}
-													if ("nutrient" in reward) {
-														return <span key={ `worlds-${this.world}-${this.area}-drop-r-${i}` }>
-															<drop-res res="nutrient" count={ reward.nutrient } am={ !!reward.am } />
-														</span>;
-													}
-													if ("power" in reward) {
-														return <span key={ `worlds-${this.world}-${this.area}-drop-r-${i}` }>
-															<drop-res res="power" count={ reward.power } am={ !!reward.am } />
-														</span>;
-													}
-													if ("unit" in reward) {
-														return <a
-															key={ `worlds-${this.world}-${this.area}-drop-r-${i}` }
-															class="drop-unit"
-															href={ this.UnitPage(reward.unit.uid) }
-															onClick={ (e: Event) => {
-																e.preventDefault();
-																this.GoTo(this.UnitPage(reward.unit.uid));
-															} }
-														>
-															<drop-unit id={ reward.unit.uid } />
-														</a>;
-													}
-													if ("equip" in reward && "count" in reward) {
-														return <a
-															key={ `worlds-${this.world}-${this.area}-drop-r-${i}` }
-															class="drop-equip"
-															href={ this.EquipPage(reward.equip) }
-															onClick={ (e: Event) => {
-																e.preventDefault();
-																this.GoTo(this.EquipPage(reward.equip));
-															} }
-														>
-															<drop-equip equip={ reward.equip } />
-															{ reward.count > 1 ? `x${reward.count}` : _e() }
-														</a>;
-													}
-													return <a key={ `worlds-${this.world}-${this.area}-drop-r-${i}` } class="drop-equip">
-														<drop-item item={ reward.consumable } count={ reward.count } am={ !!reward.am } />
-													</a>;
-												})()) }
+									<b-col cols="12" md="6">
+										<b-card text-variant="dark" header="클리어 보상">
+											<b-row cols="1" cols-lg={ this.RewardDrops.filter(x => !x.am).length === 0 ? 1 : 2 }>
+												{ this.RewardDrops.filter(x => !x.am).length === 0
+													? <div class="text-center py-4 text-secondary">클리어 보상 정보 없음</div>
+													: this.RewardDrops.filter(x => !x.am)
+														.map((reward, i) => (() => {
+															if ("cash" in reward) {
+																return <span key={ `worlds-${this.world}-${this.area}-drop-r-${i}` }>
+																	<drop-res res="cash" count={ reward.cash } />
+																</span>;
+															}
+															if ("metal" in reward) {
+																return <span key={ `worlds-${this.world}-${this.area}-drop-r-${i}` }>
+																	<drop-res res="metal" count={ reward.metal } />
+																</span>;
+															}
+															if ("nutrient" in reward) {
+																return <span key={ `worlds-${this.world}-${this.area}-drop-r-${i}` }>
+																	<drop-res res="nutrient" count={ reward.nutrient } />
+																</span>;
+															}
+															if ("power" in reward) {
+																return <span key={ `worlds-${this.world}-${this.area}-drop-r-${i}` }>
+																	<drop-res res="power" count={ reward.power } />
+																</span>;
+															}
+															if ("unit" in reward) {
+																return <a
+																	key={ `worlds-${this.world}-${this.area}-drop-r-${i}` }
+																	class="drop-unit"
+																	href={ this.UnitPage(reward.unit.uid) }
+																	onClick={ (e: Event) => {
+																		e.preventDefault();
+																		this.GoTo(this.UnitPage(reward.unit.uid));
+																	} }
+																>
+																	<drop-unit id={ reward.unit.uid } />
+																</a>;
+															}
+															if ("equip" in reward && "count" in reward) {
+																return <a
+																	key={ `worlds-${this.world}-${this.area}-drop-r-${i}` }
+																	class="drop-equip"
+																	href={ this.EquipPage(reward.equip) }
+																	onClick={ (e: Event) => {
+																		e.preventDefault();
+																		this.GoTo(this.EquipPage(reward.equip));
+																	} }
+																>
+																	<drop-equip equip={ reward.equip } />
+																	{ reward.count > 1 ? `x${reward.count}` : _e() }
+																</a>;
+															}
+															return <a key={ `worlds-${this.world}-${this.area}-drop-r-${i}` } class="drop-equip">
+																<drop-item item={ reward.consumable } count={ reward.count } />
+															</a>;
+														})()) }
 											</b-row>
-										</b-col>
-										: _e() }
+										</b-card>
+										<b-card text-variant="dark" header="★4 보상" class="mt-2">
+											<b-row cols="1" cols-lg={ this.RewardDrops.filter(x => x.am).length === 0 ? 1 : 2 }>
+												{ this.RewardDrops.filter(x => x.am).length === 0
+													? <div class="text-center py-4 text-secondary">★4 보상 정보 없음</div>
+													: this.RewardDrops.filter(x => x.am)
+														.map((reward, i) => (() => {
+															if ("cash" in reward) {
+																return <span key={ `worlds-${this.world}-${this.area}-drop-r-${i}` }>
+																	<drop-res res="cash" count={ reward.cash } am />
+																</span>;
+															}
+															if ("metal" in reward) {
+																return <span key={ `worlds-${this.world}-${this.area}-drop-r-${i}` }>
+																	<drop-res res="metal" count={ reward.metal } am />
+																</span>;
+															}
+															if ("nutrient" in reward) {
+																return <span key={ `worlds-${this.world}-${this.area}-drop-r-${i}` }>
+																	<drop-res res="nutrient" count={ reward.nutrient } am />
+																</span>;
+															}
+															if ("power" in reward) {
+																return <span key={ `worlds-${this.world}-${this.area}-drop-r-${i}` }>
+																	<drop-res res="power" count={ reward.power } am />
+																</span>;
+															}
+															if ("unit" in reward) {
+																return <a
+																	key={ `worlds-${this.world}-${this.area}-drop-r-${i}` }
+																	class="drop-unit"
+																	href={ this.UnitPage(reward.unit.uid) }
+																	onClick={ (e: Event) => {
+																		e.preventDefault();
+																		this.GoTo(this.UnitPage(reward.unit.uid));
+																	} }
+																>
+																	<drop-unit id={ reward.unit.uid } />
+																</a>;
+															}
+															if ("equip" in reward && "count" in reward) {
+																return <a
+																	key={ `worlds-${this.world}-${this.area}-drop-r-${i}` }
+																	class="drop-equip"
+																	href={ this.EquipPage(reward.equip) }
+																	onClick={ (e: Event) => {
+																		e.preventDefault();
+																		this.GoTo(this.EquipPage(reward.equip));
+																	} }
+																>
+																	<drop-equip equip={ reward.equip } />
+																	{ reward.count > 1 ? `x${reward.count}` : _e() }
+																</a>;
+															}
+															return <a key={ `worlds-${this.world}-${this.area}-drop-r-${i}` } class="drop-equip">
+																<drop-item item={ reward.consumable } count={ reward.count } am />
+															</a>;
+														})()) }
+											</b-row>
+										</b-card>
+									</b-col>
+									<b-col cols="12" md="6" class="mt-md-0 mt-4">
+										<b-card text-variant="dark" header="클리어 조건" no-body>
+											<b-list-group flush>
+												{ this.selected.missions.map(m => <b-list-group-item>★ { m }</b-list-group-item>) }
+											</b-list-group>
+										</b-card>
+									</b-col>
 								</b-row> }
 						</b-card-body>
 					</b-tab>

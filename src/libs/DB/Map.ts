@@ -4,7 +4,7 @@ type MapRewardChar = string;
 interface MapRewardItem {
 	item: string;
 	count: number;
-	chance: number;
+	chance?: number;
 }
 interface MapRewardCash {
 	cash: number;
@@ -56,7 +56,7 @@ export interface MapNodeEntity {
 
 	search: MapSearch | null;
 
-	// drops: string[];
+	missions: string[];
 	/* eslint-disable camelcase */
 	reward_f: MapReward[];
 	reward_am: MapReward[];
@@ -73,6 +73,7 @@ export namespace MapNodeEntity {
 		offset: 0,
 		text: "",
 		search: null,
+		missions: [],
 		reward_f: [],
 		reward_am: [],
 		// wave: [],

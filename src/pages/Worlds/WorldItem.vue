@@ -2,7 +2,7 @@
 	<b-card class="world-item mb-4" text-variant="light" bg-variant="dark">
 		<b-row class="text-left">
 			<b-col cols="auto">
-				<img :src="`${AssetsRoot}/world/icons/${wid}_1.png`" />
+				<img :src="`${AssetsRoot}/world/icons/${WorldIcon}.png`" />
 			</b-col>
 			<b-col>
 				<div class="world-item-name">{{ Name }}</div>
@@ -45,6 +45,13 @@ export default class WorldItem extends Vue {
 
 	private get Description () {
 		return WorldDescriptions[this.wid] !== undefined ? WorldDescriptions[this.wid] : this.wid;
+	}
+
+	private get WorldIcon () {
+		if (this.wid === "Cha")
+			return "Cha_0";
+		else
+			return `${this.wid}_1`;
 	}
 
 	private Click () {

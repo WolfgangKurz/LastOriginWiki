@@ -58,7 +58,11 @@
 								</b-button>
 							</b-btn-group>
 							<b-btn-group class="mx-1 mb-1">
-								<b-button variant="outline-apocrypha" :pressed="Display.Source.Apocrypha" @click="Filter('Source', 'Apocrypha')">
+								<b-button
+									variant="outline-supplementary"
+									:pressed="Display.Source.Supplementary"
+									@click="Filter('Source', 'Supplementary')"
+								>
 									외전
 								</b-button>
 							</b-btn-group>
@@ -423,7 +427,7 @@ export default class Equips extends Vue {
 				if (this.Display.Source.Exchange && sources.some(y => y.IsExchange && !y.IsEvent && y.ExchangeDate === CurrentDate)) return true;
 				if (this.Display.Source.OldExchange && sources.some(y => y.IsExchange && !y.IsEvent && y.ExchangeDate !== CurrentDate)) return true;
 
-				if (this.Display.Source.Apocrypha && sources.some(y => y.IsApocrypha)) return true;
+				if (this.Display.Source.Supplementary && sources.some(y => y.IsSupplementary)) return true;
 				if (this.Display.Source.EventExchange && sources.some(y => y.IsEvent && y.IsExchange && y.EventId === CurrentEvent)) return true;
 				if (this.Display.Source.OldEventExchange && sources.some(y => y.IsEvent && y.IsExchange && y.EventId !== CurrentEvent)) return true;
 
