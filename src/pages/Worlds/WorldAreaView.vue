@@ -66,11 +66,11 @@ export default class WorldArea extends Vue {
 		return WorldNames[this.wid] || this.wid;
 	}
 
-	private get AreaNames (): string[] {
-		const ret: string[] = [];
+	private get AreaNames (): Record<string, string> {
+		const ret: Record<string, string> = {};
 		Object
 			.keys(MapData[this.wid])
-			.forEach(x => (ret[parseInt(x, 10)] = MapData[this.wid][x].title));
+			.forEach(x => (ret[x] = MapData[this.wid][x].title));
 		return ret;
 	}
 
@@ -78,8 +78,8 @@ export default class WorldArea extends Vue {
 		return WorldDescriptions[this.wid] !== undefined ? WorldDescriptions[this.wid] : this.wid;
 	}
 
-	private get Areas (): number {
-		return Object.keys(MapData[this.wid] || {}).length;
+	private get Areas () {
+		return Object.keys(MapData[this.wid] || {});
 	}
 
 	private GoTo (path: string) {

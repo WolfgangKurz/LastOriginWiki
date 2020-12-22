@@ -48,6 +48,8 @@ export const CurrentDate = (() => {
 
 export const WorldNames: Record<string, string> = {
 	Story: "메인스토리",
+	Sup1: "외전",
+	Cha: "외부 통신 요청",
 	Ev1: "지고의 저녁식사",
 	Ev2: "리오보로스의 유산",
 	Ev3: "만월의 야상곡",
@@ -61,6 +63,8 @@ export const WorldNames: Record<string, string> = {
 };
 export const WorldDescriptions: Record<string, string> = {
 	Story: "",
+	Sup1: "",
+	Cha: "",
 	Ev1: "소완으로 인해 혼란에 빠진 오르카 안에선 무슨 일이?",
 	Ev2: "리오보로스의 유산을 찾아 떠나는 모험!",
 	Ev3: "마법 소녀들과 함께 뽀끄루 대마왕을 물리쳐주세요!",
@@ -72,7 +76,7 @@ export const WorldDescriptions: Record<string, string> = {
 	Ev9: "당신이 바라는 욕망은 무엇인가요?",
 };
 
-export const ApocryphaUnit: Record<string, string> = {
+export const SupplementaryUnit: Record<string, string> = {
 	"S1-1": "AGS_Rampart",
 	"S1-2": "3P_ConstantiaS2",
 	"S2-1": "3P_Sowan",
@@ -84,9 +88,4 @@ export const ApocryphaUnit: Record<string, string> = {
 	"S10-1": "AGS_Rampart",
 	"S11-1": "3P_Aurora",
 	"S12-1": "3P_CSPerrault",
-};
-export const ChallengeStage: Record<string, string> = {
-	Cha1: "밀고, 당기고, 불질러!",
-	Cha2: "설계자와 피조물",
-	Cha3: "실패작의 폭주",
 };

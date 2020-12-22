@@ -133,7 +133,7 @@ export default class FacilityView extends Vue {
 			} else if ("type" in x) {
 				switch (x.type) {
 					case "facilityParts":
-						list.push(<b-badge class="mx-1" variant="apocrypha">설비 부품 제작 시간 -{ x.bonus }%</b-badge>);
+						list.push(<b-badge class="mx-1" variant="supplementary">설비 부품 제작 시간 -{ x.bonus }%</b-badge>);
 						break;
 					case "nutrient":
 						list.push(<b-badge class="mx-1" variant="success">영양 회복량 +{ x.bonus }%</b-badge>);

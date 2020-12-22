@@ -222,13 +222,13 @@
 
 		<b-card class="border text-center mt-3" header="등장 스테이지" body-class="p-2">
 			<div v-for="(area, aindex) in Sources" :key="`enemy-modal-source-${aindex}`">
-				<hr v-if="(target && target.craftable) || aindex > 0" class="my-2" />
+				<hr v-if="aindex > 0" class="my-2" />
 				<h6 v-if="area.length > 0 && area[0].EventName" style="font-weight: bold">{{ area[0].EventName }}</h6>
+				<h6 v-else-if="area.length > 0 && area[0].IsChallenge" style="font-weight: bold">{{ area[0].ChallengeName }}</h6>
 				<source-badge
 					v-for="(source, sindex) in area"
 					:key="`enemy-modal-source-badge-${aindex}-${sindex}-${source}`"
 					:source="source"
-					minimum
 					linked
 				/>
 			</div>
@@ -368,7 +368,7 @@ export default class EnemyModal extends Vue {
 						while (ret.length <= idx)
 							ret.push([]);
 
-						if (x === "Story")
+						if (x === "Story" || x === "Cha")
 							ret[idx].push(z.text);
 						else
 							ret[idx].push(`Ev:${x}:${z.text}`);

@@ -131,7 +131,7 @@
 				<li>
 					전 전투원의
 					<b-badge variant="info">획득처</b-badge>에 <b-badge variant="exchange">교환소</b-badge>,
-					<b-badge variant="apocrypha">외전</b-badge>, <b-badge variant="event-exchange">이벤트 교환소</b-badge>,
+					<b-badge variant="supplementary">외전</b-badge>, <b-badge variant="event-exchange">이벤트 교환소</b-badge>,
 					<b-badge variant="warning">이벤트 맵</b-badge>정보가 추가되었습니다. (이벤트 맵 드랍 정보는 아직 수집되지 않았습니다.)
 				</li>
 				<li>
@@ -140,7 +140,7 @@
 				</li>
 				<li>
 					<b-badge variant="info">장비목록</b-badge>메뉴에 <b-badge variant="exchange">교환소</b-badge>,
-					<b-badge variant="apocrypha">외전</b-badge>, <b-badge variant="event-exchange">이벤트 교환소</b-badge>,
+					<b-badge variant="supplementary">외전</b-badge>, <b-badge variant="event-exchange">이벤트 교환소</b-badge>,
 					<b-badge variant="warning">이벤트 맵</b-badge>, <b-badge variant="danger">Ex 맵 (~Ex)</b-badge>,
 					<b-badge variant="success">사이드 맵 (~B)</b-badge>, <b-badge variant="warning">일반 맵</b-badge>,
 					<b-badge variant="secondary">한정(드랍 없음)</b-badge>필터가 추가되었습니다.<br />

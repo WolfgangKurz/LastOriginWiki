@@ -1,4 +1,4 @@
-import { WorldNames, ApocryphaUnit, ChallengeStage } from "@/libs/Const";
+import { WorldNames, SupplementaryUnit } from "@/libs/Const";
 
 export default class EntitySource {
 	public readonly source: string;
@@ -19,7 +19,7 @@ export default class EntitySource {
 
 	/** 전용 장비 사용 가능 전투원 */
 	public get PrivateId () {
-		return parseInt(this.Parts[1], 10);
+		return this.Parts[1];
 	}
 
 	// -------------- 교환소
@@ -118,12 +118,23 @@ export default class EntitySource {
 		return this.Parts[0].startsWith("Cha") || this.Parts[0].startsWith("*Cha");
 	}
 
-	/** 외부 통신 요청의 챌린지 이름 */
-	public get ChallengeName () {
+	/** 외부 통신 요청의 챌린지 Id */
+	public get ChallengeId () {
 		if (!this.IsChallenge) return "";
 
-		const id = this.Parts[0].replace(/^\*?(Cha[0-9]+)-.+$/, "$1");
-		return ChallengeStage[id] || id;
+		return this.Parts[0].replace(/^\*?Cha([0-9]+)-.+$/, "$1");
+	}
+
+	/** 외부 통신 요청의 챌린지 이름 */
+	public get ChallengeName () {
+		switch (this.ChallengeId) {
+			case "1": return "밀고, 당기고, 불질러!";
+			case "2": return "피조물과 설계자";
+			case "3": return "실패작의 폭주";
+			case "4":
+			case "5": return "바다의 소녀들";
+		}
+		return this.ChallengeId;
 	}
 
 	/** 외부 통신 요청의 챌린지 난이도 (1~4) */
@@ -160,7 +171,7 @@ export default class EntitySource {
 	/** 맵 보상 여부 */
 	public get IsMap () {
 		return ![
-			this.IsEndlessWar, this.IsApocrypha, this.IsExchange,
+			this.IsEndlessWar, this.IsSupplementary, this.IsExchange,
 			this.IsLimited, this.IsPrivateItem, this.IsChallenge,
 			this.IsUninstalled,
 		].some(x => x);
@@ -187,18 +198,18 @@ export default class EntitySource {
 
 	// -------------- 외전
 	/** 외전 획득 여부 */
-	public get IsApocrypha () {
+	public get IsSupplementary () {
 		return this.Parts[0].startsWith("S") || this.Parts[0].startsWith("*S");
 	}
 
 	/** 외전 대상 전투원 */
-	public get ApocryphaUnit () {
-		if (!this.IsApocrypha) return 0;
+	public get SupplementaryUnit () {
+		if (!this.IsSupplementary) return 0;
 
 		if (this.Parts[0][0] === "*")
-			return ApocryphaUnit[this.Parts[0].substr(1)];
+			return SupplementaryUnit[this.Parts[0].substr(1)];
 		else
-			return ApocryphaUnit[this.Parts[0]];
+			return SupplementaryUnit[this.Parts[0]];
 	}
 	// -------------- 외전
 
@@ -246,8 +257,8 @@ export default class EntitySource {
 			output.push("Challenge");
 		else if (this.IsEndlessWar)
 			output.push("EW");
-		else if (this.IsApocrypha)
-			output.push("Apo");
+		else if (this.IsSupplementary)
+			output.push("Supplementary");
 		else if (this.IsExchange) {
 			if (this.IsMonthly)
 				output.push("MExc");
@@ -277,13 +288,13 @@ export default class EntitySource {
 
 		if (this.IsChallenge) {
 			if (this.IsReward)
-				output.push("*Challenge:" + this.ChallengeName + ":" + this.ChallengeDifficulty);
+				output.push("*Challenge:" + this.ChallengeId + ":" + this.ChallengeDifficulty);
 			else
-				output.push("Challenge:" + this.ChallengeName + ":" + this.ChallengeDifficulty);
+				output.push("Challenge:" + this.ChallengeId + ":" + this.ChallengeDifficulty);
 		} else if (this.IsEndlessWar)
 			output.push("EW");
-		else if (this.IsApocrypha)
-			output.push("Apo:" + this.ApocryphaUnit);
+		else if (this.IsSupplementary)
+			output.push("Supplementary:" + this.SupplementaryUnit);
 		else if (this.IsExchange) {
 			if (this.IsMonthly)
 				output.push("MExc:" + this.ExchangeDate);

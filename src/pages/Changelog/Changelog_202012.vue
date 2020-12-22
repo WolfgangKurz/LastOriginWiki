@@ -1,5 +1,29 @@
 <template>
 	<div>
+		<changelog-item title="Build 7381" date="2020-12-23">
+			<template #bugfix>
+				<li>전투원의 전투 승리 호감도 변동치가 올바른 수치로 변경되었습니다.</li>
+			</template>
+			<template #new>
+				<li>
+					<b-badge variant="warning">세계정보</b-badge>에 <b-badge variant="supplementary">외전</b-badge> 및
+					<b-badge variant="primary">외부 통신 요청</b-badge> 정보가 추가되었습니다.
+				</li>
+				<li>
+					<b-badge variant="warning">세계정보</b-badge>의 클리어 보상의 보상 표시가 이제
+					<b-badge variant="secondary">클리어 보상</b-badge>과 <b-badge variant="secondary">★4 보상</b-badge>으로 분리됩니다.
+				</li>
+				<li><b-badge variant="warning">세계정보</b-badge>의 클리어 보상에 <b-badge variant="secondary">클리어 조건</b-badge>이 추가되었습니다.</li>
+			</template>
+			<template #update>
+				<li>이제 장비의 획득처가 <b-badge variant="primary">외부 통신 요청</b-badge>인 경우 별도 행으로 분류됩니다.</li>
+				<li>이제 적의 등장 스테이지가 <b-badge variant="primary">외부 통신 요청</b-badge>인 경우 별도 행으로 분류됩니다.</li>
+			</template>
+			<template #dialogue>
+				<li><b-badge variant="light">KST 2020-12-23 01:39:55</b-badge>까지의 사용자 참여로 추가된 대사들이 반영되었습니다.</li>
+			</template>
+		</changelog-item>
+
 		<changelog-item title="Build 7331" date="2020-12-21">
 			<template #bugfix>
 				<li>적 정보에서 스킬의 피해량이 잘못 표시되던 문제를 수정했습니다.</li>
