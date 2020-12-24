@@ -179,7 +179,6 @@
 												:key="`unit-view-drop-${aindex}-${sindex}-${source}`"
 												class="my-1"
 												:source="source"
-												minimum
 												linked
 											/>
 										</div>
