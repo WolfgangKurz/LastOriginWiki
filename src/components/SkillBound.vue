@@ -1,5 +1,5 @@
 <script lang="tsx">
-import { SkillEntryData } from "@/libs/DB/Skill";
+import { SkillEntity, SkillEntryData } from "@/libs/DB/Skill";
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
@@ -16,7 +16,7 @@ export default class SkillBound extends Vue {
 		type: [Object, Array],
 		required: true,
 	})
-	private levels!: SkillEntryData | SkillEntryData[];
+	private buffs!: SkillEntryData | SkillEntity["buffs"];
 
 	@Prop({
 		type: Number,
@@ -41,10 +41,10 @@ export default class SkillBound extends Vue {
 	}
 
 	private get Skill () {
-		if (Array.isArray(this.levels))
-			return this.levels[this.level - 1];
+		if ("index" in this.buffs)
+			return this.buffs.data[this.buffs.index[this.level - 1]];
 		else
-			return this.levels;
+			return this.buffs;
 	}
 
 	private get AP () {

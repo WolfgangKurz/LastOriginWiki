@@ -101,7 +101,7 @@ export default class UnitsGroup extends Vue {
 		return Object.keys(skills).some(ss => {
 			const __ = _(skills[ss as SkillSlotKey]);
 
-			return __.levels.some(l => l.buffs.some(es => {
+			return __.buffs.data.some(l => l.buffs.some(es => {
 				if ("target" in es) {
 					const target: EffectFilterTargetType = es.target === TARGET_TYPE.SELF
 						? "self"

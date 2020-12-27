@@ -195,8 +195,8 @@ function process (auth) {
 			});
 
 			fs.writeFileSync(
-				path.resolve(__dirname, "..", "src", "json", "unit.json"),
-				JSON.stringify(ret, null, 2),
+				path.resolve(__dirname, "..", "src", "json", "unit.ts"),
+				`export default ${JSON.stringify(ret, null, 2)};`,
 			);
 		} else
 			console.log("No data found.");
@@ -253,8 +253,8 @@ function process (auth) {
 			});
 
 			fs.writeFileSync(
-				path.resolve(__dirname, "..", "src", "json", "unit-stats.json"),
-				JSON.stringify(ret, null, 2),
+				path.resolve(__dirname, "..", "src", "json", "unit-stats.ts"),
+				`export default ${JSON.stringify(ret, null, 2)};`,
 			);
 		} else
 			console.log("No data found.");

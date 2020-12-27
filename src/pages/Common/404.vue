@@ -1,6 +1,6 @@
 <template>
-	<div class="error-404">
-		<img :src="`${AssetsRoot}/${imageExt}/face/132.${imageExt}`" />
+	<div class="page-404">
+		<img :src="`${AssetsRoot}/${imageExt}/face/PECS_BS_0.${imageExt}`" />
 		<div class="code">404 Not Found</div>
 		<div class="description">
 			이런! 유미가 페이지를 찾을 수 없다고 합니다.
@@ -34,7 +34,7 @@ export default class Page404 extends Vue {
 </script>
 
 <style lang="scss">
-#app > .container > .error-404 {
+#app > .container > .page-404 {
 	padding: 3em 0;
 	text-align: center;
 

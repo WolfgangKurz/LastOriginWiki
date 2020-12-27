@@ -11,13 +11,9 @@
 <script lang="ts">
 import "bootstrap";
 
-import { Component, Vue, Ref } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 
 import NavBar from "@/components/NavBar.vue";
-import Home from "@/pages/Home.vue";
-import Units from "@/pages/Units.vue";
-import Equips from "@/pages/Equips.vue";
-import Changelog from "@/pages/Changelog.vue";
 
 @Component({
 	components: {

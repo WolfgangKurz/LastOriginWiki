@@ -1,4 +1,4 @@
-import Data from "@/json/facility.json";
+import Data from "@/json/facility";
 
 export type FactilityProduct = FactilityProductItem | FacilityProductType | FacilityProductUnit;
 interface FactilityProductItem {

@@ -1,7 +1,7 @@
 import Vue, { CreateElement } from "vue";
 import { Decimal } from "decimal.js";
 
-import BuffData from "@/json/buffs.json";
+import BuffData from "@/json/buffs";
 import UnitData from "@/libs/DB/Unit";
 
 import { BuffEffect, BuffEffectValue, BUFFEFFECT_TYPE } from "@/libs/Buffs/BuffEffect";

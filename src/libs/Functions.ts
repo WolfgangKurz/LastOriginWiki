@@ -1,4 +1,3 @@
-import RequireResource from "@/libs/DB/RequireResource";
 import { LinkBonusType } from "@/libs/DB/Unit";
 import { SetMeta } from "@/libs/Meta";
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/libs/Types/Enums";
@@ -80,42 +79,4 @@ export function UniqueID (prefix?: string) {
 export function UpdateTitle (...title: string[]) {
 	document.title = [...title, "멸망 전의 전술 교본"].join(" - ");
 	SetMeta(["twitter:title", "og:title"], document.title);
-}
-
-export function GetRequireResource (rarity: ACTOR_GRADE, type: ACTOR_CLASS, role: ROLE_TYPE, body: ACTOR_BODY_TYPE, fullLinkBonus: LinkBonusType) {
-	const table = (() => {
-		const o = RequireResource[rarity][type][role][body];
-		return {
-			metal: [...o.metal],
-			nutrient: [...o.nutrient],
-			power: [...o.power],
-		};
-	})();
-
-	const discount = (x: number) => {
-		switch (fullLinkBonus) {
-			case "Cost_20":
-				return Decimal.mul(x, 0.8)
-					.ceil()
-					.toNumber();
-			case "Cost_25":
-				return Decimal.mul(x, 0.75)
-					.ceil()
-					.toNumber();
-			case "Cost_30":
-				return Decimal.mul(x, 0.7)
-					.ceil()
-					.toNumber();
-			case "Cost_35":
-				return Decimal.mul(x, 0.65)
-					.ceil()
-					.toNumber();
-		}
-		return x;
-	};
-
-	table.metal[5] = discount(table.metal[5]);
-	table.nutrient[5] = discount(table.nutrient[5]);
-	table.power[5] = discount(table.power[5]);
-	return table;
 }

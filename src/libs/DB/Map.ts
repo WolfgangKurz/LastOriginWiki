@@ -1,4 +1,4 @@
-import Data from "@/json/map.json";
+import Data from "@/json/map";
 
 type MapRewardChar = string;
 interface MapRewardItem {

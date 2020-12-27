@@ -1,5 +1,5 @@
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
-import Data from "@/json/unit-skill.json";
+import Data from "@/json/unit-skill";
 import { BuffStat } from "@/libs/Buffs/Buffs";
 import { SKILL_ATTR } from "@/libs/Types/Enums";
 
@@ -10,7 +10,10 @@ export interface RawSkillEntity {
 	icon: string;
 	type: SKILL_ATTR;
 	target: "enemy" | "team";
-	buffs: string;
+	buffs: {
+		index: number[];
+		data: SkillEntryData[];
+	};
 	desc: string[];
 }
 export interface SkillSummonInfo {
@@ -45,7 +48,11 @@ export interface SkillEntity {
 
 	target: "enemy" | "team";
 
-	levels: SkillEntryData[];
+	// levels: SkillEntryData[];
+	buffs: {
+		index: number[];
+		data: SkillEntryData[];
+	};
 	desc: string[];
 }
 /* eslint-enable camelcase */
@@ -68,36 +75,6 @@ function CompileSkill () {
 			const entity: SkillEntity = {
 				...skill,
 				icon: `${AssetsRoot}/${imgExt}/skill/${skill.icon}_${type}.${imgExt}`,
-				levels: (() => {
-					if (skill.buffs[0] === "{")
-						return new Array(10).fill(JSON.parse(skill.buffs) as SkillEntryData);
-
-					const levels = skill.buffs.split("\n");
-					const levelList: SkillEntryData[] = [];
-					levels.forEach(x => {
-						for (let current = 1; current <= 10; current++) {
-							const lv = x.substr(0, x.indexOf(":"));
-							if (lv.includes("~")) {
-								const from = parseInt(lv.substr(0, lv.indexOf("~")), 10);
-								const to = (() => {
-									const ilv = parseInt(lv.substr(lv.indexOf("~") + 1), 10);
-									if (ilv >= 10) return 13;
-									else return ilv;
-								})();
-
-								if (current < from || to < current) // 범위 밖
-									continue;
-							} else {
-								const ilv = parseInt(lv, 10);
-								if (ilv < 10 && current !== ilv) continue;
-								else if (ilv >= 10 && current < 10) continue;
-							}
-
-							levelList[current - 1] = JSON.parse(x.replace(/^[0-9~]+:/, "")) as SkillEntryData;
-						}
-					});
-					return levelList;
-				})(),
 			};
 			if (!(key in output)) output[key] = {};
 			output[key][slot as SkillSlotKey] = entity;
@@ -106,3 +83,36 @@ function CompileSkill () {
 	return output;
 }
 export default CompileSkill();
+
+/*
+(() => {
+	if (skill.buffs[0] === "{")
+		return new Array(10).fill(JSON.parse(skill.buffs) as SkillEntryData);
+
+	const levels = skill.buffs.split("\n");
+	const levelList: SkillEntryData[] = [];
+	levels.forEach(x => {
+		for (let current = 1; current <= 10; current++) {
+			const lv = x.substr(0, x.indexOf(":"));
+			if (lv.includes("~")) {
+				const from = parseInt(lv.substr(0, lv.indexOf("~")), 10);
+				const to = (() => {
+					const ilv = parseInt(lv.substr(lv.indexOf("~") + 1), 10);
+					if (ilv >= 10) return 13;
+					else return ilv;
+				})();
+
+				if (current < from || to < current) // 범위 밖
+					continue;
+			} else {
+				const ilv = parseInt(lv, 10);
+				if (ilv < 10 && current !== ilv) continue;
+				else if (ilv >= 10 && current < 10) continue;
+			}
+
+			levelList[current - 1] = JSON.parse(x.replace(/^[0-9~]+:/, "")) as SkillEntryData;
+		}
+	});
+	return levelList;
+})(),
+*/

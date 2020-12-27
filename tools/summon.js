@@ -105,8 +105,8 @@ function process (auth) {
 			});
 
 			fs.writeFileSync(
-				path.resolve(__dirname, "..", "src", "json", "summon.json"),
-				JSON.stringify(ret, null, 2),
+				path.resolve(__dirname, "..", "src", "json", "summon.ts"),
+				`export default ${JSON.stringify(ret, null, 2)};`,
 			);
 		} else
 			console.log("No data found.");

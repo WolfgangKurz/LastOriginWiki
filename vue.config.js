@@ -46,6 +46,8 @@ module.exports = {
 		config.resolve.alias.set("@", path.resolve(__dirname, "src"));
 		config.resolve.alias.set("@@", path.resolve(__dirname, "node_modules"));
 
+		config.output.chunkFilename("js/chunk-[name].[chunkhash:8].js");
+
 		// 스크립트 preload, prefetch 태그 삽입 무시
 		config.plugins.delete("preload");
 		config.plugins.delete("prefetch");
@@ -62,10 +64,10 @@ module.exports = {
 		const dbCacheGroups = (() => {
 			const ret = {};
 			fs.readdirSync(path.join(__dirname, "src", "json"))
-				.filter(f => f.endsWith(".json"))
+				.filter(f => f.endsWith(".ts"))
 				.forEach(f => {
 					const k = path.basename(f, path.extname(f));
-					ret[`db_${k}`] = {
+					ret[`db_${k.replace(/-/g, "_")}`] = {
 						name: `chunk-db-${k}`,
 						test: new RegExp(`[\\\\/]src[\\\\/]json[\\\\/]${f.replace(/\./g, "\\.")}`),
 						chunks: "all",
@@ -75,6 +77,20 @@ module.exports = {
 						enforce: true,
 					};
 				});
+			// fs.readdirSync(path.join(__dirname, "src", "pages"))
+			// 	.filter(f => f.endsWith(".ts") || f.endsWith(".tsx") || f.endsWith(".vue"))
+			// 	.forEach(f => {
+			// 		const k = path.basename(f, path.extname(f));
+			// 		ret[`page_${k}`] = {
+			// 			name: `chunk-page-${k}`,
+			// 			test: new RegExp(`[\\\\/]src[\\\\/]pages[\\\\/]${f.replace(/(\..+)$/g, "\\.?")}`),
+			// 			chunks: "async",
+			// 			priority: -5,
+			// 			minChunks: 1,
+			// 			reuseExistingChunk: true,
+			// 			enforce: true,
+			// 		};
+			// 	});
 			return ret;
 		})();
 		config.optimization.splitChunks({
@@ -89,7 +105,7 @@ module.exports = {
 				},
 				common: {
 					name: "chunk-common",
-					minChunks: 2,
+					minChunks: 1,
 					priority: -20,
 					chunks: "initial",
 					reuseExistingChunk: true,
@@ -119,14 +135,6 @@ module.exports = {
 					enforce: true,
 				},
 				...dbCacheGroups,
-				// db: {
-				// 	name: "chunk-db",
-				// 	test: /[\\/]src[\\/]json[\\/]/,
-				// 	chunks: "initial",
-				// 	priority: -20,
-				// 	reuseExistingChunk: true,
-				// 	enforce: true,
-				// },
 			},
 		});
 		config.plugin("html-app").tap((args) => {
@@ -134,7 +142,6 @@ module.exports = {
 				"chunk-components",
 				"chunk-libs",
 				"chunk-bootstrap",
-				// "chunk-db",
 				...Object.keys(dbCacheGroups).map(x => dbCacheGroups[x].name),
 			);
 			return args;

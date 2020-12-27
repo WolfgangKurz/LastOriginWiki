@@ -89,7 +89,7 @@ export default class UnitsNormal extends Vue {
 
 		return Object.keys(skills).some(ss => {
 			const __ = _(skills[ss as SkillSlotKey]);
-			return __.levels.some(l => l.buffs.some(es => {
+			return __.buffs.data.some(l => l.buffs.some(es => {
 				if ("target" in es) {
 					const target: EffectFilterTargetType = es.target === TARGET_TYPE.SELF
 						? "self"
@@ -150,7 +150,7 @@ export default class UnitsNormal extends Vue {
 					type.includes(x.type) &&
 					role.includes(x.role) &&
 					body.includes(x.body) &&
-					elem.some(y => skill.some(z => z && z.levels[0].type === y)) &&
+					elem.some(y => skill.some(z => z && z.buffs.data[0].type === y)) &&
 					this.HasFilteredEffect(x, (b) => isBuffEffectValid(b, StoreModule.unitEffectFilterListFlatten));
 			});
 

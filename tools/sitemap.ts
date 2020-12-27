@@ -1,11 +1,11 @@
 let xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">`;
 
-const Unit = require("../src/json/unit.json");
-const Equip = require("../src/json/equip.json");
-const Enemy = require("../src/json/enemy.json");
-const Facility = require("../src/json/facility.json");
-const MapData = require("../src/json/map.json");
+import Unit from "../src/json/unit";
+import Equip from "../src/json/equip";
+import Enemy from "../src/json/enemy";
+import Facility from "../src/json/facility";
+import MapData from "../src/json/map";
 // const { WorldNames } = require("../src/libs/Const");
 
 const WorldNames: Record<string, string> = {

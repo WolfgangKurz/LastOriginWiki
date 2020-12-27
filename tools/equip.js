@@ -71,13 +71,13 @@ function process (auth) {
 					limit,
 					upgrade,
 					source,
-					stats: row.filter((x, i) => i >= 13),
+					stats: row.filter((x, i) => i >= 13).map(x => JSON.parse(x)),
 				});
 			});
 
 			fs.writeFileSync(
-				path.resolve(__dirname, "..", "src", "json", "equip.json"),
-				JSON.stringify(ret, null, 2),
+				path.resolve(__dirname, "..", "src", "json", "equip.ts"),
+				`export default ${JSON.stringify(ret, null, 2)};`,
 			);
 		} else
 			console.log("No data found.");

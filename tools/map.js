@@ -11,22 +11,6 @@ function process (auth) {
 	}, (err, res) => {
 		if (err) return console.log("The API returned an error: " + err);
 
-		const enemies = JSON.parse(
-			fs.readFileSync(
-				path.join(__dirname, "..", "src", "json", "enemy.json"),
-				{ encoding: "utf-8" },
-			).toString(),
-		);
-		const et = (() => {
-			const _ = JSON.parse(
-				fs.readFileSync(
-					path.join(__dirname, "area", "enemy.json"),
-					{ encoding: "utf-8" },
-				).toString(),
-			);
-			return Object.keys(_).map(p => ({ id: p, ..._[p] }));
-		})();
-
 		const ret = {};
 		const rows = res.data.values;
 		if (rows.length) {
@@ -50,8 +34,8 @@ function process (auth) {
 			});
 
 			fs.writeFileSync(
-				path.resolve(__dirname, "..", "src", "json", "map.json"),
-				JSON.stringify(ret, null, 2),
+				path.resolve(__dirname, "..", "src", "json", "map.ts"),
+				`export default ${JSON.stringify(ret, null, 2)};`,
 			);
 		} else
 			console.log("No data found.");

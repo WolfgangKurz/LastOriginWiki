@@ -68,8 +68,8 @@ function process (auth) {
 			});
 
 			fs.writeFileSync(
-				path.resolve(__dirname, "..", "src", "json", "unit-dialogue.json"),
-				JSON.stringify(ret, null, 2),
+				path.resolve(__dirname, "..", "src", "json", "unit-dialogue.ts"),
+				`export default ${JSON.stringify(ret, null, 2)};`,
 			);
 		} else
 			console.log("No data found.");
