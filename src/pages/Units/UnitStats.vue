@@ -160,14 +160,12 @@ import { Prop } from "vue-property-decorator";
 
 import { AssetsRoot } from "@/libs/Const";
 
-import CostData from "@/json/unit-cost.json";
-
-import { ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/libs/Types/Enums";
-import UnitData, { Unit } from "@/libs/DB/Unit";
+import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/libs/Types/Enums";
+import UnitData, { LinkBonusType, Unit } from "@/libs/DB/Unit";
 import UnitStatsData from "@/libs/DB/UnitStats";
 import EquipData from "@/libs/DB/Equip";
 
-import { FormatNumber, GetRequireResource } from "@/libs/Functions";
+import { FormatNumber } from "@/libs/Functions";
 
 import { Unit as SimUnit } from "@/pages/Simulation/Simulation/Unit";
 import { StatType, Stat, UnitStat, StatListTable, RatioStats, LiteralStats } from "@/pages/Simulation/Simulation/Stats";
@@ -179,6 +177,7 @@ import StatIcon from "@/components/StatIcon.vue";
 import UnitStatsUpgrade from "./Stats/UnitStatsUpgrade.vue";
 import UnitStatsCoreLink from "./Stats/UnitStatsCoreLink.vue";
 import UnitStatsEquip from "./Stats/UnitStatsEquip.vue";
+import RequireResourceDB, { RequireResource } from "@/libs/DB/RequireResource";
 
 @Component({
 	components: {
@@ -192,6 +191,14 @@ import UnitStatsEquip from "./Stats/UnitStatsEquip.vue";
 	},
 })
 export default class UnitStatus extends Vue {
+	private internalRequireResourceDB: RequireResource | null = null;
+	private get RequireResourceDB () {
+		if (this.internalRequireResourceDB) return this.internalRequireResourceDB;
+		return RequireResourceDB((x) => {
+			this.internalRequireResourceDB = x;
+		});
+	}
+
 	@Prop({
 		type: Object,
 		required: true,
@@ -275,8 +282,54 @@ export default class UnitStatus extends Vue {
 		}[this.unit.role];
 	}
 
+	private GetRequireResource (rarity: ACTOR_GRADE, type: ACTOR_CLASS, role: ROLE_TYPE, body: ACTOR_BODY_TYPE, fullLinkBonus: LinkBonusType) {
+		if (!this.RequireResourceDB) {
+			return {
+				metal: [0, 0, 0, 0, 0, 0],
+				nutrient: [0, 0, 0, 0, 0, 0],
+				power: [0, 0, 0, 0, 0, 0],
+			};
+		}
+
+		const table = (() => {
+			const o = this.RequireResourceDB[rarity][type][role][body];
+			return {
+				metal: [...o.metal],
+				nutrient: [...o.nutrient],
+				power: [...o.power],
+			};
+		})();
+
+		const discount = (x: number) => {
+			switch (fullLinkBonus) {
+				case "Cost_20":
+					return Decimal.mul(x, 0.8)
+						.ceil()
+						.toNumber();
+				case "Cost_25":
+					return Decimal.mul(x, 0.75)
+						.ceil()
+						.toNumber();
+				case "Cost_30":
+					return Decimal.mul(x, 0.7)
+						.ceil()
+						.toNumber();
+				case "Cost_35":
+					return Decimal.mul(x, 0.65)
+						.ceil()
+						.toNumber();
+			}
+			return x;
+		};
+
+		table.metal[5] = discount(table.metal[5]);
+		table.nutrient[5] = discount(table.nutrient[5]);
+		table.power[5] = discount(table.power[5]);
+		return table;
+	}
+
 	private get CostTable () {
-		return GetRequireResource(
+		return this.GetRequireResource(
 			this.sUnit.Rarity,
 			this.sUnit.Unit.type,
 			this.sUnit.Unit.role,

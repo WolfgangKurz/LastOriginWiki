@@ -45,7 +45,7 @@
 						<img class="skill-icon" :src="skill.icon" />
 						<div class="text-bold">
 							{{ skill.name }}<br />
-							<elem-icon :elem="skill.levels[skillLevelSync].type" />
+							<elem-icon :elem="skill.buffs.data[skill.buffs.index[skillLevelSync]].type" />
 						</div>
 
 						<b-badge v-if="skill.index === 7" variant="info">더미</b-badge>
@@ -55,23 +55,24 @@
 					</b-td>
 					<b-td class="text-left d-none d-md-table-cell">
 						<div class="unit-modal-skill">
-							<b-badge v-if="skill.levels[skillLevelSync].dismiss_guard" variant="warning" class="mr-1">보호 무시</b-badge>
+							<b-badge v-if="skill.buffs.data[skill.buffs.index[skillLevelSync]].dismiss_guard" variant="warning" class="mr-1"
+								>보호 무시</b-badge
+							>
 							<b-badge
-								v-if="skill.levels[skillLevelSync].target_ground && !skill.isPassive"
+								v-if="skill.buffs.data[skill.buffs.index[skillLevelSync]].target_ground && !skill.isPassive"
 								variant="danger"
 								class="mr-1"
 								title="땅 찍기"
 								>그리드 지정</b-badge
 							>
-							<b-badge v-if="skill.levels[skillLevelSync].acc_bonus" variant="success" class="mr-1">
+							<b-badge v-if="skill.buffs.data[skill.buffs.index[skillLevelSync]].acc_bonus" variant="success" class="mr-1">
 								적중 보정
-								{{ (skill.levels[skillLevelSync].acc_bonus > 0 ? "+" : "") + skill.levels[skillLevelSync].acc_bonus }}%
+								{{
+									(skill.buffs.data[skill.buffs.index[skillLevelSync]].acc_bonus > 0 ? "+" : "") +
+									skill.buffs.data[skill.buffs.index[skillLevelSync]].acc_bonus
+								}}%
 							</b-badge>
-							<summon-badge
-								v-if="skill.levels[skillLevelSync].summon"
-								:summon="SummonChar(skill.levels[skillLevelSync].summon)"
-								class="mr-1"
-							/>
+							<summon-badge :summon="skill.buffs.data[skill.buffs.index[skillLevelSync]].summon" class="mr-1" />
 						</div>
 
 						<div>
@@ -99,7 +100,7 @@
 					<b-th variant="dark" class="text-center">
 						<skill-bound
 							:passive="skill.isPassive"
-							:levels="skill.levels"
+							:buffs="skill.buffs"
 							:target="skill.target"
 							:level="skillLevelSync + 1"
 							:range-bonus="rangeBonus"
@@ -109,23 +110,24 @@
 				<b-tr :key="`unit-modal-skill-descrow-${idx}`" class="d-table-row d-md-none">
 					<b-td class="text-left" colspan="2">
 						<div class="unit-modal-skill">
-							<b-badge v-if="skill.levels[skillLevelSync].dismiss_guard" variant="warning" class="mr-1">보호 무시</b-badge>
+							<b-badge v-if="skill.buffs.data[skill.buffs.index[skillLevelSync]].dismiss_guard" variant="warning" class="mr-1"
+								>보호 무시</b-badge
+							>
 							<b-badge
-								v-if="skill.levels[skillLevelSync].target_ground && !skill.levels[skillLevelSync].passive"
+								v-if="skill.buffs.data[skill.buffs.index[skillLevelSync]].target_ground && !skill.isPassive"
 								variant="danger"
 								class="mr-1"
 								title="땅 찍기"
 								>그리드 지정</b-badge
 							>
-							<b-badge v-if="skill.levels[skillLevelSync].acc_bonus" variant="success" class="mr-1">
+							<b-badge v-if="skill.buffs.data[skill.buffs.index[skillLevelSync]].acc_bonus" variant="success" class="mr-1">
 								적중 보정
-								{{ (skill.levels[skillLevelSync].acc_bonus > 0 ? "+" : "") + skill.levels[skillLevelSync].acc_bonus }}%
+								{{
+									(skill.buffs.data[skill.buffs.index[skillLevelSync]].acc_bonus > 0 ? "+" : "") +
+									skill.buffs.data[skill.buffs.index[skillLevelSync]].acc_bonus
+								}}%
 							</b-badge>
-							<summon-badge
-								v-if="skill.levels[skillLevelSync].summon"
-								:summon="SummonChar(skill.levels[skillLevelSync].summon)"
-								class="mr-1"
-							/>
+							<summon-badge :summon="skill.buffs.data[skill.buffs.index[skillLevelSync]].summon" class="mr-1" />
 						</div>
 
 						<div v-for="(line, lineIdx) in skill.desc" :key="`unit-modal-skill-descrow-desc-${lineIdx}`" class="unit-modal-skill">
@@ -170,7 +172,7 @@ import SummonBadge from "./SummonBadge.vue";
 
 import { ACTOR_GRADE } from "@/libs/Types/Enums";
 import SkillData, { SkillEntity, RawSkillEntity, SkillSummonInfo } from "@/libs/DB/Skill";
-import SummonData from "@/libs/DB/Summon";
+import SummonData, { Summon } from "@/libs/DB/Summon";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { BuffStat } from "@/libs/Buffs/Buffs";
 import Decimal from "decimal.js";
@@ -194,6 +196,14 @@ type SkillTable = Record<string, SkillItem>;
 	},
 })
 export default class UnitSkillTable extends Vue {
+	private internalSummonDB: Summon[] | null = null;
+	private get SummonDB () {
+		if (this.internalSummonDB) return this.internalSummonDB;
+		return SummonData((x) => {
+			this.internalSummonDB = x;
+		});
+	}
+
 	@Prop({
 		type: Object,
 		required: true,
@@ -310,7 +320,7 @@ export default class UnitSkillTable extends Vue {
 				const skill = this.skills[key];
 				if (!skill) return null;
 
-				const stat = skill.levels[this.skillLevelSync].buffs;
+				const stat = skill.buffs.data[skill.buffs.index[this.skillLevelSync]].buffs;
 				output[key] = stat;
 			});
 
@@ -324,21 +334,14 @@ export default class UnitSkillTable extends Vue {
 				const skill = this.skills[key];
 				if (!skill) return null;
 
-				output[key] = skill.levels.map(x => x.buff_rate);
+				output[key] = skill.buffs.index.map(x => skill.buffs.data[x].buff_rate);
 			});
 
 		return output;
 	}
 
 	private GetRates (skill: SkillItem) {
-		return skill.levels.map(x => x.rate);
-	}
-
-	private SummonChar (summon: SkillSummonInfo | null) {
-		if (!summon) return undefined;
-
-		const target = SummonData.find(x => x.id === summon.char);
-		return target;
+		return skill.buffs.index.map(x => skill.buffs.data[x].rate);
 	}
 }
 </script>

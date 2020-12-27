@@ -188,7 +188,7 @@
 						<small class="ml-1">Lv.1</small>
 
 						<div class="float-md-right bg-dark ml-md-2 mt-2 mt-md-0 p-2 text-center">
-							<skill-bound :target="skill.target" :levels="skill.buff" :level="0" :passive="skill.passive" />
+							<skill-bound :target="skill.target" :buffs="skill.buff" :level="0" :passive="skill.passive" />
 						</div>
 
 						<div class="mt-3 skill-desc">

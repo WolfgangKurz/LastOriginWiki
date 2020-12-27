@@ -299,7 +299,7 @@ export default class Units extends Vue {
 					// 증가치
 					let f = Object.keys(SkillData).some(su =>
 						Object.keys(SkillData[su]).some(ss =>
-							_(SkillData[su][ss as SkillSlotKey]).levels.some(l => l.buffs.some(es => {
+							_(SkillData[su][ss as SkillSlotKey]).buffs.data.some(l => l.buffs.some(es => {
 								if ("type" in es)
 									return x[0].type.includes(es.type) && isPositiveBuffEffect(es);
 								else
@@ -312,7 +312,7 @@ export default class Units extends Vue {
 					// 감소치
 					f = Object.keys(SkillData).some(su =>
 						Object.keys(SkillData[su]).some(ss =>
-							_(SkillData[su][ss as SkillSlotKey]).levels.some(l => l.buffs.some(es => {
+							_(SkillData[su][ss as SkillSlotKey]).buffs.data.some(l => l.buffs.some(es => {
 								if ("type" in es)
 									return x[1].type.includes(es.type) && !isPositiveBuffEffect(es);
 								else
@@ -328,7 +328,7 @@ export default class Units extends Vue {
 					// 상수치
 					const f = Object.keys(SkillData).some(su =>
 						Object.keys(SkillData[su]).some(ss =>
-							_(SkillData[su][ss as SkillSlotKey]).levels.some(l => l.buffs.some(es => {
+							_(SkillData[su][ss as SkillSlotKey]).buffs.data.some(l => l.buffs.some(es => {
 								if ("type" in es)
 									return x.type.includes(es.type);
 								else

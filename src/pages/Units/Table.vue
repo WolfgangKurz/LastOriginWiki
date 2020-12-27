@@ -149,7 +149,7 @@ export default class UnitsTable extends Vue {
 		return Object.keys(skills).some(ss => {
 			const __ = _(skills[ss as SkillSlotKey]);
 
-			return __.levels.some(l => l.buffs.some(es => {
+			return __.buffs.data.some(l => l.buffs.some(es => {
 				if ("target" in es) {
 					const target: EffectFilterTargetType = es.target === TARGET_TYPE.SELF
 						? "self"
@@ -189,7 +189,7 @@ export default class UnitsTable extends Vue {
 							(x.body === ACTOR_BODY_TYPE.BIOROID && this.Filters.Body[ACTOR_BODY_TYPE.BIOROID]) ||
 							(x.body === ACTOR_BODY_TYPE.AGS && this.Filters.Body[ACTOR_BODY_TYPE.AGS])
 						) &&
-						elem.some(y => skill.some(z => z && z.levels[0].type === y)) &&
+						elem.some(y => skill.some(z => z && z.buffs.data[0].type === y)) &&
 						this.HasFilteredEffect(x, (b) => isBuffEffectValid(b, StoreModule.unitEffectFilterListFlatten));
 				});
 		} else {
@@ -205,7 +205,7 @@ export default class UnitsTable extends Vue {
 							(x.body === ACTOR_BODY_TYPE.BIOROID && this.Filters.Body[ACTOR_BODY_TYPE.BIOROID]) ||
 							(x.body === ACTOR_BODY_TYPE.AGS && this.Filters.Body[ACTOR_BODY_TYPE.AGS])
 						) &&
-						elem.some(y => skill.some(z => z && z.levels[0].type === y)) &&
+						elem.some(y => skill.some(z => z && z.buffs.data[0].type === y)) &&
 						this.HasFilteredEffect(x, (b) => isBuffEffectValid(b, StoreModule.unitEffectFilterListFlatten));
 				});
 		}

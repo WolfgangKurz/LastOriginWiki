@@ -1,6 +1,6 @@
 import { ACTOR_GRADE } from "@/libs/Types/Enums";
 
-import Data from "@/json/unit-stats.json";
+import Data from "@/json/unit-stats";
 
 export interface UnitStats {
 	id: number;

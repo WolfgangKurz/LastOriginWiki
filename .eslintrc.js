@@ -13,6 +13,7 @@ module.exports = {
 	ignorePatterns: [
 		"/**/node_modules/*",
 		"dist/",
+		"src/json/",
 	],
 	parserOptions: {
 		ecmaVersion: 2020,

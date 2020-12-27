@@ -1,7 +1,7 @@
 import EntitySource from "@/libs/EntitySource";
 import { BuffStat } from "@/libs/Buffs/Buffs";
 
-import Data from "@/json/equip.json";
+import Data from "@/json/equip";
 import { ACTOR_GRADE, ITEM_TYPE } from "@/libs/Types/Enums";
 
 interface RawEquip {
@@ -19,7 +19,7 @@ interface RawEquip {
 	limit?: string;
 	upgrade: number;
 	source: string[][];
-	stats: string[];
+	stats: BuffStat[][];
 }
 export interface Equip {
 	available: boolean;
@@ -87,7 +87,7 @@ function Compile (): Equip[] {
 		upgrade: x.upgrade,
 		limit: parseLimit(x.limit),
 		source: x.source.map(y => y.map(z => new EntitySource(z))),
-		stats: x.stats.map(y => JSON.parse(y) as BuffStat[]),
+		stats: x.stats,
 	}));
 }
 export default Compile();

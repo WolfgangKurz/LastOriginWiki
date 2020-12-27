@@ -1,4 +1,4 @@
-import Data from "@/json/enemy.json";
+import Data from "@/json/enemy";
 import { SkillEntryData } from "@/libs/DB/Skill";
 import { ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE, SKILL_ATTR } from "@/libs/Types/Enums";
 

@@ -23,9 +23,19 @@ export default class EquipIcon extends Vue {
 		return `${AssetsRoot}/${imageExt}/item/${this.image}.${imageExt}`;
 	}
 
+	private get NumericSize () {
+		switch (this.size) {
+			case "small": return 40;
+			case "normal": return 48;
+			case "big": return 64;
+			case "large": return 128;
+		}
+		return parseFloat(this.size) || 48;
+	}
+
 	private render () {
-		return <div class="equip-icon" data-size={this.size}>
-			<img src={this.Icon} />
+		return <div class="equip-icon">
+			<img src={ this.Icon } width={ this.NumericSize } height={ this.NumericSize } />
 		</div>;
 	}
 }
@@ -38,25 +48,8 @@ div.equip-icon {
 	vertical-align: middle;
 	overflow: hidden;
 
-	img {
+	> img {
 		display: block;
-		width: 48px;
-		height: 48px;
-	}
-
-	&[data-size="small"] img {
-		width: 40px;
-		height: 40px;
-	}
-
-	&[data-size="big"] img {
-		width: 64px;
-		height: 64px;
-	}
-
-	&[data-size="large"] img {
-		width: 128px;
-		height: 128px;
 	}
 }
 </style>

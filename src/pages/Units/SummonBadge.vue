@@ -1,14 +1,14 @@
 <template>
-	<div class="summon-badge" v-if="summon">
+	<div class="summon-badge" v-if="Summon">
 		<b-badge variant="dark" class="summon-badge">
-			"{{ summon.name }}" 소환 / 최대 {{ summon.overlap }}체 소환 가능 / {{ summon.lifecycle }} 라운드 지속 🔗
+			"{{ Summon.name }}" 소환 / 최대 {{ Summon.overlap }}체 소환 가능 / {{ Summon.lifecycle }} 라운드 지속 🔗
 			<a href="#" class="stretched-link" @click.prevent="display = true" />
 		</b-badge>
 		<b-modal v-model="display" size="lg" centered hide-footer content-class="summon-modal">
 			<template #modal-title>
 				<div class="text-left">
-					{{ summon.name }}
-					<div style="font-size: 60%">{{ summon.id }}</div>
+					{{ Summon.name }}
+					<div style="font-size: 60%">{{ Summon.id }}</div>
 				</div>
 			</template>
 
@@ -17,7 +17,7 @@
 					<b-col class="icon-container">
 						<div class="position-relative d-inline-block">
 							<div class="summon-icon">
-								<img :src="`${AssetsRoot}/${imageExt}/tbar/${summon.icon}.${imageExt}`" />
+								<img :src="`${AssetsRoot}/${imageExt}/tbar/${Summon.icon}.${imageExt}`" />
 							</div>
 						</div>
 					</b-col>
@@ -25,17 +25,17 @@
 						<b-row cols="2">
 							<b-col class="bg-dark text-white">유형</b-col>
 							<b-col>
-								<unit-badge :type="summon.type" size="large" transparent black />
+								<unit-badge :type="Summon.type" size="large" transparent black />
 							</b-col>
 							<b-col class="bg-dark text-white">역할</b-col>
 							<b-col>
-								<unit-badge :role="summon.role" size="large" transparent black />
+								<unit-badge :role="Summon.role" size="large" transparent black />
 							</b-col>
 							<div>
 								<b-col class="bg-dark text-white">등급</b-col>
 							</div>
 							<b-col>
-								<rarity-badge :rarity="summon.rarity" />
+								<rarity-badge :rarity="Summon.rarity" />
 							</b-col>
 						</b-row>
 					</b-col>
@@ -75,15 +75,15 @@
 									<b-tr class="text-center text-white resist-parent">
 										<b-td data-type="fire">
 											<elem-icon inline elem="fire" />
-											<strong class="pl-1">{{ summon.res.fire }}%</strong>
+											<strong class="pl-1">{{ Summon.res.fire }}%</strong>
 										</b-td>
 										<b-td data-type="ice">
 											<elem-icon inline elem="ice" />
-											<strong class="pl-1">{{ summon.res.chill }}%</strong>
+											<strong class="pl-1">{{ Summon.res.chill }}%</strong>
 										</b-td>
 										<b-td data-type="lightning">
 											<elem-icon inline elem="lightning" />
-											<strong class="pl-1">{{ summon.res.thunder }}%</strong>
+											<strong class="pl-1">{{ Summon.res.thunder }}%</strong>
 										</b-td>
 									</b-tr>
 								</b-tbody>
@@ -96,7 +96,7 @@
 											<span class="status-col-head">HP</span>
 										</b-td>
 										<b-td>
-											<div class="status-col-value">{{ StatValue(summon.hp, true) }}</div>
+											<div class="status-col-value">{{ StatValue(Summon.hp, true) }}</div>
 										</b-td>
 										<b-td class="text-left" />
 										<b-td />
@@ -108,14 +108,14 @@
 											<span class="status-col-head">공격력</span>
 										</b-td>
 										<b-td>
-											<div class="status-col-value">{{ StatValue(summon.atk) }}</div>
+											<div class="status-col-value">{{ StatValue(Summon.atk) }}</div>
 										</b-td>
 										<b-td class="text-left">
 											<stat-icon inline stat="ACC" />
 											<span class="status-col-head">적중률</span>
 										</b-td>
 										<b-td>
-											<div class="status-col-value">{{ summon.acc }}%</div>
+											<div class="status-col-value">{{ Summon.acc }}%</div>
 										</b-td>
 									</b-tr>
 
@@ -125,14 +125,14 @@
 											<span class="status-col-head">치명타</span>
 										</b-td>
 										<b-td>
-											<div class="status-col-value">{{ summon.cri }}%</div>
+											<div class="status-col-value">{{ Summon.cri }}%</div>
 										</b-td>
 										<b-td class="text-left">
 											<stat-icon inline stat="DEF" />
 											<span class="status-col-head">방어력</span>
 										</b-td>
 										<b-td>
-											<div class="status-col-value">{{ StatValue(summon.def) }}</div>
+											<div class="status-col-value">{{ StatValue(Summon.def) }}</div>
 										</b-td>
 									</b-tr>
 
@@ -142,14 +142,14 @@
 											<span class="status-col-head">회피율</span>
 										</b-td>
 										<b-td>
-											<div class="status-col-value">{{ summon.eva }}%</div>
+											<div class="status-col-value">{{ Summon.eva }}%</div>
 										</b-td>
 										<b-td class="text-left">
 											<stat-icon inline stat="SPD" />
 											<span class="status-col-head">행동력</span>
 										</b-td>
 										<b-td>
-											<div class="status-col-value">{{ summon.spd }}</div>
+											<div class="status-col-value">{{ Summon.spd }}</div>
 										</b-td>
 									</b-tr>
 								</b-tbody>
@@ -184,7 +184,7 @@
 							<small class="ml-1">Lv.1</small>
 
 							<div class="float-md-right bg-dark ml-md-2 mt-2 mt-md-0 p-2 text-center">
-								<skill-bound :target="skill.target" :levels="skill.buff" :level="0" :passive="skill.passive" />
+								<skill-bound :target="skill.target" :buffs="skill.buff" :level="0" :passive="skill.passive" />
 							</div>
 
 							<div class="mt-3 skill-desc">
@@ -236,11 +236,13 @@ import StatIcon from "@/components/StatIcon.vue";
 
 import SkillBound from "@/components/SkillBound.vue";
 import SkillDescription from "@/components/SkillDescription.vue";
+import BuffList from "@/components/BuffList";
 
 import { ACTOR_GRADE, ITEM_TYPE } from "@/libs/Types/Enums";
-import SummonData, { Summon, SummonSkill } from "@/libs/DB/Summon";
+import SummonDB, { Summon, SummonSkill } from "@/libs/DB/Summon";
 import UnitData from "@/libs/DB/Unit";
 import MapData from "@/libs/DB/Map";
+import { SkillSummonInfo } from "@/libs/DB/Skill";
 
 @Component({
 	components: {
@@ -253,16 +255,22 @@ import MapData from "@/libs/DB/Map";
 
 		SkillBound,
 		SkillDescription,
+		BuffList,
 	},
 })
 export default class SummonBadge extends Vue {
+	private internalDB: Summon[] | null = null;
+	private get DB () {
+		if (this.internalDB) return this.internalDB;
+		return SummonDB((x) => {
+			this.internalDB = x;
+		});
+	}
+
 	@Prop({
-		required: true,
-		validator (v: any) {
-			return typeof v === "object" || v === null;
-		},
+		type: Object,
 	})
-	private summon!: Summon;
+	private summon!: SkillSummonInfo | null | undefined;
 
 	private currentLevel: number = 1;
 
@@ -283,10 +291,21 @@ export default class SummonBadge extends Vue {
 		return ImageExtension();
 	}
 
+	private get Summon () {
+		if (!this.summon) return undefined;
+		if (!this.DB) return undefined;
+
+		const summon = this.summon;
+		return this.DB.find(x => x.id === summon.char);
+	}
+
 	private get FamilyList () {
-		if (!this.summon) return [];
-		return SummonData
-			.filter(x => (x.name === this.summon.name))
+		if (!this.Summon) return [];
+		if (!this.DB) return [];
+
+		const summon = this.Summon;
+		return this.DB
+			.filter(x => x.name === summon.name)
 			.map((x, i) => ({
 				value: x.id,
 				text: `${x.name} ${i + 1}`,
@@ -294,8 +313,8 @@ export default class SummonBadge extends Vue {
 	}
 
 	private get Skills () {
-		if (!this.summon) return [];
-		const list: Array<SummonSkill | undefined> = this.summon.skills;
+		if (!this.Summon) return [];
+		const list: Array<SummonSkill | undefined> = this.Summon.skills;
 		while (list.length < 6) list.push(undefined);
 		return list;
 	}
@@ -310,10 +329,10 @@ export default class SummonBadge extends Vue {
 	}
 
 	private Description (skill: SummonSkill) {
-		if (!this.summon) return "";
+		if (!this.Summon) return "";
 
 		const v = Decimal.mul(
-			this.StatValue(this.summon.atk),
+			this.StatValue(this.Summon.atk),
 			skill.buff.rate,
 		)
 			.floor()
@@ -325,7 +344,7 @@ export default class SummonBadge extends Vue {
 	}
 
 	private GetRates (skill: SummonSkill) {
-		if (!this.summon) return [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+		if (!this.Summon) return [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 		return new Array(10).fill(skill.buff.rate);
 	}

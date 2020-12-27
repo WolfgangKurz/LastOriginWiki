@@ -1,4 +1,4 @@
-import Data from "@/json/consumable.json";
+import Data from "@/json/consumable";
 
 export interface Consumable {
 	key: string;

@@ -1,6 +1,6 @@
-import UnitDialogueDB from "@/json/unit-dialogue.json";
-import ExpDB from "@/json/exp.json";
-import StoryDB from "@/json/story.json";
+import UnitDialogueDB from "@/json/unit-dialogue";
+import ExpDB from "@/json/exp";
+import StoryDB from "@/json/story";
 
 import {
 	RawUnitDialogue,

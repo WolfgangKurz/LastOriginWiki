@@ -1,5 +1,27 @@
 <template>
 	<div>
+		<changelog-item title="Build 7561" date="2020-12-28">
+			<template #site>
+				<li>🎄 메리 크리스마스! 🎄 였나요? 저는 내내 이거 고쳤습니다.</li>
+				<li>사이트에서 사용되는 DB의 용량을 최적화했습니다.</li>
+				<li>전투원 스킬 DB의 구조를 최적화했습니다.</li>
+			</template>
+			<template #bugfix>
+				<li><b-badge variant="warning">세계정보</b-badge>의 일부 지역의 웨이브 수가 비정상적으로 표시되는 문제가 수정되었습니다.</li>
+			</template>
+			<template #new>
+				<li>
+					<b-badge variant="warning">교환소</b-badge> 메뉴가 추가되었습니다.<br />
+					현재 및 역대 <b-badge variant="exchange">전투원/장비 교환소</b-badge>와 <b-badge variant="exchange">이벤트 교환소</b-badge> 정보가
+					표시됩니다.<br />
+					<b-badge variant="dark">지고의 저녁식사</b-badge> 이외의 이벤트는 현재 항목 추가 일자 및 당시 교환 가능 갯수를 조사하고 있습니다.
+				</li>
+			</template>
+			<template #dialogue>
+				<li><b-badge variant="light">KST 2020-12-28 01:10:11</b-badge>까지의 사용자 참여로 추가된 대사들이 반영되었습니다.</li>
+			</template>
+		</changelog-item>
+
 		<changelog-item title="Build 7381" date="2020-12-23">
 			<template #bugfix>
 				<li>전투원의 전투 승리 호감도 변동치가 올바른 수치로 변경되었습니다.</li>
@@ -13,7 +35,9 @@
 					<b-badge variant="warning">세계정보</b-badge>의 클리어 보상의 보상 표시가 이제
 					<b-badge variant="secondary">클리어 보상</b-badge>과 <b-badge variant="secondary">★4 보상</b-badge>으로 분리됩니다.
 				</li>
-				<li><b-badge variant="warning">세계정보</b-badge>의 클리어 보상에 <b-badge variant="secondary">클리어 조건</b-badge>이 추가되었습니다.</li>
+				<li>
+					<b-badge variant="warning">세계정보</b-badge>의 클리어 보상에 <b-badge variant="secondary">클리어 조건</b-badge>이 추가되었습니다.
+				</li>
 			</template>
 			<template #update>
 				<li>이제 장비의 획득처가 <b-badge variant="primary">외부 통신 요청</b-badge>인 경우 별도 행으로 분류됩니다.</li>

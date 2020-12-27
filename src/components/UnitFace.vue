@@ -34,6 +34,9 @@ export default class UnitFace extends Vue {
 
 	public static GetURL (uid: string, skin: number = 0): string {
 		const ext = ImageExtension();
+		if (uid.startsWith("Core_") || uid.startsWith("Module_"))
+			return `${AssetsRoot}/${ext}/face/${uid}_0.${ext}`;
+
 		return UnitData.some(x => x.uid === uid)
 			? `${AssetsRoot}/${ext}/face/${uid}_${skin}.${ext}`
 			: `${AssetsRoot}/transparent.png`;

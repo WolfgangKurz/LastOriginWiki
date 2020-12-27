@@ -25,6 +25,7 @@
 				<b-nav-item :active="IsEnemy" href="/enemy" @click.prevent="GoTo('/enemy')">적 정보</b-nav-item>
 				<b-nav-item :active="IsFacilities" href="/facilities" @click.prevent="GoTo('/facilities')">설비정보</b-nav-item>
 				<b-nav-item :active="IsWorlds" href="/worlds" @click.prevent="GoTo('/worlds')">세계정보</b-nav-item>
+				<b-nav-item :active="IsExchange" href="/exchange" @click.prevent="GoTo('/exchange')">교환소</b-nav-item>
 				<b-nav-item :active="IsChangelog" href="/changelog" @click.prevent="GoTo('/changelog')">Changelog</b-nav-item>
 
 				<b-nav-item-dropdown right>
@@ -90,6 +91,10 @@ export default class NavBar extends Vue {
 
 	private get IsWorlds () {
 		return this.pageLower === "/worlds" || this.pageLower.startsWith("/worlds/");
+	}
+
+	private get IsExchange () {
+		return this.pageLower === "/exchange" || this.pageLower.startsWith("/exchange/");
 	}
 
 	private get IsChangelog () {
