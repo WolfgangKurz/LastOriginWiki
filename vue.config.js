@@ -46,7 +46,7 @@ module.exports = {
 		config.resolve.alias.set("@", path.resolve(__dirname, "src"));
 		config.resolve.alias.set("@@", path.resolve(__dirname, "node_modules"));
 
-		config.output.chunkFilename("js/chunk-[name].[chunkhash:8].js");
+		config.output.chunkFilename("js/[name].[chunkhash:8].js");
 
 		// 스크립트 preload, prefetch 태그 삽입 무시
 		config.plugins.delete("preload");
