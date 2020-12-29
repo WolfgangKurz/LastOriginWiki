@@ -49,6 +49,7 @@ export default class BGM extends Vue {
 			Talk_04: "대화 4",
 			Talk_05: "대화 5",
 			Talk_06: "대화 6",
+			Talk_07: "대화 7",
 
 			Thrill_01: "대화 (전율) 1",
 

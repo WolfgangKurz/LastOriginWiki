@@ -1361,7 +1361,7 @@ export default [
       "death": 1.2,
       "assistant": 1
     },
-    "marry": false,
+    "marry": true,
     "linkBonus": [
       "HP_20",
       "ATK_20",
@@ -8300,7 +8300,7 @@ export default [
       "death": 0.75,
       "assistant": 1
     },
-    "marry": false,
+    "marry": true,
     "linkBonus": [
       "HP_20",
       "ATK_20",
