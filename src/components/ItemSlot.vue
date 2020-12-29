@@ -69,7 +69,7 @@ export default class ItemSlot extends Vue {
 	width: $size;
 	height: $size;
 
-	background-image: url($assetsRoot+"/simulation/ItemBack.png");
+	background-image: url($assetsRoot + "simulation/ItemBack.png");
 	background-repeat: no-repeat;
 	background-size: $size $size;
 	box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.333);
@@ -91,7 +91,7 @@ export default class ItemSlot extends Vue {
 	$list: 0, 1, 2;
 	@each $type in $list {
 		&[data-type="#{$type}"]::before {
-			background-image: url($assetsRoot+"/simulation/Item#{$type}.png");
+			background-image: url($assetsRoot + "simulation/Item#{$type}.png");
 			background-repeat: no-repeat;
 			background-size: $icon-size $icon-size;
 			background-position: center;

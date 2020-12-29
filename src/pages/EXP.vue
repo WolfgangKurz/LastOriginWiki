@@ -1,6 +1,7 @@
 <template>
 	<div class="exp">
-		<exp-calculator />
+		<!-- <exp-calculator /> -->
+		리뉴얼 준비중
 	</div>
 </template>
 
@@ -10,14 +11,14 @@ import Component from "vue-class-component";
 
 import { ExpData } from "@/libs/DB";
 
-import ExpCalculator from "@/pages/EXP/ExpCalculator.vue";
+// import ExpCalculator from "@/pages/EXP/ExpCalculator.vue";
 
 import { UpdateTitle } from "@/libs/Functions";
 import { SetMeta } from "@/libs/Meta";
 
 @Component({
 	components: {
-		ExpCalculator,
+		// ExpCalculator,
 	},
 })
 export default class EXP extends Vue {

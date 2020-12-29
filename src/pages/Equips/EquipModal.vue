@@ -35,7 +35,7 @@
 							<span v-if="Limits.length === 0" class="text-secondary">제한 없음</span>
 							<template v-else>
 								<span v-for="limit in Limits" :key="`equip-limit-${limit}`">
-									<unit-badge v-if="typeof limit === 'string'" :limit="limit" />
+									<unit-badge v-if="!UnitName(limit)" :limit="limit" />
 									<a v-else :href="`/units/${limit}`" @click.prevent="GoTo(`/units/${limit}`)">
 										<b-badge class="unit-name-badge" variant="primary">{{ UnitName(limit) }} 🔗</b-badge>
 									</a>
@@ -352,10 +352,11 @@ export default class EquipModal extends Vue {
 		return stat;
 	}
 
-	private UnitName (idx: number) {
-		const char = UnitData.find(x => x.id === idx);
+	private UnitName (uid: string) {
+		const char = UnitData.find(x => x.uid === uid);
 		if (char) return char.name;
-		return `Unit${idx}`;
+		// return uid;
+		return undefined;
 	}
 }
 </script>

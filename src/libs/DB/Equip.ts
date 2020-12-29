@@ -33,7 +33,7 @@ export interface Equip {
 	icon: string;
 	craftable: false | number;
 
-	limit: Array<string | number> | null;
+	limit: string[] | null;
 	source: EntitySource[][];
 	upgrade: number;
 	stats: BuffStat[][];
@@ -61,16 +61,9 @@ export namespace Equip {
 
 function parseLimit (limit: string | undefined) {
 	if (!limit) return null;
-
-	return limit
-		.split(",")
-		.map(x => x.toLowerCase())
-		.map(x => {
-			if (/^[0-9]+$/.test(x)) return parseInt(x, 10);
-			return x;
-		})
-		.filter(x => x !== null) as Array<string | number> | null;
+	return limit.split(",").filter(x => x) as string[] | null;
 }
+
 function Compile (): Equip[] {
 	return (Data as RawEquip[]).map(x => ({
 		available: x.available,

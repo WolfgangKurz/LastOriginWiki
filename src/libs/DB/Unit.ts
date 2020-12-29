@@ -578,7 +578,7 @@ function Compile (): Unit[] {
 
 		// 이 전투원 id로 장착이 제한된 장비
 		hasLimited: (() => {
-			const eq = EquipData.find(y => y.limit && y.limit.some(z => z === x.id));
+			const eq = EquipData.find(y => y.limit && y.limit.some(z => z === x.uid));
 			if (!eq) return "";
 
 			return eq.fullKey;

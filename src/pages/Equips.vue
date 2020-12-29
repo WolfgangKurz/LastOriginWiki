@@ -204,8 +204,10 @@ import EquipCard from "./Equips/EquipCard.vue";
 import EquipModal from "./Equips/EquipModal.vue";
 
 import { ACTOR_GRADE, ITEM_TYPE } from "@/libs/Types/Enums";
-import EquipData, { Equip } from "@/libs/DB/Equip";
 import { BuffEffect, BuffEffectListGroupKeys, BuffEffectValue, BUFFEFFECT_TYPE } from "@/libs/Buffs/BuffEffect";
+
+import UnitData from "@/libs/DB/Unit";
+import EquipData, { Equip } from "@/libs/DB/Equip";
 
 import { CurrentEvent, CurrentDate, AssetsRoot, ImageExtension } from "@/libs/Const";
 import { ArrayUnique, groupBy, UpdateTitle } from "@/libs/Functions";
@@ -331,7 +333,7 @@ export default class Equips extends Vue {
 						list.push(new EntitySource("Uninstalled"));
 
 					for (const item of items) {
-						if (item.limit && item.limit.every(y => typeof y === "number")) {
+						if (item.limit && item.limit.every(y => UnitData.some(z => z.uid === y))) {
 							item.limit
 								.forEach(y => list.push(new EntitySource(`Private:${y}`)));
 						}
@@ -385,7 +387,7 @@ export default class Equips extends Vue {
 					sourceRaw: x_.reduce(
 						(p, c) => [
 							...(
-								c.limit && c.limit.every(y => typeof y === "number")
+								c.limit && c.limit.every(y => UnitData.some(z => z.uid === y))
 									? c.limit.map(y => new EntitySource(`Private:${y}`))
 									: []
 							),
@@ -407,8 +409,9 @@ export default class Equips extends Vue {
 
 				// 전용장비
 				const last = x.last;
-				if (last.limit && last.limit.every(y => typeof y === "number")) { // 전용 장비임
-					if (!this.Display.Type.Private) return false; // 전용 장비 필터가 꺼짐
+				if (last.limit && last.limit.every(y => UnitData.some(z => z.uid === y))) { // 전용 장비임
+					if (!this.Display.Type.Private)
+						return false; // 전용 장비 필터가 꺼짐
 				} else { // 그 외 유형
 					const types = [];
 					if (this.Display.Type.Chip) types.push(ITEM_TYPE.CHIP);

@@ -1,5 +1,26 @@
 <template>
 	<div>
+		<changelog-item title="Build 7567" date="2020-12-30">
+			<template #bugfix>
+				<li><b-badge variant="warning">전투원정보</b-badge>의 전투원 정보에 전용장비 정보가 표시되지 않던 문제가 수정되었습니다.</li>
+				<li>
+					<b-badge variant="warning">전투원정보</b-badge>의 스테이터스 계산기의 장비 슬롯의 배경이미지가 표시되지 않던 문제가
+					수정되었습니다.
+				</li>
+				<li><b-badge variant="warning">장비정보</b-badge>의 장비 목록에 전용장비의 전투원이 표시되지 않던 문제가 수정되었습니다.</li>
+				<li><b-badge variant="warning">장비정보</b-badge>의 장비 정보에 전용장비의 전투원이 정상적으로 표시되지 않던 문제가 수정되었습니다.</li>
+			</template>
+			<template #new>
+				<li><b-badge variant="warning">BGM</b-badge> 메뉴에 Talk_07이 추가되었습니다.</li>
+			</template>
+			<template #update>
+				<li><b-badge variant="warning">경험치 계산기</b-badge> 메뉴가 숨겨졌습니다. 리뉴얼 준비중입니다.</li>
+			</template>
+			<template #dialogue>
+				<li><b-badge variant="light">KST 2020-12-30 12:39:07</b-badge>까지의 사용자 참여로 추가된 대사들이 반영되었습니다.</li>
+			</template>
+		</changelog-item>
+
 		<changelog-item title="Build 7561" date="2020-12-28">
 			<template #site>
 				<li>🎄 메리 크리스마스! 🎄 였나요? 저는 내내 이거 고쳤습니다.</li>
