@@ -10,6 +10,8 @@
 		<hr /> -->
 
 		<!-- <component :is="`changelog-${displayDate}`" /> -->
+		<changelog-202101 />
+		<hr />
 		<changelog-202012 />
 		<hr />
 		<changelog-202011 />

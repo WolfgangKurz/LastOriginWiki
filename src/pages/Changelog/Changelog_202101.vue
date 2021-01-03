@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<changelog-item title="Build 7596" date="2021-01-03">
+		<changelog-item title="Build 7602" date="2021-01-03">
 			<template #site>
 				<li>사이트의 스토리지 서버가 공격당해 트래픽 비용이 매우 많이 발생하여 Cloudflare를 적용했습니다.</li>
 			</template>
