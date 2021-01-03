@@ -192,5 +192,7 @@ module.exports = {
 		},
 	},
 };
-if (process.env.NODE_ENV === "production")
-	module.exports.publicPath = "https://lastorigin-wiki-assets.s3.ap-northeast-2.amazonaws.com/publish";
+if (process.env.NODE_ENV === "production") {
+	// module.exports.publicPath = "https://lastorigin-wiki-assets.s3.ap-northeast-2.amazonaws.com/publish";
+	module.exports.publicPath = "/";
+}
