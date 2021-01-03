@@ -3,6 +3,7 @@ import { Decimal } from "decimal.js";
 
 import BuffData from "@/json/buffs";
 import UnitData from "@/libs/DB/Unit";
+import EnemyData from "@/libs/DB/Enemy";
 
 import { BuffEffect, BuffEffectValue, BUFFEFFECT_TYPE } from "@/libs/Buffs/BuffEffect";
 import { BuffTrigger } from "@/libs/Buffs/BuffTrigger";
@@ -101,9 +102,14 @@ function convertBuff (name: string) {
 		if (!unit) return key;
 
 		return `"${unit.name}"`;
+	} else if (name.startsWith("MOB_")) {
+		const key = name.replace(/MOB_MP_(.+)/, "$1");
+		const enemy = EnemyData.find(x => x.id === key);
+		if (!enemy) return key;
+
+		return `"${enemy.name}"`;
 	}
 
-	if (name.startsWith("Effect_BUFF_Flood_N_")) return "침수";
 	return (BuffData as Record<string, string>)[name] ||
 		name;
 }
@@ -216,12 +222,12 @@ function getTriggerText (trigger: BuffTrigger) {
 			if (typeof trigger.in_squad === "string")
 				return "아군에 " + convertBuff(trigger.in_squad) + "이(가) 존재할 때";
 			else
-				return "아군중에 " + trigger.in_squad.map(convertBuff).join(" 또는 ") + "이(가) 존재할 때";
+				return "아군중에 " + ArrayUnique(trigger.in_squad.map(convertBuff)).join(" 또는 ") + "이(가) 존재할 때";
 		} else if ("in_enemy" in trigger) {
 			if (typeof trigger.in_enemy === "string")
 				return "적에 " + convertBuff(trigger.in_enemy) + "이(가) 존재할 때";
 			else
-				return "적 중에 " + trigger.in_enemy.map(convertBuff).join(" 또는 ") + "이(가) 존재할 때";
+				return "적 중에 " + ArrayUnique(trigger.in_enemy.map(convertBuff)).join(" 또는 ") + "이(가) 존재할 때";
 		} else if ("pos" in trigger) {
 			if (typeof trigger.pos === "number") {
 				switch (trigger.pos) {
@@ -246,7 +252,7 @@ function getTriggerText (trigger: BuffTrigger) {
 			if ("func" in trigger.on && Array.isArray(trigger.on.select)) {
 				const select = typeof trigger.on.select[0] === "string"
 					// BuffTrigger_On_BuffKey
-					? ArrayUnique((trigger.on.select as string[]).map(x => convertBuff(x)))
+					? ArrayUnique((trigger.on.select as string[]).map(convertBuff))
 					// BuffTrigger_On_BuffEffectType
 					: ArrayUnique((trigger.on.select as BUFFEFFECT_TYPE[]).map(x => getBuffEffectTypeText(x, trigger.on.attr)));
 
@@ -274,7 +280,7 @@ function getTriggerText (trigger: BuffTrigger) {
 					return out;
 				}
 			} else if ("target" in trigger.on && "stack" in trigger.on) {
-				const select = ArrayUnique((trigger.on.select as string[]).map(x => convertBuff(x)));
+				const select = ArrayUnique((trigger.on.select as string[]).map(convertBuff));
 
 				// BuffTrigger_On_BuffStack
 				const target = {
@@ -289,7 +295,7 @@ function getTriggerText (trigger: BuffTrigger) {
 			} else if ("target" in trigger.on && "func" in trigger.on) {
 				const select = typeof trigger.on.select[0] === "string"
 					// BuffTrigger_On_BuffExists
-					? ArrayUnique((trigger.on.select as string[]).map(x => convertBuff(x)))
+					? ArrayUnique((trigger.on.select as string[]).map(convertBuff))
 					// BuffTrigger_On_BuffTypeExists
 					: ArrayUnique((trigger.on.select as BUFFEFFECT_TYPE[]).map(x => getBuffEffectTypeText(x, trigger.on.attr)));
 
@@ -326,7 +332,7 @@ function getTriggerText (trigger: BuffTrigger) {
 			if (trigger.target.length === 1)
 				return "대상이 " + convertBuff(trigger.target[0]) + "일 때";
 			else
-				return "대상이 " + trigger.target.map(convertBuff).join(", ") + " 중 하나일 때";
+				return "대상이 " + ArrayUnique(trigger.target.map(convertBuff)).join(", ") + " 중 하나일 때";
 		} else if ("unitCount" in trigger) {
 			const filters = typeof trigger.unitCount.filter === "string"
 				? [trigger.unitCount.filter]
@@ -900,12 +906,12 @@ export default function BuffStatus (context: Vue, stat: BuffStat, level?: number
 							{ getBuffText(buff.value, level) }
 							{ getChanceText(buff.value.chance) }
 						</div>
-						<div class="float-right">
-							{ target ? <b-badge variant="stat-def" class="ml-1">{ target }</b-badge> : _e() }
-							{ on ? <b-badge variant="danger" class="ml-1">{ on }</b-badge> : _e() }
-							{ apply ? <b-badge variant="danger" class="ml-1">{ apply }</b-badge> : _e() }
-							{ erase ? <b-badge variant="warning" class="ml-1">{ erase }</b-badge> : _e() }
-							{ stat.maxStack > 0 ? <b-badge variant="dark" class="ml-1">최대 { stat.maxStack } 중첩</b-badge> : _e() }
+						<div class="float-right text-right">
+							{ target ? <b-badge variant="stat-def" class="ml-1 text-wrap">{ target }</b-badge> : _e() }
+							{ on ? <b-badge variant="danger" class="ml-1 text-wrap">{ on }</b-badge> : _e() }
+							{ apply ? <b-badge variant="danger" class="ml-1 text-wrap">{ apply }</b-badge> : _e() }
+							{ erase ? <b-badge variant="warning" class="ml-1 text-wrap">{ erase }</b-badge> : _e() }
+							{ stat.maxStack > 0 ? <b-badge variant="dark" class="ml-1 text-wrap">최대 { stat.maxStack } 중첩</b-badge> : _e() }
 						</div>
 					</div>
 				</div>);
