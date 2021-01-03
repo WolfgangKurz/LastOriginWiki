@@ -36,6 +36,7 @@ import Component from "vue-class-component";
 
 import { UpdateTitle } from "@/libs/Functions";
 
+import Changelog202101 from "@/pages/Changelog/Changelog_202101.vue";
 import Changelog202012 from "@/pages/Changelog/Changelog_202012.vue";
 import Changelog202011 from "@/pages/Changelog/Changelog_202011.vue";
 import Changelog202010 from "@/pages/Changelog/Changelog_202010.vue";
@@ -48,6 +49,7 @@ import { SetMeta } from "@/libs/Meta";
 
 @Component({
 	components: {
+		"changelog-202101": Changelog202101,
 		"changelog-202012": Changelog202012,
 		"changelog-202011": Changelog202011,
 		"changelog-202010": Changelog202010,
