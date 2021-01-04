@@ -2010,7 +2010,7 @@ export default [
     "key": "Shop_Package_RobotMaking_02",
     "name": "신형 로봇 부품 팩",
     "icon": "UI_Icon_Consumable_RobotSPPartPack_T3",
-    "desc": "시작형 파츠/중무장 파츠/고출력 부스터/초합금 장갑판/ 고밀도 연산제어 파츠가 30개씩 들어있는 팩입니다.",
+    "desc": "시작형 파츠/중무장 파츠/고출력 부스터/초합금 장갑판/ 고밀도 연산제어 파츠가 20개씩 들어있는 팩입니다.",
     "func": "HQ_PARTS_L"
   },
   {
@@ -3933,7 +3933,7 @@ export default [
     "key": "CharTicket_Char_BR_Harpy_N",
     "name": "P-22 하르페이아",
     "icon": "InvenIcon_BR_Harpy_N",
-    "desc": "P-22 하르페이아을 영입합니다.",
+    "desc": "P-22 하르페이아를 영입합니다.",
     "func": "CharTicket_Char_BR_Harpy_N"
   },
   {
@@ -4798,14 +4798,14 @@ export default [
     "key": "CharTicket_Char_BR_Banshee_N",
     "name": "A-87 밴시",
     "icon": "InvenIcon_BR_Banshee_N",
-    "desc": "A-87 밴시을 영입합니다.",
+    "desc": "A-87 밴시를 영입합니다.",
     "func": "CharTicket_Char_BR_Banshee_N"
   },
   {
     "key": "CharTicket_Char_BR_Thetis_N",
     "name": "MH-4 테티스",
     "icon": "InvenIcon_BR_Thetis_N",
-    "desc": "MH-4 테티스을 영입합니다.",
+    "desc": "MH-4 테티스를 영입합니다.",
     "func": "CharTicket_Char_BR_Thetis_N"
   },
   {
@@ -4818,7 +4818,7 @@ export default [
   {
     "key": "CharTicket_Char_PECS_Lumberjane_N",
     "name": "럼버제인",
-    "icon": "InvenIcon_Char_PECS_Lumberjane_N",
+    "icon": "InvenIcon_PECS_Lumberjane_N",
     "desc": "럼버제인을 영입합니다.",
     "func": "CharTicket_Char_PECS_Lumberjane_N"
   },
@@ -4956,7 +4956,7 @@ export default [
   {
     "key": "CharTicket_Char_3P_BlackWyrm_N",
     "name": "블랙 웜 S9",
-    "icon": "InvenIcon_Char_3P_BlackWyrm_N",
+    "icon": "InvenIcon_3P_BlackWyrm_N",
     "desc": "블랙웜 S9을 영입합니다.",
     "func": "CharTicket_Char_3P_BlackWyrm_N"
   },
@@ -4969,8 +4969,8 @@ export default [
   {
     "key": "CharTicket_Char_DS_KunoichiZero_N",
     "name": "쿠노이치 제로",
-    "icon": "InvenIcon_Char_DS_KunoichiZero_N",
-    "desc": "쿠노이치 제로을 영입합니다.",
+    "icon": "InvenIcon_DS_KunoichiZero_N",
+    "desc": "쿠노이치 제로를 영입합니다.",
     "func": "CharTicket_Char_DS_KunoichiZero_N"
   },
   {
@@ -5003,16 +5003,16 @@ export default [
   },
   {
     "key": "CharTicket_Char_AGS_RheinRitter_N",
-    "name": "갑판 위의 서약식",
+    "name": "라인리터",
     "icon": "InvenIcon_AGS_RheinRitter_N",
-    "desc": "도료 900개",
+    "desc": "라인리터를 지급합니다",
     "func": "CharTicket_Char_AGS_RheinRitter_N"
   },
   {
     "key": "CharTicket_Char_BR_Shirayuri_N",
-    "name": "서약 배경을 활성화합니다.",
-    "icon": "InvenIcon_Char_BR_Shirayuri_N",
-    "desc": "도료 1500개",
+    "name": "시라유리",
+    "icon": "InvenIcon_BR_Shirayuri_N",
+    "desc": "시라유리을 영입합니다",
     "func": "CharTicket_Char_BR_Shirayuri_N"
   },
   {
@@ -5198,7 +5198,7 @@ export default [
   {
     "key": "CharTicket_Char_3P_SnowFeather_N",
     "name": "스노우 페더",
-    "icon": "InvenIcon_Char_3P_SnowFeather_N",
+    "icon": "InvenIcon_3P_SnowFeather_N",
     "desc": "스노우 페더를 영입합니다.",
     "func": "CharTicket_Char_3P_SnowFeather_N"
   },
@@ -5329,7 +5329,7 @@ export default [
   {
     "key": "CharTicket_Char_PECS_HighElven_N",
     "name": "생명의 세레스티아",
-    "icon": "InvenIcon_Char_PECS_HighElven_N",
+    "icon": "InvenIcon_PECS_HighElven_N",
     "desc": "생명의 세레스티아를 영입합니다.",
     "func": "CharTicket_Char_PECS_HighElven_N"
   },
@@ -5461,15 +5461,15 @@ export default [
   {
     "key": "CharTicket_Char_BR_Andvari_N",
     "name": "C-33 안드바리",
-    "icon": "InvenIcon_Char_BR_Andvari_N",
-    "desc": "C-33 안드바리을 영입합니다. ",
+    "icon": "InvenIcon_BR_Andvari_N",
+    "desc": "C-33 안드바리를 영입합니다. ",
     "func": "CharTicket_Char_BR_Andvari_N"
   },
   {
     "key": "CharTicket_Char_3P_Dryad_N",
     "name": "드리아드",
-    "icon": "InvenIcon_Char_3P_Dryad_N",
-    "desc": "드리아드을 영입합니다.",
+    "icon": "InvenIcon_3P_Dryad_N",
+    "desc": "드리아드를 영입합니다.",
     "func": "CharTicket_Char_3P_Dryad_N"
   },
   {
@@ -5517,7 +5517,7 @@ export default [
   {
     "key": "CharTicket_Char_PECS_Sadius_N",
     "name": "징벌의 사디어스",
-    "icon": "InvenIcon_Char_PECS_Sadius_N",
+    "icon": "InvenIcon_PECS_Sadius_N",
     "desc": "징벌의 사디어스를 영입합니다.",
     "func": "CharTicket_Char_PECS_Sadius_N"
   },
@@ -5703,14 +5703,14 @@ export default [
   {
     "key": "CharTicket_Char_AGS_Watcher_N",
     "name": "와쳐 MQ-20",
-    "icon": "InvenIcon_Char_AGS_Watcher_N",
+    "icon": "InvenIcon_AGS_Watcher_N",
     "desc": "와쳐 MQ-20을 영입합니다.",
     "func": "CharTicket_Char_AGS_Watcher_N"
   },
   {
     "key": "CharTicket_Char_DS_KunoichiKaen_N",
     "name": "쿠노이치 카엔",
-    "icon": "InvenIcon_Char_DS_KunoichiKaen_N",
+    "icon": "InvenIcon_DS_KunoichiKaen_N",
     "desc": "쿠노이치 카엔을 영입합니다.",
     "func": "CharTicket_Char_DS_KunoichiKaen_N"
   },
@@ -5738,14 +5738,14 @@ export default [
   {
     "key": "CharTicket_Char_BR_Hraesvelgr_N",
     "name": "EB-48G 흐레스벨그",
-    "icon": "InvenIcon_Char_BR_Hraesvelgr_N",
+    "icon": "InvenIcon_BR_Hraesvelgr_N",
     "desc": "EB-48G 흐레스벨그를 영입합니다.",
     "func": "CharTicket_Char_BR_Hraesvelgr_N"
   },
   {
     "key": "CharTicket_Char_BR_ALWraith_N",
     "name": "AL 레이스",
-    "icon": "InvenIcon_Char_BR_ALWraith_N",
+    "icon": "InvenIcon_BR_ALWraith_N",
     "desc": "AL 레이스를 영입합니다.",
     "func": "CharTicket_Char_BR_ALWraith_N"
   },
@@ -5840,14 +5840,14 @@ export default [
   {
     "key": "CharTicket_Char_3P_Poi_N",
     "name": "포이",
-    "icon": "InvenIcon_Char_3P_Poi_N",
+    "icon": "InvenIcon_3P_Poi_N",
     "desc": "포이를 영입합니다.",
     "func": "CharTicket_Char_3P_Poi_N"
   },
   {
     "key": "CharTicket_Char_PECS_Leanne_N",
     "name": "자비로운 리앤",
-    "icon": "InvenIcon_Char_PECS_Leanne_N",
+    "icon": "InvenIcon_PECS_Leanne_N",
     "desc": "자비로운 리엔을 영입합니다.",
     "func": "CharTicket_Char_PECS_Leanne_N"
   },
@@ -5882,14 +5882,14 @@ export default [
   {
     "key": "CharTicket_Char_3P_Eternity_N",
     "name": "이터니티",
-    "icon": "InvenIcon_Char_3P_Eternity_N",
+    "icon": "InvenIcon_3P_Eternity_N",
     "desc": "이터니티를 지급합니다",
     "func": "CharTicket_Char_3P_Eternity_N"
   },
   {
     "key": "CharTicket_Char_AGS_Goltarion_N",
     "name": "골타리온 XIII세",
-    "icon": "InvenIcon_Char_AGS_Goltarion_N",
+    "icon": "InvenIcon_AGS_Goltarion_N",
     "desc": "골타리온 XIII세를 지급합니다",
     "func": "CharTicket_Char_AGS_Goltarion_N"
   },
@@ -6029,14 +6029,14 @@ export default [
   {
     "key": "CharTicket_Char_PECS_Azaz_N",
     "name": "해체자 아자즈",
-    "icon": "InvenIcon_Char_PECS_Azaz_N",
+    "icon": "InvenIcon_PECS_Azaz_N",
     "desc": "해체자 아자즈을 지급합니다",
     "func": "CharTicket_Char_PECS_Azaz_N"
   },
   {
     "key": "CharTicket_Char_PECS_LemonadeAlpha_N",
     "name": "레모네이드 알파",
-    "icon": "InvenIcon_Char_PECS_LemonadeAlpha_N",
+    "icon": "InvenIcon_PECS_LemonadeAlpha_N",
     "desc": "레모네이드 알파을 지급합니다",
     "func": "CharTicket_Char_PECS_LemonadeAlpha_N"
   },
@@ -6379,7 +6379,7 @@ export default [
   {
     "key": "CharTicket_Char_PECS_Ella_N",
     "name": "천공의 엘라",
-    "icon": "InvenIcon_Char_PECS_Ella_N",
+    "icon": "InvenIcon_PECS_Ella_N",
     "desc": "천공의 엘라를 지급합니다",
     "func": "CharTicket_Char_PECS_Ella_N"
   },
@@ -6449,15 +6449,15 @@ export default [
   {
     "key": "CharTicket_Char_PECS_Rena_N",
     "name": "레나 더 챔피언",
-    "icon": "InvenIcon_Char_PECS_Rena_N",
+    "icon": "InvenIcon_PECS_Rena_N",
     "desc": "레나 더 챔피언을 지급합니다",
     "func": "CharTicket_Char_PECS_Rena_N"
   },
   {
     "key": "CharTicket_Char_PECS_Mery_N",
     "name": "메리",
-    "icon": "InvenIcon_Char_PECS_Mery_N",
-    "desc": "메리을 지급합니다",
+    "icon": "InvenIcon_PECS_Mery_N",
+    "desc": "메리를 지급합니다",
     "func": "CharTicket_Char_PECS_Mery_N"
   },
   {
@@ -6911,5 +6911,135 @@ export default [
     "icon": "UI_Icon_TunaCan_T6X2",
     "desc": "참치캔 1300개를 지급 합니다.",
     "func": "TunaCan_1080_220"
+  },
+  {
+    "key": "Consumable_BG_14",
+    "name": "평화로운 초원",
+    "icon": "UI_ICON_BG_14",
+    "desc": "답답한 실내를 벗어나 마음껏 뛰어다니고 싶은 평화로운 초원입니다. 언젠가 모두 함께 탁 트인 초원에서 마음껏 피크닉을 즐기는 모습이 눈에 그려지네요.",
+    "func": "BG_14"
+  },
+  {
+    "key": "Shop_Package_RobotMaking_03",
+    "name": "신형 로봇 부품 팩 2",
+    "icon": "UI_Icon_Consumable_RobotSPPartPack_T4",
+    "desc": "시작형 파츠/중무장 파츠/고출력 부스터/초합금 장갑판/ 고밀도 연산제어 파츠가 30개씩 들어있는 팩입니다.",
+    "func": "HQ_PARTS_L2"
+  },
+  {
+    "key": "CharTicket_Char_PECS_Machina_N",
+    "name": "마키나",
+    "icon": "InvenIcon_PECS_Rena_N",
+    "desc": "마키나를 지급합니다",
+    "func": "CharTicket_Char_PECS_Machina_N"
+  },
+  {
+    "key": "CharTicket_Char_BR_Salamander_N",
+    "name": "A-15 샐러맨더",
+    "icon": "InvenIcon_PECS_Mery_N",
+    "desc": "A-15 샐러맨더를 지급합니다",
+    "func": "CharTicket_Char_BR_Salamander_N"
+  },
+  {
+    "key": "Skin_3P_Alice_2",
+    "name": "보석 비키니(앨리스)",
+    "icon": "UI_Icon_Skin_3P_Alice_2",
+    "desc": "앨리스는 역시 샬럿이 과감한 차림으로 당신에게 대쉬했던 것이 마음에 안들었나 봅니다. 의상은 물론, 스타일 까지 똑같이 따라해서 자신이 더 아름답고 우아하다는 걸 증명하고 싶어하네요. 원하는 대답을 해준다면, 앨리스도 당신을 기쁘게 해줄지도요?",
+    "func": "Skin_3P_Alice_2"
+  },
+  {
+    "key": "Skin_BR_ALWraith_1",
+    "name": "특급 요원 장비(레이스)",
+    "icon": "UI_Icon_Skin_BR_ALWraith_1",
+    "desc": "레이스의 욕망 중 하나는 역시 동경의 대상인 팬텀을 본받는 거겠죠. 그런 의미에서 이 복장은 그녀에게 아주 큰 선물이 될 겁니다. 사이즈는 조금 작은 것 같지만, 본인이 좋아하는 것 같으니 모른 척 해주는 게 좋겠네요.",
+    "func": "Skin_BR_ALWraith_1"
+  },
+  {
+    "key": "Skin_3P_Eternity_1",
+    "name": "구속구(이터니티)",
+    "icon": "UI_Icon_Skin_3P_Eternity_1",
+    "desc": "지나가듯 던진 농담이었지만, 매사 진지한 이터니티는 있는 그대로 받아들이고 말았습니다. 단순히 복장 뿐만이 아니라, 행동도 배워온 것 같은데... 이렇게 된 이상, 그에 맞춰줄 수밖에 없지 않을까요?",
+    "func": "Skin_3P_Eternity_1"
+  },
+  {
+    "key": "Shop_Package_Skin_3P_Alice_2",
+    "name": "해변의 여왕의 유혹",
+    "icon": "UI_Icon_SkinPack_3P_Alice_2",
+    "desc": "앨리스용 보석 비키니 스킨과 수제 케이크 1개, 초콜릿 2개, 합성 롤리팝 3개가 들어있는 팩입니다.",
+    "func": "Shop_Package_Skin_3P_Alice_2"
+  },
+  {
+    "key": "Shop_Package_Skin_BR_ALWraith_1",
+    "name": "특급 요원 레이스",
+    "icon": "UI_Icon_SkinPack_BR_ALWraith_1",
+    "desc": "AL 레이스용 특급 요원 장비 스킨과 수제 케이크 1개, 초콜릿 2개, 합성 롤리팝 3개가 들어있는 팩입니다.",
+    "func": "Shop_Package_Skin_BR_ALWraith_1"
+  },
+  {
+    "key": "Shop_Package_Skin_3P_Eternity_1",
+    "name": "오르카 강아지, 이터니티",
+    "icon": "UI_Icon_SkinPack_3P_Eternity_1",
+    "desc": "이터니티용 구속구 스킨과 수제 케이크 1개, 초콜릿 2개, 합성 롤리팝 3개가 들어있는 팩입니다.",
+    "func": "Shop_Package_Skin_3P_Eternity_1"
+  },
+  {
+    "key": "Ev_Consumable_BatteryAABag10",
+    "name": "소형 배터리 팩 10",
+    "icon": "Ev_Consumable_BatteryAABag10",
+    "desc": "소형 배터리 10개가 들어있습니다.",
+    "func": "Ev_Consumable_BatteryAABag10"
+  },
+  {
+    "key": "Ev_Consumable_BatteryAABag100",
+    "name": "소형 배터리 팩 100",
+    "icon": "Ev_Consumable_BatteryAABag100",
+    "desc": "소형 배터리 100개가 들어있습니다.",
+    "func": "Ev_Consumable_BatteryAABag100"
+  },
+  {
+    "key": "Ev_Consumable_BatteryAABag1000",
+    "name": "소형 배터리 팩 1000",
+    "icon": "Ev_Consumable_BatteryAABag1000",
+    "desc": "소형 배터리 1000개가 들어있습니다.",
+    "func": "Ev_Consumable_BatteryAABag1000"
+  },
+  {
+    "key": "Ev_Consumable_BatteryFC-1Bag10",
+    "name": "중형 배터리 팩 10",
+    "icon": "Ev_Consumable_BatteryFC-1Bag10",
+    "desc": "중형 배터리 10개가 들어있습니다.",
+    "func": "Ev_Consumable_BatteryFC-1Bag10"
+  },
+  {
+    "key": "Ev_Consumable_BatteryFC-1Bag100",
+    "name": "중형 배터리 팩 100",
+    "icon": "Ev_Consumable_BatteryFC-1Bag100",
+    "desc": "중형 배터리 100개가 들어있습니다.",
+    "func": "Ev_Consumable_BatteryFC-1Bag100"
+  },
+  {
+    "key": "Ev_Consumable_BatteryFC-1Bag1000",
+    "name": "중형 배터리 팩 1000",
+    "icon": "Ev_Consumable_BatteryFC-1Bag1000",
+    "desc": "중형 배터리 1000개가 들어있습니다.",
+    "func": "Ev_Consumable_BatteryFC-1Bag1000"
+  },
+  {
+    "key": "Ev_Consumable_2ndAnniversaryTicket",
+    "name": "2주년 기념 스킨 교환권",
+    "icon": "UI_Icon_Consumable_2ndAnniversaryTicket",
+    "desc": "사령관님과의 2주년을 기념하는 티켓입니다. 향후 이벤트 교환소에서 특별한 보상으로 교환할 수 있습니다."
+  },
+  {
+    "key": "Ev_Consumable_BlueprintDraculina",
+    "name": "드라큐리나 설계도",
+    "icon": "Ev_Consumable_BlueprintDraculina",
+    "desc": "탐색 중 우연히 발견한 설계도 입니다. 여러 장을 모으면 해당 캐릭터를 획득 할 수 있습니다."
+  },
+  {
+    "key": "Ev_Consumable_BlueprintEternity",
+    "name": "이터니티 설계도",
+    "icon": "Ev_Consumable_BlueprintEternity",
+    "desc": "탐색 중 우연히 발견한 설계도 입니다. 여러 장을 모으면 해당 캐릭터를 획득 할 수 있습니다."
   }
 ];

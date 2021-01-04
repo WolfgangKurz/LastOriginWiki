@@ -103810,7 +103810,7 @@ export default {
           ]
         },
         {
-          "name": "오르카 침공 방어  I",
+          "name": "오르카 침공 방어 I",
           "desc": "더욱 강하고 많은 철충이 오르카를 습격하고 있습니다.",
           "prev": 15,
           "offset": 16,
@@ -104553,6 +104553,3992 @@ export default {
                 {
                   "id": "FridgerHead_TU3",
                   "lv": 65
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "title": "낙원으로부터 온 초대장 2부",
+      "list": [
+        {
+          "name": "엇나간 의지",
+          "desc": "그녀의 의지는 강철과 같고, 그 자비심은 성인에 비견됩니다.",
+          "prev": 15,
+          "offset": 8,
+          "text": "Ev2-1",
+          "search": {
+            "time": 1800,
+            "metal": 140,
+            "nutrient": 0,
+            "power": 0,
+            "units": 2,
+            "unitsLv": 20,
+            "items": [
+              {
+                "count": 2,
+                "item": "Consumable_AccountBook",
+                "chance": 100
+              }
+            ]
+          },
+          "missions": [
+            "스테이지 클리어",
+            "전투 불능 캐릭터 없이 클리어",
+            "8 라운드 이내에 클리어",
+            "피격 횟수 6번 이하로 클리어"
+          ],
+          "reward_f": [
+            {
+              "count": 60,
+              "item": "TestItem_10"
+            }
+          ],
+          "reward_am": [
+            {
+              "cash": 2
+            }
+          ],
+          "wave": [
+            {
+              "exp": 625,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 38
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_Chip_Atk_T1",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Acc_T1",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Def_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_BR_Leprechaun_N"
+                },
+                {
+                  "id": "Char_3P_Fotia_N"
+                },
+                {
+                  "id": "Char_BR_WarWolf_N"
+                },
+                {
+                  "id": "Char_BR_Tomoe_N"
+                },
+                {
+                  "id": "Char_BR_Impet_N"
+                }
+              ],
+              "enemy": [
+                null,
+                null,
+                {
+                  "id": "Fallen_TU2",
+                  "lv": 30
+                },
+                {
+                  "id": "Drone_TU3",
+                  "lv": 30
+                },
+                null,
+                {
+                  "id": "PuppHead_TU2",
+                  "lv": 30
+                },
+                null,
+                null,
+                {
+                  "id": "Fallen_TU2",
+                  "lv": 30
+                }
+              ]
+            },
+            {
+              "exp": 625,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 38
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_Chip_Atk_T1",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Acc_T1",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Def_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_BR_Leprechaun_N"
+                },
+                {
+                  "id": "Char_3P_Fotia_N"
+                },
+                {
+                  "id": "Char_BR_WarWolf_N"
+                },
+                {
+                  "id": "Char_BR_Tomoe_N"
+                },
+                {
+                  "id": "Char_BR_Impet_N"
+                }
+              ],
+              "enemy": [
+                null,
+                null,
+                {
+                  "id": "Drone_TU3",
+                  "lv": 30
+                },
+                {
+                  "id": "PuppHead_TU2",
+                  "lv": 30
+                },
+                {
+                  "id": "Stinger_TU3",
+                  "lv": 30
+                },
+                null,
+                null,
+                null,
+                {
+                  "id": "Drone_TU3",
+                  "lv": 30
+                }
+              ]
+            },
+            {
+              "exp": 625,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 38
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_Chip_Atk_T3",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Atk_T1",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Acc_T1",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Def_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_BR_Leprechaun_N"
+                },
+                {
+                  "id": "Char_3P_Fotia_N"
+                },
+                {
+                  "id": "Char_BR_WarWolf_N"
+                },
+                {
+                  "id": "Char_BR_Tomoe_N"
+                },
+                {
+                  "id": "Char_BR_Impet_N"
+                }
+              ],
+              "enemy": [
+                {
+                  "id": "PuppHead_TU2",
+                  "lv": 31
+                },
+                null,
+                null,
+                null,
+                {
+                  "id": "Fallen_TU2",
+                  "lv": 31
+                },
+                {
+                  "id": "Seljuq_TU2",
+                  "lv": 21
+                },
+                {
+                  "id": "PuppHead_TU2",
+                  "lv": 31
+                },
+                null,
+                null
+              ]
+            }
+          ]
+        },
+        {
+          "name": "본성에 대하여",
+          "desc": "눈을 떠라, 눈을 떠라 내 안에 잠든 본성.",
+          "prev": 8,
+          "offset": 9,
+          "text": "Ev2-2",
+          "search": {
+            "time": 2700,
+            "metal": 150,
+            "nutrient": 150,
+            "power": 0,
+            "units": 3,
+            "unitsLv": 20,
+            "items": [
+              {
+                "count": 3,
+                "item": "Consumable_AccountBook",
+                "chance": 100
+              }
+            ]
+          },
+          "missions": [
+            "스테이지 클리어",
+            "전투 불능 캐릭터 없이 클리어",
+            "8 라운드 이내에 클리어",
+            "피격 횟수 6번 이하로 클리어"
+          ],
+          "reward_f": [
+            {
+              "count": 30,
+              "item": "TestItem_6"
+            }
+          ],
+          "reward_am": [
+            {
+              "cash": 2
+            }
+          ],
+          "wave": [
+            {
+              "exp": 650,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 38
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_Chip_Acc_T1",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Def_T1",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Ev_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_BR_Wraithy_N"
+                },
+                {
+                  "id": "Char_BR_Gnome_N"
+                },
+                {
+                  "id": "Char_PECS_MissSafety_N"
+                },
+                {
+                  "id": "Char_DS_Johanna_N"
+                },
+                {
+                  "id": "Char_PECS_DutchGirl_N"
+                }
+              ],
+              "enemy": [
+                null,
+                {
+                  "id": "Drone_TU3",
+                  "lv": 31
+                },
+                null,
+                {
+                  "id": "Fallen_TU2",
+                  "lv": 31
+                },
+                null,
+                {
+                  "id": "PuppHead_TU2",
+                  "lv": 31
+                },
+                null,
+                {
+                  "id": "Drone_TU3",
+                  "lv": 31
+                },
+                null
+              ]
+            },
+            {
+              "exp": 650,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 38
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_Chip_Acc_T1",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Def_T1",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Ev_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_BR_Wraithy_N"
+                },
+                {
+                  "id": "Char_BR_Gnome_N"
+                },
+                {
+                  "id": "Char_PECS_MissSafety_N"
+                },
+                {
+                  "id": "Char_DS_Johanna_N"
+                },
+                {
+                  "id": "Char_PECS_DutchGirl_N"
+                }
+              ],
+              "enemy": [
+                {
+                  "id": "Rampart_TU2",
+                  "lv": 31
+                },
+                null,
+                null,
+                {
+                  "id": "PuppHead_TU2",
+                  "lv": 31
+                },
+                null,
+                {
+                  "id": "Seljuq_TU2",
+                  "lv": 21
+                },
+                {
+                  "id": "Rampart_TU2",
+                  "lv": 31
+                },
+                null,
+                null
+              ]
+            },
+            {
+              "exp": 650,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 38
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_Chip_Acc_T3",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Acc_T1",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Def_T1",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Ev_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_BR_Wraithy_N"
+                },
+                {
+                  "id": "Char_BR_Gnome_N"
+                },
+                {
+                  "id": "Char_PECS_MissSafety_N"
+                },
+                {
+                  "id": "Char_DS_Johanna_N"
+                },
+                {
+                  "id": "Char_PECS_DutchGirl_N"
+                }
+              ],
+              "enemy": [
+                {
+                  "id": "Stinger_TU3",
+                  "lv": 32
+                },
+                null,
+                null,
+                {
+                  "id": "Rampart_TU2",
+                  "lv": 32
+                },
+                {
+                  "id": "Fallen_TU2",
+                  "lv": 32
+                },
+                {
+                  "id": "AMG11_TU2",
+                  "lv": 32
+                },
+                {
+                  "id": "Stinger_TU3",
+                  "lv": 32
+                },
+                null,
+                null
+              ]
+            }
+          ]
+        },
+        {
+          "name": "의문의 버튼",
+          "desc": "장비를 정지합니다, 되잖아?",
+          "prev": 9,
+          "offset": 10,
+          "text": "Ev2-3",
+          "search": {
+            "time": 10800,
+            "metal": 110,
+            "nutrient": 120,
+            "power": 320,
+            "units": 4,
+            "unitsLv": 20,
+            "items": [
+              {
+                "count": 11,
+                "item": "Consumable_AccountBook",
+                "chance": 100
+              }
+            ]
+          },
+          "missions": [
+            "스테이지 클리어",
+            "전투 불능 캐릭터 없이 클리어",
+            "8 라운드 이내에 클리어",
+            "피격 횟수 6번 이하로 클리어"
+          ],
+          "reward_f": [
+            {
+              "count": 8,
+              "item": "TestItem_7"
+            }
+          ],
+          "reward_am": [
+            {
+              "cash": 2
+            }
+          ],
+          "wave": [
+            {
+              "exp": 675,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 38
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_Chip_Def_T1",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Ev_T1",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Cri_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_BR_SandMan_N"
+                },
+                {
+                  "id": "Char_BR_Djinnia_N"
+                },
+                {
+                  "id": "Char_BR_Brownie_N"
+                },
+                {
+                  "id": "Char_BR_Gremlin_N"
+                },
+                {
+                  "id": "Char_PECS_LRL_N"
+                }
+              ],
+              "enemy": [
+                {
+                  "id": "AMG11_TU2",
+                  "lv": 32
+                },
+                null,
+                null,
+                {
+                  "id": "Rampart_TU2",
+                  "lv": 32
+                },
+                null,
+                {
+                  "id": "PuppHead_TU2",
+                  "lv": 32
+                },
+                {
+                  "id": "AMG11_TU2",
+                  "lv": 32
+                },
+                null,
+                null
+              ]
+            },
+            {
+              "exp": 675,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 38
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_Chip_Def_T1",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Ev_T1",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Cri_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_BR_SandMan_N"
+                },
+                {
+                  "id": "Char_BR_Djinnia_N"
+                },
+                {
+                  "id": "Char_BR_Brownie_N"
+                },
+                {
+                  "id": "Char_BR_Gremlin_N"
+                },
+                {
+                  "id": "Char_PECS_LRL_N"
+                }
+              ],
+              "enemy": [
+                null,
+                null,
+                {
+                  "id": "Fallen_TU2",
+                  "lv": 32
+                },
+                {
+                  "id": "PuppHead_TU2",
+                  "lv": 32
+                },
+                null,
+                {
+                  "id": "Seljuq_TU2",
+                  "lv": 22
+                },
+                null,
+                null,
+                {
+                  "id": "Fallen_TU2",
+                  "lv": 32
+                }
+              ]
+            },
+            {
+              "exp": 675,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 38
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_Chip_Def_T3",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Def_T1",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Ev_T1",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Cri_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_BR_SandMan_N"
+                },
+                {
+                  "id": "Char_BR_Djinnia_N"
+                },
+                {
+                  "id": "Char_BR_Brownie_N"
+                },
+                {
+                  "id": "Char_BR_Gremlin_N"
+                },
+                {
+                  "id": "Char_PECS_LRL_N"
+                }
+              ],
+              "enemy": [
+                null,
+                {
+                  "id": "PuppHead_TU2",
+                  "lv": 33
+                },
+                null,
+                {
+                  "id": "Rampart_TU2",
+                  "lv": 33
+                },
+                {
+                  "id": "Fallen_TU2",
+                  "lv": 33
+                },
+                {
+                  "id": "Seljuq_TU2",
+                  "lv": 23
+                },
+                null,
+                {
+                  "id": "PuppHead_TU2",
+                  "lv": 33
+                },
+                null
+              ]
+            }
+          ]
+        },
+        {
+          "name": "스트라이커즈",
+          "desc": "스트라이커즈 출격. 미나, 티아멧 갑니다!",
+          "prev": 10,
+          "offset": 11,
+          "text": "Ev2-4",
+          "search": {
+            "time": 2700,
+            "metal": 0,
+            "nutrient": 150,
+            "power": 150,
+            "units": 2,
+            "unitsLv": 30,
+            "items": [
+              {
+                "count": 3,
+                "item": "Consumable_AccountBook",
+                "chance": 100
+              }
+            ]
+          },
+          "missions": [
+            "스테이지 클리어",
+            "전투 불능 캐릭터 없이 클리어",
+            "8 라운드 이내에 클리어",
+            "피격 횟수 6번 이하로 클리어"
+          ],
+          "reward_f": [
+            {
+              "count": 5,
+              "item": "TestItem_9"
+            }
+          ],
+          "reward_am": [
+            {
+              "cash": 2
+            }
+          ],
+          "wave": [
+            {
+              "exp": 700,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 38
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_Chip_Ev_T1",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Cri_T1",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Atk_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_ST_Lancer_N"
+                },
+                {
+                  "id": "Char_PECS_Tiequan_N"
+                },
+                {
+                  "id": "Char_3P_Aqua_N"
+                },
+                {
+                  "id": "Char_BR_Leprechaun_N"
+                },
+                {
+                  "id": "Char_3P_Fotia_N"
+                }
+              ],
+              "enemy": [
+                {
+                  "id": "Fallen_TU2",
+                  "lv": 33
+                },
+                null,
+                null,
+                {
+                  "id": "Drone_TU3",
+                  "lv": 33
+                },
+                null,
+                {
+                  "id": "PuppHead_TU2",
+                  "lv": 33
+                },
+                {
+                  "id": "Fallen_TU2",
+                  "lv": 33
+                },
+                null,
+                null
+              ]
+            },
+            {
+              "exp": 700,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 38
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_Chip_Ev_T1",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Cri_T1",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Atk_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_ST_Lancer_N"
+                },
+                {
+                  "id": "Char_PECS_Tiequan_N"
+                },
+                {
+                  "id": "Char_3P_Aqua_N"
+                },
+                {
+                  "id": "Char_BR_Leprechaun_N"
+                },
+                {
+                  "id": "Char_3P_Fotia_N"
+                }
+              ],
+              "enemy": [
+                null,
+                null,
+                {
+                  "id": "Drone_TU3",
+                  "lv": 33
+                },
+                {
+                  "id": "Fortress_TU3",
+                  "lv": 23
+                },
+                {
+                  "id": "Fallen_TU2",
+                  "lv": 33
+                },
+                {
+                  "id": "PuppHead_TU2",
+                  "lv": 33
+                },
+                null,
+                null,
+                {
+                  "id": "Drone_TU3",
+                  "lv": 33
+                }
+              ]
+            },
+            {
+              "exp": 700,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 38
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_Chip_Ev_T3",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Ev_T1",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Cri_T1",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Atk_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_ST_Lancer_N"
+                },
+                {
+                  "id": "Char_PECS_Tiequan_N"
+                },
+                {
+                  "id": "Char_3P_Aqua_N"
+                },
+                {
+                  "id": "Char_BR_Leprechaun_N"
+                },
+                {
+                  "id": "Char_3P_Fotia_N"
+                }
+              ],
+              "enemy": [
+                {
+                  "id": "PuppHead_TU2",
+                  "lv": 33
+                },
+                null,
+                {
+                  "id": "Fallen_TU2",
+                  "lv": 33
+                },
+                {
+                  "id": "Stinger_TU3",
+                  "lv": 33
+                },
+                null,
+                {
+                  "id": "Drone_TU3",
+                  "lv": 33
+                },
+                {
+                  "id": "PuppHead_TU2",
+                  "lv": 33
+                },
+                null,
+                {
+                  "id": "Fallen_TU2",
+                  "lv": 33
+                }
+              ]
+            },
+            {
+              "exp": 700,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 38
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_Chip_Ev_T3",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Ev_T1",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Cri_T1",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Atk_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_ST_Lancer_N"
+                },
+                {
+                  "id": "Char_PECS_Tiequan_N"
+                },
+                {
+                  "id": "Char_3P_Aqua_N"
+                },
+                {
+                  "id": "Char_BR_Leprechaun_N"
+                },
+                {
+                  "id": "Char_3P_Fotia_N"
+                }
+              ],
+              "enemy": [
+                {
+                  "id": "Fortress_TU3",
+                  "lv": 24
+                },
+                {
+                  "id": "Stinger_TU3",
+                  "lv": 34
+                },
+                null,
+                {
+                  "id": "Rampart_TU2",
+                  "lv": 34
+                },
+                {
+                  "id": "PuppHead_TU2",
+                  "lv": 34
+                },
+                null,
+                {
+                  "id": "Fortress_TU3",
+                  "lv": 24
+                },
+                {
+                  "id": "Stinger_TU3",
+                  "lv": 34
+                },
+                null
+              ]
+            }
+          ]
+        },
+        {
+          "name": "폭주하는 기계",
+          "desc": "모두 해피란 이름의 폭군을 맞이하여 공포에 떨게 될 것입니다.",
+          "prev": 11,
+          "offset": 12,
+          "text": "Ev2-5",
+          "search": {
+            "time": 36000,
+            "metal": 280,
+            "nutrient": 720,
+            "power": 360,
+            "units": 3,
+            "unitsLv": 30,
+            "items": [
+              {
+                "count": 32,
+                "item": "Consumable_AccountBook",
+                "chance": 100
+              }
+            ]
+          },
+          "missions": [
+            "스테이지 클리어",
+            "전투 불능 캐릭터 없이 클리어",
+            "8 라운드 이내에 클리어",
+            "피격 횟수 6번 이하로 클리어"
+          ],
+          "reward_f": [
+            {
+              "count": 4,
+              "item": "Mysterious_Circuit"
+            }
+          ],
+          "reward_am": [
+            {
+              "cash": 2
+            }
+          ],
+          "wave": [
+            {
+              "exp": 725,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 38
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_Chip_Cri_T1",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Atk_T1",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Acc_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_BR_Bulgasari_N"
+                },
+                {
+                  "id": "Char_BR_AS12TurtleDragon_N"
+                },
+                {
+                  "id": "Char_BR_PoniesAnger_N"
+                },
+                {
+                  "id": "Char_BR_WarWolf_N"
+                },
+                {
+                  "id": "Char_BR_Tomoe_N"
+                }
+              ],
+              "enemy": [
+                {
+                  "id": "NightChickS_TU3",
+                  "lv": 34
+                },
+                null,
+                {
+                  "id": "NightChickAQ_TU",
+                  "lv": 34
+                },
+                null,
+                {
+                  "id": "HarvesterEX_TU",
+                  "lv": 24
+                },
+                null,
+                {
+                  "id": "NightChickS_TU3",
+                  "lv": 34
+                },
+                null,
+                {
+                  "id": "NightChickAQ_TU",
+                  "lv": 34
+                }
+              ]
+            },
+            {
+              "exp": 725,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 38
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_Chip_Cri_T1",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Atk_T1",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Acc_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_BR_Bulgasari_N"
+                },
+                {
+                  "id": "Char_BR_AS12TurtleDragon_N"
+                },
+                {
+                  "id": "Char_BR_PoniesAnger_N"
+                },
+                {
+                  "id": "Char_BR_WarWolf_N"
+                },
+                {
+                  "id": "Char_BR_Tomoe_N"
+                }
+              ],
+              "enemy": [
+                {
+                  "id": "NightChickS_TU3",
+                  "lv": 24
+                },
+                null,
+                null,
+                {
+                  "id": "HarvesterEX_TU",
+                  "lv": 24
+                },
+                {
+                  "id": "FridgerShell_N",
+                  "lv": 14
+                },
+                {
+                  "id": "NightChickAQ_TU",
+                  "lv": 34
+                },
+                {
+                  "id": "NightChickS_TU3",
+                  "lv": 24
+                },
+                null,
+                null
+              ]
+            },
+            {
+              "exp": 725,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 38
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_Chip_Cri_T3",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Cri_T1",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Atk_T1",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Acc_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_BR_Bulgasari_N"
+                },
+                {
+                  "id": "Char_BR_AS12TurtleDragon_N"
+                },
+                {
+                  "id": "Char_BR_PoniesAnger_N"
+                },
+                {
+                  "id": "Char_BR_WarWolf_N"
+                },
+                {
+                  "id": "Char_BR_Tomoe_N"
+                }
+              ],
+              "enemy": [
+                null,
+                {
+                  "id": "NightChickS_TU3",
+                  "lv": 35
+                },
+                {
+                  "id": "FridgerShell_N",
+                  "lv": 15
+                },
+                {
+                  "id": "FABigChickSEX_N",
+                  "lv": 15
+                },
+                {
+                  "id": "NightChickAQ_TU",
+                  "lv": 35
+                },
+                null,
+                null,
+                {
+                  "id": "NightChickS_TU3",
+                  "lv": 35
+                },
+                {
+                  "id": "FridgerShell_N",
+                  "lv": 15
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "영웅 출현",
+          "desc": "폭풍 같은 사건 속에 영웅들이 하나둘씩 모이기 시작합니다.",
+          "prev": 12,
+          "offset": 13,
+          "text": "Ev2-6",
+          "search": {
+            "time": 12000,
+            "metal": 120,
+            "nutrient": 80,
+            "power": 450,
+            "units": 4,
+            "unitsLv": 30,
+            "items": [
+              {
+                "count": 12,
+                "item": "Consumable_AccountBook",
+                "chance": 100
+              }
+            ]
+          },
+          "missions": [
+            "스테이지 클리어",
+            "전투 불능 캐릭터 없이 클리어",
+            "8 라운드 이내에 클리어",
+            "피격 횟수 6번 이하로 클리어"
+          ],
+          "reward_f": [
+            {
+              "count": 400,
+              "item": "Consumable_OriginDust"
+            }
+          ],
+          "reward_am": [
+            {
+              "cash": 2
+            }
+          ],
+          "wave": [
+            {
+              "exp": 750,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 39
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_System_Maneuver_T2",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_System_Maneuver_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_BR_Hraesvelgr_N"
+                },
+                {
+                  "id": "Char_BR_PA00EL_N"
+                },
+                {
+                  "id": "Char_BR_Lindwurm_N"
+                },
+                {
+                  "id": "Char_BR_Impet_N"
+                },
+                {
+                  "id": "Char_BR_Wraithy_N"
+                }
+              ],
+              "enemy": [
+                {
+                  "id": "NightChickS_TU3",
+                  "lv": 35
+                },
+                null,
+                null,
+                {
+                  "id": "NightChickAQ_TU",
+                  "lv": 35
+                },
+                {
+                  "id": "NightChickDE_TU2",
+                  "lv": 35
+                },
+                {
+                  "id": "NightChickAQ_TU",
+                  "lv": 35
+                },
+                {
+                  "id": "NightChickS_TU3",
+                  "lv": 35
+                },
+                null,
+                null
+              ]
+            },
+            {
+              "exp": 750,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 39
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_System_Maneuver_T3",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_System_Maneuver_T2",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_System_Maneuver_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_BR_Hraesvelgr_N"
+                },
+                {
+                  "id": "Char_BR_PA00EL_N"
+                },
+                {
+                  "id": "Char_BR_Lindwurm_N"
+                },
+                {
+                  "id": "Char_BR_Impet_N"
+                },
+                {
+                  "id": "Char_BR_Wraithy_N"
+                }
+              ],
+              "enemy": [
+                null,
+                {
+                  "id": "NightChickAQ_TU",
+                  "lv": 35
+                },
+                null,
+                {
+                  "id": "FridgerShooter_N",
+                  "lv": 15
+                },
+                {
+                  "id": "Phalangites_TU",
+                  "lv": 25
+                },
+                {
+                  "id": "NightChickDE_TU2",
+                  "lv": 35
+                },
+                null,
+                {
+                  "id": "NightChickAQ_TU",
+                  "lv": 35
+                },
+                null
+              ]
+            },
+            {
+              "exp": 750,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 39
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_System_Maneuver_T4",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_System_Maneuver_T3",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_System_Maneuver_T2",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_System_Maneuver_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_BR_Hraesvelgr_N"
+                },
+                {
+                  "id": "Char_BR_PA00EL_N"
+                },
+                {
+                  "id": "Char_BR_Lindwurm_N"
+                },
+                {
+                  "id": "Char_BR_Impet_N"
+                },
+                {
+                  "id": "Char_BR_Wraithy_N"
+                }
+              ],
+              "enemy": [
+                {
+                  "id": "FridgerShooter_N",
+                  "lv": 16
+                },
+                null,
+                {
+                  "id": "NightChickDE_TU2",
+                  "lv": 36
+                },
+                null,
+                {
+                  "id": "NightChickAQ_TU",
+                  "lv": 36
+                },
+                {
+                  "id": "FABigChickSEX_N",
+                  "lv": 16
+                },
+                {
+                  "id": "FridgerShooter_N",
+                  "lv": 16
+                },
+                null,
+                {
+                  "id": "NightChickDE_TU2",
+                  "lv": 36
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "욕망의 하늘 아래에서",
+          "desc": "그녀의 창은 하늘을 뚫는 창입니다.",
+          "prev": 13,
+          "offset": 14,
+          "text": "Ev2-7",
+          "search": {
+            "time": 14400,
+            "metal": 425,
+            "nutrient": 425,
+            "power": 750,
+            "units": 4,
+            "unitsLv": 40,
+            "items": [
+              {
+                "count": 14,
+                "item": "Consumable_AccountBook",
+                "chance": 100
+              }
+            ]
+          },
+          "missions": [
+            "스테이지 클리어",
+            "전투 불능 캐릭터 없이 클리어",
+            "8 라운드 이내에 클리어",
+            "피격 횟수 6번 이하로 클리어"
+          ],
+          "reward_f": [
+            {
+              "count": 400,
+              "item": "Consumable_OriginDust"
+            }
+          ],
+          "reward_am": [
+            {
+              "cash": 2
+            }
+          ],
+          "wave": [
+            {
+              "exp": 775,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 39
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_Chip_AtkCri_T2",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_AtkCri_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_3P_Alice_N"
+                },
+                {
+                  "id": "Char_3P_ConstantiaS2_N"
+                },
+                {
+                  "id": "Char_3P_Vanilla_N"
+                },
+                {
+                  "id": "Char_BR_Gnome_N"
+                },
+                {
+                  "id": "Char_PECS_MissSafety_N"
+                }
+              ],
+              "enemy": [
+                null,
+                {
+                  "id": "NightChickAQ_TU",
+                  "lv": 36
+                },
+                null,
+                {
+                  "id": "FridgerShooter_N",
+                  "lv": 16
+                },
+                {
+                  "id": "NightChickS_TU3",
+                  "lv": 36
+                },
+                {
+                  "id": "FridgerHead_N",
+                  "lv": 16
+                },
+                null,
+                {
+                  "id": "NightChickAQ_TU",
+                  "lv": 36
+                },
+                null
+              ]
+            },
+            {
+              "exp": 775,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 39
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_Chip_AtkCri_T3",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_AtkCri_T2",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_AtkCri_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_3P_Alice_N"
+                },
+                {
+                  "id": "Char_3P_ConstantiaS2_N"
+                },
+                {
+                  "id": "Char_3P_Vanilla_N"
+                },
+                {
+                  "id": "Char_BR_Gnome_N"
+                },
+                {
+                  "id": "Char_PECS_MissSafety_N"
+                }
+              ],
+              "enemy": [
+                {
+                  "id": "NightChickAQ_TU",
+                  "lv": 36
+                },
+                null,
+                null,
+                {
+                  "id": "NightChickS_TU3",
+                  "lv": 36
+                },
+                {
+                  "id": "FridgerShell_N",
+                  "lv": 16
+                },
+                {
+                  "id": "FridgerHead_N",
+                  "lv": 16
+                },
+                {
+                  "id": "NightChickAQ_TU",
+                  "lv": 36
+                },
+                null,
+                null
+              ]
+            },
+            {
+              "exp": 775,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 39
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_Chip_AtkCri_T4",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_AtkCri_T3",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_AtkCri_T2",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_AtkCri_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_3P_Alice_N"
+                },
+                {
+                  "id": "Char_3P_ConstantiaS2_N"
+                },
+                {
+                  "id": "Char_3P_Vanilla_N"
+                },
+                {
+                  "id": "Char_BR_Gnome_N"
+                },
+                {
+                  "id": "Char_PECS_MissSafety_N"
+                }
+              ],
+              "enemy": [
+                null,
+                {
+                  "id": "FridgerShooter_N",
+                  "lv": 17
+                },
+                null,
+                {
+                  "id": "FABigChickSEX_N",
+                  "lv": 17
+                },
+                {
+                  "id": "FridgerShell_N",
+                  "lv": 17
+                },
+                {
+                  "id": "FridgerHead_N",
+                  "lv": 17
+                },
+                null,
+                {
+                  "id": "FridgerShooter_N",
+                  "lv": 17
+                },
+                null
+              ]
+            }
+          ]
+        },
+        {
+          "name": "메리, 마키나 크리스마스",
+          "desc": "그녀를 막을 수 있는 건, 오직 당신뿐입니다.",
+          "prev": 14,
+          "offset": 15,
+          "text": "Ev2-8",
+          "search": {
+            "time": 57600,
+            "metal": 400,
+            "nutrient": 1000,
+            "power": 450,
+            "units": 5,
+            "unitsLv": 50,
+            "items": [
+              {
+                "count": 50,
+                "item": "Consumable_AccountBook",
+                "chance": 100
+              }
+            ]
+          },
+          "missions": [
+            "스테이지 클리어",
+            "전투 불능 캐릭터 없이 클리어",
+            "12 라운드 이내에 클리어",
+            "피격 횟수 10번 이하로 클리어"
+          ],
+          "reward_f": [
+            {
+              "count": 150,
+              "item": "Consumable_OriginDustAdv"
+            }
+          ],
+          "reward_am": [
+            {
+              "cash": 3
+            }
+          ],
+          "wave": [
+            {
+              "exp": 800,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 39
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_System_Defense_T2",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_System_Defense_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_3P_BlackWyrm_N"
+                },
+                {
+                  "id": "Char_PECS_Babariana_N"
+                },
+                {
+                  "id": "Char_BR_Andvari_N"
+                },
+                {
+                  "id": "Char_DS_Johanna_N"
+                },
+                {
+                  "id": "Char_PECS_DutchGirl_N"
+                }
+              ],
+              "enemy": [
+                {
+                  "id": "Drone_EV9",
+                  "lv": 37
+                },
+                {
+                  "id": "Fallen_TU2",
+                  "lv": 37
+                },
+                null,
+                null,
+                null,
+                {
+                  "id": "Fallen_TU2",
+                  "lv": 37
+                },
+                {
+                  "id": "Drone_EV9",
+                  "lv": 37
+                },
+                {
+                  "id": "Fallen_TU2",
+                  "lv": 37
+                },
+                null
+              ]
+            },
+            {
+              "exp": 800,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 39
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_System_Defense_T3",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_System_Defense_T2",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_System_Defense_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_3P_BlackWyrm_N"
+                },
+                {
+                  "id": "Char_PECS_Babariana_N"
+                },
+                {
+                  "id": "Char_BR_Andvari_N"
+                },
+                {
+                  "id": "Char_DS_Johanna_N"
+                },
+                {
+                  "id": "Char_PECS_DutchGirl_N"
+                }
+              ],
+              "enemy": [
+                null,
+                {
+                  "id": "PuppHead_TU2",
+                  "lv": 38
+                },
+                {
+                  "id": "PuppHead_TU2",
+                  "lv": 38
+                },
+                {
+                  "id": "Drone_EV9",
+                  "lv": 38
+                },
+                {
+                  "id": "Drone_EV9",
+                  "lv": 38
+                },
+                null,
+                null,
+                {
+                  "id": "PuppHead_TU2",
+                  "lv": 38
+                },
+                {
+                  "id": "PuppHead_TU2",
+                  "lv": 38
+                }
+              ]
+            },
+            {
+              "exp": 800,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 39
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_System_Defense_T4",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_System_Defense_T3",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_System_Defense_T2",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_System_Defense_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_3P_BlackWyrm_N"
+                },
+                {
+                  "id": "Char_PECS_Babariana_N"
+                },
+                {
+                  "id": "Char_BR_Andvari_N"
+                },
+                {
+                  "id": "Char_DS_Johanna_N"
+                },
+                {
+                  "id": "Char_PECS_DutchGirl_N"
+                }
+              ],
+              "enemy": [
+                {
+                  "id": "Drone_EV9",
+                  "lv": 39
+                },
+                null,
+                {
+                  "id": "Drone_EV9",
+                  "lv": 39
+                },
+                null,
+                {
+                  "id": "Drone_EV9",
+                  "lv": 39
+                },
+                {
+                  "id": "Machina_N",
+                  "lv": 40
+                },
+                {
+                  "id": "Drone_EV9",
+                  "lv": 39
+                },
+                null,
+                {
+                  "id": "Drone_EV9",
+                  "lv": 39
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "마키나를 쓰러뜨리기 위해…",
+          "desc": "친구는 아니지만 동료입니다.",
+          "prev": 8,
+          "offset": 1,
+          "text": "Ev2-1B",
+          "search": null,
+          "missions": [
+            "스테이지 클리어",
+            "전투 불능 캐릭터 없이 클리어",
+            "8 라운드 이내에 클리어",
+            "피격 횟수 5번 이하로 클리어"
+          ],
+          "reward_f": [
+            {
+              "metal": 10000
+            }
+          ],
+          "reward_am": [
+            {
+              "cash": 2
+            }
+          ],
+          "wave": [
+            {
+              "exp": 650,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 38
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Weapon",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_CalculationControl",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_BR_SandMan_N"
+                },
+                {
+                  "id": "Char_BR_Djinnia_N"
+                },
+                {
+                  "id": "Char_BR_Brownie_N"
+                },
+                {
+                  "id": "Char_BR_Gremlin_N"
+                },
+                {
+                  "id": "Char_PECS_LRL_N"
+                }
+              ],
+              "enemy": [
+                {
+                  "id": "NightChick_TU3",
+                  "lv": 32
+                },
+                null,
+                null,
+                null,
+                {
+                  "id": "NightChickS_TU3",
+                  "lv": 32
+                },
+                {
+                  "id": "LegionEX_N",
+                  "lv": 32
+                },
+                {
+                  "id": "NightChick_TU3",
+                  "lv": 32
+                },
+                null,
+                null
+              ]
+            },
+            {
+              "exp": 650,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 38
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Weapon",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_CalculationControl",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_BR_SandMan_N"
+                },
+                {
+                  "id": "Char_BR_Djinnia_N"
+                },
+                {
+                  "id": "Char_BR_Brownie_N"
+                },
+                {
+                  "id": "Char_BR_Gremlin_N"
+                },
+                {
+                  "id": "Char_PECS_LRL_N"
+                }
+              ],
+              "enemy": [
+                null,
+                {
+                  "id": "NightChickS_TU3",
+                  "lv": 32
+                },
+                {
+                  "id": "LegionEX_N",
+                  "lv": 32
+                },
+                {
+                  "id": "NightChickS_TU3",
+                  "lv": 32
+                },
+                {
+                  "id": "NightChick_TU3",
+                  "lv": 32
+                },
+                null,
+                null,
+                {
+                  "id": "NightChickS_TU3",
+                  "lv": 32
+                },
+                {
+                  "id": "LegionEX_N",
+                  "lv": 32
+                }
+              ]
+            },
+            {
+              "exp": 650,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 38
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Weapon",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_CalculationControl",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_BR_SandMan_N"
+                },
+                {
+                  "id": "Char_BR_Djinnia_N"
+                },
+                {
+                  "id": "Char_BR_Brownie_N"
+                },
+                {
+                  "id": "Char_BR_Gremlin_N"
+                },
+                {
+                  "id": "Char_PECS_LRL_N"
+                }
+              ],
+              "enemy": [
+                {
+                  "id": "NightChickS_TU3",
+                  "lv": 33
+                },
+                {
+                  "id": "LegionEX_N",
+                  "lv": 33
+                },
+                null,
+                {
+                  "id": "HarvesterEX_TU",
+                  "lv": 33
+                },
+                null,
+                null,
+                {
+                  "id": "NightChickS_TU3",
+                  "lv": 33
+                },
+                {
+                  "id": "LegionEX_N",
+                  "lv": 33
+                },
+                null
+              ]
+            }
+          ]
+        },
+        {
+          "name": "각성",
+          "desc": "활! 부! 램파트 부! 활!",
+          "prev": 11,
+          "offset": 4,
+          "text": "Ev2-4B",
+          "search": null,
+          "missions": [
+            "스테이지 클리어",
+            "전투 불능 캐릭터 없이 클리어",
+            "8 라운드 이내에 클리어",
+            "피격 횟수 5번 이하로 클리어"
+          ],
+          "reward_f": [
+            {
+              "nutrient": 10000
+            }
+          ],
+          "reward_am": [
+            {
+              "cash": 2
+            }
+          ],
+          "wave": [
+            {
+              "exp": 700,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 38
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Weapon",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_CalculationControl",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_PECS_Tiequan_N"
+                },
+                {
+                  "id": "Char_3P_Aqua_N"
+                },
+                {
+                  "id": "Char_BR_Leprechaun_N"
+                },
+                {
+                  "id": "Char_3P_Fotia_N"
+                },
+                {
+                  "id": "Char_BR_WarWolf_N"
+                }
+              ],
+              "enemy": [
+                null,
+                {
+                  "id": "NightChickC_TU3",
+                  "lv": 34
+                },
+                null,
+                {
+                  "id": "NightChick_TU3",
+                  "lv": 34
+                },
+                {
+                  "id": "NightChickS_TU3",
+                  "lv": 34
+                },
+                {
+                  "id": "NightChickCM_N",
+                  "lv": 34
+                },
+                null,
+                {
+                  "id": "NightChickC_TU3",
+                  "lv": 34
+                },
+                null
+              ]
+            },
+            {
+              "exp": 700,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 38
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Weapon",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_CalculationControl",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_PECS_Tiequan_N"
+                },
+                {
+                  "id": "Char_3P_Aqua_N"
+                },
+                {
+                  "id": "Char_BR_Leprechaun_N"
+                },
+                {
+                  "id": "Char_3P_Fotia_N"
+                },
+                {
+                  "id": "Char_BR_WarWolf_N"
+                }
+              ],
+              "enemy": [
+                null,
+                {
+                  "id": "NightChickCM_N",
+                  "lv": 34
+                },
+                {
+                  "id": "NightChick_TU3",
+                  "lv": 34
+                },
+                {
+                  "id": "NightChick_TU3",
+                  "lv": 34
+                },
+                {
+                  "id": "NightChickC_TU3",
+                  "lv": 34
+                },
+                null,
+                null,
+                {
+                  "id": "NightChickCM_N",
+                  "lv": 34
+                },
+                {
+                  "id": "NightChick_TU3",
+                  "lv": 34
+                }
+              ]
+            },
+            {
+              "exp": 700,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 38
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Weapon",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_CalculationControl",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_PECS_Tiequan_N"
+                },
+                {
+                  "id": "Char_3P_Aqua_N"
+                },
+                {
+                  "id": "Char_BR_Leprechaun_N"
+                },
+                {
+                  "id": "Char_3P_Fotia_N"
+                },
+                {
+                  "id": "Char_BR_WarWolf_N"
+                }
+              ],
+              "enemy": [
+                {
+                  "id": "NightChick_TU3",
+                  "lv": 35
+                },
+                null,
+                {
+                  "id": "NightChickCM_N",
+                  "lv": 35
+                },
+                {
+                  "id": "NightChickS_TU3",
+                  "lv": 35
+                },
+                {
+                  "id": "FABigChickEX_TU",
+                  "lv": 15
+                },
+                null,
+                {
+                  "id": "NightChick_TU3",
+                  "lv": 35
+                },
+                null,
+                {
+                  "id": "NightChickCM_N",
+                  "lv": 35
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "임시 동맹",
+          "desc": "마법 소녀들과 대마왕이 힘을 합친다면 누군가 아주 좋아하겠군요.",
+          "prev": 13,
+          "offset": 6,
+          "text": "Ev2-6B",
+          "search": null,
+          "missions": [
+            "스테이지 클리어",
+            "전투 불능 캐릭터 없이 클리어",
+            "8 라운드 이내에 클리어",
+            "피격 횟수 5번 이하로 클리어"
+          ],
+          "reward_f": [
+            {
+              "power": 10000
+            }
+          ],
+          "reward_am": [
+            {
+              "cash": 2
+            }
+          ],
+          "wave": [
+            {
+              "exp": 1600,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 39
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_Chip_KillExp_T2",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_KillExp_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                }
+              ],
+              "enemy": [
+                null,
+                {
+                  "id": "NightChick_TU3",
+                  "lv": 35
+                },
+                null,
+                {
+                  "id": "NightChickS_TU3",
+                  "lv": 35
+                },
+                {
+                  "id": "LegionSP_N",
+                  "lv": 25
+                },
+                {
+                  "id": "NightChickM_TU3",
+                  "lv": 35
+                },
+                null,
+                {
+                  "id": "NightChick_TU3",
+                  "lv": 35
+                },
+                null
+              ]
+            },
+            {
+              "exp": 1600,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 39
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_Chip_KillExp_T3",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_KillExp_T2",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_KillExp_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                }
+              ],
+              "enemy": [
+                null,
+                {
+                  "id": "NightChickS_TU3",
+                  "lv": 35
+                },
+                {
+                  "id": "LegionSP_N",
+                  "lv": 25
+                },
+                {
+                  "id": "NightChick_TU3",
+                  "lv": 35
+                },
+                null,
+                {
+                  "id": "NightChickM_TU3",
+                  "lv": 35
+                },
+                null,
+                {
+                  "id": "NightChickS_TU3",
+                  "lv": 35
+                },
+                {
+                  "id": "LegionSP_N",
+                  "lv": 25
+                }
+              ]
+            },
+            {
+              "exp": 1600,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 39
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_Chip_KillExp_T4",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_KillExp_T3",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_KillExp_T2",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_KillExp_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                }
+              ],
+              "enemy": [
+                {
+                  "id": "NightChickS_TU3",
+                  "lv": 36
+                },
+                null,
+                {
+                  "id": "LegionSP_N",
+                  "lv": 26
+                },
+                {
+                  "id": "FABigChickSEX_N",
+                  "lv": 26
+                },
+                null,
+                {
+                  "id": "CenturionG_TU",
+                  "lv": 16
+                },
+                {
+                  "id": "NightChickS_TU3",
+                  "lv": 36
+                },
+                null,
+                {
+                  "id": "LegionSP_N",
+                  "lv": 26
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "낙원으로 향하는 길",
+          "desc": "그녀를 / 모두를... 구원하기 위해",
+          "prev": 14,
+          "offset": 7,
+          "text": "Ev2-7B",
+          "search": null,
+          "missions": [
+            "스테이지 클리어",
+            "전투 불능 캐릭터 없이 클리어",
+            "8 라운드 이내에 클리어",
+            "피격 횟수 5번 이하로 클리어"
+          ],
+          "reward_f": [
+            {
+              "count": 1,
+              "item": "Equip_Sub_Recycler_T4"
+            }
+          ],
+          "reward_am": [
+            {
+              "cash": 2
+            }
+          ],
+          "wave": [
+            {
+              "exp": 1700,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 39
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_Chip_Spd_T2",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Spd_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                }
+              ],
+              "enemy": [
+                {
+                  "id": "NightChick_TU3",
+                  "lv": 38
+                },
+                {
+                  "id": "NightChickM_TU3",
+                  "lv": 38
+                },
+                null,
+                null,
+                {
+                  "id": "NightChickQM_N",
+                  "lv": 28
+                },
+                null,
+                {
+                  "id": "NightChick_TU3",
+                  "lv": 38
+                },
+                {
+                  "id": "NightChickM_TU3",
+                  "lv": 38
+                },
+                null
+              ]
+            },
+            {
+              "exp": 1700,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 39
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_Chip_Spd_T3",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Spd_T2",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Spd_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                }
+              ],
+              "enemy": [
+                {
+                  "id": "NightChickS_TU3",
+                  "lv": 39
+                },
+                {
+                  "id": "NightChickQM_N",
+                  "lv": 29
+                },
+                null,
+                null,
+                {
+                  "id": "NightChick_TU3",
+                  "lv": 38
+                },
+                {
+                  "id": "NightChickM_TU3",
+                  "lv": 38
+                },
+                {
+                  "id": "NightChickS_TU3",
+                  "lv": 39
+                },
+                {
+                  "id": "NightChickQM_N",
+                  "lv": 29
+                },
+                null
+              ]
+            },
+            {
+              "exp": 1700,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 39
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_Chip_Spd_T4",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Spd_T3",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Spd_T2",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_Chip_Spd_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                }
+              ],
+              "enemy": [
+                null,
+                null,
+                {
+                  "id": "NightChick_TU3",
+                  "lv": 40
+                },
+                {
+                  "id": "FABigChickSEX_N",
+                  "lv": 30
+                },
+                {
+                  "id": "NightChickQM_N",
+                  "lv": 30
+                },
+                {
+                  "id": "EmperorChick_N",
+                  "lv": 20
+                },
+                null,
+                null,
+                {
+                  "id": "NightChick_TU3",
+                  "lv": 40
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "무너진 낙원 I",
+          "desc": "남은 철충 무리를 뚫고 이곳을 탈출해야 합니다.",
+          "prev": 15,
+          "offset": 16,
+          "text": "Ev2-1Ex",
+          "search": null,
+          "missions": [
+            "스테이지 클리어",
+            "전투 불능 캐릭터 없이 클리어",
+            "바이오로이드를 3기 이하로 편성해 클리어",
+            "로봇을 편성하지 않고 클리어"
+          ],
+          "reward_f": [
+            "Char_BR_ALWraith_N"
+          ],
+          "reward_am": [
+            {
+              "cash": 2
+            }
+          ],
+          "wave": [
+            {
+              "exp": 1500,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 41
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_System_AntiTrooperAir_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_DS_Faucre_N"
+                },
+                {
+                  "id": "Char_DS_Charlotte_N"
+                },
+                {
+                  "id": "Char_DS_Baekto_N"
+                },
+                {
+                  "id": "Char_PECS_Saetti_N"
+                },
+                {
+                  "id": "Char_BR_Tomoe_N"
+                },
+                {
+                  "id": "Char_BR_Impet_N"
+                },
+                {
+                  "id": "Char_BR_Wraithy_N"
+                }
+              ],
+              "enemy": [
+                {
+                  "id": "FridgerShell_TU3",
+                  "lv": 60
+                },
+                null,
+                null,
+                {
+                  "id": "NightChickAQ_EV9",
+                  "lv": 60
+                },
+                {
+                  "id": "FridgerShooter_TU3",
+                  "lv": 60
+                },
+                {
+                  "id": "FridgerHead_TU3",
+                  "lv": 60
+                },
+                {
+                  "id": "FridgerShell_TU3",
+                  "lv": 60
+                },
+                null,
+                null
+              ]
+            },
+            {
+              "exp": 1500,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 41
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_System_AntiTrooperAir_T2",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_System_AntiTrooperAir_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_DS_Faucre_N"
+                },
+                {
+                  "id": "Char_DS_Charlotte_N"
+                },
+                {
+                  "id": "Char_DS_Baekto_N"
+                },
+                {
+                  "id": "Char_PECS_Saetti_N"
+                },
+                {
+                  "id": "Char_BR_Tomoe_N"
+                },
+                {
+                  "id": "Char_BR_Impet_N"
+                },
+                {
+                  "id": "Char_BR_Wraithy_N"
+                }
+              ],
+              "enemy": [
+                {
+                  "id": "NightChickAQ_EV9",
+                  "lv": 60
+                },
+                {
+                  "id": "ChillerEX_TU4",
+                  "lv": 60
+                },
+                null,
+                {
+                  "id": "FridgerShell_TU3",
+                  "lv": 60
+                },
+                {
+                  "id": "FridgerShooter_TU3",
+                  "lv": 60
+                },
+                null,
+                {
+                  "id": "ChillerEX_TU4",
+                  "lv": 60
+                },
+                {
+                  "id": "FridgerShell_TU3",
+                  "lv": 60
+                },
+                {
+                  "id": "FridgerHead_TU3",
+                  "lv": 60
+                }
+              ]
+            },
+            {
+              "exp": 1500,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 41
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_System_AntiTrooperAir_T3",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_System_AntiTrooperAir_T2",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_System_AntiTrooperAir_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_DS_Faucre_N"
+                },
+                {
+                  "id": "Char_DS_Charlotte_N"
+                },
+                {
+                  "id": "Char_DS_Baekto_N"
+                },
+                {
+                  "id": "Char_PECS_Saetti_N"
+                },
+                {
+                  "id": "Char_BR_Tomoe_N"
+                },
+                {
+                  "id": "Char_BR_Impet_N"
+                },
+                {
+                  "id": "Char_BR_Wraithy_N"
+                }
+              ],
+              "enemy": [
+                {
+                  "id": "FridgerShell_TU3",
+                  "lv": 60
+                },
+                null,
+                {
+                  "id": "FridgerHead_TU3",
+                  "lv": 60
+                },
+                {
+                  "id": "ChillerEX_TU4",
+                  "lv": 60
+                },
+                {
+                  "id": "FridgerShooter_TU3",
+                  "lv": 60
+                },
+                null,
+                {
+                  "id": "NightChickAQ_EV9",
+                  "lv": 60
+                },
+                {
+                  "id": "ChillerEX_TU4",
+                  "lv": 60
+                },
+                null
+              ]
+            },
+            {
+              "exp": 1500,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 41
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_System_AntiTrooperAir_T4",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_System_AntiTrooperAir_T3",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_System_AntiTrooperAir_T2",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_System_AntiTrooperAir_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_DS_Faucre_N"
+                },
+                {
+                  "id": "Char_DS_Charlotte_N"
+                },
+                {
+                  "id": "Char_DS_Baekto_N"
+                },
+                {
+                  "id": "Char_PECS_Saetti_N"
+                },
+                {
+                  "id": "Char_BR_Tomoe_N"
+                },
+                {
+                  "id": "Char_BR_Impet_N"
+                },
+                {
+                  "id": "Char_BR_Wraithy_N"
+                }
+              ],
+              "enemy": [
+                {
+                  "id": "NightChickAQ_EV9",
+                  "lv": 65
+                },
+                {
+                  "id": "ChillerEX_TU4",
+                  "lv": 65
+                },
+                {
+                  "id": "FridgerHead_TU3",
+                  "lv": 65
+                },
+                {
+                  "id": "FridgerShell_TU3",
+                  "lv": 65
+                },
+                {
+                  "id": "FridgerShooter_TU3",
+                  "lv": 65
+                },
+                null,
+                {
+                  "id": "NightChickAQ_EV9",
+                  "lv": 65
+                },
+                {
+                  "id": "ChillerEX_TU4",
+                  "lv": 65
+                },
+                {
+                  "id": "FridgerHead_TU3",
+                  "lv": 65
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "무너진 낙원 II",
+          "desc": "남은 철충 무리를 뚫고 이곳을 탈출해야 합니다.",
+          "prev": 16,
+          "offset": 17,
+          "text": "Ev2-2Ex",
+          "search": null,
+          "missions": [
+            "스테이지 클리어",
+            "전투 불능 캐릭터 없이 클리어",
+            "경장형을 편성하지 않고 클리어",
+            "기동형을 편성하지 않고 클리어"
+          ],
+          "reward_f": [
+            "Char_BR_May_N"
+          ],
+          "reward_am": [
+            {
+              "cash": 2
+            }
+          ],
+          "wave": [
+            {
+              "exp": 1800,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 43
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_System_AntiAirArmor_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_PECS_Machina_N"
+                },
+                {
+                  "id": "Char_BR_Shirayuri_N"
+                },
+                {
+                  "id": "Char_PECS_Sunny_N"
+                },
+                {
+                  "id": "Char_BR_Pani_N"
+                },
+                {
+                  "id": "Char_BR_Gnome_N"
+                },
+                {
+                  "id": "Char_PECS_MissSafety_N"
+                },
+                {
+                  "id": "Char_DS_Johanna_N"
+                }
+              ],
+              "enemy": [
+                null,
+                {
+                  "id": "FridgerShooter_TU3",
+                  "lv": 65
+                },
+                {
+                  "id": "FridgerHead_TU3",
+                  "lv": 65
+                },
+                {
+                  "id": "NightChickAQ_TU4",
+                  "lv": 65
+                },
+                null,
+                null,
+                null,
+                {
+                  "id": "FridgerShooter_TU3",
+                  "lv": 65
+                },
+                {
+                  "id": "FridgerHead_TU3",
+                  "lv": 65
+                }
+              ]
+            },
+            {
+              "exp": 1800,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 43
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_System_AntiAirArmor_T2",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_System_AntiAirArmor_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_PECS_Machina_N"
+                },
+                {
+                  "id": "Char_BR_Shirayuri_N"
+                },
+                {
+                  "id": "Char_PECS_Sunny_N"
+                },
+                {
+                  "id": "Char_BR_Pani_N"
+                },
+                {
+                  "id": "Char_BR_Gnome_N"
+                },
+                {
+                  "id": "Char_PECS_MissSafety_N"
+                },
+                {
+                  "id": "Char_DS_Johanna_N"
+                }
+              ],
+              "enemy": [
+                {
+                  "id": "ChillerEX_TU4",
+                  "lv": 65
+                },
+                {
+                  "id": "FridgerShell_TU3",
+                  "lv": 65
+                },
+                null,
+                {
+                  "id": "NightChickAQ_TU4",
+                  "lv": 65
+                },
+                {
+                  "id": "NightChickAQG_TU4",
+                  "lv": 65
+                },
+                {
+                  "id": "FridgerHead_TU3",
+                  "lv": 65
+                },
+                {
+                  "id": "ChillerEX_TU4",
+                  "lv": 65
+                },
+                {
+                  "id": "FridgerShell_TU3",
+                  "lv": 65
+                },
+                null
+              ]
+            },
+            {
+              "exp": 1800,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 43
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_System_AntiAirArmor_T3",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_System_AntiAirArmor_T2",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_System_AntiAirArmor_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_PECS_Machina_N"
+                },
+                {
+                  "id": "Char_BR_Shirayuri_N"
+                },
+                {
+                  "id": "Char_PECS_Sunny_N"
+                },
+                {
+                  "id": "Char_BR_Pani_N"
+                },
+                {
+                  "id": "Char_BR_Gnome_N"
+                },
+                {
+                  "id": "Char_PECS_MissSafety_N"
+                },
+                {
+                  "id": "Char_DS_Johanna_N"
+                }
+              ],
+              "enemy": [
+                {
+                  "id": "FridgerShooter_TU3",
+                  "lv": 65
+                },
+                {
+                  "id": "NightChickAQ_TU4",
+                  "lv": 65
+                },
+                {
+                  "id": "FridgerHead_TU3",
+                  "lv": 65
+                },
+                null,
+                {
+                  "id": "FridgerShooter_TU3",
+                  "lv": 65
+                },
+                null,
+                {
+                  "id": "FridgerShooter_TU3",
+                  "lv": 65
+                },
+                {
+                  "id": "NightChickAQ_TU4",
+                  "lv": 65
+                },
+                {
+                  "id": "FridgerHead_TU3",
+                  "lv": 65
+                }
+              ]
+            },
+            {
+              "exp": 1800,
+              "drops": [
+                {
+                  "id": "Ev_Consumable_BatteryAA",
+                  "count": 43
+                },
+                {
+                  "id": "Ev_Consumable_BatteryFC-1",
+                  "count": 3
+                },
+                {
+                  "id": "Equip_System_AntiAirArmor_T4",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_System_AntiAirArmor_T3",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_System_AntiAirArmor_T2",
+                  "count": 1
+                },
+                {
+                  "id": "Equip_System_AntiAirArmor_T1",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_MPParts",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_AlloyArmor",
+                  "count": 1
+                },
+                {
+                  "id": "RobotParts_Booster",
+                  "count": 1
+                },
+                {
+                  "id": "Char_PECS_Machina_N"
+                },
+                {
+                  "id": "Char_BR_Shirayuri_N"
+                },
+                {
+                  "id": "Char_PECS_Sunny_N"
+                },
+                {
+                  "id": "Char_BR_Pani_N"
+                },
+                {
+                  "id": "Char_BR_Gnome_N"
+                },
+                {
+                  "id": "Char_PECS_MissSafety_N"
+                },
+                {
+                  "id": "Char_DS_Johanna_N"
+                }
+              ],
+              "enemy": [
+                {
+                  "id": "FridgerShell_TU3",
+                  "lv": 70
+                },
+                {
+                  "id": "FridgerHead_TU3",
+                  "lv": 70
+                },
+                {
+                  "id": "ChillerEX_TU4",
+                  "lv": 70
+                },
+                {
+                  "id": "FridgerShell_TU3",
+                  "lv": 70
+                },
+                null,
+                {
+                  "id": "NightChickAQG_TU4",
+                  "lv": 70
+                },
+                {
+                  "id": "FridgerShell_TU3",
+                  "lv": 70
+                },
+                {
+                  "id": "FridgerHead_TU3",
+                  "lv": 70
+                },
+                {
+                  "id": "ChillerEX_TU4",
+                  "lv": 70
                 }
               ]
             }

@@ -12568,6 +12568,46 @@ export default [
   {
     "category": "Event",
     "group": "Ev9",
+    "reward": "DS_Arman",
+    "count": 1,
+    "requires": [
+      "Ev_Consumable_Battery4FM:100"
+    ],
+    "note": "01.04 추가"
+  },
+  {
+    "category": "Event",
+    "group": "Ev9",
+    "reward": "3P_Dryad",
+    "count": 6,
+    "requires": [
+      "Ev_Consumable_Battery4FM:50"
+    ],
+    "note": "01.04 추가"
+  },
+  {
+    "category": "Event",
+    "group": "Ev9",
+    "reward": "Sub_NitroEx3000_T4",
+    "count": 1,
+    "requires": [
+      "Ev_Consumable_Battery4FM:50"
+    ],
+    "note": "01.04 추가"
+  },
+  {
+    "category": "Event",
+    "group": "Ev9",
+    "reward": "System_Exp_T4",
+    "count": 1,
+    "requires": [
+      "Ev_Consumable_Battery4FM:50"
+    ],
+    "note": "01.04 추가"
+  },
+  {
+    "category": "Event",
+    "group": "Ev9",
     "reward": "3P_Sowan",
     "count": 1,
     "requires": [
@@ -12764,6 +12804,16 @@ export default [
       "Ev_Consumable_BatteryFC-1:130"
     ],
     "note": ""
+  },
+  {
+    "category": "Event",
+    "group": "Ev9",
+    "reward": "Shop_Package_RobotMaking_03",
+    "count": 25,
+    "requires": [
+      "Ev_Consumable_BatteryFC-1:195"
+    ],
+    "note": "01.04 추가"
   },
   {
     "category": "Event",
@@ -13044,6 +13094,26 @@ export default [
       "Ev_Consumable_Battery4FM:150"
     ],
     "note": ""
+  },
+  {
+    "category": "Event",
+    "group": "Ev9",
+    "reward": "Core_Normal",
+    "count": 5,
+    "requires": [
+      "Ev_Consumable_Battery4FM:30"
+    ],
+    "note": "01.04 추가"
+  },
+  {
+    "category": "Event",
+    "group": "Ev9",
+    "reward": "Core_Special",
+    "count": 1,
+    "requires": [
+      "Ev_Consumable_Battery4FM:150"
+    ],
+    "note": "01.04 추가"
   },
   {
     "category": "Event",
@@ -13404,5 +13474,65 @@ export default [
       "Ev_Consumable_Battery4FM:30"
     ],
     "note": ""
+  },
+  {
+    "category": "Event",
+    "group": "Ev9",
+    "reward": "Ev_Consumable_BatteryAABag10",
+    "count": 999,
+    "requires": [
+      "Ev_Consumable_BatteryFC-1:1"
+    ],
+    "note": "01.04 추가"
+  },
+  {
+    "category": "Event",
+    "group": "Ev9",
+    "reward": "Ev_Consumable_BatteryAABag100",
+    "count": 999,
+    "requires": [
+      "Ev_Consumable_BatteryFC-1:10"
+    ],
+    "note": "01.04 추가"
+  },
+  {
+    "category": "Event",
+    "group": "Ev9",
+    "reward": "Ev_Consumable_BatteryAABag1000",
+    "count": 999,
+    "requires": [
+      "Ev_Consumable_BatteryFC-1:100"
+    ],
+    "note": "01.04 추가"
+  },
+  {
+    "category": "Event",
+    "group": "Ev9",
+    "reward": "Ev_Consumable_BatteryFC-1Bag10",
+    "count": 999,
+    "requires": [
+      "Ev_Consumable_Battery4FM:1"
+    ],
+    "note": "01.04 추가"
+  },
+  {
+    "category": "Event",
+    "group": "Ev9",
+    "reward": "Ev_Consumable_BatteryFC-1Bag100",
+    "count": 999,
+    "requires": [
+      "Ev_Consumable_Battery4FM:10"
+    ],
+    "note": "01.04 추가"
+  },
+  {
+    "category": "Event",
+    "group": "Ev9",
+    "reward": "Ev_Consumable_BatteryFC-1Bag1000",
+    "count": 999,
+    "requires": [
+      "Ev_Consumable_Battery4FM:100"
+    ],
+    "note": "01.04 추가"
   }
 ];
