@@ -35,11 +35,10 @@
 		</b-alert>
 
 		<b-alert variant="success" show>
-			현재 대사 텍스트가 입력되지 않은 전투원이 매우 많습니다. 입력해야하는 대사 분량이 너무 많아 개발자 혼자 작업할 수가 없어 발생한
-			문제입니다.<br />
-			이 문제를 해결하고자 현재
-			<a href="https://docs.google.com/spreadsheets/d/1TrLn5czFe2Ww1xg4HiFsDzZDcnphxV3AqP_DgNqaU00" target="_blank">전투원 대사 DB</a>의 기여를
-			받고 있습니다. 많은 참여 부탁드립니다.
+			모든 전투원의 대사 입력이 완료되었습니다. 참여해주신 모든 분들께 감사드립니다.<br />
+			<a href="https://docs.google.com/spreadsheets/d/1TrLn5czFe2Ww1xg4HiFsDzZDcnphxV3AqP_DgNqaU00" target="_blank">전투원 대사 DB</a>는 항상
+			열려있습니다.<br />
+			대사가 잘못되었거나 오타가 있는 경우 얼마든지 수정해주셔도 됩니다.
 		</b-alert>
 		<hr />
 

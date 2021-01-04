@@ -1,9 +1,14 @@
 <script lang="tsx">
+import Decimal from "decimal.js";
+
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
 import { ITEM_TYPE } from "@/libs/Types/Enums";
+import { UniqueID } from "@/libs/Functions";
+import { _e } from "@/libs/VNode";
+
 import UnitData, { Unit } from "@/libs/DB/Unit";
 import EquipData, { Equip } from "@/libs/DB/Equip";
 
@@ -13,8 +18,6 @@ import RarityBadge from "@/components/RarityBadge.vue";
 import ElemIcon from "@/components/ElemIcon.vue";
 import UnitCard from "@/pages/Units/UnitCard.vue";
 import EquipCard from "@/pages/Equips/EquipCard.vue";
-import Decimal from "decimal.js";
-import { UniqueID } from "@/libs/Functions";
 
 @Component({
 	components: {
@@ -306,6 +309,9 @@ export default class SkillDescription extends Vue {
 								).add(this.level),
 							)).toNumber(),
 						);
+					const valueHelp = flags.skill && this.skillBonus > 0
+						? <b-badge variant="success" class="ml-1">▲ {Decimal.div(this.skillBonus, 100).toNumber()}</b-badge>
+						: _e();
 
 					const signF = (x: string | Array<string | JSX.Element | JSX.Element[]>) => {
 						if (Array.isArray(x)) {
@@ -330,14 +336,20 @@ export default class SkillDescription extends Vue {
 						return <span class="subtree">
 							{ flags.icons }
 							{ prefix }
-							<span class="skill-value" data-sign={ sign }>{ value.toFixed(10).replace(/\.?0+$/, "") }</span>
+							<span class="skill-value" data-sign={ sign }>
+								{ value.toFixed(10).replace(/\.?0+$/, "") }
+								{ valueHelp }
+							</span>
 							{ postfix }
 						</span>;
 					} else {
 						return <rarity-badge rarity={ flags.skill ? "SS" : "S" }>
 							{ flags.icons }
 							{ prefix }
-							<span class="skill-value" data-sign={ sign }>{ value.toFixed(10).replace(/\.?0+$/, "") }</span>
+							<span class="skill-value" data-sign={ sign }>
+								{ value.toFixed(10).replace(/\.?0+$/, "") }
+								{ valueHelp }
+							</span>
 							{ postfix }
 						</rarity-badge>;
 					}
@@ -380,7 +392,7 @@ export default class SkillDescription extends Vue {
 <style lang="scss">
 .skill-description {
 	.skill-value {
-		color: $info;
+		color: $success;
 
 		&[data-sign="+"] {
 			color: $primary;

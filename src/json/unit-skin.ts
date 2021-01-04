@@ -4737,7 +4737,7 @@ export default {
         "x": 0
       }
     },
-    "V": false,
+    "V": true,
     "A": false,
     "D": false,
     "S": false,
@@ -7486,7 +7486,7 @@ export default {
           }
         },
         "price": 136,
-        "V": false,
+        "V": true,
         "A": false,
         "D": false,
         "S": false,
@@ -7661,7 +7661,7 @@ export default {
     "V": true,
     "A": false,
     "D": false,
-    "S": false,
+    "S": true,
     "X": false,
     "G": false
   },

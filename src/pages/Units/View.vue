@@ -213,7 +213,14 @@
 							<b-tr>
 								<b-th colspan="3">
 									링크 보너스
-									<b-form-select class="table-unit-link-select" size="sm" v-model="linkCount" :options="LinkCountList" />
+									<b-button-group class="ml-1" size="sm">
+										<b-button :variant="linkCount === 0 ? 'primary' : 'light'" @click="linkCount = 0">0</b-button>
+										<b-button :variant="linkCount === 1 ? 'primary' : 'light'" @click="linkCount = 1">1</b-button>
+										<b-button :variant="linkCount === 2 ? 'primary' : 'light'" @click="linkCount = 2">2</b-button>
+										<b-button :variant="linkCount === 3 ? 'primary' : 'light'" @click="linkCount = 3">3</b-button>
+										<b-button :variant="linkCount === 4 ? 'primary' : 'light'" @click="linkCount = 4">4</b-button>
+										<b-button :variant="linkCount === 5 ? 'primary' : 'light'" @click="linkCount = 5">5</b-button>
+									</b-button-group>
 								</b-th>
 							</b-tr>
 						</b-thead>
@@ -297,20 +304,20 @@
 				:skill-level.sync="skillLevel"
 				:form-state.sync="formState"
 				:rarity="unit.rarity"
-				:buff-bonus="linkBonus.startsWith('Buff_')"
+				:buff-bonus="linkCount === 5 && linkBonus.startsWith('Buff_')"
 				:skill-bonus="SkillPowerBonus"
-				:range-bonus="linkBonus.startsWith('Range_')"
+				:range-bonus="linkCount === 5 && linkBonus.startsWith('Range_')"
 			/>
 		</div>
 		<div v-show="displayTab === 'dialogue'">
-			<b-alert variant="success" show>
+			<!-- <b-alert variant="success" show>
 				현재 대사 텍스트가 입력되지 않은 전투원이 매우 많습니다. 입력해야하는 대사 분량이 너무 많아 개발자 혼자 작업할 수가 없어 발생한
 				문제입니다.<br />
 				이 문제를 해결하고자 현재
 				<a href="https://docs.google.com/spreadsheets/d/1TrLn5czFe2Ww1xg4HiFsDzZDcnphxV3AqP_DgNqaU00" target="_blank">전투원 대사 DB</a>의
 				기여를 받고 있습니다. 많은 참여 부탁드립니다.
 			</b-alert>
-			<hr />
+			<hr /> -->
 
 			<unit-dialogue v-for="(voice, keyid) in VoiceList" :key="`unit-view-text-voice-${keyid}`" :unit="unit" :voice="voice" :id="voice.id" />
 		</div>
@@ -525,13 +532,6 @@ export default class UnitView extends Vue {
 		return `/equips/${unit.hasLimited}`;
 	}
 
-	private get LinkCountList () {
-		return [0, 1, 2, 3, 4, 5].map(x => ({
-			value: x,
-			text: `${x} 링크`,
-		}));
-	}
-
 	private get CurrentResists () {
 		const stat = UnitStatsData.find(x => x.id === this.unit.id && x.rarity === this.costRarity);
 		return (stat || UnitStats_.Empty).Resist;
@@ -550,14 +550,16 @@ export default class UnitView extends Vue {
 	private get SkillPowerBonus () {
 		let bonus = new Decimal(0);
 
-		if (this.linkBonus === "Skill_2") bonus = bonus.add(2);
-		if (this.linkBonus === "Skill_5") bonus = bonus.add(5);
-		if (this.linkBonus === "Skill_10") bonus = bonus.add(10);
-		if (this.linkBonus === "Skill_15") bonus = bonus.add(15);
-		if (this.linkBonus === "Skill_20") bonus = bonus.add(20);
-		if (this.linkBonus === "Skill_25") bonus = bonus.add(25);
-		if (this.linkBonus === "Skill_30") bonus = bonus.add(30);
-		if (this.linkBonus === "Skill_35") bonus = bonus.add(35);
+		if (this.linkCount === 5) {
+			if (this.linkBonus === "Skill_2") bonus = bonus.add(2);
+			if (this.linkBonus === "Skill_5") bonus = bonus.add(5);
+			if (this.linkBonus === "Skill_10") bonus = bonus.add(10);
+			if (this.linkBonus === "Skill_15") bonus = bonus.add(15);
+			if (this.linkBonus === "Skill_20") bonus = bonus.add(20);
+			if (this.linkBonus === "Skill_25") bonus = bonus.add(25);
+			if (this.linkBonus === "Skill_30") bonus = bonus.add(30);
+			if (this.linkBonus === "Skill_35") bonus = bonus.add(35);
+		}
 
 		if (this.unit.linkBonus.includes("Skill_2")) bonus = bonus.add(Decimal.mul(2, this.linkCount));
 		if (this.unit.linkBonus.includes("Skill_5")) bonus = bonus.add(Decimal.mul(5, this.linkCount));

@@ -52,10 +52,15 @@ export default class DialogueRow extends Vue {
 			case "BattleFocus": return "primary";
 			case "ActionApprove": return "primary";
 			case "SpSkill": return "primary";
+			case "SpSkill_1": return "primary";
 			case "SpSkill_2": return "primary";
 			case "SpSkill_3": return "primary";
 			case "SpSkill_4": return "primary";
 			case "SpSkill_5": return "primary";
+			case "SpSkill_6": return "primary";
+			case "SpSkill_7": return "primary";
+			case "SpSkill_8": return "primary";
+			case "SpSkill_9": return "primary";
 			case "Retire": return "primary";
 			case "Repair": return "primary";
 			case "Reinforce": return "primary";
@@ -95,10 +100,15 @@ export default class DialogueRow extends Vue {
 			case "BattleFocus": return "전투 내 선택";
 			case "ActionApprove": return "전투 지시";
 			case "SpSkill": return "액티브 스킬";
+			case "SpSkill_1": return "액티브 스킬 (1)";
 			case "SpSkill_2": return "액티브 스킬 (2)";
 			case "SpSkill_3": return "액티브 스킬 (3)";
 			case "SpSkill_4": return "액티브 스킬 (4)";
 			case "SpSkill_5": return "액티브 스킬 (5)";
+			case "SpSkill_6": return "액티브 스킬 (6)";
+			case "SpSkill_7": return "액티브 스킬 (7)";
+			case "SpSkill_8": return "액티브 스킬 (8)";
+			case "SpSkill_9": return "액티브 스킬 (9)";
 			case "Retire": return "전투 불능";
 			case "Repair": return "수복";
 			case "Reinforce": return "전투원 강화";
@@ -132,7 +142,7 @@ export default class DialogueRow extends Vue {
 			<b-col class={this.rowClass} cols="12" sm="2">{this.TypeName}</b-col>
 			<b-col class="border dialogue" cols="12" sm="">{this.Dialogue}</b-col>
 			<b-col class="border" cols="12" sm="auto">
-				<audio src={this.VoiceLink} type="audio/ogg" controls preload="auto" />
+				<audio src={this.VoiceLink} type="audio/ogg" controls preload="none" />
 			</b-col>
 		</b-row>;
 	}
