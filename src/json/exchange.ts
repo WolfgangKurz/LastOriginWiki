@@ -13208,7 +13208,7 @@ export default [
   {
     "category": "Event",
     "group": "Ev9",
-    "reward": "Parts_T3",
+    "reward": "Equip_Parts_T3",
     "count": 5,
     "requires": [
       "Ev_Consumable_Battery4FM:15"
@@ -13288,7 +13288,7 @@ export default [
   {
     "category": "Event",
     "group": "Ev9",
-    "reward": "Parts_T2",
+    "reward": "Equip_Parts_T2",
     "count": 15,
     "requires": [
       "Ev_Consumable_BatteryFC-1:30"
@@ -13368,7 +13368,7 @@ export default [
   {
     "category": "Event",
     "group": "Ev9",
-    "reward": "Parts_T1",
+    "reward": "Equip_Parts_T1",
     "count": 50,
     "requires": [
       "Ev_Consumable_BatteryAA:30"

@@ -1,23 +1,64 @@
 <template>
 	<div>
+		<changelog-item title="Build 7623" date="2021-01-05">
+			<template #bugfix>
+				<li><b-badge variant="warning">A-15 샐러맨더</b-badge>의 요소 숨김 일러스트가 표시되지 않던 문제를 수정했습니다.</li>
+				<li>
+					<b-badge variant="warning">세계정보</b-badge>의 <b-badge variant="warning">드랍 정보</b-badge>에서 획득 가능 물품이 올바르지 않게
+					정렬되어있던 문제를 수정했습니다.
+				</li>
+				<li>
+					<b-badge variant="warning">교환소</b-badge>에서 <b-badge variant="info">장비 연구실 시설품</b-badge>이 표시되지 않던 문제를
+					수정했습니다.
+				</li>
+				<li>
+					<b-badge variant="warning">교환소</b-badge>에서 <b-badge variant="info">소형 배터리 팩</b-badge>,
+					<b-badge variant="info">중형 배터리 팩</b-badge> 이미지가 표시되지 않던 문제를 수정했습니다.
+				</li>
+			</template>
+			<template #new>
+				<li>
+					전투원 스킬 정보에 스킬 위력 증가치 뱃지를 추가했습니다.<br/>
+					스킬 위력 증가치 뱃지는 <small><b-badge variant="success">▲ 0.2</b-badge></small>와 같이 표시됩니다.<br />
+				</li>
+			</template>
+			<template #update>
+				<li>전투원 스킬 정보의 버프/디버프가 아닌 수치의 색상을 <b-badge variant="success">녹색</b-badge>으로 변경했습니다.</li>
+				<li>전투원 정보의 링크 보너스 선택 인터페이스를 드롭다운에서 버튼으로 변경했습니다.</li>
+				<li>적 정보 팝업의 데스크탑 사이즈 UI를 개선했습니다.</li>
+			</template>
+			<template #dialogue>
+				<li>토미 워커의 대사가 누락되어있던 점을 수정했습니다.</li>
+				<li>전투원의 액티브 스킬 일부가 누락된 점을 수정했습니다.</li>
+				<li><b-badge variant="light">KST 2021-01-05 01:06:33</b-badge>까지의 사용자 참여로 추가된 대사들이 반영되었습니다.</li>
+				<li>🎉 모든 전투원의 대사가 추가되었습니다. 🎉</li>
+				<li>전투원의 대사 오디오 태그의 Preload 기능을 제거했습니다.</li>
+			</template>
+		</changelog-item>
+
 		<changelog-item title="Build 7608" date="2021-01-04">
 			<template #new>
 				<li>신규 전투원 <b-badge variant="warning">마키나</b-badge>의 정보가 추가되었습니다.</li>
 				<li>신규 전투원 <b-badge variant="warning">A-15 샐러맨더</b-badge>의 정보가 추가되었습니다.</li>
+				<li><b-badge variant="warning">낙원으로부터 온 초대장</b-badge> 2부 세계 정보가 추가되었습니다.</li>
 			</template>
 			<template #skin>
 				<li>일부 전투원 스킨의 가격이 누락되어있던 점을 수정했습니다.</li>
 				<li>
-					<b-badge variant="warning">자비로운 리앤</b-badge>의 스킨 <b-badge variant="danger">데이트 복장</b-badge>의 중파 일러스트가 추가되었습니다.
+					<b-badge variant="warning">자비로운 리앤</b-badge>의 스킨 <b-badge variant="danger">데이트 복장</b-badge>의 중파 일러스트가
+					추가되었습니다.
 				</li>
 				<li>
-					<b-badge variant="warning">세라피아스 앨리스</b-badge>의 스킨 <b-badge variant="danger">해변의 여왕의 유혹</b-badge>의 정보가 추가되었습니다.
+					<b-badge variant="warning">세라피아스 앨리스</b-badge>의 스킨 <b-badge variant="danger">해변의 여왕의 유혹</b-badge>의 정보가
+					추가되었습니다.
 				</li>
 				<li>
-					<b-badge variant="warning">AL 레이스</b-badge>의 스킨 <b-badge variant="danger">특급 요원 레이스</b-badge>의 정보가 추가되었습니다.
+					<b-badge variant="warning">AL 레이스</b-badge>의 스킨 <b-badge variant="danger">특급 요원 레이스</b-badge>의 정보가
+					추가되었습니다.
 				</li>
 				<li>
-					<b-badge variant="warning">이터니티</b-badge>의 스킨 <b-badge variant="danger">오르카 강아지, 이터니티</b-badge>의 정보가 추가되었습니다.
+					<b-badge variant="warning">이터니티</b-badge>의 스킨 <b-badge variant="danger">오르카 강아지, 이터니티</b-badge>의 정보가
+					추가되었습니다.
 				</li>
 			</template>
 			<template #dialogue>

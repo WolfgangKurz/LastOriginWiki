@@ -143,9 +143,14 @@ export default class WorldMapView extends Vue {
 		});
 		// (); .sort((a, b) => b.rarity - a.rarity);
 		return ret.sort((a, b) => {
-			if (("rarity" in a) && !("rarity" in b)) return -1;
-			else if (!("rarity" in a) && ("rarity" in b)) return 1;
-			return 0;
+			if (("rarity" in a) && !("rarity" in b))
+				return -1;
+			else if (!("rarity" in a) && ("rarity" in b))
+				return 1;
+			else if (("rarity" in a) && ("rarity" in b))
+				return b.rarity - a.rarity;
+			else
+				return 0;
 		});
 	}
 

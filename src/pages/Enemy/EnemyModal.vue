@@ -11,39 +11,58 @@
 		<div v-if="FamilyList.length > 1" class="text-right mb-1">
 			<b-form-select v-model="targetId" size="sm" :options="FamilyList" />
 		</div>
-		<b-container class="table-enemy-modal mb-3">
-			<b-row cols="1" cols-md="2">
-				<b-col class="icon-container">
-					<div class="position-relative d-inline-block">
-						<div class="enemy-icon">
-							<img :src="`${AssetsRoot}/${imageExt}/tbar/${target.icon}.${imageExt}`" />
-						</div>
-					</div>
-				</b-col>
-				<b-col class="nested">
-					<b-row cols="2">
-						<b-col class="bg-dark text-white">유형</b-col>
-						<b-col>
-							<unit-badge :type="enemy.type" size="large" transparent black />
-						</b-col>
-						<b-col class="bg-dark text-white">역할</b-col>
-						<b-col>
-							<unit-badge :role="enemy.role" size="large" transparent black />
-						</b-col>
-						<div>
-							<b-col class="bg-dark text-white">등급</b-col>
-						</div>
-						<b-col>
-							<rarity-badge :rarity="target.rarity" />
-						</b-col>
-					</b-row>
-				</b-col>
-			</b-row>
-		</b-container>
 
-		<b-table-simple bordered fixed table-class="mt-2 text-center">
+		<b-table-simple bordered fixed table-class="table-enemy-modal mt-2 text-center">
 			<b-tbody>
+				<b-tr class="d-table-row d-lg-none">
+					<b-td class="p-0">
+						<div class="icon-container">
+							<div class="enemy-icon m-3">
+								<img :src="`${AssetsRoot}/${imageExt}/tbar/${target.icon}.${imageExt}`" />
+							</div>
+							<b-row cols="2">
+								<b-col class="bg-dark text-white">유형</b-col>
+								<b-col>
+									<unit-badge :type="enemy.type" size="large" transparent black />
+								</b-col>
+								<b-col class="bg-dark text-white">역할</b-col>
+								<b-col>
+									<unit-badge :role="enemy.role" size="large" transparent black />
+								</b-col>
+								<div>
+									<b-col class="bg-dark text-white">등급</b-col>
+								</div>
+								<b-col>
+									<rarity-badge :rarity="target.rarity" />
+								</b-col>
+							</b-row>
+						</div>
+					</b-td>
+				</b-tr>
 				<b-tr>
+					<b-td rowspan="2" class="p-0 d-lg-table-cell d-none">
+						<div class="icon-container">
+							<div class="enemy-icon m-3">
+								<img :src="`${AssetsRoot}/${imageExt}/tbar/${target.icon}.${imageExt}`" />
+							</div>
+							<b-row cols="2">
+								<b-col class="bg-dark text-white">유형</b-col>
+								<b-col>
+									<unit-badge :type="enemy.type" size="large" transparent black />
+								</b-col>
+								<b-col class="bg-dark text-white">역할</b-col>
+								<b-col>
+									<unit-badge :role="enemy.role" size="large" transparent black />
+								</b-col>
+								<div>
+									<b-col class="bg-dark text-white">등급</b-col>
+								</div>
+								<b-col class="border-bottom-0">
+									<rarity-badge :rarity="target.rarity" />
+								</b-col>
+							</b-row>
+						</div>
+					</b-td>
 					<b-td variant="dark">
 						<b-input-group>
 							<b-input-group-prepend>
@@ -468,43 +487,44 @@ export default class EnemyModal extends Vue {
 		white-space: pre-line;
 	}
 
-	.table-enemy-modal.container {
-		margin-bottom: 0 !important;
+	.table-enemy-modal {
+		.icon-container {
+			display: flex;
+			margin-bottom: 1px;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
 
-		.col {
-			margin-bottom: -1px;
-			padding: 0.75rem;
-			border: 1px solid #dee2e6;
+			.enemy-icon {
+				border-radius: 3px;
+				vertical-align: middle;
+				overflow: hidden;
 
-			&.icon-container {
-				display: flex;
-				justify-content: center;
-				align-items: center;
+				img {
+					display: block;
+					width: 128px;
+					height: 128px;
+				}
+			}
+			> div:nth-child(2) {
+				flex: 1;
+				margin: 0;
+				width: 100%;
 
-				.enemy-icon {
-					display: inline-block;
-					border-radius: 3px;
-					vertical-align: middle;
-					overflow: hidden;
-
-					img {
-						display: block;
-						width: 128px;
-						height: 128px;
-					}
+				> .col {
+					border-left: 0 !important;
+					border-right: 0 !important;
 				}
 			}
 
-			&.bg-dark {
-				border-color: #454d55;
-				font-weight: bold;
-			}
-			&.nested {
-				padding: 0;
-				border: 0;
+			.col {
+				margin-bottom: -1px;
+				padding: 0.75rem;
+				border: 1px solid #dee2e6;
 
-				> .row {
-					margin: 0;
+				&.bg-dark {
+					border-color: #454d55;
+					font-weight: bold;
 				}
 			}
 		}
