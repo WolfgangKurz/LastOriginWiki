@@ -36,6 +36,7 @@ export default class App extends Vue {
 @import "@/theme/theme.scss";
 @import "bootstrap-vue/src/index";
 
+@import url("/assets/font/SpoqaHanSans-kr.css");
 // @import "https://lastorigin-wiki-assets.s3.ap-northeast-2.amazonaws.com/font/SpoqaHanSans-kr.css";
 
 html,
