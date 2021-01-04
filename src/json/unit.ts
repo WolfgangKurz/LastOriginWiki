@@ -116,6 +116,9 @@ export default [
       ],
       [
         "Ev:Ev8:Ev2-5"
+      ],
+      [
+        "Ev:Ev9:Ev2-7"
       ]
     ],
     "promotions": [
@@ -175,6 +178,9 @@ export default [
       ],
       [
         "Ev:Ev8:Ev2-1Ex"
+      ],
+      [
+        "Ev:Ev9:Ev2-7"
       ],
       [
         "Exc:19:12"
@@ -260,7 +266,8 @@ export default [
         "Ev:Ev7:Ev3-3s"
       ],
       [
-        "Ev:Ev9:Ev1-6"
+        "Ev:Ev9:Ev1-6",
+        "Ev:Ev9:Ev2-7"
       ]
     ],
     "promotions": [
@@ -618,7 +625,9 @@ export default [
       ],
       [
         "Ev:Ev9:Ev1-2",
-        "Ev:Ev9:Ev1-2B"
+        "Ev:Ev9:Ev1-2B",
+        "Ev:Ev9:Ev2-4",
+        "Ev:Ev9:Ev2-4B"
       ]
     ],
     "promotions": [
@@ -972,7 +981,10 @@ export default [
       [
         "Ev:Ev9:Ev1-2",
         "Ev:Ev9:Ev1-7",
-        "Ev:Ev9:Ev1-2B"
+        "Ev:Ev9:Ev1-2B",
+        "Ev:Ev9:Ev2-1",
+        "Ev:Ev9:Ev2-4",
+        "Ev:Ev9:Ev2-4B"
       ]
     ],
     "promotions": [
@@ -1562,7 +1574,10 @@ export default [
       ],
       [
         "Ev:Ev9:Ev1-1",
-        "Ev:Ev9:Ev1-4"
+        "Ev:Ev9:Ev1-4",
+        "Ev:Ev9:Ev2-1",
+        "Ev:Ev9:Ev2-4",
+        "Ev:Ev9:Ev2-4B"
       ]
     ],
     "promotions": [
@@ -1729,7 +1744,10 @@ export default [
       [
         "Ev:Ev9:Ev1-3",
         "Ev:Ev9:Ev1-8",
-        "Ev:Ev9:Ev1-1B"
+        "Ev:Ev9:Ev1-1B",
+        "Ev:Ev9:Ev2-1",
+        "Ev:Ev9:Ev2-6",
+        "Ev:Ev9:Ev2-1Ex"
       ]
     ],
     "promotions": [
@@ -1981,7 +1999,9 @@ export default [
       ],
       [
         "Ev:Ev9:Ev1-1",
-        "Ev:Ev9:Ev1-4"
+        "Ev:Ev9:Ev1-4",
+        "Ev:Ev9:Ev2-3",
+        "Ev:Ev9:Ev2-1B"
       ]
     ],
     "promotions": [
@@ -2254,6 +2274,11 @@ export default [
         "Ev:Ev8:Ev1-2",
         "Ev:Ev8:Ev2-2",
         "Ev:Ev8:Ev2-5"
+      ],
+      [
+        "Ev:Ev9:Ev2-2",
+        "Ev:Ev9:Ev2-7",
+        "Ev:Ev9:Ev2-2Ex"
       ]
     ],
     "promotions": [
@@ -2647,7 +2672,9 @@ export default [
         "Ev:Ev8:Ev2-6"
       ],
       [
-        "Ev:Ev9:Ev1-1"
+        "Ev:Ev9:Ev1-1",
+        "Ev:Ev9:Ev2-3",
+        "Ev:Ev9:Ev2-1B"
       ]
     ],
     "promotions": [
@@ -2783,7 +2810,9 @@ export default [
       [
         "Ev:Ev9:Ev1-3",
         "Ev:Ev9:Ev1-6",
-        "Ev:Ev9:Ev1-1B"
+        "Ev:Ev9:Ev1-1B",
+        "Ev:Ev9:Ev2-3",
+        "Ev:Ev9:Ev2-1B"
       ]
     ],
     "promotions": [
@@ -3190,7 +3219,10 @@ export default [
         "Ev:Ev9:Ev1-1",
         "Ev:Ev9:Ev1-3",
         "Ev:Ev9:Ev1-6",
-        "Ev:Ev9:Ev1-1B"
+        "Ev:Ev9:Ev1-1B",
+        "Ev:Ev9:Ev2-1",
+        "Ev:Ev9:Ev2-5",
+        "Ev:Ev9:Ev2-4B"
       ]
     ],
     "promotions": [
@@ -3319,6 +3351,9 @@ export default [
       ],
       [
         "Ev:Ev7:Ev1-2Ex"
+      ],
+      [
+        "Ev:Ev9:*Ev2-2Ex"
       ],
       [
         "Ev:Ev4:1:Exc:HalloweenCandy:750"
@@ -3637,7 +3672,9 @@ export default [
       [
         "Ev:Ev9:Ev1-2",
         "Ev:Ev9:Ev1-4",
-        "Ev:Ev9:Ev1-2B"
+        "Ev:Ev9:Ev1-2B",
+        "Ev:Ev9:Ev2-3",
+        "Ev:Ev9:Ev2-1B"
       ]
     ],
     "promotions": [
@@ -4324,6 +4361,9 @@ export default [
       ],
       [
         "Ev:Ev6:Ev-4"
+      ],
+      [
+        "Ev:Ev9:Ev2-2Ex"
       ]
     ]
   },
@@ -4761,7 +4801,10 @@ export default [
       ],
       [
         "Ev:Ev9:Ev1-3",
-        "Ev:Ev9:Ev1-1B"
+        "Ev:Ev9:Ev1-1B",
+        "Ev:Ev9:Ev2-2",
+        "Ev:Ev9:Ev2-6",
+        "Ev:Ev9:Ev2-1Ex"
       ]
     ],
     "promotions": [
@@ -5006,7 +5049,10 @@ export default [
       [
         "Ev:Ev9:Ev1-3",
         "Ev:Ev9:Ev1-5",
-        "Ev:Ev9:Ev1-1B"
+        "Ev:Ev9:Ev1-1B",
+        "Ev:Ev9:Ev2-1",
+        "Ev:Ev9:Ev2-5",
+        "Ev:Ev9:Ev2-1Ex"
       ]
     ],
     "promotions": [
@@ -5060,6 +5106,9 @@ export default [
     "source": [
       [
         "Ev:Ev8:Ev1-2Ex"
+      ],
+      [
+        "Ev:Ev9:Ev2-2Ex"
       ]
     ]
   },
@@ -5202,6 +5251,9 @@ export default [
       ],
       [
         "Ev:Ev8:Ev2-6"
+      ],
+      [
+        "Ev:Ev9:Ev2-5"
       ]
     ],
     "promotions": [
@@ -5379,6 +5431,9 @@ export default [
       ],
       [
         "Ev:Ev7:Ev2-4"
+      ],
+      [
+        "Ev:Ev9:Ev2-5"
       ]
     ],
     "promotions": [
@@ -5449,6 +5504,9 @@ export default [
       ],
       [
         "Ev:Ev7:Ev2-2Ex"
+      ],
+      [
+        "Ev:Ev9:Ev2-5"
       ],
       [
         "Exc:20:3"
@@ -5877,6 +5935,9 @@ export default [
       ],
       [
         "Ev:Ev8:Ev2-5"
+      ],
+      [
+        "Ev:Ev9:Ev2-6"
       ]
     ],
     "promotions": [
@@ -6077,6 +6138,9 @@ export default [
       ],
       [
         "Ev:Ev8:Ev1-3"
+      ],
+      [
+        "Ev:Ev9:Ev2-6"
       ]
     ],
     "promotions": [
@@ -6521,7 +6585,9 @@ export default [
       [
         "Ev:Ev9:Ev1-2",
         "Ev:Ev9:Ev1-5",
-        "Ev:Ev9:Ev1-2B"
+        "Ev:Ev9:Ev1-2B",
+        "Ev:Ev9:Ev2-2",
+        "Ev:Ev9:Ev2-8"
       ]
     ],
     "promotions": [
@@ -6858,7 +6924,10 @@ export default [
         "Ev:Ev9:Ev1-8",
         "Ev:Ev9:Ev1-2B",
         "Ev:Ev9:Ev1-1Ex",
-        "Ev:Ev9:Ev1-2Ex"
+        "Ev:Ev9:Ev1-2Ex",
+        "Ev:Ev9:Ev2-2",
+        "Ev:Ev9:Ev2-7",
+        "Ev:Ev9:Ev2-2Ex"
       ]
     ],
     "promotions": [
@@ -7293,6 +7362,10 @@ export default [
       [
         "Ev:Ev7:Ev2-1B",
         "Ev:Ev7:Ev3-1s"
+      ],
+      [
+        "Ev:Ev9:Ev2-3",
+        "Ev:Ev9:Ev2-1B"
       ]
     ],
     "promotions": [
@@ -7447,7 +7520,9 @@ export default [
       [
         "Ev:Ev9:Ev1-1",
         "Ev:Ev9:Ev1-4",
-        "Ev:Ev9:Ev1-7"
+        "Ev:Ev9:Ev1-7",
+        "Ev:Ev9:Ev2-4",
+        "Ev:Ev9:Ev2-4B"
       ]
     ],
     "promotions": [
@@ -7514,6 +7589,11 @@ export default [
       ],
       [
         "Ev:Ev5:Ev-8"
+      ],
+      [
+        "Ev:Ev9:Ev2-2",
+        "Ev:Ev9:Ev2-8",
+        "Ev:Ev9:Ev2-2Ex"
       ]
     ]
   },
@@ -7767,6 +7847,9 @@ export default [
         "Ev:Ev7:Ev2-1Ex"
       ],
       [
+        "Ev:Ev9:Ev2-1Ex"
+      ],
+      [
         "Exc:19:7"
       ],
       [
@@ -7892,6 +7975,9 @@ export default [
       ],
       [
         "Ev:Ev5:Ev-2Ex"
+      ],
+      [
+        "Ev:Ev9:Ev2-1Ex"
       ],
       [
         "Exc:20:5"
@@ -8463,6 +8549,9 @@ export default [
       ],
       [
         "Ev:Ev8:Ev1-6"
+      ],
+      [
+        "Ev:Ev9:Ev2-8"
       ]
     ]
   },
@@ -8709,7 +8798,8 @@ export default [
         "Ev:Ev7:Ev1-5"
       ],
       [
-        "Ev:Ev9:Ev1-7"
+        "Ev:Ev9:Ev1-7",
+        "Ev:Ev9:Ev2-4"
       ]
     ],
     "promotions": [
@@ -8839,6 +8929,9 @@ export default [
         "Ev:Ev8:Ev1-2Ex"
       ],
       [
+        "Ev:Ev9:Ev2-1Ex"
+      ],
+      [
         "Ev:EvA0:1:Exc:FixMat:1000"
       ]
     ],
@@ -8959,6 +9052,9 @@ export default [
       ],
       [
         "Ev:Ev8:Ev2-4"
+      ],
+      [
+        "Ev:Ev9:Ev2-2Ex"
       ]
     ]
   },
@@ -9013,6 +9109,9 @@ export default [
       ],
       [
         "Ev:Ev5:Ev-2Ex"
+      ],
+      [
+        "Ev:Ev9:Ev2-1Ex"
       ],
       [
         "Exc:20:5"
@@ -9128,6 +9227,9 @@ export default [
     "source": [
       [
         "Ev:Ev7:Ev1-3Ex"
+      ],
+      [
+        "Ev:Ev9:Ev2-8"
       ],
       [
         "Exc:20:12"
@@ -9352,6 +9454,9 @@ export default [
       ],
       [
         "Ev:Ev8:Ev1-1Ex"
+      ],
+      [
+        "Ev:Ev9:Ev2-8"
       ]
     ]
   },
@@ -9552,7 +9657,11 @@ export default [
       1,
       2
     ],
-    "source": []
+    "source": [
+      [
+        "Ev:Ev9:Ev2-6"
+      ]
+    ]
   },
   {
     "id": 182,
@@ -9604,6 +9713,9 @@ export default [
       ],
       [
         "Ev:Ev8:*Ev1-7"
+      ],
+      [
+        "Ev:Ev9:*Ev2-1Ex"
       ],
       [
         "Ev:Ev8:1:Exc:PositiveClue:50"
@@ -9677,7 +9789,7 @@ export default [
     "weight": "57kg",
     "weapon1": "Detective",
     "weapon2": "Dual gun “Mercy” & “Justice”",
-    "craftable": false,
+    "craftable": 18840,
     "favor": {
       "present": 1,
       "clear": 1,
@@ -9993,6 +10105,102 @@ export default [
         "Ev:Ev9:1:Exc:Battery4FM:50"
       ]
     ]
+  },
+  {
+    "id": 191,
+    "uid": "PECS_Machina",
+    "rarity": 5,
+    "type": 2,
+    "role": 2,
+    "body": 0,
+    "name": "마키나",
+    "shortname": "마키나",
+    "group": "비스마르크 코퍼레이션 ",
+    "shortgroup": "비스마르크 코퍼레이션",
+    "groupkey": "Bismarck",
+    "introduce": "우선, 이 세계의 마지막 인간 님과 만나는 기적을 내려 주신 신께 감사의 기도를 드립니다.\n저의 이름은 마키나. 비스마르크 코퍼레이션에서 고도의 기획과 연구를 거쳐 출시한 바이오로이드예요. 인간 님의 그 어떤 욕망이든 포용할 수 있는 성격이 특징이고, 그런 욕망들을 홀로그램 드론의 힘으로 AR 공간에 구현하는 것이 특기랍니다.\n그렇게 각자의 욕망이 구현된 가상 공간은 현실과 구분이 불가능할 정도로 정교하기에, 저희 회사는 그 공간을 '낙원'이라고 불렀어요.\n하지만 지금은 인간이 남아 있지 않은 시대... 인간들이 '낙원'을 만끽하기는커녕, 인간이 사라져서 존재 목적을 잃은 바이오로이드들이 황량한 현실을 견디다 못해 극단적인 선택을 하는 시대가 돼 버렸어요. 그런 그들이 행복하게 살아갈 수 있는 유일한 방법은, 그들이 영원히 '낙원'을 경험하게 하는 것 뿐이었죠.\n인간 님, 인간님의 욕망은 무엇인가요? 제게 알려 주시면, 인간 님만을 위한 영원한 ‘낙원’을 준비해 드릴게요...",
+    "height": "183cm",
+    "weight": "57kg",
+    "weapon1": "Illusionist",
+    "weapon2": "Drone - Orchestra",
+    "craftable": false,
+    "favor": {
+      "present": 1.5,
+      "clear": 0.25,
+      "death": 1,
+      "assistant": 2
+    },
+    "marry": true,
+    "linkBonus": [
+      "HP_20",
+      "ATK_20",
+      "SPD_2",
+      "Exp_5"
+    ],
+    "fullLinkBonus": [
+      "Cost_25",
+      "ACC_75",
+      "HP_20",
+      "Buff_2",
+      "SPD_10"
+    ],
+    "equip": [
+      0,
+      0,
+      1,
+      2
+    ],
+    "source": [
+      [
+        "Ev:Ev9:Ev2-2Ex"
+      ]
+    ]
+  },
+  {
+    "id": 192,
+    "uid": "BR_Salamander",
+    "rarity": 4,
+    "type": 1,
+    "role": 1,
+    "body": 0,
+    "name": "A-15 샐러맨더",
+    "shortname": "A-15 샐러맨더",
+    "group": "앵거 오브 호드",
+    "shortgroup": "앵거 오브 호드",
+    "groupkey": "AngerOfTheHorde",
+    "introduce": "안녕, 네가 사령관이지? 샐러맨더라고 해. 호드에서 공병 일을 맡고 있어. 정확히는 전투 공병이지만.\n물론 전투 때도 적들을 불태우긴 하지만, 내 진짜 무대는 전투가 끝난 황폐한 전장이야. 적들을 박살 내고 나면 이제 숙영을 해야 하잖아? 쓸만한 물자는 노획도 해야 하고, 진지도 세워야 되고, 무엇보다 죽은 적군들을 치워야 하니까.\n대충 모아서 워커로 불을 질러 놓고 우린… 조종석에서 이것저것을 꺼내곤 했어. 뭐였냐고? 당연히 여흥 거리지! 캬하핫, 주사위, 카드, 동전... 뭐든 상관없어. 뭐든 간에 일단 걸고 승부를 낸다는 게 짜릿한 거잖아?\n아, 그래. 마침 내가 부적 삼아 갖고 다니는 주사위가 있으니까 한 번 붙자.  판돈은… 그래, 가볍게 일일 소원권 정도. 진 사람이 하루 내내 무슨 말이든 들어주는 거야. 후후, 어때? 혹시 쫄았어?",
+    "height": "170cm",
+    "weight": "49kg",
+    "weapon1": "Sapper",
+    "weapon2": "Armored Vehicle “Burning Walker”",
+    "craftable": 23640,
+    "favor": {
+      "present": 1,
+      "clear": 2,
+      "death": 0.25,
+      "assistant": 0.5
+    },
+    "marry": true,
+    "linkBonus": [
+      "HP_20",
+      "ATK_20",
+      "Skill_2",
+      "Exp_5"
+    ],
+    "fullLinkBonus": [
+      "Cost_20",
+      "Skill_15",
+      "ACC_75",
+      "Cri_20",
+      "SPD_10"
+    ],
+    "equip": [
+      0,
+      0,
+      1,
+      2
+    ],
+    "source": []
   },
   {
     "id": 201,

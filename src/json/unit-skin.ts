@@ -295,6 +295,34 @@ export default {
         "G": true,
         "name": "나이트 퀸 드레스 (앨리스)",
         "desc": "밤의 여왕의 초대에 응해 함께 달콤한 꿈을 꾸러 가보시겠어요? 영원히 깰 수 없을지도 모르지만......"
+      },
+      {
+        "sid": 2,
+        "t": "해변의 여왕의 유혹",
+        "artist": "SNOWBALL",
+        "offset": {
+          "normal": {
+            "n": 0,
+            "d": 0,
+            "s": 0,
+            "x": 0
+          },
+          "google": {
+            "n": 0,
+            "d": 0,
+            "s": 0,
+            "x": 0
+          }
+        },
+        "price": 182,
+        "V": true,
+        "A": false,
+        "D": false,
+        "S": false,
+        "X": false,
+        "G": true,
+        "name": "보석 비키니 (앨리스)",
+        "desc": "앨리스는 역시 샬럿이 과감한 차림으로 당신에게 대쉬했던 것이 마음에 안들었나 봅니다. 의상은 물론, 스타일 까지 똑같이 따라해서 자신이 더 아름답고 우아하다는 걸 증명하고 싶어하네요. 원하는 대답을 해준다면, 앨리스도 당신을 기쁘게 해줄지도요?"
       }
     ]
   },
@@ -3220,6 +3248,7 @@ export default {
             "x": 0
           }
         },
+        "price": 136,
         "V": false,
         "A": false,
         "D": false,
@@ -5345,6 +5374,7 @@ export default {
             "x": 0
           }
         },
+        "price": 15,
         "V": false,
         "A": true,
         "D": false,
@@ -7273,7 +7303,37 @@ export default {
     "D": false,
     "S": false,
     "X": false,
-    "G": false
+    "G": false,
+    "skins": [
+      {
+        "sid": 1,
+        "t": "특급 요원 레이스",
+        "artist": "SIMA",
+        "offset": {
+          "normal": {
+            "n": 0,
+            "d": 0,
+            "s": 0,
+            "x": 0
+          },
+          "google": {
+            "n": 0,
+            "d": 0,
+            "s": 0,
+            "x": 0
+          }
+        },
+        "price": 114,
+        "V": true,
+        "A": false,
+        "D": false,
+        "S": false,
+        "X": false,
+        "G": true,
+        "name": "특급 요원 장비 (레이스)",
+        "desc": "레이스의 욕망 중 하나는 역시 동경의 대상인 팬텀을 본받는 거겠죠. 그런 의미에서 이 복장은 그녀에게 아주 큰 선물이 될 겁니다. 사이즈는 조금 작은 것 같지만, 본인이 좋아하는 것 같으니 모른 척 해주는 게 좋겠네요."
+      }
+    ]
   },
   "3P_Poi": {
     "sid": null,
@@ -7360,13 +7420,13 @@ export default {
         "offset": {
           "normal": {
             "n": 0,
-            "d": 0,
+            "d": "20",
             "s": 0,
             "x": 0
           },
           "google": {
             "n": 0,
-            "d": 0,
+            "d": "30",
             "s": 0,
             "x": 0
           }
@@ -7374,7 +7434,7 @@ export default {
         "price": 136,
         "V": true,
         "A": false,
-        "D": false,
+        "D": true,
         "S": false,
         "X": false,
         "G": true,
@@ -7405,7 +7465,37 @@ export default {
     "D": true,
     "S": false,
     "X": false,
-    "G": true
+    "G": true,
+    "skins": [
+      {
+        "sid": 1,
+        "t": "오르카 강아지, 이터니티",
+        "artist": "Taesi",
+        "offset": {
+          "normal": {
+            "n": "30",
+            "d": 0,
+            "s": 0,
+            "x": 0
+          },
+          "google": {
+            "n": "30",
+            "d": 0,
+            "s": 0,
+            "x": 0
+          }
+        },
+        "price": 136,
+        "V": false,
+        "A": false,
+        "D": false,
+        "S": false,
+        "X": false,
+        "G": true,
+        "name": "구속구 (이터니티)",
+        "desc": "지나가듯 던진 농담이었지만, 매사 진지한 이터니티는 있는 그대로 받아들이고 말았습니다. 단순히 복장 뿐만이 아니라, 행동도 배워온 것 같은데... 이렇게 된 이상, 그에 맞춰줄 수밖에 없지 않을까요?"
+      }
+    ]
   },
   "PECS_Azaz": {
     "sid": null,
@@ -7515,6 +7605,54 @@ export default {
       },
       "google": {
         "n": "-20",
+        "d": 0,
+        "s": 0,
+        "x": 0
+      }
+    },
+    "V": true,
+    "A": false,
+    "D": false,
+    "S": false,
+    "X": false,
+    "G": false
+  },
+  "PECS_Machina": {
+    "sid": null,
+    "artist": "CHoney",
+    "offset": {
+      "normal": {
+        "n": "20",
+        "d": 0,
+        "s": 0,
+        "x": 0
+      },
+      "google": {
+        "n": "20",
+        "d": 0,
+        "s": 0,
+        "x": 0
+      }
+    },
+    "V": true,
+    "A": false,
+    "D": false,
+    "S": false,
+    "X": false,
+    "G": true
+  },
+  "BR_Salamander": {
+    "sid": null,
+    "artist": "MAR10",
+    "offset": {
+      "normal": {
+        "n": "-50",
+        "d": 0,
+        "s": 0,
+        "x": 0
+      },
+      "google": {
+        "n": "-50",
         "d": 0,
         "s": 0,
         "x": 0
