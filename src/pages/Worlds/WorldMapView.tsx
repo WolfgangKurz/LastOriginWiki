@@ -289,7 +289,7 @@ export default class WorldMapView extends Vue {
 
 	private get TotalExp () {
 		if (!this.selected) return 0;
-		return FormatNumber(this.Waves.reduce((p, c) => (p + c.reduce((p1, c1) => p + c1.e.exp, 0) || 0), 0));
+		return FormatNumber(this.Waves.reduce((p, c) => (p + c.reduce((p1, c1) => Math.max(p1, c1.e.exp), 0) || 0), 0));
 	}
 
 	private get SearchInfo () {
