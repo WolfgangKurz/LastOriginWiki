@@ -40,4 +40,28 @@ export interface Enemy {
 
 	skills: EnemySkill[];
 }
-export default Data as Enemy[];
+
+/**
+ * `null` : Not requested
+ * `false` : Loading
+ * `Enemy[]` : Loaded
+ */
+type DBCallback<T> = (data: T) => void;
+let internalDB: Enemy[] | false | null = null;
+const callbackQueue: DBCallback<Enemy[]>[] = [];
+export default function EnemyDB (callback?: (data: Enemy[]) => void): Enemy[] | null {
+	if (!internalDB) {
+		if (callback) callbackQueue.push(callback);
+
+		if (internalDB !== false) {
+			internalDB = false;
+			import(/* webpackChunkName: "chunk-db-enemy" */ "@/json/enemy")
+				.then(x => {
+					internalDB = x.default as unknown as Enemy[];
+					callbackQueue.forEach(y => y(internalDB as Enemy[]));
+				});
+		}
+		return null;
+	}
+	return internalDB;
+}

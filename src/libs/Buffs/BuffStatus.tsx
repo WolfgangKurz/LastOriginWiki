@@ -3,7 +3,6 @@ import { Decimal } from "decimal.js";
 
 import BuffData from "@/json/buffs";
 import UnitData from "@/libs/DB/Unit";
-import EnemyData from "@/libs/DB/Enemy";
 
 import { BuffEffect, BuffEffectValue, BUFFEFFECT_TYPE } from "@/libs/Buffs/BuffEffect";
 import { BuffTrigger } from "@/libs/Buffs/BuffTrigger";
@@ -13,6 +12,7 @@ import { BuffErase } from "@/libs/Buffs/BuffErase";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { ArrayUnique } from "@/libs/Functions";
 import { _e } from "@/libs/VNode";
+import EnemyNames from "@/json/enemy-names";
 
 let h: CreateElement | undefined;
 
@@ -104,10 +104,13 @@ function convertBuff (name: string) {
 		return `"${unit.name}"`;
 	} else if (name.startsWith("MOB_")) {
 		const key = name.replace(/MOB_MP_(.+)/, "$1");
-		const enemy = EnemyData.find(x => x.id === key);
+
+		const names = EnemyNames as Record<string, string>;
+
+		const enemy = names[key];
 		if (!enemy) return key;
 
-		return `"${enemy.name}"`;
+		return `"${enemy}"`;
 	}
 
 	return (BuffData as Record<string, string>)[name] ||

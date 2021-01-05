@@ -1,5 +1,17 @@
 <template>
 	<div>
+		<changelog-item title="Build 7638" date="2021-01-06">
+			<template #site>
+				<li>일부 DB를 비동기 처리했습니다.</li>
+			</template>
+			<template #bugfix>
+				<li>일부 지역의 웨이브 정보가 잘못 표시되던 문제를 수정했습니다.</li>
+			</template>
+			<template #new>
+				<li>여러 종류의 적 배치가 나타날 수 있는 지역의 모든 적 배치를 볼 수 있도록 웨이브 내 적 배치 번호를 추가했습니다.</li>
+			</template>
+		</changelog-item>
+
 		<changelog-item title="Build 7623" date="2021-01-05">
 			<template #bugfix>
 				<li><b-badge variant="warning">A-15 샐러맨더</b-badge>의 요소 숨김 일러스트가 표시되지 않던 문제를 수정했습니다.</li>

@@ -53,8 +53,8 @@ import StoreModule, { EnemyFilters } from "@/libs/Store";
 import EnemyCard from "./Enemy/EnemyCard.vue";
 import EnemyModal from "./Enemy/EnemyModal.vue";
 
-import EnemyData, { Enemy } from "@/libs/DB/Enemy";
-import MapData from "@/libs/DB/Map";
+import EnemyDB, { Enemy } from "@/libs/DB/Enemy";
+import MapDB, { Worlds } from "@/libs/DB/Map";
 
 import { UpdateTitle } from "@/libs/Functions";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
@@ -68,6 +68,22 @@ import { SetMeta } from "@/libs/Meta";
 	},
 })
 export default class EnemyPage extends Vue {
+	private internalEnemyDB: Enemy[] | null = null;
+	private get EnemyDB () {
+		if (this.internalEnemyDB) return this.internalEnemyDB;
+		return EnemyDB((x) => {
+			this.internalEnemyDB = x;
+		});
+	}
+
+	private internalMapDB: Worlds | null = null;
+	private get MapDB () {
+		if (this.internalMapDB) return this.internalMapDB;
+		return MapDB((x) => {
+			this.internalMapDB = x;
+		});
+	}
+
 	private enemyModalDisplay: boolean = false;
 
 	private selectedEnemy: Enemy | null = null;
@@ -90,14 +106,21 @@ export default class EnemyPage extends Vue {
 
 	private get UsedEnemies () {
 		const ret: Record<string, null> = {};
-		Object.keys(MapData).forEach(x =>
-			Object.keys(MapData[x]).forEach(y =>
-				MapData[x][y].list.forEach(z =>
-					z.wave && z.wave.forEach(w => w.enemy.filter(e => e).forEach(e => e && (ret[e.id] = null))),
+
+		const db = this.MapDB;
+		if (!db) return [];
+		if (!this.EnemyDB) return [];
+
+		Object.keys(db).forEach(x =>
+			Object.keys(db[x]).forEach(y =>
+				db[x][y].list.forEach(z =>
+					z.wave && z.wave.forEach(w => w.forEach(i =>
+						i.e.enemy.filter(e => e).forEach(e => e && (ret[e.id] = null)),
+					)),
 				),
 			),
 		);
-		EnemyData.forEach(e => {
+		this.EnemyDB.forEach(e => {
 			if (/_EW[0-9]*/.test(e.id))
 				ret[e.id] = null;
 		});
@@ -105,7 +128,9 @@ export default class EnemyPage extends Vue {
 	}
 
 	private get EnemyList () {
-		return EnemyData
+		if (!this.EnemyDB) return [];
+
+		return this.EnemyDB
 			.filter(x => {
 				if (!this.Filters.Type[ACTOR_CLASS.LIGHT] && x.type === ACTOR_CLASS.LIGHT) return false;
 				if (!this.Filters.Type[ACTOR_CLASS.AIR] && x.type === ACTOR_CLASS.AIR) return false;
@@ -143,7 +168,7 @@ export default class EnemyPage extends Vue {
 	}
 
 	private modalEnemy (id: string) {
-		this.selectedEnemy = EnemyData.find(x => x.id === id) || null;
+		this.selectedEnemy = (this.EnemyDB && this.EnemyDB.find(x => x.id === id)) || null;
 		this.enemyModalDisplay = !!this.selectedEnemy;
 	}
 

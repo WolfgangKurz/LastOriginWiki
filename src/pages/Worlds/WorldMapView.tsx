@@ -19,9 +19,11 @@ import { FormatNumber, UpdateTitle } from "@/libs/Functions";
 
 import UnitData, { Unit } from "@/libs/DB/Unit";
 import EquipData, { Equip } from "@/libs/DB/Equip";
-import MapData, { MapNodeEntity, MapReward, MapEnemyData } from "@/libs/DB/Map";
-import EnemyData, { Enemy } from "@/libs/DB/Enemy";
-import ConsumableData, { Consumable } from "@/libs/DB/Consumable";
+
+import MapDB, { Worlds, MapNodeEntity, MapReward, MapEnemyData } from "@/libs/DB/Map";
+import ConsumableDB, { Consumable } from "@/libs/DB/Consumable";
+import EnemyDB, { Enemy } from "@/libs/DB/Enemy";
+
 import { SetMeta } from "@/libs/Meta";
 import { _e } from "@/libs/VNode";
 
@@ -56,6 +58,31 @@ interface WaveEnemyInfo extends MapEnemyData {
 	},
 })
 export default class WorldMapView extends Vue {
+	private internalConsumableDB: Consumable[] | null = null;
+	private get ConsumableDB () {
+		if (this.internalConsumableDB) return this.internalConsumableDB;
+		return ConsumableDB((x) => {
+			this.internalConsumableDB = x;
+		});
+	}
+
+	private internalMapDB: Worlds | null = null;
+	private get MapDB () {
+		if (this.internalMapDB) return this.internalMapDB;
+		return MapDB((x) => {
+			this.internalMapDB = x;
+			this.checkParams();
+		});
+	}
+
+	private internalEnemyDB: Enemy[] | null = null;
+	private get EnemyDB () {
+		if (this.internalEnemyDB) return this.internalEnemyDB;
+		return EnemyDB((x) => {
+			this.internalEnemyDB = x;
+		});
+	}
+
 	private world: string = "";
 	private area: string = "";
 
@@ -64,6 +91,7 @@ export default class WorldMapView extends Vue {
 	private CurrentTab: "reward" | "drop" | "enemy" | "search" = "reward";
 
 	private selectedWave: number = 0;
+	private selectedWaveIndex: number = 0;
 
 	private selectedEnemy: Enemy | null = null;
 	private selectedEnemyLevel: number = 1;
@@ -73,10 +101,6 @@ export default class WorldMapView extends Vue {
 	@Watch("$route")
 	private routeChanged () {
 		this.checkParams();
-	}
-
-	private get AssetsRoot () {
-		return AssetsRoot;
 	}
 
 	private get ImageExt () {
@@ -90,8 +114,10 @@ export default class WorldMapView extends Vue {
 	}
 
 	private get AreaName (): string {
-		return (this.world in MapData) && (this.area in MapData[this.world])
-			? MapData[this.world][this.area].title || `${this.area} 구역`
+		if (!this.MapDB) return "???";
+
+		return (this.world in this.MapDB) && (this.area in this.MapDB[this.world])
+			? this.MapDB[this.world][this.area].title || `${this.area} 구역`
 			: "???";
 	}
 
@@ -101,45 +127,50 @@ export default class WorldMapView extends Vue {
 		const ids: string[] = [];
 		const ret: Unit[] = [];
 		this.Waves.forEach(_ => {
-			_.drops
-				.filter(x => x.id.startsWith("Char_"))
-				.map(x => {
-					if (ids.includes(x.id)) return null;
-					ids.push(x.id);
+			_.forEach(__ => {
+				__.e.drops
+					.filter(x => x.id.startsWith("Char_"))
+					.map(x => {
+						if (ids.includes(x.id)) return null;
+						ids.push(x.id);
 
-					const k = x.id.replace(/Char_(.+)_N/, "$1");
-					return UnitData.find(y => y.uid === k);
-				})
-				.filter(x => x)
-				.forEach(x => ret.push(x as Unit));
+						const k = x.id.replace(/Char_(.+)_N/, "$1");
+						return UnitData.find(y => y.uid === k);
+					})
+					.filter(x => x)
+					.forEach(x => ret.push(x as Unit));
+			});
 		});
 		return ret.sort((a, b) => ((b as Unit).rarity - (a as Unit).rarity));
 	}
 
 	private get ItemDrops () {
 		if (!this.selected) return [];
+		if (!this.ConsumableDB) return [];
 
 		const ids: string[] = [];
 		const ret: Array<Equip | Consumable> = [];
 		this.Waves.forEach(_ => {
-			_.drops
-				.filter(x => !x.id.startsWith("Char_"))
-				.map(x => {
-					if (ids.includes(x.id)) return null;
-					ids.push(x.id);
+			_.forEach(__ => {
+				__.e.drops
+					.filter(x => !x.id.startsWith("Char_"))
+					.map(x => {
+						if (ids.includes(x.id)) return null;
+						ids.push(x.id);
 
-					if (x.id.startsWith("Equip_")) {
-						const k = x.id.substr(6);
-						const eq = EquipData.find(y => y.fullKey === k);
-						if (eq) return eq;
-					} else {
-						const cs = ConsumableData.find(y => y.key === x.id);
-						if (cs) return cs;
-					}
-					return null;
-				})
-				.filter(x => x)
-				.forEach(x => ret.push(x as (Equip | Consumable)));
+						if (x.id.startsWith("Equip_")) {
+							const k = x.id.substr(6);
+							const eq = EquipData.find(y => y.fullKey === k);
+							if (eq) return eq;
+						} else {
+							const cs = this.ConsumableDB && this.ConsumableDB.find(y => y.key === x.id);
+							if (cs) return cs;
+						}
+						return null;
+					})
+					.filter(x => x)
+					.forEach(x => ret.push(x as (Equip | Consumable)));
+			});
 		});
 		// (); .sort((a, b) => b.rarity - a.rarity);
 		return ret.sort((a, b) => {
@@ -156,6 +187,7 @@ export default class WorldMapView extends Vue {
 
 	private get RewardDrops (): RewardDropType[] {
 		if (!this.selected) return [];
+		if (!this.ConsumableDB) return [];
 
 		const f = (x: MapReward) => {
 			if (typeof x === "string") {
@@ -175,7 +207,7 @@ export default class WorldMapView extends Vue {
 					const eq = EquipData.find(y => y.fullKey === k);
 					if (eq) return { equip: eq, count: x.count };
 				} else {
-					const cs = ConsumableData.find(y => y.key === i);
+					const cs = this.ConsumableDB && this.ConsumableDB.find(y => y.key === i);
 					if (cs) return { consumable: cs, count: x.count };
 				}
 				return null;
@@ -195,7 +227,9 @@ export default class WorldMapView extends Vue {
 			.fill(MapNodeEntity.Empty)
 			.map((x: MapNodeEntity, i) => ({ ...x, offset: i }));
 
-		const world = MapData[this.world];
+		if (!this.MapDB) return ret;
+
+		const world = this.MapDB[this.world];
 		if (!world) return ret;
 
 		const area = world[this.area]?.list;
@@ -207,8 +241,9 @@ export default class WorldMapView extends Vue {
 
 	private get NodeList () {
 		const ret: MapNodeEntity[] = [];
+		if (!this.MapDB) return ret;
 
-		const world = MapData[this.world];
+		const world = this.MapDB[this.world];
 		if (!world) return ret;
 
 		const area = world[this.area]?.list;
@@ -228,14 +263,16 @@ export default class WorldMapView extends Vue {
 	}
 
 	private get CurrentWave (): Array<WaveEnemyInfo | null> {
-		if (!this.selected)
-			return new Array(9).fill(null);
+		if (!this.selected) return new Array(9).fill(null);
 
-		return this.Waves[this.selectedWave].enemy
+		const db = this.EnemyDB;
+		if (!db) return new Array(9).fill(null);
+
+		return this.Waves[this.selectedWave][this.selectedWaveIndex].e.enemy
 			.map(x => {
 				if (!x) return null;
 
-				const enemy = EnemyData.find(y => y.id === x.id);
+				const enemy = db.find(y => y.id === x.id);
 				if (!enemy) return null;
 
 				return {
@@ -247,12 +284,12 @@ export default class WorldMapView extends Vue {
 
 	private get CurrentWaveExp () {
 		if (!this.selected) return 0;
-		return FormatNumber(this.Waves[this.selectedWave].exp);
+		return FormatNumber(this.Waves[this.selectedWave][this.selectedWaveIndex].e.exp);
 	}
 
 	private get TotalExp () {
 		if (!this.selected) return 0;
-		return FormatNumber(this.Waves.reduce((p, c) => (p + c.exp || 0), 0));
+		return FormatNumber(this.Waves.reduce((p, c) => (p + c.reduce((p1, c1) => p + c1.e.exp, 0) || 0), 0));
 	}
 
 	private get SearchInfo () {
@@ -606,6 +643,7 @@ export default class WorldMapView extends Vue {
 										onClick={ (e: Event) => {
 											e.preventDefault();
 											this.selectedWave = waveIdx;
+											this.selectedWaveIndex = 0;
 										} }
 									>
 										<img
@@ -616,6 +654,18 @@ export default class WorldMapView extends Vue {
 									</a>),
 
 									<div class="mt-3">
+										<div class="mb-3">
+											<b-button-group>
+												{ this.Waves[this.selectedWave].map((_, idx) => <b-button
+													variant="outline-dark"
+													pressed={ this.selectedWaveIndex === idx }
+													onClick={ () => (this.selectedWaveIndex = idx)}
+												>
+													#{ idx + 1 }
+													<b-badge class="ml-1" variant="warning">{ _.r }%</b-badge>
+												</b-button>) }
+											</b-button-group>
+										</div>
 										<div class="mb-2">
 											<b-badge variant="warning">웨이브 경험치 { this.CurrentWaveExp }</b-badge>
 										</div>

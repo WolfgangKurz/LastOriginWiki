@@ -17,7 +17,7 @@ import { Route } from "vue-router";
 import StoreModule, { UnitDisplayType } from "@/libs/Store";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
-import FacilityData, { FacilityEntity } from "@/libs/DB/Facility";
+import FacilityDB, { Facility, FacilityEntity } from "@/libs/DB/Facility";
 
 import FacilityCard from "./Facilities/FacilityCard.vue";
 import { UpdateTitle } from "@/libs/Functions";
@@ -29,12 +29,23 @@ import { SetMeta } from "@/libs/Meta";
 	},
 })
 export default class Facilities extends Vue {
+	private internalFacilityDB: Facility | null = null;
+	private get FacilityDB () {
+		if (this.internalFacilityDB) return this.internalFacilityDB;
+		return FacilityDB((x) => {
+			this.internalFacilityDB = x;
+		});
+	}
+
 	// Vuex -----
 	// Vuex -----
 
 	private get Facilities () {
-		return Object.keys(FacilityData)
-			.map(key => [FacilityData[key], key] as [FacilityEntity, string])
+		const db = this.FacilityDB;
+		if (!db) return [];
+
+		return Object.keys(db)
+			.map(key => [db[key], key] as [FacilityEntity, string])
 			.sort((a, b) => (a[1] < b[1] ? -1 : a[1] > b[1] ? 1 : 0));
 	}
 

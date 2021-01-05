@@ -7,7 +7,7 @@ import { StoryRaw } from "@/libs/Types";
 import { StoryRowData } from "@/libs/Story";
 
 import UnitData from "@/libs/DB/Unit";
-import MapData from "@/libs/DB/Map";
+import MapDB, { Worlds } from "@/libs/DB/Map";
 import { StoryData } from "@/libs/DB";
 
 import { AssetsRoot, WorldNames } from "@/libs/Const";
@@ -22,6 +22,14 @@ import { SetMeta } from "@/libs/Meta";
 	},
 })
 export default class StoryViewer extends Vue {
+	private internalMapDB: Worlds | null = null;
+	private get MapDB () {
+		if (this.internalMapDB) return this.internalMapDB;
+		return MapDB((x) => {
+			this.internalMapDB = x;
+		});
+	}
+
 	private readonly BaseURL = AssetsRoot + "/story/";
 
 	private world: string = "";
@@ -70,8 +78,10 @@ export default class StoryViewer extends Vue {
 	}
 
 	private get Area () {
-		if (this.world in MapData && this.area in MapData[this.world])
-			return MapData[this.world][this.area].title;
+		if (!this.MapDB) return "???";
+
+		if (this.world in this.MapDB && this.area in this.MapDB[this.world])
+			return this.MapDB[this.world][this.area].title;
 		return "???";
 	}
 

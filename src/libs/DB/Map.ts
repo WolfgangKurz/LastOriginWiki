@@ -1,5 +1,3 @@
-import Data from "@/json/map";
-
 type MapRewardChar = string;
 interface MapRewardItem {
 	item: string;
@@ -36,6 +34,11 @@ export interface MapWave {
 	drops: MapWaveDrop[];
 }
 
+export interface MapWaveGroup {
+	e: MapWave;
+	r: number;
+}
+
 export interface MapSearch {
 	time: number;
 	metal: number;
@@ -62,7 +65,7 @@ export interface MapNodeEntity {
 	reward_am: MapReward[];
 	/* eslint-enable camelcase */
 
-	wave?: MapWave[];
+	wave?: Array<MapWaveGroup[]>;
 }
 /* eslint-disable-next-line @typescript-eslint/no-namespace */
 export namespace MapNodeEntity {
@@ -89,4 +92,27 @@ export interface Worlds {
 	};
 }
 
-export default Data as Worlds;
+/**
+ * `null` : Not requested
+ * `false` : Loading
+ * `Worlds` : Loaded
+ */
+type DBCallback<T> = (data: T) => void;
+let internalDB: Worlds | false | null = null;
+const callbackQueue: DBCallback<Worlds>[] = [];
+export default function MapDB (callback?: (data: Worlds) => void): Worlds | null {
+	if (!internalDB) {
+		if (callback) callbackQueue.push(callback);
+
+		if (internalDB !== false) {
+			internalDB = false;
+			import(/* webpackChunkName: "chunk-db-map" */ "@/json/map")
+				.then(x => {
+					internalDB = x.default as unknown as Worlds;
+					callbackQueue.forEach(y => y(internalDB as Worlds));
+				});
+		}
+		return null;
+	}
+	return internalDB;
+}
