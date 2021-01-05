@@ -282,10 +282,11 @@ import SkillDescription from "@/components/SkillDescription.vue";
 import BuffList from "@/components/BuffList";
 
 import { ACTOR_GRADE, ITEM_TYPE } from "@/libs/Types/Enums";
-import EnemyData, { Enemy, EnemySkill } from "@/libs/DB/Enemy";
 import EntitySource from "@/libs/EntitySource";
+
+import EnemyDB, { Enemy, EnemySkill } from "@/libs/DB/Enemy";
 import UnitData from "@/libs/DB/Unit";
-import MapData from "@/libs/DB/Map";
+import MapDB, { Worlds } from "@/libs/DB/Map";
 
 @Component({
 	components: {
@@ -301,6 +302,22 @@ import MapData from "@/libs/DB/Map";
 	},
 })
 export default class EnemyModal extends Vue {
+	private internalEnemyDB: Enemy[] | null = null;
+	private get EnemyDB () {
+		if (this.internalEnemyDB) return this.internalEnemyDB;
+		return EnemyDB((x) => {
+			this.internalEnemyDB = x;
+		});
+	}
+
+	private internalMapDB: Worlds | null = null;
+	private get MapDB () {
+		if (this.internalMapDB) return this.internalMapDB;
+		return MapDB((x) => {
+			this.internalMapDB = x;
+		});
+	}
+
 	@PropSync("display", {
 		type: Boolean,
 		default: false,
@@ -345,7 +362,8 @@ export default class EnemyModal extends Vue {
 
 	private get target () {
 		if (!this.enemy) return null;
-		return EnemyData.find(x => x.id === this.targetId) || null;
+		if (!this.EnemyDB) return null;
+		return this.EnemyDB.find(x => x.id === this.targetId) || null;
 	}
 
 	private get isEWEnemy () {
@@ -355,7 +373,9 @@ export default class EnemyModal extends Vue {
 
 	private get FamilyList () {
 		if (!this.enemy) return [];
-		return EnemyData
+		if (!this.EnemyDB) return [];
+
+		return this.EnemyDB
 			.filter(x => (x.name === this.enemy.name))
 			.map((x, i) => ({
 				value: x.id,
@@ -372,26 +392,31 @@ export default class EnemyModal extends Vue {
 
 	private get Sources () {
 		if (!this.target) return [];
+
+		const db = this.MapDB;
+		if (!db) return [];
 		// return this.target.source;
 
 		const ret: string[][] = [];
 		const keys: string[] = [];
 
-		Object.keys(MapData).forEach(x =>
-			Object.keys(MapData[x]).forEach(y =>
-				MapData[x][y].list.forEach(z =>
-					z.wave && z.wave.forEach(w => w.enemy.filter(e => e && e.id === this.targetId).forEach(e => {
-						if (!keys.includes(x)) keys.push(x);
-						const idx = keys.indexOf(x);
+		Object.keys(db).forEach(x =>
+			Object.keys(db[x]).forEach(y =>
+				db[x][y].list.forEach(z =>
+					z.wave && z.wave.forEach(w => w.forEach(i =>
+						i.e.enemy.filter(e => e && e.id === this.targetId).forEach(e => {
+							if (!keys.includes(x)) keys.push(x);
+							const idx = keys.indexOf(x);
 
-						while (ret.length <= idx)
-							ret.push([]);
+							while (ret.length <= idx)
+								ret.push([]);
 
-						if (x === "Story" || x === "Cha")
-							ret[idx].push(z.text);
-						else
-							ret[idx].push(`Ev:${x}:${z.text}`);
-					})),
+							if (x === "Story" || x === "Cha")
+								ret[idx].push(z.text);
+							else
+								ret[idx].push(`Ev:${x}:${z.text}`);
+						}),
+					)),
 				),
 			),
 		);

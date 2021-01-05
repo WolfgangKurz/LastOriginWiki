@@ -5,11 +5,12 @@ import { Prop } from "vue-property-decorator";
 
 import { ACTOR_GRADE, ROLE_TYPE } from "@/libs/Types/Enums";
 import UnitData from "@/libs/DB/Unit";
-import FacilityData, { FacilityEntity, FacilityUpgradeRequiredMaterial, FactilityProduct } from "@/libs/DB/Facility";
-import ConsumableData from "@/libs/DB/Consumable";
+import FacilityDB, { Facility, FacilityEntity, FacilityUpgradeRequiredMaterial, FactilityProduct } from "@/libs/DB/Facility";
+import ConsumableDB, { Consumable } from "@/libs/DB/Consumable";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { UpdateTitle } from "@/libs/Functions";
+import { _e } from "@/libs/VNode";
 
 import UnitBadge from "@/components/UnitBadge.vue";
 import RarityBadge from "@/components/RarityBadge.vue";
@@ -30,11 +31,28 @@ import { SetMeta } from "@/libs/Meta";
 	},
 })
 export default class FacilityView extends Vue {
+	private internalConsumableDB: Consumable[] | null = null;
+	private get ConsumableDB () {
+		if (this.internalConsumableDB) return this.internalConsumableDB;
+		return ConsumableDB((x) => {
+			this.internalConsumableDB = x;
+		});
+	}
+
+	private internalFacilityDB: Facility | null = null;
+	private get FacilityDB () {
+		if (this.internalFacilityDB) return this.internalFacilityDB;
+		return FacilityDB((x) => {
+			this.internalFacilityDB = x;
+		});
+	}
+
 	private key: string = "";
 	private level: number = 0;
 
 	private get facility () {
-		return FacilityData[this.key] || null;
+		if (!this.FacilityDB) return null;
+		return this.FacilityDB[this.key] || null;
 	}
 
 	private get LevelList () {
@@ -114,6 +132,9 @@ export default class FacilityView extends Vue {
 	}
 
 	private Results (key: string, result: FactilityProduct[]) {
+		const db = this.ConsumableDB;
+		if (!db) return [];
+
 		type T = string | JSX.Element;
 		type U = T | T[];
 		type Dict<P> = { [key: string]: P; };
@@ -124,7 +145,7 @@ export default class FacilityView extends Vue {
 
 			const list: U[] = [];
 			if ("item" in x) {
-				const item = ConsumableData.find(y => y.key === x.item) || { name: x.item };
+				const item = db.find(y => y.key === x.item) || { name: x.item };
 
 				if (x.chance === 100)
 					list.push(<drop-item item={ item } count={ x.count } />);
@@ -187,8 +208,9 @@ export default class FacilityView extends Vue {
 		const level = this.level;
 		const entry = facility.list[level];
 
-		function getUpgradeRequired (m: FacilityUpgradeRequiredMaterial | null) {
+		const getUpgradeRequired = (m: FacilityUpgradeRequiredMaterial | null) => {
 			if (!m) return <small class="text-secondary">없음</small>;
+			if (!this.ConsumableDB) return _e();
 
 			// const GradeTable = {
 			// 	T1: "일반",
@@ -220,10 +242,10 @@ export default class FacilityView extends Vue {
 			const text = TextVariantTable[m.grade];
 			// const type = TypeTable[m.type];
 
-			const item = ConsumableData.find(x => x.key === `${m.type}_Parts_${m.grade}`);
+			const item = this.ConsumableDB.find(x => x.key === `${m.type}_Parts_${m.grade}`);
 			return <drop-item item={ item } count={ m.value } variant={ variant } text={ text } />;
 			// return <b-badge class="mx-1" variant={variant}>{type} ({grade}) x{m.value}</b-badge>;
-		}
+		};
 
 		const UpgradeTable = facility.list
 			.filter((x, i) => i > 0)

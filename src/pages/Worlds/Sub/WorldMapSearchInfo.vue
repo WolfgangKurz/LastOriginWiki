@@ -39,13 +39,15 @@
 					<b-card class="mt-2" text-variant="dark" header="추가 획득 가능">
 						<div v-if="SearchInfo.items.length === 0" class="py-4 text-secondary">추가 획득 가능 물품 없음</div>
 						<b-row cols="2">
-							<drop-item
-								v-for="(item, i) in SearchInfo.items"
-								:key="`worlds-${world}-${area}-search-item-${i}`"
-								:item="GetConsumable(item.item)"
-								:count="item.count"
-								:chance="item.chance"
-							/>
+							<template v-for="(item, i) in SearchInfo.items">
+								<drop-item
+									v-if="GetConsumable(item.item)"
+									:key="`worlds-${world}-${area}-search-item-${i}`"
+									:item="GetConsumable(item.item)"
+									:count="item.count"
+									:chance="item.chance"
+								/>
+							</template>
 						</b-row>
 					</b-card>
 				</b-col>
@@ -62,7 +64,7 @@ import { Prop } from "vue-property-decorator";
 import DropItem from "./../DropItem.vue";
 import DropRes from "./../DropRes.vue";
 
-import ConsumableData, { Consumable } from "@/libs/DB/Consumable";
+import ConsumableDB, { Consumable } from "@/libs/DB/Consumable";
 import { MapSearch } from "@/libs/DB/Map";
 
 @Component({
@@ -72,6 +74,14 @@ import { MapSearch } from "@/libs/DB/Map";
 	},
 })
 export default class WorldMapSearchInfo extends Vue {
+	private internalConsumableDB: Consumable[] | null = null;
+	private get ConsumableDB () {
+		if (this.internalConsumableDB) return this.internalConsumableDB;
+		return ConsumableDB((x) => {
+			this.internalConsumableDB = x;
+		});
+	}
+
 	@Prop({
 		type: String,
 		default: "",
@@ -101,7 +111,8 @@ export default class WorldMapSearchInfo extends Vue {
 	}
 
 	private GetConsumable (item: string) {
-		return ConsumableData.find(y => y.key === item);
+		if (!this.ConsumableDB) return undefined;
+		return this.ConsumableDB.find(y => y.key === item);
 	}
 }
 </script>

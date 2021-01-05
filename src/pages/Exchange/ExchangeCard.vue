@@ -44,7 +44,7 @@ import EquipIcon from "@/components/EquipIcon.vue";
 import { ExchangeInfo } from "@/libs/DB/Exchange";
 import UnitData, { Unit } from "@/libs/DB/Unit";
 import EquipData from "@/libs/DB/Equip";
-import ConsumableData, { Consumable } from "@/libs/DB/Consumable";
+import ConsumableDB, { Consumable } from "@/libs/DB/Consumable";
 
 import { FormatNumber } from "@/libs/Functions";
 import { _e } from "@/libs/VNode";
@@ -57,6 +57,14 @@ import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/libs/Typ
 	},
 })
 export default class DropItem extends Vue {
+	private internalConsumableDB: Consumable[] | null = null;
+	private get ConsumableDB () {
+		if (this.internalConsumableDB) return this.internalConsumableDB;
+		return ConsumableDB((x) => {
+			this.internalConsumableDB = x;
+		});
+	}
+
 	@Prop({
 		type: Object,
 		required: true,
@@ -117,7 +125,8 @@ export default class DropItem extends Vue {
 	}
 
 	private get Item () {
-		return ConsumableData.find(x => x.key === this.reward.reward);
+		if (!this.ConsumableDB) return undefined;
+		return this.ConsumableDB.find(x => x.key === this.reward.reward);
 	}
 
 	private get Target () {
@@ -125,11 +134,14 @@ export default class DropItem extends Vue {
 	}
 
 	private get Requirements () {
+		const db = this.ConsumableDB;
+		if (!db) return [];
+
 		return this.reward.requires
 			.map(x => {
 				const p = x.split(":");
 				return {
-					item: ConsumableData.find(y => y.key === p[0]),
+					item: db.find(y => y.key === p[0]),
 					count: parseInt(p[1], 10) || 0,
 				};
 			})

@@ -3,9 +3,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
-import UnitData from "@/libs/DB/Unit";
 import { FacilityEntity, FacilityUpgradeRequiredMaterial, FactilityProduct } from "@/libs/DB/Facility";
-import ConsumableData from "@/libs/DB/Consumable";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 

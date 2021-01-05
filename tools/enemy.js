@@ -31,6 +31,7 @@ function process (auth) {
 			return parseFloat(v);
 		}
 
+		const names = {};
 		const ret = [];
 		const rows = res.data.values;
 		if (rows.length) {
@@ -87,11 +88,16 @@ function process (auth) {
 
 					skills: JSON.parse(skillData),
 				});
+				names[id] = name;
 			});
 
 			fs.writeFileSync(
 				path.resolve(__dirname, "..", "src", "json", "enemy.ts"),
 				`export default ${JSON.stringify(ret, null, 2)};`,
+			);
+			fs.writeFileSync(
+				path.resolve(__dirname, "..", "src", "json", "enemy-names.ts"),
+				`export default ${JSON.stringify(names, null, 2)};`,
 			);
 		} else
 			console.log("No data found.");
