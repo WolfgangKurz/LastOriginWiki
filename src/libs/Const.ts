@@ -1,19 +1,17 @@
 import webpChecker from "webp-checker";
 
-export function getScrollbarWidth () {
-	const div = document.createElement("div");
-
-	div.style.position = "absolute";
-	div.style.top = "-9999px";
-	div.style.width = "50px";
-	div.style.height = "50px";
-	div.style.overflow = "scroll";
-
-	document.body.appendChild(div);
-	const scrollbarWidth = div.getBoundingClientRect().width - div.clientWidth;
-	document.body.removeChild(div);
-	return scrollbarWidth;
-}
+export const UnitLevelTable: number[] = [
+	0, 120, 129, 140, 152, 165, 182, 200, 218, 241,
+	264, 291, 321, 392, 434, 476, 523, 577, 638, 703,
+	773, 852, 937, 1035, 1141, 1260, 1386, 1528, 1682, 1852,
+	2043, 2251, 2481, 2734, 2982, 3256, 3556, 3890, 4254, 4634,
+	5052, 5511, 6019, 6574, 7227, 7973, 8787, 9614, 10506, 11486,
+	12509, 13584, 14712, 15895, 17132, 18426, 19776, 21185, 22653, 24181,
+	25770, 27421, 29136, 30914, 32757, 34667, 36644, 38688, 40802, 42986,
+	45241, 47568, 49968, 52443, 54992, 57618, 60320, 63101, 65961, 68901,
+	71922, 75025, 78212, 81482, 84837, 88279, 91808, 95424, 99130, 123219,
+	153161, 190380, 236642, 294146, 365624, 454470, 564906, 702178, 872807, 1003728,
+];
 
 export const AssetsRoot = process.env.NODE_ENV === "development"
 	? "http://localhost:5500/assets"

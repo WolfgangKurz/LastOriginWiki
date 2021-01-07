@@ -7,12 +7,13 @@ import UnitData from "@/libs/DB/Unit";
 import { BuffEffect, BuffEffectValue, BUFFEFFECT_TYPE } from "@/libs/Buffs/BuffEffect";
 import { BuffTrigger } from "@/libs/Buffs/BuffTrigger";
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, BUFF_ATTR_TYPE, NUM_OUTPUTTYPE, ROLE_TYPE, TARGET_TYPE, UNIT_POSITION } from "@/libs/Types/Enums";
-import { BuffStat } from "@/libs/Buffs/Buffs";
+import { BuffStat, BuffStatStatic } from "@/libs/Buffs/Buffs";
 import { BuffErase } from "@/libs/Buffs/BuffErase";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { ArrayUnique } from "@/libs/Functions";
 import { _e } from "@/libs/VNode";
 import EnemyNames from "@/json/enemy-names";
+import { StatPointValue } from "@/pages/Simulation/Simulation/Stats";
 
 let h: CreateElement | undefined;
 
@@ -884,6 +885,55 @@ function formatDesc (type: NUM_OUTPUTTYPE, template: string, value: string, shor
 	}
 }
 
+function isStatable (type: BUFFEFFECT_TYPE) {
+	switch (type) {
+		case BUFFEFFECT_TYPE.STAT_ATK_VALUE:
+		case BUFFEFFECT_TYPE.STAT_DEF_VALUE:
+		case BUFFEFFECT_TYPE.STAT_HP_VALUE:
+		case BUFFEFFECT_TYPE.STAT_RATING_VALUE:
+		case BUFFEFFECT_TYPE.STAT_CRITICAL_VALUE:
+		case BUFFEFFECT_TYPE.STAT_AVOID_VALUE:
+			return true;
+	}
+	return false;
+}
+
+function toStatablePoint (stat: BuffStatStatic, level: number = 0) {
+	if (!level) level = 0;
+
+	if ("attack" in stat) {
+		return Decimal.div(literal(stat.attack, level), StatPointValue.ATK)
+			.toFixed(5)
+			.replace(/\.?0+$/, "");
+	}
+	if ("defense" in stat) {
+		return Decimal.div(literal(stat.defense, level), StatPointValue.DEF)
+			.toFixed(5)
+			.replace(/\.?0+$/, "");
+	}
+	if ("hp" in stat) {
+		return Decimal.div(literal(stat.hp, level), StatPointValue.HP)
+			.toFixed(5)
+			.replace(/\.?0+$/, "");
+	}
+	if ("accuracy" in stat) {
+		return Decimal.div(literal(stat.accuracy, level).replace("%", ""), StatPointValue.ACC)
+			.toFixed(5)
+			.replace(/\.?0+$/, "");
+	}
+	if ("critical" in stat) {
+		return Decimal.div(literal(stat.critical, level).replace("%", ""), StatPointValue.Cri)
+			.toFixed(5)
+			.replace(/\.?0+$/, "");
+	}
+	if ("evade" in stat) {
+		return Decimal.div(literal(stat.evade, level).replace("%", ""), StatPointValue.EV)
+			.toFixed(5)
+			.replace(/\.?0+$/, "");
+	}
+	return "";
+}
+
 export default function BuffStatus (context: Vue, stat: BuffStat, level?: number): JSX.Element[] {
 	if (!h) h = context.$createElement;
 
@@ -927,6 +977,9 @@ export default function BuffStatus (context: Vue, stat: BuffStat, level?: number
 					{ getBuffText(stat, level) }
 					{ getChanceText(stat.chance) }
 				</div>
+				{ isStatable(stat.type) ? <div class="float-right text-right">
+					<b-badge variant="dark">{ toStatablePoint(stat, level) } 포인트</b-badge>
+				</div> : _e() }
 			</div>);
 		}
 	}

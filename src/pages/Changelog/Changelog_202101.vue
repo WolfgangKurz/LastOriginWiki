@@ -1,5 +1,17 @@
 <template>
 	<div>
+		<changelog-item title="Build 7652" date="2021-01-07">
+			<template #bugfix>
+				<li>전투원 스테이터스 계산기에서 전투원의 전용장비를 선택할 수 없는 문제를 수정했습니다.</li>
+			</template>
+			<template #new>
+				<li>장비의 스테이터스 상승 수치를 강화 포인트로 환산한 수치 표시를 추가했습니다.</li>
+			</template>
+			<template #update>
+				<li>전투원 경험치 계산기를 재개장했습니다.</li>
+			</template>
+		</changelog-item>
+
 		<changelog-item title="Build 7638" date="2021-01-06">
 			<template #site>
 				<li>일부 DB를 비동기 처리했습니다.</li>
