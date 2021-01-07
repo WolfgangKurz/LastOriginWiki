@@ -143,21 +143,6 @@ export interface RawCostTable {
 	};
 }
 
-export interface ExpEntity {
-	exp: number;
-	enemies: number;
-}
-export interface ExpRaw {
-	map: {
-		[key: string]: {
-			[key: string]: ExpEntity[] | string;
-
-			type: string;
-		};
-	};
-	table: number[];
-}
-
 export interface StoryRaw {
 	area: string;
 	map: number;

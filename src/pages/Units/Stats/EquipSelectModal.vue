@@ -35,16 +35,7 @@
 				</b-dropdown>
 			</b-col>
 			<b-col v-if="EffectList" cols="12" class="mb-3">
-				<b-list-group class="text-left">
-					<b-list-group-item v-for="(status, idx) in EffectList" :key="`status-line-${idx}`">
-						<node-renderer :elem="status" />
-						<!--
-						<div v-if="status.unknown" class="unknown-status float-right" title="정확하지 않을 수 있습니다" v-b-tooltip.hover.left>
-							&#x26A0;
-						</div>
-						-->
-					</b-list-group-item>
-				</b-list-group>
+				<buff-list v-if="EffectList.length > 0" :list="EffectList" :level="equipLevel" />
 			</b-col>
 			<b-col cols="12">
 				<b-btn-group>
@@ -67,18 +58,21 @@ import EquipData, { Equip } from "@/libs/DB/Equip";
 
 import EquipStatus from "@/libs/Buffs/BuffStatus";
 
-import NodeRenderer from "@/components/NodeRenderer.vue";
 import RarityBadge from "@/components/RarityBadge.vue";
 import EquipIcon from "@/components/EquipIcon.vue";
 import ElemIcon from "@/components/ElemIcon.vue";
+
+import BuffList from "@/components/BuffList";
+
 import { groupBy } from "@/libs/Functions";
 
 @Component({
 	components: {
-		NodeRenderer,
 		RarityBadge,
 		EquipIcon,
 		ElemIcon,
+
+		BuffList,
 	},
 })
 export default class EquipSelectModal extends Vue {
@@ -107,10 +101,10 @@ export default class EquipSelectModal extends Vue {
 	private type!: ITEM_TYPE;
 
 	@Prop({
-		type: Number,
+		type: String,
 		default: 0,
 	})
-	private target!: number;
+	private target!: string;
 
 	private rarity: ACTOR_GRADE = ACTOR_GRADE.SS;
 	private SelectedEquip: Equip = Equip.Empty;
@@ -181,16 +175,14 @@ export default class EquipSelectModal extends Vue {
 				const key = first.key;
 
 				if (this.target && first.limit) {
-					const u = UnitData.find(x => x.id === this.target);
+					const u = UnitData.find(x => x.uid === this.target);
 					if (!u) return false;
 					let ret = false;
 
 					for (const y of first.limit) {
-						if (typeof y === "number") {
-							if (y === u.id) {
-								ret = true;
-								break;
-							}
+						if (y === u.uid) {
+							ret = true;
+							break;
 						} else {
 							const _ = y.split("+")
 								.map(z => {
@@ -243,8 +235,7 @@ export default class EquipSelectModal extends Vue {
 	private get EffectList () {
 		if (!this.SelectedEquip.key) return null;
 
-		const stats = this.SelectedEquip.stats[this.equipLevel];
-		return stats.reduce((p, c) => [...p, ...EquipStatus(this, c)], [] as JSX.Element[]);
+		return this.SelectedEquip.stats[this.equipLevel];
 	}
 
 	private get SelectedEquipName () {

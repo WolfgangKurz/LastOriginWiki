@@ -35,7 +35,7 @@
 
 				<equip-select-modal
 					v-if="unit"
-					:target="unit.Id"
+					:target="unit.Unit.uid"
 					:display.sync="EquipSelectDisplay"
 					:type="EquipSelectDisplay ? unit.Equips[EquipSelecting - 1].Type : 0"
 					:equip="EquipSelectDisplay ? FindEquip(unit.Equips[EquipSelecting - 1].FullKey) : EmptyEquip"

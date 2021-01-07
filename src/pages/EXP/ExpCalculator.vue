@@ -39,109 +39,144 @@
 				</b-col>
 			</b-row>
 
-			<b-row class="my-4">
-				<b-col cols="12" class="mb-1">장비 보너스</b-col>
-
-				<template v-for="(equip, equipIdx) in ExpEquips">
-					<b-col cols="12" lg="7" :key="`exp-calc-equip-${equipIdx}-0`" :data-invalid="equip.use ? 0 : 1">
-						<div class="ml-2">
-							<b-row>
-								<b-col cols="12" md="auto" class="mb-2">
-									<b-checkbox v-model="equip.use">
-										<span>
-											<equip-icon :name="`${equip.name}_${equip.rarity.toLowerCase()}`" size="small" />
-											<strong class="ml-2 py-1">{{ equip.name }}</strong>
-										</span>
-									</b-checkbox>
-								</b-col>
+			<div class="mt-3">장비 보너스</div>
+			<b-row class="mt-1" cols="1" cols-sm="2" cols-md="3">
+				<div v-for="(equip, equipIdx) in ExpEquips" :key="`exp-calc-equip-${equipIdx}-0`" class="p-1">
+					<b-card :data-invalid="equip.use ? 0 : 1" no-body>
+						<b-card-header class="text-center">
+							<b-checkbox v-model="equip.use" class="pr-4">
+								<div class="mb-1">
+									<equip-icon :image="equip.current.icon" size="small" />
+								</div>
+								<strong class="py-1 text-keep">{{ equip.current.name }}</strong>
+							</b-checkbox>
+						</b-card-header>
+						<b-card-body>
+							<b-row class="align-items-center">
+								<b-col cols="auto" cols-md="12">등급 :</b-col>
 								<b-col>
-									<b-form-select v-model="equip.rarity" :options="rarityList" />
+									<b-form-select v-model="equip.current" :options="RarityOptions(equip.equips)" />
 								</b-col>
+							</b-row>
+							<b-row class="mt-1 align-items-center">
+								<b-col cols="auto" cols-md="12">강화 :</b-col>
 								<b-col>
 									<b-form-select v-model="equip.level" :options="equipLevelList" />
 								</b-col>
-								<b-col v-if="equip.count > 0">
-									<b-form-select v-model="equip.count" :options="equipStackList" />
+							</b-row>
+							<b-row class="mt-1 align-items-center" :data-invalid="equip.stack > 0 ? 0 : 1">
+								<b-col cols="auto" cols-md="12">중첩 :</b-col>
+								<b-col>
+									<b-form-select v-model="equip.stack" :options="equipStackList" :disabled="equip.stack <= 0" />
 								</b-col>
 							</b-row>
-						</div>
-					</b-col>
-					<b-col cols="12" lg="5" :key="`exp-calc-equip-${equipIdx}-1`" class="pl-4 mb-4" :data-invalid="equip.use ? 0 : 1">
-						<span class="pl-4">
-							경험치 x{{ AsRounded(equip.bonus[equip.level]) }}
-							<span v-if="equip.count > 0" class="pl-2">x {{ equip.count }}</span>
-						</span>
-					</b-col>
-				</template>
+						</b-card-body>
+						<b-card-footer>
+							<b-badge variant="dark">경험치</b-badge>
+							<b-badge variant="warning" class="ml-2">x{{ A1(equip.bonus[equip.current.rarity][equip.level]) }}</b-badge>
+							<b-badge v-if="equip.stack > 0" variant="info" class="ml-2">x{{ equip.stack }} 중첩</b-badge>
+						</b-card-footer>
+					</b-card>
+				</div>
 			</b-row>
 
-			<b-row class="my-4">
-				<b-col cols="12" class="mb-1">스킬 보너스</b-col>
-
-				<b-col cols="12" lg="7" :data-invalid="skills.alexandra.use ? 0 : 1">
-					<div class="ml-2">
-						<b-row>
-							<b-col cols="12" md="auto" class="mb-2">
-								<b-checkbox v-model="skills.alexandra.use">
-									<span>
-										<unit-face uid="3P_Alexandra" size="40" />
-										<strong class="ml-2 py-1">공진의 알렉산드라 [모범 교사]</strong>
-									</span>
-								</b-checkbox>
-							</b-col>
-							<b-col>
-								<b-form-select v-model="skills.alexandra.level" :options="skillLevelList" />
-							</b-col>
-						</b-row>
-					</div>
-				</b-col>
-				<b-col cols="12" lg="5" class="pl-4 mb-4" :data-invalid="skills.alexandra.use ? 0 : 1">
-					<span class="pl-4">경험치 x{{ AsRounded(skills.alexandra.bonus[skills.alexandra.level]) }}</span>
-				</b-col>
-
-				<b-col cols="12" lg="7" :data-invalid="skills.tommywalker.use ? 0 : 1">
-					<div class="ml-2">
-						<b-row>
-							<b-col cols="12" md="auto" class="mb-2">
-								<b-checkbox v-model="skills.tommywalker.use">
-									<span>
-										<unit-face uid="PECS_TommyWalker" size="40" />
-										<strong class="ml-2 py-1">토미 워커 [잔해 재활용]</strong>
-									</span>
-								</b-checkbox>
-							</b-col>
-							<b-col>
-								<b-form-select v-model="skills.tommywalker.level" :options="skillLevelList" />
-							</b-col>
-						</b-row>
-					</div>
-				</b-col>
-				<b-col cols="12" lg="5" class="pl-4 mb-4" :data-invalid="skills.tommywalker.use ? 0 : 1">
-					<span class="pl-4">경험치 x{{ AsRounded(skills.tommywalker.bonus[skills.tommywalker.level]) }}</span>
-				</b-col>
+			<div class="mt-3">스킬 보너스</div>
+			<b-row class="mt-1" cols="1" cols-sm="2" cols-md="3">
+				<div class="p-1">
+					<b-card :data-invalid="skills.alexandra.use ? 0 : 1" no-body>
+						<b-card-header class="text-center">
+							<b-checkbox v-model="skills.alexandra.use" class="pr-4">
+								<div class="mb-1">
+									<unit-face uid="3P_Alexandra" size="40" />
+								</div>
+								<strong class="py-1 text-keep">
+									공진의 알렉산드라
+									<span class="d-inline-block">[모범 교사]</span>
+								</strong>
+							</b-checkbox>
+						</b-card-header>
+						<b-card-body>
+							<b-row class="mt-1 align-items-center">
+								<b-col cols="12" md="auto">레벨 :</b-col>
+								<b-col>
+									<b-form-select v-model="skills.alexandra.level" :options="skillLevelList(true, true)" />
+								</b-col>
+							</b-row>
+							<hr />
+							<b-checkbox v-model="skills.alexandra.flavor">
+								♥200
+								<span class="d-inline-block">[스킬 레벨 Lv+1]</span>
+							</b-checkbox>
+							<hr />
+							<b-checkbox v-model="skills.alexandra.buff">
+								버프/디버프
+								<span class="d-inline-block">[스킬 레벨 Lv+2]</span>
+							</b-checkbox>
+						</b-card-body>
+						<b-card-footer>
+							<b-badge variant="dark">경험치</b-badge>
+							<b-badge variant="warning" class="ml-2">x{{ A1(skills.alexandra.bonus[skills.alexandra.level]) }}</b-badge>
+						</b-card-footer>
+					</b-card>
+				</div>
+				<div class="p-1">
+					<b-card :data-invalid="skills.tommywalker.use ? 0 : 1" no-body>
+						<b-card-header class="text-center">
+							<b-checkbox v-model="skills.tommywalker.use" class="pr-4">
+								<div class="mb-1">
+									<unit-face uid="PECS_TommyWalker" size="40" />
+								</div>
+								<strong class="py-1 text-keep">
+									토미 워커
+									<span class="d-inline-block">[잔해 재활용]</span>
+								</strong>
+							</b-checkbox>
+						</b-card-header>
+						<b-card-body>
+							<b-row class="mt-1 align-items-center">
+								<b-col cols="12" md="auto">레벨 :</b-col>
+								<b-col>
+									<b-form-select v-model="skills.tommywalker.level" :options="skillLevelList(false, true)" />
+								</b-col>
+							</b-row>
+							<hr />
+							<b-checkbox v-model="skills.tommywalker.flavor" disabled>
+								♥200
+								<span class="d-inline-block">[스킬 레벨 Lv+1]</span>
+							</b-checkbox>
+							<hr />
+							<b-checkbox v-model="skills.tommywalker.buff">
+								버프/디버프
+								<span class="d-inline-block">[스킬 레벨 Lv+2]</span>
+							</b-checkbox>
+						</b-card-body>
+						<b-card-footer>
+							<b-badge variant="dark">경험치</b-badge>
+							<b-badge variant="warning" class="ml-2">x{{ A1(skills.tommywalker.bonus[skills.tommywalker.level]) }}</b-badge>
+						</b-card-footer>
+					</b-card>
+				</div>
 			</b-row>
 
-			<b-row>
-				<b-col cols="12" md="6">
-					<div class="mb-1">전투 지역</div>
-					<div class="ml-2 mb-2">
-						<b-form-select v-model="sortieArea" :options="areaList" />
-					</div>
+			<div class="mt-3">전투 지역</div>
+			<b-row class="mt-1">
+				<b-col cols="12">
+					<b-form-select v-model="sortieArea" :options="areaList" />
 				</b-col>
-				<b-col cols="12" md="6">
-					<div class="mb-1">전투 지역 경험치</div>
-					<div class="ml-2 mb-2">
-						<b-card no-body>
-							<h4 class="m-2 p-1 clearfix">
+				<b-col cols="12" class="mt-2">
+					<b-card no-body>
+						<h4 class="m-2 p-1 clearfix">
+							<div v-if="sortieArea.length === 0" class="text-center text-secondary">전투 지역을 선택해주세요.</div>
+							<template v-else>
 								<span v-for="(waveData, waveIdx) in sortieArea" :key="`exp-calc-explist-wave-${waveIdx}`">
 									<b-icon-arrow-right v-if="waveIdx !== 0" class="mx-2" />
 									<b-badge variant="stat-hp">
-										{{ FormatNumber(waveData.exp) }} EXP, {{ FormatNumber(waveData.enemies) }} 철충
+										{{ FormatNumber(waveData.clear) }} EXP, {{ FormatNumber(waveData.enemies) }} 철충
 									</b-badge>
 								</span>
-							</h4>
-						</b-card>
-					</div>
+							</template>
+						</h4>
+					</b-card>
 				</b-col>
 			</b-row>
 			<hr />
@@ -169,6 +204,12 @@
 					<div class="ml-2 mb-2">
 						<b-checkbox v-model="isLeader">리더 경험치 1.2배</b-checkbox>
 					</div>
+					<hr />
+
+					<div class="mb-1">경험치 부스트</div>
+					<div class="ml-2 mb-2">
+						<b-checkbox v-model="isBoosted">경험치 부스트 0.5배</b-checkbox>
+					</div>
 				</b-col>
 				<b-col cols="12" lg="8">
 					<div class="mb-1"><b-icon-calculator class="mr-1" />계산 결과 (전투원 경험치)</div>
@@ -184,19 +225,19 @@
 									class="ml-1"
 									variant="danger"
 								>
-									{{ equip.rarity }}
-									{{ EquipNames[equip.name] }}
-									+{{ equip.level }} x{{ AsRounded(equip.bonus[equip.level]) }}
-									<template v-if="equip.count > 0">x{{ equip.count }}</template>
+									{{ RarityName(equip.current.rarity) }}
+									{{ equip.current.name }}
+									+{{ equip.level }} x{{ A1(equip.bonus[equip.current.rarity][equip.level]) }}
+									<template v-if="equip.stack > 0">x{{ equip.stack }}</template>
 								</b-badge>
 
 								<b-badge v-if="skills.alexandra.use" class="ml-1" variant="success">
-									모범 교사 lv.{{ skills.alexandra.level + 1 }} x{{ AsRounded(skills.alexandra.bonus[skills.alexandra.level]) }}
+									모범 교사 lv.{{ skills.alexandra.level + 1 }} x{{ A1(skills.alexandra.bonus[skills.alexandra.level]) }}
 								</b-badge>
 
 								<b-badge v-if="skills.tommywalker.use" class="ml-1" variant="success">
 									잔해 재활용 lv.{{ skills.tommywalker.level + 1 }} x{{
-										AsRounded(1 + (skills.tommywalker.bonus[skills.tommywalker.level] - 1) * waveData.enemies)
+										A1ME(skills.tommywalker.bonus[skills.tommywalker.level], waveData.enemies)
 									}}
 								</b-badge>
 							</h5>
@@ -204,18 +245,17 @@
 						</template>
 
 						<h5 v-for="(waveData, wave) in sortieArea" :key="`exp-calc-result-wave-${wave}`">
-							<b-badge variant="warning">{{ wave + 1 }} 웨이브 {{ FormatNumber(waveData.exp) }} EXP</b-badge>
+							<b-badge variant="warning">{{ wave + 1 }} 웨이브 {{ FormatNumber(waveData.clear) }} EXP</b-badge>
 							<b-badge v-if="isLeader" class="ml-1" variant="info">리더 x1.2</b-badge>
 
 							<b-badge v-if="CoreLinks > 0" class="ml-1" variant="primary">코어링크 x{{ 1 + CoreLinks * 0.04 }}</b-badge>
+							<b-badge v-show="hasSumValues" class="mx-1" variant="success">장비/스킬 보너스 x{{ SumBonusValue(wave) }}</b-badge>
+							<b-badge v-if="eventMultiply > 0" class="mx-1" variant="primary">이벤트 보너스 x{{ eventMultiply / 100 + 1 }}</b-badge>
 
-							<b-badge v-show="hasSumValues" class="mx-1" variant="success"
-								>장비/스킬 보너스 x{{ AsRounded(SumBonusValue(wave)) }}</b-badge
-							>
-
-							<b-badge v-if="eventMultiply > 0" class="mx-1" variant="primary"
-								>이벤트 보너스 x{{ AsRounded(eventMultiply / 100 + 1) }}</b-badge
-							>
+							<template v-if="isBoosted">
+								<b-icon-plus class="mx-1" />
+								<b-badge class="mx-1" variant="primary">경험치 부스트 {{ FormatNumber(waveData.clear) }} x0.5</b-badge>
+							</template>
 
 							<b-icon-arrow-right class="mx-1" />
 							<b-badge variant="dark">{{ FormatNumber(ResultExp(wave)) }} EXP</b-badge>
@@ -239,30 +279,57 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 
-import { WorldNames } from "@/libs/Const";
+import { UnitLevelTable, WorldNames } from "@/libs/Const";
 
 import EquipData, { Equip } from "@/libs/DB/Equip";
-import { ExpData } from "@/libs/DB";
-import { ExpEntity, Rarity } from "@/libs/Types";
+import MapDB, { Worlds } from "@/libs/DB/Map";
+
 import { FormSelectItem, FormSelectGroup, FormSelectData, FormSelectFirst } from "@/libs/FormSelect";
 
 import UnitFace from "@/components/UnitFace.vue";
 import EquipIcon from "@/components/EquipIcon.vue";
+import { FormatNumber, groupBy } from "@/libs/Functions";
+import Decimal from "decimal.js";
+import { ACTOR_GRADE } from "@/libs/Types/Enums";
+import buffs from "@/json/buffs";
+
+interface AreaWave {
+	clear: number;
+	enemies: number;
+	r: number;
+}
+interface AreaNode {
+	text: string;
+	value: AreaWave[];
+}
+interface AreaMap {
+	label: string;
+	options: AreaNode[];
+}
+// interface AreaWorld {
+// 	label: string;
+// 	options: AreaMap[];
+// }
 
 interface ExpEquipItem {
-	name: string;
 	use: boolean;
-	rarity: Rarity;
+
+	current: Equip;
+	equips: Equip[];
+
 	level: number;
-	count: number;
-	equip: Equip;
-	bonus: number[];
+	stack: number;
+	bonus: Record<ACTOR_GRADE, number[]>;
 }
 
 interface ExpSkillItem {
 	use: boolean;
 	level: number;
 	bonus: number[];
+
+	flavor: boolean;
+	/** 벞디벞 */
+	buff: boolean;
 }
 
 @Component({
@@ -271,16 +338,27 @@ interface ExpSkillItem {
 		EquipIcon,
 	},
 })
-export default class EXP extends Vue {
+export default class ExpCalculator extends Vue {
+	private internalMapDB: Worlds | null = null;
+	private get MapDB () {
+		if (this.internalMapDB) return this.internalMapDB;
+		return MapDB((x) => {
+			this.internalMapDB = x;
+		});
+	}
+
+	private unitRarity: ACTOR_GRADE = ACTOR_GRADE.SS;
 	private baseLevel: number = 1;
 	private baseEXP: number = 0;
+
 	private destLevel: number = 100;
 	private eventMultiply: number = 0;
 	private CoreLinks: number = 0;
-	private isLeader: boolean = true;
 
-	private unitRarity: Rarity = "SS";
-	private sortieArea: ExpEntity[] = FormSelectFirst(this.areaList)?.value ?? [];
+	private isLeader: boolean = true;
+	private isBoosted: boolean = false;
+
+	private sortieArea: AreaWave[] = [];
 
 	private skills: Record<string, ExpSkillItem> = {
 		alexandra: {
@@ -288,84 +366,104 @@ export default class EXP extends Vue {
 			level: 0,
 			bonus: new Array(10 + 2 + 1)
 				.fill(0)
-				.map((_, x) => (20 + x * 2.25) * 0.01 + 1),
+				.map((_, x) => Decimal.mul(x, 2.25)
+					.add(20)
+					.div(100)
+					.toNumber()),
+			flavor: false,
+			buff: false,
 		},
 		tommywalker: {
 			use: false,
 			level: 0,
 			bonus: new Array(10 + 2 + 1)
 				.fill(0)
-				.map((_, x) => (5 + x * 0.25) * 0.01 + 1),
+				.map((_, x) => Decimal.mul(x, 0.25)
+					.add(5)
+					.div(100)
+					.toNumber()),
+			flavor: false,
+			buff: false,
 		},
 	};
 
-	private ExpEquips: ExpEquipItem[] = [];
-	/*
-	((): ExpEquipItem[] => {
-		const group = _.groupBy(EquipData, (x) => x.name.substr(0, x.name.lastIndexOf("_")));
-		return _
-			.keys(group)
+	private ExpEquips: ExpEquipItem[] = ((): ExpEquipItem[] => {
+		const rarityTable: Record<ACTOR_GRADE, string> = {
+			[ACTOR_GRADE.B]: "B",
+			[ACTOR_GRADE.A]: "A",
+			[ACTOR_GRADE.S]: "S",
+			[ACTOR_GRADE.SS]: "SS",
+		};
+
+		return EquipData
 			.map(x => {
-				const baseType = x.substr(0, x.indexOf("_"));
-				const first = _.first(group[x]);
-				if (!first || !first.stats.some(y => y.some(z => z.actions.some(a => a.act === "exp"))))
-					return false;
+				if (x.rarity !== ACTOR_GRADE.SS) return false;
+				if (!x.available) return false;
 
-				const name = first.name.substr(0, first.name.lastIndexOf("_"));
-				if (name === "chip_exp") {
-					return new Array(2)
-						.fill(0)
-						.map(() => ({
-							name,
-							use: false,
-							rarity: "SS",
-							level: 0,
-							count: 1,
-							equip: first,
-							bonus: first.stats.map(y => this.ExpBonusMultiply(y[0].actions[0].params[0])),
-						}) as ExpEquipItem);
-				} else {
-					return {
-						name,
-						use: false,
-						rarity: "SS",
-						level: 0,
-						count: 0,
-						equip: first,
-						bonus: first.stats.map(y => this.ExpBonusMultiply(y[0].actions[0].params[0])),
-					} as ExpEquipItem;
-				}
+				const y = x.stats.find(y => y.some(z => "buffs" in z && z.buffs.some(a => "exp" in a.value)));
+				if (!y) return false;
+
+				const z = y.find(z => "buffs" in z && z.buffs.some(a => "exp" in a.value));
+				if (!z || !("buffs" in z)) return false;
+
+				const a = z.buffs.find(a => "exp" in a.value);
+				if (!a || !("exp" in a.value)) return false;
+
+				const equips = EquipData.filter(y => y.type === x.type && y.key === x.key);
+
+				const retGroup = {} as Record<ACTOR_GRADE, number[]>;
+				equips.forEach(x => {
+					const ret: number[] = [];
+					for (let i = 0; i <= 10; i++) {
+						const y = x.stats[i];
+						if (!y) return false;
+
+						const z = y.find(z => "buffs" in z && z.buffs.some(a => "exp" in a.value));
+						if (!z || !("buffs" in z)) return false;
+
+						const a = z.buffs.find(a => "exp" in a.value);
+						if (!a || !("exp" in a.value)) return false;
+
+						ret.push(Decimal.div(a.value.exp.base.replace("%", ""), 100).toNumber());
+					}
+					retGroup[x.rarity] = ret;
+				});
+
+				return {
+					current: x,
+					equips,
+					use: false,
+
+					name: x.name,
+					level: 10,
+					stack: z.maxStack,
+					bonus: retGroup,
+				} as ExpEquipItem;
 			})
-			.filter(x => typeof x !== "boolean")
-			.reduce((po, c) => {
-				const p = po as ExpEquipItem[];
-				return Array.isArray(c) ? [...p, ...c] : [...p, c as ExpEquipItem];
-			}, []) as ExpEquipItem[];
+			.filter(x => x !== false) as ExpEquipItem[];
 	})();
-	*/
-
-	private get MapData () {
-		return ExpData.map;
-	}
-
-	private get LevelTable () {
-		return ExpData.table;
-	}
 
 	private get UsingExpEquips () {
 		return this.ExpEquips.filter(x => x.use);
 	}
 
-	private get rarityList (): FormSelectItem<Rarity>[] {
-		return ["B", "A", "S", "SS"]
-			.map(x => ({ text: x, value: x as Rarity }));
+	private get rarityList () {
+		return [
+			ACTOR_GRADE.B,
+			ACTOR_GRADE.A,
+			ACTOR_GRADE.S,
+			ACTOR_GRADE.SS,
+		].map(x => ({
+			text: this.RarityName(x),
+			value: x,
+		}));
 	}
 
 	private get equipLevelList (): FormSelectItem<number>[] {
 		return new Array(11)
 			.fill(0)
 			.map((_, x) => ({
-				text: `+ ${x}`,
+				text: `+${x}`,
 				value: x,
 			}));
 	}
@@ -379,76 +477,93 @@ export default class EXP extends Vue {
 			}));
 	}
 
-	private get skillLevelList (): FormSelectItem<number>[] {
-		return new Array(10 + 2 + 1)
+	private skillLevelList (bioroid: boolean, buffBonus: boolean) {
+		return new Array(10)
 			.fill(0)
-			.map((_, x) => {
-				let postfix = "";
-				switch (x) {
-					case 10:
-						postfix = " (호감도)";
-						break;
-					case 11:
-						postfix = " (벞디벞)";
-						break;
-					case 12:
-						postfix = " (벞디벞+호감도)";
-						break;
-				}
-				return {
-					text: `lv. ${x + 1}${postfix}`,
-					value: x,
-				};
-			});
+			.map((_, x) => ({
+				text: `Lv. ${x + 1}`,
+				value: x,
+			}));
+	}
+
+	private get skillLevelAGSList (): FormSelectItem<number>[] {
+		return new Array(10)
+			.fill(0)
+			.map((_, x) => ({
+				text: `Lv. ${x + 1}`,
+				value: x,
+			}));
 	}
 
 	private get areaList () {
-		const ret: FormSelectData<ExpEntity[]> = [];
-		Object.keys(this.MapData).forEach(x => {
-			const grp: FormSelectItem<ExpEntity[]>[] = [];
+		const db = this.MapDB;
+		if (!db) return [];
 
-			const prefix = this.MapData[x].type ? x.substr(2) || "1" : x;
+		// const worlds: AreaWorld[] = [];
+		const maps: AreaMap[] = [];
+		for (const world in db) {
+			// const maps: AreaMap[] = [];
+			for (const area in db[world]) {
+				const nodes: AreaNode[] = [];
+				db[world][area].list.forEach(map => {
+					if (!map.wave) return;
 
-			Object.keys(this.MapData[x]).forEach(y => {
-				if (y === "type") return;
-
-				const z = y.endsWith("Ex")
-					? y.substr(0, y.length - 2) + "2"
-					: y;
-
-				grp.push({
-					text: `${x}-${y} (${prefix}${z})`,
-					value: this.MapData[x][y] as ExpEntity[],
+					const waves: AreaWave[] = [];
+					map.wave.forEach(w => {
+						waves.push(
+							w.reduce((p, c) => p.r > c.r ? p : {
+								clear: c.e.exp,
+								enemies: c.e.enemy.filter(e => e).length,
+								r: c.r,
+							}, { clear: 0, enemies: 0, r: 0 }),
+						);
+					});
+					nodes.push({
+						// eslint-disable-next-line no-irregular-whitespace
+						text: `${map.text}　　　${map.name}`,
+						value: waves,
+					});
 				});
-			});
-			ret.push({
-				label: this.MapData[x].type
-					? `${WorldNames[this.MapData[x].type]} ${prefix} 구역`
-					: `${x} 구역`,
-				options: grp,
-			});
-		});
-		return ret;
+				if (
+					nodes.length === 0 ||
+					nodes.every(map => map.value.every(wave => wave.clear === 0))
+				) continue;
+
+				maps.push({
+					label: world === "Story"
+						? `${area} 지역`
+						: `${WorldNames[world] || world} - ${area} 지역`,
+					options: nodes,
+				});
+			}
+			if (maps.length === 0) continue;
+
+			// worlds.push({
+			// 	label: world,
+			// 	options: maps,
+			// });
+		}
+		return maps;
 	}
 
 	private get requiredExp () {
-		const rarityMultiply = {
-			SS: 1.875,
-			S: 1.5,
-			A: 1.25,
-			B: 1,
+		const rarityMultiply: Record<ACTOR_GRADE, number> = {
+			[ACTOR_GRADE.SS]: 1.875,
+			[ACTOR_GRADE.S]: 1.5,
+			[ACTOR_GRADE.A]: 1.25,
+			[ACTOR_GRADE.B]: 1,
 		};
 
 		const startExp = (() => {
 			let exp = this.baseEXP;
 			for (let i = 0; i < this.baseLevel; i++)
-				exp += Math.floor((this.LevelTable[i] || 0) * rarityMultiply[this.unitRarity]);
+				exp += Math.floor((UnitLevelTable[i] || 0) * rarityMultiply[this.unitRarity]);
 			return exp;
 		})();
 		const destExp = (() => {
 			let exp = 0;
 			for (let i = 0; i < this.destLevel; i++)
-				exp += Math.floor((this.LevelTable[i] || 0) * rarityMultiply[this.unitRarity]);
+				exp += Math.floor((UnitLevelTable[i] || 0) * rarityMultiply[this.unitRarity]);
 			return exp;
 		})();
 		return Math.max(0, destExp - startExp);
@@ -471,19 +586,61 @@ export default class EXP extends Vue {
 		return Math.max(0, Math.ceil(this.requiredExp / exp));
 	}
 
+	private FormatNumber (num: number): string {
+		return FormatNumber(num);
+	}
+
+	private RarityName (rarity: ACTOR_GRADE) {
+		const table: Record<ACTOR_GRADE, string> = {
+			[ACTOR_GRADE.B]: "B",
+			[ACTOR_GRADE.A]: "A",
+			[ACTOR_GRADE.S]: "S",
+			[ACTOR_GRADE.SS]: "SS",
+		};
+		return table[rarity];
+	}
+
+	private RarityOptions (rarities: Equip[]) {
+		return rarities.map(x => ({
+			text: this.RarityName(x.rarity),
+			value: x,
+		}));
+	}
+
+	private A1 (value: number) {
+		return Decimal.add(value, 1).toNumber();
+	}
+
+	private A1ME (value: number, enemies: number) {
+		return this.A1(Decimal.mul(value, enemies).toNumber());
+	}
+
 	private SumBonusValue (wave: number) {
-		let sumValue = 1;
+		let sumValue = new Decimal(0);
 
 		this.UsingExpEquips
-			.forEach(x => (sumValue += (x.bonus[x.level] - 1) * (x.count > 0 ? x.count : 1)));
+			.forEach(x => {
+				sumValue = sumValue.add(
+					Decimal.mul(
+						x.bonus[x.current.rarity][x.level],
+						Math.max(x.stack, 1),
+					),
+				);
+			});
 
 		if (this.skills.alexandra.use)
-			sumValue += this.skills.alexandra.bonus[this.skills.alexandra.level] - 1;
+			sumValue = sumValue.add(this.skills.alexandra.bonus[this.skills.alexandra.level]);
 
-		if (this.skills.tommywalker.use)
-			sumValue += (this.skills.tommywalker.bonus[this.skills.tommywalker.level] - 1) * this.sortieArea[wave].enemies;
+		if (this.skills.tommywalker.use) {
+			sumValue = sumValue.add(
+				Decimal.mul(
+					this.skills.tommywalker.bonus[this.skills.tommywalker.level],
+					this.sortieArea[wave].enemies,
+				),
+			);
+		}
 
-		return sumValue;
+		return sumValue.add(1).toNumber();
 	}
 
 	private ExpBonusMultiply (value: string) {
@@ -494,25 +651,25 @@ export default class EXP extends Vue {
 		// equip.equip.stats[equip.level][0].actions[0].params[0];
 	}
 
-	private AsRounded (value: number) {
-		let x = value.toFixed(4);
-		while (x.endsWith("0")) x = x.substr(0, x.length - 1);
-
-		if (x.endsWith(".")) x = x.substr(0, x.length - 1);
-		return x;
-	}
-
 	private ResultExp (wave: number) {
-		let exp = this.sortieArea[wave].exp;
+		const base = this.sortieArea[wave].clear;
+		let exp = new Decimal(base);
 
 		// {[(웨이브 경험치 X 리더 보너스) X 장비 및 스킬에 의한 상승량 총합] X 이벤트 경험치} X 링크 보너스 + 시설 경험치
-		exp *= (this.isLeader ? 1.2 : 1);
+		if (this.isLeader) exp = exp.mul(1.2).floor();
 
-		exp *= this.SumBonusValue(wave);
-		exp *= this.eventMultiply * 0.01 + 1;
-		exp *= 1 + this.CoreLinks * 0.04;
+		exp = exp.mul(this.SumBonusValue(wave)).floor();
+		exp = exp.mul(
+			Decimal.div(this.eventMultiply, 100).add(1),
+		).floor();
+		exp = exp.mul(
+			Decimal.div(this.CoreLinks, 25).add(1),
+		).floor();
 
-		return Math.floor(exp);
+		if (this.isBoosted)
+			exp = exp.add(Decimal.div(base, 2)).floor();
+
+		return Math.floor(exp.toNumber());
 	}
 }
 </script>
@@ -523,6 +680,9 @@ export default class EXP extends Vue {
 		[data-invalid="1"] {
 			opacity: 0.5;
 		}
+	}
+	.text-keep {
+		word-break: keep-all;
 	}
 }
 </style>
