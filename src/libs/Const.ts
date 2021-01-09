@@ -1,3 +1,5 @@
+import { SortieCostType } from "@/libs/Types";
+import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, CURRENCY_TYPE, ROLE_TYPE } from "@/libs/Types/Enums";
 import webpChecker from "webp-checker";
 
 export const UnitLevelTable: number[] = [
@@ -12,6 +14,473 @@ export const UnitLevelTable: number[] = [
 	71922, 75025, 78212, 81482, 84837, 88279, 91808, 95424, 99130, 123219,
 	153161, 190380, 236642, 294146, 365624, 454470, 564906, 702178, 872807, 1003728,
 ];
+
+export const SortieCost: SortieCostType = {
+	[ACTOR_GRADE.B]: {
+		[ACTOR_CLASS.LIGHT]: {
+			[ROLE_TYPE.DEFENDER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [12, 14, 15, 17, 19, 22],
+					[CURRENCY_TYPE.NUTRIENT]: [12, 14, 15, 17, 19, 22],
+					[CURRENCY_TYPE.POWER]: [2, 3, 3, 3, 4, 4],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [20, 22, 24, 27, 30, 35],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [7, 8, 9, 10, 11, 13],
+				},
+			},
+			[ROLE_TYPE.ATTACKER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [7, 8, 9, 10, 11, 13],
+					[CURRENCY_TYPE.NUTRIENT]: [12, 14, 15, 17, 19, 22],
+					[CURRENCY_TYPE.POWER]: [7, 8, 9, 10, 11, 13],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [15, 16, 18, 20, 23, 26],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [12, 14, 15, 17, 19, 22],
+				},
+			},
+			[ROLE_TYPE.SUPPORTER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [7, 8, 9, 10, 11, 13],
+					[CURRENCY_TYPE.NUTRIENT]: [12, 14, 15, 17, 19, 22],
+					[CURRENCY_TYPE.POWER]: [2, 3, 3, 3, 4, 4],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [15, 16, 18, 20, 23, 26],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [7, 8, 9, 10, 11, 13],
+				},
+			},
+		},
+		[ACTOR_CLASS.AIR]: {
+			[ROLE_TYPE.DEFENDER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [17, 19, 21, 24, 26, 30],
+					[CURRENCY_TYPE.NUTRIENT]: [12, 14, 15, 17, 19, 22],
+					[CURRENCY_TYPE.POWER]: [7, 8, 9, 10, 11, 13],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [24, 27, 30, 34, 38, 43],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [12, 14, 15, 17, 19, 22],
+				},
+			},
+			[ROLE_TYPE.ATTACKER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [12, 14, 15, 17, 19, 22],
+					[CURRENCY_TYPE.NUTRIENT]: [12, 14, 15, 17, 19, 22],
+					[CURRENCY_TYPE.POWER]: [12, 14, 15, 17, 19, 22],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [20, 22, 24, 27, 30, 35],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [17, 19, 21, 24, 26, 30],
+				},
+			},
+			[ROLE_TYPE.SUPPORTER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [12, 14, 15, 17, 19, 22],
+					[CURRENCY_TYPE.NUTRIENT]: [12, 14, 15, 17, 19, 22],
+					[CURRENCY_TYPE.POWER]: [7, 8, 9, 10, 11, 13],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [20, 22, 24, 27, 30, 35],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [12, 14, 15, 17, 19, 22],
+				},
+			},
+		},
+		[ACTOR_CLASS.HEAVY]: {
+			[ROLE_TYPE.DEFENDER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [10, 11, 12, 14, 15, 17],
+					[CURRENCY_TYPE.NUTRIENT]: [12, 14, 15, 17, 19, 22],
+					[CURRENCY_TYPE.POWER]: [10, 11, 12, 14, 15, 17],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [17, 19, 21, 24, 26, 30],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [15, 16, 18, 20, 23, 26],
+				},
+			},
+			[ROLE_TYPE.ATTACKER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [5, 5, 6, 7, 8, 9],
+					[CURRENCY_TYPE.NUTRIENT]: [12, 14, 15, 17, 19, 22],
+					[CURRENCY_TYPE.POWER]: [15, 16, 18, 20, 23, 26],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [12, 14, 15, 17, 19, 22],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [20, 22, 24, 27, 30, 35],
+				},
+			},
+			[ROLE_TYPE.SUPPORTER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [5, 5, 6, 7, 8, 9],
+					[CURRENCY_TYPE.NUTRIENT]: [12, 14, 15, 17, 19, 22],
+					[CURRENCY_TYPE.POWER]: [10, 11, 12, 14, 15, 17],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [12, 14, 15, 17, 19, 22],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [15, 16, 18, 20, 23, 26],
+				},
+			},
+		},
+	},
+	[ACTOR_GRADE.A]: {
+		[ACTOR_CLASS.LIGHT]: {
+			[ROLE_TYPE.DEFENDER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [16, 18, 20, 23, 25, 29],
+					[CURRENCY_TYPE.NUTRIENT]: [16, 18, 20, 23, 25, 29],
+					[CURRENCY_TYPE.POWER]: [3, 4, 4, 5, 5, 6],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [26, 29, 32, 36, 40, 46],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [10, 11, 12, 14, 15, 17],
+				},
+			},
+			[ROLE_TYPE.ATTACKER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [10, 11, 12, 14, 15, 17],
+					[CURRENCY_TYPE.NUTRIENT]: [16, 18, 20, 23, 25, 29],
+					[CURRENCY_TYPE.POWER]: [10, 11, 12, 14, 15, 17],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [20, 22, 24, 27, 30, 35],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [16, 18, 20, 23, 25, 29],
+				},
+			},
+			[ROLE_TYPE.SUPPORTER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [10, 11, 12, 14, 15, 17],
+					[CURRENCY_TYPE.NUTRIENT]: [16, 18, 20, 23, 25, 29],
+					[CURRENCY_TYPE.POWER]: [3, 4, 4, 5, 5, 6],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [20, 22, 24, 27, 30, 35],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [10, 11, 12, 14, 15, 17],
+				},
+			},
+		},
+		[ACTOR_CLASS.AIR]: {
+			[ROLE_TYPE.DEFENDER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [23, 25, 28, 32, 35, 40],
+					[CURRENCY_TYPE.NUTRIENT]: [16, 18, 20, 23, 25, 29],
+					[CURRENCY_TYPE.POWER]: [10, 11, 12, 14, 15, 17],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [33, 36, 40, 45, 50, 58],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [16, 18, 20, 23, 25, 29],
+				},
+			},
+			[ROLE_TYPE.ATTACKER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [16, 18, 20, 23, 25, 29],
+					[CURRENCY_TYPE.NUTRIENT]: [16, 18, 20, 23, 25, 29],
+					[CURRENCY_TYPE.POWER]: [16, 18, 20, 23, 25, 29],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [26, 29, 32, 36, 40, 46],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [23, 25, 28, 32, 35, 40],
+				},
+			},
+			[ROLE_TYPE.SUPPORTER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [16, 18, 20, 23, 25, 29],
+					[CURRENCY_TYPE.NUTRIENT]: [16, 18, 20, 23, 25, 29],
+					[CURRENCY_TYPE.POWER]: [10, 11, 12, 14, 15, 17],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [26, 29, 32, 36, 40, 46],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [16, 18, 20, 23, 25, 29],
+				},
+			},
+		},
+		[ACTOR_CLASS.HEAVY]: {
+			[ROLE_TYPE.DEFENDER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [13, 15, 16, 18, 20, 23],
+					[CURRENCY_TYPE.NUTRIENT]: [16, 18, 20, 23, 25, 29],
+					[CURRENCY_TYPE.POWER]: [13, 15, 16, 18, 20, 23],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [23, 25, 28, 32, 35, 40],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [20, 22, 24, 27, 30, 35],
+				},
+			},
+			[ROLE_TYPE.ATTACKER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [7, 7, 8, 9, 10, 12],
+					[CURRENCY_TYPE.NUTRIENT]: [16, 18, 20, 23, 25, 29],
+					[CURRENCY_TYPE.POWER]: [20, 22, 24, 27, 30, 35],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [16, 18, 20, 23, 25, 29],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [26, 29, 32, 36, 40, 46],
+				},
+			},
+			[ROLE_TYPE.SUPPORTER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [7, 7, 8, 9, 10, 12],
+					[CURRENCY_TYPE.NUTRIENT]: [16, 18, 20, 23, 25, 29],
+					[CURRENCY_TYPE.POWER]: [13, 15, 16, 18, 20, 23],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [16, 18, 20, 23, 25, 29],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [20, 22, 24, 27, 30, 35],
+				},
+			},
+		},
+	},
+	[ACTOR_GRADE.S]: {
+		[ACTOR_CLASS.LIGHT]: {
+			[ROLE_TYPE.DEFENDER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [22, 24, 27, 30, 34, 39],
+					[CURRENCY_TYPE.NUTRIENT]: [22, 24, 27, 30, 34, 39],
+					[CURRENCY_TYPE.POWER]: [4, 5, 5, 6, 7, 8],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [35, 39, 43, 49, 54, 62],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [13, 15, 16, 18, 20, 23],
+				},
+			},
+			[ROLE_TYPE.ATTACKER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [13, 15, 16, 18, 20, 23],
+					[CURRENCY_TYPE.NUTRIENT]: [22, 24, 27, 30, 34, 39],
+					[CURRENCY_TYPE.POWER]: [13, 15, 16, 18, 20, 23],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [26, 29, 32, 36, 41, 47],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [22, 24, 27, 30, 34, 39],
+				},
+			},
+			[ROLE_TYPE.SUPPORTER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [13, 15, 16, 18, 20, 23],
+					[CURRENCY_TYPE.NUTRIENT]: [22, 24, 27, 30, 34, 39],
+					[CURRENCY_TYPE.POWER]: [4, 5, 5, 6, 7, 8],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [26, 29, 32, 36, 41, 47],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [13, 15, 16, 18, 20, 23],
+				},
+			},
+		},
+		[ACTOR_CLASS.AIR]: {
+			[ROLE_TYPE.DEFENDER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [31, 34, 38, 43, 47, 54],
+					[CURRENCY_TYPE.NUTRIENT]: [22, 24, 27, 30, 34, 39],
+					[CURRENCY_TYPE.POWER]: [13, 15, 16, 18, 20, 23],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [44, 49, 54, 61, 68, 78],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [22, 24, 27, 30, 34, 39],
+				},
+			},
+			[ROLE_TYPE.ATTACKER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [22, 24, 27, 30, 34, 39],
+					[CURRENCY_TYPE.NUTRIENT]: [22, 24, 27, 30, 34, 39],
+					[CURRENCY_TYPE.POWER]: [22, 24, 27, 30, 34, 39],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [35, 39, 43, 49, 54, 62],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [31, 34, 38, 43, 47, 54],
+				},
+			},
+			[ROLE_TYPE.SUPPORTER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [22, 24, 27, 30, 34, 39],
+					[CURRENCY_TYPE.NUTRIENT]: [22, 24, 27, 30, 34, 39],
+					[CURRENCY_TYPE.POWER]: [13, 15, 16, 18, 20, 23],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [35, 39, 43, 49, 54, 62],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [22, 24, 27, 30, 34, 39],
+				},
+			},
+		},
+		[ACTOR_CLASS.HEAVY]: {
+			[ROLE_TYPE.DEFENDER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [18, 20, 22, 24, 27, 31],
+					[CURRENCY_TYPE.NUTRIENT]: [22, 24, 27, 30, 34, 39],
+					[CURRENCY_TYPE.POWER]: [18, 20, 22, 24, 27, 31],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [31, 34, 38, 43, 47, 54],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [26, 29, 32, 36, 41, 47],
+				},
+			},
+			[ROLE_TYPE.ATTACKER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [9, 10, 11, 12, 14, 16],
+					[CURRENCY_TYPE.NUTRIENT]: [22, 24, 27, 30, 34, 39],
+					[CURRENCY_TYPE.POWER]: [26, 29, 32, 36, 41, 47],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [22, 24, 27, 30, 34, 39],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [35, 39, 43, 49, 54, 62],
+				},
+			},
+			[ROLE_TYPE.SUPPORTER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [9, 10, 11, 12, 14, 16],
+					[CURRENCY_TYPE.NUTRIENT]: [22, 24, 27, 30, 34, 39],
+					[CURRENCY_TYPE.POWER]: [18, 20, 22, 24, 27, 31],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [22, 24, 27, 30, 34, 39],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [26, 29, 32, 36, 41, 47],
+				},
+			},
+		},
+	},
+	[ACTOR_GRADE.SS]: {
+		[ACTOR_CLASS.LIGHT]: {
+			[ROLE_TYPE.DEFENDER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [27, 30, 33, 37, 41, 47],
+					[CURRENCY_TYPE.NUTRIENT]: [27, 30, 33, 37, 41, 47],
+					[CURRENCY_TYPE.POWER]: [5, 6, 7, 7, 8, 9],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [43, 48, 53, 59, 66, 76],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [16, 18, 20, 22, 25, 28],
+				},
+			},
+			[ROLE_TYPE.ATTACKER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [16, 18, 20, 22, 25, 28],
+					[CURRENCY_TYPE.NUTRIENT]: [27, 30, 33, 37, 41, 47],
+					[CURRENCY_TYPE.POWER]: [16, 18, 20, 22, 25, 28],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [32, 36, 40, 45, 50, 57],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [27, 30, 33, 37, 41, 47],
+				},
+			},
+			[ROLE_TYPE.SUPPORTER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [16, 18, 20, 22, 25, 28],
+					[CURRENCY_TYPE.NUTRIENT]: [27, 30, 33, 37, 41, 47],
+					[CURRENCY_TYPE.POWER]: [5, 6, 7, 7, 8, 9],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [32, 36, 40, 45, 50, 57],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [16, 18, 20, 22, 25, 28],
+				},
+			},
+		},
+		[ACTOR_CLASS.AIR]: {
+			[ROLE_TYPE.DEFENDER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [38, 42, 46, 52, 58, 66],
+					[CURRENCY_TYPE.NUTRIENT]: [27, 30, 33, 37, 41, 47],
+					[CURRENCY_TYPE.POWER]: [16, 18, 20, 22, 25, 28],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [54, 60, 66, 74, 83, 95],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [27, 30, 33, 37, 41, 47],
+				},
+			},
+			[ROLE_TYPE.ATTACKER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [27, 30, 33, 37, 41, 47],
+					[CURRENCY_TYPE.NUTRIENT]: [27, 30, 33, 37, 41, 47],
+					[CURRENCY_TYPE.POWER]: [27, 30, 33, 37, 41, 47],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [43, 48, 53, 59, 66, 76],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [38, 42, 46, 52, 58, 66],
+				},
+			},
+			[ROLE_TYPE.SUPPORTER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [27, 30, 33, 37, 41, 47],
+					[CURRENCY_TYPE.NUTRIENT]: [27, 30, 33, 37, 41, 47],
+					[CURRENCY_TYPE.POWER]: [16, 18, 20, 22, 25, 28],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [43, 48, 53, 59, 66, 76],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [27, 30, 33, 37, 41, 47],
+				},
+			},
+		},
+		[ACTOR_CLASS.HEAVY]: {
+			[ROLE_TYPE.DEFENDER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [21, 24, 26, 30, 33, 38],
+					[CURRENCY_TYPE.NUTRIENT]: [27, 30, 33, 37, 41, 47],
+					[CURRENCY_TYPE.POWER]: [21, 24, 26, 30, 33, 38],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [38, 42, 46, 52, 58, 66],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [32, 36, 40, 45, 50, 57],
+				},
+			},
+			[ROLE_TYPE.ATTACKER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [11, 12, 13, 15, 17, 19],
+					[CURRENCY_TYPE.NUTRIENT]: [27, 30, 33, 37, 41, 47],
+					[CURRENCY_TYPE.POWER]: [32, 36, 40, 45, 50, 57],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [27, 30, 33, 37, 41, 47],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [43, 48, 53, 59, 66, 76],
+				},
+			},
+			[ROLE_TYPE.SUPPORTER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [11, 12, 13, 15, 17, 19],
+					[CURRENCY_TYPE.NUTRIENT]: [27, 30, 33, 37, 41, 47],
+					[CURRENCY_TYPE.POWER]: [21, 24, 26, 30, 33, 38],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [27, 30, 33, 37, 41, 47],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [32, 36, 40, 45, 50, 57],
+				},
+			},
+		},
+	},
+};
 
 export const AssetsRoot = process.env.NODE_ENV === "development"
 	? "http://localhost:5500/assets"

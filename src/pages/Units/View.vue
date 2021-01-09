@@ -318,8 +318,19 @@
 				기여를 받고 있습니다. 많은 참여 부탁드립니다.
 			</b-alert>
 			<hr /> -->
+			<b-button-group>
+				<b-button variant="outline-primary" :pressed="dialogueLang === 'ko'" @click="dialogueLang = 'ko'">한국어</b-button>
+				<b-button variant="outline-primary" :pressed="dialogueLang === 'jp'" @click="dialogueLang = 'jp'">日本語</b-button>
+			</b-button-group>
 
-			<unit-dialogue v-for="(voice, keyid) in VoiceList" :key="`unit-view-text-voice-${keyid}`" :unit="unit" :voice="voice" :id="voice.id" />
+			<unit-dialogue
+				v-for="(voice, keyid) in VoiceList"
+				:key="`unit-view-text-voice-${keyid}`"
+				:unit="unit"
+				:voice="voice"
+				:id="voice.id"
+				:lang="dialogueLang"
+			/>
 		</div>
 		<unit-stats v-show="displayTab === 'status'" :unit="unit" :serialized="statusSerialized" />
 	</div>
@@ -349,10 +360,10 @@ import UnitSkinView from "./UnitSkinView.vue";
 import UnitDialogue from "./UnitDialogue.vue";
 import UnitStats from "./UnitStats.vue";
 
-import { RawSkin, SkinInfo, RawCostTable, Rarity } from "@/libs/Types";
+import { RawSkin, SkinInfo, Rarity, SortieCostBody } from "@/libs/Types";
 import SkillData, { SkillEntity } from "@/libs/DB/Skill";
 
-import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/libs/Types/Enums";
+import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, CURRENCY_TYPE, ROLE_TYPE } from "@/libs/Types/Enums";
 import UnitData, { GetLinkBonus, LinkBonusType, Unit } from "@/libs/DB/Unit";
 import EquipData from "@/libs/DB/Equip";
 import UnitStatsData, { UnitStats as UnitStats_ } from "@/libs/DB/UnitStats";
@@ -362,8 +373,7 @@ import { Unit as SimUnit } from "@/pages/Simulation/Simulation/Unit";
 import SkinData from "@/json/unit-skin";
 import { UpdateTitle } from "@/libs/Functions";
 import { SetMeta } from "@/libs/Meta";
-import { AssetsRoot, ImageExtension } from "@/libs/Const";
-import RequireResourceDB, { RequireResource } from "@/libs/DB/RequireResource";
+import { AssetsRoot, ImageExtension, SortieCost } from "@/libs/Const";
 
 interface SkillItem extends SkillEntity {
 	index: number;
@@ -395,14 +405,6 @@ interface VoiceItem extends SkinInfo {
 	},
 })
 export default class UnitView extends Vue {
-	private internalRequireResourceDB: RequireResource | null = null;
-	private get RequireResourceDB () {
-		if (this.internalRequireResourceDB) return this.internalRequireResourceDB;
-		return RequireResourceDB((x) => {
-			this.internalRequireResourceDB = x;
-		});
-	}
-
 	private rarityList: Record<ACTOR_GRADE, Rarity> = {
 		[ACTOR_GRADE.B]: "B",
 		[ACTOR_GRADE.A]: "A",
@@ -418,6 +420,8 @@ export default class UnitView extends Vue {
 	private formState: "normal" | "change" = "normal";
 
 	private displayTab: "texts" | "information" | "dialogue" | "status" = "texts";
+
+	private dialogueLang: "ko" | "jp" = "ko";
 
 	private unitId: number = 0;
 	private skillLevel: number = 0;
@@ -483,13 +487,11 @@ export default class UnitView extends Vue {
 				[ACTOR_CLASS.LIGHT]: "경장",
 				[ACTOR_CLASS.AIR]: "기동",
 				[ACTOR_CLASS.HEAVY]: "중장",
-				[ACTOR_CLASS.__MAX__]: "",
 			};
 			const roleName: Record<ROLE_TYPE, string> = {
 				[ROLE_TYPE.ATTACKER]: "공격기",
 				[ROLE_TYPE.DEFENDER]: "보호기",
 				[ROLE_TYPE.SUPPORTER]: "지원기",
-				[ROLE_TYPE.__MAX__]: "",
 			};
 
 			SetMeta(
@@ -697,20 +699,12 @@ export default class UnitView extends Vue {
 	}
 
 	private GetRequireResource (rarity: ACTOR_GRADE, type: ACTOR_CLASS, role: ROLE_TYPE, body: ACTOR_BODY_TYPE, fullLinkBonus: LinkBonusType) {
-		if (!this.RequireResourceDB) {
-			return {
-				metal: [0, 0, 0, 0, 0, 0],
-				nutrient: [0, 0, 0, 0, 0, 0],
-				power: [0, 0, 0, 0, 0, 0],
-			};
-		}
-
 		const table = (() => {
-			const o = this.RequireResourceDB[rarity][type][role][body];
+			const o = SortieCost[rarity][type][role][body as keyof SortieCostBody];
 			return {
-				metal: [...o.metal],
-				nutrient: [...o.nutrient],
-				power: [...o.power],
+				metal: [...o[CURRENCY_TYPE.METAL]],
+				nutrient: [...o[CURRENCY_TYPE.NUTRIENT]],
+				power: [...o[CURRENCY_TYPE.POWER]],
 			};
 		})();
 

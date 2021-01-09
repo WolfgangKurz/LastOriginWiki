@@ -6,7 +6,7 @@ function process (auth) {
 	const sheets = google.sheets({ version: "v4", auth });
 	sheets.spreadsheets.values.get({
 		spreadsheetId: "1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4",
-		range: "UnitDialogue!A2:F",
+		range: "UnitDialogue!A2:G",
 	}, (err, res) => {
 		if (err) return console.log("The API returned an error: " + err);
 
@@ -55,27 +55,32 @@ function process (auth) {
 			"전투 MVP": "MVP",
 		};
 
-		const ret = {};
+		const ret = {
+			ko: {},
+			jp: {},
+		};
 		const rows = res.data.values;
 		if (rows.length) {
-			rows.map((row) => {
-				if (!row[0] || row[0].length === 0 || row[0][0] === "#") return;
+			["ko", "jp"].forEach(lang => {
+				rows.map((row) => {
+					if (!row[0] || row[0].length === 0 || row[0][0] === "#") return;
 
-				const unit = row[0];
-				const skin = row[2] || "0";
-				const type = typeTable[row[4]];
-				const dialogue = row[5];
+					const unit = row[0];
+					const skin = row[2] || "0";
+					const type = typeTable[row[4]];
+					const dialogue = row[lang === "ko" ? 5 : 6];
 
-				if (!(unit in ret)) ret[unit] = {};
-				if (!(skin in ret[unit])) ret[unit][skin] = {};
+					if (!(unit in ret[lang])) ret[lang][unit] = {};
+					if (!(skin in ret[lang][unit])) ret[lang][unit][skin] = {};
 
-				ret[unit][skin][type] = dialogue || "";
+					ret[lang][unit][skin][type] = dialogue || "";
+				});
+
+				fs.writeFileSync(
+					path.resolve(__dirname, "..", "src", "json", `unit-dialogue-${lang}.ts`),
+					`export default ${JSON.stringify(ret[lang], null, 2)};`,
+				);
 			});
-
-			fs.writeFileSync(
-				path.resolve(__dirname, "..", "src", "json", "unit-dialogue.ts"),
-				`export default ${JSON.stringify(ret, null, 2)};`,
-			);
 		} else
 			console.log("No data found.");
 	});

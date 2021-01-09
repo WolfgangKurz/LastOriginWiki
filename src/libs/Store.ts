@@ -145,7 +145,7 @@ class StoreModule extends VuexModule {
 	private unitListOrder: UnitListOrder = "dict";
 	private unitListSortAsShortName: boolean = false;
 
-	private unitDisplayEffectTarget: TARGET_TYPE = TARGET_TYPE.__MAX__; // 구분 없음
+	private unitDisplayEffectTarget: TARGET_TYPE | -1 = -1; // 구분 없음
 
 	private unitGroupMerge: boolean = false;
 

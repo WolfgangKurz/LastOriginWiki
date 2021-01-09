@@ -9,13 +9,11 @@ const typeName: Record<ACTOR_CLASS, string> = {
 	[ACTOR_CLASS.LIGHT]: "경장",
 	[ACTOR_CLASS.AIR]: "기동",
 	[ACTOR_CLASS.HEAVY]: "중장",
-	[ACTOR_CLASS.__MAX__]: "",
 };
 const roleName: Record<ROLE_TYPE, string> = {
 	[ROLE_TYPE.ATTACKER]: "공격기",
 	[ROLE_TYPE.DEFENDER]: "보호기",
 	[ROLE_TYPE.SUPPORTER]: "지원기",
-	[ROLE_TYPE.__MAX__]: "",
 };
 const typeList = [
 	"light",
@@ -27,15 +25,15 @@ const typeList = [
 export default class UnitBadge extends Vue {
 	@Prop({
 		type: Number,
-		default: ACTOR_CLASS.__MAX__,
+		default: -1,
 	})
-	private type!: ACTOR_CLASS;
+	private type!: ACTOR_CLASS | -1;
 
 	@Prop({
 		type: Number,
-		default: ROLE_TYPE.__MAX__,
+		default: -1,
 	})
-	private role!: ROLE_TYPE;
+	private role!: ROLE_TYPE | -1;
 
 	@Prop({
 		type: String,
@@ -77,7 +75,7 @@ export default class UnitBadge extends Vue {
 			else if (typeList.includes(this.Limit))
 				return table[this.Limit];
 			else
-				return ACTOR_CLASS.__MAX__;
+				return -1;
 		}
 		return this.type;
 	}
@@ -94,7 +92,7 @@ export default class UnitBadge extends Vue {
 			else if (!typeList.includes(this.Limit))
 				return table[this.Limit];
 			else
-				return ROLE_TYPE.__MAX__;
+				return -1;
 		}
 		return this.role;
 	}
@@ -110,17 +108,17 @@ export default class UnitBadge extends Vue {
 	private render () {
 		return <b-badge
 			class="unit-badge"
-			variant={!this.transparent ? "primary" : "transparent"}
-			data-size={this.size}
-			data-type={this.Type}
-			data-role={this.Role}
-			data-black={this.black ? "1" : "0"}
+			variant={ !this.transparent ? "primary" : "transparent" }
+			data-size={ this.size }
+			data-type={ this.Type }
+			data-role={ this.Role }
+			data-black={ this.black ? "1" : "0" }
 		>
 			<i />
 			{
-				this.Type < ACTOR_CLASS.__MAX__ && this.Role < ROLE_TYPE.__MAX__
+				this.Type !== -1 && this.Role !== -1
 					? `${this.TypeName} ${this.RoleName}`
-					: this.Type < ACTOR_CLASS.__MAX__
+					: this.Type !== -1
 						? `${this.TypeName}형`
 						: this.RoleName
 			}

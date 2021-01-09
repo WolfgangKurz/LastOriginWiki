@@ -158,9 +158,9 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot, SortieCost } from "@/libs/Const";
 
-import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/libs/Types/Enums";
+import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, CURRENCY_TYPE, ROLE_TYPE } from "@/libs/Types/Enums";
 import UnitData, { LinkBonusType, Unit } from "@/libs/DB/Unit";
 import UnitStatsData from "@/libs/DB/UnitStats";
 import EquipData from "@/libs/DB/Equip";
@@ -177,7 +177,7 @@ import StatIcon from "@/components/StatIcon.vue";
 import UnitStatsUpgrade from "./Stats/UnitStatsUpgrade.vue";
 import UnitStatsCoreLink from "./Stats/UnitStatsCoreLink.vue";
 import UnitStatsEquip from "./Stats/UnitStatsEquip.vue";
-import RequireResourceDB, { RequireResource } from "@/libs/DB/RequireResource";
+import { SortieCostBody } from "@/libs/Types";
 
 @Component({
 	components: {
@@ -191,14 +191,6 @@ import RequireResourceDB, { RequireResource } from "@/libs/DB/RequireResource";
 	},
 })
 export default class UnitStatus extends Vue {
-	private internalRequireResourceDB: RequireResource | null = null;
-	private get RequireResourceDB () {
-		if (this.internalRequireResourceDB) return this.internalRequireResourceDB;
-		return RequireResourceDB((x) => {
-			this.internalRequireResourceDB = x;
-		});
-	}
-
 	@Prop({
 		type: Object,
 		required: true,
@@ -269,7 +261,6 @@ export default class UnitStatus extends Vue {
 			[ACTOR_CLASS.TROOPER]: "경장",
 			[ACTOR_CLASS.MOBILITY]: "기동",
 			[ACTOR_CLASS.ARMORED]: "중장",
-			[ACTOR_CLASS.__MAX__]: "",
 		}[this.unit.type];
 	}
 
@@ -278,25 +269,16 @@ export default class UnitStatus extends Vue {
 			[ROLE_TYPE.ATTACKER]: "공격기",
 			[ROLE_TYPE.DEFENDER]: "보호기",
 			[ROLE_TYPE.SUPPORTER]: "지원기",
-			[ROLE_TYPE.__MAX__]: "",
 		}[this.unit.role];
 	}
 
 	private GetRequireResource (rarity: ACTOR_GRADE, type: ACTOR_CLASS, role: ROLE_TYPE, body: ACTOR_BODY_TYPE, fullLinkBonus: LinkBonusType) {
-		if (!this.RequireResourceDB) {
-			return {
-				metal: [0, 0, 0, 0, 0, 0],
-				nutrient: [0, 0, 0, 0, 0, 0],
-				power: [0, 0, 0, 0, 0, 0],
-			};
-		}
-
 		const table = (() => {
-			const o = this.RequireResourceDB[rarity][type][role][body];
+			const o = SortieCost[rarity][type][role][body as keyof SortieCostBody];
 			return {
-				metal: [...o.metal],
-				nutrient: [...o.nutrient],
-				power: [...o.power],
+				metal: [...o[CURRENCY_TYPE.METAL]],
+				nutrient: [...o[CURRENCY_TYPE.NUTRIENT]],
+				power: [...o[CURRENCY_TYPE.POWER]],
 			};
 		})();
 

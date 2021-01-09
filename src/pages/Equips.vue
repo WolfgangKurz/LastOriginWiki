@@ -278,7 +278,6 @@ export default class Equips extends Vue {
 					[ITEM_TYPE.PCITEM]: "코어링크",
 					[ITEM_TYPE.CONSUMABLE]: "소모품",
 					[ITEM_TYPE.MATERIAL]: "재료",
-					[ITEM_TYPE.__MAX__]: "???",
 				};
 
 				SetMeta(
