@@ -230,7 +230,6 @@ export default class EquipModal extends Vue {
 				[ITEM_TYPE.PCITEM]: "",
 				[ITEM_TYPE.CONSUMABLE]: "",
 				[ITEM_TYPE.MATERIAL]: "",
-				[ITEM_TYPE.__MAX__]: "",
 			};
 
 			const found = EquipData.filter(x => x.type === this.equip.type && x.key === this.equip.key);

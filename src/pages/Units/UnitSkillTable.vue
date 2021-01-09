@@ -45,7 +45,7 @@
 						<img class="skill-icon" :src="skill.icon" />
 						<div class="text-bold">
 							{{ skill.name }}<br />
-							<elem-icon :elem="skill.buffs.data[skill.buffs.index[skillLevelSync]].type" />
+							<elem-icon :elem="skill.buffs.data[skill.buffs.index[skillLevelSync]].type" class="mx-0" />
 						</div>
 
 						<b-badge v-if="skill.index === 7" variant="info">더미</b-badge>

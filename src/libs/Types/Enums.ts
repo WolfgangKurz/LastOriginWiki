@@ -59,14 +59,14 @@ export enum ACTOR_ATTR_TYPE {
 	/** ??? 사용처 없음 */
 	LIGHTNING_RESIST = 15,
 
-	__MAX__ = 16,
+	// __MAX__ = 16,
 }
 
 /** 버프 사용 방식? */
 export enum BUFF_USE_TYPE {
 	TRIGGER = 0,
 	PASSIVE = 1,
-	__MAX__ = 2,
+	// __MAX__ = 2,
 }
 
 /** 버프 종류 */
@@ -86,7 +86,7 @@ export enum BUFF_ATTR_TYPE {
 	/** 버프 종류 상관하지 않음 */
 	NO_MATTER = 4,
 
-	__MAX__ = 4,
+	// __MAX__ = 4,
 }
 
 /** 버프 효과의 발동 조건 */
@@ -133,7 +133,7 @@ export enum BUFFEFFECT_TRIGGER_APPLY_CONDITION {
 	CHECK_COUNT_ROLE_TYPE_MY_PARTY = 39,
 	ALWAYS = 40,
 
-	__MAX__ = ALWAYS,
+	// __MAX__ = ALWAYS,
 }
 
 /** 버프 갱신 방식 */
@@ -153,7 +153,7 @@ export enum BUFF_OVERLAP_TYPE {
 	/** 기존 버프와 상관 없이 새로 추가 */
 	STACK = 4,
 
-	__MAX__ = 4,
+	// __MAX__ = 4,
 }
 
 
@@ -177,7 +177,7 @@ export enum ITEM_TYPE {
 	/** 재료 */
 	MATERIAL,
 
-	__MAX__,
+	// __MAX__,
 }
 
 /** 제대로 사용하지 않음, 아마도 헬키스트 던전의 잔재 */
@@ -207,7 +207,7 @@ export enum ITEM_SUB_TYPE {
 	STONE_MATERIAL,
 	IRON_MATERIAL,
 	COLLECTION,
-	__MAX__,
+	// __MAX__,
 }
 
 /** 제대로 사용하지 않음, 아마도 헬키스트 던전의 잔재 */
@@ -216,7 +216,7 @@ export enum ITEM_EQUIP_TYPE {
 	NOTRANGE,
 	NOTMELEE,
 	SUMMON,
-	__MAX__,
+	// __MAX__,
 }
 
 /** 장비 등급 */
@@ -243,7 +243,7 @@ export enum ACTOR_BODY_TYPE {
 	/** 사용처 없음, 아마도 헬키스트 던전의 잔재 */
 	TOTEM = 3,
 
-	__MAX__ = 4,
+	// __MAX__ = 4,
 }
 
 /** 전투원 유형 */
@@ -257,7 +257,7 @@ export enum ACTOR_CLASS {
 	MOBILITY = 2,
 	AIR = 2,
 
-	__MAX__ = 3,
+	// __MAX__ = 3,
 }
 
 /** 전투원 역할 */
@@ -270,7 +270,7 @@ export enum ROLE_TYPE {
 
 	SUPPORTER = 2,
 
-	__MAX__ = 3,
+	// __MAX__ = 3,
 }
 
 /** 전투원 등급 */
@@ -291,7 +291,7 @@ export enum NUM_OUTPUTTYPE {
 	/** 값을 100 곱하고 출력 (% 수치인 경우) */
 	PERCENT = 1,
 
-	__MAX__ = 2,
+	// __MAX__ = 2,
 }
 
 /** 적용 대상 유형 */
@@ -320,7 +320,7 @@ export enum TARGET_TYPE {
 	/** 시스템 효과? */
 	SYSTEM = 7,
 
-	__MAX__ = 8,
+	// __MAX__ = 8,
 }
 
 /** 적용 대상 부차 유형 */
@@ -331,7 +331,7 @@ export enum TARGET_SUB_TYPE {
 	/** 사망한 대상? */
 	DEAD = 1,
 
-	__MAX__ = 2,
+	// __MAX__ = 2,
 }
 
 /** 스킬 레벨 적용 방식 */
@@ -340,7 +340,7 @@ export enum SKILL_LEVEL_TYPE {
 
 	DEADLY = 1,
 
-	__MAX__ = 2,
+	// __MAX__ = 2,
 }
 
 /** 스킬의 유형 */
@@ -351,13 +351,13 @@ export enum SKILL_TYPE {
 	/** 패시브 스킬 */
 	PASSIVE = 1,
 
-	__MAX__ = 2,
+	// __MAX__ = 2,
 }
 
 /** 스킬의 부차 유형 */
 export enum SKILL_SUB_TYPE {
 	NORMAL = 0,
-	__MAX__ = 1,
+	// __MAX__ = 1,
 }
 
 /** 스킬의 슬롯 위치 */
@@ -371,7 +371,7 @@ export enum SKILL_SLOT_TYPE {
 	SLOT_4 = 4,
 	SLOT_5 = 5,
 
-	__MAX__ = 6,
+	// __MAX__ = 6,
 }
 
 /** 스킬의 속성 */
@@ -400,7 +400,7 @@ export enum MULTI_ATTACK_TYPE {
 	/** 관통 */
 	PIERCING = 2,
 
-	__MAX__ = 3,
+	// __MAX__ = 3,
 }
 
 /** 버프 표시 유형 */
@@ -417,7 +417,7 @@ export enum BUFF_ANNOUNCE_TYPE {
 	/** 추가되면 바로 표시... Emily의 리미터 해제만 존재 */
 	INSTANT = 3,
 
-	__MAX__ = 4,
+	// __MAX__ = 4,
 }
 
 /** 설비 종류 */
@@ -467,7 +467,7 @@ export enum FACILITY_TYPE_CATEGORY {
 	/** 카페테리아  */
 	CAFETERIA = 14,
 
-	__MAX__ = 15,
+	// __MAX__ = 15,
 }
 
 /** 설비 패시브 기능 종류 */
@@ -496,7 +496,7 @@ export enum PASSIVE_BUFF_TYPE {
 	/** 설비 부품 생산 시간 감소 */
 	FACILITY_MAKING_TIME_DOWN = 7,
 
-	__MAX__ = 8,
+	// __MAX__ = 8,
 }
 
 /** 설비 생산품 종류 */
@@ -510,7 +510,7 @@ export enum PRODUCE_TYPE {
 	/** 전투원 생산 */
 	FACILITY_TYPE_BIOROID = 2,
 
-	__MAX__ = 3,
+	// __MAX__ = 3,
 }
 
 /** 필요한 전투원 구분 */
@@ -533,19 +533,19 @@ export enum REQUIRED_COMBATANT_TYPE {
 	/** 특정 전투원 */
 	SPECIFIC_COMBAT = 5,
 
-	__MAX__ = 6,
+	// __MAX__ = 6,
 }
 
 export enum ITEM_USE_TYPE {
 	CREATE = 0,
 	USE = 1,
-	__MAX__ = 2,
+	// __MAX__ = 2,
 }
 
 export enum MONSTER_TYPE {
 	NORMAL = 0,
 	BOSS = 1,
-	__MAX__ = 2,
+	// __MAX__ = 2,
 }
 
 export enum MONSTER_SUB_TYPE {
@@ -554,18 +554,29 @@ export enum MONSTER_SUB_TYPE {
 	NIGHTCHICK = 2,
 	SHIELD = 3,
 	BEETLE = 4,
-	__MAX__ = 5,
+	// __MAX__ = 5,
 }
 
 export enum SUMMON_TYPE {
 	INSTALLATION = 0,
 	ENVIRONMENTAL = 1,
 	AUTOPILOT = 2,
-	__MAX__ = 3,
+	// __MAX__ = 3,
 }
 
 export enum INSTALL_POS_TYPE {
 	PC = 0,
 	MONSTER = 1,
-	__MAX__ = 2,
+	// __MAX__ = 2,
+}
+
+export enum CURRENCY_TYPE {
+	METAL = 0,
+	NUTRIENT = 1,
+	POWER = 2,
+	TRAINING_TICKET = 3,
+	CASH = 4,
+	BUYCASH = 5,
+	CHALLENGESTAGE_TICKET = 6,
+	// __MAX__ = 7,
 }

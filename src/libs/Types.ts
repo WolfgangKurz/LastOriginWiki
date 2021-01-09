@@ -1,49 +1,6 @@
-export type Rarity = "SS" | "S" | "A" | "B";
+import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, CURRENCY_TYPE, ROLE_TYPE } from "@/libs/Types/Enums";
 
-export interface RawUnitDialogueEntity {
-	Join?: string;
-	SquadJoin?: string;
-	Leader?: string;
-	SortiePick?: string;
-	StageStart?: string;
-	Retreat?: string;
-	SearchStart?: string;
-	SearchEnd?: string;
-	BattleFocus?: string;
-	ActionApprove?: string;
-	SpSkill?: string;
-	/* eslint-disable camelcase */
-	SpSkill_2?: string;
-	SpSkill_3?: string;
-	SpSkill_4?: string;
-	SpSkill_5?: string;
-	/* eslint-enable camelcase */
-	Retire?: string;
-	Repair?: string;
-	Reinforce?: string;
-	ItemEquip?: string;
-	CoreLink?: string;
-	PresentGet?: string;
-	Login?: string;
-	/* eslint-disable camelcase */
-	Idle_01_01?: string;
-	Idle_01_02?: string;
-	Idle_01_03?: string;
-	SPIdle_01_01?: string;
-	Idle_02_01?: string;
-	Idle_03_01?: string;
-	Idle_04_01?: string;
-	SPIdle_02_01?: string;
-	Oath?: string;
-	OathIdle_01?: string;
-	MVP?: string;
-	/* eslint-enable camelcase */
-}
-export interface RawUnitDialogue {
-	[key: string]: { // Unit
-		[key: string]: RawUnitDialogueEntity; // Skin
-	};
-}
+export type Rarity = "SS" | "S" | "A" | "B";
 
 interface SkinOffsetPart {
 	n: number;
@@ -131,17 +88,22 @@ export interface SkinInfo {
 	desc: string;
 }
 
-export interface CostTable {
-	components: [number, number, number, number, number, number];
-	nutritions: [number, number, number, number, number, number];
-	power: [number, number, number, number, number, number];
+export interface SortieCostResource{
+	[CURRENCY_TYPE.METAL]: [number, number, number, number, number, number];
+	[CURRENCY_TYPE.NUTRIENT]: [number, number, number, number, number, number];
+	[CURRENCY_TYPE.POWER]: [number, number, number, number, number, number];
 }
-export interface RawCostTable {
-	[key: string]: {
-		bio: CostTable;
-		ags: CostTable;
+export interface SortieCostBody {
+	[ACTOR_BODY_TYPE.BIOROID]: SortieCostResource;
+	[ACTOR_BODY_TYPE.AGS]: SortieCostResource;
+}
+export type SortieCostType = {
+	[key in ACTOR_GRADE]: {
+		[key in ACTOR_CLASS]: {
+			[key in ROLE_TYPE]: SortieCostBody;
+		};
 	};
-}
+};
 
 export interface StoryRaw {
 	area: string;

@@ -1,9 +1,10 @@
 <template>
-	<b-card v-if="IsVoiceAvailable" class="mt-2 text-left" no-body>
+	<b-card v-if="IsVoiceAvailable" class="mt-2 text-left" no-body :lang="lang">
 		<b-card-header v-b-toggle:[CollapseKey]>
 			{{ voice.t }}
 			<strong v-if="voice.isMarry" class="text-danger pl-4">♥ 서약</strong>
-			<b-badge v-if="IsNotSet" variant="warning" class="ml-3">일부 대사 없음</b-badge>
+			<b-badge v-if="IsMissing" variant="danger" class="ml-3">대사 정보 없음</b-badge>
+			<b-badge v-else-if="IsPartial" variant="warning" class="ml-3">일부 대사 없음</b-badge>
 		</b-card-header>
 		<b-collapse :id="CollapseKey">
 			<b-card-body>
@@ -13,6 +14,7 @@
 					:unit-id="unitId"
 					:type="type"
 					:dialogue="Dialogue[type]"
+					:lang="lang"
 				/>
 			</b-card-body>
 		</b-collapse>
@@ -30,8 +32,8 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, Watch, PropSync } from "vue-property-decorator";
 
-import { RawUnitDialogueEntity, SkinInfo } from "@/libs/Types";
-import { UnitDialogueData } from "@/libs/DB";
+import { SkinInfo } from "@/libs/Types";
+import DialogueDB, { RawUnitDialogue, RawUnitDialogueEntity, UnitDialogueDataType } from "@/libs/DB/Dialogue";
 
 import { Unit } from "@/libs/DB/Unit";
 
@@ -50,6 +52,33 @@ interface VoiceItem extends SkinInfo {
 	},
 })
 export default class UnitDialogue extends Vue {
+	private internalDialogueDB: Record<keyof UnitDialogueDataType, RawUnitDialogue | null> = {
+		ko: null,
+		jp: null,
+	};
+
+	private get DialogueDBKO () {
+		if (this.internalDialogueDB.ko) return this.internalDialogueDB.ko;
+		return DialogueDB("ko", (x) => {
+			this.internalDialogueDB.ko = x;
+		});
+	}
+
+	private get DialogueDBJP () {
+		if (this.internalDialogueDB.jp) return this.internalDialogueDB.jp;
+		return DialogueDB("jp", (x) => {
+			this.internalDialogueDB.jp = x;
+		});
+	}
+
+	private DialogueDB (type: keyof UnitDialogueDataType) {
+		switch (type) {
+			case "ko": return this.DialogueDBKO;
+			case "jp": return this.DialogueDBJP;
+		}
+		return null;
+	}
+
 	@Prop({
 		type: Object,
 		required: true,
@@ -68,6 +97,12 @@ export default class UnitDialogue extends Vue {
 	})
 	private id!: number;
 
+	@Prop({
+		type: String,
+		required: true,
+	})
+	private lang!: keyof UnitDialogueDataType;
+
 	private uid: number = Math.random();
 
 	private get CollapseKey () {
@@ -75,7 +110,10 @@ export default class UnitDialogue extends Vue {
 	}
 
 	private get TypeList (): Array<keyof RawUnitDialogueEntity> {
-		if (this.unit.uid in UnitDialogueData) {
+		const db = this.DialogueDB(this.lang);
+		if (!db) return [];
+
+		if (this.unit.uid in db) {
 			const key = ((v) => {
 				if (v.isMarry) return "M";
 				if (v.isPro) return "P";
@@ -83,8 +121,8 @@ export default class UnitDialogue extends Vue {
 				return v.id.toString();
 			})(this.voice);
 
-			if (key in UnitDialogueData[this.unit.uid]) {
-				const diag = UnitDialogueData[this.unit.uid][key];
+			if (key in db[this.unit.uid]) {
+				const diag = db[this.unit.uid][key];
 				return Object.keys(diag) as Array<keyof RawUnitDialogueEntity>;
 			}
 		}
@@ -103,10 +141,15 @@ export default class UnitDialogue extends Vue {
 			"BattleFocus",
 			"ActionApprove",
 			"SpSkill",
+			"SpSkill_1",
 			"SpSkill_2",
 			"SpSkill_3",
 			"SpSkill_4",
 			"SpSkill_5",
+			"SpSkill_6",
+			"SpSkill_7",
+			"SpSkill_8",
+			"SpSkill_9",
 			"Retire",
 			"Repair",
 			"Reinforce",
@@ -131,7 +174,8 @@ export default class UnitDialogue extends Vue {
 	}
 
 	private get Dialogue () {
-		if (this.unit.uid in UnitDialogueData) {
+		const db = this.DialogueDB(this.lang);
+		if (db && this.unit.uid in db) {
 			const key = ((v) => {
 				if (v.isMarry) return "M";
 				if (v.isPro) return "P";
@@ -139,8 +183,8 @@ export default class UnitDialogue extends Vue {
 				return v.id.toString();
 			})(this.voice);
 
-			if (key in UnitDialogueData[this.unit.uid]) {
-				const diag = UnitDialogueData[this.unit.uid][key];
+			if (key in db[this.unit.uid]) {
+				const diag = db[this.unit.uid][key];
 				return diag;
 			}
 		}
@@ -200,12 +244,20 @@ export default class UnitDialogue extends Vue {
 		return this.voice.V;
 	}
 
-	private get IsNotSet () {
-		function HasEmpty (d: RawUnitDialogueEntity) {
-			return Object.keys(d).some(x => !d[x as keyof RawUnitDialogueEntity]);
-		}
+	private get IsMissing () {
+		const db = this.DialogueDB(this.lang);
+		if (!db) return [];
 
-		return !(this.unit.uid in UnitDialogueData) || HasEmpty(this.Dialogue);
+		const AllEmpty = (d: Partial<RawUnitDialogueEntity>) => Object.keys(d).every(x => !d[x as keyof RawUnitDialogueEntity]);
+		return !(this.unit.uid in db) || AllEmpty(this.Dialogue);
+	}
+
+	private get IsPartial () {
+		const db = this.DialogueDB(this.lang);
+		if (!db) return [];
+
+		const HasEmpty = (d: Partial<RawUnitDialogueEntity>) => Object.keys(d).some(x => !d[x as keyof RawUnitDialogueEntity]);
+		return !(this.unit.uid in db) || HasEmpty(this.Dialogue);
 	}
 
 	private get unitId () {

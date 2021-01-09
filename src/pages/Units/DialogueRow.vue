@@ -25,6 +25,13 @@ export default class DialogueRow extends Vue {
 	})
 	private dialogue!: string;
 
+	@Prop({
+		type: String,
+		default: "ko",
+		validator: (x: string) => (x === "ko" || x === "jp"),
+	})
+	private lang!: "ko" | "jp";
+
 	private get rowClass () {
 		return [
 			"border-top",
@@ -134,15 +141,15 @@ export default class DialogueRow extends Vue {
 	}
 
 	private get VoiceLink () {
-		return `${AssetsRoot}/audio/${this.unitId}_${this.type}.ogg`;
+		return `${AssetsRoot}/audio/voice-${this.lang}/${this.unitId}_${this.type}.ogg`;
 	}
 
 	private render () {
 		return <b-row class="dialogue-row my-2 my-sm-0">
-			<b-col class={this.rowClass} cols="12" sm="2">{this.TypeName}</b-col>
-			<b-col class="border dialogue" cols="12" sm="">{this.Dialogue}</b-col>
+			<b-col class={ this.rowClass } cols="12" sm="2">{ this.TypeName }</b-col>
+			<b-col class="border dialogue" cols="12" sm="">{ this.Dialogue }</b-col>
 			<b-col class="border" cols="12" sm="auto">
-				<audio src={this.VoiceLink} type="audio/ogg" controls preload="none" />
+				<audio src={ this.VoiceLink } type="audio/ogg" controls preload="none" />
 			</b-col>
 		</b-row>;
 	}

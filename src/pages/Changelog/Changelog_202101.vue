@@ -1,5 +1,26 @@
 <template>
 	<div>
+		<changelog-item title="Build 7660" date="2021-01-09">
+			<template #site>
+				<li>일부 DB를 비동기 처리했습니다.</li>
+				<li>전투원 출격 비용 DB를 메인 스크립트와 통합했습니다.</li>
+			</template>
+			<template #bugfix>
+				<li>
+					<b-badge variant="info">레나 더 챔피언</b-badge>의 1번째 패시브 <b-badge variant="info">태그팀</b-badge>의 버프 수치가 잘못된 점을
+					수정했습니다.
+				</li>
+				<li>전투원 스킬 정보의 스킬 속성 아이콘이 약간 왼쪽으로 치우친 점을 수정했습니다.</li>
+			</template>
+			<template #new>
+				<li>
+					전투원 대사에 일본 서버 대사 정보가 추가되었습니다.<br />
+					일본 서버 대사 및 오디오는 비정기적으로 갱신됩니다.<br />
+					그렇습니다. 생각나면 갱신합니다.
+				</li>
+			</template>
+		</changelog-item>
+
 		<changelog-item title="Build 7652" date="2021-01-07">
 			<template #bugfix>
 				<li>전투원 스테이터스 계산기에서 전투원의 전용장비를 선택할 수 없는 문제를 수정했습니다.</li>
@@ -42,8 +63,9 @@
 			</template>
 			<template #new>
 				<li>
-					전투원 스킬 정보에 스킬 위력 증가치 뱃지를 추가했습니다.<br/>
-					스킬 위력 증가치 뱃지는 <small><b-badge variant="success">▲ 0.2</b-badge></small>와 같이 표시됩니다.<br />
+					전투원 스킬 정보에 스킬 위력 증가치 뱃지를 추가했습니다.<br />
+					스킬 위력 증가치 뱃지는 <small><b-badge variant="success">▲ 0.2</b-badge></small
+					>와 같이 표시됩니다.<br />
 				</li>
 			</template>
 			<template #update>
