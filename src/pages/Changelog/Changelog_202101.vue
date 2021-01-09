@@ -1,5 +1,11 @@
 <template>
 	<div>
+		<changelog-item title="Build 7662" date="2021-01-09">
+			<template #bugfix>
+				<li>전투원정보의 스테이터스에서 장착 제한이 있는 장비가 표시되지 않던 문제를 수정했습니다.</li>
+			</template>
+		</changelog-item>
+
 		<changelog-item title="Build 7660" date="2021-01-09">
 			<template #site>
 				<li>일부 DB를 비동기 처리했습니다.</li>
