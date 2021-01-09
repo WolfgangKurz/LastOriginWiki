@@ -187,12 +187,12 @@ export default class EquipSelectModal extends Vue {
 							const _ = y.split("+")
 								.map(z => {
 									switch (z) {
-										case "light": return u.type === ACTOR_CLASS.LIGHT;
-										case "air": return u.type === ACTOR_CLASS.AIR;
-										case "heavy": return u.type === ACTOR_CLASS.HEAVY;
-										case "attacker": return u.role === ROLE_TYPE.ATTACKER;
-										case "defender": return u.role === ROLE_TYPE.DEFENDER;
-										case "supporter": return u.role === ROLE_TYPE.SUPPORTER;
+										case "Light": return u.type === ACTOR_CLASS.LIGHT;
+										case "Air": return u.type === ACTOR_CLASS.AIR;
+										case "Heavy": return u.type === ACTOR_CLASS.HEAVY;
+										case "Attacker": return u.role === ROLE_TYPE.ATTACKER;
+										case "Defender": return u.role === ROLE_TYPE.DEFENDER;
+										case "Supporter": return u.role === ROLE_TYPE.SUPPORTER;
 									}
 									return false;
 								})
