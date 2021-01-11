@@ -847,5 +847,7 @@ export default {
   "ChillerEX_TU4": "칠러 HV",
   "NightChickAQ_EV9": "아쿠아 칙 Type-X",
   "Drone_EV9": "드론 09",
-  "Machina_N": "마키나"
+  "Machina_N": "마키나",
+  "Drone_Challenge1": "드론 09",
+  "Drone_Challenge2": "드론 09"
 };

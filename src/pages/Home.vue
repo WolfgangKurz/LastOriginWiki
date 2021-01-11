@@ -65,7 +65,6 @@ import { UpdateTitle } from "@/libs/Functions";
 
 import BuildInfo from "@/buildtime";
 import { SetMeta } from "@/libs/Meta";
-import BootstrapVue from "bootstrap-vue";
 
 @Component({})
 export default class Home extends Vue {

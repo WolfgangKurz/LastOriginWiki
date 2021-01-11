@@ -1,5 +1,34 @@
 <template>
 	<div>
+		<changelog-item title="Build 7673" date="2021-01-11">
+			<template #bugfix>
+				<li>
+					<b-badge variant="warning">A-14B 스프리건</b-badge>의 1번째 패시브 <b-badge variant="info">루머 콜렉터</b-badge>의 설명이 이전
+					업데이트 내용으로 반영되지 않았던 점을 수정했습니다.
+				</li>
+			</template>
+			<template #new>
+				<li>새로운 적 정보가 추가되었습니다.</li>
+			</template>
+			<template #update>
+				<li>
+					<b-badge variant="warning">마키나</b-badge>의 2번째 액티브 <b-badge variant="info">관중 소환</b-badge>의 사거리 및 고정 범위
+					여부가 변경된 점을 반영했습니다.
+				</li>
+				<li>일부 적의 정보가 갱신되었습니다.</li>
+				<li>
+					<b-badge variant="warning">낙원으로부터 온 초대장</b-badge>의 <b-badge variant="warning">Ev2-3</b-badge> 및
+					<b-badge variant="warning">Ev2-4</b-badge>의 탐색 정보가 갱신되었습니다.
+				</li>
+			</template>
+			<template #skin>
+				<li>
+					<b-badge variant="warning">로열 아스널</b-badge>의 <b-badge variant="danger">드림위버 웨딩 스페셜 : 이 마음을 그대에게</b-badge>의
+					로비 애니메이션 여부 및 가격 정보가 갱신되었습니다.
+				</li>
+			</template>
+		</changelog-item>
+
 		<changelog-item title="Build 7662" date="2021-01-09">
 			<template #bugfix>
 				<li>전투원정보의 스테이터스에서 장착 제한이 있는 장비가 표시되지 않던 문제를 수정했습니다.</li>

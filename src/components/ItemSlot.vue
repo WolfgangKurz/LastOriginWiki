@@ -1,5 +1,5 @@
 <template>
-	<div class="item-slot" :data-type="type" :data-key="fullKey" v-on="$listeners">
+	<div class="item-slot" :data-type="type" v-on="$listeners">
 		<div v-if="valid" class="equip">
 			<equip-icon :image="icon" />
 			<equip-level :level="level" :size="10" />
