@@ -37,6 +37,10 @@
 					<b-dropdown-item href="/bgm" @click.prevent="GoTo('/bgm')">BGM</b-dropdown-item>
 					<b-dropdown-item href="/eapi" @click.prevent="GoTo('/eapi')">API</b-dropdown-item>
 					<b-dropdown-divider />
+					<b-dropdown-item href="https://arca.live/b/lastorigin/4474753" target="_blank">
+						지휘의 정석
+						<b-icon-link45deg />
+					</b-dropdown-item>
 					<b-dropdown-item href="https://lastoriginmap.github.io/" target="_blank">
 						지역별 철충 지도
 						<b-icon-link45deg />

@@ -74,7 +74,7 @@ export default function EnemyDB (type: keyof UnitDialogueDataType, callback?: (d
 
 		if (internalDB[type] !== false) {
 			internalDB[type] = false;
-			import(`@/json/unit-dialogue-${type}`)
+			import(/* webpackChunkName: "chunk-db-dialogue" */ `@/json/unit-dialogue-${type}`)
 				.then(x => {
 					internalDB[type] = x.default as unknown as RawUnitDialogue;
 					callbackQueue[type].forEach(y => y(internalDB[type] as RawUnitDialogue));

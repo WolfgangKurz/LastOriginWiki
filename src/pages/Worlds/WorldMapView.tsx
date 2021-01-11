@@ -7,6 +7,7 @@ import { Watch } from "vue-property-decorator";
 import WorldMapGrid from "./WorldMapGrid.vue";
 import WorldMapSearchInfo from "./Sub/WorldMapSearchInfo.vue";
 
+import TbarIcon from "@/components/TbarIcon.vue";
 import DropUnit from "./DropUnit.vue";
 import DropEquip from "./DropEquip.vue";
 import DropItem from "./DropItem.vue";
@@ -49,6 +50,7 @@ interface WaveEnemyInfo extends MapEnemyData {
 		WorldMapGrid,
 		WorldMapSearchInfo,
 
+		TbarIcon,
 		DropUnit,
 		DropEquip,
 		DropItem,
@@ -650,7 +652,7 @@ export default class WorldMapView extends Vue {
 											class="current-map-marker"
 											src={ `${AssetsRoot}/map-current.png` }
 											style={ { display: waveIdx === this.selectedWave ? "" : "none" } } />
-										<img width="42" src={ `${AssetsRoot}/${this.ImageExt}/tbar/TbarIcon_MP_NightChick_RV.${this.ImageExt}` } />
+										<tbar-icon icon="TbarIcon_MP_NightChuck_RV" size={ 42 } />
 									</a>),
 
 									<div class="mt-3">
@@ -659,7 +661,7 @@ export default class WorldMapView extends Vue {
 												{ this.Waves[this.selectedWave].map((_, idx) => <b-button
 													variant="outline-dark"
 													pressed={ this.selectedWaveIndex === idx }
-													onClick={ () => (this.selectedWaveIndex = idx)}
+													onClick={ () => (this.selectedWaveIndex = idx) }
 												>
 													#{ idx + 1 }
 													<b-badge class="ml-1" variant="warning">{ _.r }%</b-badge>

@@ -111206,9 +111206,9 @@ export default {
           "text": "Ev2-3",
           "search": {
             "time": 10800,
-            "metal": 110,
-            "nutrient": 120,
-            "power": 320,
+            "metal": 0,
+            "nutrient": 0,
+            "power": 300,
             "units": 4,
             "unitsLv": 20,
             "items": [
@@ -111494,9 +111494,9 @@ export default {
           "text": "Ev2-4",
           "search": {
             "time": 2700,
-            "metal": 0,
-            "nutrient": 150,
-            "power": 150,
+            "metal": 360,
+            "nutrient": 360,
+            "power": 360,
             "units": 2,
             "unitsLv": 30,
             "items": [

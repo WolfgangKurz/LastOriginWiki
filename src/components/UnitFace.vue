@@ -3,7 +3,6 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
-import UnitData from "@/libs/DB/Unit";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 
 @Component({})
@@ -34,12 +33,12 @@ export default class UnitFace extends Vue {
 
 	public static GetURL (uid: string, skin: number = 0): string {
 		const ext = ImageExtension();
+		if (!uid) return `${AssetsRoot}/${ext}/face/transparent.${ext}`;
+
 		if (uid.startsWith("Core_") || uid.startsWith("Module_"))
 			return `${AssetsRoot}/${ext}/face/${uid}_0.${ext}`;
 
-		return UnitData.some(x => x.uid === uid)
-			? `${AssetsRoot}/${ext}/face/${uid}_${skin}.${ext}`
-			: `${AssetsRoot}/transparent.png`;
+		return `${AssetsRoot}/${ext}/face/${uid}_${skin}.${ext}`;
 	}
 
 	private render () {

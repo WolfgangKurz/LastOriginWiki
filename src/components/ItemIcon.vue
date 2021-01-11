@@ -1,5 +1,5 @@
 <template>
-	<img class="item-icon mr-1" :src="ItemImage" />
+	<img class="item-icon mr-1" :src="ItemImage" :width="size" :height="size" />
 </template>
 
 <script lang="ts">
@@ -17,6 +17,12 @@ export default class ItemIcon extends Vue {
 	})
 	private item!: string;
 
+	@Prop({
+		type: [String, Number],
+		default: 24,
+	})
+	private size!: string | number;
+
 	private get ItemImage () {
 		const ext = ImageExtension();
 		return `${AssetsRoot}/${ext}/item/${this.item}.${ext}`;
@@ -26,8 +32,6 @@ export default class ItemIcon extends Vue {
 
 <style lang="scss">
 img.item-icon {
-	width: 24px;
-	height: 24px;
 	vertical-align: middle;
 }
 </style>

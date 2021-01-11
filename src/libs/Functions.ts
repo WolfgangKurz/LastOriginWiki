@@ -1,7 +1,4 @@
-import { LinkBonusType } from "@/libs/DB/Unit";
 import { SetMeta } from "@/libs/Meta";
-import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/libs/Types/Enums";
-import Decimal from "decimal.js";
 
 export function FormatNumber (num: number): string {
 	if (num === 0) return num.toString();
