@@ -1,4 +1,4 @@
-import Data from "@/json/facility";
+import LoadDBFactory from "./DBLoader";
 
 export type FactilityProduct = FactilityProductItem | FacilityProductType | FacilityProductUnit;
 interface FactilityProductItem {
@@ -52,23 +52,7 @@ export interface Facility {
 	[key: string]: FacilityEntity;
 }
 
-/**
- * `null` : Not requested
- * `false` : Loading
- * `Facility` : Loaded
- */
-let internalDB: Facility | false | null = null;
-export default function FacilityDB (callback?: (data: Facility) => void): Facility | null {
-	if (!internalDB) {
-		if (internalDB !== false) {
-			internalDB = false;
-			import(/* webpackChunkName: "chunk-db-facility" */ "@/json/facility")
-				.then(x => {
-					internalDB = x.default as unknown as Facility;
-					if (callback) callback(internalDB);
-				});
-		}
-		return null;
-	}
-	return internalDB;
-}
+export default LoadDBFactory<Facility>(
+	"facility",
+	import(/* webpackChunkName: "chunk-db-facility" */ "@/json/facility"),
+);

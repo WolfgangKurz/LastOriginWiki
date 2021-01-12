@@ -3,13 +3,29 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
-import UnitData, { Unit } from "@/libs/DB/Unit";
+import LazyLoad, { LazyDataType } from "@/libs/LazyData";
+import FilterableUnitDB, { FilterableUnit } from "@/libs/DB/Unit.Filterable";
 
 import { CurrentEvent, CurrentDate } from "@/libs/Const";
 import EntitySource from "@/libs/EntitySource";
 
 @Component({})
 export default class SourceBadge extends Vue {
+	private DB: LazyDataType<FilterableUnit[]> = null;
+	private InitialDB () {
+		this.DB = null;
+
+		const uid = this.$route.params.id;
+		LazyLoad(
+			r => {
+				const FilterableUnit = r[0] as FilterableUnit[];
+				if (!FilterableUnit) return (this.DB = false);
+				this.DB = FilterableUnit;
+			},
+			cb => FilterableUnitDB(x => cb(x)),
+		);
+	}
+
 	@Prop({
 		type: [String, Object],
 		required: true,
@@ -72,7 +88,7 @@ export default class SourceBadge extends Vue {
 			if (this.Source.IsUninstalled)
 				return "미구현";
 			else if (this.Source.IsPrivateItem) {
-				const unit = UnitData.find(x => x.uid === this.Source.PrivateId);
+				const unit = this.DB && this.DB.find(x => x.uid === this.Source.PrivateId);
 				if (unit) return `${unit.name}`;
 				return this.Source.PrivateId;
 			} else if (this.Source.IsLimited)
@@ -104,8 +120,8 @@ export default class SourceBadge extends Vue {
 			} else if (this.Source.IsSupplementary) {
 				const text = this.Source.IsReward ? "클리어 보상" : "";
 				if (!this.minimum) {
-					const unit = UnitData.find(x => x.uid === this.Source.SupplementaryUnit) || Unit.Empty;
-					return `${unit.name} 외전 ${text}`.trim();
+					const unit = this.DB && this.DB.find(x => x.uid === this.Source.SupplementaryUnit);
+					return `${(unit && unit.name) || "???"} 외전 ${text}`.trim();
 				} else
 					return "외전";
 			} else if (this.Source.IsExchange) {
@@ -170,13 +186,22 @@ export default class SourceBadge extends Vue {
 						return ls;
 					})(this.Source.Map)}/${this.Source.Map}`;
 
-				return <a href={ link } onClick={ (e: Event) => this.Link(e, link) }>
-					<b-badge class="source-badge mx-1" variant={ variant } data-source={ this.Source.toString() }>{ content } 🔗</b-badge>
-				</a>;
-			} else
-				return <b-badge class="source-badge mx-1" variant={ variant } data-source={ this.Source.toString() }>{ content }</b-badge>;
+				return <lazy-data-base data={ this.DB }>
+					<a href={ link } onClick={ (e: Event) => this.Link(e, link) }>
+						<b-badge class="source-badge mx-1" variant={ variant } data-source={ this.Source.toString() }>{ content } 🔗</b-badge>
+					</a>
+				</lazy-data-base>;
+			} else {
+				return <lazy-data-base data={ this.DB }>
+					<b-badge class="source-badge mx-1" variant={ variant } data-source={ this.Source.toString() }>{ content }</b-badge>
+				</lazy-data-base>;
+			}
 		} else
 			return <i />;
+	}
+
+	private mounted () {
+		this.InitialDB();
 	}
 }
 </script>

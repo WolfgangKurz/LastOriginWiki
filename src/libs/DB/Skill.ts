@@ -1,5 +1,5 @@
-import { AssetsRoot, ImageExtension } from "@/libs/Const";
-// import Data from "@/json/unit-skill";
+import LoadDBFactory from "./DBLoader";
+
 import { BuffStat } from "@/libs/Buffs/Buffs";
 import { SKILL_ATTR } from "@/libs/Types/Enums";
 
@@ -59,61 +59,30 @@ export interface SkillEntity {
 
 export type SkillSlotKey = "active1" | "active2" | "passive1" | "passive2" | "passive3" |
 	"Factive1" | "Factive2" | "Fpassive1" | "Fpassive2" | "Fpassive3";
-export type RawSkillData = Record<string, Record<SkillSlotKey, RawSkillEntity>>;
 
-const Data = {};
-function CompileSkill () {
-	const imgExt = ImageExtension();
-	const table = JSON.parse(JSON.stringify(Data)) as RawSkillData;
+export type SkillGroup = {
+	[key in SkillSlotKey]: SkillEntity;
+};
 
-	const output: Record<string, Partial<Record<SkillSlotKey, SkillEntity>>> = {};
+export default (uid: string, callback?: (data: Partial<SkillGroup> | null) => void) => {
+	return LoadDBFactory<Record<SkillSlotKey, RawSkillEntity>, Partial<SkillGroup>>(
+		`skill-${uid}`,
+		import(/* webpackChunkName: "chunk-db-skill-[base]" */ `@/json/skill/${uid}`),
+		(x) => {
+			if (!x) return null;
 
-	Object.keys(table).forEach(key => {
-		Object.keys(table[key]).forEach(slot => {
-			const skill = table[key][slot as SkillSlotKey];
-			const type = slot.includes("active") ? "active" : "passive";
+			const ret: Partial<SkillGroup> = {};
+			Object.keys(x).forEach(slot => {
+				const skill = x[slot as SkillSlotKey];
+				const type = slot.includes("active") ? "active" : "passive";
 
-			const entity: SkillEntity = {
-				...skill,
-				icon: `${AssetsRoot}/${imgExt}/skill/${skill.icon}_${type}.${imgExt}`,
-			};
-			if (!(key in output)) output[key] = {};
-			output[key][slot as SkillSlotKey] = entity;
-		});
-	});
-	return output;
-}
-export default CompileSkill();
-
-/*
-(() => {
-	if (skill.buffs[0] === "{")
-		return new Array(10).fill(JSON.parse(skill.buffs) as SkillEntryData);
-
-	const levels = skill.buffs.split("\n");
-	const levelList: SkillEntryData[] = [];
-	levels.forEach(x => {
-		for (let current = 1; current <= 10; current++) {
-			const lv = x.substr(0, x.indexOf(":"));
-			if (lv.includes("~")) {
-				const from = parseInt(lv.substr(0, lv.indexOf("~")), 10);
-				const to = (() => {
-					const ilv = parseInt(lv.substr(lv.indexOf("~") + 1), 10);
-					if (ilv >= 10) return 13;
-					else return ilv;
-				})();
-
-				if (current < from || to < current) // 범위 밖
-					continue;
-			} else {
-				const ilv = parseInt(lv, 10);
-				if (ilv < 10 && current !== ilv) continue;
-				else if (ilv >= 10 && current < 10) continue;
-			}
-
-			levelList[current - 1] = JSON.parse(x.replace(/^[0-9~]+:/, "")) as SkillEntryData;
-		}
-	});
-	return levelList;
-})(),
-*/
+				const entity: SkillEntity = {
+					...skill,
+					icon: `${skill.icon}_${type}`,
+				};
+				ret[slot as SkillSlotKey] = entity;
+			});
+			return ret;
+		},
+	)(callback);
+};

@@ -14,7 +14,7 @@
 				</b-col>
 				<b-col cols="12" lg="10" md="9">
 					<b-row cols="2" cols-xl="5" cols-lg="4" cols-md="3" cols-sm="3">
-						<b-col v-for="unit in list" :key="`unit-group-${group}-${unit.id}`" class="unit-list-item">
+						<b-col v-for="unit in list" :key="`unit-group-${group}-${unit.uid}`" class="unit-list-item">
 							<unit-card :unit="unit" @click="modalUnit(unit)" />
 						</b-col>
 					</b-row>
@@ -33,8 +33,8 @@ import StoreModule, { EffectFilterTargetType, UnitDisplayFilters, UnitListOrder 
 
 import UnitCard from "./UnitCard.vue";
 
-import UnitData, { Unit } from "@/libs/DB/Unit";
-import SkillData, { SkillSlotKey } from "@/libs/DB/Skill";
+import { FilterableUnit } from "@/libs/DB/Unit.Filterable";
+
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { BuffEffect } from "@/libs/Buffs/BuffEffect";
 import { isBuffEffectValid } from "@/libs/Buffs/Helper";
@@ -47,6 +47,12 @@ import { TARGET_TYPE } from "@/libs/Types/Enums";
 	},
 })
 export default class UnitsGroup extends Vue {
+	@Prop({
+		type: Array,
+		default: () => [],
+	})
+	private list!: FilterableUnit[];
+
 	// Vuex -----
 	private get SearchText () {
 		return StoreModule.UnitSearchText;
@@ -82,50 +88,19 @@ export default class UnitsGroup extends Vue {
 	}
 
 	private get GroupKeyTable () {
-		const g = groupBy(UnitData, x => this.Merge ? x.shortgroup : x.group);
+		const g = groupBy(this.list, x => this.Merge ? x.shortgroup : x.group);
 		const r: Record<string, string> = {};
 		for (const k in g)
-			r[k] = g[k][0].groupkey;
+			r[k] = g[k][0].groupKey;
 
 		return r;
 	}
 
-	private HasFilteredEffect (unit: Unit, validator: (stat: BuffEffect) => boolean) {
-		const isNumeric = (data: string) => {
-			return /^[0-9]+\.?[0-9]*%?$/.test(data);
-		};
-		const _ = <T extends unknown> (__: T | undefined) => __ as T;
-
-		const skills = SkillData[unit.uid];
-
-		return Object.keys(skills).some(ss => {
-			const __ = _(skills[ss as SkillSlotKey]);
-
-			return __.buffs.data.some(l => l.buffs.some(es => {
-				if ("target" in es) {
-					const target: EffectFilterTargetType = es.target === TARGET_TYPE.SELF
-						? "self"
-						: es.target === TARGET_TYPE.OUR || es.target === TARGET_TYPE.OUR_GRID
-							? "team"
-							: "enemy";
-					if (!this.Filters.EffectTarget.includes(target)) return false;
-				}
-
-				if ("type" in es)
-					return validator(es);
-				else
-					return es.buffs.some(y => validator(y.value));
-			}));
-		});
-	}
-
 	private get GroupList () {
-		const list = UnitData
-			.filter(x => x.name.includes(this.SearchText))
-			.filter(x => this.HasFilteredEffect(x, (b) => isBuffEffectValid(b, StoreModule.unitEffectFilterListFlatten)));
+		const list = this.list;
 
 		const g = groupBy(list, x => this.Merge ? x.shortgroup : x.group);
-		const r: Record<string, Unit[]> = {};
+		const r: Record<string, FilterableUnit[]> = {};
 		Object.keys(g)
 			.sort()
 			.forEach(k => (r[k] = g[k]));
@@ -133,7 +108,7 @@ export default class UnitsGroup extends Vue {
 		return r;
 	}
 
-	private modalUnit (unit: Unit) {
+	private modalUnit (unit: FilterableUnit) {
 		if (unit.group)
 			this.$router.push({ path: "/units/" + unit.uid });
 	}

@@ -1,4 +1,4 @@
-import LoadDBFactory from "./Loader";
+import LoadDBFactory from "./DBLoader";
 
 type MapRewardChar = string;
 interface MapRewardItem {

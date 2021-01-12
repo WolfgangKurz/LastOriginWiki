@@ -1,6 +1,7 @@
 import Vue from "vue";
 
 import "./plugins/bootstrap-vue";
+import "./plugins/lazydata";
 import "./plugins/mixin";
 
 import { initWEBP } from "@/libs/Const";

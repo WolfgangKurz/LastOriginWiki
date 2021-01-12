@@ -1,5 +1,5 @@
 <template>
-	<div class="chars">
+	<lazy-data-base class="chars" :data="DB">
 		<div class="text-center mb-3">
 			<div class="btn-group">
 				<button type="button" class="btn btn-outline-info" :class="{ active: DisplayType === 'table' }" @click="DisplayType = 'table'">
@@ -177,11 +177,11 @@
 
 		<hr class="my-2" />
 
-		<units-table v-if="DisplayType === 'table'" />
-		<!-- <units-normal v-else-if="DisplayType === 'list'" />
-		<units-group v-else-if="DisplayType === 'group'" />
-		<units-time-table v-else-if="DisplayType === 'time'" /> -->
-	</div>
+		<units-table v-if="DisplayType === 'table'" :list="UnitList" />
+		<units-normal v-else-if="DisplayType === 'list'" :list="UnitList" />
+		<units-group v-else-if="DisplayType === 'group'" :list="UnitList" />
+		<units-time-table v-else-if="DisplayType === 'time'" :list="UnitList" />
+	</lazy-data-base>
 </template>
 
 <script lang="ts">
@@ -193,35 +193,44 @@ import { Route } from "vue-router";
 import StoreModule, { EffectFilterListType, UnitDisplayType, UnitDisplayFilters, EffectFilterListItemPM, EffectFilterTargetType } from "@/libs/Store";
 
 import UnitsTable from "./Units/Table.vue";
-// import UnitsNormal from "./Units/Normal.vue";
-// import UnitsGroup from "./Units/Group.vue";
-// import UnitsTimeTable from "./Units/TimeTable.vue";
+import UnitsNormal from "./Units/Normal.vue";
+import UnitsGroup from "./Units/Group.vue";
+import UnitsTimeTable from "./Units/TimeTable.vue";
 
 import ElemIcon from "@/components/ElemIcon.vue";
 
+import LazyLoad, { LazyDataType } from "@/libs/LazyData";
 import FilterableUnitDB, { FilterableUnit } from "@/libs/DB/Unit.Filterable";
 
 import { UpdateTitle } from "@/libs/Functions";
 import { SetMeta } from "@/libs/Meta";
 import { BuffEffect, BuffEffectListGroupKeys, BuffEffectValue } from "@/libs/Buffs/BuffEffect";
+import { SKILL_ATTR } from "@/libs/Types/Enums";
 
 @Component({
 	components: {
 		UnitsTable,
-		// UnitsNormal,
-		// UnitsGroup,
-		// UnitsTimeTable,
+		UnitsNormal,
+		UnitsGroup,
+		UnitsTimeTable,
 
 		ElemIcon,
 	},
 })
 export default class Units extends Vue {
-	private internalFilterableUnitDB: FilterableUnit[] | null = null;
-	private get FilterableUnitDB () {
-		if (this.internalFilterableUnitDB) return this.internalFilterableUnitDB;
-		return FilterableUnitDB((x) => {
-			this.internalFilterableUnitDB = x;
-		});
+	private DB: LazyDataType<FilterableUnit[]> = null;
+	private InitialDB () {
+		this.DB = null;
+
+		const uid = this.$route.params.id;
+		LazyLoad(
+			r => {
+				const FilterableUnit = r[0] as FilterableUnit[];
+				if (!FilterableUnit) return (this.DB = false);
+				this.DB = FilterableUnit;
+			},
+			cb => FilterableUnitDB(x => cb(x)),
+		);
 	}
 
 	private unitModalDisplay: boolean = false;
@@ -292,7 +301,7 @@ export default class Units extends Vue {
 	}
 
 	private get UnitEffects () {
-		const db = this.FilterableUnitDB;
+		const db = this.DB;
 		if (!db) return [];
 
 		const ret: EffectFilterListType = [];
@@ -335,6 +344,29 @@ export default class Units extends Vue {
 		return dict;
 	}
 
+	private get UnitList () {
+		const db = this.DB;
+		if (!db) return [];
+
+		const elem = [
+			this.Filters.Elem[SKILL_ATTR.PHYSICS] ? SKILL_ATTR.PHYSICS : -1,
+			this.Filters.Elem[SKILL_ATTR.FIRE] ? SKILL_ATTR.FIRE : -1,
+			this.Filters.Elem[SKILL_ATTR.ICE] ? SKILL_ATTR.ICE : -1,
+			this.Filters.Elem[SKILL_ATTR.LIGHTNING] ? SKILL_ATTR.LIGHTNING : -1,
+		].filter(x => x > -1);
+
+		return db
+			.filter(x => x.name.includes(this.SearchText))
+			.filter((x) => {
+				return this.Filters.Rarity[x.rarity] &&
+					this.Filters.Type[x.type] &&
+					this.Filters.Role[x.role] &&
+					this.Filters.Body[x.body] &&
+					elem.some(y => x.buffs.some(z => z && z.elem === y)) &&
+					this.HasFilteredEffect(x);
+			});
+	}
+
 	private ToggleEffectTargetFor (type: EffectFilterTargetType) {
 		const idx = this.Filters.EffectTarget.indexOf(type);
 		if (idx >= 0)
@@ -351,7 +383,24 @@ export default class Units extends Vue {
 		StoreModule.ClearUnitDisplayEffectFilter();
 	}
 
+	private HasFilteredEffect (unit: FilterableUnit) {
+		const db = this.DB;
+		if (!db) return false;
+
+		const target = db.find(x => x.uid === unit.uid);
+		if (!target) return false;
+
+		return target.buffs.some(x => x.effects.some(y => {
+			if (!this.Filters.EffectTarget.includes(y.target)) return false;
+
+			return StoreModule.unitEffectFilterListFlatten.some(z => Array.isArray(z)
+				? z.some(_ => _.selected && _.type.includes(y.type) && ((_.pmType > 0 && y.positive) || (_.pmType < 0 && !y.positive)))
+				: z.selected && z.type.includes(y.type));
+		}));
+	}
+
 	private mounted () {
+		this.InitialDB();
 		this.checkParams();
 
 		SetMeta(["description", "twitter:description"], "전투원의 목록을 표시합니다. 원하는 전투원을 찾기 위해 검색할 수 있습니다.");

@@ -1,8 +1,8 @@
 <template>
 	<div class="page-loading">
-		<div class="code">리소스 로드중...</div>
+		<div class="code">페이지 불러오는중</div>
 		<div class="description">
-			페이지에 필요한 리소스를 불러오고 있습니다.<br />
+			페이지를 불러오고 있습니다.<br />
 			잠시만 기다려주세요!
 		</div>
 	</div>

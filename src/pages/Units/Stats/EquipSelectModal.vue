@@ -1,50 +1,52 @@
 <template>
-	<b-modal v-model="displaySync" hide-footer size="md" modal-class="equip-select-modal">
-		<template #modal-title>장비 선택</template>
+	<lazy-data-base :data="DB">
+		<b-modal v-model="displaySync" hide-footer size="md" modal-class="equip-select-modal">
+			<template #modal-title>장비 선택</template>
 
-		<!-- 필터 -->
-		<b-row>
-			<b-col class="mb-3">
-				<b-select :options="RarityList" v-model="rarity" />
-			</b-col>
-			<b-col class="mb-3">
-				<b-select :options="LevelList" v-model="equipLevel" />
-			</b-col>
-		</b-row>
+			<!-- 필터 -->
+			<b-row>
+				<b-col class="mb-3">
+					<b-select :options="RarityList" v-model="rarity" />
+				</b-col>
+				<b-col class="mb-3">
+					<b-select :options="LevelList" v-model="equipLevel" />
+				</b-col>
+			</b-row>
 
-		<b-row class="justify-content-center">
-			<b-col cols="8" class="mb-4">
-				<b-dropdown variant="outline-dark">
-					<template #button-content>
-						<template v-if="!SelectedEquip.key">장비를 선택해주세요.</template>
-						<template v-else>
-							<equip-icon :image="SelectedEquip.icon" size="40" class="mr-2" />
-							{{ SelectedEquipName }}
-							<rarity-badge class="ml-1" :rarity="SelectedEquip.rarity" border />
-							<b-badge v-if="equipLevel > 0" variant="info">+ {{ equipLevel }}</b-badge>
+			<b-row class="justify-content-center">
+				<b-col cols="8" class="mb-4">
+					<b-dropdown variant="outline-dark">
+						<template #button-content>
+							<template v-if="!SelectedEquip.key">장비를 선택해주세요.</template>
+							<template v-else>
+								<equip-icon :image="SelectedEquip.icon" size="40" class="mr-2" />
+								{{ SelectedEquipName }}
+								<rarity-badge class="ml-1" :rarity="SelectedEquip.rarity" border />
+								<b-badge v-if="equipLevel > 0" variant="info">+ {{ equipLevel }}</b-badge>
+							</template>
 						</template>
-					</template>
-					<b-dropdown-item
-						v-for="group in EquipGroups"
-						:key="`simulation-equip-select-modal-${group.baseKey}`"
-						@click="SelectEquipGroup(group.baseKey)"
-					>
-						<equip-icon :image="group.icon" size="40" class="mr-2" />
-						<span class="d-inline-block mr-2">{{ group.name }}</span>
-					</b-dropdown-item>
-				</b-dropdown>
-			</b-col>
-			<b-col v-if="EffectList" cols="12" class="mb-3">
-				<buff-list v-if="EffectList.length > 0" :list="EffectList" :level="equipLevel" />
-			</b-col>
-			<b-col cols="12">
-				<b-btn-group>
-					<b-button variant="primary" @click="Select(SelectedEquip)">장비 선택</b-button>
-					<b-button variant="secondary" @click="Select(null)">장비 해제</b-button>
-				</b-btn-group>
-			</b-col>
-		</b-row>
-	</b-modal>
+						<b-dropdown-item
+							v-for="group in EquipGroups"
+							:key="`simulation-equip-select-modal-${group.baseKey}`"
+							@click="SelectEquipGroup(group.baseKey)"
+						>
+							<equip-icon :image="group.icon" size="40" class="mr-2" />
+							<span class="d-inline-block mr-2">{{ group.name }}</span>
+						</b-dropdown-item>
+					</b-dropdown>
+				</b-col>
+				<b-col v-if="EffectList" cols="12" class="mb-3">
+					<buff-list v-if="EffectList.length > 0" :list="EffectList" :level="equipLevel" />
+				</b-col>
+				<b-col cols="12">
+					<b-btn-group>
+						<b-button variant="primary" @click="Select(SelectedEquip)">장비 선택</b-button>
+						<b-button variant="secondary" @click="Select(null)">장비 해제</b-button>
+					</b-btn-group>
+				</b-col>
+			</b-row>
+		</b-modal>
+	</lazy-data-base>
 </template>
 
 <script lang="ts">
@@ -53,8 +55,10 @@ import Component from "vue-class-component";
 import { Prop, Watch, PropSync, Ref } from "vue-property-decorator";
 
 import { ACTOR_CLASS, ACTOR_GRADE, ITEM_TYPE, ROLE_TYPE } from "@/libs/Types/Enums";
-import UnitData, { Unit } from "@/libs/DB/Unit";
-import EquipData, { Equip } from "@/libs/DB/Equip";
+
+import LazyLoad, { LazyDataType } from "@/libs/LazyData";
+import FilterableUnitDB, { FilterableUnit } from "@/libs/DB/Unit.Filterable";
+import EquipDB, { Equip } from "@/libs/DB/Equip";
 
 import EquipStatus from "@/libs/Buffs/BuffStatus";
 
@@ -65,6 +69,10 @@ import ElemIcon from "@/components/ElemIcon.vue";
 import BuffList from "@/components/BuffList";
 
 import { groupBy } from "@/libs/Functions";
+interface DBData {
+	FilterableUnit: FilterableUnit[];
+	Equip: Equip[];
+}
 
 @Component({
 	components: {
@@ -76,6 +84,28 @@ import { groupBy } from "@/libs/Functions";
 	},
 })
 export default class EquipSelectModal extends Vue {
+	private DB: LazyDataType<DBData> = null;
+	private InitialDB () {
+		this.DB = null;
+
+		LazyLoad(
+			r => {
+				const FilterableUnit = r[0] as FilterableUnit[];
+				const Equip = r[1] as Equip[];
+
+				if (!FilterableUnit) return (this.DB = false);
+				if (!Equip) return (this.DB = false);
+
+				this.DB = {
+					FilterableUnit,
+					Equip,
+				};
+			},
+			cb => FilterableUnitDB(x => cb(x)),
+			cb => EquipDB(x => cb(x)),
+		);
+	}
+
 	@PropSync("display", {
 		type: Boolean,
 		default: false,
@@ -136,6 +166,8 @@ export default class EquipSelectModal extends Vue {
 	}
 
 	private get RarityList () {
+		if (!this.DB) return [];
+
 		const table = {
 			[ACTOR_GRADE.B]: "B",
 			[ACTOR_GRADE.A]: "A",
@@ -157,7 +189,7 @@ export default class EquipSelectModal extends Vue {
 		const base = `${type}_${key}_T`;
 		const rarityList = ["", "B", "A", "S", "SS"];
 
-		const rarities = EquipData
+		const rarities = this.DB.Equip
 			.filter(x => x.key === key && x.type === type)
 			.map(x => x.rarity)
 			.map(x => ({ value: x, text: table[x] }));
@@ -166,7 +198,10 @@ export default class EquipSelectModal extends Vue {
 	}
 
 	private get EquipGroups () {
-		const group = groupBy(EquipData, (x) => `${x.type}_${x.key}`);
+		const db = this.DB;
+		if (!db) return [];
+
+		const group = groupBy(db.Equip, (x) => `${x.type}_${x.key}`);
 		return Object.keys(group)
 			.map(x => group[x])
 			.filter(x_ => {
@@ -175,7 +210,7 @@ export default class EquipSelectModal extends Vue {
 				const key = first.key;
 
 				if (this.target && first.limit) {
-					const u = UnitData.find(x => x.uid === this.target);
+					const u = db.FilterableUnit.find(x => x.uid === this.target);
 					if (!u) return false;
 					let ret = false;
 
@@ -244,7 +279,9 @@ export default class EquipSelectModal extends Vue {
 	}
 
 	private SelectEquipGroup (group: string) {
-		const grp = EquipData
+		if (!this.DB) return;
+
+		const grp = this.DB.Equip
 			.filter(x => {
 				const type = ({
 					[ITEM_TYPE.CHIP]: "Chip",
@@ -271,6 +308,10 @@ export default class EquipSelectModal extends Vue {
 			this.$emit("select", { ...Equip.Empty, type: this.type }, 10);
 		else
 			this.$emit("select", equip, this.equipLevel);
+	}
+
+	private mounted () {
+		this.InitialDB();
 	}
 }
 </script>

@@ -25,7 +25,7 @@
 			<template v-if="leftPromotions">
 				<rarity-badge
 					v-for="pro in leftPromotions"
-					:key="`unit-table-unit-${unit.id}-pro-${pro}`"
+					:key="`unit-table-unit-${unit.uid}-pro-${pro}`"
 					class="ml-1"
 					:rarity="pro"
 				>{{RarityName[pro]}} 승급</rarity-badge>
@@ -44,7 +44,7 @@
 			<div v-if="leftPromotions" class="float-right">
 				<rarity-badge
 					v-for="pro in leftPromotions"
-					:key="`unit-table-unit-${unit.id}-pro-${pro}`"
+					:key="`unit-table-unit-${unit.uid}-pro-${pro}`"
 					:rarity="pro"
 					class="ml-1"
 				>{{RarityName[pro]}} 승급</rarity-badge>
@@ -61,7 +61,7 @@ import UnitFace from "@/components/UnitFace.vue";
 import RarityBadge from "@/components/RarityBadge.vue";
 import { Prop, Emit } from "vue-property-decorator";
 
-import { Unit } from "@/libs/DB/Unit";
+import { FilterableUnit } from "@/libs/DB/Unit.Filterable";
 import { ACTOR_GRADE } from "@/libs/Types/Enums";
 
 @Component({
@@ -75,7 +75,7 @@ export default class UnitCard extends Vue {
 		type: Object,
 		required: true,
 	})
-	private unit!: Unit;
+	private unit!: FilterableUnit;
 
 	@Prop({
 		type: Boolean,
@@ -96,7 +96,7 @@ export default class UnitCard extends Vue {
 	private noLink!: boolean;
 
 	private get IdDisplay () {
-		return ("00" + this.unit.id).substr(-3);
+		return ("00" + this.unit.no).substr(-3);
 	}
 
 	private get UnitFaceUrl () {

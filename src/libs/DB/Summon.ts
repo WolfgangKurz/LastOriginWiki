@@ -1,4 +1,5 @@
-import Data from "@/json/summon";
+import LoadDBFactory from "./DBLoader";
+
 import { SkillEntryData } from "@/libs/DB/Skill";
 import { ACTOR_CLASS, ACTOR_GRADE, INSTALL_POS_TYPE, ROLE_TYPE, SKILL_ATTR, SUMMON_TYPE } from "@/libs/Types/Enums";
 
@@ -49,27 +50,7 @@ export interface Summon {
 	skills: SummonSkill[];
 }
 
-/**
- * `null` : Not requested
- * `false` : Loading
- * `Summon[]` : Loaded
- */
-type DBCallback<T> = (data: T) => void;
-let internalDB: Summon[] | false | null = null;
-const callbackQueue: DBCallback<Summon[]>[] = [];
-export default function SummonDB (callback?: DBCallback<Summon[]>): Summon[] | null {
-	if (!internalDB) {
-		if (callback) callbackQueue.push(callback);
-
-		if (internalDB !== false) {
-			internalDB = false;
-			import(/* webpackChunkName: "chunk-db-summon" */ "@/json/summon")
-				.then(x => {
-					internalDB = x.default as unknown as Summon[];
-					callbackQueue.forEach(y => y(internalDB as Summon[]));
-				});
-		}
-		return null;
-	}
-	return internalDB;
-}
+export default LoadDBFactory<Summon[]>(
+	"summon",
+	import(/* webpackChunkName: "chunk-db-summon" */ "@/json/summon"),
+);

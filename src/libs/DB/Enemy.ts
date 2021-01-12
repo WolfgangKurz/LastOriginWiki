@@ -1,4 +1,5 @@
-import Data from "@/json/enemy";
+import LoadDBFactory from "./DBLoader";
+
 import { SkillEntryData } from "@/libs/DB/Skill";
 import { ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE, SKILL_ATTR } from "@/libs/Types/Enums";
 
@@ -41,27 +42,7 @@ export interface Enemy {
 	skills: EnemySkill[];
 }
 
-/**
- * `null` : Not requested
- * `false` : Loading
- * `Enemy[]` : Loaded
- */
-type DBCallback<T> = (data: T) => void;
-let internalDB: Enemy[] | false | null = null;
-const callbackQueue: DBCallback<Enemy[]>[] = [];
-export default function EnemyDB (callback?: (data: Enemy[]) => void): Enemy[] | null {
-	if (!internalDB) {
-		if (callback) callbackQueue.push(callback);
-
-		if (internalDB !== false) {
-			internalDB = false;
-			import(/* webpackChunkName: "chunk-db-enemy" */ "@/json/enemy")
-				.then(x => {
-					internalDB = x.default as unknown as Enemy[];
-					callbackQueue.forEach(y => y(internalDB as Enemy[]));
-				});
-		}
-		return null;
-	}
-	return internalDB;
-}
+export default LoadDBFactory<Enemy[]>(
+	"enemy",
+	import(/* webpackChunkName: "chunk-db-enemy" */ "@/json/enemy"),
+);

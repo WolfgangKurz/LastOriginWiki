@@ -1,12 +1,12 @@
 <template>
 	<div class="unit-status" v-if="unit && unit.id">
-		<b-input-group class="mb-3">
+		<!-- <b-input-group class="mb-3">
 			<b-input readonly :value="StatsLink" />
 			<b-input-group-append>
 				<b-button variant="primary" @click="ExportSerialized">내보내기</b-button>
 				<b-button variant="secondary" @click="ImportSerialized">가져오기</b-button>
 			</b-input-group-append>
-		</b-input-group>
+		</b-input-group> -->
 
 		<b-card class="mb-3 text-left" :bg-variant="`rarity-${sUnit.Rarity}`">
 			<b-row>
@@ -203,7 +203,7 @@ export default class UnitStatus extends Vue {
 	})
 	private serialized!: string | null;
 
-	private StatsLink: string = "";
+	// private StatsLink: string = "";
 
 	private gsUnit: SimUnit | null = null;
 	private get sUnit (): SimUnit {
@@ -214,8 +214,8 @@ export default class UnitStatus extends Vue {
 		}
 
 		this.gsUnit = new SimUnit();
-		this.gsUnit.$on("update", () => (this.StatsLink = this.BuildLink()));
-		this.gsUnit.SetUnit(this.unit.id);
+		// this.gsUnit.$on("update", () => (this.StatsLink = this.BuildLink()));
+		this.gsUnit.SetUnit(this.unit.uid);
 		return this.gsUnit;
 	}
 
@@ -530,12 +530,12 @@ export default class UnitStatus extends Vue {
 
 	private created () {
 		setTimeout(() => {
-			const stored = localStorage.getItem(`unit-stats-${this.sUnit.Id}`);
+			const stored = localStorage.getItem(`unit-stats-${this.sUnit.Uid}`);
 			if (stored) {
 				try {
 					this.sUnit.Deserialize(stored);
 				} finally {
-					localStorage.removeItem(`unit-stats-${this.sUnit.Id}`);
+					localStorage.removeItem(`unit-stats-${this.sUnit.Uid}`);
 				}
 			}
 		}, 100);

@@ -18,8 +18,8 @@ import EnemyModal from "@/pages/Enemy/EnemyModal.vue";
 import { AssetsRoot, ImageExtension, SupplementaryUnit, WorldNames } from "@/libs/Const";
 import { FormatNumber, UpdateTitle } from "@/libs/Functions";
 
-import UnitData, { Unit } from "@/libs/DB/Unit";
-import EquipData, { Equip } from "@/libs/DB/Equip";
+import FilterableUnitDB, { FilterableUnit } from "@/libs/DB/Unit.Filterable";
+import EquipDB, { Equip } from "@/libs/DB/Equip";
 
 import MapDB, { Worlds, MapNodeEntity, MapReward, MapEnemyData } from "@/libs/DB/Map";
 import ConsumableDB, { Consumable } from "@/libs/DB/Consumable";
@@ -29,7 +29,7 @@ import { SetMeta } from "@/libs/Meta";
 import { _e } from "@/libs/VNode";
 
 type RewardDropTypeBase =
-	{ unit: Unit; } |
+	{ unit: FilterableUnit; } |
 	{ equip: Equip, count: number; } |
 	{ consumable: Consumable, count: number; } |
 	{ cash: number; } |
@@ -60,6 +60,23 @@ interface WaveEnemyInfo extends MapEnemyData {
 	},
 })
 export default class WorldMapView extends Vue {
+	private internalFilterableUnitDB: FilterableUnit[] | null = null;
+	private get FilterableUnitDB () {
+		if (this.internalFilterableUnitDB) return this.internalFilterableUnitDB;
+		return FilterableUnitDB((x) => {
+			this.internalFilterableUnitDB = x;
+			this.checkParams();
+		});
+	}
+
+	private internalEquipDB: Equip[] | null = null;
+	private get EquipDB () {
+		if (this.internalEquipDB) return this.internalEquipDB;
+		return EquipDB((x) => {
+			this.internalEquipDB = x;
+		});
+	}
+
 	private internalConsumableDB: Consumable[] | null = null;
 	private get ConsumableDB () {
 		if (this.internalConsumableDB) return this.internalConsumableDB;
@@ -126,8 +143,10 @@ export default class WorldMapView extends Vue {
 	private get UnitDrops () {
 		if (!this.selected) return [];
 
+		const db = this.FilterableUnitDB || [];
+
 		const ids: string[] = [];
-		const ret: Unit[] = [];
+		const ret: FilterableUnit[] = [];
 		this.Waves.forEach(_ => {
 			_.forEach(__ => {
 				__.e.drops
@@ -137,18 +156,20 @@ export default class WorldMapView extends Vue {
 						ids.push(x.id);
 
 						const k = x.id.replace(/Char_(.+)_N/, "$1");
-						return UnitData.find(y => y.uid === k);
+						return db.find(y => y.uid === k);
 					})
 					.filter(x => x)
-					.forEach(x => ret.push(x as Unit));
+					.forEach(x => ret.push(x as FilterableUnit));
 			});
 		});
-		return ret.sort((a, b) => ((b as Unit).rarity - (a as Unit).rarity));
+		return ret.sort((a, b) => b.rarity - a.rarity);
 	}
 
 	private get ItemDrops () {
 		if (!this.selected) return [];
-		if (!this.ConsumableDB) return [];
+
+		const consumableDB = this.ConsumableDB || [];
+		const equipDB = this.EquipDB || [];
 
 		const ids: string[] = [];
 		const ret: Array<Equip | Consumable> = [];
@@ -162,10 +183,10 @@ export default class WorldMapView extends Vue {
 
 						if (x.id.startsWith("Equip_")) {
 							const k = x.id.substr(6);
-							const eq = EquipData.find(y => y.fullKey === k);
+							const eq = equipDB.find(y => y.fullKey === k);
 							if (eq) return eq;
 						} else {
-							const cs = this.ConsumableDB && this.ConsumableDB.find(y => y.key === x.id);
+							const cs = consumableDB.find(y => y.key === x.id);
 							if (cs) return cs;
 						}
 						return null;
@@ -189,12 +210,15 @@ export default class WorldMapView extends Vue {
 
 	private get RewardDrops (): RewardDropType[] {
 		if (!this.selected) return [];
-		if (!this.ConsumableDB) return [];
+
+		const consumableDB = this.ConsumableDB || [];
+		const unitDB = this.FilterableUnitDB || [];
+		const equipDB = this.EquipDB || [];
 
 		const f = (x: MapReward) => {
 			if (typeof x === "string") {
 				const k = x.replace(/Char_(.+)_N/, "$1");
-				const u = UnitData.find(y => y.uid === k);
+				const u = unitDB.find(y => y.uid === k);
 				if (u) return { unit: u };
 				return null;
 			}
@@ -206,10 +230,10 @@ export default class WorldMapView extends Vue {
 				const i = x.item;
 				if (i.startsWith("Equip_")) {
 					const k = i.substr(6);
-					const eq = EquipData.find(y => y.fullKey === k);
+					const eq = equipDB.find(y => y.fullKey === k);
 					if (eq) return { equip: eq, count: x.count };
 				} else {
-					const cs = this.ConsumableDB && this.ConsumableDB.find(y => y.key === i);
+					const cs = consumableDB.find(y => y.key === i);
 					if (cs) return { consumable: cs, count: x.count };
 				}
 				return null;
@@ -300,7 +324,8 @@ export default class WorldMapView extends Vue {
 	}
 
 	private SupplementaryName (text: string) {
-		const unit = UnitData.find(x => x.uid === SupplementaryUnit[text]);
+		if (!this.FilterableUnitDB) return "???";
+		const unit = this.FilterableUnitDB.find(x => x.uid === SupplementaryUnit[text]);
 		if (!unit) return "???";
 		return unit.name;
 	}

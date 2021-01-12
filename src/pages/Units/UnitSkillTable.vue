@@ -5,12 +5,12 @@
 				<b-th colspan="3">
 					스킬 정보
 					<b-btn-group v-if="HasFormChange" class="ml-2">
-						<b-button variant="outline-warning" :pressed="formStateSync === 'normal'" size="sm" @click="formStateSync = 'normal'"
-							>Normal</b-button
-						>
-						<b-button variant="outline-warning" :pressed="formStateSync === 'change'" size="sm" @click="formStateSync = 'change'"
-							>F.Change</b-button
-						>
+						<b-button variant="outline-warning" :pressed="formStateSync === 'normal'" size="sm" @click="formStateSync = 'normal'">
+							Normal
+						</b-button>
+						<b-button variant="outline-warning" :pressed="formStateSync === 'change'" size="sm" @click="formStateSync = 'change'">
+							F.Change
+						</b-button>
 					</b-btn-group>
 				</b-th>
 			</b-tr>
@@ -42,7 +42,7 @@
 			<template v-for="(skill, idx) in Skills">
 				<b-tr :key="`unit-modal-skill-${idx}`">
 					<b-td>
-						<img class="skill-icon" :src="skill.icon" />
+						<img class="skill-icon" :src="`${AssetsRoot}/${imageExt}/skill/${skill.icon}.${imageExt}`" />
 						<div class="text-bold">
 							{{ skill.name }}<br />
 							<elem-icon :elem="skill.buffs.data[skill.buffs.index[skillLevelSync]].type" class="mx-0" />

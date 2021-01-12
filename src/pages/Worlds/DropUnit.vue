@@ -1,6 +1,6 @@
 <template>
 	<div class="drop-unit p-2 text-dark">
-		<b-card :class="`text-left rarity-${RarityName[unit.rarity]}`">
+		<b-card v-if="unit" :class="`text-left rarity-${RarityName[unit.rarity]}`">
 			<unit-face class="float-left mr-2" :uid="unit.uid" size="48" type="mini" />
 			<div>
 				<b-badge variant="secondary" class="mr-1 bordered">{{ RarityName[unit.rarity] }}</b-badge>
@@ -23,8 +23,10 @@ import { Watch, Prop } from "vue-property-decorator";
 import UnitFace from "@/components/UnitFace.vue";
 import RarityBadge from "@/components/RarityBadge.vue";
 
-import UnitData, { Unit } from "@/libs/DB/Unit";
 import { ACTOR_GRADE } from "@/libs/Types/Enums";
+
+import LazyLoad, { LazyDataType } from "@/libs/LazyData";
+import FilterableUnitDB, { FilterableUnit } from "@/libs/DB/Unit.Filterable";
 
 @Component({
 	components: {
@@ -32,6 +34,22 @@ import { ACTOR_GRADE } from "@/libs/Types/Enums";
 	},
 })
 export default class DropUnit extends Vue {
+	private DB: LazyDataType<FilterableUnit[]> = null;
+	private InitialDB () {
+		this.DB = null;
+
+		const uid = this.$route.params.id;
+		LazyLoad(
+			r => {
+				const FilterableUnit = r[0] as FilterableUnit[];
+				if (!FilterableUnit) return (this.DB = false);
+				this.DB = FilterableUnit;
+				this.$forceUpdate();
+			},
+			cb => FilterableUnitDB(x => cb(x)),
+		);
+	}
+
 	@Prop({
 		type: [String, Number],
 		required: true,
@@ -45,10 +63,12 @@ export default class DropUnit extends Vue {
 	private chance!: number;
 
 	private get unit () {
+		if (!this.DB) return null;
+
 		if (typeof this.id === "number")
-			return UnitData.find(x => x.id === this.id) || Unit.Empty;
+			return this.DB.find(x => x.no === this.id);
 		else
-			return UnitData.find(x => x.uid === this.id) || Unit.Empty;
+			return this.DB.find(x => x.uid === this.id);
 	}
 
 	private get RarityName () {
