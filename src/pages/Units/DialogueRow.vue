@@ -141,7 +141,7 @@ export default class DialogueRow extends Vue {
 	}
 
 	private get VoiceLink () {
-		return `${AssetsRoot}/audio/voice-${this.lang}/${this.unitId}_${this.type}.ogg`;
+		return `${AssetsRoot}/audio/voice-${this.lang}/${this.unitId}_${this.type}.mp3`;
 	}
 
 	private render () {
@@ -149,7 +149,7 @@ export default class DialogueRow extends Vue {
 			<b-col class={ this.rowClass } cols="12" sm="2">{ this.TypeName }</b-col>
 			<b-col class="border dialogue" cols="12" sm="">{ this.Dialogue }</b-col>
 			<b-col class="border" cols="12" sm="auto">
-				<audio src={ this.VoiceLink } type="audio/ogg" controls preload="none" />
+				<audio src={ this.VoiceLink } type="audio/mp3" controls preload="none" />
 			</b-col>
 		</b-row>;
 	}
