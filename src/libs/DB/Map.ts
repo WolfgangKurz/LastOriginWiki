@@ -1,3 +1,5 @@
+import LoadDBFactory from "./Loader";
+
 type MapRewardChar = string;
 interface MapRewardItem {
 	item: string;
@@ -92,27 +94,7 @@ export interface Worlds {
 	};
 }
 
-/**
- * `null` : Not requested
- * `false` : Loading
- * `Worlds` : Loaded
- */
-type DBCallback<T> = (data: T) => void;
-let internalDB: Worlds | false | null = null;
-const callbackQueue: DBCallback<Worlds>[] = [];
-export default function MapDB (callback?: (data: Worlds) => void): Worlds | null {
-	if (!internalDB) {
-		if (callback) callbackQueue.push(callback);
-
-		if (internalDB !== false) {
-			internalDB = false;
-			import(/* webpackChunkName: "chunk-db-map" */ "@/json/map")
-				.then(x => {
-					internalDB = x.default as unknown as Worlds;
-					callbackQueue.forEach(y => y(internalDB as Worlds));
-				});
-		}
-		return null;
-	}
-	return internalDB;
-}
+export default LoadDBFactory<Worlds>(
+	"map",
+	import(/* webpackChunkName: "chunk-db-map" */ "@/json/map"),
+);
