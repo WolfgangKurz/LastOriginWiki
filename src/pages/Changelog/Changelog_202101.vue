@@ -1,5 +1,18 @@
 <template>
 	<div>
+		<changelog-item title="Build 7678" date="2021-01-12">
+			<template #site>
+				<li>대사 오디오 파일의 확장자를 mp3로 변경했습니다.</li>
+				<li>BGM 오디오 파일의 확장자를 mp3로 변경했습니다.</li>
+			</template>
+			<template #bugfix>
+				<li>
+					<b-badge variant="dark">Build 7660</b-badge> 이후 중장형 전투원과 기동형 전투원의 출격 비용이 뒤바뀌어있던 문제를 수정했습니다.
+				</li>
+				<li>일부 장비의 획득처 정보가 제대로 표시되지 않던 문제를 수정했습니다.</li>
+			</template>
+		</changelog-item>
+
 		<changelog-item title="Build 7673" date="2021-01-11">
 			<template #bugfix>
 				<li>
