@@ -178,9 +178,9 @@
 		<hr class="my-2" />
 
 		<units-table v-if="DisplayType === 'table'" />
-		<units-normal v-else-if="DisplayType === 'list'" />
+		<!-- <units-normal v-else-if="DisplayType === 'list'" />
 		<units-group v-else-if="DisplayType === 'group'" />
-		<units-time-table v-else-if="DisplayType === 'time'" />
+		<units-time-table v-else-if="DisplayType === 'time'" /> -->
 	</div>
 </template>
 
@@ -193,33 +193,38 @@ import { Route } from "vue-router";
 import StoreModule, { EffectFilterListType, UnitDisplayType, UnitDisplayFilters, EffectFilterListItemPM, EffectFilterTargetType } from "@/libs/Store";
 
 import UnitsTable from "./Units/Table.vue";
-import UnitsNormal from "./Units/Normal.vue";
-import UnitsGroup from "./Units/Group.vue";
-import UnitsTimeTable from "./Units/TimeTable.vue";
+// import UnitsNormal from "./Units/Normal.vue";
+// import UnitsGroup from "./Units/Group.vue";
+// import UnitsTimeTable from "./Units/TimeTable.vue";
 
 import ElemIcon from "@/components/ElemIcon.vue";
 
-import UnitData, { Unit } from "@/libs/DB/Unit";
-import SkillData, { SkillSlotKey } from "@/libs/DB/Skill";
+import FilterableUnitDB, { FilterableUnit } from "@/libs/DB/Unit.Filterable";
 
 import { UpdateTitle } from "@/libs/Functions";
 import { SetMeta } from "@/libs/Meta";
 import { BuffEffect, BuffEffectListGroupKeys, BuffEffectValue } from "@/libs/Buffs/BuffEffect";
-import { isPositiveBuffEffect } from "@/libs/Buffs/Helper";
 
 @Component({
 	components: {
 		UnitsTable,
-		UnitsNormal,
-		UnitsGroup,
-		UnitsTimeTable,
+		// UnitsNormal,
+		// UnitsGroup,
+		// UnitsTimeTable,
 
 		ElemIcon,
 	},
 })
 export default class Units extends Vue {
+	private internalFilterableUnitDB: FilterableUnit[] | null = null;
+	private get FilterableUnitDB () {
+		if (this.internalFilterableUnitDB) return this.internalFilterableUnitDB;
+		return FilterableUnitDB((x) => {
+			this.internalFilterableUnitDB = x;
+		});
+	}
+
 	private unitModalDisplay: boolean = false;
-	private selectedUnit: Unit = Unit.Empty;
 
 	private displayFilters: boolean = false;
 	private displayUnitEffects: boolean = false;
@@ -287,6 +292,9 @@ export default class Units extends Vue {
 	}
 
 	private get UnitEffects () {
+		const db = this.FilterableUnitDB;
+		if (!db) return [];
+
 		const ret: EffectFilterListType = [];
 		const _ = <T extends unknown> (__: T | undefined) => __ as T;
 
@@ -297,45 +305,18 @@ export default class Units extends Vue {
 					const part: EffectFilterListItemPM[] = [];
 
 					// 증가치
-					let f = Object.keys(SkillData).some(su =>
-						Object.keys(SkillData[su]).some(ss =>
-							_(SkillData[su][ss as SkillSlotKey]).buffs.data.some(l => l.buffs.some(es => {
-								if ("type" in es)
-									return x[0].type.includes(es.type) && isPositiveBuffEffect(es);
-								else
-									return es.buffs.some(b => x[0].type.includes(b.value.type) && isPositiveBuffEffect(b.value));
-							})),
-						),
-					);
+					let f = db.some(fu => fu.buffs.some(bg => bg.effects.some(es => x[0].type.includes(es.type) && es.positive)));
 					if (f) part.push(x[0]);
 
 					// 감소치
-					f = Object.keys(SkillData).some(su =>
-						Object.keys(SkillData[su]).some(ss =>
-							_(SkillData[su][ss as SkillSlotKey]).buffs.data.some(l => l.buffs.some(es => {
-								if ("type" in es)
-									return x[1].type.includes(es.type) && !isPositiveBuffEffect(es);
-								else
-									return es.buffs.some(b => x[1].type.includes(b.value.type) && !isPositiveBuffEffect(b.value));
-							})),
-						),
-					);
+					f = db.some(fu => fu.buffs.some(bg => bg.effects.some(es => x[0].type.includes(es.type) && !es.positive)));
 					if (f) part.push(x[1]);
 
 					if (part.length > 0)
 						ret.push(part);
 				} else {
 					// 상수치
-					const f = Object.keys(SkillData).some(su =>
-						Object.keys(SkillData[su]).some(ss =>
-							_(SkillData[su][ss as SkillSlotKey]).buffs.data.some(l => l.buffs.some(es => {
-								if ("type" in es)
-									return x.type.includes(es.type);
-								else
-									return es.buffs.some(b => x.type.includes(b.value.type));
-							})),
-						),
-					);
+					const f = db.some(fu => fu.buffs.some(bg => bg.effects.some(es => x.type.includes(es.type))));
 					if (f) ret.push(x);
 				}
 			});

@@ -55,7 +55,7 @@ export const SortieCost: SortieCostType = {
 				},
 			},
 		},
-		[ACTOR_CLASS.AIR]: {
+		[ACTOR_CLASS.HEAVY]: {
 			[ROLE_TYPE.DEFENDER]: {
 				[ACTOR_BODY_TYPE.BIOROID]: {
 					[CURRENCY_TYPE.METAL]: [17, 19, 21, 24, 26, 30],
@@ -93,7 +93,7 @@ export const SortieCost: SortieCostType = {
 				},
 			},
 		},
-		[ACTOR_CLASS.HEAVY]: {
+		[ACTOR_CLASS.AIR]: {
 			[ROLE_TYPE.DEFENDER]: {
 				[ACTOR_BODY_TYPE.BIOROID]: {
 					[CURRENCY_TYPE.METAL]: [10, 11, 12, 14, 15, 17],
@@ -171,7 +171,7 @@ export const SortieCost: SortieCostType = {
 				},
 			},
 		},
-		[ACTOR_CLASS.AIR]: {
+		[ACTOR_CLASS.HEAVY]: {
 			[ROLE_TYPE.DEFENDER]: {
 				[ACTOR_BODY_TYPE.BIOROID]: {
 					[CURRENCY_TYPE.METAL]: [23, 25, 28, 32, 35, 40],
@@ -209,7 +209,7 @@ export const SortieCost: SortieCostType = {
 				},
 			},
 		},
-		[ACTOR_CLASS.HEAVY]: {
+		[ACTOR_CLASS.AIR]: {
 			[ROLE_TYPE.DEFENDER]: {
 				[ACTOR_BODY_TYPE.BIOROID]: {
 					[CURRENCY_TYPE.METAL]: [13, 15, 16, 18, 20, 23],
@@ -287,7 +287,7 @@ export const SortieCost: SortieCostType = {
 				},
 			},
 		},
-		[ACTOR_CLASS.AIR]: {
+		[ACTOR_CLASS.HEAVY]: {
 			[ROLE_TYPE.DEFENDER]: {
 				[ACTOR_BODY_TYPE.BIOROID]: {
 					[CURRENCY_TYPE.METAL]: [31, 34, 38, 43, 47, 54],
@@ -325,7 +325,7 @@ export const SortieCost: SortieCostType = {
 				},
 			},
 		},
-		[ACTOR_CLASS.HEAVY]: {
+		[ACTOR_CLASS.AIR]: {
 			[ROLE_TYPE.DEFENDER]: {
 				[ACTOR_BODY_TYPE.BIOROID]: {
 					[CURRENCY_TYPE.METAL]: [18, 20, 22, 24, 27, 31],
@@ -403,7 +403,7 @@ export const SortieCost: SortieCostType = {
 				},
 			},
 		},
-		[ACTOR_CLASS.AIR]: {
+		[ACTOR_CLASS.HEAVY]: {
 			[ROLE_TYPE.DEFENDER]: {
 				[ACTOR_BODY_TYPE.BIOROID]: {
 					[CURRENCY_TYPE.METAL]: [38, 42, 46, 52, 58, 66],
@@ -441,7 +441,7 @@ export const SortieCost: SortieCostType = {
 				},
 			},
 		},
-		[ACTOR_CLASS.HEAVY]: {
+		[ACTOR_CLASS.AIR]: {
 			[ROLE_TYPE.DEFENDER]: {
 				[ACTOR_BODY_TYPE.BIOROID]: {
 					[CURRENCY_TYPE.METAL]: [21, 24, 26, 30, 33, 38],

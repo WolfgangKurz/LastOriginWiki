@@ -1,5 +1,5 @@
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
-import Data from "@/json/unit-skill";
+// import Data from "@/json/unit-skill";
 import { BuffStat } from "@/libs/Buffs/Buffs";
 import { SKILL_ATTR } from "@/libs/Types/Enums";
 
@@ -61,6 +61,7 @@ export type SkillSlotKey = "active1" | "active2" | "passive1" | "passive2" | "pa
 	"Factive1" | "Factive2" | "Fpassive1" | "Fpassive2" | "Fpassive3";
 export type RawSkillData = Record<string, Record<SkillSlotKey, RawSkillEntity>>;
 
+const Data = {};
 function CompileSkill () {
 	const imgExt = ImageExtension();
 	const table = JSON.parse(JSON.stringify(Data)) as RawSkillData;

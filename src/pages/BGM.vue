@@ -14,7 +14,7 @@
 						<b-th>{{ name }}</b-th>
 						<b-td>{{ desc }}</b-td>
 						<b-td class="player-cell">
-							<audio :src="`${AssetsRoot}/bgm/${name}.ogg`" type="audio/ogg" controls loop preload="auto" />
+							<audio :src="`${AssetsRoot}/audio/bgm/${name}.mp3`" type="audio/mp3" controls loop preload="none" />
 						</b-td>
 					</b-tr>
 				</b-tbody>
