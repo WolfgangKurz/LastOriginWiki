@@ -8,10 +8,10 @@ import { UnitEquip } from "./UnitEquip";
 import { UnitStat, UnitPoint, Stat, StatPointValue, StatType, RatioStats } from "./Stats";
 import { BuffEffect, BUFFEFFECT_TYPE } from "@/libs/Buffs/BuffEffect";
 
-import { ACTOR_GRADE, BUFF_ATTR_TYPE, ITEM_TYPE, ROLE_TYPE } from "@/libs/Types/Enums";
-import UnitData, { GetLinkBonus, LinkBonusType, Unit as Unit_ } from "@/libs/DB/Unit";
+import { ACTOR_GRADE, BUFF_ATTR_TYPE, ITEM_TYPE } from "@/libs/Types/Enums";
+import UnitDB, { GetLinkBonus, LinkBonusType, Unit as Unit_ } from "@/libs/DB/Unit";
 import UnitStatsData from "@/libs/DB/UnitStats";
-import EquipData from "@/libs/DB/Equip";
+import EquipDB, { Equip } from "@/libs/DB/Equip";
 import SkillData, { SkillEntity, SkillSlotKey } from "@/libs/DB/Skill";
 
 type LinkData = [number, number, number, number, number];
@@ -24,7 +24,27 @@ type SkillTable = Record<SkillSlotKey, SkillItem>;
 
 @Component({})
 export class Unit extends Vue {
-	private id: number = -1;
+	private internalUnitDB: Unit_ | null = null;
+	private get UnitDB () {
+		if (!this.uid) return null;
+
+		if (this.internalUnitDB) return this.internalUnitDB;
+		return UnitDB(this.uid, (x) => {
+			if (!x) return;
+
+			this.internalUnitDB = x;
+		});
+	}
+
+	private internalEquipDB: Equip[] | null = null;
+	private get EquipDB () {
+		if (!this.uid) return null;
+
+		if (this.internalEquipDB) return this.internalEquipDB;
+		return EquipDB((x) => (this.internalEquipDB = x));
+	}
+
+	private uid: string | null = null;
 	private level: number = 1;
 	private rarity: ACTOR_GRADE = ACTOR_GRADE.B; // 기본 등급
 
@@ -37,11 +57,11 @@ export class Unit extends Vue {
 
 	// #region Getters
 	public get Unit () {
-		return UnitData.find(x => x.id === this.id) || Unit_.Empty;
+		return this.UnitDB || Unit_.Empty;
 	}
 
-	public get Id () {
-		return this.id;
+	public get Uid () {
+		return this.uid;
 	}
 
 	public get Level () {
@@ -116,9 +136,9 @@ export class Unit extends Vue {
 
 	/** 스탯 수치 계산 */
 	public get StatData () {
-		if (this.Id === 0) return UnitStat.Empty;
+		if (!this.Uid) return UnitStat.Empty;
 
-		const data = UnitStatsData.find(x => x.id === this.Id && x.rarity === this.Rarity);
+		const data = UnitStatsData.find(x => x.id === this.Unit.id && x.rarity === this.Rarity);
 		if (!data) return UnitStat.Empty; // 잘못된 요청 (존재하지 않는 스탯 데이터)
 
 		const levelValue = (value: number[], level: number) => {
@@ -173,7 +193,7 @@ export class Unit extends Vue {
 				.forEach(x => {
 					const level = x.Level;
 
-					const equip = EquipData.find(y => y.fullKey === x.FullKey);
+					const equip = (this.EquipDB || []).find(y => y.fullKey === x.FullKey);
 					if (!equip) return;
 
 					const calc = (src: string | number) => {
@@ -377,8 +397,8 @@ export class Unit extends Vue {
 			.map(x => raw[x as SkillSlotKey]);
 	}
 
-	public SetUnit (id: number) {
-		this.id = id;
+	public SetUnit (uid: string) {
+		this.uid = uid;
 		this.rarity = (this.Unit && this.Unit.rarity) || ACTOR_GRADE.B;
 		this.stats = UnitPoint.Empty; // 투자 포인트 초기화
 		this.equips = new Array(4)
@@ -430,69 +450,70 @@ export class Unit extends Vue {
 	}
 
 	public Deserialize (data: string) {
-		const json = JSON.parse(data);
+		// const json = JSON.parse(data);
 
-		const statList = [
-			"resist.fire", "resist.chill", "resist.thunder",
-			"atk", "def", "hp", "acc", "eva", "crit", "spd",
-			"armorpierce", "range",
-			"dmg.light", "dmg.air", "dmg.heavy",
-			"dr", "resist", "off",
-			"-acc", "-eva", "-range",
-		];
-		const equipTypes = ["Chip", "OS", "Public", "Private"];
-		const rarityList = ["B", "A", "S", "SS"];
-		const lrarityList = ["b", "a", "s", "ss"];
-		const fullLinkList = ["", "discount", "skill", "acc", "buff", "crit", "eva", "hp", "range", "spd"];
+		// const statList = [
+		// 	"resist.fire", "resist.chill", "resist.thunder",
+		// 	"atk", "def", "hp", "acc", "eva", "crit", "spd",
+		// 	"armorpierce", "range",
+		// 	"dmg.light", "dmg.air", "dmg.heavy",
+		// 	"dr", "resist", "off",
+		// 	"-acc", "-eva", "-range",
+		// ];
+		// const equipTypes = ["Chip", "OS", "Public", "Private"];
+		// const rarityList = ["B", "A", "S", "SS"];
+		// const lrarityList = ["b", "a", "s", "ss"];
+		// const fullLinkList = ["", "discount", "skill", "acc", "buff", "crit", "eva", "hp", "range", "spd"];
 
-		if (
-			!("id" in json) || typeof json.id !== "number" ||
-			!("rarity" in json) || !rarityList.includes(json.rarity) ||
-			!("level" in json) || typeof json.level !== "number" ||
-			!("links" in json) || !Array.isArray(json.links) || !json.links.every((y: any) => typeof y === "number") ||
-			!("fulllink" in json) || !fullLinkList.includes(json.fulllink) ||
-			!("stats" in json) || typeof json.stats !== "object" ||
-			!Object.keys(json.stats).every(y => statList.includes(y) && typeof json.stats[y] === "number") ||
-			!("equips" in json) || !Array.isArray(json.equips) ||
-			!json.equips.every((y: any) => {
-				if (typeof y !== "object") return false;
-				if (!("Type" in y) || !equipTypes.includes(y.Type)) return false;
-				if (!("Name" in y) || typeof y.Name !== "string") return false;
-				if (!("Level" in y) || typeof y.Level !== "number") return false;
-				if (!("Rarity" in y) || !lrarityList.includes(y.Rarity)) return false;
-				return true;
-			})
-		) throw new Error("Invalid Serialize String");
-		this.id = json.id;
+		// if (
+		// 	!("id" in json) || typeof json.id !== "number" ||
+		// 	!("rarity" in json) || !rarityList.includes(json.rarity) ||
+		// 	!("level" in json) || typeof json.level !== "number" ||
+		// 	!("links" in json) || !Array.isArray(json.links) || !json.links.every((y: any) => typeof y === "number") ||
+		// 	!("fulllink" in json) || !fullLinkList.includes(json.fulllink) ||
+		// 	!("stats" in json) || typeof json.stats !== "object" ||
+		// 	!Object.keys(json.stats).every(y => statList.includes(y) && typeof json.stats[y] === "number") ||
+		// 	!("equips" in json) || !Array.isArray(json.equips) ||
+		// 	!json.equips.every((y: any) => {
+		// 		if (typeof y !== "object") return false;
+		// 		if (!("Type" in y) || !equipTypes.includes(y.Type)) return false;
+		// 		if (!("Name" in y) || typeof y.Name !== "string") return false;
+		// 		if (!("Level" in y) || typeof y.Level !== "number") return false;
+		// 		if (!("Rarity" in y) || !lrarityList.includes(y.Rarity)) return false;
+		// 		return true;
+		// 	})
+		// ) throw new Error("Invalid Serialize String");
+		// this.id = json.id;
 
-		this.Rarity = json.rarity;
-		this.Level = json.level;
+		// this.Rarity = json.rarity;
+		// this.Level = json.level;
 
-		for (let i = 0; i < 5; i++)
-			this.$set(this.Linked, i, json.links[i]);
+		// for (let i = 0; i < 5; i++)
+		// 	this.$set(this.Linked, i, json.links[i]);
 
-		this.FullLinkBonus = json.fulllink;
+		// this.FullLinkBonus = json.fulllink;
 
-		for (const key in this.Stats) {
-			if (key in json.stats)
-				this.$set(this.Stats, key, json.stats[key]);
-		}
+		// for (const key in this.Stats) {
+		// 	if (key in json.stats)
+		// 		this.$set(this.Stats, key, json.stats[key]);
+		// }
 
-		for (let i = 0; i < 4; i++)
-			this.$set(this.Equips, i, json.equips[i]);
+		// for (let i = 0; i < 4; i++)
+		// 	this.$set(this.Equips, i, json.equips[i]);
 
 		this.Changed();
 	}
 
 	public Serialize () {
-		return {
-			id: this.Id,
-			rarity: this.Rarity,
-			level: this.Level,
-			links: this.Linked,
-			fulllink: this.fullLinkBonus,
-			stats: this.Stats,
-			equips: this.Equips,
-		};
+		// return {
+		// 	id: this.Id,
+		// 	rarity: this.Rarity,
+		// 	level: this.Level,
+		// 	links: this.Linked,
+		// 	fulllink: this.fullLinkBonus,
+		// 	stats: this.Stats,
+		// 	equips: this.Equips,
+		// };
+		return {};
 	}
 }

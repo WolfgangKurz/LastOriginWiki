@@ -1,3 +1,5 @@
+import LoadDBFactory from "./DBLoader";
+
 export interface RawUnitDialogueEntity {
 	Join: string;
 	SquadJoin: string;
@@ -56,31 +58,9 @@ export interface UnitDialogueDataType {
 	jp: RawUnitDialogue | false | null;
 }
 
-/**
- * `null` : Not requested
- * `false` : Loading
- * `RawUnitDialogue` : Loaded
- */
-const internalDB: UnitDialogueDataType = { ko: null, jp: null };
-const callbackQueue = {
-	ko: [] as DBCallback<RawUnitDialogue>[],
-	jp: [] as DBCallback<RawUnitDialogue>[],
+export default (locale: string, callback?: (data: RawUnitDialogue | null) => void) => {
+	return LoadDBFactory<RawUnitDialogue>(
+		`dialogue-${locale}`,
+		import(/* webpackChunkName: "chunk-db-dialogue-[base]" */ `@/json/dialogue/${locale}`),
+	)(callback);
 };
-
-export default function EnemyDB (type: keyof UnitDialogueDataType, callback?: (data: RawUnitDialogue) => void): RawUnitDialogue | null {
-	const sub = internalDB[type];
-	if (!sub) {
-		if (callback) callbackQueue[type].push(callback);
-
-		if (internalDB[type] !== false) {
-			internalDB[type] = false;
-			import(/* webpackChunkName: "chunk-db-dialogue" */ `@/json/unit-dialogue-${type}`)
-				.then(x => {
-					internalDB[type] = x.default as unknown as RawUnitDialogue;
-					callbackQueue[type].forEach(y => y(internalDB[type] as RawUnitDialogue));
-				});
-		}
-		return null;
-	}
-	return sub;
-}

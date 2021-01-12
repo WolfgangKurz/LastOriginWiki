@@ -9,8 +9,6 @@ import { ITEM_TYPE } from "@/libs/Types/Enums";
 import { UniqueID } from "@/libs/Functions";
 import { _e } from "@/libs/VNode";
 
-import UnitData, { Unit } from "@/libs/DB/Unit";
-import EquipData, { Equip } from "@/libs/DB/Equip";
 
 import UnitFace from "@/components/UnitFace.vue";
 import EquipIcon from "@/components/EquipIcon.vue";
@@ -18,6 +16,15 @@ import RarityBadge from "@/components/RarityBadge.vue";
 import ElemIcon from "@/components/ElemIcon.vue";
 import UnitCard from "@/pages/Units/UnitCard.vue";
 import EquipCard from "@/pages/Equips/EquipCard.vue";
+
+import LazyLoad, { LazyDataType } from "@/libs/LazyData";
+import FilterableUnitDB, { FilterableUnit } from "@/libs/DB/Unit.Filterable";
+import EquipDB, { Equip } from "@/libs/DB/Equip";
+
+interface DBData {
+	FilterableUnit: FilterableUnit[];
+	Equip: Equip[];
+}
 
 @Component({
 	components: {
@@ -30,6 +37,31 @@ import EquipCard from "@/pages/Equips/EquipCard.vue";
 	},
 })
 export default class SkillDescription extends Vue {
+	private DB: LazyDataType<DBData> = null;
+	private InitialDB () {
+		const data: Partial<DBData> = {};
+		this.DB = null;
+
+		const uid = this.$route.params.id;
+		LazyLoad(
+			r => {
+				const FilterableUnit = r[0] as FilterableUnit[];
+				const Equip = r[1] as Equip[];
+
+				if (!FilterableUnit) return (this.DB = false);
+				if (!Equip) return (this.DB = false);
+
+				this.DB = {
+					FilterableUnit,
+					Equip: Equip,
+				};
+				this.$forceUpdate();
+			},
+			cb => FilterableUnitDB(x => cb(x)),
+			cb => EquipDB(x => cb(x)),
+		);
+	}
+
 	@Prop({
 		type: String,
 		required: true,
@@ -170,6 +202,9 @@ export default class SkillDescription extends Vue {
 		};
 		if (!flags) return ret;
 
+		const db = this.DB;
+		if (!db) return ret;
+
 		flags.split(",")
 			.forEach(x => {
 				if (x === "@")
@@ -186,22 +221,30 @@ export default class SkillDescription extends Vue {
 					if (p[0] === "$ch") {
 						const id = p[1];
 						const href = `/units/${id}`;
-						const unit = UnitData.find(x => x.uid === id) || Unit.Empty;
-						ret.link = {
-							href,
-							display: <rarity-badge id={ uid } rarity="A">{ unit.name } 🔗</rarity-badge>,
-							tooltip: <b-tooltip target={ uid } placement="top" noninteractive custom-class="badge-tooltip">
-								<unit-card unit={ unit } no-link />
-							</b-tooltip>,
-						};
-						ret.preload.push(<unit-face uid={ unit.uid } />);
+						const unit = db.FilterableUnit.find(x => x.uid === id);
+						if (!unit) {
+							ret.link = {
+								href: "#",
+								display: <rarity-badge rarity="A">???</rarity-badge>,
+								tooltip: <span />,
+							};
+						} else {
+							ret.link = {
+								href,
+								display: <rarity-badge id={ uid } rarity="A">{ unit.name } 🔗</rarity-badge>,
+								tooltip: <b-tooltip target={ uid } placement="top" noninteractive custom-class="badge-tooltip">
+									<unit-card unit={ unit } no-link />
+								</b-tooltip>,
+							};
+							ret.preload.push(<unit-face uid={ unit.uid } />);
+						}
 					} else if (p[0] === "$eq") {
 						const type = {
 							[ITEM_TYPE.CHIP]: "Chip",
 							[ITEM_TYPE.SPCHIP]: "System",
 							[ITEM_TYPE.SUBEQ]: "Sub",
 						} as Record<ITEM_TYPE, string>;
-						const equips = EquipData
+						const equips = db.Equip
 							.filter(y => `${type[y.type]}_${y.key}` === p[1])
 							.sort((a, b) => b.rarity - a.rarity);
 
@@ -310,7 +353,7 @@ export default class SkillDescription extends Vue {
 							)).toNumber(),
 						);
 					const valueHelp = flags.skill && this.skillBonus > 0
-						? <b-badge variant="success" class="ml-1">▲ {Decimal.div(this.skillBonus, 100).toNumber()}</b-badge>
+						? <b-badge variant="success" class="ml-1">▲ { Decimal.div(this.skillBonus, 100).toNumber() }</b-badge>
 						: _e();
 
 					const signF = (x: string | Array<string | JSX.Element | JSX.Element[]>) => {
@@ -384,7 +427,13 @@ export default class SkillDescription extends Vue {
 
 	private render () {
 		const list = this.compile(this.text);
-		return <span class="skill-description">{ list }</span>;
+		return <lazy-data-base data={ this.DB }>
+			<span class="skill-description">{ list }</span>
+		</lazy-data-base>;
+	}
+
+	private mounted () {
+		this.InitialDB();
 	}
 }
 </script>

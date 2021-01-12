@@ -1,4 +1,4 @@
-import LoadDBFactory from "./Loader";
+import LoadDBFactory from "./DBLoader";
 
 import { BUFFEFFECT_TYPE } from "@/libs/Buffs/BuffEffect";
 import { ACTOR_GRADE, ACTOR_CLASS, ROLE_TYPE, ACTOR_BODY_TYPE, SKILL_ATTR } from "@/libs/Types/Enums";
@@ -28,7 +28,7 @@ export interface FilterableUnit {
 
 	group: string;
 	shortgroup: string;
-	groupkey: string;
+	groupKey: string;
 
 	craft: false | number;
 
@@ -36,6 +36,6 @@ export interface FilterableUnit {
 }
 
 export default LoadDBFactory<FilterableUnit[]>(
-	"unit-filterable",
-	import(/* webpackChunkName: "chunk-db-unit-filterable" */ "@/json/unit-filterable"),
+	"filterableunit",
+	import(/* webpackChunkName: "chunk-db-filterableunit" */ "@/json/unit-filterable"),
 );

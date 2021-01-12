@@ -17,6 +17,8 @@ import { Route } from "vue-router";
 import StoreModule, { UnitDisplayType } from "@/libs/Store";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
+
+import LazyLoad, { LazyDataType } from "@/libs/LazyData";
 import FacilityDB, { Facility, FacilityEntity } from "@/libs/DB/Facility";
 
 import FacilityCard from "./Facilities/FacilityCard.vue";
@@ -29,19 +31,28 @@ import { SetMeta } from "@/libs/Meta";
 	},
 })
 export default class Facilities extends Vue {
-	private internalFacilityDB: Facility | null = null;
-	private get FacilityDB () {
-		if (this.internalFacilityDB) return this.internalFacilityDB;
-		return FacilityDB((x) => {
-			this.internalFacilityDB = x;
-		});
+	private DB: LazyDataType<Facility> = null;
+	private InitialDB () {
+		this.DB = null;
+
+		LazyLoad(
+			r => {
+				const Facility = r[0] as Facility;
+
+				if (!Facility) return (this.DB = false);
+
+				this.DB = Facility;
+				this.checkParams();
+			},
+			cb => FacilityDB(x => cb(x)),
+		);
 	}
 
 	// Vuex -----
 	// Vuex -----
 
 	private get Facilities () {
-		const db = this.FacilityDB;
+		const db = this.DB;
 		if (!db) return [];
 
 		return Object.keys(db)
@@ -71,6 +82,7 @@ export default class Facilities extends Vue {
 	}
 
 	private mounted () {
+		this.InitialDB();
 		this.checkParams();
 
 		SetMeta(["description", "twitter:description"], "기지 설비의 목록을 표시합니다.");

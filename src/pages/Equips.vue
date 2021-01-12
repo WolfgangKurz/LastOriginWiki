@@ -1,5 +1,5 @@
 <template>
-	<div class="equips">
+	<lazy-data-base :data="DB" class="equips">
 		<div class="text-center mb-3">
 			<b-alert variant="warning" show>
 				일부 이벤트의 교환소 정보가 입력되지 않았습니다.<br />
@@ -189,7 +189,7 @@
 		</b-row>
 
 		<equip-modal :equip="selectedEquip" :display.sync="equipModalDisplay" />
-	</div>
+	</lazy-data-base>
 </template>
 
 <script lang="ts">
@@ -206,8 +206,9 @@ import EquipModal from "./Equips/EquipModal.vue";
 import { ACTOR_GRADE, ITEM_TYPE } from "@/libs/Types/Enums";
 import { BuffEffect, BuffEffectListGroupKeys, BuffEffectValue, BUFFEFFECT_TYPE } from "@/libs/Buffs/BuffEffect";
 
-import UnitData from "@/libs/DB/Unit";
-import EquipData, { Equip } from "@/libs/DB/Equip";
+import LazyLoad, { LazyDataType } from "@/libs/LazyData";
+import FilterableUnitDB, { FilterableUnit } from "@/libs/DB/Unit.Filterable";
+import EquipDB, { Equip } from "@/libs/DB/Equip";
 
 import { CurrentEvent, CurrentDate, AssetsRoot, ImageExtension } from "@/libs/Const";
 import { ArrayUnique, groupBy, UpdateTitle } from "@/libs/Functions";
@@ -217,6 +218,11 @@ import EntitySource from "@/libs/EntitySource";
 import StoreModule, { EffectFilterListItemPM, EffectFilterListItemSingle, EffectFilterListType, EquipDisplayType } from "@/libs/Store";
 import { SetMeta } from "@/libs/Meta";
 import { isBuffEffectValid, isPositiveBuffEffect, isPositiveBuffEffectValue } from "@/libs/Buffs/Helper";
+
+interface DBData {
+	FilterableUnit: FilterableUnit[];
+	Equip: Equip[];
+}
 
 @Component({
 	components: {
@@ -228,6 +234,29 @@ import { isBuffEffectValid, isPositiveBuffEffect, isPositiveBuffEffectValue } fr
 	},
 })
 export default class Equips extends Vue {
+	private DB: LazyDataType<DBData> = null;
+	private InitialDB () {
+		this.DB = null;
+
+		LazyLoad(
+			r => {
+				const FilterableUnit = r[0] as FilterableUnit[];
+				const Equip = r[1] as Equip[];
+
+				if (!FilterableUnit) return (this.DB = false);
+				if (!Equip) return (this.DB = false);
+
+				this.DB = {
+					FilterableUnit,
+					Equip,
+				};
+				this.checkParams();
+			},
+			cb => FilterableUnitDB(x => cb(x)),
+			cb => EquipDB(x => cb(x)),
+		);
+	}
+
 	private selectedEquip: Equip | null = null;
 
 	private equipModalDisplay: boolean = false;
@@ -318,7 +347,10 @@ export default class Equips extends Vue {
 	}
 
 	private get EquipGroups () {
-		const group = groupBy(EquipData, (x) => `${x.type}_${x.key}`);
+		const db = this.DB;
+		if (!db) return [];
+
+		const group = groupBy(db.Equip, (x) => `${x.type}_${x.key}`);
 		return Object.keys(group)
 			.map(x => group[x])
 			.map(x_ => {
@@ -332,7 +364,7 @@ export default class Equips extends Vue {
 						list.push(new EntitySource("Uninstalled"));
 
 					for (const item of items) {
-						if (item.limit && item.limit.every(y => UnitData.some(z => z.uid === y))) {
+						if (item.limit && item.limit.every(y => db.FilterableUnit.some(z => z.uid === y))) {
 							item.limit
 								.forEach(y => list.push(new EntitySource(`Private:${y}`)));
 						}
@@ -386,7 +418,7 @@ export default class Equips extends Vue {
 					sourceRaw: x_.reduce(
 						(p, c) => [
 							...(
-								c.limit && c.limit.every(y => UnitData.some(z => z.uid === y))
+								c.limit && c.limit.every(y => db.FilterableUnit.some(z => z.uid === y))
 									? c.limit.map(y => new EntitySource(`Private:${y}`))
 									: []
 							),
@@ -408,7 +440,7 @@ export default class Equips extends Vue {
 
 				// 전용장비
 				const last = x.last;
-				if (last.limit && last.limit.every(y => UnitData.some(z => z.uid === y))) { // 전용 장비임
+				if (last.limit && last.limit.every(y => db.FilterableUnit.some(z => z.uid === y))) { // 전용 장비임
 					if (!this.Display.Type.Private)
 						return false; // 전용 장비 필터가 꺼짐
 				} else { // 그 외 유형
@@ -464,6 +496,9 @@ export default class Equips extends Vue {
 	}
 
 	private get EquipEffects () {
+		const db = this.DB;
+		if (!db) return [];
+
 		const ret: EffectFilterListType = [];
 
 		StoreModule.equipEffectFilterListFlatten
@@ -473,7 +508,7 @@ export default class Equips extends Vue {
 					const part: EffectFilterListItemPM[] = [];
 
 					// 증가치
-					let f = EquipData.some(eq => eq.stats.some(row => row.some(es => {
+					let f = db.Equip.some(eq => eq.stats.some(row => row.some(es => {
 						if ("type" in es)
 							return x[0].type.includes(es.type) && isPositiveBuffEffect(es);
 						else
@@ -482,7 +517,7 @@ export default class Equips extends Vue {
 					if (f) part.push(x[0]);
 
 					// 감소치
-					f = EquipData.some(eq => eq.stats.some(row => row.some(es => {
+					f = db.Equip.some(eq => eq.stats.some(row => row.some(es => {
 						if ("type" in es)
 							return x[1].type.includes(es.type) && !isPositiveBuffEffect(es);
 						else
@@ -494,7 +529,7 @@ export default class Equips extends Vue {
 						ret.push(part);
 				} else {
 					// 상수치
-					const f = EquipData.some(eq => eq.stats.some(row => row.some(es => {
+					const f = db.Equip.some(eq => eq.stats.some(row => row.some(es => {
 						if ("type" in es)
 							return x.type.includes(es.type);
 						else
@@ -547,12 +582,9 @@ export default class Equips extends Vue {
 		StoreModule.ClearEquipDisplaySourceFilter();
 	}
 
-	private EquipBase (name: string) {
-		return Object.values(EquipData).filter(x => x.name.startsWith(name))[0];
-	}
-
 	private modalEquip (fullKey: string) {
-		this.selectedEquip = EquipData.find(x => x.fullKey === fullKey) || null;
+		if (!this.DB) return;
+		this.selectedEquip = this.DB.Equip.find(x => x.fullKey === fullKey) || null;
 		this.equipModalDisplay = true;
 	}
 
@@ -577,6 +609,7 @@ export default class Equips extends Vue {
 	}
 
 	private mounted () {
+		this.InitialDB();
 		this.checkParams();
 	}
 }

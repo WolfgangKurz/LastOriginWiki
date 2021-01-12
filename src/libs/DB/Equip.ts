@@ -1,7 +1,8 @@
+import LoadDBFactory from "./DBLoader";
+
 import EntitySource from "@/libs/EntitySource";
 import { BuffStat } from "@/libs/Buffs/Buffs";
 
-import Data from "@/json/equip";
 import { ACTOR_GRADE, ITEM_TYPE } from "@/libs/Types/Enums";
 
 interface RawEquip {
@@ -64,8 +65,10 @@ function parseLimit (limit: string | undefined) {
 	return limit.split(",").filter(x => x) as string[] | null;
 }
 
-function Compile (): Equip[] {
-	return (Data as RawEquip[]).map(x => ({
+export default LoadDBFactory<RawEquip[], Equip[]>(
+	"equip",
+	import(/* webpackChunkName: "chunk-db-equip" */ "@/json/equip"),
+	(Data) => (Data || []).map(x => ({
 		available: x.available,
 		rarity: x.rarity,
 		type: x.type,
@@ -81,6 +84,5 @@ function Compile (): Equip[] {
 		limit: parseLimit(x.limit),
 		source: x.source.map(y => y.map(z => new EntitySource(z))),
 		stats: x.stats,
-	}));
-}
-export default Compile();
+	})),
+);

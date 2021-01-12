@@ -482,6 +482,25 @@ export const SortieCost: SortieCostType = {
 	},
 };
 
+export const RarityDisplay: Record<ACTOR_GRADE, string> = {
+	[ACTOR_GRADE.B]: "B",
+	[ACTOR_GRADE.A]: "A",
+	[ACTOR_GRADE.S]: "S",
+	[ACTOR_GRADE.SS]: "SS",
+};
+
+export const UnitClassDisplay: Record<ACTOR_CLASS, string> = {
+	[ACTOR_CLASS.LIGHT]: "경장",
+	[ACTOR_CLASS.AIR]: "기동",
+	[ACTOR_CLASS.HEAVY]: "중장",
+};
+
+export const UnitRoleDisplay: Record<ROLE_TYPE, string> = {
+	[ROLE_TYPE.ATTACKER]: "공격기",
+	[ROLE_TYPE.DEFENDER]: "보호기",
+	[ROLE_TYPE.SUPPORTER]: "지원기",
+};
+
 export const AssetsRoot = process.env.NODE_ENV === "development"
 	? "http://localhost:5500/assets"
 	// : "https://lastorigin-wiki-assets.s3.ap-northeast-2.amazonaws.com";

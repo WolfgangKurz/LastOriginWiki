@@ -28,6 +28,8 @@ export interface UnitDisplayFilters {
 	Body: {
 		[ACTOR_BODY_TYPE.BIOROID]: boolean;
 		[ACTOR_BODY_TYPE.AGS]: boolean;
+		[ACTOR_BODY_TYPE.SUMMON]: false;
+		[ACTOR_BODY_TYPE.TOTEM]: false;
 	};
 	Elem: {
 		[SKILL_ATTR.PHYSICS]: boolean;
@@ -131,6 +133,8 @@ class StoreModule extends VuexModule {
 		Body: {
 			[ACTOR_BODY_TYPE.BIOROID]: true,
 			[ACTOR_BODY_TYPE.AGS]: true,
+			[ACTOR_BODY_TYPE.SUMMON]: false,
+			[ACTOR_BODY_TYPE.TOTEM]: false,
 		},
 		Elem: {
 			[SKILL_ATTR.PHYSICS]: true,

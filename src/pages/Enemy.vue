@@ -1,5 +1,5 @@
 <template>
-	<div class="chars">
+	<lazy-data-base :data="DB" class="chars">
 		<div class="mb-2">
 			<b-btn-group class="mx-2 mb-2">
 				<b-button variant="outline-success" :pressed="Filters.Type[0]" @click="Filters.Type[0] = !Filters.Type[0]">경장형</b-button>
@@ -39,7 +39,7 @@
 		</b-row>
 
 		<enemy-modal :enemy="selectedEnemy" :display.sync="enemyModalDisplay" />
-	</div>
+	</lazy-data-base>
 </template>
 
 <script lang="ts">
@@ -53,6 +53,7 @@ import StoreModule, { EnemyFilters } from "@/libs/Store";
 import EnemyCard from "./Enemy/EnemyCard.vue";
 import EnemyModal from "./Enemy/EnemyModal.vue";
 
+import LazyLoad, { LazyDataType } from "@/libs/LazyData";
 import EnemyDB, { Enemy } from "@/libs/DB/Enemy";
 import MapDB, { Worlds } from "@/libs/DB/Map";
 
@@ -61,6 +62,11 @@ import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { ACTOR_CLASS, ROLE_TYPE } from "@/libs/Types/Enums";
 import { SetMeta } from "@/libs/Meta";
 
+interface DBData {
+	Enemy: Enemy[];
+	Map: Worlds;
+}
+
 @Component({
 	components: {
 		EnemyCard,
@@ -68,20 +74,27 @@ import { SetMeta } from "@/libs/Meta";
 	},
 })
 export default class EnemyPage extends Vue {
-	private internalEnemyDB: Enemy[] | null = null;
-	private get EnemyDB () {
-		if (this.internalEnemyDB) return this.internalEnemyDB;
-		return EnemyDB((x) => {
-			this.internalEnemyDB = x;
-		});
-	}
+	private DB: LazyDataType<DBData> = null;
+	private InitialDB () {
+		this.DB = null;
 
-	private internalMapDB: Worlds | null = null;
-	private get MapDB () {
-		if (this.internalMapDB) return this.internalMapDB;
-		return MapDB((x) => {
-			this.internalMapDB = x;
-		});
+		LazyLoad(
+			r => {
+				const Enemy = r[0] as Enemy[];
+				const Map = r[1] as Worlds;
+
+				if (!Enemy) return (this.DB = false);
+				if (!Map) return (this.DB = false);
+
+				this.DB = {
+					Enemy,
+					Map,
+				};
+				this.checkParams();
+			},
+			cb => EnemyDB(x => cb(x)),
+			cb => MapDB(x => cb(x)),
+		);
 	}
 
 	private enemyModalDisplay: boolean = false;
@@ -107,20 +120,19 @@ export default class EnemyPage extends Vue {
 	private get UsedEnemies () {
 		const ret: Record<string, null> = {};
 
-		const db = this.MapDB;
+		const db = this.DB;
 		if (!db) return [];
-		if (!this.EnemyDB) return [];
 
-		Object.keys(db).forEach(x =>
-			Object.keys(db[x]).forEach(y =>
-				db[x][y].list.forEach(z =>
+		Object.keys(db.Map).forEach(x =>
+			Object.keys(db.Map[x]).forEach(y =>
+				db.Map[x][y].list.forEach(z =>
 					z.wave && z.wave.forEach(w => w.forEach(i =>
 						i.e.enemy.filter(e => e).forEach(e => e && (ret[e.id] = null)),
 					)),
 				),
 			),
 		);
-		this.EnemyDB.forEach(e => {
+		db.Enemy.forEach(e => {
 			if (/_EW[0-9]*/.test(e.id))
 				ret[e.id] = null;
 		});
@@ -128,9 +140,9 @@ export default class EnemyPage extends Vue {
 	}
 
 	private get EnemyList () {
-		if (!this.EnemyDB) return [];
+		if (!this.DB) return [];
 
-		return this.EnemyDB
+		return this.DB.Enemy
 			.filter(x => {
 				if (!this.Filters.Type[ACTOR_CLASS.LIGHT] && x.type === ACTOR_CLASS.LIGHT) return false;
 				if (!this.Filters.Type[ACTOR_CLASS.AIR] && x.type === ACTOR_CLASS.AIR) return false;
@@ -203,6 +215,7 @@ export default class EnemyPage extends Vue {
 	}
 
 	private mounted () {
+		this.InitialDB();
 		this.checkParams();
 	}
 }

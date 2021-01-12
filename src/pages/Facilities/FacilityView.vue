@@ -4,9 +4,11 @@ import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
 import { ACTOR_GRADE, ROLE_TYPE } from "@/libs/Types/Enums";
-import UnitData from "@/libs/DB/Unit";
+
+import LazyLoad, { LazyDataType } from "@/libs/LazyData";
 import FacilityDB, { Facility, FacilityEntity, FacilityUpgradeRequiredMaterial, FactilityProduct } from "@/libs/DB/Facility";
 import ConsumableDB, { Consumable } from "@/libs/DB/Consumable";
+import FilterableUnitDB, { FilterableUnit } from "@/libs/DB/Unit.Filterable";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { UpdateTitle } from "@/libs/Functions";
@@ -20,6 +22,12 @@ import DropItem from "@/pages/Worlds/DropItem.vue";
 import FacilityIcon from "./FacilityIcon.vue";
 import { SetMeta } from "@/libs/Meta";
 
+interface DBData {
+	FilterableUnit: FilterableUnit[];
+	Consumable: Consumable[];
+	Facility: Facility;
+}
+
 @Component({
 	components: {
 		UnitBadge,
@@ -31,28 +39,37 @@ import { SetMeta } from "@/libs/Meta";
 	},
 })
 export default class FacilityView extends Vue {
-	private internalConsumableDB: Consumable[] | null = null;
-	private get ConsumableDB () {
-		if (this.internalConsumableDB) return this.internalConsumableDB;
-		return ConsumableDB((x) => {
-			this.internalConsumableDB = x;
-		});
-	}
+	private DB: LazyDataType<DBData> = null;
+	private InitialDB () {
+		this.DB = null;
 
-	private internalFacilityDB: Facility | null = null;
-	private get FacilityDB () {
-		if (this.internalFacilityDB) return this.internalFacilityDB;
-		return FacilityDB((x) => {
-			this.internalFacilityDB = x;
-		});
+		LazyLoad(
+			r => {
+				const Facility = r[0] as Facility;
+				const Consumable = r[1] as Consumable[];
+				const FilterableUnit = r[2] as FilterableUnit[];
+
+				if (!Facility) return (this.DB = false);
+
+				this.DB = {
+					Facility,
+					Consumable,
+					FilterableUnit,
+				};
+				this.checkParams();
+			},
+			cb => FacilityDB(x => cb(x)),
+			cb => ConsumableDB(x => cb(x)),
+			cb => FilterableUnitDB(x => cb(x)),
+		);
 	}
 
 	private key: string = "";
 	private level: number = 0;
 
 	private get facility () {
-		if (!this.FacilityDB) return null;
-		return this.FacilityDB[this.key] || null;
+		if (!this.DB || !this.DB.Facility) return null;
+		return this.DB.Facility[this.key] || null;
 	}
 
 	private get LevelList () {
@@ -82,57 +99,55 @@ export default class FacilityView extends Vue {
 	}
 
 	private CombatantType (type: string) {
-		return type.split(",")
-			.map(x => {
-				return x.split("+")
-					.map(y => {
-						switch (y) {
-							case "Bioroid":
-								return <b-badge class="mx-1" variant="info">바이오로이드</b-badge>;
-							case "AGS":
-								return <b-badge class="mx-1" variant="info">AGS</b-badge>;
-							case "Attacker":
-							case "Defender":
-							case "Supporter": {
-								const roleTable = {
-									Attacker: ROLE_TYPE.ATTACKER,
-									Defender: ROLE_TYPE.DEFENDER,
-									Supporter: ROLE_TYPE.SUPPORTER,
-								};
-								return <unit-badge role={ roleTable[y] } />;
-							}
-							default:
-								if (/^[0-9]+$/.test(y)) {
-									const rarities: Record<ACTOR_GRADE, string> = {
-										[ACTOR_GRADE.B]: "B",
-										[ACTOR_GRADE.A]: "A",
-										[ACTOR_GRADE.S]: "S",
-										[ACTOR_GRADE.SS]: "SS",
-									};
-									const unit = UnitData.find(z => z.id === parseInt(y, 10));
-									if (!unit) return <b-badge variant="secondary">???</b-badge>;
+		return type.split(",").map(x =>
+			x.split("+").map(y => {
+				switch (y) {
+					case "Bioroid":
+						return <b-badge class="mx-1" variant="info">바이오로이드</b-badge>;
+					case "AGS":
+						return <b-badge class="mx-1" variant="info">AGS</b-badge>;
+					case "Attacker":
+					case "Defender":
+					case "Supporter": {
+						const roleTable = {
+							Attacker: ROLE_TYPE.ATTACKER,
+							Defender: ROLE_TYPE.DEFENDER,
+							Supporter: ROLE_TYPE.SUPPORTER,
+						};
+						return <unit-badge role={ roleTable[y] } />;
+					}
+					default:
+						if (/^[0-9]+$/.test(y)) {
+							const rarities: Record<ACTOR_GRADE, string> = {
+								[ACTOR_GRADE.B]: "B",
+								[ACTOR_GRADE.A]: "A",
+								[ACTOR_GRADE.S]: "S",
+								[ACTOR_GRADE.SS]: "SS",
+							};
+							const unit = this.DB && this.DB.FilterableUnit.find(z => z.no === parseInt(y, 10));
+							if (!unit) return <b-badge variant="secondary">???</b-badge>;
 
-									const uid = `UNIT_${unit.uid}`;
-									return [
-										<a href={ `/units/${unit.id}` } onClick={ () => this.GoTo(`/units/${unit.id}`) } class="mx-1 d-inline-block">
-											<rarity-badge id={ uid } rarity={ rarities[unit.rarity] }>{ unit.name } 🔗</rarity-badge>
-										</a>,
-										<b-tooltip target={ uid } placement="top" no-fade noninteractive custom-class="badge-tooltip">
-											<unit-card unit={ unit } no-link />
-										</b-tooltip>,
-										<div class="preload-area">
-											<unit-card unit={ unit } no-link />
-										</div>,
-									];
-								} else
-									return y;
-						}
-					});
-			});
+							const uid = `UNIT_${unit.uid}`;
+							return [
+								<a href={ `/units/${unit.uid}` } onClick={ () => this.GoTo(`/units/${unit.uid}`) } class="mx-1 d-inline-block">
+									<rarity-badge id={ uid } rarity={ rarities[unit.rarity] }>{ unit.name } 🔗</rarity-badge>
+								</a>,
+								<b-tooltip target={ uid } placement="top" no-fade noninteractive custom-class="badge-tooltip">
+									<unit-card unit={ unit } no-link />
+								</b-tooltip>,
+								<div class="preload-area">
+									<unit-card unit={ unit } no-link />
+								</div>,
+							];
+						} else
+							return y;
+				}
+			}),
+		);
 	}
 
 	private Results (key: string, result: FactilityProduct[]) {
-		const db = this.ConsumableDB;
+		const db = this.DB;
 		if (!db) return [];
 
 		type T = string | JSX.Element;
@@ -145,7 +160,7 @@ export default class FacilityView extends Vue {
 
 			const list: U[] = [];
 			if ("item" in x) {
-				const item = db.find(y => y.key === x.item) || { name: x.item };
+				const item = db.Consumable.find(y => y.key === x.item) || { name: x.item };
 
 				if (x.chance === 100)
 					list.push(<drop-item item={ item } count={ x.count } />);
@@ -203,14 +218,14 @@ export default class FacilityView extends Vue {
 
 	private render () {
 		const facility = this.facility;
-		if (!facility) return <div>...</div>;
+		if (!facility) return <lazy-data-base data={ this.DB } class="facility-view" />;
 
 		const level = this.level;
 		const entry = facility.list[level];
 
 		const getUpgradeRequired = (m: FacilityUpgradeRequiredMaterial | null) => {
 			if (!m) return <small class="text-secondary">없음</small>;
-			if (!this.ConsumableDB) return _e();
+			if (!this.DB) return _e();
 
 			// const GradeTable = {
 			// 	T1: "일반",
@@ -242,7 +257,7 @@ export default class FacilityView extends Vue {
 			const text = TextVariantTable[m.grade];
 			// const type = TypeTable[m.type];
 
-			const item = this.ConsumableDB.find(x => x.key === `${m.type}_Parts_${m.grade}`);
+			const item = this.DB.Consumable.find(x => x.key === `${m.type}_Parts_${m.grade}`);
 			return <drop-item item={ item } count={ m.value } variant={ variant } text={ text } />;
 			// return <b-badge class="mx-1" variant={variant}>{type} ({grade}) x{m.value}</b-badge>;
 		};
@@ -319,7 +334,7 @@ export default class FacilityView extends Vue {
 				];
 			});
 
-		return <div class="facility-view">
+		return <lazy-data-base data={ this.DB } class="facility-view">
 			<b-row>
 				<b-col cols="auto">
 					<b-button variant="dark" onClick={ () => this.GoTo("/facilities/") }>
@@ -415,7 +430,7 @@ export default class FacilityView extends Vue {
 					</b-table-simple>
 				</b-card-body>
 			</b-card>
-		</div>;
+		</lazy-data-base>;
 	}
 
 	private GoTo (path: string) {
@@ -432,6 +447,7 @@ export default class FacilityView extends Vue {
 	}
 
 	private mounted () {
+		this.InitialDB();
 		this.checkParams();
 
 		const facility = this.facility;

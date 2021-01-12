@@ -79,6 +79,13 @@ function process (auth) {
 				};
 			});
 
+			Object.keys(ret).forEach(u => {
+				fs.writeFileSync(
+					path.resolve(__dirname, "..", "src", "json", "skill", `${u}.ts`),
+					`export default ${JSON.stringify(ret[u], null, 2)};`,
+				);
+			});
+
 			fs.writeFileSync(
 				path.resolve(__dirname, "..", "src", "json", "unit-skill.ts"),
 				`export default ${JSON.stringify(ret, null, 2)};`,

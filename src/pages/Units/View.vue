@@ -1,5 +1,5 @@
 <template>
-	<div class="unit-view">
+	<lazy-data-base class="unit-view" :data="DB" @error="ReplaceTo('/units/')">
 		<b-row>
 			<b-col cols="12" md="auto" class="text-left">
 				<b-button variant="dark" @click="GoBack()">뒤로</b-button>
@@ -64,12 +64,12 @@
 						{{ unit.introduce }}
 					</b-card>
 
-					<b-alert v-if="unit.hasLimited" variant="primary" show class="mt-3">
+					<!-- <b-alert v-if="unit.hasLimited" variant="primary" show class="mt-3">
 						<div>이 전투원은 다음 전용장비를 갖고 있습니다.</div>
 						<a :href="LimitedEquipURL" @click.prevent="GoTo(LimitedEquipURL)">
 							<drop-equip class="limited-item-card" :equip="LimitedEquip" />
 						</a>
-					</b-alert>
+					</b-alert> -->
 
 					<b-container class="table-unit-modal mt-3 mb-3">
 						<b-row cols="2" cols-md="4" class="text-center">
@@ -333,7 +333,7 @@
 			/>
 		</div>
 		<unit-stats v-show="displayTab === 'status'" :unit="unit" :serialized="statusSerialized" />
-	</div>
+	</lazy-data-base>
 </template>
 
 <script lang="tsx">
@@ -360,20 +360,32 @@ import UnitSkinView from "./UnitSkinView.vue";
 import UnitDialogue from "./UnitDialogue.vue";
 import UnitStats from "./UnitStats.vue";
 
+import LazyLoad, { LazyDataType } from "@/libs/LazyData";
+import UnitDB, { GetLinkBonus, LinkBonusType, Unit } from "@/libs/DB/Unit";
+import FilterableUnitDB, { FilterableUnit } from "@/libs/DB/Unit.Filterable";
+import EquipDB, { Equip } from "@/libs/DB/Equip";
+import SkillDB, { SkillEntity, SkillGroup } from "@/libs/DB/Skill";
+
 import { RawSkin, SkinInfo, Rarity, SortieCostBody } from "@/libs/Types";
-import SkillData, { SkillEntity } from "@/libs/DB/Skill";
+
+import UnitStatsData, { UnitStats as UnitStats_ } from "@/libs/DB/UnitStats";
 
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, CURRENCY_TYPE, ROLE_TYPE } from "@/libs/Types/Enums";
-import UnitData, { GetLinkBonus, LinkBonusType, Unit } from "@/libs/DB/Unit";
-import EquipData from "@/libs/DB/Equip";
-import UnitStatsData, { UnitStats as UnitStats_ } from "@/libs/DB/UnitStats";
 
 import { Unit as SimUnit } from "@/pages/Simulation/Simulation/Unit";
 
 import SkinData from "@/json/unit-skin";
 import { UpdateTitle } from "@/libs/Functions";
 import { SetMeta } from "@/libs/Meta";
-import { AssetsRoot, ImageExtension, SortieCost } from "@/libs/Const";
+import { AssetsRoot, ImageExtension, RarityDisplay, SortieCost, UnitClassDisplay, UnitRoleDisplay } from "@/libs/Const";
+import unit from "@/json/unit";
+
+interface DBData {
+	FilterableUnit: FilterableUnit[];
+	Unit: Unit;
+	Equip: Equip[];
+	Skill: SkillGroup;
+}
 
 interface SkillItem extends SkillEntity {
 	index: number;
@@ -405,12 +417,49 @@ interface VoiceItem extends SkinInfo {
 	},
 })
 export default class UnitView extends Vue {
-	private rarityList: Record<ACTOR_GRADE, Rarity> = {
-		[ACTOR_GRADE.B]: "B",
-		[ACTOR_GRADE.A]: "A",
-		[ACTOR_GRADE.S]: "S",
-		[ACTOR_GRADE.SS]: "SS",
-	};
+	private DB: LazyDataType<DBData> = null;
+	private InitialDB () {
+		const data: Partial<DBData> = {};
+		this.DB = null;
+
+		const uid = this.$route.params.id;
+		LazyLoad(
+			r => {
+				const FilterableUnit = r[0] as FilterableUnit[];
+				const Unit = r[1] as Unit;
+				const Equip = r[2] as Equip[];
+				const Skill = r[3] as SkillGroup;
+
+				if (!FilterableUnit) return (this.DB = false);
+				if (!Unit) {
+					if (/^[0-9]+$/.test(uid)) {
+						const iUid = parseInt(uid, 10);
+						const u = FilterableUnit.find(z => z.no === iUid);
+						if (u) {
+							this.$router.replace("/units/" + u.uid);
+							this.InitialDB();
+							return;
+						}
+					}
+					this.DB = false;
+					return;
+				}
+				if (!Skill) return (this.DB = false);
+
+				this.DB = {
+					FilterableUnit,
+					Unit,
+					Equip: Equip || [],
+					Skill,
+				};
+				this.checkParams();
+			},
+			cb => FilterableUnitDB(x => cb(x)),
+			cb => UnitDB(uid, x => cb(x)),
+			cb => EquipDB(x => cb(x)),
+			cb => SkillDB(uid, x => cb(x)),
+		);
+	}
 
 	private costRarity: ACTOR_GRADE = ACTOR_GRADE.SS;
 
@@ -420,10 +469,9 @@ export default class UnitView extends Vue {
 	private formState: "normal" | "change" = "normal";
 
 	private displayTab: "texts" | "information" | "dialogue" | "status" = "texts";
-
 	private dialogueLang: "ko" | "jp" = "ko";
 
-	private unitId: number = 0;
+	private unitUid: string | null = null;
 	private skillLevel: number = 0;
 
 	private linkBonus: LinkBonusType = "";
@@ -432,6 +480,7 @@ export default class UnitView extends Vue {
 
 	@Watch("$route")
 	private routeChanged () {
+		this.InitialDB();
 		this.checkParams();
 	}
 
@@ -443,73 +492,43 @@ export default class UnitView extends Vue {
 		this.$router.push({ path });
 	}
 
+	private ReplaceTo (path: string) {
+		this.$router.replace({ path });
+	}
+
 	private checkParams () {
 		const params = this.$route.params;
-
-		if ("stats" in params) {
-			try {
-				const _ = params.stats;
-				const u = new SimUnit();
-				const json = window.atob(_);
-
-				u.Deserialize(json);
-				localStorage.setItem(`unit-stats-${u.Id}`, json);
-				u.$destroy();
-
-				this.$router.replace(`/units/${u.Id}`);
-				this.displayTab = "status";
-			} catch (e) {
-				// TODO : 올바르지 않은 공유 문자열 주소
-			}
-			return;
-		} else if (!("id" in params)) {
+		if (!("id" in params)) {
 			this.$router.replace("/units");
 			return;
 		}
 
 		const id = params.id;
-		if (/^[0-9]+$/.test(id)) {
-			const iid = parseInt(params.id, 10);
-			const unit = UnitData.find(x => x.id === iid);
-			if (!unit)
-				this.$router.replace("/units");
-			else
-				this.$router.replace("/units/" + unit.uid);
-		} else {
-			const unit = UnitData.find(x => x.uid === id);
-			if (!unit) {
-				this.$router.replace("/units");
-				return;
-			}
-			this.unitId = unit.id;
+		if (!this.DB) return;
 
-			const typeName: Record<ACTOR_CLASS, string> = {
-				[ACTOR_CLASS.LIGHT]: "경장",
-				[ACTOR_CLASS.AIR]: "기동",
-				[ACTOR_CLASS.HEAVY]: "중장",
-			};
-			const roleName: Record<ROLE_TYPE, string> = {
-				[ROLE_TYPE.ATTACKER]: "공격기",
-				[ROLE_TYPE.DEFENDER]: "보호기",
-				[ROLE_TYPE.SUPPORTER]: "지원기",
-			};
-
-			SetMeta(
-				["description", "twitter:description"],
-				`${this.RarityName[this.unit.rarity]}급 ${typeName[this.unit.type]} ${roleName[this.unit.role]} ${this.unit.name}의 정보입니다. ` +
-				"기본 정보, 링크/풀링크 보너스, 스킬 정보, 대사를 확인할 수 있으며, 스테이터스 계산기를 이용할 수 있습니다.",
-			);
-			SetMeta(
-				["twitter:image", "og:image"],
-				`${AssetsRoot}/${ImageExtension()}/full/${("00" + this.unit.id).substr(-3)}.${ImageExtension()}`,
-			);
-			SetMeta("keywords", (this.unit.name === this.unit.shortname ? `,${this.unit.name}` : `,${this.unit.name},${this.unit.shortname}`), true);
-			UpdateTitle("전투원정보", `${this.unit.name}`);
+		const unit = this.DB.FilterableUnit.find(x => x.uid === id);
+		if (!unit) {
+			this.$router.replace("/units");
+			return;
 		}
+		this.unitUid = unit.uid;
+
+		SetMeta(
+			["description", "twitter:description"],
+			`${RarityDisplay[this.unit.rarity]}급 ${UnitClassDisplay[this.unit.type]} ${UnitRoleDisplay[this.unit.role]} ` +
+			`${this.unit.name}의 정보입니다. ` +
+			"기본 정보, 링크/풀링크 보너스, 스킬 정보, 대사를 확인할 수 있으며, 스테이터스 계산기를 이용할 수 있습니다.",
+		);
+		SetMeta(
+			["twitter:image", "og:image"],
+			`${AssetsRoot}/${ImageExtension()}/full/${("00" + this.unit.id).substr(-3)}.${ImageExtension()}`,
+		);
+		SetMeta("keywords", (this.unit.name === this.unit.shortname ? `,${this.unit.name}` : `,${this.unit.name},${this.unit.shortname}`), true);
+		UpdateTitle("전투원정보", `${this.unit.name}`);
 	}
 
 	private get unit () {
-		return UnitData.find(x => x.id === this.unitId) || Unit.Empty;
+		return (this.DB && this.DB.Unit) || Unit.Empty;
 	}
 
 	private get RarityName () {
@@ -522,16 +541,17 @@ export default class UnitView extends Vue {
 	}
 
 	private get LimitedEquip () {
-		if (this.unit.hasLimited)
-			return EquipData.find(x => x.fullKey === this.unit.hasLimited) || null;
-		else
-			return null;
+		// if (this.unit.hasLimited)
+		// 	return EquipData.find(x => x.fullKey === this.unit.hasLimited) || null;
+		// else
+		return null;
 	}
 
 	private get LimitedEquipURL () {
 		const unit = this.unit;
-		if (!unit.hasLimited) return "";
-		return `/equips/${unit.hasLimited}`;
+		// if (!unit.hasLimited) return "";
+		// return `/equips/${unit.hasLimited}`;
+		return "";
 	}
 
 	private get CurrentResists () {
@@ -750,16 +770,22 @@ export default class UnitView extends Vue {
 	 * 형태 전환 전/후를 모두 포함한 스킬 목록
 	 */
 	private get SkillsRaw () {
-		const table = SkillData[this.unit.uid] as SkillTable;
-		if (!table) return undefined;
+		if (!this.DB || !this.DB.Skill) return {};
 
-		Object.keys(table)
+		const db = this.DB.Skill;
+		const table: SkillTable = {};
+		Object.keys(db)
 			.forEach(x => {
-				const y = /(passive|active)([0-9]+)/.exec(table[x].key);
+				const t = db[x as keyof SkillGroup];
+
+				const y = /(passive|active)([0-9]+)/.exec(t.key);
 				if (!y) return;
 
-				table[x].index = parseInt(y[2], 10);
-				table[x].isPassive = y[1].includes("passive");
+				table[x] = {
+					...t,
+					index: parseInt(y[2], 10),
+					isPassive: y[1].includes("passive"),
+				};
 			});
 		return table;
 	}
@@ -818,6 +844,7 @@ export default class UnitView extends Vue {
 	}
 
 	private mounted () {
+		this.InitialDB();
 		this.checkParams();
 	}
 }

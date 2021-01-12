@@ -1,7 +1,5 @@
 <template>
 	<div class="unit-table">
-		<b-alert show variant="info">제조 시간 테이블은 스킬 효과 필터의 영향을 받지 않습니다.</b-alert>
-
 		<b-table-simple class="unit-table mb-3" striped>
 			<b-thead head-variant="dark">
 				<b-tr>
@@ -15,7 +13,7 @@
 						<b-td class="align-middle p-2">{{ CraftTime(time) }}</b-td>
 						<b-td>
 							<b-row cols-sm="2" cols-md="4" cols-lg="6" cols="8" class="justify-content-center">
-								<b-col v-for="unit in units" :key="`unit-time-table-unit-${unit.id}`">
+								<b-col v-for="unit in units" :key="`unit-time-table-unit-${unit.uid}`">
 									<unit-card class="unit-list-item" :unit="unit" :rarity="unit.rarity" @click="modalUnit(unit)" />
 								</b-col>
 							</b-row>
@@ -39,9 +37,9 @@ import UnitFace from "@/components/UnitFace.vue";
 import UnitBadge from "@/components/UnitBadge.vue";
 import UnitCard from "./UnitCard.vue";
 
+import { FilterableUnit } from "@/libs/DB/Unit.Filterable";
+
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/libs/Types/Enums";
-import UnitData, { Unit } from "@/libs/DB/Unit";
-import SkillData, { SkillSlotKey } from "@/libs/DB/Skill";
 import { BuffEffect } from "@/libs/Buffs/BuffEffect";
 import { isBuffEffectValid, isPositiveBuffEffectValue } from "@/libs/Buffs/Helper";
 import { groupBy } from "@/libs/Functions";
@@ -55,6 +53,12 @@ import { groupBy } from "@/libs/Functions";
 	},
 })
 export default class UnitsTable extends Vue {
+	@Prop({
+		type: Array,
+		default: () => [],
+	})
+	private list!: FilterableUnit[];
+
 	// Vuex -----
 	private get SearchText () {
 		return StoreModule.UnitSearchText;
@@ -129,18 +133,11 @@ export default class UnitsTable extends Vue {
 			this.Filters.Body[ACTOR_BODY_TYPE.AGS] ? ACTOR_BODY_TYPE.AGS : -1,
 		].filter(x => x > -1);
 
-		const units = UnitData
-			.filter(x => x.craftable)
-			.filter(x => x.name.includes(this.SearchText))
-			.filter(x => rarity.includes(x.rarity) &&
-				type.includes(x.type) &&
-				role.includes(x.role) &&
-				body.includes(x.body));
-
-		return groupBy(units, x => x.craftable as number);
+		const units = this.list.filter(x => x.craft);
+		return groupBy(units, x => x.craft as number);
 	}
 
-	private modalUnit (unit: Unit) {
+	private modalUnit (unit: FilterableUnit) {
 		if (unit.group)
 			this.$router.push({ path: "/units/" + unit.uid });
 	}

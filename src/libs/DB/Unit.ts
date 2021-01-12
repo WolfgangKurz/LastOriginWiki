@@ -1,9 +1,8 @@
 import EntitySource from "@/libs/EntitySource";
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ITEM_TYPE, ROLE_TYPE } from "@/libs/Types/Enums";
 
-import Data from "@/json/unit";
-import EquipData from "@/libs/DB/Equip";
 import Decimal from "decimal.js";
+import LoadDBFactory from "@/libs/DB/DBLoader";
 
 export type LinkBonusType =
 	"" |
@@ -97,8 +96,6 @@ export interface Unit {
 
 	equip: [ITEM_TYPE, ITEM_TYPE, ITEM_TYPE, ITEM_TYPE];
 	source: EntitySource[][];
-
-	hasLimited: string;
 }
 /* eslint-disable-next-line @typescript-eslint/no-namespace */
 export namespace Unit {
@@ -141,7 +138,6 @@ export namespace Unit {
 			ITEM_TYPE.SUBEQ,
 		],
 		source: [],
-		hasLimited: "",
 	};
 
 	/* eslint-disable camelcase */
@@ -536,56 +532,6 @@ export namespace Unit {
 	};
 	/* eslint-enable camelcase */
 }
-function Compile (): Unit[] {
-	return (Data as RawUnit[]).map(x => ({
-		id: x.id,
-		uid: x.uid,
-
-		name: x.name,
-		shortname: x.shortname,
-
-		group: x.group,
-		shortgroup: x.shortgroup,
-		groupkey: x.groupkey,
-
-		introduce: x.introduce,
-		height: x.height,
-		weight: x.weight,
-		weapon1: x.weapon1,
-		weapon2: x.weapon2,
-
-		rarity: x.rarity,
-		body: x.body,
-		type: x.type,
-		role: x.role,
-
-		promotions: x.promotions,
-		craftable: x.craftable,
-		favor: x.favor,
-		marry: x.marry,
-
-		linkBonus: x.linkBonus,
-		fullLinkBonus: x.fullLinkBonus,
-
-		equip: [
-			x.equip[0],
-			x.equip[1],
-			x.equip[2],
-			x.equip[3],
-		],
-		source: x.source
-			.map(y => y.map(z => new EntitySource(z))),
-
-		// 이 전투원 id로 장착이 제한된 장비
-		hasLimited: (() => {
-			const eq = EquipData.find(y => y.limit && y.limit.some(z => z === x.uid));
-			if (!eq) return "";
-
-			return eq.fullKey;
-		})(),
-	}));
-}
-export default Compile();
 
 export interface LinkBonusData {
 	Key: LinkBonusType;
@@ -820,3 +766,15 @@ export function GetLinkBonus (type: LinkBonusType, links: number): LinkBonusData
 		Value: 0,
 	};
 }
+
+export default (uid: string, callback?: (data: Unit | null) => void) => {
+	return LoadDBFactory<RawUnit, Unit>(
+		`unit-${uid}`,
+		import(/* webpackChunkName: "chunk-db-unit-[base]" */ `@/json/unit/${uid}`),
+		(x) => !x ? null : {
+			...x,
+			source: x.source
+				.map(y => y.map(z => new EntitySource(z))),
+		},
+	)(callback);
+};

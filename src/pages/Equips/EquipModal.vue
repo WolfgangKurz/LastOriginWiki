@@ -152,6 +152,7 @@
 </template>
 
 <script lang="ts">
+import Decimal from "decimal.js";
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, Watch, PropSync } from "vue-property-decorator";
@@ -169,9 +170,15 @@ import EquipIcon from "@/components/EquipIcon.vue";
 import EquipLevel from "./EquipLevel.vue";
 
 import { ACTOR_GRADE, ITEM_TYPE } from "@/libs/Types/Enums";
-import EquipData, { Equip } from "@/libs/DB/Equip";
-import UnitData from "@/libs/DB/Unit";
-import Decimal from "decimal.js";
+
+import LazyLoad, { LazyDataType } from "@/libs/LazyData";
+import FilterableUnitDB, { FilterableUnit } from "@/libs/DB/Unit.Filterable";
+import EquipDB, { Equip } from "@/libs/DB/Equip";
+
+interface DBData {
+	FilterableUnit: FilterableUnit[];
+	Equip: Equip[];
+}
 
 @Component({
 	components: {
@@ -186,6 +193,27 @@ import Decimal from "decimal.js";
 	},
 })
 export default class EquipModal extends Vue {
+	private DB: LazyDataType<DBData> = null;
+	private InitialDB () {
+		this.DB = null;
+
+		const uid = this.$route.params.id;
+		LazyLoad(
+			r => {
+				const FilterableUnit = r[0] as FilterableUnit[];
+				const Equip = r[1] as Equip[];
+				if (!FilterableUnit) return (this.DB = false);
+				if (!Equip) return (this.DB = false);
+				this.DB = {
+					FilterableUnit,
+					Equip,
+				};
+			},
+			cb => FilterableUnitDB(x => cb(x)),
+			cb => EquipDB(x => cb(x)),
+		);
+	}
+
 	@PropSync("display", {
 		type: Boolean,
 		default: false,
@@ -221,7 +249,11 @@ export default class EquipModal extends Vue {
 
 	private get target () {
 		if (!this.equip) return null;
-		return EquipData.find(x => x.type === this.equip.type && x.key === this.equip.key && x.rarity === this.rarity) || (() => {
+
+		const db = this.DB;
+		if (!db) return null;
+
+		return db.Equip.find(x => x.type === this.equip.type && x.key === this.equip.key && x.rarity === this.rarity) || (() => {
 			const typeTable: Record<ITEM_TYPE, string> = {
 				[ITEM_TYPE.CHIP]: "Chip",
 				[ITEM_TYPE.SPCHIP]: "System",
@@ -232,7 +264,7 @@ export default class EquipModal extends Vue {
 				[ITEM_TYPE.MATERIAL]: "",
 			};
 
-			const found = EquipData.filter(x => x.type === this.equip.type && x.key === this.equip.key);
+			const found = db.Equip.filter(x => x.type === this.equip.type && x.key === this.equip.key);
 			if (found.length === 0) return null;
 			const eq = found.sort((a, b) => (b.rarity - a.rarity))[0];
 			this.rarity = eq.rarity;
@@ -242,7 +274,10 @@ export default class EquipModal extends Vue {
 
 	private get RarityList () {
 		if (!this.equip) return [];
-		return EquipData
+		const db = this.DB;
+		if (!db) return [];
+
+		return db.Equip
 			.filter(x => x.key === this.equip.key && x.type === this.equip.type)
 			.map(x => ({
 				value: x.rarity,
@@ -352,10 +387,15 @@ export default class EquipModal extends Vue {
 	}
 
 	private UnitName (uid: string) {
-		const char = UnitData.find(x => x.uid === uid);
+		if (!this.DB) return undefined;
+
+		const char = this.DB.FilterableUnit.find(x => x.uid === uid);
 		if (char) return char.name;
-		// return uid;
 		return undefined;
+	}
+
+	private mounted () {
+		this.InitialDB();
 	}
 }
 </script>

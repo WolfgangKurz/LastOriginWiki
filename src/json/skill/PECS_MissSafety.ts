@@ -1,0 +1,2934 @@
+export default {
+  "active1": {
+    "key": "active1",
+    "name": "리볼버 속사",
+    "icon": "Shot",
+    "target": "enemy",
+    "buffs": {
+      "index": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "data": [
+        {
+          "rate": 0.995,
+          "type": 0,
+          "range": 3,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PROVOKE",
+                  "desc": {
+                    "desc": "대상 도발",
+                    "type": 0,
+                    "value": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 74,
+                    "provoke": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "적중 {0}%",
+                    "type": 1,
+                    "value": "-0.200000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "리볼버 속사 : 협동 공격",
+                    "type": 0,
+                    "value": "Char_PECS_PuppHead_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_PECS_PuppHead_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "적중 {0}%",
+                    "type": 1,
+                    "value": "-0.200000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "리볼버 속사 : 협동 공격",
+                    "type": 0,
+                    "value": "Char_PECS_PuppHead_N"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 102,
+                    "collaborate": {
+                      "skill": 1,
+                      "with": "Char_PECS_PuppHead_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.085,
+          "type": 0,
+          "range": 3,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PROVOKE",
+                  "desc": {
+                    "desc": "대상 도발",
+                    "type": 0,
+                    "value": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 74,
+                    "provoke": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "적중 {0}%",
+                    "type": 1,
+                    "value": "-0.200000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "리볼버 속사 : 협동 공격",
+                    "type": 0,
+                    "value": "Char_PECS_PuppHead_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_PECS_PuppHead_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "적중 {0}%",
+                    "type": 1,
+                    "value": "-0.200000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "리볼버 속사 : 협동 공격",
+                    "type": 0,
+                    "value": "Char_PECS_PuppHead_N"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 102,
+                    "collaborate": {
+                      "skill": 1,
+                      "with": "Char_PECS_PuppHead_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.175,
+          "type": 0,
+          "range": 3,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PROVOKE",
+                  "desc": {
+                    "desc": "대상 도발",
+                    "type": 0,
+                    "value": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 74,
+                    "provoke": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "적중 {0}%",
+                    "type": 1,
+                    "value": "-0.200000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "리볼버 속사 : 협동 공격",
+                    "type": 0,
+                    "value": "Char_PECS_PuppHead_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_PECS_PuppHead_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "적중 {0}%",
+                    "type": 1,
+                    "value": "-0.200000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "리볼버 속사 : 협동 공격",
+                    "type": 0,
+                    "value": "Char_PECS_PuppHead_N"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 102,
+                    "collaborate": {
+                      "skill": 1,
+                      "with": "Char_PECS_PuppHead_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.265,
+          "type": 0,
+          "range": 3,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PROVOKE",
+                  "desc": {
+                    "desc": "대상 도발",
+                    "type": 0,
+                    "value": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 74,
+                    "provoke": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "적중 {0}%",
+                    "type": 1,
+                    "value": "-0.200000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "리볼버 속사 : 협동 공격",
+                    "type": 0,
+                    "value": "Char_PECS_PuppHead_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_PECS_PuppHead_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "적중 {0}%",
+                    "type": 1,
+                    "value": "-0.200000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "리볼버 속사 : 협동 공격",
+                    "type": 0,
+                    "value": "Char_PECS_PuppHead_N"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 102,
+                    "collaborate": {
+                      "skill": 1,
+                      "with": "Char_PECS_PuppHead_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.355,
+          "type": 0,
+          "range": 3,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PROVOKE",
+                  "desc": {
+                    "desc": "대상 도발",
+                    "type": 0,
+                    "value": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 74,
+                    "provoke": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "적중 {0}%",
+                    "type": 1,
+                    "value": "-0.200000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "리볼버 속사 : 협동 공격",
+                    "type": 0,
+                    "value": "Char_PECS_PuppHead_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_PECS_PuppHead_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "적중 {0}%",
+                    "type": 1,
+                    "value": "-0.200000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "리볼버 속사 : 협동 공격",
+                    "type": 0,
+                    "value": "Char_PECS_PuppHead_N"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 102,
+                    "collaborate": {
+                      "skill": 1,
+                      "with": "Char_PECS_PuppHead_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.445,
+          "type": 0,
+          "range": 3,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PROVOKE",
+                  "desc": {
+                    "desc": "대상 도발",
+                    "type": 0,
+                    "value": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 74,
+                    "provoke": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "적중 {0}%",
+                    "type": 1,
+                    "value": "-0.200000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "리볼버 속사 : 협동 공격",
+                    "type": 0,
+                    "value": "Char_PECS_PuppHead_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_PECS_PuppHead_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "적중 {0}%",
+                    "type": 1,
+                    "value": "-0.200000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "리볼버 속사 : 협동 공격",
+                    "type": 0,
+                    "value": "Char_PECS_PuppHead_N"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 102,
+                    "collaborate": {
+                      "skill": 1,
+                      "with": "Char_PECS_PuppHead_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.535,
+          "type": 0,
+          "range": 3,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PROVOKE",
+                  "desc": {
+                    "desc": "대상 도발",
+                    "type": 0,
+                    "value": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 74,
+                    "provoke": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "적중 {0}%",
+                    "type": 1,
+                    "value": "-0.200000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "리볼버 속사 : 협동 공격",
+                    "type": 0,
+                    "value": "Char_PECS_PuppHead_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_PECS_PuppHead_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "적중 {0}%",
+                    "type": 1,
+                    "value": "-0.200000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "리볼버 속사 : 협동 공격",
+                    "type": 0,
+                    "value": "Char_PECS_PuppHead_N"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 102,
+                    "collaborate": {
+                      "skill": 1,
+                      "with": "Char_PECS_PuppHead_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.625,
+          "type": 0,
+          "range": 3,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PROVOKE",
+                  "desc": {
+                    "desc": "대상 도발",
+                    "type": 0,
+                    "value": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 74,
+                    "provoke": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "적중 {0}%",
+                    "type": 1,
+                    "value": "-0.200000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "리볼버 속사 : 협동 공격",
+                    "type": 0,
+                    "value": "Char_PECS_PuppHead_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_PECS_PuppHead_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "적중 {0}%",
+                    "type": 1,
+                    "value": "-0.200000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "리볼버 속사 : 협동 공격",
+                    "type": 0,
+                    "value": "Char_PECS_PuppHead_N"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 102,
+                    "collaborate": {
+                      "skill": 1,
+                      "with": "Char_PECS_PuppHead_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.715,
+          "type": 0,
+          "range": 3,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PROVOKE",
+                  "desc": {
+                    "desc": "대상 도발",
+                    "type": 0,
+                    "value": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 74,
+                    "provoke": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "적중 {0}%",
+                    "type": 1,
+                    "value": "-0.200000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "리볼버 속사 : 협동 공격",
+                    "type": 0,
+                    "value": "Char_PECS_PuppHead_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_PECS_PuppHead_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "적중 {0}%",
+                    "type": 1,
+                    "value": "-0.200000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "리볼버 속사 : 협동 공격",
+                    "type": 0,
+                    "value": "Char_PECS_PuppHead_N"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 102,
+                    "collaborate": {
+                      "skill": 1,
+                      "with": "Char_PECS_PuppHead_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.805,
+          "type": 0,
+          "range": 3,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PROVOKE",
+                  "desc": {
+                    "desc": "대상 도발",
+                    "type": 0,
+                    "value": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 74,
+                    "provoke": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "적중 {0}%",
+                    "type": 1,
+                    "value": "-0.200000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "리볼버 속사 : 협동 공격",
+                    "type": 0,
+                    "value": "Char_PECS_PuppHead_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_PECS_PuppHead_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "적중 {0}%",
+                    "type": 1,
+                    "value": "-0.200000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "리볼버 속사 : 협동 공격",
+                    "type": 0,
+                    "value": "Char_PECS_PuppHead_N"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 102,
+                    "collaborate": {
+                      "skill": 1,
+                      "with": "Char_PECS_PuppHead_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "desc": [
+      "리볼버를 발사해 [@:공격력 :0~0:배 피해]를 주고, 대상을 2라운드 동안 도발하며 [적중 -:20~1:%]를 낮춥니다.",
+      "스쿼드 내 [$ch;PECS_PuppHead]가 있을 시, 대상에게 <테이저 건> 스킬 협동 공격을 합니다."
+    ]
+  },
+  "active2": {
+    "key": "active2",
+    "name": "고압 가스탄",
+    "icon": "SelfAtkDeBuff",
+    "target": "enemy",
+    "buffs": {
+      "index": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "data": [
+        {
+          "rate": 0.775,
+          "type": 0,
+          "range": 2,
+          "ap": 6,
+          "grid": "56",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "공격력 {0}%",
+                    "type": 1,
+                    "value": "-0.150000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-15%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.150000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-15%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 4
+            }
+          ]
+        },
+        {
+          "rate": 0.845,
+          "type": 0,
+          "range": 2,
+          "ap": 6,
+          "grid": "56",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "공격력 {0}%",
+                    "type": 1,
+                    "value": "-0.150000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-15%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.150000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-15%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 4
+            }
+          ]
+        },
+        {
+          "rate": 0.915,
+          "type": 0,
+          "range": 2,
+          "ap": 6,
+          "grid": "56",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "공격력 {0}%",
+                    "type": 1,
+                    "value": "-0.150000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-15%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.150000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-15%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 4
+            }
+          ]
+        },
+        {
+          "rate": 0.985,
+          "type": 0,
+          "range": 2,
+          "ap": 6,
+          "grid": "56",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "공격력 {0}%",
+                    "type": 1,
+                    "value": "-0.150000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-15%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.150000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-15%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 4
+            }
+          ]
+        },
+        {
+          "rate": 1.055,
+          "type": 0,
+          "range": 2,
+          "ap": 6,
+          "grid": "56",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "공격력 {0}%",
+                    "type": 1,
+                    "value": "-0.150000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-15%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.150000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-15%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 4
+            }
+          ]
+        },
+        {
+          "rate": 1.125,
+          "type": 0,
+          "range": 2,
+          "ap": 6,
+          "grid": "56",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "공격력 {0}%",
+                    "type": 1,
+                    "value": "-0.150000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-15%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.150000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-15%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 4
+            }
+          ]
+        },
+        {
+          "rate": 1.195,
+          "type": 0,
+          "range": 2,
+          "ap": 6,
+          "grid": "56",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "공격력 {0}%",
+                    "type": 1,
+                    "value": "-0.150000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-15%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.150000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-15%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 4
+            }
+          ]
+        },
+        {
+          "rate": 1.265,
+          "type": 0,
+          "range": 2,
+          "ap": 6,
+          "grid": "56",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "공격력 {0}%",
+                    "type": 1,
+                    "value": "-0.150000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-15%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.150000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-15%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 4
+            }
+          ]
+        },
+        {
+          "rate": 1.335,
+          "type": 0,
+          "range": 2,
+          "ap": 6,
+          "grid": "56",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "공격력 {0}%",
+                    "type": 1,
+                    "value": "-0.150000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-15%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.150000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-15%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 4
+            }
+          ]
+        },
+        {
+          "rate": 1.405,
+          "type": 0,
+          "range": 2,
+          "ap": 6,
+          "grid": "56",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "공격력 {0}%",
+                    "type": 1,
+                    "value": "-0.150000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-15%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.150000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-15%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 4
+            }
+          ]
+        }
+      ]
+    },
+    "desc": [
+      "고압 가스탄을 발사해 목표 대상들에게 [@:공격력 :0~0:배 피해]를 주고, 2라운드 동안 [공격력 -:15~0.5:%]과 [방어력 -:15~0.5:%]를 감소시킵니다."
+    ]
+  },
+  "passive3": {
+    "key": "passive3",
+    "name": "유인책",
+    "icon": "SelfDefBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "self",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "round",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "유인책 : 표식 지정 (자신)",
+                    "type": 0,
+                    "value": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_UP",
+                  "desc": {
+                    "desc": "유인책 : 방어력+{0}%",
+                    "type": 1,
+                    "value": "0.170000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "17%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "유인책 : 받는 피해 {0}% 감소",
+                    "type": 1,
+                    "value": "0.120000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "12%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_LIGHTNINGRES_UP",
+                  "desc": {
+                    "desc": "유인책 : 모든 속성 저항+{0}%",
+                    "type": 1,
+                    "value": "0.060000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 19,
+                    "resist": {
+                      "elem": "lightning",
+                      "value": {
+                        "base": "6%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "round",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_LIGHTNINGRES_UP",
+                  "desc": {
+                    "desc": "유인책 : 전기 속성 저항+{0}%",
+                    "type": 1,
+                    "value": "0.060000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 19,
+                    "resist": {
+                      "elem": "lightning",
+                      "value": {
+                        "base": "6%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FIRERES_UP",
+                  "desc": {
+                    "desc": "유인책 : 화염 속성 저항+{0}%",
+                    "type": 1,
+                    "value": "0.060000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 15,
+                    "resist": {
+                      "elem": "fire",
+                      "value": {
+                        "base": "6%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ICERES_UP",
+                  "desc": {
+                    "desc": "유인책 : 냉기 속성 저항+{0}%",
+                    "type": 1,
+                    "value": "0.060000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 17,
+                    "resist": {
+                      "elem": "ice",
+                      "value": {
+                        "base": "6%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "desc": [
+      "라운드 개시 시, 자신에게 표식을 지정하고 자신의 [방어력 +:17~2:%] / [#fire,#chill,#thunder:모든 속성 저항 +:6~1:%]을 증가시키며 [받는 피해 -:12~2:%]를 감소시킵니다."
+    ]
+  }
+};

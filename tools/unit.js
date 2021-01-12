@@ -191,6 +191,11 @@ function process (auth) {
 				if (pro)
 					x.promotions = pro.split(",").map(y => rarityTable[y]);
 
+				fs.writeFileSync(
+					path.resolve(__dirname, "..", "src", "json", "unit", `${x.uid}.ts`),
+					`export default ${JSON.stringify(x, null, 2)};`,
+				);
+
 				ret.push(x);
 			});
 
