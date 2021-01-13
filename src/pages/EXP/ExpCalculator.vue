@@ -46,9 +46,9 @@
 						<b-card-header class="text-center">
 							<b-checkbox v-model="equip.use" class="pr-4">
 								<div class="mb-1">
-									<equip-icon :image="equip.current.icon" size="small" />
+									<equip-icon :image="equip.current.base.icon" size="small" />
 								</div>
-								<strong class="py-1 text-keep">{{ equip.current.name }}</strong>
+								<strong class="py-1 text-keep">{{ equip.current.base.name }}</strong>
 							</b-checkbox>
 						</b-card-header>
 						<b-card-body>
@@ -73,7 +73,7 @@
 						</b-card-body>
 						<b-card-footer>
 							<b-badge variant="dark">경험치</b-badge>
-							<b-badge variant="warning" class="ml-2">x{{ A1(equip.bonus[equip.current.rarity][equip.level]) }}</b-badge>
+							<b-badge variant="warning" class="ml-2">x{{ A1(equip.bonus[equip.current.base.rarity][equip.level]) }}</b-badge>
 							<b-badge v-if="equip.stack > 0" variant="info" class="ml-2">x{{ equip.stack }} 중첩</b-badge>
 						</b-card-footer>
 					</b-card>
@@ -225,9 +225,9 @@
 									class="ml-1"
 									variant="danger"
 								>
-									{{ RarityName(equip.current.rarity) }}
-									{{ equip.current.name }}
-									+{{ equip.level }} x{{ A1(equip.bonus[equip.current.rarity][equip.level]) }}
+									{{ RarityName(equip.current.base.rarity) }}
+									{{ equip.current.base.name }}
+									+{{ equip.level }} x{{ A1(equip.bonus[equip.current.base.rarity][equip.level]) }}
 									<template v-if="equip.stack > 0">x{{ equip.stack }}</template>
 								</b-badge>
 
@@ -281,8 +281,11 @@ import Component from "vue-class-component";
 
 import { UnitLevelTable, WorldNames } from "@/libs/Const";
 
-import EquipData, { Equip } from "@/libs/DB/Equip";
-import MapDB, { Worlds } from "@/libs/DB/Map";
+import { FilterableEquip } from "@/libs/Types/Equip.Filterable";
+import { Worlds } from "@/libs/Types/Map";
+
+import FilterableEquipDB from "@/libs/DB/Equip.Filterable";
+import MapDB from "@/libs/DB/Map";
 
 import { FormSelectItem, FormSelectGroup, FormSelectData, FormSelectFirst } from "@/libs/FormSelect";
 
@@ -292,6 +295,10 @@ import { FormatNumber, groupBy } from "@/libs/Functions";
 import Decimal from "decimal.js";
 import { ACTOR_GRADE } from "@/libs/Types/Enums";
 import buffs from "@/json/buffs";
+import { Equip, EquipItem } from "@/libs/Types/Equip";
+import { BUFFEFFECT_TYPE } from "@/libs/Buffs/BuffEffect";
+import { EquipItemDB } from "@/libs/DB/Equip";
+import LazyLoad from "@/libs/LazyData";
 
 interface AreaWave {
 	clear: number;
@@ -314,8 +321,8 @@ interface AreaMap {
 interface ExpEquipItem {
 	use: boolean;
 
-	current: Equip;
-	equips: Equip[];
+	current: EquipItem;
+	equips: EquipItem[];
 
 	level: number;
 	stack: number;
@@ -339,14 +346,6 @@ interface ExpSkillItem {
 	},
 })
 export default class ExpCalculator extends Vue {
-	private internalMapDB: Worlds | null = null;
-	private get MapDB () {
-		if (this.internalMapDB) return this.internalMapDB;
-		return MapDB((x) => {
-			this.internalMapDB = x;
-		});
-	}
-
 	private unitRarity: ACTOR_GRADE = ACTOR_GRADE.SS;
 	private baseLevel: number = 1;
 	private baseEXP: number = 0;
@@ -387,61 +386,7 @@ export default class ExpCalculator extends Vue {
 		},
 	};
 
-	private ExpEquips: ExpEquipItem[] = ((): ExpEquipItem[] => {
-		const rarityTable: Record<ACTOR_GRADE, string> = {
-			[ACTOR_GRADE.B]: "B",
-			[ACTOR_GRADE.A]: "A",
-			[ACTOR_GRADE.S]: "S",
-			[ACTOR_GRADE.SS]: "SS",
-		};
-
-		return EquipData
-			.map(x => {
-				if (x.rarity !== ACTOR_GRADE.SS) return false;
-				if (!x.available) return false;
-
-				const y = x.stats.find(y => y.some(z => "buffs" in z && z.buffs.some(a => "exp" in a.value)));
-				if (!y) return false;
-
-				const z = y.find(z => "buffs" in z && z.buffs.some(a => "exp" in a.value));
-				if (!z || !("buffs" in z)) return false;
-
-				const a = z.buffs.find(a => "exp" in a.value);
-				if (!a || !("exp" in a.value)) return false;
-
-				const equips = EquipData.filter(y => y.type === x.type && y.key === x.key);
-
-				const retGroup = {} as Record<ACTOR_GRADE, number[]>;
-				equips.forEach(x => {
-					const ret: number[] = [];
-					for (let i = 0; i <= 10; i++) {
-						const y = x.stats[i];
-						if (!y) return false;
-
-						const z = y.find(z => "buffs" in z && z.buffs.some(a => "exp" in a.value));
-						if (!z || !("buffs" in z)) return false;
-
-						const a = z.buffs.find(a => "exp" in a.value);
-						if (!a || !("exp" in a.value)) return false;
-
-						ret.push(Decimal.div(a.value.exp.base.replace("%", ""), 100).toNumber());
-					}
-					retGroup[x.rarity] = ret;
-				});
-
-				return {
-					current: x,
-					equips,
-					use: false,
-
-					name: x.name,
-					level: 10,
-					stack: z.maxStack,
-					bonus: retGroup,
-				} as ExpEquipItem;
-			})
-			.filter(x => x !== false) as ExpEquipItem[];
-	})();
+	private ExpEquips: ExpEquipItem[] = [];
 
 	private get UsingExpEquips () {
 		return this.ExpEquips.filter(x => x.use);
@@ -496,16 +441,13 @@ export default class ExpCalculator extends Vue {
 	}
 
 	private get areaList () {
-		const db = this.MapDB;
-		if (!db) return [];
-
 		// const worlds: AreaWorld[] = [];
 		const maps: AreaMap[] = [];
-		for (const world in db) {
+		for (const world in MapDB) {
 			// const maps: AreaMap[] = [];
-			for (const area in db[world]) {
+			for (const area in MapDB[world]) {
 				const nodes: AreaNode[] = [];
-				db[world][area].list.forEach(map => {
+				MapDB[world][area].list.forEach(map => {
 					if (!map.wave) return;
 
 					const waves: AreaWave[] = [];
@@ -600,9 +542,9 @@ export default class ExpCalculator extends Vue {
 		return table[rarity];
 	}
 
-	private RarityOptions (rarities: Equip[]) {
+	private RarityOptions (rarities: EquipItem[]) {
 		return rarities.map(x => ({
-			text: this.RarityName(x.rarity),
+			text: this.RarityName(x.base.rarity),
 			value: x,
 		}));
 	}
@@ -622,7 +564,7 @@ export default class ExpCalculator extends Vue {
 			.forEach(x => {
 				sumValue = sumValue.add(
 					Decimal.mul(
-						x.bonus[x.current.rarity][x.level],
+						x.bonus[x.current.base.rarity][x.level],
 						Math.max(x.stack, 1),
 					),
 				);
@@ -670,6 +612,66 @@ export default class ExpCalculator extends Vue {
 			exp = exp.add(Decimal.div(base, 2)).floor();
 
 		return Math.floor(exp.toNumber());
+	}
+
+	private mounted () {
+		(() => {
+			return FilterableEquipDB
+				.filter(x => x.effects.some(y => y.type === BUFFEFFECT_TYPE.STAGE_EXP_UP))
+				.forEach(async x => {
+					if (x.rarity !== ACTOR_GRADE.SS) return false;
+					if (!x.available) return false;
+
+					const equips = await new Promise<EquipItem[]>((resolve, reject) => {
+						const list = FilterableEquipDB.filter(y => y.type === x.type && y.key === x.key);
+
+						const cbs: Array<(callback: (loaded: EquipItem | null) => void) => EquipItem | null> = [];
+						list.forEach(x => cbs.push(cb => EquipItemDB(x.fullKey, x => cb(x))));
+
+						LazyLoad(
+							e => resolve(e.filter(x => x) as EquipItem[]),
+							...cbs,
+						);
+					});
+
+					const retGroup = {} as Record<ACTOR_GRADE, number[]>;
+					equips.forEach(x => {
+						const ret: number[] = [];
+						for (let i = 0; i <= 10; i++) {
+							const y = x.stats[i];
+							if (!y) return false;
+
+							const z = y.find(z => "buffs" in z && z.buffs.some(a => "exp" in a.value));
+							if (!z || !("buffs" in z)) return false;
+
+							const a = z.buffs.find(a => "exp" in a.value);
+							if (!a || !("exp" in a.value)) return false;
+
+							ret.push(Decimal.div(a.value.exp.base.replace("%", ""), 100).toNumber());
+						}
+						retGroup[x.base.rarity] = ret;
+					});
+
+					const current = equips.find(x => x.base.rarity === ACTOR_GRADE.SS) as EquipItem;
+
+					const y = current.stats.find(y => y.some(z => "buffs" in z && z.buffs.some(a => "exp" in a.value)));
+					if (!y) return false;
+
+					const z = y.find(z => "buffs" in z && z.buffs.some(a => "exp" in a.value));
+					if (!z || !("buffs" in z)) return false;
+
+					this.ExpEquips.push({
+						current,
+						equips,
+						use: false,
+
+						// name: x.name,
+						level: 10,
+						stack: z.maxStack,
+						bonus: retGroup,
+					});
+				});
+		})();
 	}
 }
 </script>
