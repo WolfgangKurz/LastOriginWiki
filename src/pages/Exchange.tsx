@@ -3,7 +3,7 @@ import Component from "vue-class-component";
 
 import ExchangeCard from "@/pages/Exchange/ExchangeCard.vue";
 
-import ExchangeData, { ExchangeInfo } from "@/libs/DB/Exchange";
+import ExchangeData, { ExchangeInfo } from "@/libs/Types/Exchange";
 import { ArrayUnique, UpdateTitle } from "@/libs/Functions";
 
 import { SetMeta } from "@/libs/Meta";

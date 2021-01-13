@@ -1,3 +1,4 @@
+import { BuffStat } from "@/libs/Buffs/Buffs";
 import { ACTOR_GRADE, ITEM_TYPE } from "@/libs/Types/Enums";
 
 export interface UnitEquip {
@@ -7,6 +8,7 @@ export interface UnitEquip {
 	Icon: string;
 	Rarity: ACTOR_GRADE;
 	Level: number; // 0 ~ 10
+	stats: BuffStat[][];
 }
 // eslint-disable-next-line
 export namespace UnitEquip {
@@ -17,5 +19,6 @@ export namespace UnitEquip {
 		Icon: "none",
 		Rarity: ACTOR_GRADE.SS,
 		Level: 10,
+		stats: [],
 	};
 }

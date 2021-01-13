@@ -1,5 +1,5 @@
 <template>
-	<lazy-data-base class="chars" :data="DB">
+	<div class="chars">
 		<div class="text-center mb-3">
 			<div class="btn-group">
 				<button type="button" class="btn btn-outline-info" :class="{ active: DisplayType === 'table' }" @click="DisplayType = 'table'">
@@ -181,7 +181,7 @@
 		<units-normal v-else-if="DisplayType === 'list'" :list="UnitList" />
 		<units-group v-else-if="DisplayType === 'group'" :list="UnitList" />
 		<units-time-table v-else-if="DisplayType === 'time'" :list="UnitList" />
-	</lazy-data-base>
+	</div>
 </template>
 
 <script lang="ts">
@@ -199,8 +199,8 @@ import UnitsTimeTable from "./Units/TimeTable.vue";
 
 import ElemIcon from "@/components/ElemIcon.vue";
 
-import LazyLoad, { LazyDataType } from "@/libs/LazyData";
-import FilterableUnitDB, { FilterableUnit } from "@/libs/DB/Unit.Filterable";
+import { FilterableUnit } from "@/libs/Types/Unit.Filterable";
+import FilterableUnitDB from "@/libs/DB/Unit.Filterable";
 
 import { UpdateTitle } from "@/libs/Functions";
 import { SetMeta } from "@/libs/Meta";
@@ -218,21 +218,6 @@ import { SKILL_ATTR } from "@/libs/Types/Enums";
 	},
 })
 export default class Units extends Vue {
-	private DB: LazyDataType<FilterableUnit[]> = null;
-	private InitialDB () {
-		this.DB = null;
-
-		const uid = this.$route.params.id;
-		LazyLoad(
-			r => {
-				const FilterableUnit = r[0] as FilterableUnit[];
-				if (!FilterableUnit) return (this.DB = false);
-				this.DB = FilterableUnit;
-			},
-			cb => FilterableUnitDB(x => cb(x)),
-		);
-	}
-
 	private unitModalDisplay: boolean = false;
 
 	private displayFilters: boolean = false;
@@ -301,9 +286,6 @@ export default class Units extends Vue {
 	}
 
 	private get UnitEffects () {
-		const db = this.DB;
-		if (!db) return [];
-
 		const ret: EffectFilterListType = [];
 		const _ = <T extends unknown> (__: T | undefined) => __ as T;
 
@@ -314,18 +296,18 @@ export default class Units extends Vue {
 					const part: EffectFilterListItemPM[] = [];
 
 					// 증가치
-					let f = db.some(fu => fu.buffs.some(bg => bg.effects.some(es => x[0].type.includes(es.type) && es.positive)));
+					let f = FilterableUnitDB.some(fu => fu.buffs.some(bg => bg.effects.some(es => x[0].type.includes(es.type) && es.positive)));
 					if (f) part.push(x[0]);
 
 					// 감소치
-					f = db.some(fu => fu.buffs.some(bg => bg.effects.some(es => x[0].type.includes(es.type) && !es.positive)));
+					f = FilterableUnitDB.some(fu => fu.buffs.some(bg => bg.effects.some(es => x[0].type.includes(es.type) && !es.positive)));
 					if (f) part.push(x[1]);
 
 					if (part.length > 0)
 						ret.push(part);
 				} else {
 					// 상수치
-					const f = db.some(fu => fu.buffs.some(bg => bg.effects.some(es => x.type.includes(es.type))));
+					const f = FilterableUnitDB.some(fu => fu.buffs.some(bg => bg.effects.some(es => x.type.includes(es.type))));
 					if (f) ret.push(x);
 				}
 			});
@@ -345,9 +327,6 @@ export default class Units extends Vue {
 	}
 
 	private get UnitList () {
-		const db = this.DB;
-		if (!db) return [];
-
 		const elem = [
 			this.Filters.Elem[SKILL_ATTR.PHYSICS] ? SKILL_ATTR.PHYSICS : -1,
 			this.Filters.Elem[SKILL_ATTR.FIRE] ? SKILL_ATTR.FIRE : -1,
@@ -355,7 +334,7 @@ export default class Units extends Vue {
 			this.Filters.Elem[SKILL_ATTR.LIGHTNING] ? SKILL_ATTR.LIGHTNING : -1,
 		].filter(x => x > -1);
 
-		return db
+		return FilterableUnitDB
 			.filter(x => x.name.includes(this.SearchText))
 			.filter((x) => {
 				return this.Filters.Rarity[x.rarity] &&
@@ -384,10 +363,7 @@ export default class Units extends Vue {
 	}
 
 	private HasFilteredEffect (unit: FilterableUnit) {
-		const db = this.DB;
-		if (!db) return false;
-
-		const target = db.find(x => x.uid === unit.uid);
+		const target = FilterableUnitDB.find(x => x.uid === unit.uid);
 		if (!target) return false;
 
 		return target.buffs.some(x => x.effects.some(y => {
@@ -400,7 +376,6 @@ export default class Units extends Vue {
 	}
 
 	private mounted () {
-		this.InitialDB();
 		this.checkParams();
 
 		SetMeta(["description", "twitter:description"], "전투원의 목록을 표시합니다. 원하는 전투원을 찾기 위해 검색할 수 있습니다.");

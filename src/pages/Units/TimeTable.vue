@@ -37,7 +37,7 @@ import UnitFace from "@/components/UnitFace.vue";
 import UnitBadge from "@/components/UnitBadge.vue";
 import UnitCard from "./UnitCard.vue";
 
-import { FilterableUnit } from "@/libs/DB/Unit.Filterable";
+import { FilterableUnit } from "@/libs/Types/Unit.Filterable";
 
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/libs/Types/Enums";
 import { BuffEffect } from "@/libs/Buffs/BuffEffect";

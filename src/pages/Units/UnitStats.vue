@@ -161,9 +161,8 @@ import { Prop } from "vue-property-decorator";
 import { AssetsRoot, SortieCost } from "@/libs/Const";
 
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, CURRENCY_TYPE, ROLE_TYPE } from "@/libs/Types/Enums";
-import UnitData, { LinkBonusType, Unit } from "@/libs/DB/Unit";
-import UnitStatsData from "@/libs/DB/UnitStats";
-import EquipData from "@/libs/DB/Equip";
+
+import { LinkBonusType, Unit } from "@/libs/Types/Unit";
 
 import { FormatNumber } from "@/libs/Functions";
 

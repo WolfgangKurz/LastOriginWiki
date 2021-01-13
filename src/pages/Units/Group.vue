@@ -33,7 +33,7 @@ import StoreModule, { EffectFilterTargetType, UnitDisplayFilters, UnitListOrder 
 
 import UnitCard from "./UnitCard.vue";
 
-import { FilterableUnit } from "@/libs/DB/Unit.Filterable";
+import { FilterableUnit } from "@/libs/Types/Unit.Filterable";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { BuffEffect } from "@/libs/Buffs/BuffEffect";

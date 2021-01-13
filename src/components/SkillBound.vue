@@ -1,5 +1,6 @@
 <script lang="tsx">
-import { SkillEntity, SkillEntryData } from "@/libs/DB/Skill";
+import { SkillEntity, SkillEntryData } from "@/libs/Types/Skill";
+
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
