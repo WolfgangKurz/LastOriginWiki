@@ -103,10 +103,10 @@ const Router = new VueRouter({
 		// 	component: () => Lazyload(import(/* webpackChunkName: "chunk-page-story" */ "@/pages/Story/StoryViewer.vue")),
 		// },
 
-		// {
-		// 	path: "/exchange",
-		// 	component: () => Lazyload(import(/* webpackChunkName: "chunk-page-exchange" */ "@/pages/Exchange")),
-		// },
+		{
+			path: "/exchange",
+			component: () => Lazyload(import(/* webpackChunkName: "chunk-page-exchange" */ "@/pages/Exchange")),
+		},
 
 		{
 			path: "/changelog",
@@ -114,18 +114,18 @@ const Router = new VueRouter({
 			component: () => Lazyload(import(/* webpackChunkName: "chunk-page-changelog" */ "@/pages/Changelog.vue")),
 		},
 
-		// {
-		// 	path: "/exp",
-		// 	component: () => Lazyload(import(/* webpackChunkName: "chunk-page-exp" */ "@/pages/EXP.vue")),
-		// },
-		// {
-		// 	path: "/bgm",
-		// 	component: () => Lazyload(import(/* webpackChunkName: "chunk-page-bgm" */ "@/pages/BGM.vue")),
-		// },
-		// {
-		// 	path: "/eapi",
-		// 	component: () => Lazyload(import(/* webpackChunkName: "chunk-page-api" */ "@/pages/API.vue")),
-		// },
+		{
+			path: "/exp",
+			component: () => Lazyload(import(/* webpackChunkName: "chunk-page-exp" */ "@/pages/EXP.vue")),
+		},
+		{
+			path: "/bgm",
+			component: () => Lazyload(import(/* webpackChunkName: "chunk-page-bgm" */ "@/pages/BGM.vue")),
+		},
+		{
+			path: "/eapi",
+			component: () => Lazyload(import(/* webpackChunkName: "chunk-page-api" */ "@/pages/API.vue")),
+		},
 	],
 
 	scrollBehavior (to, from, savedPosition) {

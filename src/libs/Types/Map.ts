@@ -1,5 +1,3 @@
-import LoadDBFactory from "../DB/DBLoader";
-
 type MapRewardChar = string;
 interface MapRewardItem {
 	item: string;
@@ -93,8 +91,3 @@ export interface Worlds {
 		};
 	};
 }
-
-export default LoadDBFactory<Worlds>(
-	"map",
-	import(/* webpackChunkName: "chunk-db-map" */ "@/json/map"),
-);

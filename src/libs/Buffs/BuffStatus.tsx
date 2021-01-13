@@ -3,8 +3,8 @@ import { Decimal } from "decimal.js";
 
 import BuffData from "@/json/buffs";
 
-import LazyLoad from "@/libs/LazyData";
-import FilterableUnitDB, { FilterableUnit } from "@/libs/Types/Unit.Filterable";
+import { FilterableUnit } from "@/libs/Types/Unit.Filterable";
+import FilterableUnitDB from "@/libs/DB/Unit.Filterable";
 
 import { BuffEffect, BuffEffectValue, BUFFEFFECT_TYPE } from "@/libs/Buffs/BuffEffect";
 import { BuffTrigger } from "@/libs/Buffs/BuffTrigger";
@@ -18,8 +18,6 @@ import EnemyNames from "@/json/enemy-names";
 import { StatPointValue } from "@/pages/Simulation/Simulation/Stats";
 
 let h: CreateElement | undefined;
-
-let nameTable: FilterableUnit[] | null = null;
 
 function positive (value: BuffEffectValue, level: number = 0) {
 	const p = typeof value.base === "string" && value.base.endsWith("%") ? "%" : "";
@@ -103,7 +101,7 @@ function percent (value: BuffEffectValue, ifTrue: string = "", ifFalse: string =
 function convertBuff (name: string) {
 	if (name.startsWith("Char_")) {
 		const key = name.replace(/Char_(.+)_N/, "$1");
-		const unit = nameTable && nameTable.find(x => x.uid === key);
+		const unit = FilterableUnitDB.find(x => x.uid === key);
 		if (!unit) return key;
 
 		return `"${unit.name}"`;
@@ -940,17 +938,6 @@ function toStatablePoint (stat: BuffStatStatic, level: number = 0) {
 
 export default function BuffStatus (context: Vue, stat: BuffStat, level?: number): JSX.Element[] {
 	if (!h) h = context.$createElement;
-
-	if (!nameTable) {
-		LazyLoad(
-			r => {
-				const FilterableUnit = r[0] as FilterableUnit[];
-				nameTable = FilterableUnit;
-				context.$forceUpdate();
-			},
-			cb => FilterableUnitDB(x => cb(x)),
-		);
-	}
 
 	const elems: JSX.Element[] = [];
 

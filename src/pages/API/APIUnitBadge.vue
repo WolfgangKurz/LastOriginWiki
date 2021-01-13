@@ -28,7 +28,7 @@
 					{{ SelectedUnit.name }}
 				</template>
 			</template>
-			<b-dropdown-item v-for="unit in UnitList" :key="`simulation-unit-select-modal-${unit.id}`" @click="SelectedUnit = unit">
+			<b-dropdown-item v-for="unit in UnitList" :key="`simulation-unit-select-modal-${unit.uid}`" @click="SelectedUnit = unit">
 				<unit-face :uid="unit.uid" size="40" class="mr-2" />
 				<span class="d-inline-block mr-2">{{ unit.name }}</span>
 			</b-dropdown-item>
@@ -45,8 +45,10 @@ import Vue from "vue";
 import Component from "vue-class-component";
 
 import { UnitDisplayFilters } from "@/libs/Store";
-import UnitData, { Unit } from "@/libs/DB/Unit";
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE, SKILL_ATTR } from "@/libs/Types/Enums";
+
+import { FilterableUnit } from "@/libs/Types/Unit.Filterable";
+import FilterableUnitDB from "@/libs/DB/Unit.Filterable";
 
 import UnitFace from "@/components/UnitFace.vue";
 
@@ -56,7 +58,7 @@ import UnitFace from "@/components/UnitFace.vue";
 	},
 })
 export default class APIUnitBadge extends Vue {
-	private SelectedUnit: Unit | null = null;
+	private SelectedUnit: FilterableUnit | null = null;
 
 	private isSD: boolean = false;
 
@@ -80,6 +82,8 @@ export default class APIUnitBadge extends Vue {
 		Body: {
 			[ACTOR_BODY_TYPE.BIOROID]: true,
 			[ACTOR_BODY_TYPE.AGS]: true,
+			[ACTOR_BODY_TYPE.SUMMON]: false,
+			[ACTOR_BODY_TYPE.TOTEM]: false,
 		},
 		Elem: {
 			[SKILL_ATTR.PHYSICS]: true,
@@ -99,7 +103,7 @@ export default class APIUnitBadge extends Vue {
 	}
 
 	private get UnitList () {
-		const list = Object.values(UnitData)
+		const list = Object.values(FilterableUnitDB)
 			.filter(x => {
 				if (!this.Filters.Rarity[ACTOR_GRADE.SS] && x.rarity === ACTOR_GRADE.SS) return false;
 				if (!this.Filters.Rarity[ACTOR_GRADE.S] && x.rarity === ACTOR_GRADE.S) return false;
@@ -121,7 +125,7 @@ export default class APIUnitBadge extends Vue {
 			});
 
 		const unit = this.SelectedUnit;
-		if (unit && !list.some(x => x.id === unit.id))
+		if (unit && !list.some(x => x.uid === unit.uid))
 			this.SelectedUnit = null;
 
 		return list;
