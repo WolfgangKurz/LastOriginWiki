@@ -61,7 +61,7 @@ function process (auth) {
 					skillData,
 				] = row;
 
-				ret.push({
+				const o = {
 					id,
 					name,
 					desc,
@@ -87,7 +87,14 @@ function process (auth) {
 					},
 
 					skills: JSON.parse(skillData),
-				});
+				};
+				ret.push(o);
+
+				fs.writeFileSync(
+					path.resolve(__dirname, "..", "src", "json", "enemy", `${id}.ts`),
+					`export default ${JSON.stringify(o, null, 2)};`,
+				);
+
 				names[id] = name;
 			});
 

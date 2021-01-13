@@ -157,7 +157,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, Watch, PropSync } from "vue-property-decorator";
 
-import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { AssetsRoot, ImageExtension, RarityDisplay } from "@/libs/Const";
 import { FormatNumber } from "@/libs/Functions";
 
 import UnitBadge from "@/components/UnitBadge.vue";
@@ -171,14 +171,14 @@ import EquipLevel from "./EquipLevel.vue";
 
 import { ACTOR_GRADE, ITEM_TYPE } from "@/libs/Types/Enums";
 
-import LazyLoad, { LazyDataType } from "@/libs/LazyData";
-import FilterableUnitDB, { FilterableUnit } from "@/libs/DB/Unit.Filterable";
-import EquipDB, { Equip } from "@/libs/DB/Equip";
+import { FilterableUnit } from "@/libs/Types/Unit.Filterable";
+import { FilterableEquip } from "@/libs/Types/Equip.Filterable";
+import { Equip, EquipItem } from "@/libs/Types/Equip";
 
-interface DBData {
-	FilterableUnit: FilterableUnit[];
-	Equip: Equip[];
-}
+import LazyLoad, { LazyDataType } from "@/libs/LazyData";
+import FilterableUnitDB from "@/libs/DB/Unit.Filterable";
+import FilterableEquipDB from "@/libs/DB/Equip.Filterable";
+import { EquipItemDB } from "@/libs/DB/Equip";
 
 @Component({
 	components: {
@@ -193,24 +193,18 @@ interface DBData {
 	},
 })
 export default class EquipModal extends Vue {
-	private DB: LazyDataType<DBData> = null;
+	private DB: LazyDataType<EquipItem> = null;
 	private InitialDB () {
 		this.DB = null;
+		if (!this.equip) return;
 
-		const uid = this.$route.params.id;
 		LazyLoad(
 			r => {
-				const FilterableUnit = r[0] as FilterableUnit[];
-				const Equip = r[1] as Equip[];
-				if (!FilterableUnit) return (this.DB = false);
+				const Equip = r[0] as EquipItem;
 				if (!Equip) return (this.DB = false);
-				this.DB = {
-					FilterableUnit,
-					Equip,
-				};
+				this.DB = Equip;
 			},
-			cb => FilterableUnitDB(x => cb(x)),
-			cb => EquipDB(x => cb(x)),
+			cb => EquipItemDB(this.equip.fullKey, x => cb(x)),
 		);
 	}
 
@@ -226,7 +220,7 @@ export default class EquipModal extends Vue {
 			return typeof v === "object" || v === null;
 		},
 	})
-	private equip!: Equip;
+	private equip!: FilterableEquip;
 
 	private rarity: ACTOR_GRADE = ACTOR_GRADE.SS;
 	private level: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 = 10;
@@ -237,6 +231,7 @@ export default class EquipModal extends Vue {
 	private WatchEquip () {
 		this.level = 10;
 		this.displayTab = "info";
+		this.InitialDB();
 	}
 
 	private get AssetsRoot () {
@@ -253,7 +248,7 @@ export default class EquipModal extends Vue {
 		const db = this.DB;
 		if (!db) return null;
 
-		return db.Equip.find(x => x.type === this.equip.type && x.key === this.equip.key && x.rarity === this.rarity) || (() => {
+		return FilterableEquipDB.find(x => x.type === this.equip.type && x.key === this.equip.key && x.rarity === this.rarity) || (() => {
 			const typeTable: Record<ITEM_TYPE, string> = {
 				[ITEM_TYPE.CHIP]: "Chip",
 				[ITEM_TYPE.SPCHIP]: "System",
@@ -264,7 +259,7 @@ export default class EquipModal extends Vue {
 				[ITEM_TYPE.MATERIAL]: "",
 			};
 
-			const found = db.Equip.filter(x => x.type === this.equip.type && x.key === this.equip.key);
+			const found = FilterableEquipDB.filter(x => x.type === this.equip.type && x.key === this.equip.key);
 			if (found.length === 0) return null;
 			const eq = found.sort((a, b) => (b.rarity - a.rarity))[0];
 			this.rarity = eq.rarity;
@@ -277,12 +272,16 @@ export default class EquipModal extends Vue {
 		const db = this.DB;
 		if (!db) return [];
 
-		return db.Equip
+		return FilterableEquipDB
 			.filter(x => x.key === this.equip.key && x.type === this.equip.type)
 			.map(x => ({
 				value: x.rarity,
-				text: this.RarityDisplay[x.rarity],
+				text: RarityDisplay[x.rarity],
 			}));
+	}
+
+	private get RarityDisplay () {
+		return RarityDisplay;
 	}
 
 	private get Sources () {
@@ -311,15 +310,6 @@ export default class EquipModal extends Vue {
 
 		const type = this.equip.type;
 		return typeTable[type] || "???";
-	}
-
-	private get RarityDisplay () {
-		return {
-			[ACTOR_GRADE.B]: "B",
-			[ACTOR_GRADE.A]: "A",
-			[ACTOR_GRADE.S]: "S",
-			[ACTOR_GRADE.SS]: "SS",
-		};
 	}
 
 	private get CraftTime () {
@@ -380,16 +370,16 @@ export default class EquipModal extends Vue {
 	}
 
 	private get StatusList () {
-		if (!this.target) return null;
+		if (!this.DB) return [];
 
-		const stat = this.target.stats[this.level];
+		const stat = this.DB.stats[this.level];
 		return stat;
 	}
 
 	private UnitName (uid: string) {
 		if (!this.DB) return undefined;
 
-		const char = this.DB.FilterableUnit.find(x => x.uid === uid);
+		const char = FilterableUnitDB.find(x => x.uid === uid);
 		if (char) return char.name;
 		return undefined;
 	}

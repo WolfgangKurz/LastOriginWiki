@@ -1,5 +1,5 @@
 <template>
-	<lazy-data-base :data="DB" class="chars">
+	<div class="enemy">
 		<div class="mb-2">
 			<b-btn-group class="mx-2 mb-2">
 				<b-button variant="outline-success" :pressed="Filters.Type[0]" @click="Filters.Type[0] = !Filters.Type[0]">경장형</b-button>
@@ -39,7 +39,7 @@
 		</b-row>
 
 		<enemy-modal :enemy="selectedEnemy" :display.sync="enemyModalDisplay" />
-	</lazy-data-base>
+	</div>
 </template>
 
 <script lang="ts">
@@ -53,19 +53,13 @@ import StoreModule, { EnemyFilters } from "@/libs/Store";
 import EnemyCard from "./Enemy/EnemyCard.vue";
 import EnemyModal from "./Enemy/EnemyModal.vue";
 
-import LazyLoad, { LazyDataType } from "@/libs/LazyData";
-import EnemyDB, { Enemy } from "@/libs/DB/Enemy";
-import MapDB, { Worlds } from "@/libs/DB/Map";
+import { FilterableEnemy } from "@/libs/Types/Enemy.Filterable";
+import FilterableEnemyDB from "@/libs/DB/Enemy.Filterable";
 
 import { UpdateTitle } from "@/libs/Functions";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { ACTOR_CLASS, ROLE_TYPE } from "@/libs/Types/Enums";
 import { SetMeta } from "@/libs/Meta";
-
-interface DBData {
-	Enemy: Enemy[];
-	Map: Worlds;
-}
 
 @Component({
 	components: {
@@ -74,32 +68,9 @@ interface DBData {
 	},
 })
 export default class EnemyPage extends Vue {
-	private DB: LazyDataType<DBData> = null;
-	private InitialDB () {
-		this.DB = null;
-
-		LazyLoad(
-			r => {
-				const Enemy = r[0] as Enemy[];
-				const Map = r[1] as Worlds;
-
-				if (!Enemy) return (this.DB = false);
-				if (!Map) return (this.DB = false);
-
-				this.DB = {
-					Enemy,
-					Map,
-				};
-				this.checkParams();
-			},
-			cb => EnemyDB(x => cb(x)),
-			cb => MapDB(x => cb(x)),
-		);
-	}
-
 	private enemyModalDisplay: boolean = false;
 
-	private selectedEnemy: Enemy | null = null;
+	private selectedEnemy: FilterableEnemy | null = null;
 
 	private searchKeyword: string = "";
 
@@ -118,31 +89,17 @@ export default class EnemyPage extends Vue {
 	}
 
 	private get UsedEnemies () {
-		const ret: Record<string, null> = {};
+		const ret = FilterableEnemyDB.filter(x => Object.keys(x.used).length > 0).map(x => x.id);
 
-		const db = this.DB;
-		if (!db) return [];
-
-		Object.keys(db.Map).forEach(x =>
-			Object.keys(db.Map[x]).forEach(y =>
-				db.Map[x][y].list.forEach(z =>
-					z.wave && z.wave.forEach(w => w.forEach(i =>
-						i.e.enemy.filter(e => e).forEach(e => e && (ret[e.id] = null)),
-					)),
-				),
-			),
-		);
-		db.Enemy.forEach(e => {
+		FilterableEnemyDB.forEach(e => {
 			if (/_EW[0-9]*/.test(e.id))
-				ret[e.id] = null;
+				ret.push(e.id);
 		});
-		return Object.keys(ret);
+		return ret;
 	}
 
 	private get EnemyList () {
-		if (!this.DB) return [];
-
-		return this.DB.Enemy
+		return FilterableEnemyDB
 			.filter(x => {
 				if (!this.Filters.Type[ACTOR_CLASS.LIGHT] && x.type === ACTOR_CLASS.LIGHT) return false;
 				if (!this.Filters.Type[ACTOR_CLASS.AIR] && x.type === ACTOR_CLASS.AIR) return false;
@@ -161,7 +118,7 @@ export default class EnemyPage extends Vue {
 			.reduce((p, c) => {
 				if (p.some(x => x.name === c.name)) return p;
 				return [...p, c];
-			}, [] as Enemy[])
+			}, [] as FilterableEnemy[])
 			.sort((a, b) => {
 				return a.isBoss === b.isBoss
 					? a.name.localeCompare(b.name)
@@ -180,7 +137,7 @@ export default class EnemyPage extends Vue {
 	}
 
 	private modalEnemy (id: string) {
-		this.selectedEnemy = (this.EnemyDB && this.EnemyDB.find(x => x.id === id)) || null;
+		this.selectedEnemy = FilterableEnemyDB.find(x => x.id === id) || null;
 		this.enemyModalDisplay = !!this.selectedEnemy;
 	}
 
@@ -198,7 +155,7 @@ export default class EnemyPage extends Vue {
 
 			if (this.selectedEnemy) {
 				const en = this.selectedEnemy;
-				SetMeta(["description", "twitter:description"], `${en.name}의 정보입니다. 스테이터스와 스킬, 등장 스테이지를 확인할 수 있습니다.`);
+				SetMeta(["description", "twitter:description"], `적 ${en.name}의 정보입니다. 스테이터스와 스킬, 등장 스테이지를 확인할 수 있습니다.`);
 				SetMeta("keywords", `,${en.name}`, true);
 				SetMeta(["twitter:image", "og:image"], `${AssetsRoot}/${ImageExtension()}/tbar/${en.icon}.${ImageExtension()}`);
 			}
@@ -215,7 +172,6 @@ export default class EnemyPage extends Vue {
 	}
 
 	private mounted () {
-		this.InitialDB();
 		this.checkParams();
 	}
 }

@@ -38,7 +38,7 @@
 					:target="unit.Unit.uid"
 					:display.sync="EquipSelectDisplay"
 					:type="EquipSelectDisplay ? unit.Equips[EquipSelecting - 1].Type : 0"
-					:equip="EquipSelectDisplay ? FindEquip(unit.Equips[EquipSelecting - 1].FullKey) : EmptyEquip"
+					:equip="EquipSelectDisplay ? FindEquip(unit.Equips[EquipSelecting - 1].FullKey) : null"
 					:level="EquipSelectDisplay ? unit.Equips[EquipSelecting - 1].Level : 10"
 					@select="EquipSelect"
 				/>
@@ -54,8 +54,11 @@ import { Prop } from "vue-property-decorator";
 
 import { ITEM_TYPE } from "@/libs/Types/Enums";
 
-import { Equip, EquipItem } from "@/libs/Types/Equip";
-import EquipDB, { EquipItemDB } from "@/libs/DB/Equip";
+import { EquipItem } from "@/libs/Types/Equip";
+import { FilterableEquip } from "@/libs/Types/Equip.Filterable";
+
+import { EquipItemDB } from "@/libs/DB/Equip";
+import FilterableEquipDB from "@/libs/DB/Equip.Filterable";
 
 import StatIcon from "@/components/StatIcon.vue";
 import ItemSlot from "@/components/ItemSlot.vue";
@@ -65,6 +68,7 @@ import RarityBadge from "@/components/RarityBadge.vue";
 import EquipSelectModal from "./EquipSelectModal.vue";
 
 import { Unit } from "@/pages/Simulation/Simulation/Unit";
+import { UnitEquip } from "@/pages/Simulation/Simulation/UnitEquip";
 
 @Component({
 	components: {
@@ -85,10 +89,6 @@ export default class UnitStatsEquip extends Vue {
 
 	private EquipSelecting: number = 0;
 
-	private get EmptyEquip () {
-		return Equip.Empty;
-	}
-
 	private get EquipSelectDisplay () {
 		return this.EquipSelecting > 0;
 	}
@@ -99,16 +99,16 @@ export default class UnitStatsEquip extends Vue {
 	}
 
 	private EquipName (key: string) {
-		const eq = EquipDB.find(x => x.fullKey === key);
+		const eq = FilterableEquipDB.find(x => x.fullKey === key);
 		if (eq) return eq.name;
 		return key;
 	}
 
 	private FindEquip (key: string) {
-		return EquipDB.find(x => x.fullKey === key) || Equip.Empty;
+		return FilterableEquipDB.find(x => x.fullKey === key) || null;
 	}
 
-	private EquipSelect (equip: Equip, level: number, equipItem: EquipItem) {
+	private EquipSelect (equip: FilterableEquip | null, level: number, equipItem: EquipItem) {
 		if (!this.unit) return;
 
 		const index = this.EquipSelecting - 1;
@@ -117,16 +117,18 @@ export default class UnitStatsEquip extends Vue {
 		this.$set(
 			this.unit.Equips,
 			index,
-			{
-				FullKey: equip.fullKey,
-				Type: equip.type,
-				Key: equip.key,
-				Icon: equip.icon,
-				Rarity: equip.rarity,
-				// Name: equip.name,
-				Level: level,
-				stats: equipItem.stats,
-			},
+			equip
+				? {
+					FullKey: equip.fullKey,
+					Type: equip.type,
+					Key: equip.key,
+					Icon: equip.icon,
+					Rarity: equip.rarity,
+					// Name: equip.name,
+					Level: level,
+					stats: equipItem.stats,
+				}
+				: { ...UnitEquip.Empty },
 		);
 	}
 }

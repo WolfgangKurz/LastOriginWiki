@@ -29,7 +29,7 @@ import Component from "vue-class-component";
 import { Emit, Prop } from "vue-property-decorator";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
-import { Enemy } from "@/libs/DB/Enemy";
+import { FilterableEnemy } from "@/libs/Types/Enemy.Filterable";
 
 import RarityBadge from "@/components/RarityBadge.vue";
 
@@ -43,7 +43,7 @@ export default class EnemyCard extends Vue {
 		type: Object,
 		required: true,
 	})
-	private enemy!: Enemy;
+	private enemy!: FilterableEnemy;
 
 	private get AssetsRoot () {
 		return AssetsRoot;

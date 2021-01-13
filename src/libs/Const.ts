@@ -1,5 +1,5 @@
 import { SortieCostType } from "@/libs/Types";
-import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, CURRENCY_TYPE, ROLE_TYPE } from "@/libs/Types/Enums";
+import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, CURRENCY_TYPE, ITEM_TYPE, ROLE_TYPE } from "@/libs/Types/Enums";
 import webpChecker from "webp-checker";
 
 export const UnitLevelTable: number[] = [
@@ -501,9 +501,18 @@ export const UnitRoleDisplay: Record<ROLE_TYPE, string> = {
 	[ROLE_TYPE.SUPPORTER]: "지원기",
 };
 
+export const EquipTypeDisplay: Record<ITEM_TYPE, string> = {
+	[ITEM_TYPE.CHIP]: "칩",
+	[ITEM_TYPE.SPCHIP]: "OS",
+	[ITEM_TYPE.SUBEQ]: "보조장비",
+	[ITEM_TYPE.PCITEM]: "코어링크",
+	[ITEM_TYPE.CONSUMABLE]: "소모품",
+	[ITEM_TYPE.MATERIAL]: "재료",
+};
+
 export const AssetsRoot = process.env.NODE_ENV === "development"
-	// ? "http://localhost:5500/assets"
-	? "https://lo.swaytwig.com/assets"
+	? "http://localhost:5500/assets"
+	// ? "https://lo.swaytwig.com/assets"
 	// : "https://lastorigin-wiki-assets.s3.ap-northeast-2.amazonaws.com";
 	: "/assets";
 

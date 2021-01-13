@@ -1,5 +1,3 @@
-import LoadDBFactory from "../DB/DBLoader";
-
 export type FactilityProduct = FactilityProductItem | FacilityProductType | FacilityProductUnit;
 interface FactilityProductItem {
 	item: "Wood_Material" | "Stone_Material" | "Iron_Material" | "TestItem_5" | "TestItem_4" | "TestItem_8" |
@@ -51,8 +49,3 @@ export interface FacilityEntity {
 export interface Facility {
 	[key: string]: FacilityEntity;
 }
-
-export default LoadDBFactory<Facility>(
-	"facility",
-	import(/* webpackChunkName: "chunk-db-facility" */ "@/json/facility"),
-);

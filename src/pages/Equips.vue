@@ -207,12 +207,12 @@ import { ACTOR_GRADE, ITEM_TYPE } from "@/libs/Types/Enums";
 import { BuffEffect, BuffEffectListGroupKeys, BuffEffectValue, BUFFEFFECT_TYPE } from "@/libs/Buffs/BuffEffect";
 
 import { FilterableUnit } from "@/libs/Types/Unit.Filterable";
-import { Equip, EquipItem } from "@/libs/Types/Equip";
+import { FilterableEquip } from "@/libs/Types/Equip.Filterable";
 
 import FilterableUnitDB from "@/libs/DB/Unit.Filterable";
 import FilterableEquipDB from "@/libs/DB/Equip.Filterable";
 
-import { CurrentEvent, CurrentDate, AssetsRoot, ImageExtension } from "@/libs/Const";
+import { CurrentEvent, CurrentDate, AssetsRoot, ImageExtension, RarityDisplay, EquipTypeDisplay } from "@/libs/Const";
 import { ArrayUnique, groupBy, UpdateTitle } from "@/libs/Functions";
 import { Rarity } from "@/libs/Types";
 import EntitySource from "@/libs/EntitySource";
@@ -220,11 +220,6 @@ import EntitySource from "@/libs/EntitySource";
 import StoreModule, { EffectFilterListItemPM, EffectFilterListItemSingle, EffectFilterListType, EquipDisplayType } from "@/libs/Store";
 import { SetMeta } from "@/libs/Meta";
 import { isBuffEffectValid, isPositiveBuffEffect, isPositiveBuffEffectValue } from "@/libs/Buffs/Helper";
-
-interface DBData {
-	FilterableUnit: FilterableUnit[];
-	Equip: Equip[];
-}
 
 @Component({
 	components: {
@@ -236,7 +231,7 @@ interface DBData {
 	},
 })
 export default class Equips extends Vue {
-	private selectedEquip: Equip | null = null;
+	private selectedEquip: FilterableEquip | null = null;
 
 	private equipModalDisplay: boolean = false;
 
@@ -273,24 +268,10 @@ export default class Equips extends Vue {
 
 			if (this.selectedEquip) {
 				const eq = this.selectedEquip;
-				const RarityName = {
-					[ACTOR_GRADE.B]: "B",
-					[ACTOR_GRADE.A]: "A",
-					[ACTOR_GRADE.S]: "S",
-					[ACTOR_GRADE.SS]: "SS",
-				};
-				const typeNames = {
-					[ITEM_TYPE.CHIP]: "칩",
-					[ITEM_TYPE.SPCHIP]: "OS",
-					[ITEM_TYPE.SUBEQ]: "보조장비",
-					[ITEM_TYPE.PCITEM]: "코어링크",
-					[ITEM_TYPE.CONSUMABLE]: "소모품",
-					[ITEM_TYPE.MATERIAL]: "재료",
-				};
 
 				SetMeta(
 					["description", "twitter:description"],
-					`${RarityName[eq.rarity]}급 ${typeNames[eq.type]} ${eq.name}의 정보입니다. 레벨별 효과, 획득처, 강화 비용을 확인할 수 있습니다.`,
+					`${RarityDisplay[eq.rarity]}급 ${EquipTypeDisplay[eq.type]} ${eq.name}의 정보입니다. 레벨별 효과, 획득처, 강화 비용을 확인할 수 있습니다.`,
 				);
 				SetMeta("keywords", `,${eq.name}`, true);
 				SetMeta(
@@ -340,7 +321,7 @@ export default class Equips extends Vue {
 						list.push(new EntitySource("Uninstalled"));
 
 					for (const item of items) {
-						if (item.limit && item.limit.every(y => db.FilterableUnit.some(z => z.uid === y))) {
+						if (item.limit && item.limit.every(y => FilterableUnitDB.some(z => z.uid === y))) {
 							item.limit
 								.forEach(y => list.push(new EntitySource(`Private:${y}`)));
 						}
@@ -394,7 +375,7 @@ export default class Equips extends Vue {
 					sourceRaw: x_.reduce(
 						(p, c) => [
 							...(
-								c.limit && c.limit.every(y => db.FilterableUnit.some(z => z.uid === y))
+								c.limit && c.limit.every(y => FilterableUnitDB.some(z => z.uid === y))
 									? c.limit.map(y => new EntitySource(`Private:${y}`))
 									: []
 							),
@@ -416,7 +397,7 @@ export default class Equips extends Vue {
 
 				// 전용장비
 				const last = x.last;
-				if (last.limit && last.limit.every(y => db.FilterableUnit.some(z => z.uid === y))) { // 전용 장비임
+				if (last.limit && last.limit.every(y => FilterableUnitDB.some(z => z.uid === y))) { // 전용 장비임
 					if (!this.Display.Type.Private)
 						return false; // 전용 장비 필터가 꺼짐
 				} else { // 그 외 유형
@@ -428,7 +409,7 @@ export default class Equips extends Vue {
 				}
 
 				// 효과 필터
-				if (x.equips.every(y => !this.HasFilteredEffect(y, (b) => isBuffEffectValid(b, StoreModule.equipEffectFilterListFlatten))))
+				if (x.equips.every(y => !this.HasFilteredEffect(y)))
 					return false;
 
 				// 획득처
@@ -481,33 +462,18 @@ export default class Equips extends Vue {
 					const part: EffectFilterListItemPM[] = [];
 
 					// 증가치
-					let f = FilterableEquipDB.some(eq => eq.stats.some(row => row.some(es => {
-						if ("type" in es)
-							return x[0].type.includes(es.type) && isPositiveBuffEffect(es);
-						else
-							return es.buffs.some(b => x[0].type.includes(b.value.type) && isPositiveBuffEffect(b.value));
-					})));
+					let f = FilterableEquipDB.some(eq => eq.effects.some(es => x[0].type.includes(es.type) && es.positive));
 					if (f) part.push(x[0]);
 
 					// 감소치
-					f = FilterableEquipDB.some(eq => eq.stats.some(row => row.some(es => {
-						if ("type" in es)
-							return x[1].type.includes(es.type) && !isPositiveBuffEffect(es);
-						else
-							return es.buffs.some(b => x[1].type.includes(b.value.type) && !isPositiveBuffEffect(b.value));
-					})));
+					f = FilterableEquipDB.some(eq => eq.effects.some(es => x[1].type.includes(es.type) && !es.positive));
 					if (f) part.push(x[1]);
 
 					if (part.length > 0)
 						ret.push(part);
 				} else {
 					// 상수치
-					const f = FilterableEquipDB.some(eq => eq.stats.some(row => row.some(es => {
-						if ("type" in es)
-							return x.type.includes(es.type);
-						else
-							return es.buffs.some(b => x.type.includes(b.value.type));
-					})));
+					const f = FilterableEquipDB.some(eq => eq.effects.some(es => x.type.includes(es.type)));
 					if (f) ret.push(x);
 				}
 			});
@@ -526,17 +492,12 @@ export default class Equips extends Vue {
 		return dict;
 	}
 
-	private HasFilteredEffect (eq: FilterableEquip, validator: (stat: BuffEffect) => boolean) {
-		const isNumeric = (data: string) => {
-			return /^[0-9]+\.?[0-9]*%?$/.test(data);
-		};
-
-		return eq.stats.some(x => x.some(stat => {
-			if ("type" in stat)
-				return validator(stat);
-			else
-				return stat.buffs.some(y => validator(y.value));
-		}));
+	private HasFilteredEffect (eq: FilterableEquip) {
+		return eq.effects.some(y => {
+			return StoreModule.equipEffectFilterListFlatten.some(z => Array.isArray(z)
+				? z.some(_ => _.selected && _.type.includes(y.type) && ((_.pmType > 0 && y.positive) || (_.pmType < 0 && !y.positive)))
+				: z.selected && z.type.includes(y.type));
+		});
 	}
 
 	private FillEquipEffectFilters () {
@@ -556,7 +517,7 @@ export default class Equips extends Vue {
 	}
 
 	private modalEquip (fullKey: string) {
-		this.selectedEquip = EquipDB.find(x => x.fullKey === fullKey) || null;
+		this.selectedEquip = FilterableEquipDB.find(x => x.fullKey === fullKey) || null;
 		this.equipModalDisplay = true;
 	}
 

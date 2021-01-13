@@ -1,11 +1,13 @@
 import LoadDBFactory from "@/libs/DB/DBLoader";
-import Data from "@/json/equip";
+// import Data from "@/json/equip";
 
-import EntitySource from "@/libs/EntitySource";
+// import EntitySource from "@/libs/EntitySource";
 
 import { ACTOR_GRADE, ITEM_TYPE } from "@/libs/Types/Enums";
 import { Equip, EquipItem } from "@/libs/Types/Equip";
 import { BuffStat } from "@/libs/Buffs/Buffs";
+
+import FilterableEquipDB from "./Equip.Filterable";
 
 interface RawEquip {
 	available: boolean;
@@ -19,38 +21,33 @@ interface RawEquip {
 	icon: string;
 	craftable: false | number;
 
-	limit?: string;
+	limit: string[] | null;
 	upgrade: number;
 	source: string[][];
 }
 
-function parseLimit (limit: string | undefined) {
-	if (!limit) return null;
-	return limit.split(",").filter(x => x) as string[] | null;
-}
+// const EquipDB = (Data as RawEquip[])
+// 	.map(x => ({
+// 		available: x.available,
+// 		rarity: x.rarity,
+// 		type: x.type,
+// 		key: x.key,
+// 		fullKey: x.fullKey,
 
-const EquipDB = (Data as RawEquip[])
-	.map(x => ({
-		available: x.available,
-		rarity: x.rarity,
-		type: x.type,
-		key: x.key,
-		fullKey: x.fullKey,
+// 		name: x.name,
+// 		desc: x.desc,
+// 		icon: x.icon,
+// 		craftable: x.craftable,
 
-		name: x.name,
-		desc: x.desc,
-		icon: x.icon,
-		craftable: x.craftable,
-
-		upgrade: x.upgrade,
-		limit: parseLimit(x.limit),
-		source: x.source.map(y => y.map(z => new EntitySource(z))),
-		// stats: x.stats,
-	}) as Equip);
-export default (() => EquipDB)();
+// 		upgrade: x.upgrade,
+// 		limit: x.limit,
+// 		source: x.source.map(y => y.map(z => new EntitySource(z))),
+// 		// stats: x.stats,
+// 	}) as Equip);
+// export default (() => EquipDB)();
 
 export function EquipItemDB (uid: string, callback?: (data: EquipItem | null) => void) {
-	const base = EquipDB.find(y => y.fullKey === uid);
+	const base = FilterableEquipDB.find(y => y.fullKey === uid);
 	if (!base) {
 		if (callback) callback(null);
 		return null;

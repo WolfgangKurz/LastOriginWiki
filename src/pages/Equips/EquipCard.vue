@@ -26,7 +26,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Emit, Prop } from "vue-property-decorator";
 
-import { Equip } from "@/libs/DB/Equip";
+import { FilterableEquip } from "@/libs/Types/Equip.Filterable";
 import EntitySource from "@/libs/EntitySource";
 
 import EquipIcon from "@/components/EquipIcon.vue";
@@ -43,7 +43,7 @@ export default class EquipCard extends Vue {
 		type: Object,
 		required: true,
 	})
-	private equip!: Equip;
+	private equip!: FilterableEquip;
 
 	@Prop({
 		type: Array,

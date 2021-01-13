@@ -16,7 +16,7 @@
 			<b-col cols="8" class="mb-4">
 				<b-dropdown variant="outline-dark">
 					<template #button-content>
-						<template v-if="!SelectedEquip.key">장비를 선택해주세요.</template>
+						<template v-if="!SelectedEquip">장비를 선택해주세요.</template>
 						<template v-else>
 							<equip-icon :image="SelectedEquip.icon" size="40" class="mr-2" />
 							{{ SelectedEquipName }}
@@ -55,10 +55,12 @@ import { Prop, Watch, PropSync, Ref } from "vue-property-decorator";
 import { ACTOR_CLASS, ACTOR_GRADE, ITEM_TYPE, ROLE_TYPE } from "@/libs/Types/Enums";
 
 import { FilterableUnit } from "@/libs/Types/Unit.Filterable";
-import { Equip, EquipItem } from "@/libs/Types/Equip";
+import { FilterableEquip } from "@/libs/Types/Equip.Filterable";
+import { EquipItem } from "@/libs/Types/Equip";
 
 import FilterableUnitDB from "@/libs/DB/Unit.Filterable";
-import EquipDB, { EquipItemDB } from "@/libs/DB/Equip";
+import FilterableEquipDB from "@/libs/DB/Equip.Filterable";
+import { EquipItemDB } from "@/libs/DB/Equip";
 
 import EquipStatus from "@/libs/Buffs/BuffStatus";
 
@@ -69,10 +71,6 @@ import ElemIcon from "@/components/ElemIcon.vue";
 import BuffList from "@/components/BuffList";
 
 import { groupBy } from "@/libs/Functions";
-interface DBData {
-	FilterableUnit: FilterableUnit[];
-	Equip: Equip[];
-}
 
 @Component({
 	components: {
@@ -96,7 +94,7 @@ export default class EquipSelectModal extends Vue {
 		type: Object,
 		default: null,
 	})
-	private equip!: Equip;
+	private equip!: FilterableEquip;
 
 	@Prop({
 		type: Number,
@@ -117,13 +115,13 @@ export default class EquipSelectModal extends Vue {
 	private target!: string;
 
 	private rarity: ACTOR_GRADE = ACTOR_GRADE.SS;
-	private SelectedEquip: Equip = Equip.Empty;
+	private SelectedEquip: FilterableEquip | null = null;
 	private equipLevel: number = 10;
 
 	@Watch("display", { immediate: true })
 	private DisplayWatch (value: boolean) {
 		if (!value)
-			this.SelectedEquip = Equip.Empty;
+			this.SelectedEquip = null;
 		else if (this.equip) {
 			this.SelectedEquip = this.equip;
 			this.equipLevel = this.level;
@@ -133,7 +131,7 @@ export default class EquipSelectModal extends Vue {
 	@Watch("rarity")
 	private DisplayRarity () {
 		const e = this.SelectedEquip;
-		this.SelectEquipGroup(`${e.type}_${e.key}`);
+		this.SelectEquipGroup(e ? `${e.type}_${e.key}` : null);
 	}
 
 	private get LevelList () {
@@ -159,7 +157,7 @@ export default class EquipSelectModal extends Vue {
 			ACTOR_GRADE.S,
 			ACTOR_GRADE.SS,
 		].map(x => ({ value: x, text: table[x] }));
-		if (!this.SelectedEquip.key) return list;
+		if (!this.SelectedEquip) return list;
 
 		const key = this.SelectedEquip.key;
 		const type = this.SelectedEquip.type;
@@ -167,7 +165,7 @@ export default class EquipSelectModal extends Vue {
 		const base = `${type}_${key}_T`;
 		const rarityList = ["", "B", "A", "S", "SS"];
 
-		const rarities = EquipDB
+		const rarities = FilterableEquipDB
 			.filter(x => x.key === key && x.type === type)
 			.map(x => x.rarity)
 			.map(x => ({ value: x, text: table[x] }));
@@ -176,7 +174,7 @@ export default class EquipSelectModal extends Vue {
 	}
 
 	private get EquipGroups () {
-		const group = groupBy(EquipDB, (x) => `${x.type}_${x.key}`);
+		const group = groupBy(FilterableEquipDB, (x) => `${x.type}_${x.key}`);
 		return Object.keys(group)
 			.map(x => group[x])
 			.filter(x_ => {
@@ -243,7 +241,7 @@ export default class EquipSelectModal extends Vue {
 	}
 
 	private get EffectList () {
-		if (!this.SelectedEquip.key) return null;
+		if (!this.SelectedEquip) return null;
 
 		if (this.SelectedEquipData)
 			return this.SelectedEquipData.stats[this.equipLevel];
@@ -254,12 +252,14 @@ export default class EquipSelectModal extends Vue {
 	}
 
 	private get SelectedEquipName () {
-		if (!this.SelectedEquip.key) return "";
+		if (!this.SelectedEquip) return "";
 		return this.SelectedEquip.name.replace(/ (RE|MP|SP|EX)$/, "");
 	}
 
-	private SelectEquipGroup (group: string) {
-		const grp = EquipDB
+	private SelectEquipGroup (group: string | null) {
+		if (!group) return;
+
+		const grp = FilterableEquipDB
 			.filter(x => {
 				const type = ({
 					[ITEM_TYPE.CHIP]: "Chip",
@@ -283,11 +283,11 @@ export default class EquipSelectModal extends Vue {
 		}
 	}
 
-	private Select (equip: Equip | null) {
+	private Select (equip: FilterableEquip | null) {
 		if (!this.SelectedEquipData) return;
 
 		if (!equip)
-			this.$emit("select", { ...Equip.Empty, type: this.type }, 10, []);
+			this.$emit("select", null);
 		else
 			this.$emit("select", equip, this.equipLevel, this.SelectedEquipData);
 	}

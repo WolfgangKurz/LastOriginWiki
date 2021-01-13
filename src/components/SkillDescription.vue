@@ -18,16 +18,11 @@ import UnitCard from "@/pages/Units/UnitCard.vue";
 import EquipCard from "@/pages/Equips/EquipCard.vue";
 
 import { FilterableUnit } from "@/libs/Types/Unit.Filterable";
-import { Equip } from "@/libs/Types/Equip";
+import { FilterableEquip } from "@/libs/Types/Equip.Filterable";
 
 import LazyLoad, { LazyDataType } from "@/libs/LazyData";
 import FilterableUnitDB from "@/libs/DB/Unit.Filterable";
-import EquipDB from "@/libs/DB/Equip";
-
-interface DBData {
-	FilterableUnit: FilterableUnit[];
-	Equip: Equip[];
-}
+import FilterableEquipDB from "@/libs/DB/Equip.Filterable";
 
 @Component({
 	components: {
@@ -219,11 +214,11 @@ export default class SkillDescription extends Vue {
 							[ITEM_TYPE.SPCHIP]: "System",
 							[ITEM_TYPE.SUBEQ]: "Sub",
 						} as Record<ITEM_TYPE, string>;
-						const equips = EquipDB
+						const equips = FilterableEquipDB
 							.filter(y => `${type[y.type]}_${y.key}` === p[1])
 							.sort((a, b) => b.rarity - a.rarity);
 
-						let equip: Equip | null = null;
+						let equip: FilterableEquip | null = null;
 						if (equips.length) equip = equips[0];
 
 						const href = `/equips/${equip ? equip.fullKey : p[1]}`;

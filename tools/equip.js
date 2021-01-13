@@ -38,7 +38,7 @@ function process (auth) {
 				const desc = row[6];
 				const icon = row[7];
 				const craftable = !row[8] ? false : parseInt(row[8], 10);
-				const limit = row[9];
+				const limit = row[9] ? row[9].split(",").filter(f => f) : null;
 
 				const upgrade = parseInt(row[10], 10);
 				const source = [
