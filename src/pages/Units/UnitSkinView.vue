@@ -64,10 +64,10 @@ import Component from "vue-class-component";
 
 import { Prop, Emit, Watch } from "vue-property-decorator";
 
-import { Unit } from "@/libs/DB/Unit";
+import { AssetsRoot, ImageExtension } from "@/libs/Const";
 
 import { SkinInfo } from "@/libs/Types";
-import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { Unit } from "@/libs/Types/Unit";
 
 interface SkinItem extends SkinInfo {
 	isDef: boolean;

@@ -93,15 +93,15 @@
 								<b-tr class="text-center text-white resist-parent">
 									<b-td data-type="fire">
 										<elem-icon inline elem="fire" />
-										<strong class="pl-1">{{ target.res.fire }}%</strong>
+										<strong class="pl-1">{{ (DB && DB.res.fire) || 0 }}%</strong>
 									</b-td>
 									<b-td data-type="ice">
 										<elem-icon inline elem="ice" />
-										<strong class="pl-1">{{ target.res.chill }}%</strong>
+										<strong class="pl-1">{{ (DB && DB.res.chill) || 0 }}%</strong>
 									</b-td>
 									<b-td data-type="lightning">
 										<elem-icon inline elem="lightning" />
-										<strong class="pl-1">{{ target.res.thunder }}%</strong>
+										<strong class="pl-1">{{ (DB && DB.res.thunder) || 0 }}%</strong>
 									</b-td>
 								</b-tr>
 							</b-tbody>
@@ -114,7 +114,7 @@
 										<span class="status-col-head">HP</span>
 									</b-td>
 									<b-td>
-										<div class="status-col-value">{{ StatValue(target.hp, true) }}</div>
+										<div class="status-col-value">{{ StatValue((DB && DB.hp) || [0, 0], true) }}</div>
 									</b-td>
 									<b-td class="text-left" />
 									<b-td />
@@ -126,14 +126,14 @@
 										<span class="status-col-head">공격력</span>
 									</b-td>
 									<b-td>
-										<div class="status-col-value">{{ StatValue(target.atk) }}</div>
+										<div class="status-col-value">{{ StatValue((DB && DB.atk) || [0, 0]) }}</div>
 									</b-td>
 									<b-td class="text-left">
 										<stat-icon inline stat="ACC" />
 										<span class="status-col-head">적중률</span>
 									</b-td>
 									<b-td>
-										<div class="status-col-value">{{ target.acc }}%</div>
+										<div class="status-col-value">{{ (DB && DB.acc) || 0 }}%</div>
 									</b-td>
 								</b-tr>
 
@@ -143,14 +143,14 @@
 										<span class="status-col-head">치명타</span>
 									</b-td>
 									<b-td>
-										<div class="status-col-value">{{ target.cri }}%</div>
+										<div class="status-col-value">{{ (DB && DB.cri) || 0 }}%</div>
 									</b-td>
 									<b-td class="text-left">
 										<stat-icon inline stat="DEF" />
 										<span class="status-col-head">방어력</span>
 									</b-td>
 									<b-td>
-										<div class="status-col-value">{{ StatValue(target.def) }}</div>
+										<div class="status-col-value">{{ StatValue((DB && DB.def) || [0, 0]) }}</div>
 									</b-td>
 								</b-tr>
 
@@ -160,14 +160,14 @@
 										<span class="status-col-head">회피율</span>
 									</b-td>
 									<b-td>
-										<div class="status-col-value">{{ target.eva }}%</div>
+										<div class="status-col-value">{{ (DB && DB.eva) || 0 }}%</div>
 									</b-td>
 									<b-td class="text-left">
 										<stat-icon inline stat="SPD" />
 										<span class="status-col-head">행동력</span>
 									</b-td>
 									<b-td>
-										<div class="status-col-value">{{ target.spd }}</div>
+										<div class="status-col-value">{{ (DB && DB.spd) || 0 }}</div>
 									</b-td>
 								</b-tr>
 							</b-tbody>
@@ -284,9 +284,12 @@ import BuffList from "@/components/BuffList";
 import { ACTOR_GRADE, ITEM_TYPE } from "@/libs/Types/Enums";
 import EntitySource from "@/libs/EntitySource";
 
-import EnemyDB, { Enemy, EnemySkill } from "@/libs/DB/Enemy";
-import UnitData from "@/libs/DB/Unit";
-import MapDB, { Worlds } from "@/libs/DB/Map";
+import { Enemy, EnemySkill } from "@/libs/Types/Enemy";
+import { FilterableEnemy } from "@/libs/Types/Enemy.Filterable";
+
+import LazyLoad, { LazyDataType } from "@/libs/LazyData";
+import EnemyDB from "@/libs/DB/Enemy";
+import FilterableEenemyDB from "@/libs/DB/Enemy.Filterable";
 
 @Component({
 	components: {
@@ -302,20 +305,21 @@ import MapDB, { Worlds } from "@/libs/DB/Map";
 	},
 })
 export default class EnemyModal extends Vue {
-	private internalEnemyDB: Enemy[] | null = null;
-	private get EnemyDB () {
-		if (this.internalEnemyDB) return this.internalEnemyDB;
-		return EnemyDB((x) => {
-			this.internalEnemyDB = x;
-		});
-	}
+	private DB: LazyDataType<Enemy> = null;
+	private InitialDB () {
+		this.DB = null;
 
-	private internalMapDB: Worlds | null = null;
-	private get MapDB () {
-		if (this.internalMapDB) return this.internalMapDB;
-		return MapDB((x) => {
-			this.internalMapDB = x;
-		});
+		const target = this.target;
+		if (!target) return;
+
+		LazyLoad(
+			r => {
+				const Equip = r[0] as Enemy;
+				if (!Equip) return (this.DB = false);
+				this.DB = Equip;
+			},
+			cb => EnemyDB(target.id, x => cb(x)),
+		);
 	}
 
 	@PropSync("display", {
@@ -330,7 +334,7 @@ export default class EnemyModal extends Vue {
 			return typeof v === "object" || v === null;
 		},
 	})
-	private enemy!: Enemy;
+	private enemy!: FilterableEnemy;
 
 	@Prop({
 		type: Number,
@@ -352,6 +356,11 @@ export default class EnemyModal extends Vue {
 		this.targetId = this.enemy ? this.enemy.id : "";
 	}
 
+	@Watch("targetId")
+	private WatchTargetId () {
+		this.InitialDB();
+	}
+
 	private get AssetsRoot () {
 		return AssetsRoot;
 	}
@@ -362,8 +371,7 @@ export default class EnemyModal extends Vue {
 
 	private get target () {
 		if (!this.enemy) return null;
-		if (!this.EnemyDB) return null;
-		return this.EnemyDB.find(x => x.id === this.targetId) || null;
+		return FilterableEenemyDB.find(x => x.id === this.targetId) || null;
 	}
 
 	private get isEWEnemy () {
@@ -373,9 +381,8 @@ export default class EnemyModal extends Vue {
 
 	private get FamilyList () {
 		if (!this.enemy) return [];
-		if (!this.EnemyDB) return [];
 
-		return this.EnemyDB
+		return FilterableEenemyDB
 			.filter(x => (x.name === this.enemy.name))
 			.map((x, i) => ({
 				value: x.id,
@@ -384,67 +391,36 @@ export default class EnemyModal extends Vue {
 	}
 
 	private get Skills () {
-		if (!this.target) return [];
-		const list: Array<EnemySkill | undefined> = this.target.skills;
+		if (!this.DB) return [];
+		const list: Array<EnemySkill | undefined> = this.DB.skills;
 		while (list.length < 6) list.push(undefined);
 		return list;
 	}
 
 	private get Sources () {
-		if (!this.target) return [];
-
-		const db = this.MapDB;
-		if (!db) return [];
-		// return this.target.source;
+		const target = this.target;
+		if (!target) return [];
 
 		const ret: string[][] = [];
-		const keys: string[] = [];
 
-		Object.keys(db).forEach(x =>
-			Object.keys(db[x]).forEach(y =>
-				db[x][y].list.forEach(z =>
-					z.wave && z.wave.forEach(w => w.forEach(i =>
-						i.e.enemy.filter(e => e && e.id === this.targetId).forEach(e => {
-							if (!keys.includes(x)) keys.push(x);
-							const idx = keys.indexOf(x);
-
-							while (ret.length <= idx)
-								ret.push([]);
-
-							if (x === "Story" || x === "Cha")
-								ret[idx].push(z.text);
-							else
-								ret[idx].push(`Ev:${x}:${z.text}`);
-						}),
-					)),
-				),
-			),
-		);
+		Object.keys(target.used)
+			.forEach(x => ret.push(target.used[x]));
 
 		ret.forEach((x, i) => (ret[i] = ArrayUnique(x)));
 		return ret.map(x => x.map(y => new EntitySource(y)));
 	}
 
-	private get RarityDisplay () {
-		return {
-			[ACTOR_GRADE.B]: "B",
-			[ACTOR_GRADE.A]: "A",
-			[ACTOR_GRADE.S]: "S",
-			[ACTOR_GRADE.SS]: "SS",
-		};
-	}
-
 	private GetRates (skill: EnemySkill) {
-		if (!this.target) return [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+		if (!this.DB) return [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-		return new Array(10).fill(skill.buff.rate * this.StatValue(this.target.atk));
+		return new Array(10).fill(skill.buff.rate * this.StatValue(this.DB.atk));
 	}
 
 	private Description (skill: EnemySkill) {
-		if (!this.target) return "";
+		if (!this.DB) return "";
 
 		const v = Decimal.mul(
-			this.StatValue(this.target.atk),
+			this.StatValue(this.DB.atk),
 			skill.buff.rate,
 		)
 			.floor()
@@ -486,6 +462,10 @@ export default class EnemyModal extends Vue {
 		});
 
 		return output;
+	}
+
+	private mounted () {
+		this.InitialDB();
 	}
 }
 </script>

@@ -157,6 +157,7 @@
 </template>
 
 <script lang="ts">
+import Decimal from "decimal.js";
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, Watch, PropSync } from "vue-property-decorator";
@@ -170,12 +171,13 @@ import ElemIcon from "@/components/ElemIcon.vue";
 import EquipIcon from "@/components/EquipIcon.vue";
 import SummonBadge from "./SummonBadge.vue";
 
-import { ACTOR_GRADE } from "@/libs/Types/Enums";
-import SkillData, { SkillEntity, RawSkillEntity, SkillSummonInfo } from "@/libs/DB/Skill";
-import SummonData, { Summon } from "@/libs/DB/Summon";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
+
+import { ACTOR_GRADE } from "@/libs/Types/Enums";
 import { BuffStat } from "@/libs/Buffs/Buffs";
-import Decimal from "decimal.js";
+
+import { SkillEntity, RawSkillEntity, SkillSummonInfo } from "@/libs/Types/Skill";
+import { Summon } from "@/libs/Types/Summon";
 
 interface SkillItem extends SkillEntity {
 	index: number;
@@ -196,14 +198,6 @@ type SkillTable = Record<string, SkillItem>;
 	},
 })
 export default class UnitSkillTable extends Vue {
-	private internalSummonDB: Summon[] | null = null;
-	private get SummonDB () {
-		if (this.internalSummonDB) return this.internalSummonDB;
-		return SummonData((x) => {
-			this.internalSummonDB = x;
-		});
-	}
-
 	@Prop({
 		type: Object,
 		required: true,

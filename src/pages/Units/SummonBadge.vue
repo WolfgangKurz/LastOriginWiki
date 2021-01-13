@@ -239,10 +239,11 @@ import SkillDescription from "@/components/SkillDescription.vue";
 import BuffList from "@/components/BuffList";
 
 import { ACTOR_GRADE, ITEM_TYPE } from "@/libs/Types/Enums";
-import SummonDB, { Summon, SummonSkill } from "@/libs/DB/Summon";
-import UnitData from "@/libs/DB/Unit";
-import MapData from "@/libs/DB/Map";
-import { SkillSummonInfo } from "@/libs/DB/Skill";
+
+import { Summon, SummonSkill } from "@/libs/Types/Summon";
+import { SkillSummonInfo } from "@/libs/Types/Skill";
+
+import SummonDB from "@/libs/DB/Summon";
 
 @Component({
 	components: {
@@ -259,14 +260,6 @@ import { SkillSummonInfo } from "@/libs/DB/Skill";
 	},
 })
 export default class SummonBadge extends Vue {
-	private internalDB: Summon[] | null = null;
-	private get DB () {
-		if (this.internalDB) return this.internalDB;
-		return SummonDB((x) => {
-			this.internalDB = x;
-		});
-	}
-
 	@Prop({
 		type: Object,
 	})
@@ -293,18 +286,16 @@ export default class SummonBadge extends Vue {
 
 	private get Summon () {
 		if (!this.summon) return undefined;
-		if (!this.DB) return undefined;
 
 		const summon = this.summon;
-		return this.DB.find(x => x.id === summon.char);
+		return SummonDB.find(x => x.id === summon.char);
 	}
 
 	private get FamilyList () {
 		if (!this.Summon) return [];
-		if (!this.DB) return [];
 
 		const summon = this.Summon;
-		return this.DB
+		return SummonDB
 			.filter(x => x.name === summon.name)
 			.map((x, i) => ({
 				value: x.id,

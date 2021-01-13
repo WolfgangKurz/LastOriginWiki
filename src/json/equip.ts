@@ -9,7 +9,7 @@ export default [
     "desc": "출력을 강화해 공격력을 높입니다.",
     "icon": "UI_Icon_Equip_Chip_Atk_T1",
     "craftable": 600,
-    "limit": "",
+    "limit": null,
     "upgrade": 100,
     "source": [
       [
@@ -260,7 +260,7 @@ export default [
     "desc": "출력을 강화해 공격력을 높입니다.",
     "icon": "UI_Icon_Equip_Chip_Atk_T2",
     "craftable": 1200,
-    "limit": "",
+    "limit": null,
     "upgrade": 150,
     "source": [
       [
@@ -385,7 +385,7 @@ export default [
     "desc": "출력을 강화해 공격력을 높입니다.",
     "icon": "UI_Icon_Equip_Chip_Atk_T3",
     "craftable": 1800,
-    "limit": "",
+    "limit": null,
     "upgrade": 250,
     "source": [
       [
@@ -526,7 +526,7 @@ export default [
     "desc": "출력을 강화해 공격력을 높입니다.",
     "icon": "UI_Icon_Equip_Chip_Atk_T4",
     "craftable": 2400,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [
       [
@@ -671,7 +671,7 @@ export default [
     "desc": "연산 성능을 강화해 적중을 높입니다.",
     "icon": "UI_Icon_Equip_Chip_Acc_T1",
     "craftable": 300,
-    "limit": "",
+    "limit": null,
     "upgrade": 100,
     "source": [
       [
@@ -915,7 +915,7 @@ export default [
     "desc": "연산 성능을 강화해 적중을 높입니다.",
     "icon": "UI_Icon_Equip_Chip_Acc_T2",
     "craftable": 600,
-    "limit": "",
+    "limit": null,
     "upgrade": 150,
     "source": [
       [
@@ -1045,7 +1045,7 @@ export default [
     "desc": "연산 성능을 강화해 적중을 높입니다.",
     "icon": "UI_Icon_Equip_Chip_Acc_T3",
     "craftable": 900,
-    "limit": "",
+    "limit": null,
     "upgrade": 250,
     "source": [
       [
@@ -1190,7 +1190,7 @@ export default [
     "desc": "연산 성능을 강화해 적중을 높입니다.",
     "icon": "UI_Icon_Equip_Chip_Acc_T4",
     "craftable": 1200,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [
       [
@@ -1329,7 +1329,7 @@ export default [
     "desc": "내 충격 성능을 강화해 방어를 높입니다.",
     "icon": "UI_Icon_Equip_Chip_Def_T1",
     "craftable": 480,
-    "limit": "",
+    "limit": null,
     "upgrade": 100,
     "source": [
       [
@@ -1584,7 +1584,7 @@ export default [
     "desc": "내 충격 성능을 강화해 방어를 높입니다.",
     "icon": "UI_Icon_Equip_Chip_Def_T2",
     "craftable": 960,
-    "limit": "",
+    "limit": null,
     "upgrade": 150,
     "source": [
       [
@@ -1710,7 +1710,7 @@ export default [
     "desc": "내 충격 성능을 강화해 방어를 높입니다.",
     "icon": "UI_Icon_Equip_Chip_Def_T3",
     "craftable": 1440,
-    "limit": "",
+    "limit": null,
     "upgrade": 250,
     "source": [
       [
@@ -1852,7 +1852,7 @@ export default [
     "desc": "내 충격 성능을 강화해 방어를 높입니다.",
     "icon": "UI_Icon_Equip_Chip_Def_T4",
     "craftable": 1920,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [
       [
@@ -1992,7 +1992,7 @@ export default [
     "desc": "반응 속도를 향상시켜 회피를 높입니다.",
     "icon": "UI_Icon_Equip_Chip_Ev_T1",
     "craftable": 360,
-    "limit": "",
+    "limit": null,
     "upgrade": 100,
     "source": [
       [
@@ -2227,7 +2227,7 @@ export default [
     "desc": "반응 속도를 향상시켜 회피를 높입니다.",
     "icon": "UI_Icon_Equip_Chip_Ev_T2",
     "craftable": 720,
-    "limit": "",
+    "limit": null,
     "upgrade": 150,
     "source": [
       [
@@ -2353,7 +2353,7 @@ export default [
     "desc": "반응 속도를 향상시켜 회피를 높입니다.",
     "icon": "UI_Icon_Equip_Chip_Ev_T3",
     "craftable": 1080,
-    "limit": "",
+    "limit": null,
     "upgrade": 250,
     "source": [
       [
@@ -2495,7 +2495,7 @@ export default [
     "desc": "반응 속도를 향상시켜 회피를 높입니다.",
     "icon": "UI_Icon_Equip_Chip_Ev_T4",
     "craftable": 1440,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [
       [
@@ -2631,7 +2631,7 @@ export default [
     "desc": "적의 약점을 분석해 치명타를 높입니다.",
     "icon": "UI_Icon_Equip_Chip_Cri_T1",
     "craftable": 720,
-    "limit": "",
+    "limit": null,
     "upgrade": 100,
     "source": [
       [
@@ -2768,7 +2768,7 @@ export default [
     "desc": "적의 약점을 분석해 치명타를 높입니다.",
     "icon": "UI_Icon_Equip_Chip_Cri_T2",
     "craftable": 1440,
-    "limit": "",
+    "limit": null,
     "upgrade": 150,
     "source": [
       [
@@ -2893,7 +2893,7 @@ export default [
     "desc": "적의 약점을 분석해 치명타를 높입니다.",
     "icon": "UI_Icon_Equip_Chip_Cri_T3",
     "craftable": 2160,
-    "limit": "",
+    "limit": null,
     "upgrade": 250,
     "source": [
       [
@@ -3034,7 +3034,7 @@ export default [
     "desc": "적의 약점을 분석해 치명타를 높입니다.",
     "icon": "UI_Icon_Equip_Chip_Cri_T4",
     "craftable": 2880,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [
       [
@@ -3175,7 +3175,7 @@ export default [
     "desc": "회로 내구도를 높여 HP가 증가합니다.",
     "icon": "UI_Icon_Equip_Chip_Hp_T1",
     "craftable": 420,
-    "limit": "",
+    "limit": null,
     "upgrade": 100,
     "source": [
       [
@@ -3307,7 +3307,7 @@ export default [
     "desc": "회로 내구도를 높여 HP가 증가합니다.",
     "icon": "UI_Icon_Equip_Chip_Hp_T2",
     "craftable": 840,
-    "limit": "",
+    "limit": null,
     "upgrade": 150,
     "source": [
       [
@@ -3432,7 +3432,7 @@ export default [
     "desc": "회로 내구도를 높여 HP가 증가합니다.",
     "icon": "UI_Icon_Equip_Chip_Hp_T3",
     "craftable": 1260,
-    "limit": "",
+    "limit": null,
     "upgrade": 250,
     "source": [
       [
@@ -3564,7 +3564,7 @@ export default [
     "desc": "회로 내구도를 높여 HP가 증가합니다.",
     "icon": "UI_Icon_Equip_Chip_Hp_T4",
     "craftable": 1680,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [
       [
@@ -3695,7 +3695,7 @@ export default [
     "desc": "라운드 개시 시, 해로운 효과 저항력을 높여주고 일정 확률로 해로운 효과를 해제합니다.",
     "icon": "UI_Icon_Equip_Chip_Debuff_Res_T1",
     "craftable": 900,
-    "limit": "",
+    "limit": null,
     "upgrade": 150,
     "source": [
       [
@@ -4466,7 +4466,7 @@ export default [
     "desc": "라운드 개시 시, 해로운 효과 저항력을 높여주고 일정 확률로 해로운 효과를 해제합니다.",
     "icon": "UI_Icon_Equip_Chip_Debuff_Res_T2",
     "craftable": 1800,
-    "limit": "",
+    "limit": null,
     "upgrade": 225,
     "source": [
       [
@@ -5231,7 +5231,7 @@ export default [
     "desc": "라운드 개시 시, 해로운 효과 저항력을 높여주고 일정 확률로 해로운 효과를 해제합니다.",
     "icon": "UI_Icon_Equip_Chip_Debuff_Res_T3",
     "craftable": 2700,
-    "limit": "",
+    "limit": null,
     "upgrade": 375,
     "source": [
       [
@@ -5997,7 +5997,7 @@ export default [
     "desc": "라운드 개시 시, 해로운 효과 저항력을 높여주고 일정 확률로 해로운 효과를 해제합니다.",
     "icon": "UI_Icon_Equip_Chip_Debuff_Res_T4",
     "craftable": 3600,
-    "limit": "",
+    "limit": null,
     "upgrade": 750,
     "source": [
       [
@@ -6788,7 +6788,7 @@ export default [
     "desc": "각 처리 성능을 향상시켜 행동력이 증가합니다.",
     "icon": "UI_Icon_Equip_Chip_Spd_T1",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 200,
     "source": [
       [
@@ -6926,7 +6926,7 @@ export default [
     "desc": "각 처리 성능을 향상시켜 행동력이 증가합니다.",
     "icon": "UI_Icon_Equip_Chip_Spd_T2",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 300,
     "source": [
       [
@@ -7063,7 +7063,7 @@ export default [
     "desc": "각 처리 성능을 향상시켜 행동력이 증가합니다.",
     "icon": "UI_Icon_Equip_Chip_Spd_T3",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [
       [
@@ -7201,7 +7201,7 @@ export default [
     "desc": "각 처리 성능을 향상시켜 행동력이 증가합니다.",
     "icon": "UI_Icon_Equip_Chip_Spd_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1000,
     "source": [
       [
@@ -7343,7 +7343,7 @@ export default [
     "desc": "공격, 방어, 적중, 회피를 올려주는 표준형 전투 OS입니다. 해당 OS의 효과는 스킬 부가 효과 발동에 필요한 조건을 만족시킬 수 있습니다.",
     "icon": "UI_Icon_Equip_System_Normal_T1",
     "craftable": 1200,
-    "limit": "",
+    "limit": null,
     "upgrade": 200,
     "source": [
       [
@@ -8551,7 +8551,7 @@ export default [
     "desc": "공격, 방어, 적중, 회피를 올려주는 표준형 전투 OS입니다. 해당 OS의 효과는 스킬 부가 효과 발동에 필요한 조건을 만족시킬 수 있습니다.",
     "icon": "UI_Icon_Equip_System_Normal_T2",
     "craftable": 2400,
-    "limit": "",
+    "limit": null,
     "upgrade": 300,
     "source": [
       [
@@ -9762,7 +9762,7 @@ export default [
     "desc": "공격, 방어, 적중, 회피를 올려주는 표준형 전투 OS입니다. 해당 OS의 효과는 스킬 부가 효과 발동에 필요한 조건을 만족시킬 수 있습니다.",
     "icon": "UI_Icon_Equip_System_Normal_T3",
     "craftable": 3600,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [
       [
@@ -10985,7 +10985,7 @@ export default [
     "desc": "공격, 방어, 적중, 회피를 올려주는 표준형 전투 OS입니다. 해당 OS의 효과는 스킬 부가 효과 발동에 필요한 조건을 만족시킬 수 있습니다.",
     "icon": "UI_Icon_Equip_System_Normal_T4",
     "craftable": 4800,
-    "limit": "",
+    "limit": null,
     "upgrade": 1000,
     "source": [
       [
@@ -12206,7 +12206,7 @@ export default [
     "desc": "공격에만 집중하는 전투 OS입니다.",
     "icon": "UI_Icon_Equip_System_Assault_T1",
     "craftable": 1500,
-    "limit": "",
+    "limit": null,
     "upgrade": 200,
     "source": [
       [
@@ -13123,7 +13123,7 @@ export default [
     "desc": "공격에만 집중하는 전투 OS입니다.",
     "icon": "UI_Icon_Equip_System_Assault_T2",
     "craftable": 3000,
-    "limit": "",
+    "limit": null,
     "upgrade": 300,
     "source": [
       [
@@ -14040,7 +14040,7 @@ export default [
     "desc": "공격에만 집중하는 전투 OS입니다.",
     "icon": "UI_Icon_Equip_System_Assault_T3",
     "craftable": 4500,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [
       [
@@ -14963,7 +14963,7 @@ export default [
     "desc": "공격에만 집중하는 전투 OS입니다.",
     "icon": "UI_Icon_Equip_System_Assault_T4",
     "craftable": 6000,
-    "limit": "",
+    "limit": null,
     "upgrade": 1000,
     "source": [
       [
@@ -15884,7 +15884,7 @@ export default [
     "desc": "방어에 집중하는 전투 OS 입니다.",
     "icon": "UI_Icon_Equip_System_Defense_T1",
     "craftable": 1380,
-    "limit": "",
+    "limit": null,
     "upgrade": 200,
     "source": [
       [
@@ -16586,7 +16586,7 @@ export default [
     "desc": "방어에 집중하는 전투 OS 입니다.",
     "icon": "UI_Icon_Equip_System_Defense_T2",
     "craftable": 2760,
-    "limit": "",
+    "limit": null,
     "upgrade": 300,
     "source": [
       [
@@ -17294,7 +17294,7 @@ export default [
     "desc": "방어에 집중하는 전투 OS 입니다.",
     "icon": "UI_Icon_Equip_System_Defense_T3",
     "craftable": 4140,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [
       [
@@ -18014,7 +18014,7 @@ export default [
     "desc": "방어에 집중하는 전투 OS 입니다.",
     "icon": "UI_Icon_Equip_System_Defense_T4",
     "craftable": 5520,
-    "limit": "",
+    "limit": null,
     "upgrade": 1000,
     "source": [
       [
@@ -18741,7 +18741,9 @@ export default [
     "desc": "지원기 전용 시스템으로, 공격받으면 일정 확률로 반격합니다.",
     "icon": "UI_Icon_Equip_System_Sniper_T1",
     "craftable": 1440,
-    "limit": "Supporter",
+    "limit": [
+      "Supporter"
+    ],
     "upgrade": 200,
     "source": [],
     "stats": [
@@ -19285,7 +19287,9 @@ export default [
     "desc": "지원기 전용 시스템으로, 공격받으면 일정 확률로 반격합니다.",
     "icon": "UI_Icon_Equip_System_Sniper_T2",
     "craftable": 2880,
-    "limit": "Supporter",
+    "limit": [
+      "Supporter"
+    ],
     "upgrade": 300,
     "source": [
       [
@@ -19833,7 +19837,9 @@ export default [
     "desc": "지원기 전용 시스템으로, 공격받으면 일정 확률로 반격합니다.",
     "icon": "UI_Icon_Equip_System_Sniper_T3",
     "craftable": 4320,
-    "limit": "Supporter",
+    "limit": [
+      "Supporter"
+    ],
     "upgrade": 500,
     "source": [
       [
@@ -20384,7 +20390,9 @@ export default [
     "desc": "지원기 전용 시스템으로, 공격받으면 일정 확률로 반격합니다.",
     "icon": "UI_Icon_Equip_System_Sniper_T4",
     "craftable": 5760,
-    "limit": "Supporter",
+    "limit": [
+      "Supporter"
+    ],
     "upgrade": 1000,
     "source": [
       [
@@ -20934,7 +20942,7 @@ export default [
     "desc": "강력한 공격을 위한 전투 OS로, 공격력이 증가하지만 사거리가 감소합니다.",
     "icon": "UI_Icon_Equip_System_Highspd_T1",
     "craftable": 1620,
-    "limit": "",
+    "limit": null,
     "upgrade": 200,
     "source": [
       [
@@ -21642,7 +21650,7 @@ export default [
     "desc": "강력한 공격을 위한 전투 OS로, 공격력이 증가하지만 사거리가 감소합니다.",
     "icon": "UI_Icon_Equip_System_Highspd_T2",
     "craftable": 3240,
-    "limit": "",
+    "limit": null,
     "upgrade": 300,
     "source": [
       [
@@ -22354,7 +22362,7 @@ export default [
     "desc": "강력한 공격을 위한 전투 OS로, 공격력이 증가하지만 사거리가 감소합니다.",
     "icon": "UI_Icon_Equip_System_Highspd_T3",
     "craftable": 4860,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [
       [
@@ -23073,7 +23081,7 @@ export default [
     "desc": "강력한 공격을 위한 전투 OS로, 공격력이 증가하지만 사거리가 감소합니다.",
     "icon": "UI_Icon_Equip_System_Highspd_T4",
     "craftable": 6480,
-    "limit": "",
+    "limit": null,
     "upgrade": 1000,
     "source": [
       [
@@ -23789,7 +23797,7 @@ export default [
     "desc": "정밀 공격을 위한 전투 OS로, 공격력 / 적중 / 치명타가 증가하지만 행동력이 감소합니다.\n라운드 개시 시, 적중 감소 효과를 해제합니다.",
     "icon": "UI_Icon_Equip_System_Maneuver_T1",
     "craftable": 2400,
-    "limit": "",
+    "limit": null,
     "upgrade": 200,
     "source": [
       [
@@ -24926,7 +24934,7 @@ export default [
     "desc": "정밀 공격을 위한 전투 OS로, 공격력 / 적중 / 치명타가 증가하지만 행동력이 감소합니다.\n라운드 개시 시, 적중 감소 효과를 해제합니다.",
     "icon": "UI_Icon_Equip_System_Maneuver_T2",
     "craftable": 3600,
-    "limit": "",
+    "limit": null,
     "upgrade": 300,
     "source": [
       [
@@ -26063,7 +26071,7 @@ export default [
     "desc": "정밀 공격을 위한 전투 OS로, 공격력 / 적중 / 치명타가 증가하지만 행동력이 감소합니다.\n라운드 개시 시, 적중 감소 효과를 해제합니다.",
     "icon": "UI_Icon_Equip_System_Maneuver_T3",
     "craftable": 4800,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [
       [
@@ -27203,7 +27211,7 @@ export default [
     "desc": "정밀 공격을 위한 전투 OS로, 공격력 / 적중 / 치명타가 증가하지만 행동력이 감소합니다.\n라운드 개시 시, 적중 감소 효과를 해제합니다.",
     "icon": "UI_Icon_Equip_System_Maneuver_T4",
     "craftable": 7200,
-    "limit": "",
+    "limit": null,
     "upgrade": 1000,
     "source": [
       [
@@ -28340,7 +28348,7 @@ export default [
     "desc": "기동형에 대응하기 위한 전투 OS 입니다.",
     "icon": "UI_Icon_Equip_System_AntiAir_T1",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 200,
     "source": [
       [
@@ -28874,7 +28882,7 @@ export default [
     "desc": "기동형에 대응하기 위한 전투 OS 입니다.",
     "icon": "UI_Icon_Equip_System_AntiAir_T2",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 300,
     "source": [
       [
@@ -29412,7 +29420,7 @@ export default [
     "desc": "기동형에 대응하기 위한 전투 OS 입니다.",
     "icon": "UI_Icon_Equip_System_AntiAir_T3",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [
       [
@@ -29958,7 +29966,7 @@ export default [
     "desc": "기동형에 대응하기 위한 전투 OS 입니다.",
     "icon": "UI_Icon_Equip_System_AntiAir_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1000,
     "source": [
       [
@@ -30498,7 +30506,7 @@ export default [
     "desc": "경장형에 대응하기 위한 전투 OS 입니다.",
     "icon": "UI_Icon_Equip_System_AntiTrooper_T1",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 200,
     "source": [
       [
@@ -31030,7 +31038,7 @@ export default [
     "desc": "경장형에 대응하기 위한 전투 OS 입니다.",
     "icon": "UI_Icon_Equip_System_AntiTrooper_T2",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 300,
     "source": [
       [
@@ -31568,7 +31576,7 @@ export default [
     "desc": "경장형에 대응하기 위한 전투 OS 입니다.",
     "icon": "UI_Icon_Equip_System_AntiTrooper_T3",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [
       [
@@ -32118,7 +32126,7 @@ export default [
     "desc": "경장형에 대응하기 위한 전투 OS 입니다.",
     "icon": "UI_Icon_Equip_System_AntiTrooper_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1000,
     "source": [
       [
@@ -32659,7 +32667,7 @@ export default [
     "desc": "중장형에 대응하기 위한 전투 OS 입니다.",
     "icon": "UI_Icon_Equip_System_AntiArmor_T1",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 200,
     "source": [
       [
@@ -33191,7 +33199,7 @@ export default [
     "desc": "중장형에 대응하기 위한 전투 OS 입니다.",
     "icon": "UI_Icon_Equip_System_AntiArmor_T2",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 300,
     "source": [
       [
@@ -33724,7 +33732,7 @@ export default [
     "desc": "중장형에 대응하기 위한 전투 OS 입니다.",
     "icon": "UI_Icon_Equip_System_AntiArmor_T3",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [
       [
@@ -34270,7 +34278,7 @@ export default [
     "desc": "중장형에 대응하기 위한 전투 OS 입니다.",
     "icon": "UI_Icon_Equip_System_AntiArmor_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1000,
     "source": [
       [
@@ -34813,7 +34821,7 @@ export default [
     "desc": "학습형 OS로 인해 전투 승리 시, 획득 경험치가 증가합니다.",
     "icon": "UI_Icon_Equip_System_Exp_T1",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 250,
     "source": [
       [
@@ -35307,7 +35315,7 @@ export default [
     "desc": "학습형 OS로 인해 전투 승리 시, 획득 경험치가 증가합니다.",
     "icon": "UI_Icon_Equip_System_Exp_T2",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 375,
     "source": [
       [
@@ -35802,7 +35810,7 @@ export default [
     "desc": "학습형 OS로 인해 전투 승리 시, 획득 경험치가 증가합니다.",
     "icon": "UI_Icon_Equip_System_Exp_T3",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 625,
     "source": [
       [
@@ -36305,7 +36313,7 @@ export default [
     "desc": "학습형 OS로 인해 전투 승리 시, 획득 경험치가 증가합니다.",
     "icon": "UI_Icon_Equip_System_Exp_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1250,
     "source": [
       [
@@ -36804,7 +36812,7 @@ export default [
     "desc": "에너지 팩의 보조로, 매 라운드 AP가 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_EnergyPack_T1",
     "craftable": 1920,
-    "limit": "",
+    "limit": null,
     "upgrade": 150,
     "source": [
       [
@@ -37319,7 +37327,7 @@ export default [
     "desc": "에너지 팩의 보조로, 매 라운드 AP가 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_EnergyPack_T2",
     "craftable": 2880,
-    "limit": "",
+    "limit": null,
     "upgrade": 225,
     "source": [
       [
@@ -37837,7 +37845,7 @@ export default [
     "desc": "에너지 팩의 보조로, 매 라운드 AP가 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_EnergyPack_T3",
     "craftable": 3840,
-    "limit": "",
+    "limit": null,
     "upgrade": 375,
     "source": [
       [
@@ -38364,7 +38372,7 @@ export default [
     "desc": "에너지 팩의 보조로, 매 라운드 AP가 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_EnergyPack_T4",
     "craftable": 7680,
-    "limit": "",
+    "limit": null,
     "upgrade": 750,
     "source": [
       [
@@ -38901,7 +38909,9 @@ export default [
     "desc": "공격기 전용 관측 장비입니다.\n라운드 개시 시, 사거리가 증가하며 일정 확률로 사거리 감소 효과를 해제합니다.",
     "icon": "UI_Icon_Equip_Sub_Observer_T1",
     "craftable": false,
-    "limit": "Attacker",
+    "limit": [
+      "Attacker"
+    ],
     "upgrade": 150,
     "source": [],
     "stats": [
@@ -39731,7 +39741,9 @@ export default [
     "desc": "공격기 전용 관측 장비입니다.\n라운드 개시 시, 사거리가 증가하며 일정 확률로 사거리 감소 효과를 해제합니다.",
     "icon": "UI_Icon_Equip_Sub_Observer_T2",
     "craftable": false,
-    "limit": "Attacker",
+    "limit": [
+      "Attacker"
+    ],
     "upgrade": 225,
     "source": [],
     "stats": [
@@ -40561,7 +40573,9 @@ export default [
     "desc": "공격기 전용 관측 장비입니다.\n라운드 개시 시, 사거리가 증가하며 일정 확률로 사거리 감소 효과를 해제합니다.",
     "icon": "UI_Icon_Equip_Sub_Observer_T3",
     "craftable": false,
-    "limit": "Attacker",
+    "limit": [
+      "Attacker"
+    ],
     "upgrade": 375,
     "source": [
       [
@@ -41398,7 +41412,9 @@ export default [
     "desc": "공격기 전용 관측 장비입니다.\n라운드 개시 시, 사거리가 증가하며 일정 확률로 사거리 감소 효과를 해제합니다.",
     "icon": "UI_Icon_Equip_Sub_Observer_T4",
     "craftable": false,
-    "limit": "Attacker",
+    "limit": [
+      "Attacker"
+    ],
     "upgrade": 750,
     "source": [
       [
@@ -42244,7 +42260,9 @@ export default [
     "desc": "중장형 전용 특수 장갑입니다. 전투 개시 후, 일정 횟수 공격에 대한 받는 피해가 감소합니다.",
     "icon": "UI_Icon_Equip_Sub_SpaceArmor_T1",
     "craftable": 2100,
-    "limit": "Heavy",
+    "limit": [
+      "Heavy"
+    ],
     "upgrade": 150,
     "source": [
       [
@@ -42851,7 +42869,9 @@ export default [
     "desc": "중장형 전용 특수 장갑입니다. 전투 개시 후, 일정 횟수 공격에 대한 받는 피해가 감소합니다.",
     "icon": "UI_Icon_Equip_Sub_SpaceArmor_T2",
     "craftable": 4200,
-    "limit": "Heavy",
+    "limit": [
+      "Heavy"
+    ],
     "upgrade": 225,
     "source": [
       [
@@ -43461,7 +43481,9 @@ export default [
     "desc": "중장형 전용 특수 장갑입니다. 전투 개시 후, 일정 횟수 공격에 대한 받는 피해가 감소합니다.",
     "icon": "UI_Icon_Equip_Sub_SpaceArmor_T3",
     "craftable": 6300,
-    "limit": "Heavy",
+    "limit": [
+      "Heavy"
+    ],
     "upgrade": 375,
     "source": [
       [
@@ -44076,7 +44098,9 @@ export default [
     "desc": "중장형 전용 특수 장갑입니다. 전투 개시 후, 일정 횟수 공격에 대한 받는 피해가 감소합니다.",
     "icon": "UI_Icon_Equip_Sub_SpaceArmor_T4",
     "craftable": 8400,
-    "limit": "Heavy",
+    "limit": [
+      "Heavy"
+    ],
     "upgrade": 750,
     "source": [
       [
@@ -44688,7 +44712,9 @@ export default [
     "desc": "기동형 전용 보조 부스터입니다. 라운드 개시 시, 일정 확률로 회피 감소 효과를 해제합니다.",
     "icon": "UI_Icon_Equip_Sub_SubBooster_T1",
     "craftable": 1920,
-    "limit": "Air",
+    "limit": [
+      "Air"
+    ],
     "upgrade": 150,
     "source": [
       [
@@ -45294,7 +45320,9 @@ export default [
     "desc": "기동형 전용 보조 부스터입니다. 라운드 개시 시, 일정 확률로 회피 감소 효과를 해제합니다.",
     "icon": "UI_Icon_Equip_Sub_SubBooster_T2",
     "craftable": 3840,
-    "limit": "Air",
+    "limit": [
+      "Air"
+    ],
     "upgrade": 225,
     "source": [
       [
@@ -45903,7 +45931,9 @@ export default [
     "desc": "기동형 전용 보조 부스터입니다. 라운드 개시 시, 일정 확률로 회피 감소 효과를 해제합니다.",
     "icon": "UI_Icon_Equip_Sub_SubBooster_T3",
     "craftable": 5760,
-    "limit": "Air",
+    "limit": [
+      "Air"
+    ],
     "upgrade": 375,
     "source": [
       [
@@ -46521,7 +46551,9 @@ export default [
     "desc": "기동형 전용 보조 부스터입니다. 라운드 개시 시, 일정 확률로 회피 감소 효과를 해제합니다.",
     "icon": "UI_Icon_Equip_Sub_SubBooster_T4",
     "craftable": 7680,
-    "limit": "Air",
+    "limit": [
+      "Air"
+    ],
     "upgrade": 750,
     "source": [
       [
@@ -47139,7 +47171,7 @@ export default [
     "desc": "매우 정밀한 조준기입니다. 라운드 개시 시, 일정 확률로 적중 감소 효과가 해제됩니다.",
     "icon": "UI_Icon_Equip_Sub_SpSight_T1",
     "craftable": 1500,
-    "limit": "",
+    "limit": null,
     "upgrade": 150,
     "source": [],
     "stats": [
@@ -47815,7 +47847,7 @@ export default [
     "desc": "매우 정밀한 조준기입니다. 라운드 개시 시, 일정 확률로 적중 감소 효과가 해제됩니다.",
     "icon": "UI_Icon_Equip_Sub_SpSight_T2",
     "craftable": 3000,
-    "limit": "",
+    "limit": null,
     "upgrade": 225,
     "source": [
       [
@@ -48498,7 +48530,7 @@ export default [
     "desc": "매우 정밀한 조준기입니다. 라운드 개시 시, 일정 확률로 적중 감소 효과가 해제됩니다.",
     "icon": "UI_Icon_Equip_Sub_SpSight_T3",
     "craftable": 4500,
-    "limit": "",
+    "limit": null,
     "upgrade": 375,
     "source": [
       [
@@ -49185,7 +49217,7 @@ export default [
     "desc": "매우 정밀한 조준기입니다. 라운드 개시 시, 일정 확률로 적중 감소 효과가 해제됩니다.",
     "icon": "UI_Icon_Equip_Sub_SpSight_T4",
     "craftable": 6000,
-    "limit": "",
+    "limit": null,
     "upgrade": 750,
     "source": [
       [
@@ -49876,7 +49908,7 @@ export default [
     "desc": "치명타가 증가하며 방어 관통 효과를 얻습니다.",
     "icon": "UI_Icon_Equip_Sub_ArmorPierce_T1",
     "craftable": 2520,
-    "limit": "",
+    "limit": null,
     "upgrade": 150,
     "source": [
       [
@@ -50452,7 +50484,7 @@ export default [
     "desc": "치명타가 증가하며 방어 관통 효과를 얻습니다.",
     "icon": "UI_Icon_Equip_Sub_ArmorPierce_T2",
     "craftable": 5040,
-    "limit": "",
+    "limit": null,
     "upgrade": 225,
     "source": [
       [
@@ -51035,7 +51067,7 @@ export default [
     "desc": "치명타가 증가하며 방어 관통 효과를 얻습니다.",
     "icon": "UI_Icon_Equip_Sub_ArmorPierce_T3",
     "craftable": 7560,
-    "limit": "",
+    "limit": null,
     "upgrade": 375,
     "source": [
       [
@@ -51622,7 +51654,7 @@ export default [
     "desc": "치명타가 증가하며 방어 관통 효과를 얻습니다.",
     "icon": "UI_Icon_Equip_Sub_ArmorPierce_T4",
     "craftable": 10080,
-    "limit": "",
+    "limit": null,
     "upgrade": 750,
     "source": [
       [
@@ -52214,7 +52246,7 @@ export default [
     "desc": "라운드 개시 시, 방어막 효과가 적용된 상태면 해당 효과를 해제하고 공격력과 행동력이 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_ShieldConverter_T1",
     "craftable": 2640,
-    "limit": "",
+    "limit": null,
     "upgrade": 200,
     "source": [
       [
@@ -53282,7 +53314,7 @@ export default [
     "desc": "라운드 개시 시, 방어막 효과가 적용된 상태면 해당 효과를 해제하고 공격력과 행동력이 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_ShieldConverter_T2",
     "craftable": 5280,
-    "limit": "",
+    "limit": null,
     "upgrade": 300,
     "source": [
       [
@@ -54350,7 +54382,7 @@ export default [
     "desc": "라운드 개시 시, 방어막 효과가 적용된 상태면 해당 효과를 해제하고 공격력과 행동력이 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_ShieldConverter_T3",
     "craftable": 7920,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [
       [
@@ -55418,7 +55450,7 @@ export default [
     "desc": "라운드 개시 시, 방어막 효과가 적용된 상태면 해당 효과를 해제하고 공격력과 행동력이 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_ShieldConverter_T4",
     "craftable": 10560,
-    "limit": "",
+    "limit": null,
     "upgrade": 1000,
     "source": [
       [
@@ -56495,7 +56527,7 @@ export default [
     "desc": "매 라운드마다 일정 수치의 방어막을 얻습니다.",
     "icon": "UI_Icon_Equip_Sub_Barrier_T1",
     "craftable": 2700,
-    "limit": "",
+    "limit": null,
     "upgrade": 150,
     "source": [
       [
@@ -57013,7 +57045,7 @@ export default [
     "desc": "매 라운드마다 일정 수치의 방어막을 얻습니다.",
     "icon": "UI_Icon_Equip_Sub_Barrier_T2",
     "craftable": 5400,
-    "limit": "",
+    "limit": null,
     "upgrade": 225,
     "source": [
       [
@@ -57531,7 +57563,7 @@ export default [
     "desc": "매 라운드마다 일정 수치의 방어막을 얻습니다.",
     "icon": "UI_Icon_Equip_Sub_Barrier_T3",
     "craftable": 8100,
-    "limit": "",
+    "limit": null,
     "upgrade": 375,
     "source": [
       [
@@ -58058,7 +58090,7 @@ export default [
     "desc": "매 라운드마다 일정 수치의 방어막을 얻습니다.",
     "icon": "UI_Icon_Equip_Sub_Barrier_T4",
     "craftable": 10800,
-    "limit": "",
+    "limit": null,
     "upgrade": 750,
     "source": [
       [
@@ -58592,7 +58624,7 @@ export default [
     "desc": "소형 정찰 드론을 띄워 다음에 출현하는 적의 정보를 얻습니다.",
     "icon": "UI_Icon_Equip_Sub_SpyDrone_T1",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 100,
     "source": [],
     "stats": [
@@ -59202,7 +59234,7 @@ export default [
     "desc": "소형 정찰 드론을 띄워 다음에 출현하는 적의 정보를 얻습니다.",
     "icon": "UI_Icon_Equip_Sub_SpyDrone_T2",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 150,
     "source": [],
     "stats": [
@@ -59812,7 +59844,7 @@ export default [
     "desc": "소형 정찰 드론을 띄워 다음에 출현하는 적의 정보를 얻습니다.",
     "icon": "UI_Icon_Equip_Sub_SpyDrone_T3",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 250,
     "source": [],
     "stats": [
@@ -60422,7 +60454,7 @@ export default [
     "desc": "소형 정찰 드론을 띄워 다음에 출현하는 적의 정보를 얻습니다.",
     "icon": "UI_Icon_Equip_Sub_SpyDrone_T4",
     "craftable": 3600,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [
       [
@@ -61040,7 +61072,9 @@ export default [
     "desc": "중장형 공격기 전용 조준기입니다.\n공격 시, 일정 확률로 공격 대상의 방어막과 피해 감소 효과를 무시합니다.",
     "icon": "UI_Icon_Equip_Sub_ExamKit_T1",
     "craftable": 3000,
-    "limit": "Heavy+Attacker",
+    "limit": [
+      "Heavy+Attacker"
+    ],
     "upgrade": 250,
     "source": [
       [
@@ -61709,7 +61743,9 @@ export default [
     "desc": "중장형 공격기 전용 조준기입니다.\n공격 시, 일정 확률로 공격 대상의 방어막과 피해 감소 효과를 무시합니다.",
     "icon": "UI_Icon_Equip_Sub_ExamKit_T2",
     "craftable": 6000,
-    "limit": "Heavy+Attacker",
+    "limit": [
+      "Heavy+Attacker"
+    ],
     "upgrade": 375,
     "source": [
       [
@@ -62381,7 +62417,9 @@ export default [
     "desc": "중장형 공격기 전용 조준기입니다.\n공격 시, 일정 확률로 공격 대상의 방어막과 피해 감소 효과를 무시합니다.",
     "icon": "UI_Icon_Equip_Sub_ExamKit_T3",
     "craftable": 9000,
-    "limit": "Heavy+Attacker",
+    "limit": [
+      "Heavy+Attacker"
+    ],
     "upgrade": 625,
     "source": [
       [
@@ -63053,7 +63091,9 @@ export default [
     "desc": "중장형 공격기 전용 조준기입니다.\n공격 시, 일정 확률로 공격 대상의 방어막과 피해 감소 효과를 무시합니다.",
     "icon": "UI_Icon_Equip_Sub_ExamKit_T4",
     "craftable": 12000,
-    "limit": "Heavy+Attacker",
+    "limit": [
+      "Heavy+Attacker"
+    ],
     "upgrade": 1250,
     "source": [
       [
@@ -63736,7 +63776,9 @@ export default [
     "desc": "공격기 전용 장비입니다.\n자신이 후열에 배치된 경우, 공격력 / 적중 / 치명타가 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_AdvRadar_T1",
     "craftable": 2100,
-    "limit": "Attacker",
+    "limit": [
+      "Attacker"
+    ],
     "upgrade": 200,
     "source": [
       [
@@ -64719,7 +64761,9 @@ export default [
     "desc": "공격기 전용 장비입니다.\n자신이 후열에 배치된 경우, 공격력 / 적중 / 치명타가 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_AdvRadar_T2",
     "craftable": 4200,
-    "limit": "Attacker",
+    "limit": [
+      "Attacker"
+    ],
     "upgrade": 300,
     "source": [
       [
@@ -65705,7 +65749,9 @@ export default [
     "desc": "공격기 전용 장비입니다.\n자신이 후열에 배치된 경우, 공격력 / 적중 / 치명타가 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_AdvRadar_T3",
     "craftable": 6300,
-    "limit": "Attacker",
+    "limit": [
+      "Attacker"
+    ],
     "upgrade": 500,
     "source": [
       [
@@ -66691,7 +66737,9 @@ export default [
     "desc": "공격기 전용 장비입니다.\n자신이 후열에 배치된 경우, 공격력 / 적중 / 치명타가 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_AdvRadar_T4",
     "craftable": 8400,
-    "limit": "Attacker",
+    "limit": [
+      "Attacker"
+    ],
     "upgrade": 1000,
     "source": [
       [
@@ -67680,7 +67728,7 @@ export default [
     "desc": "전투 시작 시, 행동력이 증가합니다.\n행동 불능 시, 1회에 한해 일정 HP를 가지고 전투를 속행합니다.",
     "icon": "UI_Icon_Equip_Sub_Stimulant_T1",
     "craftable": 2700,
-    "limit": "",
+    "limit": null,
     "upgrade": 150,
     "source": [
       [
@@ -68391,7 +68439,7 @@ export default [
     "desc": "전투 시작 시, 행동력이 증가합니다.\n행동 불능 시, 1회에 한해 일정 HP를 가지고 전투를 속행합니다.",
     "icon": "UI_Icon_Equip_Sub_Stimulant_T2",
     "craftable": 3600,
-    "limit": "",
+    "limit": null,
     "upgrade": 225,
     "source": [
       [
@@ -69107,7 +69155,7 @@ export default [
     "desc": "전투 시작 시, 행동력이 증가합니다.\n행동 불능 시, 1회에 한해 일정 HP를 가지고 전투를 속행합니다.",
     "icon": "UI_Icon_Equip_Sub_Stimulant_T3",
     "craftable": 4500,
-    "limit": "",
+    "limit": null,
     "upgrade": 375,
     "source": [
       [
@@ -69819,7 +69867,7 @@ export default [
     "desc": "전투 시작 시, 행동력이 증가합니다.\n행동 불능 시, 1회에 한해 일정 HP를 가지고 전투를 속행합니다.",
     "icon": "UI_Icon_Equip_Sub_Stimulant_T4",
     "craftable": 5400,
-    "limit": "",
+    "limit": null,
     "upgrade": 750,
     "source": [
       [
@@ -70534,7 +70582,9 @@ export default [
     "desc": "지원기 전용 보조 장비입니다.\n교란용 더미를 사출해 피격 시, 피해가 일정 횟수 최소화됩니다.",
     "icon": "UI_Icon_Equip_Sub_Hologram_T1",
     "craftable": 2820,
-    "limit": "Supporter",
+    "limit": [
+      "Supporter"
+    ],
     "upgrade": 150,
     "source": [
       [
@@ -71137,7 +71187,9 @@ export default [
     "desc": "지원기 전용 보조 장비입니다.\n교란용 더미를 사출해 피격 시, 피해가 일정 횟수 최소화됩니다.",
     "icon": "UI_Icon_Equip_Sub_Hologram_T2",
     "craftable": 5640,
-    "limit": "Supporter",
+    "limit": [
+      "Supporter"
+    ],
     "upgrade": 225,
     "source": [
       [
@@ -71743,7 +71795,9 @@ export default [
     "desc": "지원기 전용 보조 장비입니다.\n교란용 더미를 사출해 피격 시, 피해가 일정 횟수 최소화됩니다.",
     "icon": "UI_Icon_Equip_Sub_Hologram_T3",
     "craftable": 8460,
-    "limit": "Supporter",
+    "limit": [
+      "Supporter"
+    ],
     "upgrade": 375,
     "source": [
       [
@@ -72358,7 +72412,9 @@ export default [
     "desc": "지원기 전용 보조 장비입니다.\n교란용 더미를 사출해 피격 시, 피해가 일정 횟수 최소화됩니다.",
     "icon": "UI_Icon_Equip_Sub_Hologram_T4",
     "craftable": 11280,
-    "limit": "Supporter",
+    "limit": [
+      "Supporter"
+    ],
     "upgrade": 750,
     "source": [
       [
@@ -72974,7 +73030,9 @@ export default [
     "desc": "콘스탄챠의 윈체스터 라이플 전용 특수 탄환입니다.\n방어 관통이 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_SpRifleBullet_T4",
     "craftable": false,
-    "limit": "3P_ConstantiaS2",
+    "limit": [
+      "3P_ConstantiaS2"
+    ],
     "upgrade": 1250,
     "source": [
       [
@@ -73621,7 +73679,9 @@ export default [
     "desc": "그리폰 전용 확장 미사일 포드입니다.\n대 기동형 피해량과 방어 관통이 증가하며, 강화 레벨 10에서 사거리가 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_AMRAAMPod_T4",
     "craftable": false,
-    "limit": "BR_PA00EL",
+    "limit": [
+      "BR_PA00EL"
+    ],
     "upgrade": 1250,
     "source": [
       [
@@ -74606,7 +74666,9 @@ export default [
     "desc": "요안나 전용 초합금 플레이트 아머입니다.",
     "icon": "UI_Icon_Equip_Sub_SpAlloyArmor_T4",
     "craftable": false,
-    "limit": "DS_Johanna",
+    "limit": [
+      "DS_Johanna"
+    ],
     "upgrade": 1250,
     "source": [
       [
@@ -75693,7 +75755,9 @@ export default [
     "desc": "LRL의 애독서입니다.\n원리는 알 수 없지만 들고 있으면 운이 좋아지는 듯 합니다.",
     "icon": "UI_Icon_Equip_Sub_MarkOfDS_T4",
     "craftable": false,
-    "limit": "PECS_LRL",
+    "limit": [
+      "PECS_LRL"
+    ],
     "upgrade": 1250,
     "source": [
       [
@@ -76341,7 +76405,7 @@ export default [
     "desc": "내열 코팅으로 화염 속성 공격의 위력을 낮춥니다.",
     "icon": "UI_Icon_Equip_Sub_AntiFire_T1",
     "craftable": 1800,
-    "limit": "",
+    "limit": null,
     "upgrade": 150,
     "source": [],
     "stats": [
@@ -77017,7 +77081,7 @@ export default [
     "desc": "내열 코팅으로 화염 속성 공격의 위력을 낮춥니다.",
     "icon": "UI_Icon_Equip_Sub_AntiFire_T2",
     "craftable": 2700,
-    "limit": "",
+    "limit": null,
     "upgrade": 225,
     "source": [],
     "stats": [
@@ -77693,7 +77757,7 @@ export default [
     "desc": "내열 코팅으로 화염 속성 공격의 위력을 낮춥니다.",
     "icon": "UI_Icon_Equip_Sub_AntiFire_T3",
     "craftable": 3600,
-    "limit": "",
+    "limit": null,
     "upgrade": 375,
     "source": [
       [
@@ -78382,7 +78446,7 @@ export default [
     "desc": "내열 코팅으로 화염 속성 공격의 위력을 낮춥니다.",
     "icon": "UI_Icon_Equip_Sub_AntiFire_T4",
     "craftable": 4500,
-    "limit": "",
+    "limit": null,
     "upgrade": 750,
     "source": [
       [
@@ -79081,7 +79145,7 @@ export default [
     "desc": "내한 코팅으로 냉기 속성 공격의 위력을 낮춥니다.",
     "icon": "UI_Icon_Equip_Sub_AntiCold_T1",
     "craftable": 1800,
-    "limit": "",
+    "limit": null,
     "upgrade": 150,
     "source": [
       [
@@ -79761,7 +79825,7 @@ export default [
     "desc": "내한 코팅으로 냉기 속성 공격의 위력을 낮춥니다.",
     "icon": "UI_Icon_Equip_Sub_AntiCold_T2",
     "craftable": 2700,
-    "limit": "",
+    "limit": null,
     "upgrade": 225,
     "source": [
       [
@@ -80444,7 +80508,7 @@ export default [
     "desc": "내한 코팅으로 냉기 속성 공격의 위력을 낮춥니다.",
     "icon": "UI_Icon_Equip_Sub_AntiCold_T3",
     "craftable": 3600,
-    "limit": "",
+    "limit": null,
     "upgrade": 375,
     "source": [
       [
@@ -81131,7 +81195,7 @@ export default [
     "desc": "내한 코팅으로 냉기 속성 공격의 위력을 낮춥니다.",
     "icon": "UI_Icon_Equip_Sub_AntiCold_T4",
     "craftable": 4500,
-    "limit": "",
+    "limit": null,
     "upgrade": 750,
     "source": [
       [
@@ -81836,7 +81900,7 @@ export default [
     "desc": "내전 코팅으로 전기 속성 공격의 위력을 낮춥니다.",
     "icon": "UI_Icon_Equip_Sub_AntiLightning_T1",
     "craftable": 1800,
-    "limit": "",
+    "limit": null,
     "upgrade": 150,
     "source": [],
     "stats": [
@@ -82512,7 +82576,7 @@ export default [
     "desc": "내전 코팅으로 전기 속성 공격의 위력을 낮춥니다.",
     "icon": "UI_Icon_Equip_Sub_AntiLightning_T2",
     "craftable": 2700,
-    "limit": "",
+    "limit": null,
     "upgrade": 225,
     "source": [
       [
@@ -83192,7 +83256,7 @@ export default [
     "desc": "내전 코팅으로 전기 속성 공격의 위력을 낮춥니다.",
     "icon": "UI_Icon_Equip_Sub_AntiLightning_T3",
     "craftable": 3600,
-    "limit": "",
+    "limit": null,
     "upgrade": 375,
     "source": [
       [
@@ -83878,7 +83942,7 @@ export default [
     "desc": "내전 코팅으로 전기 속성 공격의 위력을 낮춥니다.",
     "icon": "UI_Icon_Equip_Sub_AntiLightning_T4",
     "craftable": 4500,
-    "limit": "",
+    "limit": null,
     "upgrade": 750,
     "source": [
       [
@@ -84574,7 +84638,7 @@ export default [
     "desc": "장비 강화에 사용 시 약간의 강화 포인트를 제공하는 칩셋입니다.",
     "icon": "UI_Icon_Equip_ChipSet_T1",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 100,
     "source": [
       [
@@ -84614,7 +84678,7 @@ export default [
     "desc": "장비 강화에 사용 시 강화 포인트를 제공하는 칩셋입니다.",
     "icon": "UI_Icon_Equip_ChipSet_T2",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 150,
     "source": [
       [
@@ -84658,7 +84722,7 @@ export default [
     "desc": "장비 강화에 사용 시 높은 강화 포인트를 제공하는 칩셋입니다.",
     "icon": "UI_Icon_Equip_ChipSet_T3",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 250,
     "source": [
       [
@@ -84696,7 +84760,7 @@ export default [
     "desc": "장비 강화에 사용 시 매우 높은 강화 포인트를 제공하는 칩셋입니다.",
     "icon": "UI_Icon_Equip_ChipSet_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [
       [
@@ -84733,7 +84797,9 @@ export default [
     "desc": "콘스탄챠의 윈체스터 라이플 전용 조준 회로입니다.",
     "icon": "UI_Icon_Equip_Chip_Cri_T4",
     "craftable": false,
-    "limit": "3P_ConstantiaS2",
+    "limit": [
+      "3P_ConstantiaS2"
+    ],
     "upgrade": 1250,
     "source": [],
     "stats": [
@@ -84925,7 +84991,9 @@ export default [
     "desc": "T-60 불가사리 전용 신소재 테러 진압용 외장 아머입니다.\n속성 저항과 받는 피해가 감소합니다.",
     "icon": "UI_Icon_Equip_Sub_T60ExtArmor_T4",
     "craftable": false,
-    "limit": "BR_Bulgasari",
+    "limit": [
+      "BR_Bulgasari"
+    ],
     "upgrade": 1000,
     "source": [
       [
@@ -86375,7 +86443,9 @@ export default [
     "desc": "AG-1 네레이드 전용 40mm 열화 우라늄탄입니다.",
     "icon": "UI_Icon_Equip_Sub_40mmDUBullet_T4",
     "craftable": false,
-    "limit": "BR_Nereid",
+    "limit": [
+      "BR_Nereid"
+    ],
     "upgrade": 1000,
     "source": [
       [
@@ -87099,7 +87169,9 @@ export default [
     "desc": "P-18 실피드 전용 타겟 추적 장치 강화 회로입니다.",
     "icon": "UI_Icon_Equip_Chip_ATFLIR_T4",
     "craftable": false,
-    "limit": "BR_Sylphid",
+    "limit": [
+      "BR_Sylphid"
+    ],
     "upgrade": 1000,
     "source": [
       [
@@ -87372,7 +87444,9 @@ export default [
     "desc": "CM67 스팅어 전용 우주용 확장 부스터 유닛입니다.",
     "icon": "UI_Icon_Equip_Sub_CM67SpaceBooster_T4",
     "craftable": false,
-    "limit": "PECS_Stinger",
+    "limit": [
+      "PECS_Stinger"
+    ],
     "upgrade": 1000,
     "source": [
       [
@@ -88118,7 +88192,9 @@ export default [
     "desc": "T-10 님프 전용 MG80 개조 장비입니다.",
     "icon": "UI_Icon_Equip_Sub_MG80MODKit_T4",
     "craftable": false,
-    "limit": "BR_Nymph",
+    "limit": [
+      "BR_Nymph"
+    ],
     "upgrade": 1000,
     "source": [
       [
@@ -88875,7 +88951,9 @@ export default [
     "desc": "스카디 전용 수상한 보조 식품입니다.\n대부분의 바이오로이드들이 기피하는 식품입니다.",
     "icon": "UI_Icon_Equip_Sub_STEROID_T4",
     "craftable": false,
-    "limit": "BR_Scathy",
+    "limit": [
+      "BR_Scathy"
+    ],
     "upgrade": 1000,
     "source": [
       [
@@ -89654,7 +89732,9 @@ export default [
     "desc": "T-14 미호 전용 SK-14 Pinky 개량형의 개량형입니다.\n화력이 크게 개선된 모델입니다.\n라운드 개시 시, 사거리 감소 효과를 해제합니다.",
     "icon": "UI_Icon_Equip_Sub_SK14MODKit_T4",
     "craftable": false,
-    "limit": "BR_Miho",
+    "limit": [
+      "BR_Miho"
+    ],
     "upgrade": 1000,
     "source": [
       [
@@ -90557,7 +90637,7 @@ export default [
     "desc": "소완이 만든 맛이 뛰어난 휴대용 도시락 팩입니다.\n바이오로이드가 장착 시, 이로운 효과를 얻습니다.",
     "icon": "UI_Icon_Equip_Sub_LunchBox_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1000,
     "source": [
       [
@@ -91248,7 +91328,9 @@ export default [
     "desc": "기동형 전용 전략 폭격용 보조 장비입니다.\n공격력 / 치명타 / 방어 관통이 증가하지만 회피가 감소합니다.",
     "icon": "UI_Icon_Equip_Sub_Bombard_T4",
     "craftable": 14400,
-    "limit": "Air",
+    "limit": [
+      "Air"
+    ],
     "upgrade": 1500,
     "source": [
       [
@@ -92118,7 +92200,7 @@ export default [
     "desc": "출력 제한을 올려 공격력이 증가하지만 적중이 감소합니다.",
     "icon": "UI_Icon_Equip_Chip_SpAtk_T1",
     "craftable": 900,
-    "limit": "",
+    "limit": null,
     "upgrade": 100,
     "source": [
       [
@@ -92314,7 +92396,7 @@ export default [
     "desc": "출력 제한을 올려 공격력이 증가하지만 적중이 감소합니다.",
     "icon": "UI_Icon_Equip_Chip_SpAtk_T2",
     "craftable": 1800,
-    "limit": "",
+    "limit": null,
     "upgrade": 150,
     "source": [
       [
@@ -92510,7 +92592,7 @@ export default [
     "desc": "출력 제한을 올려 공격력이 증가하지만 적중이 감소합니다.",
     "icon": "UI_Icon_Equip_Chip_SpAtk_T3",
     "craftable": 2700,
-    "limit": "",
+    "limit": null,
     "upgrade": 250,
     "source": [
       [
@@ -92706,7 +92788,7 @@ export default [
     "desc": "출력 제한을 올려 공격력이 증가하지만 적중이 감소합니다.",
     "icon": "UI_Icon_Equip_Chip_SpAtk_T4",
     "craftable": 3600,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [
       [
@@ -92905,7 +92987,9 @@ export default [
     "desc": "마리 전용 방어용 시스템 OS입니다.",
     "icon": "UI_Icon_Equip_System_EyesOfBeholderD_T4",
     "craftable": false,
-    "limit": "BR_Marie",
+    "limit": [
+      "BR_Marie"
+    ],
     "upgrade": 1500,
     "source": [
       [
@@ -93926,7 +94010,7 @@ export default [
     "desc": "출력을 안정시켜 행동력을 낮추는 대신, 공격력과 치명타를 높입니다.",
     "icon": "UI_Icon_Equip_Chip_AtkCri_T1",
     "craftable": 960,
-    "limit": "",
+    "limit": null,
     "upgrade": 125,
     "source": [
       [
@@ -94208,7 +94292,7 @@ export default [
     "desc": "출력을 안정시켜 행동력을 낮추는 대신, 공격력과 치명타를 높입니다.",
     "icon": "UI_Icon_Equip_Chip_AtkCri_T2",
     "craftable": 1920,
-    "limit": "",
+    "limit": null,
     "upgrade": 187,
     "source": [
       [
@@ -94493,7 +94577,7 @@ export default [
     "desc": "출력을 안정시켜 행동력을 낮추는 대신, 공격력과 치명타를 높입니다.",
     "icon": "UI_Icon_Equip_Chip_AtkCri_T3",
     "craftable": 2880,
-    "limit": "",
+    "limit": null,
     "upgrade": 312,
     "source": [
       [
@@ -94775,7 +94859,7 @@ export default [
     "desc": "출력을 안정시켜 행동력을 낮추는 대신, 공격력과 치명타를 높입니다.",
     "icon": "UI_Icon_Equip_Chip_AtkCri_T4",
     "craftable": 3840,
-    "limit": "",
+    "limit": null,
     "upgrade": 625,
     "source": [
       [
@@ -95067,7 +95151,7 @@ export default [
     "desc": "자신이 적을 공격할 시, 전투 종료 후 획득하는 경험치가 증가합니다.\n동일 효과는 최대 3회까지만 중첩됩니다.",
     "icon": "UI_Icon_Equip_Chip_KillExp_T1",
     "craftable": 1200,
-    "limit": "",
+    "limit": null,
     "upgrade": 150,
     "source": [
       [
@@ -95563,7 +95647,7 @@ export default [
     "desc": "자신이 적을 공격할 시, 전투 종료 후 획득하는 경험치가 증가합니다.\n동일 효과는 최대 3회까지만 중첩됩니다.",
     "icon": "UI_Icon_Equip_Chip_KillExp_T2",
     "craftable": 2400,
-    "limit": "",
+    "limit": null,
     "upgrade": 225,
     "source": [
       [
@@ -96062,7 +96146,7 @@ export default [
     "desc": "자신이 적을 공격할 시, 전투 종료 후 획득하는 경험치가 증가합니다.\n동일 효과는 최대 3회까지만 중첩됩니다.",
     "icon": "UI_Icon_Equip_Chip_KillExp_T3",
     "craftable": 3600,
-    "limit": "",
+    "limit": null,
     "upgrade": 375,
     "source": [
       [
@@ -96564,7 +96648,7 @@ export default [
     "desc": "자신이 적을 공격할 시, 전투 종료 후 획득하는 경험치가 증가합니다.\n동일 효과는 최대 3회까지만 중첩됩니다.",
     "icon": "UI_Icon_Equip_Chip_KillExp_T4",
     "craftable": 4800,
-    "limit": "",
+    "limit": null,
     "upgrade": 750,
     "source": [
       [
@@ -97069,7 +97153,7 @@ export default [
     "desc": "수중용 보조 장비입니다. 침수 상태가 되면 능력이 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_AquaModule_T1",
     "craftable": 3600,
-    "limit": "",
+    "limit": null,
     "upgrade": 200,
     "source": [],
     "stats": [
@@ -98823,7 +98907,7 @@ export default [
     "desc": "수중용 보조 장비입니다. 침수 상태가 되면 능력이 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_AquaModule_T2",
     "craftable": 7200,
-    "limit": "",
+    "limit": null,
     "upgrade": 300,
     "source": [
       [
@@ -100584,7 +100668,7 @@ export default [
     "desc": "수중용 보조 장비입니다. 침수 상태가 되면 능력이 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_AquaModule_T3",
     "craftable": 10800,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [
       [
@@ -102342,7 +102426,7 @@ export default [
     "desc": "수중용 보조 장비입니다. 침수 상태가 되면 능력이 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_AquaModule_T4",
     "craftable": 14400,
-    "limit": "",
+    "limit": null,
     "upgrade": 1000,
     "source": [
       [
@@ -104112,7 +104196,7 @@ export default [
     "desc": "출력 제한을 해제해 공격력 / 행동력이 크게 증가하지만, 지속 고정 피해를 입습니다.\n로봇에게만 효과가 있습니다.",
     "icon": "UI_Icon_Equip_Sub_Overclock_T1",
     "craftable": 4200,
-    "limit": "",
+    "limit": null,
     "upgrade": 200,
     "source": [
       [
@@ -105015,7 +105099,7 @@ export default [
     "desc": "출력 제한을 해제해 공격력 / 행동력이 크게 증가하지만, 지속 고정 피해를 입습니다.\n로봇에게만 효과가 있습니다.",
     "icon": "UI_Icon_Equip_Sub_Overclock_T2",
     "craftable": 8400,
-    "limit": "",
+    "limit": null,
     "upgrade": 300,
     "source": [
       [
@@ -105921,7 +106005,7 @@ export default [
     "desc": "출력 제한을 해제해 공격력 / 행동력이 크게 증가하지만, 지속 고정 피해를 입습니다.\n로봇에게만 효과가 있습니다.",
     "icon": "UI_Icon_Equip_Sub_Overclock_T3",
     "craftable": 12600,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [
       [
@@ -106827,7 +106911,7 @@ export default [
     "desc": "출력 제한을 해제해 공격력 / 행동력이 크게 증가하지만, 지속 고정 피해를 입습니다.\n로봇에게만 효과가 있습니다.",
     "icon": "UI_Icon_Equip_Sub_Overclock_T4",
     "craftable": 16800,
-    "limit": "",
+    "limit": null,
     "upgrade": 1000,
     "source": [
       [
@@ -107734,7 +107818,9 @@ export default [
     "desc": "기동형 보호기 전용 OS입니다.\n라운드 개시 시, 1회 피격에 한해 받는 피해가 감소합니다.",
     "icon": "UI_Icon_Equip_System_HManeuver_T1",
     "craftable": 2880,
-    "limit": "Air+Defender",
+    "limit": [
+      "Air+Defender"
+    ],
     "upgrade": 250,
     "source": [],
     "stats": [
@@ -108355,7 +108441,9 @@ export default [
     "desc": "기동형 보호기 전용 OS입니다.\n라운드 개시 시, 1회 피격에 한해 받는 피해가 감소합니다.",
     "icon": "UI_Icon_Equip_System_HManeuver_T2",
     "craftable": 5760,
-    "limit": "Air+Defender",
+    "limit": [
+      "Air+Defender"
+    ],
     "upgrade": 375,
     "source": [
       [
@@ -108980,7 +109068,9 @@ export default [
     "desc": "기동형 보호기 전용 OS입니다.\n라운드 개시 시, 1회 피격에 한해 받는 피해가 감소합니다.",
     "icon": "UI_Icon_Equip_System_HManeuver_T3",
     "craftable": 8640,
-    "limit": "Air+Defender",
+    "limit": [
+      "Air+Defender"
+    ],
     "upgrade": 625,
     "source": [
       [
@@ -109611,7 +109701,9 @@ export default [
     "desc": "기동형 보호기 전용 OS입니다.\n라운드 개시 시, 1회 피격에 한해 받는 피해가 감소합니다.",
     "icon": "UI_Icon_Equip_System_HManeuver_T4",
     "craftable": 11520,
-    "limit": "Air+Defender",
+    "limit": [
+      "Air+Defender"
+    ],
     "upgrade": 1250,
     "source": [
       [
@@ -110254,7 +110346,7 @@ export default [
     "desc": "정찰 기능이 활성화 된 상태로 라운드 개시 시, 전황을 분석해 능력이 증가합니다.",
     "icon": "UI_Icon_Equip_System_EXAM_T1",
     "craftable": 3480,
-    "limit": "",
+    "limit": null,
     "upgrade": 300,
     "source": [
       [
@@ -111674,7 +111766,7 @@ export default [
     "desc": "정찰 기능이 활성화 된 상태로 라운드 개시 시, 전황을 분석해 능력이 증가합니다.",
     "icon": "UI_Icon_Equip_System_EXAM_T2",
     "craftable": 6960,
-    "limit": "",
+    "limit": null,
     "upgrade": 450,
     "source": [
       [
@@ -113097,7 +113189,7 @@ export default [
     "desc": "정찰 기능이 활성화 된 상태로 라운드 개시 시, 전황을 분석해 능력이 증가합니다.",
     "icon": "UI_Icon_Equip_System_EXAM_T3",
     "craftable": 10440,
-    "limit": "",
+    "limit": null,
     "upgrade": 750,
     "source": [
       [
@@ -114517,7 +114609,7 @@ export default [
     "desc": "정찰 기능이 활성화 된 상태로 라운드 개시 시, 전황을 분석해 능력이 증가합니다.",
     "icon": "UI_Icon_Equip_System_EXAM_T4",
     "craftable": 13920,
-    "limit": "",
+    "limit": null,
     "upgrade": 1500,
     "source": [
       [
@@ -115947,7 +116039,7 @@ export default [
     "desc": "각종 열기를 이겨내는데 큰 도움을 주는 장비입니다. 공격 보조에도 뛰어난 성능을 자랑합니다.",
     "icon": "UI_Icon_Equip_Sub_IcePack_T4",
     "craftable": 12600,
-    "limit": "",
+    "limit": null,
     "upgrade": 1000,
     "source": [
       [
@@ -116572,7 +116664,7 @@ export default [
     "desc": "과거 인류가 여름에 사용하던 물품을 누군가 재현해냈습니다.\n바이오로이드가 장착 시, 열기를 받으면 강해지는 기분이 들게됩니다.",
     "icon": "UI_Icon_Equip_Sub_SunCream_T4",
     "craftable": 9000,
-    "limit": "",
+    "limit": null,
     "upgrade": 1000,
     "source": [
       [
@@ -117670,7 +117762,9 @@ export default [
     "desc": "P-3M 운디네 전용 ASN-6G 미사일입니다. 방어 관통과 대 중장형 피해량이 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_ASMP6G_T4",
     "craftable": false,
-    "limit": "BR_Undine",
+    "limit": [
+      "BR_Undine"
+    ],
     "upgrade": 1000,
     "source": [
       [
@@ -118559,7 +118653,7 @@ export default [
     "desc": "뽀끄루 대마왕의 힘으로 본 능력 이상으로 강해지지만, 가끔 스킬을 사용하는 법을 잊어 멍하니 있게 됩니다. 바이오로이드에게만 효과가 있습니다.",
     "icon": "UI_Icon_Equip_Sub_HornOfBADK_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1000,
     "source": [
       [
@@ -119965,7 +120059,7 @@ export default [
     "desc": "달의 마력(?)이 담긴 송편입니다. 가지고 있으면 라운드 개시 시, 무작위 강화 효과가 각각 일정 확률로 적용됩니다.",
     "icon": "UI_Icon_Equip_Sub_MoonCake_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1000,
     "source": [
       [
@@ -121462,7 +121556,7 @@ export default [
     "desc": "라운드 개시 시, 강화 단계에 따라 일정 확률로 적중 / 사거리 감소 효과를 해제하며 사거리가 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_Interceptor_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1500,
     "source": [
       [
@@ -122613,7 +122707,7 @@ export default [
     "desc": "기능 제작 중 장비",
     "icon": "UI_Icon_Equip_Sub_AntiBarrier_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1000,
     "source": [],
     "stats": [
@@ -122640,7 +122734,7 @@ export default [
     "desc": "신소재로 강화된 출력 강화 회로입니다.\n공격력과 행동력이 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_AtkSpd_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1250,
     "source": [
       [
@@ -122836,7 +122930,7 @@ export default [
     "desc": "수정구 형태의 연산장치입니다.\n전투 개시 시, 행동력이 증가하며 정찰 효과를 얻습니다.",
     "icon": "UI_Icon_Equip_Sub_FortuneOrb_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1250,
     "source": [
       [
@@ -123662,7 +123756,7 @@ export default [
     "desc": "신소재로 제작한 고출력 제네레이터입니다. 공격력이 증가하며, 라운드 개시 시 AP가 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_ElectroGenerator_T1",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 300,
     "source": [],
     "stats": [
@@ -124250,7 +124344,7 @@ export default [
     "desc": "신소재로 제작한 고출력 제네레이터입니다. 공격력이 증가하며, 라운드 개시 시 AP가 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_ElectroGenerator_T2",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 450,
     "source": [],
     "stats": [
@@ -124838,7 +124932,7 @@ export default [
     "desc": "신소재로 제작한 고출력 제네레이터입니다. 공격력이 증가하며, 라운드 개시 시 AP가 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_ElectroGenerator_T3",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 750,
     "source": [],
     "stats": [
@@ -125426,7 +125520,7 @@ export default [
     "desc": "신소재로 제작한 고출력 제네레이터입니다. 공격력이 증가하며, 라운드 개시 시 AP가 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_ElectroGenerator_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1500,
     "source": [
       [
@@ -126018,7 +126112,7 @@ export default [
     "desc": "잔해 수집용 보조 장비입니다. HP가 증가하며, 적이 처치되면 적에게서 쓸만한 잔해를 수거해 AP가 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_Recycler_T1",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 250,
     "source": [
       [
@@ -126610,7 +126704,7 @@ export default [
     "desc": "잔해 수집용 보조 장비입니다. HP가 증가하며, 적이 처치되면 적에게서 쓸만한 잔해를 수거해 AP가 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_Recycler_T2",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 375,
     "source": [
       [
@@ -127202,7 +127296,7 @@ export default [
     "desc": "잔해 수집용 보조 장비입니다. HP가 증가하며, 적이 처치되면 적에게서 쓸만한 잔해를 수거해 AP가 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_Recycler_T3",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 625,
     "source": [
       [
@@ -127794,7 +127888,7 @@ export default [
     "desc": "잔해 수집용 보조 장비입니다. HP가 증가하며, 적이 처치되면 적에게서 쓸만한 잔해를 수거해 AP가 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_Recycler_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1250,
     "source": [
       [
@@ -128392,7 +128486,7 @@ export default [
     "desc": "경량화 처리로 적중 / 회피 / 행동력이 증가하지만, 공격력이 감소합니다.",
     "icon": "UI_Icon_Equip_Chip_LTWT_T1",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 150,
     "source": [
       [
@@ -129122,7 +129216,7 @@ export default [
     "desc": "경량화 처리로 적중 / 회피 / 행동력이 증가하지만, 공격력이 감소합니다.",
     "icon": "UI_Icon_Equip_Chip_LTWT_T2",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 225,
     "source": [
       [
@@ -129852,7 +129946,7 @@ export default [
     "desc": "경량화 처리로 적중 / 회피 / 행동력이 증가하지만, 공격력이 감소합니다.",
     "icon": "UI_Icon_Equip_Chip_LTWT_T3",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 375,
     "source": [
       [
@@ -130592,7 +130686,7 @@ export default [
     "desc": "경량화 처리로 적중 / 회피 / 행동력이 증가하지만, 공격력이 감소합니다.",
     "icon": "UI_Icon_Equip_Chip_LTWT_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 750,
     "source": [
       [
@@ -131325,7 +131419,7 @@ export default [
     "desc": "신소재로 강화된 분석 회로입니다.\n치명타와 적중이 증가합니다.",
     "icon": "UI_Icon_Equip_Chip_CriAccEx_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1250,
     "source": [
       [
@@ -131521,7 +131615,7 @@ export default [
     "desc": "<최대 속력 마하 2.45! 선물 전달을 위한 필수 장비!>\n<주의 : 탑승자의 안전은 보장하지 않습니다>\n바이오로이드가 장착 시, 가끔 멀미 때문에 적중이 감소합니다. (해로운 효과)",
     "icon": "UI_Icon_Equip_Sub_NitroEx3000_T4",
     "craftable": 13500,
-    "limit": "",
+    "limit": null,
     "upgrade": 1250,
     "source": [
       [
@@ -132299,7 +132393,7 @@ export default [
     "desc": "미니 페로가 들어 있는 상자입니다. 적에게 민첩하게 대응할 수 있도록 도와주며, 스킬 사용 시 꾹꾹이로 빠른 피로 회복을 도와줍니다.\n\n-  왠지 모르겠지만, 기계에도 효과가 있는 듯합니다.",
     "icon": "UI_Icon_Equip_Sub_MiniPerrault_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1500,
     "source": [
       [
@@ -132990,7 +133084,7 @@ export default [
     "desc": "미니 하치코가 들어 있는 상자입니다. 전투에서 쉽게 쓰러지지 않도록 도와줍니다.\n\n- 녹색 빛을 띠는 미트 파이를 끊임없이 만듭니다.",
     "icon": "UI_Icon_Equip_Sub_MiniHachiko_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1500,
     "source": [
       [
@@ -133637,7 +133731,7 @@ export default [
     "desc": "미니 블랙 리리스가 들어 있는 상자입니다. 공격을 보조하며, 적의 공격 위력을 경감시키는 역장을 생성해줍니다.\n\n- 가끔 묘한 시선이 느껴집니다…",
     "icon": "UI_Icon_Equip_Sub_MiniLilith_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1500,
     "source": [],
     "stats": [
@@ -134280,7 +134374,7 @@ export default [
     "desc": "전장에서의 전투 기록을 분석해 제작한 개량형 전투 OS입니다. 공격력 / 회피 / 행동력을 올려주며, 받는 피해가 감소합니다.\n해당 OS의 효과는 스킬 부가 효과 발동에 필요한 조건을 만족시킬 수 있습니다.",
     "icon": "UI_Icon_Equip_System_Advanced_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1500,
     "source": [
       [
@@ -135488,7 +135582,7 @@ export default [
     "desc": "매우 맛이 뛰어난 초콜릿입니다. 정신없이 먹다보면 나중에 후회할 일이 생길지도 모릅니다…\n바이오로이드가 장착 시, 전투 시작 AP가 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_GrandCruChocolate_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1250,
     "source": [
       [
@@ -136146,7 +136240,7 @@ export default [
     "desc": "공격력이 증가하지만, 치명타는 감소하는 회로입니다.",
     "icon": "UI_Icon_Equip_Chip_AtkControl_T1",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 200,
     "source": [
       [
@@ -136348,7 +136442,7 @@ export default [
     "desc": "공격력이 증가하지만, 치명타는 감소하는 회로입니다.",
     "icon": "UI_Icon_Equip_Chip_AtkControl_T2",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 300,
     "source": [
       [
@@ -136550,7 +136644,7 @@ export default [
     "desc": "공격력이 증가하지만, 치명타는 감소하는 회로입니다.",
     "icon": "UI_Icon_Equip_Chip_AtkControl_T3",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [
       [
@@ -136752,7 +136846,7 @@ export default [
     "desc": "공격력이 증가하지만, 치명타는 감소하는 회로입니다.",
     "icon": "UI_Icon_Equip_Chip_AtkControl_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1000,
     "source": [
       [
@@ -136957,7 +137051,9 @@ export default [
     "desc": "움직임을 보조해주는 경장형 전용 외골격입니다.",
     "icon": "UI_Icon_Equip_Sub_ExoSkeleton_T1",
     "craftable": false,
-    "limit": "Light",
+    "limit": [
+      "Light"
+    ],
     "upgrade": 200,
     "source": [
       [
@@ -137610,7 +137706,9 @@ export default [
     "desc": "움직임을 보조해주는 경장형 전용 외골격입니다.",
     "icon": "UI_Icon_Equip_Sub_ExoSkeleton_T2",
     "craftable": false,
-    "limit": "Light",
+    "limit": [
+      "Light"
+    ],
     "upgrade": 300,
     "source": [
       [
@@ -138263,7 +138361,9 @@ export default [
     "desc": "움직임을 보조해주는 경장형 전용 외골격입니다.",
     "icon": "UI_Icon_Equip_Sub_ExoSkeleton_T3",
     "craftable": false,
-    "limit": "Light",
+    "limit": [
+      "Light"
+    ],
     "upgrade": 500,
     "source": [
       [
@@ -138916,7 +139016,9 @@ export default [
     "desc": "움직임을 보조해주는 경장형 전용 외골격입니다.",
     "icon": "UI_Icon_Equip_Sub_ExoSkeleton_T4",
     "craftable": false,
-    "limit": "Light",
+    "limit": [
+      "Light"
+    ],
     "upgrade": 1000,
     "source": [
       [
@@ -139569,7 +139671,7 @@ export default [
     "desc": "사용 안함",
     "icon": "UI_Icon_Equip_Sub_ODamplifier_T1",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 300,
     "source": [],
     "stats": [
@@ -139596,7 +139698,7 @@ export default [
     "desc": "사용 안함",
     "icon": "UI_Icon_Equip_Sub_ODamplifier_T2",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 450,
     "source": [],
     "stats": [
@@ -139623,7 +139725,7 @@ export default [
     "desc": "사용 안함",
     "icon": "UI_Icon_Equip_Sub_ODamplifier_T3",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 750,
     "source": [],
     "stats": [
@@ -139650,7 +139752,7 @@ export default [
     "desc": "라운드 개시 시, 체내의 오리진 더스트를 일시적으로 증폭시켜 공격력이 크게 증가하지만 지속 고정 피해를 입습니다. 바이로오이드에게만 효과가 있으며, HP 25% 이상일 때만 발동합니다.",
     "icon": "UI_Icon_Equip_Sub_ODamplifier_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1500,
     "source": [
       [
@@ -140407,7 +140509,9 @@ export default [
     "desc": "켈베로스 전용 촙 메이커 II와 강화 티타늄 실드입니다. 라운드 개시 시, 방어력이 증가하며 반격이 활성화 됩니다. <스턴 롯드>의 피해량이 20% 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_CMIIShield_T4",
     "craftable": false,
-    "limit": "PECS_Cerberus",
+    "limit": [
+      "PECS_Cerberus"
+    ],
     "upgrade": 1000,
     "source": [
       [
@@ -141450,7 +141554,9 @@ export default [
     "desc": "시저스 리제 전용 신형 블레이드입니다. 라운드 개시 시, 공격력 감소 효과를 해제하며 방어 관통이 크게 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_VerminEliminator_T4",
     "craftable": false,
-    "limit": "3P_ScissorsLise",
+    "limit": [
+      "3P_ScissorsLise"
+    ],
     "upgrade": 1000,
     "source": [
       [
@@ -142427,7 +142533,9 @@ export default [
     "desc": "기간테스 전용 신형 외장 장갑입니다. 기존보다 가볍고 탄력 있는 특수 소재로 만들어져, 받는 피해가 감소합니다.",
     "icon": "UI_Icon_Equip_Sub_GigantesArmor_T4",
     "craftable": false,
-    "limit": "AGS_Gigantes",
+    "limit": [
+      "AGS_Gigantes"
+    ],
     "upgrade": 1000,
     "source": [
       [
@@ -143217,7 +143325,9 @@ export default [
     "desc": "철혈의 레오나 전용 지휘 보조 프레임입니다. 정찰 기능이 상시 활성화 되며, 지휘 계통 패시브 스킬의 효과가 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_QMObserver_T4",
     "craftable": false,
-    "limit": "BR_Leona",
+    "limit": [
+      "BR_Leona"
+    ],
     "upgrade": 1000,
     "source": [
       [
@@ -143834,7 +143944,7 @@ export default [
     "desc": "출력을 강화해 공격력을 높입니다. 오버 클럭으로 회피가 감소 합니다.",
     "icon": "UI_Icon_Equip_Chip_AtkTypeB_T1",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 100,
     "source": [],
     "stats": [
@@ -144026,7 +144136,7 @@ export default [
     "desc": "출력을 강화해 공격력을 높입니다. 오버 클럭으로 회피가 감소 합니다.",
     "icon": "UI_Icon_Equip_Chip_AtkTypeB_T2",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 150,
     "source": [],
     "stats": [
@@ -144218,7 +144328,7 @@ export default [
     "desc": "출력을 강화해 공격력을 높입니다. 오버 클럭으로 회피가 감소 합니다.",
     "icon": "UI_Icon_Equip_Chip_AtkTypeB_T3",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 250,
     "source": [],
     "stats": [
@@ -144410,7 +144520,7 @@ export default [
     "desc": "출력을 강화해 공격력을 높입니다. 오버 클럭으로 회피가 감소 합니다.",
     "icon": "UI_Icon_Equip_Chip_AtkTypeB_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [
       [
@@ -144612,7 +144722,7 @@ export default [
     "desc": "연산 성능을 강화해 적중을 높입니다. 오버 클럭으로 방어력이 감소 합니다.",
     "icon": "UI_Icon_Equip_Chip_AccTypeB_T1",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 100,
     "source": [
       [
@@ -144808,7 +144918,7 @@ export default [
     "desc": "연산 성능을 강화해 적중을 높입니다. 오버 클럭으로 방어력이 감소 합니다.",
     "icon": "UI_Icon_Equip_Chip_AccTypeB_T2",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 150,
     "source": [
       [
@@ -145004,7 +145114,7 @@ export default [
     "desc": "연산 성능을 강화해 적중을 높입니다. 오버 클럭으로 방어력이 감소 합니다.",
     "icon": "UI_Icon_Equip_Chip_AccTypeB_T3",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 250,
     "source": [
       [
@@ -145200,7 +145310,7 @@ export default [
     "desc": "연산 성능을 강화해 적중을 높입니다. 오버 클럭으로 방어력이 감소 합니다.",
     "icon": "UI_Icon_Equip_Chip_AccTypeB_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [
       [
@@ -145399,7 +145509,7 @@ export default [
     "desc": "내 충격 성능을 강화해 방어를 높입니다. 오버 클럭으로 공격력이 감소 합니다.",
     "icon": "UI_Icon_Equip_Chip_DefTypeB_T1",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 100,
     "source": [],
     "stats": [
@@ -145591,7 +145701,7 @@ export default [
     "desc": "내 충격 성능을 강화해 방어를 높입니다. 오버 클럭으로 공격력이 감소 합니다.",
     "icon": "UI_Icon_Equip_Chip_DefTypeB_T2",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 150,
     "source": [],
     "stats": [
@@ -145783,7 +145893,7 @@ export default [
     "desc": "내 충격 성능을 강화해 방어를 높입니다. 오버 클럭으로 공격력이 감소 합니다.",
     "icon": "UI_Icon_Equip_Chip_DefTypeB_T3",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 250,
     "source": [],
     "stats": [
@@ -145975,7 +146085,7 @@ export default [
     "desc": "내 충격 성능을 강화해 방어를 높입니다. 오버 클럭으로 공격력이 감소 합니다.",
     "icon": "UI_Icon_Equip_Chip_DefTypeB_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [
       [
@@ -146171,7 +146281,7 @@ export default [
     "desc": "반응 속도를 향상시켜 회피를 높입니다. 오버 클럭으로 공격력이 감소 합니다.",
     "icon": "UI_Icon_Equip_Chip_EvTypeB_T1",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 100,
     "source": [
       [
@@ -146367,7 +146477,7 @@ export default [
     "desc": "반응 속도를 향상시켜 회피를 높입니다. 오버 클럭으로 공격력이 감소 합니다.",
     "icon": "UI_Icon_Equip_Chip_EvTypeB_T2",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 150,
     "source": [
       [
@@ -146563,7 +146673,7 @@ export default [
     "desc": "반응 속도를 향상시켜 회피를 높입니다. 오버 클럭으로 공격력이 감소 합니다.",
     "icon": "UI_Icon_Equip_Chip_EvTypeB_T3",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 250,
     "source": [
       [
@@ -146759,7 +146869,7 @@ export default [
     "desc": "반응 속도를 향상시켜 회피를 높입니다. 오버 클럭으로 공격력이 감소 합니다.",
     "icon": "UI_Icon_Equip_Chip_EvTypeB_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [
       [
@@ -146955,7 +147065,7 @@ export default [
     "desc": "적의 약점을 분석해 치명타를 높입니다. 오버 클럭으로 방어력이 감소 합니다.",
     "icon": "UI_Icon_Equip_Chip_CriTypeB_T1",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 100,
     "source": [],
     "stats": [
@@ -147147,7 +147257,7 @@ export default [
     "desc": "적의 약점을 분석해 치명타를 높입니다. 오버 클럭으로 방어력이 감소 합니다.",
     "icon": "UI_Icon_Equip_Chip_CriTypeB_T2",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 150,
     "source": [],
     "stats": [
@@ -147339,7 +147449,7 @@ export default [
     "desc": "적의 약점을 분석해 치명타를 높입니다. 오버 클럭으로 방어력이 감소 합니다.",
     "icon": "UI_Icon_Equip_Chip_CriTypeB_T3",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 250,
     "source": [],
     "stats": [
@@ -147531,7 +147641,7 @@ export default [
     "desc": "적의 약점을 분석해 치명타를 높입니다. 오버 클럭으로 방어력이 감소 합니다.",
     "icon": "UI_Icon_Equip_Chip_CriTypeB_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [
       [
@@ -147730,7 +147840,7 @@ export default [
     "desc": "회로 내구도를 높여 HP가 증가합니다. 오버 클럭으로 공격력이 감소 합니다.",
     "icon": "UI_Icon_Equip_Chip_HpTypeB_T1",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 100,
     "source": [],
     "stats": [
@@ -147922,7 +148032,7 @@ export default [
     "desc": "회로 내구도를 높여 HP가 증가합니다. 오버 클럭으로 공격력이 감소 합니다.",
     "icon": "UI_Icon_Equip_Chip_HpTypeB_T2",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 150,
     "source": [],
     "stats": [
@@ -148114,7 +148224,7 @@ export default [
     "desc": "회로 내구도를 높여 HP가 증가합니다. 오버 클럭으로 공격력이 감소 합니다.",
     "icon": "UI_Icon_Equip_Chip_HpTypeB_T3",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 250,
     "source": [],
     "stats": [
@@ -148306,7 +148416,7 @@ export default [
     "desc": "회로 내구도를 높여 HP가 증가합니다. 오버 클럭으로 공격력이 감소 합니다.",
     "icon": "UI_Icon_Equip_Chip_HpTypeB_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [
       [
@@ -148505,7 +148615,7 @@ export default [
     "desc": "각 처리 성능을 향상시켜 행동력이 증가합니다. 오버 클럭으로 회피가 감소 합니다.",
     "icon": "UI_Icon_Equip_Chip_SpdTypeB_T1",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 200,
     "source": [
       [
@@ -148701,7 +148811,7 @@ export default [
     "desc": "각 처리 성능을 향상시켜 행동력이 증가합니다. 오버 클럭으로 회피가 감소 합니다.",
     "icon": "UI_Icon_Equip_Chip_SpdTypeB_T2",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 300,
     "source": [
       [
@@ -148897,7 +149007,7 @@ export default [
     "desc": "각 처리 성능을 향상시켜 행동력이 증가합니다. 오버 클럭으로 회피가 감소 합니다.",
     "icon": "UI_Icon_Equip_Chip_SpdTypeB_T3",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [
       [
@@ -149093,7 +149203,7 @@ export default [
     "desc": "각 처리 성능을 향상시켜 행동력이 증가합니다. 오버 클럭으로 회피가 감소 합니다.",
     "icon": "UI_Icon_Equip_Chip_SpdTypeB_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1000,
     "source": [
       [
@@ -149289,7 +149399,7 @@ export default [
     "desc": "기동형에 대응하기 위한 전투 OS 입니다. 오버 클럭으로 효과 저항이 감소 합니다.",
     "icon": "UI_Icon_Equip_System_AntiAirTypeB_T1",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 200,
     "source": [],
     "stats": [
@@ -150097,7 +150207,7 @@ export default [
     "desc": "기동형에 대응하기 위한 전투 OS 입니다. 오버 클럭으로 효과 저항이 감소 합니다.",
     "icon": "UI_Icon_Equip_System_AntiAirTypeB_T2",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 300,
     "source": [],
     "stats": [
@@ -150905,7 +151015,7 @@ export default [
     "desc": "기동형에 대응하기 위한 전투 OS 입니다. 오버 클럭으로 효과 저항이 감소 합니다.",
     "icon": "UI_Icon_Equip_System_AntiAirTypeB_T3",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [],
     "stats": [
@@ -151713,7 +151823,7 @@ export default [
     "desc": "기동형에 대응하기 위한 전투 OS 입니다. 오버 클럭으로 효과 저항이 감소 합니다.",
     "icon": "UI_Icon_Equip_System_AntiAirTypeB_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1000,
     "source": [],
     "stats": [
@@ -152521,7 +152631,7 @@ export default [
     "desc": "경장형에 대응하기 위한 전투 OS 입니다. 오버 클럭으로 효과 저항이 감소 합니다.",
     "icon": "UI_Icon_Equip_System_AntiTrooperTypeB_T1",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 200,
     "source": [],
     "stats": [
@@ -153329,7 +153439,7 @@ export default [
     "desc": "경장형에 대응하기 위한 전투 OS 입니다. 오버 클럭으로 효과 저항이 감소 합니다.",
     "icon": "UI_Icon_Equip_System_AntiTrooperTypeB_T2",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 300,
     "source": [],
     "stats": [
@@ -154137,7 +154247,7 @@ export default [
     "desc": "경장형에 대응하기 위한 전투 OS 입니다. 오버 클럭으로 효과 저항이 감소 합니다.",
     "icon": "UI_Icon_Equip_System_AntiTrooperTypeB_T3",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [],
     "stats": [
@@ -154945,7 +155055,7 @@ export default [
     "desc": "경장형에 대응하기 위한 전투 OS 입니다. 오버 클럭으로 효과 저항이 감소 합니다.",
     "icon": "UI_Icon_Equip_System_AntiTrooperTypeB_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1000,
     "source": [],
     "stats": [
@@ -155753,7 +155863,7 @@ export default [
     "desc": "중장형에 대응하기 위한 전투 OS 입니다. 오버 클럭으로 효과 저항이 감소 합니다.",
     "icon": "UI_Icon_Equip_System_AntiArmorTypeB_T1",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 200,
     "source": [],
     "stats": [
@@ -156561,7 +156671,7 @@ export default [
     "desc": "중장형에 대응하기 위한 전투 OS 입니다. 오버 클럭으로 효과 저항이 감소 합니다.",
     "icon": "UI_Icon_Equip_System_AntiArmorTypeB_T2",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 300,
     "source": [],
     "stats": [
@@ -157369,7 +157479,7 @@ export default [
     "desc": "중장형에 대응하기 위한 전투 OS 입니다. 오버 클럭으로 효과 저항이 감소 합니다.",
     "icon": "UI_Icon_Equip_System_AntiArmorTypeB_T3",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [],
     "stats": [
@@ -158177,7 +158287,7 @@ export default [
     "desc": "중장형에 대응하기 위한 전투 OS 입니다. 오버 클럭으로 효과 저항이 감소 합니다.",
     "icon": "UI_Icon_Equip_System_AntiArmorTypeB_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1000,
     "source": [],
     "stats": [
@@ -158985,7 +159095,7 @@ export default [
     "desc": "사거리 증가 기능이 특화된 관측 장비 입니다. 사거리 감소 효과를 해제하며 사거리가 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_Precision_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1500,
     "source": [
       [
@@ -159741,7 +159851,9 @@ export default [
     "desc": "다크엘븐 전용 전투장비 세트 입니다.\n장착 시 공격력, 치명타, 적중이 증가하며 방어 관통 효과를 얻습니다.",
     "icon": "UI_Icon_Equip_Sub_RangerSet_T4",
     "craftable": false,
-    "limit": "PECS_DarkElf",
+    "limit": [
+      "PECS_DarkElf"
+    ],
     "upgrade": 1000,
     "source": [
       [
@@ -160721,7 +160833,9 @@ export default [
     "desc": "엘븐 전용 특수 프레임 입니다.\n장착 시 방어력과 HP가 증가하며 열보호가 활성화되고 받는 피해 감소와 모든 속성 저항 효과가 발생합니다.",
     "icon": "UI_Icon_Equip_Sub_UnevenTerrain_T4",
     "craftable": false,
-    "limit": "PECS_ElvenForestmaker",
+    "limit": [
+      "PECS_ElvenForestmaker"
+    ],
     "upgrade": 1000,
     "source": [
       [
@@ -162383,7 +162497,9 @@ export default [
     "desc": "베로니카 전용 가시 목걸이 입니다.\n장착 시 공격력과 치명타가 증가하는 반면 적 사망 시 공격력 일정 비율의 HP가 감소합니다.",
     "icon": "UI_Icon_Equip_Sub_ThornNecklace_T4",
     "craftable": false,
-    "limit": "PECS_Veronica",
+    "limit": [
+      "PECS_Veronica"
+    ],
     "upgrade": 1000,
     "source": [
       [
@@ -163055,7 +163171,9 @@ export default [
     "desc": "타이런트 전용 폭주 유도 시스템 OS 입니다.\n장착 시 공격력과 적중이 증가하며 적 사망시 짧은 시간 공격력이 증가하는 효과를 얻습니다.",
     "icon": "UI_Icon_Equip_System_OverFlow_T4",
     "craftable": false,
-    "limit": "AGS_Tyrant",
+    "limit": [
+      "AGS_Tyrant"
+    ],
     "upgrade": 1000,
     "source": [
       [
@@ -163727,7 +163845,9 @@ export default [
     "desc": "셀주크 전용 사격 조정 시스템입니다.\n장착 시 공격력, 치명타, 적중이 증가하며 매 라운드 AP를 획득합니다.",
     "icon": "UI_Icon_Equip_Sub_FCS_T4",
     "craftable": false,
-    "limit": "AGS_Seljuq",
+    "limit": [
+      "AGS_Seljuq"
+    ],
     "upgrade": 1000,
     "source": [
       [
@@ -164476,7 +164596,7 @@ export default [
     "desc": "신소재로 강화된 스코프입니다.\n치명타와 적중이 증가하며 적중 감소 해제 효과를 얻습니다.",
     "icon": "UI_Icon_Equip_Sub_ImSpSight_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1000,
     "source": [
       [
@@ -165155,7 +165275,7 @@ export default [
     "desc": "경장형/기동형에 대응하기 위한 전투 OS 입니다.",
     "icon": "UI_Icon_Equip_System_AntiTrooperAir_T1",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 200,
     "source": [
       [
@@ -165923,7 +166043,7 @@ export default [
     "desc": "경장형/기동형에 대응하기 위한 전투 OS 입니다.",
     "icon": "UI_Icon_Equip_System_AntiTrooperAir_T2",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 300,
     "source": [
       [
@@ -166691,7 +166811,7 @@ export default [
     "desc": "경장형/기동형에 대응하기 위한 전투 OS 입니다.",
     "icon": "UI_Icon_Equip_System_AntiTrooperAir_T3",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [
       [
@@ -167459,7 +167579,7 @@ export default [
     "desc": "경장형/기동형에 대응하기 위한 전투 OS 입니다.",
     "icon": "UI_Icon_Equip_System_AntiTrooperAir_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1000,
     "source": [
       [
@@ -168230,7 +168350,7 @@ export default [
     "desc": "기동형/중장형에 대응하기 위한 전투 OS 입니다.",
     "icon": "UI_Icon_Equip_System_AntiAirArmor_T1",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 200,
     "source": [
       [
@@ -168998,7 +169118,7 @@ export default [
     "desc": "기동형/중장형에 대응하기 위한 전투 OS 입니다.",
     "icon": "UI_Icon_Equip_System_AntiAirArmor_T2",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 300,
     "source": [
       [
@@ -169766,7 +169886,7 @@ export default [
     "desc": "기동형/중장형에 대응하기 위한 전투 OS 입니다.",
     "icon": "UI_Icon_Equip_System_AntiAirArmor_T3",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [
       [
@@ -170534,7 +170654,7 @@ export default [
     "desc": "기동형/중장형에 대응하기 위한 전투 OS 입니다.",
     "icon": "UI_Icon_Equip_System_AntiAirArmor_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1000,
     "source": [
       [
@@ -171305,7 +171425,7 @@ export default [
     "desc": "중장형/경장형에 대응하기 위한 전투 OS 입니다.",
     "icon": "UI_Icon_Equip_System_AntiArmorTrooper_T1",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 200,
     "source": [
       [
@@ -172073,7 +172193,7 @@ export default [
     "desc": "중장형/경장형에 대응하기 위한 전투 OS 입니다.",
     "icon": "UI_Icon_Equip_System_AntiArmorTrooper_T2",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 300,
     "source": [
       [
@@ -172841,7 +172961,7 @@ export default [
     "desc": "중장형/경장형에 대응하기 위한 전투 OS 입니다.",
     "icon": "UI_Icon_Equip_System_AntiArmorTrooper_T3",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 500,
     "source": [
       [
@@ -173609,7 +173729,7 @@ export default [
     "desc": "중장형/경장형에 대응하기 위한 전투 OS 입니다.",
     "icon": "UI_Icon_Equip_System_AntiArmorTrooper_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1000,
     "source": [
       [
@@ -174380,7 +174500,7 @@ export default [
     "desc": "학습형 OS로 인해 전투 승리 시, 획득 경험치가 크게 증가 하지만 행동력이 감소 합니다.",
     "icon": "UI_Icon_Equip_System_ImExp_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1250,
     "source": [
       [
@@ -175082,7 +175202,7 @@ export default [
     "desc": "학습형 OS로 인해 전투 승리 시, 획득 경험치가 크게 증가 하지만 행동력이 감소 합니다.",
     "icon": "UI_Icon_Equip_System_ImExp_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1250,
     "source": [],
     "stats": [
@@ -175780,7 +175900,9 @@ export default [
     "desc": "공격기 전용 장비입니다. 라운드 개시 시, 고에너지를 생성해 공격력이 크게 증가하지만 받는 피해도 함께 증가합니다.",
     "icon": "UI_Icon_Equip_Sub_ParticleAcceleratorATK_T4",
     "craftable": false,
-    "limit": "Attacker",
+    "limit": [
+      "Attacker"
+    ],
     "upgrade": 500,
     "source": [
       [
@@ -176504,7 +176626,7 @@ export default [
     "desc": "<최대 속력 마하 2.50! 선물 전달을 위한 필수 장비!>\n<개량 : 장비의 성능을 향상 시켰습니다.>\n장비 장착시 효과가 증가하고 부작용을 제거 했습니다.",
     "icon": "UI_Icon_Equip_Sub_ImNitroEx3500_T4",
     "craftable": false,
-    "limit": "",
+    "limit": null,
     "upgrade": 1250,
     "source": [
       [

@@ -18,8 +18,8 @@ import StoreModule, { UnitDisplayType } from "@/libs/Store";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 
-import LazyLoad, { LazyDataType } from "@/libs/LazyData";
-import FacilityDB, { Facility, FacilityEntity } from "@/libs/DB/Facility";
+import { Facility, FacilityEntity } from "@/libs/Types/Facility";
+import FacilityDB from "@/libs/DB/Facility";
 
 import FacilityCard from "./Facilities/FacilityCard.vue";
 import { UpdateTitle } from "@/libs/Functions";
@@ -31,32 +31,12 @@ import { SetMeta } from "@/libs/Meta";
 	},
 })
 export default class Facilities extends Vue {
-	private DB: LazyDataType<Facility> = null;
-	private InitialDB () {
-		this.DB = null;
-
-		LazyLoad(
-			r => {
-				const Facility = r[0] as Facility;
-
-				if (!Facility) return (this.DB = false);
-
-				this.DB = Facility;
-				this.checkParams();
-			},
-			cb => FacilityDB(x => cb(x)),
-		);
-	}
-
 	// Vuex -----
 	// Vuex -----
 
 	private get Facilities () {
-		const db = this.DB;
-		if (!db) return [];
-
-		return Object.keys(db)
-			.map(key => [db[key], key] as [FacilityEntity, string])
+		return Object.keys(FacilityDB)
+			.map(key => [FacilityDB[key], key] as [FacilityEntity, string])
 			.sort((a, b) => (a[1] < b[1] ? -1 : a[1] > b[1] ? 1 : 0));
 	}
 
@@ -82,7 +62,6 @@ export default class Facilities extends Vue {
 	}
 
 	private mounted () {
-		this.InitialDB();
 		this.checkParams();
 
 		SetMeta(["description", "twitter:description"], "기지 설비의 목록을 표시합니다.");

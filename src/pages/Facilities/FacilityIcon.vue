@@ -14,7 +14,7 @@ import { Prop } from "vue-property-decorator";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 
-import { FacilityEntity } from "@/libs/DB/Facility";
+import { FacilityEntity } from "@/libs/Types/Facility";
 
 @Component({})
 export default class FacilityIcon extends Vue {

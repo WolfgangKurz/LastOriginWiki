@@ -33,9 +33,11 @@ import Component from "vue-class-component";
 import { Prop, Watch, PropSync } from "vue-property-decorator";
 
 import { SkinInfo } from "@/libs/Types";
-import DialogueDB, { RawUnitDialogue, RawUnitDialogueEntity, UnitDialogueDataType } from "@/libs/DB/Dialogue";
 
-import { Unit } from "@/libs/DB/Unit";
+import { RawUnitDialogue, RawUnitDialogueEntity, UnitDialogueDataType } from "@/libs/Types/Dialogue";
+import DialogueDB from "@/libs/DB/Dialogue";
+
+import { Unit } from "@/libs/Types/Unit";
 
 import DialogueRow from "./DialogueRow.vue";
 

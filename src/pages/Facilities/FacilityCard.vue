@@ -3,7 +3,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
-import { FacilityEntity, FacilityUpgradeRequiredMaterial, FactilityProduct } from "@/libs/DB/Facility";
+import { FacilityEntity, FacilityUpgradeRequiredMaterial, FactilityProduct } from "@/libs/Types/Facility";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 
