@@ -27,7 +27,7 @@ import { Prop, PropSync, Emit } from "vue-property-decorator";
 
 import StoreModule, { UnitListOrder, UnitDisplayFilters, EffectFilterTargetType } from "@/libs/Store";
 
-import { FilterableUnit } from "@/libs/DB/Unit.Filterable";
+import { FilterableUnit } from "@/libs/Types/Unit.Filterable";
 
 import UnitCard from "./UnitCard.vue";
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE, SKILL_ATTR, TARGET_TYPE } from "@/libs/Types/Enums";

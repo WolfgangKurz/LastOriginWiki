@@ -360,15 +360,20 @@ import UnitSkinView from "./UnitSkinView.vue";
 import UnitDialogue from "./UnitDialogue.vue";
 import UnitStats from "./UnitStats.vue";
 
+import { LinkBonusType, Unit } from "@/libs/Types/Unit";
+import { FilterableUnit } from "@/libs/Types/Unit.Filterable";
+import { Equip, EquipItem } from "@/libs/Types/Equip";
+import { SkillEntity, SkillGroup } from "@/libs/Types/Skill";
+import { UnitStats as UnitStats_ } from "@/libs/Types/UnitStats";
+
 import LazyLoad, { LazyDataType } from "@/libs/LazyData";
-import UnitDB, { GetLinkBonus, LinkBonusType, Unit } from "@/libs/DB/Unit";
-import FilterableUnitDB, { FilterableUnit } from "@/libs/DB/Unit.Filterable";
-import EquipDB, { Equip } from "@/libs/DB/Equip";
-import SkillDB, { SkillEntity, SkillGroup } from "@/libs/DB/Skill";
+import FilterableUnitDB from "@/libs/DB/Unit.Filterable";
+import UnitDB, { GetLinkBonus } from "@/libs/DB/Unit";
+import EquipDB from "@/libs/DB/Equip";
+import SkillDB from "@/libs/DB/Skill";
+import UnitStatDB from "@/libs/DB/UnitStats";
 
 import { RawSkin, SkinInfo, Rarity, SortieCostBody } from "@/libs/Types";
-
-import UnitStatsData, { UnitStats as UnitStats_ } from "@/libs/DB/UnitStats";
 
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, CURRENCY_TYPE, ROLE_TYPE } from "@/libs/Types/Enums";
 
@@ -378,12 +383,9 @@ import SkinData from "@/json/unit-skin";
 import { UpdateTitle } from "@/libs/Functions";
 import { SetMeta } from "@/libs/Meta";
 import { AssetsRoot, ImageExtension, RarityDisplay, SortieCost, UnitClassDisplay, UnitRoleDisplay } from "@/libs/Const";
-import unit from "@/json/unit";
 
 interface DBData {
-	FilterableUnit: FilterableUnit[];
 	Unit: Unit;
-	Equip: Equip[];
 	Skill: SkillGroup;
 }
 
@@ -419,22 +421,18 @@ interface VoiceItem extends SkinInfo {
 export default class UnitView extends Vue {
 	private DB: LazyDataType<DBData> = null;
 	private InitialDB () {
-		const data: Partial<DBData> = {};
 		this.DB = null;
 
 		const uid = this.$route.params.id;
 		LazyLoad(
 			r => {
-				const FilterableUnit = r[0] as FilterableUnit[];
-				const Unit = r[1] as Unit;
-				const Equip = r[2] as Equip[];
-				const Skill = r[3] as SkillGroup;
+				const Unit = r[0] as Unit;
+				const Skill = r[1] as SkillGroup;
 
-				if (!FilterableUnit) return (this.DB = false);
 				if (!Unit) {
 					if (/^[0-9]+$/.test(uid)) {
 						const iUid = parseInt(uid, 10);
-						const u = FilterableUnit.find(z => z.no === iUid);
+						const u = FilterableUnitDB.find(z => z.no === iUid);
 						if (u) {
 							this.$router.replace("/units/" + u.uid);
 							this.InitialDB();
@@ -447,16 +445,12 @@ export default class UnitView extends Vue {
 				if (!Skill) return (this.DB = false);
 
 				this.DB = {
-					FilterableUnit,
 					Unit,
-					Equip: Equip || [],
 					Skill,
 				};
 				this.checkParams();
 			},
-			cb => FilterableUnitDB(x => cb(x)),
 			cb => UnitDB(uid, x => cb(x)),
-			cb => EquipDB(x => cb(x)),
 			cb => SkillDB(uid, x => cb(x)),
 		);
 	}
@@ -504,9 +498,7 @@ export default class UnitView extends Vue {
 		}
 
 		const id = params.id;
-		if (!this.DB) return;
-
-		const unit = this.DB.FilterableUnit.find(x => x.uid === id);
+		const unit = FilterableUnitDB.find(x => x.uid === id);
 		if (!unit) {
 			this.$router.replace("/units");
 			return;
@@ -555,7 +547,7 @@ export default class UnitView extends Vue {
 	}
 
 	private get CurrentResists () {
-		const stat = UnitStatsData.find(x => x.id === this.unit.id && x.rarity === this.costRarity);
+		const stat = UnitStatDB.find(x => x.id === this.unit.id && x.rarity === this.costRarity);
 		return (stat || UnitStats_.Empty).Resist;
 	}
 

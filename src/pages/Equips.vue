@@ -1,5 +1,5 @@
 <template>
-	<lazy-data-base :data="DB" class="equips">
+	<div class="equips">
 		<div class="text-center mb-3">
 			<b-alert variant="warning" show>
 				일부 이벤트의 교환소 정보가 입력되지 않았습니다.<br />
@@ -189,7 +189,7 @@
 		</b-row>
 
 		<equip-modal :equip="selectedEquip" :display.sync="equipModalDisplay" />
-	</lazy-data-base>
+	</div>
 </template>
 
 <script lang="ts">
@@ -206,9 +206,11 @@ import EquipModal from "./Equips/EquipModal.vue";
 import { ACTOR_GRADE, ITEM_TYPE } from "@/libs/Types/Enums";
 import { BuffEffect, BuffEffectListGroupKeys, BuffEffectValue, BUFFEFFECT_TYPE } from "@/libs/Buffs/BuffEffect";
 
-import LazyLoad, { LazyDataType } from "@/libs/LazyData";
-import FilterableUnitDB, { FilterableUnit } from "@/libs/DB/Unit.Filterable";
-import EquipDB, { Equip } from "@/libs/DB/Equip";
+import { FilterableUnit } from "@/libs/Types/Unit.Filterable";
+import { Equip, EquipItem } from "@/libs/Types/Equip";
+
+import FilterableUnitDB from "@/libs/DB/Unit.Filterable";
+import FilterableEquipDB from "@/libs/DB/Equip.Filterable";
 
 import { CurrentEvent, CurrentDate, AssetsRoot, ImageExtension } from "@/libs/Const";
 import { ArrayUnique, groupBy, UpdateTitle } from "@/libs/Functions";
@@ -234,29 +236,6 @@ interface DBData {
 	},
 })
 export default class Equips extends Vue {
-	private DB: LazyDataType<DBData> = null;
-	private InitialDB () {
-		this.DB = null;
-
-		LazyLoad(
-			r => {
-				const FilterableUnit = r[0] as FilterableUnit[];
-				const Equip = r[1] as Equip[];
-
-				if (!FilterableUnit) return (this.DB = false);
-				if (!Equip) return (this.DB = false);
-
-				this.DB = {
-					FilterableUnit,
-					Equip,
-				};
-				this.checkParams();
-			},
-			cb => FilterableUnitDB(x => cb(x)),
-			cb => EquipDB(x => cb(x)),
-		);
-	}
-
 	private selectedEquip: Equip | null = null;
 
 	private equipModalDisplay: boolean = false;
@@ -347,10 +326,7 @@ export default class Equips extends Vue {
 	}
 
 	private get EquipGroups () {
-		const db = this.DB;
-		if (!db) return [];
-
-		const group = groupBy(db.Equip, (x) => `${x.type}_${x.key}`);
+		const group = groupBy(FilterableEquipDB, (x) => `${x.type}_${x.key}`);
 		return Object.keys(group)
 			.map(x => group[x])
 			.map(x_ => {
@@ -496,9 +472,6 @@ export default class Equips extends Vue {
 	}
 
 	private get EquipEffects () {
-		const db = this.DB;
-		if (!db) return [];
-
 		const ret: EffectFilterListType = [];
 
 		StoreModule.equipEffectFilterListFlatten
@@ -508,7 +481,7 @@ export default class Equips extends Vue {
 					const part: EffectFilterListItemPM[] = [];
 
 					// 증가치
-					let f = db.Equip.some(eq => eq.stats.some(row => row.some(es => {
+					let f = FilterableEquipDB.some(eq => eq.stats.some(row => row.some(es => {
 						if ("type" in es)
 							return x[0].type.includes(es.type) && isPositiveBuffEffect(es);
 						else
@@ -517,7 +490,7 @@ export default class Equips extends Vue {
 					if (f) part.push(x[0]);
 
 					// 감소치
-					f = db.Equip.some(eq => eq.stats.some(row => row.some(es => {
+					f = FilterableEquipDB.some(eq => eq.stats.some(row => row.some(es => {
 						if ("type" in es)
 							return x[1].type.includes(es.type) && !isPositiveBuffEffect(es);
 						else
@@ -529,7 +502,7 @@ export default class Equips extends Vue {
 						ret.push(part);
 				} else {
 					// 상수치
-					const f = db.Equip.some(eq => eq.stats.some(row => row.some(es => {
+					const f = FilterableEquipDB.some(eq => eq.stats.some(row => row.some(es => {
 						if ("type" in es)
 							return x.type.includes(es.type);
 						else
@@ -553,7 +526,7 @@ export default class Equips extends Vue {
 		return dict;
 	}
 
-	private HasFilteredEffect (eq: Equip, validator: (stat: BuffEffect) => boolean) {
+	private HasFilteredEffect (eq: FilterableEquip, validator: (stat: BuffEffect) => boolean) {
 		const isNumeric = (data: string) => {
 			return /^[0-9]+\.?[0-9]*%?$/.test(data);
 		};
@@ -583,8 +556,7 @@ export default class Equips extends Vue {
 	}
 
 	private modalEquip (fullKey: string) {
-		if (!this.DB) return;
-		this.selectedEquip = this.DB.Equip.find(x => x.fullKey === fullKey) || null;
+		this.selectedEquip = EquipDB.find(x => x.fullKey === fullKey) || null;
 		this.equipModalDisplay = true;
 	}
 
@@ -609,7 +581,6 @@ export default class Equips extends Vue {
 	}
 
 	private mounted () {
-		this.InitialDB();
 		this.checkParams();
 	}
 }

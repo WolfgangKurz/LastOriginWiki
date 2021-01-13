@@ -502,7 +502,8 @@ export const UnitRoleDisplay: Record<ROLE_TYPE, string> = {
 };
 
 export const AssetsRoot = process.env.NODE_ENV === "development"
-	? "http://localhost:5500/assets"
+	// ? "http://localhost:5500/assets"
+	? "https://lo.swaytwig.com/assets"
 	// : "https://lastorigin-wiki-assets.s3.ap-northeast-2.amazonaws.com";
 	: "/assets";
 

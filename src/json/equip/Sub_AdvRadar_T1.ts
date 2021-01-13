@@ -1,0 +1,959 @@
+export default [
+  [
+    {
+      "on": "round",
+      "if": {
+        "pos": 2
+      },
+      "body": [
+        0,
+        1
+      ],
+      "class": [
+        0,
+        1,
+        2
+      ],
+      "role": [
+        1
+      ],
+      "target": 0,
+      "buffs": [
+        {
+          "icon": "BuffIcon_ATK_UP",
+          "desc": {
+            "desc": "망원 조준장치 : 공격력+{0}%",
+            "type": 1,
+            "value": "0.010000"
+          },
+          "attr": 3,
+          "erase": {
+            "rounds": 1
+          },
+          "value": {
+            "isBuff": true,
+            "type": 1,
+            "attack": {
+              "base": "1%",
+              "per": "0%"
+            }
+          },
+          "overlap": 4
+        },
+        {
+          "icon": "BuffIcon_ACCURACY_UP",
+          "desc": {
+            "desc": "망원 조준장치 : 적중+{0}%",
+            "type": 1,
+            "value": "0.250000"
+          },
+          "attr": 3,
+          "erase": {
+            "rounds": 1
+          },
+          "value": {
+            "isBuff": true,
+            "type": 7,
+            "accuracy": {
+              "base": "25%",
+              "per": "0%"
+            }
+          },
+          "overlap": 4
+        },
+        {
+          "icon": "BuffIcon_CRITICAL_UP",
+          "desc": {
+            "desc": "망원 조준장치 : 치명타+{0}%",
+            "type": 1,
+            "value": "0.050000"
+          },
+          "attr": 3,
+          "erase": {
+            "rounds": 1
+          },
+          "value": {
+            "isBuff": true,
+            "type": 9,
+            "critical": {
+              "base": "5%",
+              "per": "0%"
+            }
+          },
+          "overlap": 4
+        }
+      ],
+      "maxStack": 0
+    }
+  ],
+  [
+    {
+      "on": "round",
+      "if": {
+        "pos": 2
+      },
+      "body": [
+        0,
+        1
+      ],
+      "class": [
+        0,
+        1,
+        2
+      ],
+      "role": [
+        1
+      ],
+      "target": 0,
+      "buffs": [
+        {
+          "icon": "BuffIcon_ATK_UP",
+          "desc": {
+            "desc": "망원 조준장치 : 공격력+{0}%",
+            "type": 1,
+            "value": "0.012000"
+          },
+          "attr": 3,
+          "erase": {
+            "rounds": 1
+          },
+          "value": {
+            "isBuff": true,
+            "type": 1,
+            "attack": {
+              "base": "1.2%",
+              "per": "0%"
+            }
+          },
+          "overlap": 4
+        },
+        {
+          "icon": "BuffIcon_ACCURACY_UP",
+          "desc": {
+            "desc": "망원 조준장치 : 적중+{0}%",
+            "type": 1,
+            "value": "0.265000"
+          },
+          "attr": 3,
+          "erase": {
+            "rounds": 1
+          },
+          "value": {
+            "isBuff": true,
+            "type": 7,
+            "accuracy": {
+              "base": "26.5%",
+              "per": "0%"
+            }
+          },
+          "overlap": 4
+        },
+        {
+          "icon": "BuffIcon_CRITICAL_UP",
+          "desc": {
+            "desc": "망원 조준장치 : 치명타+{0}%",
+            "type": 1,
+            "value": "0.055000"
+          },
+          "attr": 3,
+          "erase": {
+            "rounds": 1
+          },
+          "value": {
+            "isBuff": true,
+            "type": 9,
+            "critical": {
+              "base": "5.5%",
+              "per": "0%"
+            }
+          },
+          "overlap": 4
+        }
+      ],
+      "maxStack": 0
+    }
+  ],
+  [
+    {
+      "on": "round",
+      "if": {
+        "pos": 2
+      },
+      "body": [
+        0,
+        1
+      ],
+      "class": [
+        0,
+        1,
+        2
+      ],
+      "role": [
+        1
+      ],
+      "target": 0,
+      "buffs": [
+        {
+          "icon": "BuffIcon_ATK_UP",
+          "desc": {
+            "desc": "망원 조준장치 : 공격력+{0}%",
+            "type": 1,
+            "value": "0.014000"
+          },
+          "attr": 3,
+          "erase": {
+            "rounds": 1
+          },
+          "value": {
+            "isBuff": true,
+            "type": 1,
+            "attack": {
+              "base": "1.4%",
+              "per": "0%"
+            }
+          },
+          "overlap": 4
+        },
+        {
+          "icon": "BuffIcon_ACCURACY_UP",
+          "desc": {
+            "desc": "망원 조준장치 : 적중+{0}%",
+            "type": 1,
+            "value": "0.280000"
+          },
+          "attr": 3,
+          "erase": {
+            "rounds": 1
+          },
+          "value": {
+            "isBuff": true,
+            "type": 7,
+            "accuracy": {
+              "base": "28%",
+              "per": "0%"
+            }
+          },
+          "overlap": 4
+        },
+        {
+          "icon": "BuffIcon_CRITICAL_UP",
+          "desc": {
+            "desc": "망원 조준장치 : 치명타+{0}%",
+            "type": 1,
+            "value": "0.060000"
+          },
+          "attr": 3,
+          "erase": {
+            "rounds": 1
+          },
+          "value": {
+            "isBuff": true,
+            "type": 9,
+            "critical": {
+              "base": "6%",
+              "per": "0%"
+            }
+          },
+          "overlap": 4
+        }
+      ],
+      "maxStack": 0
+    }
+  ],
+  [
+    {
+      "on": "round",
+      "if": {
+        "pos": 2
+      },
+      "body": [
+        0,
+        1
+      ],
+      "class": [
+        0,
+        1,
+        2
+      ],
+      "role": [
+        1
+      ],
+      "target": 0,
+      "buffs": [
+        {
+          "icon": "BuffIcon_ATK_UP",
+          "desc": {
+            "desc": "망원 조준장치 : 공격력+{0}%",
+            "type": 1,
+            "value": "0.016000"
+          },
+          "attr": 3,
+          "erase": {
+            "rounds": 1
+          },
+          "value": {
+            "isBuff": true,
+            "type": 1,
+            "attack": {
+              "base": "1.6%",
+              "per": "0%"
+            }
+          },
+          "overlap": 4
+        },
+        {
+          "icon": "BuffIcon_ACCURACY_UP",
+          "desc": {
+            "desc": "망원 조준장치 : 적중+{0}%",
+            "type": 1,
+            "value": "0.295000"
+          },
+          "attr": 3,
+          "erase": {
+            "rounds": 1
+          },
+          "value": {
+            "isBuff": true,
+            "type": 7,
+            "accuracy": {
+              "base": "29.5%",
+              "per": "0%"
+            }
+          },
+          "overlap": 4
+        },
+        {
+          "icon": "BuffIcon_CRITICAL_UP",
+          "desc": {
+            "desc": "망원 조준장치 : 치명타+{0}%",
+            "type": 1,
+            "value": "0.065000"
+          },
+          "attr": 3,
+          "erase": {
+            "rounds": 1
+          },
+          "value": {
+            "isBuff": true,
+            "type": 9,
+            "critical": {
+              "base": "6.5%",
+              "per": "0%"
+            }
+          },
+          "overlap": 4
+        }
+      ],
+      "maxStack": 0
+    }
+  ],
+  [
+    {
+      "on": "round",
+      "if": {
+        "pos": 2
+      },
+      "body": [
+        0,
+        1
+      ],
+      "class": [
+        0,
+        1,
+        2
+      ],
+      "role": [
+        1
+      ],
+      "target": 0,
+      "buffs": [
+        {
+          "icon": "BuffIcon_ATK_UP",
+          "desc": {
+            "desc": "망원 조준장치 : 공격력+{0}%",
+            "type": 1,
+            "value": "0.018000"
+          },
+          "attr": 3,
+          "erase": {
+            "rounds": 1
+          },
+          "value": {
+            "isBuff": true,
+            "type": 1,
+            "attack": {
+              "base": "1.8%",
+              "per": "0%"
+            }
+          },
+          "overlap": 4
+        },
+        {
+          "icon": "BuffIcon_ACCURACY_UP",
+          "desc": {
+            "desc": "망원 조준장치 : 적중+{0}%",
+            "type": 1,
+            "value": "0.310000"
+          },
+          "attr": 3,
+          "erase": {
+            "rounds": 1
+          },
+          "value": {
+            "isBuff": true,
+            "type": 7,
+            "accuracy": {
+              "base": "31%",
+              "per": "0%"
+            }
+          },
+          "overlap": 4
+        },
+        {
+          "icon": "BuffIcon_CRITICAL_UP",
+          "desc": {
+            "desc": "망원 조준장치 : 치명타+{0}%",
+            "type": 1,
+            "value": "0.070000"
+          },
+          "attr": 3,
+          "erase": {
+            "rounds": 1
+          },
+          "value": {
+            "isBuff": true,
+            "type": 9,
+            "critical": {
+              "base": "7%",
+              "per": "0%"
+            }
+          },
+          "overlap": 4
+        }
+      ],
+      "maxStack": 0
+    }
+  ],
+  [
+    {
+      "on": "round",
+      "if": {
+        "pos": 2
+      },
+      "body": [
+        0,
+        1
+      ],
+      "class": [
+        0,
+        1,
+        2
+      ],
+      "role": [
+        1
+      ],
+      "target": 0,
+      "buffs": [
+        {
+          "icon": "BuffIcon_ATK_UP",
+          "desc": {
+            "desc": "망원 조준장치 : 공격력+{0}%",
+            "type": 1,
+            "value": "0.020000"
+          },
+          "attr": 3,
+          "erase": {
+            "rounds": 1
+          },
+          "value": {
+            "isBuff": true,
+            "type": 1,
+            "attack": {
+              "base": "2%",
+              "per": "0%"
+            }
+          },
+          "overlap": 4
+        },
+        {
+          "icon": "BuffIcon_ACCURACY_UP",
+          "desc": {
+            "desc": "망원 조준장치 : 적중+{0}%",
+            "type": 1,
+            "value": "0.325000"
+          },
+          "attr": 3,
+          "erase": {
+            "rounds": 1
+          },
+          "value": {
+            "isBuff": true,
+            "type": 7,
+            "accuracy": {
+              "base": "32.5%",
+              "per": "0%"
+            }
+          },
+          "overlap": 4
+        },
+        {
+          "icon": "BuffIcon_CRITICAL_UP",
+          "desc": {
+            "desc": "망원 조준장치 : 치명타+{0}%",
+            "type": 1,
+            "value": "0.075000"
+          },
+          "attr": 3,
+          "erase": {
+            "rounds": 1
+          },
+          "value": {
+            "isBuff": true,
+            "type": 9,
+            "critical": {
+              "base": "7.5%",
+              "per": "0%"
+            }
+          },
+          "overlap": 4
+        }
+      ],
+      "maxStack": 0
+    }
+  ],
+  [
+    {
+      "on": "round",
+      "if": {
+        "pos": 2
+      },
+      "body": [
+        0,
+        1
+      ],
+      "class": [
+        0,
+        1,
+        2
+      ],
+      "role": [
+        1
+      ],
+      "target": 0,
+      "buffs": [
+        {
+          "icon": "BuffIcon_ATK_UP",
+          "desc": {
+            "desc": "망원 조준장치 : 공격력+{0}%",
+            "type": 1,
+            "value": "0.022000"
+          },
+          "attr": 3,
+          "erase": {
+            "rounds": 1
+          },
+          "value": {
+            "isBuff": true,
+            "type": 1,
+            "attack": {
+              "base": "2.2%",
+              "per": "0%"
+            }
+          },
+          "overlap": 4
+        },
+        {
+          "icon": "BuffIcon_ACCURACY_UP",
+          "desc": {
+            "desc": "망원 조준장치 : 적중+{0}%",
+            "type": 1,
+            "value": "0.340000"
+          },
+          "attr": 3,
+          "erase": {
+            "rounds": 1
+          },
+          "value": {
+            "isBuff": true,
+            "type": 7,
+            "accuracy": {
+              "base": "34%",
+              "per": "0%"
+            }
+          },
+          "overlap": 4
+        },
+        {
+          "icon": "BuffIcon_CRITICAL_UP",
+          "desc": {
+            "desc": "망원 조준장치 : 치명타+{0}%",
+            "type": 1,
+            "value": "0.080000"
+          },
+          "attr": 3,
+          "erase": {
+            "rounds": 1
+          },
+          "value": {
+            "isBuff": true,
+            "type": 9,
+            "critical": {
+              "base": "8%",
+              "per": "0%"
+            }
+          },
+          "overlap": 4
+        }
+      ],
+      "maxStack": 0
+    }
+  ],
+  [
+    {
+      "on": "round",
+      "if": {
+        "pos": 2
+      },
+      "body": [
+        0,
+        1
+      ],
+      "class": [
+        0,
+        1,
+        2
+      ],
+      "role": [
+        1
+      ],
+      "target": 0,
+      "buffs": [
+        {
+          "icon": "BuffIcon_ATK_UP",
+          "desc": {
+            "desc": "망원 조준장치 : 공격력+{0}%",
+            "type": 1,
+            "value": "0.024000"
+          },
+          "attr": 3,
+          "erase": {
+            "rounds": 1
+          },
+          "value": {
+            "isBuff": true,
+            "type": 1,
+            "attack": {
+              "base": "2.4%",
+              "per": "0%"
+            }
+          },
+          "overlap": 4
+        },
+        {
+          "icon": "BuffIcon_ACCURACY_UP",
+          "desc": {
+            "desc": "망원 조준장치 : 적중+{0}%",
+            "type": 1,
+            "value": "0.355000"
+          },
+          "attr": 3,
+          "erase": {
+            "rounds": 1
+          },
+          "value": {
+            "isBuff": true,
+            "type": 7,
+            "accuracy": {
+              "base": "35.5%",
+              "per": "0%"
+            }
+          },
+          "overlap": 4
+        },
+        {
+          "icon": "BuffIcon_CRITICAL_UP",
+          "desc": {
+            "desc": "망원 조준장치 : 치명타+{0}%",
+            "type": 1,
+            "value": "0.085000"
+          },
+          "attr": 3,
+          "erase": {
+            "rounds": 1
+          },
+          "value": {
+            "isBuff": true,
+            "type": 9,
+            "critical": {
+              "base": "8.5%",
+              "per": "0%"
+            }
+          },
+          "overlap": 4
+        }
+      ],
+      "maxStack": 0
+    }
+  ],
+  [
+    {
+      "on": "round",
+      "if": {
+        "pos": 2
+      },
+      "body": [
+        0,
+        1
+      ],
+      "class": [
+        0,
+        1,
+        2
+      ],
+      "role": [
+        1
+      ],
+      "target": 0,
+      "buffs": [
+        {
+          "icon": "BuffIcon_ATK_UP",
+          "desc": {
+            "desc": "망원 조준장치 : 공격력+{0}%",
+            "type": 1,
+            "value": "0.026000"
+          },
+          "attr": 3,
+          "erase": {
+            "rounds": 1
+          },
+          "value": {
+            "isBuff": true,
+            "type": 1,
+            "attack": {
+              "base": "2.6%",
+              "per": "0%"
+            }
+          },
+          "overlap": 4
+        },
+        {
+          "icon": "BuffIcon_ACCURACY_UP",
+          "desc": {
+            "desc": "망원 조준장치 : 적중+{0}%",
+            "type": 1,
+            "value": "0.370000"
+          },
+          "attr": 3,
+          "erase": {
+            "rounds": 1
+          },
+          "value": {
+            "isBuff": true,
+            "type": 7,
+            "accuracy": {
+              "base": "37%",
+              "per": "0%"
+            }
+          },
+          "overlap": 4
+        },
+        {
+          "icon": "BuffIcon_CRITICAL_UP",
+          "desc": {
+            "desc": "망원 조준장치 : 치명타+{0}%",
+            "type": 1,
+            "value": "0.090000"
+          },
+          "attr": 3,
+          "erase": {
+            "rounds": 1
+          },
+          "value": {
+            "isBuff": true,
+            "type": 9,
+            "critical": {
+              "base": "9%",
+              "per": "0%"
+            }
+          },
+          "overlap": 4
+        }
+      ],
+      "maxStack": 0
+    }
+  ],
+  [
+    {
+      "on": "round",
+      "if": {
+        "pos": 2
+      },
+      "body": [
+        0,
+        1
+      ],
+      "class": [
+        0,
+        1,
+        2
+      ],
+      "role": [
+        1
+      ],
+      "target": 0,
+      "buffs": [
+        {
+          "icon": "BuffIcon_ATK_UP",
+          "desc": {
+            "desc": "망원 조준장치 : 공격력+{0}%",
+            "type": 1,
+            "value": "0.028000"
+          },
+          "attr": 3,
+          "erase": {
+            "rounds": 1
+          },
+          "value": {
+            "isBuff": true,
+            "type": 1,
+            "attack": {
+              "base": "2.8%",
+              "per": "0%"
+            }
+          },
+          "overlap": 4
+        },
+        {
+          "icon": "BuffIcon_ACCURACY_UP",
+          "desc": {
+            "desc": "망원 조준장치 : 적중+{0}%",
+            "type": 1,
+            "value": "0.385000"
+          },
+          "attr": 3,
+          "erase": {
+            "rounds": 1
+          },
+          "value": {
+            "isBuff": true,
+            "type": 7,
+            "accuracy": {
+              "base": "38.5%",
+              "per": "0%"
+            }
+          },
+          "overlap": 4
+        },
+        {
+          "icon": "BuffIcon_CRITICAL_UP",
+          "desc": {
+            "desc": "망원 조준장치 : 치명타+{0}%",
+            "type": 1,
+            "value": "0.095000"
+          },
+          "attr": 3,
+          "erase": {
+            "rounds": 1
+          },
+          "value": {
+            "isBuff": true,
+            "type": 9,
+            "critical": {
+              "base": "9.5%",
+              "per": "0%"
+            }
+          },
+          "overlap": 4
+        }
+      ],
+      "maxStack": 0
+    }
+  ],
+  [
+    {
+      "on": "round",
+      "if": {
+        "pos": 2
+      },
+      "body": [
+        0,
+        1
+      ],
+      "class": [
+        0,
+        1,
+        2
+      ],
+      "role": [
+        1
+      ],
+      "target": 0,
+      "buffs": [
+        {
+          "icon": "BuffIcon_ATK_UP",
+          "desc": {
+            "desc": "망원 조준장치 : 공격력+{0}%",
+            "type": 1,
+            "value": "0.030000"
+          },
+          "attr": 3,
+          "erase": {
+            "rounds": 1
+          },
+          "value": {
+            "isBuff": true,
+            "type": 1,
+            "attack": {
+              "base": "3%",
+              "per": "0%"
+            }
+          },
+          "overlap": 4
+        },
+        {
+          "icon": "BuffIcon_ACCURACY_UP",
+          "desc": {
+            "desc": "망원 조준장치 : 적중+{0}%",
+            "type": 1,
+            "value": "0.400000"
+          },
+          "attr": 3,
+          "erase": {
+            "rounds": 1
+          },
+          "value": {
+            "isBuff": true,
+            "type": 7,
+            "accuracy": {
+              "base": "40%",
+              "per": "0%"
+            }
+          },
+          "overlap": 4
+        },
+        {
+          "icon": "BuffIcon_CRITICAL_UP",
+          "desc": {
+            "desc": "망원 조준장치 : 치명타+{0}%",
+            "type": 1,
+            "value": "0.100000"
+          },
+          "attr": 3,
+          "erase": {
+            "rounds": 1
+          },
+          "value": {
+            "isBuff": true,
+            "type": 9,
+            "critical": {
+              "base": "10%",
+              "per": "0%"
+            }
+          },
+          "overlap": 4
+        }
+      ],
+      "maxStack": 0
+    }
+  ]
+];

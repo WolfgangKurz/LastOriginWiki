@@ -56,7 +56,7 @@ function process (auth) {
 					),
 				];
 
-				ret.push({
+				const o = {
 					available,
 					rarity,
 					type,
@@ -72,7 +72,12 @@ function process (auth) {
 					upgrade,
 					source,
 					stats: row.filter((x, i) => i >= 13).map(x => JSON.parse(x)),
-				});
+				};
+				ret.push(o);
+				fs.writeFileSync(
+					path.resolve(__dirname, "..", "src", "json", "equip", `${fullKey}.ts`),
+					`export default ${JSON.stringify(o.stats, null, 2)};`,
+				);
 			});
 
 			fs.writeFileSync(

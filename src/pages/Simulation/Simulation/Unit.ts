@@ -9,10 +9,15 @@ import { UnitStat, UnitPoint, Stat, StatPointValue, StatType, RatioStats } from 
 import { BuffEffect, BUFFEFFECT_TYPE } from "@/libs/Buffs/BuffEffect";
 
 import { ACTOR_GRADE, BUFF_ATTR_TYPE, ITEM_TYPE } from "@/libs/Types/Enums";
-import UnitDB, { GetLinkBonus, LinkBonusType, Unit as Unit_ } from "@/libs/DB/Unit";
-import UnitStatsData from "@/libs/DB/UnitStats";
-import EquipDB, { Equip } from "@/libs/DB/Equip";
-import SkillData, { SkillEntity, SkillSlotKey } from "@/libs/DB/Skill";
+
+import { LinkBonusType, Unit as Unit_ } from "@/libs/Types/Unit";
+import { SkillEntity, SkillGroup, SkillSlotKey } from "@/libs/Types/Skill";
+
+import LazyLoad, { LazyDataType } from "@/libs/LazyData";
+import UnitDB, { GetLinkBonus } from "@/libs/DB/Unit";
+import UnitStatsDB from "@/libs/DB/UnitStats";
+import EquipDB from "@/libs/DB/Equip";
+import SkillDB from "@/libs/DB/Skill";
 
 type LinkData = [number, number, number, number, number];
 
@@ -22,26 +27,36 @@ interface SkillItem extends SkillEntity {
 }
 type SkillTable = Record<SkillSlotKey, SkillItem>;
 
+interface DBData {
+	Unit: Unit_;
+	Skill: SkillGroup;
+}
+
 @Component({})
 export class Unit extends Vue {
-	private internalUnitDB: Unit_ | null = null;
-	private get UnitDB () {
-		if (!this.uid) return null;
+	private DB: LazyDataType<DBData> = null;
+	private InitialDB () {
+		this.DB = null;
 
-		if (this.internalUnitDB) return this.internalUnitDB;
-		return UnitDB(this.uid, (x) => {
-			if (!x) return;
+		const uid = this.uid;
+		if (!uid) return;
 
-			this.internalUnitDB = x;
-		});
-	}
+		LazyLoad(
+			r => {
+				const Unit = r[0] as Unit_;
+				const Skill = r[1] as SkillGroup;
 
-	private internalEquipDB: Equip[] | null = null;
-	private get EquipDB () {
-		if (!this.uid) return null;
+				if (!Unit) return (this.DB = false);
+				if (!Skill) return (this.DB = false);
 
-		if (this.internalEquipDB) return this.internalEquipDB;
-		return EquipDB((x) => (this.internalEquipDB = x));
+				this.DB = {
+					Unit,
+					Skill,
+				};
+			},
+			cb => UnitDB(uid, x => cb(x)),
+			cb => SkillDB(uid, x => cb(x)),
+		);
 	}
 
 	private uid: string | null = null;
@@ -57,7 +72,7 @@ export class Unit extends Vue {
 
 	// #region Getters
 	public get Unit () {
-		return this.UnitDB || Unit_.Empty;
+		return (this.DB && this.DB.Unit) || Unit_.Empty;
 	}
 
 	public get Uid () {
@@ -138,7 +153,7 @@ export class Unit extends Vue {
 	public get StatData () {
 		if (!this.Uid) return UnitStat.Empty;
 
-		const data = UnitStatsData.find(x => x.id === this.Unit.id && x.rarity === this.Rarity);
+		const data = UnitStatsDB.find(x => x.id === this.Unit.id && x.rarity === this.Rarity);
 		if (!data) return UnitStat.Empty; // 잘못된 요청 (존재하지 않는 스탯 데이터)
 
 		const levelValue = (value: number[], level: number) => {
@@ -192,9 +207,6 @@ export class Unit extends Vue {
 				.filter(x => x.Key)
 				.forEach(x => {
 					const level = x.Level;
-
-					const equip = (this.EquipDB || []).find(y => y.fullKey === x.FullKey);
-					if (!equip) return;
 
 					const calc = (src: string | number) => {
 						const { p, v } = (() => {
@@ -321,7 +333,7 @@ export class Unit extends Vue {
 						}
 					};
 
-					const stats = equip.stats[level];
+					const stats = x.stats[level];
 					stats.forEach(stat => {
 						if ("buffs" in stat)
 							stat.buffs.forEach(buff => procValue(buff.value));
@@ -368,8 +380,10 @@ export class Unit extends Vue {
 	/**
 	 * 형태 전환 전/후를 모두 포함한 스킬 목록
 	 */
-	private get SkillsRaw () {
-		const table = SkillData[this.Unit.uid] as SkillTable;
+	private get SkillsRaw (): SkillTable | null {
+		if (!this.DB) return null;
+
+		const table = { ...this.DB.Skill } as SkillTable;
 		if (table) {
 			Object.keys(table)
 				.forEach(xk => {
@@ -408,6 +422,7 @@ export class Unit extends Vue {
 				Type: (this.Unit && this.Unit.equip[i]) || ITEM_TYPE.CHIP,
 			}));
 
+		this.InitialDB();
 		return this;
 	}
 

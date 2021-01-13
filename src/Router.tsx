@@ -50,32 +50,32 @@ const Router = new VueRouter({
 		// 	component: () => Lazyload(import(/* webpackChunkName: "chunk-page-units" */ "@/pages/Units/View.vue")),
 		// },
 
-		{
-			path: "/equips",
-			component: () => Lazyload(import(/* webpackChunkName: "chunk-page-equips" */ "@/pages/Equips.vue")),
-		},
-		{
-			path: "/equips/:id",
-			component: () => Lazyload(import(/* webpackChunkName: "chunk-page-equips" */ "@/pages/Equips.vue")),
-		},
+		// {
+		// 	path: "/equips",
+		// 	component: () => Lazyload(import(/* webpackChunkName: "chunk-page-equips" */ "@/pages/Equips.vue")),
+		// },
+		// {
+		// 	path: "/equips/:id",
+		// 	component: () => Lazyload(import(/* webpackChunkName: "chunk-page-equips" */ "@/pages/Equips.vue")),
+		// },
 
-		{
-			path: "/enemy",
-			component: () => Lazyload(import(/* webpackChunkName: "chunk-page-enemy" */ "@/pages/Enemy.vue")),
-		},
-		{
-			path: "/enemy/:id",
-			component: () => Lazyload(import(/* webpackChunkName: "chunk-page-enemy" */ "@/pages/Enemy.vue")),
-		},
+		// {
+		// 	path: "/enemy",
+		// 	component: () => Lazyload(import(/* webpackChunkName: "chunk-page-enemy" */ "@/pages/Enemy.vue")),
+		// },
+		// {
+		// 	path: "/enemy/:id",
+		// 	component: () => Lazyload(import(/* webpackChunkName: "chunk-page-enemy" */ "@/pages/Enemy.vue")),
+		// },
 
-		{
-			path: "/facilities",
-			component: () => Lazyload(import(/* webpackChunkName: "chunk-page-facilities" */ "@/pages/Facilities.vue")),
-		},
-		{
-			path: "/facilities/:key",
-			component: () => Lazyload(import(/* webpackChunkName: "chunk-page-facilities" */ "@/pages/Facilities/FacilityView.vue")),
-		},
+		// {
+		// 	path: "/facilities",
+		// 	component: () => Lazyload(import(/* webpackChunkName: "chunk-page-facilities" */ "@/pages/Facilities.vue")),
+		// },
+		// {
+		// 	path: "/facilities/:key",
+		// 	component: () => Lazyload(import(/* webpackChunkName: "chunk-page-facilities" */ "@/pages/Facilities/FacilityView.vue")),
+		// },
 
 		// {
 		// 	path: "/worlds",
@@ -103,10 +103,10 @@ const Router = new VueRouter({
 		// 	component: () => Lazyload(import(/* webpackChunkName: "chunk-page-story" */ "@/pages/Story/StoryViewer.vue")),
 		// },
 
-		{
-			path: "/exchange",
-			component: () => Lazyload(import(/* webpackChunkName: "chunk-page-exchange" */ "@/pages/Exchange")),
-		},
+		// {
+		// 	path: "/exchange",
+		// 	component: () => Lazyload(import(/* webpackChunkName: "chunk-page-exchange" */ "@/pages/Exchange")),
+		// },
 
 		{
 			path: "/changelog",
@@ -114,18 +114,18 @@ const Router = new VueRouter({
 			component: () => Lazyload(import(/* webpackChunkName: "chunk-page-changelog" */ "@/pages/Changelog.vue")),
 		},
 
-		{
-			path: "/exp",
-			component: () => Lazyload(import(/* webpackChunkName: "chunk-page-exp" */ "@/pages/EXP.vue")),
-		},
-		{
-			path: "/bgm",
-			component: () => Lazyload(import(/* webpackChunkName: "chunk-page-bgm" */ "@/pages/BGM.vue")),
-		},
-		{
-			path: "/eapi",
-			component: () => Lazyload(import(/* webpackChunkName: "chunk-page-api" */ "@/pages/API.vue")),
-		},
+		// {
+		// 	path: "/exp",
+		// 	component: () => Lazyload(import(/* webpackChunkName: "chunk-page-exp" */ "@/pages/EXP.vue")),
+		// },
+		// {
+		// 	path: "/bgm",
+		// 	component: () => Lazyload(import(/* webpackChunkName: "chunk-page-bgm" */ "@/pages/BGM.vue")),
+		// },
+		// {
+		// 	path: "/eapi",
+		// 	component: () => Lazyload(import(/* webpackChunkName: "chunk-page-api" */ "@/pages/API.vue")),
+		// },
 	],
 
 	scrollBehavior (to, from, savedPosition) {

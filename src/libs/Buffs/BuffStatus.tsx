@@ -4,7 +4,7 @@ import { Decimal } from "decimal.js";
 import BuffData from "@/json/buffs";
 
 import LazyLoad from "@/libs/LazyData";
-import FilterableUnitDB, { FilterableUnit } from "@/libs/DB/Unit.Filterable";
+import FilterableUnitDB, { FilterableUnit } from "@/libs/Types/Unit.Filterable";
 
 import { BuffEffect, BuffEffectValue, BUFFEFFECT_TYPE } from "@/libs/Buffs/BuffEffect";
 import { BuffTrigger } from "@/libs/Buffs/BuffTrigger";

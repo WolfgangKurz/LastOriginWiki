@@ -61,7 +61,7 @@ import UnitFace from "@/components/UnitFace.vue";
 import RarityBadge from "@/components/RarityBadge.vue";
 import { Prop, Emit } from "vue-property-decorator";
 
-import { FilterableUnit } from "@/libs/DB/Unit.Filterable";
+import { FilterableUnit } from "@/libs/Types/Unit.Filterable";
 import { ACTOR_GRADE } from "@/libs/Types/Enums";
 
 @Component({

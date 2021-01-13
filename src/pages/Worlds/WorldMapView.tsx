@@ -18,12 +18,12 @@ import EnemyModal from "@/pages/Enemy/EnemyModal.vue";
 import { AssetsRoot, ImageExtension, SupplementaryUnit, WorldNames } from "@/libs/Const";
 import { FormatNumber, UpdateTitle } from "@/libs/Functions";
 
-import FilterableUnitDB, { FilterableUnit } from "@/libs/DB/Unit.Filterable";
-import EquipDB, { Equip } from "@/libs/DB/Equip";
+import FilterableUnitDB, { FilterableUnit } from "@/libs/Types/Unit.Filterable";
+import EquipDB, { Equip } from "@/libs/Types/Equip";
 
-import MapDB, { Worlds, MapNodeEntity, MapReward, MapEnemyData } from "@/libs/DB/Map";
-import ConsumableDB, { Consumable } from "@/libs/DB/Consumable";
-import EnemyDB, { Enemy } from "@/libs/DB/Enemy";
+import MapDB, { Worlds, MapNodeEntity, MapReward, MapEnemyData } from "@/libs/Types/Map";
+import ConsumableDB, { Consumable } from "@/libs/Types/Consumable";
+import EnemyDB, { Enemy } from "@/libs/Types/Enemy";
 
 import { SetMeta } from "@/libs/Meta";
 import { _e } from "@/libs/VNode";

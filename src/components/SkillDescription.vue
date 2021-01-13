@@ -17,9 +17,12 @@ import ElemIcon from "@/components/ElemIcon.vue";
 import UnitCard from "@/pages/Units/UnitCard.vue";
 import EquipCard from "@/pages/Equips/EquipCard.vue";
 
+import { FilterableUnit } from "@/libs/Types/Unit.Filterable";
+import { Equip } from "@/libs/Types/Equip";
+
 import LazyLoad, { LazyDataType } from "@/libs/LazyData";
-import FilterableUnitDB, { FilterableUnit } from "@/libs/DB/Unit.Filterable";
-import EquipDB, { Equip } from "@/libs/DB/Equip";
+import FilterableUnitDB from "@/libs/DB/Unit.Filterable";
+import EquipDB from "@/libs/DB/Equip";
 
 interface DBData {
 	FilterableUnit: FilterableUnit[];
@@ -37,31 +40,6 @@ interface DBData {
 	},
 })
 export default class SkillDescription extends Vue {
-	private DB: LazyDataType<DBData> = null;
-	private InitialDB () {
-		const data: Partial<DBData> = {};
-		this.DB = null;
-
-		const uid = this.$route.params.id;
-		LazyLoad(
-			r => {
-				const FilterableUnit = r[0] as FilterableUnit[];
-				const Equip = r[1] as Equip[];
-
-				if (!FilterableUnit) return (this.DB = false);
-				if (!Equip) return (this.DB = false);
-
-				this.DB = {
-					FilterableUnit,
-					Equip: Equip,
-				};
-				this.$forceUpdate();
-			},
-			cb => FilterableUnitDB(x => cb(x)),
-			cb => EquipDB(x => cb(x)),
-		);
-	}
-
 	@Prop({
 		type: String,
 		required: true,
@@ -202,9 +180,6 @@ export default class SkillDescription extends Vue {
 		};
 		if (!flags) return ret;
 
-		const db = this.DB;
-		if (!db) return ret;
-
 		flags.split(",")
 			.forEach(x => {
 				if (x === "@")
@@ -221,7 +196,7 @@ export default class SkillDescription extends Vue {
 					if (p[0] === "$ch") {
 						const id = p[1];
 						const href = `/units/${id}`;
-						const unit = db.FilterableUnit.find(x => x.uid === id);
+						const unit = FilterableUnitDB.find(x => x.uid === id);
 						if (!unit) {
 							ret.link = {
 								href: "#",
@@ -244,7 +219,7 @@ export default class SkillDescription extends Vue {
 							[ITEM_TYPE.SPCHIP]: "System",
 							[ITEM_TYPE.SUBEQ]: "Sub",
 						} as Record<ITEM_TYPE, string>;
-						const equips = db.Equip
+						const equips = EquipDB
 							.filter(y => `${type[y.type]}_${y.key}` === p[1])
 							.sort((a, b) => b.rarity - a.rarity);
 
@@ -427,13 +402,7 @@ export default class SkillDescription extends Vue {
 
 	private render () {
 		const list = this.compile(this.text);
-		return <lazy-data-base data={ this.DB }>
-			<span class="skill-description">{ list }</span>
-		</lazy-data-base>;
-	}
-
-	private mounted () {
-		this.InitialDB();
+		return <span class="skill-description">{ list }</span>;
 	}
 }
 </script>
