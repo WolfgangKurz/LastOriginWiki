@@ -71,6 +71,7 @@ import ElemIcon from "@/components/ElemIcon.vue";
 import BuffList from "@/components/BuffList";
 
 import { groupBy } from "@/libs/Functions";
+import { RarityDisplay } from "@/libs/Const";
 
 @Component({
 	components: {
@@ -120,12 +121,15 @@ export default class EquipSelectModal extends Vue {
 
 	@Watch("display", { immediate: true })
 	private DisplayWatch (value: boolean) {
+		this.SelectedEquipData = null;
+
 		if (!value)
 			this.SelectedEquip = null;
 		else if (this.equip) {
 			this.SelectedEquip = this.equip;
 			this.equipLevel = this.level;
 		}
+		this.$forceUpdate();
 	}
 
 	@Watch("rarity")
@@ -144,31 +148,22 @@ export default class EquipSelectModal extends Vue {
 	}
 
 	private get RarityList () {
-		const table = {
-			[ACTOR_GRADE.B]: "B",
-			[ACTOR_GRADE.A]: "A",
-			[ACTOR_GRADE.S]: "S",
-			[ACTOR_GRADE.SS]: "SS",
-		};
-
 		const list = [
 			ACTOR_GRADE.B,
 			ACTOR_GRADE.A,
 			ACTOR_GRADE.S,
 			ACTOR_GRADE.SS,
-		].map(x => ({ value: x, text: table[x] }));
+		].map(x => ({ value: x, text: RarityDisplay[x] }));
 		if (!this.SelectedEquip) return list;
 
 		const key = this.SelectedEquip.key;
 		const type = this.SelectedEquip.type;
 
 		const base = `${type}_${key}_T`;
-		const rarityList = ["", "B", "A", "S", "SS"];
-
 		const rarities = FilterableEquipDB
 			.filter(x => x.key === key && x.type === type)
 			.map(x => x.rarity)
-			.map(x => ({ value: x, text: table[x] }));
+			.map(x => ({ value: x, text: RarityDisplay[x] }));
 
 		return rarities;
 	}
@@ -241,12 +236,17 @@ export default class EquipSelectModal extends Vue {
 	}
 
 	private get EffectList () {
+		console.log(this.SelectedEquip, this.SelectedEquipData);
 		if (!this.SelectedEquip) return null;
 
 		if (this.SelectedEquipData)
 			return this.SelectedEquipData.stats[this.equipLevel];
-		else
-			EquipItemDB(this.SelectedEquip.fullKey, x => (this.SelectedEquipData = x));
+
+		const prev = EquipItemDB(this.SelectedEquip.fullKey, x => (this.SelectedEquipData = x));
+		if (prev) {
+			this.SelectedEquipData = prev;
+			return prev.stats[this.equipLevel];
+		}
 
 		return null;
 	}
@@ -271,15 +271,15 @@ export default class EquipSelectModal extends Vue {
 			.sort((a, b) => b.rarity - a.rarity);
 
 		if (grp.length === 0) return;
-		if (this.SelectedEquip) {
+		if (this.SelectedEquip)
 			this.SelectedEquipData = null;
 
-			const rarity = this.rarity;
-			const match = grp.find(x => x.rarity === rarity);
-			if (match)
-				this.SelectedEquip = match;
-			else
-				this.SelectedEquip = grp[0];
+		const match = grp.find(x => x.rarity === this.rarity);
+		if (match)
+			this.SelectedEquip = match;
+		else {
+			this.SelectedEquip = grp[0];
+			this.rarity = grp[0].rarity;
 		}
 	}
 

@@ -128,7 +128,10 @@ export default class UnitStatsEquip extends Vue {
 					Level: level,
 					stats: equipItem.stats,
 				}
-				: { ...UnitEquip.Empty },
+				: {
+					...UnitEquip.Empty,
+					Type: this.unit.Equips[index].Type,
+				},
 		);
 	}
 }

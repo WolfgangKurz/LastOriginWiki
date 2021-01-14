@@ -635,7 +635,7 @@ function getBuffText (stat: BuffEffect, level?: number) {
 	else if ("hp" in stat)
 		return "체력 " + positive(stat.hp, level);
 	else if ("accuracy" in stat)
-		return "명중률 " + positive(stat.accuracy, level);
+		return "적중 " + positive(stat.accuracy, level);
 	else if ("critical" in stat)
 		return "치명타 " + positive(stat.critical, level);
 	else if ("evade" in stat)
