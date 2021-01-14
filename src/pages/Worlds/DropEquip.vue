@@ -1,9 +1,9 @@
 <template>
 	<div class="drop-equip p-2 text-dark">
-		<b-card :class="`rarity-${RarityName[equip.rarity]}`">
+		<b-card :class="`rarity-${RarityDisplay[equip.rarity]}`">
 			<equip-icon class="float-left mr-2" :image="equip.icon" />
 			<div class="text-left">
-				<b-badge variant="secondary">{{ RarityName[equip.rarity] }}</b-badge>
+				<b-badge variant="secondary">{{ RarityDisplay[equip.rarity] }}</b-badge>
 				{{ equip.name }}
 				<small v-if="chance < 100" class="pl-1 text-bold">({{ chance }}%)</small>
 			</div>
@@ -18,8 +18,10 @@ import { Watch, Prop } from "vue-property-decorator";
 
 import EquipIcon from "@/components/EquipIcon.vue";
 
-import { Equip } from "@/libs/DB/Equip";
+import { RarityDisplay } from "@/libs/Const";
 import { ACTOR_GRADE } from "@/libs/Types/Enums";
+
+import { FilterableEquip } from "@/libs/Types/Equip.Filterable";
 
 @Component({
 	components: {
@@ -31,7 +33,7 @@ export default class DropEquip extends Vue {
 		type: Object,
 		required: true,
 	})
-	private equip!: Equip;
+	private equip!: FilterableEquip;
 
 	@Prop({
 		type: Number,
@@ -39,13 +41,8 @@ export default class DropEquip extends Vue {
 	})
 	private chance!: number;
 
-	private get RarityName () {
-		return {
-			[ACTOR_GRADE.B]: "B",
-			[ACTOR_GRADE.A]: "A",
-			[ACTOR_GRADE.S]: "S",
-			[ACTOR_GRADE.SS]: "SS",
-		};
+	private get RarityDisplay () {
+		return RarityDisplay;
 	}
 }
 </script>

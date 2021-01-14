@@ -6,8 +6,11 @@ import { Watch } from "vue-property-decorator";
 import { StoryRaw } from "@/libs/Types";
 import { StoryRowData } from "@/libs/Story";
 
-import UnitData from "@/libs/DB/Unit";
-import MapDB, { Worlds } from "@/libs/DB/Map";
+import { Worlds } from "@/libs/Types/Map";
+import { FilterableUnit } from "@/libs/Types/Unit.Filterable";
+
+import FilterableUnitDB from "@/libs/DB/Unit.Filterable";
+import MapDB from "@/libs/DB/Map";
 import { StoryData } from "@/libs/DB";
 
 import { AssetsRoot, WorldNames } from "@/libs/Const";
@@ -22,14 +25,6 @@ import { SetMeta } from "@/libs/Meta";
 	},
 })
 export default class StoryViewer extends Vue {
-	private internalMapDB: Worlds | null = null;
-	private get MapDB () {
-		if (this.internalMapDB) return this.internalMapDB;
-		return MapDB((x) => {
-			this.internalMapDB = x;
-		});
-	}
-
 	private readonly BaseURL = AssetsRoot + "/story/";
 
 	private world: string = "";
@@ -78,10 +73,8 @@ export default class StoryViewer extends Vue {
 	}
 
 	private get Area () {
-		if (!this.MapDB) return "???";
-
-		if (this.world in this.MapDB && this.area in this.MapDB[this.world])
-			return this.MapDB[this.world][this.area].title;
+		if (this.world in MapDB && this.area in MapDB[this.world])
+			return MapDB[this.world][this.area].title;
 		return "???";
 	}
 
@@ -230,10 +223,10 @@ export default class StoryViewer extends Vue {
 				if (teller) {
 					if (typeof teller !== "string") {
 						if (teller.image === null) {
-							const unit = UnitData.find(x => x.uid === teller.char);
+							const unit = FilterableUnitDB.find(x => x.uid === teller.char);
 
 							tellerElems.push(
-								<unit-face uid={ unit ? unit.uid : "" } skin={teller.skin} size="60" />,
+								<unit-face uid={ unit ? unit.uid : "" } skin={ teller.skin } size="60" />,
 								unit ? unit.name : teller.char,
 							);
 						} else {

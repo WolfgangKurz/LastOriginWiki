@@ -85,7 +85,8 @@ import { StoryData } from "@/libs/DB";
 import { UpdateTitle } from "@/libs/Functions";
 import { StoryRaw } from "@/libs/Types";
 
-import MapDB, { Worlds } from "@/libs/DB/Map";
+import { Worlds } from "@/libs/Types/Map";
+import MapDB from "@/libs/DB/Map";
 
 import UnitFace from "@/components/UnitFace.vue";
 import EquipIcon from "@/components/EquipIcon.vue";
@@ -98,14 +99,6 @@ import { SetMeta } from "@/libs/Meta";
 	},
 })
 export default class Story extends Vue {
-	private internalMapDB: Worlds | null = null;
-	private get MapDB () {
-		if (this.internalMapDB) return this.internalMapDB;
-		return MapDB((x) => {
-			this.internalMapDB = x;
-		});
-	}
-
 	private world: string = "";
 	private area: string = "";
 
@@ -125,10 +118,8 @@ export default class Story extends Vue {
 	}
 
 	private get Area () {
-		if (!this.MapDB) return "???";
-
-		if (this.world in this.MapDB && this.area in this.MapDB[this.world])
-			return this.MapDB[this.world][this.area].title;
+		if (this.world in MapDB && this.area in MapDB[this.world])
+			return MapDB[this.world][this.area].title;
 		return "???";
 	}
 

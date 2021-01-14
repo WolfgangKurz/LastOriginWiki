@@ -165,7 +165,7 @@ module.exports = {
 			.tap(args => {
 				if (args.length > 0) {
 					args[0].workers = Math.floor(os.cpus().length / 2);
-					args[0].memoryLimit = 1024;
+					args[0].memoryLimit = 4096;
 				}
 				return args;
 			});

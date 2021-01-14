@@ -64,8 +64,10 @@ import { Prop } from "vue-property-decorator";
 import DropItem from "./../DropItem.vue";
 import DropRes from "./../DropRes.vue";
 
-import ConsumableDB, { Consumable } from "@/libs/DB/Consumable";
-import { MapSearch } from "@/libs/DB/Map";
+import { MapSearch } from "@/libs/Types/Map";
+import { Consumable } from "@/libs/Types/Consumable";
+
+import ConsumableDB from "@/libs/DB/Consumable";
 
 @Component({
 	components: {
@@ -74,14 +76,6 @@ import { MapSearch } from "@/libs/DB/Map";
 	},
 })
 export default class WorldMapSearchInfo extends Vue {
-	private internalConsumableDB: Consumable[] | null = null;
-	private get ConsumableDB () {
-		if (this.internalConsumableDB) return this.internalConsumableDB;
-		return ConsumableDB((x) => {
-			this.internalConsumableDB = x;
-		});
-	}
-
 	@Prop({
 		type: String,
 		default: "",
@@ -111,8 +105,7 @@ export default class WorldMapSearchInfo extends Vue {
 	}
 
 	private GetConsumable (item: string) {
-		if (!this.ConsumableDB) return undefined;
-		return this.ConsumableDB.find(y => y.key === item);
+		return ConsumableDB.find(y => y.key === item);
 	}
 }
 </script>

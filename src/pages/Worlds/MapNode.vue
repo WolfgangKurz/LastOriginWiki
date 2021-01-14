@@ -12,7 +12,8 @@ import Component from "vue-class-component";
 import { Watch, Prop } from "vue-property-decorator";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
-import { MapNodeEntity } from "@/libs/DB/Map";
+
+import { MapNodeEntity } from "@/libs/Types/Map";
 
 @Component({})
 export default class MapNode extends Vue {

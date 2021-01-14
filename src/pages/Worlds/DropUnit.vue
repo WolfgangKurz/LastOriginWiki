@@ -1,9 +1,9 @@
 <template>
 	<div class="drop-unit p-2 text-dark">
-		<b-card v-if="unit" :class="`text-left rarity-${RarityName[unit.rarity]}`">
+		<b-card v-if="unit" :class="`text-left rarity-${RarityDisplay[unit.rarity]}`">
 			<unit-face class="float-left mr-2" :uid="unit.uid" size="48" type="mini" />
 			<div>
-				<b-badge variant="secondary" class="mr-1 bordered">{{ RarityName[unit.rarity] }}</b-badge>
+				<b-badge variant="secondary" class="mr-1 bordered">{{ RarityDisplay[unit.rarity] }}</b-badge>
 				<span class="unit-info">
 					<i class="unit-type" :data-type="unit.type" />
 					<i class="unit-role" :data-role="unit.role" />
@@ -25,8 +25,9 @@ import RarityBadge from "@/components/RarityBadge.vue";
 
 import { ACTOR_GRADE } from "@/libs/Types/Enums";
 
-import LazyLoad, { LazyDataType } from "@/libs/LazyData";
-import FilterableUnitDB, { FilterableUnit } from "@/libs/DB/Unit.Filterable";
+import { FilterableUnit } from "@/libs/Types/Unit.Filterable";
+import FilterableUnitDB from "@/libs/DB/Unit.Filterable";
+import { RarityDisplay } from "@/libs/Const";
 
 @Component({
 	components: {
@@ -34,22 +35,6 @@ import FilterableUnitDB, { FilterableUnit } from "@/libs/DB/Unit.Filterable";
 	},
 })
 export default class DropUnit extends Vue {
-	private DB: LazyDataType<FilterableUnit[]> = null;
-	private InitialDB () {
-		this.DB = null;
-
-		const uid = this.$route.params.id;
-		LazyLoad(
-			r => {
-				const FilterableUnit = r[0] as FilterableUnit[];
-				if (!FilterableUnit) return (this.DB = false);
-				this.DB = FilterableUnit;
-				this.$forceUpdate();
-			},
-			cb => FilterableUnitDB(x => cb(x)),
-		);
-	}
-
 	@Prop({
 		type: [String, Number],
 		required: true,
@@ -63,21 +48,14 @@ export default class DropUnit extends Vue {
 	private chance!: number;
 
 	private get unit () {
-		if (!this.DB) return null;
-
 		if (typeof this.id === "number")
-			return this.DB.find(x => x.no === this.id);
+			return FilterableUnitDB.find(x => x.no === this.id);
 		else
-			return this.DB.find(x => x.uid === this.id);
+			return FilterableUnitDB.find(x => x.uid === this.id);
 	}
 
-	private get RarityName () {
-		return {
-			[ACTOR_GRADE.B]: "B",
-			[ACTOR_GRADE.A]: "A",
-			[ACTOR_GRADE.S]: "S",
-			[ACTOR_GRADE.SS]: "SS",
-		};
+	private get RarityDisplay () {
+		return RarityDisplay;
 	}
 }
 </script>
