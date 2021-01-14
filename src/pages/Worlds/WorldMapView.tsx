@@ -624,7 +624,7 @@ export default class WorldMapView extends Vue {
 											class="current-map-marker"
 											src={ `${AssetsRoot}/map-current.png` }
 											style={ { display: waveIdx === this.selectedWave ? "" : "none" } } />
-										<tbar-icon icon="TbarIcon_MP_NightChuck_RV" size={ 42 } />
+										<tbar-icon icon="TbarIcon_MP_NightChick_RV" size={ 42 } />
 									</a>),
 
 									<div class="mt-3">

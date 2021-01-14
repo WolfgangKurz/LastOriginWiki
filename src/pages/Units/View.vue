@@ -64,12 +64,17 @@
 						{{ unit.introduce }}
 					</b-card>
 
-					<!-- <b-alert v-if="unit.hasLimited" variant="primary" show class="mt-3">
+					<b-alert v-if="LimitedEquip" variant="primary" show class="mt-3">
 						<div>이 전투원은 다음 전용장비를 갖고 있습니다.</div>
-						<a :href="LimitedEquipURL" @click.prevent="GoTo(LimitedEquipURL)">
-							<drop-equip class="limited-item-card" :equip="LimitedEquip" />
+						<a
+							v-for="limited in LimitedEquip"
+							:key="`unit-limited-equip-${limited.equip.fullKey}`"
+							:href="limited.url"
+							@click.prevent="GoTo(limited.url)"
+						>
+							<drop-equip class="limited-item-card" :equip="limited.equip" />
 						</a>
-					</b-alert> -->
+					</b-alert>
 
 					<b-container class="table-unit-modal mt-3 mb-3">
 						<b-row cols="2" cols-md="4" class="text-center">
@@ -84,13 +89,13 @@
 							</b-col>
 							<b-col class="bg-dark text-white">등급</b-col>
 							<b-col>
-								<rarity-badge :rarity="unit.rarity" size="medium">{{ RarityName[unit.rarity] }} 등급</rarity-badge>
+								<rarity-badge :rarity="unit.rarity" size="medium">{{ RarityDisplay[unit.rarity] }} 등급</rarity-badge>
 							</b-col>
 							<b-col class="bg-dark text-white">승급</b-col>
 							<b-col>
 								<template v-if="unit.promotions">
 									<rarity-badge v-for="pro in unit.promotions" :key="`unit-promotion-${pro}`" :rarity="pro" size="medium"
-										>{{ RarityName[pro] }} 승급</rarity-badge
+										>{{ RarityDisplay[pro] }} 승급</rarity-badge
 									>
 								</template>
 								<template v-else>
@@ -369,7 +374,7 @@ import { UnitStats as UnitStats_ } from "@/libs/Types/UnitStats";
 import LazyLoad, { LazyDataType } from "@/libs/LazyData";
 import FilterableUnitDB from "@/libs/DB/Unit.Filterable";
 import UnitDB, { GetLinkBonus } from "@/libs/DB/Unit";
-import EquipDB from "@/libs/DB/Equip";
+import FilterableEquipDB from "@/libs/DB/Equip.Filterable";
 import SkillDB from "@/libs/DB/Skill";
 import UnitStatDB from "@/libs/DB/UnitStats";
 
@@ -523,27 +528,19 @@ export default class UnitView extends Vue {
 		return (this.DB && this.DB.Unit) || Unit.Empty;
 	}
 
-	private get RarityName () {
-		return {
-			[ACTOR_GRADE.B]: "B",
-			[ACTOR_GRADE.A]: "A",
-			[ACTOR_GRADE.S]: "S",
-			[ACTOR_GRADE.SS]: "SS",
-		};
+	private get RarityDisplay () {
+		return RarityDisplay;
 	}
 
 	private get LimitedEquip () {
-		// if (this.unit.hasLimited)
-		// 	return EquipData.find(x => x.fullKey === this.unit.hasLimited) || null;
-		// else
-		return null;
-	}
+		const uid = this.unitUid;
 
-	private get LimitedEquipURL () {
-		const unit = this.unit;
-		// if (!unit.hasLimited) return "";
-		// return `/equips/${unit.hasLimited}`;
-		return "";
+		return FilterableEquipDB
+			.filter(x => x.limit && x.limit.some(y => y === uid))
+			.map(x => ({
+				equip: x,
+				url: `/equips/${x.fullKey}`,
+			}));
 	}
 
 	private get CurrentResists () {
@@ -618,14 +615,14 @@ export default class UnitView extends Vue {
 	private get CostRarityList () {
 		const list = [{
 			value: this.unit.rarity,
-			text: `${this.RarityName[this.unit.rarity]} 등급`,
+			text: `${this.RarityDisplay[this.unit.rarity]} 등급`,
 		}];
 
 		if (this.unit.promotions) {
 			list.push(...this.unit.promotions.map(x => (
 				{
 					value: x,
-					text: `${this.RarityName[x]} 승급`,
+					text: `${this.RarityDisplay[x]} 승급`,
 				}),
 			));
 		}

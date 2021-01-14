@@ -1,5 +1,11 @@
 <template>
 	<div>
+		<changelog-item title="Build 7737" date="2021-01-14">
+			<template #site>
+				<li>전투원, 장비, 적의 DB 구조를 개편했습니다.</li>
+			</template>
+		</changelog-item>
+
 		<changelog-item title="Build 7678" date="2021-01-12">
 			<template #site>
 				<li>대사 오디오 파일의 확장자를 mp3로 변경했습니다.</li>
