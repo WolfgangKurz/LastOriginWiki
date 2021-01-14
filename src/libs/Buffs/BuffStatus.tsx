@@ -864,7 +864,7 @@ function formatDesc (type: NUM_OUTPUTTYPE, template: string, value: string, shor
 
 	if (value.startsWith("Char_")) {
 		const key = value.replace(/Char_(.+)_N/, "$1");
-		const unit = nameTable && nameTable.find(x => x.uid === key);
+		const unit = FilterableUnitDB.find(x => x.uid === key);
 		if (!unit) return `${template} - ${key}`;
 
 		return `${template} - ${unit.name}`;

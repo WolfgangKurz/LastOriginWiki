@@ -16,7 +16,6 @@ import { SkillEntity, SkillGroup, SkillSlotKey } from "@/libs/Types/Skill";
 import LazyLoad, { LazyDataType } from "@/libs/LazyData";
 import UnitDB, { GetLinkBonus } from "@/libs/DB/Unit";
 import UnitStatsDB from "@/libs/DB/UnitStats";
-import EquipDB from "@/libs/DB/Equip";
 import SkillDB from "@/libs/DB/Skill";
 
 type LinkData = [number, number, number, number, number];
