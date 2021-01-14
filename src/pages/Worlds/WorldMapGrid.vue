@@ -35,14 +35,14 @@
 </template>
 
 <script lang="ts">
+import Decimal from "decimal.js";
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, PropSync, Watch } from "vue-property-decorator";
 
 import MapNode from "./MapNode.vue";
 
-import { MapNodeEntity } from "@/libs/DB/Map";
-import Decimal from "decimal.js";
+import { MapNodeEntity } from "@/libs/Types/Map";
 
 interface LineData {
 	x1: string;

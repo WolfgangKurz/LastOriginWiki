@@ -40,7 +40,8 @@ import { Watch } from "vue-property-decorator";
 import { AssetsRoot, ImageExtension, WorldDescriptions, WorldNames } from "@/libs/Const";
 import { UpdateTitle } from "@/libs/Functions";
 
-import MapDB, { Worlds } from "@/libs/DB/Map";
+import { Worlds } from "@/libs/Types/Map";
+import MapDB from "@/libs/DB/Map";
 
 import WorldItem from "./WorldItem.vue";
 import { SetMeta } from "@/libs/Meta";
@@ -51,14 +52,6 @@ import { SetMeta } from "@/libs/Meta";
 	},
 })
 export default class WorldArea extends Vue {
-	private internalMapDB: Worlds | null = null;
-	private get MapDB () {
-		if (this.internalMapDB) return this.internalMapDB;
-		return MapDB((x) => {
-			this.internalMapDB = x;
-		});
-	}
-
 	private wid: string = "";
 
 	@Watch("$route")
@@ -77,11 +70,8 @@ export default class WorldArea extends Vue {
 	private get AreaNames (): Record<string, string> {
 		const ret: Record<string, string> = {};
 
-		const db = this.MapDB;
-		if (!db) return ret;
-
-		Object.keys(db[this.wid])
-			.forEach(x => (ret[x] = db[this.wid][x].title));
+		Object.keys(MapDB[this.wid])
+			.forEach(x => (ret[x] = MapDB[this.wid][x].title));
 		return ret;
 	}
 
@@ -90,8 +80,7 @@ export default class WorldArea extends Vue {
 	}
 
 	private get Areas () {
-		if (!this.MapDB) return [];
-		return Object.keys(this.MapDB[this.wid] || {});
+		return Object.keys(MapDB[this.wid] || {});
 	}
 
 	private GoTo (path: string) {

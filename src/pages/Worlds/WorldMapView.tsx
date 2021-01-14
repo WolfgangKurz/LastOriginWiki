@@ -18,19 +18,26 @@ import EnemyModal from "@/pages/Enemy/EnemyModal.vue";
 import { AssetsRoot, ImageExtension, SupplementaryUnit, WorldNames } from "@/libs/Const";
 import { FormatNumber, UpdateTitle } from "@/libs/Functions";
 
-import FilterableUnitDB, { FilterableUnit } from "@/libs/Types/Unit.Filterable";
-import EquipDB, { Equip } from "@/libs/Types/Equip";
+import { FilterableUnit } from "@/libs/Types/Unit.Filterable";
+import { FilterableEquip } from "@/libs/Types/Equip.Filterable";
+import { FilterableEnemy } from "@/libs/Types/Enemy.Filterable";
 
-import MapDB, { Worlds, MapNodeEntity, MapReward, MapEnemyData } from "@/libs/Types/Map";
-import ConsumableDB, { Consumable } from "@/libs/Types/Consumable";
-import EnemyDB, { Enemy } from "@/libs/Types/Enemy";
+import { Worlds, MapNodeEntity, MapReward, MapEnemyData } from "@/libs/Types/Map";
+import { Consumable } from "@/libs/Types/Consumable";
+
+import FilterableUnitDB from "@/libs/DB/Unit.Filterable";
+import FilterableEquipDB from "@/libs/DB/Equip.Filterable";
+import FilterableEnemyDB from "@/libs/DB/Enemy.Filterable";
+
+import MapDB from "@/libs/DB/Map";
+import ConsumableDB from "@/libs/DB/Consumable";
 
 import { SetMeta } from "@/libs/Meta";
 import { _e } from "@/libs/VNode";
 
 type RewardDropTypeBase =
 	{ unit: FilterableUnit; } |
-	{ equip: Equip, count: number; } |
+	{ equip: FilterableEquip, count: number; } |
 	{ consumable: Consumable, count: number; } |
 	{ cash: number; } |
 	{ metal: number; } |
@@ -42,7 +49,7 @@ type RewardDropType = RewardDropTypeBase & {
 };
 
 interface WaveEnemyInfo extends MapEnemyData {
-	enemy: Enemy;
+	enemy: FilterableEnemy;
 }
 
 @Component({
@@ -60,48 +67,6 @@ interface WaveEnemyInfo extends MapEnemyData {
 	},
 })
 export default class WorldMapView extends Vue {
-	private internalFilterableUnitDB: FilterableUnit[] | null = null;
-	private get FilterableUnitDB () {
-		if (this.internalFilterableUnitDB) return this.internalFilterableUnitDB;
-		return FilterableUnitDB((x) => {
-			this.internalFilterableUnitDB = x;
-			this.checkParams();
-		});
-	}
-
-	private internalEquipDB: Equip[] | null = null;
-	private get EquipDB () {
-		if (this.internalEquipDB) return this.internalEquipDB;
-		return EquipDB((x) => {
-			this.internalEquipDB = x;
-		});
-	}
-
-	private internalConsumableDB: Consumable[] | null = null;
-	private get ConsumableDB () {
-		if (this.internalConsumableDB) return this.internalConsumableDB;
-		return ConsumableDB((x) => {
-			this.internalConsumableDB = x;
-		});
-	}
-
-	private internalMapDB: Worlds | null = null;
-	private get MapDB () {
-		if (this.internalMapDB) return this.internalMapDB;
-		return MapDB((x) => {
-			this.internalMapDB = x;
-			this.checkParams();
-		});
-	}
-
-	private internalEnemyDB: Enemy[] | null = null;
-	private get EnemyDB () {
-		if (this.internalEnemyDB) return this.internalEnemyDB;
-		return EnemyDB((x) => {
-			this.internalEnemyDB = x;
-		});
-	}
-
 	private world: string = "";
 	private area: string = "";
 
@@ -112,7 +77,7 @@ export default class WorldMapView extends Vue {
 	private selectedWave: number = 0;
 	private selectedWaveIndex: number = 0;
 
-	private selectedEnemy: Enemy | null = null;
+	private selectedEnemy: FilterableEnemy | null = null;
 	private selectedEnemyLevel: number = 1;
 
 	private enemyModalDisplay: boolean = false;
@@ -133,17 +98,13 @@ export default class WorldMapView extends Vue {
 	}
 
 	private get AreaName (): string {
-		if (!this.MapDB) return "???";
-
-		return (this.world in this.MapDB) && (this.area in this.MapDB[this.world])
-			? this.MapDB[this.world][this.area].title || `${this.area} 구역`
+		return (this.world in MapDB) && (this.area in MapDB[this.world])
+			? MapDB[this.world][this.area].title || `${this.area} 구역`
 			: "???";
 	}
 
 	private get UnitDrops () {
 		if (!this.selected) return [];
-
-		const db = this.FilterableUnitDB || [];
 
 		const ids: string[] = [];
 		const ret: FilterableUnit[] = [];
@@ -156,7 +117,7 @@ export default class WorldMapView extends Vue {
 						ids.push(x.id);
 
 						const k = x.id.replace(/Char_(.+)_N/, "$1");
-						return db.find(y => y.uid === k);
+						return FilterableUnitDB.find(y => y.uid === k);
 					})
 					.filter(x => x)
 					.forEach(x => ret.push(x as FilterableUnit));
@@ -168,11 +129,8 @@ export default class WorldMapView extends Vue {
 	private get ItemDrops () {
 		if (!this.selected) return [];
 
-		const consumableDB = this.ConsumableDB || [];
-		const equipDB = this.EquipDB || [];
-
 		const ids: string[] = [];
-		const ret: Array<Equip | Consumable> = [];
+		const ret: Array<FilterableEquip | Consumable> = [];
 		this.Waves.forEach(_ => {
 			_.forEach(__ => {
 				__.e.drops
@@ -183,16 +141,16 @@ export default class WorldMapView extends Vue {
 
 						if (x.id.startsWith("Equip_")) {
 							const k = x.id.substr(6);
-							const eq = equipDB.find(y => y.fullKey === k);
+							const eq = FilterableEquipDB.find(y => y.fullKey === k);
 							if (eq) return eq;
 						} else {
-							const cs = consumableDB.find(y => y.key === x.id);
+							const cs = ConsumableDB.find(y => y.key === x.id);
 							if (cs) return cs;
 						}
 						return null;
 					})
 					.filter(x => x)
-					.forEach(x => ret.push(x as (Equip | Consumable)));
+					.forEach(x => ret.push(x as (FilterableEquip | Consumable)));
 			});
 		});
 		// (); .sort((a, b) => b.rarity - a.rarity);
@@ -211,14 +169,10 @@ export default class WorldMapView extends Vue {
 	private get RewardDrops (): RewardDropType[] {
 		if (!this.selected) return [];
 
-		const consumableDB = this.ConsumableDB || [];
-		const unitDB = this.FilterableUnitDB || [];
-		const equipDB = this.EquipDB || [];
-
 		const f = (x: MapReward) => {
 			if (typeof x === "string") {
 				const k = x.replace(/Char_(.+)_N/, "$1");
-				const u = unitDB.find(y => y.uid === k);
+				const u = FilterableUnitDB.find(y => y.uid === k);
 				if (u) return { unit: u };
 				return null;
 			}
@@ -230,10 +184,10 @@ export default class WorldMapView extends Vue {
 				const i = x.item;
 				if (i.startsWith("Equip_")) {
 					const k = i.substr(6);
-					const eq = equipDB.find(y => y.fullKey === k);
+					const eq = FilterableEquipDB.find(y => y.fullKey === k);
 					if (eq) return { equip: eq, count: x.count };
 				} else {
-					const cs = consumableDB.find(y => y.key === i);
+					const cs = ConsumableDB.find(y => y.key === i);
 					if (cs) return { consumable: cs, count: x.count };
 				}
 				return null;
@@ -253,9 +207,7 @@ export default class WorldMapView extends Vue {
 			.fill(MapNodeEntity.Empty)
 			.map((x: MapNodeEntity, i) => ({ ...x, offset: i }));
 
-		if (!this.MapDB) return ret;
-
-		const world = this.MapDB[this.world];
+		const world = MapDB[this.world];
 		if (!world) return ret;
 
 		const area = world[this.area]?.list;
@@ -267,9 +219,8 @@ export default class WorldMapView extends Vue {
 
 	private get NodeList () {
 		const ret: MapNodeEntity[] = [];
-		if (!this.MapDB) return ret;
 
-		const world = this.MapDB[this.world];
+		const world = MapDB[this.world];
 		if (!world) return ret;
 
 		const area = world[this.area]?.list;
@@ -291,14 +242,11 @@ export default class WorldMapView extends Vue {
 	private get CurrentWave (): Array<WaveEnemyInfo | null> {
 		if (!this.selected) return new Array(9).fill(null);
 
-		const db = this.EnemyDB;
-		if (!db) return new Array(9).fill(null);
-
 		return this.Waves[this.selectedWave][this.selectedWaveIndex].e.enemy
 			.map(x => {
 				if (!x) return null;
 
-				const enemy = db.find(y => y.id === x.id);
+				const enemy = FilterableEnemyDB.find(y => y.id === x.id);
 				if (!enemy) return null;
 
 				return {
@@ -324,8 +272,7 @@ export default class WorldMapView extends Vue {
 	}
 
 	private SupplementaryName (text: string) {
-		if (!this.FilterableUnitDB) return "???";
-		const unit = this.FilterableUnitDB.find(x => x.uid === SupplementaryUnit[text]);
+		const unit = FilterableUnitDB.find(x => x.uid === SupplementaryUnit[text]);
 		if (!unit) return "???";
 		return unit.name;
 	}
@@ -343,11 +290,11 @@ export default class WorldMapView extends Vue {
 		return `/units/${id}`;
 	}
 
-	private EquipPage (equip: Equip) {
+	private EquipPage (equip: FilterableEquip) {
 		return `/equips/${equip.fullKey}`;
 	}
 
-	private OpenEnemyInfo (enemy: Enemy, level: number) {
+	private OpenEnemyInfo (enemy: FilterableEnemy, level: number) {
 		this.enemyModalDisplay = true;
 		this.selectedEnemy = enemy;
 		this.selectedEnemyLevel = level;
