@@ -64,7 +64,7 @@
 						{{ unit.introduce }}
 					</b-card>
 
-					<b-alert v-if="LimitedEquip" variant="primary" show class="mt-3">
+					<b-alert v-if="LimitedEquip.length > 0" variant="primary" show class="mt-3">
 						<div>이 전투원은 다음 전용장비를 갖고 있습니다.</div>
 						<a
 							v-for="limited in LimitedEquip"

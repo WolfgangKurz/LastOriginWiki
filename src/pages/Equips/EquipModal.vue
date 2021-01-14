@@ -196,7 +196,9 @@ export default class EquipModal extends Vue {
 	private DB: LazyDataType<EquipItem> = null;
 	private InitialDB () {
 		this.DB = null;
-		if (!this.equip) return;
+
+		const target = this.target;
+		if (!target) return;
 
 		LazyLoad(
 			r => {
@@ -204,7 +206,7 @@ export default class EquipModal extends Vue {
 				if (!Equip) return (this.DB = false);
 				this.DB = Equip;
 			},
-			cb => EquipItemDB(this.equip.fullKey, x => cb(x)),
+			cb => EquipItemDB(target.fullKey, x => cb(x)),
 		);
 	}
 
@@ -231,6 +233,10 @@ export default class EquipModal extends Vue {
 	private WatchEquip () {
 		this.level = 10;
 		this.displayTab = "info";
+	}
+
+	@Watch("target")
+	private WatchTarget () {
 		this.InitialDB();
 	}
 
@@ -244,9 +250,6 @@ export default class EquipModal extends Vue {
 
 	private get target () {
 		if (!this.equip) return null;
-
-		const db = this.DB;
-		if (!db) return null;
 
 		return FilterableEquipDB.find(x => x.type === this.equip.type && x.key === this.equip.key && x.rarity === this.rarity) || (() => {
 			const typeTable: Record<ITEM_TYPE, string> = {

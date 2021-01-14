@@ -1,5 +1,14 @@
 <template>
 	<div>
+		<changelog-item title="Build 7742" date="2021-01-15">
+			<template #bugfix>
+				<li>전투원 페이지에서 전용 장비가 없어도 표시되던 점을 수정했습니다.</li>
+				<li>전투원의 스테이터스 계산기에서 장비가 장착되지 않던 점을 수정했습니다.</li>
+				<li>장비의 등급을 변경해도 버프 목록이 변경되지 않던 점을 수정했습니다.</li>
+				<li>적중 버프가 명중률로 표기되던 점을 수정했습니다.</li>
+			</template>
+		</changelog-item>
+
 		<changelog-item title="Build 7737" date="2021-01-14">
 			<template #site>
 				<li>전투원, 장비, 적의 DB 구조를 개편했습니다.</li>
