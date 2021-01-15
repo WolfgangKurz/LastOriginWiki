@@ -31,18 +31,27 @@ export default class UnitFace extends Vue {
 	})
 	private type!: string;
 
-	public static GetURL (uid: string, skin: number = 0): string {
+	@Prop({
+		type: Boolean,
+		default: false,
+	})
+	private sd!: boolean;
+
+	public static GetURL (uid: string, skin: number = 0, sd: boolean = false): string {
 		const ext = ImageExtension();
 		if (!uid) return `${AssetsRoot}/${ext}/face/transparent.${ext}`;
 
 		if (uid.startsWith("Core_") || uid.startsWith("Module_"))
 			return `${AssetsRoot}/${ext}/face/${uid}_0.${ext}`;
 
-		return `${AssetsRoot}/${ext}/face/${uid}_${skin}.${ext}`;
+		if (sd)
+			return `${AssetsRoot}/${ext}/tbar/${uid}.${ext}`;
+		else
+			return `${AssetsRoot}/${ext}/face/${uid}_${skin}.${ext}`;
 	}
 
 	private render () {
-		const path = UnitFace.GetURL(this.uid, this.skin);
+		const path = UnitFace.GetURL(this.uid, this.skin, this.sd);
 		if (this.size)
 			return <img class="unit-face" data-type={ this.type } src={ path } width={ this.size } height={ this.size } />;
 		else

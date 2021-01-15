@@ -378,6 +378,7 @@ export default class UnitSkinView extends Vue {
 			z-index: 3;
 
 			> div > img {
+				width: auto;
 				height: 25%;
 				opacity: 0.9;
 				filter: drop-shadow(0 0 4px #000);

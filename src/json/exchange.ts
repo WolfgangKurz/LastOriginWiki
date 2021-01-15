@@ -5296,6 +5296,606 @@ export default [
     "note": ""
   },
   {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "DS_Charlotte",
+    "count": 1,
+    "requires": [
+      "Special_Module:50",
+      "RobotParts_HighpowerBooster:150"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "PECS_BS",
+    "count": 1,
+    "requires": [
+      "Advanced_Module:175",
+      "RobotParts_HeavyWeapon:30"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Chip_Acc_T4",
+    "count": 1,
+    "requires": [
+      "Special_Module:25",
+      "RobotParts_SuperAlloyArmor:75"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "System_Highspd_T4",
+    "count": 1,
+    "requires": [
+      "Special_Module:25",
+      "RobotParts_SuperAlloyArmor:75"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Varnish_Pack_T1",
+    "count": 5,
+    "requires": [
+      "Special_Module:5"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "SyntheticResin_Pack_T1",
+    "count": 5,
+    "requires": [
+      "Special_Module:5"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Iron_Pack_T1",
+    "count": 5,
+    "requires": [
+      "Special_Module:5"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Core_Normal",
+    "count": 3,
+    "requires": [
+      "Normal_Module:1000",
+      "Advanced_Module:100"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Core_Special",
+    "count": 1,
+    "requires": [
+      "Advanced_Module:500",
+      "Special_Module:50"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Core_Normal",
+    "count": 15,
+    "requires": [
+      "Consumable_CostumeTicket:40"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Core_Special",
+    "count": 3,
+    "requires": [
+      "Consumable_CostumeTicket:200"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Chip_Enchant_T1",
+    "count": 200,
+    "requires": [
+      "Normal_Module:15",
+      "RobotParts_MPParts:10"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Chip_Enchant_T2",
+    "count": 100,
+    "requires": [
+      "Normal_Module:30",
+      "RobotParts_MPParts:20"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Chip_Enchant_T3",
+    "count": 50,
+    "requires": [
+      "Normal_Module:75",
+      "RobotParts_MPParts:50"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Chip_Enchant_T4",
+    "count": 30,
+    "requires": [
+      "Normal_Module:150",
+      "RobotParts_MPParts:100"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Favor_MaxExpand_Lv1",
+    "count": 5,
+    "requires": [
+      "Special_Module:10"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Chip_AtkSpd_T4",
+    "count": 2,
+    "requires": [
+      "Consumable_EWMPMetal:500"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Sub_Interceptor_T4",
+    "count": 1,
+    "requires": [
+      "Consumable_EWMPMetal:1000"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Chip_CriAccEx_T4",
+    "count": 2,
+    "requires": [
+      "Consumable_EWMPMetal:750"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "System_Advanced_T4",
+    "count": 1,
+    "requires": [
+      "Consumable_EWMPMetal:1000"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Sub_ElectroGenerator_T4",
+    "count": 1,
+    "requires": [
+      "Consumable_EWMPMetal:1000"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Sub_Odamplifier_T4",
+    "count": 1,
+    "requires": [
+      "Consumable_EWMPMetal:1000"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Sub_Precision_T4",
+    "count": 1,
+    "requires": [
+      "Consumable_EWMPMetal:1000"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Sub_ImSpSight_T4",
+    "count": 1,
+    "requires": [
+      "Consumable_EWMPMetal:1000"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "System_ImExp_T4",
+    "count": 1,
+    "requires": [
+      "Consumable_EWMPMetal:1000"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Sub_ImNitroEx3500_T4",
+    "count": 1,
+    "requires": [
+      "Consumable_EWMPMetal:1000"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Consumable_TacticRecord_T3",
+    "count": 3,
+    "requires": [
+      "Consumable_EWMPMetal:250"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Consumable_TrainingManual_T3",
+    "count": 3,
+    "requires": [
+      "Consumable_EWMPMetal:250"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Favor_Cake_S",
+    "count": 5,
+    "requires": [
+      "Consumable_EWMPMetal:50"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Consumable_OriginDustSp",
+    "count": 25,
+    "requires": [
+      "Consumable_EWMPMetal:30"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Consumable_OriginDustAdv",
+    "count": 100,
+    "requires": [
+      "Consumable_EWMPMetal:10"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Consumable_OriginDust",
+    "count": 250,
+    "requires": [
+      "Consumable_EWMPMetal:1"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "CharLetter_Char_PECS_DarkElf_N_1",
+    "count": 1,
+    "requires": [
+      "Normal_Module:1"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "CharLetter_Char_BR_DrM_N_1",
+    "count": 1,
+    "requires": [
+      "Normal_Module:1"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "CharLetter_Char_BR_Leona_N_1",
+    "count": 1,
+    "requires": [
+      "Normal_Module:1"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "CharLetter_Char_3P_BlackLilith_N_1",
+    "count": 1,
+    "requires": [
+      "Normal_Module:1"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "CharLetter_Char_3P_ScissorsLise_N_1",
+    "count": 1,
+    "requires": [
+      "Normal_Module:1"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "CharLetter_Char_BR_Miho_N_1",
+    "count": 1,
+    "requires": [
+      "Normal_Module:1"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "CharLetter_Char_BR_Miho_N_2",
+    "count": 1,
+    "requires": [
+      "Normal_Module:1"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "CharLetter_Char_3P_Sowan_N_1",
+    "count": 1,
+    "requires": [
+      "Normal_Module:1"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "CharLetter_Char_3P_Aurora_N_1",
+    "count": 1,
+    "requires": [
+      "Normal_Module:1"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "CharLetter_Char_3P_Aurora_N_2",
+    "count": 1,
+    "requires": [
+      "Normal_Module:1"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "CharLetter_Char_BR_Alvis_N_1",
+    "count": 1,
+    "requires": [
+      "Normal_Module:1"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "CharLetter_Char_BR_Emily_N_1",
+    "count": 1,
+    "requires": [
+      "Normal_Module:1"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "CharLetter_Char_BR_Emily_N_2",
+    "count": 1,
+    "requires": [
+      "Normal_Module:1"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "CharLetter_Char_BR_Undine_N_1",
+    "count": 1,
+    "requires": [
+      "Normal_Module:1"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "CharLetter_Char_ST_Tiamat_N_1",
+    "count": 1,
+    "requires": [
+      "Normal_Module:1"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "CharLetter_Char_3P_Fenrir_N_1",
+    "count": 1,
+    "requires": [
+      "Normal_Module:1"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Ev_Chocolate_3P_Aurora",
+    "count": 1,
+    "requires": [
+      "Normal_Module:1"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Ev_Chocolate_3P_Aurora_2",
+    "count": 1,
+    "requires": [
+      "Normal_Module:1"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Ev_Chocolate_3P_ScissorsLise",
+    "count": 1,
+    "requires": [
+      "Normal_Module:1"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Ev_Meat_3P_Fenrir",
+    "count": 1,
+    "requires": [
+      "Normal_Module:1"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Ev_Chocolate_ST_Tiamat",
+    "count": 1,
+    "requires": [
+      "Normal_Module:1"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Ev_Chocolate_BR_Emily",
+    "count": 1,
+    "requires": [
+      "Normal_Module:1"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Ev_Chocolate_3P_BlackLilith",
+    "count": 1,
+    "requires": [
+      "Normal_Module:1"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Ev_Chocolate_3P_Sowan",
+    "count": 1,
+    "requires": [
+      "Normal_Module:1"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Ev_Chocolate_PECS_DarkElf",
+    "count": 1,
+    "requires": [
+      "Normal_Module:1"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Skin_PECS_Fortune_99",
+    "count": 1,
+    "requires": [
+      "Normal_Module:1"
+    ],
+    "note": ""
+  },
+  {
+    "category": "Montly",
+    "group": "2101",
+    "reward": "Skin_AGS_MrAlfred2_1",
+    "count": 1,
+    "requires": [
+      "Normal_Module:1"
+    ],
+    "note": ""
+  },
+  {
     "category": "Event",
     "group": "Ev1",
     "reward": "3P_Sowan",

@@ -1,5 +1,18 @@
 <template>
 	<div>
+		<changelog-item title="Build 7786" date="2021-01-15">
+			<template #bugfix>
+				<li>전투원정보의 테이블 보기에서 승급 필터가 작동하지 않던 문제를 수정했습니다.</li>
+			</template>
+			<template #new>
+				<li>전투원 기본 정보에 전투원 아이콘 및 SD 아이콘이 추가되었습니다.</li>
+				<li>경험치 계산기에 시설 보너스 입력이 추가되었습니다.</li>
+			</template>
+			<template #update>
+				<li>2021년 01월 교환소 정보가 추가되었습니다.</li>
+			</template>
+		</changelog-item>
+
 		<changelog-item title="Build 7742" date="2021-01-15">
 			<template #bugfix>
 				<li>전투원 페이지에서 전용 장비가 없어도 표시되던 점을 수정했습니다.</li>
