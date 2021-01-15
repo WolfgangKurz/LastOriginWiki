@@ -1,34 +1,25 @@
 <template>
-	<b-card
-		v-if="!horizontal"
-		class="unit-card position-relative my-1"
-		bg-variant="dark"
-		text-variant="white"
-		:img-src="UnitFaceUrl"
-	>
+	<b-card v-if="!horizontal" class="unit-card position-relative my-1" bg-variant="dark" text-variant="white" :img-src="UnitFaceUrl">
 		<b-card-title>
 			<div class="unit-info">
 				<rarity-badge :rarity="unit.rarity" />
 				<span>
-					<span class="d-inline-block">No. {{IdDisplay}}</span>
+					<span class="d-inline-block">No. {{ IdDisplay }}</span>
 					<span class="d-inline-block">
 						<i class="unit-type" :data-type="unit.type" />
 						<i class="unit-role" :data-role="unit.role" />
 					</span>
 				</span>
 			</div>
-			{{unit.name}}
+			{{ unit.name }}
 		</b-card-title>
 
 		<div class="unit-badges">
 			<b-badge v-if="unit.body === 1" variant="info" class="ml-1">AGS</b-badge>
 			<template v-if="leftPromotions">
-				<rarity-badge
-					v-for="pro in leftPromotions"
-					:key="`unit-table-unit-${unit.uid}-pro-${pro}`"
-					class="ml-1"
-					:rarity="pro"
-				>{{RarityName[pro]}} 승급</rarity-badge>
+				<rarity-badge v-for="pro in leftPromotions" :key="`unit-table-unit-${unit.uid}-pro-${pro}`" class="ml-1" :rarity="pro">
+					{{ RarityDisplay[pro] }} 승급
+				</rarity-badge>
 			</template>
 		</div>
 
@@ -36,18 +27,15 @@
 	</b-card>
 	<div v-else class="unit-card text-left clearfix" @click.prevent="!noLink && OnClick()">
 		<unit-face :uid="unit.uid" class="unit-face float-left" />
-		<div class="unit-name">{{unit.name}}</div>
+		<div class="unit-name">{{ unit.name }}</div>
 		<div class="unit-flag">
 			<b-badge v-if="unit.body === 1" variant="info" class="mr-1">AGS</b-badge>
 			<b-badge v-if="isPromoted" variant="danger" class="mr-1">승급 후</b-badge>
 
 			<div v-if="leftPromotions" class="float-right">
-				<rarity-badge
-					v-for="pro in leftPromotions"
-					:key="`unit-table-unit-${unit.uid}-pro-${pro}`"
-					:rarity="pro"
-					class="ml-1"
-				>{{RarityName[pro]}} 승급</rarity-badge>
+				<rarity-badge v-for="pro in leftPromotions" :key="`unit-table-unit-${unit.uid}-pro-${pro}`" :rarity="pro" class="ml-1">
+					{{ RarityDisplay[pro] }} 승급
+				</rarity-badge>
 			</div>
 		</div>
 	</div>
@@ -63,6 +51,7 @@ import { Prop, Emit } from "vue-property-decorator";
 
 import { FilterableUnit } from "@/libs/Types/Unit.Filterable";
 import { ACTOR_GRADE } from "@/libs/Types/Enums";
+import { RarityDisplay } from "@/libs/Const";
 
 @Component({
 	components: {
@@ -103,21 +92,16 @@ export default class UnitCard extends Vue {
 		return UnitFace.GetURL(this.unit.uid);
 	}
 
-	private get RarityName () {
-		return {
-			[ACTOR_GRADE.B]: "B",
-			[ACTOR_GRADE.A]: "A",
-			[ACTOR_GRADE.S]: "S",
-			[ACTOR_GRADE.SS]: "SS",
-		};
+	private get RarityDisplay () {
+		return RarityDisplay;
 	}
 
 	private get isPromoted () {
-		return (this.unit.promotions || []).includes(this.rarity);
+		return (this.unit.promo || []).includes(this.rarity);
 	}
 
 	private get leftPromotions () {
-		return (this.unit.promotions || []).filter(x => x > this.rarity);
+		return (this.unit.promo || []).filter(x => x > this.rarity);
 	}
 
 	@Emit("click")

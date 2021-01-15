@@ -28,7 +28,7 @@
 				<b-tbody>
 					<template v-for="rarity in RarityList">
 						<b-tr v-if="Filters.Rarity[rarity]" :key="`unit-table-body-${type}-${rarity}`">
-							<b-th :class="`rarity-${RarityName[rarity]}`">{{ RarityName[rarity] }}</b-th>
+							<b-th :class="`rarity-${RarityDisplay[rarity]}`">{{ RarityDisplay[rarity] }}</b-th>
 
 							<template v-for="role in RoleList">
 								<b-td v-if="Filters.Role[role]" :key="`unit-table-body-${type}-${rarity}-${role}`">
@@ -69,6 +69,7 @@ import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE, SKILL_ATTR, TARGE
 
 import { BuffEffect } from "@/libs/Buffs/BuffEffect";
 import { isBuffEffectValid, isPositiveBuffEffectValue } from "@/libs/Buffs/Helper";
+import { RarityDisplay } from "@/libs/Const";
 
 @Component({
 	components: {
@@ -111,13 +112,8 @@ export default class UnitsTable extends Vue {
 	}
 	// Vuex -----
 
-	private get RarityName () {
-		return {
-			[ACTOR_GRADE.B]: "B",
-			[ACTOR_GRADE.A]: "A",
-			[ACTOR_GRADE.S]: "S",
-			[ACTOR_GRADE.SS]: "SS",
-		};
+	private get RarityDisplay () {
+		return RarityDisplay;
 	}
 
 	private get RarityList (): (keyof UnitDisplayFilters["Rarity"])[] {
@@ -148,9 +144,11 @@ export default class UnitsTable extends Vue {
 	private UnitList (rarity: ACTOR_GRADE, type: ACTOR_CLASS, role: ROLE_TYPE) {
 		return this.list
 			.filter(x => {
-				const rarityMatch = (this.PromotionFilter === 1 || this.PromotionFilter === 2)
-					? (this.PromotionFilter === 1 && x.rarity === rarity) || (x.promotions && x.promotions.includes(rarity))
-					: x.rarity === rarity;
+				const rarityMatch = this.PromotionFilter === 1
+					? (x.rarity === rarity) || (x.promo && x.promo.includes(rarity))
+					: this.PromotionFilter === 2
+						? x.promo && x.promo.includes(rarity)
+						: x.rarity === rarity;
 
 				return rarityMatch && x.type === type && x.role === role;
 			});

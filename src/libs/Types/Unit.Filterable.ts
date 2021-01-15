@@ -15,7 +15,7 @@ export interface FilterableUnit {
 	no: number;
 
 	rarity: ACTOR_GRADE;
-	promotions?: ACTOR_GRADE[];
+	promo?: ACTOR_GRADE[];
 
 	type: ACTOR_CLASS;
 	role: ROLE_TYPE;

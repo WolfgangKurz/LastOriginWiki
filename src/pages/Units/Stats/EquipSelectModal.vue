@@ -236,7 +236,6 @@ export default class EquipSelectModal extends Vue {
 	}
 
 	private get EffectList () {
-		console.log(this.SelectedEquip, this.SelectedEquipData);
 		if (!this.SelectedEquip) return null;
 
 		if (this.SelectedEquipData)

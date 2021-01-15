@@ -59,8 +59,19 @@
 					<unit-skin-view v-if="SkinList[skinIndex]" :unit="unit" :skin="SkinList[skinIndex]" collapsed detailable />
 				</b-col>
 
-				<b-col cols="12" md="9">
-					<b-card no-body bg-variant="dark" text-variant="light" class="mt-4 introduce-text p-3">
+				<b-col cols="12" md="9" class="mt-3">
+					<b-row>
+						<b-col />
+						<b-col cols="auto">
+							<unit-face :uid="unit.uid" :skin="skinIndex" size="88" />
+						</b-col>
+						<b-col cols="auto">
+							<unit-face :uid="`TbarIcon_${unit.uid}_${CurrentSkinPostfix}`" :skin="skinIndex" sd size="88" />
+						</b-col>
+						<b-col />
+					</b-row>
+
+					<b-card no-body bg-variant="dark" text-variant="light" class="mt-3 introduce-text p-3">
 						{{ unit.introduce }}
 					</b-card>
 
@@ -681,6 +692,13 @@ export default class UnitView extends Vue {
 
 		this.Reset();
 		return list;
+	}
+
+	private get CurrentSkinPostfix () {
+		const skin = this.SkinList[this.skinIndex];
+		if (!skin || skin.isDef) return "N";
+		if (skin.isPro) return "PS1";
+		return `NS${skin.sid}`;
 	}
 
 	private get VoiceList (): VoiceItem[] {

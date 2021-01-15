@@ -206,6 +206,19 @@
 					</div>
 					<hr />
 
+					<div class="mb-1">시설 보너스</div>
+					<div class="ml-2 mb-2">
+						<b-row v-for="(use, i) in facilityUse" :key="`exp-calc-facility-${i}`" class="align-items-center pb-1">
+							<b-col cols="auto" class="pr-0">
+								<b-checkbox v-model="facilityUse[i]">전투 결과 분석실{{ i + 1 }}</b-checkbox>
+							</b-col>
+							<b-col>
+								<b-form-select v-model="facilityLevel[i]" :disabled="!use" :options="facilityLevelList" />
+							</b-col>
+						</b-row>
+					</div>
+					<hr />
+
 					<div class="mb-1">경험치 부스트</div>
 					<div class="ml-2 mb-2">
 						<b-checkbox v-model="isBoosted">경험치 부스트 0.5배</b-checkbox>
@@ -256,6 +269,13 @@
 								<b-icon-plus class="mx-1" />
 								<b-badge class="mx-1" variant="primary">경험치 부스트 {{ FormatNumber(waveData.clear) }} x0.5</b-badge>
 							</template>
+
+							<span v-for="(expBonus, faceIdx) in UsingFacility" :key="`exp-calc-result-facility-${faceIdx}`">
+								<b-icon-plus class="mx-1" />
+								<b-badge class="mx-1" variant="primary">
+									시설 보너스({{ faceIdx + 1 }}) {{ FormatNumber(waveData.clear) }} x{{ expBonus }}
+								</b-badge>
+							</span>
 
 							<b-icon-arrow-right class="mx-1" />
 							<b-badge variant="dark">{{ FormatNumber(ResultExp(wave)) }} EXP</b-badge>
@@ -357,6 +377,9 @@ export default class ExpCalculator extends Vue {
 	private isLeader: boolean = true;
 	private isBoosted: boolean = false;
 
+	private facilityUse: boolean[] = [false, false, false, false];
+	private facilityLevel: number[] = [9, 9, 9, 9];
+
 	private sortieArea: AreaWave[] = [];
 
 	private skills: Record<string, ExpSkillItem> = {
@@ -440,6 +463,25 @@ export default class ExpCalculator extends Vue {
 			}));
 	}
 
+	private get facilityLevelList (): FormSelectItem<number>[] {
+		return new Array(25)
+			.fill(0)
+			.map((_, x) => {
+				const value = [
+					1.25, 1.37, 1.5, 1.63, 1.75,
+					1.88, 2, 2.13, 2.25, 2.38,
+					2.5, 2.63, 2.75, 2.88, 3,
+					3.13, 3.25, 3.38, 3.63, 3.75,
+					4, 4.25, 4.5, 4.75, 5,
+				][x];
+
+				return {
+					text: `Lv. ${x + 1} (${value}%)`,
+					value: x,
+				};
+			});
+	}
+
 	private get areaList () {
 		// const worlds: AreaWorld[] = [];
 		const maps: AreaMap[] = [];
@@ -509,6 +551,21 @@ export default class ExpCalculator extends Vue {
 			return exp;
 		})();
 		return Math.max(0, destExp - startExp);
+	}
+
+	private get UsingFacility () {
+		const table = [
+			1.25, 1.37, 1.5, 1.63, 1.75,
+			1.88, 2, 2.13, 2.25, 2.38,
+			2.5, 2.63, 2.75, 2.88, 3,
+			3.13, 3.25, 3.38, 3.63, 3.75,
+			4, 4.25, 4.5, 4.75, 5,
+		];
+
+		return this.facilityUse
+			.map((x, i) => x ? this.facilityLevel[i] : -1)
+			.filter(x => x >= 0)
+			.map(x => Decimal.div(table[x], 100).toNumber());
 	}
 
 	private get hasSumValues () {
@@ -597,7 +654,7 @@ export default class ExpCalculator extends Vue {
 		const base = this.sortieArea[wave].clear;
 		let exp = new Decimal(base);
 
-		// {[(웨이브 경험치 X 리더 보너스) X 장비 및 스킬에 의한 상승량 총합] X 이벤트 경험치} X 링크 보너스 + 시설 경험치
+		// {[(웨이브 경험치 X 리더 보너스) X 장비 및 스킬에 의한 상승량 총합] X 이벤트 경험치} X 링크 보너스 + 시설 경험치 + 부스트 경험치
 		if (this.isLeader) exp = exp.mul(1.2).floor();
 
 		exp = exp.mul(this.SumBonusValue(wave)).floor();
@@ -610,6 +667,8 @@ export default class ExpCalculator extends Vue {
 
 		if (this.isBoosted)
 			exp = exp.add(Decimal.div(base, 2)).floor();
+
+		this.UsingFacility.forEach(x => (exp = exp.add(Decimal.mul(base, x))));
 
 		return Math.floor(exp.toNumber());
 	}

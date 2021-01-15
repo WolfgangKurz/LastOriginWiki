@@ -56,7 +56,7 @@ module.exports = {
 
 		// 소스맵 형식 (기본값은 cheap-module-eval-source-map)
 		if (process.env.NODE_ENV === "development")
-			config.set("devtool", "source-map");
+			config.set("devtool", "eval-cheap-module-source-map");
 		else
 			config.set("devtool", "none");
 
@@ -164,7 +164,7 @@ module.exports = {
 			.plugin("fork-ts-checker")
 			.tap(args => {
 				if (args.length > 0) {
-					args[0].workers = Math.floor(os.cpus().length / 2);
+					args[0].workers = Math.floor(os.cpus().length / 4);
 					args[0].memoryLimit = 4096;
 				}
 				return args;
