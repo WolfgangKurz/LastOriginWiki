@@ -52,6 +52,7 @@ export class Unit extends Vue {
 					Unit,
 					Skill,
 				};
+				this.rarity = Unit.rarity;
 			},
 			cb => UnitDB(uid, x => cb(x)),
 			cb => SkillDB(uid, x => cb(x)),

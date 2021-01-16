@@ -1,5 +1,11 @@
 <template>
 	<div>
+		<changelog-item title="Build 7801" date="2021-01-17">
+			<template #bugfix>
+				<li>전투원의 스테이터스 계산기에서 전투원 등급의 초기값이 비정상적인 문제를 수정했습니다.</li>
+			</template>
+		</changelog-item>
+
 		<changelog-item title="Build 7786" date="2021-01-15">
 			<template #bugfix>
 				<li>전투원정보의 테이블 보기에서 승급 필터가 작동하지 않던 문제를 수정했습니다.</li>
