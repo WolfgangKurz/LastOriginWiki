@@ -1,5 +1,32 @@
 <template>
 	<div>
+		<changelog-item title="Build 7807" date="2021-01-18">
+			<template #bugfix>
+				<li>전투원 유형 아이콘이 올바르지 않게 표시되던 문제를 수정했습니다.</li>
+			</template>
+			<template #update>
+				<li><b-badge variant="warning">소완</b-badge>의 스킬 정보가 갱신되었습니다.</li>
+			</template>
+			<template #new>
+				<li>신규 전투원 <b-badge variant="warning">드라큐리나</b-badge>의 정보가 추가되었습니다.</li>
+				<li><b-badge variant="info">낙원으로부터 온 초대장 3부</b-badge> 정보가 추가되었습니다.</li>
+			</template>
+			<template #skin>
+				<li>
+					<b-badge variant="warning">소완</b-badge>의 <b-badge variant="danger">일일천추, 당신을 위한 미식</b-badge> 스킨 정보가
+					추가되었습니다.
+				</li>
+				<li><b-badge variant="warning">무적의 용</b-badge>의 <b-badge variant="danger">세일러 용</b-badge> 스킨 정보가 추가되었습니다.</li>
+				<li>
+					<b-badge variant="warning">랜서 미나</b-badge>의 <b-badge variant="danger">천상의 기사 미나</b-badge> 스킨 정보가 추가되었습니다.
+				</li>
+				<li>
+					<b-badge variant="warning">쿠노이치 카엔</b-badge>의 <b-badge variant="danger">두송이 꽃</b-badge> 스킨의 중파 정보가
+					추가되었습니다.
+				</li>
+			</template>
+		</changelog-item>
+
 		<changelog-item title="Build 7801" date="2021-01-17">
 			<template #bugfix>
 				<li>전투원의 스테이터스 계산기에서 전투원 등급의 초기값이 비정상적인 문제를 수정했습니다.</li>

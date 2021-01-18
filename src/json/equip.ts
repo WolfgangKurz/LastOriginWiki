@@ -73037,6 +73037,9 @@ export default [
     "source": [
       [
         "4-2B"
+      ],
+      [
+        "Ev:Ev9:Ev3-2s"
       ]
     ],
     "stats": [
@@ -73686,6 +73689,9 @@ export default [
     "source": [
       [
         "5-7B"
+      ],
+      [
+        "Ev:Ev9:Ev3-2s"
       ]
     ],
     "stats": [
@@ -74673,6 +74679,9 @@ export default [
     "source": [
       [
         "4-1Ex"
+      ],
+      [
+        "Ev:Ev9:Ev3-4s"
       ]
     ],
     "stats": [
@@ -84998,6 +85007,9 @@ export default [
     "source": [
       [
         "5-8Ex"
+      ],
+      [
+        "Ev:Ev9:Ev3-1s"
       ]
     ],
     "stats": [
@@ -86450,6 +86462,9 @@ export default [
     "source": [
       [
         "5-2Ex"
+      ],
+      [
+        "Ev:Ev9:Ev3-1s"
       ]
     ],
     "stats": [
@@ -87176,6 +87191,9 @@ export default [
     "source": [
       [
         "5-4Ex"
+      ],
+      [
+        "Ev:Ev9:Ev3-3s"
       ]
     ],
     "stats": [
@@ -88199,6 +88217,9 @@ export default [
     "source": [
       [
         "4-3Ex"
+      ],
+      [
+        "Ev:Ev9:Ev3-3s"
       ]
     ],
     "stats": [
@@ -88958,6 +88979,9 @@ export default [
     "source": [
       [
         "5-1Ex"
+      ],
+      [
+        "Ev:Ev9:Ev3-3s"
       ]
     ],
     "stats": [
@@ -92994,6 +93018,9 @@ export default [
     "source": [
       [
         "6-4Ex"
+      ],
+      [
+        "Ev:Ev9:Ev3-1s"
       ]
     ],
     "stats": [
@@ -117769,6 +117796,9 @@ export default [
     "source": [
       [
         "6-1Ex"
+      ],
+      [
+        "Ev:Ev9:Ev3-2s"
       ]
     ],
     "stats": [
@@ -140516,6 +140546,9 @@ export default [
     "source": [
       [
         "7-1Ex"
+      ],
+      [
+        "Ev:Ev9:Ev3-4s"
       ]
     ],
     "stats": [
@@ -141561,6 +141594,9 @@ export default [
     "source": [
       [
         "7-2Ex"
+      ],
+      [
+        "Ev:Ev9:Ev3-4s"
       ]
     ],
     "stats": [
@@ -143946,7 +143982,11 @@ export default [
     "craftable": false,
     "limit": null,
     "upgrade": 100,
-    "source": [],
+    "source": [
+      [
+        "Ev:Ev9:Ev2-3Ex"
+      ]
+    ],
     "stats": [
       [
         {
@@ -144138,7 +144178,11 @@ export default [
     "craftable": false,
     "limit": null,
     "upgrade": 150,
-    "source": [],
+    "source": [
+      [
+        "Ev:Ev9:Ev2-3Ex"
+      ]
+    ],
     "stats": [
       [
         {
@@ -144330,7 +144374,11 @@ export default [
     "craftable": false,
     "limit": null,
     "upgrade": 250,
-    "source": [],
+    "source": [
+      [
+        "Ev:Ev9:Ev2-3Ex"
+      ]
+    ],
     "stats": [
       [
         {
@@ -144525,6 +144573,9 @@ export default [
     "source": [
       [
         "*Cha2-3"
+      ],
+      [
+        "Ev:Ev9:Ev2-3Ex"
       ],
       [
         "Ev:EvA0:2:Exc:FixTool:500"
@@ -145315,6 +145366,9 @@ export default [
     "source": [
       [
         "8-8"
+      ],
+      [
+        "Ev:Ev9:*Ev2-3Ex"
       ],
       [
         "Ev:Ev8:1:Exc:PositiveClue:50"
@@ -146874,6 +146928,9 @@ export default [
     "source": [
       [
         "8-1Ex"
+      ],
+      [
+        "Ev:Ev9:*Ev1-3Ex"
       ]
     ],
     "stats": [
@@ -147067,7 +147124,11 @@ export default [
     "craftable": false,
     "limit": null,
     "upgrade": 100,
-    "source": [],
+    "source": [
+      [
+        "Ev:Ev9:Ev1-3Ex"
+      ]
+    ],
     "stats": [
       [
         {
@@ -147259,7 +147320,11 @@ export default [
     "craftable": false,
     "limit": null,
     "upgrade": 150,
-    "source": [],
+    "source": [
+      [
+        "Ev:Ev9:Ev1-3Ex"
+      ]
+    ],
     "stats": [
       [
         {
@@ -147451,7 +147516,11 @@ export default [
     "craftable": false,
     "limit": null,
     "upgrade": 250,
-    "source": [],
+    "source": [
+      [
+        "Ev:Ev9:Ev1-3Ex"
+      ]
+    ],
     "stats": [
       [
         {
@@ -147649,6 +147718,9 @@ export default [
       ],
       [
         "*Cha1-3"
+      ],
+      [
+        "Ev:Ev9:Ev1-3Ex"
       ]
     ],
     "stats": [

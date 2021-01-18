@@ -1094,6 +1094,11 @@ export default [
             "target": "enemy",
             "type": 83,
             "positive": true
+          },
+          {
+            "target": "enemy",
+            "type": 3,
+            "positive": false
           }
         ]
       },
@@ -1158,6 +1163,11 @@ export default [
           {
             "target": "self",
             "type": 81,
+            "positive": true
+          },
+          {
+            "target": "self",
+            "type": 13,
             "positive": true
           }
         ]
@@ -12215,6 +12225,122 @@ export default [
             "target": "enemy",
             "type": 70,
             "positive": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "uid": "PECS_Draculina",
+    "no": 141,
+    "rarity": 5,
+    "name": "드라큐리나",
+    "shortname": "드라큐리나",
+    "groupKey": "Bismarck",
+    "group": "비스마르크 코퍼레이션 ",
+    "shortgroup": "비스마르크 코퍼레이션",
+    "type": 2,
+    "role": 1,
+    "body": 0,
+    "craft": 17880,
+    "buffs": [
+      {
+        "elem": 0,
+        "effects": [
+          {
+            "target": "enemy",
+            "type": 11,
+            "positive": false
+          },
+          {
+            "target": "enemy",
+            "type": 83,
+            "positive": true
+          }
+        ]
+      },
+      {
+        "elem": 0,
+        "effects": [
+          {
+            "target": "self",
+            "type": 1,
+            "positive": true
+          },
+          {
+            "target": "self",
+            "type": 58,
+            "positive": true
+          },
+          {
+            "target": "self",
+            "type": 55,
+            "positive": true
+          },
+          {
+            "target": "enemy",
+            "type": 65,
+            "positive": false
+          }
+        ]
+      },
+      {
+        "elem": 0,
+        "effects": [
+          {
+            "target": "self",
+            "type": 58,
+            "positive": true
+          },
+          {
+            "target": "self",
+            "type": 81,
+            "positive": true
+          }
+        ]
+      },
+      {
+        "elem": 0,
+        "effects": [
+          {
+            "target": "self",
+            "type": 58,
+            "positive": true
+          },
+          {
+            "target": "self",
+            "type": 9,
+            "positive": true
+          },
+          {
+            "target": "self",
+            "type": 7,
+            "positive": true
+          }
+        ]
+      },
+      {
+        "elem": 0,
+        "effects": [
+          {
+            "target": "team",
+            "type": 23,
+            "positive": false
+          },
+          {
+            "target": "team",
+            "type": 9,
+            "positive": true
+          },
+          {
+            "target": "team",
+            "type": 7,
+            "positive": true
+          },
+          {
+            "target": "team",
+            "type": 11,
+            "positive": true
           }
         ]
       }

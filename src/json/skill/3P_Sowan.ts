@@ -55,7 +55,7 @@ export default {
                   "desc": {
                     "desc": "재료 손질 : 방어력 {0}%",
                     "type": 1,
-                    "value": "-0.250000"
+                    "value": "-0.320000"
                   },
                   "attr": 1,
                   "erase": {
@@ -65,8 +65,8 @@ export default {
                     "isBuff": true,
                     "type": 3,
                     "defense": {
-                      "base": "-25%",
-                      "per": "-1.25%"
+                      "base": "-32%",
+                      "per": "-2%"
                     }
                   },
                   "overlap": 4
@@ -187,7 +187,7 @@ export default {
                   "desc": {
                     "desc": "재료 손질 : 방어력 {0}%",
                     "type": 1,
-                    "value": "-0.250000"
+                    "value": "-0.320000"
                   },
                   "attr": 1,
                   "erase": {
@@ -197,8 +197,8 @@ export default {
                     "isBuff": true,
                     "type": 3,
                     "defense": {
-                      "base": "-25%",
-                      "per": "-1.25%"
+                      "base": "-32%",
+                      "per": "-2%"
                     }
                   },
                   "overlap": 4
@@ -319,7 +319,7 @@ export default {
                   "desc": {
                     "desc": "재료 손질 : 방어력 {0}%",
                     "type": 1,
-                    "value": "-0.250000"
+                    "value": "-0.320000"
                   },
                   "attr": 1,
                   "erase": {
@@ -329,8 +329,8 @@ export default {
                     "isBuff": true,
                     "type": 3,
                     "defense": {
-                      "base": "-25%",
-                      "per": "-1.25%"
+                      "base": "-32%",
+                      "per": "-2%"
                     }
                   },
                   "overlap": 4
@@ -451,7 +451,7 @@ export default {
                   "desc": {
                     "desc": "재료 손질 : 방어력 {0}%",
                     "type": 1,
-                    "value": "-0.250000"
+                    "value": "-0.320000"
                   },
                   "attr": 1,
                   "erase": {
@@ -461,8 +461,8 @@ export default {
                     "isBuff": true,
                     "type": 3,
                     "defense": {
-                      "base": "-25%",
-                      "per": "-1.25%"
+                      "base": "-32%",
+                      "per": "-2%"
                     }
                   },
                   "overlap": 4
@@ -583,7 +583,7 @@ export default {
                   "desc": {
                     "desc": "재료 손질 : 방어력 {0}%",
                     "type": 1,
-                    "value": "-0.250000"
+                    "value": "-0.320000"
                   },
                   "attr": 1,
                   "erase": {
@@ -593,8 +593,8 @@ export default {
                     "isBuff": true,
                     "type": 3,
                     "defense": {
-                      "base": "-25%",
-                      "per": "-1.25%"
+                      "base": "-32%",
+                      "per": "-2%"
                     }
                   },
                   "overlap": 4
@@ -715,7 +715,7 @@ export default {
                   "desc": {
                     "desc": "재료 손질 : 방어력 {0}%",
                     "type": 1,
-                    "value": "-0.250000"
+                    "value": "-0.320000"
                   },
                   "attr": 1,
                   "erase": {
@@ -725,8 +725,8 @@ export default {
                     "isBuff": true,
                     "type": 3,
                     "defense": {
-                      "base": "-25%",
-                      "per": "-1.25%"
+                      "base": "-32%",
+                      "per": "-2%"
                     }
                   },
                   "overlap": 4
@@ -847,7 +847,7 @@ export default {
                   "desc": {
                     "desc": "재료 손질 : 방어력 {0}%",
                     "type": 1,
-                    "value": "-0.250000"
+                    "value": "-0.320000"
                   },
                   "attr": 1,
                   "erase": {
@@ -857,8 +857,8 @@ export default {
                     "isBuff": true,
                     "type": 3,
                     "defense": {
-                      "base": "-25%",
-                      "per": "-1.25%"
+                      "base": "-32%",
+                      "per": "-2%"
                     }
                   },
                   "overlap": 4
@@ -979,7 +979,7 @@ export default {
                   "desc": {
                     "desc": "재료 손질 : 방어력 {0}%",
                     "type": 1,
-                    "value": "-0.250000"
+                    "value": "-0.320000"
                   },
                   "attr": 1,
                   "erase": {
@@ -989,8 +989,8 @@ export default {
                     "isBuff": true,
                     "type": 3,
                     "defense": {
-                      "base": "-25%",
-                      "per": "-1.25%"
+                      "base": "-32%",
+                      "per": "-2%"
                     }
                   },
                   "overlap": 4
@@ -1111,7 +1111,7 @@ export default {
                   "desc": {
                     "desc": "재료 손질 : 방어력 {0}%",
                     "type": 1,
-                    "value": "-0.250000"
+                    "value": "-0.320000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1121,8 +1121,8 @@ export default {
                     "isBuff": true,
                     "type": 3,
                     "defense": {
-                      "base": "-25%",
-                      "per": "-1.25%"
+                      "base": "-32%",
+                      "per": "-2%"
                     }
                   },
                   "overlap": 4
@@ -1243,7 +1243,7 @@ export default {
                   "desc": {
                     "desc": "재료 손질 : 방어력 {0}%",
                     "type": 1,
-                    "value": "-0.250000"
+                    "value": "-0.320000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1253,8 +1253,8 @@ export default {
                     "isBuff": true,
                     "type": 3,
                     "defense": {
-                      "base": "-25%",
-                      "per": "-1.25%"
+                      "base": "-32%",
+                      "per": "-2%"
                     }
                   },
                   "overlap": 4
@@ -1341,7 +1341,7 @@ export default {
       ]
     },
     "desc": [
-      "목표 대상을 손질해 [@:공격력 :0~0:배 피해]를 주고, 3라운드 동안 대상의 [방어력 -:25~1.25:%]를 낮춥니다.",
+      "목표 대상을 손질해 [@:공격력 :0~0:배 피해]를 주고, 3라운드 동안 대상의 [방어력 -:32~2:%]를 낮춥니다.",
       "대상이 방어력 감소 상태면 2라운드 동안 [받는 피해 +:15~0.75:%]가 증가하는 상태로 만듭니다."
     ]
   },
@@ -1410,9 +1410,9 @@ export default {
                   "desc": {
                     "desc": "요리 개시 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.300000"
+                    "value": "0.340000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -1420,8 +1420,73 @@ export default {
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "30%",
-                      "per": "1.5%"
+                      "base": "34%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "요리 개시 : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.250000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "요리 개시 : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.250000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1.25%"
                     }
                   },
                   "overlap": 4
@@ -1477,9 +1542,9 @@ export default {
                   "desc": {
                     "desc": "요리 개시 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.300000"
+                    "value": "0.340000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -1487,8 +1552,73 @@ export default {
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "30%",
-                      "per": "1.5%"
+                      "base": "34%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "요리 개시 : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.250000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "요리 개시 : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.250000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1.25%"
                     }
                   },
                   "overlap": 4
@@ -1544,9 +1674,9 @@ export default {
                   "desc": {
                     "desc": "요리 개시 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.300000"
+                    "value": "0.340000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -1554,8 +1684,73 @@ export default {
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "30%",
-                      "per": "1.5%"
+                      "base": "34%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "요리 개시 : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.250000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "요리 개시 : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.250000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1.25%"
                     }
                   },
                   "overlap": 4
@@ -1611,9 +1806,9 @@ export default {
                   "desc": {
                     "desc": "요리 개시 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.300000"
+                    "value": "0.340000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -1621,8 +1816,73 @@ export default {
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "30%",
-                      "per": "1.5%"
+                      "base": "34%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "요리 개시 : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.250000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "요리 개시 : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.250000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1.25%"
                     }
                   },
                   "overlap": 4
@@ -1678,9 +1938,9 @@ export default {
                   "desc": {
                     "desc": "요리 개시 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.300000"
+                    "value": "0.340000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -1688,8 +1948,73 @@ export default {
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "30%",
-                      "per": "1.5%"
+                      "base": "34%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "요리 개시 : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.250000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "요리 개시 : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.250000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1.25%"
                     }
                   },
                   "overlap": 4
@@ -1745,9 +2070,9 @@ export default {
                   "desc": {
                     "desc": "요리 개시 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.300000"
+                    "value": "0.340000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -1755,8 +2080,73 @@ export default {
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "30%",
-                      "per": "1.5%"
+                      "base": "34%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "요리 개시 : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.250000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "요리 개시 : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.250000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1.25%"
                     }
                   },
                   "overlap": 4
@@ -1812,9 +2202,9 @@ export default {
                   "desc": {
                     "desc": "요리 개시 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.300000"
+                    "value": "0.340000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -1822,8 +2212,73 @@ export default {
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "30%",
-                      "per": "1.5%"
+                      "base": "34%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "요리 개시 : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.250000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "요리 개시 : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.250000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1.25%"
                     }
                   },
                   "overlap": 4
@@ -1879,9 +2334,9 @@ export default {
                   "desc": {
                     "desc": "요리 개시 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.300000"
+                    "value": "0.340000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -1889,8 +2344,73 @@ export default {
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "30%",
-                      "per": "1.5%"
+                      "base": "34%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "요리 개시 : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.250000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "요리 개시 : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.250000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1.25%"
                     }
                   },
                   "overlap": 4
@@ -1946,9 +2466,9 @@ export default {
                   "desc": {
                     "desc": "요리 개시 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.300000"
+                    "value": "0.340000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -1956,8 +2476,73 @@ export default {
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "30%",
-                      "per": "1.5%"
+                      "base": "34%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "요리 개시 : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.250000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "요리 개시 : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.250000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1.25%"
                     }
                   },
                   "overlap": 4
@@ -2013,9 +2598,9 @@ export default {
                   "desc": {
                     "desc": "요리 개시 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.300000"
+                    "value": "0.340000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -2023,8 +2608,73 @@ export default {
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "30%",
-                      "per": "1.5%"
+                      "base": "34%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "요리 개시 : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.250000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "요리 개시 : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.250000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1.25%"
                     }
                   },
                   "overlap": 4
@@ -2037,8 +2687,8 @@ export default {
       ]
     },
     "desc": [
-      "지정 범위에 있는 대상들을 요리해 [@:공격력 :0~0:배 피해]를 줍니다.",
-      "대상이 방어력 감소 상태면 [피해량 +:30~1.5:%]가 증가합니다."
+      "지정 범위에 있는 대상들을 요리해 [@:공격력 :0~0:배 피해]를 주고, 2라운드 동안 대상의 [방어력 -:25~1.25:%]를 낮춥니다.",
+      "대상이 방어력 감소 상태면 [피해량 +:34~2:%]가 증가합니다."
     ]
   },
   "passive3": {
@@ -2074,7 +2724,7 @@ export default {
           "buff_rate": 100,
           "buffs": [
             {
-              "on": "enemy_killed",
+              "on": "attack_success",
               "if": false,
               "body": [
                 0,
@@ -2126,6 +2776,7 @@ export default {
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "0%",
                     "type": 7,
                     "accuracy": {
                       "base": "30%",
@@ -2147,6 +2798,7 @@ export default {
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "0%",
                     "type": 9,
                     "critical": {
                       "base": "10%",
@@ -2155,6 +2807,158 @@ export default {
                   },
                   "overlap": 4
                 },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "가학적인 요리사 : 행동력+{0}%",
+                    "type": 1,
+                    "value": "0.150000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "가학적인 요리사 : 공격력+{0}%(아군 1)",
+                    "type": 1,
+                    "value": "0.045000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 1,
+                    "attack": {
+                      "base": "4.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 3
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "가학적인 요리사 : 적중+{0}%",
+                    "type": 1,
+                    "value": "0.300000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 3
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "가학적인 요리사 : 치명타+{0}%",
+                    "type": 1,
+                    "value": "0.100000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 3
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
                 {
                   "icon": "BuffIcon_AP_UP",
                   "desc": {
@@ -2177,6 +2981,271 @@ export default {
                   "overlap": 4
                 }
               ],
+              "maxStack": 3
+            },
+            {
+              "on": "round",
+              "if": {
+                "unitCount": {
+                  "filter": "squad",
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "가학적인 요리사 : 공격력+{0}%(아군 1)",
+                    "type": 1,
+                    "value": "0.045000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "4.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "round",
+              "if": {
+                "unitCount": {
+                  "filter": "squad",
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 2
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "가학적인 요리사 : 공격력+{0}%(아군 2)",
+                    "type": 1,
+                    "value": "0.090000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "9%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "round",
+              "if": {
+                "unitCount": {
+                  "filter": "squad",
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 3
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "가학적인 요리사 : 공격력+{0}%(아군 3)",
+                    "type": 1,
+                    "value": "0.135000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "13.5%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "round",
+              "if": {
+                "unitCount": {
+                  "filter": "squad",
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "가학적인 요리사 : 공격력+{0}%(아군 4)",
+                    "type": 1,
+                    "value": "0.180000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "18%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "round",
+              "if": {
+                "unitCount": {
+                  "filter": "squad",
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 5
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "가학적인 요리사 : 공격력+{0}%(아군 5)",
+                    "type": 1,
+                    "value": "0.225000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "22.5%",
+                      "per": "2.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
               "maxStack": 0
             }
           ]
@@ -2184,7 +3253,8 @@ export default {
       ]
     },
     "desc": [
-      "적을 처치하면 다음 요리를 준비하기 위해, 2라운드 동안 [공격력 +:20~1:%] / [적중 +:30~1.5:%] / [치명타 +:10~0.5:%] / [행동력 +:15~0.75:%]가 증가합니다."
+      "공격이 적중하면 다음 요리를 준비하기 위해, 2라운드 동안 [공격력 +:20~1:%] / [적중 +:30~1.5:%] / [치명타 +:10~0.5:%] / [행동력 +:15~0.75:%]가 증가합니다.",
+      "라운드 개시 시, 아군 인원 수에 따라 [공격력 +:4.5~0.5:%]가 증가합니다."
     ]
   },
   "passive4": {
@@ -2211,8 +3281,8 @@ export default {
           "type": 0,
           "range": 0,
           "ap": 0,
-          "grid": "248",
-          "target_ground": false,
+          "grid": "2458",
+          "target_ground": true,
           "summon": null,
           "use": null,
           "dismiss_guard": false,
@@ -2441,7 +3511,7 @@ export default {
       ]
     },
     "desc": [
-      "라운드 개시 시, 주변에 있는 경장형 아군의 공격을 지원하며 [공격력 +:10~0.5:%] / [적중 +:15~0.75:%] / [치명타 +:5~0.25:%]를 증가시킵니다.",
+      "라운드 개시 시, 자신과 주변에 있는 경장형 아군의 공격을 지원하며 [공격력 +:10~0.5:%] / [적중 +:15~0.75:%] / [치명타 +:5~0.25:%]를 증가시킵니다.",
       "<가학적인 요리사> 활성화 상태면 공격력 / 적중 / 치명타 증가 효과가 2배로 적용됩니다."
     ]
   },
@@ -2543,6 +3613,27 @@ export default {
                     }
                   },
                   "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "빠른 처리 : 행동력+{0}%",
+                    "type": 1,
+                    "value": "0.160000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "16%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
                 }
               ],
               "maxStack": 0
@@ -2553,7 +3644,9 @@ export default {
     },
     "desc": [
       "자신과 공격당하는 적의 HP 비율이 낮을수록 적에게 주는 피해량이 증가합니다.",
-      "내 HP% 낮을수록 [피해량 +:20~1:%], 적 HP% 낮을수록 [피해량 +:50~2.5:%]"
+      "라운드 개시 시, 자신의 [행동력 +:16~1:%]를 증가시킵니다.",
+      "자신의 HP% 낮을수록 [피해량 +:20~1:%] 증가",
+      "적의 HP% 낮을수록 [피해량 +:50~2.5:%] 증가"
     ]
   }
 };

@@ -77,7 +77,7 @@ function process (auth) {
 				});
 
 				fs.writeFileSync(
-					path.resolve(__dirname, "..", "src", "json", `unit-dialogue-${lang}.ts`),
+					path.resolve(__dirname, "..", "src", "json", "dialogue", `${lang}.ts`),
 					`export default ${JSON.stringify(ret[lang], null, 2)};`,
 				);
 			});

@@ -143,7 +143,7 @@ export default {
               "maxStack": 0
             },
             {
-              "on": "attack",
+              "on": "attack_success",
               "if": false,
               "body": [
                 0,
@@ -407,7 +407,7 @@ export default {
               "maxStack": 0
             },
             {
-              "on": "attack",
+              "on": "attack_success",
               "if": false,
               "body": [
                 0,
@@ -671,7 +671,7 @@ export default {
               "maxStack": 0
             },
             {
-              "on": "attack",
+              "on": "attack_success",
               "if": false,
               "body": [
                 0,
@@ -935,7 +935,7 @@ export default {
               "maxStack": 0
             },
             {
-              "on": "attack",
+              "on": "attack_success",
               "if": false,
               "body": [
                 0,
@@ -1199,7 +1199,7 @@ export default {
               "maxStack": 0
             },
             {
-              "on": "attack",
+              "on": "attack_success",
               "if": false,
               "body": [
                 0,
@@ -1463,7 +1463,7 @@ export default {
               "maxStack": 0
             },
             {
-              "on": "attack",
+              "on": "attack_success",
               "if": false,
               "body": [
                 0,
@@ -1727,7 +1727,7 @@ export default {
               "maxStack": 0
             },
             {
-              "on": "attack",
+              "on": "attack_success",
               "if": false,
               "body": [
                 0,
@@ -1991,7 +1991,7 @@ export default {
               "maxStack": 0
             },
             {
-              "on": "attack",
+              "on": "attack_success",
               "if": false,
               "body": [
                 0,
@@ -2255,7 +2255,7 @@ export default {
               "maxStack": 0
             },
             {
-              "on": "attack",
+              "on": "attack_success",
               "if": false,
               "body": [
                 0,
@@ -2519,7 +2519,7 @@ export default {
               "maxStack": 0
             },
             {
-              "on": "attack",
+              "on": "attack_success",
               "if": false,
               "body": [
                 0,
@@ -2662,7 +2662,7 @@ export default {
     },
     "desc": [
       "랜스 돌격으로 대상에게 [@,#fire:공격력 :0~0:배 화염 피해]를 주고, 대상의 [방어력 -:25~1.25:%]과 [#fire:화염 저항 -:25~1.25:%]를 낮춥니다.",
-      "공격 시, 2라운드 동안 자신의 [회피 +:35~5:%]가 증가합니다.",
+      "공격 적중 시, 2라운드 동안 자신의 [회피 +:35~5:%]가 증가합니다.",
       "적을 처치하면 [회피 +:35~5:%]가 추가로 증가합니다."
     ]
   },

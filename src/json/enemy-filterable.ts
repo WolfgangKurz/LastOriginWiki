@@ -172,7 +172,11 @@ export default [
     "type": 0,
     "role": 1,
     "isBoss": false,
-    "used": {}
+    "used": {
+      "Ev9": [
+        "Ev:Ev9:Ev3-2s"
+      ]
+    }
   },
   {
     "id": "NightChick_TU",
@@ -348,7 +352,10 @@ export default [
         "Ev:Ev9:Ev2-1B",
         "Ev:Ev9:Ev2-4B",
         "Ev:Ev9:Ev2-6B",
-        "Ev:Ev9:Ev2-7B"
+        "Ev:Ev9:Ev2-7B",
+        "Ev:Ev9:Ev3-1s",
+        "Ev:Ev9:Ev3-2s",
+        "Ev:Ev9:Ev3-4s"
       ]
     }
   },
@@ -732,7 +739,8 @@ export default [
         "Ev:Ev9:Ev2-1B",
         "Ev:Ev9:Ev2-4B",
         "Ev:Ev9:Ev2-6B",
-        "Ev:Ev9:Ev2-7B"
+        "Ev:Ev9:Ev2-7B",
+        "Ev:Ev9:Ev3-2s"
       ]
     }
   },
@@ -2051,6 +2059,9 @@ export default [
       ],
       "Ev1": [
         "Ev:Ev1:Ev-2B"
+      ],
+      "Ev9": [
+        "Ev:Ev9:Ev3-1s"
       ]
     }
   },
@@ -2183,6 +2194,9 @@ export default [
       "Ev1": [
         "Ev:Ev1:Ev-2B",
         "Ev:Ev1:Ev-3B"
+      ],
+      "Ev9": [
+        "Ev:Ev9:Ev3-3s"
       ]
     }
   },
@@ -2260,6 +2274,9 @@ export default [
       "Ev8": [
         "Ev:Ev8:Ev2-5",
         "Ev:Ev8:Ev2-6"
+      ],
+      "Ev9": [
+        "Ev:Ev9:Ev3-3s"
       ]
     }
   },
@@ -2985,6 +3002,9 @@ export default [
       ],
       "Ev7": [
         "Ev:Ev7:Ev3-1s"
+      ],
+      "Ev9": [
+        "Ev:Ev9:Ev3-2s"
       ]
     }
   },
@@ -3062,6 +3082,9 @@ export default [
       ],
       "Ev5": [
         "Ev:Ev5:Ev2-5"
+      ],
+      "Ev9": [
+        "Ev:Ev9:Ev3-3s"
       ]
     }
   },
@@ -3402,6 +3425,9 @@ export default [
       ],
       "Ev5": [
         "Ev:Ev5:Ev-7Ex"
+      ],
+      "Ev9": [
+        "Ev:Ev9:Ev2-3Ex"
       ]
     }
   },
@@ -3596,6 +3622,9 @@ export default [
       ],
       "Ev2": [
         "Ev:Ev2:Ev2-3B"
+      ],
+      "Ev9": [
+        "Ev:Ev9:Ev2-3Ex"
       ]
     }
   },
@@ -5465,7 +5494,8 @@ export default [
         "6-1B"
       ],
       "Ev9": [
-        "Ev:Ev9:Ev2-6B"
+        "Ev:Ev9:Ev2-6B",
+        "Ev:Ev9:Ev3-1s"
       ]
     }
   },
@@ -6995,6 +7025,9 @@ export default [
     "used": {
       "Story": [
         "6-4Ex"
+      ],
+      "Ev9": [
+        "Ev:Ev9:Ev1-3Ex"
       ]
     }
   },
@@ -7471,6 +7504,9 @@ export default [
       ],
       "Ev4": [
         "Ev:Ev4:Ev-5Ex"
+      ],
+      "Ev9": [
+        "Ev:Ev9:Ev1-3Ex"
       ]
     }
   },
@@ -9174,6 +9210,9 @@ export default [
       ],
       "Ev7": [
         "Ev:Ev7:Ev1-2Ex"
+      ],
+      "Ev9": [
+        "Ev:Ev9:Ev2-3Ex"
       ]
     }
   },
@@ -9686,6 +9725,10 @@ export default [
     "used": {
       "Ev3": [
         "Ev:Ev3:Ev-5Ex"
+      ],
+      "Ev9": [
+        "Ev:Ev9:Ev1-3Ex",
+        "Ev:Ev9:Ev2-3Ex"
       ]
     }
   },
@@ -10416,7 +10459,11 @@ export default [
     "type": 0,
     "role": 2,
     "isBoss": false,
-    "used": {}
+    "used": {
+      "Ev9": [
+        "Ev:Ev9:Ev2-3Ex"
+      ]
+    }
   },
   {
     "id": "NightChickCMP_N",
@@ -10434,6 +10481,9 @@ export default [
       ],
       "Ev5": [
         "Ev:Ev5:Ev2-2C"
+      ],
+      "Ev9": [
+        "Ev:Ev9:Ev3-4s"
       ]
     }
   },
@@ -10964,7 +11014,11 @@ export default [
     "type": 0,
     "role": 2,
     "isBoss": false,
-    "used": {}
+    "used": {
+      "Ev9": [
+        "Ev:Ev9:Ev1-3Ex"
+      ]
+    }
   },
   {
     "id": "LegionMk2_N",
@@ -11040,7 +11094,11 @@ export default [
     "type": 0,
     "role": 1,
     "isBoss": false,
-    "used": {}
+    "used": {
+      "Ev9": [
+        "Ev:Ev9:Ev1-3Ex"
+      ]
+    }
   },
   {
     "id": "LegionMk2_TU4",
@@ -12679,7 +12737,11 @@ export default [
     "type": 2,
     "role": 1,
     "isBoss": false,
-    "used": {}
+    "used": {
+      "Ev9": [
+        "Ev:Ev9:Ev3-3s"
+      ]
+    }
   },
   {
     "id": "LightningBomber_TU2",
@@ -13163,6 +13225,9 @@ export default [
     "used": {
       "Ev7": [
         "Ev:Ev7:Ev1-6B"
+      ],
+      "Ev9": [
+        "Ev:Ev9:Ev3-2s"
       ]
     }
   },
@@ -13249,6 +13314,9 @@ export default [
     "used": {
       "Ev7": [
         "Ev:Ev7:Ev1-8"
+      ],
+      "Ev9": [
+        "Ev:Ev9:Ev3-1s"
       ]
     }
   },
@@ -15382,7 +15450,9 @@ export default [
     "isBoss": false,
     "used": {
       "Ev9": [
-        "Ev:Ev9:Ev2-2Ex"
+        "Ev:Ev9:Ev1-3Ex",
+        "Ev:Ev9:Ev2-2Ex",
+        "Ev:Ev9:Ev2-3Ex"
       ]
     }
   },
@@ -15463,6 +15533,7 @@ export default [
     "isBoss": false,
     "used": {
       "Ev9": [
+        "Ev:Ev9:Ev1-3Ex",
         "Ev:Ev9:Ev2-1Ex"
       ]
     }
@@ -15501,26 +15572,34 @@ export default [
   },
   {
     "id": "Drone_Challenge1",
-    "name": "드론 09",
-    "desc": "1002000371",
-    "icon": "TbarIcon_MP_Drone_N",
+    "name": "익스큐셔너",
+    "desc": "스캔 완료! 결과를 분석해보니 이건… 일종의 허상인가? 틀림없이 형태는 갖추고 있지만, 내구력이 굉장히 약해. 거기다 얼마 안가서 스스로 작동을 정지할 것으로 보여. 툭 치면 부서지겠지만 영 석연치 않네… 엄~청나게 강력한 한 방으로 날려버리는게 어때? 예를 들면... 우리 에밀리라던가?\n\n\n- 레이븐 누나가♥",
+    "icon": "TbarIcon_MP_Executioner_B06",
     "ai": "AI_MP_Drone_Challenge1",
     "rarity": 4,
     "type": 2,
-    "role": 2,
+    "role": 1,
     "isBoss": false,
-    "used": {}
+    "used": {
+      "Ev9": [
+        "Ev:Ev9:Ev1-1C"
+      ]
+    }
   },
   {
     "id": "Drone_Challenge2",
-    "name": "드론 09",
-    "desc": "1002000371",
-    "icon": "TbarIcon_MP_Drone_N",
+    "name": "이모탈 익스큐셔너",
+    "desc": "저번 녀석이랑 비슷하지만, 뭔가 다르네. 엄청나게 튼튼해 보이는걸? 거기다 에너지를 모으느라 반격할 기미도 안보이고… 후후, 반항하는 녀석을 데리고 놀아주는 것도 즐겁지만, 저항하지 못하는 걸 짓밟는 건 또 다른 재미가 있지. 이봐, 사령관. 혹시 다른 애들을 내보낼 생각은 아니지? 나한테 맡겨주면 적당~히 재미 좀 보다가 저녀석이 에너지를 다 모으기 전에 숨통을 끊어주겠어.\n\n\n- 사디어스 보고함",
+    "icon": "TbarIcon_MP_Executioner_BEW",
     "ai": "AI_MP_Drone_Challenge2",
     "rarity": 4,
     "type": 2,
-    "role": 2,
+    "role": 1,
     "isBoss": false,
-    "used": {}
+    "used": {
+      "Ev9": [
+        "Ev:Ev9:Ev2-1C"
+      ]
+    }
   }
 ];

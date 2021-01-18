@@ -848,6 +848,6 @@ export default {
   "NightChickAQ_EV9": "아쿠아 칙 Type-X",
   "Drone_EV9": "드론 09",
   "Machina_N": "마키나",
-  "Drone_Challenge1": "드론 09",
-  "Drone_Challenge2": "드론 09"
+  "Drone_Challenge1": "익스큐셔너",
+  "Drone_Challenge2": "이모탈 익스큐셔너"
 };

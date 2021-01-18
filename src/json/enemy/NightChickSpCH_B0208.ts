@@ -31,7 +31,7 @@ export default {
   },
   "skills": [
     {
-      "key": "Skill_MP_NightChickSpCH_N_1",
+      "key": "Skill_MP_NightChickSpCH_B0208_1",
       "name": "머신건 견제 사격",
       "icon": "ARShot",
       "desc": "머신건 견제 사격으로 {0} 피해를 주며 방어력을 3라운드 동안 감소 시킵니다.",
@@ -72,11 +72,11 @@ export default {
               {
                 "icon": "BuffIcon_DEF_DOWN",
                 "desc": {
-                  "desc": "머신건 견제 사격 : 방어력 {0}%",
+                  "desc": "리포스트 : 받는 피해 {0}% 감소",
                   "type": 1,
                   "value": "-0.200000"
                 },
-                "attr": 1,
+                "attr": 3,
                 "erase": {
                   "rounds": 3
                 },
@@ -89,6 +89,49 @@ export default {
                   }
                 },
                 "overlap": 1
+              }
+            ],
+            "maxStack": 0
+          },
+          {
+            "on": "attack_success",
+            "if": false,
+            "body": [
+              0,
+              1
+            ],
+            "class": [
+              0,
+              1,
+              2
+            ],
+            "role": [
+              0,
+              1,
+              2
+            ],
+            "target": 0,
+            "buffs": [
+              {
+                "icon": "BuffIcon_TOGETHER_ATTACK",
+                "desc": {
+                  "desc": "호위 지원 강화 : 전기 저항+{0}%",
+                  "type": 1,
+                  "value": "MOB_MP_Mammoth_TU5"
+                },
+                "attr": 3,
+                "erase": {
+                  "rounds": 1
+                },
+                "value": {
+                  "isBuff": true,
+                  "type": 103,
+                  "collaborate": {
+                    "skill": 2,
+                    "with": "MOB_MP_Mammoth_TU5"
+                  }
+                },
+                "overlap": 4
               }
             ],
             "maxStack": 0
