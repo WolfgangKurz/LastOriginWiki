@@ -627,7 +627,8 @@ export default [
         "Ev:Ev9:Ev1-2",
         "Ev:Ev9:Ev1-2B",
         "Ev:Ev9:Ev2-4",
-        "Ev:Ev9:Ev2-4B"
+        "Ev:Ev9:Ev2-4B",
+        "Ev:Ev9:Ev3-3s"
       ]
     ],
     "promotions": [
@@ -984,7 +985,9 @@ export default [
         "Ev:Ev9:Ev1-2B",
         "Ev:Ev9:Ev2-1",
         "Ev:Ev9:Ev2-4",
-        "Ev:Ev9:Ev2-4B"
+        "Ev:Ev9:Ev2-4B",
+        "Ev:Ev9:Ev3-1s",
+        "Ev:Ev9:Ev3-4s"
       ]
     ],
     "promotions": [
@@ -1342,6 +1345,9 @@ export default [
         "Ev:Ev8:Ev2-5"
       ],
       [
+        "Ev:Ev9:Ev2-3Ex"
+      ],
+      [
         "Ev:Ev4:1:Exc:HalloweenBat:750"
       ],
       [
@@ -1577,7 +1583,9 @@ export default [
         "Ev:Ev9:Ev1-4",
         "Ev:Ev9:Ev2-1",
         "Ev:Ev9:Ev2-4",
-        "Ev:Ev9:Ev2-4B"
+        "Ev:Ev9:Ev2-4B",
+        "Ev:Ev9:Ev3-1s",
+        "Ev:Ev9:Ev3-3s"
       ]
     ],
     "promotions": [
@@ -1747,7 +1755,9 @@ export default [
         "Ev:Ev9:Ev1-1B",
         "Ev:Ev9:Ev2-1",
         "Ev:Ev9:Ev2-6",
-        "Ev:Ev9:Ev2-1Ex"
+        "Ev:Ev9:Ev2-1Ex",
+        "Ev:Ev9:Ev3-1s",
+        "Ev:Ev9:Ev3-4s"
       ]
     ],
     "promotions": [
@@ -2001,7 +2011,8 @@ export default [
         "Ev:Ev9:Ev1-1",
         "Ev:Ev9:Ev1-4",
         "Ev:Ev9:Ev2-3",
-        "Ev:Ev9:Ev2-1B"
+        "Ev:Ev9:Ev2-1B",
+        "Ev:Ev9:Ev3-3s"
       ]
     ],
     "promotions": [
@@ -2278,7 +2289,9 @@ export default [
       [
         "Ev:Ev9:Ev2-2",
         "Ev:Ev9:Ev2-7",
-        "Ev:Ev9:Ev2-2Ex"
+        "Ev:Ev9:Ev2-2Ex",
+        "Ev:Ev9:Ev3-2s",
+        "Ev:Ev9:Ev3-4s"
       ]
     ],
     "promotions": [
@@ -2407,6 +2420,9 @@ export default [
       ],
       [
         "Ev:Ev7:Ev2-4B"
+      ],
+      [
+        "Ev:Ev9:Ev2-3Ex"
       ],
       [
         "Exc:19:9"
@@ -2674,7 +2690,9 @@ export default [
       [
         "Ev:Ev9:Ev1-1",
         "Ev:Ev9:Ev2-3",
-        "Ev:Ev9:Ev2-1B"
+        "Ev:Ev9:Ev2-1B",
+        "Ev:Ev9:Ev2-3Ex",
+        "Ev:Ev9:Ev3-3s"
       ]
     ],
     "promotions": [
@@ -2812,7 +2830,9 @@ export default [
         "Ev:Ev9:Ev1-6",
         "Ev:Ev9:Ev1-1B",
         "Ev:Ev9:Ev2-3",
-        "Ev:Ev9:Ev2-1B"
+        "Ev:Ev9:Ev2-1B",
+        "Ev:Ev9:Ev2-3Ex",
+        "Ev:Ev9:Ev3-2s"
       ]
     ],
     "promotions": [
@@ -2880,6 +2900,9 @@ export default [
       ],
       [
         "Ev:Ev8:Ev1-4"
+      ],
+      [
+        "Ev:Ev9:Ev2-3Ex"
       ]
     ]
   },
@@ -3014,6 +3037,9 @@ export default [
         "Ev:Ev7:Ev1-6B"
       ],
       [
+        "Ev:Ev9:Ev3-3s"
+      ],
+      [
         "Exc:19:10"
       ],
       [
@@ -3086,6 +3112,9 @@ export default [
       ],
       [
         "Ev:Ev7:Ev1-6"
+      ],
+      [
+        "Ev:Ev9:Ev3-3s"
       ]
     ]
   },
@@ -3222,7 +3251,9 @@ export default [
         "Ev:Ev9:Ev1-1B",
         "Ev:Ev9:Ev2-1",
         "Ev:Ev9:Ev2-5",
-        "Ev:Ev9:Ev2-4B"
+        "Ev:Ev9:Ev2-4B",
+        "Ev:Ev9:Ev3-1s",
+        "Ev:Ev9:Ev3-4s"
       ]
     ],
     "promotions": [
@@ -3283,6 +3314,9 @@ export default [
       ],
       [
         "Ev:Ev8:Ev2-6"
+      ],
+      [
+        "Ev:Ev9:Ev3-3s"
       ],
       [
         "Exc:20:4"
@@ -3674,7 +3708,8 @@ export default [
         "Ev:Ev9:Ev1-4",
         "Ev:Ev9:Ev1-2B",
         "Ev:Ev9:Ev2-3",
-        "Ev:Ev9:Ev2-1B"
+        "Ev:Ev9:Ev2-1B",
+        "Ev:Ev9:Ev3-2s"
       ]
     ],
     "promotions": [
@@ -4428,6 +4463,9 @@ export default [
       ],
       [
         "Ev:Ev8:Ev1-2"
+      ],
+      [
+        "Ev:Ev9:Ev3-1s"
       ]
     ]
   },
@@ -4599,6 +4637,9 @@ export default [
       ],
       [
         "Ev:Ev8:Ev1-2Ex"
+      ],
+      [
+        "Ev:Ev9:Ev2-3Ex"
       ],
       [
         "Exc:19:11"
@@ -4804,7 +4845,10 @@ export default [
         "Ev:Ev9:Ev1-1B",
         "Ev:Ev9:Ev2-2",
         "Ev:Ev9:Ev2-6",
-        "Ev:Ev9:Ev2-1Ex"
+        "Ev:Ev9:Ev2-1Ex",
+        "Ev:Ev9:Ev1-3Ex",
+        "Ev:Ev9:Ev3-1s",
+        "Ev:Ev9:Ev3-4s"
       ]
     ],
     "promotions": [
@@ -4865,6 +4909,9 @@ export default [
       ],
       [
         "Ev:Ev8:Ev2-2Ex"
+      ],
+      [
+        "Ev:Ev9:Ev1-3Ex"
       ]
     ]
   },
@@ -4932,6 +4979,9 @@ export default [
       ],
       [
         "Ev:Ev7:Ev3-3s"
+      ],
+      [
+        "Ev:Ev9:Ev1-3Ex"
       ]
     ]
   },
@@ -5052,7 +5102,10 @@ export default [
         "Ev:Ev9:Ev1-1B",
         "Ev:Ev9:Ev2-1",
         "Ev:Ev9:Ev2-5",
-        "Ev:Ev9:Ev2-1Ex"
+        "Ev:Ev9:Ev2-1Ex",
+        "Ev:Ev9:Ev1-3Ex",
+        "Ev:Ev9:Ev3-1s",
+        "Ev:Ev9:Ev3-4s"
       ]
     ],
     "promotions": [
@@ -5625,6 +5678,9 @@ export default [
       ],
       [
         "Ev:Ev7:Ev1-1Ex"
+      ],
+      [
+        "Ev:Ev9:Ev3-2s"
       ]
     ]
   },
@@ -5691,6 +5747,9 @@ export default [
         "Ev:Ev6:Ev-5Ex"
       ],
       [
+        "Ev:Ev9:Ev3-2s"
+      ],
+      [
         "Exc:19:5"
       ]
     ]
@@ -5753,6 +5812,9 @@ export default [
         "Ev:Ev7:Ev1-1Ex"
       ],
       [
+        "Ev:Ev9:Ev3-2s"
+      ],
+      [
         "Exc:20:4"
       ]
     ]
@@ -5807,6 +5869,9 @@ export default [
       ],
       [
         "Ev:Ev8:Ev1-6"
+      ],
+      [
+        "Ev:Ev9:Ev3-1s"
       ]
     ]
   },
@@ -5866,6 +5931,9 @@ export default [
       ],
       [
         "Ev:Ev6:Ev-1Ex"
+      ],
+      [
+        "Ev:Ev9:Ev3-4s"
       ]
     ]
   },
@@ -5937,7 +6005,8 @@ export default [
         "Ev:Ev8:Ev2-5"
       ],
       [
-        "Ev:Ev9:Ev2-6"
+        "Ev:Ev9:Ev2-6",
+        "Ev:Ev9:Ev3-4s"
       ]
     ],
     "promotions": [
@@ -6071,6 +6140,9 @@ export default [
       ],
       [
         "Ev:Ev6:Ev-1Ex"
+      ],
+      [
+        "Ev:Ev9:Ev3-4s"
       ]
     ]
   },
@@ -6140,7 +6212,8 @@ export default [
         "Ev:Ev8:Ev1-3"
       ],
       [
-        "Ev:Ev9:Ev2-6"
+        "Ev:Ev9:Ev2-6",
+        "Ev:Ev9:Ev3-3s"
       ]
     ],
     "promotions": [
@@ -6421,6 +6494,9 @@ export default [
         "Ev:Ev8:Ev1-7"
       ],
       [
+        "Ev:Ev9:Ev3-1s"
+      ],
+      [
         "Ev:Ev4:1:Exc:HalloweenBat:750"
       ]
     ]
@@ -6587,7 +6663,8 @@ export default [
         "Ev:Ev9:Ev1-5",
         "Ev:Ev9:Ev1-2B",
         "Ev:Ev9:Ev2-2",
-        "Ev:Ev9:Ev2-8"
+        "Ev:Ev9:Ev2-8",
+        "Ev:Ev9:Ev3-2s"
       ]
     ],
     "promotions": [
@@ -6654,6 +6731,9 @@ export default [
       ],
       [
         "Ev:Ev6:Ev2-2Ex"
+      ],
+      [
+        "Ev:Ev9:Ev3-1s"
       ]
     ]
   },
@@ -6927,7 +7007,8 @@ export default [
         "Ev:Ev9:Ev1-2Ex",
         "Ev:Ev9:Ev2-2",
         "Ev:Ev9:Ev2-7",
-        "Ev:Ev9:Ev2-2Ex"
+        "Ev:Ev9:Ev2-2Ex",
+        "Ev:Ev9:Ev3-2s"
       ]
     ],
     "promotions": [
@@ -7214,6 +7295,9 @@ export default [
         "Ev:Ev4:Ev-4Ex"
       ],
       [
+        "Ev:Ev9:Ev2-3Ex"
+      ],
+      [
         "Exc:20:1"
       ]
     ]
@@ -7365,7 +7449,8 @@ export default [
       ],
       [
         "Ev:Ev9:Ev2-3",
-        "Ev:Ev9:Ev2-1B"
+        "Ev:Ev9:Ev2-1B",
+        "Ev:Ev9:Ev3-3s"
       ]
     ],
     "promotions": [
@@ -7522,7 +7607,8 @@ export default [
         "Ev:Ev9:Ev1-4",
         "Ev:Ev9:Ev1-7",
         "Ev:Ev9:Ev2-4",
-        "Ev:Ev9:Ev2-4B"
+        "Ev:Ev9:Ev2-4B",
+        "Ev:Ev9:Ev3-3s"
       ]
     ],
     "promotions": [
@@ -7593,7 +7679,8 @@ export default [
       [
         "Ev:Ev9:Ev2-2",
         "Ev:Ev9:Ev2-8",
-        "Ev:Ev9:Ev2-2Ex"
+        "Ev:Ev9:Ev2-2Ex",
+        "Ev:Ev9:Ev3-2s"
       ]
     ]
   },
@@ -7912,6 +7999,9 @@ export default [
         "Ev:Ev6:Ev-4Ex"
       ],
       [
+        "Ev:Ev9:Ev1-3Ex"
+      ],
+      [
         "Exc:19:8"
       ],
       [
@@ -8140,6 +8230,9 @@ export default [
       ],
       [
         "Ev:Ev5:Ev2-2ep"
+      ],
+      [
+        "Ev:Ev9:Ev1-3Ex"
       ],
       [
         "Exc:19:8"
@@ -8613,9 +8706,58 @@ export default [
         "Ev:Ev7:Ev1-3Ex"
       ],
       [
+        "Ev:Ev9:Ev1-3Ex"
+      ],
+      [
         "Exc:20:7"
       ]
     ]
+  },
+  {
+    "id": 141,
+    "uid": "PECS_Draculina",
+    "rarity": 5,
+    "type": 2,
+    "role": 1,
+    "body": 0,
+    "name": "드라큐리나",
+    "shortname": "드라큐리나",
+    "group": "비스마르크 코퍼레이션 ",
+    "shortgroup": "비스마르크 코퍼레이션",
+    "groupkey": "Bismarck",
+    "introduce": "흐응… 네가 마지막 인간이라 이거지? 이 드라큐리나 님을 눈앞에서 보게 된 걸 영광으로 알도록 해.\n우리는 태생부터 달라. 한참 엔터테인먼트 사업으로 재미를 보던 비스마르크 코퍼레이션은 이 드라큐리나 님 덕분에 완전히 자리를 잡게 됐으니까.\nAR 기술로 화려하게 치장된 무대는 연일 인산인해를 이뤘고, 나를 먼 발치에서나마 보기 위해 애쓰는 인간들은 그보다도 많았어.\n윽… 그, 그래. 아주 가끔은 이 초진동을 일으키는 장비로 건설 현장에서 일하기도 했어. 너도 나에게 그런 일을 시키려는 건 아니겠지? 그럴 바엔 차라리 저 미천한 철충들을 상대하는 게 훨씬 낫겠어.\n하아… 그래봤자 테마파크도 없는 지금은 의미가 없나. 진짜 시시하다니까. 뭐야, 표정이 왜 그래? 부러운 건 알겠지만 어쩔 수 없어. 은퇴하고 테마파크에서 여생을 편하게 지내는 건 이 드라큐리나 님의 특권이니까.\n어쨌든 내가 얼마나 귀한 몸인지는 잘 알았지? 알았으면 받들어 모시도록 해. 일단 토마토 쥬스부터 한 잔 가져와.",
+    "height": "141cm",
+    "weight": "35kg",
+    "weapon1": "Entertainer",
+    "weapon2": "Active SONAR / Levitation cloak",
+    "craftable": 17880,
+    "favor": {
+      "present": 2,
+      "clear": 2,
+      "death": 2.5,
+      "assistant": 0.25
+    },
+    "marry": true,
+    "linkBonus": [
+      "HP_20",
+      "ATK_20",
+      "Cri_2",
+      "Exp_5"
+    ],
+    "fullLinkBonus": [
+      "Cost_25",
+      "Skill_20",
+      "Range_1",
+      "Cri_20",
+      "SPD_10"
+    ],
+    "equip": [
+      2,
+      0,
+      0,
+      1
+    ],
+    "source": []
   },
   {
     "id": 147,
@@ -9176,6 +9318,9 @@ export default [
         "Ev:Ev8:Ev2-3"
       ],
       [
+        "Ev:Ev9:Ev3-2s"
+      ],
+      [
         "Ev:EvA0:3:Exc:FixTool:250"
       ]
     ]
@@ -9659,7 +9804,8 @@ export default [
     ],
     "source": [
       [
-        "Ev:Ev9:Ev2-6"
+        "Ev:Ev9:Ev2-6",
+        "Ev:Ev9:Ev3-4s"
       ]
     ]
   },
@@ -9976,7 +10122,7 @@ export default [
     "group": "와처 오브 네이쳐 ",
     "shortgroup": "와처 오브 네이쳐",
     "groupkey": "WatcherOfNature",
-    "introduce": "안녕하세요. 저는 엘라. 편하게 엘이라고 불러주세요.\n저는 옛날, 여러 연구원분들이 마음을 모은 프로젝트로 개발됐어요. 전 세계의 대기 오염을 감시하고 해결하기 위한, 멋진 프로젝트였어요. 네, 맞아요. 제 친구 세띠랑 비슷하죠? 혹시 세띠도 여기 있- 아… 소개를 하는 중이었었죠…?\n그렇게 만들어진 저는 “천공”이라고 불리는 궤도 데이터베이스랑 연결되어 여기저기서 활동했어요. 제가 모은 데이터를 연구원분들이 분석하시고, 당장 취할 수 있는 조치는 제가 바로 취하기도 하구요. “창공”에는 “천사의 숨결”이라고 불리는… 음, 일종의 대체 에너지가 저장되어 있거든요. 그걸 이용해서 오염이 심한 지역에도 드나들 수 있었어요.\n그런데 저를 만드신 연구원분들은 그렇게 부자가 아니라서… 이런저런 기능을 넣다보니 너무 비싸졌다고 해요. 그래서 저는 일반적인 바이오로이드분들보다 훨씬 체력이 약해졌다고 미안해하셨어요. 장비랑 “천사의 숨결”이 없으면 제대로 밖에 나가지 못할 정도로요.\n그래도 괜찮았어요. 연구원 분들이 평소엔 밖에 나가지 못하는 저랑 놀아주셨으니까요. 추운 겨울날, 둘러앉아서 마시던 따뜻한 엘븐 밀크랑 보드게임은 아직도 기억하고 있어요.\n저… 준비해 온 소개는 여기까지인데, 혹시 제가 도와드릴만한 일이 있나요? 헤헷, 청소나 정리 같은 거라도 괜찮아요.",
+    "introduce": "안녕하세요. 저는 엘라. 편하게 엘이라고 불러주세요.\n저는 옛날, 여러 연구원분들이 마음을 모은 프로젝트로 개발됐어요. 전 세계의 대기 오염을 감시하고 해결하기 위한, 멋진 프로젝트였어요. 네, 맞아요. 제 친구 세띠랑 비슷하죠? 혹시 세띠도 여기 있- 아… 소개를 하는 중이었었죠…?\n그렇게 만들어진 저는 “창공”이라고 불리는 궤도 데이터베이스랑 연결되어 여기저기서 활동했어요. 제가 모은 데이터를 연구원분들이 분석하시고, 당장 취할 수 있는 조치는 제가 바로 취하기도 하구요. “창공”에는 “천사의 숨결”이라고 불리는… 음, 일종의 대체 에너지가 저장되어 있거든요. 그걸 이용해서 오염이 심한 지역에도 드나들 수 있었어요.\n그런데 저를 만드신 연구원분들은 그렇게 부자가 아니라서… 이런저런 기능을 넣다보니 너무 비싸졌다고 해요. 그래서 저는 일반적인 바이오로이드분들보다 훨씬 체력이 약해졌다고 미안해하셨어요. 장비랑 “천사의 숨결”이 없으면 제대로 밖에 나가지 못할 정도로요.\n그래도 괜찮았어요. 연구원 분들이 평소엔 밖에 나가지 못하는 저랑 놀아주셨으니까요. 추운 겨울날, 둘러앉아서 마시던 따뜻한 엘븐 밀크랑 보드게임은 아직도 기억하고 있어요.\n저… 준비해 온 소개는 여기까지인데, 혹시 제가 도와드릴만한 일이 있나요? 헤헷, 청소나 정리 같은 거라도 괜찮아요.",
     "height": "139cm",
     "weight": "31kg",
     "weapon1": "Sucher",

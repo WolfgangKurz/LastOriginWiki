@@ -783,6 +783,33 @@ export default {
         "G": true,
         "name": "치파오 드레스 (소완)",
         "desc": "그동안 바짝 엎드려 있던 소완이 두 라이벌이 자리를 비운 사이에 기회를 잡았습니다. 소완이 술의 힘을 빌려 전하는 진심을 들어보세요."
+      },
+      {
+        "sid": 3,
+        "t": "일일천추, 당신을 위한 미식",
+        "artist": "Taesi",
+        "offset": {
+          "normal": {
+            "n": "150",
+            "d": 0,
+            "s": 0,
+            "x": 0
+          },
+          "google": {
+            "n": "150",
+            "d": 0,
+            "s": 0,
+            "x": 0
+          }
+        },
+        "V": true,
+        "A": false,
+        "D": false,
+        "S": true,
+        "X": false,
+        "G": false,
+        "name": "연미복 (소완)",
+        "desc": "소완이 입버릇처럼 말하는, 당신의 미식을 위해서라면 진흙탕이라도 기쁘게 기겠다는 각오는 때와 장소를 가리지 않습니다. 만약 당신이 잠시, 혹은 영원히 자리를 비우더라도 오르카의 주방장은 언제까지나 당신을 기다리며 따뜻한 식사를 준비해두고 있겠죠."
       }
     ]
   },
@@ -2940,7 +2967,7 @@ export default {
     "skins": [
       {
         "sid": 1,
-        "t": "한 겨울의 약속",
+        "t": "한겨울의 약속",
         "artist": "???",
         "offset": {
           "normal": {
@@ -4026,6 +4053,34 @@ export default {
         "G": true,
         "name": "전용 모피 코트 (무적의 용)",
         "desc": "VR속에서 어둠의 세력을 평정하려던 무적의 용은 무언가의 문제로 의상 데이터가 로딩되지 않아, 급한대로 주변 가게에서 모피 코트를 가져와 걸쳤습니다. 그리고 안목이 훌륭한 오드리는 이 멋진 장면을 그대로 구현해 내기로 결심했습니다."
+      },
+      {
+        "sid": 2,
+        "t": "세일러 용",
+        "artist": "Kakiman",
+        "offset": {
+          "normal": {
+            "n": "10",
+            "d": 0,
+            "s": 0,
+            "x": 0
+          },
+          "google": {
+            "n": "10",
+            "d": 0,
+            "s": 0,
+            "x": 0
+          }
+        },
+        "price": 136,
+        "V": true,
+        "A": false,
+        "D": false,
+        "S": false,
+        "X": false,
+        "G": true,
+        "name": "세일러복 (무적의 용)",
+        "desc": "당신은 그 누구도 엄두를 내지 못했던 위업을 이루었습니다. 무적이라고 일컬어지던 바이오로이드가 당신의 말 한마디에 이런 옷을 입어줄줄 누가 상상이나 했을까요... 거기다 당신이 잘 설득한다면 다른 옷을 입어줄지도요?"
       }
     ]
   },
@@ -6105,7 +6160,7 @@ export default {
       },
       {
         "sid": 2,
-        "t": "화이트 드레스",
+        "t": "드림위버 웨딩 스페셜 : 감미로운 설렘",
         "artist": "SNOWBALL",
         "offset": {
           "normal": {
@@ -6241,7 +6296,7 @@ export default {
       },
       {
         "sid": 2,
-        "t": "초콜릿 드레스",
+        "t": "드림위버 웨딩 스페셜 : 달콤한 기다림",
         "artist": "SNOWBALL",
         "offset": {
           "normal": {
@@ -6431,6 +6486,30 @@ export default {
       }
     ]
   },
+  "PECS_Draculina": {
+    "sid": null,
+    "artist": "朝凪(Asanagi)",
+    "offset": {
+      "normal": {
+        "n": 0,
+        "d": 0,
+        "s": 0,
+        "x": 0
+      },
+      "google": {
+        "n": 0,
+        "d": 0,
+        "s": 0,
+        "x": 0
+      }
+    },
+    "V": true,
+    "A": false,
+    "D": false,
+    "S": false,
+    "X": false,
+    "G": true
+  },
   "3P_Ran": {
     "sid": null,
     "artist": "Rorobomb",
@@ -6561,7 +6640,36 @@ export default {
     "D": false,
     "S": false,
     "X": false,
-    "G": false
+    "G": false,
+    "skins": [
+      {
+        "sid": 1,
+        "t": "천상의 기사 미나",
+        "artist": "MAR10",
+        "offset": {
+          "normal": {
+            "n": "-40",
+            "d": 0,
+            "s": 0,
+            "x": 0
+          },
+          "google": {
+            "n": "-40",
+            "d": 0,
+            "s": 0,
+            "x": 0
+          }
+        },
+        "V": true,
+        "A": false,
+        "D": false,
+        "S": false,
+        "X": false,
+        "G": true,
+        "name": "천상의 갑옷(랜서 미나)",
+        "desc": "오르카 최강 지휘관의 강하고 고귀한 모습을 동경했던 미나는, 당신과 아자즈의 도움으로 그 바람을 이룰 수 있었습니다. 영광스러운 승리를 당신에게 보여주고 싶어 하는 미나의 새로운 모습을 좀 더 가까이에서 지켜봐 주는 건 어떨까요?"
+      }
+    ]
   },
   "PECS_Empress": {
     "sid": null,
@@ -7175,7 +7283,7 @@ export default {
     "skins": [
       {
         "sid": 1,
-        "t": "뇌전룡 의상",
+        "t": "대마왕의 심복: 멸절의 뇌전룡",
         "artist": "CHoney",
         "offset": {
           "normal": {
@@ -7234,13 +7342,13 @@ export default {
         "offset": {
           "normal": {
             "n": "20",
-            "d": 0,
+            "d": "50",
             "s": 0,
             "x": 0
           },
           "google": {
             "n": "20",
-            "d": 0,
+            "d": "50",
             "s": 0,
             "x": 0
           }
@@ -7248,7 +7356,7 @@ export default {
         "price": 114,
         "V": true,
         "A": false,
-        "D": false,
+        "D": true,
         "S": false,
         "X": false,
         "G": true,
@@ -7415,7 +7523,7 @@ export default {
     "skins": [
       {
         "sid": 1,
-        "t": "데이트 복장",
+        "t": "한겨울의 승부사",
         "artist": "BUMCHa",
         "offset": {
           "normal": {
@@ -8021,7 +8129,7 @@ export default {
     "skins": [
       {
         "sid": 1,
-        "t": "RheinTiger 모델",
+        "t": "마법소녀의 수호수",
         "artist": "MAR10",
         "offset": {
           "normal": {

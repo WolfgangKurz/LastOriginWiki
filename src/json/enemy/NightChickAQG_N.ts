@@ -564,7 +564,7 @@ export default {
       "key": "Skill_MP_NightChickAQG_N_4",
       "name": "수냉식 포신",
       "icon": "TeamSpdBuff",
-      "desc": "전투 시작 시, 전체 아군과 적 공격기의 AP를 16으로 변경하고, 해로운 효과를 모두 해제합니다.",
+      "desc": "전투 시작 시, 전체 아군 공격기와 적 공격기의 AP를 16으로 변경합니다.",
       "passive": true,
       "type": 0,
       "target": "team",
@@ -617,24 +617,6 @@ export default {
                   }
                 },
                 "overlap": 4
-              },
-              {
-                "icon": "BuffIcon_REMOVE_DEBUFF",
-                "desc": {
-                  "desc": "수냉식 포신 : 해로운 효과 해제",
-                  "type": 0,
-                  "value": "0"
-                },
-                "attr": 0,
-                "erase": {
-                  "rounds": 0
-                },
-                "value": {
-                  "isBuff": true,
-                  "type": 100,
-                  "off": 1
-                },
-                "overlap": 4
               }
             ],
             "maxStack": 0
@@ -674,24 +656,6 @@ export default {
                     "base": 16,
                     "per": 0
                   }
-                },
-                "overlap": 4
-              },
-              {
-                "icon": "BuffIcon_REMOVE_DEBUFF",
-                "desc": {
-                  "desc": "수냉식 포신 : 해로운 효과 해제",
-                  "type": 0,
-                  "value": "0"
-                },
-                "attr": 0,
-                "erase": {
-                  "rounds": 0
-                },
-                "value": {
-                  "isBuff": true,
-                  "type": 100,
-                  "off": 1
                 },
                 "overlap": 4
               }

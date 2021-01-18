@@ -13168,6 +13168,46 @@ export default [
   {
     "category": "Event",
     "group": "Ev9",
+    "reward": "Shop_Package_Skin_3P_Sowan_3",
+    "count": 1,
+    "requires": [
+      "Ev_Consumable_2ndAnniversaryTicket:10"
+    ],
+    "note": "01.18 추가"
+  },
+  {
+    "category": "Event",
+    "group": "Ev9",
+    "reward": "Favor_MaxExpand_Lv1",
+    "count": 0,
+    "requires": [
+      "Ev_Consumable_2ndAnniversaryTicket:1"
+    ],
+    "note": "01.18 추가"
+  },
+  {
+    "category": "Event",
+    "group": "Ev9",
+    "reward": "PECS_Draculina",
+    "count": 1,
+    "requires": [
+      "Ev_Consumable_BlueprintDraculina:14"
+    ],
+    "note": "01.18 추가"
+  },
+  {
+    "category": "Event",
+    "group": "Ev9",
+    "reward": "Favor_MaxExpand_Lv1",
+    "count": 0,
+    "requires": [
+      "Ev_Consumable_BlueprintDraculina:1"
+    ],
+    "note": "01.18 추가"
+  },
+  {
+    "category": "Event",
+    "group": "Ev9",
     "reward": "DS_Arman",
     "count": 1,
     "requires": [
@@ -14134,5 +14174,15 @@ export default [
       "Ev_Consumable_Battery4FM:100"
     ],
     "note": "01.04 추가"
+  },
+  {
+    "category": "Event",
+    "group": "Ev9",
+    "reward": "Consumable_AccountBook",
+    "count": 3600,
+    "requires": [
+      "Ev_Consumable_BatteryAA:50"
+    ],
+    "note": "01.18 추가"
   }
 ];

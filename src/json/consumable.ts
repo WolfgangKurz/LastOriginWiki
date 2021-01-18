@@ -5965,24 +5965,24 @@ export default [
   },
   {
     "key": "Consumable_RoguePcInven",
-    "name": "로비 프리셋 확장",
-    "icon": "UI_Icon_Consumable_RoguePcInven",
-    "desc": "로비 프리셋  1칸 확장됩니다.",
-    "func": "RoguePcInven_Slot_05"
+    "name": "#N/A",
+    "icon": "#N/A",
+    "desc": "#N/A",
+    "func": "#N/A"
   },
   {
     "key": "Consumable_RoguePcSquard",
-    "name": "로비 프리셋 확장",
+    "name": "로그라이크 스쿼드 슬롯 확장",
     "icon": "UI_Icon_Consumable_RoguePcSquard",
-    "desc": "로비 프리셋  1칸 확장됩니다.",
+    "desc": "로그라이크 스쿼드 슬롯 1칸 확장됩니다.",
     "func": "RoguePcSquard_Slot_01"
   },
   {
     "key": "Consumable_RogueEffect",
-    "name": "로비 프리셋 확장",
-    "icon": "UI_Icon_Consumable_RogueEffect",
-    "desc": "로비 프리셋  1칸 확장됩니다.",
-    "func": "RogueEffect_Slot_01"
+    "name": "#N/A",
+    "icon": "#N/A",
+    "desc": "#N/A",
+    "func": "#N/A"
   },
   {
     "key": "Skin_PECS_LRL_2",
@@ -6929,14 +6929,14 @@ export default [
   {
     "key": "CharTicket_Char_PECS_Machina_N",
     "name": "마키나",
-    "icon": "InvenIcon_PECS_Rena_N",
+    "icon": "InvenIcon_PECS_Machina_N",
     "desc": "마키나를 지급합니다",
     "func": "CharTicket_Char_PECS_Machina_N"
   },
   {
     "key": "CharTicket_Char_BR_Salamander_N",
     "name": "A-15 샐러맨더",
-    "icon": "InvenIcon_PECS_Mery_N",
+    "icon": "InvenIcon_BR_Salamander_N",
     "desc": "A-15 샐러맨더를 지급합니다",
     "func": "CharTicket_Char_BR_Salamander_N"
   },
@@ -7041,5 +7041,138 @@ export default [
     "name": "이터니티 설계도",
     "icon": "Ev_Consumable_BlueprintEternity",
     "desc": "탐색 중 우연히 발견한 설계도 입니다. 여러 장을 모으면 해당 캐릭터를 획득 할 수 있습니다."
+  },
+  {
+    "key": "CharTicket_Char_PECS_Draculina_N",
+    "name": "드라큐리나",
+    "icon": "InvenIcon_PECS_Draculina_N",
+    "desc": "드라큐리나를 지급합니다",
+    "func": "CharTicket_Char_PECS_Draculina_N"
+  },
+  {
+    "key": "Skin_3P_Sowan_3",
+    "name": "연미복(소완)",
+    "icon": "UI_Icon_Skin_3P_Sowan_3",
+    "desc": "소완이 입버릇처럼 말하는, 당신의 미식을 위해서라면 진흙탕이라도 기쁘게 기겠다는 각오는 때와 장소를 가리지 않습니다. 만약 당신이 잠시, 혹은 영원히 자리를 비우더라도 오르카의 주방장은 언제까지나 당신을 기다리며 따뜻한 식사를 준비해두고 있겠죠.",
+    "func": "Skin_3P_Sowan_3"
+  },
+  {
+    "key": "Skin_BR_InvDragon_2",
+    "name": "세일러복(무적의 용)",
+    "icon": "UI_Icon_Skin_BR_InvDragon_2",
+    "desc": "당신은 그 누구도 엄두를 내지 못했던 위업을 이루었습니다. 무적이라고 일컬어지던 바이오로이드가 당신의 말 한마디에 이런 옷을 입어줄줄 누가 상상이나 했을까요... 거기다 당신이 잘 설득한다면 다른 옷을 입어줄지도요?",
+    "func": "Skin_BR_InvDragon_2"
+  },
+  {
+    "key": "Skin_ST_Lancer_1",
+    "name": "천상의 갑옷(랜서 미나)",
+    "icon": "UI_Icon_Skin_ST_Lancer_1",
+    "desc": "오르카 최강 지휘관의 강하고 고귀한 모습을 동경했던 미나는, 당신과 아자즈의 도움으로 그 바람을 이룰 수 있었습니다. 영광스러운 승리를 당신에게 보여주고 싶어 하는 미나의 새로운 모습을 좀 더 가까이에서 지켜봐 주는 건 어떨까요?",
+    "func": "Skin_ST_Lancer_1"
+  },
+  {
+    "key": "Shop_Package_Skin_3P_Sowan_3",
+    "name": "일일천추, 당신을 위한 미식",
+    "icon": "UI_Icon_SkinPack_3P_Sowan_3",
+    "desc": "소완 용 연미복 스킨과 수제 케이크 1개, 초콜릿 2개, 합성 롤리팝 3개가 들어있는 팩입니다.",
+    "func": "Shop_Package_Skin_3P_Sowan_3"
+  },
+  {
+    "key": "Shop_Package_Skin_BR_InvDragon_2",
+    "name": "세일러 용",
+    "icon": "UI_Icon_SkinPack_BR_InvDragon_2",
+    "desc": "무적의 용 세일러복 스킨과 수제 케이크 1개, 초콜릿 2개, 합성 롤리팝 3개가 들어있는 팩입니다.",
+    "func": "Shop_Package_Skin_BR_InvDragon_2"
+  },
+  {
+    "key": "Shop_Package_Skin_ST_Lancer_1",
+    "name": "천상의 기사 미나",
+    "icon": "UI_Icon_SkinPack_ST_Lancer_1",
+    "desc": "랜서 미나 용 천상의 갑옷 스킨과 수제 케이크 1개, 초콜릿 2개, 합성 롤리팝 3개가 들어있는 팩입니다.",
+    "func": "Shop_Package_Skin_ST_Lancer_1"
+  },
+  {
+    "key": "PROP_Surprise02_N",
+    "name": "놀람2",
+    "icon": "UI_Icon_PROP_Surprise02",
+    "desc": "놀람2 장식품을 활성화 합니다.",
+    "func": "PROP_Surprise02_N"
+  },
+  {
+    "key": "PROP_Dizzy_N",
+    "name": "어지러워",
+    "icon": "UI_Icon_PROP_Dizzy",
+    "desc": "어지러워 장식품을 활성화 합니다.",
+    "func": "PROP_Dizzy_N"
+  },
+  {
+    "key": "PROP_Sweat02_N",
+    "name": "땀2",
+    "icon": "UI_Icon_PROP_Sweat02",
+    "desc": "땀2 장식품을 활성화 합니다.",
+    "func": "PROP_Sweat02_N"
+  },
+  {
+    "key": "PROP_angry_N",
+    "name": "화가난다",
+    "icon": "UI_Icon_PROP_angry",
+    "desc": "화가난다 장식품을 활성화 합니다.",
+    "func": "PROP_angry_N"
+  },
+  {
+    "key": "PROP_HugeShock_N",
+    "name": "대충격",
+    "icon": "UI_Icon_PROP_HugeShock",
+    "desc": "대충격 장식품을 활성화 합니다.",
+    "func": "PROP_HugeShock_N"
+  },
+  {
+    "key": "PROP_AnimalEar02_N",
+    "name": "동물귀3",
+    "icon": "UI_Icon_PROP_AnimalEar02",
+    "desc": "동물귀3 장식품을 활성화 합니다.",
+    "func": "PROP_AnimalEar02_N"
+  },
+  {
+    "key": "PROP_FloralHairpin_N",
+    "name": "꽃핀",
+    "icon": "UI_Icon_PROP_FloralHairpin",
+    "desc": "꽃핀 장식품을 활성화 합니다.",
+    "func": "PROP_FloralHairpin_N"
+  },
+  {
+    "key": "PROP_Ribbon02_N",
+    "name": "리본2",
+    "icon": "UI_Icon_PROP_Ribbon02",
+    "desc": "리본2 장식품을 활성화 합니다.",
+    "func": "PROP_Ribbon02_N"
+  },
+  {
+    "key": "PROP_Hachiko_N",
+    "name": "하치코",
+    "icon": "UI_Icon_PROP_Hachiko",
+    "desc": "하치코 장식품을 활성화 합니다.",
+    "func": "PROP_Hachiko_N"
+  },
+  {
+    "key": "PROP_Sunglass_N",
+    "name": "선글래스",
+    "icon": "UI_Icon_PROP_Sunglass",
+    "desc": "선글래스 장식품을 활성화 합니다.",
+    "func": "PROP_Sunglass_N"
+  },
+  {
+    "key": "PROPPack_Surprise02",
+    "name": "두근 두근 감정 표현 패키지 3",
+    "icon": "UI_Icon_PROPPack_Surprise02",
+    "desc": "\"놀람2, 어지러워, 땀2, 화가난다, 대충격\"\n장식품 인벤토리에서 사용할 수 있습니다.",
+    "func": "PROPPack_Surprise02"
+  },
+  {
+    "key": "PROPPack_AnimalEar02",
+    "name": "장식품 패키지 2",
+    "icon": "UI_Icon_PROPPack_AnimalEar02",
+    "desc": "\"동물귀3, 꽃핀, 리본2, 하치코, 선글라스\"\n장식품 인벤토리에서 사용할 수 있습니다.",
+    "func": "PROPPack_AnimalEar02"
   }
 ];
