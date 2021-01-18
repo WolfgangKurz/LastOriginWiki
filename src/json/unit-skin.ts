@@ -6660,6 +6660,7 @@ export default {
             "x": 0
           }
         },
+        "price": 114,
         "V": true,
         "A": false,
         "D": false,
