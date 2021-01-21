@@ -71,20 +71,6 @@
 								AGS
 							</b-button>
 						</b-btn-group>
-						<b-btn-group class="mx-2 mb-2">
-							<b-button variant="outline-secondary" :pressed="Filters.Elem[0]" @click="Filters.Elem[0] = !Filters.Elem[0]">
-								<elem-icon class="mr-0" elem="physics" />
-							</b-button>
-							<b-button variant="outline-secondary" :pressed="Filters.Elem[1]" @click="Filters.Elem[1] = !Filters.Elem[1]">
-								<elem-icon class="mr-0" elem="fire" />
-							</b-button>
-							<b-button variant="outline-secondary" :pressed="Filters.Elem[2]" @click="Filters.Elem[2] = !Filters.Elem[2]">
-								<elem-icon class="mr-0" elem="ice" />
-							</b-button>
-							<b-button variant="outline-secondary" :pressed="Filters.Elem[3]" @click="Filters.Elem[3] = !Filters.Elem[3]">
-								<elem-icon class="mr-0" elem="lightning" />
-							</b-button>
-						</b-btn-group>
 					</b-col>
 				</b-row>
 
@@ -99,6 +85,93 @@
 					</b-col>
 				</b-row>
 				<hr class="my-2" />
+
+				<template v-for="i in 2">
+					<b-row :key="`units-skillfilter-row-${i}`">
+						<b-col class="filter-label" md="auto" cols="12">{{ i }}번 액티브 스킬 필터 :</b-col>
+						<b-col md cols="12">
+							<b-btn-group class="mx-2 mb-2">
+								<b-button
+									variant="outline-secondary"
+									:pressed="Filters.Skill[i - 1].Elem[0]"
+									@click="Filters.Skill[i - 1].Elem[0] = !Filters.Skill[i - 1].Elem[0]"
+								>
+									<elem-icon class="mr-0" elem="physics" />
+								</b-button>
+								<b-button
+									variant="outline-secondary"
+									:pressed="Filters.Skill[i - 1].Elem[1]"
+									@click="Filters.Skill[i - 1].Elem[1] = !Filters.Skill[i - 1].Elem[1]"
+								>
+									<elem-icon class="mr-0" elem="fire" />
+								</b-button>
+								<b-button
+									variant="outline-secondary"
+									:pressed="Filters.Skill[i - 1].Elem[2]"
+									@click="Filters.Skill[i - 1].Elem[2] = !Filters.Skill[i - 1].Elem[2]"
+								>
+									<elem-icon class="mr-0" elem="ice" />
+								</b-button>
+								<b-button
+									variant="outline-secondary"
+									:pressed="Filters.Skill[i - 1].Elem[3]"
+									@click="Filters.Skill[i - 1].Elem[3] = !Filters.Skill[i - 1].Elem[3]"
+								>
+									<elem-icon class="mr-0" elem="lightning" />
+								</b-button>
+							</b-btn-group>
+
+							<b-btn-group class="mx-2 mb-2">
+								<b-button
+									variant="outline-danger"
+									:pressed="Filters.Skill[i - 1].GridType === 0"
+									@click="Filters.Skill[i - 1].GridType = 0"
+								>
+									모두
+								</b-button>
+								<b-button
+									variant="outline-danger"
+									:pressed="Filters.Skill[i - 1].GridType === 1"
+									@click="Filters.Skill[i - 1].GridType = 1"
+								>
+									그리드 지정만
+								</b-button>
+								<b-button
+									variant="outline-danger"
+									:pressed="Filters.Skill[i - 1].GridType === 2"
+									@click="Filters.Skill[i - 1].GridType = 2"
+								>
+									대상 선택만
+								</b-button>
+							</b-btn-group>
+
+							<b-btn-group class="mx-2 mb-2">
+								<b-button
+									variant="outline-primary"
+									:pressed="Filters.Skill[i - 1].DismissGuardType === 0"
+									@click="Filters.Skill[i - 1].DismissGuardType = 0"
+								>
+									모두
+								</b-button>
+								<b-button
+									variant="outline-primary"
+									:pressed="Filters.Skill[i - 1].DismissGuardType === 1"
+									@click="Filters.Skill[i - 1].DismissGuardType = 1"
+								>
+									보호 무시
+								</b-button>
+								<b-button
+									variant="outline-primary"
+									:pressed="Filters.Skill[i - 1].DismissGuardType === 2"
+									@click="Filters.Skill[i - 1].DismissGuardType = 2"
+								>
+									보호 무시 안함
+								</b-button>
+							</b-btn-group>
+						</b-col>
+					</b-row>
+					<hr class="my-2" :key="`units-skillfilter-hr-${i}`" />
+				</template>
 
 				<b-row>
 					<b-col class="filter-label" md="auto" cols="12">스킬 효과 필터 :</b-col>
@@ -296,18 +369,18 @@ export default class Units extends Vue {
 					const part: EffectFilterListItemPM[] = [];
 
 					// 증가치
-					let f = FilterableUnitDB.some(fu => fu.buffs.some(bg => bg.effects.some(es => x[0].type.includes(es.type) && es.positive)));
+					let f = FilterableUnitDB.some(fu => fu.buffs.some(bg => bg.some(es => x[0].type.includes(es.type) && es.positive)));
 					if (f) part.push(x[0]);
 
 					// 감소치
-					f = FilterableUnitDB.some(fu => fu.buffs.some(bg => bg.effects.some(es => x[0].type.includes(es.type) && !es.positive)));
+					f = FilterableUnitDB.some(fu => fu.buffs.some(bg => bg.some(es => x[0].type.includes(es.type) && !es.positive)));
 					if (f) part.push(x[1]);
 
 					if (part.length > 0)
 						ret.push(part);
 				} else {
 					// 상수치
-					const f = FilterableUnitDB.some(fu => fu.buffs.some(bg => bg.effects.some(es => x.type.includes(es.type))));
+					const f = FilterableUnitDB.some(fu => fu.buffs.some(bg => bg.some(es => x.type.includes(es.type))));
 					if (f) ret.push(x);
 				}
 			});
@@ -327,22 +400,57 @@ export default class Units extends Vue {
 	}
 
 	private get UnitList () {
-		const elem = [
-			this.Filters.Elem[SKILL_ATTR.PHYSICS] ? SKILL_ATTR.PHYSICS : -1,
-			this.Filters.Elem[SKILL_ATTR.FIRE] ? SKILL_ATTR.FIRE : -1,
-			this.Filters.Elem[SKILL_ATTR.ICE] ? SKILL_ATTR.ICE : -1,
-			this.Filters.Elem[SKILL_ATTR.LIGHTNING] ? SKILL_ATTR.LIGHTNING : -1,
-		].filter(x => x > -1);
+		const elem = new Array(2)
+			.fill(0)
+			.map((_, i) => [
+				this.Filters.Skill[i].Elem[SKILL_ATTR.PHYSICS] ? SKILL_ATTR.PHYSICS : -1,
+				this.Filters.Skill[i].Elem[SKILL_ATTR.FIRE] ? SKILL_ATTR.FIRE : -1,
+				this.Filters.Skill[i].Elem[SKILL_ATTR.ICE] ? SKILL_ATTR.ICE : -1,
+				this.Filters.Skill[i].Elem[SKILL_ATTR.LIGHTNING] ? SKILL_ATTR.LIGHTNING : -1,
+			].filter(y => y > -1));
 
 		return FilterableUnitDB
 			.filter(x => x.name.includes(this.SearchText))
 			.filter((x) => {
-				return this.Filters.Rarity[x.rarity] &&
-					this.Filters.Type[x.type] &&
-					this.Filters.Role[x.role] &&
-					this.Filters.Body[x.body] &&
-					elem.some(y => x.buffs.some(z => z && z.elem === y)) &&
-					this.HasFilteredEffect(x);
+				if (!this.Filters.Rarity[x.rarity]) return false;
+				if (!this.Filters.Type[x.type]) return false;
+				if (!this.Filters.Role[x.role]) return false;
+				if (!this.Filters.Body[x.body]) return false;
+
+				const elem1 = elem[0].some(y => y === x.skills.active1.elem || (x.skills.Factive1 && y === x.skills.Factive1.elem));
+				const grid1 = this.Filters.Skill[0].GridType === 0 ||
+					(this.Filters.Skill[0].GridType === 1 && (x.skills.active1.grid || (x.skills.Factive1 && x.skills.Factive1.grid))) ||
+					(this.Filters.Skill[0].GridType === 2 && !(x.skills.active1.grid || (x.skills.Factive1 && x.skills.Factive1.grid)));
+				const guard1 = this.Filters.Skill[0].DismissGuardType === 0 ||
+					(
+						this.Filters.Skill[0].DismissGuardType === 1 &&
+						(x.skills.active1.guard || (x.skills.Factive1 && x.skills.Factive1.guard))
+					) ||
+					(
+						this.Filters.Skill[0].DismissGuardType === 2 &&
+						!(x.skills.active1.guard || (x.skills.Factive1 && x.skills.Factive1.guard))
+					);
+
+				const elem2 = elem[1].some(y => y === x.skills.active2.elem || (x.skills.Factive2 && y === x.skills.Factive2.elem));
+				const grid2 = this.Filters.Skill[1].GridType === 0 ||
+					(this.Filters.Skill[1].GridType === 1 && (x.skills.active2.grid || (x.skills.Factive2 && x.skills.Factive2.grid))) ||
+					(this.Filters.Skill[1].GridType === 2 && !(x.skills.active2.grid || (x.skills.Factive2 && x.skills.Factive2.grid)));
+				const guard2 = this.Filters.Skill[1].DismissGuardType === 0 ||
+					(
+						this.Filters.Skill[1].DismissGuardType === 1 &&
+						(x.skills.active2.guard || (x.skills.Factive2 && x.skills.Factive2.guard))
+					) ||
+					(
+						this.Filters.Skill[1].DismissGuardType === 2 &&
+						!(x.skills.active2.guard || (x.skills.Factive2 && x.skills.Factive2.guard))
+					);
+
+				if (!(
+					(elem1 && grid1 && guard1) ||
+					(elem2 && grid2 && guard2)
+				)) return false;
+
+				return this.HasFilteredEffect(x);
 			});
 	}
 
@@ -366,7 +474,7 @@ export default class Units extends Vue {
 		const target = FilterableUnitDB.find(x => x.uid === unit.uid);
 		if (!target) return false;
 
-		return target.buffs.some(x => x.effects.some(y => {
+		return target.buffs.some(x => x.some(y => {
 			if (!this.Filters.EffectTarget.includes(y.target)) return false;
 
 			return StoreModule.unitEffectFilterListFlatten.some(z => Array.isArray(z)

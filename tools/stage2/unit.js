@@ -79,19 +79,32 @@ function v (target, stat) {
 
 let reta = [];
 input.forEach((x) => {
+	const se = (() => {
+		const ret = {};
+		Object.keys(skill[x.uid])
+			.filter(k => ["active1", "active2", "Factive1", "Factive2"].includes(k))
+			.map(k => [k, skill[x.uid][k]])
+			.forEach(([k, s]) => (ret[k] = {
+				elem: s.buffs.data[0].type,
+				grid: s.buffs.data[0].target_ground,
+				guard: s.buffs.data[0].dismiss_guard,
+			}));
+		return ret;
+	})();
+
 	const s = Object.keys(skill[x.uid])
 		.map(k => skill[x.uid][k])
 		.map((s) => {
 			// const target = s.target;
 			const buffs = s.buffs;
 
-			return {
-				elem: buffs.data[0].type,
+			const b = {
+				// elem: buffs.data[0].type,
 				effects: (() => {
 					const output = [];
 
-					buffs.data
-						.map(d => d.buffs.map(bs => {
+					buffs.data.forEach(d =>
+						d.buffs.forEach(bs => {
 							const ret = {
 								target: "",
 								list: [],
@@ -120,6 +133,8 @@ input.forEach((x) => {
 					return output;
 				})(),
 			};
+			// return b;
+			return b.effects;
 		});
 
 	reta.push({
@@ -142,6 +157,7 @@ input.forEach((x) => {
 		craft: x.craftable,
 
 		buffs: s,
+		skills: se,
 	});
 });
 

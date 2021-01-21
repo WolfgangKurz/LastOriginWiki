@@ -31,12 +31,16 @@ export interface UnitDisplayFilters {
 		[ACTOR_BODY_TYPE.SUMMON]: false;
 		[ACTOR_BODY_TYPE.TOTEM]: false;
 	};
-	Elem: {
-		[SKILL_ATTR.PHYSICS]: boolean;
-		[SKILL_ATTR.FIRE]: boolean;
-		[SKILL_ATTR.ICE]: boolean;
-		[SKILL_ATTR.LIGHTNING]: boolean;
-	};
+	Skill: Array<{
+		Elem: {
+			[SKILL_ATTR.PHYSICS]: boolean;
+			[SKILL_ATTR.FIRE]: boolean;
+			[SKILL_ATTR.ICE]: boolean;
+			[SKILL_ATTR.LIGHTNING]: boolean;
+		};
+		GridType: 0 | 1 | 2;
+		DismissGuardType: 0 | 1 | 2;
+	}>;
 	EffectTarget: EffectFilterTargetType[];
 	Effects: EffectFilterListType;
 }
@@ -136,12 +140,18 @@ class StoreModule extends VuexModule {
 			[ACTOR_BODY_TYPE.SUMMON]: false,
 			[ACTOR_BODY_TYPE.TOTEM]: false,
 		},
-		Elem: {
-			[SKILL_ATTR.PHYSICS]: true,
-			[SKILL_ATTR.FIRE]: true,
-			[SKILL_ATTR.ICE]: true,
-			[SKILL_ATTR.LIGHTNING]: true,
-		},
+		Skill: new Array(2)
+			.fill(0)
+			.map(() => ({
+				Elem: {
+					[SKILL_ATTR.PHYSICS]: true,
+					[SKILL_ATTR.FIRE]: true,
+					[SKILL_ATTR.ICE]: true,
+					[SKILL_ATTR.LIGHTNING]: true,
+				},
+				GridType: 0,
+				DismissGuardType: 0,
+			})),
 		EffectTarget: ["self", "team", "enemy"],
 		Effects: this.unitEffectFilterListFlatten,
 	};

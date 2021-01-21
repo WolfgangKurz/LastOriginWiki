@@ -13,82 +13,79 @@ export default [
     "body": 0,
     "craft": false,
     "buffs": [
-      {
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 94,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 94,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "3P_ConstantiaS2",
@@ -107,82 +104,79 @@ export default [
     "body": 0,
     "craft": 6600,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 13,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 78,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 87,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 20,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 33,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 13,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 78,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 87,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 20,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 33,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "3P_Alice",
@@ -198,92 +192,89 @@ export default [
     "body": 0,
     "craft": 24720,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 87,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 20,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 20,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 81,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 60,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 94,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 87,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 20,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 20,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 81,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 60,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 94,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "3P_Vanilla",
@@ -302,107 +293,107 @@ export default [
     "body": 0,
     "craft": 7080,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 78,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 13,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 84,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 70,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 77,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 50,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 77,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 78,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 13,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 1,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 84,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 70,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 77,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 50,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 77,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "3P_Rhea",
@@ -418,147 +409,144 @@ export default [
     "body": 0,
     "craft": 23100,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 15,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 17,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 19,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 86,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 84,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 70,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 88,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 15,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 17,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 19,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 91,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 34,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 3,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 15,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 17,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 19,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 86,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": true
       },
-      {
+      "active2": {
         "elem": 2,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 84,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 70,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 88,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 15,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 17,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 19,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 91,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 34,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "3P_ScissorsLise",
@@ -577,72 +565,72 @@ export default [
     "body": 0,
     "craft": 10500,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 48,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 48,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "3P_Daphne",
@@ -661,112 +649,112 @@ export default [
     "body": 0,
     "craft": 9000,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 13,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 70,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 65,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 13,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 70,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 65,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 55,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 13,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 70,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 65,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 13,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 70,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 65,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 55,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "3P_Aqua",
@@ -785,92 +773,95 @@ export default [
     "body": 0,
     "craft": 3900,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 13,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 70,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 65,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 100,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 91,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 15,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 17,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 19,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 13,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 70,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 65,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 100,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 91,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 15,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 17,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 19,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "3P_Alexandra",
@@ -886,177 +877,175 @@ export default [
     "body": 0,
     "craft": 19500,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 20,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 86,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 20,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 86,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 63,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 19,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 95,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 20,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 86,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 20,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 86,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 3,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 20,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 86,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 3,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 20,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 86,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": true
       },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 63,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 19,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 95,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          }
-        ]
-      },
-      {
+      "Factive1": {
         "elem": 3,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 20,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 86,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "Factive2": {
         "elem": 3,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 20,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 86,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "3P_Sowan",
@@ -1072,107 +1061,104 @@ export default [
     "body": 0,
     "craft": 19380,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 77,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 80,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 81,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 77,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 80,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 81,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "3P_Annie",
@@ -1188,112 +1174,112 @@ export default [
     "body": 0,
     "craft": 16020,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 74,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 38,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 75,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 91,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 87,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 74,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": true
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 38,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 75,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 91,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 87,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "3P_Maria",
@@ -1309,92 +1295,95 @@ export default [
     "body": 0,
     "craft": 8640,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 9,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 13,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 74,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 38,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 38,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 79,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 9,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 13,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 74,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 38,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 38,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 79,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "3P_Fotia",
@@ -1413,62 +1402,65 @@ export default [
     "body": 0,
     "craft": 2280,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 66,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 15,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 70,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 66,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 15,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 70,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 94,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 1,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 66,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 15,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 70,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 1,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 66,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 15,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 70,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 94,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "3P_BlackLilith",
@@ -1484,142 +1476,139 @@ export default [
     "body": 0,
     "craft": 21300,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 74,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 9,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 33,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 33,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 91,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 82,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 29,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 74,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 9,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 33,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 33,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 91,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 82,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 29,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "3P_CSPerrault",
@@ -1638,102 +1627,99 @@ export default [
     "body": 0,
     "craft": 13800,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 77,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 29,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 81,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 77,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 77,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 29,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 81,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 77,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "3P_Hachiko",
@@ -1749,97 +1735,97 @@ export default [
     "body": 0,
     "craft": 23100,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 74,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 29,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 29,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 82,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 100,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 74,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 29,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 29,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 82,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 100,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "3P_Fenrir",
@@ -1855,122 +1841,119 @@ export default [
     "body": 0,
     "craft": 21900,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 74,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 80,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 82,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 75,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 94,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 29,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 69,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 74,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 80,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 82,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 75,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 94,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 29,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 69,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_Marie",
@@ -1986,117 +1969,114 @@ export default [
     "body": 0,
     "craft": 21600,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 74,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 9,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 62,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 74,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 9,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 62,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "BR_Efreeti",
@@ -2115,97 +2095,94 @@ export default [
     "body": 0,
     "craft": 14400,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 52,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 20,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 20,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 20,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 52,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 20,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": true
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 20,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 20,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "BR_Leprechaun",
@@ -2225,87 +2202,87 @@ export default [
     "body": 0,
     "craft": 2400,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 62,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 77,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 88,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 62,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 77,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 88,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_Impet",
@@ -2325,67 +2302,67 @@ export default [
     "body": 0,
     "craft": 5040,
     "buffs": [
-      {
+      [
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 84,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 61,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 84,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 61,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_Brownie",
@@ -2405,82 +2382,82 @@ export default [
     "body": 0,
     "craft": 1800,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 48,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 48,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_PXSilky",
@@ -2496,87 +2473,87 @@ export default [
     "body": 0,
     "craft": 11520,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 78,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 100,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 3,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 78,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 100,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 3,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_Phoenix",
@@ -2592,72 +2569,72 @@ export default [
     "body": 0,
     "craft": 15900,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 77,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 55,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": true
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 77,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 55,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "BR_Gnome",
@@ -2676,46 +2653,49 @@ export default [
     "body": 0,
     "craft": 3420,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 87,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        }
+      ],
+      [],
+      [
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 87,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": []
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_RedHood",
@@ -2731,107 +2711,107 @@ export default [
     "body": 0,
     "craft": 16320,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 9,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 84,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 66,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 70,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 91,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 65,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 9,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 1,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 84,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 66,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 70,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 91,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 65,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_Leona",
@@ -2847,172 +2827,163 @@ export default [
     "body": 0,
     "craft": 18900,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 87,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 21,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 100,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 3,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 23,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 63,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 87,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 21,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 100,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 3,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 23,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 63,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_Valkyrie",
@@ -3031,117 +3002,114 @@ export default [
     "body": 0,
     "craft": 12600,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 94,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 29,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 89,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 6,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 77,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 94,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 29,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 89,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 6,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 77,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "BR_Nymph",
@@ -3160,77 +3128,77 @@ export default [
     "body": 0,
     "craft": 7200,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 60,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 77,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 29,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 60,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 77,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 29,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_Gremlin",
@@ -3249,51 +3217,54 @@ export default [
     "body": 0,
     "craft": 1680,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 87,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        }
+      ],
+      [],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 55,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 87,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": []
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 55,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_SandMan",
@@ -3312,72 +3283,75 @@ export default [
     "body": 0,
     "craft": 5100,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 74,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 9,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 61,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 74,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 9,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 61,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_Bheur",
@@ -3393,82 +3367,85 @@ export default [
     "body": 0,
     "craft": 6900,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 87,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 55,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 77,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 87,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 55,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 77,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_Alvis",
@@ -3484,87 +3461,90 @@ export default [
     "body": 0,
     "craft": 8700,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 74,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 13,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 9,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 55,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 17,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 74,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 13,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 9,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 55,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 17,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_Khan",
@@ -3580,107 +3560,104 @@ export default [
     "body": 0,
     "craft": 19800,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 87,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 87,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 60,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 61,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 87,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 87,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 60,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 61,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "BR_QuickCamel",
@@ -3696,82 +3673,82 @@ export default [
     "body": 0,
     "craft": 12900,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 61,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 77,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 77,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 61,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 77,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 77,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_WarWolf",
@@ -3791,67 +3768,67 @@ export default [
     "body": 0,
     "craft": 2640,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_TalonFeather",
@@ -3867,97 +3844,97 @@ export default [
     "body": 0,
     "craft": 15300,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 87,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 9,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 55,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 23,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 87,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 9,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 55,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 23,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "BR_May",
@@ -3973,102 +3950,96 @@ export default [
     "body": 0,
     "craft": 24900,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 66,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 70,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 66,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": true
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 66,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 70,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 66,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "BR_NightAngel",
@@ -4084,77 +4055,77 @@ export default [
     "body": 0,
     "craft": 15840,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 55,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 55,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "BR_Daika",
@@ -4173,97 +4144,97 @@ export default [
     "body": 0,
     "craft": 9300,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 9,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 13,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 55,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 23,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 89,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 9,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 13,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 55,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 23,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 89,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_Djinnia",
@@ -4282,52 +4253,55 @@ export default [
     "body": 0,
     "craft": 4800,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 74,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 36,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 74,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 36,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_Sylphid",
@@ -4346,87 +4320,87 @@ export default [
     "body": 0,
     "craft": 10980,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 62,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 62,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 77,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 62,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 62,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 77,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_Banshee",
@@ -4442,52 +4416,55 @@ export default [
     "body": 0,
     "craft": 10620,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 60,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 61,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 60,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 61,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "BR_RoyalArsenal",
@@ -4503,112 +4480,109 @@ export default [
     "body": 0,
     "craft": 26820,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 87,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 94,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 36,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 89,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 87,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": true
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 94,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 36,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 89,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_BloodyPanther",
@@ -4624,172 +4598,170 @@ export default [
     "body": 0,
     "craft": 31200,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 9,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 60,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 61,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 63,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 50,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 15,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 17,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 19,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 91,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 3,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 60,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 61,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 100,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 69,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 9,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 60,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 61,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "Factive1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 63,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 50,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "Factive2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 15,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 17,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 19,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 91,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 3,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 60,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 61,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 100,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 69,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_Calista",
@@ -4805,72 +4777,72 @@ export default [
     "body": 0,
     "craft": 22860,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 77,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 88,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 77,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 88,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_Io",
@@ -4890,92 +4862,89 @@ export default [
     "body": 0,
     "craft": 16200,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 60,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 20,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 60,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 60,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 20,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 60,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "BR_Spriggan",
@@ -4991,57 +4960,60 @@ export default [
     "body": 0,
     "craft": 16380,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 61,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 61,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "BR_BeastHunter",
@@ -5057,52 +5029,52 @@ export default [
     "body": 0,
     "craft": 21900,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 94,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 94,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_Emily",
@@ -5118,132 +5090,128 @@ export default [
     "body": 0,
     "craft": 30600,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 65,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 65,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 94,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 20,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 63,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 94,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 65,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 65,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 65,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": true
       },
-      {
+      "Factive2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 94,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 20,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 63,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 94,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 65,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "BR_Pani",
@@ -5259,47 +5227,50 @@ export default [
     "body": 0,
     "craft": 16560,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 84,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 84,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_Raven",
@@ -5315,67 +5286,70 @@ export default [
     "body": 0,
     "craft": 9480,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 87,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 87,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "BR_Neodym",
@@ -5391,132 +5365,129 @@ export default [
     "body": 0,
     "craft": 22800,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 20,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 99,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 13,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 78,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 55,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 99,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 15,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 17,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 19,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 15,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 17,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 19,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 20,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 99,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 13,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 78,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 55,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 99,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 15,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 17,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 19,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 15,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 17,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 19,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "AGS_Shade",
@@ -5532,71 +5503,71 @@ export default [
     "body": 1,
     "craft": 15600,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 84,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 70,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        }
+      ],
+      [],
+      [
+        {
+          "target": "self",
+          "type": 29,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 1,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 84,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 70,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": []
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 29,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "BR_Phantom",
@@ -5615,222 +5586,214 @@ export default [
     "body": 0,
     "craft": 12720,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 87,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 90,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 20,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 63,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 63,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 77,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 9,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 13,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 99,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 69,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 100,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 77,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 87,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 90,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "Factive1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 20,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": true
       },
-      {
+      "Factive2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 63,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 63,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 77,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 9,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 13,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 99,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 69,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 100,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 77,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "BR_Echidna",
@@ -5846,127 +5809,124 @@ export default [
     "body": 0,
     "craft": 30900,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 13,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 78,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 38,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 91,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 19,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 75,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 19,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 91,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 13,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 78,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 13,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 78,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": true
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 38,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 91,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 19,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 75,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 19,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 91,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 13,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 78,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_Wraithy",
@@ -5985,67 +5945,70 @@ export default [
     "body": 0,
     "craft": 5220,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 20,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 86,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 20,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 86,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 3,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 20,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 86,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 3,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 20,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 86,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_DrM",
@@ -6061,132 +6024,129 @@ export default [
     "body": 0,
     "craft": 27000,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 52,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 22,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 53,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 78,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 99,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 20,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 36,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 23,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 9,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 52,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 22,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 53,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 78,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 99,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 20,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 36,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 23,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 9,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_Amy",
@@ -6202,67 +6162,64 @@ export default [
     "body": 0,
     "craft": 7500,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 87,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 81,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 20,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 0,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 87,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 81,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 20,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 0,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "BR_Tomoe",
@@ -6281,67 +6238,70 @@ export default [
     "body": 0,
     "craft": 2340,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 84,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 70,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 77,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 1,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 84,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 70,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 77,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_Shirayuri",
@@ -6357,142 +6317,139 @@ export default [
     "body": 0,
     "craft": 22020,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 15,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 20,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 78,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 23,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 77,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 15,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 17,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 19,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 1,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 15,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 20,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 78,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 23,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 77,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 15,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 17,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 19,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "BR_HongRyun",
@@ -6508,122 +6465,119 @@ export default [
     "body": 0,
     "craft": 18780,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 87,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 13,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 58,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 50,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 58,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 2,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 87,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 13,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 58,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 50,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 58,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_AS12TurtleDragon",
@@ -6642,102 +6596,102 @@ export default [
     "body": 0,
     "craft": 18000,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 13,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 22,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 29,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 91,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 50,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 20,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 29,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 13,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 22,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 29,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 91,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 50,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 20,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 29,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_Miho",
@@ -6757,107 +6711,104 @@ export default [
     "body": 0,
     "craft": 7440,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 81,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 77,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 50,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 29,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 81,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 77,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 50,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 29,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "BR_PoniesAnger",
@@ -6877,142 +6828,139 @@ export default [
     "body": 0,
     "craft": 9720,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 74,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 9,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 29,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 91,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 50,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 23,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 20,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 74,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 9,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 29,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 91,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 50,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 23,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 20,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_Bulgasari",
@@ -7028,82 +6976,82 @@ export default [
     "body": 0,
     "craft": 20100,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 20,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 52,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 61,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 77,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 3,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 20,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 52,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 61,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 77,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_InvDragon",
@@ -7119,192 +7067,193 @@ export default [
     "body": 0,
     "craft": false,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 87,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 90,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 91,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 29,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 2,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 23,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 63,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 69,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 69,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 100,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 87,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 90,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "Factive1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 91,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 29,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": true
       },
-      {
+      "Factive2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 2,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 23,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 63,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 69,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 69,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 100,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_Nereid",
@@ -7320,97 +7269,97 @@ export default [
     "body": 0,
     "craft": 22200,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 62,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 20,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 20,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 80,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 82,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 94,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 62,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 20,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 20,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 80,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 82,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 94,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "BR_Undine",
@@ -7426,127 +7375,127 @@ export default [
     "body": 0,
     "craft": 15780,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 74,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 77,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 74,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 77,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_Sirene",
@@ -7562,197 +7511,195 @@ export default [
     "body": 0,
     "craft": 30300,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 87,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 62,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 77,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 58,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 63,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 20,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 60,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 61,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 94,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 69,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 87,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 62,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 77,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "Factive1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 58,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": false
       },
-      {
+      "Factive2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 63,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 20,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 60,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 61,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 94,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 69,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "BR_Thetis",
@@ -7768,127 +7715,127 @@ export default [
     "body": 0,
     "craft": 15120,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 20,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 87,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 23,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 77,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 20,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": true
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 87,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 23,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 77,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_Sleipnir",
@@ -7904,127 +7851,124 @@ export default [
     "body": 0,
     "craft": 24000,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 74,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 9,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 13,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 89,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 89,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 74,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 9,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 13,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 89,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 89,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "BR_PA00EL",
@@ -8043,72 +7987,72 @@ export default [
     "body": 0,
     "craft": 10800,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 84,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 23,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 20,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 84,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 23,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 20,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "BR_Harpy",
@@ -8124,122 +8068,119 @@ export default [
     "body": 0,
     "craft": 24600,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 62,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 60,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 61,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 62,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 34,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 89,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 62,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 60,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 61,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 62,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 34,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 89,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "BR_Blackhound",
@@ -8255,82 +8196,82 @@ export default [
     "body": 0,
     "craft": 15660,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 74,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 74,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_Lindwurm",
@@ -8349,92 +8290,92 @@ export default [
     "body": 0,
     "craft": 11100,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 62,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 61,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 29,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 87,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 20,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 62,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 61,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 29,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 87,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 20,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "AGS_Aeda",
@@ -8450,92 +8391,89 @@ export default [
     "body": 1,
     "craft": 43200,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 87,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 13,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 23,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 87,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 13,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 23,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "PECS_CoCoWhiteShell",
@@ -8551,92 +8489,89 @@ export default [
     "body": 0,
     "craft": 23400,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 38,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 36,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 15,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 17,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 19,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 91,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 75,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 4,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 38,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 36,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 15,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 17,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 19,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 91,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 75,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 4,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "PECS_Stinger",
@@ -8652,57 +8587,60 @@ export default [
     "body": 1,
     "craft": 11100,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 66,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 70,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 1,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 66,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 70,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "PECS_Spartoia",
@@ -8718,97 +8656,97 @@ export default [
     "body": 0,
     "craft": 23100,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 80,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 94,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 89,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 15,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 17,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 19,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 91,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": true
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 80,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 94,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 89,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 15,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 17,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 19,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 91,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "PECS_Audrey",
@@ -8824,167 +8762,164 @@ export default [
     "body": 0,
     "craft": 18720,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 78,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 15,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 17,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 19,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 9,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 13,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 38,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 89,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 78,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 15,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 17,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 19,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 9,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 13,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 38,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 89,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "PECS_TommyWalker",
@@ -9003,82 +8938,82 @@ export default [
     "body": 1,
     "craft": 15600,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 22,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 13,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 53,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 78,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 95,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 22,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 13,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 53,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 78,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 95,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "PECS_DutchGirl",
@@ -9098,82 +9033,82 @@ export default [
     "body": 0,
     "craft": 2100,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 70,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 91,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 60,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 61,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 70,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 91,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 60,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 61,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "PECS_Triaina",
@@ -9189,122 +9124,122 @@ export default [
     "body": 0,
     "craft": 20580,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 52,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 22,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 99,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 15,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 17,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 19,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 91,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 17,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 2,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 52,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 22,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 99,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 15,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 17,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 19,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 91,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 17,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "PECS_Drone",
@@ -9320,42 +9255,48 @@ export default [
     "body": 1,
     "craft": 2400,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 52,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 20,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 90,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 52,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 20,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 90,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "PECS_Serpent",
@@ -9374,97 +9315,97 @@ export default [
     "body": 0,
     "craft": 9600,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 15,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 17,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 19,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 22,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 78,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 103,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 82,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 15,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 17,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 2,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 15,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 17,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 19,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 2,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 22,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 78,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 103,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 82,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 15,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 17,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "PECS_MissSafety",
@@ -9483,77 +9424,80 @@ export default [
     "body": 0,
     "craft": 3000,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 74,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 102,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 87,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 19,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 15,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 17,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 74,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 102,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 87,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 19,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 15,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 17,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "PECS_Cerberus",
@@ -9573,137 +9517,134 @@ export default [
     "body": 0,
     "craft": 8100,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 74,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 19,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 22,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 102,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 86,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 29,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 55,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 77,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 3,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 77,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 15,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 19,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 3,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 74,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 19,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 22,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 102,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 86,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 29,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 55,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 77,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 3,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 77,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 15,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 19,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "AGS_Rampart",
@@ -9723,97 +9664,97 @@ export default [
     "body": 1,
     "craft": 3600,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 103,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 50,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 29,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 103,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 50,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 29,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "PECS_PuppHead",
@@ -9832,102 +9773,99 @@ export default [
     "body": 1,
     "craft": 1800,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 20,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 53,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 78,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 87,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 102,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 3,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 20,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 53,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 78,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 87,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 102,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "PECS_Express76",
@@ -9943,82 +9881,82 @@ export default [
     "body": 0,
     "craft": 15000,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 52,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 22,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 20,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 52,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 22,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 20,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "PECS_Fortune",
@@ -10034,41 +9972,44 @@ export default [
     "body": 0,
     "craft": 8520,
     "buffs": [
-      {
+      [
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        }
+      ],
+      [],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": []
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "PECS_LRL",
@@ -10088,97 +10029,94 @@ export default [
     "body": 0,
     "craft": 1320,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 94,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 20,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 92,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 39,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 94,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 20,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 92,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 39,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "PECS_MightyR",
@@ -10198,87 +10136,84 @@ export default [
     "body": 0,
     "craft": 6000,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 20,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 22,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 6,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 3,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 20,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 22,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 6,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 3,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "PECS_Tiequan",
@@ -10297,52 +10232,55 @@ export default [
     "body": 0,
     "craft": 2160,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 84,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 20,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 84,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 20,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "DS_Johanna",
@@ -10358,77 +10296,74 @@ export default [
     "body": 0,
     "craft": 3600,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 74,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 9,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 50,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 75,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 22,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 74,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 9,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 50,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 75,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 22,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_Scathy",
@@ -10444,62 +10379,65 @@ export default [
     "body": 0,
     "craft": 6480,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 65,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 22,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 23,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 3,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 65,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 22,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 23,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 3,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "DS_MoMo",
@@ -10518,127 +10456,124 @@ export default [
     "body": 0,
     "craft": 15720,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 99,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 100,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 36,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 82,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 99,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 100,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 36,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 82,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "DS_Atalanta",
@@ -10654,97 +10589,97 @@ export default [
     "body": 0,
     "craft": 13500,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 74,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 13,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 29,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 61,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 74,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 13,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 29,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 61,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "DS_Charlotte",
@@ -10760,122 +10695,119 @@ export default [
     "body": 0,
     "craft": 19620,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 87,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 74,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 13,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 99,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 20,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 94,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 77,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 29,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 87,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 74,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 13,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 99,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 20,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 94,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 77,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 29,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "DS_Azazel",
@@ -10891,137 +10823,134 @@ export default [
     "body": 0,
     "craft": 24120,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 87,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 9,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 38,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 38,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 75,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 80,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 82,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 34,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 91,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 82,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 33,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 87,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 9,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 38,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 38,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 75,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 80,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 82,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 34,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 91,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 82,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 33,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "DS_Baekto",
@@ -11037,107 +10966,107 @@ export default [
     "body": 0,
     "craft": 13080,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 74,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 74,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "AGS_Goltarion",
@@ -11153,92 +11082,92 @@ export default [
     "body": 1,
     "craft": 18000,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 98,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 91,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 17,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 15,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 19,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 98,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 91,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 17,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 15,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 19,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "DS_Arman",
@@ -11254,147 +11183,144 @@ export default [
     "body": 0,
     "craft": 20100,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 87,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 99,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 90,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 100,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 91,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 60,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 62,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 61,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 15,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 17,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 19,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 23,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 13,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 87,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 99,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 90,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": true
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 100,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 91,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 60,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 62,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 61,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 15,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 17,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 19,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 23,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 13,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "PECS_Carolina",
@@ -11410,97 +11336,97 @@ export default [
     "body": 0,
     "craft": 11820,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 9,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 100,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 9,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": true
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 100,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "PECS_BS",
@@ -11516,92 +11442,92 @@ export default [
     "body": 0,
     "craft": 11340,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 20,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 55,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 89,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 62,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 55,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 36,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 3,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 20,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 55,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 89,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 62,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 55,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 36,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "PECS_ElvenForestmaker",
@@ -11620,92 +11546,92 @@ export default [
     "body": 0,
     "craft": 14100,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 15,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 17,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 19,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 15,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 22,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 36,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 36,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 2,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 15,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 17,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 19,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 15,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 22,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 36,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 36,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "PECS_Ignis",
@@ -11721,92 +11647,92 @@ export default [
     "body": 0,
     "craft": 23220,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 15,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 70,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 15,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 91,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 17,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 19,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 75,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 1,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 15,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 1,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 70,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 15,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 91,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 17,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 19,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 75,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "PECS_DarkElf",
@@ -11825,87 +11751,87 @@ export default [
     "body": 0,
     "craft": 7920,
     "buffs": [
-      {
+      [
+        {
+          "target": "self",
+          "type": 60,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 9,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 77,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 77,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 60,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 9,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 77,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 77,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "PECS_Circe",
@@ -11921,107 +11847,107 @@ export default [
     "body": 0,
     "craft": 15240,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 87,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 15,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 70,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 79,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 23,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 1,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 87,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 15,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 70,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 79,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 23,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "PECS_Babariana",
@@ -12037,97 +11963,97 @@ export default [
     "body": 0,
     "craft": 23040,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 74,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 9,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 91,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 74,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 9,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 91,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "PECS_Veronica",
@@ -12143,92 +12069,92 @@ export default [
     "body": 0,
     "craft": 12720,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 87,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 77,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 29,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 80,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 70,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 87,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 77,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 29,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 80,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 70,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "PECS_Draculina",
@@ -12244,107 +12170,104 @@ export default [
     "body": 0,
     "craft": 17880,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 55,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 65,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 81,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 23,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 55,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 65,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 81,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 23,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "3P_Ran",
@@ -12360,102 +12283,102 @@ export default [
     "body": 0,
     "craft": 13620,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 13,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 74,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 55,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 29,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 13,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 74,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 55,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 29,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "ST_Tiamat",
@@ -12471,132 +12394,129 @@ export default [
     "body": 0,
     "craft": 25200,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 60,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 94,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 61,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 70,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 29,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 23,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 60,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 94,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 61,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 70,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 29,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 23,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "ST_Lancer",
@@ -12616,147 +12536,144 @@ export default [
     "body": 0,
     "craft": 9900,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 15,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 70,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 15,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 17,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 17,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 17,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 1,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 15,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 70,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 15,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 17,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 17,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 17,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "PECS_Empress",
@@ -12772,97 +12689,97 @@ export default [
     "body": 0,
     "craft": 12780,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 17,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 13,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 22,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 85,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 22,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 70,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 34,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 17,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 17,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 2,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 17,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 13,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 22,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 2,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 85,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 22,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 70,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 34,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 17,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 17,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "PECS_Saetti",
@@ -12881,97 +12798,97 @@ export default [
     "body": 0,
     "craft": 17700,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 9,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 74,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 20,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 75,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 91,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 9,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 74,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 20,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 75,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 91,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "3P_Aurora",
@@ -12987,82 +12904,82 @@ export default [
     "body": 0,
     "craft": 12720,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 20,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 100,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 38,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 36,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 20,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 100,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 38,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 36,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "PECS_Sunny",
@@ -13078,87 +12995,87 @@ export default [
     "body": 0,
     "craft": 13020,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 74,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 15,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 70,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 82,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 91,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 1,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 74,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 15,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 70,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 82,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 91,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "DS_Faucre",
@@ -13174,132 +13091,129 @@ export default [
     "body": 0,
     "craft": 20280,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 66,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 15,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 87,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 70,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 99,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 84,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 20,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 65,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 1,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 66,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 15,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 87,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 70,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 99,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 84,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 20,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 65,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "PECS_Lumberjane",
@@ -13315,57 +13229,60 @@ export default [
     "body": 0,
     "craft": 16260,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 61,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 13,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 61,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 13,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "3P_BlackWyrm",
@@ -13381,112 +13298,109 @@ export default [
     "body": 0,
     "craft": 32340,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 15,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 9,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 84,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 66,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 15,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 15,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 91,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 15,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 1,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 15,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 9,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 84,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 66,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 15,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 15,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 91,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 15,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "DS_KunoichiZero",
@@ -13502,92 +13416,92 @@ export default [
     "body": 0,
     "craft": 16320,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 86,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 61,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 13,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 19,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 86,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 19,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 20,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 3,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 86,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 61,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 3,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 13,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 19,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 86,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 19,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 20,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "3P_SnowFeather",
@@ -13603,102 +13517,102 @@ export default [
     "body": 0,
     "craft": 16320,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 17,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 15,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 19,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 78,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 13,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 29,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 15,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 2,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 17,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 15,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 19,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 2,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 78,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 13,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 29,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 15,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "PECS_HighElven",
@@ -13714,102 +13628,99 @@ export default [
     "body": 0,
     "craft": 20340,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 99,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 78,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 100,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 70,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 38,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 58,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 36,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 99,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 78,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 100,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 70,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 38,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 58,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 36,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_Andvari",
@@ -13825,87 +13736,90 @@ export default [
     "body": 0,
     "craft": 6780,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 87,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 17,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 3,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 87,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 17,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 3,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "3P_Dryad",
@@ -13921,77 +13835,77 @@ export default [
     "body": 0,
     "craft": 16620,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 61,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 61,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "PECS_Sadius",
@@ -14007,97 +13921,94 @@ export default [
     "body": 0,
     "craft": 30720,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 19,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 22,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 13,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 86,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 77,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 6,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 19,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 3,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 19,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 22,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 3,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 13,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 86,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 77,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 6,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 19,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "DS_KunoichiKaen",
@@ -14113,72 +14024,72 @@ export default [
     "body": 0,
     "craft": 16500,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 90,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 66,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 84,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 15,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 84,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 6,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 1,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 90,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 66,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 84,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 1,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 15,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 84,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 6,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "BR_Hraesvelgr",
@@ -14194,72 +14105,72 @@ export default [
     "body": 0,
     "craft": 15360,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 62,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 60,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 61,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 33,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 38,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 62,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 60,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 61,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 33,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 38,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "BR_ALWraith",
@@ -14275,92 +14186,92 @@ export default [
     "body": 0,
     "craft": false,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 103,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": true
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 103,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "3P_Poi",
@@ -14376,82 +14287,79 @@ export default [
     "body": 0,
     "craft": 22500,
     "buffs": [
-      {
+      [
+        {
+          "target": "self",
+          "type": 94,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 6,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 77,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 94,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 6,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 77,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "PECS_Leanne",
@@ -14467,172 +14375,169 @@ export default [
     "body": 0,
     "craft": 18840,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 87,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 103,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 15,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 17,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 19,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 91,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 38,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 15,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 17,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 19,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 91,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 23,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 15,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 17,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 19,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 36,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 15,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 17,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 19,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 87,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 103,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": true
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 15,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 17,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 19,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 91,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 38,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 15,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 17,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 19,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 91,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 23,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 15,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 17,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 19,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 36,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 15,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 17,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 19,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "3P_Eternity",
@@ -14648,127 +14553,124 @@ export default [
     "body": 0,
     "craft": 31800,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 33,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 98,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 0,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 91,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 2,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 29,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 33,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 98,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 0,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 91,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 2,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 29,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "PECS_Azaz",
@@ -14784,96 +14686,93 @@ export default [
     "body": 0,
     "craft": 22500,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 22,
+          "positive": false
+        }
+      ],
+      [],
+      [
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 6,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 6,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 38,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 33,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 87,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 22,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": []
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 6,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 6,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 38,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 33,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 87,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "PECS_LemonadeAlpha",
@@ -14889,137 +14788,134 @@ export default [
     "body": 0,
     "craft": false,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 70,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 79,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 90,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 70,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 52,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 55,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 55,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 55,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 15,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 17,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 19,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 13,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 70,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 79,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 90,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": true
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 70,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 52,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 55,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 55,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 55,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 15,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 17,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 19,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 13,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "PECS_Ella",
@@ -15035,112 +14931,109 @@ export default [
     "body": 0,
     "craft": 22380,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 19,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 15,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 17,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 100,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 19,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 15,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 17,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 91,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 19,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 15,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 17,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 100,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 19,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 15,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 17,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 91,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "PECS_Rena",
@@ -15156,97 +15049,94 @@ export default [
     "body": 0,
     "craft": 30840,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 22,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 103,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 102,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 58,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 58,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 22,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 103,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 102,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 58,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 58,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "PECS_Mery",
@@ -15262,87 +15152,87 @@ export default [
     "body": 0,
     "craft": false,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 87,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 94,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 87,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 94,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "PECS_Machina",
@@ -15358,82 +15248,79 @@ export default [
     "body": 0,
     "craft": false,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 20,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 61,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 60,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 20,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 61,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 60,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "BR_Salamander",
@@ -15449,67 +15336,67 @@ export default [
     "body": 0,
     "craft": 23640,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 66,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 15,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 17,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 15,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 77,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 1,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 66,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 1,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 15,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 17,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 15,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 77,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "AGS_Albatross",
@@ -15525,147 +15412,144 @@ export default [
     "body": 1,
     "craft": 36000,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 74,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 38,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 22,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 86,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 38,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 75,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 50,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 33,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 21,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 74,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 38,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 3,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 22,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 86,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 38,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 75,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 50,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 33,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 21,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "AGS_Seljuq",
@@ -15684,72 +15568,69 @@ export default [
     "body": 1,
     "craft": 17280,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 60,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 94,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 60,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 94,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "AGS_Gigantes",
@@ -15765,117 +15646,117 @@ export default [
     "body": 1,
     "craft": 30600,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 22,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 52,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 13,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 50,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 75,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 91,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 88,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 22,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 52,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 13,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 50,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 75,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 91,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 88,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "AGS_Fallen",
@@ -15891,32 +15772,38 @@ export default [
     "body": 1,
     "craft": 600,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "AGS_SpartanC",
@@ -15935,87 +15822,87 @@ export default [
     "body": 1,
     "craft": 7200,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 87,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 99,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 77,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 87,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 99,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 77,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "AGS_SpartanA",
@@ -16034,97 +15921,97 @@ export default [
     "body": 1,
     "craft": 4200,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 9,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 99,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 20,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 103,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 9,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 99,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 20,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 103,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "AGS_SpartanB",
@@ -16143,77 +16030,77 @@ export default [
     "body": 1,
     "craft": 4800,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 13,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 22,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 103,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 13,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 22,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 103,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "AGS_Roc",
@@ -16229,122 +16116,119 @@ export default [
     "body": 1,
     "craft": 37800,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 20,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 86,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 70,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 20,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 94,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 86,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 62,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 70,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 29,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 29,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 19,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 19,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 3,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 20,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 86,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 70,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": true
       },
-      {
+      "active2": {
         "elem": 3,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 20,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 94,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 86,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 62,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 70,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 29,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 29,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 19,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 19,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "AGS_Fortress",
@@ -16360,137 +16244,141 @@ export default [
     "body": 1,
     "craft": 18000,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 87,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 64,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 50,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 74,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 9,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 74,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 13,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 50,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 69,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 78,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 3,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 87,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "Factive1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 64,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 50,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "Factive2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 74,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 9,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 74,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 13,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 50,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 69,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 78,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 76,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 3,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "AGS_Tyrant",
@@ -16506,137 +16394,134 @@ export default [
     "body": 1,
     "craft": 57600,
     "buffs": [
-      {
+      [
+        {
+          "target": "self",
+          "type": 81,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 0,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 15,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 70,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 94,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 91,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 88,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 87,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 82,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 69,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 70,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 81,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 0,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 1,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 15,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "enemy",
-            "type": 70,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 94,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 91,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 36,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 88,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 87,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 82,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 69,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 70,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "AGS_RheinRitter",
@@ -16655,107 +16540,104 @@ export default [
     "body": 1,
     "craft": 16200,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 55,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 94,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 34,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 77,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 3,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 58,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 55,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 83,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 94,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 34,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 77,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 20,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 3,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "self",
-            "type": 58,
-            "positive": true
-          }
-        ]
+        "grid": false,
+        "guard": true
       }
-    ]
+    }
   },
   {
     "uid": "AGS_MrAlfred2",
@@ -16771,152 +16653,149 @@ export default [
     "body": 1,
     "craft": 57600,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 13,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 78,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 20,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 79,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 1,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 13,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 58,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 38,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 3,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 48,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 13,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 78,
-            "positive": false
-          }
-        ]
+        "grid": true,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 20,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 79,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 1,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 7,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 13,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 3,
-            "positive": false
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 58,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "self",
-            "type": 38,
-            "positive": false
-          },
-          {
-            "target": "self",
-            "type": 3,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 11,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": false
       }
-    ]
+    }
   },
   {
     "uid": "AGS_Watcher",
@@ -16932,71 +16811,74 @@ export default [
     "body": 1,
     "craft": 17280,
     "buffs": [
-      {
+      [
+        {
+          "target": "enemy",
+          "type": 87,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 88,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 77,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 3,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "enemy",
-            "type": 87,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 88,
-            "positive": false
-          },
-          {
-            "target": "enemy",
-            "type": 11,
-            "positive": false
-          }
-        ]
+        "grid": false,
+        "guard": false
       },
-      {
+      "active2": {
         "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 1,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 7,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          }
-        ]
-      },
-      {
-        "elem": 0,
-        "effects": [
-          {
-            "target": "team",
-            "type": 77,
-            "positive": false
-          },
-          {
-            "target": "team",
-            "type": 9,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 3,
-            "positive": true
-          },
-          {
-            "target": "team",
-            "type": 13,
-            "positive": true
-          }
-        ]
+        "grid": true,
+        "guard": false
       }
-    ]
+    }
   }
 ];
