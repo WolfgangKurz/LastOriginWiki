@@ -7,9 +7,17 @@ export interface FilterableUnitBuff {
 	positive: boolean;
 }
 export interface FilterableUnitBuffGroup {
-	elem: SKILL_ATTR;
 	effects: FilterableUnitBuff[];
 }
+
+export interface FilterableUnitSkill {
+	/** target_ground */
+	grid: boolean;
+	/** dismiss_guard */
+	guard: boolean;
+	elem: SKILL_ATTR;
+}
+
 export interface FilterableUnit {
 	uid: string;
 	no: number;
@@ -30,7 +38,13 @@ export interface FilterableUnit {
 
 	craft: false | number;
 
-	buffs: FilterableUnitBuffGroup[];
+	buffs: FilterableUnitBuff[][]; // FilterableUnitBuffGroup[];
+	skills: {
+		active1: FilterableUnitSkill;
+		active2: FilterableUnitSkill;
+		Factive1?: FilterableUnitSkill;
+		Factive2?: FilterableUnitSkill;
+	};
 }
 
 /* eslint-disable-next-line @typescript-eslint/no-namespace */
@@ -54,6 +68,18 @@ export namespace FilterableUnit {
 		craft: false,
 
 		buffs: [],
+		skills: {
+			active1: {
+				grid: false,
+				guard: false,
+				elem: SKILL_ATTR.PHYSICS,
+			},
+			active2: {
+				grid: false,
+				guard: false,
+				elem: SKILL_ATTR.PHYSICS,
+			},
+		},
 	};
 
 	/* eslint-disable camelcase */

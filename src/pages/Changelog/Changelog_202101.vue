@@ -1,5 +1,21 @@
 <template>
 	<div>
+		<changelog-item title="Build 7812" date="2021-01-22">
+			<template #new>
+				<li>
+					<b-badge variant="warning">전투원정보</b-badge> 메뉴에 스킬 유형 필터가 추가되었습니다.<br />
+					지정할 수 있는 유형은 <b-badge variant="danger">그리드 지정</b-badge> 여부와
+					<b-badge variant="primary">보호 무시</b-badge> 여부입니다.
+				</li>
+			</template>
+			<template #update>
+				<li>
+					<b-badge variant="warning">전투원정보</b-badge> 메뉴의 스킬 속성 필터가 스킬별 필터로 분리되었습니다.<br />
+					각 스킬의 필터는 형태 변환 이후의 스킬도 포함합니다.
+				</li>
+			</template>
+		</changelog-item>
+
 		<changelog-item title="Build 7807" date="2021-01-18">
 			<template #bugfix>
 				<li>전투원 유형 아이콘이 올바르지 않게 표시되던 문제를 수정했습니다.</li>

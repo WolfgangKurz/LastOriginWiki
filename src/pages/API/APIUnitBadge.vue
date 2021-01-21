@@ -85,12 +85,28 @@ export default class APIUnitBadge extends Vue {
 			[ACTOR_BODY_TYPE.SUMMON]: false,
 			[ACTOR_BODY_TYPE.TOTEM]: false,
 		},
-		Elem: {
-			[SKILL_ATTR.PHYSICS]: true,
-			[SKILL_ATTR.FIRE]: true,
-			[SKILL_ATTR.ICE]: true,
-			[SKILL_ATTR.LIGHTNING]: true,
-		},
+		Skill: [
+			{
+				Elem: {
+					[SKILL_ATTR.PHYSICS]: true,
+					[SKILL_ATTR.FIRE]: true,
+					[SKILL_ATTR.ICE]: true,
+					[SKILL_ATTR.LIGHTNING]: true,
+				},
+				GridType: 0,
+				DismissGuardType: 0,
+			},
+			{
+				Elem: {
+					[SKILL_ATTR.PHYSICS]: true,
+					[SKILL_ATTR.FIRE]: true,
+					[SKILL_ATTR.ICE]: true,
+					[SKILL_ATTR.LIGHTNING]: true,
+				},
+				GridType: 0,
+				DismissGuardType: 0,
+			},
+		],
 		Effects: [],
 		EffectTarget: [],
 	};
