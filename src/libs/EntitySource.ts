@@ -131,7 +131,7 @@ export default class EntitySource {
 			case "1": return "밀고, 당기고, 불질러!";
 			case "2": return "피조물과 설계자";
 			case "3": return "실패작의 폭주";
-			case "4":
+			case "4": return "레모네이드 VR";
 			case "5": return "바다의 소녀들";
 		}
 		return this.ChallengeId;
