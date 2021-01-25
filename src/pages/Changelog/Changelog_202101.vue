@@ -1,5 +1,22 @@
 <template>
 	<div>
+		<changelog-item title="Build 7823" date="2021-01-25">
+			<template #new>
+				<li>
+					<b-badge variant="warning">적 정보</b-badge> 팝업에 <b-badge variant="danger">행동 패턴</b-badge> 탭이 추가되었습니다.<br />
+					검수를 하지 않은 초벌 상태의 데이터이므로, 완전히 신뢰하지는 말아주시기 바랍니다.
+				</li>
+				<li>신규 외부 통신 요청 <b-badge variant="info">레모네이드 VR</b-badge>이 추가되었습니다.</li>
+			</template>
+			<template #update>
+				<li><b-badge variant="warning">소완</b-badge>의 2번째 액티브 <b-badge variant="info">게이트 오브 키친</b-badge>의 내용이 수정되었습니다.</li>
+				<li><b-badge variant="warning">랜서 미나</b-badge>의 1번째 패시브 <b-badge variant="info">뱅가드</b-badge>의 내용이 수정되었습니다.</li>
+			</template>
+			<template #dialogue>
+				<li><b-badge variant="warning">T-75 워울프</b-badge>의 대사가 누락되어있던 점을 수정했습니다.</li>
+			</template>
+		</changelog-item>
+
 		<changelog-item title="Build 7812" date="2021-01-22">
 			<template #new>
 				<li>

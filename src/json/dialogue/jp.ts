@@ -2694,6 +2694,39 @@ export default {
       "MVP": ""
     }
   },
+  "BR_WarWolf": {
+    "0": {
+      "Join": "",
+      "SquadJoin": "",
+      "Leader": "",
+      "SortiePick": "",
+      "StageStart": "",
+      "Retreat": "",
+      "SearchStart": "",
+      "SearchEnd": "",
+      "BattleFocus": "",
+      "ActionApprove": "",
+      "SpSkill": "",
+      "Retire": "",
+      "Repair": "",
+      "Reinforce": "",
+      "ItemEquip": "",
+      "CoreLink": "",
+      "PresentGet": "",
+      "Login": "",
+      "Idle_01_01": "",
+      "Idle_01_02": "",
+      "Idle_01_03": "",
+      "SPIdle_01_01": "",
+      "Idle_02_01": "",
+      "Idle_03_01": "",
+      "Idle_04_01": "",
+      "SPIdle_02_01": "",
+      "Oath": "",
+      "OathIdle_01": "",
+      "MVP": ""
+    }
+  },
   "BR_TalonFeather": {
     "0": {
       "Join": "ホードの目、タロンフェザーです。気軽にフェザーと呼んでください。",

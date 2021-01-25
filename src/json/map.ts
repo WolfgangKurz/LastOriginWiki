@@ -118493,6 +118493,647 @@ export default {
         }
       ]
     },
+    "4": {
+      "title": "레모네이드 VR",
+      "list": [
+        {
+          "name": "레모네이드 VR (Trooper)",
+          "desc": "레모네이드 VR (Trooper)",
+          "prev": null,
+          "offset": 8,
+          "text": "Cha5-1",
+          "search": null,
+          "missions": [
+            "스테이지 클리어",
+            "레모네이드 알파를 스쿼드에 포함해 클리어",
+            "경장형을 2기 이하로 편성해 클리어",
+            "중장형을 1기 이하로 편성해 클리어"
+          ],
+          "reward_f": [
+            {
+              "cash": 3
+            }
+          ],
+          "reward_am": [
+            {
+              "count": 20,
+              "item": "TestItem_8"
+            }
+          ],
+          "wave": [
+            [
+              {
+                "e": {
+                  "exp": 0,
+                  "drops": [],
+                  "enemy": [
+                    {
+                      "id": "NightChickM_TU6",
+                      "lv": 1
+                    },
+                    {
+                      "id": "NightChick_TU6",
+                      "lv": 1
+                    },
+                    {
+                      "id": "NightChickSP_TU9",
+                      "lv": 1
+                    },
+                    {
+                      "id": "NightChickS_TU5",
+                      "lv": 1
+                    },
+                    null,
+                    {
+                      "id": "LemonadeAvatar_Challenge1",
+                      "lv": 100
+                    },
+                    {
+                      "id": "NightChickM_TU6",
+                      "lv": 1
+                    },
+                    {
+                      "id": "NightChick_TU6",
+                      "lv": 1
+                    },
+                    {
+                      "id": "NightChickSP_TU9",
+                      "lv": 1
+                    }
+                  ]
+                },
+                "r": 100
+              }
+            ],
+            [
+              {
+                "e": {
+                  "exp": 0,
+                  "drops": [],
+                  "enemy": [
+                    {
+                      "id": "Tarantula_TU4",
+                      "lv": 1
+                    },
+                    {
+                      "id": "LegionMk2_TU4",
+                      "lv": 1
+                    },
+                    {
+                      "id": "LegionSPEX_TU2",
+                      "lv": 1
+                    },
+                    null,
+                    {
+                      "id": "LemonadeAvatar_Challenge1",
+                      "lv": 100
+                    },
+                    {
+                      "id": "NightChickQMSK_TU5",
+                      "lv": 1
+                    },
+                    {
+                      "id": "Tarantula_TU4",
+                      "lv": 1
+                    },
+                    {
+                      "id": "LegionMk2_TU4",
+                      "lv": 1
+                    },
+                    {
+                      "id": "LegionSPEX_TU2",
+                      "lv": 1
+                    }
+                  ]
+                },
+                "r": 100
+              }
+            ],
+            [
+              {
+                "e": {
+                  "exp": 0,
+                  "drops": [],
+                  "enemy": [
+                    {
+                      "id": "Testudo_TU4",
+                      "lv": 1
+                    },
+                    {
+                      "id": "CenturionCF_TU5",
+                      "lv": 1
+                    },
+                    {
+                      "id": "NightChickDEAA_TU4",
+                      "lv": 1
+                    },
+                    {
+                      "id": "LemonadeAvatar_Challenge1",
+                      "lv": 100
+                    },
+                    {
+                      "id": "CenturionG_TU4",
+                      "lv": 1
+                    },
+                    null,
+                    {
+                      "id": "Testudo_TU4",
+                      "lv": 1
+                    },
+                    {
+                      "id": "CenturionCF_TU5",
+                      "lv": 1
+                    },
+                    {
+                      "id": "NightChickDEAA_TU4",
+                      "lv": 1
+                    }
+                  ]
+                },
+                "r": 100
+              }
+            ]
+          ]
+        },
+        {
+          "name": "레모네이드 VR (Mobility)",
+          "desc": "레모네이드 VR (Mobility)",
+          "prev": null,
+          "offset": 8,
+          "text": "Cha5-2",
+          "search": null,
+          "missions": [
+            "스테이지 클리어",
+            "레모네이드 알파를 스쿼드에 포함해 클리어",
+            "기동형을 2기 이하로 편성해 클리어",
+            "경장형을 편성하지 않고 클리어"
+          ],
+          "reward_f": [
+            {
+              "cash": 3
+            }
+          ],
+          "reward_am": [
+            {
+              "count": 10,
+              "item": "TestItem_7"
+            }
+          ],
+          "wave": [
+            [
+              {
+                "e": {
+                  "exp": 0,
+                  "drops": [],
+                  "enemy": [
+                    {
+                      "id": "Scout_TU5",
+                      "lv": 1
+                    },
+                    {
+                      "id": "HeavyScout_N",
+                      "lv": 1
+                    },
+                    {
+                      "id": "Wasp_TU8",
+                      "lv": 1
+                    },
+                    {
+                      "id": "Scout_TU5",
+                      "lv": 1
+                    },
+                    null,
+                    {
+                      "id": "LemonadeAvatar_Challenge2",
+                      "lv": 100
+                    },
+                    {
+                      "id": "Scout_TU5",
+                      "lv": 1
+                    },
+                    {
+                      "id": "HeavyScout_N",
+                      "lv": 1
+                    },
+                    {
+                      "id": "Chiller_N",
+                      "lv": 1
+                    }
+                  ]
+                },
+                "r": 100
+              }
+            ],
+            [
+              {
+                "e": {
+                  "exp": 0,
+                  "drops": [],
+                  "enemy": [
+                    {
+                      "id": "ScarabEX_N",
+                      "lv": 1
+                    },
+                    {
+                      "id": "WaspEX_N",
+                      "lv": 1
+                    },
+                    {
+                      "id": "WaspEX_N",
+                      "lv": 1
+                    },
+                    null,
+                    {
+                      "id": "LemonadeAvatar_Challenge2",
+                      "lv": 100
+                    },
+                    {
+                      "id": "ScoutSP_TU2",
+                      "lv": 1
+                    },
+                    {
+                      "id": "ScarabEX_N",
+                      "lv": 1
+                    },
+                    {
+                      "id": "ChillerEX_TU4",
+                      "lv": 1
+                    },
+                    {
+                      "id": "ChillerEX_TU4",
+                      "lv": 1
+                    }
+                  ]
+                },
+                "r": 100
+              }
+            ],
+            [
+              {
+                "e": {
+                  "exp": 0,
+                  "drops": [],
+                  "enemy": [
+                    {
+                      "id": "LightningBomber_TU5",
+                      "lv": 1
+                    },
+                    {
+                      "id": "ScoutSP_TU2",
+                      "lv": 1
+                    },
+                    {
+                      "id": "LightningBomber_TU5",
+                      "lv": 1
+                    },
+                    {
+                      "id": "LemonadeAvatar_Challenge2",
+                      "lv": 100
+                    },
+                    {
+                      "id": "SpectorMS_N",
+                      "lv": 1
+                    },
+                    null,
+                    {
+                      "id": "LightningBomber_TU5",
+                      "lv": 1
+                    },
+                    {
+                      "id": "ScoutSP_TU2",
+                      "lv": 1
+                    },
+                    {
+                      "id": "LightningBomber_TU5",
+                      "lv": 1
+                    }
+                  ]
+                },
+                "r": 100
+              }
+            ]
+          ]
+        },
+        {
+          "name": "레모네이드 VR (Armored)",
+          "desc": "레모네이드 VR (Armored)",
+          "prev": null,
+          "offset": 8,
+          "text": "Cha5-3",
+          "search": null,
+          "missions": [
+            "스테이지 클리어",
+            "레모네이드 알파를 스쿼드에 포함해 클리어",
+            "중장형을 2기 이하로 편성해 클리어",
+            "기동형을 편성하지 않고 클리어"
+          ],
+          "reward_f": [
+            {
+              "cash": 3
+            }
+          ],
+          "reward_am": [
+            {
+              "count": 5,
+              "item": "TestItem_9"
+            }
+          ],
+          "wave": [
+            [
+              {
+                "e": {
+                  "exp": 0,
+                  "drops": [],
+                  "enemy": [
+                    {
+                      "id": "Harvester_TU5",
+                      "lv": 1
+                    },
+                    {
+                      "id": "BigChick_TU4",
+                      "lv": 1
+                    },
+                    {
+                      "id": "NightChickC_TU5",
+                      "lv": 1
+                    },
+                    {
+                      "id": "BigChickS_TU4",
+                      "lv": 1
+                    },
+                    null,
+                    {
+                      "id": "LemonadeAvatar_Challenge3",
+                      "lv": 100
+                    },
+                    {
+                      "id": "Harvester_TU5",
+                      "lv": 1
+                    },
+                    {
+                      "id": "BigChick_TU4",
+                      "lv": 1
+                    },
+                    {
+                      "id": "NightChickC_TU5",
+                      "lv": 1
+                    }
+                  ]
+                },
+                "r": 100
+              }
+            ],
+            [
+              {
+                "e": {
+                  "exp": 0,
+                  "drops": [],
+                  "enemy": [
+                    {
+                      "id": "Juggernaut_TU6",
+                      "lv": 1
+                    },
+                    {
+                      "id": "FABigChickEX_N",
+                      "lv": 1
+                    },
+                    {
+                      "id": "Mammoth_TU6",
+                      "lv": 1
+                    },
+                    null,
+                    {
+                      "id": "LemonadeAvatar_Challenge3",
+                      "lv": 100
+                    },
+                    {
+                      "id": "Mammoth_TU6",
+                      "lv": 1
+                    },
+                    {
+                      "id": "Juggernaut_TU6",
+                      "lv": 1
+                    },
+                    {
+                      "id": "FABigChickEX_N",
+                      "lv": 1
+                    },
+                    {
+                      "id": "Mammoth_TU6",
+                      "lv": 1
+                    }
+                  ]
+                },
+                "r": 100
+              }
+            ],
+            [
+              {
+                "e": {
+                  "exp": 0,
+                  "drops": [],
+                  "enemy": [
+                    {
+                      "id": "Tortoise_TU4",
+                      "lv": 1
+                    },
+                    {
+                      "id": "Frostbite_TU3",
+                      "lv": 1
+                    },
+                    {
+                      "id": "BigChickM_TU5",
+                      "lv": 1
+                    },
+                    {
+                      "id": "LemonadeAvatar_Challenge3",
+                      "lv": 100
+                    },
+                    {
+                      "id": "EmperorChick_TU4",
+                      "lv": 1
+                    },
+                    null,
+                    {
+                      "id": "Tortoise_TU4",
+                      "lv": 1
+                    },
+                    {
+                      "id": "Frostbite_TU3",
+                      "lv": 1
+                    },
+                    {
+                      "id": "BigChickM_TU5",
+                      "lv": 1
+                    }
+                  ]
+                },
+                "r": 100
+              }
+            ]
+          ]
+        },
+        {
+          "name": "레모네이드 VR (Max)",
+          "desc": "레모네이드 VR (Max)",
+          "prev": null,
+          "offset": 8,
+          "text": "Cha5-4",
+          "search": null,
+          "missions": [
+            "스테이지 클리어",
+            "레모네이드 알파를 스쿼드에 포함해 클리어",
+            "바이오로이드를 2기 이하로 편성해 클리어",
+            "로봇을 1기 이하로 편성해 클리어"
+          ],
+          "reward_f": [
+            {
+              "cash": 3
+            }
+          ],
+          "reward_am": [
+            {
+              "count": 1,
+              "item": "Ev_Consumable_OrcaMedal"
+            }
+          ],
+          "wave": [
+            [
+              {
+                "e": {
+                  "exp": 0,
+                  "drops": [],
+                  "enemy": [
+                    {
+                      "id": "Wasp_TU8",
+                      "lv": 1
+                    },
+                    {
+                      "id": "NightChick_TU6",
+                      "lv": 1
+                    },
+                    {
+                      "id": "NightChickC_TU5",
+                      "lv": 1
+                    },
+                    {
+                      "id": "NightChickM_TU6",
+                      "lv": 1
+                    },
+                    null,
+                    {
+                      "id": "LemonadeAvatar_Challenge4",
+                      "lv": 100
+                    },
+                    {
+                      "id": "Chiller_N",
+                      "lv": 1
+                    },
+                    {
+                      "id": "BigChick_TU4",
+                      "lv": 1
+                    },
+                    {
+                      "id": "NightChickSP_TU9",
+                      "lv": 1
+                    }
+                  ]
+                },
+                "r": 100
+              }
+            ],
+            [
+              {
+                "e": {
+                  "exp": 0,
+                  "drops": [],
+                  "enemy": [
+                    {
+                      "id": "Juggernaut_TU6",
+                      "lv": 1
+                    },
+                    {
+                      "id": "FABigChickEX_N",
+                      "lv": 1
+                    },
+                    {
+                      "id": "LegionSPEX_TU2",
+                      "lv": 1
+                    },
+                    null,
+                    {
+                      "id": "LemonadeAvatar_Challenge4",
+                      "lv": 100
+                    },
+                    {
+                      "id": "NightChickQMSK_TU5",
+                      "lv": 1
+                    },
+                    {
+                      "id": "ScarabEX_N",
+                      "lv": 1
+                    },
+                    {
+                      "id": "WaspEX_N",
+                      "lv": 1
+                    },
+                    {
+                      "id": "LegionMk2_TU4",
+                      "lv": 1
+                    }
+                  ]
+                },
+                "r": 100
+              }
+            ],
+            [
+              {
+                "e": {
+                  "exp": 0,
+                  "drops": [],
+                  "enemy": [
+                    {
+                      "id": "Testudo_TU4",
+                      "lv": 1
+                    },
+                    {
+                      "id": "LightningBomber_TU5",
+                      "lv": 1
+                    },
+                    {
+                      "id": "CenturionCF_TU5",
+                      "lv": 1
+                    },
+                    {
+                      "id": "LemonadeAvatar_Challenge4",
+                      "lv": 100
+                    },
+                    {
+                      "id": "SpectorMS_N",
+                      "lv": 1
+                    },
+                    null,
+                    {
+                      "id": "Tortoise_TU4",
+                      "lv": 1
+                    },
+                    {
+                      "id": "Frostbite_TU3",
+                      "lv": 1
+                    },
+                    {
+                      "id": "NightChickDEAA_TU4",
+                      "lv": 1
+                    }
+                  ]
+                },
+                "r": 100
+              }
+            ]
+          ]
+        }
+      ]
+    },
     "5": {
       "title": "바다의 소녀들",
       "list": [
