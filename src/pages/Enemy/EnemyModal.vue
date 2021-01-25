@@ -302,7 +302,7 @@ import { FilterableEnemy } from "@/libs/Types/Enemy.Filterable";
 
 import LazyLoad, { LazyDataType } from "@/libs/LazyData";
 import EnemyDB from "@/libs/DB/Enemy";
-import FilterableEenemyDB from "@/libs/DB/Enemy.Filterable";
+import FilterableEnemyDB from "@/libs/DB/Enemy.Filterable";
 
 @Component({
 	components: {
@@ -366,14 +366,14 @@ export default class EnemyModal extends Vue {
 	@Watch("displaySync")
 	private WatchDisplay () {
 		this.currentLevel = this.level;
-		this.displayTab = "ai";
+		this.displayTab = "desc";
 
 		this.targetId = this.enemy ? this.enemy.id : "";
 	}
 
 	@Watch("targetId")
 	private WatchTargetId () {
-		if (this.targetId)
+		if (this.targetId && this.$route.path.startsWith("/enemy"))
 			this.$router.push({ path: `/enemy/${this.targetId}` });
 		this.InitialDB();
 	}
@@ -388,7 +388,7 @@ export default class EnemyModal extends Vue {
 
 	private get target () {
 		if (!this.enemy) return null;
-		return FilterableEenemyDB.find(x => x.id === this.targetId) || null;
+		return FilterableEnemyDB.find(x => x.id === this.targetId) || null;
 	}
 
 	private get isEWEnemy () {
@@ -399,7 +399,7 @@ export default class EnemyModal extends Vue {
 	private get FamilyList () {
 		if (!this.enemy) return [];
 
-		return FilterableEenemyDB
+		return FilterableEnemyDB
 			.filter(x => (x.name === this.enemy.name))
 			.map((x, i) => ({
 				value: x.id,

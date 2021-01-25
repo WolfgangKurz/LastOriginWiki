@@ -849,5 +849,11 @@ export default {
   "Drone_EV9": "드론 09",
   "Machina_N": "마키나",
   "Drone_Challenge1": "익스큐셔너",
-  "Drone_Challenge2": "이모탈 익스큐셔너"
+  "Drone_Challenge2": "이모탈 익스큐셔너",
+  "Tracker_N": "추격자",
+  "Tracker_TU": "추격자",
+  "Tracker_TU2": "추격자",
+  "Tracker_TU3": "추격자",
+  "Tracker_TU4": "추격자",
+  "Tracker_TU5": "추격자"
 };

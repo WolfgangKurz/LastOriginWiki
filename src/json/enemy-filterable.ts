@@ -1117,6 +1117,10 @@ export default [
         "Ev:Ev3:Ev-2Ex",
         "Ev:Ev3:Ev-3Ex",
         "Ev:Ev3:Ev-8"
+      ],
+      "Cha": [
+        "Cha5-3",
+        "Cha5-4"
       ]
     }
   },
@@ -1267,6 +1271,9 @@ export default [
       ],
       "Ev1": [
         "Ev:Ev1:Ev-3B"
+      ],
+      "Cha": [
+        "Cha5-2"
       ]
     }
   },
@@ -1366,6 +1373,10 @@ export default [
     "used": {
       "Story": [
         "4-6"
+      ],
+      "Cha": [
+        "Cha5-3",
+        "Cha5-4"
       ]
     }
   },
@@ -1523,6 +1534,9 @@ export default [
       ],
       "Ev3": [
         "Ev:Ev3:Ev-8"
+      ],
+      "Cha": [
+        "Cha5-3"
       ]
     }
   },
@@ -2234,7 +2248,12 @@ export default [
     "type": 2,
     "role": 1,
     "isBoss": false,
-    "used": {}
+    "used": {
+      "Cha": [
+        "Cha5-2",
+        "Cha5-4"
+      ]
+    }
   },
   {
     "id": "Scarab_N",
@@ -6049,6 +6068,10 @@ export default [
       "Story": [
         "6-3",
         "6-7"
+      ],
+      "Cha": [
+        "Cha5-1",
+        "Cha5-4"
       ]
     }
   },
@@ -6079,7 +6102,12 @@ export default [
     "type": 0,
     "role": 1,
     "isBoss": false,
-    "used": {}
+    "used": {
+      "Cha": [
+        "Cha5-1",
+        "Cha5-4"
+      ]
+    }
   },
   {
     "id": "Harvester_TU6",
@@ -6268,7 +6296,11 @@ export default [
     "type": 0,
     "role": 0,
     "isBoss": false,
-    "used": {}
+    "used": {
+      "Cha": [
+        "Cha5-1"
+      ]
+    }
   },
   {
     "id": "NightChickC_EV1",
@@ -7028,6 +7060,10 @@ export default [
       ],
       "Ev9": [
         "Ev:Ev9:Ev1-3Ex"
+      ],
+      "Cha": [
+        "Cha5-1",
+        "Cha5-4"
       ]
     }
   },
@@ -7171,6 +7207,9 @@ export default [
       "Story": [
         "6-1Ex",
         "6-4Ex"
+      ],
+      "Cha": [
+        "Cha5-3"
       ]
     }
   },
@@ -7187,6 +7226,9 @@ export default [
     "used": {
       "Story": [
         "6-1Ex"
+      ],
+      "Cha": [
+        "Cha5-3"
       ]
     }
   },
@@ -7251,6 +7293,10 @@ export default [
     "used": {
       "Story": [
         "6-4Ex"
+      ],
+      "Cha": [
+        "Cha5-1",
+        "Cha5-4"
       ]
     }
   },
@@ -7319,6 +7365,10 @@ export default [
     "used": {
       "Story": [
         "6-4Ex"
+      ],
+      "Cha": [
+        "Cha5-2",
+        "Cha5-4"
       ]
     }
   },
@@ -7454,6 +7504,10 @@ export default [
     "used": {
       "Ev2": [
         "Ev:Ev2:Ev2-4B"
+      ],
+      "Cha": [
+        "Cha5-3",
+        "Cha5-4"
       ]
     }
   },
@@ -7482,6 +7536,9 @@ export default [
     "used": {
       "Story": [
         "6-4Ex"
+      ],
+      "Cha": [
+        "Cha5-2"
       ]
     }
   },
@@ -7507,6 +7564,10 @@ export default [
       ],
       "Ev9": [
         "Ev:Ev9:Ev1-3Ex"
+      ],
+      "Cha": [
+        "Cha5-1",
+        "Cha5-4"
       ]
     }
   },
@@ -7540,6 +7601,9 @@ export default [
     "used": {
       "Story": [
         "6-4Ex"
+      ],
+      "Cha": [
+        "Cha5-3"
       ]
     }
   },
@@ -7621,6 +7685,10 @@ export default [
       ],
       "Ev5": [
         "Ev:Ev5:Ev-6Ex"
+      ],
+      "Cha": [
+        "Cha5-3",
+        "Cha5-4"
       ]
     }
   },
@@ -8155,6 +8223,9 @@ export default [
       ],
       "Ev2": [
         "Ev:Ev2:Ev2-4B"
+      ],
+      "Cha": [
+        "Cha5-3"
       ]
     }
   },
@@ -9102,6 +9173,10 @@ export default [
       ],
       "Ev6": [
         "Ev:Ev6:Ev2-4Ex"
+      ],
+      "Cha": [
+        "Cha5-1",
+        "Cha5-4"
       ]
     }
   },
@@ -9245,7 +9320,11 @@ export default [
     "type": 0,
     "role": 2,
     "isBoss": false,
-    "used": {}
+    "used": {
+      "Cha": [
+        "Cha5-1"
+      ]
+    }
   },
   {
     "id": "Centurion_EV1",
@@ -10273,7 +10352,12 @@ export default [
     "type": 1,
     "role": 1,
     "isBoss": false,
-    "used": {}
+    "used": {
+      "Cha": [
+        "Cha5-3",
+        "Cha5-4"
+      ]
+    }
   },
   {
     "id": "HeavyScout_N",
@@ -10285,7 +10369,11 @@ export default [
     "type": 2,
     "role": 1,
     "isBoss": false,
-    "used": {}
+    "used": {
+      "Cha": [
+        "Cha5-2"
+      ]
+    }
   },
   {
     "id": "Juggernaut_N",
@@ -10383,7 +10471,12 @@ export default [
     "type": 2,
     "role": 1,
     "isBoss": false,
-    "used": {}
+    "used": {
+      "Cha": [
+        "Cha5-2",
+        "Cha5-4"
+      ]
+    }
   },
   {
     "id": "ScarabEX_N",
@@ -10395,7 +10488,12 @@ export default [
     "type": 2,
     "role": 0,
     "isBoss": false,
-    "used": {}
+    "used": {
+      "Cha": [
+        "Cha5-2",
+        "Cha5-4"
+      ]
+    }
   },
   {
     "id": "NightChickTD_N",
@@ -10434,6 +10532,10 @@ export default [
     "used": {
       "Ev9": [
         "Ev:Ev9:Ev1-1Ex"
+      ],
+      "Cha": [
+        "Cha5-2",
+        "Cha5-4"
       ]
     }
   },
@@ -10702,7 +10804,11 @@ export default [
     "type": 0,
     "role": 1,
     "isBoss": false,
-    "used": {}
+    "used": {
+      "Cha": [
+        "Cha5-1"
+      ]
+    }
   },
   {
     "id": "NightChickDEX_N",
@@ -10843,6 +10949,10 @@ export default [
       "Ev9": [
         "Ev:Ev9:Ev1-1Ex",
         "Ev:Ev9:Ev1-2Ex"
+      ],
+      "Cha": [
+        "Cha5-3",
+        "Cha5-4"
       ]
     }
   },
@@ -11017,6 +11127,10 @@ export default [
     "used": {
       "Ev9": [
         "Ev:Ev9:Ev1-3Ex"
+      ],
+      "Cha": [
+        "Cha5-1",
+        "Cha5-4"
       ]
     }
   },
@@ -11110,7 +11224,12 @@ export default [
     "type": 0,
     "role": 1,
     "isBoss": false,
-    "used": {}
+    "used": {
+      "Cha": [
+        "Cha5-1",
+        "Cha5-4"
+      ]
+    }
   },
   {
     "id": "NightChickSPW_N",
@@ -12800,6 +12919,10 @@ export default [
     "used": {
       "Story": [
         "7-3Ex"
+      ],
+      "Cha": [
+        "Cha5-2",
+        "Cha5-4"
       ]
     }
   },
@@ -13299,7 +13422,12 @@ export default [
     "type": 0,
     "role": 2,
     "isBoss": false,
-    "used": {}
+    "used": {
+      "Cha": [
+        "Cha5-1",
+        "Cha5-4"
+      ]
+    }
   },
   {
     "id": "PhalangitesH_N",
@@ -14247,50 +14375,66 @@ export default [
   {
     "id": "LemonadeAvatar_Challenge1",
     "name": "레모네이드 아바타",
-    "desc": "내 무기가 전혀 안 먹히는걸? 저 녀석, 이 공간을 완전히 장악했어. 아무리 그래도 혼자서는… 아! 주변의 부하들과 연결되어서 출력을 상승시키고 있는 건가? 내 생각이 맞다면, 부하들을 먼저 쓰러뜨리면 약화시킬 수 있을 거야. 물론 부하들도 연결되어서 강해졌겠지만… 반드시 이겨낼 수 있어. 우린 친구니까!\n\n\n- 리앤",
+    "desc": "그 여자... 감히 이런식으로 주인님을 방해했었군요. 가상 세계에 본인의 아바타를 투입하고, 코드를 해킹해서 주변의 부하들을 먼저 처치하지 않으면 자신은 아무런 피해를 입지 않도록 해두었어요. 상당한 솜씨지만, 오메가 본인이라면 모를까 이런 아바타 따위는 저라면 손쉽게 상대할 수 있어요. 주인님, 부디 저를 사용해주세요.\n\n\n- 레모네이드 알파 보고함",
     "icon": "TbarIcon_MP_LemonadeAvatar_N",
     "ai": "AI_LemonadeAvatar_Normal_01",
     "rarity": 5,
     "type": 0,
     "role": 2,
     "isBoss": false,
-    "used": {}
+    "used": {
+      "Cha": [
+        "Cha5-1"
+      ]
+    }
   },
   {
     "id": "LemonadeAvatar_Challenge2",
     "name": "레모네이드 아바타",
-    "desc": "내 무기가 전혀 안 먹히는걸? 저 녀석, 이 공간을 완전히 장악했어. 아무리 그래도 혼자서는… 아! 주변의 부하들과 연결되어서 출력을 상승시키고 있는 건가? 내 생각이 맞다면, 부하들을 먼저 쓰러뜨리면 약화시킬 수 있을 거야. 물론 부하들도 연결되어서 강해졌겠지만… 반드시 이겨낼 수 있어. 우린 친구니까!\n\n\n- 리앤",
+    "desc": "그 여자... 감히 이런식으로 주인님을 방해했었군요. 가상 세계에 본인의 아바타를 투입하고, 코드를 해킹해서 주변의 부하들을 먼저 처치하지 않으면 자신은 아무런 피해를 입지 않도록 해두었어요. 상당한 솜씨지만, 오메가 본인이라면 모를까 이런 아바타 따위는 저라면 손쉽게 상대할 수 있어요. 주인님, 부디 저를 사용해주세요.\n\n\n- 레모네이드 알파 보고함",
     "icon": "TbarIcon_MP_LemonadeAvatar_N",
     "ai": "AI_LemonadeAvatar_Normal_01",
     "rarity": 5,
     "type": 0,
     "role": 2,
     "isBoss": false,
-    "used": {}
+    "used": {
+      "Cha": [
+        "Cha5-2"
+      ]
+    }
   },
   {
     "id": "LemonadeAvatar_Challenge3",
     "name": "레모네이드 아바타",
-    "desc": "내 무기가 전혀 안 먹히는걸? 저 녀석, 이 공간을 완전히 장악했어. 아무리 그래도 혼자서는… 아! 주변의 부하들과 연결되어서 출력을 상승시키고 있는 건가? 내 생각이 맞다면, 부하들을 먼저 쓰러뜨리면 약화시킬 수 있을 거야. 물론 부하들도 연결되어서 강해졌겠지만… 반드시 이겨낼 수 있어. 우린 친구니까!\n\n\n- 리앤",
+    "desc": "그 여자... 감히 이런식으로 주인님을 방해했었군요. 가상 세계에 본인의 아바타를 투입하고, 코드를 해킹해서 주변의 부하들을 먼저 처치하지 않으면 자신은 아무런 피해를 입지 않도록 해두었어요. 상당한 솜씨지만, 오메가 본인이라면 모를까 이런 아바타 따위는 저라면 손쉽게 상대할 수 있어요. 주인님, 부디 저를 사용해주세요.\n\n\n- 레모네이드 알파 보고함",
     "icon": "TbarIcon_MP_LemonadeAvatar_N",
     "ai": "AI_LemonadeAvatar_Normal_01",
     "rarity": 5,
     "type": 0,
     "role": 2,
     "isBoss": false,
-    "used": {}
+    "used": {
+      "Cha": [
+        "Cha5-3"
+      ]
+    }
   },
   {
     "id": "LemonadeAvatar_Challenge4",
     "name": "레모네이드 아바타",
-    "desc": "내 무기가 전혀 안 먹히는걸? 저 녀석, 이 공간을 완전히 장악했어. 아무리 그래도 혼자서는… 아! 주변의 부하들과 연결되어서 출력을 상승시키고 있는 건가? 내 생각이 맞다면, 부하들을 먼저 쓰러뜨리면 약화시킬 수 있을 거야. 물론 부하들도 연결되어서 강해졌겠지만… 반드시 이겨낼 수 있어. 우린 친구니까!\n\n\n- 리앤",
+    "desc": "그 여자... 감히 이런식으로 주인님을 방해했었군요. 가상 세계에 본인의 아바타를 투입하고, 코드를 해킹해서 주변의 부하들을 먼저 처치하지 않으면 자신은 아무런 피해를 입지 않도록 해두었어요. 상당한 솜씨지만, 오메가 본인이라면 모를까 이런 아바타 따위는 저라면 손쉽게 상대할 수 있어요. 주인님, 부디 저를 사용해주세요.\n\n\n- 레모네이드 알파 보고함",
     "icon": "TbarIcon_MP_LemonadeAvatar_N",
     "ai": "AI_LemonadeAvatar_Normal_01",
     "rarity": 5,
     "type": 0,
     "role": 2,
     "isBoss": false,
-    "used": {}
+    "used": {
+      "Cha": [
+        "Cha5-4"
+      ]
+    }
   },
   {
     "id": "Wasp_EV8",
@@ -15518,6 +15662,9 @@ export default [
       "Ev9": [
         "Ev:Ev9:Ev2-1Ex",
         "Ev:Ev9:Ev2-2Ex"
+      ],
+      "Cha": [
+        "Cha5-2"
       ]
     }
   },
@@ -15601,5 +15748,77 @@ export default [
         "Ev:Ev9:Ev2-1C"
       ]
     }
+  },
+  {
+    "id": "Tracker_N",
+    "name": "추격자",
+    "desc": "추격자~~~",
+    "icon": "TbarIcon_MP_NightChick_N",
+    "ai": "AI_TrickSter_01",
+    "rarity": 5,
+    "type": 0,
+    "role": 1,
+    "isBoss": false,
+    "used": {}
+  },
+  {
+    "id": "Tracker_TU",
+    "name": "추격자",
+    "desc": "추격자~~~",
+    "icon": "TbarIcon_MP_Tracker_TU",
+    "ai": "AI_TrickSter_01",
+    "rarity": 5,
+    "type": 0,
+    "role": 1,
+    "isBoss": false,
+    "used": {}
+  },
+  {
+    "id": "Tracker_TU2",
+    "name": "추격자",
+    "desc": "추격자~~~",
+    "icon": "TbarIcon_MP_Tracker_TU2",
+    "ai": "AI_TrickSter_01",
+    "rarity": 5,
+    "type": 0,
+    "role": 1,
+    "isBoss": false,
+    "used": {}
+  },
+  {
+    "id": "Tracker_TU3",
+    "name": "추격자",
+    "desc": "추격자~~~",
+    "icon": "TbarIcon_MP_Tracker_TU3",
+    "ai": "AI_TrickSter_01",
+    "rarity": 5,
+    "type": 0,
+    "role": 1,
+    "isBoss": false,
+    "used": {}
+  },
+  {
+    "id": "Tracker_TU4",
+    "name": "추격자",
+    "desc": "추격자~~~",
+    "icon": "TbarIcon_MP_Tracker_TU4",
+    "ai": "AI_TrickSter_01",
+    "rarity": 5,
+    "type": 0,
+    "role": 1,
+    "isBoss": false,
+    "used": {}
+  },
+  {
+    "id": "Tracker_TU5",
+    "name": "추격자",
+    "desc": "추격자~~~",
+    "icon": "TbarIcon_MP_Tracker_TU5",
+    "ai": "AI_TrickSter_01",
+    "rarity": 5,
+    "type": 0,
+    "role": 1,
+    "isBoss": false,
+    "used": {}
   }
 ];

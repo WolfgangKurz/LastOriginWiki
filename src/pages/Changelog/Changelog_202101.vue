@@ -1,5 +1,15 @@
 <template>
 	<div>
+		<changelog-item title="Build 7827" date="2021-01-26">
+			<template #bugfix>
+				<li>일부 적의 정보가 올바르게 갱신되지 않은 점을 수정했습니다.</li>
+				<li>
+					<b-badge variant="warning">세계 정보</b-badge>의 적을 선택했을 때, 팝업이 아닌 <b-badge variant="warning">적 정보</b-badge>메뉴로
+					이동하던 점을 수정했습니다.
+				</li>
+			</template>
+		</changelog-item>
+
 		<changelog-item title="Build 7823" date="2021-01-25">
 			<template #new>
 				<li>
@@ -9,8 +19,13 @@
 				<li>신규 외부 통신 요청 <b-badge variant="info">레모네이드 VR</b-badge>이 추가되었습니다.</li>
 			</template>
 			<template #update>
-				<li><b-badge variant="warning">소완</b-badge>의 2번째 액티브 <b-badge variant="info">게이트 오브 키친</b-badge>의 내용이 수정되었습니다.</li>
-				<li><b-badge variant="warning">랜서 미나</b-badge>의 1번째 패시브 <b-badge variant="info">뱅가드</b-badge>의 내용이 수정되었습니다.</li>
+				<li>
+					<b-badge variant="warning">소완</b-badge>의 2번째 액티브 <b-badge variant="info">게이트 오브 키친</b-badge>의 내용이
+					수정되었습니다.
+				</li>
+				<li>
+					<b-badge variant="warning">랜서 미나</b-badge>의 1번째 패시브 <b-badge variant="info">뱅가드</b-badge>의 내용이 수정되었습니다.
+				</li>
 			</template>
 			<template #dialogue>
 				<li><b-badge variant="warning">T-75 워울프</b-badge>의 대사가 누락되어있던 점을 수정했습니다.</li>

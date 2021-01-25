@@ -1,7 +1,7 @@
 export default {
   "id": "LemonadeAvatar_Challenge4",
   "name": "레모네이드 아바타",
-  "desc": "내 무기가 전혀 안 먹히는걸? 저 녀석, 이 공간을 완전히 장악했어. 아무리 그래도 혼자서는… 아! 주변의 부하들과 연결되어서 출력을 상승시키고 있는 건가? 내 생각이 맞다면, 부하들을 먼저 쓰러뜨리면 약화시킬 수 있을 거야. 물론 부하들도 연결되어서 강해졌겠지만… 반드시 이겨낼 수 있어. 우린 친구니까!\n\n\n- 리앤",
+  "desc": "그 여자... 감히 이런식으로 주인님을 방해했었군요. 가상 세계에 본인의 아바타를 투입하고, 코드를 해킹해서 주변의 부하들을 먼저 처치하지 않으면 자신은 아무런 피해를 입지 않도록 해두었어요. 상당한 솜씨지만, 오메가 본인이라면 모를까 이런 아바타 따위는 저라면 손쉽게 상대할 수 있어요. 주인님, 부디 저를 사용해주세요.\n\n\n- 레모네이드 알파 보고함",
   "icon": "TbarIcon_MP_LemonadeAvatar_N",
   "ai": "AI_LemonadeAvatar_Normal_01",
   "rarity": 5,
@@ -9,7 +9,7 @@ export default {
   "role": 2,
   "isBoss": false,
   "hp": [
-    1500,
+    20000,
     0
   ],
   "atk": [
@@ -164,7 +164,7 @@ export default {
                 "desc": {
                   "desc": "주인님을 위하여 : 공격력+{0}%",
                   "type": 1,
-                  "value": "2"
+                  "value": "2.500000"
                 },
                 "attr": 3,
                 "erase": {
@@ -175,7 +175,7 @@ export default {
                   "chance": "0%",
                   "type": 1,
                   "attack": {
-                    "base": "200%",
+                    "base": "250%",
                     "per": "0%"
                   }
                 },
@@ -186,7 +186,7 @@ export default {
                 "desc": {
                   "desc": "주인님을 위하여 : 치명타+{0}%",
                   "type": 1,
-                  "value": "0.200000"
+                  "value": "0.250000"
                 },
                 "attr": 3,
                 "erase": {
@@ -197,7 +197,7 @@ export default {
                   "chance": "0%",
                   "type": 9,
                   "critical": {
-                    "base": "20%",
+                    "base": "25%",
                     "per": "0%"
                   }
                 },
@@ -275,7 +275,7 @@ export default {
                 "desc": {
                   "desc": "주인님을 위하여 : 공격력+{0}%",
                   "type": 1,
-                  "value": "2"
+                  "value": "2.500000"
                 },
                 "attr": 3,
                 "erase": {
@@ -285,7 +285,7 @@ export default {
                   "isBuff": true,
                   "type": 1,
                   "attack": {
-                    "base": "200%",
+                    "base": "250%",
                     "per": "0%"
                   }
                 },
@@ -319,7 +319,7 @@ export default {
                 "desc": {
                   "desc": "주인님을 위하여 : 치명타+{0}%",
                   "type": 1,
-                  "value": "0.200000"
+                  "value": "0.250000"
                 },
                 "attr": 3,
                 "erase": {
@@ -329,7 +329,7 @@ export default {
                   "isBuff": true,
                   "type": 9,
                   "critical": {
-                    "base": "20%",
+                    "base": "25%",
                     "per": "0%"
                   }
                 },
