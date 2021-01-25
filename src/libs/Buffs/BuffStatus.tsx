@@ -2,19 +2,22 @@ import Vue, { CreateElement } from "vue";
 import { Decimal } from "decimal.js";
 
 import BuffData from "@/json/buffs";
+import EnemyNames from "@/json/enemy-names";
 
-import { FilterableUnit } from "@/libs/Types/Unit.Filterable";
 import FilterableUnitDB from "@/libs/DB/Unit.Filterable";
+
+import { _e } from "@/libs/VNode";
 
 import { BuffEffect, BuffEffectValue, BUFFEFFECT_TYPE } from "@/libs/Buffs/BuffEffect";
 import { BuffTrigger } from "@/libs/Buffs/BuffTrigger";
-import { ACTOR_BODY_TYPE, ACTOR_CLASS, BUFF_ATTR_TYPE, NUM_OUTPUTTYPE, ROLE_TYPE, TARGET_TYPE, UNIT_POSITION } from "@/libs/Types/Enums";
-import { BuffStat, BuffStatStatic } from "@/libs/Buffs/Buffs";
 import { BuffErase } from "@/libs/Buffs/BuffErase";
+import { BuffStat, BuffStatStatic } from "@/libs/Buffs/Buffs";
+
+import { ACTOR_BODY_TYPE, ACTOR_CLASS, BUFF_ATTR_TYPE, NUM_OUTPUTTYPE, ROLE_TYPE, TARGET_TYPE, UNIT_POSITION } from "@/libs/Types/Enums";
+
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { ArrayUnique } from "@/libs/Functions";
-import { _e } from "@/libs/VNode";
-import EnemyNames from "@/json/enemy-names";
+
 import { StatPointValue } from "@/pages/Simulation/Simulation/Stats";
 
 let h: CreateElement | undefined;

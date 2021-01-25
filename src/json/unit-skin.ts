@@ -3721,9 +3721,9 @@ export default {
             "x": 0
           }
         },
-        "price": 136,
+        "price": 159,
         "V": true,
-        "A": false,
+        "A": true,
         "D": true,
         "S": false,
         "X": false,

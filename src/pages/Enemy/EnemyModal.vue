@@ -1,5 +1,5 @@
 <template>
-	<b-modal v-if="enemy && target" v-model="displaySync" size="lg" centered hide-footer content-class="enemy-modal">
+	<b-modal v-if="enemy && target" v-model="displaySync" size="xl" centered hide-footer content-class="enemy-modal">
 		<template #modal-title>
 			<div class="text-left">
 				{{ target.name }}
@@ -178,7 +178,7 @@
 		</b-table-simple>
 
 		<b-container>
-			<b-row class="enemy-display-tabs mt-1" cols="4" cols-md="7">
+			<b-row class="enemy-display-tabs mt-1" cols="4" cols-md="8">
 				<b-col
 					v-for="(skill, idx) in Skills"
 					:key="`enemy-modal-skill-${idx}`"
@@ -190,6 +190,11 @@
 							class="skill-icon my-2"
 							:src="`${AssetsRoot}/${imageExt}/skill/${skill.icon}_${skill.passive ? 'passive' : 'active'}.${imageExt}`"
 						/>
+					</a>
+				</b-col>
+				<b-col :class="['info-tab-button', 'mt-1', displayTab === 'ai' ? 'border border-bottom-0' : 'border-bottom']">
+					<a href="#" class="text-dark" @click.prevent="displayTab = 'ai'">
+						<b-icon-cpu-fill class="my-2" />
 					</a>
 				</b-col>
 				<b-col :class="['info-tab-button', 'mt-1', displayTab === 'desc' ? 'border border-bottom-0' : 'border-bottom']">
@@ -234,8 +239,15 @@
 					</b-col>
 				</b-row>
 			</template>
+			<b-row v-if="displayTab === 'ai'">
+				<b-col class="border border-top-0 text-left p-3">
+					<enemy-ai :ai="target.ai" :skills="Skills" />
+				</b-col>
+			</b-row>
 			<b-row v-if="displayTab === 'desc'">
-				<b-col class="break-keep white-pre-line border border-top-0 text-left p-3">{{ target.desc }}</b-col>
+				<b-col class="break-keep white-pre-line border border-top-0 text-left p-1">
+					<div class="bg-dark text-light p-3">{{ target.desc }}</div>
+				</b-col>
 			</b-row>
 		</b-container>
 
@@ -268,7 +280,7 @@ import Component from "vue-class-component";
 import { Prop, Watch, PropSync } from "vue-property-decorator";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
-import { ArrayUnique, FormatNumber } from "@/libs/Functions";
+import { ArrayUnique } from "@/libs/Functions";
 import { BuffStat } from "@/libs/Buffs/Buffs";
 
 import UnitBadge from "@/components/UnitBadge.vue";
@@ -281,7 +293,8 @@ import SkillBound from "@/components/SkillBound.vue";
 import SkillDescription from "@/components/SkillDescription.vue";
 import BuffList from "@/components/BuffList";
 
-import { ACTOR_GRADE, ITEM_TYPE } from "@/libs/Types/Enums";
+import EnemyAI from "./EnemyAI";
+
 import EntitySource from "@/libs/EntitySource";
 
 import { Enemy, EnemySkill } from "@/libs/Types/Enemy";
@@ -302,6 +315,8 @@ import FilterableEenemyDB from "@/libs/DB/Enemy.Filterable";
 		SkillBound,
 		SkillDescription,
 		BuffList,
+
+		"enemy-ai": EnemyAI,
 	},
 })
 export default class EnemyModal extends Vue {
@@ -346,18 +361,20 @@ export default class EnemyModal extends Vue {
 
 	private currentLevel: number = 1;
 
-	private displayTab: "desc" | string = "skill1";
+	private displayTab: "ai" | "desc" | string = "skill1";
 
 	@Watch("displaySync")
 	private WatchDisplay () {
 		this.currentLevel = this.level;
-		this.displayTab = "skill1";
+		this.displayTab = "ai";
 
 		this.targetId = this.enemy ? this.enemy.id : "";
 	}
 
 	@Watch("targetId")
 	private WatchTargetId () {
+		if (this.targetId)
+			this.$router.push({ path: `/enemy/${this.targetId}` });
 		this.InitialDB();
 	}
 
