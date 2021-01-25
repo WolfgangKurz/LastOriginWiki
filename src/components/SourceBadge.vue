@@ -84,7 +84,7 @@ export default class SourceBadge extends Vue {
 					1: "밀고, 당기고, 불질러!",
 					2: "피조물과 설계자",
 					3: "실패작의 폭주",
-					4: "바다의 소녀들",
+					4: "레모네이드 VR",
 					5: "바다의 소녀들",
 				};
 
