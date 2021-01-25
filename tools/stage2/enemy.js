@@ -44,8 +44,10 @@ input.forEach((_) => {
 					map[x][y].list.forEach(z =>
 						z.wave && z.wave.forEach(w => w.forEach(i => {
 							if (i.e.enemy.some(e => e && e.id === _.id)) {
-								if (x === "Story" || x === "Cha")
+								if (x === "Story")
 									ret[x].push(z.text);
+								else if (x === "Cha")
+									ret[x].push(`Cha${y}-${z.text.replace(/Cha[0-9]*-(.+)/, "$1")}`);
 								else
 									ret[x].push(`Ev:${x}:${z.text}`);
 							}
