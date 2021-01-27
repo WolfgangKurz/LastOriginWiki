@@ -140,7 +140,14 @@ export default class EntitySource {
 	/** 외부 통신 요청의 챌린지 난이도 (1~4) */
 	public get ChallengeDifficulty () {
 		if (!this.IsChallenge) return 0;
-		const difficulty = ["", "NORMAL", "HARD", "VERY HARD", "EXETREAM"];
+		const difficulty = (() => {
+			switch (this.ChallengeId) {
+				case "4":
+					return ["", "TROOPER", "MOBILITY", "ARMORED", "MAX"];
+				default:
+					return ["", "NORMAL", "HARD", "VERY HARD", "EXETREAM"];
+			}
+		})();
 		return difficulty[parseInt(this.Parts[0].replace(/^\*?Cha[0-9]+-(.+)$/, "$1"), 10)];
 	}
 	// -------------- 외부 통신 요청
