@@ -297,6 +297,7 @@ import EnemyAI from "./EnemyAI";
 
 import EntitySource from "@/libs/EntitySource";
 
+import { ACTOR_GRADE } from "@/libs/Types/Enums";
 import { Enemy, EnemySkill } from "@/libs/Types/Enemy";
 import { FilterableEnemy } from "@/libs/Types/Enemy.Filterable";
 
@@ -324,16 +325,14 @@ export default class EnemyModal extends Vue {
 	private InitialDB () {
 		this.DB = null;
 
-		const target = this.target;
-		if (!target) return;
-
+		if (!this.targetId) return;
 		LazyLoad(
 			r => {
 				const Equip = r[0] as Enemy;
 				if (!Equip) return (this.DB = false);
 				this.DB = Equip;
 			},
-			cb => EnemyDB(target.id, x => cb(x)),
+			cb => EnemyDB(this.targetId, x => cb(x)),
 		);
 	}
 
@@ -409,7 +408,21 @@ export default class EnemyModal extends Vue {
 
 	private get Skills () {
 		if (!this.DB) return [];
-		const list: Array<EnemySkill | undefined> = this.DB.skills;
+		const list: Array<EnemySkill | undefined> = this.DB.rarity === ACTOR_GRADE.SS
+			? this.DB.skills
+			: this.DB.skills.slice(0, this.DB.rarity);
+
+		let passive = false;
+		for (let i = 0; i < list.length; i++) {
+			const e = list[i];
+			if (!e) break;
+			if (e.passive) passive = true;
+			else if (passive) {
+				list.splice(i, list.length - i);
+				break;
+			}
+		}
+
 		while (list.length < 6) list.push(undefined);
 		return list;
 	}

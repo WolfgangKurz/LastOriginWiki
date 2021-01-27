@@ -1,5 +1,19 @@
 <template>
 	<div>
+		<changelog-item title="Build 7835" date="2021-01-26">
+			<template #bugfix>
+				<li>
+					<b-badge variant="warning">적 정보</b-badge>에서 SS급 미만의 일부 적에게 사용되지 않는 패시브 스킬이 표시되는 문제를 수정했습니다.
+				</li>
+				<li>
+					외부 통신 요청 <b-badge variant="info">레모네이드 VR</b-badge>의 난이도가 <b-badge variant="info">등장 스테이지</b-badge> 및
+					<b-badge variant="info">획득처</b-badge>에 표시될 때 <b-badge variant="dark">NORMAL</b-badge> /
+					<b-badge variant="dark">HARD</b-badge> / <b-badge variant="dark">VERY HARD</b-badge> /
+					<b-badge variant="dark">EXETREAM</b-badge>으로 표시되는 문제를 수정했습니다.
+				</li>
+			</template>
+		</changelog-item>
+
 		<changelog-item title="Build 7827" date="2021-01-26">
 			<template #bugfix>
 				<li>일부 적의 정보가 올바르게 갱신되지 않은 점을 수정했습니다.</li>
