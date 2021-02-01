@@ -405,8 +405,15 @@ export default class SkillDescription extends Vue {
 <style lang="scss">
 .skill-description {
 	.skill-value {
-		color: $success;
+		display: inline-block;
+		border-radius: 0.25em;
+		color: $dark;
 
+		&[data-sign=""] {
+			padding: 0.125em 0.25em;
+			border: 1px solid transparentize($secondary, 0.5);
+			background-color: $light;
+		}
 		&[data-sign="+"] {
 			color: $primary;
 		}

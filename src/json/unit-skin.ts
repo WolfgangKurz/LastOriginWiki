@@ -3464,7 +3464,37 @@ export default {
     "D": false,
     "S": false,
     "X": false,
-    "G": false
+    "G": false,
+    "skins": [
+      {
+        "sid": 1,
+        "t": "머무를 장소",
+        "artist": "BUMCHa",
+        "offset": {
+          "normal": {
+            "n": 0,
+            "d": 0,
+            "s": 0,
+            "x": 0
+          },
+          "google": {
+            "n": 0,
+            "d": 0,
+            "s": 0,
+            "x": 0
+          }
+        },
+        "price": 91,
+        "V": true,
+        "A": false,
+        "D": false,
+        "S": true,
+        "X": false,
+        "G": true,
+        "name": "슬립 란제리 (레이시)",
+        "desc": "오르카 기술부의 부단한 노력으로, 레이시의 상태는 일상 생활이 가능할 정도로 안정되었습니다. 항상 자신을 괴롭히던 고통이 사라진 뒤, 잠시 멍하니 앉아 있던 레이시가 가장 먼저 한 일은 당신을 맞이하러 가는 거였죠. 동생들의 축복 속에 준비된 로맨틱한 방에서, 레이시가 조심스레 입에 담는 미뤄뒀던 대답을 들어보세요."
+      }
+    ]
   },
   "BR_DrM": {
     "sid": null,
@@ -6486,6 +6516,30 @@ export default {
       }
     ]
   },
+  "DS_Saraqael": {
+    "sid": null,
+    "artist": "CHoney",
+    "offset": {
+      "normal": {
+        "n": "60",
+        "d": 0,
+        "s": 0,
+        "x": 0
+      },
+      "google": {
+        "n": "60",
+        "d": 0,
+        "s": 0,
+        "x": 0
+      }
+    },
+    "V": true,
+    "A": false,
+    "D": false,
+    "S": false,
+    "X": false,
+    "G": false
+  },
   "PECS_Draculina": {
     "sid": null,
     "artist": "朝凪(Asanagi)",
@@ -6505,7 +6559,7 @@ export default {
     },
     "V": true,
     "A": false,
-    "D": false,
+    "D": true,
     "S": false,
     "X": false,
     "G": true

@@ -1059,7 +1059,7 @@ export default {
                 {
                   "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
-                    "desc": "정밀 공격 : 피해량+{0}%",
+                    "desc": "정밀 공격 : 피해량+{0}%(표식/이동 불가)",
                     "type": 1,
                     "value": "0.250000"
                   },
@@ -1127,7 +1127,7 @@ export default {
                 {
                   "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
-                    "desc": "정밀 공격 : 피해량+{0}%",
+                    "desc": "정밀 공격 : 피해량+{0}%(표식/이동 불가)",
                     "type": 1,
                     "value": "0.250000"
                   },
@@ -1195,7 +1195,7 @@ export default {
                 {
                   "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
-                    "desc": "정밀 공격 : 피해량+{0}%",
+                    "desc": "정밀 공격 : 피해량+{0}%(표식/이동 불가)",
                     "type": 1,
                     "value": "0.250000"
                   },
@@ -1263,7 +1263,7 @@ export default {
                 {
                   "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
-                    "desc": "정밀 공격 : 피해량+{0}%",
+                    "desc": "정밀 공격 : 피해량+{0}%(표식/이동 불가)",
                     "type": 1,
                     "value": "0.250000"
                   },
@@ -1331,7 +1331,7 @@ export default {
                 {
                   "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
-                    "desc": "정밀 공격 : 피해량+{0}%",
+                    "desc": "정밀 공격 : 피해량+{0}%(표식/이동 불가)",
                     "type": 1,
                     "value": "0.250000"
                   },
@@ -1399,7 +1399,7 @@ export default {
                 {
                   "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
-                    "desc": "정밀 공격 : 피해량+{0}%",
+                    "desc": "정밀 공격 : 피해량+{0}%(표식/이동 불가)",
                     "type": 1,
                     "value": "0.250000"
                   },
@@ -1467,7 +1467,7 @@ export default {
                 {
                   "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
-                    "desc": "정밀 공격 : 피해량+{0}%",
+                    "desc": "정밀 공격 : 피해량+{0}%(표식/이동 불가)",
                     "type": 1,
                     "value": "0.250000"
                   },
@@ -1535,7 +1535,7 @@ export default {
                 {
                   "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
-                    "desc": "정밀 공격 : 피해량+{0}%",
+                    "desc": "정밀 공격 : 피해량+{0}%(표식/이동 불가)",
                     "type": 1,
                     "value": "0.250000"
                   },
@@ -1603,7 +1603,7 @@ export default {
                 {
                   "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
-                    "desc": "정밀 공격 : 피해량+{0}%",
+                    "desc": "정밀 공격 : 피해량+{0}%(표식/이동 불가)",
                     "type": 1,
                     "value": "0.250000"
                   },
@@ -1671,7 +1671,7 @@ export default {
                 {
                   "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
-                    "desc": "정밀 공격 : 피해량+{0}%",
+                    "desc": "정밀 공격 : 피해량+{0}%(표식/이동 불가)",
                     "type": 1,
                     "value": "0.250000"
                   },

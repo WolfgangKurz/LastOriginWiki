@@ -10,6 +10,8 @@
 		<hr /> -->
 
 		<!-- <component :is="`changelog-${displayDate}`" /> -->
+		<changelog-202102 />
+		<hr />
 		<changelog-202101 />
 		<hr />
 		<changelog-202012 />
@@ -36,6 +38,7 @@ import Component from "vue-class-component";
 
 import { UpdateTitle } from "@/libs/Functions";
 
+import Changelog202102 from "@/pages/Changelog/Changelog_202102.vue";
 import Changelog202101 from "@/pages/Changelog/Changelog_202101.vue";
 import Changelog202012 from "@/pages/Changelog/Changelog_202012.vue";
 import Changelog202011 from "@/pages/Changelog/Changelog_202011.vue";
@@ -49,6 +52,7 @@ import { SetMeta } from "@/libs/Meta";
 
 @Component({
 	components: {
+		"changelog-202102": Changelog202102,
 		"changelog-202101": Changelog202101,
 		"changelog-202012": Changelog202012,
 		"changelog-202011": Changelog202011,

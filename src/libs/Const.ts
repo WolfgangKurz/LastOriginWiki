@@ -511,8 +511,8 @@ export const EquipTypeDisplay: Record<ITEM_TYPE, string> = {
 };
 
 export const AssetsRoot = process.env.NODE_ENV === "development"
-	? "http://localhost:5500/assets"
-	// ? "https://lo.swaytwig.com/assets"
+	// ? "http://localhost:5500/assets"
+	? "https://lo.swaytwig.com/assets"
 	// : "https://lastorigin-wiki-assets.s3.ap-northeast-2.amazonaws.com";
 	: "/assets";
 
@@ -535,7 +535,7 @@ export function ImageExtension () {
 	return webpAvailable ? "webp" : "png";
 }
 
-export const CurrentEvent = "Ev4";
+export const CurrentEvent = "";
 export const CurrentDate = (() => {
 	const d = new Date();
 	const y = d.getUTCFullYear() % 100;

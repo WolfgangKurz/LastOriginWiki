@@ -2372,8 +2372,8 @@ export default [
       3,
       4
     ],
-    "name": "T2 브라우니",
-    "shortname": "브라우니",
+    "name": "T-2 브라우니",
+    "shortname": "T-2 브라우니",
     "groupKey": "SteelLine",
     "group": "스틸 라인",
     "shortgroup": "스틸 라인",
@@ -5933,7 +5933,9 @@ export default [
     "no": 75,
     "rarity": 2,
     "promo": [
-      3
+      3,
+      4,
+      5
     ],
     "name": "레이시",
     "shortname": "레이시",
@@ -5994,6 +5996,50 @@ export default [
           "target": "self",
           "type": 1,
           "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 7,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 19,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 11,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
         }
       ]
     ],
@@ -12153,6 +12199,109 @@ export default [
         "elem": 0,
         "grid": true,
         "guard": true
+      }
+    }
+  },
+  {
+    "uid": "DS_Saraqael",
+    "no": 139,
+    "rarity": 5,
+    "name": "사라카엘",
+    "shortname": "사라카엘",
+    "groupKey": "Kouhei",
+    "group": "코헤이 교 ",
+    "shortgroup": "코헤이 교",
+    "type": 2,
+    "role": 0,
+    "body": 0,
+    "craft": 24540,
+    "buffs": [
+      [
+        {
+          "target": "enemy",
+          "type": 19,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 19,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 19,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 87,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 19,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 19,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
+        "elem": 3,
+        "grid": true,
+        "guard": false
+      },
+      "active2": {
+        "elem": 3,
+        "grid": false,
+        "guard": false
       }
     }
   },
