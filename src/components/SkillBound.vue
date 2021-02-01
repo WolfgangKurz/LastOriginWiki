@@ -326,6 +326,7 @@ export default class SkillBound extends Vue {
 	}
 	.team-text {
 		float: left;
+		margin-right: -12px;
 		padding-left: 76px;
 		font-size: 11px;
 		text-align: left;

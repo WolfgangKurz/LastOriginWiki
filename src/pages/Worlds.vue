@@ -3,7 +3,7 @@
 		<h2>세계 정보</h2>
 		<hr />
 
-		<h4>메인스토리 / 현재 진행중인 / 곧 진행될 이벤트</h4>
+		<h4>메인스토리 / 진행중인 이벤트</h4>
 		<b-row cols="1" cols-lg="2">
 			<b-col v-for="item in Tops" :key="`worlds-top-${item}`">
 				<world-item linked :wid="item" @goto="GoTo" />
@@ -50,7 +50,7 @@ export default class Worlds extends Vue {
 	}
 
 	private get Tops () {
-		return ["Story", "Ev9"];
+		return ["Story"];
 	}
 
 	private get SupCha () {

@@ -1761,7 +1761,7 @@ export default {
     },
     "desc": [
       "라운드 개시 시, [공격력 +:15~0.75:%] / [치명타 +:10~0.5:%]가 증가하며 같은 열에 인접한 기동형 / <21 스쿼드> 아군의 공격을 지원합니다.",
-      "21스쿼드 : [$ch;3P_ConstantiaS2] / [$ch;DS_Johanna] / [$ch;PECS_LRL] / [$ch;3P_Labiata] / [$ch;BR_InvDragon]"
+      "21스쿼드 : [$ch;3P_ConstantiaS2] [$ch;DS_Johanna] [$ch;PECS_LRL] [$ch;3P_Labiata] [$ch;BR_InvDragon] [$ch;PECS_LemonadeAlpha]"
     ]
   }
 };

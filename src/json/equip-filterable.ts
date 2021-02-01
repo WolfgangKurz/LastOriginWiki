@@ -8849,7 +8849,7 @@ export default [
     ]
   },
   {
-    "available": false,
+    "available": true,
     "rarity": 2,
     "type": 0,
     "key": "AtkTypeB",
@@ -8877,7 +8877,7 @@ export default [
     ]
   },
   {
-    "available": false,
+    "available": true,
     "rarity": 3,
     "type": 0,
     "key": "AtkTypeB",
@@ -8905,7 +8905,7 @@ export default [
     ]
   },
   {
-    "available": false,
+    "available": true,
     "rarity": 4,
     "type": 0,
     "key": "AtkTypeB",
@@ -8970,7 +8970,7 @@ export default [
     ]
   },
   {
-    "available": false,
+    "available": true,
     "rarity": 2,
     "type": 0,
     "key": "AccTypeB",
@@ -8998,7 +8998,7 @@ export default [
     ]
   },
   {
-    "available": false,
+    "available": true,
     "rarity": 3,
     "type": 0,
     "key": "AccTypeB",
@@ -9026,7 +9026,7 @@ export default [
     ]
   },
   {
-    "available": false,
+    "available": true,
     "rarity": 4,
     "type": 0,
     "key": "AccTypeB",
@@ -9303,7 +9303,7 @@ export default [
     ]
   },
   {
-    "available": false,
+    "available": true,
     "rarity": 2,
     "type": 0,
     "key": "CriTypeB",
@@ -9331,7 +9331,7 @@ export default [
     ]
   },
   {
-    "available": false,
+    "available": true,
     "rarity": 3,
     "type": 0,
     "key": "CriTypeB",
@@ -9359,7 +9359,7 @@ export default [
     ]
   },
   {
-    "available": false,
+    "available": true,
     "rarity": 4,
     "type": 0,
     "key": "CriTypeB",
@@ -10197,7 +10197,7 @@ export default [
     ]
   },
   {
-    "available": false,
+    "available": true,
     "rarity": 2,
     "type": 1,
     "key": "AntiTrooperAir",
@@ -10225,7 +10225,7 @@ export default [
     ]
   },
   {
-    "available": false,
+    "available": true,
     "rarity": 3,
     "type": 1,
     "key": "AntiTrooperAir",
@@ -10253,7 +10253,7 @@ export default [
     ]
   },
   {
-    "available": false,
+    "available": true,
     "rarity": 4,
     "type": 1,
     "key": "AntiTrooperAir",
@@ -10312,7 +10312,7 @@ export default [
     ]
   },
   {
-    "available": false,
+    "available": true,
     "rarity": 2,
     "type": 1,
     "key": "AntiAirArmor",
@@ -10340,7 +10340,7 @@ export default [
     ]
   },
   {
-    "available": false,
+    "available": true,
     "rarity": 3,
     "type": 1,
     "key": "AntiAirArmor",
@@ -10368,7 +10368,7 @@ export default [
     ]
   },
   {
-    "available": false,
+    "available": true,
     "rarity": 4,
     "type": 1,
     "key": "AntiAirArmor",
@@ -10427,7 +10427,7 @@ export default [
     ]
   },
   {
-    "available": false,
+    "available": true,
     "rarity": 2,
     "type": 1,
     "key": "AntiArmorTrooper",
@@ -10455,7 +10455,7 @@ export default [
     ]
   },
   {
-    "available": false,
+    "available": true,
     "rarity": 3,
     "type": 1,
     "key": "AntiArmorTrooper",
@@ -10483,7 +10483,7 @@ export default [
     ]
   },
   {
-    "available": false,
+    "available": true,
     "rarity": 4,
     "type": 1,
     "key": "AntiArmorTrooper",
@@ -10652,6 +10652,34 @@ export default [
       {
         "type": 12,
         "positive": true
+      }
+    ]
+  },
+  {
+    "available": true,
+    "rarity": 5,
+    "type": 2,
+    "key": "ImBarrier",
+    "fullKey": "Sub_ImBarrier_T4",
+    "name": "개량형 방어 역장",
+    "desc": "개량형 장비로 매 라운드마다 더 높은 수치의 방어막을 얻는 대신 행동력이 감소합니다. ",
+    "icon": "UI_Icon_Equip_Sub_ImBarrier_T4",
+    "craftable": false,
+    "limit": null,
+    "source": [
+      [
+        "EndlessWar:1000"
+      ]
+    ],
+    "upgrade": 1500,
+    "effects": [
+      {
+        "type": 38,
+        "positive": false
+      },
+      {
+        "type": 13,
+        "positive": false
       }
     ]
   }

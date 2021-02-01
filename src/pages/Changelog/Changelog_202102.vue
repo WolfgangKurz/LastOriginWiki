@@ -1,0 +1,46 @@
+<template>
+	<div>
+		<changelog-item title="Build 7842" date="2021-02-01">
+			<template #bugfix>
+				<li>
+					<b-badge variant="warning">P/A-00 그리폰</b-badge>의 2번째 패시브 <b-badge variant="info">연계 폭격</b-badge>의 적용 대상이
+					올바르지 않던 점을 수정했습니다.
+				</li>
+				<li>
+					일부 환경에서 전투원 스킬 정보의 <b-badge variant="primary">아군 대상</b-badge> 또는
+					<b-badge variant="primary">본인 대상</b-badge> 표기가 줄바꿈되는 문제를 수정했습니다.
+				</li>
+			</template>
+			<template #new>
+				<li>신규 전투원 <b-badge variant="warning">사라카엘</b-badge>의 정보가 추가되었습니다.</li>
+				<li>신규 장비 <b-badge variant="warning">개량형 방어 역장</b-badge>의 정보가 추가되었습니다.</li>
+				<li><b-badge variant="warning">2021년 02월 교환소</b-badge> 정보가 추가되었습니다.</li>
+			</template>
+			<template #update>
+				<li>전투원 스킬 정보의 비 증감값 계수의 가시성을 개선했습니다.</li>
+				<li>전투원 대사의 <b-badge variant="warning">누락</b-badge>을 <b-badge variant="dark">미구현</b-badge>으로 변경하였습니다.</li>
+			</template>
+			<template #skin>
+				<li><b-badge variant="warning">드라큐리나</b-badge>의 중파 이미지 정보가 추가되었습니다.</li>
+				<li><b-badge variant="warning">레이시</b-badge>의 <b-badge variant="danger">머무를 장소</b-badge> 스킨 정보가 추가되었습니다.</li>
+			</template>
+		</changelog-item>
+	</div>
+</template>
+
+<script lang="ts">
+import Vue from "vue";
+import Component from "vue-class-component";
+
+import ChangelogItem from "./ChangelogItem/ChangelogItem";
+import RarityBadge from "@/components/RarityBadge.vue";
+
+@Component({
+	components: {
+		ChangelogItem,
+		RarityBadge,
+	},
+})
+// eslint-disable-next-line camelcase
+export default class Changelog_202102 extends Vue { }
+</script>

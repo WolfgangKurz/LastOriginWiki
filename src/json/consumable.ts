@@ -986,9 +986,9 @@ export default [
   },
   {
     "key": "CharTicket_Char_BR_Brownie_N",
-    "name": "T2 브라우니",
+    "name": "T-2 브라우니",
     "icon": "InvenIcon_BR_Brownie_N",
-    "desc": "T2 브라우니을 지급합니다.",
+    "desc": "T-2 브라우니을 지급합니다.",
     "func": "CharTicket_Char_BR_Brownie_N"
   },
   {
@@ -7174,5 +7174,123 @@ export default [
     "icon": "UI_Icon_PROPPack_AnimalEar02",
     "desc": "\"동물귀3, 꽃핀, 리본2, 하치코, 선글라스\"\n장식품 인벤토리에서 사용할 수 있습니다.",
     "func": "PROPPack_AnimalEar02"
+  },
+  {
+    "key": "CharTicket_Char_DS_Saraqael_N",
+    "name": "사라카엘",
+    "icon": "InvenIcon_DS_Saraqael_N",
+    "desc": "사라카엘을 지급합니다",
+    "func": "CharTicket_Char_DS_Saraqael_N"
+  },
+  {
+    "key": "Skin_BR_Wraithy_1",
+    "name": "슬립 란제리(레이시)",
+    "icon": "UI_Icon_Skin_BR_Wraithy_1",
+    "desc": "오르카 기술부의 부단한 노력으로, 레이시의 상태는 일상 생활이 가능할 정도로 안정되었습니다. 항상 자신을 괴롭히던 고통이 사라진 뒤, 잠시 멍하니 앉아 있던 레이시가 가장 먼저 한 일은 당신을 맞이하러 가는 거였죠. 동생들의 축복 속에 준비된 로맨틱한 방에서, 레이시가 조심스레 입에 담는 미뤄뒀던 대답을 들어보세요.",
+    "func": "Skin_BR_Wraithy_1"
+  },
+  {
+    "key": "Shop_Package_Skin_BR_Wraithy_1",
+    "name": "머무를 장소",
+    "icon": "UI_Icon_SkinPack_BR_Wraithy_1",
+    "desc": "레이시 용 슬립 란제리 스킨과 수제 케이크 1개, 초콜릿 2개, 합성 롤리팝 3개가 들어있는 팩입니다.",
+    "func": "Shop_Package_Skin_BR_Wraithy_1"
+  },
+  {
+    "key": "TunaCan_6_30percentup",
+    "name": "레이시 용 슬립 란제리 스킨과 수제 케이크 1개, 초콜릿 2개, 합성 롤리팝 3개가 들어있는 팩입니다.",
+    "icon": "UI_Icon_TunaCan_T1",
+    "desc": "1001101951",
+    "func": "TunaCan_6_30percentup"
+  },
+  {
+    "key": "TunaCan_18_30percentup",
+    "name": "파티마의 편지",
+    "icon": "UI_Icon_TunaCan_T1",
+    "desc": "1001101952",
+    "func": "TunaCan_18_30percentup"
+  },
+  {
+    "key": "TunaCan_30_30percentup",
+    "name": "안녕하세요! 사령관님!&n이렇게 편지로 인사드리는 건 처음이네요.&n&n처음 사령관님을 뵌 게 바로 어제 같은데 우리가 만난지 2년이나 지났네요.&n2년이 지나 지난 일들을 되돌아보면 전장에서 함선에서 오랫동안 함께 하며 행복했던 기억들이 하나하나 떠올라 저를 행복하게 해요.&n그동안 사령관님이 보여주신 사랑에 조금이나마 보답하기 위해 작은 선물을 보내요.&n사령관님이 헤쳐 나가는 힘든 싸움에 조금이나마 도움이 되었으면 좋겠어요.&n이 싸움이 언제 끝날 지는 몰라도, 이 싸움의 끝이 우리의 승리란 걸 믿고 있어요.&n지금까지처럼, 그리고 앞으로도 영원히 함께해요. 사령관님. 세상이 끝날 때까지.",
+    "icon": "UI_Icon_TunaCan_T2",
+    "desc": "1001101953",
+    "func": "TunaCan_30_30percentup"
+  },
+  {
+    "key": "TunaCan_60_30percentup",
+    "name": "파티마의 편지 입니다.\n\n[i][c][B8DDD9FF]세상이 끝날 때까지 함께 해요!",
+    "icon": "UI_Icon_TunaCan_T3",
+    "desc": "1001101954",
+    "func": "TunaCan_60_30percentup"
+  },
+  {
+    "key": "TunaCan_180_30percentup",
+    "name": "1001101943",
+    "icon": "UI_Icon_TunaCan_T4",
+    "desc": "1001101955",
+    "func": "TunaCan_180_30percentup"
+  },
+  {
+    "key": "TunaCan_300_30percentup",
+    "name": "1001101944",
+    "icon": "UI_Icon_TunaCan_T5",
+    "desc": "1001101956",
+    "func": "TunaCan_300_30percentup"
+  },
+  {
+    "key": "TunaCan_600_30percentup",
+    "name": "1001101945",
+    "icon": "UI_Icon_TunaCan_T6",
+    "desc": "1001101957",
+    "func": "TunaCan_600_30percentup"
+  },
+  {
+    "key": "TunaCan_21_30percentupios",
+    "name": "1001101946",
+    "icon": "UI_Icon_TunaCan_T1",
+    "desc": "1001101958",
+    "func": "TunaCan_21_30percentupios"
+  },
+  {
+    "key": "TunaCan_32_30percentupios",
+    "name": "1001101947",
+    "icon": "UI_Icon_TunaCan_T2",
+    "desc": "1001101959",
+    "func": "TunaCan_32_30percentupios"
+  },
+  {
+    "key": "TunaCan_60_30percentupios",
+    "name": "1001101948",
+    "icon": "UI_Icon_TunaCan_T3",
+    "desc": "1001101960",
+    "func": "TunaCan_60_30percentupios"
+  },
+  {
+    "key": "TunaCan_180_30percentupios",
+    "name": "1001101949",
+    "icon": "UI_Icon_TunaCan_T4",
+    "desc": "1001101961",
+    "func": "TunaCan_180_30percentupios"
+  },
+  {
+    "key": "TunaCan_300_30percentupios",
+    "name": "1001101950",
+    "icon": "UI_Icon_TunaCan_T5",
+    "desc": "1001101962",
+    "func": "TunaCan_300_30percentupios"
+  },
+  {
+    "key": "TunaCan_650_30percentupios",
+    "name": "1001101951",
+    "icon": "UI_Icon_TunaCan_T6",
+    "desc": "1001101963",
+    "func": "TunaCan_650_30percentupios"
+  },
+  {
+    "key": "CharLetter_Fatima",
+    "name": "파티마의 편지",
+    "icon": "UI_Icon_CharLetter_Fatima",
+    "desc": "안녕하세요! 사령관님!\n이렇게 편지로 인사드리는 건 처음이네요.\n\n처음 사령관님을 뵌 게 바로 어제 같은데 우리가 만난지 2년이나 지났네요.\n2년이 지나 지난 일들을 되돌아보면 전장에서 함선에서 오랫동안 함께 하며 행복했던 기억들이 하나하나 떠올라 저를 행복하게 해요.\n그동안 사령관님이 보여주신 사랑에 조금이나마 보답하기 위해 작은 선물을 보내요.\n사령관님이 헤쳐 나가는 힘든 싸움에 조금이나마 도움이 되었으면 좋겠어요.\n이 싸움이 언제 끝날 지는 몰라도, 이 싸움의 끝이 우리의 승리란 걸 믿고 있어요.\n지금까지처럼, 그리고 앞으로도 영원히 함께해요. 사령관님. 세상이 끝날 때까지."
   }
 ];

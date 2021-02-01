@@ -135,7 +135,7 @@ export default class DialogueRow extends Vue {
 
 			case "Oath": return "서약";
 			case "OathIdle_01": return "서약 후 터치";
-			case "MVP": return ["전투 MVP", <b-badge variant="warning" class="float-right mt-1">누락</b-badge>];
+			case "MVP": return ["전투 MVP", <b-badge variant="dark" class="float-right mt-1">미구현</b-badge>];
 		}
 		return "???";
 	}

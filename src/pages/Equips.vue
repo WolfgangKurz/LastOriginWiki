@@ -19,7 +19,7 @@
 		<b-collapse :visible="displayFilters">
 			<b-card class="text-left">
 				<b-row>
-					<b-col class="filter-label" md="auto" cols="12">장비 유형 :</b-col>
+					<b-col class="filter-label" md="auto" cols="12">유형 :</b-col>
 					<b-col md cols="12">
 						<b-btn-group class="mx-1">
 							<b-button variant="outline-secondary" :pressed="Display.Type.Chip" @click="Filter('Type', 'Chip')">칩</b-button>
@@ -33,7 +33,7 @@
 				</b-row>
 				<hr class="my-2" />
 				<b-row>
-					<b-col class="filter-label" md="auto" cols="12">장비 획득처 :</b-col>
+					<b-col class="filter-label" md="auto" cols="12">획득처 :</b-col>
 					<b-col md cols="12">
 						<div class="clearfix">
 							<div class="float-right">
@@ -128,7 +128,7 @@
 				</b-row>
 				<hr class="my-2" />
 				<b-row>
-					<b-col class="filter-label" md="auto" cols="12">장비 효과 :</b-col>
+					<b-col class="filter-label" md="auto" cols="12">효과 :</b-col>
 					<b-col md cols="12">
 						<div class="clearfix">
 							<div class="float-right">
