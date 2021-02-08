@@ -4150,7 +4150,7 @@ export default {
       ]
     },
     "desc": [
-      "라운드 개시 시, 범위 내 [#thunder]전기 속성 아군에게 [공격력 +:21~1:%] [행동력 +:5.5~0.5:%]를 증가시킵니다.",
+      "라운드 개시 시, 범위 내 공격이 [#thunder]전기 속성인 아군에게 [공격력 +:21~1:%] [행동력 +:5.5~0.5:%]를 증가시킵니다.",
       "대상이 기동형일 경우 [치명타 +:4.5~0.5:%] [적중 +:10~0.5:%] [회피 +:10~0.5:%]를 추가로 증가시킵니다.",
       "[#thunder]전기 속성 아군 : [$ch;3P_Rhea] [$ch;3P_Alexandra] [$ch;BR_Bulgasari] [$ch;PECS_Cerberus] [$ch;PECS_PuppHead] [$ch;PECS_BS] [$ch;AGS_Albatross] [$ch;AGS_Roc] [$ch;DS_KunoichiZero] [$ch;PECS_Sadius] [$ch;DS_Saraqael] [$ch;BR_Wraithy]"
     ]
@@ -4191,10 +4191,7 @@ export default {
               "on": "round",
               "if": {
                 "unitCount": {
-                  "filter": [
-                    "squad",
-                    "bioroid"
-                  ],
+                  "filter": "squad",
                   "type": [
                     0,
                     2,
@@ -4292,10 +4289,7 @@ export default {
               "on": "round",
               "if": {
                 "unitCount": {
-                  "filter": [
-                    "squad",
-                    "bioroid"
-                  ],
+                  "filter": "squad",
                   "type": [
                     0,
                     2,
@@ -4393,10 +4387,7 @@ export default {
               "on": "round",
               "if": {
                 "unitCount": {
-                  "filter": [
-                    "squad",
-                    "bioroid"
-                  ],
+                  "filter": "squad",
                   "type": [
                     0,
                     2,
@@ -4494,10 +4485,7 @@ export default {
               "on": "round",
               "if": {
                 "unitCount": {
-                  "filter": [
-                    "squad",
-                    "bioroid"
-                  ],
+                  "filter": "squad",
                   "type": [
                     0,
                     2,
@@ -4595,10 +4583,7 @@ export default {
               "on": "round",
               "if": {
                 "unitCount": {
-                  "filter": [
-                    "squad",
-                    "bioroid"
-                  ],
+                  "filter": "squad",
                   "type": [
                     0,
                     2,

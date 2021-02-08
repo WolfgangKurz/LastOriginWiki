@@ -274,6 +274,11 @@ export default [
         "Ev:Ev9:Ev1-4",
         "Ev:Ev9:Ev1-5",
         "Ev:Ev9:Ev1-6"
+      ],
+      "Ev10": [
+        "Ev:Ev10:Ev1-1",
+        "Ev:Ev10:Ev1-3",
+        "Ev:Ev10:Ev1-5"
       ]
     }
   },
@@ -490,6 +495,12 @@ export default [
         "Ev:Ev9:Ev1-4",
         "Ev:Ev9:Ev1-5",
         "Ev:Ev9:Ev1-6"
+      ],
+      "Ev10": [
+        "Ev:Ev10:Ev1-1",
+        "Ev:Ev10:Ev1-3",
+        "Ev:Ev10:Ev1-4",
+        "Ev:Ev10:Ev1-5"
       ]
     }
   },
@@ -700,6 +711,12 @@ export default [
         "Ev:Ev9:Ev1-4",
         "Ev:Ev9:Ev1-5",
         "Ev:Ev9:Ev1-6"
+      ],
+      "Ev10": [
+        "Ev:Ev10:Ev1-1",
+        "Ev:Ev10:Ev1-3",
+        "Ev:Ev10:Ev1-4",
+        "Ev:Ev10:Ev1-5"
       ]
     }
   },
@@ -980,6 +997,10 @@ export default [
       ],
       "Ev9": [
         "Ev:Ev9:Ev1-6"
+      ],
+      "Ev10": [
+        "Ev:Ev10:Ev1-3",
+        "Ev:Ev10:Ev1-6"
       ]
     }
   },
@@ -1634,6 +1655,9 @@ export default [
       "Ev7": [
         "Ev:Ev7:Ev1-1Ex",
         "Ev:Ev7:Ev1-2Ex"
+      ],
+      "Ev10": [
+        "Ev:Ev10:Ev1-1Ex"
       ]
     }
   },
@@ -7004,6 +7028,9 @@ export default [
     "used": {
       "Story": [
         "6-2Ex"
+      ],
+      "Ev10": [
+        "Ev:Ev10:Ev1-2Ex"
       ]
     }
   },
@@ -8358,6 +8385,9 @@ export default [
       "Ev7": [
         "Ev:Ev7:Ev1-1Ex",
         "Ev:Ev7:Ev1-2Ex"
+      ],
+      "Ev10": [
+        "Ev:Ev10:Ev1-1Ex"
       ]
     }
   },
@@ -10505,7 +10535,11 @@ export default [
     "type": 0,
     "role": 1,
     "isBoss": false,
-    "used": {}
+    "used": {
+      "Ev10": [
+        "Ev:Ev10:Ev1-2Ex"
+      ]
+    }
   },
   {
     "id": "NightChickAQ_N",
@@ -10709,6 +10743,9 @@ export default [
       "Ev8": [
         "Ev:Ev8:Ev1-1Ex",
         "Ev:Ev8:Ev1-2Ex"
+      ],
+      "Ev10": [
+        "Ev:Ev10:Ev1-1Ex"
       ]
     }
   },
@@ -12859,6 +12896,9 @@ export default [
     "used": {
       "Ev9": [
         "Ev:Ev9:Ev3-3s"
+      ],
+      "Ev10": [
+        "Ev:Ev10:Ev1-4"
       ]
     }
   },
@@ -13397,6 +13437,9 @@ export default [
       "Ev7": [
         "Ev:Ev7:Ev1-2Ex",
         "Ev:Ev7:Ev1-3Ex"
+      ],
+      "Ev10": [
+        "Ev:Ev10:Ev1-1Ex"
       ]
     }
   },
@@ -13476,6 +13519,9 @@ export default [
       ],
       "Ev8": [
         "Ev:Ev8:Ev2-1Ex"
+      ],
+      "Ev10": [
+        "Ev:Ev10:Ev1-1Ex"
       ]
     }
   },
@@ -14662,6 +14708,10 @@ export default [
         "Ev:Ev9:Ev2-7",
         "Ev:Ev9:Ev2-6B",
         "Ev:Ev9:Ev2-7B"
+      ],
+      "Ev10": [
+        "Ev:Ev10:Ev1-4",
+        "Ev:Ev10:Ev1-6"
       ]
     }
   },
@@ -14775,7 +14825,11 @@ export default [
     "type": 2,
     "role": 1,
     "isBoss": false,
-    "used": {}
+    "used": {
+      "Ev10": [
+        "Ev:Ev10:Ev1-2Ex"
+      ]
+    }
   },
   {
     "id": "LightningBomberMP_TU5",
@@ -15127,7 +15181,7 @@ export default [
   {
     "id": "FryerHead_N",
     "name": "프라이어 헤드",
-    "desc": "<교전 기록 없음>",
+    "desc": "저 철충들은... 제 능력에 취약할 거예요. 부디, 제가 나가서 싸우게 해주세요. 후훗. 걱정 마세요, 상냥하신 분. 제 모든 건... 전부 당신 것이니까요.\n\n\n- 레이시",
     "icon": "TbarIcon_MP_FryerHead_N",
     "ai": "AI_MP_FridgerHead_01",
     "rarity": 5,
@@ -15139,8 +15193,8 @@ export default [
   {
     "id": "FryerHead_TU",
     "name": "프라이어 헤드",
-    "desc": "<교전 기록 없음>",
-    "icon": "TbarIcon_MP_FryerHead_TU",
+    "desc": "저 철충들은... 제 능력에 취약할 거예요. 부디, 제가 나가서 싸우게 해주세요. 후훗. 걱정 마세요, 상냥하신 분. 제 모든 건... 전부 당신 것이니까요.\n\n\n- 레이시",
+    "icon": "TbarIcon_MP_FryerHead_N",
     "ai": "AI_MP_FridgerHead_01",
     "rarity": 5,
     "type": 0,
@@ -15151,7 +15205,7 @@ export default [
   {
     "id": "FryerHead_TU2",
     "name": "프라이어 헤드",
-    "desc": "<교전 기록 없음>",
+    "desc": "저 철충들은... 제 능력에 취약할 거예요. 부디, 제가 나가서 싸우게 해주세요. 후훗. 걱정 마세요, 상냥하신 분. 제 모든 건... 전부 당신 것이니까요.\n\n\n- 레이시",
     "icon": "TbarIcon_MP_FryerHead_N",
     "ai": "AI_MP_FridgerHead_01",
     "rarity": 5,
@@ -15163,19 +15217,23 @@ export default [
   {
     "id": "FryerHead_TU3",
     "name": "프라이어 헤드",
-    "desc": "<교전 기록 없음>",
+    "desc": "저 철충들은... 제 능력에 취약할 거예요. 부디, 제가 나가서 싸우게 해주세요. 후훗. 걱정 마세요, 상냥하신 분. 제 모든 건... 전부 당신 것이니까요.\n\n\n- 레이시",
     "icon": "TbarIcon_MP_FryerHead_N",
     "ai": "AI_MP_FridgerHead_01",
     "rarity": 5,
     "type": 0,
     "role": 2,
     "isBoss": false,
-    "used": {}
+    "used": {
+      "Ev10": [
+        "Ev:Ev10:Ev1-2Ex"
+      ]
+    }
   },
   {
     "id": "FryerHead_TU4",
     "name": "프라이어 헤드",
-    "desc": "<교전 기록 없음>",
+    "desc": "저 철충들은... 제 능력에 취약할 거예요. 부디, 제가 나가서 싸우게 해주세요. 후훗. 걱정 마세요, 상냥하신 분. 제 모든 건... 전부 당신 것이니까요.\n\n\n- 레이시",
     "icon": "TbarIcon_MP_FryerHead_N",
     "ai": "AI_MP_FridgerHead_01",
     "rarity": 5,
@@ -15187,7 +15245,7 @@ export default [
   {
     "id": "FryerHead_TU5",
     "name": "프라이어 헤드",
-    "desc": "<교전 기록 없음>",
+    "desc": "저 철충들은... 제 능력에 취약할 거예요. 부디, 제가 나가서 싸우게 해주세요. 후훗. 걱정 마세요, 상냥하신 분. 제 모든 건... 전부 당신 것이니까요.\n\n\n- 레이시",
     "icon": "TbarIcon_MP_FryerHead_N",
     "ai": "AI_MP_FridgerHead_01",
     "rarity": 5,
@@ -15199,7 +15257,7 @@ export default [
   {
     "id": "FryerShooter_N",
     "name": "프라이어 슈터",
-    "desc": "<교전 기록 없음>",
+    "desc": "저 철충들은... 제 능력에 취약할 거예요. 부디, 제가 나가서 싸우게 해주세요. 후훗. 걱정 마세요, 상냥하신 분. 제 모든 건... 전부 당신 것이니까요.\n\n\n- 레이시",
     "icon": "TbarIcon_MP_FryerShooter_N",
     "ai": "AI_MP_FridgerShooter_01",
     "rarity": 4,
@@ -15211,8 +15269,8 @@ export default [
   {
     "id": "FryerShooter_TU",
     "name": "프라이어 슈터",
-    "desc": "<교전 기록 없음>",
-    "icon": "TbarIcon_MP_FryerShooter_TU",
+    "desc": "저 철충들은... 제 능력에 취약할 거예요. 부디, 제가 나가서 싸우게 해주세요. 후훗. 걱정 마세요, 상냥하신 분. 제 모든 건... 전부 당신 것이니까요.\n\n\n- 레이시",
+    "icon": "TbarIcon_MP_FryerShooter_N",
     "ai": "AI_MP_FridgerShooter_01",
     "rarity": 4,
     "type": 0,
@@ -15223,7 +15281,7 @@ export default [
   {
     "id": "FryerShooter_TU2",
     "name": "프라이어 슈터",
-    "desc": "<교전 기록 없음>",
+    "desc": "저 철충들은... 제 능력에 취약할 거예요. 부디, 제가 나가서 싸우게 해주세요. 후훗. 걱정 마세요, 상냥하신 분. 제 모든 건... 전부 당신 것이니까요.\n\n\n- 레이시",
     "icon": "TbarIcon_MP_FryerShooter_N",
     "ai": "AI_MP_FridgerShooter_01",
     "rarity": 4,
@@ -15235,19 +15293,23 @@ export default [
   {
     "id": "FryerShooter_TU3",
     "name": "프라이어 슈터",
-    "desc": "<교전 기록 없음>",
+    "desc": "저 철충들은... 제 능력에 취약할 거예요. 부디, 제가 나가서 싸우게 해주세요. 후훗. 걱정 마세요, 상냥하신 분. 제 모든 건... 전부 당신 것이니까요.\n\n\n- 레이시",
     "icon": "TbarIcon_MP_FryerShooter_N",
     "ai": "AI_MP_FridgerShooter_01",
     "rarity": 4,
     "type": 0,
     "role": 2,
     "isBoss": false,
-    "used": {}
+    "used": {
+      "Ev10": [
+        "Ev:Ev10:Ev1-2Ex"
+      ]
+    }
   },
   {
     "id": "FryerShooter_TU4",
     "name": "프라이어 슈터",
-    "desc": "<교전 기록 없음>",
+    "desc": "저 철충들은... 제 능력에 취약할 거예요. 부디, 제가 나가서 싸우게 해주세요. 후훗. 걱정 마세요, 상냥하신 분. 제 모든 건... 전부 당신 것이니까요.\n\n\n- 레이시",
     "icon": "TbarIcon_MP_FryerShooter_N",
     "ai": "AI_MP_FridgerShooter_01",
     "rarity": 4,
@@ -15259,7 +15321,7 @@ export default [
   {
     "id": "FryerShooter_TU5",
     "name": "프라이어 슈터",
-    "desc": "<교전 기록 없음>",
+    "desc": "저 철충들은... 제 능력에 취약할 거예요. 부디, 제가 나가서 싸우게 해주세요. 후훗. 걱정 마세요, 상냥하신 분. 제 모든 건... 전부 당신 것이니까요.\n\n\n- 레이시",
     "icon": "TbarIcon_MP_FryerShooter_N",
     "ai": "AI_MP_FridgerShooter_01",
     "rarity": 4,
@@ -15271,7 +15333,7 @@ export default [
   {
     "id": "FryerShell_N",
     "name": "프라이어 쉘",
-    "desc": "<교전 기록 없음>",
+    "desc": "저 철충들은... 제 능력에 취약할 거예요. 부디, 제가 나가서 싸우게 해주세요. 후훗. 걱정 마세요, 상냥하신 분. 제 모든 건... 전부 당신 것이니까요.\n\n\n- 레이시",
     "icon": "TbarIcon_MP_FryerShell_N",
     "ai": "AI_MP_FridgerShooter_01",
     "rarity": 4,
@@ -15283,8 +15345,8 @@ export default [
   {
     "id": "FryerShell_TU",
     "name": "프라이어 쉘",
-    "desc": "<교전 기록 없음>",
-    "icon": "TbarIcon_MP_FryerShell_TU",
+    "desc": "저 철충들은... 제 능력에 취약할 거예요. 부디, 제가 나가서 싸우게 해주세요. 후훗. 걱정 마세요, 상냥하신 분. 제 모든 건... 전부 당신 것이니까요.\n\n\n- 레이시",
+    "icon": "TbarIcon_MP_FryerShell_N",
     "ai": "AI_MP_FridgerShooter_01",
     "rarity": 4,
     "type": 0,
@@ -15295,7 +15357,7 @@ export default [
   {
     "id": "FryerShell_TU2",
     "name": "프라이어 쉘",
-    "desc": "<교전 기록 없음>",
+    "desc": "저 철충들은... 제 능력에 취약할 거예요. 부디, 제가 나가서 싸우게 해주세요. 후훗. 걱정 마세요, 상냥하신 분. 제 모든 건... 전부 당신 것이니까요.\n\n\n- 레이시",
     "icon": "TbarIcon_MP_FryerShell_N",
     "ai": "AI_MP_FridgerShooter_01",
     "rarity": 4,
@@ -15307,19 +15369,23 @@ export default [
   {
     "id": "FryerShell_TU3",
     "name": "프라이어 쉘",
-    "desc": "<교전 기록 없음>",
+    "desc": "저 철충들은... 제 능력에 취약할 거예요. 부디, 제가 나가서 싸우게 해주세요. 후훗. 걱정 마세요, 상냥하신 분. 제 모든 건... 전부 당신 것이니까요.\n\n\n- 레이시",
     "icon": "TbarIcon_MP_FryerShell_N",
     "ai": "AI_MP_FridgerShooter_01",
     "rarity": 4,
     "type": 0,
     "role": 1,
     "isBoss": false,
-    "used": {}
+    "used": {
+      "Ev10": [
+        "Ev:Ev10:Ev1-2Ex"
+      ]
+    }
   },
   {
     "id": "FryerShell_TU4",
     "name": "프라이어 쉘",
-    "desc": "<교전 기록 없음>",
+    "desc": "저 철충들은... 제 능력에 취약할 거예요. 부디, 제가 나가서 싸우게 해주세요. 후훗. 걱정 마세요, 상냥하신 분. 제 모든 건... 전부 당신 것이니까요.\n\n\n- 레이시",
     "icon": "TbarIcon_MP_FryerShell_N",
     "ai": "AI_MP_FridgerShooter_01",
     "rarity": 4,
@@ -15331,7 +15397,7 @@ export default [
   {
     "id": "FryerShell_TU5",
     "name": "프라이어 쉘",
-    "desc": "<교전 기록 없음>",
+    "desc": "저 철충들은... 제 능력에 취약할 거예요. 부디, 제가 나가서 싸우게 해주세요. 후훗. 걱정 마세요, 상냥하신 분. 제 모든 건... 전부 당신 것이니까요.\n\n\n- 레이시",
     "icon": "TbarIcon_MP_FryerShell_N",
     "ai": "AI_MP_FridgerShooter_01",
     "rarity": 4,
@@ -15753,8 +15819,8 @@ export default [
     "id": "Tracker_N",
     "name": "추격자",
     "desc": "추격자~~~",
-    "icon": "TbarIcon_MP_NightChick_N",
-    "ai": "AI_TrickSter_01",
+    "icon": "TbarIcon_MP_Tracker_N",
+    "ai": "AI_MP_Tracker_01",
     "rarity": 5,
     "type": 0,
     "role": 1,
@@ -15765,8 +15831,8 @@ export default [
     "id": "Tracker_TU",
     "name": "추격자",
     "desc": "추격자~~~",
-    "icon": "TbarIcon_MP_Tracker_TU",
-    "ai": "AI_TrickSter_01",
+    "icon": "TbarIcon_MP_Tracker_N",
+    "ai": "AI_MP_Tracker_01",
     "rarity": 5,
     "type": 0,
     "role": 1,
@@ -15777,8 +15843,8 @@ export default [
     "id": "Tracker_TU2",
     "name": "추격자",
     "desc": "추격자~~~",
-    "icon": "TbarIcon_MP_Tracker_TU2",
-    "ai": "AI_TrickSter_01",
+    "icon": "TbarIcon_MP_Tracker_N",
+    "ai": "AI_MP_Tracker_01",
     "rarity": 5,
     "type": 0,
     "role": 1,
@@ -15789,8 +15855,8 @@ export default [
     "id": "Tracker_TU3",
     "name": "추격자",
     "desc": "추격자~~~",
-    "icon": "TbarIcon_MP_Tracker_TU3",
-    "ai": "AI_TrickSter_01",
+    "icon": "TbarIcon_MP_Tracker_N",
+    "ai": "AI_MP_Tracker_01",
     "rarity": 5,
     "type": 0,
     "role": 1,
@@ -15801,8 +15867,8 @@ export default [
     "id": "Tracker_TU4",
     "name": "추격자",
     "desc": "추격자~~~",
-    "icon": "TbarIcon_MP_Tracker_TU4",
-    "ai": "AI_TrickSter_01",
+    "icon": "TbarIcon_MP_Tracker_N",
+    "ai": "AI_MP_Tracker_01",
     "rarity": 5,
     "type": 0,
     "role": 1,
@@ -15813,12 +15879,97 @@ export default [
     "id": "Tracker_TU5",
     "name": "추격자",
     "desc": "추격자~~~",
-    "icon": "TbarIcon_MP_Tracker_TU5",
-    "ai": "AI_TrickSter_01",
+    "icon": "TbarIcon_MP_Tracker_N",
+    "ai": "AI_MP_Tracker_01",
     "rarity": 5,
     "type": 0,
     "role": 1,
     "isBoss": false,
     "used": {}
+  },
+  {
+    "id": "LightningBomberEX_N",
+    "name": "라이트닝 봄버 Type-S",
+    "desc": "우와아... 또 이렇게 흉악한 철충이 나왔네요...헤헷, 그래도 귀~여운 린티한텐 안 될걸요? 공격해서 빈틈이 드러난 사이에, 린티가 한 방 먹여줄 거니까요~! 린티가 활약하는 모습, 꼭 봐주시기에요?\n\n\n- 사령관님의 귀.여.운. 린티가",
+    "icon": "TbarIcon_MP_LightningBomberEX_N",
+    "ai": "AI_MP_LightningBomberEX_01",
+    "rarity": 5,
+    "type": 2,
+    "role": 1,
+    "isBoss": false,
+    "used": {
+      "Ev10": [
+        "Ev:Ev10:Ev1-5",
+        "Ev:Ev10:Ev1-6"
+      ]
+    }
+  },
+  {
+    "id": "LightningBomberEX_TU2",
+    "name": "라이트닝 봄버 Type-S",
+    "desc": "우와아... 또 이렇게 흉악한 철충이 나왔네요...헤헷, 그래도 귀~여운 린티한텐 안 될걸요? 공격해서 빈틈이 드러난 사이에, 린티가 한 방 먹여줄 거니까요~! 린티가 활약하는 모습, 꼭 봐주시기에요?\n\n\n- 사령관님의 귀.여.운. 린티가",
+    "icon": "TbarIcon_MP_LightningBomberEX_N",
+    "ai": "AI_MP_LightningBomberEX_01",
+    "rarity": 5,
+    "type": 2,
+    "role": 1,
+    "isBoss": false,
+    "used": {}
+  },
+  {
+    "id": "LightningBomberEX_TU3",
+    "name": "라이트닝 봄버 Type-S",
+    "desc": "우와아... 또 이렇게 흉악한 철충이 나왔네요...헤헷, 그래도 귀~여운 린티한텐 안 될걸요? 공격해서 빈틈이 드러난 사이에, 린티가 한 방 먹여줄 거니까요~! 린티가 활약하는 모습, 꼭 봐주시기에요?\n\n\n- 사령관님의 귀.여.운. 린티가",
+    "icon": "TbarIcon_MP_LightningBomberEX_N",
+    "ai": "AI_MP_LightningBomberEX_01",
+    "rarity": 5,
+    "type": 2,
+    "role": 1,
+    "isBoss": false,
+    "used": {}
+  },
+  {
+    "id": "LightningBomberEX_TU4",
+    "name": "라이트닝 봄버 Type-S",
+    "desc": "우와아... 또 이렇게 흉악한 철충이 나왔네요...헤헷, 그래도 귀~여운 린티한텐 안 될걸요? 공격해서 빈틈이 드러난 사이에, 린티가 한 방 먹여줄 거니까요~! 린티가 활약하는 모습, 꼭 봐주시기에요?\n\n\n- 사령관님의 귀.여.운. 린티가",
+    "icon": "TbarIcon_MP_LightningBomberEX_N",
+    "ai": "AI_MP_LightningBomberEX_01",
+    "rarity": 5,
+    "type": 2,
+    "role": 1,
+    "isBoss": false,
+    "used": {
+      "Ev10": [
+        "Ev:Ev10:Ev1-1Ex"
+      ]
+    }
+  },
+  {
+    "id": "LightningBomberEX_TU5",
+    "name": "라이트닝 봄버 Type-S",
+    "desc": "우와아... 또 이렇게 흉악한 철충이 나왔네요...헤헷, 그래도 귀~여운 린티한텐 안 될걸요? 공격해서 빈틈이 드러난 사이에, 린티가 한 방 먹여줄 거니까요~! 린티가 활약하는 모습, 꼭 봐주시기에요?\n\n\n- 사령관님의 귀.여.운. 린티가",
+    "icon": "TbarIcon_MP_LightningBomberEX_N",
+    "ai": "AI_MP_LightningBomberEX_01",
+    "rarity": 5,
+    "type": 2,
+    "role": 1,
+    "isBoss": false,
+    "used": {}
+  },
+  {
+    "id": "Hirume_N",
+    "name": "천향의 히루메",
+    "desc": "처, 첩에게 심한 짓을 할 생각인게지!",
+    "icon": "TbarIcon_MP_Hirume_N",
+    "ai": "AI_MP_Hirume_01",
+    "rarity": 5,
+    "type": 0,
+    "role": 0,
+    "isBoss": false,
+    "used": {
+      "Ev10": [
+        "Ev:Ev10:Ev1-2"
+      ]
+    }
   }
 ];

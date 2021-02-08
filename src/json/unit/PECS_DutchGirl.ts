@@ -113,6 +113,9 @@ export default {
       "Ev:Ev9:Ev2-2",
       "Ev:Ev9:Ev2-8",
       "Ev:Ev9:Ev3-2s"
+    ],
+    [
+      "Ev:Ev10:Ev1-4"
     ]
   ],
   "promotions": [

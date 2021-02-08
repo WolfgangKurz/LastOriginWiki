@@ -1,5 +1,22 @@
 <template>
 	<div>
+		<changelog-item title="Build 7845" date="2021-02-08">
+			<template #new>
+				<li>신규 전투원 <b-badge variant="warning">천향의 히루메</b-badge>의 정보가 추가되었습니다.</li>
+				<li><b-badge variant="warning">누군가 바랐던 소원</b-badge> 이벤트 정보가 추가되었습니다. (교환소 정보는 이후 추가됩니다.)</li>
+				<li>신규 적 정보가 추가되었습니다.</li>
+			</template>
+			<template #update>
+				<li>일부 적의 정보가 갱신되었습니다.</li>
+			</template>
+			<template #skin>
+				<li><b-badge variant="warning">T-14 미호</b-badge> <b-badge variant="danger">천 년의 약속</b-badge> 스킨 정보가 추가되었습니다.</li>
+			</template>
+			<template #dialogue>
+				<li><b-badge variant="warning">사라카엘</b-badge>의 대사 일부가 잘못입력되어있던 점을 수정했습니다.</li>
+			</template>
+		</changelog-item>
+
 		<changelog-item title="Build 7842" date="2021-02-01">
 			<template #bugfix>
 				<li>

@@ -1,7 +1,7 @@
 export default {
   "id": "FryerHead_TU3",
   "name": "프라이어 헤드",
-  "desc": "<교전 기록 없음>",
+  "desc": "저 철충들은... 제 능력에 취약할 거예요. 부디, 제가 나가서 싸우게 해주세요. 후훗. 걱정 마세요, 상냥하신 분. 제 모든 건... 전부 당신 것이니까요.\n\n\n- 레이시",
   "icon": "TbarIcon_MP_FryerHead_N",
   "ai": "AI_MP_FridgerHead_01",
   "rarity": 5,
@@ -25,15 +25,15 @@ export default {
   "acc": 350,
   "eva": 10,
   "res": {
-    "fire": 50,
-    "chill": 50,
+    "fire": 60,
+    "chill": 60,
     "thunder": 0
   },
   "skills": [
     {
       "key": "Skill_MP_FryerHead_N_1",
       "name": "리펄서 쇼크",
-      "icon": "IceShot",
+      "icon": "Shock",
       "desc": "{0} 전기 피해를 주고, 2라운드 동안 대상을 표식으로 설정하고 전기 저항을 감소시킵니다.",
       "passive": false,
       "type": 3,
@@ -411,7 +411,7 @@ export default {
     {
       "key": "Skill_MP_FryerHead_N_4",
       "name": "전기 방사",
-      "icon": "WideIceShot",
+      "icon": "WideLightning",
       "desc": "라운드 개시 시, 지정 범위 적의 회피 / 방어 관통을 크게 감소시킵니다. 방어 관통 감소 효과는 매 라운드 감소하며, 자신 사망 시 아군 전체의 회피를 감소시킵니다.",
       "passive": true,
       "type": 0,

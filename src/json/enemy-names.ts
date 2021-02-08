@@ -855,5 +855,11 @@ export default {
   "Tracker_TU2": "추격자",
   "Tracker_TU3": "추격자",
   "Tracker_TU4": "추격자",
-  "Tracker_TU5": "추격자"
+  "Tracker_TU5": "추격자",
+  "LightningBomberEX_N": "라이트닝 봄버 Type-S",
+  "LightningBomberEX_TU2": "라이트닝 봄버 Type-S",
+  "LightningBomberEX_TU3": "라이트닝 봄버 Type-S",
+  "LightningBomberEX_TU4": "라이트닝 봄버 Type-S",
+  "LightningBomberEX_TU5": "라이트닝 봄버 Type-S",
+  "Hirume_N": "천향의 히루메"
 };
