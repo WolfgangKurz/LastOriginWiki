@@ -1,7 +1,7 @@
 export default {
   "id": "FryerShooter_N",
   "name": "프라이어 슈터",
-  "desc": "<교전 기록 없음>",
+  "desc": "저 철충들은... 제 능력에 취약할 거예요. 부디, 제가 나가서 싸우게 해주세요. 후훗. 걱정 마세요, 상냥하신 분. 제 모든 건... 전부 당신 것이니까요.\n\n\n- 레이시",
   "icon": "TbarIcon_MP_FryerShooter_N",
   "ai": "AI_MP_FridgerShooter_01",
   "rarity": 4,
@@ -25,15 +25,15 @@ export default {
   "acc": 180,
   "eva": 10,
   "res": {
-    "fire": 50,
-    "chill": 50,
+    "fire": 60,
+    "chill": 60,
     "thunder": 0
   },
   "skills": [
     {
       "key": "Skill_MP_FryerShooter_N_1",
       "name": "리펄서 쇼크",
-      "icon": "IceShot",
+      "icon": "Shock",
       "desc": "{0} 전기 피해를 주고, 2라운드 동안 대상의 공격력 / 전기 저항을 감소시키고 받는 피해를 증가시킵니다.",
       "passive": false,
       "type": 3,
@@ -482,7 +482,7 @@ export default {
     {
       "key": "Skill_MP_FryerShooter_N_4",
       "name": "충전 장치",
-      "icon": "IceShot",
+      "icon": "Shock",
       "desc": "라운드 개시 시, 자신이 회피 감소 상태일 경우 행동력 / 효과 저항이 크게 증가합니다.",
       "passive": true,
       "type": 0,

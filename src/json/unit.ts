@@ -329,6 +329,9 @@ export default [
         "Ev:Ev6:Ev2-1Ex"
       ],
       [
+        "Ev:Ev10:Ev1-1Ex"
+      ],
+      [
         "Exc:20:11"
       ]
     ]
@@ -408,6 +411,9 @@ export default [
       ],
       [
         "Ev:Ev7:Ev1-4"
+      ],
+      [
+        "Ev:Ev10:Ev1-1Ex"
       ]
     ],
     "promotions": [
@@ -629,6 +635,9 @@ export default [
         "Ev:Ev9:Ev2-4",
         "Ev:Ev9:Ev2-4B",
         "Ev:Ev9:Ev3-3s"
+      ],
+      [
+        "Ev:Ev10:Ev1-5"
       ]
     ],
     "promotions": [
@@ -988,6 +997,9 @@ export default [
         "Ev:Ev9:Ev2-4B",
         "Ev:Ev9:Ev3-1s",
         "Ev:Ev9:Ev3-4s"
+      ],
+      [
+        "Ev:Ev10:Ev1-4"
       ]
     ],
     "promotions": [
@@ -1053,6 +1065,9 @@ export default [
       ],
       [
         "Ev:Ev9:Ev1-1Ex"
+      ],
+      [
+        "Ev:Ev10:Ev1-6"
       ],
       [
         "Exc:19:6"
@@ -1141,6 +1156,9 @@ export default [
       ],
       [
         "Ev:Ev9:Ev1-1Ex"
+      ],
+      [
+        "Ev:Ev10:Ev1-4"
       ]
     ],
     "promotions": [
@@ -1586,6 +1604,9 @@ export default [
         "Ev:Ev9:Ev2-4B",
         "Ev:Ev9:Ev3-1s",
         "Ev:Ev9:Ev3-3s"
+      ],
+      [
+        "Ev:Ev10:Ev1-3"
       ]
     ],
     "promotions": [
@@ -1758,6 +1779,9 @@ export default [
         "Ev:Ev9:Ev2-1Ex",
         "Ev:Ev9:Ev3-1s",
         "Ev:Ev9:Ev3-4s"
+      ],
+      [
+        "Ev:Ev10:Ev1-1"
       ]
     ],
     "promotions": [
@@ -2013,6 +2037,9 @@ export default [
         "Ev:Ev9:Ev2-3",
         "Ev:Ev9:Ev2-1B",
         "Ev:Ev9:Ev3-3s"
+      ],
+      [
+        "Ev:Ev10:Ev1-5"
       ]
     ],
     "promotions": [
@@ -2505,6 +2532,9 @@ export default [
         "Ev:Ev8:Ev1-1Ex"
       ],
       [
+        "Ev:Ev10:Ev1-5"
+      ],
+      [
         "Exc:19:6"
       ]
     ],
@@ -2580,6 +2610,9 @@ export default [
       [
         "Ev:Ev6:Ev2-4",
         "Ev:Ev6:Ev2-5Ex"
+      ],
+      [
+        "Ev:Ev10:Ev1-4"
       ]
     ],
     "promotions": [
@@ -2693,6 +2726,9 @@ export default [
         "Ev:Ev9:Ev2-1B",
         "Ev:Ev9:Ev2-3Ex",
         "Ev:Ev9:Ev3-3s"
+      ],
+      [
+        "Ev:Ev10:Ev1-3"
       ]
     ],
     "promotions": [
@@ -2833,6 +2869,9 @@ export default [
         "Ev:Ev9:Ev2-1B",
         "Ev:Ev9:Ev2-3Ex",
         "Ev:Ev9:Ev3-2s"
+      ],
+      [
+        "Ev:Ev10:Ev1-1"
       ]
     ],
     "promotions": [
@@ -3254,6 +3293,10 @@ export default [
         "Ev:Ev9:Ev2-4B",
         "Ev:Ev9:Ev3-1s",
         "Ev:Ev9:Ev3-4s"
+      ],
+      [
+        "Ev:Ev10:Ev1-1",
+        "Ev:Ev10:Ev1-3"
       ]
     ],
     "promotions": [
@@ -3710,6 +3753,9 @@ export default [
         "Ev:Ev9:Ev2-3",
         "Ev:Ev9:Ev2-1B",
         "Ev:Ev9:Ev3-2s"
+      ],
+      [
+        "Ev:Ev10:Ev1-6"
       ]
     ],
     "promotions": [
@@ -4849,6 +4895,11 @@ export default [
         "Ev:Ev9:Ev1-3Ex",
         "Ev:Ev9:Ev3-1s",
         "Ev:Ev9:Ev3-4s"
+      ],
+      [
+        "Ev:Ev10:Ev1-1",
+        "Ev:Ev10:Ev1-1Ex",
+        "Ev:Ev10:Ev1-2Ex"
       ]
     ],
     "promotions": [
@@ -4984,6 +5035,9 @@ export default [
       ],
       [
         "Ev:Ev9:Ev1-3Ex"
+      ],
+      [
+        "Ev:Ev10:Ev1-5"
       ]
     ]
   },
@@ -5108,6 +5162,9 @@ export default [
         "Ev:Ev9:Ev1-3Ex",
         "Ev:Ev9:Ev3-1s",
         "Ev:Ev9:Ev3-4s"
+      ],
+      [
+        "Ev:Ev10:Ev1-1"
       ]
     ],
     "promotions": [
@@ -5399,6 +5456,9 @@ export default [
       ],
       [
         "Ev:Ev9:Ev1-4"
+      ],
+      [
+        "Ev:Ev10:Ev1-2Ex"
       ]
     ],
     "promotions": [
@@ -6216,6 +6276,9 @@ export default [
       [
         "Ev:Ev9:Ev2-6",
         "Ev:Ev9:Ev3-3s"
+      ],
+      [
+        "Ev:Ev10:Ev1-3"
       ]
     ],
     "promotions": [
@@ -6667,6 +6730,9 @@ export default [
         "Ev:Ev9:Ev2-2",
         "Ev:Ev9:Ev2-8",
         "Ev:Ev9:Ev3-2s"
+      ],
+      [
+        "Ev:Ev10:Ev1-4"
       ]
     ],
     "promotions": [
@@ -7011,6 +7077,9 @@ export default [
         "Ev:Ev9:Ev2-7",
         "Ev:Ev9:Ev2-2Ex",
         "Ev:Ev9:Ev3-2s"
+      ],
+      [
+        "Ev:Ev10:Ev1-4"
       ]
     ],
     "promotions": [
@@ -7104,6 +7173,9 @@ export default [
       ],
       [
         "Ev:Ev9:Ev1-2Ex"
+      ],
+      [
+        "Ev:Ev10:Ev1-6"
       ]
     ],
     "promotions": [
@@ -7172,6 +7244,10 @@ export default [
       [
         "Ev:Ev9:Ev1-1Ex",
         "Ev:Ev9:Ev1-2Ex"
+      ],
+      [
+        "Ev:Ev10:Ev1-1Ex",
+        "Ev:Ev10:Ev1-2Ex"
       ]
     ],
     "promotions": [
@@ -7233,6 +7309,10 @@ export default [
       [
         "Ev:Ev9:Ev1-1Ex",
         "Ev:Ev9:Ev1-2Ex"
+      ],
+      [
+        "Ev:Ev10:Ev1-1Ex",
+        "Ev:Ev10:Ev1-2Ex"
       ]
     ],
     "promotions": [
@@ -7453,6 +7533,9 @@ export default [
         "Ev:Ev9:Ev2-3",
         "Ev:Ev9:Ev2-1B",
         "Ev:Ev9:Ev3-3s"
+      ],
+      [
+        "Ev:Ev10:Ev1-6"
       ]
     ],
     "promotions": [
@@ -7611,6 +7694,9 @@ export default [
         "Ev:Ev9:Ev2-4",
         "Ev:Ev9:Ev2-4B",
         "Ev:Ev9:Ev3-3s"
+      ],
+      [
+        "Ev:Ev10:Ev1-3"
       ]
     ],
     "promotions": [
@@ -8711,6 +8797,9 @@ export default [
         "Ev:Ev9:Ev1-3Ex"
       ],
       [
+        "Ev:Ev10:Ev1-2Ex"
+      ],
+      [
         "Exc:20:7"
       ]
     ]
@@ -8864,6 +8953,56 @@ export default [
     ]
   },
   {
+    "id": 148,
+    "uid": "3P_Hirume",
+    "rarity": 5,
+    "type": 0,
+    "role": 0,
+    "body": 0,
+    "name": "천향의 히루메",
+    "shortname": "천향의 히루메",
+    "group": "배틀 메이드 프로젝트 II",
+    "shortgroup": "배틀 메이드 프로젝트",
+    "groupkey": "BattleMaid",
+    "introduce": "소개 말이더냐. 첩은 고귀한 존재를 모시는 무녀, 히루메다. 잠시 그대에게 신세를- ……! 가, 가까이 오지 말고 거기서 듣거라!\n흠흠. 첩을 만든 삼안 산업에서는 점점 더 혼란스러워져가는 정치구도에 주목했다. 날이 갈수록 정치인들을 대상으로 한 각종 암살 시도와 모략이 횡행했고, 심지어 일반 시민들에게까지 목숨을 위협받게 되었지.\n삼안 산업에서는 그것을 기회로 삼아, 여러 나라들의 전설과 전통을 반영한 고급 모델을 기획했다. 그래, 첩은 그 중에서도 가장 혼란스러웠던- ...윽. 무, 무례한 말을 하는구나. 첩은 문제가 있어서 컴패니언에서 배틀메이드로 소속이 옮겨진 것이 절.대.로. 아니다. 오히려 첩의 힘을 더욱 활용하기 위함이었지.\n첩은 신성한 광휘와 불꽃을 이용해 악한 것을 정화하고, 아군을 수호한다. 원한다면 그대 또한- \n...그런데 그대, 조금 전부터 눈빛이 수상하구나. 혹시… 그, 그렇군. 네녀석, 첩에게 심한 짓을 할 생각이로구나…! 큭, 불찰이었다. 선뜻 식량을 나눠줄 때 눈치를 챘어야 했건만…\n발뺌하지 말거라! 줄곧 첩의 꼬리와 귀를 끈적하게 쳐다보았지 않느냐! 흑... 첩은 고작 참치캔 몇 개에 엉망진창으로 당하고 말겠구나… 이래서 누구와도 만나고 싶지 않았건만...",
+    "height": "169cm",
+    "weight": "58kg",
+    "weapon1": "Miko",
+    "weapon2": "Drone hub “Yatagarasu”",
+    "craftable": 22320,
+    "favor": {
+      "present": 2.5,
+      "clear": 0.75,
+      "death": 2,
+      "assistant": 3
+    },
+    "marry": true,
+    "linkBonus": [
+      "HP_20",
+      "ATK_20",
+      "ACC_5",
+      "Exp_5"
+    ],
+    "fullLinkBonus": [
+      "Cost_25",
+      "HP_20",
+      "ACC_75",
+      "Buff_2",
+      "SPD_10"
+    ],
+    "equip": [
+      0,
+      0,
+      1,
+      2
+    ],
+    "source": [
+      [
+        "Ev:Ev10:*Ev1-2"
+      ]
+    ]
+  },
+  {
     "id": 149,
     "uid": "ST_Tiamat",
     "rarity": 5,
@@ -8916,6 +9055,9 @@ export default [
       ],
       [
         "Ev:Ev7:Ev3-1s"
+      ],
+      [
+        "Ev:Ev10:Ev1-2Ex"
       ]
     ]
   },
@@ -9484,6 +9626,9 @@ export default [
         "Ev:Ev9:*Ev1-7"
       ],
       [
+        "Ev:Ev10:Ev1-1Ex"
+      ],
+      [
         "Exc:20:10"
       ]
     ]
@@ -9650,6 +9795,9 @@ export default [
       ],
       [
         "Ev:Ev9:Ev2-8"
+      ],
+      [
+        "Ev:Ev10:Ev1-5"
       ]
     ]
   },
@@ -9700,6 +9848,9 @@ export default [
     "source": [
       [
         "Ev:Ev8:Ev2-1Ex"
+      ],
+      [
+        "Ev:Ev10:Ev1-6"
       ]
     ]
   },
@@ -9750,6 +9901,9 @@ export default [
     "source": [
       [
         "Ev:Ev9:Ev1-2Ex"
+      ],
+      [
+        "Ev:Ev10:Ev1-1Ex"
       ]
     ]
   },
@@ -10013,6 +10167,9 @@ export default [
     "source": [
       [
         "Ev:Ev8:Ev2-2Ex"
+      ],
+      [
+        "Ev:Ev10:Ev1-2Ex"
       ]
     ]
   },

@@ -1289,98 +1289,98 @@ export default [
     "key": "CharTicket_Char_3P_Hachiko_N",
     "name": "성벽의 하치코",
     "icon": "InvenIcon_3P_Hachiko_N",
-    "desc": "성벽의 하치코을 지급합니다.",
+    "desc": "성벽의 하치코를 지급합니다.",
     "func": "CharTicket_Char_3P_Hachiko_N"
   },
   {
     "key": "CharTicket_Char_BR_Djinnia_N",
     "name": "P-2000 지니야",
     "icon": "InvenIcon_BR_Djinnia_N",
-    "desc": "P-2000 지니야을 지급합니다.",
+    "desc": "P-2000 지니야를 지급합니다.",
     "func": "CharTicket_Char_BR_Djinnia_N"
   },
   {
     "key": "CharTicket_Char_BR_Blackhound_N",
     "name": "P/A-8 블랙 하운드",
     "icon": "InvenIcon_BR_Blackhound_N",
-    "desc": "P/A-8 블랙 하운드을 지급합니다.",
+    "desc": "P/A-8 블랙 하운드를 지급합니다.",
     "func": "CharTicket_Char_BR_Blackhound_N"
   },
   {
     "key": "CharTicket_Char_BR_DrM_N",
     "name": "닥터",
     "icon": "InvenIcon_BR_DrM_N",
-    "desc": "닥터을 지급합니다.",
+    "desc": "닥터를 지급합니다.",
     "func": "CharTicket_Char_BR_DrM_N"
   },
   {
     "key": "CharTicket_Char_BR_PXSilky_N",
     "name": "T-50 PX 실키",
     "icon": "InvenIcon_BR_PXSilky_N",
-    "desc": "T-50 PX 실키을 지급합니다.",
+    "desc": "T-50 PX 실키를 지급합니다.",
     "func": "CharTicket_Char_BR_PXSilky_N"
   },
   {
     "key": "CharTicket_Char_PECS_Stinger_N",
     "name": "스팅어",
     "icon": "InvenIcon_PECS_Stinger_N",
-    "desc": "스팅어을 지급합니다.",
+    "desc": "스팅어를 지급합니다.",
     "func": "CharTicket_Char_PECS_Stinger_N"
   },
   {
     "key": "CharTicket_Char_BR_Miho_N",
     "name": "T-14 미호",
     "icon": "InvenIcon_BR_Miho_N",
-    "desc": "T-14 미호을 지급합니다.",
+    "desc": "T-14 미호를 지급합니다.",
     "func": "CharTicket_Char_BR_Miho_N"
   },
   {
     "key": "CharTicket_Char_BR_Calista_N",
     "name": "A-54 칼리스타",
     "icon": "InvenIcon_BR_Calista_N",
-    "desc": "A-54 칼리스타을 지급합니다.",
+    "desc": "A-54 칼리스타를 지급합니다.",
     "func": "CharTicket_Char_BR_Calista_N"
   },
   {
     "key": "CharTicket_Char_AGS_Gigantes_N",
     "name": "기간테스",
     "icon": "InvenIcon_AGS_Gigantes_N",
-    "desc": "기간테스을 지급합니다.",
+    "desc": "기간테스를 지급합니다.",
     "func": "CharTicket_Char_AGS_Gigantes_N"
   },
   {
     "key": "CharTicket_Char_AGS_Seljuq_N",
     "name": "셀주크",
     "icon": "InvenIcon_AGS_Seljuq_N",
-    "desc": "셀주크을 지급합니다.",
+    "desc": "셀주크를 지급합니다.",
     "func": "CharTicket_Char_AGS_Seljuq_N"
   },
   {
     "key": "CharTicket_Char_BR_Daika_N",
     "name": "37식 다이카",
     "icon": "InvenIcon_BR_Daika_N",
-    "desc": "37식 다이카을 지급합니다.",
+    "desc": "37식 다이카를 지급합니다.",
     "func": "CharTicket_Char_BR_Daika_N"
   },
   {
     "key": "CharTicket_Char_3P_Aqua_N",
     "name": "아쿠아",
     "icon": "InvenIcon_3P_Aqua_N",
-    "desc": "아쿠아을 지급합니다.",
+    "desc": "아쿠아를 지급합니다.",
     "func": "CharTicket_Char_3P_Aqua_N"
   },
   {
     "key": "CharTicket_Char_BR_Wraithy_N",
     "name": "레이시",
     "icon": "InvenIcon_BR_Wraithy_N",
-    "desc": "레이시을 지급합니다.",
+    "desc": "레이시를 지급합니다.",
     "func": "CharTicket_Char_BR_Wraithy_N"
   },
   {
     "key": "CharTicket_Char_BR_Bulgasari_N",
     "name": "T-60 불가사리",
     "icon": "InvenIcon_BR_Bulgasari_N",
-    "desc": "T-60 불가사리을 지급합니다.",
+    "desc": "T-60 불가사리를 지급합니다.",
     "func": "CharTicket_Char_BR_Bulgasari_N"
   },
   {
@@ -1394,7 +1394,7 @@ export default [
     "key": "CharTicket_Char_BR_WarWolf_N",
     "name": "T-75 워울프",
     "icon": "InvenIcon_BR_WarWolf_N",
-    "desc": "T-75 워울프을 지급합니다.",
+    "desc": "T-75 워울프를 지급합니다.",
     "func": "CharTicket_Char_BR_WarWolf_N"
   },
   {
@@ -6161,7 +6161,7 @@ export default [
   },
   {
     "key": "ResetPack_BF_50",
-    "name": "블랙 프라이데이 초기화 장비 패키지",
+    "name": "초기화 장비 패키지",
     "icon": "UI_Icon_ResetPack_BF_50",
     "desc": "전투 모듈 초기화 장비와 코어 링크 해제기가 50개씩 들어 있는 패키지 입니다.",
     "func": "ResetPack_BF_50"
@@ -7198,93 +7198,93 @@ export default [
   },
   {
     "key": "TunaCan_6_30percentup",
-    "name": "레이시 용 슬립 란제리 스킨과 수제 케이크 1개, 초콜릿 2개, 합성 롤리팝 3개가 들어있는 팩입니다.",
+    "name": "참치캔 6개에 30%추가",
     "icon": "UI_Icon_TunaCan_T1",
-    "desc": "1001101951",
+    "desc": "참치캔 6개에 30%를 추가하여 총 8개를 지급합니다.",
     "func": "TunaCan_6_30percentup"
   },
   {
     "key": "TunaCan_18_30percentup",
-    "name": "파티마의 편지",
+    "name": "참치캔 18개에 30%추가",
     "icon": "UI_Icon_TunaCan_T1",
-    "desc": "1001101952",
+    "desc": "참치캔 18개에 30%를 추가하여 총 24개를 지급합니다.",
     "func": "TunaCan_18_30percentup"
   },
   {
     "key": "TunaCan_30_30percentup",
-    "name": "안녕하세요! 사령관님!&n이렇게 편지로 인사드리는 건 처음이네요.&n&n처음 사령관님을 뵌 게 바로 어제 같은데 우리가 만난지 2년이나 지났네요.&n2년이 지나 지난 일들을 되돌아보면 전장에서 함선에서 오랫동안 함께 하며 행복했던 기억들이 하나하나 떠올라 저를 행복하게 해요.&n그동안 사령관님이 보여주신 사랑에 조금이나마 보답하기 위해 작은 선물을 보내요.&n사령관님이 헤쳐 나가는 힘든 싸움에 조금이나마 도움이 되었으면 좋겠어요.&n이 싸움이 언제 끝날 지는 몰라도, 이 싸움의 끝이 우리의 승리란 걸 믿고 있어요.&n지금까지처럼, 그리고 앞으로도 영원히 함께해요. 사령관님. 세상이 끝날 때까지.",
+    "name": "참치캔 30개에 30%추가",
     "icon": "UI_Icon_TunaCan_T2",
-    "desc": "1001101953",
+    "desc": "참치캔 30개에 30%를 추가하여 총 39개를 지급합니다.",
     "func": "TunaCan_30_30percentup"
   },
   {
     "key": "TunaCan_60_30percentup",
-    "name": "파티마의 편지 입니다.\n\n[i][c][B8DDD9FF]세상이 끝날 때까지 함께 해요!",
+    "name": "참치캔 60개에 30%추가",
     "icon": "UI_Icon_TunaCan_T3",
-    "desc": "1001101954",
+    "desc": "참치캔 60개에 30%를 추가하여 총 78개를 지급합니다.",
     "func": "TunaCan_60_30percentup"
   },
   {
     "key": "TunaCan_180_30percentup",
-    "name": "1001101943",
+    "name": "참치캔 180개에 30%추가",
     "icon": "UI_Icon_TunaCan_T4",
-    "desc": "1001101955",
+    "desc": "참치캔 180개에 30%를 추가하여 총 234개를 지급합니다.",
     "func": "TunaCan_180_30percentup"
   },
   {
     "key": "TunaCan_300_30percentup",
-    "name": "1001101944",
+    "name": "참치캔 300개에 30%추가",
     "icon": "UI_Icon_TunaCan_T5",
-    "desc": "1001101956",
+    "desc": "참치캔 300개에 30%를 추가하여 총 390개를 지급합니다.",
     "func": "TunaCan_300_30percentup"
   },
   {
     "key": "TunaCan_600_30percentup",
-    "name": "1001101945",
+    "name": "참치캔 600개에 30%추가",
     "icon": "UI_Icon_TunaCan_T6",
-    "desc": "1001101957",
+    "desc": "참치캔 600개에 30%를 추가하여 총 780개를 지급합니다.",
     "func": "TunaCan_600_30percentup"
   },
   {
     "key": "TunaCan_21_30percentupios",
-    "name": "1001101946",
+    "name": "참치캔 21개에 30%추가",
     "icon": "UI_Icon_TunaCan_T1",
-    "desc": "1001101958",
+    "desc": "참치캔 21개에 30%를 추가하여 총 28개를 지급합니다.",
     "func": "TunaCan_21_30percentupios"
   },
   {
     "key": "TunaCan_32_30percentupios",
-    "name": "1001101947",
+    "name": "참치캔 32개에 30%추가",
     "icon": "UI_Icon_TunaCan_T2",
-    "desc": "1001101959",
+    "desc": "참치캔 32개에 30%를 추가하여 총 42개를 지급합니다.",
     "func": "TunaCan_32_30percentupios"
   },
   {
     "key": "TunaCan_60_30percentupios",
-    "name": "1001101948",
+    "name": "참치캔 60개에 30%추가",
     "icon": "UI_Icon_TunaCan_T3",
-    "desc": "1001101960",
+    "desc": "참치캔 60개에 30%를 추가하여 총 78개를 지급합니다.",
     "func": "TunaCan_60_30percentupios"
   },
   {
     "key": "TunaCan_180_30percentupios",
-    "name": "1001101949",
+    "name": "참치캔 180개에 30%추가",
     "icon": "UI_Icon_TunaCan_T4",
-    "desc": "1001101961",
+    "desc": "참치캔 180개에 30%를 추가하여 총 234개를 지급합니다.",
     "func": "TunaCan_180_30percentupios"
   },
   {
     "key": "TunaCan_300_30percentupios",
-    "name": "1001101950",
+    "name": "참치캔 300개에 30%추가",
     "icon": "UI_Icon_TunaCan_T5",
-    "desc": "1001101962",
+    "desc": "참치캔 300개에 30%를 추가하여 총 390개를 지급합니다.",
     "func": "TunaCan_300_30percentupios"
   },
   {
     "key": "TunaCan_650_30percentupios",
-    "name": "1001101951",
+    "name": "참치캔 650개에 30%추가",
     "icon": "UI_Icon_TunaCan_T6",
-    "desc": "1001101963",
+    "desc": "참치캔 650개에 30%를 추가하여 총 845개를 지급합니다.",
     "func": "TunaCan_650_30percentupios"
   },
   {
@@ -7292,5 +7292,45 @@ export default [
     "name": "파티마의 편지",
     "icon": "UI_Icon_CharLetter_Fatima",
     "desc": "안녕하세요! 사령관님!\n이렇게 편지로 인사드리는 건 처음이네요.\n\n처음 사령관님을 뵌 게 바로 어제 같은데 우리가 만난지 2년이나 지났네요.\n2년이 지나 지난 일들을 되돌아보면 전장에서 함선에서 오랫동안 함께 하며 행복했던 기억들이 하나하나 떠올라 저를 행복하게 해요.\n그동안 사령관님이 보여주신 사랑에 조금이나마 보답하기 위해 작은 선물을 보내요.\n사령관님이 헤쳐 나가는 힘든 싸움에 조금이나마 도움이 되었으면 좋겠어요.\n이 싸움이 언제 끝날 지는 몰라도, 이 싸움의 끝이 우리의 승리란 걸 믿고 있어요.\n지금까지처럼, 그리고 앞으로도 영원히 함께해요. 사령관님. 세상이 끝날 때까지."
+  },
+  {
+    "key": "CharTicket_Char_3P_Hirume_N",
+    "name": "천향의 히루메",
+    "icon": "InvenIcon_3P_Hirume_N",
+    "desc": "천향의 히루메를 지급합니다",
+    "func": "CharTicket_Char_3P_Hirume_N"
+  },
+  {
+    "key": "Skin_BR_Miho_3",
+    "name": "구미호 코스튬(미호)",
+    "icon": "UI_Icon_Skin_BR_Miho_3",
+    "desc": "혹시 상대방이 나에게 질리진 않을까? 오래된 연인들의 공통된 걱정이겠죠. 그럴 리 없다고 생각하면서도, 미호는 혹시 모를 권태기를 대비하기 위해 코스프레를 감행하기로 했습니다. 부끄러워 죽을 것 같으면서도 요망한 표정을 짓는 구미호 아가씨가 원하는 건 뭘까요?",
+    "func": "Skin_BR_Miho_3"
+  },
+  {
+    "key": "Shop_Package_Skin_BR_Miho_3",
+    "name": "천 년의 약속",
+    "icon": "UI_Icon_SkinPack_BR_Miho_3",
+    "desc": "미호 용 구미호 코스튬 스킨과 수제 케이크 1개, 초콜릿 2개, 합성 롤리팝 3개가 들어있는 팩입니다.",
+    "func": "Shop_Package_Skin_BR_Miho_3"
+  },
+  {
+    "key": "Ev_Consumable_NewYearTalent",
+    "name": "오르카 달란트",
+    "icon": "Ev_Consumable_NewYearTalent",
+    "desc": "사령관이 준비한 오르카 달란트입니다. 이벤트 교환소에서 다른 물품으로 교환할 수 있습니다.",
+    "func": "0"
+  },
+  {
+    "key": "Ev_Consumable_NewYearGoods",
+    "name": "신년 행사 용품",
+    "icon": "Ev_Consumable_NewYearGoods",
+    "desc": "다양한 문화가 담긴 신년 행사 용품입니다. 이벤트 교환소에서 다른 물품으로 교환할 수 있습니다."
+  },
+  {
+    "key": "Ev_Consumable_NewYearFood",
+    "name": "신년 떡 세트",
+    "icon": "Ev_Consumable_NewYearFood",
+    "desc": "다양한 문화가 담긴 신년 떡 세트입니다. 이벤트 교환소에서 다른 물품으로 교환할 수 있습니다."
   }
 ];

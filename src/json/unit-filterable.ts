@@ -12530,6 +12530,129 @@ export default [
     }
   },
   {
+    "uid": "3P_Hirume",
+    "no": 148,
+    "rarity": 5,
+    "name": "천향의 히루메",
+    "shortname": "천향의 히루메",
+    "groupKey": "BattleMaid",
+    "group": "배틀 메이드 프로젝트 II",
+    "shortgroup": "배틀 메이드 프로젝트",
+    "type": 0,
+    "role": 0,
+    "body": 0,
+    "craft": 22320,
+    "buffs": [
+      [
+        {
+          "target": "enemy",
+          "type": 66,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 78,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 15,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 17,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 38,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "self",
+          "type": 17,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 36,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 20,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 76,
+          "positive": false
+        },
+        {
+          "target": "team",
+          "type": 17,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 90,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 15,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 23,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 33,
+          "positive": false
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
+        "elem": 1,
+        "grid": true,
+        "guard": false
+      },
+      "active2": {
+        "elem": 0,
+        "grid": false,
+        "guard": false
+      }
+    }
+  },
+  {
     "uid": "ST_Tiamat",
     "no": 149,
     "rarity": 5,

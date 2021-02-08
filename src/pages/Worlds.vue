@@ -50,7 +50,7 @@ export default class Worlds extends Vue {
 	}
 
 	private get Tops () {
-		return ["Story"];
+		return ["Story", "Ev10"];
 	}
 
 	private get SupCha () {

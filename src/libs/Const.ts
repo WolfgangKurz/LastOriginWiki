@@ -511,8 +511,8 @@ export const EquipTypeDisplay: Record<ITEM_TYPE, string> = {
 };
 
 export const AssetsRoot = process.env.NODE_ENV === "development"
-	// ? "http://localhost:5500/assets"
-	? "https://lo.swaytwig.com/assets"
+	? "http://localhost:5500/assets"
+	// ? "https://lo.swaytwig.com/assets"
 	// : "https://lastorigin-wiki-assets.s3.ap-northeast-2.amazonaws.com";
 	: "/assets";
 
@@ -535,7 +535,7 @@ export function ImageExtension () {
 	return webpAvailable ? "webp" : "png";
 }
 
-export const CurrentEvent = "";
+export const CurrentEvent = "Ev10";
 export const CurrentDate = (() => {
 	const d = new Date();
 	const y = d.getUTCFullYear() % 100;
@@ -557,6 +557,7 @@ export const WorldNames: Record<string, string> = {
 	Ev7: "요정 마을의 아리아",
 	Ev8: "흐린 기억 속의 나라",
 	Ev9: "낙원으로부터 온 초대장",
+	Ev10: "누군가 바랐던 소원",
 };
 export const WorldDescriptions: Record<string, string> = {
 	Story: "",
@@ -571,6 +572,7 @@ export const WorldDescriptions: Record<string, string> = {
 	Ev7: "가벼운 마음으로 요정 마을로 향한 사령관에게...?",
 	Ev8: "왓슨, 드디어 대단원이야!",
 	Ev9: "당신이 바라는 욕망은 무엇인가요?",
+	Ev10: "혼란스러운 오르카 호에서, 사령관은 웃고 있다...",
 };
 
 export const SupplementaryUnit: Record<string, string> = {

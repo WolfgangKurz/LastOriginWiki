@@ -4824,7 +4824,7 @@ export default {
           "buff_rate": 100,
           "buffs": [
             {
-              "on": "wave",
+              "on": "wave_end",
               "if": false,
               "body": [
                 0,
@@ -4847,7 +4847,7 @@ export default {
                   "desc": {
                     "desc": "음파 탐지 : 정찰 활성화",
                     "type": 0,
-                    "value": "1"
+                    "value": "0"
                   },
                   "attr": 0,
                   "erase": {},
@@ -4856,7 +4856,7 @@ export default {
                     "type": 23,
                     "scout": true
                   },
-                  "overlap": 0
+                  "overlap": 4
                 },
                 {
                   "icon": "BuffIcon_CRITICAL_UP",
