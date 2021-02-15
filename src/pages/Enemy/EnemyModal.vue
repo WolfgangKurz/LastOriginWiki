@@ -8,8 +8,12 @@
 			</div>
 		</template>
 
-		<div v-if="FamilyList.length > 1" class="text-right mb-1">
+		<div v-if="FamilyList.length > 1" class="mb-1">
 			<b-form-select v-model="targetId" size="sm" :options="FamilyList" />
+
+			<a :href="EnemyLink" class="text-secondary">
+				<small>{{ EnemyLink }}</small>
+			</a>
 		</div>
 
 		<b-table-simple bordered fixed table-class="table-enemy-modal mt-2 text-center">
@@ -373,8 +377,14 @@ export default class EnemyModal extends Vue {
 	@Watch("targetId")
 	private WatchTargetId () {
 		if (this.targetId && this.$route.path.startsWith("/enemy"))
-			this.$router.push({ path: `/enemy/${this.targetId}` });
+			this.$router.push({ path: `/enemy/${this.targetId}/${this.currentLevel}` });
 		this.InitialDB();
+	}
+
+	@Watch("currentLevel")
+	private WatchLevel () {
+		if (this.targetId && this.$route.path.startsWith("/enemy"))
+			this.$router.replace({ path: `/enemy/${this.targetId}/${this.currentLevel}` });
 	}
 
 	private get AssetsRoot () {
@@ -404,6 +414,13 @@ export default class EnemyModal extends Vue {
 				value: x.id,
 				text: `${x.name} ${i + 1}`,
 			}));
+	}
+
+	private get EnemyLink () {
+		if (!this.target) return "";
+
+		const loc = window.location;
+		return `${loc.origin}/enemy/${this.target.id}/${this.currentLevel}`;
 	}
 
 	private get Skills () {

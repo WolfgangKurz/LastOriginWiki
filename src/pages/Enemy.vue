@@ -38,7 +38,7 @@
 			</b-col>
 		</b-row>
 
-		<enemy-modal :enemy="selectedEnemy" :display.sync="enemyModalDisplay" />
+		<enemy-modal :enemy="selectedEnemy" :level="level" :display.sync="enemyModalDisplay" />
 	</div>
 </template>
 
@@ -71,6 +71,7 @@ export default class EnemyPage extends Vue {
 	private enemyModalDisplay: boolean = false;
 
 	private selectedEnemy: FilterableEnemy | null = null;
+	private level: number = 1;
 
 	private searchKeyword: string = "";
 
@@ -133,11 +134,12 @@ export default class EnemyPage extends Vue {
 
 	private modalEnemyRequest (id: string) {
 		if (id)
-			this.$router.push({ path: `/enemy/${id}` });
+			this.$router.push({ path: `/enemy/${id}/1` });
 	}
 
-	private modalEnemy (id: string) {
+	private modalEnemy (id: string, level: number) {
 		this.selectedEnemy = FilterableEnemyDB.find(x => x.id === id) || null;
+		this.level = level;
 		this.enemyModalDisplay = !!this.selectedEnemy;
 	}
 
@@ -151,7 +153,7 @@ export default class EnemyPage extends Vue {
 		const params = this.$route.params;
 
 		if ("id" in params) {
-			this.modalEnemy(params.id);
+			this.modalEnemy(params.id, parseInt(params.level || "1", 10));
 
 			if (this.selectedEnemy) {
 				const en = this.selectedEnemy;

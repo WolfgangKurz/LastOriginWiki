@@ -1,5 +1,9 @@
 <template>
 	<b-card v-if="!horizontal" class="unit-card position-relative my-1" bg-variant="dark" text-variant="white" :img-src="UnitFaceUrl">
+		<div v-if="unit.name" class="unit-role-icon">
+			<img :src="`${AssetsRoot}/icons/CHA_${RoleIconId}${RarityDisplay[unit.rarity]}.png`" />
+		</div>
+
 		<b-card-title>
 			<div class="unit-info">
 				<rarity-badge :rarity="unit.rarity" />
@@ -7,21 +11,21 @@
 					<span class="d-inline-block">No. {{ IdDisplay }}</span>
 					<span class="d-inline-block">
 						<i class="unit-type" :data-type="unit.type" />
-						<i class="unit-role" :data-role="unit.role" />
+						<!-- <i class="unit-role" :data-role="unit.role" /> -->
 					</span>
 				</span>
 			</div>
 			{{ unit.name }}
-		</b-card-title>
 
-		<div class="unit-badges">
-			<b-badge v-if="unit.body === 1" variant="info" class="ml-1">AGS</b-badge>
-			<template v-if="leftPromotions">
-				<rarity-badge v-for="pro in leftPromotions" :key="`unit-table-unit-${unit.uid}-pro-${pro}`" class="ml-1" :rarity="pro">
-					{{ RarityDisplay[pro] }} 승급
-				</rarity-badge>
-			</template>
-		</div>
+			<div class="unit-badges">
+				<b-badge v-if="unit.body === 1" variant="info" class="ml-1">AGS</b-badge>
+				<template v-if="leftPromotions">
+					<rarity-badge v-for="pro in leftPromotions" :key="`unit-table-unit-${unit.uid}-pro-${pro}`" class="ml-1" :rarity="pro">
+						{{ RarityDisplay[pro] }} 승급
+					</rarity-badge>
+				</template>
+			</div>
+		</b-card-title>
 
 		<a v-if="!noLink" href="#" class="stretched-link unit-stretched" @click.prevent="OnClick()" />
 	</b-card>
@@ -50,8 +54,8 @@ import RarityBadge from "@/components/RarityBadge.vue";
 import { Prop, Emit } from "vue-property-decorator";
 
 import { FilterableUnit } from "@/libs/Types/Unit.Filterable";
-import { ACTOR_GRADE } from "@/libs/Types/Enums";
-import { RarityDisplay } from "@/libs/Const";
+import { ACTOR_GRADE, ROLE_TYPE } from "@/libs/Types/Enums";
+import { AssetsRoot, RarityDisplay } from "@/libs/Const";
 
 @Component({
 	components: {
@@ -84,6 +88,19 @@ export default class UnitCard extends Vue {
 	})
 	private noLink!: boolean;
 
+	private get AssetsRoot () {
+		return AssetsRoot;
+	}
+
+	private get RoleIconId () {
+		switch (this.unit.role) {
+			case ROLE_TYPE.ATTACKER: return "Sword";
+			case ROLE_TYPE.DEFENDER: return "Shield";
+			case ROLE_TYPE.SUPPORTER: return "Gear";
+		}
+		return "";
+	}
+
 	private get IdDisplay () {
 		return ("00" + this.unit.no).substr(-3);
 	}
@@ -113,6 +130,7 @@ export default class UnitCard extends Vue {
 
 <style lang="scss">
 .unit-card {
+	position: relative;
 	cursor: pointer;
 
 	&.card {
@@ -135,9 +153,10 @@ export default class UnitCard extends Vue {
 			}
 		}
 		.card-body {
-			padding: 1em;
+			padding: 1em 0;
 
 			.card-title {
+				position: relative;
 				margin: 0;
 				font-size: 14px;
 				word-break: keep-all;
@@ -192,11 +211,24 @@ export default class UnitCard extends Vue {
 			}
 		}
 
+		.unit-role-icon {
+			position: absolute;
+			left: -1em;
+			top: -2em;
+			pointer-events: none;
+
+			> img {
+				width: 6em;
+				height: 6em;
+			}
+		}
+
 		.unit-badges {
 			position: absolute;
-			top: 4px;
-			right: 4px;
+			top: -2.5em;
+			right: 0.125em;
 			line-height: 0;
+			font-size: 16px;
 
 			> .badge {
 				box-shadow: 0 0 4px #000;

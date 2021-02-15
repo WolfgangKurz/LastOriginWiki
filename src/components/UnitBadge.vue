@@ -88,7 +88,7 @@ export default class UnitBadge extends Vue {
 		};
 		if (this.Limit) {
 			if (this.Limit.includes("+"))
-				return table[this.Limit.split("+")[0]];
+				return table[this.Limit.split("+")[1]];
 			else if (!typeList.includes(this.Limit))
 				return table[this.Limit];
 			else
@@ -157,7 +157,7 @@ export default class UnitBadge extends Vue {
 		background-position-x: -$w;
 	}
 
-	&[data-type="3"] {
+	&[data-type="-1"] {
 		&[data-role="0"] > i {
 			background-position-x: -$w;
 		}
@@ -185,11 +185,12 @@ export default class UnitBadge extends Vue {
 		background-repeat: no-repeat;
 		vertical-align: bottom;
 	}
-	&[data-type="3"] {
-		&:not([data-role=""]) > i {
+	&[data-type="-1"] {
+		> i {
 			background-image: url($assetsRoot + "unit-role.png");
 		}
-		&[data-role=""] > i {
+
+		&[data-role="-1"] > i {
 			display: none;
 		}
 	}

@@ -1,5 +1,41 @@
 <template>
 	<div>
+		<changelog-item title="Build 7856" date="2021-02-13">
+			<template #site>
+				<li>일부 스크립트를 CDN 경유로 변경하였습니다.</li>
+			</template>
+			<template #bugfix>
+				<li>
+					<b-badge variant="warning">전투원정보</b-badge>의 <b-badge variant="info">테이블 보기</b-badge>의 헤더 아이콘이 잘못 표시되던 점을
+					수정했습니다.
+				</li>
+				<li>
+					<b-badge variant="warning">전투원정보</b-badge>의 전투원 대사에서 스킨의 서약 대사는 <b-badge variant="dark">미구현</b-badge>으로
+					표시되도록 수정했습니다.
+				</li>
+				<li>일부 소모품의 이미지가 표시되지 않던 점을 수정했습니다.</li>
+			</template>
+			<template #new>
+				<li><b-badge variant="warning">적 정보</b-badge> 팝업에 해당 적 팝업으로 바로 이동하는 주소 링크를 추가했습니다.</li>
+			</template>
+			<template #update>
+				<li>
+					<b-badge variant="warning">적 정보</b-badge> 팝업에서 레벨을 변경하면 현재 주소에도 해당 레벨이 반영되도록 수정했습니다. 적 정보
+					주소를 적의 레벨과 함께 공유할 수 있습니다.
+				</li>
+				<li>
+					<b-badge variant="warning">전투원정보</b-badge>의 <b-badge variant="info">전투원 카드</b-badge>의 전투원 유형을 인게임에서
+					사용하는 아이콘으로 변경하고 카드의 좌상단으로 옮겼습니다.
+				</li>
+			</template>
+			<template #skin>
+				<li>
+					<b-badge variant="warning">켈베로스</b-badge>의 <b-badge variant="danger">드림위버 웨딩 스페셜 : 오늘은 얌전히!</b-badge> 스킨의
+					로비 애니메이션 여부와 가격 정보가 갱신되었습니다.
+				</li>
+			</template>
+		</changelog-item>
+
 		<changelog-item title="Build 7845" date="2021-02-08">
 			<template #new>
 				<li>신규 전투원 <b-badge variant="warning">천향의 히루메</b-badge>의 정보가 추가되었습니다.</li>
@@ -10,7 +46,7 @@
 				<li>일부 적의 정보가 갱신되었습니다.</li>
 			</template>
 			<template #skin>
-				<li><b-badge variant="warning">T-14 미호</b-badge> <b-badge variant="danger">천 년의 약속</b-badge> 스킨 정보가 추가되었습니다.</li>
+				<li><b-badge variant="warning">T-14 미호</b-badge>의 <b-badge variant="danger">천 년의 약속</b-badge> 스킨 정보가 추가되었습니다.</li>
 			</template>
 			<template #dialogue>
 				<li><b-badge variant="warning">사라카엘</b-badge>의 대사 일부가 잘못입력되어있던 점을 수정했습니다.</li>
