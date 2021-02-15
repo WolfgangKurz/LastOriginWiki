@@ -20,6 +20,12 @@ export default class DialogueRow extends Vue {
 	private unitId!: string;
 
 	@Prop({
+		type: Boolean,
+		default: false,
+	})
+	private isSkin!: boolean;
+
+	@Prop({
 		type: String,
 		default: "",
 	})
@@ -133,7 +139,11 @@ export default class DialogueRow extends Vue {
 			case "Idle_04_01": return ["일반 터치", <b-badge variant="danger" class="float-right mt-1">♥ 100</b-badge>];
 			case "SPIdle_02_01": return ["특정 터치", <b-badge variant="danger" class="float-right mt-1">♥ 100</b-badge>];
 
-			case "Oath": return "서약";
+			case "Oath":
+				if (this.isSkin)
+					return ["서약", <b-badge variant="dark" class="float-right mt-1">미구현</b-badge>];
+				else
+					return "서약";
 			case "OathIdle_01": return "서약 후 터치";
 			case "MVP": return ["전투 MVP", <b-badge variant="dark" class="float-right mt-1">미구현</b-badge>];
 		}

@@ -67,6 +67,10 @@ const Router = new VueRouter({
 			path: "/enemy/:id",
 			component: () => Lazyload(import(/* webpackChunkName: "chunk-page-enemy" */ "@/pages/Enemy.vue")),
 		},
+		{
+			path: "/enemy/:id/:level",
+			component: () => Lazyload(import(/* webpackChunkName: "chunk-page-enemy" */ "@/pages/Enemy.vue")),
+		},
 
 		{
 			path: "/facilities",

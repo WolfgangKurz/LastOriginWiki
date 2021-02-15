@@ -12,6 +12,7 @@
 					v-for="type in TypeList"
 					:key="`dialogue-${unitId}-${type}`"
 					:unit-id="unitId"
+					:is-skin="!voice.isDef"
 					:type="type"
 					:dialogue="Dialogue[type]"
 					:lang="lang"

@@ -9,7 +9,7 @@
 </template>
 
 <script lang="ts">
-import "bootstrap";
+// import "bootstrap";
 
 import { Component, Vue } from "vue-property-decorator";
 

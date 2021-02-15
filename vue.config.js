@@ -54,9 +54,16 @@ module.exports = {
 		config.plugins.delete("preload-app");
 		config.plugins.delete("prefetch-app");
 
+		// 컴파일시 결과에 포함하지 않을 라이브러리 관리
+		config.externals({
+			vue: "Vue",
+			bootstrap: "bootstrap",
+			"bootstrap-vue": "window.BootstrapVue",
+		});
+
 		// 소스맵 형식 (기본값은 cheap-module-eval-source-map)
 		if (process.env.NODE_ENV === "development")
-			config.set("devtool", "eval-cheap-module-source-map");
+			config.set("devtool", "source-map");
 		else
 			config.set("devtool", "none");
 
