@@ -1,3 +1,4 @@
+import { LocaleGet } from "@/libs/Locale";
 import { SetMeta } from "@/libs/Meta";
 
 export function FormatNumber (num: number): string {
@@ -74,6 +75,6 @@ export function UniqueID (prefix?: string) {
 }
 
 export function UpdateTitle (...title: string[]) {
-	document.title = [...title, "멸망 전의 전술 교본"].join(" - ");
+	document.title = [...title, LocaleGet("COMMON_TITLE")].join(" - ");
 	SetMeta(["twitter:title", "og:title"], document.title);
 }

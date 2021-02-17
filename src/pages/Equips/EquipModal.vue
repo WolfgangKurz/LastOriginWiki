@@ -332,7 +332,7 @@ export default class EquipModal extends Vue {
 		return {
 			[ACTOR_GRADE.B]: Decimal.div(3, 4),
 			[ACTOR_GRADE.A]: Decimal.div(5, 6),
-			[ACTOR_GRADE.S]: Decimal.div(10, 17),
+			[ACTOR_GRADE.S]: Decimal.div(10, 7),
 			[ACTOR_GRADE.SS]: Decimal.div(11, 20),
 		};
 	}

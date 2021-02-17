@@ -1,37 +1,47 @@
 <template>
 	<div class="home">
 		<b-alert variant="primary" show>
-			<template v-if="IsEW">
-				<b-badge variant="light" style="font-size: 100%">제 {{ EWNo }}차 영원한 전장</b-badge>이 진행중입니다. 종료까지
-				<b-badge variant="danger" style="font-size: 100%">{{ LeftEW }} 일</b-badge>남았습니다.
-			</template>
-			<template v-else>
-				<b-badge variant="light" style="font-size: 100%">제 {{ EWNo - 1 }}차 영원한 전장</b-badge>가 종료되었습니다.
-				<b-badge variant="light" style="font-size: 100%">제 {{ EWNo }}차 영원한 전장</b-badge>은
-				<b-badge variant="danger" style="font-size: 100%">{{ LeftEW - 14 + 1 }}</b-badge
-				>일 후에 시작합니다.
-			</template>
+			<locale v-if="IsEW" k="HOME_EW_REMAIN">
+				<template #p0>
+					<b-badge variant="light" style="font-size: 100%"><locale k="HOME_EW" :p0="EWNo" /></b-badge>
+				</template>
+				<template #p1>
+					<b-badge variant="danger" style="font-size: 100%"><locale k="HOME_EW_DAYS" :p0="LeftEW" /></b-badge>
+				</template>
+			</locale>
+			<locale v-else k="HOME_EW_ENDED">
+				<template #p0>
+					<b-badge variant="light" style="font-size: 100%"><locale k="HOME_EW" :p0="EWNo - 1" /></b-badge>
+				</template>
+				<template #p1>
+					<b-badge variant="light" style="font-size: 100%"><locale k="HOME_EW" :p0="EWNo" /></b-badge>
+				</template>
+				<template #p2>
+					<b-badge variant="danger" style="font-size: 100%"><locale k="HOME_EW_DAYS" :p0="LeftEW - 14 + 1" /></b-badge>
+				</template>
+			</locale>
 		</b-alert>
 
 		<h2>
 			<img class="heading-icon" :src="`${AssetsRoot}/icon.png`" />
-			멸망 전의 전술 교본
+			<locale k="COMMON_TITLE" />
 		</h2>
 		<div class="mb-4 text-secondary">
-			<div>Build {{ BuildVersion }}, 빌드 시간 {{ BuildTime }}</div>
+			<div>
+				<locale k="HOME_BUILD_INFO">
+					<template #p0>{{ BuildVersion }}</template>
+					<template #p1>{{ BuildTime }}</template>
+				</locale>
+			</div>
 		</div>
 
 		<p>
-			<i>멸망 전의 전술 교본</i>은 전투원과 장비, 설비, 적 및 세계 정보를 볼 수 있는 정보 사이트입니다.<br />
-			각종 패시브 스킬과 장비 효과가 적용된 후의 실질적인 스테이터스 수치를 계산하기 위한 시뮬레이터를 목표로 개발중에 있습니다.
+			<locale k="HOME_DESCRIPTION" />
 		</p>
 		<hr />
 
 		<b-alert v-if="imageExt === 'png'" variant="danger" show>
-			현재
-			<strong>"WEBP"</strong> 이미지를 사용할 수 없는 브라우저 환경이기 때문에 <strong>"PNG"</strong> 이미지를 불러오도록 되어있습니다.
-			<br />사이트 내 이미지들을 보는데 10배 가까이 데이터를 사용하게 되며, 데이터를 절약하기 위해서 모바일에서 전투원의 전체 이미지는 기본
-			<strong>"닫음"</strong> 상태가 됩니다.
+			<locale k="HOME_WEBP_UNAVAILABLE" />
 		</b-alert>
 
 		<b-alert variant="success" show>
@@ -42,16 +52,11 @@
 		</b-alert>
 		<hr />
 
-		<p>사이트 개발: <a href="mailto:wolfgangkurzdev@gmail.com">wolfgangkurzdev@gmail.com</a></p>
-		<p>정보에 오류가 있는 경우, 스크린샷과 함께 메일 주시면 최대한 빠르게 확인하겠습니다.</p>
-		<p><strong>특정 데이터의 게시 중단 요청</strong>은 위 메일 주소로 메일을 보내주시기 바랍니다.</p>
-		<p>게시 중단 요청은 저작권자인 <i>(주)스마트조이</i>의 요청 외에는 응답하거나 시행하지 않습니다.</p>
+		<locale k="HOME_DEVELOPER" />
 		<hr />
 
 		<p>
-			장비 및 전투원의 아이콘, 수치 데이터 등
-			<i>(주)스마트조이</i>의 <i>라스트오리진(LastOrigin)</i>에서 사용된 자원은 모두 <i>(주)스마트조이</i>의 <i>라스트오리진(LastOrigin)</i>의
-			자원이며, 해당 자원의 모든 권리는 <i>(주)스마트조이</i>에게 있습니다.
+			<locale k="HOME_COPYRIGHT" />
 		</p>
 	</div>
 </template>
