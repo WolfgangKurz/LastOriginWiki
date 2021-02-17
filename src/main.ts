@@ -3,6 +3,7 @@ import Vue from "vue";
 import "./plugins/bootstrap-vue";
 import "./plugins/lazydata";
 import "./plugins/mixin";
+import "./plugins/locale";
 
 import { initWEBP } from "@/libs/Const";
 
@@ -12,6 +13,8 @@ import App from "./App.vue";
 import "@/libs/Meta";
 
 Vue.config.productionTip = false;
+
+window.GLOBAL_LANG = "EN";
 
 const router = Router;
 initWEBP().then(() => {

@@ -5,6 +5,7 @@ import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
 import { slot } from "@/libs/VNode";
+import { LocaleGet } from "@/libs/Locale";
 
 @Component({})
 export default class ChangelogItem extends Vue {
@@ -51,21 +52,21 @@ export default class ChangelogItem extends Vue {
 		switch (tag) {
 			default:
 			case "default":
-				return "미분류";
+				return LocaleGet("CHANGELOG_CATEGORY_UNCATEGORIZED");
 			case "site":
-				return "사이트";
+				return LocaleGet("CHANGELOG_CATEGORY_SITE");
 			case "bugfix":
-				return "버그수정";
+				return LocaleGet("CHANGELOG_CATEGORY_BUGFIX");
 			case "delete":
-				return "삭제";
+				return LocaleGet("CHANGELOG_CATEGORY_DELETE");
 			case "new":
-				return "신규";
+				return LocaleGet("CHANGELOG_CATEGORY_NEW");
 			case "skin":
-				return "스킨";
+				return LocaleGet("CHANGELOG_CATEGORY_SKIN");
 			case "update":
-				return "갱신";
+				return LocaleGet("CHANGELOG_CATEGORY_UPDATE");
 			case "dialogue":
-				return "대사";
+				return LocaleGet("CHANGELOG_CATEGORY_QUOTE");
 		}
 	}
 

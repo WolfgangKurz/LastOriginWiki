@@ -1,7 +1,11 @@
 <template>
 	<div class="changelog text-left">
-		<h2>변경 기록</h2>
-		<p><i>멸망 전의 전술 교본</i> 사이트의 변경 기록을 작성한 문서입니다.</p>
+		<h2>
+			<locale k="CHANGELOG_TITLE" />
+		</h2>
+		<p>
+			<locale k="CHANGELOG_DESCRIPTION" />
+		</p>
 		<hr />
 
 		<!-- <div class="text-right">

@@ -15,13 +15,15 @@
 					</span>
 				</span>
 			</div>
-			{{ unit.name }}
+			<locale :k="`UNIT_${unit.uid}`" />
 
 			<div class="unit-badges">
-				<b-badge v-if="unit.body === 1" variant="info" class="ml-1">AGS</b-badge>
+				<b-badge v-if="unit.body === 1" variant="info" class="ml-1">
+					<locale k="COMMON_UNIT_BODY_AGS" />
+				</b-badge>
 				<template v-if="leftPromotions">
 					<rarity-badge v-for="pro in leftPromotions" :key="`unit-table-unit-${unit.uid}-pro-${pro}`" class="ml-1" :rarity="pro">
-						{{ RarityDisplay[pro] }} 승급
+						<locale k="UNIT_CARD_PROMOTION_BADGE" :p0="RarityDisplay[pro]" />
 					</rarity-badge>
 				</template>
 			</div>
@@ -31,14 +33,20 @@
 	</b-card>
 	<div v-else class="unit-card text-left clearfix" @click.prevent="!noLink && OnClick()">
 		<unit-face :uid="unit.uid" class="unit-face float-left" />
-		<div class="unit-name">{{ unit.name }}</div>
+		<div class="unit-name">
+			<locale :k="`UNIT_${unit.uid}`" />
+		</div>
 		<div class="unit-flag">
-			<b-badge v-if="unit.body === 1" variant="info" class="mr-1">AGS</b-badge>
-			<b-badge v-if="isPromoted" variant="danger" class="mr-1">승급 후</b-badge>
+			<b-badge v-if="unit.body === 1" variant="info" class="mr-1">
+				<locale k="COMMON_UNIT_BODY_AGS" />
+			</b-badge>
+			<b-badge v-if="isPromoted" variant="danger" class="mr-1">
+				<locale k="UNIT_CARD_PROMOTION_AFTER" />
+			</b-badge>
 
 			<div v-if="leftPromotions" class="float-right">
 				<rarity-badge v-for="pro in leftPromotions" :key="`unit-table-unit-${unit.uid}-pro-${pro}`" :rarity="pro" class="ml-1">
-					{{ RarityDisplay[pro] }} 승급
+					<locale k="UNIT_CARD_PROMOTION_BADGE" :p0="RarityDisplay[pro]" />
 				</rarity-badge>
 			</div>
 		</div>

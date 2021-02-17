@@ -4,16 +4,17 @@ import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
 import { ACTOR_CLASS, ROLE_TYPE } from "@/libs/Types/Enums";
+import { LocaleGet } from "@/libs/Locale";
 
 const typeName: Record<ACTOR_CLASS, string> = {
-	[ACTOR_CLASS.LIGHT]: "경장",
-	[ACTOR_CLASS.AIR]: "기동",
-	[ACTOR_CLASS.HEAVY]: "중장",
+	[ACTOR_CLASS.LIGHT]: "LIGHT",
+	[ACTOR_CLASS.AIR]: "MOBILITY",
+	[ACTOR_CLASS.HEAVY]: "HEAVY",
 };
 const roleName: Record<ROLE_TYPE, string> = {
-	[ROLE_TYPE.ATTACKER]: "공격기",
-	[ROLE_TYPE.DEFENDER]: "보호기",
-	[ROLE_TYPE.SUPPORTER]: "지원기",
+	[ROLE_TYPE.ATTACKER]: "ATTACKER",
+	[ROLE_TYPE.DEFENDER]: "DEFENDER",
+	[ROLE_TYPE.SUPPORTER]: "SUPPORTER",
 };
 const typeList = [
 	"light",
@@ -117,10 +118,10 @@ export default class UnitBadge extends Vue {
 			<i />
 			{
 				this.Type !== -1 && this.Role !== -1
-					? `${this.TypeName} ${this.RoleName}`
+					? `${LocaleGet("COMMON_UNIT_TYPE_SHORT_" + this.TypeName)} ${LocaleGet("COMMON_UNIT_ROLE_" + this.RoleName)}`
 					: this.Type !== -1
-						? `${this.TypeName}형`
-						: this.RoleName
+						? LocaleGet("COMMON_UNIT_TYPE_" + this.TypeName)
+						: LocaleGet("COMMON_UNIT_ROLE_" + this.RoleName)
 			}
 		</b-badge>;
 	}
