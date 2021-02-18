@@ -15,7 +15,7 @@
 					</span>
 				</span>
 			</div>
-			<locale :k="`UNIT_${unit.uid}`" />
+			<raw :data="unitName" />
 
 			<div class="unit-badges">
 				<b-badge v-if="unit.body === 1" variant="info" class="ml-1">
@@ -53,9 +53,10 @@
 	</div>
 </template>
 
-<script lang="ts">
+<script lang="tsx">
 import Vue from "vue";
 import Component from "vue-class-component";
+import { LocaleGet } from "@/libs/Locale";
 
 import UnitFace from "@/components/UnitFace.vue";
 import RarityBadge from "@/components/RarityBadge.vue";
@@ -96,6 +97,12 @@ export default class UnitCard extends Vue {
 	})
 	private noLink!: boolean;
 
+	@Prop({
+		type: Boolean,
+		default: false,
+	})
+	private shortName!: boolean;
+
 	private get AssetsRoot () {
 		return AssetsRoot;
 	}
@@ -127,6 +134,18 @@ export default class UnitCard extends Vue {
 
 	private get leftPromotions () {
 		return (this.unit.promo || []).filter(x => x > this.rarity);
+	}
+
+	private get unitName () {
+		if (this.shortName) {
+			const h = this.$createElement;
+			const name = LocaleGet(`UNIT_${this.unit.uid}`);
+			const sname = LocaleGet(`UNIT_SHORT_${this.unit.uid}`);
+
+			if (name === sname) return (this as any)._v(name);
+			return name.split(sname).map(x => x.length === 0 ? sname : h("span", { staticClass: "text-secondary" }, [x]));
+		} else
+			return (this as any)._v(LocaleGet(`UNIT_${this.unit.uid}`));
 	}
 
 	@Emit("click")

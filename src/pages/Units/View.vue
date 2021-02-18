@@ -2,32 +2,34 @@
 	<lazy-data-base class="unit-view" :data="DB" @error="ReplaceTo('/units/')">
 		<b-row>
 			<b-col cols="12" md="auto" class="text-left">
-				<b-button variant="dark" @click="GoBack()">뒤로</b-button>
+				<b-button variant="dark" @click="GoBack()">
+					<locale k="COMMON_BACK" />
+				</b-button>
 			</b-col>
 			<b-col>
 				<b-tabs nav-class="unit-display-tabs mb-3" align="right">
 					<b-tab title-link-class="text-dark" :active="displayTab === 'texts'" @click="displayTab = 'texts'">
 						<template #title>
 							<b-icon-person-square class="mr-1" />
-							기본정보
+							<locale k="UNIT_VIEW_TAB_BASICINFO" />
 						</template>
 					</b-tab>
 					<b-tab title-link-class="text-dark" :active="displayTab === 'information'" @click="displayTab = 'information'">
 						<template #title>
 							<b-icon-lightning-fill class="mr-1" />
-							링크/스킬
+							<locale k="UNIT_VIEW_TAB_SKILLS" />
 						</template>
 					</b-tab>
 					<b-tab title-link-class="text-dark" :active="displayTab === 'dialogue'" @click="displayTab = 'dialogue'">
 						<template #title>
 							<b-icon-chat-text-fill class="mr-1" />
-							대사
+							<locale k="UNIT_VIEW_TAB_DIALOGUE" />
 						</template>
 					</b-tab>
 					<b-tab title-link-class="text-dark" :active="displayTab === 'status'" @click="displayTab = 'status'">
 						<template #title>
 							<b-icon-calculator class="mr-1" />
-							스테이터스
+							<locale k="UNIT_VIEW_TAB_CALC" />
 						</template>
 					</b-tab>
 				</b-tabs>
@@ -45,11 +47,17 @@
 				>
 					<template #title>
 						<template v-if="skin.isPro">
-							<b-badge v-if="index === skinIndex" variant="light">SS 승급</b-badge>
-							<rarity-badge v-else rarity="SS">SS 승급</rarity-badge>
-							{{ skin.t }}
+							<b-badge v-if="index === skinIndex" variant="light">
+								<locale k="UNIT_CARD_PROMOTION_BADGE" p0="SS" />
+							</b-badge>
+							<rarity-badge v-else rarity="SS">
+								<locale k="UNIT_CARD_PROMOTION_BADGE" p0="SS" />
+							</rarity-badge>
+							{{ LocaleGet(`UNIT_SKIN_${unit.uid}_${skin.sid || 0}`, `UNIT_${unit.uid}`) }}
 						</template>
-						<template v-else>{{ skin.t }}</template>
+						<template v-else>
+							{{ LocaleGet(`UNIT_SKIN_${unit.uid}_${skin.sid || 0}`, `UNIT_${unit.uid}`) }}
+						</template>
 					</template>
 				</b-tab>
 			</b-tabs>
@@ -72,7 +80,8 @@
 					</b-row>
 
 					<b-card no-body bg-variant="dark" text-variant="light" class="mt-3 introduce-text p-3">
-						{{ unit.introduce }}
+						<!-- {{ unit.introduce }} -->
+						<locale :k="`UNIT_INTRO_${unit.uid}`" />
 					</b-card>
 
 					<b-alert v-if="LimitedEquip.length > 0" variant="primary" show class="mt-3">
@@ -89,45 +98,47 @@
 
 					<b-container class="table-unit-modal mt-3 mb-3">
 						<b-row cols="2" cols-md="4" class="text-center">
-							<b-col class="bg-dark text-white">도감 번호</b-col>
+							<b-col class="bg-dark text-white"><locale k="UNIT_VIEW_DICTNO" /></b-col>
 							<b-col>
 								<small>No.&nbsp;</small>
 								<strong>{{ unit.id }}</strong>
 							</b-col>
-							<b-col class="bg-dark text-white">소속</b-col>
+							<b-col class="bg-dark text-white"><locale k="UNIT_VIEW_FACTION" /></b-col>
 							<b-col>
 								<span class="break-keep">{{ unit.group }}</span>
 							</b-col>
-							<b-col class="bg-dark text-white">등급</b-col>
+							<b-col class="bg-dark text-white"><locale k="UNIT_VIEW_GRADE" /></b-col>
 							<b-col>
-								<rarity-badge :rarity="unit.rarity" size="medium">{{ RarityDisplay[unit.rarity] }} 등급</rarity-badge>
+								<rarity-badge :rarity="unit.rarity" size="medium">
+									<locale k="COMMON_UNIT_GRADE_FORMAT" :p0="RarityDisplay[unit.rarity]" />
+								</rarity-badge>
 							</b-col>
-							<b-col class="bg-dark text-white">승급</b-col>
+							<b-col class="bg-dark text-white"><locale k="UNIT_VIEW_PROMOTION" /></b-col>
 							<b-col>
 								<template v-if="unit.promotions">
-									<rarity-badge v-for="pro in unit.promotions" :key="`unit-promotion-${pro}`" :rarity="pro" size="medium"
-										>{{ RarityDisplay[pro] }} 승급</rarity-badge
-									>
+									<rarity-badge v-for="pro in unit.promotions" :key="`unit-promotion-${pro}`" :rarity="pro" size="medium">
+										<locale k="UNIT_VIEW_PROMOTION_BADGE" :p0="RarityDisplay[pro]" />
+									</rarity-badge>
 								</template>
 								<template v-else>
-									<span class="text-secondary">승급 없음</span>
+									<span class="text-secondary"><locale k="UNIT_VIEW_PROMOTION_BADGE_EMPTY" /></span>
 								</template>
 							</b-col>
-							<b-col class="bg-dark text-white">유형</b-col>
+							<b-col class="bg-dark text-white"><locale k="UNIT_VIEW_TYPE" /></b-col>
 							<b-col>
 								<unit-badge :type="unit.type" size="large" transparent black />
 							</b-col>
-							<b-col class="bg-dark text-white">역할</b-col>
+							<b-col class="bg-dark text-white"><locale k="UNIT_VIEW_ROLE" /></b-col>
 							<b-col>
 								<unit-badge :role="unit.role" size="large" transparent black />
 							</b-col>
-							<b-col class="bg-dark text-white">키</b-col>
+							<b-col class="bg-dark text-white"><locale k="UNIT_VIEW_HEIGHT" /></b-col>
 							<b-col>{{ unit.height }}</b-col>
-							<b-col class="bg-dark text-white">몸무게</b-col>
+							<b-col class="bg-dark text-white"><locale k="UNIT_VIEW_WEIGHT" /></b-col>
 							<b-col>{{ unit.weight }}</b-col>
-							<b-col class="bg-dark text-white">전투 스타일</b-col>
+							<b-col class="bg-dark text-white"><locale k="UNIT_VIEW_BATTLESTYLE" /></b-col>
 							<b-col>{{ unit.weapon1 }}</b-col>
-							<b-col class="bg-dark text-white">무기</b-col>
+							<b-col class="bg-dark text-white"><locale k="UNIT_VIEW_WEAPON" /></b-col>
 							<b-col>{{ unit.weapon2 }}</b-col>
 						</b-row>
 					</b-container>
@@ -135,35 +146,37 @@
 					<b-table-simple bordered fixed table-class="text-center table-unit-modal">
 						<b-thead head-variant="dark">
 							<b-tr>
-								<b-th>선물</b-th>
-								<b-th>웨이브 승리</b-th>
-								<b-th class="d-none d-md-table-cell">사망</b-th>
-								<b-th class="d-none d-md-table-cell">부관</b-th>
+								<b-th><locale k="UNIT_VIEW_FAVOR_PRESENT" /></b-th>
+								<b-th><locale k="UNIT_VIEW_FAVOR_VICTORY" /></b-th>
+								<b-th class="d-none d-md-table-cell"><locale k="UNIT_VIEW_FAVOR_RETIRE" /></b-th>
+								<b-th class="d-none d-md-table-cell"><locale k="UNIT_VIEW_FAVOR_ASSISTANT" /></b-th>
 							</b-tr>
 						</b-thead>
 						<b-tbody>
 							<b-tr class="text-center">
-								<b-td>{{ unit.favor.present.toFixed(2) }}배</b-td>
 								<b-td>
-									<b-badge variant="danger">♥ 호감도 +{{ Favor.clear }}</b-badge>
+									<locale k="UNIT_VIEW_FAVOR_MULTIPLY" :p0="unit.favor.present.toFixed(2)" />
+								</b-td>
+								<b-td>
+									<b-badge variant="danger"><locale k="UNIT_VIEW_FAVOR_P" :p0="Favor.clear" /></b-badge>
 								</b-td>
 								<b-td class="d-none d-md-table-cell">
-									<b-badge variant="danger">♥ 호감도 -{{ Favor.death }}</b-badge>
+									<b-badge variant="danger"><locale k="UNIT_VIEW_FAVOR_M" :p0="Favor.death" /></b-badge>
 								</b-td>
 								<b-td class="d-none d-md-table-cell">
-									<b-badge variant="danger">♥ 호감도 +{{ Favor.assistant }}</b-badge>
+									<b-badge variant="danger"><locale k="UNIT_VIEW_FAVOR_P" :p0="Favor.assistant" /></b-badge>
 								</b-td>
 							</b-tr>
 							<b-tr class="d-md-none">
-								<b-th class="bg-dark text-white">사망</b-th>
-								<b-th class="bg-dark text-white">부관</b-th>
+								<b-th class="bg-dark text-white"><locale k="UNIT_VIEW_FAVOR_RETIRE" /></b-th>
+								<b-th class="bg-dark text-white"><locale k="UNIT_VIEW_FAVOR_ASSISTANT" /></b-th>
 							</b-tr>
 							<b-tr class="d-md-none text-center">
 								<b-td>
-									<b-badge variant="danger">♥ 호감도 -{{ Favor.death }}</b-badge>
+									<b-badge variant="danger"><locale k="UNIT_VIEW_FAVOR_M" :p0="Favor.death" /></b-badge>
 								</b-td>
 								<b-td>
-									<b-badge variant="danger">♥ 호감도 +{{ Favor.assistant }}</b-badge>
+									<b-badge variant="danger"><locale k="UNIT_VIEW_FAVOR_P" :p0="Favor.assistant" /></b-badge>
 								</b-td>
 							</b-tr>
 						</b-tbody>
@@ -172,19 +185,20 @@
 					<b-table-simple bordered fixed table-class="text-center table-unit-modal">
 						<b-thead head-variant="dark">
 							<b-tr>
-								<b-th>획득처</b-th>
+								<b-th><locale k="UNIT_VIEW_DROPS" /></b-th>
 							</b-tr>
 						</b-thead>
 						<b-tbody>
 							<b-tr>
 								<b-td class="px-0 py-1 drop-list">
 									<span v-if="unit.source.length === 0 && !unit.craftable" class="text-secondary">
-										획득처 정보 없음 (제조 불가)
+										<locale k="UNIT_VIEW_DROPS_EMPTY" />
 									</span>
 									<template v-else>
 										<b-badge v-if="unit.craftable" variant="dark" class="my-1">
 											<b-icon-hammer class="mr-1" />
-											제조 시간 {{ CraftTime }}
+											<locale k="UNIT_VIEW_DROPS_CREATIONTIME" />
+											{{ CraftTime }}
 										</b-badge>
 
 										<div v-for="(area, aindex) in unit.source" :key="`unit-view-source-${aindex}`">
