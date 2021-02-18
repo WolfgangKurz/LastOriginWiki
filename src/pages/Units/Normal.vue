@@ -20,7 +20,7 @@
 
 		<b-row cols="2" cols-lg="5" :cols-xl="6" :cols-md="4" :cols-sm="3">
 			<b-col v-for="unit in UnitList" :key="`unit-normal-unit-${unit.uid}`" class="mt-3">
-				<unit-card :unit="unit" :class="{ invalid: !unit.group }" @click="modalUnit(unit)" />
+				<unit-card :unit="unit" :class="{ invalid: !unit.group }" :short-name="ShortName" @click="modalUnit(unit)" />
 			</b-col>
 		</b-row>
 	</div>

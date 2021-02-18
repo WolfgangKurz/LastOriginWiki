@@ -4,6 +4,7 @@ import "./plugins/bootstrap-vue";
 import "./plugins/lazydata";
 import "./plugins/mixin";
 import "./plugins/locale";
+import "./plugins/raw";
 
 import { initWEBP } from "@/libs/Const";
 

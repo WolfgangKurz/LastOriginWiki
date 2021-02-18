@@ -5,8 +5,12 @@ import { LocaleGet } from "@/libs/Locale";
 Vue.component("Locale", Locale);
 Vue.mixin({
 	methods: {
-		LocaleGet (tag: string) {
-			return LocaleGet(tag);
+		LocaleGet (...tags: string[]) {
+			for (const tag of tags) {
+				const output = LocaleGet(tag);
+				if (output !== tag) return output;
+			}
+			return tags[0];
 		},
 	},
 });

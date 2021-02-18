@@ -239,14 +239,12 @@
 														:pressed="subentity.selected"
 														@click="subentity.selected = !subentity.selected"
 													>
-														<locale
-															:k="
-																subentity.pmType > 0
-																	? 'UNIT_FILTERS_SKILL_EFFECTS_PM_P'
-																	: 'UNIT_FILTERS_SKILL_EFFECTS_PM_M'
-															"
-															:p0="subentity.text"
-														/>
+														<locale :k="subentity.text">
+															<template #p0>
+																<locale v-if="subentity.pmType > 0" k="UNIT_FILTERS_SKILL_EFFECTS_PM_P" />
+																<locale v-else k="UNIT_FILTERS_SKILL_EFFECTS_PM_M" />
+															</template>
+														</locale>
 													</b-button>
 												</b-btn-group>
 												<b-button
@@ -367,16 +365,16 @@ export default class Units extends Vue {
 
 	private get EffectGroupNames (): Record<string, string> {
 		const ret: Record<BuffEffectListGroupKeys, string> = {
-			stats: "스테이터스",
-			damageAdd: "피해 증가",
-			damageReduce: "피해 감소",
-			guard: "보호",
-			speedAp: "AP / 행동",
-			offPierce: "효과 해제 / 무시",
-			resist: "효과 / 속성 저항",
-			damage: "추가 / 고정 피해",
-			etcBuff: "그 외 버프",
-			etcDebuff: "그 외 디버프",
+			stats: LocaleGet("BUFF_GROUP_STATS"),
+			damageAdd: LocaleGet("BUFF_GROUP_DMG_UP"),
+			damageReduce: LocaleGet("BUFF_GROUP_DMG_REDUCE"),
+			guard: LocaleGet("BUFF_GROUP_GUARD"),
+			speedAp: LocaleGet("BUFF_GROUP_AP"),
+			offPierce: LocaleGet("BUFF_GROUP_OFF"),
+			resist: LocaleGet("BUFF_GROUP_RESIST"),
+			damage: LocaleGet("BUFF_GROUP_DMG"),
+			etcBuff: LocaleGet("BUFF_GROUP_ETC_BUFF"),
+			etcDebuff: LocaleGet("BUFF_GROUP_ETC_DEBUFF"),
 		};
 		return ret;
 	}
