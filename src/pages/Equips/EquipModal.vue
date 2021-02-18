@@ -94,7 +94,8 @@
 					<b-col class="text-center pt-2">
 						<b-badge v-if="target.craftable" variant="dark">
 							<b-icon-hammer class="mr-1" />
-							제조 {{ CraftTime }}
+							<locale k="EQUIP_CREATIONTIME_TIME" />
+							{{ CraftTime }}
 						</b-badge>
 
 						<div v-for="(area, aindex) in Sources" :key="`equip-modal-source-${aindex}`">
@@ -111,7 +112,8 @@
 						<template v-if="Sources.length === 0">
 							<b-badge v-if="target.craftable" variant="dark">
 								<b-icon-hammer class="mr-1" />
-								제조 {{ CraftTime }}
+								<locale k="EQUIP_CREATIONTIME_TIME" />
+								{{ CraftTime }}
 							</b-badge>
 							<span v-else class="text-secondary">획득처 정보 없음 (제조 불가)</span>
 						</template>

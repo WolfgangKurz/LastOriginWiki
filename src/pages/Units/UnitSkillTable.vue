@@ -3,7 +3,7 @@
 		<b-thead head-variant="dark">
 			<b-tr>
 				<b-th colspan="3">
-					스킬 정보
+					<locale k="UNIT_SKILL" />
 					<b-btn-group v-if="HasFormChange" class="ml-2">
 						<b-button variant="outline-warning" :pressed="formStateSync === 'normal'" size="sm" @click="formStateSync = 'normal'">
 							Normal
@@ -15,25 +15,33 @@
 				</b-th>
 			</b-tr>
 			<b-tr>
-				<b-th>이름</b-th>
+				<b-th><locale k="UNIT_SKILL_NAME" /></b-th>
 				<b-th class="d-md-table-cell d-none">
-					설명 및 수치
+					<locale k="UNIT_SKILL_DESCRIPTION" />
 					<b-form-select class="table-unit-level-select" size="sm" v-model="skillLevelSync" :options="SkillLevelList" />
 					<span class="text-secondary pl-2">|</span>
 					<div class="d-inline-block ml-2">
-						<b-checkbox class="d-inline-block mr-2" v-model="loveBonus">호감도 200</b-checkbox>
-						<b-checkbox class="d-inline-block mr-2" v-model="displayBuffList">버프 보기</b-checkbox>
+						<b-checkbox class="d-inline-block mr-2" v-model="loveBonus">
+							<locale k="UNIT_SKILL_FAVOR_200" />
+						</b-checkbox>
+						<b-checkbox class="d-inline-block mr-2" v-model="displayBuffList">
+							<locale k="UNIT_SKILL_DISPLAY_BUFF" />
+						</b-checkbox>
 					</div>
 				</b-th>
-				<b-th>AP &amp; 사거리 &amp; 범위</b-th>
+				<b-th><locale k="UNIT_SKILL_RANGE" /></b-th>
 			</b-tr>
 			<b-tr class="d-md-none d-table-row">
 				<b-th colspan="2">
-					설명 및 수치
+					<locale k="UNIT_SKILL_DESCRIPTION" />
 					<b-form-select class="table-unit-level-select" size="sm" v-model="skillLevelSync" :options="SkillLevelList" />
 					<div>
-						<b-checkbox class="d-inline-block mr-2" v-model="loveBonus">호감도 200</b-checkbox>
-						<b-checkbox class="d-inline-block mr-2" v-model="displayBuffList">버프 보기</b-checkbox>
+						<b-checkbox class="d-inline-block mr-2" v-model="loveBonus">
+							<locale k="UNIT_SKILL_FAVOR_200" />
+						</b-checkbox>
+						<b-checkbox class="d-inline-block mr-2" v-model="displayBuffList">
+							<locale k="UNIT_SKILL_DISPLAY_BUFF" />
+						</b-checkbox>
 					</div>
 				</b-th>
 			</b-tr>
@@ -48,25 +56,27 @@
 							<elem-icon :elem="skill.buffs.data[skill.buffs.index[skillLevelSync]].type" class="mx-0" />
 						</div>
 
-						<b-badge v-if="skill.index === 7" variant="info">더미</b-badge>
-						<rarity-badge v-else-if="skill.isPassive && skill.index > rarityIndex" :rarity="rarityList[skill.index]"
-							>{{ RarityName[rarityList[skill.index]] }} 승급 스킬</rarity-badge
-						>
+						<b-badge v-if="skill.index === 7" variant="info"><locale k="UNIT_SKILL_DUMMY" /></b-badge>
+						<rarity-badge v-else-if="skill.isPassive && skill.index > rarityIndex" :rarity="rarityList[skill.index]">
+							{{ RarityName[rarityList[skill.index]] }}
+							<locale k="UNIT_SKILL_PROMOTION_SKILL" />
+						</rarity-badge>
 					</b-td>
 					<b-td class="text-left d-none d-md-table-cell">
 						<div class="unit-modal-skill">
-							<b-badge v-if="skill.buffs.data[skill.buffs.index[skillLevelSync]].dismiss_guard" variant="warning" class="mr-1"
-								>보호 무시</b-badge
-							>
+							<b-badge v-if="skill.buffs.data[skill.buffs.index[skillLevelSync]].dismiss_guard" variant="warning" class="mr-1">
+								<locale k="UNIT_SKILL_DISMISS_GUARD" />
+							</b-badge>
 							<b-badge
 								v-if="skill.buffs.data[skill.buffs.index[skillLevelSync]].target_ground && !skill.isPassive"
 								variant="danger"
 								class="mr-1"
-								title="땅 찍기"
-								>그리드 지정</b-badge
+								:title="LocaleGet('UNIT_SKILL_GRID_TARGET_TIP')"
 							>
+								<locale k="UNIT_SKILL_GRID_TARGET" />
+							</b-badge>
 							<b-badge v-if="skill.buffs.data[skill.buffs.index[skillLevelSync]].acc_bonus" variant="success" class="mr-1">
-								적중 보정
+								<locale k="UNIT_SKILL_ACC_BONUS" />
 								{{
 									(skill.buffs.data[skill.buffs.index[skillLevelSync]].acc_bonus > 0 ? "+" : "") +
 									skill.buffs.data[skill.buffs.index[skillLevelSync]].acc_bonus
@@ -77,7 +87,9 @@
 
 						<div>
 							<div v-for="(line, lineIdx) in skill.desc" :key="`unit-modal-skill-desc-${lineIdx}`" class="unit-modal-skill">
-								<span v-if="!line" class="text-secondary">설명 없음</span>
+								<span v-if="!line" class="text-secondary">
+									<locale k="UNIT_SKILL_NO_DESCRIPTION" />
+								</span>
 								<skill-description
 									v-else
 									:text="line"
@@ -91,8 +103,12 @@
 						</div>
 
 						<div v-if="BuffRates[skill.key].some((x) => x !== 100)">
-							<b-badge variant="danger">{{ BuffRates[skill.key][skillLevelSync] }}% 확률로 버프 발동</b-badge>
-							<small class="text-secondary ml-1">- 호감도 및 버프/디버프 효과 증가로 변동되지 않음, 효과 발동에 영향 받음</small>
+							<b-badge variant="danger">
+								<locale k="UNIT_SKILL_BUFF_RATE" :p0="BuffRates[skill.key][skillLevelSync]" />
+							</b-badge>
+							<small class="text-secondary ml-1">
+								<locale k="UNIT_SKILL_BUFF_RATE_DESC" />
+							</small>
 						</div>
 
 						<buff-list v-if="displayBuffList && BuffList[skill.key].length > 0" :list="BuffList[skill.key]" :level="ComputedLevel" />
@@ -110,18 +126,19 @@
 				<b-tr :key="`unit-modal-skill-descrow-${idx}`" class="d-table-row d-md-none">
 					<b-td class="text-left" colspan="2">
 						<div class="unit-modal-skill">
-							<b-badge v-if="skill.buffs.data[skill.buffs.index[skillLevelSync]].dismiss_guard" variant="warning" class="mr-1"
-								>보호 무시</b-badge
-							>
+							<b-badge v-if="skill.buffs.data[skill.buffs.index[skillLevelSync]].dismiss_guard" variant="warning" class="mr-1">
+								<locale k="UNIT_SKILL_DISMISS_GUARD" />
+							</b-badge>
 							<b-badge
 								v-if="skill.buffs.data[skill.buffs.index[skillLevelSync]].target_ground && !skill.isPassive"
 								variant="danger"
 								class="mr-1"
-								title="땅 찍기"
-								>그리드 지정</b-badge
+								:title="LocaleGet('UNIT_SKILL_GRID_TARGET_TIP')"
 							>
+								<locale k="UNIT_SKILL_GRID_TARGET" />
+							</b-badge>
 							<b-badge v-if="skill.buffs.data[skill.buffs.index[skillLevelSync]].acc_bonus" variant="success" class="mr-1">
-								적중 보정
+								<locale k="UNIT_SKILL_ACC_BONUS" />
 								{{
 									(skill.buffs.data[skill.buffs.index[skillLevelSync]].acc_bonus > 0 ? "+" : "") +
 									skill.buffs.data[skill.buffs.index[skillLevelSync]].acc_bonus
@@ -130,22 +147,30 @@
 							<summon-badge :summon="skill.buffs.data[skill.buffs.index[skillLevelSync]].summon" class="mr-1" />
 						</div>
 
-						<div v-for="(line, lineIdx) in skill.desc" :key="`unit-modal-skill-descrow-desc-${lineIdx}`" class="unit-modal-skill">
-							<span v-if="!line" class="text-secondary">설명 없음</span>
-							<skill-description
-								v-else
-								:text="line"
-								:rates="GetRates(skill)"
-								:level="skillLevelSync"
-								:buff-bonus="buffBonus"
-								:skill-bonus="skillBonus"
-								:love-bonus="loveBonus"
-							/>
+						<div>
+							<div v-for="(line, lineIdx) in skill.desc" :key="`unit-modal-skill-desc-${lineIdx}`" class="unit-modal-skill">
+								<span v-if="!line" class="text-secondary">
+									<locale k="UNIT_SKILL_NO_DESCRIPTION" />
+								</span>
+								<skill-description
+									v-else
+									:text="line"
+									:rates="GetRates(skill)"
+									:level="skillLevelSync"
+									:buff-bonus="buffBonus"
+									:skill-bonus="skillBonus"
+									:love-bonus="loveBonus"
+								/>
+							</div>
 						</div>
 
 						<div v-if="BuffRates[skill.key].some((x) => x !== 100)">
-							<b-badge variant="danger">{{ BuffRates[skill.key][skillLevelSync] }}% 확률로 버프 발동</b-badge>
-							<small class="text-secondary ml-1">- 호감도 및 버프/디버프 효과 증가로 변동되지 않음, 효과 발동에 영향 받음</small>
+							<b-badge variant="danger">
+								<locale k="UNIT_SKILL_BUFF_RATE" :p0="BuffRates[skill.key][skillLevelSync]" />
+							</b-badge>
+							<small class="text-secondary ml-1">
+								<locale k="UNIT_SKILL_BUFF_RATE_DESC" />
+							</small>
 						</div>
 
 						<buff-list v-if="displayBuffList && BuffList[skill.key].length > 0" :list="BuffList[skill.key]" :level="ComputedLevel" />

@@ -1,5 +1,6 @@
 import LoadDBFactory from "@/libs/DB/DBLoader";
 import EntitySource from "@/libs/EntitySource";
+import { LocaleGet } from "@/libs/Locale";
 import { ACTOR_GRADE, ACTOR_CLASS, ROLE_TYPE, ACTOR_BODY_TYPE, ITEM_TYPE } from "@/libs/Types/Enums";
 import { LinkBonusData, LinkBonusType, Unit } from "@/libs/Types/Unit";
 
@@ -59,7 +60,7 @@ export function GetLinkBonus (type: LinkBonusType, links: number): LinkBonusData
 		case "HP_50":
 			return {
 				Key: type,
-				Name: "체력",
+				Name: LocaleGet("LINKBONUS_HP"),
 				Prefix: "+",
 				Postfix: "%",
 				Value: Decimal.mul(links, v).toNumber(),
@@ -72,7 +73,7 @@ export function GetLinkBonus (type: LinkBonusType, links: number): LinkBonusData
 		case "ATK_30":
 			return {
 				Key: type,
-				Name: "공격력",
+				Name: LocaleGet("LINKBONUS_ATK"),
 				Prefix: "+",
 				Postfix: "%",
 				Value: Decimal.mul(links, v).toNumber(),
@@ -81,7 +82,7 @@ export function GetLinkBonus (type: LinkBonusType, links: number): LinkBonusData
 		case "DEF_3":
 			return {
 				Key: type,
-				Name: "방어력",
+				Name: LocaleGet("LINKBOUNS_DEF"),
 				Prefix: "+",
 				Postfix: "%",
 				Value: Decimal.mul(links, 3).toNumber(),
@@ -89,7 +90,7 @@ export function GetLinkBonus (type: LinkBonusType, links: number): LinkBonusData
 		case "DEF_10":
 			return {
 				Key: type,
-				Name: "방어력",
+				Name: LocaleGet("LINKBOUNS_DEF"),
 				Prefix: "+",
 				Postfix: "%",
 				Value: Decimal.mul(links, 5).toNumber(),
@@ -97,7 +98,7 @@ export function GetLinkBonus (type: LinkBonusType, links: number): LinkBonusData
 		case "DEF_15":
 			return {
 				Key: type,
-				Name: "방어력",
+				Name: LocaleGet("LINKBOUNS_DEF"),
 				Prefix: "+",
 				Postfix: "%",
 				Value: Decimal.mul(links, 10).toNumber(),
@@ -105,7 +106,7 @@ export function GetLinkBonus (type: LinkBonusType, links: number): LinkBonusData
 		case "DEF_20":
 			return {
 				Key: type,
-				Name: "방어력",
+				Name: LocaleGet("LINKBOUNS_DEF"),
 				Prefix: "+",
 				Postfix: "%",
 				Value: Decimal.mul(links, 20).toNumber(),
@@ -113,7 +114,7 @@ export function GetLinkBonus (type: LinkBonusType, links: number): LinkBonusData
 		case "DEF_25":
 			return {
 				Key: type,
-				Name: "방어력",
+				Name: LocaleGet("LINKBOUNS_DEF"),
 				Prefix: "+",
 				Postfix: "%",
 				Value: Decimal.mul(links, 30).toNumber(),
@@ -122,7 +123,7 @@ export function GetLinkBonus (type: LinkBonusType, links: number): LinkBonusData
 		case "ACC_5":
 			return {
 				Key: type,
-				Name: "적중률",
+				Name: LocaleGet("LINKBOUNS_ACC"),
 				Prefix: "+",
 				Postfix: "%",
 				Value: Decimal.mul(links, 7).toNumber(),
@@ -133,7 +134,7 @@ export function GetLinkBonus (type: LinkBonusType, links: number): LinkBonusData
 		case "ACC_75":
 			return {
 				Key: type,
-				Name: "적중률",
+				Name: LocaleGet("LINKBOUNS_ACC"),
 				Prefix: "+",
 				Postfix: "%",
 				Value: Decimal.mul(links, v).toNumber(),
@@ -142,7 +143,7 @@ export function GetLinkBonus (type: LinkBonusType, links: number): LinkBonusData
 		case "EV_3":
 			return {
 				Key: type,
-				Name: "회피",
+				Name: LocaleGet("LINKBONUS_EVA"),
 				Prefix: "+",
 				Postfix: "%",
 				Value: Decimal.mul(links, 2).toNumber(),
@@ -156,7 +157,7 @@ export function GetLinkBonus (type: LinkBonusType, links: number): LinkBonusData
 		case "EV_50":
 			return {
 				Key: type,
-				Name: "회피",
+				Name: LocaleGet("LINKBONUS_EVA"),
 				Prefix: "+",
 				Postfix: "%",
 				Value: Decimal.mul(links, v).toNumber(),
@@ -172,7 +173,7 @@ export function GetLinkBonus (type: LinkBonusType, links: number): LinkBonusData
 		case "SPD_30":
 			return {
 				Key: type,
-				Name: "행동력",
+				Name: LocaleGet("LINKBONUS_SPD"),
 				Prefix: "+",
 				Postfix: "",
 				Value: Decimal.mul(links, v)
@@ -190,7 +191,7 @@ export function GetLinkBonus (type: LinkBonusType, links: number): LinkBonusData
 		case "Cri_30":
 			return {
 				Key: type,
-				Name: "치명타",
+				Name: LocaleGet("LINKBONUS_CRIT"),
 				Prefix: "+",
 				Postfix: "%",
 				Value: Decimal.mul(links, v).toNumber(),
@@ -199,7 +200,7 @@ export function GetLinkBonus (type: LinkBonusType, links: number): LinkBonusData
 		case "Range_1":
 			return {
 				Key: type,
-				Name: "사거리",
+				Name: LocaleGet("LINKBONUS_RANGE"),
 				Prefix: "+",
 				Postfix: "",
 				Value: 1,
@@ -210,7 +211,7 @@ export function GetLinkBonus (type: LinkBonusType, links: number): LinkBonusData
 		case "Buff_3":
 			return {
 				Key: type,
-				Name: "버프/디버프 효과",
+				Name: LocaleGet("LINKBONUS_BUFF"),
 				Prefix: "Lv+",
 				Postfix: "",
 				Value: v,
@@ -219,7 +220,7 @@ export function GetLinkBonus (type: LinkBonusType, links: number): LinkBonusData
 		case "Exp_5":
 			return {
 				Key: type,
-				Name: "경험치",
+				Name: LocaleGet("LINKBONUS_EXP"),
 				Prefix: "+",
 				Postfix: "%",
 				Value: Decimal.mul(links, 4).toNumber(),
@@ -227,7 +228,7 @@ export function GetLinkBonus (type: LinkBonusType, links: number): LinkBonusData
 		case "Exp_10":
 			return {
 				Key: type,
-				Name: "경험치",
+				Name: LocaleGet("LINKBONUS_EXP"),
 				Prefix: "+",
 				Postfix: "%",
 				Value: Decimal.mul(links, 10).toNumber(),
@@ -243,7 +244,7 @@ export function GetLinkBonus (type: LinkBonusType, links: number): LinkBonusData
 		case "Skill_35":
 			return {
 				Key: type,
-				Name: "스킬 위력",
+				Name: LocaleGet("LINKBONUS_SKILL"),
 				Prefix: "+",
 				Postfix: "%",
 				Value: Decimal.mul(links, v).toNumber(),
@@ -255,7 +256,7 @@ export function GetLinkBonus (type: LinkBonusType, links: number): LinkBonusData
 		case "Cost_35":
 			return {
 				Key: type,
-				Name: "출격 비용",
+				Name: LocaleGet("LINKBONUS_COST"),
 				Prefix: "-",
 				Postfix: "%",
 				Value: Decimal.mul(links, v).toNumber(),
