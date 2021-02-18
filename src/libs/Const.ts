@@ -1,3 +1,4 @@
+import { LocaleGet } from "@/libs/Locale";
 import { SortieCostType } from "@/libs/Types";
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, CURRENCY_TYPE, ITEM_TYPE, ROLE_TYPE } from "@/libs/Types/Enums";
 import webpChecker from "webp-checker";
@@ -543,22 +544,13 @@ export const CurrentDate = (() => {
 	return `${y}/${m}`;
 })();
 
-export const WorldNames: Record<string, string> = {
-	Story: "메인스토리",
-	Sup1: "외전",
-	Cha: "외부 통신 요청",
-	Ev1: "지고의 저녁식사",
-	Ev2: "리오보로스의 유산",
-	Ev3: "만월의 야상곡",
-	Ev4: "할로윈 파크 패닉",
-	Ev5: "세인트 오르카의 비밀작전",
-	Ev6: "이상한 나라의 초코 여왕",
-	EvA0: "오르카호를 수복하라!",
-	Ev7: "요정 마을의 아리아",
-	Ev8: "흐린 기억 속의 나라",
-	Ev9: "낙원으로부터 온 초대장",
-	Ev10: "누군가 바랐던 소원",
-};
+export const WorldNames: Record<string, string> = (() => {
+	const keys = ["Story", "Sup1", "Cha", "Ev1", "Ev2", "Ev3", "Ev4", "Ev5", "Ev6", "EvA0", "Ev7", "Ev8", "Ev9", "Ev10"];
+	const ret: Record<string, string> = {};
+	keys.forEach(x => (ret[x] = LocaleGet(`WORLD_${x}`)));
+	return ret;
+})();
+
 export const WorldDescriptions: Record<string, string> = {
 	Story: "",
 	Sup1: "",

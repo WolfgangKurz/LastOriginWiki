@@ -47,8 +47,8 @@ async function process (auth) {
 		});
 	}
 	fs.writeFileSync(
-		path.resolve(__dirname, "..", "src", "json", "locale.ts"),
-		`export default ${JSON.stringify(data, null, 2)};`,
+		path.resolve(__dirname, "..", "src", "locale.ts"),
+		`/* eslint-disable */\nexport default ${JSON.stringify(data, null, 2)};`,
 	);
 }
 

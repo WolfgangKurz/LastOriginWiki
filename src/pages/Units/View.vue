@@ -53,11 +53,10 @@
 							<rarity-badge v-else rarity="SS">
 								<locale k="UNIT_CARD_PROMOTION_BADGE" p0="SS" />
 							</rarity-badge>
-							{{ LocaleGet(`UNIT_SKIN_${unit.uid}_${skin.sid || 0}`, `UNIT_${unit.uid}`) }}
 						</template>
-						<template v-else>
-							{{ LocaleGet(`UNIT_SKIN_${unit.uid}_${skin.sid || 0}`, `UNIT_${unit.uid}`) }}
-						</template>
+
+						<locale v-if="skin.sid === null" :k="`UNIT_${unit.uid}`" />
+						<locale v-else :k="`UNIT_SKIN_${unit.uid}_${skin.sid}`" />
 					</template>
 				</b-tab>
 			</b-tabs>
@@ -85,7 +84,9 @@
 					</b-card>
 
 					<b-alert v-if="LimitedEquip.length > 0" variant="primary" show class="mt-3">
-						<div>이 전투원은 다음 전용장비를 갖고 있습니다.</div>
+						<div>
+							<locale k="UNIT_VIEW_PRIVATE_EQUIP" />
+						</div>
 						<a
 							v-for="limited in LimitedEquip"
 							:key="`unit-limited-equip-${limited.equip.fullKey}`"
@@ -242,7 +243,7 @@
 							</b-tr>
 							<b-tr>
 								<b-th colspan="3">
-									링크 보너스
+									<locale k="UNIT_VIEW_LINKBONUS" />
 									<b-button-group class="ml-1" size="sm">
 										<b-button :variant="linkCount === 0 ? 'primary' : 'light'" @click="linkCount = 0">0</b-button>
 										<b-button :variant="linkCount === 1 ? 'primary' : 'light'" @click="linkCount = 1">1</b-button>
@@ -271,13 +272,13 @@
 					<b-table-simple bordered fixed table-class="text-left table-unit-modal">
 						<b-thead head-variant="dark">
 							<b-tr>
-								<b-th class="text-center">풀링크 보너스</b-th>
+								<b-th class="text-center"><locale k="UNIT_VIEW_FULL_LINKBONUS" /></b-th>
 							</b-tr>
 						</b-thead>
 						<b-tbody>
 							<b-tr>
 								<b-td>
-									없음
+									<locale k="LINKBONUS_NONE" />
 									<b-radio class="float-right" value v-model="linkBonus" />
 								</b-td>
 							</b-tr>
@@ -299,7 +300,7 @@
 						<b-thead head-variant="dark">
 							<b-tr>
 								<b-th colspan="4">
-									출격 비용
+									<locale k="UNIT_VIEW_COST" />
 									<b-form-select
 										v-if="CostRarityList.length > 1"
 										class="table-unit-rarity-select"
@@ -310,10 +311,10 @@
 								</b-th>
 							</b-tr>
 							<b-tr>
-								<b-th>링크</b-th>
-								<b-th>부품</b-th>
-								<b-th>영양</b-th>
-								<b-th>전력</b-th>
+								<b-th><locale k="UNIT_VIEW_COST_LINKS" /></b-th>
+								<b-th><locale k="UNIT_VIEW_COST_PARTS" /></b-th>
+								<b-th><locale k="UNIT_VIEW_COST_NUTRIENTS" /></b-th>
+								<b-th><locale k="UNIT_VIEW_COST_POWER" /></b-th>
 							</b-tr>
 						</b-thead>
 						<b-tbody>
@@ -372,6 +373,7 @@ import { Decimal } from "decimal.js";
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, Watch, PropSync } from "vue-property-decorator";
+import { LocaleGet } from "@/libs/Locale";
 
 import StoreModule from "@/libs/Store";
 
@@ -640,14 +642,14 @@ export default class UnitView extends Vue {
 	private get CostRarityList () {
 		const list = [{
 			value: this.unit.rarity,
-			text: `${this.RarityDisplay[this.unit.rarity]} 등급`,
+			text: LocaleGet("COMMON_UNIT_GRADE_FORMAT", this.RarityDisplay[this.unit.rarity]),
 		}];
 
 		if (this.unit.promotions) {
 			list.push(...this.unit.promotions.map(x => (
 				{
 					value: x,
-					text: `${this.RarityDisplay[x]} 승급`,
+					text: LocaleGet("UNIT_CARD_PROMOTION_BADGE", this.RarityDisplay[x]),
 				}),
 			));
 		}

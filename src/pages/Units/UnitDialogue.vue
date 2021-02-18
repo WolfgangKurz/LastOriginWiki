@@ -1,10 +1,18 @@
 <template>
 	<b-card v-if="IsVoiceAvailable" class="mt-2 text-left" no-body :lang="lang">
 		<b-card-header v-b-toggle:[CollapseKey]>
-			{{ voice.t }}
-			<strong v-if="voice.isMarry" class="text-danger pl-4">♥ 서약</strong>
-			<b-badge v-if="IsMissing" variant="danger" class="ml-3">대사 정보 없음</b-badge>
-			<b-badge v-else-if="IsPartial" variant="warning" class="ml-3">일부 대사 없음</b-badge>
+			<locale v-if="voice.sid === null" :k="`UNIT_${unit.uid}`" />
+			<locale v-else :k="`UNIT_SKIN_${unit.uid}_${voice.sid}`" />
+
+			<strong v-if="voice.isMarry" class="text-danger pl-4">
+				<locale k="UNIT_DIALOGUE_MARRIAGE" />
+			</strong>
+			<b-badge v-if="IsMissing" variant="danger" class="ml-3">
+				<locale k="UNIT_DIALOGUE_EMPTY" />
+			</b-badge>
+			<b-badge v-else-if="IsPartial" variant="warning" class="ml-3">
+				<locale k="UNIT_DIALOGUE_MISSING" />
+			</b-badge>
 		</b-card-header>
 		<b-collapse :id="CollapseKey">
 			<b-card-body>
@@ -22,8 +30,12 @@
 	</b-card>
 	<b-card v-else class="mt-2 text-left unit-dialogue-empty" no-body>
 		<b-card-header>
-			{{ voice.t }}
-			<b-badge variant="secondary" class="ml-3">보이스 없는 스킨</b-badge>
+			<locale v-if="voice.sid === null" :k="`UNIT_${unit.uid}`" />
+			<locale v-else :k="`UNIT_SKIN_${unit.uid}_${voice.sid}`" />
+
+			<b-badge variant="secondary" class="ml-3">
+				<locale k="UNIT_DIALOGUE_VOICELESS" />
+			</b-badge>
 		</b-card-header>
 	</b-card>
 </template>
