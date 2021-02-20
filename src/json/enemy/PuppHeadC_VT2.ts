@@ -1,7 +1,5 @@
 export default {
   "id": "PuppHeadC_VT2",
-  "name": "초코 여왕의 귀여운 애완기계",
-  "desc": "이 녀석과 같이 다니는 적들은 신속하게 움직이는 것 같군. 신속히 처리하는 것이 좋겠어.\n\n\n - 칸 보고함",
   "icon": "TbarIcon_MP_PuppHeadC_V2",
   "ai": "AI_PupHeadC_Normal_01",
   "rarity": 5,

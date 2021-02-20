@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickAQ_EV9",
-  "name": "아쿠아 칙 Type-X",
-  "desc": "조금 이상한 행동을 하는 걸 봤어. 일부러 주위에 뭔가 다른 액체를 흘리는 것 같아. 그냥 물이 아닌걸까...?\n\n\n- 아쿠아 보고함",
   "icon": "TbarIcon_MP_NightChickAQ_N",
   "ai": "AI_AquaChick_Normal_01",
   "rarity": 5,

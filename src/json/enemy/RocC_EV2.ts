@@ -1,7 +1,5 @@
 export default {
   "id": "RocC_EV2",
-  "name": "로크 (최대 충전)",
-  "desc": "큿… 제 레이더로도 포착하기 어려운 상대네요. 최대 충전 상태가 되면 강력한 공격을 하니 주의하시길. 상태를 보니 큰 피해를 입으면 어떤 꼬맹이처럼 성대하게 폭발할 것 같군요.\n\n\n- 나이트 앤젤 보고함",
   "icon": "TbarIcon_MP_RocC_N",
   "ai": "AI_RocC_Normal_02",
   "rarity": 5,

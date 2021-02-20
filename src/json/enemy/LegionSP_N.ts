@@ -1,7 +1,5 @@
 export default {
   "id": "LegionSP_N",
-  "name": "레기온 스나이퍼",
-  "desc": "적의 빈틈을 노리는 용의주도한 개체입니다. 대물 저격총을 가지고 있으니 중장갑 전투원을 운용할 때는 주의해주세요.\n\n\n- 팬텀",
   "icon": "TbarIcon_MP_LegionSP_N",
   "ai": "AI_LegionSP_Normal_01",
   "rarity": 3,

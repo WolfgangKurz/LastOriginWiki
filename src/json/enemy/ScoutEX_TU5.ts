@@ -1,7 +1,5 @@
 export default {
   "id": "ScoutEX_TU5",
-  "name": "강습형 스카우트",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_Scout_N",
   "ai": "AI_Scout_Normal_01",
   "rarity": 3,

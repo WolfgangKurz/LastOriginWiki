@@ -1,7 +1,5 @@
 export default {
   "id": "Drone_Challenge1",
-  "name": "익스큐셔너",
-  "desc": "스캔 완료! 결과를 분석해보니 이건… 일종의 허상인가? 틀림없이 형태는 갖추고 있지만, 내구력이 굉장히 약해. 거기다 얼마 안가서 스스로 작동을 정지할 것으로 보여. 툭 치면 부서지겠지만 영 석연치 않네… 엄~청나게 강력한 한 방으로 날려버리는게 어때? 예를 들면... 우리 에밀리라던가?\n\n\n- 레이븐 누나가♥",
   "icon": "TbarIcon_MP_Executioner_B06",
   "ai": "AI_MP_Drone_Challenge1",
   "rarity": 4,

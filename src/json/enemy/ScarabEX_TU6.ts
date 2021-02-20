@@ -1,7 +1,5 @@
 export default {
   "id": "ScarabEX_TU6",
-  "name": "스캐럽 HC",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_Scarab_N",
   "ai": "AI_Scarab_01",
   "rarity": 3,

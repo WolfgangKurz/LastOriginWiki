@@ -1,7 +1,5 @@
 export default {
   "id": "Zapper_TU5",
-  "name": "재퍼",
-  "desc": "호전성이 낮은 개체예요. 건드리지만 않으면 공격하지 않으니 주의해 주세요. 고압 전류 공격을 하니까요. 설마 제가 대신 맞아서 찌릿찌릿에 눈 뜨는 걸 바라는 건 아니겠죠?\n\n\n- 보고자 블랙 리리스",
   "icon": "TbarIcon_MP_Zapper_N",
   "ai": "AI_Zapper_Normal_01",
   "rarity": 3,

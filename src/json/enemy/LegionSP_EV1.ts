@@ -1,7 +1,5 @@
 export default {
   "id": "LegionSP_EV1",
-  "name": "레기온 스나이퍼",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_LegionSP_N",
   "ai": "AI_Jako_Event_01",
   "rarity": 3,

@@ -1,7 +1,5 @@
 export default {
   "id": "LightningBomberEX_TU3",
-  "name": "라이트닝 봄버 Type-S",
-  "desc": "우와아... 또 이렇게 흉악한 철충이 나왔네요...헤헷, 그래도 귀~여운 린티한텐 안 될걸요? 공격해서 빈틈이 드러난 사이에, 린티가 한 방 먹여줄 거니까요~! 린티가 활약하는 모습, 꼭 봐주시기에요?\n\n\n- 사령관님의 귀.여.운. 린티가",
   "icon": "TbarIcon_MP_LightningBomberEX_N",
   "ai": "AI_MP_LightningBomberEX_01",
   "rarity": 5,

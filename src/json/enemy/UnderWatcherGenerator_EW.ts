@@ -1,7 +1,5 @@
 export default {
   "id": "UnderWatcherGenerator_EW",
-  "name": "언더왓쳐 제네레이터",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_UnderWatcherGenerator_B05",
   "ai": "AI_UnderWatcherGene_01",
   "rarity": 5,

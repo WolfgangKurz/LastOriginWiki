@@ -1,7 +1,5 @@
 export default {
   "id": "FallenC_SA2",
-  "name": "폴른 커스텀",
-  "desc": "공격 할 수록 점점 더 화력이 강력해지니 주의해 주세요. 제 풀에 지쳐 가동을 멈추니 잘 피하기만 해도 될 거에요.\n\n\n - 블랙 하운드 보고함",
   "icon": "TbarIcon_MP_FallenC_N",
   "ai": "AI_Mp_FallenC_Normal_01",
   "rarity": 5,

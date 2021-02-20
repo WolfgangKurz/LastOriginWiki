@@ -1,7 +1,5 @@
 export default {
   "id": "Drone_VT3",
-  "name": "초코 여왕의 정찰병",
-  "desc": "초코 여왕이 경비용 드론 기종을 도색해 만들어낸 기체입니다.",
   "icon": "TbarIcon_MP_Drone_V2",
   "ai": "AI_FABigChick_01",
   "rarity": 2,

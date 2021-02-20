@@ -1,7 +1,5 @@
 export default {
   "id": "Gigantes_VT4",
-  "name": "초코 여왕의 근위병",
-  "desc": "초코 여왕이 양산형 기간테스 기종을 도색해 만들어낸 기체입니다.",
   "icon": "TbarIcon_MP_Gigantes_V2",
   "ai": "AI_Mp_Mammoth_01",
   "rarity": 3,

@@ -1,7 +1,5 @@
 export default {
   "id": "ProgramMobMT_EW",
-  "name": "가상공간 파이터",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_ProgramMobMT_N",
   "ai": "AI_ProgramMobMT_Normal_01",
   "rarity": 4,

@@ -1,7 +1,5 @@
 export default {
   "id": "UnderWatcherArm_B05",
-  "name": "언더왓쳐 암",
-  "desc": "언더왓쳐의 공격용 암 파츠네요. 대공 기능이 있는 것 같으니 주의하세요.\n\n\n- 스카디",
   "icon": "TbarIcon_MP_UnderWatcherArm_B05",
   "ai": "AI_UnderWatcherArm_01",
   "rarity": 5,

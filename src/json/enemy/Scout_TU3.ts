@@ -1,7 +1,5 @@
 export default {
   "id": "Scout_TU3",
-  "name": "스카우트",
-  "desc": "저 망할 날파리들! 엄청 빨라서 잘 맞지도 않고 뭐만 하려하면 방해해서 진짜 짜증나는 녀석들이야. 백발백중인 미호가 필요해!\n\n\n- 스틸 드라코",
   "icon": "TbarIcon_MP_Scout_N",
   "ai": "AI_Scout_Normal_01",
   "rarity": 2,

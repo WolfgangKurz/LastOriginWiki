@@ -1,7 +1,5 @@
 export default {
   "id": "BigChickSP_EV1",
-  "name": "강화형 빅 칙",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_BigChick_N",
   "ai": "AI_Ncc_Normal_01",
   "rarity": 3,

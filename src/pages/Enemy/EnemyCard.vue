@@ -16,7 +16,8 @@
 					</span>
 				</span>
 			</div>
-			{{ enemy.name }}
+			<!-- {{ enemy.name }} -->
+			<locale :k="`ENEMY_${enemy.id}`" />
 		</b-card-title>
 
 		<a href="#" class="stretched-link enemy-stretched" @click.prevent="Click" />

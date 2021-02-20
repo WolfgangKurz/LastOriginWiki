@@ -1,7 +1,5 @@
 export default {
   "id": "LightningBomber_EW5",
-  "name": "라이트닝 봄버",
-  "desc": "이 녀석, 요리조리 잘 피해서 다들 애먹었을 거야. 내 저격은 백발백중이니 맡겨만 줘.\n\n\n-미호 보고함",
   "icon": "TbarIcon_MP_LightningBomber_N",
   "ai": "AI_LightningBomber_Normal_01",
   "rarity": 3,

@@ -1,7 +1,5 @@
 export default {
   "id": "Machina_N",
-  "name": "마키나",
-  "desc": "마키나의 화력은 그리 위협적이지 않지만, 그녀가 보여주는 허상에 빠지지 않도록 조심해 주세요.\n\n\n- 팬텀 보고함",
   "icon": "TbarIcon_MP_Machina_N",
   "ai": "AI_MP_Machina_01",
   "rarity": 5,

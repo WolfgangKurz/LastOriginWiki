@@ -54,7 +54,7 @@ export enum BUFFEFFECT_TYPE {
 	STAGE_LOCKON01_TIME = 47,
 	STAGE_ADDDAMAGE_RATIO = 48,
 	STAGE_ADDDAMAGE_VALUE = 49,
-	STAGE_BLOCK_LINE = 50,
+	STAGE_BLOCK_COLUMN = 50,
 	STAGE_BLOCK_GRID = 51,
 	STAGE_MOVE_BACK = 52,
 	STAGE_MOVE_FRONT = 53,
@@ -129,7 +129,7 @@ type BuffEffect_Body = BuffEffect_Unknown | BuffEffect_Off | BuffEffect_Attack |
 	BuffEffect_DamageAdd | BuffEffect_Barrier | BuffEffect_Guard | BuffEffect_Position | BuffEffect_NextCritical | BuffEffect_Range |
 	BuffEffect_Penetration | BuffEffect_Metamolphosis | BuffEffect_FixedDamage | BuffEffect_Provoke | BuffEffect_AttackSupport |
 	BuffEffect_Immovable | BuffEffect_SkillDisable | BuffEffect_Revive | BuffEffect_AttackTarget | BuffEffect_InvokeChance |
-	BuffEffect_SummonRemove | BuffEffect_PenetrationForce | BuffEffect_Exp | BuffEffect_Collaborate;
+	BuffEffect_SummonRemove | BuffEffect_PenetrationForce | BuffEffect_Exp | BuffEffect_DebuffImmune | BuffEffect_Collaborate;
 
 // #region BuffEffect
 interface BuffEffect_Unknown {
@@ -364,6 +364,11 @@ interface BuffEffect_Exp {
 	exp: BuffEffectValue_Percent;
 }
 
+/** 디버프 면역 */
+interface BuffEffect_DebuffImmune {
+	debuff_immune: BUFFEFFECT_TYPE;
+}
+
 /** 협동 공격 */
 interface BuffEffect_Collaborate {
 	collaborate: {
@@ -403,7 +408,7 @@ export function BuffEffectList (): Record<BuffEffectListGroupKeys, BuffEffectInf
 			{ pm: false, text: LocaleGet("BUFF_GET_DMG_UP"), type: [BUFFEFFECT_TYPE.STAGE_ADDDAMAGE_RATIO] },
 			{ pm: true, text: LocaleGet("BUFF_DMG"), type: [BUFFEFFECT_TYPE.STAGE_DAMAGEPHYSICS_RATIO_INS] },
 			{ pm: true, text: LocaleGet("BUFF_DMG_FIRE"), type: [BUFFEFFECT_TYPE.STAGE_DAMAGEFIRE_RATIO_INS] },
-			{ pm: true, text: LocaleGet("BUFF_DMG_CHILL"), type: [BUFFEFFECT_TYPE.STAGE_DAMAGEICE_RATIO_INS] },
+			{ pm: true, text: LocaleGet("BUFF_DMG_ICE"), type: [BUFFEFFECT_TYPE.STAGE_DAMAGEICE_RATIO_INS] },
 			{ pm: true, text: LocaleGet("BUFF_DMG_THUNDER"), type: [BUFFEFFECT_TYPE.STAGE_DAMAGELIGHTNING_RATIO_INS] },
 		],
 		damageReduce: [
@@ -414,7 +419,7 @@ export function BuffEffectList (): Record<BuffEffectListGroupKeys, BuffEffectInf
 			{ pm: false, text: LocaleGet("BUFF_RESURRECT"), type: [BUFFEFFECT_TYPE.STAGE_RESURRECT, BUFFEFFECT_TYPE.STAGE_RESURRECT_RATIO] },
 		],
 		guard: [
-			{ pm: false, text: LocaleGet("BUFF_BLOCK_LINE"), type: [BUFFEFFECT_TYPE.STAGE_BLOCK_LINE] },
+			{ pm: false, text: LocaleGet("BUFF_BLOCK_COLUMN"), type: [BUFFEFFECT_TYPE.STAGE_BLOCK_COLUMN] },
 			{ pm: false, text: LocaleGet("BUFF_BLOCK_ROW"), type: [BUFFEFFECT_TYPE.STAGE_BLOCK_ROW] },
 			{ pm: false, text: LocaleGet("BUFF_BLOCK_CHAR"), type: [BUFFEFFECT_TYPE.STAGE_BLOCK_CHARACTER] },
 		],
@@ -440,7 +445,7 @@ export function BuffEffectList (): Record<BuffEffectListGroupKeys, BuffEffectInf
 		],
 		resist: [
 			{ pm: true, text: LocaleGet("BUFF_RES_FIRE"), type: [BUFFEFFECT_TYPE.STAT_RESFIRE_VALUE, BUFFEFFECT_TYPE.STAT_RESFIRE_RATIO] },
-			{ pm: true, text: LocaleGet("BUFF_RES_CHILL"), type: [BUFFEFFECT_TYPE.STAT_RESICE_VALUE, BUFFEFFECT_TYPE.STAT_RESICE_RATIO] },
+			{ pm: true, text: LocaleGet("BUFF_RES_ICE"), type: [BUFFEFFECT_TYPE.STAT_RESICE_VALUE, BUFFEFFECT_TYPE.STAT_RESICE_RATIO] },
 			{
 				pm: true,
 				text: LocaleGet("BUFF_RES_THUNDER"),
@@ -470,7 +475,7 @@ export function BuffEffectList (): Record<BuffEffectListGroupKeys, BuffEffectInf
 			},
 			{
 				pm: false,
-				text: LocaleGet("BUFF_ADDDMG_CHILL"),
+				text: LocaleGet("BUFF_ADDDMG_ICE"),
 				type: [
 					BUFFEFFECT_TYPE.STAGE_DAMAGEICE_RATIO,
 					BUFFEFFECT_TYPE.STAGE_DAMAGEICE_VALUE,
@@ -486,7 +491,7 @@ export function BuffEffectList (): Record<BuffEffectListGroupKeys, BuffEffectInf
 			},
 			{ pm: false, text: LocaleGet("BUFF_DOT_PHYSICS"), type: [BUFFEFFECT_TYPE.STAGE_PHYSICS_DOT] },
 			{ pm: false, text: LocaleGet("BUFF_DOT_FIRE"), type: [BUFFEFFECT_TYPE.STAGE_FIRE_DOT] },
-			{ pm: false, text: LocaleGet("BUFF_DOT_CHILL"), type: [BUFFEFFECT_TYPE.STAGE_ICE_DOT] },
+			{ pm: false, text: LocaleGet("BUFF_DOT_ICE"), type: [BUFFEFFECT_TYPE.STAGE_ICE_DOT] },
 			{ pm: false, text: LocaleGet("BUFF_DOT_THUNDER"), type: [BUFFEFFECT_TYPE.STAGE_LIGHTNING_DOT] },
 			{ pm: false, text: LocaleGet("BUFF_DMG_PHYSICS_BY_HP"), type: [BUFFEFFECT_TYPE.STAGE_PHYSICS_DAMAGE_APPLY] },
 			{ pm: false, text: LocaleGet("BUFF_DMG_PHYSICS_BY_HP"), type: [BUFFEFFECT_TYPE.STAGE_FIRE_DAMAGE_APPLY] },

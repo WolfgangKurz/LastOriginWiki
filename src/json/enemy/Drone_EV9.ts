@@ -1,7 +1,5 @@
 export default {
   "id": "Drone_EV9",
-  "name": "드론 09",
-  "desc": "홀로그램 투사용으로 개조된 비스마르크사의 드론이에요. 무엇이 가상이고, 무엇이 현실인지 깨닫는 것은...쉬운 일이 아니겠죠.\n\n\n- 메리",
   "icon": "TbarIcon_MP_Drone_N",
   "ai": "AI_MP_Drone_EV9",
   "rarity": 3,

@@ -1,7 +1,5 @@
 export default {
   "id": "MammothP_TU4",
-  "name": "개량형 매머드",
-  "desc": "",
   "icon": "TbarIcon_MP_Mammoth_N",
   "ai": "AI_Mp_Mammoth_01",
   "rarity": 4,

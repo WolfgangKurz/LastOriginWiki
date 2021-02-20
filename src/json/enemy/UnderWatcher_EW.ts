@@ -1,7 +1,5 @@
 export default {
   "id": "UnderWatcher_EW",
-  "name": "언더왓쳐",
-  "desc": "전장에서 등장하는 더욱 강력해진 언더왓쳐로 제네레이터로부터 에너지를 공급 받는 한 계속 전투를 이어나갈 수 있습니다.\n\n\n보고자 ???",
   "icon": "TbarIcon_MP_UnderWatcher_B05",
   "ai": "AI_UnderWatcher_02",
   "rarity": 5,

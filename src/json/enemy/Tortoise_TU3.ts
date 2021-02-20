@@ -1,7 +1,5 @@
 export default {
   "id": "Tortoise_TU3",
-  "name": "토터스",
-  "desc": "장갑이 활성화 되었을 땐 유효 피해를 주기 힘들어요! 장갑을 비활성화 시킨 후에 한 번에 해치워야 해요!\n\n\n- 켈베로스",
   "icon": "TbarIcon_MP_Tortoise_N",
   "ai": "AI_Tortoise_Normal_01",
   "rarity": 4,

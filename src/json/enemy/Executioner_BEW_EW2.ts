@@ -1,7 +1,5 @@
 export default {
   "id": "Executioner_BEW_EW2",
-  "name": "이모탈 익스큐셔너",
-  "desc": "여태껏 보고된 적 없는 새로운 형태의 익스큐셔너로, 제압해도 부활한다는 것만 알려진 상태입니다. 대원들이 공포에 질릴 수 있으니, 불사신 같은 건 없다는 것을 증명해주셔야 합니다.\n\n\n보고자 ???",
   "icon": "TbarIcon_MP_Executioner_BEW",
   "ai": "AI_Executioner_EW_02",
   "rarity": 5,

@@ -1,7 +1,5 @@
 export default {
   "id": "Raider_EW",
-  "name": "레이더",
-  "desc": "전장에서 등장하는 더욱 강력해진 레이더로 철충들의 공격을 지원하여 지속적으로 막강한 피해를 줄 것입니다.\n\n\n보고자 ???",
   "icon": "TbarIcon_MP_Raider_B04",
   "ai": "AI_Raider_02",
   "rarity": 5,

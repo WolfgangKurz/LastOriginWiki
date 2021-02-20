@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickShEx_N",
-  "name": "강화형 칙 실더",
-  "desc": "일반적인 칙 실더랑 다르게 어디에서나 방어하네? 대열을 짜기 시작하면 귀찮아질 거 같으니 빨리 처리하는 게 좋을 것 같아.\n\n\n- 피닉스 보고함",
   "icon": "TbarIcon_MP_NightChickS_N",
   "ai": "AI_Mp_NCShieldEx_Normal_01",
   "rarity": 3,

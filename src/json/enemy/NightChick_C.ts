@@ -1,7 +1,5 @@
 export default {
   "id": "NightChick_C",
-  "name": "나이트 칙?",
-  "desc": "기동형을 상대하기 위해 반만년 동안 패스트 드로우를 수련한 나이트 칙이라는 것 같다. 이 녀석들도 영화를 보는 건가…?",
   "icon": "TbarIcon_MP_NightChick_N",
   "ai": "AI_Mp_NChick_Challenge_01",
   "rarity": 5,

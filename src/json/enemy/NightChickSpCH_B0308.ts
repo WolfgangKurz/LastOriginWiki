@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickSpCH_B0308",
-  "name": "기능 테스트용 2",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_NightChickSpCH_N",
   "ai": "AI_SoldierChick_Test_02",
   "rarity": 5,

@@ -1,7 +1,5 @@
 export default {
   "id": "ScarabEX_TU",
-  "name": "스캐럽 HC",
-  "desc": "이상한 구조인데 잘도 나는 거 있지? 나 저거 꼭 분해하고 싶으니까 잡히면 나한테 보내 줘야 해! 겁쟁이라 무서우면 방어를 하니까 빨리 해치우는 게 좋아.\n\n\n- 보고자 닥터",
   "icon": "TbarIcon_MP_Scarab_N",
   "ai": "AI_Scarab_01",
   "rarity": 3,

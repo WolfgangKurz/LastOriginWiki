@@ -1,7 +1,5 @@
 export default {
   "id": "SpectorBS_N",
-  "name": "스펙터 BS",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_Spector_N",
   "ai": "AI_Spector_Special_01",
   "rarity": 4,

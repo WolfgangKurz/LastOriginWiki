@@ -1,7 +1,5 @@
 export default {
   "id": "AMG11AA_EV5",
-  "name": "네리의 부하",
-  "desc": "결국 부하가 되어버린 불쌍한 기계들이다.",
   "icon": "TbarIcon_MP_AMG11AA_N",
   "ai": "AI_AAAMG11_Normal_02",
   "rarity": 4,

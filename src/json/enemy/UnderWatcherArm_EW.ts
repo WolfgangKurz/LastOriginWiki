@@ -1,7 +1,5 @@
 export default {
   "id": "UnderWatcherArm_EW",
-  "name": "언더왓쳐 암",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_UnderWatcherArm_B05",
   "ai": "AI_UnderWatcherArm_02",
   "rarity": 5,

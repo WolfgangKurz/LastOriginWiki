@@ -502,14 +502,16 @@ export const UnitRoleDisplay: Record<ROLE_TYPE, string> = {
 	[ROLE_TYPE.SUPPORTER]: "지원기",
 };
 
-export const EquipTypeDisplay: Record<ITEM_TYPE, string> = {
-	[ITEM_TYPE.CHIP]: "칩",
-	[ITEM_TYPE.SPCHIP]: "OS",
-	[ITEM_TYPE.SUBEQ]: "보조장비",
-	[ITEM_TYPE.PCITEM]: "코어링크",
-	[ITEM_TYPE.CONSUMABLE]: "소모품",
-	[ITEM_TYPE.MATERIAL]: "재료",
-};
+export function EquipTypeDisplay (): Record<ITEM_TYPE, string> {
+	return {
+		[ITEM_TYPE.CHIP]: LocaleGet("EQUIP_FILTER_TYPE_CHIP"),
+		[ITEM_TYPE.SPCHIP]: LocaleGet("EQUIP_FILTER_TYPE_OS"),
+		[ITEM_TYPE.SUBEQ]: LocaleGet("EQUIP_FILTER_TYPE_ITEM"),
+		[ITEM_TYPE.PCITEM]: "코어링크",
+		[ITEM_TYPE.CONSUMABLE]: "소모품",
+		[ITEM_TYPE.MATERIAL]: "재료",
+	};
+}
 
 export const AssetsRoot = process.env.NODE_ENV === "development"
 	? "http://localhost:5500/assets"

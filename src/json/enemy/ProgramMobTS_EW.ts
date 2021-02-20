@@ -1,7 +1,5 @@
 export default {
   "id": "ProgramMobTS_EW",
-  "name": "가상공간 솔져",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_ProgramMobTS_N",
   "ai": "AI_ProgramMobTS_Normal_01",
   "rarity": 4,

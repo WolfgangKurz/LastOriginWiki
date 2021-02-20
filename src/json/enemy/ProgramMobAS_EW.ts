@@ -1,7 +1,5 @@
 export default {
   "id": "ProgramMobAS_EW",
-  "name": "가상공간 패트릭",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_ProgramMobAS_N",
   "ai": "AI_ProgramMobAS_Normal_01",
   "rarity": 5,

@@ -1,7 +1,5 @@
 export default {
   "id": "Predator_EW",
-  "name": "프레데터",
-  "desc": "전장에서 등장하는 더욱 강력해진 프레데터로 강력한 방어력으로 인해 물리 공격은 통하지 않을 것입니다.\n\n\n보고자 ???",
   "icon": "TbarIcon_MP_Predator_B0208",
   "ai": "AI_Boss_PWLR_02",
   "rarity": 5,

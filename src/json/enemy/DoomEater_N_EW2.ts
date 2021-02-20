@@ -1,7 +1,5 @@
 export default {
   "id": "DoomEater_N_EW2",
-  "name": "둠 이터",
-  "desc": "같은 철충들을 먹어치워버리는 이 무자비한 철충을 막을 방법은 오직 포식 후, 에너지를 흡수할 때 밖에는 없는 듯 합니다.\n\n\n보고자 ???",
   "icon": "TbarIcon_MP_DoomEater_N",
   "ai": "AI_Boss_PWLR_EW_02",
   "rarity": 5,

@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickSI_TU5",
-  "name": "나이트 칙 실더 개",
-  "desc": "일반 칙 실더보다 큰 방패 때문에 뒤의 대상들을 공격하기 위해서는 더 용맹한 정신이 필요하다. 나이트 칙 실더와 헷갈리지 않도록 지휘 콘솔을 반드시 확인해야 함.\n\n\n- 마리 ",
   "icon": "TbarIcon_MP_NightChickSI_N",
   "ai": "AI_NCShield_Normal_01",
   "rarity": 3,

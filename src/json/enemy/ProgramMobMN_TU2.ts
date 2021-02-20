@@ -1,7 +1,5 @@
 export default {
   "id": "ProgramMobMN_TU2",
-  "name": "철충 사념체 (폭격기)",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_ProgramMobMN_N",
   "ai": "AI_ProgramMobMN_Normal_01",
   "rarity": 4,

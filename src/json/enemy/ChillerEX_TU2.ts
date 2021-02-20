@@ -1,7 +1,5 @@
 export default {
   "id": "ChillerEX_TU2",
-  "name": "칠러 HV",
-  "desc": "물… 절대 뿌리지 말것…\n\n\n - 서펀트 보고함",
   "icon": "TbarIcon_MP_Chiller_N",
   "ai": "AI_Chiller_Normal_01",
   "rarity": 4,

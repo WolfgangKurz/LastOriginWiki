@@ -1,7 +1,5 @@
 export default {
   "id": "HeavyScoutG_TU2",
-  "name": "헤비 스카우트 G",
-  "desc": "",
   "icon": "TbarIcon_MP_Scout_V2",
   "ai": "AI_MP_HeavyScout_01",
   "rarity": 4,

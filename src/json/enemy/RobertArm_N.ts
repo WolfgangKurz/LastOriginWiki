@@ -1,7 +1,5 @@
 export default {
   "id": "RobertArm_N",
-  "name": "로버트 암",
-  "desc": "이건 알기 쉽군요. 저와 로버트 같은 A.I.에게 흔히 장착되던 다용도 팔입니다! 그래도 손상에 대비한 개조가 되어있는 모양이니, 수리되기 전에 빠르게 파괴해버리시지요!\n\n\n-Mr 알프레드",
   "icon": "TbarIcon_MP_RobertArm_N",
   "ai": "AI_MP_RobertArm_01",
   "rarity": 4,

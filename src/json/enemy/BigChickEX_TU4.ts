@@ -1,7 +1,5 @@
 export default {
   "id": "BigChickEX_TU4",
-  "name": "시작형 빅 칙",
-  "desc": "엄청 큰 나이트 칙이지 말임다! 하는 짓은 나이트 칙이랑 똑같은데 갑빠도 두껍고 총도 더 쎄게 쏘지 말임다. 움직이기 전에 얼른 죽여야 함다!\n\n\n- 보고자 브라우니지 말임다.",
   "icon": "TbarIcon_MP_BigChick_N",
   "ai": "AI_Jako_Normal_01",
   "rarity": 4,

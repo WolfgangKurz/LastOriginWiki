@@ -1,7 +1,5 @@
 export default {
   "id": "FABigChick_Challenge3",
-  "name": "FA 빅 칙 알파",
-  "desc": "킥킥, 아무리 훈련이라지만 이건 너무한데? 엄~청나게 강화된 빅 칙이야. 함부로 공격했다간 큰일 날 수도 있으니까, 좀 더 관찰해보자.\n\n\n- 보고자 닥터",
   "icon": "TbarIcon_MP_FABigChick_N",
   "ai": "AI_FABigChick_Challenge_01",
   "rarity": 3,

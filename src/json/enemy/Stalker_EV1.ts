@@ -1,7 +1,5 @@
 export default {
   "id": "Stalker_EV1",
-  "name": "스토커",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_Stalker_B0108",
   "ai": "AI_Boss_Stalker_01",
   "rarity": 5,

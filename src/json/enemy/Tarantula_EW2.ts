@@ -1,7 +1,5 @@
 export default {
   "id": "Tarantula_EW2",
-  "name": "개조된 타란튤라",
-  "desc": "스스로 내부를 과열하게 되어 자폭을 할 수 있도록 개조된 타란튤라 입니다. 자폭 상태가 되기 전에 과열된 내부를 냉각 시켜야 합니다.\n\n\n보고자 ???",
   "icon": "TbarIcon_MP_Tarantula_N",
   "ai": "AI_Mp_Tarantula_EW_02",
   "rarity": 4,

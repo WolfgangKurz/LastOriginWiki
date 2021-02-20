@@ -1,7 +1,5 @@
 export default {
   "id": "HarvesterS_N",
-  "name": "실드 하베스터",
-  "desc": "평범한 철충이다.",
   "icon": "TbarIcon_MP_Harvester_N",
   "ai": "AI_Jako_Normal_01",
   "rarity": 3,

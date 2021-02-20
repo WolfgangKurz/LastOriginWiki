@@ -1,7 +1,5 @@
 export default {
   "id": "Predator_EV1",
-  "name": "프레데터",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_Predator_B0208",
   "ai": "AI_Boss_PWLR_02",
   "rarity": 5,

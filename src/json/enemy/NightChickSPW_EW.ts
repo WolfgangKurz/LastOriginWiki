@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickSPW_EW",
-  "name": "한랭지형 칙 스나이퍼",
-  "desc": "보기보다 잽싼 녀석이야! 발키리 언니처럼 가까운 거리에선 사격이 더 정밀해지니 주의해야 해. 설원에선 찾기 힘드니 베라 언니한테 도와달라고 하는 게 좋을 거야.\n\n\n- 알비스 보고함",
   "icon": "TbarIcon_MP_NightChickSPW_N",
   "ai": "AI_Mp_NCSniperWinter_Normal_01",
   "rarity": 4,

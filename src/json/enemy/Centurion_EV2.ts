@@ -1,7 +1,5 @@
 export default {
   "id": "Centurion_EV2",
-  "name": "센츄리온",
-  "desc": "작은 부대의 지휘관 역할을 하는 철충으로 보입니다. 주변 철충에게 일제 공격을 지시하는 정황이 포착되었군요. 부하들이 파괴되면 경계를 하는 것 같아요. 먼저 처리하는 게 좋을 것으로 보입니다.\n\n\n- 37식 다이카",
   "icon": "TbarIcon_MP_Centurion_N",
   "ai": "AI_Mp_CenturionEv_Normal_01",
   "rarity": 3,

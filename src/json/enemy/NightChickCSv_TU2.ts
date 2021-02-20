@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickCSv_TU2",
-  "name": "생존형 나이트 칙 캐논",
-  "desc": "저 녀석 엄청 끈질긴 녀석으로 유명해. 소문에 의하면 물에 젖으면 제대로 힘을 못쓴다고 하니까 내가 한번 상대해볼게.\n\n\n- 프로스트 서펀트 보고함",
   "icon": "TbarIcon_MP_NightChickC_N",
   "ai": "AI_Ncc_Normal_01",
   "rarity": 4,

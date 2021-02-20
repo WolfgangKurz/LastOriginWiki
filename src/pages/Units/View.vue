@@ -204,7 +204,12 @@
 
 										<div v-for="(area, aindex) in unit.source" :key="`unit-view-source-${aindex}`">
 											<hr v-if="unit.craftable || aindex > 0" class="my-1" />
-											<h6 v-if="area.length > 0 && area[0].EventName" style="font-weight: bold">{{ area[0].EventName }}</h6>
+											<h6 v-if="area.length > 0 && area[0].EventName" style="font-weight: bold">
+												{{ area[0].EventName }}
+											</h6>
+											<h6 v-else-if="area.length > 0 && area[0].IsChallenge" style="font-weight: bold">
+												<locale :k="`COMMON_CHALLENGE_${area[0].ChallengeName}`" />
+											</h6>
 											<source-badge
 												v-for="(source, sindex) in area"
 												:key="`unit-view-drop-${aindex}-${sindex}-${source}`"
@@ -331,6 +336,7 @@
 
 			<unit-skill-table
 				v-if="SkillsRaw"
+				:uid="unit.uid"
 				:skills="SkillsRaw"
 				:skill-level.sync="skillLevel"
 				:form-state.sync="formState"
@@ -548,7 +554,7 @@ export default class UnitView extends Vue {
 			`${AssetsRoot}/${ImageExtension()}/full/${("00" + this.unit.id).substr(-3)}.${ImageExtension()}`,
 		);
 		SetMeta("keywords", (this.unit.name === this.unit.shortname ? `,${this.unit.name}` : `,${this.unit.name},${this.unit.shortname}`), true);
-		UpdateTitle("전투원정보", `${this.unit.name}`);
+		UpdateTitle(LocaleGet("MENU_UNITS"), LocaleGet(`UNIT_${this.unit.uid}`));
 	}
 
 	private get unit () {

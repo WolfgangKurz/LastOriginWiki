@@ -54,15 +54,17 @@ export default class FacilityCard extends Vue {
 	private render () {
 		const facility = this.facility;
 		const level = this.level;
-		const entry = facility.list[level];
+		// const entry = facility.list[level];
 
-		return <b-card no-body class="facility-card" id={`anchor_${this.id}`}>
-			<b-card-header>{facility.name}</b-card-header>
+		return <b-card no-body class="facility-card" id={ `anchor_${this.id}` }>
+			<b-card-header>
+				<locale k={ `FACILITY_${this.id}` } />
+			</b-card-header>
 			<b-card-body>
-				<facility-icon facility={facility} />
+				<facility-icon facility={ facility } />
 			</b-card-body>
 
-			<a href="#" class="stretched-link equip-stretched" onClick={this.Click} />
+			<a href="#" class="stretched-link equip-stretched" onClick={ this.Click } />
 		</b-card>;
 	}
 }
