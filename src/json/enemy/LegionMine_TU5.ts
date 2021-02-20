@@ -1,7 +1,5 @@
 export default {
   "id": "LegionMine_TU5",
-  "name": "레기온 마인레이어",
-  "desc": "평범한 철충이다.",
   "icon": "TbarIcon_MP_Legion_N",
   "ai": "AI_Wasp_Normal_01",
   "rarity": 3,

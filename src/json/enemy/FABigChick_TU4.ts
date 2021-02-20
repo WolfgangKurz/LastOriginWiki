@@ -1,7 +1,5 @@
 export default {
   "id": "FABigChick_TU4",
-  "name": "풀아머 빅 칙",
-  "desc": "빅 칙과는 달라! 빅 칙과는! 뭐로 만든지는 몰라도 장갑이 차원이 다르니 나 같은 대 장갑 요원이 없으면 꽤나 곤란할걸?\n\n\n - 불가사리 보고함",
   "icon": "TbarIcon_MP_FABigChick_N",
   "ai": "AI_FABigChick_01",
   "rarity": 3,

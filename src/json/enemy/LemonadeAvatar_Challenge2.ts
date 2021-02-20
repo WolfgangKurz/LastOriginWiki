@@ -1,7 +1,5 @@
 export default {
   "id": "LemonadeAvatar_Challenge2",
-  "name": "레모네이드 아바타",
-  "desc": "그 여자... 감히 이런식으로 주인님을 방해했었군요. 가상 세계에 본인의 아바타를 투입하고, 코드를 해킹해서 주변의 부하들을 먼저 처치하지 않으면 자신은 아무런 피해를 입지 않도록 해두었어요. 상당한 솜씨지만, 오메가 본인이라면 모를까 이런 아바타 따위는 저라면 손쉽게 상대할 수 있어요. 주인님, 부디 저를 사용해주세요.\n\n\n- 레모네이드 알파 보고함",
   "icon": "TbarIcon_MP_LemonadeAvatar_N",
   "ai": "AI_LemonadeAvatar_Normal_01",
   "rarity": 5,

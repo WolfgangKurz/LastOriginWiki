@@ -1,7 +1,5 @@
 export default {
   "id": "SpeakerEx_N",
-  "name": "강화형 스피커",
-  "desc": "얘는 몸체에 달린 스피커로 주변 철충들을 강하게 만들고 있나 봐. 꼭 나처럼 응원하는거 같네? 응원이라면 나도 질 수 없지! 모두 파이팅~\n\n\n-캐럴라이나 보고함",
   "icon": "TbarIcon_MP_Speaker_N",
   "ai": "AI_SpeakerEx_Normal_01",
   "rarity": 5,

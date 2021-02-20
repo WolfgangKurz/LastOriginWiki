@@ -1,7 +1,5 @@
 export default {
   "id": "UnderWatcherSensor_EW",
-  "name": "언더왓쳐 센서",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_UnderWatcherSensor_B05",
   "ai": "AI_UnderWatcherSensor_02",
   "rarity": 5,

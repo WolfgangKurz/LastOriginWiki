@@ -1,7 +1,5 @@
 export default {
   "id": "ProgramMobAT_TU2",
-  "name": "철충 사념체 (중장갑병)",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_ProgramMobAT_N",
   "ai": "AI_ProgramMobAT_Normal_01",
   "rarity": 5,

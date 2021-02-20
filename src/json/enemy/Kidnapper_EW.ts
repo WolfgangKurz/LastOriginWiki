@@ -1,7 +1,5 @@
 export default {
   "id": "Kidnapper_EW",
-  "name": "트릭스터",
-  "desc": "전장에서 등장하는 더욱 강력해진 트릭스터로 적을 한번에 괴멸 시킬 수 있는 매우 강력한 반격기를 가지고 있습니다.\n\n\n보고자 ???",
   "icon": "TbarIcon_MP_Kidnapper_B0308",
   "ai": "AI_TrickSter_01",
   "rarity": 5,

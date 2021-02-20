@@ -1,7 +1,5 @@
 export default {
   "id": "Destroyer_TU2",
-  "name": "디스트로이어",
-  "desc": "저거... 내 제녹스 만큼이나 세... 다른 애들한테 막지 말고 피하라고 말해줘...\n\n\n-에밀리가",
   "icon": "TbarIcon_MP_Destroyer_N",
   "ai": "AI_Mp_Destroyer_Normal_01",
   "rarity": 5,

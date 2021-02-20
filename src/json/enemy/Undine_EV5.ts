@@ -1,7 +1,5 @@
 export default {
   "id": "Undine_EV5",
-  "name": "P-3M 운디네_적",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_Undine_N",
   "ai": "AI_PupHeadC_Normal_01",
   "rarity": 4,

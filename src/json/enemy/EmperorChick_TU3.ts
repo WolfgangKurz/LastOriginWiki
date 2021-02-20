@@ -1,7 +1,5 @@
 export default {
   "id": "EmperorChick_TU3",
-  "name": "칙 엠페러",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_EmperorChick_N",
   "ai": "AI_EmperorChick_Normal_01",
   "rarity": 5,

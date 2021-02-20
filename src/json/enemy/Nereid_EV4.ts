@@ -1,7 +1,5 @@
 export default {
   "id": "Nereid_EV4",
-  "name": "AG-1 네레이드_적",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_Nereid_N",
   "ai": "AI_PupHeadC_Normal_01",
   "rarity": 4,

@@ -1,7 +1,5 @@
 export default {
   "id": "Phalangites_TU3",
-  "name": "팔랑스",
-  "desc": "각이 잡힌 대열로 행군하는 철충입니다. 철충 놈들 중엔 드물게 군기가 들어있지 말입니다. 딱 밀착해서 서로서로를 보호하는 녀석들이니 진형을 아작내는 게 중요하지 말임다.\n\n\n- 블러디팬서",
   "icon": "TbarIcon_MP_Phalangites_N",
   "ai": "AI_MP_Palanx_01",
   "rarity": 3,

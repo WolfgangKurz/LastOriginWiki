@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickAQ_C",
-  "name": "아쿠아 칙?",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_NightChickC_N",
   "ai": "AI_AquaChick_Normal_01",
   "rarity": 5,

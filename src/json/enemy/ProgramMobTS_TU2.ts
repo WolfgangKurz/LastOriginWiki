@@ -1,7 +1,5 @@
 export default {
   "id": "ProgramMobTS_TU2",
-  "name": "철충 사념체 (보병)",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_ProgramMobTS_N",
   "ai": "AI_ProgramMobTS_Normal_01",
   "rarity": 3,

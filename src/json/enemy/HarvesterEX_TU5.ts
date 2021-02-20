@@ -1,7 +1,5 @@
 export default {
   "id": "HarvesterEX_TU5",
-  "name": "아머드 하베스터",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_Harvester_N",
   "ai": "AI_Hvst_Normal_02",
   "rarity": 3,

@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickAQ_EW",
-  "name": "아쿠아 칙",
-  "desc": "물을 운반하는 철충인가봐. 철충들은 주변에 물이 새면 안절부절못하니 이걸 이용하면 좋을 것 같아!\n\n\n - 아쿠아 보고함",
   "icon": "TbarIcon_MP_NightChickAQ_N",
   "ai": "AI_AquaChick_Normal_01",
   "rarity": 4,

@@ -1,7 +1,5 @@
 export default {
   "id": "Stalker_EW",
-  "name": "스토커",
-  "desc": "전장에서 등장하는 더욱 강력해진 스토커로 매 라운드마다 방어 관통효과가 증가되어 점점 파괴적인 공격을 합니다.\n\n\n보고자 ???",
   "icon": "TbarIcon_MP_Stalker_B0108",
   "ai": "AI_Boss_Stalker_01",
   "rarity": 5,

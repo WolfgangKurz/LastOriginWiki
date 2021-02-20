@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickTT2_N",
-  "name": "테스트용 나이트칙2",
-  "desc": "평범한 철충이다.",
   "icon": "TbarIcon_MP_NightChickM_N",
   "ai": "AI_Jako_Normal_01",
   "rarity": 2,

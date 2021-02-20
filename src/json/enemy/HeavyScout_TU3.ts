@@ -1,7 +1,5 @@
 export default {
   "id": "HeavyScout_TU3",
-  "name": "헤비 스카우트",
-  "desc": "스카우트와 비슷해요. 탄종은 좀 다른 것 같지만. 뭘 쏘길래 모두 피해냈어요. 별로 정확하진 않은 것 같군요. 주변 철충들과 대열을 갖추려고 하면 주의해 주세요.\n\n\n- 페로 드림",
   "icon": "TbarIcon_MP_Scout_V2",
   "ai": "AI_MP_HeavyScout_01",
   "rarity": 3,

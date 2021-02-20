@@ -1,7 +1,5 @@
 export default {
   "id": "AMG11_TU2",
-  "name": "경비용 AMG-11",
-  "desc": "AMG-11의 자율 경비용 기종이다.",
   "icon": "TbarIcon_MP_AMG11_N",
   "ai": "AI_MP_AntiAirBuffer_01",
   "rarity": 2,

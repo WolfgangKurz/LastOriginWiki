@@ -1,7 +1,5 @@
 export default {
   "id": "Nest_B07",
-  "name": "네스트",
-  "desc": "네스트",
   "icon": "TbarIcon_MP_Nest_B07",
   "ai": "AI_Boss_Nest_Normal_01",
   "rarity": 5,

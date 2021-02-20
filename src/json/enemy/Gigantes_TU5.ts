@@ -1,7 +1,5 @@
 export default {
   "id": "Gigantes_TU5",
-  "name": "양산형 기간테스",
-  "desc": "기간테스의 양산형 기종이다.",
   "icon": "TbarIcon_MP_Gigantes_N",
   "ai": "AI_Mp_Mammoth_01",
   "rarity": 3,

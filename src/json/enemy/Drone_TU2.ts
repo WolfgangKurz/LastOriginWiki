@@ -1,7 +1,5 @@
 export default {
   "id": "Drone_TU2",
-  "name": "경비용 드론",
-  "desc": "드론의 자율 경비용 기종이다.",
   "icon": "TbarIcon_MP_Drone_N",
   "ai": "AI_FABigChick_01",
   "rarity": 2,

@@ -1,7 +1,5 @@
 export default {
   "id": "Fortress_N",
-  "name": "양산형 포트리스",
-  "desc": "포트리스의 양산형 기종이다.",
   "icon": "TbarIcon_MP_Fortress_N",
   "ai": "AI_MP_Fortress_Normal_01",
   "rarity": 3,

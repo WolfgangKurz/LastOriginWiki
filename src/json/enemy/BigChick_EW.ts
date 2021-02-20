@@ -1,7 +1,5 @@
 export default {
   "id": "BigChick_EW",
-  "name": "빅 칙",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_BigChick_N",
   "ai": "AI_BigChickM_01",
   "rarity": 4,

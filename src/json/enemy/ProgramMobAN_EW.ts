@@ -1,7 +1,5 @@
 export default {
   "id": "ProgramMobAN_EW",
-  "name": "가상공간 캐노니어",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_ProgramMobAN_N",
   "ai": "AI_ProgramMobAN_Normal_01",
   "rarity": 5,

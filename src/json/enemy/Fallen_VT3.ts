@@ -1,7 +1,5 @@
 export default {
   "id": "Fallen_VT3",
-  "name": "초코 여왕의 보병",
-  "desc": "초코 여왕이 경비용 폴른 기종을 도색해 만들어낸 기체입니다.",
   "icon": "TbarIcon_MP_Fallen_V2",
   "ai": "AI_Mp_Fallen_01",
   "rarity": 2,

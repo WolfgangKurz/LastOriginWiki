@@ -1,7 +1,5 @@
 export default {
   "id": "Hirume_N",
-  "name": "천향의 히루메",
-  "desc": "처, 첩에게 심한 짓을 할 생각인게지!",
   "icon": "TbarIcon_MP_Hirume_N",
   "ai": "AI_MP_Hirume_01",
   "rarity": 5,

@@ -1,7 +1,5 @@
 export default {
   "id": "LegionSPEX_N",
-  "name": "개량형 레기온 스나이퍼",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_LegionSP_N",
   "ai": "AI_LegionSP_Special_01",
   "rarity": 4,

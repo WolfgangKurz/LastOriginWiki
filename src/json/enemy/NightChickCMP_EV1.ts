@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickCMP_EV1",
-  "name": "케미컬 칙 Type-X",
-  "desc": "히익… 다신 보기 싫을 정도로 징그러웠어요…... 불에는 약한지 불을 붙이니 폭발해서 깜짝 놀랐네요.\n\n\n - 뽀끄루 보고함",
   "icon": "TbarIcon_MP_NightChickCMP_N",
   "ai": "AI_MP_CMChickX_Normal_01",
   "rarity": 5,

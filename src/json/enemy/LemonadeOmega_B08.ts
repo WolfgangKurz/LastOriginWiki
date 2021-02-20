@@ -1,7 +1,5 @@
 export default {
   "id": "LemonadeOmega_B08",
-  "name": "레모네이드 오메가",
-  "desc": "케스토스 히마스는 정보 수집과 분석을 통한 전장 장악에 특화되어있어요. 보유한 전력과 전황을 분석하고, 그에따른 전투 알고리즘을 즉석에서 호위 AGS들에게 부여할 거예요. 물론, 회로 해킹에도 주의하셔야 해요.\n\n\n- 레모네이드 알파",
   "icon": "TbarIcon_MP_LemonadeOmega_B08",
   "ai": "AI_LemonadeOmega_Normal_01",
   "rarity": 5,

@@ -2,8 +2,11 @@
 	<b-modal v-if="enemy && target" v-model="displaySync" size="xl" centered hide-footer content-class="enemy-modal">
 		<template #modal-title>
 			<div class="text-left">
-				{{ target.name }}
-				<b-badge v-show="isEWEnemy" class="ml-2" variant="warning">영원한 전장</b-badge>
+				<!-- {{ target.name }} -->
+				<locale :k="`ENEMY_${target.id}`" />
+				<b-badge v-show="isEWEnemy" class="ml-2" variant="warning">
+					<locale k="ENEMY_VIEW_EW" />
+				</b-badge>
 				<div style="font-size: 60%">{{ target.id }}</div>
 			</div>
 		</template>
@@ -50,16 +53,16 @@
 								<img :src="`${AssetsRoot}/${imageExt}/tbar/${target.icon}.${imageExt}`" />
 							</div>
 							<b-row cols="2">
-								<b-col class="bg-dark text-white">유형</b-col>
+								<b-col class="bg-dark text-white"><locale k="ENEMY_VIEW_TYPE" /></b-col>
 								<b-col>
 									<unit-badge :type="enemy.type" size="large" transparent black />
 								</b-col>
-								<b-col class="bg-dark text-white">역할</b-col>
+								<b-col class="bg-dark text-white"><locale k="ENEMY_VIEW_ROLE" /></b-col>
 								<b-col>
 									<unit-badge :role="enemy.role" size="large" transparent black />
 								</b-col>
 								<div>
-									<b-col class="bg-dark text-white">등급</b-col>
+									<b-col class="bg-dark text-white"><locale k="ENEMY_VIEW_GRADE" /></b-col>
 								</div>
 								<b-col class="border-bottom-0">
 									<rarity-badge :rarity="target.rarity" />
@@ -115,7 +118,7 @@
 								<b-tr>
 									<b-td class="text-left">
 										<stat-icon inline stat="HP" />
-										<span class="status-col-head">HP</span>
+										<span class="status-col-head"><locale k="ENEMY_VIEW_STAT_HP" /></span>
 									</b-td>
 									<b-td>
 										<div class="status-col-value">{{ StatValue((DB && DB.hp) || [0, 0], true) }}</div>
@@ -127,14 +130,14 @@
 								<b-tr>
 									<b-td class="text-left">
 										<stat-icon inline stat="ATK" />
-										<span class="status-col-head">공격력</span>
+										<span class="status-col-head"><locale k="ENEMY_VIEW_STAT_ATK" /></span>
 									</b-td>
 									<b-td>
 										<div class="status-col-value">{{ StatValue((DB && DB.atk) || [0, 0]) }}</div>
 									</b-td>
 									<b-td class="text-left">
 										<stat-icon inline stat="ACC" />
-										<span class="status-col-head">적중률</span>
+										<span class="status-col-head"><locale k="ENEMY_VIEW_STAT_ACC" /></span>
 									</b-td>
 									<b-td>
 										<div class="status-col-value">{{ (DB && DB.acc) || 0 }}%</div>
@@ -144,14 +147,14 @@
 								<b-tr>
 									<b-td class="text-left">
 										<stat-icon inline stat="Cri" />
-										<span class="status-col-head">치명타</span>
+										<span class="status-col-head"><locale k="ENEMY_VIEW_STAT_CRIT" /></span>
 									</b-td>
 									<b-td>
 										<div class="status-col-value">{{ (DB && DB.cri) || 0 }}%</div>
 									</b-td>
 									<b-td class="text-left">
 										<stat-icon inline stat="DEF" />
-										<span class="status-col-head">방어력</span>
+										<span class="status-col-head"><locale k="ENEMY_VIEW_STAT_DEF" /></span>
 									</b-td>
 									<b-td>
 										<div class="status-col-value">{{ StatValue((DB && DB.def) || [0, 0]) }}</div>
@@ -161,14 +164,14 @@
 								<b-tr>
 									<b-td class="text-left">
 										<stat-icon inline stat="EV" />
-										<span class="status-col-head">회피율</span>
+										<span class="status-col-head"><locale k="ENEMY_VIEW_STAT_EVA" /></span>
 									</b-td>
 									<b-td>
 										<div class="status-col-value">{{ (DB && DB.eva) || 0 }}%</div>
 									</b-td>
 									<b-td class="text-left">
 										<stat-icon inline stat="SPD" />
-										<span class="status-col-head">행동력</span>
+										<span class="status-col-head"><locale k="ENEMY_VIEW_STAT_SPD" /></span>
 									</b-td>
 									<b-td>
 										<div class="status-col-value">{{ (DB && DB.spd) || 0 }}</div>
@@ -222,10 +225,19 @@
 						<div class="mt-3 skill-desc">
 							<div>
 								<elem-icon :elem="skill.buff.type" class="mr-1" />
-								<b-badge v-if="skill.buff.dismiss_guard" variant="warning" class="mr-1">보호 무시</b-badge>
-								<b-badge v-if="skill.buff.target_ground" variant="danger" class="mr-1" title="땅 찍기">그리드 지정</b-badge>
+								<b-badge v-if="skill.buff.dismiss_guard" variant="warning" class="mr-1">
+									<locale k="ENEMY_SKILL_DISMISS_GUARD" />
+								</b-badge>
+								<b-badge
+									v-if="skill.buff.target_ground"
+									variant="danger"
+									class="mr-1"
+									:title="LocaleGet('ENEMY_SKILL_GRID_TARGET_TIP')"
+								>
+									<locale k="ENEMY_SKILL_GRID_TARGET" />
+								</b-badge>
 								<b-badge v-if="skill.buff.acc_bonus" variant="success" class="mr-1">
-									적중 보정
+									<locale k="ENEMY_SKILL_ACC_BONUS" />
 									{{ (skill.buff.acc_bonus > 0 ? "+" : "") + skill.buff.acc_bonus }}%
 								</b-badge>
 							</div>
@@ -250,16 +262,20 @@
 			</b-row>
 			<b-row v-if="displayTab === 'desc'">
 				<b-col class="break-keep white-pre-line border border-top-0 text-left p-1">
-					<div class="bg-dark text-light p-3">{{ target.desc }}</div>
+					<div class="bg-dark text-light p-3"><locale :k="`ENEMY_INTRO_${target.id}`" /></div>
 				</b-col>
 			</b-row>
 		</b-container>
 
-		<b-card class="border text-center mt-3" header="등장 스테이지" body-class="p-2">
+		<b-card class="border text-center mt-3" :header="LocaleGet('ENEMY_VIEW_STAGE')" body-class="p-2">
 			<div v-for="(area, aindex) in Sources" :key="`enemy-modal-source-${aindex}`">
 				<hr v-if="aindex > 0" class="my-2" />
-				<h6 v-if="area.length > 0 && area[0].EventName" style="font-weight: bold">{{ area[0].EventName }}</h6>
-				<h6 v-else-if="area.length > 0 && area[0].IsChallenge" style="font-weight: bold">{{ area[0].ChallengeName }}</h6>
+				<h6 v-if="area.length > 0 && area[0].EventName" style="font-weight: bold">
+					{{ area[0].EventName }}
+				</h6>
+				<h6 v-else-if="area.length > 0 && area[0].IsChallenge" style="font-weight: bold">
+					<locale :k="`COMMON_CHALLENGE_${area[0].ChallengeName}`" />
+				</h6>
 				<source-badge
 					v-for="(source, sindex) in area"
 					:key="`enemy-modal-source-badge-${aindex}-${sindex}-${source}`"
@@ -269,9 +285,13 @@
 			</div>
 			<template v-if="isEWEnemy">
 				<hr v-if="Sources.length > 0" class="my-2" />
-				<b-badge variant="dark">영원한 전장</b-badge>
+				<b-badge variant="dark">
+					<locale k="ENEMY_VIEW_EW" />
+				</b-badge>
 			</template>
-			<div v-else-if="Object.keys(Sources).length === 0" class="secondary">등장 없음</div>
+			<div v-else-if="Object.keys(Sources).length === 0" class="secondary">
+				<locale k="ENEMY_VIEW_STAGE_NONE" />
+			</div>
 		</b-card>
 	</b-modal>
 </template>
@@ -282,6 +302,7 @@ import { Decimal } from "decimal.js";
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, Watch, PropSync } from "vue-property-decorator";
+import { LocaleGet } from "@/libs/Locale";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { ArrayUnique } from "@/libs/Functions";
@@ -408,11 +429,12 @@ export default class EnemyModal extends Vue {
 	private get FamilyList () {
 		if (!this.enemy) return [];
 
+		const name = LocaleGet(`ENEMY_${this.enemy.id}`);
 		return FilterableEnemyDB
-			.filter(x => (x.name === this.enemy.name))
+			.filter(x => (LocaleGet(`ENEMY_${x.id}`) === name))
 			.map((x, i) => ({
 				value: x.id,
-				text: `${x.name} ${i + 1}`,
+				text: `${LocaleGet(`ENEMY_${x.id}`)} ${i + 1}`,
 			}));
 	}
 

@@ -1,7 +1,5 @@
 export default {
   "id": "Sirene_EV1",
-  "name": "문제아반 반장",
-  "desc": "속이 아파오기 시작했어요… 제가 안 보면 대체 무슨 일을 할지...\n\n\n- 세이렌",
   "icon": "TbarIcon_MP_Sirene_N",
   "ai": "AI_MP_Sirene_Event_01",
   "rarity": 5,

@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickTD_C",
-  "name": "썬더 칙?",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_NightChickS_N",
   "ai": "AI_ThunderChick_Normal_01",
   "rarity": 5,

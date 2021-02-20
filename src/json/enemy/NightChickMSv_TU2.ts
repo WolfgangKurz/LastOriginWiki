@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickMSv_TU2",
-  "name": "생존형 나이트 칙 런처",
-  "desc": "위협적으로 보이지는 않지만 그래도 제가 보호해 드릴게요.\n\n\n- 스노우페더 보고함",
   "icon": "TbarIcon_MP_NightChickM_N",
   "ai": "AI_Jako_Normal_01",
   "rarity": 4,

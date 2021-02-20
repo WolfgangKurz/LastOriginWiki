@@ -1,7 +1,5 @@
 export default {
   "id": "FryerShell_TU5",
-  "name": "프라이어 쉘",
-  "desc": "저 철충들은... 제 능력에 취약할 거예요. 부디, 제가 나가서 싸우게 해주세요. 후훗. 걱정 마세요, 상냥하신 분. 제 모든 건... 전부 당신 것이니까요.\n\n\n- 레이시",
   "icon": "TbarIcon_MP_FryerShell_N",
   "ai": "AI_MP_FridgerShooter_01",
   "rarity": 4,

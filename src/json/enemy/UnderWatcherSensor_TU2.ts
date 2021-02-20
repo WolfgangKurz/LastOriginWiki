@@ -1,7 +1,5 @@
 export default {
   "id": "UnderWatcherSensor_TU2",
-  "name": "언더왓쳐 센서",
-  "desc": "조준용 센서가 달린 파츠네요. 피해를 주거나 파괴하면 공격을 피하기 쉬워질거에요.\n\n\n- 스카디",
   "icon": "TbarIcon_MP_UnderWatcherSensor_B05",
   "ai": "AI_UnderWatcherSensor_02",
   "rarity": 5,

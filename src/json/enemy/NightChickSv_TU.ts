@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickSv_TU",
-  "name": "생존형 나이트 칙",
-  "desc": "위험해 보이진 않지만 정말 끈질기게 버티네요. 제 급수기로 한 번에 날려버리는 게 낫겠어요.\n\n\n- 엘븐 포레스트 보고함",
   "icon": "TbarIcon_MP_NightChick_N",
   "ai": "AI_Jako_Special_01",
   "rarity": 4,

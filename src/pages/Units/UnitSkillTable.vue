@@ -52,7 +52,8 @@
 					<b-td>
 						<img class="skill-icon" :src="`${AssetsRoot}/${imageExt}/skill/${skill.icon}.${imageExt}`" />
 						<div class="text-bold">
-							{{ skill.name }}<br />
+							<locale :k="`UNIT_SKILL_${skill.key}_${uid}`" />
+							<br />
 							<elem-icon :elem="skill.buffs.data[skill.buffs.index[skillLevelSync]].type" class="mx-0" />
 						</div>
 
@@ -203,6 +204,7 @@ import { BuffStat } from "@/libs/Buffs/Buffs";
 
 import { SkillEntity, RawSkillEntity, SkillSummonInfo } from "@/libs/Types/Skill";
 import { Summon } from "@/libs/Types/Summon";
+import { FilterableUnit } from "@/libs/Types/Unit.Filterable";
 
 interface SkillItem extends SkillEntity {
 	index: number;
@@ -223,6 +225,12 @@ type SkillTable = Record<string, SkillItem>;
 	},
 })
 export default class UnitSkillTable extends Vue {
+	@Prop({
+		type: String,
+		default: "",
+	})
+	private uid!: string;
+
 	@Prop({
 		type: Object,
 		required: true,

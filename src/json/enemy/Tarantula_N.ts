@@ -1,7 +1,5 @@
 export default {
   "id": "Tarantula_N",
-  "name": "타란튤라",
-  "desc": "가까이 오면 자폭해서 접근하기 전에 처리해야 하는데... 엄청나게 잽싸서 조준 보조 없이는 맞추기 힘들어요. 과열 상태가 되면 큰 폭발을 일으키니 이걸 노려보는 게 어떨까요?\n\n\n - 베라 보고함",
   "icon": "TbarIcon_MP_Tarantula_N",
   "ai": "AI_Mp_Tarantula_Normal_01",
   "rarity": 4,

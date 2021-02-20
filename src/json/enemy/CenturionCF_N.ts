@@ -1,7 +1,5 @@
 export default {
   "id": "CenturionCF_N",
-  "name": "센츄리온 치프틴",
-  "desc": "센츄리온에서 지휘 능력이 더 강화된 기종입니다. 포착 당한 후에는 공격을 피하기 힘드니 주의하셔야 합니다. 본 기종에도 안테나 도입을 검토하면 감사하겠습니다.\n\n\n- 램파트",
   "icon": "TbarIcon_MP_CenturionCF_N",
   "ai": "AI_CenturionCF_Normal_01",
   "rarity": 4,

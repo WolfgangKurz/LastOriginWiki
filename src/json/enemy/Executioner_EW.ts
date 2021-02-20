@@ -1,7 +1,5 @@
 export default {
   "id": "Executioner_EW",
-  "name": "익스큐셔너",
-  "desc": "전장에서 등장하는 더욱 강력해진 익스큐셔너로 블레이드가 파괴된다면 막강한 파괴력을 지니게 될 것입니다.\n\n\n보고자 ???",
   "icon": "TbarIcon_MP_Executioner_B06",
   "ai": "AI_Executioner_01",
   "rarity": 5,

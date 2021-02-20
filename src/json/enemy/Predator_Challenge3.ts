@@ -1,7 +1,5 @@
 export default {
   "id": "Predator_Challenge3",
-  "name": "프레데터 변종",
-  "desc": "녀석은 주변 철충을 공격해 잡아먹고 있다. 그런데 아직 흡수한 에너지를 다룰 줄은 모르는 것 같군. 철충을 먹을수록 오히려 불안정해지는 모습을 관찰했다.\n\n\n- 보고자 마리",
   "icon": "TbarIcon_MP_Predator_B0208",
   "ai": "AI_Predator_Challenge_01",
   "rarity": 5,

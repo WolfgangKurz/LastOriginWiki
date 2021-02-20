@@ -1,7 +1,5 @@
 export default {
   "id": "FridgerHead_TU",
-  "name": "프리져 헤드",
-  "desc": "놈들의 리더격인 철충이에요. 먼저 처리하는 게 좋을 것 같은데, 문제는 녀석이 터지면서 주위에 물을 뿌리네요. 어떻게 하죠?\n\n\n- 랜서 미나",
   "icon": "TbarIcon_MP_FridgerHead_N",
   "ai": "AI_MP_FridgerHead_01",
   "rarity": 5,

@@ -1,7 +1,5 @@
 export default {
   "id": "ExpGenerator2_TU2",
-  "name": "수상한 실험체",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_ExpGenerator2_N",
   "ai": "AI_ExpGenerator_Normal_01",
   "rarity": 5,
