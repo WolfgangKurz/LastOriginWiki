@@ -87,7 +87,7 @@
 						</div>
 
 						<div>
-							<div v-for="(line, lineIdx) in skill.desc" :key="`unit-modal-skill-desc-${lineIdx}`" class="unit-modal-skill">
+							<div v-for="(line, lineIdx) in GetDesc(skill)" :key="`unit-modal-skill-desc-${lineIdx}`" class="unit-modal-skill">
 								<span v-if="!line" class="text-secondary">
 									<locale k="UNIT_SKILL_NO_DESCRIPTION" />
 								</span>
@@ -187,6 +187,7 @@ import Decimal from "decimal.js";
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, Watch, PropSync } from "vue-property-decorator";
+import { LocaleGet } from "@/libs/Locale";
 
 import RarityBadge from "@/components/RarityBadge.vue";
 import SkillBound from "@/components/SkillBound.vue";
@@ -365,6 +366,11 @@ export default class UnitSkillTable extends Vue {
 			});
 
 		return output;
+	}
+
+	private GetDesc (skill: SkillItem) {
+		return LocaleGet(`UNIT_SKILL_DESC_${skill.key}_${this.uid}`)
+			.split("\n");
 	}
 
 	private GetRates (skill: SkillItem) {

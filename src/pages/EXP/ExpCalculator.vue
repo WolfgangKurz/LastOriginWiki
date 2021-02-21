@@ -2,30 +2,30 @@
 	<b-card no-body class="exp-calculator">
 		<b-card-header>
 			<b-icon-calculator class="mr-1" />
-			경험치 계산기
+			<locale k="EXPCALC_TITLE" />
 		</b-card-header>
 		<b-card-body body-class="text-left">
 			<b-row>
 				<b-col cols="12" md="6" lg="3">
-					<div class="mb-1">현재 레벨</div>
+					<div class="mb-1"><locale k="EXPCALC_CURRENT_LV" /></div>
 					<div class="ml-2 mb-2">
 						<b-input v-model.number="baseLevel" />
 					</div>
 				</b-col>
 				<b-col cols="12" md="6" lg="3">
-					<div class="mb-1">현재 경험치</div>
+					<div class="mb-1"><locale k="EXPCALC_CURRENT_EXP" /></div>
 					<div class="ml-2 mb-2">
 						<b-input v-model.number="baseEXP" />
 					</div>
 				</b-col>
 				<b-col cols="12" md="6" lg="3">
-					<div class="mb-1">전투원 기본 등급 (승급 전)</div>
+					<div class="mb-1"><locale k="EXPCALC_CURRENT_BASE_GRADE" /></div>
 					<div class="ml-2 mb-2">
 						<b-form-select v-model="unitRarity" :options="rarityList" />
 					</div>
 				</b-col>
 				<b-col cols="12" md="6" lg="3">
-					<div class="mb-1">코어링크</div>
+					<div class="mb-1"><locale k="EXPCALC_CORELINKS" /></div>
 					<div class="ml-2 mb-2 text-center">
 						<b-btn-group>
 							<b-button variant="outline-secondary" :pressed="CoreLinks === 0" @click="CoreLinks = 0">0</b-button>
@@ -39,7 +39,7 @@
 				</b-col>
 			</b-row>
 
-			<div class="mt-3">장비 보너스</div>
+			<div class="mt-3"><locale k="EXPCALC_EQUIP_BONUS" /></div>
 			<b-row class="mt-1" cols="1" cols-sm="2" cols-md="3">
 				<div v-for="(equip, equipIdx) in ExpEquips" :key="`exp-calc-equip-${equipIdx}-0`" class="p-1">
 					<b-card :data-invalid="equip.use ? 0 : 1" no-body>
@@ -48,39 +48,43 @@
 								<div class="mb-1">
 									<equip-icon :image="equip.current.base.icon" size="small" />
 								</div>
-								<strong class="py-1 text-keep">{{ equip.current.base.name }}</strong>
+								<strong class="py-1 text-keep">
+									<locale :k="`EQUIP_${equip.current.base.fullKey}`" />
+								</strong>
 							</b-checkbox>
 						</b-card-header>
 						<b-card-body>
 							<b-row class="align-items-center">
-								<b-col cols="auto" cols-md="12">등급 :</b-col>
+								<b-col cols="auto" cols-md="12"><locale k="EXPCALC_EQUIP_GRADE" /></b-col>
 								<b-col>
 									<b-form-select v-model="equip.current" :options="RarityOptions(equip.equips)" />
 								</b-col>
 							</b-row>
 							<b-row class="mt-1 align-items-center">
-								<b-col cols="auto" cols-md="12">강화 :</b-col>
+								<b-col cols="auto" cols-md="12"><locale k="EXPCALC_EQUIP_LEVEL" /></b-col>
 								<b-col>
 									<b-form-select v-model="equip.level" :options="equipLevelList" />
 								</b-col>
 							</b-row>
 							<b-row class="mt-1 align-items-center" :data-invalid="equip.stack > 0 ? 0 : 1">
-								<b-col cols="auto" cols-md="12">중첩 :</b-col>
+								<b-col cols="auto" cols-md="12"><locale k="EXPCALC_EQUIP_STACK" /></b-col>
 								<b-col>
 									<b-form-select v-model="equip.stack" :options="equipStackList" :disabled="equip.stack <= 0" />
 								</b-col>
 							</b-row>
 						</b-card-body>
 						<b-card-footer>
-							<b-badge variant="dark">경험치</b-badge>
+							<b-badge variant="dark"><locale k="EXPCALC_EXP" /></b-badge>
 							<b-badge variant="warning" class="ml-2">x{{ A1(equip.bonus[equip.current.base.rarity][equip.level]) }}</b-badge>
-							<b-badge v-if="equip.stack > 0" variant="info" class="ml-2">x{{ equip.stack }} 중첩</b-badge>
+							<b-badge v-if="equip.stack > 0" variant="info" class="ml-2">
+								x<locale k="EXPCALC_STACKS_FORMAT" :p0="equip.stack" />
+							</b-badge>
 						</b-card-footer>
 					</b-card>
 				</div>
 			</b-row>
 
-			<div class="mt-3">스킬 보너스</div>
+			<div class="mt-3"><locale k="EXPCALC_SKILL_BONUS" /></div>
 			<b-row class="mt-1" cols="1" cols-sm="2" cols-md="3">
 				<div class="p-1">
 					<b-card :data-invalid="skills.alexandra.use ? 0 : 1" no-body>
@@ -90,14 +94,14 @@
 									<unit-face uid="3P_Alexandra" size="40" />
 								</div>
 								<strong class="py-1 text-keep">
-									공진의 알렉산드라
-									<span class="d-inline-block">[모범 교사]</span>
+									<locale k="UNIT_3P_Alexandra" />
+									<div>[<locale k="UNIT_SKILL_passive5_3P_Alexandra" />]</div>
 								</strong>
 							</b-checkbox>
 						</b-card-header>
 						<b-card-body>
 							<b-row class="mt-1 align-items-center">
-								<b-col cols="12" md="auto">레벨 :</b-col>
+								<b-col cols="12" md="auto"><locale k="EXPCALC_SKILL_LEVEL" /></b-col>
 								<b-col>
 									<b-form-select v-model="skills.alexandra.level" :options="skillLevelList(true, true)" />
 								</b-col>
@@ -105,16 +109,16 @@
 							<hr />
 							<b-checkbox v-model="skills.alexandra.flavor">
 								♥200
-								<span class="d-inline-block">[스킬 레벨 Lv+1]</span>
+								<span class="d-inline-block">[<locale k="EXPCALC_SKILL_BONUS_FORMAT" p0="1" />]</span>
 							</b-checkbox>
 							<hr />
 							<b-checkbox v-model="skills.alexandra.buff">
-								버프/디버프
-								<span class="d-inline-block">[스킬 레벨 Lv+2]</span>
+								<locale k="EXPCALC_SKILL_BUFF_DEBUFF" />
+								<span class="d-inline-block">[<locale k="EXPCALC_SKILL_BONUS_FORMAT" p0="2" />]</span>
 							</b-checkbox>
 						</b-card-body>
 						<b-card-footer>
-							<b-badge variant="dark">경험치</b-badge>
+							<b-badge variant="dark"><locale k="EXPCALC_EXP" /></b-badge>
 							<b-badge variant="warning" class="ml-2">x{{ A1(skills.alexandra.bonus[skills.alexandra.level]) }}</b-badge>
 						</b-card-footer>
 					</b-card>
@@ -127,14 +131,14 @@
 									<unit-face uid="PECS_TommyWalker" size="40" />
 								</div>
 								<strong class="py-1 text-keep">
-									토미 워커
-									<span class="d-inline-block">[잔해 재활용]</span>
+									<locale k="UNIT_PECS_TommyWalker" />
+									<div>[<locale k="UNIT_SKILL_passive3_PECS_TommyWalker" />]</div>
 								</strong>
 							</b-checkbox>
 						</b-card-header>
 						<b-card-body>
 							<b-row class="mt-1 align-items-center">
-								<b-col cols="12" md="auto">레벨 :</b-col>
+								<b-col cols="12" md="auto"><locale k="EXPCALC_SKILL_LEVEL" /></b-col>
 								<b-col>
 									<b-form-select v-model="skills.tommywalker.level" :options="skillLevelList(false, true)" />
 								</b-col>
@@ -142,23 +146,23 @@
 							<hr />
 							<b-checkbox v-model="skills.tommywalker.flavor" disabled>
 								♥200
-								<span class="d-inline-block">[스킬 레벨 Lv+1]</span>
+								<span class="d-inline-block">[<locale k="EXPCALC_SKILL_BONUS_FORMAT" p0="1" />]</span>
 							</b-checkbox>
 							<hr />
 							<b-checkbox v-model="skills.tommywalker.buff">
-								버프/디버프
-								<span class="d-inline-block">[스킬 레벨 Lv+2]</span>
+								<locale k="EXPCALC_SKILL_BUFF_DEBUFF" />
+								<span class="d-inline-block">[<locale k="EXPCALC_SKILL_BONUS_FORMAT" p0="2" />]</span>
 							</b-checkbox>
 						</b-card-body>
 						<b-card-footer>
-							<b-badge variant="dark">경험치</b-badge>
+							<b-badge variant="dark"><locale k="EXPCALC_EXP" /></b-badge>
 							<b-badge variant="warning" class="ml-2">x{{ A1(skills.tommywalker.bonus[skills.tommywalker.level]) }}</b-badge>
 						</b-card-footer>
 					</b-card>
 				</div>
 			</b-row>
 
-			<div class="mt-3">전투 지역</div>
+			<div class="mt-3"><locale k="EXPCALC_STAGE" /></div>
 			<b-row class="mt-1">
 				<b-col cols="12">
 					<b-form-select v-model="sortieArea" :options="areaList" />
@@ -166,12 +170,14 @@
 				<b-col cols="12" class="mt-2">
 					<b-card no-body>
 						<h4 class="m-2 p-1 clearfix">
-							<div v-if="sortieArea.length === 0" class="text-center text-secondary">전투 지역을 선택해주세요.</div>
+							<div v-if="sortieArea.length === 0" class="text-center text-secondary">
+								<locale k="EXPCALC_STAGE_TIP" />
+							</div>
 							<template v-else>
 								<span v-for="(waveData, waveIdx) in sortieArea" :key="`exp-calc-explist-wave-${waveIdx}`">
 									<b-icon-arrow-right v-if="waveIdx !== 0" class="mx-2" />
 									<b-badge variant="stat-hp">
-										{{ FormatNumber(waveData.clear) }} EXP, {{ FormatNumber(waveData.enemies) }} 철충
+										<locale k="EXPCALC_STAGE_FORMAT" :p0="FormatNumber(waveData.clear)" :p1="FormatNumber(waveData.enemies)" />
 									</b-badge>
 								</span>
 							</template>
@@ -182,13 +188,13 @@
 			<hr />
 			<b-row>
 				<b-col cols="12" lg="4">
-					<div class="mb-1">목표 레벨</div>
+					<div class="mb-1"><locale k="EXPCALC_TARGET_LEVEL" /></div>
 					<div class="ml-2 mb-2">
 						<b-input v-model.number="destLevel" />
 					</div>
 					<hr />
 
-					<div class="mb-1">이벤트 보너스</div>
+					<div class="mb-1"><locale k="EXPCALC_EVENT_BONUS" /></div>
 					<div class="ml-2 mb-2">
 						<b-row class="align-items-center">
 							<b-col cols="auto" class="pr-0">+</b-col>
@@ -200,37 +206,44 @@
 					</div>
 					<hr />
 
-					<div class="mb-1">리더 보너스</div>
+					<div class="mb-1"><locale k="EXPCALC_LEADER_BONUS" /></div>
 					<div class="ml-2 mb-2">
-						<b-checkbox v-model="isLeader">리더 경험치 1.2배</b-checkbox>
+						<b-checkbox v-model="isLeader"><locale k="EXPCALC_LEADER_BONUS_DESC" /></b-checkbox>
 					</div>
 					<hr />
 
-					<div class="mb-1">시설 보너스</div>
+					<div class="mb-1"><locale k="EXPCALC_FACILITY_BONUS" /></div>
 					<div class="ml-2 mb-2">
 						<b-row v-for="(use, i) in facilityUse" :key="`exp-calc-facility-${i}`" class="align-items-center pb-1">
-							<b-col cols="auto" class="pr-0">
-								<b-checkbox v-model="facilityUse[i]">전투 결과 분석실{{ i + 1 }}</b-checkbox>
+							<b-col cols="12" class="pr-0">
+								<b-checkbox v-model="facilityUse[i]">
+									<locale k="EXPCALC_FACILITY_EXP" :p0="i + 1" />
+								</b-checkbox>
 							</b-col>
-							<b-col>
+							<b-col cols="12">
 								<b-form-select v-model="facilityLevel[i]" :disabled="!use" :options="facilityLevelList" />
 							</b-col>
 						</b-row>
 					</div>
 					<hr />
 
-					<div class="mb-1">경험치 부스트</div>
+					<div class="mb-1"><locale k="EXPCALC_BOOST" /></div>
 					<div class="ml-2 mb-2">
-						<b-checkbox v-model="isBoosted">경험치 부스트 0.5배</b-checkbox>
+						<b-checkbox v-model="isBoosted"><locale k="EXPCALC_BOOST_DESC" /></b-checkbox>
 					</div>
 				</b-col>
 				<b-col cols="12" lg="8">
-					<div class="mb-1"><b-icon-calculator class="mr-1" />계산 결과 (전투원 경험치)</div>
+					<div class="mb-1">
+						<b-icon-calculator class="mr-1" />
+						<locale k="EXPCALC_RESULT" />
+					</div>
 					<div class="ml-4 mb-2">
 						<template v-if="hasSumValues">
-							<div class="mt-2">장비/스킬 보너스</div>
+							<div class="mt-2"><locale k="EXPCALC_EQUIP_SKILL_BONUS" /></div>
 							<h5 v-for="(waveData, wave) in sortieArea" :key="`exp-calc-bonus-wave-${wave}`">
-								<b-badge variant="warning">{{ wave + 1 }} 웨이브 {{ FormatNumber(waveData.enemies) }} 철충</b-badge>
+								<b-badge variant="warning">
+									<locale k="EXPCALC_WAVE_ENEMIES" :p0="wave + 1" :p1="FormatNumber(waveData.enemies)" />
+								</b-badge>
 
 								<b-badge
 									v-for="(equip, equipIdx) in UsingExpEquips"
@@ -245,35 +258,49 @@
 								</b-badge>
 
 								<b-badge v-if="skills.alexandra.use" class="ml-1" variant="success">
-									모범 교사 lv.{{ skills.alexandra.level + 1 }} x{{ A1(skills.alexandra.bonus[skills.alexandra.level]) }}
+									<locale k="UNIT_SKILL_passive5_3P_Alexandra" />
+									<span class="mx-1">lv.{{ skills.alexandra.level + 1 }}</span>
+									x{{ A1(skills.alexandra.bonus[skills.alexandra.level]) }}
 								</b-badge>
 
 								<b-badge v-if="skills.tommywalker.use" class="ml-1" variant="success">
-									잔해 재활용 lv.{{ skills.tommywalker.level + 1 }} x{{
-										A1ME(skills.tommywalker.bonus[skills.tommywalker.level], waveData.enemies)
-									}}
+									<locale k="UNIT_SKILL_passive3_PECS_TommyWalker" />
+									<span class="mx-1">lv.{{ skills.tommywalker.level + 1 }}</span>
+									x{{ A1ME(skills.tommywalker.bonus[skills.tommywalker.level], waveData.enemies) }}
 								</b-badge>
 							</h5>
 							<hr />
 						</template>
 
 						<h5 v-for="(waveData, wave) in sortieArea" :key="`exp-calc-result-wave-${wave}`">
-							<b-badge variant="warning">{{ wave + 1 }} 웨이브 {{ FormatNumber(waveData.clear) }} EXP</b-badge>
-							<b-badge v-if="isLeader" class="ml-1" variant="info">리더 x1.2</b-badge>
+							<b-badge variant="warning">
+								<locale k="EXPCALC_WAVE_EXP" :p0="wave + 1" :p1="FormatNumber(waveData.clear)" />
+							</b-badge>
+							<b-badge v-if="isLeader" class="ml-1" variant="info">
+								<locale k="EXPCALC_BADGES_LEADER" />
+							</b-badge>
 
-							<b-badge v-if="CoreLinks > 0" class="ml-1" variant="primary">코어링크 x{{ 1 + CoreLinks * 0.04 }}</b-badge>
-							<b-badge v-show="hasSumValues" class="mx-1" variant="success">장비/스킬 보너스 x{{ SumBonusValue(wave) }}</b-badge>
-							<b-badge v-if="eventMultiply > 0" class="mx-1" variant="primary">이벤트 보너스 x{{ eventMultiply / 100 + 1 }}</b-badge>
+							<b-badge v-if="CoreLinks > 0" class="ml-1" variant="primary">
+								<locale k="EXPCALC_BADGES_CORELINK" :p0="1 + CoreLinks * 0.04" />
+							</b-badge>
+							<b-badge v-show="hasSumValues" class="mx-1" variant="success">
+								<locale k="EXPCALC_BADGES_EQUIP_SKILL" :p0="SumBonusValue(wave)" />
+							</b-badge>
+							<b-badge v-if="eventMultiply > 0" class="mx-1" variant="primary">
+								<locale k="EXPCALC_BADGES_EVENT" :p0="eventMultiply / 100 + 1" />
+							</b-badge>
 
 							<template v-if="isBoosted">
 								<b-icon-plus class="mx-1" />
-								<b-badge class="mx-1" variant="primary">경험치 부스트 {{ FormatNumber(waveData.clear) }} x0.5</b-badge>
+								<b-badge class="mx-1" variant="primary">
+									<locale k="EXPCALC_BADGES_BOOST" :p0="FormatNumber(waveData.clear)" />
+								</b-badge>
 							</template>
 
 							<span v-for="(expBonus, faceIdx) in UsingFacility" :key="`exp-calc-result-facility-${faceIdx}`">
 								<b-icon-plus class="mx-1" />
 								<b-badge class="mx-1" variant="primary">
-									시설 보너스({{ faceIdx + 1 }}) {{ FormatNumber(waveData.clear) }} x{{ expBonus }}
+									<locale k="EXPCALC_BADGES_FACILITY" :p0="faceIdx + 1" :p1="FormatNumber(waveData.clear)" :p2="expBonus" />
 								</b-badge>
 							</span>
 
@@ -282,11 +309,17 @@
 						</h5>
 						<hr />
 						<h5>
-							<b-badge variant="warning">필요 경험치 {{ FormatNumber(requiredExp) }}</b-badge>
+							<b-badge variant="warning">
+								<locale k="EXPCALC_REQUIRE_EXP" :p0="FormatNumber(requiredExp)" />
+							</b-badge>
 							<span class="px-1">&divide;</span>
-							<b-badge variant="warning">총 경험치 {{ FormatNumber(sumExp) }}</b-badge>
+							<b-badge variant="warning">
+								<locale k="EXPCALC_REQUIRE_TOTAL" :p0="FormatNumber(sumExp)" />
+							</b-badge>
 							<b-icon-arrow-right class="mx-1" />
-							<b-badge variant="dark">{{ FormatNumber(resultCount) }} 회</b-badge>
+							<b-badge variant="dark">
+								<locale k="EXPCALC_REQUIRE_SORTIES" :p0="FormatNumber(resultCount)" />
+							</b-badge>
 						</h5>
 					</div>
 				</b-col>
@@ -441,7 +474,7 @@ export default class ExpCalculator extends Vue {
 		return new Array(3)
 			.fill(0)
 			.map((_, x) => ({
-				text: `${x + 1} 중첩`,
+				text: LocaleGet("EXPCALC_STACKS_FORMAT", x + 1),
 				value: x + 1,
 			}));
 	}
@@ -505,7 +538,7 @@ export default class ExpCalculator extends Vue {
 					});
 					nodes.push({
 						// eslint-disable-next-line no-irregular-whitespace
-						text: `${map.text}　　　${map.name}`,
+						text: `${map.text}　　　${LocaleGet(`WORLD_MAP_${world}_${map.text}`)}`,
 						value: waves,
 					});
 				});
@@ -516,8 +549,8 @@ export default class ExpCalculator extends Vue {
 
 				maps.push({
 					label: world === "Story"
-						? `${area} 지역`
-						: `${LocaleGet(`WORLD_${world}`)} - ${area} 지역`,
+						? LocaleGet("EXPCALC_STAGE_AREA", area)
+						: `${LocaleGet(`WORLD_${world}`)} - ${LocaleGet("EXPCALC_STAGE_AREA", area)}`,
 					options: nodes,
 				});
 			}
