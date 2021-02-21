@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "얼티밋 레리어트",
     "icon": "MeleeAttack",
     "target": "enemy",
     "buffs": {
@@ -1229,15 +1228,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "단일 대상 적에게 [@:공격력 :0~0:배 피해]를 입히고 일정 확률로 2라운드 동안 행동 불가 상태로 만듭니다.",
-      "치명타 시 [피해량 +:12~2:%]가 증가합니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "마벨러스 드롭킥",
     "icon": "AssaultAttack",
     "target": "enemy",
     "buffs": {
@@ -4655,15 +4649,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "지정 대상에게 [@:공격력 :0~0:배 피해]를 입히고, 한 칸 뒤 대상에게는 감소된 피해를 입힙니다.",
-      "대상의 [방어력 -:43~3:%]를 감소시킵니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "태그팀",
     "icon": "SelfAtkBuff",
     "target": "team",
     "buffs": {
@@ -5066,14 +5055,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, 스쿼드에 포함된 아군 1명 당 자신의 [공격력 +:8~1:%]와 [행동력 +:4.3~0.3:%]를 증가 시킵니다."
-    ]
+    }
   },
   "passive4": {
     "key": "passive4",
-    "name": "환호 유도",
     "icon": "TeamAtkBuff",
     "target": "team",
     "buffs": {
@@ -5321,15 +5306,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, 범위 내 아군과 자신의 [공격력 +:16~1:%]와 [행동력 +:10.5~0.5:%]를 증가시킵니다.",
-      "대기 시 <바로 끝내주마!> 상태를 부여하여 [방어 관통 +:21~1:%], [공격력 +:21~1:%], [행동력 +:10.5~0.5:%]를 추가로 상승 시키며 중첩됩니다."
-    ]
+    }
   },
   "passive5": {
     "key": "passive5",
-    "name": "태그팀 피니쉬 무브",
     "icon": "TeamAtkBuff",
     "target": "team",
     "buffs": {
@@ -5597,11 +5577,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, 범위 내에 자신, [$ch;PECS_Babariana], [$ch;PECS_MightyR], [$ch;BR_Scathy], [$ch;PECS_Tiequan], [$ch;PECS_ElvenForestmaker], [$ch;BR_Bulgasari]는 <환호 유도> 버프 효과가 50% 증가합니다.",
-      "<마벨러스 드롭킥>을 사용했을 때 스쿼드에 [$ch;PECS_Babariana], [$ch;PECS_MightyR], [$ch;BR_Scathy], [$ch;PECS_Tiequan], [$ch;PECS_ElvenForestmaker], [$ch;BR_Bulgasari]가 있을 시, 각각 <철거 개시>, <바벨 강타>,<최후의 해킹>, <백보신권>, <묘목 심기>, <벙커 버스터> 스킬로 협동 공격을 유도 합니다.",
-      "협동 공격을 할 수 있는 전투원이 다수인 경우 가장 공격력이 높은 대상이 협공 공격을 가합니다."
-    ]
+    }
   }
 };

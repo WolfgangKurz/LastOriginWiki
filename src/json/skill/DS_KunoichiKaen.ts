@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "시라누이",
     "icon": "SwordAttk",
     "target": "enemy",
     "buffs": {
@@ -2339,16 +2338,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "대상에 [@,#fire:공격력 :0~0:배 화염 피해]를 주고 적중 시 [효과 저항 -:17~2:%]를 감소시킵니다.",
-      "치명타 시 [#fire:지속 화염 피해 :140~20:]를 입힙니다.",
-      "<일격필살> 활성화 상태 시 추가 [피해량 +:60~10:%]를 입힙니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "오의 [화신강림]",
     "icon": "WideSwordAttk",
     "target": "enemy",
     "buffs": {
@@ -4806,16 +4799,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "지정 범위에 [@,#fire:공격력 :0~0:배 화염 피해]를 주고 대상의 [#fire:화염 저항 -:22~2:%]를 감소시킵니다.",
-      "적이 [#chill,#thunder]냉기/전기 속성 저항 감소 상태일 시 [#fire:화염 추가 피해 +:12~2:%]가 발생합니다.",
-      "<일격필살> 활성화 상태 시 추가 [피해량 +:25~5:%]를 입힙니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "불꽃의 춤",
     "icon": "SelfAtkBuff",
     "target": "team",
     "buffs": {
@@ -5147,15 +5134,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, 자신의 [공격력 +:11~1:%]를 크게 증가시킵니다.",
-      "해당 효과는 4라운드 동안 점차 감소합니다. [공격력 +:24~4:% (라운드 감소)]"
-    ]
+    }
   },
   "passive4": {
     "key": "passive4",
-    "name": "일격필살",
     "icon": "SelfAtkBuff",
     "target": "team",
     "buffs": {
@@ -5296,10 +5278,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "전투 개시 시 <일격필살> 버프가 활성화됩니다.",
-      "[행동력 +:12~2:%]가 증가합니다."
-    ]
+    }
   }
 };

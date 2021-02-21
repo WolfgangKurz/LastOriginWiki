@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "은밀",
     "icon": "Shock",
     "target": "enemy",
     "buffs": {
@@ -1339,15 +1338,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "적에게 은밀하게 접근하여 [@,#thunder:공격력 :0~0:배 전기 피해]를 주고, 치명타 시 피해량이 증가하며 중장형 적에게 추가 피해를 입힙니다.",
-      "[치명타 피해량 +:16.5~1.5:%] / [대 중장형 피해량 +:5.5~0.5:%]"
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "뇌신 일섬",
     "icon": "WideLightning",
     "target": "enemy",
     "buffs": {
@@ -3225,15 +3219,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "지정 범위에 [@,#thunder:공격력 :0~0:배 전기 피해]를 주고, 적의 [행동력 -:0.165~0.015:%] / [회피 -:11.5~1.5:%] / [#thunder:전기 저항 -:22~2:%]를 감소시킵니다.",
-      "[#fire,#chill] 화염 / 냉기 감소 상태인 적에게는 [#thunder:추가 전기 피해 +:12~2:%]를 줍니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "허공 둔",
     "icon": "SelfDefBuff",
     "target": "team",
     "buffs": {
@@ -3460,14 +3449,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, 자신과 범위의 아군의 [회피 +:11.5~1.5:%] / [적중 +:21~1:%] / [치명타 +:12~2:%]가 증가하고, [행동력 +:6~1:%]가 중첩 증가합니다."
-    ]
+    }
   },
   "passive4": {
     "key": "passive4",
-    "name": "가속",
     "icon": "SelfSpdBuff",
     "target": "team",
     "buffs": {
@@ -3676,9 +3661,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, 자신의 [#thunder:전기 저항 +:22~2:%]를 증가시키고, 적 처치 시 [AP +:0.6~0.1:]가 회복되고 [공격력 +:11~1:%]가 중첩되어 증가합니다."
-    ]
+    }
   }
 };

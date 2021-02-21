@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "기사의 응시",
     "icon": "WideBeamShot",
     "target": "enemy",
     "buffs": {
@@ -699,14 +698,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "적에게 [@:공격력 :0~0:배 피해]를 주고 적이 방어력 감소 상태일 시 [추가 피해 +:16~1:%]를 입힙니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "용기병의 화창",
     "icon": "CannonShotWide",
     "target": "enemy",
     "buffs": {
@@ -2754,14 +2749,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "지정 범위의 적에게 [@:공격력 :0~0:배 보호 무시, 방어막 / 피해 감소 무시 피해]를 주고, 적의 [방어력 -:15~0.5:%] / [사거리 -:1~0:]을 감소시키며 치명타 발생시 [추가 피해 +:11~1:%]를 입힙니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "빠른 걸음",
     "icon": "Snipe",
     "target": "team",
     "buffs": {
@@ -2904,15 +2895,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "전투 개시 시, [피해 최소화 :2~0:회]가 활성화됩니다.",
-      "라운드 개시 시 [적중 +:5~1:%]가 증가합니다."
-    ]
+    }
   },
   "passive4": {
     "key": "passive4",
-    "name": "기병 참전",
     "icon": "SelfAtkBuff",
     "target": "team",
     "buffs": {
@@ -3435,17 +3421,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시 지정 범위 내 보호기 / 스파르탄 계열 / 스틸라인 계열을 공격 지원합니다.",
-      "적 사망시 자신과 <기병 참전> 대상 아군의 [AP +:0.11~0.01:] / [회피 +:7~2:%] / [방어력 +:7~2:%]를 증가시킵니다",
-      "스파르탄 계열 : [$ch;AGS_SpartanA] / [$ch;AGS_SpartanB] / [$ch;AGS_SpartanC]",
-      "스틸라인 계열 : [$ch;BR_Marie] / [$ch;BR_Leprechaun] / [$ch;BR_Impet] / [$ch;BR_Brownie] / [$ch;BR_Gnome]"
-    ]
+    }
   },
   "passive5": {
     "key": "passive5",
-    "name": "기병 돌격",
     "icon": "SelfAtkBuff",
     "target": "team",
     "buffs": {
@@ -4311,10 +4290,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, 자신의 [공격력 +:11~1:%] / [치명타 +:11~1:%] / [적중 +:11~1:%]가 증가합니다.",
-      "스쿼드 내 자신을 제외한 AGS 1기당 [공격력 +:6~1:%] / [방어 관통 +:3.5~1:%]가, 바이오로이드 1명당 [공격력 +:11~1:%] / [치명타 +:11~1:%]가 중첩 증가합니다."
-    ]
+    }
   }
 };

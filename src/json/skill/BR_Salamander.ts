@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "화염 방사",
     "icon": "WideFireShot",
     "target": "enemy",
     "buffs": {
@@ -1149,14 +1148,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "단일 대상에게 [@,#fire:공격력 :0~0:배 화염 피해]를 주고 3라운드 동안 [#fire:지속 화염 피해 :230~10:]를 입는 <점화> 상태로 만듭니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "전술 기동: 스트레이트 플러시",
     "icon": "TeamDefDeBuff",
     "target": "enemy",
     "buffs": {
@@ -2304,14 +2299,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "지정 범위 적에게 [@,#fire:공격력 :0~0:배 화염 피해]를 주고 대상의 [#fire:화염 저항 -:26~1:%]을 감소시킵니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "도박광",
     "icon": "SelfAtkBuff",
     "target": "team",
     "buffs": {
@@ -2911,16 +2902,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, 자신의 [#chill:냉기 저항 +:11~1:%]가 증가하고 적 수에 비례하여 자신의 [공격력 +:6.2~0.2:%]를 증가시킵니다.",
-      "스쿼드 내 자신을 제외한 <앵거 오브 호드 소속> 전투원의 공격을 지원합니다.",
-      "앵거 오브 호드 : [$ch;BR_Khan] / [$ch;BR_QuickCamel] / [$ch;BR_WarWolf] / [$ch;BR_TalonFeather]"
-    ]
+    }
   },
   "passive4": {
     "key": "passive4",
-    "name": "연쇄 화염",
     "icon": "TeamDefDeBuff",
     "target": "enemy",
     "buffs": {
@@ -3049,9 +3034,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "적 사망 시, 모든 적의 [#fire:화염 저항 -:16~1:%]를 감소시킵니다. (최대 6중첩)"
-    ]
+    }
   }
 };

@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "단분자 클로 프로토",
     "icon": "MeleeAttack",
     "target": "enemy",
     "buffs": {
@@ -1299,14 +1298,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "적에게 [@:공격력 :0~0:배 방어막 / 피해 감소 무시 피해]를 주고, <과흥분> 상태일 시, [추가 피해 +:25~5:%]를 입힙니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "무자비한 고양이",
     "icon": "WideSwordAttk",
     "target": "enemy",
     "buffs": {
@@ -2554,14 +2549,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "지정 범위 적에게 [@:공격력 :0~0:배 피해]를 주고, [적중 -:12~2:%] / [방어력 -:11~1:%]를 감소시킵니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "과 흥분 상태",
     "icon": "SelfAtkBuff",
     "target": "team",
     "buffs": {
@@ -3063,16 +3054,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 시작 시, <과흥분> 상태가 됩니다.",
-      "피격 시 <과흥분> 상태가 해제되고, 2회 대기 후 라운드 시작 시 <과흥분> 상태가 재활성화 됩니다.",
-      "자신의 [공격력 +:7~2:%]가 증가하며 <과흥분> 상태일 시 [방어 관통 +:10~5:%]가 추가로 증가합니다."
-    ]
+    }
   },
   "passive4": {
     "key": "passive4",
-    "name": "사냥감 포착",
     "icon": "SelfSpdBuff",
     "target": "team",
     "buffs": {
@@ -3221,15 +3206,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "자신의 [행동력 +:11~1:%]가 증가합니다.",
-      "<과흥분> 상태일 시 [행동력 +:1~1:%]가 추가로 증가합니다."
-    ]
+    }
   },
   "passive5": {
     "key": "passive5",
-    "name": "9개의 목숨",
     "icon": "SelfDefBuff",
     "target": "team",
     "buffs": {
@@ -3536,11 +3516,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "경장형 보호기와 컴패니언 소속 캐릭터를 지원 공격합니다.",
-      "자신의 [회피율 +:12~2:%]가 증가하며 <과흥분> 상태가 해제되면 [회피율 +:5~5:%]가 추가로 증가합니다.",
-      "컴패니언 : [$ch;3P_BlackLilith] / [$ch;3P_CSPerrault] / [$ch;3P_Hachiko] / [$ch;3P_Fenrir] / [$ch;3P_SnowFeather] / [$ch;3P_Poi]"
-    ]
+    }
   }
 };

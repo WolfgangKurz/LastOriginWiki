@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "쇼크 스파이크",
     "icon": "Shock",
     "target": "enemy",
     "buffs": {
@@ -1029,15 +1028,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "대상을 전격 스파이크로 찔러 [@,#thunder:공격력 :0~0:배 전기 피해]를 줍니다.",
-      "공격 적중 시, 대상의 [AP -:0.5~0.025:]와 [회피 -:30~1.5:%]를 감소시키고 일정 확률로 행동력 강화 효과를 해제시킵니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "벙커 버스터",
     "icon": "AssaultAttack",
     "target": "enemy",
     "buffs": {
@@ -2505,15 +2499,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "파일 벙커로 대상을 공격해 [@:공격력 :0~0:배 피해]를 주며 대상을 뒤로 밀어냅니다.",
-      "적중 시, 대상에게 걸려있는 모든 보호 효과와 피해 감소 효과를 해제합니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "파쇄 강타",
     "icon": "SelfAtkBuff",
     "target": "team",
     "buffs": {
@@ -2609,14 +2598,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "대 장갑 장비로 인해, [방어 관통 +:30~4:%]가 증가하며 중장형 공격 시 [피해량 +:25~1.25:%]가 증가합니다."
-    ]
+    }
   },
   "passive4": {
     "key": "passive4",
-    "name": "돌격 지원",
     "icon": "SelfAtkBuff",
     "target": "team",
     "buffs": {
@@ -2753,9 +2738,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, 같은 열에 인접한 보호기의 [공격력 +:10~1:%] / [치명타 +:5~0.5:%] / [행동력 +:3~0.15:%]를 증가시키며 [:55~5:% 확률 공격 지원]으로 대상의 공격을 지원합니다."
-    ]
+    }
   }
 };

@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "인페르노 미사일",
     "icon": "Missile",
     "target": "enemy",
     "buffs": {
@@ -699,15 +698,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "미사일을 발사해 [@:공격력 :0~0:배 피해]를 줍니다.",
-      "대상이 이동 불가 또는 표식 상태면 [피해량 +:25~1.25:%]가 증가합니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "화염 폭격",
     "icon": "MultiMissile",
     "target": "enemy",
     "buffs": {
@@ -1335,17 +1329,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "네이팜 미사일로 목표 지점에 [@:공격력 :0~0:배 피해]를 줍니다.",
-      "목표 지점 주변은 피해가 25% 감소합니다.",
-      "적중 시, [#fire:추가 화염 피해 +:25~1.25:%]가 적용됩니다.",
-      "{스킬 레벨 10에서 범위가 증가}합니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "정찰 비행",
     "icon": "EnemyDetect",
     "target": "team",
     "buffs": {
@@ -1632,16 +1619,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "적의 진형과 상태를 정찰해, [적중 +:30~3:%] / [회피 +:30~5:%] / [방어 관통 +:30~4:%]가 증가합니다.",
-      "전투 종료 시, 다음에 출현할 적 정보를 획득합니다.",
-      "정찰 활성화 상태로 전투 개시 시, [AP +:0.1~0.1:]가 증가합니다."
-    ]
+    }
   },
   "passive4": {
     "key": "passive4",
-    "name": "연계 폭격",
     "icon": "SelfAtkBuff",
     "target": "team",
     "buffs": {
@@ -1758,10 +1739,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, [공격력 +:15~0.75:%] / [치명타 +:10~0.5:%]가 증가하며 같은 열에 인접한 기동형 / <21 스쿼드> 아군의 공격을 지원합니다.",
-      "21스쿼드 : [$ch;3P_ConstantiaS2] [$ch;DS_Johanna] [$ch;PECS_LRL] [$ch;3P_Labiata] [$ch;BR_InvDragon] [$ch;PECS_LemonadeAlpha]"
-    ]
+    }
   }
 };

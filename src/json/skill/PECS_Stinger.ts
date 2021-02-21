@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "네이팜 버너",
     "icon": "WideFireShot",
     "target": "enemy",
     "buffs": {
@@ -1149,15 +1148,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "화염 방사로 [@,#fire:공격력 :0~0:배 화염 피해]를 주고, 뒤의 대상에게는 50% 감소한 피해를 줍니다.",
-      "3라운드 동안 대상을 점화 상태로 만들어 [#fire:지속 화염 피해 :40~30:]을 줍니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "파쇄 돌격",
     "icon": "AssaultAttack",
     "target": "enemy",
     "buffs": {
@@ -2505,15 +2499,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "목표 대상에게 돌격해 [@:공격력 :0~0:배 [:30~4:% 방어 관통] 피해]를 줍니다.",
-      "대상의 방어력을 일정 비율 무시하며(위 방어 관통), 이동 불가 또는 표식 상태인 경우 [피해량 +:25~1.25:%]가 증가합니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "예열 개시",
     "icon": "SelfAtkBuff",
     "target": "team",
     "buffs": {
@@ -2631,9 +2620,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "적 공격 시, 부스터 출력을 올려 2라운드 동안 [공격력 +:15~0.75:%] / [행동력 +:5~0.25:%] / [회피 +:30~5:%]가 증가합니다."
-    ]
+    }
   }
 };

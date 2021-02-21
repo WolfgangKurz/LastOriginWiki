@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "바벨 강타",
     "icon": "MeleeAttack",
     "target": "enemy",
     "buffs": {
@@ -689,15 +688,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "바벨로 강타해 [@:공격력 :0~0:배 피해]를 줍니다.",
-      "<벌크 업> 상태면 [피해량 +:21~1:%]가 증가합니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "스프린트",
     "icon": "AssaultAttack",
     "target": "enemy",
     "buffs": {
@@ -2275,17 +2269,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "목표에게 돌격해 [@:공격력 :0~0:배 피해]를 줍니다.",
-      "목표 대상 뒤 추가 대상을 타격할 때마다 피해량이 25%씩 감소합니다.",
-      "<벌크 업> 중첩이 2 이상이면 [피해량 +:30~1.5:%]가 증가하며 대상의 [AP -:1.5~0.1:]가 감소합니다.",
-      "<벌크 업>이 5 중첩이면 대상이 행동 불능 상태가 됩니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "벌크 업",
     "icon": "SelfAtkBuff",
     "target": "team",
     "buffs": {
@@ -2953,15 +2940,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "공격 적중 시, 5라운드 동안 <벌크 업> 상태가 되어 [행동력 +:1.5~0.5:%] / [공격력 +:8~1:%]가 증가합니다.",
-      "최대 5번 중첩됩니다."
-    ]
+    }
   },
   "passive4": {
     "key": "passive4",
-    "name": "따라해 보세요",
     "icon": "TeamAtkBuff",
     "target": "team",
     "buffs": {
@@ -3124,14 +3106,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "공격 적중 시, 범위 내 아군의 [행동력 +:1.5~0.5:%] / [공격력 +:8~1:%]가 증가합니다."
-    ]
+    }
   },
   "passive5": {
     "key": "passive5",
-    "name": "한 세트 더",
     "icon": "SelfAtkBuff",
     "target": "team",
     "buffs": {
@@ -3238,9 +3216,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, <벌크 업> / <따라해 보세요> 버프를 받는 자신 또는 아군에게 [방어 관통 +:16~1:%] / [방어력 +:16~1:%] 증가 버프를 부여합니다."
-    ]
+    }
   }
 };

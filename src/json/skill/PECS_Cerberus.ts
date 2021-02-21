@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "스턴 롯드",
     "icon": "Shock",
     "target": "enemy",
     "buffs": {
@@ -3249,16 +3248,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "스턴 롯드로 [@,#thunder:공격력 :0~0:배 전기 피해]를 주고, 3라운드 동안 [#thunder:전기 저항 -:2.5~1.5:%]를 낮춥니다.",
-      "2라운드 동안 대상을 도발하며, 대상이 이동 불가 상태일 경우 행동 불가로 만듭니다.",
-      "스쿼드 내 [$ch;PECS_Leanne]이 있을 시, 대상에게 <위협사격> 협동 공격을 합니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "지옥의 파수꾼",
     "icon": "ShieldWall",
     "target": "team",
     "buffs": {
@@ -3531,15 +3524,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "방어 태세를 취해 3라운드 동안 지정한 아군을 보호하며, 자신에게 [:80~5:% 위력으로 반격] / [받는 피해 -:25~3:%] 감소 / [사거리 +:1~0:] 증가 효과가 적용됩니다.",
-      "사거리 증가 효과는 2라운드 동안만 적용됩니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "호위 지원",
     "icon": "SelfDefBuff",
     "target": "team",
     "buffs": {
@@ -4301,16 +4289,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, 지정 범위의 아군을 보호하고 [치명타 +:11.5~0.5:%]를 증가시킵니다.",
-      "자신의 [방어력 +:9~4:%]가 증가하며, 보호 대상 중 공격기의 공격을 지원합니다.",
-      "{스킬 레벨 5, 10에서 범위가 증가}합니다."
-    ]
+    }
   },
   "passive4": {
     "key": "passive4",
-    "name": "총공격이에요!",
     "icon": "TeamAtkBuff",
     "target": "team",
     "buffs": {
@@ -4588,16 +4570,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, 자신에게 [받는 피해 -:15~3:%] 감소를 부여합니다.",
-      "지정 범위 아군의 [공격력 +:12~0.6:%] / [적중 +:15~2:%] / [행동력 +:3~0.3:%]를 증가시키며, <시티가드> 소속일 시 효과가 2배로 적용됩니다.",
-      "시티가드 : [$ch;PECS_Serpent], [$ch;PECS_MissSafety], [$ch;PECS_Cerberus], [$ch;AGS_Rampart], [$ch;PECS_PuppHead], [$ch;PECS_Leanne], [$ch;PECS_Sadius]"
-    ]
+    }
   },
   "passive5": {
     "key": "passive5",
-    "name": "호위 지원 강화",
     "icon": "SelfAtkBuff",
     "target": "team",
     "buffs": {
@@ -4890,11 +4866,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, 자신의 [공격력 +:19~4:%] / [#fire:화염 저항 +:7~2:%] / [#thunder:전기 저항 +:7~2:%]를 증가시킵니다.",
-      "지정 범위 내 <시티가드> 소속 전투원의 공격을 지원합니다.",
-      "시티가드 : [$ch;PECS_Serpent], [$ch;PECS_MissSafety], [$ch;PECS_Cerberus], [$ch;AGS_Rampart], [$ch;PECS_PuppHead], [$ch;PECS_Leanne], [$ch;PECS_Sadius]"
-    ]
+    }
   }
 };

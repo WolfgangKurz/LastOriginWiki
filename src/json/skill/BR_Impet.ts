@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "대 장갑 로켓",
     "icon": "AntiArmorShot",
     "target": "enemy",
     "buffs": {
@@ -599,15 +598,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "대 장갑 로켓을 발사해 [@:공격력 :0~0:배 [:30~4:% 방어 관통] 피해]를 줍니다.",
-      "대상의 방어력을 일정 비율 무시합니다. (위 방어 관통)"
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "MK08. 열압력탄",
     "icon": "Missile",
     "target": "enemy",
     "buffs": {
@@ -1235,15 +1229,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "열압력탄을 발사해 대상에게 [@:공격력 :0~0:배 피해]를 주고, 뒤쪽에는 25% 감소한 피해를 줍니다.",
-      "치명타인 경우, [#fire:추가 화염 피해 :30~1.5:%]를 줍니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "시제 EFP탄",
     "icon": "Missile",
     "target": "team",
     "buffs": {
@@ -1432,15 +1421,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "[중장형 적에게 주는 피해량 +:15~2:%]가 증가합니다.",
-      "자신이 전열인 경우, [공격력 +:15~1:%] / [방어 관통 +:25~1.25:%]가 증가합니다."
-    ]
+    }
   },
   "passive4": {
     "key": "passive4",
-    "name": "스틸라인의 마음가짐",
     "icon": "TeamAtkBuff",
     "target": "team",
     "buffs": {
@@ -2176,10 +2160,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, 자신의 [적중 +:12~2:%]가 증가하며, 같은 스쿼드 내에 자신을 포함하여 [$ch;BR_Marie] / [$ch;BR_Efreeti] / [$ch;BR_Leprechaun] / [$ch;BR_Brownie] / [$ch;BR_PXSilky] / [$ch;BR_Phoenix] / [$ch;BR_Gnome] / [$ch;BR_RedHood] 1기 당 [공격력 +:5.5~0.5:%] / [치명타 +:5.5~0.5:%]가 증가합니다.",
-      "해당 효과는 중첩 적용됩니다."
-    ]
+    }
   }
 };

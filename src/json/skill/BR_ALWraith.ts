@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "공중 저격",
     "icon": "ARShot",
     "target": "enemy",
     "buffs": {
@@ -1899,14 +1898,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "적에게 [@:공격력 :0~0:배 피해]를 주고, 치명타 시 [추가 피해 +:8~3:%]를 입힙니다. 적 적중 시 [방어력 -:7~2:%] / [회피 -:12~2:%]를 감소시킵니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "조준 폭격",
     "icon": "AirStrike",
     "target": "enemy",
     "buffs": {
@@ -3804,16 +3799,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "지정 범위에 [@:공격력 :0~0:배 피해]를 주고, [받는 피해 +:23~3:%]를 증가시킵니다.",
-      "스쿼드 내 [$ch;BR_May]가 있을 시, 지정 타깃 대상으로 <석기 시대로!> 스킬 협동 공격을 합니다.",
-      "공격 적중 시 자신의 [행동력 -:68~1:%]가 감소합니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "하늘의 저격수",
     "icon": "SelfAtkBuff",
     "target": "team",
     "buffs": {
@@ -3952,14 +3941,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, 자신의 [적중 +:7~2:%] / [치명타 +:7~2:%] / [회피 +:12~2:%] / [방어 관통 +:12~2:%]를 증가시킵니다."
-    ]
+    }
   },
   "passive4": {
     "key": "passive4",
-    "name": "정밀 타격 지원",
     "icon": "SelfAtkBuff",
     "target": "team",
     "buffs": {
@@ -4194,11 +4179,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, 지정 범위 아군 [공격력 +:6~1:%] / [적중 +:12~2:%] / [치명타 +:1~1:%]를 증가시킵니다.",
-      "둠 브링어 소속은 50% 증가된 효과를 받습니다.",
-      "둠 브링어 : [$ch;BR_May] / [$ch;BR_NightAngel] / [$ch;BR_Daika] / [$ch;BR_Djinnia] / [$ch;Sylphid] / [$ch;BR_Banshee] / [$ch;BR_ALWraith]"
-    ]
+    }
   }
 };

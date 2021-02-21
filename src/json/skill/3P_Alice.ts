@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "찌르는 강철",
     "icon": "Missile",
     "target": "enemy",
     "buffs": {
@@ -1429,15 +1428,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "지정 대상에게 [@:공격력 :0~0:배 피해]를 줍니다.",
-      "적중 대상은 2라운드 동안 표식 / [받는 피해 :15~0.75:%] 증가 / [회피 -:30~1.5:%] 감소 상태가 됩니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "강철의 비",
     "icon": "MultiMissile",
     "target": "enemy",
     "buffs": {
@@ -2575,15 +2569,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "지정 범위에 [@:공격력 :0~0:배 피해]를 줍니다.",
-      "대상이 표식 또는 이동 불가 상태면 [피해량 :25~1.25:%]가 증가합니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "강자의 품격",
     "icon": "SelfAtkBuff",
     "target": "team",
     "buffs": {
@@ -2706,14 +2695,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "자신의 HP가 50% 이상일 경우, [공격력 +:15~0.75:%] / [치명타 +:5~1:%]가 증가하며, 목표의 HP%가 낮을수록 [피해량 +:30~1.5:%]가 증가합니다."
-    ]
+    }
   },
   "passive4": {
     "key": "passive4",
-    "name": "가학의 기쁨",
     "icon": "SelfSpdBuff",
     "target": "team",
     "buffs": {
@@ -2787,16 +2772,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "적 공격시, [행동력 +:5~0.5:%]가 증가합니다.",
-      "행동력 증가 효과는 최대 3회까지 중첩됩니다.",
-      "적 처치 시, 낮은 확률로 적 처치에 사용한 스킬의 AP를 돌려받습니다"
-    ]
+    }
   },
   "passive5": {
     "key": "passive5",
-    "name": "학살 본능",
     "icon": "SelfAtkBuff",
     "target": "team",
     "buffs": {
@@ -3146,10 +3125,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "경장형에게 주는 [피해 +:15~0.75:%]가 증가하며, 2회 공격까지 방어막과 피해 감소 무시 효과가 적용됩니다.",
-      "해당 효과는 대기 시 재 활성화되며, {스킬 레벨 10에서 적용 횟수가 1회 증가}합니다."
-    ]
+    }
   }
 };

@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "운석 파쇄 드릴",
     "icon": "MeleeAttack",
     "target": "enemy",
     "buffs": {
@@ -809,16 +808,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "운석 파쇄 드릴로 장갑을 부숴, [@:공격력 :0~0:배 피해]를 주고 3라운드 동안 대상의 방어력을 낮춥니다.",
-      "방어력 감소 효과는 적용 라운드에 최대로 적용되었다가 점감됩니다.",
-      "공격 라운드에 [방어력 -:35~1.75:%] 감소, 다음 라운드부터 2라운드 동안 [방어력 -:25~1.25:%] 감소"
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "역장 전개",
     "icon": "Barrier",
     "target": "team",
     "buffs": {
@@ -957,14 +950,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "3라운드 동안 지정한 아군을 보호하며 [방어막 +:150~150:]을 전개합니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "아군 엄폐",
     "icon": "SelfDefBuff",
     "target": "team",
     "buffs": {
@@ -1080,14 +1069,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, 열 보호가 활성화되며 바로 뒤의 아군을 엄폐해 대상의 [회피 +:20~1:%]가 증가하고 [받는 피해 -:20~1:%]가 감소합니다."
-    ]
+    }
   },
   "passive4": {
     "key": "passive4",
-    "name": "오비탈 플레이팅",
     "icon": "SelfDefBuff",
     "target": "team",
     "buffs": {
@@ -1299,14 +1284,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "우주용 특수 장갑으로 인해 [방어력 +:30~3:%]와 [모든 저항 +:33~1.75:%]가 증가합니다."
-    ]
+    }
   },
   "passive5": {
     "key": "passive5",
-    "name": "긴급 탈출",
     "icon": "SelfDefBuff",
     "target": "team",
     "buffs": {
@@ -1382,9 +1363,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      ""
-    ]
+    }
   }
 };

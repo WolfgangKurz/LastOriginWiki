@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "급속 성장",
     "icon": "WideFireShot",
     "target": "enemy",
     "buffs": {
@@ -1359,15 +1358,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "나노봇으로 목표 지점에 [@:공격력 :0~0:배 피해]를 주고, 3라운드 동안 대상을 이동 불가 상태로 만듭니다.",
-      "대상이 침수 상태인 경우, 대상의 강화 효과를 해제합니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "숲의 노래",
     "icon": "TeamSpdBuff",
     "target": "team",
     "buffs": {
@@ -1746,15 +1740,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "[$ch;PECS_ElvenForestmaker], [$ch;PECS_DarkElf], 경장형 아군의 해로운 효과를 모두 해제하고 [AP +:0.2~0.2:]를 증가시키며, 3라운드 동안 [공격력 +:17~2:%] / [치명타 +:17~2:%] / [방어 관통 +:6~1:%]를 증가시킵니다.",
-      "스킬 사용 시, 기본 공격력에 비례한 고정 피해를 입습니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "정화",
     "icon": "Barrier",
     "target": "team",
     "buffs": {
@@ -1989,15 +1978,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 시작 시 [행동력 +:0.5~0.5:%]가 증가하며, 전투 시작 시 [방어막 +:60~60:]를 전개합니다.",
-      "스쿼드에 [$ch;PECS_ElvenForestmaker], [$ch;PECS_DarkElf]가 있으면 [행동력 +:0.5~0.5:]가 추가로 증가합니다."
-    ]
+    }
   },
   "passive4": {
     "key": "passive4",
-    "name": "세계수의 은총",
     "icon": "SelfDefBuff",
     "target": "team",
     "buffs": {
@@ -2464,15 +2448,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "[$ch;PECS_ElvenForestmaker], [$ch;PECS_DarkElf], 경장형 아군의 [공격력 +:1~1:%] / [행동력 +:0.5~0.5:%] / [방어 관통 +:1~1:%]를 증가시킵니다.",
-      "스쿼드에 [$ch;PECS_ElvenForestmaker], [$ch;PECS_DarkElf]가 있으면 경장형 아군이 받는 효과가 증가합니다."
-    ]
+    }
   },
   "passive5": {
     "key": "passive5",
-    "name": "모성",
     "icon": "SelfSpdBuff",
     "target": "team",
     "buffs": {
@@ -2557,9 +2536,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "같은 열에 배치된 열 보호가 활성화된 대상의 [받는 피해 -:23~3:%]를 감소시킵니다."
-    ]
+    }
   }
 };
