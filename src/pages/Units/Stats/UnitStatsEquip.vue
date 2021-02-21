@@ -1,7 +1,7 @@
 <template>
 	<b-card class="text-left" no-body>
 		<b-card-header v-b-toggle.collapse_equip>
-			장비 장착
+			<locale k="UNIT_STATUS_EQUIPS" />
 			<div class="float-right">
 				<equip-type-icon v-for="(equip, idx) in unit.Equips" :key="`unit-stats-equip-icon-${idx}`" :type="equip.Type" :active="!!equip.Key" />
 			</div>
@@ -27,7 +27,7 @@
 						</template>
 						<template v-else>
 							<div class="py-3">
-								<small class="pl-2 text-secondary">장비 없음</small>
+								<small class="pl-2 text-secondary"><locale k="UNIT_STATUS_EQUIPS_NONE" /></small>
 							</div>
 						</template>
 					</b-col>
@@ -51,6 +51,7 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
+import { LocaleGet } from "@/libs/Locale";
 
 import { ITEM_TYPE } from "@/libs/Types/Enums";
 
@@ -99,9 +100,10 @@ export default class UnitStatsEquip extends Vue {
 	}
 
 	private EquipName (key: string) {
-		const eq = FilterableEquipDB.find(x => x.fullKey === key);
-		if (eq) return eq.name;
-		return key;
+		return LocaleGet(`EQUIP_${key}`);
+		// const eq = FilterableEquipDB.find(x => x.fullKey === key);
+		// if (eq) return eq.name;
+		// return key;
 	}
 
 	private FindEquip (key: string) {

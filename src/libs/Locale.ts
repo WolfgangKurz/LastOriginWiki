@@ -12,7 +12,7 @@ export function LocaleGet (keys: string | string[], ...params: any[]) {
 		if (value !== null) {
 			return value.replace(/\{([0-9]+)\}/g, (_, p1) => {
 				const index = parseInt(p1, 10);
-				return params[index] || `{${p1}}`;
+				return typeof params[index] !== "undefined" ? params[index] : `{${p1}}`;
 			});
 		}
 	}
