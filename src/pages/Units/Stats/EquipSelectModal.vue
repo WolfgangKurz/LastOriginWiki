@@ -1,6 +1,6 @@
 <template>
 	<b-modal v-model="displaySync" hide-footer size="md" modal-class="equip-select-modal">
-		<template #modal-title>장비 선택</template>
+		<template #modal-title><locale k="UNIT_STATUS_EQUIP_SELECT_TITLE" /></template>
 
 		<!-- 필터 -->
 		<b-row>
@@ -13,10 +13,12 @@
 		</b-row>
 
 		<b-row class="justify-content-center">
-			<b-col cols="8" class="mb-4">
+			<b-col class="mb-4">
 				<b-dropdown variant="outline-dark">
 					<template #button-content>
-						<template v-if="!SelectedEquip">장비를 선택해주세요.</template>
+						<template v-if="!SelectedEquip">
+							<locale k="UNIT_STATUS_EQUIP_SELECT_DESC" />
+						</template>
 						<template v-else>
 							<equip-icon :image="SelectedEquip.icon" size="40" class="mr-2" />
 							{{ SelectedEquipName }}
@@ -39,8 +41,12 @@
 			</b-col>
 			<b-col cols="12">
 				<b-btn-group>
-					<b-button variant="primary" @click="Select(SelectedEquip)">장비 선택</b-button>
-					<b-button variant="secondary" @click="Select(null)">장비 해제</b-button>
+					<b-button variant="primary" @click="Select(SelectedEquip)">
+						<locale k="UNIT_STATUS_EQUIP_SELECT" />
+					</b-button>
+					<b-button variant="secondary" @click="Select(null)">
+						<locale k="UNIT_STATUS_EQUIP_DESELECT" />
+					</b-button>
 				</b-btn-group>
 			</b-col>
 		</b-row>
@@ -51,6 +57,7 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, Watch, PropSync, Ref } from "vue-property-decorator";
+import { LocaleGet } from "@/libs/Locale";
 
 import { ACTOR_CLASS, ACTOR_GRADE, ITEM_TYPE, ROLE_TYPE } from "@/libs/Types/Enums";
 
@@ -229,7 +236,7 @@ export default class EquipSelectModal extends Vue {
 				return {
 					fullKey: `${type}_${key}_T${last.rarity - 1}`,
 					baseKey: `${type}_${key}`,
-					name: last.name.replace(/ (RE|MP|SP|EX)$/, ""),
+					name: LocaleGet(`EQUIP_${last.fullKey}`).replace(/ (RE|MP|SP|EX)$/, ""),
 					icon: last.icon,
 				};
 			});
@@ -252,7 +259,8 @@ export default class EquipSelectModal extends Vue {
 
 	private get SelectedEquipName () {
 		if (!this.SelectedEquip) return "";
-		return this.SelectedEquip.name.replace(/ (RE|MP|SP|EX)$/, "");
+		return LocaleGet(`EQUIP_${this.SelectedEquip.fullKey}`)
+			.replace(/ (RE|MP|SP|EX)$/, "");
 	}
 
 	private SelectEquipGroup (group: string | null) {

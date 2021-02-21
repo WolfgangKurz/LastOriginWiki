@@ -22,7 +22,9 @@ function traverseVNode (nodes: Node[] | NodeListOf<ChildNode>, h: Vue.CreateElem
 							return r
 								? (() => {
 									const p = `p${r[1].substr(1, r[1].length - 2)}`;
-									return (context.data.attrs && context.data.attrs[p]) || scope(context, p);
+									if (context.data.attrs && p in context.data.attrs)
+										return context.data.attrs[p];
+									return scope(context, p);
 								})()
 								: context._v(x);
 						}),

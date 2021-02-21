@@ -1,7 +1,7 @@
 <template>
 	<b-card class="text-left" no-body>
 		<b-card-header v-b-toggle.collapse_corelink>
-			코어링크
+			<locale k="UNIT_STATUS_CORELINKS" />
 			<div class="float-right">
 				<b-badge pill :variant="previewClass">{{ linkPercent }}%</b-badge>
 			</div>
@@ -15,7 +15,7 @@
 				</b-row>
 				<b-row class="mt-2">
 					<b-col cols="12">
-						빠른 설정 (링크 수)
+						<locale k="UNIT_STATUS_CORELINKS_QUICKSET" />
 						<b-btn-group class="float-right">
 							<b-button size="sm" variant="secondary" @click="reset(0)">0</b-button>
 							<b-button size="sm" variant="success" :disabled="disabled[0]" @click="reset(1)">1</b-button>
@@ -29,11 +29,11 @@
 				<template v-if="unit.LinkSum === 5">
 					<hr />
 					<b-row class="mt-2">
-						<b-col cols="12">풀링크 보너스</b-col>
+						<b-col cols="12"><locale k="UNIT_STATUS_CORELINKS_FULLLINK" /></b-col>
 						<b-col cols="12">
 							<b-list-group>
 								<b-list-group-item>
-									없음
+									<locale k="LINKBONUS_NONE" />
 									<b-radio class="float-right" value v-model="unit.FullLinkBonus" />
 								</b-list-group-item>
 
