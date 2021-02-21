@@ -15,7 +15,22 @@ import "@/libs/Meta";
 
 Vue.config.productionTip = false;
 
-window.GLOBAL_LANG = "EN";
+const getCookie = (name: string) => {
+	const value = `; ${document.cookie}`;
+	const parts = value.split(`; ${name}=`);
+	if (parts.length === 2) {
+		return (parts.pop() as string)
+			.split(";")
+			.shift();
+	}
+};
+const LangValidation = (name: string | undefined) => {
+	const list = ["KR", "EN", "JP"];
+	if (!name || !list.includes(name)) return "KR";
+	return name as "KR" | "EN" | "JP";
+};
+
+window.GLOBAL_LANG = LangValidation(getCookie("LO_LANG"));
 
 const router = Router;
 initWEBP().then(() => {

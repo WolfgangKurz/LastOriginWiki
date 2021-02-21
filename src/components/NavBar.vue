@@ -42,6 +42,14 @@
 						<b-icon-link45deg />
 					</b-dropdown-item>
 				</b-nav-item-dropdown>
+				<b-nav-item-dropdown right>
+					<template #button-content>
+						<locale k="COMMON_LANG" />
+					</template>
+					<b-dropdown-item href="#" @click.prevent="ChangeLang('KR')">KR</b-dropdown-item>
+					<b-dropdown-item href="#" @click.prevent="ChangeLang('EN')">EN</b-dropdown-item>
+					<!-- <b-dropdown-item href="#" @click.prevent="ChangeLang('JP')">JP</b-dropdown-item> -->
+				</b-nav-item-dropdown>
 			</b-navbar-nav>
 		</b-collapse>
 	</b-navbar>
@@ -112,6 +120,11 @@ export default class NavBar extends Vue {
 	@Emit("goto")
 	private GoTo (destination: string) {
 		return undefined;
+	}
+
+	private ChangeLang (lang: string) {
+		document.cookie = `LO_LANG=${lang}`;
+		window.location.reload(true);
 	}
 }
 </script>
