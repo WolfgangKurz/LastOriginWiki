@@ -14,6 +14,7 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Watch, Prop } from "vue-property-decorator";
+import { LocaleGet } from "@/libs/Locale";
 
 import EquipIcon from "@/components/EquipIcon.vue";
 
@@ -57,10 +58,10 @@ export default class DropRes extends Vue {
 
 	private get Name () {
 		switch (this.res) {
-			case "metal": return "부품";
-			case "nutrient": return "영양";
-			case "power": return "전력";
-			case "cash": return "참치";
+			case "metal": return LocaleGet("COMMON_RES_PARTS");
+			case "nutrient": return LocaleGet("COMMON_RES_NUTRIENTS");
+			case "power": return LocaleGet("COMMON_RES_POWER");
+			case "cash": return LocaleGet("COMMON_RES_TUNA");
 			default: return "???";
 		}
 	}

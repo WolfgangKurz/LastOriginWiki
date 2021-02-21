@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Component from "vue-class-component";
+import { LocaleGet } from "@/libs/Locale";
 
 import ExchangeCard from "@/pages/Exchange/ExchangeCard.vue";
 
@@ -7,7 +8,6 @@ import ExchangeData, { ExchangeInfo } from "@/libs/Types/Exchange";
 import { ArrayUnique, UpdateTitle } from "@/libs/Functions";
 
 import { SetMeta } from "@/libs/Meta";
-import { WorldNames } from "@/libs/Const";
 
 @Component({
 	components: {
@@ -83,7 +83,7 @@ export default class Exchange extends Vue {
 			.filter(x => x.category === "Event")
 			.map(x => ({
 				value: x.group,
-				text: WorldNames[x.group] || x.group,
+				text: LocaleGet(`WORLD_${x.group}`),
 			}));
 		return ArrayUnique(events);
 	}

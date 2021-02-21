@@ -1,4 +1,4 @@
-import { WorldNames, SupplementaryUnit } from "@/libs/Const";
+import { SupplementaryUnit } from "@/libs/Const";
 import { LocaleGet } from "@/libs/Locale";
 
 export default class EntitySource {
@@ -97,9 +97,7 @@ export default class EntitySource {
 	public get EventName () {
 		if (!this.IsEvent) return "";
 
-		// return (this.Parts[1] in WorldNames)
 		return LocaleGet([`WORLD_${this.Parts[1]}`, this.Parts[1]]);
-		// : this.Parts[1];
 	}
 
 	/** 부수를 포함한 이벤트 이름 */

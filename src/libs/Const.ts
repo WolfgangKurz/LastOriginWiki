@@ -546,28 +546,29 @@ export const CurrentDate = (() => {
 	return `${y}/${m}`;
 })();
 
-export const WorldNames: Record<string, string> = (() => {
-	const keys = ["Story", "Sup1", "Cha", "Ev1", "Ev2", "Ev3", "Ev4", "Ev5", "Ev6", "EvA0", "Ev7", "Ev8", "Ev9", "Ev10"];
-	const ret: Record<string, string> = {};
-	keys.forEach(x => (ret[x] = LocaleGet(`WORLD_${x}`)));
-	return ret;
-})();
+// export const WorldNames: Record<string, string> = (() => {
+// 	const keys = ["Story", "Sup1", "Cha", "Ev1", "Ev2", "Ev3", "Ev4", "Ev5", "Ev6", "EvA0", "Ev7", "Ev8", "Ev9", "Ev10"];
+// 	const ret: Record<string, string> = {};
+// 	keys.forEach(x => (ret[x] = LocaleGet(`WORLD_${x}`)));
+// 	return ret;
+// })();
+export const WorldIds: string[] = ["Story", "Sup1", "Cha", "Ev1", "Ev2", "Ev3", "Ev4", "Ev5", "Ev6", "EvA0", "Ev7", "Ev8", "Ev9", "Ev10"];
 
-export const WorldDescriptions: Record<string, string> = {
-	Story: "",
-	Sup1: "",
-	Cha: "",
-	Ev1: "소완으로 인해 혼란에 빠진 오르카 안에선 무슨 일이?",
-	Ev2: "리오보로스의 유산을 찾아 떠나는 모험!",
-	Ev3: "마법 소녀들과 함께 뽀끄루 대마왕을 물리쳐주세요!",
-	Ev4: "과거에 얽매이지 마. 지금을 즐기는 거야!",
-	Ev5: "연말 파티를 준비하는 사령관에게 뻗쳐오는 마수는?",
-	Ev6: "티아멧은 '초코 여왕'과 얽힌 멸망 전 인류의 일그러짐과 마주하는데..",
-	Ev7: "가벼운 마음으로 요정 마을로 향한 사령관에게...?",
-	Ev8: "왓슨, 드디어 대단원이야!",
-	Ev9: "당신이 바라는 욕망은 무엇인가요?",
-	Ev10: "혼란스러운 오르카 호에서, 사령관은 웃고 있다...",
-};
+// export const WorldDescriptions: Record<string, string> = {
+// 	Story: "",
+// 	Sup1: "",
+// 	Cha: "",
+// 	Ev1: "소완으로 인해 혼란에 빠진 오르카 안에선 무슨 일이?",
+// 	Ev2: "리오보로스의 유산을 찾아 떠나는 모험!",
+// 	Ev3: "마법 소녀들과 함께 뽀끄루 대마왕을 물리쳐주세요!",
+// 	Ev4: "과거에 얽매이지 마. 지금을 즐기는 거야!",
+// 	Ev5: "연말 파티를 준비하는 사령관에게 뻗쳐오는 마수는?",
+// 	Ev6: "티아멧은 '초코 여왕'과 얽힌 멸망 전 인류의 일그러짐과 마주하는데..",
+// 	Ev7: "가벼운 마음으로 요정 마을로 향한 사령관에게...?",
+// 	Ev8: "왓슨, 드디어 대단원이야!",
+// 	Ev9: "당신이 바라는 욕망은 무엇인가요?",
+// 	Ev10: "혼란스러운 오르카 호에서, 사령관은 웃고 있다...",
+// };
 
 export const SupplementaryUnit: Record<string, string> = {
 	"S1-1": "AGS_Rampart",
