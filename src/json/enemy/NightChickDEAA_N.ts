@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickDEAA_N",
-  "name": "나이트 칙 디텍터 AA",
-  "desc": "대공 교란용 적인가? 상관없다! 선제 공격을 맞아도 버티고 섬멸하면 그만이다! 돌격!!!\n\n\n- 레드후드의 명령을 브라우니가 기록함",
   "icon": "TbarIcon_MP_NightChickDEAA_N",
   "ai": "AI_Mp_NCDetectorAA_Normal_01",
   "rarity": 4,

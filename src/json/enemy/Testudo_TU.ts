@@ -1,7 +1,5 @@
 export default {
   "id": "Testudo_TU",
-  "name": "테스투도",
-  "desc": "트레비앙~한 방어 능력을 가진 적이에요. 보통은 중화기로 제압해야 하지만 제 정교한 검술로도 해결할 수 있으니 맡겨주세요!\n\n\n- 샬럿 보고함",
   "icon": "TbarIcon_MP_Testudo_N",
   "ai": "AI_Mp_Testudo_Normal_01",
   "rarity": 4,

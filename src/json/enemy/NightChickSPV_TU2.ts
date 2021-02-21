@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickSPV_TU2",
-  "name": "베테랑 칙 스나이퍼",
-  "desc": "",
   "icon": "TbarIcon_MP_NightChickSP_N",
   "ai": "AI_Jako_Sniper_01",
   "rarity": 4,

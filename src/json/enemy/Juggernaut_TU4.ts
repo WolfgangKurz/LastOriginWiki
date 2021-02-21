@@ -1,7 +1,5 @@
 export default {
   "id": "Juggernaut_TU4",
-  "name": "저거너트",
-  "desc": "성격이 나빠 보이는 철충인 거예요. 공격을 시작하면 끝까지 공격하거든요. 그래서 공중 부대로 유인을 하는 게 좋을 것 같아요. 그 덩치로 다른 철충들을 보호하지 못하게요.\n\n\n- 블랙 하운드",
   "icon": "TbarIcon_MP_Juggernaut_N",
   "ai": "AI_Hvst_Normal_02",
   "rarity": 4,

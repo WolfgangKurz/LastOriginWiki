@@ -1,7 +1,5 @@
 export default {
   "id": "ScoutSP_TU2",
-  "name": "지원형 스카우트",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_Scout_N",
   "ai": "AI_Scout_Special_01",
   "rarity": 4,

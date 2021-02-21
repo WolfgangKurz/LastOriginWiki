@@ -1,7 +1,8 @@
 <script lang="tsx">
 import Vue from "vue";
 import Component from "vue-class-component";
-import { Watch, Prop } from "vue-property-decorator";
+import { Prop } from "vue-property-decorator";
+import { LocaleGet } from "@/libs/Locale";
 
 import EquipIcon from "@/components/EquipIcon.vue";
 
@@ -157,7 +158,7 @@ export default class DropItem extends Vue {
 			return ret;
 		}
 
-		return parseText(this.item.desc);
+		return parseText(LocaleGet(`CONSUMABLE_DESC_${this.item.key}`));
 	}
 
 	private get FunctionBadge () {
@@ -167,32 +168,36 @@ export default class DropItem extends Vue {
 				GiveFavor_02: 2.5,
 				GiveFavor_03: 5,
 			};
-			return <b-badge variant="danger">♥ 기본 호감도 +{ favorTable[this.item.func].toFixed(2) }</b-badge>;
+			return <b-badge variant="danger">
+				<locale k="ITEM_FUNCTION_FAVOR" p0={ favorTable[this.item.func].toFixed(2) } />
+			</b-badge>;
 		} else if (["MaxFavor_Expand_Lv1"].includes(this.item.func)) { // 호감도 상한
 			const favorLimitTable: Record<string, number> = {
 				MaxFavor_Expand_Lv1: 10,
 			};
-			return <b-badge variant="danger">♥ 호감도 상한 +{ favorLimitTable[this.item.func].toFixed(2) }</b-badge>;
-		} else if (this.item.func === "Consumable_CommanderDiary") { // 사령관의 일지
-			return [
-				<b-badge variant="warning">전투원 경험치 +15,000,000</b-badge>,
-				<b-badge variant="success" class="mx-1">스킬 경험치 +284,000</b-badge>,
-				<b-badge variant="danger">♥ 호감도 +200.00</b-badge>,
-			];
-		} else if (["TacticRecord_01", "TacticRecord_02", "TacticRecord_03"].includes(this.item.func)) { // 경험치 교본
+			return <b-badge variant="danger">
+				<locale k="ITEM_FUNCTION_FAVOR" p0={ favorLimitTable[this.item.func].toFixed(2) } />
+			</b-badge>;
+		} else if (this.item.func === "Consumable_CommanderDiary") // 사령관의 일지
+			return <locale k="ITEM_FUNCTION_COMMANDERDIARY" />;
+		else if (["TacticRecord_01", "TacticRecord_02", "TacticRecord_03"].includes(this.item.func)) { // 경험치 교본
 			const expTable: Record<string, number> = {
 				TacticRecord_01: 3000,
 				TacticRecord_02: 100000,
 				TacticRecord_03: 1000000,
 			};
-			return <b-badge variant="warning">전투원 경험치 +{ FormatNumber(expTable[this.item.func]) }</b-badge>;
+			return <b-badge variant="warning">
+				<locale k="ITEM_FUNCTION_TACTICRECORD" p0={ FormatNumber(expTable[this.item.func]) } />
+			</b-badge>;
 		} else if (["TrainingManual_01", "TrainingManual_02", "TrainingManual_03"].includes(this.item.func)) { // 스킬 교본
 			const expTable: Record<string, number> = {
 				TrainingManual_01: 1000,
 				TrainingManual_02: 10000,
 				TrainingManual_03: 100000,
 			};
-			return <b-badge variant="success">스킬 경험치 +{ FormatNumber(expTable[this.item.func]) }</b-badge>;
+			return <b-badge variant="success">
+				<locale k="ITEM_FUNCTION_TRAININGMANUAL" p0={ FormatNumber(expTable[this.item.func]) } />
+			</b-badge>;
 		}
 
 		return null;
@@ -203,7 +208,7 @@ export default class DropItem extends Vue {
 			<b-card bg-variant={ this.variant } text-variant={ this.text }>
 				<equip-icon class="float-left mr-2" image={ this.item.icon } />
 				<div class="text-left">
-					{ this.item.name }
+					<locale k={ `CONSUMABLE_${this.item.key}` } />
 
 					{ this.count > 1 ? <b-badge variant="dark" class="ml-1">x{ this.count }</b-badge> : _e() }
 					<div>
@@ -230,14 +235,16 @@ export default class DropItem extends Vue {
 			>
 				<template slot="modal-title">
 					<div class="text-left">
-						{ this.item.name }
+						<locale k={ `CONSUMABLE_${this.item.key}` } />
 						<div style="font-size: 60%">{ this.item.key }</div>
 					</div>
 				</template>
 
 				<div class="text-center">
 					<equip-icon image={ this.item.icon } size="large" />
-					<h5 class="mt-1">{ this.item.name }</h5>
+					<h5 class="mt-1">
+						<locale k={ `CONSUMABLE_${this.item.key}` } />
+					</h5>
 				</div>
 				<template slot="modal-footer">
 					<div class="text-left desc-text p-2">

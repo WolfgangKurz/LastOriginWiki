@@ -18,8 +18,9 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Emit, Prop } from "vue-property-decorator";
+import { LocaleGet } from "@/libs/Locale";
 
-import { AssetsRoot, WorldDescriptions, WorldNames } from "@/libs/Const";
+import { AssetsRoot } from "@/libs/Const";
 
 @Component({})
 export default class WorldItem extends Vue {
@@ -40,11 +41,11 @@ export default class WorldItem extends Vue {
 	}
 
 	private get Name () {
-		return WorldNames[this.wid] || this.wid;
+		return LocaleGet(`WORLD_${this.wid}`);
 	}
 
 	private get Description () {
-		return WorldDescriptions[this.wid] !== undefined ? WorldDescriptions[this.wid] : this.wid;
+		return LocaleGet([`WORLD_DESC_${this.wid}`, ""]);
 	}
 
 	private get WorldIcon () {

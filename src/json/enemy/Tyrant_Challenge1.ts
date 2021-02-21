@@ -1,7 +1,5 @@
 export default {
   "id": "Tyrant_Challenge1",
-  "name": "폭군 타이런트",
-  "desc": "주인님. 이 특수한 타이런트들은 너무 포악해져서, 주인님의 소중한 분들을 제가 직접 보호해드릴 수 없을 것 같습니다. 하지만 저를 보내 주신다면, 제가 적의 주의를 끌 수는 있을 것 같습니다.\n\n\n-블랙 웜 S9 드림.",
   "icon": "TbarIcon_MP_Tyrant_N",
   "ai": "AI_Tyrant_Challenge_02",
   "rarity": 5,

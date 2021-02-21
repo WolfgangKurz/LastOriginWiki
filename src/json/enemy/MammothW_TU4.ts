@@ -1,7 +1,5 @@
 export default {
   "id": "MammothW_TU4",
-  "name": "한랭지형 매머드",
-  "desc": "일반 매머드보다 포격의 위력은 줄었지만, 장전 속도가 빨라진 것 같아요. 설원에서는 방호력이 증가하는 특성이 있으니 촬영 자료를 참조해 주세요.\n\n\n- 탈론페더 보고함",
   "icon": "TbarIcon_MP_MammothW_N",
   "ai": "AI_Mp_MammothW_Normal_01",
   "rarity": 5,

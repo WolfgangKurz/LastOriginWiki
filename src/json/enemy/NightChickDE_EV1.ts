@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickDE_EV1",
-  "name": "나이트 칙 디텍터",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_NightChickDE_N",
   "ai": "AI_NCDetector_01",
   "rarity": 3,

@@ -13,11 +13,12 @@ import FilterableUnitDB from "@/libs/DB/Unit.Filterable";
 import MapDB from "@/libs/DB/Map";
 import { StoryData } from "@/libs/DB";
 
-import { AssetsRoot, WorldNames } from "@/libs/Const";
+import { AssetsRoot } from "@/libs/Const";
 import { UpdateTitle } from "@/libs/Functions";
 
 import UnitFace from "@/components/UnitFace.vue";
 import { SetMeta } from "@/libs/Meta";
+import { LocaleGet } from "@/libs/Locale";
 
 @Component({
 	components: {
@@ -69,7 +70,7 @@ export default class StoryViewer extends Vue {
 	}
 
 	private get Name () {
-		return WorldNames[this.world] || this.world;
+		return LocaleGet(`WORLD_${this.world}`);
 	}
 
 	private get Area () {

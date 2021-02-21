@@ -1,7 +1,5 @@
 export default {
   "id": "IronPrince_B08",
-  "name": "철의 왕자",
-  "desc": "종말의 끝에, 나는 다시 태어나리라.\n우민들에게 은총을, 대적자에게 심판을.\n내게 무릎 꿇은 자들을 영생의 성가로써 인도하리라.\n\n- 누군가의 일기",
   "icon": "TbarIcon_MP_IronPrince_N",
   "ai": "AI_Boss_IronPrince_01",
   "rarity": 5,
@@ -763,7 +761,7 @@ export default {
                 "value": {
                   "isBuff": true,
                   "type": 101,
-                  "_comment": "STAGE_IMMUNITY_DEBUFF"
+                  "debuff_immune": 20
                 },
                 "overlap": 4
               },
@@ -779,7 +777,7 @@ export default {
                 "value": {
                   "isBuff": true,
                   "type": 101,
-                  "_comment": "STAGE_IMMUNITY_DEBUFF"
+                  "debuff_immune": 74
                 },
                 "overlap": 4
               }

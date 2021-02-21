@@ -8,6 +8,7 @@ import FilterableUnitDB from "@/libs/DB/Unit.Filterable";
 
 import { CurrentEvent, CurrentDate } from "@/libs/Const";
 import EntitySource from "@/libs/EntitySource";
+import { LocaleGet } from "@/libs/Locale";
 
 @Component({})
 export default class SourceBadge extends Vue {
@@ -71,44 +72,44 @@ export default class SourceBadge extends Vue {
 
 		const content = (() => {
 			if (this.Source.IsUninstalled)
-				return "미구현";
+				return LocaleGet("COMMON_SOURCE_NOT_IMPLEMENTED");
 			else if (this.Source.IsPrivateItem) {
 				const unit = FilterableUnitDB.find(x => x.uid === this.Source.PrivateId);
-				if (unit) return `${unit.name}`;
+				if (unit) return LocaleGet(`UNIT_${unit.uid}`);
 				return this.Source.PrivateId;
 			} else if (this.Source.IsLimited)
-				return "획득처 없음";
+				return LocaleGet("COMMON_SOURCE_LIMITED");
 			else if (this.Source.IsChallenge) {
-				const text = this.Source.IsReward ? "최종 보상" : "클리어 보상";
-				const ChallengeName: Record<string, string> = {
-					1: "밀고, 당기고, 불질러!",
-					2: "피조물과 설계자",
-					3: "실패작의 폭주",
-					4: "레모네이드 VR",
-					5: "바다의 소녀들",
-				};
+				const name = LocaleGet([`COMMON_CHALLENGE_${this.Source.ChallengeId}`, this.Source.ChallengeId]);
+				const text = this.Source.IsReward
+					? LocaleGet("COMMON_SOURCE_FINISH_REWARD")
+					: LocaleGet("COMMON_SOURCE_CLEAR_REWARD");
+				// const ChallengeName: Record<string, string> = {
+				// 	1: "밀고, 당기고, 불질러!",
+				// 	2: "피조물과 설계자",
+				// 	3: "실패작의 폭주",
+				// 	4: "레모네이드 VR",
+				// 	5: "바다의 소녀들",
+				// };
 
 				if (this.minimum)
-					return "외부 통신 요청";
-				else if (this.detail) {
-					return (
-						`외부 통신 요청 (${ChallengeName[this.Source.ChallengeId] || this.Source.ChallengeId}` +
-						` ${this.Source.ChallengeDifficulty}) ${text}`
-					).trim();
-				} else
-					return `${ChallengeName[this.Source.ChallengeId] || this.Source.ChallengeId} ${this.Source.ChallengeDifficulty}`;
+					return LocaleGet("COMMON_SOURCE_CHALLENGE");
+				else if (this.detail)
+					return `${LocaleGet("COMMON_SOURCE_CHALLENGE")} (${name} ${this.Source.ChallengeDifficulty}) ${text}`.trim();
+				else
+					return `${name} ${this.Source.ChallengeDifficulty}`;
 			} else if (this.Source.IsEndlessWar) {
 				if (this.detail)
-					return `영원한 전장 (${this.Source.EndlessWarPrice} 광물)`;
+					return LocaleGet("COMMON_SOURCE_EW_RESOURCES", this.Source.EndlessWarPrice);
 				else
-					return "영원한 전장";
+					return LocaleGet("COMMON_SOURCE_EW");
 			} else if (this.Source.IsSupplementary) {
-				const text = this.Source.IsReward ? "클리어 보상" : "";
+				const text = this.Source.IsReward ? LocaleGet("COMMON_SOURCE_CLEAR_REWARD") : "";
 				if (!this.minimum) {
 					const unit = FilterableUnitDB.find(x => x.uid === this.Source.SupplementaryUnit);
-					return `${(unit && unit.name) || "???"} 외전 ${text}`.trim();
+					return `${LocaleGet("COMMON_SOURCE_SUBSTORY", (unit && LocaleGet(`UNIT_${unit.uid}`)) || "???")} ${text}`.trim();
 				} else
-					return "외전";
+					return LocaleGet("COMMON_SOURCE_SUBSTORY_SINGLE");
 			} else if (this.Source.IsExchange) {
 				if (this.Source.IsEvent) {
 					const event = this.Source.FullEventName;
@@ -119,21 +120,21 @@ export default class SourceBadge extends Vue {
 						return [
 							event,
 							` '${item}' `/* 아이템 아이콘 컴포넌트 */,
-							`${data.value}개`,
+							LocaleGet("COMMON_SOURCE_EXCHANGE_COUNT", data.value),
 						];
 					} else if (this.minimum)
-						return "이벤트 교환소";
+						return LocaleGet("COMMON_SOURCE_EXCHANGE_EVENT");
 					else
-						return `${event} 교환소`;
+						return `${event} ${LocaleGet("COMMON_SOURCE_EXCHANGE")}`;
 				} else {
 					const data = this.Source.MonthlyData || { year: "?", month: "?" };
 					if (!this.minimum)
-						return `${data.year}년 ${data.month}월 교환소`;
+						return LocaleGet("COMMON_SOURCE_EXCHANGE_DATE", data.year, data.month);
 					else
-						return "교환소";
+						return LocaleGet("COMMON_SOURCE_EXCHANGE");
 				}
 			} else {
-				const text = this.Source.IsReward ? "클리어 보상" : "";
+				const text = this.Source.IsReward ? LocaleGet("COMMON_SOURCE_CLEAR_REWARD") : "";
 				if (this.Source.IsEvent) {
 					const event = this.Source.FullEventName;
 
@@ -144,7 +145,7 @@ export default class SourceBadge extends Vue {
 					// else if (this.minimum && this.Source.IsSideMap)
 					// 	return "이벤트 B";
 					else if (this.minimum)
-						return "이벤트";
+						return LocaleGet("COMMON_SOURCE_EVENT");
 					else
 						return `${this.Source.Map} ${text}`.trim();
 				} else {

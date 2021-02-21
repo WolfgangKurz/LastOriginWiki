@@ -1,7 +1,5 @@
 export default {
   "id": "ProgramMobMS_EW",
-  "name": "가상공간 경보기",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_ProgramMobMS_N",
   "ai": "AI_ProgramMobMS_Normal_01",
   "rarity": 5,

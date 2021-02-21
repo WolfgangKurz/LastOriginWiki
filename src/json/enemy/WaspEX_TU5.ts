@@ -1,7 +1,5 @@
 export default {
   "id": "WaspEX_TU5",
-  "name": "와습 HM",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_Wasp_N",
   "ai": "AI_Wasp_Normal_01",
   "rarity": 3,

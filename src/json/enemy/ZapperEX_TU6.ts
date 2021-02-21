@@ -1,7 +1,5 @@
 export default {
   "id": "ZapperEX_TU6",
-  "name": "강화형 재퍼",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_Zapper_N",
   "ai": "AI_Zapper_EX_01",
   "rarity": 3,

@@ -2,7 +2,7 @@
 	<b-modal v-if="equip && target" v-model="displaySync" centered hide-footer content-class="equip-modal">
 		<template #modal-title>
 			<div class="text-left">
-				{{ target.name }}
+				<locale :k="`EQUIP_${target.fullKey}`" />
 				<div style="font-size: 60%">{{ target.fullKey }}</div>
 			</div>
 		</template>
@@ -17,27 +17,27 @@
 				</b-col>
 				<b-col class="nested">
 					<b-row cols="2">
-						<b-col class="bg-dark text-white">장비 유형</b-col>
+						<b-col class="bg-dark text-white"><locale k="EQUIP_VIEW_TYPE" /></b-col>
 						<b-col>
-							<b-badge v-if="isUninstalled" variant="black">미구현</b-badge>
-							<b-badge v-if="isPrivate" variant="primary">전용장비</b-badge>
+							<b-badge v-if="isUninstalled" variant="black"><locale k="EQUIP_VIEW_TYPE_NOT_IMPLEMENTED" /></b-badge>
+							<b-badge v-if="isPrivate" variant="primary"><locale k="EQUIP_VIEW_TYPE_EXCLUSIVE" /></b-badge>
 							<div>
 								<b-badge variant="success">{{ EquipType }}</b-badge>
 							</div>
 						</b-col>
-						<b-col class="bg-dark text-white">장비 등급</b-col>
+						<b-col class="bg-dark text-white"><locale k="EQUIP_VIEW_GRADE" /></b-col>
 						<b-col>
 							<template v-if="RarityList.length === 1">{{ RarityDisplay[rarity] }}</template>
 							<b-form-select v-else v-model="rarity" size="sm" :options="RarityList" />
 						</b-col>
-						<b-col class="bg-dark text-white">장착 제한</b-col>
+						<b-col class="bg-dark text-white"><locale k="EQUIP_VIEW_LIMIT" /></b-col>
 						<b-col>
-							<span v-if="Limits.length === 0" class="text-secondary">제한 없음</span>
+							<span v-if="Limits.length === 0" class="text-secondary"><locale k="EQUIP_VIEW_LIMIT_NOT" /></span>
 							<template v-else>
 								<span v-for="limit in Limits" :key="`equip-limit-${limit}`">
-									<unit-badge v-if="!UnitName(limit)" :limit="limit" />
+									<unit-badge v-if="!ExistUnit(limit)" :limit="limit" />
 									<a v-else :href="`/units/${limit}`" @click.prevent="GoTo(`/units/${limit}`)">
-										<b-badge class="unit-name-badge" variant="primary">{{ UnitName(limit) }} 🔗</b-badge>
+										<b-badge class="unit-name-badge" variant="primary"><locale :k="`UNIT_${limit}`" /> 🔗</b-badge>
 									</a>
 								</span>
 							</template>
@@ -46,7 +46,7 @@
 				</b-col>
 			</b-row>
 			<b-row class="mt-1">
-				<b-col class="break-keep white-pre-line">{{ target.desc }}</b-col>
+				<b-col class="break-keep white-pre-line"><locale :k="`EQUIP_DESC_${target.fullKey}`" /></b-col>
 			</b-row>
 		</b-container>
 
@@ -54,19 +54,19 @@
 			<b-tab title-link-class="text-dark" :active="displayTab === 'info'" @click="displayTab = 'info'">
 				<template #title>
 					<b-icon-receipt class="mr-1" />
-					장비효과
+					<locale k="EQUIP_VIEW_EFFECT" />
 				</template>
 			</b-tab>
 			<b-tab title-link-class="text-dark" :active="displayTab === 'drop'" @click="displayTab = 'drop'">
 				<template #title>
 					<b-icon-basket-fill class="mr-1" />
-					획득처
+					<locale k="EQUIP_VIEW_SOURCE" />
 				</template>
 			</b-tab>
 			<b-tab title-link-class="text-dark" :active="displayTab === 'enchant'" @click="displayTab = 'enchant'">
 				<template #title>
 					<b-icon-cpu-fill class="mr-1" />
-					강화비용
+					<locale k="EQUIP_VIEW_COST" />
 				</template>
 			</b-tab>
 		</b-tabs>
@@ -75,7 +75,7 @@
 			<b-table-simple bordered fixed table-class="text-center">
 				<b-tbody>
 					<b-tr>
-						<b-th variant="dark">강화 레벨 +{{ level }}</b-th>
+						<b-th variant="dark"><locale k="EQUIP_VIEW_EFFECT_LEVEL" :p0="level.toString()" /></b-th>
 					</b-tr>
 					<b-tr>
 						<b-td>
@@ -94,7 +94,8 @@
 					<b-col class="text-center pt-2">
 						<b-badge v-if="target.craftable" variant="dark">
 							<b-icon-hammer class="mr-1" />
-							제조 {{ CraftTime }}
+							<locale k="EQUIP_CREATIONTIME_TIME" />
+							{{ CraftTime }}
 						</b-badge>
 
 						<div v-for="(area, aindex) in Sources" :key="`equip-modal-source-${aindex}`">
@@ -111,9 +112,12 @@
 						<template v-if="Sources.length === 0">
 							<b-badge v-if="target.craftable" variant="dark">
 								<b-icon-hammer class="mr-1" />
-								제조 {{ CraftTime }}
+								<locale k="EQUIP_CREATIONTIME_TIME" />
+								{{ CraftTime }}
 							</b-badge>
-							<span v-else class="text-secondary">획득처 정보 없음 (제조 불가)</span>
+							<span v-else class="text-secondary">
+								<locale k="EQUIP_VIEW_SOURCE_NONE" />
+							</span>
 						</template>
 					</b-col>
 				</b-row>
@@ -123,12 +127,12 @@
 		<b-table-simple v-if="displayTab === 'enchant'" bordered table-class="text-center">
 			<b-tbody>
 				<b-tr>
-					<b-th variant="dark">레벨</b-th>
-					<b-th variant="dark">강화 비용</b-th>
+					<b-th variant="dark"><locale k="EQUIP_VIEW_COST_LEVEL" /></b-th>
+					<b-th variant="dark"><locale k="EQUIP_VIEW_COST_COST" /></b-th>
 					<b-th variant="dark">
 						<img class="upmodule-icon" :src="`${AssetsRoot}/${imageExt}/item/UI_Icon_Equip_ChipSet_T4.${imageExt}`" />
 					</b-th>
-					<b-th variant="dark">총 비용</b-th>
+					<b-th variant="dark"><locale k="EQUIP_VIEW_COST_TOTALCOST" /></b-th>
 					<b-th variant="dark">
 						<img class="upmodule-icon" :src="`${AssetsRoot}/${imageExt}/item/UI_Icon_Equip_ChipSet_T4.${imageExt}`" />
 					</b-th>
@@ -157,7 +161,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, Watch, PropSync } from "vue-property-decorator";
 
-import { AssetsRoot, ImageExtension, RarityDisplay } from "@/libs/Const";
+import { AssetsRoot, EquipTypeDisplay, ImageExtension, RarityDisplay } from "@/libs/Const";
 import { FormatNumber } from "@/libs/Functions";
 
 import UnitBadge from "@/components/UnitBadge.vue";
@@ -305,14 +309,8 @@ export default class EquipModal extends Vue {
 	private get EquipType () {
 		if (!this.equip) return "???";
 
-		const typeTable = {
-			[ITEM_TYPE.CHIP]: "칩",
-			[ITEM_TYPE.SPCHIP]: "OS",
-			[ITEM_TYPE.SUBEQ]: "보조장비",
-		} as Record<ITEM_TYPE, string>;
-
 		const type = this.equip.type;
-		return typeTable[type] || "???";
+		return EquipTypeDisplay()[type] || "???";
 	}
 
 	private get CraftTime () {
@@ -332,7 +330,7 @@ export default class EquipModal extends Vue {
 		return {
 			[ACTOR_GRADE.B]: Decimal.div(3, 4),
 			[ACTOR_GRADE.A]: Decimal.div(5, 6),
-			[ACTOR_GRADE.S]: Decimal.div(10, 17),
+			[ACTOR_GRADE.S]: Decimal.div(10, 7),
 			[ACTOR_GRADE.SS]: Decimal.div(11, 20),
 		};
 	}
@@ -379,12 +377,9 @@ export default class EquipModal extends Vue {
 		return stat;
 	}
 
-	private UnitName (uid: string) {
-		if (!this.DB) return undefined;
-
-		const char = FilterableUnitDB.find(x => x.uid === uid);
-		if (char) return char.name;
-		return undefined;
+	private ExistUnit (uid: string) {
+		if (!this.DB) return false;
+		return FilterableUnitDB.some(x => x.uid === uid);
 	}
 
 	private mounted () {

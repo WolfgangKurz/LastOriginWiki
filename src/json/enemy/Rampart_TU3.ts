@@ -1,7 +1,5 @@
 export default {
   "id": "Rampart_TU3",
-  "name": "경비용 램파트",
-  "desc": "램파트의 자율 경비용 기종이다.",
   "icon": "TbarIcon_MP_Rampart_N",
   "ai": "AI_Mp_Rampart_01",
   "rarity": 2,

@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickAQG_TU2",
-  "name": "아쿠아 칙 G",
-  "desc": "...주위, 추워졌어. 하지만...땀이, 식어서. 기분, 좋아.\n\n\n- 카엔",
   "icon": "TbarIcon_MP_NightChickAQG_N",
   "ai": "AI_AquaChick_Normal_01",
   "rarity": 5,

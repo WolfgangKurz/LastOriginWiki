@@ -1,7 +1,5 @@
 export default {
   "id": "ProgramMobAN_TU2",
-  "name": "철충 사념체 (포병)",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_ProgramMobAN_N",
   "ai": "AI_ProgramMobAN_Normal_01",
   "rarity": 5,

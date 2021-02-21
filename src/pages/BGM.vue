@@ -1,20 +1,20 @@
 <template>
 	<div class="bgm">
-		<b-card header="BGM 목록">
+		<b-card :header="LocaleGet('BGM_LIST')">
 			<b-table-simple bordered table-class="bgm-table">
 				<b-thead>
 					<b-tr>
-						<b-th>이름</b-th>
-						<b-th>설명</b-th>
-						<b-th>플레이어</b-th>
+						<b-th><locale k="BGM_NAME" /></b-th>
+						<b-th><locale k="BGM_DESC" /></b-th>
+						<b-th><locale k="BGM_PLAYER" /></b-th>
 					</b-tr>
 				</b-thead>
 				<b-tbody>
-					<b-tr v-for="(desc, name) in BGMList" :key="`bgm-list-${name}`">
-						<b-th>{{ name }}</b-th>
-						<b-td>{{ desc }}</b-td>
+					<b-tr v-for="id in BGMList" :key="`bgm-list-${id}`">
+						<b-th>{{ id }}</b-th>
+						<b-td><locale :k="`BGM_DESC_${id}`" /></b-td>
 						<b-td class="player-cell">
-							<audio :src="`${AssetsRoot}/audio/bgm/${name}.mp3`" type="audio/mp3" controls loop preload="none" />
+							<audio :src="`${AssetsRoot}/audio/bgm/${id}.mp3`" type="audio/mp3" controls loop preload="none" />
 						</b-td>
 					</b-tr>
 				</b-tbody>
@@ -39,42 +39,20 @@ export default class BGM extends Vue {
 	}
 
 	private get BGMList () {
-		return {
-			Title: "로그인 화면",
-			Lobby: "기본 로비",
-
-			Talk_01: "대화 1",
-			Talk_02: "대화 2",
-			Talk_03: "대화 3",
-			Talk_04: "대화 4",
-			Talk_05: "대화 5",
-			Talk_06: "대화 6",
-			Talk_07: "대화 7",
-
-			Thrill_01: "대화 (전율) 1",
-
-			Battle_01: "전투 1",
-			Battle_02: "전투 2",
-			Battle_03: "전투 3 (만월의 야상곡 전투)",
-			Battle_04: "전투 4",
-			Battle_Boss_01: "보스 전투 1",
-			Battle_Boss_02: "보스 전투 2",
-			Battle_Boss_03: "보스 전투 3",
-
-			Marriage_01: "서약 엘리베이터",
-			Marriage_02: "서약 갑판",
-
-			Summer_01: "리오로보스의 유산?",
-			Summer_02: "리오보로스의 유산?",
-			Christmas_01: "세인트 오르카의 비밀작전?",
-			Christmas_02: "세인트 오르카의 비밀작전 로비",
-			Forest_of_Elves: "요정 마을의 아리아?",
-			Valentine: "발렌타인데이",
-
-			Mystic: "흐린 기억 속의 나라 1",
-			Noire_01: "흐린 기억 속의 나라 2",
-			Noire_02: "흐린 기억 속의 나라 3",
-		};
+		return [
+			"Title", "Lobby",
+			"Talk_01", "Talk_02", "Talk_03", "Talk_04", "Talk_05", "Talk_06", "Talk_07",
+			"Thrill_01",
+			"Battle_01", "Battle_02", "Battle_03", "Battle_04",
+			"Battle_Boss_01", "Battle_Boss_02", "Battle_Boss_03",
+			"IronPrince",
+			"Marriage_01", "Marriage_02",
+			"Summer_01", "Summer_02",
+			"Christmas_01", "Christmas_02",
+			"Forest_of_Elves",
+			"Valentine",
+			"Mystic", "Noire_01", "Noire_02",
+		];
 	}
 
 	private mounted () {

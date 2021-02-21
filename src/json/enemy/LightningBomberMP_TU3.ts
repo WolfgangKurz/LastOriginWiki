@@ -1,7 +1,5 @@
 export default {
   "id": "LightningBomberMP_TU3",
-  "name": "라이트닝 봄버 Type-X",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_LightningBomber_N",
   "ai": "AI_LightningBomber_Normal_01",
   "rarity": 5,

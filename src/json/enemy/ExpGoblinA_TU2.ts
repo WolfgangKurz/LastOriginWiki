@@ -1,7 +1,5 @@
 export default {
   "id": "ExpGoblinA_TU2",
-  "name": "실험체 고블린 파쇄병",
-  "desc": "고블린이었던 것으로 보인다. 더 이상 생물체라고 할 수 있을지는 모르겠다…",
   "icon": "TbarIcon_MP_ExpGoblinA_N",
   "ai": "AI_ExpGoblinA_Normal_01",
   "rarity": 4,

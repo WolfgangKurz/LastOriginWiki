@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickC_EV2",
-  "name": "나이트 칙 캐논",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_NightChickC_N",
   "ai": "AI_Ncc_Event_01",
   "rarity": 3,

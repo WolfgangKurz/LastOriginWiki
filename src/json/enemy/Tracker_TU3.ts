@@ -1,7 +1,5 @@
 export default {
   "id": "Tracker_TU3",
-  "name": "추격자",
-  "desc": "추격자~~~",
   "icon": "TbarIcon_MP_Tracker_N",
   "ai": "AI_MP_Tracker_01",
   "rarity": 5,

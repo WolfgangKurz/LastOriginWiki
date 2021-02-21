@@ -1,7 +1,5 @@
 export default {
   "id": "MrAlfred_N",
-  "name": "Mr 알프레드",
-  "desc": "???\n\n\n - ???",
   "icon": "TbarIcon_MP_MrAlfred2_N",
   "ai": "AI_MP_MrAlfred",
   "rarity": 5,

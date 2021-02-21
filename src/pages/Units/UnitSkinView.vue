@@ -50,7 +50,10 @@
 		</b-aspect>
 
 		<template v-if="collapsed">
-			<b-alert variant="primary" show v-if="skin.artist">일러스트레이터 : {{ skin.artist }}</b-alert>
+			<b-alert variant="primary" show v-if="skin.artist">
+				<locale k="UNIT_VIEW_ILLUSTRATOR" /> :
+				{{ skin.artist }}
+			</b-alert>
 			<b-card v-if="skin.name" :header="skin.name" :class="{ 'mb-2': true, 'skin-name-desc': true, 'mt-2': !skin.artist }">{{
 				skin.desc
 			}}</b-card>

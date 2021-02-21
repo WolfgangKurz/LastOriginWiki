@@ -1,7 +1,5 @@
 export default {
   "id": "GigantesDagon_N",
-  "name": "다곤씨 (대여 중)",
-  "desc": "아르바이트 중인 기간테스인 듯하다...",
   "icon": "TbarIcon_MP_GigantesDagon_N",
   "ai": "AI_MP_Dagon_Event_01",
   "rarity": 4,

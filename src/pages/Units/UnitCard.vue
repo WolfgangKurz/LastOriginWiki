@@ -15,13 +15,15 @@
 					</span>
 				</span>
 			</div>
-			{{ unit.name }}
+			<raw :data="unitName" />
 
 			<div class="unit-badges">
-				<b-badge v-if="unit.body === 1" variant="info" class="ml-1">AGS</b-badge>
+				<b-badge v-if="unit.body === 1" variant="info" class="ml-1">
+					<locale k="COMMON_UNIT_BODY_AGS" />
+				</b-badge>
 				<template v-if="leftPromotions">
 					<rarity-badge v-for="pro in leftPromotions" :key="`unit-table-unit-${unit.uid}-pro-${pro}`" class="ml-1" :rarity="pro">
-						{{ RarityDisplay[pro] }} 승급
+						<locale k="UNIT_CARD_PROMOTION_BADGE" :p0="RarityDisplay[pro]" />
 					</rarity-badge>
 				</template>
 			</div>
@@ -31,23 +33,30 @@
 	</b-card>
 	<div v-else class="unit-card text-left clearfix" @click.prevent="!noLink && OnClick()">
 		<unit-face :uid="unit.uid" class="unit-face float-left" />
-		<div class="unit-name">{{ unit.name }}</div>
+		<div class="unit-name">
+			<locale :k="`UNIT_${unit.uid}`" />
+		</div>
 		<div class="unit-flag">
-			<b-badge v-if="unit.body === 1" variant="info" class="mr-1">AGS</b-badge>
-			<b-badge v-if="isPromoted" variant="danger" class="mr-1">승급 후</b-badge>
+			<b-badge v-if="unit.body === 1" variant="info" class="mr-1">
+				<locale k="COMMON_UNIT_BODY_AGS" />
+			</b-badge>
+			<b-badge v-if="isPromoted" variant="danger" class="mr-1">
+				<locale k="UNIT_CARD_PROMOTION_AFTER" />
+			</b-badge>
 
 			<div v-if="leftPromotions" class="float-right">
 				<rarity-badge v-for="pro in leftPromotions" :key="`unit-table-unit-${unit.uid}-pro-${pro}`" :rarity="pro" class="ml-1">
-					{{ RarityDisplay[pro] }} 승급
+					<locale k="UNIT_CARD_PROMOTION_BADGE" :p0="RarityDisplay[pro]" />
 				</rarity-badge>
 			</div>
 		</div>
 	</div>
 </template>
 
-<script lang="ts">
+<script lang="tsx">
 import Vue from "vue";
 import Component from "vue-class-component";
+import { LocaleGet } from "@/libs/Locale";
 
 import UnitFace from "@/components/UnitFace.vue";
 import RarityBadge from "@/components/RarityBadge.vue";
@@ -88,6 +97,12 @@ export default class UnitCard extends Vue {
 	})
 	private noLink!: boolean;
 
+	@Prop({
+		type: Boolean,
+		default: false,
+	})
+	private shortName!: boolean;
+
 	private get AssetsRoot () {
 		return AssetsRoot;
 	}
@@ -119,6 +134,18 @@ export default class UnitCard extends Vue {
 
 	private get leftPromotions () {
 		return (this.unit.promo || []).filter(x => x > this.rarity);
+	}
+
+	private get unitName () {
+		if (this.shortName) {
+			const h = this.$createElement;
+			const name = LocaleGet(`UNIT_${this.unit.uid}`);
+			const sname = LocaleGet(`UNIT_SHORT_${this.unit.uid}`);
+
+			if (name === sname) return (this as any)._v(name);
+			return name.split(sname).map(x => x.length === 0 ? sname : h("span", { staticClass: "text-secondary" }, [x]));
+		} else
+			return (this as any)._v(LocaleGet(`UNIT_${this.unit.uid}`));
 	}
 
 	@Emit("click")

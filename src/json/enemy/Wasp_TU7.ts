@@ -1,7 +1,5 @@
 export default {
   "id": "Wasp_TU7",
-  "name": "와습",
-  "desc": "누가 이 자식한테 이 뿔침을 달아준 거야? 물론 나처럼 빠르진 않지만 나보다 느린 애들은 전부 조심하도록 해. 제법 빠른 속도로 돌격을 하니 말이야.\n\n\n- 슬레이프니르",
   "icon": "TbarIcon_MP_Wasp_N",
   "ai": "AI_Wasp_Normal_01",
   "rarity": 3,

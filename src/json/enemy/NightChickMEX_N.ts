@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickMEX_N",
-  "name": "강화형 칙 런쳐",
-  "desc": "흔히 볼 수 있는 미사일로 무장한 철충. 무조건 앞으로 돌격하는 모습이 브라우니와 비슷합니다.\n\n\n- 보고자 레프리콘",
   "icon": "TbarIcon_MP_NightChickM_N",
   "ai": "AI_Jako_Normal_01",
   "rarity": 3,

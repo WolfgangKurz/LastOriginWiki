@@ -1,7 +1,5 @@
 export default {
   "id": "NightChick_N",
-  "name": "나이트 칙",
-  "desc": "하아… 이 예쁜 애의 이름은 나이트 칙입니당. 예쁘지만 더 예쁜 폴른이를 잡아먹은 무서운 녀석들이에용. 쉬지않고 기관총을 난사하니 주의해 주세용~!\n\n\n- 보고자 그렘린입니당! ",
   "icon": "TbarIcon_MP_NightChick_N",
   "ai": "AI_Jako_Special_01",
   "rarity": 2,

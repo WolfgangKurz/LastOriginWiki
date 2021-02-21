@@ -1,7 +1,5 @@
 export default {
   "id": "AMG11AA_EV3",
-  "name": "대공용 AMG-11",
-  "desc": "오~ 이 녀석들 왠지 마음에 드는데? 몇 대 가져가서 네리의 부하로 쓰면 되겠어! 네리 대신 일하게 해야지!\n\n\n - 네레이드 보고함",
   "icon": "TbarIcon_MP_AMG11AA_N",
   "ai": "AI_AAAMG11_Normal_01",
   "rarity": 4,

@@ -1,7 +1,5 @@
 export default {
   "id": "NightChick_EW2",
-  "name": "나이트 칙",
-  "desc": "둠 이터에게 쫓기는 중인 나이트 칙입니다.",
   "icon": "TbarIcon_MP_NightChick_N",
   "ai": "AI_Jako_Normal_01",
   "rarity": 3,

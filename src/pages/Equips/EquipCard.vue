@@ -25,6 +25,7 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Emit, Prop } from "vue-property-decorator";
+import { LocaleGet } from "@/libs/Locale";
 
 import { FilterableEquip } from "@/libs/Types/Equip.Filterable";
 import EntitySource from "@/libs/EntitySource";
@@ -58,7 +59,8 @@ export default class EquipCard extends Vue {
 	private noLink!: boolean;
 
 	private get Name () {
-		return this.equip.name.replace(/ (RE|MP|SP|EX)$/, "");
+		return LocaleGet(`EQUIP_${this.equip.fullKey}`) // this.equip.name
+			.replace(/ (RE|MP|SP|EX)$/, "");
 	}
 
 	private get Sources () {

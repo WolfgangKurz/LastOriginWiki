@@ -1,7 +1,5 @@
 export default {
   "id": "Undine_EV2",
-  "name": "퐁 레베크",
-  "desc": "치즈는 역시 프랑스 산이 최고에요!\n\n\n- 운디네",
   "icon": "TbarIcon_MP_Undine_N",
   "ai": "AI_MP_Undine_Event_02",
   "rarity": 4,

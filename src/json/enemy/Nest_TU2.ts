@@ -1,7 +1,5 @@
 export default {
   "id": "Nest_TU2",
-  "name": "네스트",
-  "desc": "저게 날아다니는 항공모함이든 뭐든 나는 상관없어. 어쨌든 저 녀석은 날 무시한 대가를 치러야 할 거야.\n\n-보고자 레오나",
   "icon": "TbarIcon_MP_Nest_B07",
   "ai": "AI_Boss_Nest_Normal_02",
   "rarity": 5,

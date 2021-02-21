@@ -1,7 +1,5 @@
 export default {
   "id": "CenturionEX_TU5",
-  "name": "엘리트 센츄리온",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_Centurion_N",
   "ai": "AI_Centurion_Special_01",
   "rarity": 4,

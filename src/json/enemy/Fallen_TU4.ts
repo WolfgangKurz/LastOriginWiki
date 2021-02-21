@@ -1,7 +1,5 @@
 export default {
   "id": "Fallen_TU4",
-  "name": "경비용 폴른",
-  "desc": "폴른의 자율 경비용 기종이다.",
   "icon": "TbarIcon_MP_Fallen_N",
   "ai": "AI_Mp_Fallen_01",
   "rarity": 2,

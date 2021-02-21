@@ -1,7 +1,5 @@
 export default {
   "id": "ProgramMobAT_EW",
-  "name": "가상공간 탱크",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_ProgramMobAT_N",
   "ai": "AI_ProgramMobAT_Normal_01",
   "rarity": 5,

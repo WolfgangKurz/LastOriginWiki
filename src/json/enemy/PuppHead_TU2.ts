@@ -1,7 +1,5 @@
 export default {
   "id": "PuppHead_TU2",
-  "name": "경비용 펍 헤드",
-  "desc": "펍 헤드의 자율 경비용 기종이다.",
   "icon": "TbarIcon_MP_PuppHead_N",
   "ai": "AI_Hvst_Normal_02",
   "rarity": 2,

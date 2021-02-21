@@ -1,7 +1,5 @@
 export default {
   "id": "AMG11_VT5",
-  "name": "초코 여왕의 감시병",
-  "desc": "초코 여왕이 경비용 AMG 기종을 도색해 만들어낸 기체입니다.",
   "icon": "TbarIcon_MP_AMG11_V2",
   "ai": "AI_MP_AntiAirBuffer_01",
   "rarity": 2,

@@ -1,7 +1,5 @@
 export default {
   "id": "NightChick_RV",
-  "name": "나이트 칙 Type-S",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_NightChick_RV",
   "ai": "AI_Jako_Special_01",
   "rarity": 5,

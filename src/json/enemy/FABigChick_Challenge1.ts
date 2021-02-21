@@ -1,7 +1,5 @@
 export default {
   "id": "FABigChick_Challenge1",
-  "name": "FA 빅 칙 베타",
-  "desc": "우와... 오빠, 나도 저번에 장난칠 때 이 정도까지는 생각 안 했다구? 아무리 튼튼한 언니들이라도 이걸 버틸 수는 없을 거야. 대신 시선을 돌릴 만한 걸 찾아보는 게 어때?\n\n\n- 보고자 닥터",
   "icon": "TbarIcon_MP_FABigChick_N",
   "ai": "AI_FABigChick_Challenge_01",
   "rarity": 3,

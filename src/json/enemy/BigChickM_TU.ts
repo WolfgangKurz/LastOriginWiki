@@ -1,7 +1,5 @@
 export default {
   "id": "BigChickM_TU",
-  "name": "빅 칙 런쳐",
-  "desc": "엄청나게 피하기 힘든 미사일을 마구 쏴댐. 멀리서 처리하는 게 제일 좋을 것 같아.\n\n\n- 핀토가 정찰 중 보고",
   "icon": "TbarIcon_MP_BigChickM_N",
   "ai": "AI_BigChickM_01",
   "rarity": 4,

@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickDEX_TU3",
-  "name": "강화형 칙 디텍터",
-  "desc": "강한 방패 전파를 쏴서 귀찮긴 한데, 냉기에 약한지 기온이 내려가면 이상을 일으켜 오히려 도움이 되는 것 같아.\n\n\n- 엠프리스 보고함",
   "icon": "TbarIcon_MP_NightChickDE_N",
   "ai": "AI_Mp_ChDetectorEx_Normal_01",
   "rarity": 4,

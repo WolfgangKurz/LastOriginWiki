@@ -1,7 +1,5 @@
 export default {
   "id": "Slasher_TU4",
-  "name": "슬래셔",
-  "desc": "회피와 기동 능력이 매우 뛰어납니다. 정밀 사격으로 처리해야 할 것 같습니다.\n\n\n- 발키리 보고함",
   "icon": "TbarIcon_MP_Slasher_N",
   "ai": "AI_MP_Slasher_01",
   "rarity": 4,

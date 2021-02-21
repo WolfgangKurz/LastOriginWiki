@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickSP_EV1",
-  "name": "칙 스나이퍼",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_NightChickSP_N",
   "ai": "AI_Jako_Sniper_01",
   "rarity": 3,

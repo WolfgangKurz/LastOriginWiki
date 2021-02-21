@@ -1,7 +1,5 @@
 export default {
   "id": "LegionMk2_TU3",
-  "name": "레기온 Mk.II",
-  "desc": "레기온의 개량형인 것 같군요. 적의 움직임을 예측해 공격하니 대응할 장비가 필요해 보이네요. 공격 연계 능력도 높아졌으니 먼저 처리해 변수를 줄이는 게 좋겠습니다.\n\n\n- 아르망 보고함",
   "icon": "TbarIcon_MP_LegionMk2_N",
   "ai": "AI_Mp_LegionMk2_Normal_01",
   "rarity": 4,

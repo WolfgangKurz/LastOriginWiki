@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickMEX_TU5",
-  "name": "강화형 칙 런쳐",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_NightChickM_N",
   "ai": "AI_Jako_Normal_01",
   "rarity": 3,

@@ -9,7 +9,7 @@
 					<i class="unit-role" :data-role="unit.role" />
 				</span>
 			</div>
-			<div class="float-left">{{ unit.name }}</div>
+			<div class="float-left"><locale :k="`UNIT_${unit.uid}`" /></div>
 			<small v-if="chance < 100" class="ml-1 text-bold">({{ chance }}%)</small>
 		</b-card>
 	</div>

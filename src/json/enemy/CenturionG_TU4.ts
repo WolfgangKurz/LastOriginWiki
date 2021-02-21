@@ -1,7 +1,5 @@
 export default {
   "id": "CenturionG_TU4",
-  "name": "센츄리온 제네럴",
-  "desc": "지휘관 역할을 하는 철충인가 보네… 저렇게 무리하게 부하들을 다루면 안 좋을 것 같은데… 역시 적당히 하는 게 최고야...\n\n\n- 이프리트 보고함",
   "icon": "TbarIcon_MP_CenturionG_N",
   "ai": "AI_Mp_CenturionG_Normal_01",
   "rarity": 5,

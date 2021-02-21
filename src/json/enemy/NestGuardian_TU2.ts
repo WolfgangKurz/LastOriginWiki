@@ -1,7 +1,5 @@
 export default {
   "id": "NestGuardian_TU2",
-  "name": "네스트 가디언",
-  "desc": "네스트에서 사출된 전투 기계로 네스트를 위협으로부터 지키는 게 목적",
   "icon": "TbarIcon_MP_NestGuardian_N",
   "ai": "AI_NestGuardian_Normal_02",
   "rarity": 5,

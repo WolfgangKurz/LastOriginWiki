@@ -1,9 +1,9 @@
 <template>
 	<b-card class="text-left" no-body>
 		<b-card-header v-b-toggle.collapse_stats>
-			전투원 강화
+			<locale k="UNIT_STATUS_UPGRADE" />
 			<div :class="UnitStatsHeaderClass">
-				<small class="pr-2">잔여 포인트</small>
+				<small class="pr-2"><locale k="UNIT_STATUS_UPGRADE_LEFTPOINTS" /></small>
 				<b-badge pill :variant="LeftClass">{{ unit.LeftPoints }}</b-badge>
 			</div>
 		</b-card-header>
@@ -13,7 +13,7 @@
 					<b-col lg="5" cols="12" class="text-left">
 						<span class="stat-label">
 							<stat-icon :stat="key" />
-							<strong>{{ StatName[key] }}</strong>
+							<strong>{{ statNames[key] }}</strong>
 						</span>
 						<span class="d-inline-block">
 							<small class="text-secondary">Lv.</small>
@@ -54,35 +54,15 @@ export default class UnitStatsUpgrade extends Vue {
 	})
 	private unit!: Unit;
 
+	@Prop({
+		type: Object,
+		default: () => ({}),
+	})
+	private statNames!: Record<string, string>;
+
 	// private get StatList () {
 	// 	return StatList;
 	// }
-
-	private get StatName (): Record<StatType, string> {
-		return {
-			"resist.fire": "화염 저항",
-			"resist.ice": "냉기 저항",
-			"resist.lightning": "번개 저항",
-			ATK: "공격력",
-			DEF: "방어력",
-			HP: "체력",
-			ACC: "적중률",
-			EV: "회피율",
-			Cri: "치명타",
-			SPD: "행동력",
-			armor_pierce: "방어 관통",
-			Range: "사거리",
-			"damage.light": "대경장 피해량",
-			"damage.air": "대기동 피해량",
-			"damage.heavy": "대중장 피해량",
-			damage_reduce: "받는 피해 감소",
-			Resist: "효과 저항",
-			off: "효과 해제",
-			"off.-ACC": "적중 감소 해제",
-			"off.-EV": "회피 감소 해제",
-			"off.-Range": "사거리 감소 해제",
-		};
-	}
 
 	private get UnitStatsHeaderClass () {
 		const sUnit = this.unit;

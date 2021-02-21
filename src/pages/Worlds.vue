@@ -1,9 +1,13 @@
 <template>
 	<div class="worlds text-left">
-		<h2>세계 정보</h2>
+		<h2>
+			<locale k="MENU_WORLDS" />
+		</h2>
 		<hr />
 
-		<h4>메인스토리 / 진행중인 이벤트</h4>
+		<h4>
+			<locale k="WORLDS_MAINSTORY_EVENT" />
+		</h4>
 		<b-row cols="1" cols-lg="2">
 			<b-col v-for="item in Tops" :key="`worlds-top-${item}`">
 				<world-item linked :wid="item" @goto="GoTo" />
@@ -11,7 +15,9 @@
 		</b-row>
 		<hr />
 
-		<h4>외전 / 외부 통신 요청</h4>
+		<h4>
+			<locale k="WORLDS_SUBSTORY_CHALLENGE" />
+		</h4>
 		<b-row cols="1" cols-lg="2">
 			<b-col v-for="item in SupCha" :key="`worlds-list-${item}`">
 				<world-item linked :wid="item" @goto="GoTo" />
@@ -19,7 +25,9 @@
 		</b-row>
 		<hr />
 
-		<h4>지난 이벤트</h4>
+		<h4>
+			<locale k="WORLDS_PAST_EVENT" />
+		</h4>
 		<b-row cols="1" cols-lg="2">
 			<b-col v-for="item in List" :key="`worlds-list-${item}`">
 				<world-item linked :wid="item" @goto="GoTo" />
@@ -32,10 +40,11 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Watch } from "vue-property-decorator";
+import { LocaleGet } from "@/libs/Locale";
 
 import WorldItem from "./Worlds/WorldItem.vue";
 
-import { AssetsRoot, ImageExtension, WorldNames } from "@/libs/Const";
+import { AssetsRoot, ImageExtension, WorldIds } from "@/libs/Const";
 import { UpdateTitle } from "@/libs/Functions";
 import { SetMeta } from "@/libs/Meta";
 
@@ -58,7 +67,7 @@ export default class Worlds extends Vue {
 	}
 
 	private get List () {
-		return Object.keys(WorldNames)
+		return WorldIds
 			.filter(x => !x.startsWith("EvA") &&
 				!this.Tops.includes(x) &&
 				!this.SupCha.includes(x));
@@ -71,7 +80,7 @@ export default class Worlds extends Vue {
 	private mounted () {
 		SetMeta(["description", "twitter:description"], "세계 목록을 표시합니다. 현재 진행중이거나 진행될 예정인 이벤트도 확인할 수 있습니다.");
 		SetMeta(["twitter:image", "og:image"], null);
-		UpdateTitle("세계정보");
+		UpdateTitle(LocaleGet("MENU_WORLDS"));
 	}
 }
 </script>

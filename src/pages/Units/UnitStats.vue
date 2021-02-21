@@ -15,17 +15,17 @@
 						<unit-face :uid="unit.uid" size="52" />
 					</div>
 					<strong class="pt-1">
-						{{ unit.name }}
+						<locale :k="`UNIT_${unit.uid}`" />
 						<b-badge class="ml-1" variant="secondary">{{ RarityName[sUnit.Rarity] }}</b-badge>
 					</strong>
 					<div>
-						<small>{{ unit.group }}・{{ UnitType }}・{{ UnitRole }}</small>
+						<small> <locale :k="`UNIT_GROUP_${unit.group}`" />・{{ UnitType }}・{{ UnitRole }}</small>
 					</div>
 					<div class="clearfix" />
 				</b-col>
 				<hr class="d-md-none col-11" />
 				<b-col cols="12" md="6">
-					<strong>출격 비용</strong>
+					<strong><locale k="UNIT_VIEW_COST" /></strong>
 					<b-row>
 						<b-col cols="4">
 							<img class="res-icon" :src="`${AssetsRoot}/res-component.png`" />
@@ -142,7 +142,7 @@
 						</b-input-group-append>
 					</b-input-group>
 
-					<unit-stats-upgrade class="mt-2" :unit="sUnit" />
+					<unit-stats-upgrade class="mt-2" :unit="sUnit" :stat-names="StatName" />
 					<unit-stats-core-link class="mt-2" :unit="sUnit" />
 					<unit-stats-equip class="mt-2" :unit="sUnit" />
 				</b-card>
@@ -157,6 +157,7 @@ import { Decimal } from "decimal.js";
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
+import { LocaleGet } from "@/libs/Locale";
 
 import { AssetsRoot, SortieCost } from "@/libs/Const";
 
@@ -256,19 +257,21 @@ export default class UnitStatus extends Vue {
 	}
 
 	private get UnitType () {
-		return {
-			[ACTOR_CLASS.TROOPER]: "경장",
-			[ACTOR_CLASS.MOBILITY]: "기동",
-			[ACTOR_CLASS.ARMORED]: "중장",
+		const type = {
+			[ACTOR_CLASS.TROOPER]: "LIGHT",
+			[ACTOR_CLASS.MOBILITY]: "MOBILITY",
+			[ACTOR_CLASS.ARMORED]: "HEAVY",
 		}[this.unit.type];
+		return LocaleGet(`COMMON_UNIT_TYPE_${type}`);
 	}
 
 	private get UnitRole () {
-		return {
-			[ROLE_TYPE.ATTACKER]: "공격기",
-			[ROLE_TYPE.DEFENDER]: "보호기",
-			[ROLE_TYPE.SUPPORTER]: "지원기",
+		const role = {
+			[ROLE_TYPE.ATTACKER]: "ATTACKER",
+			[ROLE_TYPE.DEFENDER]: "DEFENDER",
+			[ROLE_TYPE.SUPPORTER]: "SUPPORTER",
 		}[this.unit.role];
+		return LocaleGet(`COMMON_UNIT_ROLE_${role}`);
 	}
 
 	private GetRequireResource (rarity: ACTOR_GRADE, type: ACTOR_CLASS, role: ROLE_TYPE, body: ACTOR_BODY_TYPE, fullLinkBonus: LinkBonusType) {
@@ -357,27 +360,27 @@ export default class UnitStatus extends Vue {
 
 	private get StatName (): Record<StatType, string> {
 		return {
-			"resist.fire": "화염 저항",
-			"resist.ice": "냉기 저항",
-			"resist.lightning": "번개 저항",
-			ATK: "공격력",
-			DEF: "방어력",
-			HP: "체력",
-			ACC: "적중률",
-			EV: "회피율",
-			Cri: "치명타",
-			SPD: "행동력",
-			armor_pierce: "방어 관통",
-			Range: "사거리",
-			"damage.light": "대경장 피해량",
-			"damage.air": "대기동 피해량",
-			"damage.heavy": "대중장 피해량",
-			damage_reduce: "받는 피해 감소",
-			Resist: "효과 저항",
-			off: "효과 해제",
-			"off.-ACC": "적중 감소 해제",
-			"off.-EV": "회피 감소 해제",
-			"off.-Range": "사거리 감소 해제",
+			"resist.fire": LocaleGet("UNIT_STATUS_FIRE_RES"),
+			"resist.ice": LocaleGet("UNIT_STATUS_ICE_RES"),
+			"resist.lightning": LocaleGet("UNIT_STATUS_THUNDER_RES"),
+			ATK: LocaleGet("UNIT_STATUS_ATK"),
+			DEF: LocaleGet("UNIT_STATUS_DEF"),
+			HP: LocaleGet("UNIT_STATUS_HP"),
+			ACC: LocaleGet("UNIT_STATUS_ACC"),
+			EV: LocaleGet("UNIT_STATUS_EVA"),
+			Cri: LocaleGet("UNIT_STATUS_CRIT"),
+			SPD: LocaleGet("UNIT_STATUS_SPD"),
+			armor_pierce: LocaleGet("UNIT_STATUS_ARMOR_PIERCE"),
+			Range: LocaleGet("UNIT_STATUS_RANGE"),
+			"damage.light": LocaleGet("UNIT_STATUS_DMG_LIGHT"),
+			"damage.air": LocaleGet("UNIT_STATUS_DMG_MOBILITY"),
+			"damage.heavy": LocaleGet("UNIT_STATUS_DMG_HEAVY"),
+			damage_reduce: LocaleGet("UNIT_STATUS_DMG_REDUCE"),
+			Resist: LocaleGet("UNIT_STATUS_DEBUFF_RESIST"),
+			off: LocaleGet("UNIT_STATUS_OFF"),
+			"off.-ACC": LocaleGet("UNIT_STATUS_OFF_ACC"),
+			"off.-EV": LocaleGet("UNIT_STATUS_OFF_EVA"),
+			"off.-Range": LocaleGet("UNIT_STATUS_OFF_RANGE"),
 		};
 	}
 
@@ -499,33 +502,33 @@ export default class UnitStatus extends Vue {
 		}
 	}
 
-	private ExportSerialized () {
-		alert(
-			window.btoa(JSON.stringify(this.sUnit.Serialize())),
-		);
-	}
+	// private ExportSerialized () {
+	// 	alert(
+	// 		window.btoa(JSON.stringify(this.sUnit.Serialize())),
+	// 	);
+	// }
 
-	private ImportSerialized () {
-		const input = prompt("공유 문자열을 입력해주세요.");
+	// private ImportSerialized () {
+	// 	const input = prompt("공유 문자열을 입력해주세요.");
 
-		if (input) {
-			try {
-				const x = window.atob(input);
-				this.sUnit.Deserialize(x);
-			} catch (e) {
-				alert("올바르지 않은 공유 문자열입니다.");
-			}
-		}
-	}
+	// 	if (input) {
+	// 		try {
+	// 			const x = window.atob(input);
+	// 			this.sUnit.Deserialize(x);
+	// 		} catch (e) {
+	// 			alert("올바르지 않은 공유 문자열입니다.");
+	// 		}
+	// 	}
+	// }
 
-	private BuildLink (): string {
-		const json = JSON.stringify(this.sUnit.Serialize());
-		const based = window.btoa(json);
+	// private BuildLink (): string {
+	// 	const json = JSON.stringify(this.sUnit.Serialize());
+	// 	const based = window.btoa(json);
 
-		const loc = window.location;
+	// 	const loc = window.location;
 
-		return `${loc.origin}/units/stats/${based}`;
-	}
+	// 	return `${loc.origin}/units/stats/${based}`;
+	// }
 
 	private created () {
 		setTimeout(() => {

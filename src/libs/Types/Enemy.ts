@@ -16,8 +16,8 @@ export interface EnemySkill {
 
 export interface Enemy {
 	id: string;
-	name: string;
-	desc: string;
+	// name: string;
+	// desc: string;
 	icon: string;
 	ai: string;
 

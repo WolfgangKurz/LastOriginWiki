@@ -1,7 +1,5 @@
 export default {
   "id": "Nereid_EV2",
-  "name": "그럼~요!",
-  "desc": "얼른 처리하고 놀러 가야지!\n\n\n- 네레이드",
   "icon": "TbarIcon_MP_Nereid_N",
   "ai": "AI_MP_Nereid_Event_02",
   "rarity": 4,
