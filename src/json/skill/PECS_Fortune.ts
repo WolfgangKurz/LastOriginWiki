@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "리벳건 사격",
     "icon": "AntiArmorShot",
     "target": "enemy",
     "buffs": {
@@ -599,15 +598,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "리벳건을 발사해 [@:공격력 :0~0:배 [:30~4:% 방어 관통] 피해]를 줍니다.",
-      "대상의 방어력을 일정 비율 무시합니다. (위 방어 관통)"
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "래빗 D 필드",
     "icon": "Barrier",
     "target": "team",
     "buffs": {
@@ -1035,15 +1029,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "아군 진영에 행 보호 기능이 있는 <<래빗 D 필드>를 설치합니다.",
-      "10라운드 동안 지속되며, 최대 1개만 설치할 수 있습니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "기계 공학",
     "icon": "TeamAtkBuff",
     "target": "team",
     "buffs": {
@@ -1154,9 +1143,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "같은 스쿼드에 있는 로봇 캐릭터의 [공격력 +:15~1:%] / [방어력 +:15~1:%] / [행동력 +:5~0.25:%]가 증가합니다."
-    ]
+    }
   }
 };

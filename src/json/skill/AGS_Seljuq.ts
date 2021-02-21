@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "175mm 직사포",
     "icon": "CannonShotWide",
     "target": "enemy",
     "buffs": {
@@ -699,15 +698,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "직사 포격으로 목표 대상이 있는 열에 [@:공격력 :0~0:배 피해]를 줍니다.",
-      "대상이 표식 / 이동 불가 상태인 경우, [피해량 +:20~1:%]가 증가합니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "175mm 곡사포",
     "icon": "CannonShotDelay",
     "target": "enemy",
     "buffs": {
@@ -1715,17 +1709,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "다음 라운드에 착탄하는 곡사 포격으로 목표 지점에 [@:공격력 :0~0:배 피해]를 줍니다.",
-      "목표 지점 주변에는 피해가 25% 감소합니다.",
-      "표식 / 이동 불가 상태인 대상에게는 [피해량 +:30~1.5:%]가 증가하며, 대상의 방어막 / 피해 감소 효과를 무시합니다.",
-      "착탄 시, 대상의 반격 효과를 해제합니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "대 보병 고폭탄",
     "icon": "SelfAtkBuff",
     "target": "team",
     "buffs": {
@@ -1804,14 +1791,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "대 보병 고폭탄을 장전해, [대 경장 피해량 +:30~1.5:%]가 증가합니다."
-    ]
+    }
   },
   "passive4": {
     "key": "passive4",
-    "name": "속전 준비",
     "icon": "SelfSpdBuff",
     "target": "team",
     "buffs": {
@@ -1952,14 +1935,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "초반 압도를 목적으로 전투 개시 시 [AP +:4~0.2:]가 증가하며 라운드 개시 시 [치명타 +:11~1:%]가 증가합니다."
-    ]
+    }
   },
   "active7": {
     "key": "active7",
-    "name": "203mm 곡사포 착탄",
     "icon": "CannonShotDelay",
     "target": "enemy",
     "buffs": {
@@ -3487,9 +3466,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      ""
-    ]
+    }
   }
 };

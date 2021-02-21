@@ -63,7 +63,7 @@ function process (auth) {
 					key,
 
 					fullKey,
-					name,
+					// name,
 					desc,
 					icon,
 					craftable,

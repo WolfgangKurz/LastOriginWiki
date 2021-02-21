@@ -6,7 +6,7 @@ import { SKILL_ATTR } from "@/libs/Types/Enums";
 /* eslint-disable camelcase */
 export interface RawSkillEntity {
 	key: string;
-	name: string;
+	// name: string;
 	icon: string;
 	type: SKILL_ATTR;
 	target: "enemy" | "team";
@@ -14,7 +14,7 @@ export interface RawSkillEntity {
 		index: number[];
 		data: SkillEntryData[];
 	};
-	desc: string[];
+	// desc: string[];
 }
 export interface SkillSummonInfo {
 	char: string;
@@ -43,7 +43,7 @@ export interface SkillEntryData {
 }
 export interface SkillEntity {
 	key: string;
-	name: string;
+	// name: string;
 	icon: string;
 
 	target: "enemy" | "team";
@@ -53,7 +53,7 @@ export interface SkillEntity {
 		index: number[];
 		data: SkillEntryData[];
 	};
-	desc: string[];
+	// desc: string[];
 }
 /* eslint-enable camelcase */
 

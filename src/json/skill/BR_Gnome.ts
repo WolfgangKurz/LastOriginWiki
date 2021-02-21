@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "원호 사격",
     "icon": "ARShot",
     "target": "enemy",
     "buffs": {
@@ -1429,15 +1428,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "사격으로 [@:공격력 :0~0:배 피해]를 주고, 2라운드 동안 대상을 표식으로 설정합니다.",
-      "대상은 [회피 -:30~1.5:%]가 감소하며 [받는 피해 +:15~0.75:%]가 증가합니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "방벽 생성",
     "icon": "TeamDefBuff",
     "target": "team",
     "buffs": {
@@ -1865,15 +1859,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "빈 아군 그리드에 9라운드 동안 유지되는 콘크리트 참호 방벽을 생성합니다.",
-      "방벽은 같은 행의 뒤에 배치된 아군을 보호합니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "스틸라인 포메이션",
     "icon": "TeamDefBuff",
     "target": "team",
     "buffs": {
@@ -2021,10 +2010,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, 자신이 [받는 피해 -:20~2:%]가 감소합니다.",
-      "범위 내에 [$ch;BR_Brownie] 또는 [$ch;BR_Leprechaun]의 패시브 효과를 받는 보호기 외의 대상을 지정 보호합니다."
-    ]
+    }
   }
 };

@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "고압 분사",
     "icon": "IceShot",
     "target": "enemy",
     "buffs": {
@@ -2519,14 +2518,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "물 대포를 고압 분사해 [@,#chill:공격력 :0~0:배 냉기 피해]를 주며, 2라운드 동안 [#chill,#thunder:냉기/전기 저항 -:50~2.5:%]가 감소하며 [#fire:화염 저항 +:50~2.5:%]가 증가하는 침수 상태로 만듭니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "액화 질소 분사",
     "icon": "IceShot",
     "target": "enemy",
     "buffs": {
@@ -4744,17 +4739,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "액화 질소를 분사해 [@,#chill:공격력 :0~0:배 냉기 피해]를 주며, 2라운드 동안 이동 불가 상태로 만듭니다.",
-      "대상이 침수 상태면 빙결 상태로 만듭니다.",
-      "빙결 상태에선 행동 불가이며, 피격시 [받는 피해 +:30~1.5:%]가 증가됩니다.",
-      "스쿼드 내 [$ch;PECS_Sadius]가 있을 시, 지정 대상에게 <일렉트릭 펜스> 스킬 협동 공격을 합니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "긴급 구조",
     "icon": "TeamDefBuff",
     "target": "team",
     "buffs": {
@@ -4913,14 +4901,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, 지정 범위의 경장 / 중장형 아군을 보호하고 [행동력 +:4~1:%]을 증가시킵니다."
-    ]
+    }
   },
   "passive4": {
     "key": "passive4",
-    "name": "불굴의 소방관",
     "icon": "SelfDefBuff",
     "target": "team",
     "buffs": {
@@ -5172,10 +5156,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "전투 개시시 [:100~100:HP로 전투 속행] 효과를 얻습니다.",
-      "라운드 개시 시, [받는 피해 -:15~3:%]가 감소하며 [행동력 +:3~0.15:%] / [#fire:화염 저항 +:12~2:%] / [#chill:냉기 저항 +:12~2:%]가 증가합니다."
-    ]
+    }
   }
 };

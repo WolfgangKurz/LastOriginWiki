@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "해결책 제시",
     "icon": "Shot",
     "target": "enemy",
     "buffs": {
@@ -569,14 +568,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "단일 적에게 개조된 폭발탄을 발사하여 [@:공격력 :0~0:배 피해]를 주고, 2라운드 동안 대상을 표식으로 설정합니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "아껴 써야 해요!",
     "icon": "SelfAtkBuff",
     "target": "team",
     "buffs": {
@@ -1222,17 +1217,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "스킬 사용 시, 공격기의 [공격력 +:11~1:%] / [치명타 +:11~1:%], 보호기의 [방어력 +:17~2:%] / [회피 +:17~2:%], 지원기의 [행동력 +:11~1:%] / [적중 +:11~1:%]가 증가합니다.",
-      "시스터즈 오브 발할라 소속일 시 효과가 2배로 적용되며, [#chill:냉기 저항 +:1~1:%]가 증가합니다.",
-      "시스터즈 오브 발할라 : [$ch;BR_Leona] / [$ch;BR_Valkyrie] / [$ch;BR_Nymph] / [$ch;BR_Gremlin] / [$ch;BR_SandMan]",
-      "시스터즈 오브 발할라 II : [$ch;BR_Bheur] / [$ch;BR_Alvis] / [$ch;BR_Andvari]"
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "의젓한 여동생",
     "icon": "SelfAtkBuff",
     "target": "team",
     "buffs": {
@@ -1729,11 +1717,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, [$ch;BR_Leona]의 지휘 상태에 따른 효과 감소를 제거하고, 추가로 지휘 효과를 50% 증가시킵니다.",
-      "{<의젓한 여동생> 스킬 레벨에 해당하는 지휘 효과의 50%만큼 증가합니다.}",
-      "<의젓한 여동생>이 4레벨이라면 4레벨 지휘 효과의 50%가 적용됩니다."
-    ]
+    }
   }
 };

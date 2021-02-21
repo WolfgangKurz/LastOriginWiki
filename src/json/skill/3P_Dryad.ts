@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "수확의 낫",
     "icon": "SwordAttk",
     "target": "enemy",
     "buffs": {
@@ -1249,14 +1248,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "지정 범위에 [@:공격력 :0~0:배 피해]를 주고, 2라운드 동안 대상들의 [방어력 -:16~1:%]을 감소시키며 [받는 피해 +:16~1:%]를 증가시킵니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "수확제",
     "icon": "SwordAttk",
     "target": "enemy",
     "buffs": {
@@ -2524,15 +2519,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "단일 적에게 [@:공격력 :0~0:배 피해]를 줍니다.",
-      "치명타 시 [피해량 +:16~1:%]가 증가하며, 스킬 사용 시 탈진하여 자신의 [행동력 -:50~0:%]가 감소합니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "수확 준비",
     "icon": "SelfAtkBuff",
     "target": "team",
     "buffs": {
@@ -2653,14 +2643,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, 자신의 [치명타 +:16~1:%] / [방어 관통 +:16~1:%]가 증가하며, [대 중장 피해량 +:17~2:%]가 증가합니다."
-    ]
+    }
   },
   "passive4": {
     "key": "passive4",
-    "name": "금빛 물결",
     "icon": "SelfAtkBuff",
     "target": "team",
     "buffs": {
@@ -2956,10 +2942,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, 범위 내 아군의 [적중 +:1~1:%] / [공격력 +:1~1:%] / [행동력 +:1~1:%]가 증가합니다.",
-      "스쿼드에 [$ch;3P_ScissorsLise], [$ch;3P_Daphne]가 있으면 효과가 추가로 증가하여, 최대 3회까지 중첩됩니다."
-    ]
+    }
   }
 };

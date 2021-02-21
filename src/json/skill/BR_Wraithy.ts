@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "라이트닝 샷",
     "icon": "Shock",
     "target": "enemy",
     "buffs": {
@@ -1619,15 +1618,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "대상에게 전격을 발사해 [@,#thunder:공격력 :0~0:배 전기 피해]를 주고 [AP -:0.3~0.015:]와 [회피 -:30~1.5:%]를 감소시킵니다.",
-      "대상이 표식 / 이동 불가 상태면 [피해량 +:20~1:%]가 증가합니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "스톰 볼트",
     "icon": "WideLightning",
     "target": "enemy",
     "buffs": {
@@ -3245,15 +3239,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "지정 범위에 [@,#thunder:공격력 :0~0:배 전기 피해]를 주고, [AP -:0.3~0.015:]와 [회피 -:30~1.5:%]를 감소시킵니다.",
-      "대상이 표식 / 이동 불가 상태면 [피해량 +:20~1:%]가 증가합니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "전자기 공명",
     "icon": "SelfAtkBuff",
     "target": "team",
     "buffs": {
@@ -3863,16 +3852,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "스쿼드 내에 [#thunder]전기 속성인 아군이 있으면 [공격력 +:10~0.5:%]가 증가합니다.",
-      "해당 효과는 중첩되며, 효과 발동 시 [치명타 +:10~0.5:%] / [행동력 +:10~0.5:%]가 증가합니다.",
-      "[#thunder]전기 속성 아군 : [$ch;3P_Rhea] [$ch;3P_Alexandra] [$ch;BR_Bulgasari] [$ch;PECS_Cerberus] [$ch;PECS_PuppHead] [$ch;PECS_BS] [$ch;AGS_Albatross] [$ch;AGS_Roc] [$ch;DS_KunoichiZero] [$ch;PECS_Sadius] [$ch;DS_Saraqael]"
-    ]
+    }
   },
   "passive4": {
     "key": "passive4",
-    "name": "신경 자극",
     "icon": "TeamAtkBuff",
     "target": "team",
     "buffs": {
@@ -4148,16 +4131,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, 범위 내 공격이 [#thunder]전기 속성인 아군에게 [공격력 +:21~1:%] [행동력 +:5.5~0.5:%]를 증가시킵니다.",
-      "대상이 기동형일 경우 [치명타 +:4.5~0.5:%] [적중 +:10~0.5:%] [회피 +:10~0.5:%]를 추가로 증가시킵니다.",
-      "[#thunder]전기 속성 아군 : [$ch;3P_Rhea] [$ch;3P_Alexandra] [$ch;BR_Bulgasari] [$ch;PECS_Cerberus] [$ch;PECS_PuppHead] [$ch;PECS_BS] [$ch;AGS_Albatross] [$ch;AGS_Roc] [$ch;DS_KunoichiZero] [$ch;PECS_Sadius] [$ch;DS_Saraqael] [$ch;BR_Wraithy]"
-    ]
+    }
   },
   "passive5": {
     "key": "passive5",
-    "name": "쇼트",
     "icon": "TeamAtkDeBuff",
     "target": "enemy",
     "buffs": {
@@ -4680,9 +4657,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "아군 수에 비례하여 모든 적의 [#thunder:전기 저항 -:3.3~0.3:%], [회피 -:3.2~0.2:%], [적중 -:2.2~0.2:%]를 감소시킵니다."
-    ]
+    }
   }
 };

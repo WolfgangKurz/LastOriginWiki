@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "157mm HEAT탄",
     "icon": "CannonShot",
     "target": "enemy",
     "buffs": {
@@ -1229,15 +1228,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "성형 작약탄을 발사해 [@:공격력 :0~0:배 [:30~4:% 방어 관통] 피해]를 줍니다.",
-      "대상의 방어력을 일정 비율 무시하며(위 방어 관통), 대상이 보호기면 [피해량 +:20~1:%]가 증가합니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "유산탄 포격",
     "icon": "CannonShotWide",
     "target": "enemy",
     "buffs": {
@@ -1825,17 +1819,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "유산탄을 발사해 목표 대상에게 [@:공격력 :0~0:배 피해]를 주며, 대상 뒷 열에 25% 감소한 피해를 줍니다.",
-      "일정 확률로 적중한 대상의 피해 감소 효과를 해제합니다.",
-      "스킬 레벨이 높아질수록 해제 확률이 증가합니다.",
-      "{스킬 레벨 5에서 뒷 열 피해가 100%로 증가}합니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "사냥 개시",
     "icon": "SelfAtkBuff",
     "target": "team",
     "buffs": {
@@ -1912,14 +1899,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "적 처치 시, 다음 공격의 [공격력 +:25~1:%]가 증가합니다."
-    ]
+    }
   },
   "passive4": {
     "key": "passive4",
-    "name": "제압 포격",
     "icon": "CannonShot",
     "target": "team",
     "buffs": {
@@ -2577,10 +2560,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "공격력 증가 상태로 적 공격 시, 일정 확률로 방어막과 받는 피해 감소 효과를 무시합니다.",
-      "스킬 레벨이 높아질 수록 무시 확률이 높아집니다."
-    ]
+    }
   }
 };

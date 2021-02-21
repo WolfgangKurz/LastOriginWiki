@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "더블배럴 샷건",
     "icon": "Shot",
     "target": "enemy",
     "buffs": {
@@ -1379,15 +1378,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "더블배럴 샷건으로 지정 대상에게 [@:공격력 :0~0:배 피해]를 줍니다.",
-      "대상이 경장형 / 방어력 / 회피 감소 상태면 [피해량 +:20~1:%]가 증가합니다"
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "이글 어썰트",
     "icon": "Scan",
     "target": "enemy",
     "buffs": {
@@ -3915,16 +3909,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "독수리와 협공해 대상에게 [@:공격력 :0~0:배 피해]를 주고, 2라운드 동안 대상의 [적중 -:17.5~2.5:%] / [치명타 -:11~1:%]를 감소시킵니다.",
-      "감소 효과는 적용 라운드에는 2배로 적용됩니다.",
-      "치명타 시, [피해량 +:30~1.5:%]가 증가하며 적중 강화 효과를 해제합니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "선봉 요격대",
     "icon": "TeamAtkBuff",
     "target": "team",
     "buffs": {
@@ -4065,14 +4053,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "자신과 같은 행 뒤쪽에 배치된 아군의 공격을 지원하며, 대상의 [전투 개시 AP +:1~0.05:]를 올려줍니다."
-    ]
+    }
   },
   "passive4": {
     "key": "passive4",
-    "name": "숲의 도움",
     "icon": "TeamAtkBuff",
     "target": "team",
     "buffs": {
@@ -4421,9 +4405,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, 자신의 [공격력 +:11~1:%]과 [치명타 +:9~1:%]가 증가하며, [$ch;PECS_ElvenForestmaker]의 패시브 효과를 받는 대상과 [$ch;PECS_HighElven], [$ch;PECS_ElvenForestmaker]의 공격을 지원하고 전투 개시 시 [AP +:1~0.05:]를 증가시킵니다."
-    ]
+    }
   }
 };

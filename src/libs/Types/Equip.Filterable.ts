@@ -15,7 +15,7 @@ export interface FilterableEquip {
 	key: string;
 	fullKey: string;
 
-	name: string;
+	// name: string;
 	desc: string;
 	icon: string;
 	craftable: false | number;

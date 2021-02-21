@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "183mm HESH탄",
     "icon": "CannonShot",
     "target": "enemy",
     "buffs": {
@@ -1369,16 +1368,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "HESH탄을 발사해 [@:공격력 :0~0:배 피해]를 줍니다.",
-      "치명타 시, [#fire:추가 화염 피해 +:30~1.5:%]가 적용됩니다.",
-      "대상이 받는 피해 증가 / 방어력 감소 상태일 경우, 대상의 피해 감소 효과를 해제합니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "183mm HVAP탄",
     "icon": "CannonShot",
     "target": "enemy",
     "buffs": {
@@ -2626,15 +2619,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "고속 철갑탄을 발사해 [@:공격력 :0~0:배 [:35~5:% 방어 관통] 피해]를 줍니다.",
-      "치명타인 경우, [피해량 +:25~1.25:%]가 증가합니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "포격 대열",
     "icon": "TeamSpdBuff",
     "target": "team",
     "buffs": {
@@ -2767,10 +2755,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "전투 개시 시, 포격 대열을 전개해 자신과 같은 열에 인접한 중장 공격기의 [AP +:2~0.1:]가 증가합니다.",
-      "자신이 적 공격 시, 해당 수치의 50%만큼 인접한 중장 공격기의 [AP +:1~0.05:]를 증가시킵니다."
-    ]
+    }
   }
 };

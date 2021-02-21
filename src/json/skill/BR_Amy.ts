@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "암살 목표 지정",
     "icon": "Shot",
     "target": "enemy",
     "buffs": {
@@ -779,15 +778,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "권총을 발사해 [@:공격력 :0~0:배 피해]를 주고, 2라운드 동안 표식 / [받는 피해 +:10~0.5:%] 증가 상태로 만듭니다.",
-      "표식을 제외한 효과는 중첩 가능합니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "예정된 죽음",
     "icon": "Snipe",
     "target": "enemy",
     "buffs": {
@@ -1485,15 +1479,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라이플 저격으로 [@:공격력 :0~0:배 피해]를 줍니다.",
-      "대상이 표식 / 이동 불가 상태인 경우 [피해량 +:30~1.5:%]가 증가합니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "냉혈한",
     "icon": "SelfSpdBuff",
     "target": "team",
     "buffs": {
@@ -1637,15 +1626,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "적의 HP%가 낮을수록 [피해량 +:30~1:%]가 증가합니다.",
-      "적 처치 시, 다음 목표를 찾기 시작해 [AP +:2~0.1:]가 증가합니다."
-    ]
+    }
   },
   "passive4": {
     "key": "passive4",
-    "name": "앙갚음",
     "icon": "None",
     "target": "team",
     "buffs": {
@@ -1721,14 +1705,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      ""
-    ]
+    }
   },
   "passive5": {
     "key": "passive5",
-    "name": "누출된 약점",
     "icon": "None",
     "target": "enemy",
     "buffs": {
@@ -1805,9 +1785,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      ""
-    ]
+    }
   }
 };

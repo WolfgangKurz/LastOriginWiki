@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "대혼란",
     "icon": "Beam",
     "target": "enemy",
     "buffs": {
@@ -599,14 +598,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "범위 내 적에게 [@:공격력 :0~0:배 피해]를 주고, 대상의 [적중 -:22~2:%]를 감소시킵니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "관중 소환",
     "icon": "TeamAtkBuff",
     "target": "team",
     "buffs": {
@@ -724,14 +719,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "범위 내 기동형 아군의 [공격력 +:16~1:%] / [적중 +:22~2:%] / [회피 +:33~3:%]를 증가시킵니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "낙원으로의 초대 1",
     "icon": "TeamAtkBuff",
     "target": "team",
     "buffs": {
@@ -826,14 +817,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, 기동형 아군의 [공격력 +:16~1:%] / [치명타 +:10~0.5:%]를 증가시킵니다."
-    ]
+    }
   },
   "passive4": {
     "key": "passive4",
-    "name": "낙원으로의 초대 2",
     "icon": "TeamSpdBuff",
     "target": "team",
     "buffs": {
@@ -970,15 +957,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "전투 시작 시, 자신의 [AP +:0.9~0.1:]를 증가시킵니다.",
-      "라운드 개시 시, 자신과 기동형 지원기 아군의 [AP +:0.55~0.05:]를 증가시킵니다."
-    ]
+    }
   },
   "passive5": {
     "key": "passive5",
-    "name": "드론 오케스트라",
     "icon": "TeamAtkBuff",
     "target": "team",
     "buffs": {
@@ -1079,9 +1061,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, 범위 내 기동형 아군의 [대 중장 피해 +:27~2:%]와 [대 경장 피해 +:16~1:%]를 증가시킵니다."
-    ]
+    }
   }
 };

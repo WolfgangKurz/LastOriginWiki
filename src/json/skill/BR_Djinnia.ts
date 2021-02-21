@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "리볼버 기관포",
     "icon": "MGShot",
     "target": "enemy",
     "buffs": {
@@ -779,14 +778,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "리볼버 기관포를 발사해 [@:공격력 :0~0:배 피해]를 주고, 2라운드 동안 대상을 도발하며 [적중 -:20~1:%]를 낮춥니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "채프 미사일",
     "icon": "MultiMissile",
     "target": "team",
     "buffs": {
@@ -931,14 +926,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "채프 미사일을 발사해 2라운드 동안 지정 범위에 있는 아군의 [회피 +:30~1.5:%]를 올리고, [받는 피해 -:10~0.5:%]를 낮춥니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "폭격 편대 호위",
     "icon": "SelfSpdBuff",
     "target": "team",
     "buffs": {
@@ -1081,10 +1072,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, [회피 +:35~5:%]가 증가합니다.",
-      "범위 내 [$ch;BR_May]의 <폭격 편대 지휘>를 받는 보호기 제외 아군을 지정 보호합니다."
-    ]
+    }
   }
 };

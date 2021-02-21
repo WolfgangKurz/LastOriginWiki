@@ -10,7 +10,7 @@ export interface Equip {
 	key: string;
 	fullKey: string;
 
-	name: string;
+	// name: string;
 	desc: string;
 	icon: string;
 	craftable: false | number;
@@ -29,7 +29,7 @@ export namespace Equip {
 		key: "",
 
 		fullKey: "__T1",
-		name: "",
+		// name: "",
 		desc: "",
 		icon: "none",
 		craftable: false,

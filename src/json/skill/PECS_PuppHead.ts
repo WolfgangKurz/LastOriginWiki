@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "테이저 건",
     "icon": "Shock",
     "target": "enemy",
     "buffs": {
@@ -809,14 +808,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "목표 적을 감전시켜 [@,#thunder:공격력 :0~0:배 전기 피해]를 주고 [AP -:0.5~0.025:]와 [회피 -:30~1.5:%]를 감소시킵니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "체포 사슬",
     "icon": "Hang",
     "target": "enemy",
     "buffs": {
@@ -1288,16 +1283,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "목표 대상을 체포해 최대 [당기기 :2~0:칸]까지 앞으로 당기며, 2라운드 동안 이동 불가 상태로 만듭니다.",
-      "대상은 2라운드 동안 표식 / [받는 피해 +:25~1.25:%] 증가 상태가 됩니다.",
-      "스쿼드 내 [$ch;AGS_Rampart]가 있을 시, 대상에게 <목표 견제> 스킬 협동 공격을 합니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "검거 완료!",
     "icon": "TeamSpdBuff",
     "target": "team",
     "buffs": {
@@ -1942,15 +1931,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "스킬 적중 시 인접 아군들의 [AP +:0.15~0.03:]가 상승하며, 2라운드 동안 [공격력 +:10~0.5:%] / [치명타 +:5~0.5:%] / [적중 +:25~1.25:%]가 증가합니다.",
-      "{스킬 레벨 5 / 10에서 범위가 증가}합니다."
-    ]
+    }
   },
   "passive4": {
     "key": "passive4",
-    "name": "잠복 근무",
     "icon": "None",
     "target": "team",
     "buffs": {
@@ -2024,14 +2008,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      ""
-    ]
+    }
   },
   "passive5": {
     "key": "passive5",
-    "name": "경고",
     "icon": "None",
     "target": "enemy",
     "buffs": {
@@ -2129,9 +2109,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      ""
-    ]
+    }
   }
 };

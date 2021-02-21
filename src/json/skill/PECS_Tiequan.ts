@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "유탄 차기",
     "icon": "GrenadeAttack_2",
     "target": "enemy",
     "buffs": {
@@ -629,15 +628,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "유탄을 차 날려 [@:공격력 :0~0:배 피해]를 줍니다.",
-      "치명타 시, 대상에게 [#fire:추가 화염 피해 +:30~1.5:%]를 줍니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "백보신권",
     "icon": "MeleeAttack",
     "target": "enemy",
     "buffs": {
@@ -1985,15 +1979,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "정권지르기로 [@:공격력 :0~0:배 [:30~4:% 방어 관통] 피해]를 줍니다.",
-      "대상이 회피 감소 또는 이동 불가 상태면 [피해량 +:25~1.25:%]가 증가합니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "숙련된 무술",
     "icon": "SelfAtkBuff",
     "target": "team",
     "buffs": {
@@ -2155,9 +2144,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "[공격력 +:15~0.75:%] / [적중 +:25~1.25:%]가 증가하며, 적 공격 시 [AP +:0.05~0.05:]가 증가합니다."
-    ]
+    }
   }
 };

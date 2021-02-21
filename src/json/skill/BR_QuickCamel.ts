@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "듀얼 머신건",
     "icon": "MGShot",
     "target": "enemy",
     "buffs": {
@@ -1219,15 +1218,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "기관총을 발사해 [@:공격력 :0~0:배 피해]를 줍니다.",
-      "대상이 회피 / 방어력 감소 상태인 경우 [피해량 +:20~1:%]가 증가합니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "180mm 로켓포",
     "icon": "CannonShot",
     "target": "enemy",
     "buffs": {
@@ -3585,15 +3579,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "대 장갑 로켓포를 발사해 [@:공격력 :0~0:배 [:30~4:% 방어 관통] 피해]를 줍니다.",
-      "대상이 표식 / 이동 불가 상태면 [피해량 +:30~1.5:%]가 증가하며, 중장형인 경우 [추가 피해 +:15~1:%]를 줍니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "보병 지원",
     "icon": "TeamAtkBuff",
     "target": "team",
     "buffs": {
@@ -3732,14 +3721,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, 같은 열에 인접한 경장 / 중장형 아군의 공격을 지원하며 전투 개시 시 [AP +:1~0.05:]를 증가시킵니다."
-    ]
+    }
   },
   "passive4": {
     "key": "passive4",
-    "name": "기동간 사격",
     "icon": "SelfAtkBuff",
     "target": "team",
     "buffs": {
@@ -4139,11 +4124,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, [공격력 +:15~0.75:%] / [치명타 +:10~0.5:%]가 증가하며 [받는 피해 -:15~1:%]가 감소합니다.",
-      "스쿼드 내에 존재하는 자신을 제외한 <앵거 오브 호드> 대원 수에 비례해 [행동력 +:4~0.2:%]가 증가하며, 해당 대원의 공격을 지원합니다.",
-      "<앵거 오브 호드> 부대원: [$ch;BR_Khan] / [$ch;BR_QuickCamel] / [$ch;BR_WarWolf] / [$ch;BR_TalonFeather]"
-    ]
+    }
   }
 };

@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "라이플 사격",
     "icon": "Shot",
     "target": "enemy",
     "buffs": {
@@ -689,15 +688,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라이플을 발사해 [@:공격력 :0~0:배 피해]를 줍니다.",
-      "이동 불가 대상인 경우, 정밀 사격으로 [피해량 :30~1.5:%]가 증가합니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "발목 잡기",
     "icon": "SlowShot",
     "target": "enemy",
     "buffs": {
@@ -1865,15 +1859,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "보리와 함께 [@:공격력 :0~0:배 피해]를 주고, 2라운드 동안 대상을 표식으로 설정하고 이동 불가 상태로 만듭니다.",
-      "적중 대상은 [행동력 -:25~1.25:%]가 감소하며 [받는 피해 :10~0.5:%]가 증가합니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "준비만전",
     "icon": "SelfSpdBuff",
     "target": "team",
     "buffs": {
@@ -1949,14 +1938,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "꼼꼼한 전투 준비로 인해 [전투 개시 시 AP +:4~0.2:]가 증가합니다."
-    ]
+    }
   },
   "passive4": {
     "key": "passive4",
-    "name": "사냥감 몰이",
     "icon": "TeamAtkBuff",
     "target": "team",
     "buffs": {
@@ -2250,15 +2235,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "적 공격 시, 3라운드 동안 스쿼드 내 모든 아군의 [공격력 +:10~0.5:%] / [적중 +:20~1:%] / [치명타 +:5~0.5:%]가 증가합니다.",
-      "해당 효과는 중첩되지 않습니다."
-    ]
+    }
   },
   "passive5": {
     "key": "passive5",
-    "name": "보리방패",
     "icon": "SelfDefBuff",
     "target": "team",
     "buffs": {
@@ -2866,9 +2846,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      ""
-    ]
+    }
   }
 };

@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "140mm 고폭탄",
     "icon": "CannonShot",
     "target": "enemy",
     "buffs": {
@@ -2759,15 +2758,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "박격포를 발사해 [@:공격력 :0~0:배 피해]를 주고, 대상을 [밀기 :1~0:칸] 밀어내며 [AP -:1.5~0.075:]를 감소시킵니다.",
-      "대상이 표식 / 이동 불가 상태면 [피해량 +:20~1:%]가 증가합니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "곡사 포격",
     "icon": "CannonShotDelay",
     "target": "enemy",
     "buffs": {
@@ -3805,17 +3799,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "1라운드 후에 착탄해, [@:공격력 :0~0:배 피해]를 주는 박격포를 발사합니다.",
-      "적중 대상들은 [AP -:1~0.05:]가 감소하며, 2라운드 동안 [받는 피해 +:20~1:%]가 증가합니다.",
-      "목표 지점 주변에는 25% 감소한 피해를 줍니다.",
-      "착탄 시, 대상의 반격 효과를 해제합니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "조명탄 발사",
     "icon": "TeamAtkBuff",
     "target": "team",
     "buffs": {
@@ -3912,14 +3899,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, 조명탄을 발사해 아군 전체의 [적중 +:25~1.5:%]와 [치명타 +:10~1:%]를 증가시킵니다."
-    ]
+    }
   },
   "passive4": {
     "key": "passive4",
-    "name": "강선형 박격포",
     "icon": "SelfAtkBuff",
     "target": "team",
     "buffs": {
@@ -4148,15 +4131,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, 중열 또는 후열이면 [공격력 +:20~1:%] / [적중 +:15~0.75:%] / [방어 관통 +:25~3:%]가 증가합니다.",
-      "해당 효과 활성화 상태에서 치명타 적중 시, 대상의 지정 보호 / 열 보호 효과를 해제합니다."
-    ]
+    }
   },
   "active7": {
     "key": "active7",
-    "name": "박격포 착탄",
     "icon": "Missile",
     "target": "enemy",
     "buffs": {
@@ -6344,9 +6322,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      ""
-    ]
+    }
   }
 };

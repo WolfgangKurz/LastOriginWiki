@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "리볼버 속사",
     "icon": "Shot",
     "target": "enemy",
     "buffs": {
@@ -1869,15 +1868,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "리볼버를 발사해 [@:공격력 :0~0:배 피해]를 주고, 대상을 2라운드 동안 도발하며 [적중 -:20~1:%]를 낮춥니다.",
-      "스쿼드 내 [$ch;PECS_PuppHead]가 있을 시, 대상에게 <테이저 건> 스킬 협동 공격을 합니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "고압 가스탄",
     "icon": "SelfAtkDeBuff",
     "target": "enemy",
     "buffs": {
@@ -2685,14 +2679,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "고압 가스탄을 발사해 목표 대상들에게 [@:공격력 :0~0:배 피해]를 주고, 2라운드 동안 [공격력 -:15~0.5:%]과 [방어력 -:15~0.5:%]를 감소시킵니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "유인책",
     "icon": "SelfDefBuff",
     "target": "team",
     "buffs": {
@@ -2926,9 +2916,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, 자신에게 표식을 지정하고 자신의 [방어력 +:17~2:%] / [#fire,#chill,#thunder:모든 속성 저항 +:6~1:%]을 증가시키며 [받는 피해 -:12~2:%]를 감소시킵니다."
-    ]
+    }
   }
 };

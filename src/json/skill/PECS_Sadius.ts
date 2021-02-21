@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "테이져 캐논",
     "icon": "WideLightning",
     "target": "enemy",
     "buffs": {
@@ -1829,15 +1828,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "지정 범위에 [@,#thunder:공격력 :0~0:배 전기 피해]를 주고 [#thunder:전기 저항 -:6~1:%]를 감소시킵니다.",
-      "<고전압> 상태에서는 대상의 [#thunder:전기 저항 -:23~3:%]를 추가로 감소시키고 1라운드 동안 행동 불가 상태로 만듭니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "일렉트릭 펜스",
     "icon": "WideLightning",
     "target": "enemy",
     "buffs": {
@@ -3235,15 +3229,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "지정 범위에 [@,#thunder:공격력 :0~0:배 전기 피해]를 주고 대상이 [#thunder]전기 저항 감소 상태일 시 적 [행동력 -:12~2:%]를 감소시킵니다",
-      "치명타 시, [피해량 +:30~2:%]가 증가합니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "출동 지원",
     "icon": "SelfAtkBuff",
     "target": "team",
     "buffs": {
@@ -3707,17 +3696,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, 자신의 [공격력 +:11~1:%] / [치명타 +:11~1:%]가 증가하며, 스쿼드 내 아군이 3명일 시 [공격력 +:11~1:%], 5명일 시 [치명타 +:11~1:%]가 추가로 증가합니다.",
-      "지정 범위의 시티가드 / 경장 보호기의 공격을 지원하며, 전투 시작 시 <충전> 상태가 됩니다.",
-      "<충전> 상태에서 대기 시, <고전압> 상태가 됩니다.",
-      "시티가드 : [$ch;PECS_Serpent], [$ch;PECS_MissSafety], [$ch;PECS_Cerberus], [$ch;AGS_Rampart], [$ch;PECS_PuppHead], [$ch;PECS_Leanne]"
-    ]
+    }
   },
   "passive4": {
     "key": "passive4",
-    "name": "가학성",
     "icon": "SelfAtkBuff",
     "target": "team",
     "buffs": {
@@ -3858,14 +3840,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "공격 적중 시, 지정 범위 아군의 [공격력 +:1.5~1.5:%] / [행동력 +:1~1:%]가 최대 3 중첩까지 증가합니다."
-    ]
+    }
   },
   "passive5": {
     "key": "passive5",
-    "name": "가드 오브 시티즌",
     "icon": "SelfAtkBuff",
     "target": "team",
     "buffs": {
@@ -4464,11 +4442,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "스쿼드 내 시티가드 소속 전투원 수에 따라 자신의 [공격력 +:6~1:%] / [치명타 +:6~1:%]가 추가로 증가합니다.",
-      "지정 범위 아군의 [#thunder:전기 저항 +:11~1:%]가 증가합니다.",
-      "시티가드 : [$ch;PECS_Serpent], [$ch;PECS_MissSafety], [$ch;PECS_Cerberus], [$ch;AGS_Rampart], [$ch;PECS_PuppHead], [$ch;PECS_Leanne]"
-    ]
+    }
   }
 };

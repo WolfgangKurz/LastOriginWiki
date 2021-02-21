@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "숙적",
     "icon": "SwordAttk",
     "target": "enemy",
     "buffs": {
@@ -989,14 +988,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "검격으로 [@:공격력 :0~0:배 피해]를 주고, 2라운드 동안 대상에게 도발 / [공격력 -:10~0.5:%] / [치명타 -:10~0.5:%] 감쇼 효과를 줍니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "기사도",
     "icon": "ShieldWall",
     "target": "team",
     "buffs": {
@@ -1440,15 +1435,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "방패를 전개해 3라운드 동안 행 보호 / 열 보호 / [받는 피해 -:25~3:%] 감소 효과를 얻습니다.",
-      "{스킬 레벨이 오를수록 소모 AP가 감소}합니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "눈 먼 자들의 성벽",
     "icon": "None",
     "target": "enemy",
     "buffs": {
@@ -2026,14 +2016,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      ""
-    ]
+    }
   },
   "passive4": {
     "key": "passive4",
-    "name": "복수자",
     "icon": "None",
     "target": "team",
     "buffs": {
@@ -2107,14 +2093,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      ""
-    ]
+    }
   },
   "passive5": {
     "key": "passive5",
-    "name": "예언자 왕의 위엄",
     "icon": "None",
     "target": "enemy",
     "buffs": {
@@ -2188,9 +2170,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      ""
-    ]
+    }
   }
 };

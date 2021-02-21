@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "SMG 연사",
     "icon": "ARShot",
     "target": "enemy",
     "buffs": {
@@ -809,15 +808,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "서브 머신건으로 [@:공격력 :0~0:배 피해]를 주고, 2라운드 동안 대상의 [회피 -:30~1.5:%]를 낮추며 [받는 피해 +:10~0.5:%]를 증가시킵니다.",
-      "각 효과는 중첩 가능합니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "고폭 수류탄",
     "icon": "GrenadeAttack_1",
     "target": "enemy",
     "buffs": {
@@ -2075,15 +2069,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "고폭 수류탄을 던져 [@,#fire:공격력 :0~0:배 화염 피해]를 줍니다.",
-      "대상이 회피 감소 또는 이동 불가 상태인 경우, [피해량 +:30~1.5:%]가 증가합니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "토모와 친구들",
     "icon": "TeamAtkBuff",
     "target": "team",
     "buffs": {
@@ -2766,10 +2755,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, 같은 스쿼드 내의 [$ch;BR_WarWolf] / [$ch;BR_Brownie] / [$ch;BR_AS12TurtleDragon] / [$ch;DS_Charlotte] 1기 당 [공격력 +:10~0.5:%] / [적중 +:15~0.75:%] / [치명타 +:5~0.25:%] / [행동력 +:5~0.25:%]가 증가하며 해당 대원들의 공격을 지원합니다.",
-      "해당 효과는 중첩 적용됩니다."
-    ]
+    }
   }
 };

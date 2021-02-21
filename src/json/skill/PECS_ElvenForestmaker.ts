@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "초고압 분사",
     "icon": "BeamShot",
     "target": "enemy",
     "buffs": {
@@ -2519,15 +2518,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "지정 범위에 물대포를 발사해 [@,#chill:공격력 :0~0:배 냉기 피해]를 주고, 2라운드 동안 대상을 침수 상태로 만듭니다.",
-      "침수 : [#chill:냉기 저항 -:50~2.5:%] / [#thunder:전기 저항 -:50~2.5:%] / [#fire:화염 저항 +:50~2.5:%]"
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "묘목 심기",
     "icon": "MeleeAttack",
     "target": "enemy",
     "buffs": {
@@ -4275,15 +4269,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "지정 대상에게 묘목을 심어 [@:공격력 :0~0:배 피해]를 주고, [#fire:화염 저항 -:30~1.5:%]를 낮춥니다.",
-      "대상이 방어력 감소 상태면 [받는 피해 +:25~1.25:%]가 증가하는 상태로 만들며, 일정 확률로 행동 불가 상태가 됩니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "수풀 매복",
     "icon": "TeamAtkBuff",
     "target": "team",
     "buffs": {
@@ -4401,14 +4390,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, 자신과 같은 행의 뒤에 배치된 아군의 [공격력 +:15~0.75:%] / [치명타 +:10~0.5:%]를 증가시키며 [받는 피해 -:10~0.5:%]를 감소시킵니다."
-    ]
+    }
   },
   "passive4": {
     "key": "passive4",
-    "name": "숲의 교감",
     "icon": "SelfDefBuff",
     "target": "team",
     "buffs": {
@@ -4739,9 +4724,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, 자신의 [행동력 +:10~1:%]를 증가시키며, [$ch;PECS_DarkElf]의 패시브 효과를 받는 대상과 [$ch;PECS_HighElven], [$ch;PECS_DarkElf]의 [공격력 +:15~0.75:%] / [치명타 +:10~0.5:%]를 증가시키고 [받는 피해 -:10~0.5:%]를 감소시킵니다."
-    ]
+    }
   }
 };

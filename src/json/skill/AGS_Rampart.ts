@@ -1,7 +1,6 @@
 export default {
   "active1": {
     "key": "active1",
-    "name": "목표 견제",
     "icon": "ARShot",
     "target": "enemy",
     "buffs": {
@@ -2599,15 +2598,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "위협 사격으로 [@:공격력 :0~0:배 피해]를 주고, 2라운드 동안 대상의 [공격력 -:15~0.5:%]과 [적중 -:20~1:%]를 낮춥니다.",
-      "스쿼드 내 [$ch;PECS_MissSafety]가 있을 시, 대상에게 <고압 가스탄> 스킬 협동 공격을 합니다."
-    ]
+    }
   },
   "active2": {
     "key": "active2",
-    "name": "시민 호위",
     "icon": "ShieldWall",
     "target": "team",
     "buffs": {
@@ -2816,15 +2810,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "3라운드 동안 지정한 아군을 보호하며, 대상의 [AP +:1~0.05:]를 증가시킵니다.",
-      "아군을 보호하는 동안 자신이 [받는 피해 -:25~3:%]가 감소합니다."
-    ]
+    }
   },
   "passive3": {
     "key": "passive3",
-    "name": "시민의 친구",
     "icon": "SelfDefBuff",
     "target": "team",
     "buffs": {
@@ -2939,14 +2928,10 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, 자신와 같은 열 위쪽에 배치된 아군을 지정 보호하며 [적중 +:20~1:%] / [행동력 +:5~0.25:%]을 증가시킵니다."
-    ]
+    }
   },
   "passive4": {
     "key": "passive4",
-    "name": "군용 현대화 개수",
     "icon": "SelfAtkBuff",
     "target": "team",
     "buffs": {
@@ -3155,10 +3140,6 @@ export default {
           ]
         }
       ]
-    },
-    "desc": [
-      "라운드 개시 시, [공격력 +:10~0.5:%] / [방어력 +:30~1.5:%]이 증가하며 행 보호가 적용됩니다.",
-      "[$eq;Sub_Overclock] 장착 시, <목표 견제>의 피해량이 20% 증가하고 공격 받으면 [:67~4:% 위력으로 반격]합니다."
-    ]
+    }
   }
 };

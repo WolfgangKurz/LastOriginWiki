@@ -70,11 +70,11 @@ function process (auth) {
 
 				ret[unit][key] = {
 					key,
-					name: row[3],
+					// name: row[3],
 					icon: row[4],
 					target: row[5],
 					buffs,
-					desc: (row[7] || "").split("\n"),
+					// desc: (row[7] || "").split("\n"),
 					// effect: row[11].split("\n"),
 				};
 			});
