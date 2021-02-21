@@ -298,8 +298,9 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
+import { LocaleGet } from "@/libs/Locale";
 
-import { UnitLevelTable, WorldNames } from "@/libs/Const";
+import { UnitLevelTable } from "@/libs/Const";
 
 import { FilterableEquip } from "@/libs/Types/Equip.Filterable";
 import { Worlds } from "@/libs/Types/Map";
@@ -516,7 +517,7 @@ export default class ExpCalculator extends Vue {
 				maps.push({
 					label: world === "Story"
 						? `${area} 지역`
-						: `${WorldNames[world] || world} - ${area} 지역`,
+						: `${LocaleGet(`WORLD_${world}`)} - ${area} 지역`,
 					options: nodes,
 				});
 			}

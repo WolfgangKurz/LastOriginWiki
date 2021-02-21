@@ -172,8 +172,8 @@ export default class EnemyPage extends Vue {
 
 			if (this.selectedEnemy) {
 				const en = this.selectedEnemy;
-				SetMeta(["description", "twitter:description"], `적 ${en.name}의 정보입니다. 스테이터스와 스킬, 등장 스테이지를 확인할 수 있습니다.`);
-				SetMeta("keywords", `,${en.name}`, true);
+				SetMeta(["description", "twitter:description"], `적 ${LocaleGet(`ENEMY_${en.id}`)}의 정보입니다. 스테이터스와 스킬, 등장 스테이지를 확인할 수 있습니다.`);
+				SetMeta("keywords", `,${LocaleGet(`ENEMY_${en.id}`)}`, true);
 				SetMeta(["twitter:image", "og:image"], `${AssetsRoot}/${ImageExtension()}/tbar/${en.icon}.${ImageExtension()}`);
 			}
 

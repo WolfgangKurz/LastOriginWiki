@@ -317,9 +317,9 @@
 							</b-tr>
 							<b-tr>
 								<b-th><locale k="UNIT_VIEW_COST_LINKS" /></b-th>
-								<b-th><locale k="UNIT_VIEW_COST_PARTS" /></b-th>
-								<b-th><locale k="UNIT_VIEW_COST_NUTRIENTS" /></b-th>
-								<b-th><locale k="UNIT_VIEW_COST_POWER" /></b-th>
+								<b-th><locale k="COMMON_RES_PARTS" /></b-th>
+								<b-th><locale k="COMMON_RES_NUTRIENTS" /></b-th>
+								<b-th><locale k="COMMON_RES_POWER" /></b-th>
 							</b-tr>
 						</b-thead>
 						<b-tbody>

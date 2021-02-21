@@ -3,8 +3,8 @@
 		<b-card :class="`rarity-${RarityDisplay[equip.rarity]}`">
 			<equip-icon class="float-left mr-2" :image="equip.icon" />
 			<div class="text-left">
-				<b-badge variant="secondary">{{ RarityDisplay[equip.rarity] }}</b-badge>
-				{{ equip.name }}
+				<b-badge variant="secondary" class="mr-1">{{ RarityDisplay[equip.rarity] }}</b-badge>
+				<locale :k="`EQUIP_${equip.fullKey}`" />
 				<small v-if="chance < 100" class="pl-1 text-bold">({{ chance }}%)</small>
 			</div>
 		</b-card>

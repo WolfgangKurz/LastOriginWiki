@@ -190,17 +190,17 @@ function getTriggerText (trigger: BuffTrigger) {
 			switch (trigger.damaged) {
 				case "fire":
 					return [
-						<elem-icon elem={ trigger.damaged } class="mr-1 mb-0" />,
+						<elem-icon elem={ trigger.damaged } class="mr-0 mb-0" />,
 						LocaleGet("BUFFTRIGGER_DAMAGED_FIRE"),
 					];
 				case "ice":
 					return [
-						<elem-icon elem={ trigger.damaged } class="mr-1 mb-0" />,
+						<elem-icon elem={ trigger.damaged } class="mr-0 mb-0" />,
 						LocaleGet("BUFFTRIGGER_DAMAGED_ICE"),
 					];
 				case "lightning":
 					return [
-						<elem-icon elem={ trigger.damaged } class="mr-1 mb-0" />,
+						<elem-icon elem={ trigger.damaged } class="mr-0 mb-0" />,
 						LocaleGet("BUFFTRIGGER_DAMAGED_THUNDER"),
 					];
 			}
@@ -463,19 +463,19 @@ function getBuffEffectTypeText (type: BUFFEFFECT_TYPE, target: BUFF_ATTR_TYPE) {
 		case BUFFEFFECT_TYPE.STAT_RESFIRE_VALUE: // 14
 		case BUFFEFFECT_TYPE.STAT_RESFIRE_RATIO: // 15
 			return [
-				<elem-icon elem="fire" class="mr-1 mb-0" />,
+				<elem-icon elem="fire" class="mr-0 mb-0" />,
 				LocaleGet("BUFFTYPE_FIRE_RES", p),
 			];
 		case BUFFEFFECT_TYPE.STAT_RESICE_VALUE: // 16
 		case BUFFEFFECT_TYPE.STAT_RESICE_RATIO: // 17
 			return [
-				<elem-icon elem="ice" class="mr-1 mb-0" />,
+				<elem-icon elem="ice" class="mr-0 mb-0" />,
 				LocaleGet("BUFFTYPE_ICE_RES", p),
 			];
 		case BUFFEFFECT_TYPE.STAT_RESLIGHTNING_VALUE: // 18
 		case BUFFEFFECT_TYPE.STAT_RESLIGHTNING_RATIO: // 19
 			return [
-				<elem-icon elem="lightning" class="mr-1 mb-0" />,
+				<elem-icon elem="lightning" class="mr-0 mb-0" />,
 				LocaleGet("BUFFTYPE_THUNDER_RES", p),
 			];
 		case BUFFEFFECT_TYPE.STAGE_AP_VALUE: // 20
@@ -717,17 +717,17 @@ function getBuffText (stat: BuffEffect, level?: number) {
 			switch (stat.damage.elem) {
 				case "fire":
 					return [
-						<elem-icon elem={ stat.damage.elem } class="mr-1 mb-0" />,
+						<elem-icon elem={ stat.damage.elem } class="mr-0 mb-0" />,
 						LocaleGet("BUFFEFFECT_ADDDMG_FIRE", literal(stat.damage.damage, level)),
 					];
 				case "ice":
 					return [
-						<elem-icon elem={ stat.damage.elem } class="mr-1 mb-0" />,
+						<elem-icon elem={ stat.damage.elem } class="mr-0 mb-0" />,
 						LocaleGet("BUFFEFFECT_ADDDMG_ICE", literal(stat.damage.damage, level)),
 					];
 				case "lightning":
 					return [
-						<elem-icon elem={ stat.damage.elem } class="mr-1 mb-0" />,
+						<elem-icon elem={ stat.damage.elem } class="mr-0 mb-0" />,
 						LocaleGet("BUFFEFFECT_ADDDMG_THUNDER", literal(stat.damage.damage, level)),
 					];
 			}
@@ -752,17 +752,17 @@ function getBuffText (stat: BuffEffect, level?: number) {
 			switch (stat.damage_add.elem) {
 				case "fire":
 					return [
-						<elem-icon elem={ stat.damage_add.elem } class="mr-1 mb-0" />,
+						<elem-icon elem={ stat.damage_add.elem } class="mr-0 mb-0" />,
 						LocaleGet("BUFFEFFECT_DMG_FIRE", positive(stat.damage_add.damage, level)),
 					];
 				case "ice":
 					return [
-						<elem-icon elem={ stat.damage_add.elem } class="mr-1 mb-0" />,
+						<elem-icon elem={ stat.damage_add.elem } class="mr-0 mb-0" />,
 						LocaleGet("BUFFEFFECT_DMG_ICE", positive(stat.damage_add.damage, level)),
 					];
 				case "lightning":
 					return [
-						<elem-icon elem={ stat.damage_add.elem } class="mr-1 mb-0" />,
+						<elem-icon elem={ stat.damage_add.elem } class="mr-0 mb-0" />,
 						LocaleGet("BUFFEFFECT_DMG_THUNDER", positive(stat.damage_add.damage, level)),
 					];
 			}
@@ -801,26 +801,26 @@ function getBuffText (stat: BuffEffect, level?: number) {
 					return <locale
 						k="BUFFEFFECT_DOT_FIRE"
 						p0={ literal(stat.fixed_damage.damage, level) }
-						p1={ <elem-icon elem={ stat.fixed_damage.elem } class="mr-1 mb-0" /> }
+						p1={ <elem-icon elem={ stat.fixed_damage.elem } class="mr-0 mb-0" /> }
 					/>;
 				case "ice":
 					return <locale
 						k="BUFFEFFECT_DOT_ICE"
 						p0={ literal(stat.fixed_damage.damage, level) }
-						p1={ <elem-icon elem={ stat.fixed_damage.elem } class="mr-1 mb-0" /> }
+						p1={ <elem-icon elem={ stat.fixed_damage.elem } class="mr-0 mb-0" /> }
 					/>;
 				case "lightning":
 					return <locale
 						k="BUFFEFFECT_DOT_THUNDER"
 						p0={ literal(stat.fixed_damage.damage, level) }
-						p1={ <elem-icon elem={ stat.fixed_damage.elem } class="mr-1 mb-0" /> }
+						p1={ <elem-icon elem={ stat.fixed_damage.elem } class="mr-0 mb-0" /> }
 					/>;
 			}
 		} else {
 			return <locale
 				k="BUFFEFFECT_DOT_PHYSICS"
 				p0={ literal(stat.fixed_damage, level) }
-				p1={ <elem-icon elem={ SKILL_ATTR.PHYSICS } class="mr-1 mb-0" /> }
+				p1={ <elem-icon elem={ SKILL_ATTR.PHYSICS } class="mr-0 mb-0" /> }
 			/>;
 		}
 	} else if ("provoke" in stat)

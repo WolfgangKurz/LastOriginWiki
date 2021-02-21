@@ -1,43 +1,57 @@
 <template>
 	<b-card-body class="p-0 text-center">
-		<div v-if="SearchInfo === null" class="py-4 text-secondary">위 지도에서 지역을 선택해주세요.</div>
-		<div v-else-if="SearchInfo === false" class="py-4 text-secondary">탐사할 수 없는 지역입니다.</div>
+		<div v-if="SearchInfo === null" class="py-4 text-secondary">
+			<locale k="WORLD_VIEW_SELECT_NODE" />
+		</div>
+		<div v-else-if="SearchInfo === false" class="py-4 text-secondary">
+			<locale k="WORLD_VIEW_NOT_EXPLORABLE" />
+		</div>
 		<template v-else>
 			<b-row cols="1" cols-lg="2">
 				<b-col>
-					<b-card text-variant="dark" header="탐색 조건">
+					<b-card text-variant="dark" :header="LocaleGet('WORLD_VIEW_EXPLORATION_CONDITION')">
 						<b-table-simple class="border-bottom">
 							<b-tbody>
 								<b-tr>
-									<b-td> 필요 평균 레벨</b-td>
+									<b-td><locale k="WORLD_VIEW_EXPLORATION_AVG_LV" /></b-td>
 									<b-td>
-										<b-badge variant="warning">Lv. {{ SearchInfo.unitsLv }} 이상</b-badge>
+										<b-badge variant="warning">
+											<locale k="WORLD_VIEW_EXPLORATION_LV_FORMAT" :p0="SearchInfo.unitsLv" />
+										</b-badge>
 									</b-td>
 								</b-tr>
 								<b-tr>
-									<b-td> 스쿼드 구성 인원</b-td>
 									<b-td>
-										<b-badge variant="warning">{{ SearchInfo.units }} 이상</b-badge>
+										<locale k="WORLD_VIEW_EXPLORATION_MEMBERS" />
+									</b-td>
+									<b-td>
+										<b-badge variant="warning">
+											<locale k="WORLD_VIEW_EXPLORATION_MEMBERS_FORMAT" :p0="SearchInfo.units" />
+										</b-badge>
 									</b-td>
 								</b-tr>
 							</b-tbody>
 						</b-table-simple>
 						<div>
-							<b-badge variant="warning">탐색 소요 시간</b-badge>
+							<b-badge variant="warning">
+								<locale k="WORLD_VIEW_EXPLORING_TIME" />
+							</b-badge>
 							<h3>{{ SearchTime }}</h3>
 						</div>
 					</b-card>
 				</b-col>
 				<b-col>
-					<b-card class="mt-2 mt-lg-0" text-variant="dark" header="탐색 완료 보상">
+					<b-card class="mt-2 mt-lg-0" text-variant="dark" :header="LocaleGet('WORLD_VIEW_EXPLORATION_REWARDS')">
 						<b-row cols="2" cols-md="3">
 							<drop-res res="metal" :count="SearchInfo.metal" />
 							<drop-res res="nutrient" :count="SearchInfo.nutrient" />
 							<drop-res res="power" :count="SearchInfo.power" />
 						</b-row>
 					</b-card>
-					<b-card class="mt-2" text-variant="dark" header="추가 획득 가능">
-						<div v-if="SearchInfo.items.length === 0" class="py-4 text-secondary">추가 획득 가능 물품 없음</div>
+					<b-card class="mt-2" text-variant="dark" :header="LocaleGet('WORLD_VIEW_EXPLORATION_REWARDS_ITEM')">
+						<div v-if="SearchInfo.items.length === 0" class="py-4 text-secondary">
+							<locale k="WORLD_VIEW_EXPLORATION_REWARDS_ITEM_NO" />
+						</div>
 						<b-row cols="2">
 							<template v-for="(item, i) in SearchInfo.items">
 								<drop-item

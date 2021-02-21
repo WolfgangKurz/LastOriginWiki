@@ -5,9 +5,9 @@ import { ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE, SKILL_ATTR } from "@/libs/Types/En
 
 export interface EnemySkill {
 	key: string;
-	// name: string;
+	name: string;
 	icon: string;
-	// desc: string;
+	desc: string;
 	passive: boolean;
 	type: SKILL_ATTR;
 	target: "enemy" | "team";

@@ -79,8 +79,9 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Watch } from "vue-property-decorator";
+import { LocaleGet } from "@/libs/Locale";
 
-import { AssetsRoot, ImageExtension, WorldDescriptions, WorldNames } from "@/libs/Const";
+import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { StoryData } from "@/libs/DB";
 import { UpdateTitle } from "@/libs/Functions";
 import { StoryRaw } from "@/libs/Types";
@@ -114,7 +115,7 @@ export default class Story extends Vue {
 	}
 
 	private get Name () {
-		return WorldNames[this.world] || this.world;
+		return LocaleGet(`WORLD_${this.world}`);
 	}
 
 	private get Area () {
@@ -124,7 +125,7 @@ export default class Story extends Vue {
 	}
 
 	private get Description () {
-		return WorldDescriptions[this.world] !== undefined ? WorldDescriptions[this.world] : this.world;
+		return LocaleGet([`WORLD_DESC_${this.world}`, ""]);
 	}
 
 	private get Stories (): StoryRaw[] {

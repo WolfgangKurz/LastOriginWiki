@@ -376,13 +376,13 @@ export default class FacilityView extends Vue {
 										? <span class="text-secondary"><locale k="FACILITY_COST_NO" /></span>
 										: [
 											<b-badge class="mx-1" key={ `facility-${this.key}-reqres-0` } variant="warning">
-												<locale k="FACILITY_PART" /> { entry.cost[0] }
+												<locale k="COMMON_RES_PARTS" /> { entry.cost[0] }
 											</b-badge>,
 											<b-badge class="mx-1" key={ `facility-${this.key}-reqres-1` } variant="success">
-												<locale k="FACILITY_NUTRIENT" /> { entry.cost[1] }
+												<locale k="COMMON_RES_NUTRIENTS" /> { entry.cost[1] }
 											</b-badge>,
 											<b-badge class="mx-1" key={ `facility-${this.key}-reqres-2` } variant="primary">
-												<locale k="FACILITY_POWER" /> { entry.cost[2] }
+												<locale k="COMMON_RES_POWER" /> { entry.cost[2] }
 											</b-badge>,
 										]
 								}
