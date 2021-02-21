@@ -1,7 +1,5 @@
 export default {
   "id": "TrainingDummy_N",
-  "name": "표적 더미",
-  "desc": "연습용으로 쓰이는 표적 나이트 칙 모형이다.",
   "icon": "TbarIcon_MP_NightChick_N",
   "ai": "AI_Jako_Special_01",
   "rarity": 3,

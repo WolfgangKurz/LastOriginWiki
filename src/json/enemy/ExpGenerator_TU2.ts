@@ -1,7 +1,5 @@
 export default {
   "id": "ExpGenerator_TU2",
-  "name": "수상한 기계장치",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_ExpGenerator_N",
   "ai": "AI_ExpGenerator_Normal_01",
   "rarity": 5,

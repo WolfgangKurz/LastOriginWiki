@@ -31,7 +31,7 @@ function process (auth) {
 			return parseFloat(v);
 		}
 
-		const names = {};
+		// const names = {};
 		const ret = [];
 		const rows = res.data.values;
 		if (rows.length) {
@@ -40,14 +40,14 @@ function process (auth) {
 
 				const [
 					id,
-					name,
+					// name,
 					rarity,
 					cls,
 					role,
 					isBoss,
 					icon,
 					ai,
-					desc,
+					// desc,
 					hp, hpPer,
 					atk, atkPer,
 					def, defPer,
@@ -63,8 +63,8 @@ function process (auth) {
 
 				const o = {
 					id,
-					name,
-					desc,
+					// name,
+					// desc,
 					icon,
 					ai,
 
@@ -95,17 +95,17 @@ function process (auth) {
 					`export default ${JSON.stringify(o, null, 2)};`,
 				);
 
-				names[id] = name;
+				// names[id] = name;
 			});
 
 			fs.writeFileSync(
 				path.resolve(__dirname, "..", "src", "json", "enemy.ts"),
 				`export default ${JSON.stringify(ret, null, 2)};`,
 			);
-			fs.writeFileSync(
-				path.resolve(__dirname, "..", "src", "json", "enemy-names.ts"),
-				`export default ${JSON.stringify(names, null, 2)};`,
-			);
+			// fs.writeFileSync(
+			// 	path.resolve(__dirname, "..", "src", "json", "enemy-names.ts"),
+			// 	`export default ${JSON.stringify(names, null, 2)};`,
+			// );
 		} else
 			console.log("No data found.");
 	});

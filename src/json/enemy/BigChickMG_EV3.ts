@@ -1,7 +1,5 @@
 export default {
   "id": "BigChickMG_EV3",
-  "name": "빅 칙 런쳐 G",
-  "desc": "화력이 뛰어나지만 전기로 센서를 일시적으로 고장낼 수 있는거 같아요. 보조 무장은 약하지만 정밀하니 주의하세요.\n\n\n- 레아 보고함",
   "icon": "TbarIcon_MP_BigChickMG_N",
   "ai": "AI_MP_BigChickMG_Normal_01",
   "rarity": 5,

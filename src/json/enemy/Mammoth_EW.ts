@@ -1,7 +1,5 @@
 export default {
   "id": "Mammoth_EW",
-  "name": "매머드",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_Mammoth_N",
   "ai": "AI_Mp_Mammoth_01",
   "rarity": 4,

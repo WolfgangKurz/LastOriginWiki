@@ -1,7 +1,5 @@
 export default {
   "id": "FridgerShell_TU5",
-  "name": "프리져 쉘",
-  "desc": "매우 드문 스파르탄 기체의 철충입니다만, 냉각 무기로 무장한 건 어리석네요. 최고의 소이전 전문가들이 나설 차례예요!\n\n\n- 랜서 미나",
   "icon": "TbarIcon_MP_FridgerShell_N",
   "ai": "AI_MP_FridgerShooter_01",
   "rarity": 4,

@@ -1,7 +1,5 @@
 export default {
   "id": "StingerC_B08",
-  "name": "스팅어 커스텀",
-  "desc": "극지용 스팅어? 묘한 친근감이 느껴지네요. 적이 보호하기 전에 빠르게 처치하는게 좋을거에요. 견딜만하다고 방심하다간 큰일날 수 있어요.\n\n\n - 님프 보고함",
   "icon": "TbarIcon_MP_StingerC_N",
   "ai": "AI_StingerC_Normal_01",
   "rarity": 4,

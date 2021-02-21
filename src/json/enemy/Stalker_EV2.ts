@@ -1,7 +1,5 @@
 export default {
   "id": "Stalker_EV2",
-  "name": "스토커",
-  "desc": "철충 연결체입니다. 힘을 모아서 엄청난 한 방을 노리는 비열한 타입의 적입니다. 하지만 힘을 모으고 있는 시간은 짧으니 최대한 공격을 늦춰서 제 포를 이용해 처리하는 게 가장 좋아 보이는군요.\n\n\n- 보고자 비스트 헌터",
   "icon": "TbarIcon_MP_Stalker_B0108",
   "ai": "AI_Boss_Stalker_Event_01",
   "rarity": 5,

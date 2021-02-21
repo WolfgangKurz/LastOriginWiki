@@ -1,7 +1,5 @@
 export default {
   "id": "SpectorMS_EW",
-  "name": "양산형 스펙터",
-  "desc": "한동안 안 보이더니 그동안의 데이터로 양산 모델이 만들어진 것 같습니다. 역장의 성능은 예전만 못하지만, 굉장히 민첩해졌으니 주의하셔야 합니다.\n\n\n보고자 ???",
   "icon": "TbarIcon_MP_Spector_N",
   "ai": "AI_Spector_Special_03",
   "rarity": 5,

@@ -1,7 +1,5 @@
 export default {
   "id": "RocCGeneratorA_EV2",
-  "name": "강화 에너지 컨덴서",
-  "desc": "전력을 공급하기 위한 장치네요. 웬만한 충격으론 금방 복원되니 무력화되었을 때 본체를 노리는게 좋을 것 같아요.\n\n\n- 세이렌 보고함",
   "icon": "TbarIcon_MP_RocCGenerator_N",
   "ai": "AI_RocGenerator_Normal_04",
   "rarity": 4,

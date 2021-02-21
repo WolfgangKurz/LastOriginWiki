@@ -1,7 +1,5 @@
 export default {
   "id": "RocCGenerator_EW",
-  "name": "에너지 컨덴서",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_RocCGenerator_N",
   "ai": "AI_RocGenerator_Normal_01",
   "rarity": 4,

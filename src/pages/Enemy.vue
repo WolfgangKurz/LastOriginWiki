@@ -2,34 +2,48 @@
 	<div class="enemy">
 		<div class="mb-2">
 			<b-btn-group class="mx-2 mb-2">
-				<b-button variant="outline-success" :pressed="Filters.Type[0]" @click="Filters.Type[0] = !Filters.Type[0]">경장형</b-button>
-				<b-button variant="outline-success" :pressed="Filters.Type[2]" @click="Filters.Type[2] = !Filters.Type[2]">기동형</b-button>
-				<b-button variant="outline-success" :pressed="Filters.Type[1]" @click="Filters.Type[1] = !Filters.Type[1]">중장형</b-button>
+				<b-button variant="outline-success" :pressed="Filters.Type[0]" @click="Filters.Type[0] = !Filters.Type[0]">
+					<locale k="COMMON_UNIT_TYPE_LIGHT" />
+				</b-button>
+				<b-button variant="outline-success" :pressed="Filters.Type[2]" @click="Filters.Type[2] = !Filters.Type[2]">
+					<locale k="COMMON_UNIT_TYPE_MOBILITY" />
+				</b-button>
+				<b-button variant="outline-success" :pressed="Filters.Type[1]" @click="Filters.Type[1] = !Filters.Type[1]">
+					<locale k="COMMON_UNIT_TYPE_HEAVY" />
+				</b-button>
 			</b-btn-group>
 			<b-btn-group class="mx-2 mb-2">
-				<b-button variant="outline-primary" :pressed="Filters.Role[1]" @click="Filters.Role[1] = !Filters.Role[1]">공격기</b-button>
-				<b-button variant="outline-primary" :pressed="Filters.Role[0]" @click="Filters.Role[0] = !Filters.Role[0]">보호기</b-button>
-				<b-button variant="outline-primary" :pressed="Filters.Role[2]" @click="Filters.Role[2] = !Filters.Role[2]">지원기</b-button>
+				<b-button variant="outline-primary" :pressed="Filters.Role[1]" @click="Filters.Role[1] = !Filters.Role[1]">
+					<locale k="COMMON_UNIT_ROLE_ATTACKER" />
+				</b-button>
+				<b-button variant="outline-primary" :pressed="Filters.Role[0]" @click="Filters.Role[0] = !Filters.Role[0]">
+					<locale k="COMMON_UNIT_ROLE_DEFENDER" />
+				</b-button>
+				<b-button variant="outline-primary" :pressed="Filters.Role[2]" @click="Filters.Role[2] = !Filters.Role[2]">
+					<locale k="COMMON_UNIT_ROLE_SUPPORTER" />
+				</b-button>
 			</b-btn-group>
 			<b-btn-group class="mx-2 mb-2">
-				<b-button variant="outline-warning" :pressed="Filters.BossOnly" @click="Filters.BossOnly = !Filters.BossOnly">보스만 표시</b-button>
-				<b-button variant="outline-warning" :pressed="Filters.UsedOnly" @click="Filters.UsedOnly = !Filters.UsedOnly"
-					>사용된 적만 표시</b-button
-				>
+				<b-button variant="outline-warning" :pressed="Filters.BossOnly" @click="Filters.BossOnly = !Filters.BossOnly">
+					<locale k="ENEMY_DISPLAY_BOSS_ONLY" />
+				</b-button>
+				<b-button variant="outline-warning" :pressed="Filters.UsedOnly" @click="Filters.UsedOnly = !Filters.UsedOnly">
+					<locale k="ENEMY_DISPLAY_USED_ONLY" />
+				</b-button>
 			</b-btn-group>
 		</div>
 
 		<div class="mb-4 mx-4">
 			<b-input-group>
-				<b-input v-model="searchKeyword" placeholder="적 검색" />
+				<b-input v-model="searchKeyword" :placeholder="LocaleGet('ENEMY_DISPLAY_SEARCH')" />
 				<b-input-group-append>
-					<b-button variant="danger" @click="searchKeyword = ''">지우기</b-button>
+					<b-button variant="danger" @click="searchKeyword = ''"><locale k="ENEMY_SEARCH_RESET" /></b-button>
 				</b-input-group-append>
 			</b-input-group>
 		</div>
 
 		<b-alert v-if="Filters.UsedOnly" variant="success" show>
-			영원한 전장에서 사용되는 적은 실제 사용 여부와 상관 없이 사용된 적 표시에 나타납니다.
+			<locale k="ENEMY_EW_TIP" />
 		</b-alert>
 
 		<b-row cols="2" cols-lg="5" :cols-xl="6" :cols-md="4" :cols-sm="3">
@@ -47,6 +61,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Watch } from "vue-property-decorator";
 import { Route } from "vue-router";
+import { LocaleGet } from "@/libs/Locale";
 
 import StoreModule, { EnemyFilters } from "@/libs/Store";
 
@@ -113,16 +128,16 @@ export default class EnemyPage extends Vue {
 				if (this.Filters.BossOnly && !x.isBoss) return false;
 				if (this.Filters.UsedOnly && !this.UsedEnemies.includes(x.id)) return false;
 
-				if (this.searchKeyword && !x.name.includes(this.searchKeyword)) return false;
+				if (this.searchKeyword && !LocaleGet(`ENEMY_${x.id}`).includes(this.searchKeyword)) return false;
 				return true;
 			})
 			.reduce((p, c) => {
-				if (p.some(x => x.name === c.name)) return p;
+				if (p.some(x => LocaleGet(`ENEMY_${x.id}`) === LocaleGet(`ENEMY_${c.id}`))) return p;
 				return [...p, c];
 			}, [] as FilterableEnemy[])
 			.sort((a, b) => {
 				return a.isBoss === b.isBoss
-					? a.name.localeCompare(b.name)
+					? LocaleGet(`ENEMY_${a.id}`).localeCompare(LocaleGet(`ENEMY_${b.id}`))
 					: a.isBoss && !b.isBoss ? 1 : -1;
 			});
 	}
@@ -157,19 +172,19 @@ export default class EnemyPage extends Vue {
 
 			if (this.selectedEnemy) {
 				const en = this.selectedEnemy;
-				SetMeta(["description", "twitter:description"], `적 ${en.name}의 정보입니다. 스테이터스와 스킬, 등장 스테이지를 확인할 수 있습니다.`);
-				SetMeta("keywords", `,${en.name}`, true);
+				SetMeta(["description", "twitter:description"], `적 ${LocaleGet(`ENEMY_${en.id}`)}의 정보입니다. 스테이터스와 스킬, 등장 스테이지를 확인할 수 있습니다.`);
+				SetMeta("keywords", `,${LocaleGet(`ENEMY_${en.id}`)}`, true);
 				SetMeta(["twitter:image", "og:image"], `${AssetsRoot}/${ImageExtension()}/tbar/${en.icon}.${ImageExtension()}`);
 			}
 
-			UpdateTitle("적 정보", `${this.selectedEnemy ? this.selectedEnemy.name : "???"}`);
+			UpdateTitle(LocaleGet("MENU_ENEMIES"), `${this.selectedEnemy ? LocaleGet(`ENEMY_${this.selectedEnemy.id}`) : "???"}`);
 		} else {
 			this.enemyModalDisplay = false;
 
 			SetMeta(["description", "twitter:description"], "적의 목록을 표시합니다. 원하는 적을 찾기 위해 검색할 수 있습니다.");
 			SetMeta(["twitter:image", "og:image"], null);
 
-			UpdateTitle("적 정보");
+			UpdateTitle(LocaleGet("MENU_ENEMIES"));
 		}
 	}
 

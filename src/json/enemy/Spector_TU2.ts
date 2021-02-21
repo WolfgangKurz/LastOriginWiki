@@ -1,7 +1,5 @@
 export default {
   "id": "Spector_TU2",
-  "name": "스펙터",
-  "desc": "방어막을 걷어내지 않으면 격추하기 힘든 개체야. 유령같은 움직임 때문에 맞추기 힘들테니 주의해.\n\n\n- 네오딤",
   "icon": "TbarIcon_MP_Spector_N",
   "ai": "AI_Spector_Normal_01",
   "rarity": 5,

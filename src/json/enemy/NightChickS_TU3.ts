@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickS_TU3",
-  "name": "나이트 칙 실더",
-  "desc": "이 자식들 짜증나 방패를 들고 앞을 자꾸 가로막거든? 다행히 머리가 나빠서 바로 뒤만 가로 막지만… 어쨌든 이 녀석들이 방어 자세를 취하기 전에 뒤를 정리해 두라고!\n\n\n- 보고자 그리폰",
   "icon": "TbarIcon_MP_NightChickS_N",
   "ai": "AI_Jako_Defense_02",
   "rarity": 2,

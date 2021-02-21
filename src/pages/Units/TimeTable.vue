@@ -3,8 +3,12 @@
 		<b-table-simple class="unit-table mb-3" striped>
 			<b-thead head-variant="dark">
 				<b-tr>
-					<b-th>제조 시간</b-th>
-					<b-th>전투원</b-th>
+					<b-th>
+						<locale k="UNIT_CREATIONTIME_TIME" />
+					</b-th>
+					<b-th>
+						<locale k="UNIT_CREATIONTIME_UNIT" />
+					</b-th>
 				</b-tr>
 			</b-thead>
 			<b-tbody>

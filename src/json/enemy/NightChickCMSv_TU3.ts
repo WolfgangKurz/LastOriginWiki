@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickCMSv_TU3",
-  "name": "생존형 케미컬 칙",
-  "desc": "저 철충 때문에 소중한 나무들이 죽어가고 있어요! 저 녀석한테서 흘러나오는 더러운 액체를 어서 제 급수기로 씻어내버리죠!\n\n\n- 엘븐 포레스트 보고함",
   "icon": "TbarIcon_MP_NightChickCM_N",
   "ai": "AI_MP_CMChickP_Normal_01",
   "rarity": 4,

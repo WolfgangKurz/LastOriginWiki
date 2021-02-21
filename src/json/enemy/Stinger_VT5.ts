@@ -1,7 +1,5 @@
 export default {
   "id": "Stinger_VT5",
-  "name": "초코 여왕의 돌격병",
-  "desc": "초코 여왕이 양산형 스팅어 기종을 도색해 만들어낸 기체입니다.",
   "icon": "TbarIcon_MP_Stinger_V2",
   "ai": "AI_Hvst_Normal_02",
   "rarity": 3,

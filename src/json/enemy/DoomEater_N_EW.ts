@@ -1,7 +1,5 @@
 export default {
   "id": "DoomEater_N_EW",
-  "name": "굶주린 둠 이터",
-  "desc": "오랫동안 에너지 섭취를 못해 매우 굶주려 있는 상태로 주위에 있는 모든 철충들을 닥치는 대로 먹어치워 버릴 것입니다. 더 이상 먹어치울 철충이 없을 경우 광폭화에 빠지게 되어 막을 수 없을지도 모릅니다.\n\n\n보고자 ???",
   "icon": "TbarIcon_MP_DoomEater_N",
   "ai": "AI_Boss_PWLR_EW_01",
   "rarity": 5,

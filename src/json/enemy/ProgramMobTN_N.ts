@@ -1,7 +1,5 @@
 export default {
   "id": "ProgramMobTN_N",
-  "name": "철충 사념체 (저격병)",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_ProgramMobTN_N",
   "ai": "AI_ProgramMobTN_Normal_01",
   "rarity": 4,

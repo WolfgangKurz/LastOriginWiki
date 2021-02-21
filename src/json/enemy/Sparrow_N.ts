@@ -1,7 +1,5 @@
 export default {
   "id": "Sparrow_N",
-  "name": "스패로우",
-  "desc": "평범한 철충이다.",
   "icon": "TbarIcon_MP_Scout_N",
   "ai": "AI_Scout_Normal_01",
   "rarity": 2,

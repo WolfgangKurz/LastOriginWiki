@@ -1,7 +1,5 @@
 export default {
   "id": "Kidnapper_CH",
-  "name": "트릭스터",
-  "desc": "요원 암살용 철충 연결체. 빠르고 민첩하다. 나와 우리 부대처럼 기동전이 가능한 부대가 맡는 게 좋을 것 같군. 포획이든 파괴든 쉽지 않다.\n\n\n- 칸",
   "icon": "TbarIcon_MP_Kidnapper_B0308",
   "ai": "AI_Boss_Typhoon_01",
   "rarity": 5,

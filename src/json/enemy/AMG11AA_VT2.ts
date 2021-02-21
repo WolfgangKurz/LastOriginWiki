@@ -1,7 +1,5 @@
 export default {
   "id": "AMG11AA_VT2",
-  "name": "초코 여왕의 정예 감시병",
-  "desc": "이 녀석들은 대공 능력에 특화된 녀석들이야. 물론 내 우수한 스텔스 능력에 비하면 분명 보잘것없는 능력이지만, 다른 친구들에게는 성가실 수 있으니 내가 먼저 처리해야겠어.\n\n\n - 하르페이아 보고함",
   "icon": "TbarIcon_MP_AMG11AA_V2",
   "ai": "AI_AAAMG11_Normal_01",
   "rarity": 5,

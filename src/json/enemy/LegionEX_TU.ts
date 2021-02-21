@@ -1,7 +1,5 @@
 export default {
   "id": "LegionEX_TU",
-  "name": "정예 레기온",
-  "desc": "공중의 적만 집요하게 노리니 공중 부대 운용 시 주의해! 구리게 보이는 점착제를 떼느라 이틀이나 고생했어. 그거 묻으면 진짜 아싸처럼 보이니 주의하라고!\n\n\n- 실피드",
   "icon": "TbarIcon_MP_Legion_N",
   "ai": "AI_Legion_Normal_03",
   "rarity": 3,

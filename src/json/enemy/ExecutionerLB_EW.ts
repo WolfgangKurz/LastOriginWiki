@@ -1,7 +1,5 @@
 export default {
   "id": "ExecutionerLB_EW",
-  "name": "익스큐셔너 롱 블레이드",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_ExecutionerRB_B06",
   "ai": "AI_ExecutionerLB_01",
   "rarity": 5,

@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickCMS_EV1",
-  "name": "강화형 케미컬 칙",
-  "desc": "냄새 나고 이상한 액체를 뿌려. 더럽고 음란해. 그 이상한 액을 뒤집어 쓴 애들은 한 동안 근처에 못 오게 했어. 특히 스틸 드라코는…\n\n\n- 보고자 미호",
   "icon": "TbarIcon_MP_NightChickCM_N",
   "ai": "AI_MP_CMChickP_Normal_01",
   "rarity": 3,

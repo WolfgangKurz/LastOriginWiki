@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickQM_EV2",
-  "name": "칙 쿼터마스터",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_NightChickQM_N",
   "ai": "AI_NightChickQM_Normal_01",
   "rarity": 4,

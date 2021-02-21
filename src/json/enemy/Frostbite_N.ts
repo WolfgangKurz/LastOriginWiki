@@ -1,7 +1,5 @@
 export default {
   "id": "Frostbite_N",
-  "name": "프로스트바이트",
-  "desc": "유기 생명체, 기온 하락 시 작전 능력 저하. 특수재질 장갑, 열 병기 지원 필요.\n\n\n- 기간테스 보고함",
   "icon": "TbarIcon_MP_Frostbite_N",
   "ai": "AI_Mp_Frostbite_Normal_01",
   "rarity": 5,

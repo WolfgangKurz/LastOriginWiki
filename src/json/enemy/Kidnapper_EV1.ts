@@ -1,7 +1,5 @@
 export default {
   "id": "Kidnapper_EV1",
-  "name": "트릭스터",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_Kidnapper_B0308",
   "ai": "AI_TrickSter_01",
   "rarity": 5,

@@ -1,7 +1,5 @@
 export default {
   "id": "Undine_EV4",
-  "name": "그럼…요?",
-  "desc": "그럼요…? 오늘의 암구호인 건가요?\n\n\n- 운디네",
   "icon": "TbarIcon_MP_Undine_N",
   "ai": "AI_MP_Undine_Event_04",
   "rarity": 4,

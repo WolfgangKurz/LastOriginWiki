@@ -1,7 +1,5 @@
 export default {
   "id": "NestChaser_TU2",
-  "name": "네스트 체이서",
-  "desc": "네스트에서 사출된 전투 기계로 네스트를 위협하는 요소를 제거하는 게 목적",
   "icon": "TbarIcon_MP_NestChaser_N",
   "ai": "AI_NestChaser_Normal_02",
   "rarity": 5,

@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickM_C",
-  "name": "나이트 칙 런처??",
-  "desc": "중장형을 상대하기 위해 반만년 동안 수련해 기동 공격기가 된 나이트 칙 런처라는 것 같다. 어떤 바이오로이드가 부러워 할 것 같다…",
   "icon": "TbarIcon_MP_NightChickM_N",
   "ai": "AI_Mp_NChickM_Challenge_01",
   "rarity": 5,

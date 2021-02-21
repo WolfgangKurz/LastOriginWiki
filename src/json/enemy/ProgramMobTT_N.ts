@@ -1,7 +1,5 @@
 export default {
   "id": "ProgramMobTT_N",
-  "name": "철충 사념체 (장갑병)",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_ProgramMobTT_N",
   "ai": "AI_ProgramMobTT_Normal_01",
   "rarity": 3,

@@ -2,7 +2,6 @@
 	<div class="equips">
 		<div class="text-center mb-3">
 			<b-alert variant="warning" show>
-				일부 이벤트의 교환소 정보가 입력되지 않았습니다.<br />
 				장비 좌측 상단의 <b-badge variant="secondary">획득처 없음</b-badge>표시는 <b-badge variant="danger">현재 진행중인 이벤트</b-badge>및
 				<b-badge variant="exchange">현재 기간 교환소</b-badge>기준입니다.<br />
 				이전 이벤트 또는 기간에 드랍/교환 가능했던 장비어도 현재 획득처가 없다면 표시됩니다.
@@ -11,50 +10,66 @@
 
 		<div class="mb-2 text-left clearfix">
 			<div class="float-right">
-				<b-checkbox v-model="displayFilters">필터 표시</b-checkbox>
+				<b-checkbox v-model="displayFilters"><locale k="EQUIP_DISPLAY_FILTERS" /></b-checkbox>
 			</div>
-			총 {{ EquipGroups.length }} 개의 장비
+			<locale k="EQUIP_RESULT_COUNT" :p0="EquipGroups.length" />
 		</div>
 
 		<b-collapse :visible="displayFilters">
 			<b-card class="text-left">
 				<b-row>
-					<b-col class="filter-label" md="auto" cols="12">유형 :</b-col>
+					<b-col class="filter-label" md="auto" cols="12">
+						<locale k="EQUIP_FILTER_TYPE" />
+					</b-col>
 					<b-col md cols="12">
 						<b-btn-group class="mx-1">
-							<b-button variant="outline-secondary" :pressed="Display.Type.Chip" @click="Filter('Type', 'Chip')">칩</b-button>
-							<b-button variant="outline-secondary" :pressed="Display.Type.OS" @click="Filter('Type', 'OS')">OS</b-button>
-							<b-button variant="outline-secondary" :pressed="Display.Type.Public" @click="Filter('Type', 'Public')">보조장비</b-button>
-							<b-button variant="outline-secondary" :pressed="Display.Type.Private" @click="Filter('Type', 'Private')"
-								>전용장비</b-button
-							>
+							<b-button variant="outline-secondary" :pressed="Display.Type.Chip" @click="Filter('Type', 'Chip')">
+								<locale k="EQUIP_FILTER_TYPE_CHIP" />
+							</b-button>
+							<b-button variant="outline-secondary" :pressed="Display.Type.OS" @click="Filter('Type', 'OS')">
+								<locale k="EQUIP_FILTER_TYPE_OS" />
+							</b-button>
+							<b-button variant="outline-secondary" :pressed="Display.Type.Public" @click="Filter('Type', 'Public')">
+								<locale k="EQUIP_FILTER_TYPE_ITEM" />
+							</b-button>
+							<b-button variant="outline-secondary" :pressed="Display.Type.Private" @click="Filter('Type', 'Private')">
+								<locale k="EQUIP_FILTER_TYPE_EXCLUSIVE" />
+							</b-button>
 						</b-btn-group>
 					</b-col>
 				</b-row>
 				<hr class="my-2" />
 				<b-row>
-					<b-col class="filter-label" md="auto" cols="12">획득처 :</b-col>
+					<b-col class="filter-label" md="auto" cols="12">
+						<locale k="EQUIP_FILTER_SOURCE" />
+					</b-col>
 					<b-col md cols="12">
 						<div class="clearfix">
 							<div class="float-right">
-								<b-checkbox v-model="displayEquipSources">장비 획득처 목록 표시</b-checkbox>
+								<b-checkbox v-model="displayEquipSources">
+									<locale k="EQUIP_FILTER_DISPLAY_SOURCES" />
+								</b-checkbox>
 							</div>
 
 							<b-button-group class="float-left d-block mb-1">
-								<b-button variant="primary" @click="FillEquipSourceFilters">모두 선택</b-button>
-								<b-button variant="danger" @click="ClearEquipSourceFilters">모두 선택 해제</b-button>
+								<b-button variant="primary" @click="FillEquipSourceFilters">
+									<locale k="EQUIP_FILTER_SELECTALL" />
+								</b-button>
+								<b-button variant="danger" @click="ClearEquipSourceFilters">
+									<locale k="EQUIP_FILTER_DESELECTALL" />
+								</b-button>
 							</b-button-group>
 						</div>
 
 						<b-collapse :visible="displayEquipSources">
 							<b-btn-group class="mx-1 mb-1">
 								<b-button variant="outline-secondary" :pressed="Display.Source.Limited" @click="Filter('Source', 'Limited')">
-									한정
+									<locale k="EQUIP_FILTER_SOURCE_LIMITED" />
 								</b-button>
 							</b-btn-group>
 							<b-btn-group class="mx-1 mb-1">
 								<b-button variant="outline-dark" :pressed="Display.Source.EndlessWar" @click="Filter('Source', 'EndlessWar')">
-									영원한 전장
+									<locale k="EQUIP_FILTER_SOURCE_ENDLESSWAR" />
 								</b-button>
 							</b-btn-group>
 							<b-btn-group class="mx-1 mb-1">
@@ -63,64 +78,64 @@
 									:pressed="Display.Source.Supplementary"
 									@click="Filter('Source', 'Supplementary')"
 								>
-									외전
+									<locale k="EQUIP_FILTER_SOURCE_SUBSTORY" />
 								</b-button>
 							</b-btn-group>
 							<b-btn-group class="mx-1 mb-1">
 								<b-button variant="outline-exchange" :pressed="Display.Source.Exchange" @click="Filter('Source', 'Exchange')">
-									교환소
+									<locale k="EQUIP_FILTER_SOURCE_EXCHANGE" />
 								</b-button>
 								<b-button
 									variant="outline-exchange-old"
 									:pressed="Display.Source.OldExchange"
 									@click="Filter('Source', 'OldExchange')"
 								>
-									지난 교환소
+									<locale k="EQUIP_FILTER_SOURCE_OLD_EXCHANGE" />
 								</b-button>
 							</b-btn-group>
 							<b-btn-group class="mx-1 mb-1">
 								<b-button variant="outline-danger" :pressed="Display.Source.ExMap" @click="Filter('Source', 'ExMap')">
-									Ex 맵
+									<locale k="EQUIP_FILTER_SOURCE_MAP_EX" />
 								</b-button>
 								<b-button variant="outline-success" :pressed="Display.Source.SideMap" @click="Filter('Source', 'SideMap')">
-									사이드 맵
+									<locale k="EQUIP_FILTER_SOURCE_MAP_SIDE" />
 								</b-button>
 								<b-button variant="outline-warning" :pressed="Display.Source.Map" @click="Filter('Source', 'Map')">
-									일반 맵
+									<locale k="EQUIP_FILTER_SOURCE_MAP_NORMAL" />
 								</b-button>
 							</b-btn-group>
 							<b-btn-group class="mx-1 mb-1">
 								<b-button variant="outline-warning" :pressed="Display.Source.EventMap" @click="Filter('Source', 'EventMap')">
-									이벤트 맵
+									<locale k="EQUIP_FILTER_SOURCE_EVENT_MAP" />
 								</b-button>
 								<b-button
 									variant="outline-event-exchange"
 									:pressed="Display.Source.EventExchange"
 									@click="Filter('Source', 'EventExchange')"
 								>
-									이벤트 교환소
+									<locale k="EQUIP_FILTER_SOURCE_EVENT_EXCHANGE" />
 								</b-button>
 							</b-btn-group>
 							<b-btn-group class="mx-1 mb-1">
 								<b-button variant="outline-warning" :pressed="Display.Source.OldEventMap" @click="Filter('Source', 'OldEventMap')">
-									지난 이벤트 맵
+									<locale k="EQUIP_FILTER_SOURCE_OLD_EVENT_MAP" />
 								</b-button>
 								<b-button
 									variant="outline-event-exchange-old"
 									:pressed="Display.Source.OldEventExchange"
 									@click="Filter('Source', 'OldEventExchange')"
 								>
-									지난 이벤트 교환소
+									<locale k="EQUIP_FILTER_SOURCE_OLD_EVENT_EXCHANGE" />
 								</b-button>
 							</b-btn-group>
 							<b-btn-group class="mx-1 mb-1">
 								<b-button variant="outline-primary" :pressed="Display.Source.Challenge" @click="Filter('Source', 'Challenge')">
-									외부 통신 요청
+									<locale k="EQUIP_FILTER_SOURCE_CHALLENGE" />
 								</b-button>
 							</b-btn-group>
 							<b-btn-group class="mx-1 mb-1">
 								<b-button variant="outline-black" :pressed="Display.Source.Uninstalled" @click="Filter('Source', 'Uninstalled')">
-									미구현
+									<locale k="EQUIP_FILTER_SOURCE_NOT_IMPLEMENTED" />
 								</b-button>
 							</b-btn-group>
 						</b-collapse>
@@ -128,16 +143,22 @@
 				</b-row>
 				<hr class="my-2" />
 				<b-row>
-					<b-col class="filter-label" md="auto" cols="12">효과 :</b-col>
+					<b-col class="filter-label" md="auto" cols="12"><locale k="EQUIP_FILTER_EFFECTS" /></b-col>
 					<b-col md cols="12">
 						<div class="clearfix">
 							<div class="float-right">
-								<b-checkbox v-model="displayEquipEffects">장비 효과 목록 표시</b-checkbox>
+								<b-checkbox v-model="displayEquipEffects">
+									<locale k="EQUIP_FILTER_DISPLAY_EFFECTS" />
+								</b-checkbox>
 							</div>
 
 							<b-button-group class="float-left d-block mb-1">
-								<b-button variant="primary" @click="FillEquipEffectFilters">모두 선택</b-button>
-								<b-button variant="danger" @click="ClearEquipEffectFilters">모두 선택 해제</b-button>
+								<b-button variant="primary" @click="FillEquipEffectFilters">
+									<locale k="EQUIP_FILTER_SELECTALL" />
+								</b-button>
+								<b-button variant="danger" @click="ClearEquipEffectFilters">
+									<locale k="EQUIP_FILTER_DESELECTALL" />
+								</b-button>
 							</b-button-group>
 						</div>
 						<!-- <b-select :options="EquipEffects" /> -->
@@ -158,7 +179,12 @@
 														:pressed="subentity.selected"
 														@click="subentity.selected = !subentity.selected"
 													>
-														{{ subentity.text + (subentity.pmType > 0 ? " 증가" : " 감소") }}
+														<locale :k="subentity.text">
+															<template #p0>
+																<locale v-if="subentity.pmType > 0" k="UNIT_FILTERS_SKILL_EFFECTS_PM_P" />
+																<locale v-else k="UNIT_FILTERS_SKILL_EFFECTS_PM_M" />
+															</template>
+														</locale>
 													</b-button>
 												</b-btn-group>
 												<b-button
@@ -196,6 +222,7 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Watch } from "vue-property-decorator";
+import { LocaleGet } from "@/libs/Locale";
 
 import EquipIcon from "@/components/EquipIcon.vue";
 import SourceBadge from "@/components/SourceBadge.vue";
@@ -271,7 +298,7 @@ export default class Equips extends Vue {
 
 				SetMeta(
 					["description", "twitter:description"],
-					`${RarityDisplay[eq.rarity]}급 ${EquipTypeDisplay[eq.type]} ${eq.name}의 정보입니다. 레벨별 효과, 획득처, 강화 비용을 확인할 수 있습니다.`,
+					`${RarityDisplay[eq.rarity]}급 ${EquipTypeDisplay()[eq.type]} ${eq.name}의 정보입니다. 레벨별 효과, 획득처, 강화 비용을 확인할 수 있습니다.`,
 				);
 				SetMeta("keywords", `,${eq.name}`, true);
 				SetMeta(
@@ -280,28 +307,28 @@ export default class Equips extends Vue {
 				);
 			}
 
-			UpdateTitle("장비정보", `${this.selectedEquip ? this.selectedEquip.name : "???"}`);
+			UpdateTitle(LocaleGet("MENU_EQUIPS"), `${this.selectedEquip ? this.selectedEquip.name : "???"}`);
 		} else {
 			this.equipModalDisplay = false;
 
 			SetMeta(["description", "twitter:description"], "장비의 목록을 표시합니다. 원하는 장비를 찾기 위해 검색할 수 있습니다.");
 			SetMeta(["twitter:image", "og:image"], null);
-			UpdateTitle("장비정보");
+			UpdateTitle(LocaleGet("MENU_EQUIPS"));
 		}
 	}
 
 	private get EffectGroupNames (): Record<string, string> {
 		const ret: Record<BuffEffectListGroupKeys, string> = {
-			stats: "스테이터스",
-			damageAdd: "피해 증가",
-			damageReduce: "피해 감소",
-			guard: "보호",
-			speedAp: "AP / 행동",
-			offPierce: "효과 해제 / 무시",
-			resist: "효과 / 속성 저항",
-			damage: "추가 / 고정 피해",
-			etcBuff: "그 외 버프",
-			etcDebuff: "그 외 디버프",
+			stats: LocaleGet("BUFF_GROUP_STATS"),
+			damageAdd: LocaleGet("BUFF_GROUP_DMG_UP"),
+			damageReduce: LocaleGet("BUFF_GROUP_DMG_REDUCE"),
+			guard: LocaleGet("BUFF_GROUP_GUARD"),
+			speedAp: LocaleGet("BUFF_GROUP_AP"),
+			offPierce: LocaleGet("BUFF_GROUP_OFF"),
+			resist: LocaleGet("BUFF_GROUP_RESIST"),
+			damage: LocaleGet("BUFF_GROUP_DMG"),
+			etcBuff: LocaleGet("BUFF_GROUP_ETC_BUFF"),
+			etcDebuff: LocaleGet("BUFF_GROUP_ETC_DEBUFF"),
 		};
 		return ret;
 	}

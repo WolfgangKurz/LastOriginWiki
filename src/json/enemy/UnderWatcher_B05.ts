@@ -1,7 +1,5 @@
 export default {
   "id": "UnderWatcher_B05",
-  "name": "언더왓쳐",
-  "desc": "제 해킹으로 성능이 저하된 상태지만, 에너지 충전이 완료되면 여전히 무시무시한 공격을 할 거예요. 충전을 막기 위해 제네레이터를 공격하는 것도 좋겠네요. 본체는 공격 직후를 노리면 더 많은 타격을 줄 수 있을 것 같네요.\n\n\n- 스카디",
   "icon": "TbarIcon_MP_UnderWatcher_B05",
   "ai": "AI_UnderWatcher_01",
   "rarity": 5,

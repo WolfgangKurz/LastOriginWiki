@@ -1,7 +1,5 @@
 export default {
   "id": "Stinger_TU5",
-  "name": "양산형 스팅어",
-  "desc": "스팅어의 양산형 기종이다.",
   "icon": "TbarIcon_MP_Stinger_N",
   "ai": "AI_Hvst_Normal_02",
   "rarity": 3,

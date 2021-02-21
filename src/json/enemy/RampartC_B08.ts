@@ -1,7 +1,5 @@
 export default {
   "id": "RampartC_B08",
-  "name": "램파트 커스텀",
-  "desc": "불리해지면 동료에게 지원 요청을 하는 약삭빠른 녀석이야. 방어하기 시작하면 반격하니 주의해.\n\n\n - 칼리스타 보고함",
   "icon": "TbarIcon_MP_RampartC_N",
   "ai": "AI_RampartC_Normal_01",
   "rarity": 4,

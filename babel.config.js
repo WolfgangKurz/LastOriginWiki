@@ -4,5 +4,8 @@ module.exports = {
 		"@vue/cli-plugin-babel/preset",
 	],
 	plugins: ["@babel/plugin-syntax-dynamic-import"],
-	ignore: ["src/json"],
+	ignore: [
+		"./src/json",
+		"./src/locale.ts",
+	],
 };

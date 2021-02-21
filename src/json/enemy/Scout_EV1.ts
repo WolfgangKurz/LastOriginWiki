@@ -1,7 +1,5 @@
 export default {
   "id": "Scout_EV1",
-  "name": "스카우트",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_Scout_N",
   "ai": "AI_Scout_Event_01",
   "rarity": 2,

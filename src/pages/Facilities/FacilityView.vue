@@ -24,6 +24,7 @@ import UnitCard from "@/pages/Units/UnitCard.vue";
 import DropItem from "@/pages/Worlds/DropItem.vue";
 import FacilityIcon from "./FacilityIcon.vue";
 import { SetMeta } from "@/libs/Meta";
+import { LocaleGet } from "@/libs/Locale";
 
 @Component({
 	components: {
@@ -60,7 +61,7 @@ export default class FacilityView extends Vue {
 			const h = Math.floor(duration / 3600) % 24;
 			const m = Math.floor(duration / 60) % 60;
 			const s = duration % 60;
-			return `${d}일 ${("0" + h).substr(-2)}:${("0" + m).substr(-2)}:${("0" + s).substr(-2)}`;
+			return LocaleGet("FACILITY_TIME_DAY_FORMAT", d, `${("0" + h).substr(-2)}:${("0" + m).substr(-2)}:${("0" + s).substr(-2)}`);
 		} else {
 			const h = Math.floor(duration / 3600);
 			const m = Math.floor(duration / 60) % 60;
@@ -74,9 +75,13 @@ export default class FacilityView extends Vue {
 			x.split("+").map(y => {
 				switch (y) {
 					case "Bioroid":
-						return <b-badge class="mx-1" variant="info">바이오로이드</b-badge>;
+						return <b-badge class="mx-1" variant="info">
+							<locale k="COMMON_UNIT_BODY_BIOROID" />
+						</b-badge>;
 					case "AGS":
-						return <b-badge class="mx-1" variant="info">AGS</b-badge>;
+						return <b-badge class="mx-1" variant="info">
+							<locale k="COMMON_UNIT_BODY_AGS" />
+						</b-badge>;
 					case "Attacker":
 					case "Defender":
 					case "Supporter": {
@@ -101,7 +106,9 @@ export default class FacilityView extends Vue {
 							const uid = `UNIT_${unit.uid}`;
 							return [
 								<a href={ `/units/${unit.uid}` } onClick={ () => this.GoTo(`/units/${unit.uid}`) } class="mx-1 d-inline-block">
-									<rarity-badge id={ uid } rarity={ rarities[unit.rarity] }>{ unit.name } 🔗</rarity-badge>
+									<rarity-badge id={ uid } rarity={ rarities[unit.rarity] }>
+										<locale k={ `UNIT_${unit.uid}` } /> 🔗
+									</rarity-badge>
 								</a>,
 								<b-tooltip target={ uid } placement="top" no-fade noninteractive custom-class="badge-tooltip">
 									<unit-card unit={ unit } no-link />
@@ -137,35 +144,42 @@ export default class FacilityView extends Vue {
 			} else if ("type" in x) {
 				switch (x.type) {
 					case "facilityParts":
-						list.push(<b-badge class="mx-1" variant="supplementary">설비 부품 제작 시간 -{ x.bonus }%</b-badge>);
-						break;
-					case "nutrient":
-						list.push(<b-badge class="mx-1" variant="success">영양 회복량 +{ x.bonus }%</b-badge>);
+						list.push(<b-badge class="mx-1" variant="supplementary">
+							<locale k="FACILITY_FUNCTION_FACILITYPARTS" p0={ x.bonus } />
+						</b-badge>);
 						break;
 					case "metal":
-						list.push(<b-badge class="mx-1" variant="warning">부품 회복량 +{ x.bonus }%</b-badge>);
+						list.push(<b-badge class="mx-1" variant="warning">
+							<locale k="FACILITY_FUNCTION_PART" p0={ x.bonus } />
+						</b-badge>);
+						break;
+					case "nutrient":
+						list.push(<b-badge class="mx-1" variant="success">
+							<locale k="FACILITY_FUNCTION_NUTRIENT" p0={ x.bonus } />
+						</b-badge>);
 						break;
 					case "power":
-						list.push(<b-badge class="mx-1" variant="primary">전력 회복량 +{ x.bonus }%</b-badge>);
+						list.push(<b-badge class="mx-1" variant="primary">
+							<locale k="FACILITY_FUNCTION_POWER" p0={ x.bonus } />
+						</b-badge>);
 						break;
 					case "equipCost":
-						list.push(<b-badge class="mx-1" variant="exchange">장비 강화 소모 자원 -{ x.bonus }%</b-badge>);
+						list.push(<b-badge class="mx-1" variant="exchange">
+							<locale k="FACILITY_FUNCTION_EQUIPCOST" p0={ x.bonus } />
+						</b-badge>);
 						break;
 					case "equipDisassemble":
-						list.push(<b-badge class="mx-1" variant="exchange">장비 분해 자원 +{ x.bonus }%</b-badge>);
+						list.push(<b-badge class="mx-1" variant="exchange">
+							<locale k="FACILITY_FUNCTION_EQUIPDISASSEMBLE" p0={ x.bonus } />
+						</b-badge>);
 						break;
 					case "exp":
-						list.push(<b-badge class="mx-1" variant="warning">전투 경험치 +{ x.bonus }%</b-badge>);
+						list.push(<b-badge class="mx-1" variant="warning">
+							<locale k="FACILITY_FUNCTION_EXP" p0={ x.bonus } />
+						</b-badge>);
 						break;
 				}
 			} else if ("grade" in x) {
-				const UnitRole: Dict<string> = {
-					Attacker: "공격기",
-					Defender: "보호기",
-					Supporter: "지원기",
-					"": "???",
-				};
-
 				const target = key.startsWith("NukerMaking")
 					? "Attacker"
 					: key.startsWith("TankerMaking")
@@ -174,7 +188,11 @@ export default class FacilityView extends Vue {
 							? "Supporter"
 							: "";
 				list.push(
-					<rarity-badge rarity={ x.grade }>{ x.grade } { UnitRole[target] } 바이오로이드</rarity-badge>,
+					<rarity-badge rarity={ x.grade }>
+						{ x.grade }
+						<span class="mx-1"><locale k={ `COMMON_UNIT_ROLE_${target.toUpperCase()}` } /></span>
+						<span><locale k="COMMON_UNIT_BODY_BIOROID" /></span>
+					</rarity-badge>,
 					<small> ({ x.chance }%)</small>,
 				);
 			}
@@ -190,7 +208,11 @@ export default class FacilityView extends Vue {
 		const entry = facility.list[level];
 
 		const getUpgradeRequired = (m: FacilityUpgradeRequiredMaterial | null) => {
-			if (!m) return <small class="text-secondary">없음</small>;
+			if (!m) {
+				return <small class="text-secondary">
+					<locale k="FACILITY_UPGRADE_PART_NO" />
+				</small>;
+			}
 
 			// const GradeTable = {
 			// 	T1: "일반",
@@ -267,9 +289,9 @@ export default class FacilityView extends Vue {
 						</b-td>
 					</b-tr>,
 					<b-tr>
-						<b-td class="bg-dark text-white border-left" colspan="2">합성수지</b-td>
-						<b-td class="bg-dark text-white" colspan="2">도료</b-td>
-						<b-td class="bg-dark text-white border-right" colspan="2">철재</b-td>
+						<b-td class="bg-dark text-white border-left" colspan="2"><locale k="FACILITY_UPGRADE_RESIN" /></b-td>
+						<b-td class="bg-dark text-white" colspan="2"><locale k="FACILITY_UPGRADE_VARNISH" /></b-td>
+						<b-td class="bg-dark text-white border-right" colspan="2"><locale k="FACILITY_UPGRADE_IRON" /></b-td>
 					</b-tr>,
 					<b-tr>
 						<b-td class="border-left" colspan="2">
@@ -286,8 +308,8 @@ export default class FacilityView extends Vue {
 						</b-td>
 					</b-tr>,
 					<b-tr>
-						<b-td class="bg-dark text-white border-left" colspan="3">시설품</b-td>
-						<b-td class="bg-dark text-white border-right" colspan="3">소요시간</b-td>
+						<b-td class="bg-dark text-white border-left" colspan="3"><locale k="FACILITY_UPGRADE_PART" /></b-td>
+						<b-td class="bg-dark text-white border-right" colspan="3"><locale k="FACILITY_UPGRADE_TIME" /></b-td>
 					</b-tr>,
 					<b-tr>
 						<b-td class="border-left" colspan="3">{ Material }</b-td>
@@ -304,19 +326,23 @@ export default class FacilityView extends Vue {
 				<b-col cols="auto">
 					<b-button variant="dark" onClick={ () => this.GoTo("/facilities/") }>
 						<b-icon-arrow-left class="mr-1" />
-						설비 정보로
+						<locale k="FACILITY_BACK_TO_LIST" />
 					</b-button>
 				</b-col>
 			</b-row>
 			<hr />
 
 			<b-card no-body >
-				<b-card-header>{ facility.name }</b-card-header>
+				<b-card-header>
+					<locale k={ `FACILITY_${this.key}` } />
+				</b-card-header>
 				<b-card-body>
 					<facility-icon facility={ facility } level={ this.level + 1 } />
 
 					<b-row class="align-items-center justify-content-center mt-2">
-						<b-col cols="auto">시설 레벨 :</b-col>
+						<b-col cols="auto">
+							<locale k="FACILITY_LEVEL" />
+						</b-col>
 						<b-col cols="4">
 							<b-select options={ this.LevelList } vModel={ this.level } />
 						</b-col>
@@ -324,53 +350,53 @@ export default class FacilityView extends Vue {
 
 					<b-container class="facility-info-table mt-2">
 						<b-row cols="2" cols-md="4" class="text-center">
-							<b-col class="bg-dark text-white">설비 크기</b-col>
-							<b-col>{ facility.size }칸</b-col>
-							<b-col class="bg-dark text-white">가동 시간</b-col>
+							<b-col class="bg-dark text-white"><locale k="FACILITY_SIZE" /></b-col>
+							<b-col><locale k="FACILITY_SIZE_CELLS" p0={ facility.size } /></b-col>
+							<b-col class="bg-dark text-white"><locale k="FACILITY_WORKTIME" /></b-col>
 							<b-col>
 								{
 									facility.duration === 0
-										? <span class="text-secondary">상시 가동</span>
+										? <span class="text-secondary"><locale k="FACILITY_WORKTIME_ALWAYS" /></span>
 										: this.TimeFormat(facility.duration)
 								}
 							</b-col>
 
-							<b-col class="bg-dark text-white">편성 조건</b-col>
+							<b-col class="bg-dark text-white"><locale k="FACILITY_UNIT_REQ" /></b-col>
 							<b-col>
-								{ entry.requiredCombatant.count }명<br />
+								<locale k="FACILITY_UNIT_REQ_COUNT" p0={ entry.requiredCombatant.count } /><br />
 								<span>
 									<small>Lv.</small>
 									{ entry.requiredCombatant.level }
 								</span>
 							</b-col>
-							<b-col class="bg-dark text-white">필요 자원</b-col>
+							<b-col class="bg-dark text-white"><locale k="FACILITY_COST" /></b-col>
 							<b-col>
 								{
 									entry.cost.every(res => res === 0)
-										? <span class="text-secondary">자원 소모 없음</span>
+										? <span class="text-secondary"><locale k="FACILITY_COST_NO" /></span>
 										: [
 											<b-badge class="mx-1" key={ `facility-${this.key}-reqres-0` } variant="warning">
-												부품 { entry.cost[0] }
+												<locale k="COMMON_RES_PARTS" /> { entry.cost[0] }
 											</b-badge>,
 											<b-badge class="mx-1" key={ `facility-${this.key}-reqres-1` } variant="success">
-												영양 { entry.cost[1] }
+												<locale k="COMMON_RES_NUTRIENTS" /> { entry.cost[1] }
 											</b-badge>,
 											<b-badge class="mx-1" key={ `facility-${this.key}-reqres-2` } variant="primary">
-												전력 { entry.cost[2] }
+												<locale k="COMMON_RES_POWER" /> { entry.cost[2] }
 											</b-badge>,
 										]
 								}
 							</b-col>
 
-							<b-col class="bg-dark text-white">편성 제한</b-col>
+							<b-col class="bg-dark text-white"><locale k="FACILITY_LIMIT" /></b-col>
 							<b-col>
 								{
 									entry.requiredCombatant.type
 										? this.CombatantType(entry.requiredCombatant.type)
-										: <span class="text-secondary">제한 없음</span>
+										: <span class="text-secondary"><locale k="FACILITY_LIMIT_NO" /></span>
 								}
 							</b-col>
-							<b-col class="bg-dark text-white">시설 능력</b-col>
+							<b-col class="bg-dark text-white"><locale k="FACILITY_FUNCTION" /></b-col>
 							<b-col>{ this.Results(this.key, entry.produceItem) }</b-col>
 						</b-row>
 					</b-container>
@@ -378,12 +404,12 @@ export default class FacilityView extends Vue {
 					<b-table-simple class="mt-1 d-none d-md-table">
 						<b-tbody>
 							<b-tr class="bg-dark text-white">
-								<b-td>레벨</b-td>
-								<b-td>합성수지</b-td>
-								<b-td>도료</b-td>
-								<b-td>철재</b-td>
-								<b-td>시설품</b-td>
-								<b-td>소요시간</b-td>
+								<b-td><locale k="FACILITY_UPGRADE_LEVEL" /></b-td>
+								<b-td><locale k="FACILITY_UPGRADE_RESIN" /></b-td>
+								<b-td><locale k="FACILITY_UPGRADE_VARNISH" /></b-td>
+								<b-td><locale k="FACILITY_UPGRADE_IRON" /></b-td>
+								<b-td><locale k="FACILITY_UPGRADE_PART" /></b-td>
+								<b-td><locale k="FACILITY_UPGRADE_TIME" /></b-td>
 							</b-tr>
 							{ UpgradeTable }
 						</b-tbody>
@@ -416,13 +442,13 @@ export default class FacilityView extends Vue {
 
 		const facility = this.facility;
 		if (!facility)
-			UpdateTitle("설비정보", "???");
+			UpdateTitle(LocaleGet("MENU_FACILITIES"), "???");
 		else {
 			SetMeta(["description", "twitter:description"], `${facility.name} 설비의 정보입니다. 소모 자원과 필요 전투원 정보, 생산품과 업그레이드 비용/시간을 확인할 수 있습니다.`);
 			SetMeta(["twitter:image", "og:image"], `${AssetsRoot}/${ImageExtension()}/facility/${facility.image}.${ImageExtension()}`);
 			SetMeta("keywords", `,${facility.name}`, true);
 
-			UpdateTitle("설비정보", facility.name);
+			UpdateTitle(LocaleGet("MENU_FACILITIES"), LocaleGet(`FACILITY_${this.key}`));
 		}
 	}
 }

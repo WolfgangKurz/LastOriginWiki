@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickS_C",
-  "name": "나이트 칙 실더???",
-  "desc": "진정한 보호기가 되기 위해 반만년 동안 수련하여 중장형으로 체급을 올린 나이트 칙 실더라는 것 같다. 누구의 장난인지는 몰라도 찾으면 혼내줘야겠다…",
   "icon": "TbarIcon_MP_NightChickS_N",
   "ai": "AI_Mp_NCShield_Challenge_01",
   "rarity": 5,

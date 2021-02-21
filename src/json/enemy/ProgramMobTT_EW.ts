@@ -1,7 +1,5 @@
 export default {
   "id": "ProgramMobTT_EW",
-  "name": "가상공간 실더",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_ProgramMobTT_N",
   "ai": "AI_ProgramMobTT_Normal_01",
   "rarity": 4,

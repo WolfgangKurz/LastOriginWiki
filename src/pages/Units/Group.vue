@@ -2,7 +2,9 @@
 	<div class="unit-group">
 		<div class="mb-4">
 			<b-btn-group>
-				<b-button variant="outline-secondary" :pressed="Merge" @click="Merge = !Merge">세부 그룹 합치기</b-button>
+				<b-button variant="outline-secondary" :pressed="Merge" @click="Merge = !Merge">
+					<locale k="UNIT_GROUP_MERGE_SUBGROUP" />
+				</b-button>
 			</b-btn-group>
 		</div>
 
@@ -10,7 +12,9 @@
 			<b-row class="text-center">
 				<b-col class="bg-dark text-white" cols="12" lg="2" md="3">
 					<img :src="`${AssetsRoot}/${imageExt}/group/${GroupKeyTable[group]}.${imageExt}`" />
-					<div>{{ group }}</div>
+					<div>
+						<locale :k="group" />
+					</div>
 				</b-col>
 				<b-col cols="12" lg="10" md="9">
 					<b-row cols="2" cols-xl="5" cols-lg="4" cols-md="3" cols-sm="3">
@@ -28,6 +32,7 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, PropSync, Emit } from "vue-property-decorator";
+import { LocaleGet } from "@/libs/Locale";
 
 import StoreModule, { EffectFilterTargetType, UnitDisplayFilters, UnitListOrder } from "@/libs/Store";
 
@@ -88,7 +93,7 @@ export default class UnitsGroup extends Vue {
 	}
 
 	private get GroupKeyTable () {
-		const g = groupBy(this.list, x => this.Merge ? x.shortgroup : x.group);
+		const g = groupBy(this.list, x => LocaleGet(`UNIT_GROUP_${this.Merge ? x.shortgroup : x.group}`));
 		const r: Record<string, string> = {};
 		for (const k in g)
 			r[k] = g[k][0].groupKey;
@@ -99,7 +104,7 @@ export default class UnitsGroup extends Vue {
 	private get GroupList () {
 		const list = this.list;
 
-		const g = groupBy(list, x => this.Merge ? x.shortgroup : x.group);
+		const g = groupBy(list, x => LocaleGet(`UNIT_GROUP_${this.Merge ? x.shortgroup : x.group}`));
 		const r: Record<string, FilterableUnit[]> = {};
 		Object.keys(g)
 			.sort()

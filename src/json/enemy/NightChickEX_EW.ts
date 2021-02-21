@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickEX_EW",
-  "name": "강화형 나이트 칙",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_NightChick_N",
   "ai": "AI_Jako_Special_02",
   "rarity": 4,

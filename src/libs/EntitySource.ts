@@ -1,4 +1,5 @@
-import { WorldNames, SupplementaryUnit } from "@/libs/Const";
+import { SupplementaryUnit } from "@/libs/Const";
+import { LocaleGet } from "@/libs/Locale";
 
 export default class EntitySource {
 	public readonly source: string;
@@ -96,7 +97,7 @@ export default class EntitySource {
 	public get EventName () {
 		if (!this.IsEvent) return "";
 
-		return (this.Parts[1] in WorldNames) ? WorldNames[this.Parts[1]] : this.Parts[1];
+		return LocaleGet([`WORLD_${this.Parts[1]}`, this.Parts[1]]);
 	}
 
 	/** 부수를 포함한 이벤트 이름 */
@@ -127,14 +128,15 @@ export default class EntitySource {
 
 	/** 외부 통신 요청의 챌린지 이름 */
 	public get ChallengeName () {
-		switch (this.ChallengeId) {
-			case "1": return "밀고, 당기고, 불질러!";
-			case "2": return "피조물과 설계자";
-			case "3": return "실패작의 폭주";
-			case "4": return "레모네이드 VR";
-			case "5": return "바다의 소녀들";
-		}
-		return this.ChallengeId;
+		return LocaleGet([`CHALLENGE_${this.ChallengeId}`, this.ChallengeId.toString()]);
+		// switch (this.ChallengeId) {
+		// 	case "1": return "밀고, 당기고, 불질러!";
+		// 	case "2": return "피조물과 설계자";
+		// 	case "3": return "실패작의 폭주";
+		// 	case "4": return "레모네이드 VR";
+		// 	case "5": return "바다의 소녀들";
+		// }
+		// return this.ChallengeId;
 	}
 
 	/** 외부 통신 요청의 챌린지 난이도 (1~4) */

@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickDE_TU5",
-  "name": "나이트 칙 디텍터",
-  "desc": "그 아이는 별로 위험한 아인 아니거든? 근데 자꾸 우리를 방해하는 공격을 하니까 다른 애들이랑 있으면 주의해야 하거든? 맞으면 다른 철충한테 지원 요청하는 못된 아이니까 혼내줘야행! 누나 보고 있을께~!\n\n\n- 예쁜 누나 포츈이 보고해용~!",
   "icon": "TbarIcon_MP_NightChickDE_N",
   "ai": "AI_NCDetector_01",
   "rarity": 3,

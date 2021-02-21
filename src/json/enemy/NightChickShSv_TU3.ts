@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickShSv_TU3",
-  "name": "생존형 칙 실더",
-  "desc": "일반적인 칙 실더와는 다르게 생존력이 강한 것 같네요. 철충은 물에 약하다고 하니 제 급수기로 흠뻑 적셔보는 게 좋겠어요.\n\n\n- 엘븐 포레스트 보고함",
   "icon": "TbarIcon_MP_NightChickS_N",
   "ai": "AI_Mp_NCShieldEx_Normal_01",
   "rarity": 4,

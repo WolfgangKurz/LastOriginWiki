@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
+import { LocaleGet } from "@/libs/Locale";
 
 import { UniqueID } from "@/libs/Functions";
 
@@ -181,7 +182,7 @@ export default class EnemyAI extends Vue {
 							return BuffData[y] ? `"${BuffData[y]}"이(가) 있는 적` : "???";
 						else if (y.startsWith("MP_")) {
 							const enemy = FilterableEnemyData.find(z => `MP_${z.id}` === y);
-							return enemy ? enemy.name : "???";
+							return enemy ? LocaleGet(`ENEMY_${enemy.id}`) : "???";
 						} else if (y.startsWith("Char_")) {
 							const unit = FilterableUnitData.find(z => `Char_${z.uid}` === y);
 							return unit ? unit.name : "???";

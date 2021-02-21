@@ -1,7 +1,5 @@
 export default {
   "id": "GigantesC_SA5",
-  "name": "기간테스 커스텀",
-  "desc": "거점 방어에 특화된 모델인건가? 행동은 굼떠보이지만 좀처럼 빈틈이 안보여. 하지만 내 소우 피쉬라면 해결할 수 있을걸?\n\n\n - 트리아이나 보고함",
   "icon": "TbarIcon_MP_GigantesC_N",
   "ai": "AI_GigantesC_Normal_01",
   "rarity": 5,

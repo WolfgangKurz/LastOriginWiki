@@ -1,7 +1,5 @@
 export default {
   "id": "BigChickM_EV1",
-  "name": "빅 칙 런쳐",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_BigChickM_N",
   "ai": "AI_BigChickM_Event_01",
   "rarity": 4,

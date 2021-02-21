@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Component from "vue-class-component";
+import { LocaleGet } from "@/libs/Locale";
 
 import ExchangeCard from "@/pages/Exchange/ExchangeCard.vue";
 
@@ -7,7 +8,6 @@ import ExchangeData, { ExchangeInfo } from "@/libs/Types/Exchange";
 import { ArrayUnique, UpdateTitle } from "@/libs/Functions";
 
 import { SetMeta } from "@/libs/Meta";
-import { WorldNames } from "@/libs/Const";
 
 @Component({
 	components: {
@@ -83,7 +83,7 @@ export default class Exchange extends Vue {
 			.filter(x => x.category === "Event")
 			.map(x => ({
 				value: x.group,
-				text: WorldNames[x.group] || x.group,
+				text: LocaleGet(`WORLD_${x.group}`),
 			}));
 		return ArrayUnique(events);
 	}
@@ -93,7 +93,7 @@ export default class Exchange extends Vue {
 		SetMeta("keywords", ",이벤트 교환소,전투원 교환소,장비 교환소,영원한 전장 교환소,영전 교환소,교환소", true);
 		SetMeta(["twitter:image", "og:image"], null);
 
-		UpdateTitle("교환소");
+		UpdateTitle(LocaleGet("MENU_EXCHANGES"));
 	}
 
 	private render () {
@@ -103,7 +103,7 @@ export default class Exchange extends Vue {
 					<b-tab title-link-class="text-dark" active={ this.CurrentTab === "monthly" } onClick={ () => (this.CurrentTab = "monthly") }>
 						<template slot="title">
 							<b-icon-calendar-week-fill class="mr-2" />
-							전투원/장비
+							<locale k="EXCHANGE_MONTHLY" />
 						</template>
 
 						<b-card-body class="p-0">
@@ -138,7 +138,7 @@ export default class Exchange extends Vue {
 					<b-tab title-link-class="text-dark" active={ this.CurrentTab === "event" } onClick={ () => (this.CurrentTab = "event") }>
 						<template slot="title">
 							<b-icon-controller class="mr-2" />
-							이벤트 교환
+							<locale k="EXCHANGE_EVENT" />
 						</template>
 
 						<b-card-body class="p-0">

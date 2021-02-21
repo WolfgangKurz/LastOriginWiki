@@ -3,23 +3,27 @@
 		<div class="text-center mb-3">
 			<div class="btn-group">
 				<button type="button" class="btn btn-outline-info" :class="{ active: DisplayType === 'table' }" @click="DisplayType = 'table'">
-					<b-icon-table class="mr-1" />테이블 보기
+					<b-icon-table class="mr-1" />
+					<locale k="UNITS_VIEW_TABLE" />
 				</button>
 				<button type="button" class="btn btn-outline-info" :class="{ active: DisplayType === 'list' }" @click="DisplayType = 'list'">
-					<b-icon-grid-3x3-gap-fill class="mr-1" />목록 보기
+					<b-icon-grid-3x3-gap-fill class="mr-1" />
+					<locale k="UNITS_VIEW_LIST" />
 				</button>
 				<button type="button" class="btn btn-outline-info" :class="{ active: DisplayType === 'group' }" @click="DisplayType = 'group'">
-					<b-icon-tags-fill class="mr-1" />그룹별 보기
+					<b-icon-tags-fill class="mr-1" />
+					<locale k="UNITS_VIEW_GROUP" />
 				</button>
 				<button type="button" class="btn btn-outline-info" :class="{ active: DisplayType === 'time' }" @click="DisplayType = 'time'">
-					<b-icon-hammer class="mr-1" />제조 시간
+					<b-icon-hammer class="mr-1" />
+					<locale k="UNITS_VIEW_CREATIONTIME" />
 				</button>
 			</div>
 		</div>
 
 		<div class="mb-2 text-left clearfix">
 			<div class="float-right">
-				<b-checkbox v-model="displayFilters">필터 표시</b-checkbox>
+				<b-checkbox v-model="displayFilters"><locale k="UNITS_FILTERS_TOGGLE" /></b-checkbox>
 			</div>
 		</div>
 
@@ -43,32 +47,32 @@
 						</b-btn-group>
 						<b-btn-group class="mx-2 mb-2">
 							<b-button variant="outline-success" :pressed="Filters.Type[0]" @click="Filters.Type[0] = !Filters.Type[0]">
-								경장형
+								<locale k="COMMON_UNIT_TYPE_LIGHT" />
 							</b-button>
 							<b-button variant="outline-success" :pressed="Filters.Type[2]" @click="Filters.Type[2] = !Filters.Type[2]">
-								기동형
+								<locale k="COMMON_UNIT_TYPE_MOBILITY" />
 							</b-button>
 							<b-button variant="outline-success" :pressed="Filters.Type[1]" @click="Filters.Type[1] = !Filters.Type[1]">
-								중장형
+								<locale k="COMMON_UNIT_TYPE_HEAVY" />
 							</b-button>
 						</b-btn-group>
 						<b-btn-group class="mx-2 mb-2">
 							<b-button variant="outline-primary" :pressed="Filters.Role[1]" @click="Filters.Role[1] = !Filters.Role[1]">
-								공격기
+								<locale k="COMMON_UNIT_ROLE_ATTACKER" />
 							</b-button>
 							<b-button variant="outline-primary" :pressed="Filters.Role[0]" @click="Filters.Role[0] = !Filters.Role[0]">
-								보호기
+								<locale k="COMMON_UNIT_ROLE_DEFENDER" />
 							</b-button>
 							<b-button variant="outline-primary" :pressed="Filters.Role[2]" @click="Filters.Role[2] = !Filters.Role[2]">
-								지원기
+								<locale k="COMMON_UNIT_ROLE_SUPPORTER" />
 							</b-button>
 						</b-btn-group>
 						<b-btn-group class="mx-2 mb-2">
 							<b-button variant="outline-warning" :pressed="Filters.Body[0]" @click="Filters.Body[0] = !Filters.Body[0]">
-								바이오로이드
+								<locale k="COMMON_UNIT_BODY_BIOROID" />
 							</b-button>
 							<b-button variant="outline-warning" :pressed="Filters.Body[1]" @click="Filters.Body[1] = !Filters.Body[1]">
-								AGS
+								<locale k="COMMON_UNIT_BODY_AGS" />
 							</b-button>
 						</b-btn-group>
 					</b-col>
@@ -77,9 +81,11 @@
 				<b-row class="mb-4 mx-4">
 					<b-col>
 						<b-input-group>
-							<b-input v-model="SearchText" placeholder="전투원 검색" />
+							<b-input v-model="SearchText" :placeholder="LocaleGet('UNITS_SEARCH_PLACEHOLDER')" />
 							<b-input-group-append>
-								<b-button variant="danger" @click="SearchText = ''">지우기</b-button>
+								<b-button variant="danger" @click="SearchText = ''">
+									<locale k="UNITS_SEARCH_RESET" />
+								</b-button>
 							</b-input-group-append>
 						</b-input-group>
 					</b-col>
@@ -88,7 +94,9 @@
 
 				<template v-for="i in 2">
 					<b-row :key="`units-skillfilter-row-${i}`">
-						<b-col class="filter-label" md="auto" cols="12">{{ i }}번 액티브 스킬 필터 :</b-col>
+						<b-col class="filter-label" md="auto" cols="12">
+							<locale k="UNITS_FILTERS_ACTIVE_LABEL" :p0="i" />
+						</b-col>
 						<b-col md cols="12">
 							<b-btn-group class="mx-2 mb-2">
 								<b-button
@@ -127,21 +135,21 @@
 									:pressed="Filters.Skill[i - 1].GridType === 0"
 									@click="Filters.Skill[i - 1].GridType = 0"
 								>
-									모두
+									<locale k="UNITS_FILTERS_ACTIVE_GRID_ALL" />
 								</b-button>
 								<b-button
 									variant="outline-danger"
 									:pressed="Filters.Skill[i - 1].GridType === 1"
 									@click="Filters.Skill[i - 1].GridType = 1"
 								>
-									그리드 지정만
+									<locale k="UNITS_FILTERS_ACTIVE_GRID_ONLY" />
 								</b-button>
 								<b-button
 									variant="outline-danger"
 									:pressed="Filters.Skill[i - 1].GridType === 2"
 									@click="Filters.Skill[i - 1].GridType = 2"
 								>
-									대상 선택만
+									<locale k="UNITS_FILTERS_ACTIVE_GRID_TARGET" />
 								</b-button>
 							</b-btn-group>
 
@@ -151,21 +159,21 @@
 									:pressed="Filters.Skill[i - 1].DismissGuardType === 0"
 									@click="Filters.Skill[i - 1].DismissGuardType = 0"
 								>
-									모두
+									<locale k="UNITS_FILTERS_ACTIVE_DISMISS_GUARD_ALL" />
 								</b-button>
 								<b-button
 									variant="outline-primary"
 									:pressed="Filters.Skill[i - 1].DismissGuardType === 1"
 									@click="Filters.Skill[i - 1].DismissGuardType = 1"
 								>
-									보호 무시
+									<locale k="UNITS_FILTERS_ACTIVE_DISMISS_GUARD_ONLY" />
 								</b-button>
 								<b-button
 									variant="outline-primary"
 									:pressed="Filters.Skill[i - 1].DismissGuardType === 2"
 									@click="Filters.Skill[i - 1].DismissGuardType = 2"
 								>
-									보호 무시 안함
+									<locale k="UNITS_FILTERS_ACTIVE_DISMISS_GUARD_NOT" />
 								</b-button>
 							</b-btn-group>
 						</b-col>
@@ -174,36 +182,43 @@
 				</template>
 
 				<b-row>
-					<b-col class="filter-label" md="auto" cols="12">스킬 효과 필터 :</b-col>
+					<b-col class="filter-label" md="auto" cols="12"><locale k="UNITS_FILTERS_SKILL_EFFECTS_LABEL" /></b-col>
 					<b-col md cols="12">
 						<div class="clearfix">
 							<div class="float-right">
-								<b-checkbox v-model="displayUnitEffects">스킬 효과 필터 목록 표시</b-checkbox>
+								<b-checkbox v-model="displayUnitEffects"><locale k="UNITS_FILTERS_SKILL_EFFECTS_TOGGLE" /></b-checkbox>
 							</div>
 
 							<b-button-group class="mb-1 mr-1">
-								<b-button variant="primary" @click="FillUnitEffectFilters">모두 선택</b-button>
-								<b-button variant="danger" @click="ClearUnitEffectFilters">모두 선택 해제</b-button>
+								<b-button variant="primary" @click="FillUnitEffectFilters">
+									<locale k="UNITS_FILTERS_SKILL_EFFECTS_SELECTALL" />
+								</b-button>
+								<b-button variant="danger" @click="ClearUnitEffectFilters">
+									<locale k="UNITS_FILTERS_SKILL_EFFECTS_DESELECTALL" />
+								</b-button>
 							</b-button-group>
 							<b-button-group class="mb-1 mr-1">
 								<b-button
 									variant="outline-info"
 									:pressed="Filters.EffectTarget.includes('self')"
 									@click="ToggleEffectTargetFor('self')"
-									>자신</b-button
 								>
+									<locale k="UNIT_FILTERS_SKILL_EFFECTS_TARGET_SELF" />
+								</b-button>
 								<b-button
 									variant="outline-info"
 									:pressed="Filters.EffectTarget.includes('team')"
 									@click="ToggleEffectTargetFor('team')"
-									>아군</b-button
 								>
+									<locale k="UNIT_FILTERS_SKILL_EFFECTS_TARGET_SQUAD" />
+								</b-button>
 								<b-button
 									variant="outline-info"
 									:pressed="Filters.EffectTarget.includes('enemy')"
 									@click="ToggleEffectTargetFor('enemy')"
-									>적군</b-button
 								>
+									<locale k="UNIT_FILTERS_SKILL_EFFECTS_TARGET_ENEMY" />
+								</b-button>
 							</b-button-group>
 						</div>
 						<!-- <b-select :options="UnitEffects" /> -->
@@ -224,7 +239,12 @@
 														:pressed="subentity.selected"
 														@click="subentity.selected = !subentity.selected"
 													>
-														{{ subentity.text + (subentity.pmType > 0 ? " 증가" : " 감소") }}
+														<locale :k="subentity.text">
+															<template #p0>
+																<locale v-if="subentity.pmType > 0" k="UNIT_FILTERS_SKILL_EFFECTS_PM_P" />
+																<locale v-else k="UNIT_FILTERS_SKILL_EFFECTS_PM_M" />
+															</template>
+														</locale>
 													</b-button>
 												</b-btn-group>
 												<b-button
@@ -262,6 +282,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Watch } from "vue-property-decorator";
 import { Route } from "vue-router";
+import { LocaleGet } from "@/libs/Locale";
 
 import StoreModule, { EffectFilterListType, UnitDisplayType, UnitDisplayFilters, EffectFilterListItemPM, EffectFilterTargetType } from "@/libs/Store";
 
@@ -344,16 +365,16 @@ export default class Units extends Vue {
 
 	private get EffectGroupNames (): Record<string, string> {
 		const ret: Record<BuffEffectListGroupKeys, string> = {
-			stats: "스테이터스",
-			damageAdd: "피해 증가",
-			damageReduce: "피해 감소",
-			guard: "보호",
-			speedAp: "AP / 행동",
-			offPierce: "효과 해제 / 무시",
-			resist: "효과 / 속성 저항",
-			damage: "추가 / 고정 피해",
-			etcBuff: "그 외 버프",
-			etcDebuff: "그 외 디버프",
+			stats: LocaleGet("BUFF_GROUP_STATS"),
+			damageAdd: LocaleGet("BUFF_GROUP_DMG_UP"),
+			damageReduce: LocaleGet("BUFF_GROUP_DMG_REDUCE"),
+			guard: LocaleGet("BUFF_GROUP_GUARD"),
+			speedAp: LocaleGet("BUFF_GROUP_AP"),
+			offPierce: LocaleGet("BUFF_GROUP_OFF"),
+			resist: LocaleGet("BUFF_GROUP_RESIST"),
+			damage: LocaleGet("BUFF_GROUP_DMG"),
+			etcBuff: LocaleGet("BUFF_GROUP_ETC_BUFF"),
+			etcDebuff: LocaleGet("BUFF_GROUP_ETC_DEBUFF"),
 		};
 		return ret;
 	}
@@ -488,7 +509,7 @@ export default class Units extends Vue {
 
 		SetMeta(["description", "twitter:description"], "전투원의 목록을 표시합니다. 원하는 전투원을 찾기 위해 검색할 수 있습니다.");
 		SetMeta(["twitter:image", "og:image"], null);
-		UpdateTitle("전투원정보");
+		UpdateTitle(LocaleGet("MENU_UNITS"));
 	}
 }
 </script>

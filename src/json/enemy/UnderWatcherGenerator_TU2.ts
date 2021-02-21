@@ -1,7 +1,5 @@
 export default {
   "id": "UnderWatcherGenerator_TU2",
-  "name": "언더왓쳐 제네레이터",
-  "desc": "에너지 공급용 제네레이터네요. 계속 공격해보면 에너지 공급을 멈출 수 있을 것 같네요.\n\n\n- 스카디",
   "icon": "TbarIcon_MP_UnderWatcherGenerator_B05",
   "ai": "AI_UnderWatcherGene_02",
   "rarity": 5,

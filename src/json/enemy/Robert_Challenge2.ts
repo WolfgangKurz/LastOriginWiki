@@ -1,7 +1,5 @@
 export default {
   "id": "Robert_Challenge2",
-  "name": "로버트",
-  "desc": "세상에, 저런 완벽한 형태라니...! 거기다 순식간에 부하 AGS들을 조립해 낸 것을 보면 저희의 약점을 분석하고, 그것에 적합한 무장을 만들어낼지도 모릅니다...!\n다만, 약점을 분석하기 위해 코어를 풀가동한다면 외부의 공격에 취약해 질 수 밖에 없겠죠! 그 점을 노려보시는 것이 좋겠습니다!\n\n\n-Mr 알프레드",
   "icon": "TbarIcon_MP_Robert_N",
   "ai": "AI_MP_Robert_Challenge_01",
   "rarity": 5,

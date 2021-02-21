@@ -1,7 +1,5 @@
 export default {
   "id": "HarvesterEX_TU3",
-  "name": "아머드 하베스터",
-  "desc": "얘는 원래는 나처럼 일하던 애였던 것 같아. 멀리 있는 적을 갈고리로 당겨오니 주의하는 게 좋아. 나처럼 힘들게 사는 애니 편히 보내 주는 게 좋을 지도…\n\n\n- 더치걸",
   "icon": "TbarIcon_MP_Harvester_N",
   "ai": "AI_Hvst_Normal_02",
   "rarity": 3,

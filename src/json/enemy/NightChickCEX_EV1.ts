@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickCEX_EV1",
-  "name": "개량형 칙 캐논",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_NightChickC_N",
   "ai": "AI_Jako_Event_01",
   "rarity": 3,

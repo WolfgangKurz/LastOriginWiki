@@ -1,7 +1,5 @@
 export default {
   "id": "Mammoth_TU3",
-  "name": "매머드",
-  "desc": "한 방이 엄청나게 무서운데다 장갑도 두꺼워서 장갑 사이에 치명타를 먹이거나 아니면 관통할 수 있는 무기가 좋아 보이네. 뭐, 못 피하면 죽으니까 조심하라고.\n\n\n- 보고자 샌드걸",
   "icon": "TbarIcon_MP_Mammoth_N",
   "ai": "AI_Mp_Mammoth_01",
   "rarity": 3,

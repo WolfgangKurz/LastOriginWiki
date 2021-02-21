@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickSP_TU7",
-  "name": "칙 스나이퍼",
-  "desc": "엄폐와 위장 능력이 좋음. 빠르게 한 방으로 처치하는 게 좋을 것 같음.\n\n\n- 발키리",
   "icon": "TbarIcon_MP_NightChickSP_N",
   "ai": "AI_Jako_Sniper_01",
   "rarity": 3,

@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickQMSK_TU5",
-  "name": "칙 쿼터마스터SK",
-  "desc": "새로운 적 발견. 적 분석 시작.\n분석 중………………\n분석 결과.\n공격 저지 능력. 대 경장 기능 갖춤. 아군 보병들 보호 필요. 최우선 타겟으로 파괴하겠음.\n\n\n- 기간테스 보고함",
   "icon": "TbarIcon_MP_NightChickQMSK_N",
   "ai": "AI_NightChickQMSK_Normal_01",
   "rarity": 5,

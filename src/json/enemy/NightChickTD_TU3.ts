@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickTD_TU3",
-  "name": "썬더 칙",
-  "desc": "으아~ 촙 메이커로 때리니 갑자기 날뛰어서 큰일 날 뻔 했어요! 전기에 반응하는 것 같던데...아 참! 서펀트씨가 물을 뿌린 녀석은 갑자기 자폭해버리더라구요.\n\n\n - 켈베로스 보고함",
   "icon": "TbarIcon_MP_NightChickTD_N",
   "ai": "AI_ThunderChick_Normal_01",
   "rarity": 4,

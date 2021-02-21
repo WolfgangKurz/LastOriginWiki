@@ -1,7 +1,5 @@
 export default {
   "id": "ProgramMobMN_EW",
-  "name": "가상공간 봄버",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_ProgramMobMN_N",
   "ai": "AI_ProgramMobMN_Normal_01",
   "rarity": 5,

@@ -1,7 +1,5 @@
 export default {
   "id": "Executioner_B06",
-  "name": "익스큐셔너",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_Executioner_B06",
   "ai": "AI_Executioner_01",
   "rarity": 5,

@@ -1,7 +1,5 @@
 export default {
   "id": "PhalangitesH_TU5",
-  "name": "팔랑스H",
-  "desc": "상황에 따라 공격이나 방어 능력이 상승하는 특이한 철충이네, 음... 아마 어깨에 있는 장치에서 에너지를 전환해 주는 게 아닐까 싶은데… 안되겠다! 오빠? 나 저거 분해해보고 싶어졌어! 얼른 잡아서 나한테 보내줘!\n\n\n- 보고자 닥터",
   "icon": "TbarIcon_MP_PhalangitesH_N",
   "ai": "AI_MP_PalanxH_01",
   "rarity": 4,

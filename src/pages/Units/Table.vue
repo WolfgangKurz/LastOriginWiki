@@ -2,9 +2,15 @@
 	<div class="unit-table">
 		<div class="mb-2">
 			<b-btn-group class="mx-2 mb-2">
-				<b-button variant="outline-secondary" :pressed="PromotionFilter === 0" @click="PromotionFilter = 0"> 승급 보지 않기 </b-button>
-				<b-button variant="outline-secondary" :pressed="PromotionFilter === 1" @click="PromotionFilter = 1"> 승급 후 등급 보기 </b-button>
-				<b-button variant="outline-secondary" :pressed="PromotionFilter === 2" @click="PromotionFilter = 2"> 승급만 보기 </b-button>
+				<b-button variant="outline-secondary" :pressed="PromotionFilter === 0" @click="PromotionFilter = 0">
+					<locale k="UNIT_TABLE_FILTERS_PROMOTION_NEVER" />
+				</b-button>
+				<b-button variant="outline-secondary" :pressed="PromotionFilter === 1" @click="PromotionFilter = 1">
+					<locale k="UNIT_TABLE_FILTERS_PROMOTION_WITH" />
+				</b-button>
+				<b-button variant="outline-secondary" :pressed="PromotionFilter === 2" @click="PromotionFilter = 2">
+					<locale k="UNIT_TABLE_FILTERS_PROMOTION_ONLY" />
+				</b-button>
 			</b-btn-group>
 		</div>
 
@@ -17,7 +23,9 @@
 						</b-th>
 					</b-tr>
 					<b-tr>
-						<b-th>등급</b-th>
+						<b-th>
+							<locale k="COMMON_UNIT_GRADE" />
+						</b-th>
 						<template v-for="role in RoleList">
 							<b-th v-if="Filters.Role[role]" :key="`unit-table-head-${role}`">
 								<unit-badge :role="role" transparent size="large" />

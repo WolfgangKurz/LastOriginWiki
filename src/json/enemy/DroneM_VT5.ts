@@ -1,7 +1,5 @@
 export default {
   "id": "DroneM_VT5",
-  "name": "초코 여왕의 정예 정찰병",
-  "desc": "지상군 대응용으로 개조된 드론인거 같아. 대공 능력은 없는 것 같네. 그나저나 폭탄 배송이라니… 캐치 프레이즈로 적합한거 같기도…\n\n\n - 익스프레스 76 보고함",
   "icon": "TbarIcon_MP_DroneM_V2",
   "ai": "AI_DroneC_Normal_01",
   "rarity": 5,

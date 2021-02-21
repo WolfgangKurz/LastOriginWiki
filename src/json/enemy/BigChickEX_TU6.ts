@@ -1,7 +1,5 @@
 export default {
   "id": "BigChickEX_TU6",
-  "name": "시작형 빅 칙",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_BigChick_N",
   "ai": "AI_Jako_Normal_01",
   "rarity": 4,

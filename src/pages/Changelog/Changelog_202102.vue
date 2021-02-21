@@ -1,5 +1,24 @@
 <template>
 	<div>
+		<changelog-item title="Build 8137" date="2021-02-22">
+			<template #site>
+				<li>사이트 언어 기능이 추가되었습니다. 현재 한글과 영문만 사용 가능하며, 영문은 일부만 번역되었습니다.</li>
+				<li>Language feature has added. Currently only supports KR and EN, EN is partially translated.</li>
+			</template>
+			<template #bugfix>
+				<li><rarity-badge border rarity="S">S급 장비</rarity-badge>의 강화 비용이 잘못 표시되던 문제를 수정했습니다.</li>
+				<li>일부 전투원의 짧은 이름이 제대로 적용되어있지 않던 문제를 수정했습니다.</li>
+			</template>
+			<template #new> </template>
+			<template #update> </template>
+			<template #skin>
+				<li>
+					<b-badge variant="warning">T-14 미호</b-badge>의 <b-badge variant="danger">천년의 약속</b-badge> 스킨의 가격 정보가
+					갱신되었습니다.
+				</li>
+			</template>
+		</changelog-item>
+
 		<changelog-item title="Build 7856" date="2021-02-13">
 			<template #site>
 				<li>일부 스크립트를 CDN 경유로 변경하였습니다.</li>

@@ -1,7 +1,5 @@
 export default {
   "id": "Rampart_VT3",
-  "name": "초코 여왕의 경비병",
-  "desc": "초코 여왕이 경비용 램파트 기종을 도색해 만들어낸 기체입니다.",
   "icon": "TbarIcon_MP_Rampart_V2",
   "ai": "AI_Mp_Rampart_01",
   "rarity": 2,

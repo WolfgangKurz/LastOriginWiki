@@ -1,7 +1,5 @@
 export default {
   "id": "FABigChickSEX_TU5",
-  "name": "FA 빅 칙 실더 II",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_FABigChickS_N",
   "ai": "AI_FABigChickShield_Normal_01",
   "rarity": 5,

@@ -99,55 +99,56 @@ export default class DialogueRow extends Vue {
 	}
 
 	private get TypeName (): string | JSX.Element | Array<string | JSX.Element> {
-		switch (this.type) {
-			case "Join": return "획득";
+		return `UNIT_DIALOGUE_TYPE_${this.type}`;
+		// switch (this.type) {
+		// 	case "Join": return "획득";
 
-			case "SquadJoin": return "편성";
-			case "Leader": return "리더 지정";
-			case "SortiePick": return "스쿼드 선택";
-			case "StageStart": return "전투 시작";
-			case "Retreat": return "퇴각";
-			case "SearchStart": return "탐색 시작";
-			case "SearchEnd": return "탐색 완료";
+		// 	case "SquadJoin": return "편성";
+		// 	case "Leader": return "리더 지정";
+		// 	case "SortiePick": return "스쿼드 선택";
+		// 	case "StageStart": return "전투 시작";
+		// 	case "Retreat": return "퇴각";
+		// 	case "SearchStart": return "탐색 시작";
+		// 	case "SearchEnd": return "탐색 완료";
 
-			case "BattleFocus": return "전투 내 선택";
-			case "ActionApprove": return "전투 지시";
-			case "SpSkill": return "액티브 스킬";
-			case "SpSkill_1": return "액티브 스킬 (1)";
-			case "SpSkill_2": return "액티브 스킬 (2)";
-			case "SpSkill_3": return "액티브 스킬 (3)";
-			case "SpSkill_4": return "액티브 스킬 (4)";
-			case "SpSkill_5": return "액티브 스킬 (5)";
-			case "SpSkill_6": return "액티브 스킬 (6)";
-			case "SpSkill_7": return "액티브 스킬 (7)";
-			case "SpSkill_8": return "액티브 스킬 (8)";
-			case "SpSkill_9": return "액티브 스킬 (9)";
-			case "Retire": return "전투 불능";
-			case "Repair": return "수복";
-			case "Reinforce": return "전투원 강화";
-			case "ItemEquip": return "장비 장착";
-			case "CoreLink": return "코어 링크";
-			case "PresentGet": return "선물";
+		// 	case "BattleFocus": return "전투 내 선택";
+		// 	case "ActionApprove": return "전투 지시";
+		// 	case "SpSkill": return "액티브 스킬";
+		// 	case "SpSkill_1": return "액티브 스킬 (1)";
+		// 	case "SpSkill_2": return "액티브 스킬 (2)";
+		// 	case "SpSkill_3": return "액티브 스킬 (3)";
+		// 	case "SpSkill_4": return "액티브 스킬 (4)";
+		// 	case "SpSkill_5": return "액티브 스킬 (5)";
+		// 	case "SpSkill_6": return "액티브 스킬 (6)";
+		// 	case "SpSkill_7": return "액티브 스킬 (7)";
+		// 	case "SpSkill_8": return "액티브 스킬 (8)";
+		// 	case "SpSkill_9": return "액티브 스킬 (9)";
+		// 	case "Retire": return "전투 불능";
+		// 	case "Repair": return "수복";
+		// 	case "Reinforce": return "전투원 강화";
+		// 	case "ItemEquip": return "장비 장착";
+		// 	case "CoreLink": return "코어 링크";
+		// 	case "PresentGet": return "선물";
 
-			case "Login": return "접속";
-			case "Idle_01_01": return "일반 터치 (1)";
-			case "Idle_01_02": return "일반 터치 (2)";
-			case "Idle_01_03": return "일반 터치 (3)";
-			case "SPIdle_01_01": return "특정 터치";
-			case "Idle_02_01": return ["일반 터치", <b-badge variant="danger" class="float-right mt-1">♥ 40</b-badge>];
-			case "Idle_03_01": return ["일반 터치", <b-badge variant="danger" class="float-right mt-1">♥ 70</b-badge>];
-			case "Idle_04_01": return ["일반 터치", <b-badge variant="danger" class="float-right mt-1">♥ 100</b-badge>];
-			case "SPIdle_02_01": return ["특정 터치", <b-badge variant="danger" class="float-right mt-1">♥ 100</b-badge>];
+		// 	case "Login": return "접속";
+		// 	case "Idle_01_01": return "일반 터치 (1)";
+		// 	case "Idle_01_02": return "일반 터치 (2)";
+		// 	case "Idle_01_03": return "일반 터치 (3)";
+		// 	case "SPIdle_01_01": return "특정 터치";
+		// 	case "Idle_02_01": return ["일반 터치", <b-badge variant="danger" class="float-right mt-1">♥ 40</b-badge>];
+		// 	case "Idle_03_01": return ["일반 터치", <b-badge variant="danger" class="float-right mt-1">♥ 70</b-badge>];
+		// 	case "Idle_04_01": return ["일반 터치", <b-badge variant="danger" class="float-right mt-1">♥ 100</b-badge>];
+		// 	case "SPIdle_02_01": return ["특정 터치", <b-badge variant="danger" class="float-right mt-1">♥ 100</b-badge>];
 
-			case "Oath":
-				if (this.isSkin)
-					return ["서약", <b-badge variant="dark" class="float-right mt-1">미구현</b-badge>];
-				else
-					return "서약";
-			case "OathIdle_01": return "서약 후 터치";
-			case "MVP": return ["전투 MVP", <b-badge variant="dark" class="float-right mt-1">미구현</b-badge>];
-		}
-		return "???";
+		// 	case "Oath":
+		// 		if (this.isSkin)
+		// 			return ["서약", <b-badge variant="dark" class="float-right mt-1">미구현</b-badge>];
+		// 		else
+		// 			return "서약";
+		// 	case "OathIdle_01": return "서약 후 터치";
+		// 	case "MVP": return ["전투 MVP", <b-badge variant="dark" class="float-right mt-1">미구현</b-badge>];
+		// }
+		// return "???";
 	}
 
 	private get VoiceLink () {
@@ -156,7 +157,9 @@ export default class DialogueRow extends Vue {
 
 	private render () {
 		return <b-row class="dialogue-row my-2 my-sm-0">
-			<b-col class={ this.rowClass } cols="12" sm="2">{ this.TypeName }</b-col>
+			<b-col class={ this.rowClass } cols="12" sm="2">
+				<locale k={ this.TypeName } />
+			</b-col>
 			<b-col class="border dialogue" cols="12" sm="">{ this.Dialogue }</b-col>
 			<b-col class="border" cols="12" sm="auto">
 				<audio src={ this.VoiceLink } type="audio/mp3" controls preload="none" />

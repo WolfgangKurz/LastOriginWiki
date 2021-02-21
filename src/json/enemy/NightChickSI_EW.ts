@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickSI_EW",
-  "name": "나이트 칙 실더 개",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_NightChickSI_N",
   "ai": "AI_NCShield_Normal_01",
   "rarity": 4,

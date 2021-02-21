@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickSpCH_C",
-  "name": "솔져 칙",
-  "desc": "솔져 칙은 칙 커맨더의 명령에 따라 움직이며 자신의 몸체를 던져 칙 커맨더를 보호하기도 합니다. 그리고 칙 커맨더가 있는 한 쓰러지지 않고 근성으로 일어나 다시 싸웁니다.\n\n\n보고자 ???",
   "icon": "TbarIcon_MP_NightChickSpCH_N",
   "ai": "AI_SoldierChick_Challenge_01",
   "rarity": 5,

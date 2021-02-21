@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickCEX_N",
-  "name": "개량형 칙 캐논",
-  "desc": "박격포로 무장한 나이트 칙인데... 별 거 아닌 폭죽이나 쏴대는 벌레야. 아, 약한 애들한텐 무서우려나?\n\n\n- 메이 보고함",
   "icon": "TbarIcon_MP_NightChickC_N",
   "ai": "AI_Ncc_Normal_01",
   "rarity": 3,

@@ -1,7 +1,5 @@
 export default {
   "id": "ProgramMobMT_TU2",
-  "name": "철충 사념체 (호위기)",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_ProgramMobMT_N",
   "ai": "AI_ProgramMobMT_Normal_01",
   "rarity": 3,

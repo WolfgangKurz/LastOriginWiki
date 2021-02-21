@@ -1,7 +1,5 @@
 export default {
   "id": "Nereid_EV1",
-  "name": "슈퍼 네리다!",
-  "desc": "슈~퍼한 네리네리를 이길 수 있을까!?\n\n\n- 네레이드",
   "icon": "TbarIcon_MP_Nereid_N",
   "ai": "AI_MP_Nereid_Event_01",
   "rarity": 5,

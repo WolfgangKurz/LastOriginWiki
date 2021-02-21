@@ -13,6 +13,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Watch } from "vue-property-decorator";
 import { Route } from "vue-router";
+import { LocaleGet } from "@/libs/Locale";
 
 import StoreModule, { UnitDisplayType } from "@/libs/Store";
 
@@ -67,7 +68,7 @@ export default class Facilities extends Vue {
 		SetMeta(["description", "twitter:description"], "기지 설비의 목록을 표시합니다.");
 		SetMeta(["twitter:image", "og:image"], null);
 
-		UpdateTitle("설비정보");
+		UpdateTitle(LocaleGet("MENU_FACILITIES"));
 	}
 }
 </script>

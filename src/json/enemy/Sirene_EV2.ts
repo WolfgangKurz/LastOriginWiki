@@ -1,7 +1,5 @@
 export default {
   "id": "Sirene_EV2",
-  "name": "그럼요~",
-  "desc": "사실 세이렌도 놀고 싶어 하는 걸지도.",
   "icon": "TbarIcon_MP_SireneC_N",
   "ai": "AI_MP_Sirene_Event_02",
   "rarity": 5,

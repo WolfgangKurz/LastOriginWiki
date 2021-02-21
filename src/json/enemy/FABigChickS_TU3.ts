@@ -1,7 +1,5 @@
 export default {
   "id": "FABigChickS_TU3",
-  "name": "풀아머 빅 칙 실더",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_FABigChickS_N",
   "ai": "AI_FABigChickShield_Normal_01",
   "rarity": 4,

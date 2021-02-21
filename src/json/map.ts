@@ -19,10 +19,10 @@ export default {
             "items": []
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "5 라운드 이내에 클리어",
-            "피격 횟수 없이 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round5",
+            "Mission_StageClear_Beatenless0"
           ],
           "reward_f": [
             "Char_DS_Johanna_N"
@@ -92,10 +92,10 @@ export default {
             "items": []
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "5 라운드 이내에 클리어",
-            "피격 횟수 1번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round5",
+            "Mission_StageClear_Beatenless1"
           ],
           "reward_f": [
             {
@@ -176,10 +176,10 @@ export default {
             "items": []
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 3번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless3"
           ],
           "reward_f": [
             "Char_PECS_LRL_N"
@@ -303,10 +303,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "10 라운드 이내에 클리어",
-            "빅 칙이 영거리 중 기관총을 쓴 적 없이 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round10",
+            "Mission_StageClear_NoBigChickSkill2"
           ],
           "reward_f": [
             "Char_PECS_PuppHead_N"
@@ -462,10 +462,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "피격 횟수 3번 이하로 클리어",
-            "3기 이상의 적을 동시에 처치한 상태로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Beatenless3",
+            "Mission_KillMonster3_By_ONESKILL"
           ],
           "reward_f": [
             "Char_AGS_Fallen_N"
@@ -692,10 +692,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "10 라운드 이내에 클리어",
-            "3 라운드 내에 적을 4기 이상 처치한 상태로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round10",
+            "Mission_StageClear_Kill4_In3Round"
           ],
           "reward_f": [
             {
@@ -916,10 +916,10 @@ export default {
             "items": []
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "3기 이상의 적을 동시에 처치한 상태로 클리어",
-            "4 라운드 내에 적을 5기 이상 처치한 상태로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_KillMonster3_By_ONESKILL",
+            "Mission_StageClear_Kill5_In4Round"
           ],
           "reward_f": [
             {
@@ -1152,10 +1152,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "10 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round10",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -1266,10 +1266,10 @@ export default {
           "text": "1-1Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "12 라운드 이내에 클리어",
-            "기동형을 2기 이하로 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round12",
+            "Mission_StageClear_MOBILITYLess2"
           ],
           "reward_f": [
             {
@@ -1593,10 +1593,10 @@ export default {
           "text": "1-3B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "10 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round10",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -1836,10 +1836,10 @@ export default {
           "text": "1-4B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "3 라운드 내에 적을 5기 이상 처치한 상태로 클리어",
-            "4기 이상의 적을 동시에 처치한 상태로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Kill5_In3Round",
+            "Mission_KillMonster4_By_ONESKILL"
           ],
           "reward_f": [
             {
@@ -2082,10 +2082,10 @@ export default {
           "text": "1-5B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "2 라운드 내에 적을 4기 이상 처치한 상태로 클리어",
-            "4기 이상의 적을 동시에 처치한 상태로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Kill4_In2Round",
+            "Mission_KillMonster4_By_ONESKILL"
           ],
           "reward_f": [
             "Char_PECS_Drone_N"
@@ -2331,10 +2331,10 @@ export default {
           "text": "1-6B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "12 라운드 이내에 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round12",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -2662,10 +2662,10 @@ export default {
           "text": "1-2Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "12 라운드 이내에 클리어",
-            "시작형 빅 칙이 영거리 중 기관포를 쓴 적 없이 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round12",
+            "Mission_StageClear_NoBigChickExSkill2"
           ],
           "reward_f": [
             {
@@ -3014,10 +3014,10 @@ export default {
           "text": "1-3Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "12 라운드 이내에 클리어",
-            "경장형을 4기 이상 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round12",
+            "Mission_StageClear_TrooperMore4"
           ],
           "reward_f": [
             {
@@ -3347,10 +3347,10 @@ export default {
           "text": "1-4Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "12 라운드 이내에 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round12",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -3670,10 +3670,10 @@ export default {
             "items": []
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "10 라운드 이내에 클리어",
-            "스카우트가 공격한 적 없이 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round10",
+            "Mission_StageClear_NoScoutAttack"
           ],
           "reward_f": [
             "Char_BR_Amy_N"
@@ -3912,10 +3912,10 @@ export default {
             "items": []
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "로봇을 1기 이상 편성해 클리어",
-            "3 라운드 내에 적을 5기 이상 처치한 상태로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_RobotMore1",
+            "Mission_StageClear_Kill5_In3Round"
           ],
           "reward_f": [
             {
@@ -4168,10 +4168,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "하베스터가 폐기물 분쇄를 쓴 적 없이 클리어",
-            "4기 이상의 적을 동시에 처치한 상태로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_NoHarvesterAttack",
+            "Mission_KillMonster4_By_ONESKILL"
           ],
           "reward_f": [
             {
@@ -4425,10 +4425,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "10 라운드 이내에 클리어",
-            "경장형을 5기 이상 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round10",
+            "Mission_StageClear_TrooperMore5"
           ],
           "reward_f": [
             {
@@ -4646,10 +4646,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "3 라운드 내에 적을 5기 이상 처치한 상태로 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Kill5_In3Round",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -4990,10 +4990,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "3 라운드 내에 적을 5기 이상 처치한 상태로 클리어",
-            "5기 이상의 적을 동시에 처치한 상태로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Kill5_In3Round",
+            "Mission_KillMonster5_By_ONESKILL"
           ],
           "reward_f": [
             "Char_PECS_CoCoWhiteShell_N"
@@ -5326,10 +5326,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "2 라운드 내에 적을 4기 이상 처치한 상태로 클리어",
-            "스쿼드를 교체한 적 없이 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Kill4_In2Round",
+            "Mission_StageClear_NoSquadChange"
           ],
           "reward_f": [
             {
@@ -5685,10 +5685,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "하나의 스쿼드만 배치해 클리어",
-            "프레데터가 부식 용액을 쓴 적 없이 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_OneSquad",
+            "Mission_StageClear_No_Skill_MP_Predator_B0208_2"
           ],
           "reward_f": [
             "Char_BR_Marie_N"
@@ -5894,10 +5894,10 @@ export default {
           "text": "2-1Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "12 라운드 이내에 클리어",
-            "기동형을 2기 이하로 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round12",
+            "Mission_StageClear_MOBILITYLess2"
           ],
           "reward_f": [
             {
@@ -6303,10 +6303,10 @@ export default {
           "text": "2-2Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "3 라운드 내에 적을 5기 이상 처치한 상태로 클리어",
-            "경장형을 5기 이상 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Kill5_In3Round",
+            "Mission_StageClear_TrooperMore5"
           ],
           "reward_f": [
             {
@@ -6741,10 +6741,10 @@ export default {
           "text": "2-3Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "피격 횟수 10번 이하로 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Beatenless10",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -7365,10 +7365,10 @@ export default {
           "text": "2-4Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "하나의 스쿼드만 배치해 클리어",
-            "경장형을 5기 이상 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_OneSquad",
+            "Mission_StageClear_TrooperMore5"
           ],
           "reward_f": [
             {
@@ -7805,10 +7805,10 @@ export default {
           "text": "2-1B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "피격 횟수 5번 이하로 클리어",
-            "기동형을 5기 이상 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Beatenless5",
+            "Mission_StageClear_MOBILITYMore5"
           ],
           "reward_f": [
             {
@@ -8063,10 +8063,10 @@ export default {
           "text": "2-3B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "12 라운드 이내에 클리어",
-            "하베스터가 폐기물 수거를 쓴 적 없이 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round12",
+            "Mission_StageClear_NoHarvesterAttack2"
           ],
           "reward_f": [
             {
@@ -8323,10 +8323,10 @@ export default {
           "text": "2-4B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "피격 횟수 5번 이하로 클리어",
-            "4기 이상의 적을 동시에 처치한 상태로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Beatenless5",
+            "Mission_KillMonster4_By_ONESKILL"
           ],
           "reward_f": [
             {
@@ -8583,10 +8583,10 @@ export default {
           "text": "2-7B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "기동형을 2기 이하로 편성해 클리어",
-            "중장형을 2기 이하로 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYLess2",
+            "Mission_StageClear_ARMOREDLess2"
           ],
           "reward_f": [
             {
@@ -8793,10 +8793,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "10 라운드 이내에 클리어",
-            "재퍼가 전격 방사를 쓴 적 없이 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round10",
+            "Mission_StageClear_NoZapperAttack"
           ],
           "reward_f": [
             {
@@ -9000,10 +9000,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "12 라운드 이내에 클리어",
-            "기동형을 3기 이상 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round12",
+            "Mission_StageClear_MOBILITYMore3"
           ],
           "reward_f": [
             {
@@ -9364,10 +9364,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "10 라운드 내에 적을 18기 이상 처치한 상태로 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Kill18_In10Round",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -9645,10 +9645,10 @@ export default {
             "items": []
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "12 라운드 이내에 클리어",
-            "기동형을 5기 이상 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round12",
+            "Mission_StageClear_MOBILITYMore5"
           ],
           "reward_f": [
             {
@@ -9876,10 +9876,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "하나의 스쿼드만 배치해 클리어",
-            "중장형을 2기 이상 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_OneSquad",
+            "Mission_StageClear_ARMOREDMore2"
           ],
           "reward_f": [
             {
@@ -10397,10 +10397,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "15 라운드 이내에 클리어",
-            "1 라운드 내에 적을 8기 이상 처치한 상태로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round15",
+            "Mission_StageClear_Kill8_In1Round"
           ],
           "reward_f": [
             {
@@ -10687,10 +10687,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "하나의 스쿼드만 배치해 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_OneSquad",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -11059,10 +11059,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "피격 횟수 5번 이하로 클리어",
-            "8 라운드 이내에 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Beatenless5",
+            "Mission_StageClear_Round8"
           ],
           "reward_f": [
             {
@@ -11195,10 +11195,10 @@ export default {
           "text": "3-1Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "하나의 스쿼드만 배치해 클리어",
-            "기동형을 5기 이상 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_OneSquad",
+            "Mission_StageClear_MOBILITYMore5"
           ],
           "reward_f": [
             {
@@ -11658,10 +11658,10 @@ export default {
           "text": "3-2Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "3 라운드 내에 적을 6기 이상 처치한 상태로 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Kill6_In3Round",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -12124,10 +12124,10 @@ export default {
           "text": "3-3Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "매머드의 직사 포격이 발동한 적 없이 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_NoMammothAttack1",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -12590,10 +12590,10 @@ export default {
           "text": "3-4Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "15 라운드 이내에 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round15",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -12953,10 +12953,10 @@ export default {
           "text": "3-2B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "1 라운드 내에 적을 3기 이상 처치한 상태로 클리어",
-            "헤비 스카우트가 대 장갑 기관포를 쓴 적 없이 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Kill3_In1Round",
+            "Mission_StageClear_NoHScoutAttack1"
           ],
           "reward_f": [
             "Char_AGS_Seljuq_N"
@@ -13230,10 +13230,10 @@ export default {
           "text": "3-3B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "10 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round10",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -13465,10 +13465,10 @@ export default {
           "text": "3-6B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "2 라운드 내에 적을 6기 이상 처치한 상태로 클리어",
-            "경장형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Kill6_In2Round",
+            "Mission_StageClear_TrooperLess0"
           ],
           "reward_f": [
             {
@@ -13700,10 +13700,10 @@ export default {
           "text": "3-7B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "하나의 스쿼드만 배치해 클리어",
-            "기동형을 5기 이상 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_OneSquad",
+            "Mission_StageClear_MOBILITYMore5"
           ],
           "reward_f": [
             {
@@ -13881,10 +13881,10 @@ export default {
             "items": []
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "12 라운드 이내에 클리어",
-            "칙 스나이퍼가 정조준 저격을 쓴 적 없이 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round12",
+            "Mission_StageClear_NoSniperChickAttack"
           ],
           "reward_f": [
             {
@@ -14204,10 +14204,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "12 라운드 이내에 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round12",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -14705,10 +14705,10 @@ export default {
             "items": []
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "하나의 스쿼드만 배치해 클리어",
-            "경장형을 2기 이하로 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_OneSquad",
+            "Mission_StageClear_TrooperLess2"
           ],
           "reward_f": [
             {
@@ -15211,10 +15211,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "10 라운드 이내에 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round10",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -15546,10 +15546,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "3 라운드 내에 적을 5기 이상 처치한 상태로 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Kill5_In3Round",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -16053,10 +16053,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "12 라운드 이내에 클리어",
-            "두 개 이하의 스쿼드만으로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round12",
+            "Mission_StageClear_Squad2"
           ],
           "reward_f": [
             {
@@ -16936,10 +16936,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "12 라운드 이내에 클리어",
-            "기동형을 5기 이상 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round12",
+            "Mission_StageClear_MOBILITYMore5"
           ],
           "reward_f": [
             {
@@ -17262,10 +17262,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "레이더의 광탄 난사가 발동한 적 없이 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_NoRaiderSkill2",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -17496,10 +17496,10 @@ export default {
           "text": "4-1B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "12 라운드 이내에 클리어",
-            "기동형을 2기 이하로 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round12",
+            "Mission_StageClear_MOBILITYLess2"
           ],
           "reward_f": [
             "Char_3P_Vanilla_N"
@@ -17745,10 +17745,10 @@ export default {
           "text": "4-2B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "4기 이상의 적을 동시에 처치한 상태로 클리어",
-            "중장형을 2기 이하로 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_KillMonster4_By_ONESKILL",
+            "Mission_StageClear_ARMOREDLess2"
           ],
           "reward_f": [
             {
@@ -17969,10 +17969,10 @@ export default {
           "text": "4-3B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "중장형을 2기 이하로 편성해 클리어",
-            "기동형을 5기 이상 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_ARMOREDLess2",
+            "Mission_StageClear_MOBILITYMore5"
           ],
           "reward_f": [
             {
@@ -18192,10 +18192,10 @@ export default {
           "text": "4-6B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "피격 횟수 10번 이하로 클리어",
-            "중장형을 2기 이하로 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Beatenless10",
+            "Mission_StageClear_ARMOREDLess2"
           ],
           "reward_f": [
             {
@@ -18354,10 +18354,10 @@ export default {
           "text": "4-1Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "중장형을 1기 이하로 편성해 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_ARMOREDLess1",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -18760,10 +18760,10 @@ export default {
           "text": "4-2Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "중장형을 편성하지 않고 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_ARMOREDLess0",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -19166,10 +19166,10 @@ export default {
           "text": "4-3Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "3 라운드 내에 적을 7기 이상 처치한 상태로 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Kill7_In3Round",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -19683,10 +19683,10 @@ export default {
           "text": "4-4Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "경장형을 편성하지 않고 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_TrooperLess0",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -20028,10 +20028,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "하나의 스쿼드만 배치해 클리어",
-            "로봇을 5기 이상 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_OneSquad",
+            "Mission_StageClear_RobotMore5"
           ],
           "reward_f": [
             {
@@ -20345,10 +20345,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "12 라운드 이내에 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round12",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -20668,10 +20668,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "양산형 셀주크가 175mm 직사포를 쓴 적 없이 클리어",
-            "12 라운드 이내에 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_NoSeljuqAttack1",
+            "Mission_StageClear_Round12"
           ],
           "reward_f": [
             {
@@ -20991,10 +20991,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "하나의 스쿼드만 배치해 클리어",
-            "트릭스터가 광란의 학살을 쓴 적 없이 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_OneSquad",
+            "Mission_StageClear_NoChTricksterAttack2"
           ],
           "reward_f": [
             {
@@ -21244,10 +21244,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "3 라운드 내에 적을 5기 이상 처치한 상태로 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Kill5_In3Round",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -21660,10 +21660,10 @@ export default {
             "items": []
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "스쿼드 교체 수 1번 이하로 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_SquadChangeLess1",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -22174,10 +22174,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "피격 횟수 15번 이하로 클리어",
-            "중장형을 5기 이상 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Beatenless15",
+            "Mission_StageClear_ARMOREDMore5"
           ],
           "reward_f": [
             {
@@ -22506,10 +22506,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "언더왓쳐의 플라즈마 캐논이 발동한 적 없이 클리어",
-            "중장형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_NoUWMEGACANNON",
+            "Mission_StageClear_ARMOREDLess0"
           ],
           "reward_f": [
             {
@@ -22636,10 +22636,10 @@ export default {
           "text": "5-2B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "4기 이상의 적을 동시에 처치한 상태로 클리어",
-            "10 라운드 이내에 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_KillMonster4_By_ONESKILL",
+            "Mission_StageClear_Round10"
           ],
           "reward_f": [
             {
@@ -22900,10 +22900,10 @@ export default {
           "text": "5-3B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "2 라운드 내에 적을 7기 이상 처치한 상태로 클리어",
-            "10 라운드 이내에 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Kill7_In2Round",
+            "Mission_StageClear_Round10"
           ],
           "reward_f": [
             {
@@ -23164,10 +23164,10 @@ export default {
           "text": "5-6B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "기동형을 2기 이하로 편성해 클리어",
-            "경장형을 2기 이하로 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYLess2",
+            "Mission_StageClear_TrooperLess2"
           ],
           "reward_f": [
             {
@@ -23428,10 +23428,10 @@ export default {
           "text": "5-7B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "경장형을 2기 이하로 편성해 클리어",
-            "피격 횟수 없이 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_TrooperLess2",
+            "Mission_StageClear_Beatenless0"
           ],
           "reward_f": [
             {
@@ -23616,10 +23616,10 @@ export default {
           "text": "5-1Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "15 라운드 이내에 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round15",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -24033,10 +24033,10 @@ export default {
           "text": "5-2Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "기동형을 5기 이상 편성해 클리어",
-            "경장형을 5기 이상 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYMore5",
+            "Mission_StageClear_TrooperMore5"
           ],
           "reward_f": [
             {
@@ -24451,10 +24451,10 @@ export default {
           "text": "5-3Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "경장형을 5기 이상 편성해 클리어",
-            "스쿼드 교체 수 1번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_TrooperMore5",
+            "Mission_StageClear_SquadChangeLess1"
           ],
           "reward_f": [
             {
@@ -24869,10 +24869,10 @@ export default {
           "text": "5-4Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "15 라운드 이내에 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round15",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -25210,10 +25210,10 @@ export default {
           "text": "5-8Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "경장형을 편성하지 않고 클리어",
-            "중장형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_TrooperLess0",
+            "Mission_StageClear_ARMOREDLess0"
           ],
           "reward_f": [
             {
@@ -25368,10 +25368,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "12 라운드 이내에 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round12",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -25685,10 +25685,10 @@ export default {
             "items": []
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "12 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round12",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -26093,10 +26093,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "로봇을 5기 이상 편성해 클리어",
-            "중장형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_RobotMore5",
+            "Mission_StageClear_ARMOREDLess0"
           ],
           "reward_f": [
             {
@@ -26592,10 +26592,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "기동형을 2기 이하로 편성해 클리어",
-            "3 라운드 내에 적을 5기 이상 처치한 상태로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYLess2",
+            "Mission_StageClear_Kill5_In3Round"
           ],
           "reward_f": [
             {
@@ -26947,10 +26947,10 @@ export default {
             "items": []
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "로봇을 1기 이상 편성해 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_RobotMore1",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -27539,10 +27539,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "스쿼드 교체 수 1번 이하로 클리어",
-            "경장형을 5기 이상 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_SquadChangeLess1",
+            "Mission_StageClear_TrooperMore5"
           ],
           "reward_f": [
             {
@@ -28128,10 +28128,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "15 라운드 이내에 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round15",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -28747,10 +28747,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "경장형을 편성하지 않고 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_TrooperLess0",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             "Char_3P_Labiata_N"
@@ -28983,10 +28983,10 @@ export default {
           "text": "6-1B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "4기 이상의 적을 동시에 처치한 상태로 클리어",
-            "7 라운드 이내에 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_KillMonster4_By_ONESKILL",
+            "Mission_StageClear_Round7"
           ],
           "reward_f": [
             {
@@ -29252,10 +29252,10 @@ export default {
           "text": "6-2B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "2 라운드 내에 적을 4기 이상 처치한 상태로 클리어",
-            "로봇을 1기 이상 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Kill4_In2Round",
+            "Mission_StageClear_RobotMore1"
           ],
           "reward_f": [
             {
@@ -29516,10 +29516,10 @@ export default {
           "text": "6-5B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "중장형을 편성하지 않고 클리어",
-            "피격 횟수 없이 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_ARMOREDLess0",
+            "Mission_StageClear_Beatenless0"
           ],
           "reward_f": [
             {
@@ -29783,10 +29783,10 @@ export default {
           "text": "6-6B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "경장형을 2기 이하로 편성해 클리어",
-            "피격 횟수 1번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_TrooperLess2",
+            "Mission_StageClear_Beatenless1"
           ],
           "reward_f": [
             {
@@ -29974,10 +29974,10 @@ export default {
           "text": "6-1Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "기동형을 5기 이상 편성해 클리어",
-            "중장형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYMore5",
+            "Mission_StageClear_ARMOREDLess0"
           ],
           "reward_f": [
             {
@@ -30405,10 +30405,10 @@ export default {
           "text": "6-2Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "경장형을 5기 이상 편성해 클리어",
-            "기동형을 5기 이상 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_TrooperMore5",
+            "Mission_StageClear_MOBILITYMore5"
           ],
           "reward_f": [
             {
@@ -30848,10 +30848,10 @@ export default {
           "text": "6-3Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "중장형을 5기 이상 편성해 클리어",
-            "경장형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_ARMOREDMore5",
+            "Mission_StageClear_TrooperLess0"
           ],
           "reward_f": [
             {
@@ -31291,10 +31291,10 @@ export default {
           "text": "6-4Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "15 라운드 이내에 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round15",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -31626,10 +31626,10 @@ export default {
           "text": "6-8Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "중장형을 2기 이하로 편성해 클리어",
-            "경장형을 2기 이하로 편성해 클리어",
-            "기동형을 2기 이하로 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_ARMOREDLess2",
+            "Mission_StageClear_TrooperLess2",
+            "Mission_StageClear_MOBILITYLess2"
           ],
           "reward_f": [
             {
@@ -31787,10 +31787,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "6 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round6",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -32106,10 +32106,10 @@ export default {
             "items": []
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "경장형을 2기 이상 편성해 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_TrooperMore2",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -32426,10 +32426,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "7 라운드 이내에 클리어",
-            "중장형을 1기 이하로 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round7",
+            "Mission_StageClear_ARMOREDLess1"
           ],
           "reward_f": [
             {
@@ -32834,10 +32834,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "2 라운드 내에 적을 2기 이상 처치한 상태로 클리어",
-            "피격 횟수 4번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Kill2_In2Round",
+            "Mission_StageClear_Beatenless4"
           ],
           "reward_f": [
             {
@@ -33278,10 +33278,10 @@ export default {
             "items": []
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "로봇을 1기 이상 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_RobotMore1"
           ],
           "reward_f": [
             {
@@ -33686,10 +33686,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 1명 이하로 클리어",
-            "스쿼드를 교체한 적 없이 클리어",
-            "피격 횟수 없이 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess1",
+            "Mission_StageClear_NoSquadChange",
+            "Mission_StageClear_Beatenless0"
           ],
           "reward_f": [
             {
@@ -34015,10 +34015,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "기동형을 2기 이하로 편성해 클리어",
-            "3 라운드 내에 적을 4기 이상 처치한 상태로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYLess2",
+            "Mission_StageClear_Kill4_In3Round"
           ],
           "reward_f": [
             {
@@ -34565,10 +34565,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 2명 이하로 클리어",
-            "15 라운드 이내에 클리어",
-            "스쿼드 교체 수 1번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess2",
+            "Mission_StageClear_Round15",
+            "Mission_StageClear_SquadChangeLess1"
           ],
           "reward_f": [
             "Char_BR_InvDragon_N"
@@ -34898,10 +34898,10 @@ export default {
           "text": "7-3B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -35165,10 +35165,10 @@ export default {
           "text": "7-4B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "기동형을 1기 이하로 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_MOBILITYLess1"
           ],
           "reward_f": [
             {
@@ -35432,10 +35432,10 @@ export default {
           "text": "7-5B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "중장형을 1기 이하로 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_ARMOREDLess1"
           ],
           "reward_f": [
             {
@@ -35699,10 +35699,10 @@ export default {
           "text": "7-6B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "경장형을 1기 이하로 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_TrooperLess1"
           ],
           "reward_f": [
             {
@@ -35971,10 +35971,10 @@ export default {
           "text": "7-1Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 1명 이하로 클리어",
-            "중장형을 3기 이상 편성해 클리어",
-            "기동형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess1",
+            "Mission_StageClear_ARMOREDMore3",
+            "Mission_StageClear_MOBILITYLess0"
           ],
           "reward_f": [
             {
@@ -36393,10 +36393,10 @@ export default {
           "text": "7-2Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 1명 이하로 클리어",
-            "기동형을 3기 이상 편성해 클리어",
-            "경장형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess1",
+            "Mission_StageClear_MOBILITYMore3",
+            "Mission_StageClear_TrooperLess0"
           ],
           "reward_f": [
             {
@@ -36800,10 +36800,10 @@ export default {
           "text": "7-3Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 1명 이하로 클리어",
-            "경장형을 3기 이상 편성해 클리어",
-            "중장형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess1",
+            "Mission_StageClear_TrooperMore3",
+            "Mission_StageClear_ARMOREDLess0"
           ],
           "reward_f": [
             {
@@ -37231,10 +37231,10 @@ export default {
           "text": "7-4Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 1명 이하로 클리어",
-            "스쿼드를 교체한 적 없이 클리어",
-            "피격 횟수 8번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess1",
+            "Mission_StageClear_NoSquadChange",
+            "Mission_StageClear_Beatenless8"
           ],
           "reward_f": [
             {
@@ -37448,10 +37448,10 @@ export default {
           "text": "7-8Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "중장형을 1기 이하로 편성해 클리어",
-            "경장형을 1기 이하로 편성해 클리어",
-            "기동형을 1기 이하로 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_ARMOREDLess1",
+            "Mission_StageClear_TrooperLess1",
+            "Mission_StageClear_MOBILITYLess1"
           ],
           "reward_f": [
             {
@@ -37612,10 +37612,10 @@ export default {
             "items": []
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "6 라운드 이내에 클리어",
-            "경장형을 1기 이하로 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round6",
+            "Mission_StageClear_TrooperLess1"
           ],
           "reward_f": [
             {
@@ -37932,10 +37932,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "6 라운드 이내에 클리어",
-            "로봇을 1기 이상 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round6",
+            "Mission_StageClear_RobotMore1"
           ],
           "reward_f": [
             {
@@ -38254,10 +38254,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "7 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round7",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -38664,10 +38664,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "3 라운드 내에 적을 5기 이상 처치한 상태로 클리어",
-            "중장형을 1기 이하로 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Kill5_In3Round",
+            "Mission_StageClear_ARMOREDLess1"
           ],
           "reward_f": [
             {
@@ -39074,10 +39074,10 @@ export default {
             "items": []
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "경장형을 편성하지 않고 클리어",
-            "중장형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_TrooperLess0",
+            "Mission_StageClear_ARMOREDLess0"
           ],
           "reward_f": [
             {
@@ -39494,10 +39494,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 1명 이하로 클리어",
-            "바이오로이드를 4기 이하로 편성해 클리어",
-            "피격 횟수 없이 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess1",
+            "Mission_StageClear_AndroidLess4",
+            "Mission_StageClear_Beatenless0"
           ],
           "reward_f": [
             {
@@ -40014,10 +40014,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 1명 이하로 클리어",
-            "바이오로이드를 3기 이하로 편성해 클리어",
-            "피격 횟수 없이 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess1",
+            "Mission_StageClear_AndroidLess3",
+            "Mission_StageClear_Beatenless0"
           ],
           "reward_f": [
             {
@@ -40534,10 +40534,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 2명 이하로 클리어",
-            "경장형을 편성하지 않고 클리어",
-            "기동형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess2",
+            "Mission_StageClear_TrooperLess0",
+            "Mission_StageClear_MOBILITYLess0"
           ],
           "reward_f": [
             "Char_PECS_LemonadeAlpha_N"
@@ -40856,10 +40856,10 @@ export default {
           "text": "8-2B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "로봇을 1기 이상 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_RobotMore1"
           ],
           "reward_f": [
             {
@@ -41087,10 +41087,10 @@ export default {
           "text": "8-3B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "1 라운드 내에 적을 3기 이상 처치한 상태로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Kill3_In1Round"
           ],
           "reward_f": [
             {
@@ -41318,10 +41318,10 @@ export default {
           "text": "8-4B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "2 라운드 내에 적을 6기 이상 처치한 상태로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Kill6_In2Round"
           ],
           "reward_f": [
             {
@@ -41549,10 +41549,10 @@ export default {
           "text": "8-5B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -41780,10 +41780,10 @@ export default {
           "text": "8-1Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 1명 이하로 클리어",
-            "기동형을 3기 이상 편성해 클리어",
-            "중장형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess1",
+            "Mission_StageClear_MOBILITYMore3",
+            "Mission_StageClear_ARMOREDLess0"
           ],
           "reward_f": [
             {
@@ -42181,10 +42181,10 @@ export default {
           "text": "8-2Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 1명 이하로 클리어",
-            "중장형을 3기 이상 편성해 클리어",
-            "기동형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess1",
+            "Mission_StageClear_ARMOREDMore3",
+            "Mission_StageClear_MOBILITYLess0"
           ],
           "reward_f": [
             {
@@ -42582,10 +42582,10 @@ export default {
           "text": "Interlude",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 2명 이하로 클리어",
-            "중장형을 편성하지 않고 클리어",
-            "기동형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess2",
+            "Mission_StageClear_ARMOREDLess0",
+            "Mission_StageClear_MOBILITYLess0"
           ],
           "reward_f": [
             {
@@ -42665,10 +42665,10 @@ export default {
           "text": "Ev-1",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "피격 횟수 없이 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Beatenless0",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -42841,10 +42841,10 @@ export default {
           "text": "Ev-2",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "7 라운드 이내에 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round7",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -43092,10 +43092,10 @@ export default {
           "text": "Ev-3",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "10 라운드 이내에 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round10",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -43343,10 +43343,10 @@ export default {
           "text": "Ev-4",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "피격 횟수 없이 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Beatenless0",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -43600,10 +43600,10 @@ export default {
           "text": "Ev-5",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "10 라운드 이내에 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round10",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -43942,10 +43942,10 @@ export default {
           "text": "Ev-6",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             "Char_3P_Sowan_N"
@@ -44297,10 +44297,10 @@ export default {
           "text": "Ev-1B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "경장형을 편성하지 않고 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_TrooperLess0",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -44635,10 +44635,10 @@ export default {
           "text": "Ev-2B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "기동형을 편성하지 않고 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYLess0",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -44973,10 +44973,10 @@ export default {
           "text": "Ev-3B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "중장형을 편성하지 않고 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_ARMOREDLess0",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -45311,10 +45311,10 @@ export default {
           "text": "Ev-4B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "10 라운드 이내에 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round10",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -45652,10 +45652,10 @@ export default {
           "text": "Ev-1Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "기동형을 편성하지 않고 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYLess0",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -46014,10 +46014,10 @@ export default {
           "text": "Ev-2Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "중장형을 편성하지 않고 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_ARMOREDLess0",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -46373,10 +46373,10 @@ export default {
           "text": "Ev-3Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "경장형을 편성하지 않고 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_TrooperLess0",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -46634,10 +46634,10 @@ export default {
           "text": "Ev-4Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "20 라운드 이내에 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round20",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -47028,10 +47028,10 @@ export default {
           "text": "S1-1",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "램파트를 스쿼드에 포함해 클리어",
-            "램파트를 편성 후, 생존한 채로 클리어",
-            "램파트로 풀아머 빅 칙을 처치 후 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_With_Char_AGS_Rampart_N",
+            "Mission_StageClear_Live_Char_AGS_Rampart_N",
+            "Mission_Kill_FABigChicnk_By_Rampart"
           ],
           "reward_f": [
             {
@@ -47285,10 +47285,10 @@ export default {
           "text": "S1-2",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "콘스탄챠 S2를 편성 후, 그녀가 생존한 채로 클리어",
-            "에이미 레이저를 편성 후, 그녀가 생존한 채로 클리어",
-            "칙 스나이퍼가 정조준 저격을 쓴 적 없이 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_Live_Char_3P_ConstantiaS2_N",
+            "Mission_StageClear_Live_Char_BR_Amy_N",
+            "Mission_StageClear_NoSniperChickAttack"
           ],
           "reward_f": [
             {
@@ -47545,10 +47545,10 @@ export default {
           "text": "S2-1",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "소완을 편성 후, 그녀가 생존한 채로 클리어",
-            "소완으로 한 웨이브에 적을 5기 이상 처치 후 클리어",
-            "블랙 리리스를 편성 후, 그녀가 생존한 채로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_Live_Char_3P_Sowan_N",
+            "Mission_StageClear_Kill5_Char_3P_Sowan_N",
+            "Mission_StageClear_Live_Char_3P_BlackLilith_N"
           ],
           "reward_f": [
             {
@@ -47746,10 +47746,10 @@ export default {
           "text": "S2-2",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "공진의 알렉산드라를 편성 후, 그녀가 생존한 채로 클리어",
-            "토모를 편성 후, 그녀가 생존한 채로 클리어",
-            "피격 횟수 3번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_Live_Char_3P_Alexandra_N",
+            "Mission_StageClear_Live_Char_BR_Tomoe_N",
+            "Mission_StageClear_Beatenless3"
           ],
           "reward_f": [],
           "reward_am": [],
@@ -48010,10 +48010,10 @@ export default {
           "text": "S3-1",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "시저스 리제를 편성 후, 그녀가 생존한 채로 클리어",
-            "다프네를 편성 후, 그녀가 생존한 채로 클리어",
-            "피격 횟수 3번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_Live_Char_3P_ScissorsLise_N",
+            "Mission_StageClear_Live_Char_3P_Daphne_N",
+            "Mission_StageClear_Beatenless3"
           ],
           "reward_f": [],
           "reward_am": [],
@@ -48183,10 +48183,10 @@ export default {
           "text": "S3-2",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "시저스 리제를 편성 후, 그녀가 생존한 채로 클리어",
-            "다프네를 편성 후, 그녀가 생존한 채로 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_Live_Char_3P_ScissorsLise_N",
+            "Mission_StageClear_Live_Char_3P_Daphne_N",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [],
           "reward_am": [],
@@ -48441,10 +48441,10 @@ export default {
           "text": "S4-1",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "T-2 브라우니를 편성 후, 그녀가 생존한 채로 클리어",
-            "T-3 레프리콘을 편성 후, 그녀가 생존한 채로 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_Live_Char_BR_Brownie_N",
+            "Mission_StageClear_Live_Char_BR_Leprechaun_N",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [],
           "reward_am": [],
@@ -48690,10 +48690,10 @@ export default {
           "text": "S4-2",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "T-2 브라우니를 편성 후, 그녀가 생존한 채로 클리어",
-            "M-5 이프리트를 편성 후, 그녀가 생존한 채로 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_Live_Char_BR_Brownie_N",
+            "Mission_StageClear_Live_Char_BR_Efreeti_N",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [],
           "reward_am": [],
@@ -49015,10 +49015,10 @@ export default {
           "text": "S5-1",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "뽀끄루 대마왕을 스쿼드에 포함해 클리어",
-            "CS 페로를 스쿼드에 포함해 클리어",
-            "3기 이상의 적을 동시에 처치한 상태로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_With_Char_DS_Faucre_N",
+            "Mission_StageClear_With_Char_3P_CSPerrault_N",
+            "Mission_KillMonster3_By_ONESKILL"
           ],
           "reward_f": [
             {
@@ -49278,10 +49278,10 @@ export default {
           "text": "S6-1",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "매지컬 백토를 스쿼드에 포함해 클리어",
-            "매지컬 백토로 시작형 빅 칙 처치 후 클리어",
-            "피격 횟수 없이 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_With_Char_DS_Baekto_N",
+            "Mission_Kill_BigChickEX_By_Baekto",
+            "Mission_StageClear_Beatenless0"
           ],
           "reward_f": [
             {
@@ -49535,10 +49535,10 @@ export default {
           "text": "S7-1",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "펜리르를 스쿼드에 포함해 클리어",
-            "펜리르로 시작형 FA 빅 칙 II 처치 후 클리어",
-            "펜리르로 시작형 빅 칙 실더 처치 후 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_With_Char_3P_Fenrir_N",
+            "Mission_Kill_FABigChickEX_By_Fenrir",
+            "Mission_Kill_BigChickS_By_Fenrir"
           ],
           "reward_f": [
             {
@@ -49792,10 +49792,10 @@ export default {
           "text": "S8-1",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "키르케를 스쿼드에 포함해 클리어",
-            "키르케로 프로스트바이트 처치 후 클리어",
-            "10 라운드 이내에 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_With_Char_PECS_Circe_N",
+            "Mission_Kill_Frostbite_By_Circe",
+            "Mission_StageClear_Round10"
           ],
           "reward_f": [
             {
@@ -49978,10 +49978,10 @@ export default {
           "text": "S9-1",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "바이오로이드를 2기 이상 편성해 클리어",
-            "10 라운드 이내에 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_AndroidMore2",
+            "Mission_StageClear_Round10"
           ],
           "reward_f": [
             {
@@ -50170,10 +50170,10 @@ export default {
           "text": "S10-1",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "10 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round10",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -50421,10 +50421,10 @@ export default {
           "text": "S11-1",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "10 라운드 이내에 클리어",
-            "아우로라를 스쿼드에 포함해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round10",
+            "Mission_StageClear_With_Char_3P_Aurora_N"
           ],
           "reward_f": [
             {
@@ -50625,10 +50625,10 @@ export default {
           "text": "S12-1",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "10 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round10",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -50898,10 +50898,10 @@ export default {
           "text": "Ev-1",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "피격 횟수 5번 이하로 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Beatenless5",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             "Char_PECS_Triaina_N"
@@ -51159,10 +51159,10 @@ export default {
           "text": "Ev-2",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "피격 횟수 5번 이하로 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Beatenless5",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -51428,10 +51428,10 @@ export default {
           "text": "Ev-3",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "10 라운드 이내에 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round10",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -51697,10 +51697,10 @@ export default {
           "text": "Ev-4",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "10 라운드 이내에 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round10",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -51975,10 +51975,10 @@ export default {
           "text": "Ev-5",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "10 라운드 이내에 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round10",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             "Char_BR_Nereid_N"
@@ -52236,10 +52236,10 @@ export default {
           "text": "Ev-6",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "10 라운드 이내에 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round10",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             "Char_BR_Undine_N"
@@ -52500,10 +52500,10 @@ export default {
           "text": "Ev-7",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -52853,10 +52853,10 @@ export default {
           "text": "Ev-1s",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "피격 횟수 5번 이하로 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Beatenless5",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -53060,10 +53060,10 @@ export default {
           "text": "Ev-2s",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "피격 횟수 5번 이하로 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Beatenless5",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -53267,10 +53267,10 @@ export default {
           "text": "Ev-3s",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "10 라운드 이내에 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round10",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -53474,10 +53474,10 @@ export default {
           "text": "Ev-4s",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "10 라운드 이내에 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round10",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -53693,10 +53693,10 @@ export default {
           "text": "Ev-5s",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -54001,10 +54001,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "피격 횟수 5번 이하로 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Beatenless5",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -54337,10 +54337,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "기동형을 편성하지 않고 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYLess0",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -54673,10 +54673,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "기동형을 5기 이상 편성해 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYMore5",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -55007,10 +55007,10 @@ export default {
           "text": "Ev2-1B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "피격 횟수 5번 이하로 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Beatenless5",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -55419,10 +55419,10 @@ export default {
           "text": "Ev2-2B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "기동형을 5기 이상 편성해 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYMore5",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -55828,10 +55828,10 @@ export default {
           "text": "Ev2-3B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "기동형을 편성하지 않고 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYLess0",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -56251,10 +56251,10 @@ export default {
           "text": "Ev2-4B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "기동형을 편성하지 않고 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYLess0",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -56689,10 +56689,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "기동형을 편성하지 않고 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYLess0",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -57014,10 +57014,10 @@ export default {
           "text": "Ev2-5B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "중장형을 편성하지 않고 클리어",
-            "기동형을 5기 이상 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_ARMOREDLess0",
+            "Mission_StageClear_MOBILITYMore5"
           ],
           "reward_f": [
             {
@@ -57452,10 +57452,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "기동형을 편성하지 않고 클리어",
-            "경장형을 5기 이상 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYLess0",
+            "Mission_StageClear_TrooperMore5"
           ],
           "reward_f": [
             {
@@ -57780,10 +57780,10 @@ export default {
           "text": "Ev2-1C",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "경장형을 1기 이하로 편성해 클리어",
-            "기동형을 1기 이하로 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_TrooperLess1",
+            "Mission_StageClear_MOBILITYLess1"
           ],
           "reward_f": [
             {
@@ -57842,10 +57842,10 @@ export default {
           "text": "Ev2-2C",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "경장형을 1기 이하로 편성해 클리어",
-            "기동형을 1기 이하로 편성해 클리어",
-            "중장형을 1기 이하로 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_TrooperLess1",
+            "Mission_StageClear_MOBILITYLess1",
+            "Mission_StageClear_ARMOREDLess1"
           ],
           "reward_f": [
             {
@@ -57976,10 +57976,10 @@ export default {
           "text": "Ev3-1",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "10 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round10",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -58195,10 +58195,10 @@ export default {
           "text": "Ev3-2",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "10 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round10",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -58414,10 +58414,10 @@ export default {
           "text": "Ev3-3",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "10 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round10",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             "Char_BR_Sirene_N"
@@ -58630,10 +58630,10 @@ export default {
           "text": "Ev3-4",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "10 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round10",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -58904,10 +58904,10 @@ export default {
           "text": "Ev3-5",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -59115,10 +59115,10 @@ export default {
           "text": "Ev3-6",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -59329,10 +59329,10 @@ export default {
           "text": "Ev3-7",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -59606,10 +59606,10 @@ export default {
           "text": "Ev3-8",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "중장형을 5기 이상 편성해 클리어",
-            "기동형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_ARMOREDMore5",
+            "Mission_StageClear_MOBILITYLess0"
           ],
           "reward_f": [
             "Char_AGS_Roc_N"
@@ -59698,10 +59698,10 @@ export default {
           "text": "Ev3-1s",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "10 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round10",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -59962,10 +59962,10 @@ export default {
           "text": "Ev3-2s",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "10 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round10",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -60229,10 +60229,10 @@ export default {
           "text": "Ev3-3s",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -60505,10 +60505,10 @@ export default {
           "text": "Ev3-4s",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "기동형을 편성하지 않고 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYLess0",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -60854,10 +60854,10 @@ export default {
           "text": "Ev3-1ep",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "경장형을 편성하지 않고 클리어",
-            "피격 횟수 없이 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_TrooperLess0",
+            "Mission_StageClear_Beatenless0"
           ],
           "reward_f": [
             {
@@ -61224,10 +61224,10 @@ export default {
           "text": "Ev3-2ep",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "중장형을 편성하지 않고 클리어",
-            "기동형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_ARMOREDLess0",
+            "Mission_StageClear_MOBILITYLess0"
           ],
           "reward_f": [
             {
@@ -61506,10 +61506,10 @@ export default {
           "text": "Ev-1",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "피격 횟수 5번 이하로 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Beatenless5",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -61779,10 +61779,10 @@ export default {
           "text": "Ev-2",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "피격 횟수 5번 이하로 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Beatenless5",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -62047,10 +62047,10 @@ export default {
           "text": "Ev-3",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "피격 횟수 5번 이하로 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Beatenless5",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             "Char_DS_Baekto_N"
@@ -62315,10 +62315,10 @@ export default {
           "text": "Ev-4",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "피격 횟수 5번 이하로 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Beatenless5",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             "Char_DS_Faucre_N"
@@ -62665,10 +62665,10 @@ export default {
           "text": "Ev-1Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "피격 횟수 5번 이하로 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Beatenless5",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -62997,10 +62997,10 @@ export default {
           "text": "Ev-2Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "경장형을 편성하지 않고 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_TrooperLess0",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -63332,10 +63332,10 @@ export default {
           "text": "Ev-3Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "기동형을 편성하지 않고 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYLess0",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -63667,10 +63667,10 @@ export default {
           "text": "Ev-4Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "중장형을 편성하지 않고 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_ARMOREDLess0",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -64002,10 +64002,10 @@ export default {
           "text": "Ev-5",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "피격 횟수 5번 이하로 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Beatenless5",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -64273,10 +64273,10 @@ export default {
           "text": "Ev-6",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "피격 횟수 5번 이하로 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Beatenless5",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -64544,10 +64544,10 @@ export default {
           "text": "Ev-7",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -64815,10 +64815,10 @@ export default {
           "text": "Ev-8",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -65150,10 +65150,10 @@ export default {
           "text": "Ev-5Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "중장형을 편성하지 않고 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_ARMOREDLess0",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -65485,10 +65485,10 @@ export default {
           "text": "Ev-6Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "기동형을 편성하지 않고 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYLess0",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -65836,10 +65836,10 @@ export default {
           "text": "Ev-1",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -66080,10 +66080,10 @@ export default {
           "text": "Ev-2",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -66324,10 +66324,10 @@ export default {
           "text": "Ev-3",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -66571,10 +66571,10 @@ export default {
           "text": "Ev-4",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -66818,10 +66818,10 @@ export default {
           "text": "Ev-5",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -67077,10 +67077,10 @@ export default {
           "text": "Ev-6",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -67414,10 +67414,10 @@ export default {
           "text": "Ev-7",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -67673,10 +67673,10 @@ export default {
           "text": "Ev-8",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -67932,10 +67932,10 @@ export default {
           "text": "Ev-9",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -68191,10 +68191,10 @@ export default {
           "text": "Ev-10",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -68456,10 +68456,10 @@ export default {
           "text": "Ev-11",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -68721,10 +68721,10 @@ export default {
           "text": "Ev-12",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             "Char_PECS_Circe_N"
@@ -69061,10 +69061,10 @@ export default {
           "text": "Ev-1Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "경장형을 2기 이상 편성해 클리어",
-            "피격 횟수 없이 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_TrooperMore2",
+            "Mission_StageClear_Beatenless0"
           ],
           "reward_f": [
             {
@@ -69380,10 +69380,10 @@ export default {
           "text": "Ev-2Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "경장형을 2기 이하로 편성해 클리어",
-            "중장형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_TrooperLess2",
+            "Mission_StageClear_ARMOREDLess0"
           ],
           "reward_f": [
             {
@@ -69699,10 +69699,10 @@ export default {
           "text": "Ev-3Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "중장형을 2기 이상 편성해 클리어",
-            "기동형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_ARMOREDMore2",
+            "Mission_StageClear_MOBILITYLess0"
           ],
           "reward_f": [
             {
@@ -70018,10 +70018,10 @@ export default {
           "text": "Ev-4Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "기동형을 3기 이상 편성해 클리어",
-            "경장형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYMore3",
+            "Mission_StageClear_TrooperLess0"
           ],
           "reward_f": [
             {
@@ -70340,10 +70340,10 @@ export default {
           "text": "Ev-5Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "기동형을 5기 이상 편성해 클리어",
-            "중장형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYMore5",
+            "Mission_StageClear_ARMOREDLess0"
           ],
           "reward_f": [
             {
@@ -70678,10 +70678,10 @@ export default {
           "text": "Ev-6Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "경장형을 편성하지 않고 클리어",
-            "기동형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_TrooperLess0",
+            "Mission_StageClear_MOBILITYLess0"
           ],
           "reward_f": [
             {
@@ -71040,10 +71040,10 @@ export default {
           "text": "Ev-1",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             "Char_BR_DrM_N"
@@ -71278,10 +71278,10 @@ export default {
           "text": "Ev-2",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             "Char_BR_TalonFeather_N"
@@ -71516,10 +71516,10 @@ export default {
           "text": "Ev-3",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -71757,10 +71757,10 @@ export default {
           "text": "Ev-4",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -72072,10 +72072,10 @@ export default {
           "text": "Ev-5",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -72313,10 +72313,10 @@ export default {
           "text": "Ev-6",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -72554,10 +72554,10 @@ export default {
           "text": "Ev-7",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -72795,10 +72795,10 @@ export default {
           "text": "Ev-8",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             "Char_BR_Khan_N"
@@ -73110,10 +73110,10 @@ export default {
           "text": "Ev-1B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -73354,10 +73354,10 @@ export default {
           "text": "Ev-2B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -73598,10 +73598,10 @@ export default {
           "text": "Ev-3B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -73842,10 +73842,10 @@ export default {
           "text": "Ev-4B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             "Char_BR_Leona_N"
@@ -74157,10 +74157,10 @@ export default {
           "text": "Ev-1Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "경장형을 2기 이하로 편성해 클리어",
-            "피격 횟수 없이 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_TrooperLess2",
+            "Mission_StageClear_Beatenless0"
           ],
           "reward_f": [
             {
@@ -74476,10 +74476,10 @@ export default {
           "text": "Ev-2Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "기동형을 2기 이하로 편성해 클리어",
-            "피격 횟수 없이 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYLess2",
+            "Mission_StageClear_Beatenless0"
           ],
           "reward_f": [
             {
@@ -74795,10 +74795,10 @@ export default {
           "text": "Ev-3Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "중장형을 2기 이상 편성해 클리어",
-            "피격 횟수 없이 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_ARMOREDMore2",
+            "Mission_StageClear_Beatenless0"
           ],
           "reward_f": [
             {
@@ -75114,10 +75114,10 @@ export default {
           "text": "Ev-4Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "경장형을 5기 이상 편성해 클리어",
-            "기동형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_TrooperMore5",
+            "Mission_StageClear_MOBILITYLess0"
           ],
           "reward_f": [
             {
@@ -75433,10 +75433,10 @@ export default {
           "text": "Ev-5Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "기동형을 5기 이상 편성해 클리어",
-            "중장형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYMore5",
+            "Mission_StageClear_ARMOREDLess0"
           ],
           "reward_f": [
             {
@@ -75752,10 +75752,10 @@ export default {
           "text": "Ev-6Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "중장형을 편성하지 않고 클리어",
-            "경장형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_ARMOREDLess0",
+            "Mission_StageClear_TrooperLess0"
           ],
           "reward_f": [
             {
@@ -76071,10 +76071,10 @@ export default {
           "text": "Ev-7Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "피격 횟수 없이 클리어",
-            "기동형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Beatenless0",
+            "Mission_StageClear_MOBILITYLess0"
           ],
           "reward_f": [
             {
@@ -76398,10 +76398,10 @@ export default {
           "text": "Ev2-1",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -76641,10 +76641,10 @@ export default {
           "text": "Ev2-2",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -76879,10 +76879,10 @@ export default {
           "text": "Ev2-3",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -77117,10 +77117,10 @@ export default {
           "text": "Ev2-4",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -77426,10 +77426,10 @@ export default {
           "text": "Ev2-5",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -77664,10 +77664,10 @@ export default {
           "text": "Ev2-6",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             "Char_PECS_Audrey_N"
@@ -77899,10 +77899,10 @@ export default {
           "text": "Ev2-7",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -78137,10 +78137,10 @@ export default {
           "text": "Ev2-8",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -78446,10 +78446,10 @@ export default {
           "text": "Ev2-1B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             "Char_BR_RedHood_N"
@@ -78690,10 +78690,10 @@ export default {
           "text": "Ev2-2B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -78937,10 +78937,10 @@ export default {
           "text": "Ev2-3B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -79184,10 +79184,10 @@ export default {
           "text": "Ev2-4B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -79505,10 +79505,10 @@ export default {
           "text": "Ev2-1ep",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "기동형을 3기 이상 편성해 클리어",
-            "피격 횟수 없이 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYMore3",
+            "Mission_StageClear_Beatenless0"
           ],
           "reward_f": [
             {
@@ -79814,10 +79814,10 @@ export default {
           "text": "Ev2-2ep",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "중장형을 2기 이상 편성해 클리어",
-            "피격 횟수 없이 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_ARMOREDMore2",
+            "Mission_StageClear_Beatenless0"
           ],
           "reward_f": [
             {
@@ -80123,10 +80123,10 @@ export default {
           "text": "Ev2-1C",
           "search": null,
           "missions": [
-            "하나의 스쿼드만 배치해 클리어",
-            "경장형을 편성하지 않고 클리어",
-            "기동형을 편성하지 않고 클리어",
-            "중장형을 편성하지 않고 클리어"
+            "Mission_StageClear_OneSquad",
+            "Mission_StageClear_TrooperLess0",
+            "Mission_StageClear_MOBILITYLess0",
+            "Mission_StageClear_ARMOREDLess0"
           ],
           "reward_f": [
             {
@@ -80267,10 +80267,10 @@ export default {
           "text": "Ev2-2C",
           "search": null,
           "missions": [
-            "하나의 스쿼드만 배치해 클리어",
-            "경장형을 편성하지 않고 클리어",
-            "기동형을 편성하지 않고 클리어",
-            "중장형을 편성하지 않고 클리어"
+            "Mission_StageClear_OneSquad",
+            "Mission_StageClear_TrooperLess0",
+            "Mission_StageClear_MOBILITYLess0",
+            "Mission_StageClear_ARMOREDLess0"
           ],
           "reward_f": [
             {
@@ -80415,10 +80415,10 @@ export default {
           "text": "Ev-1",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             "Char_3P_Aurora_N"
@@ -80650,10 +80650,10 @@ export default {
           "text": "Ev-2",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             "Char_BR_Emily_N"
@@ -80885,10 +80885,10 @@ export default {
           "text": "Ev-3",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -81127,10 +81127,10 @@ export default {
           "text": "Ev-4",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -81440,10 +81440,10 @@ export default {
           "text": "Ev-5",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -81683,10 +81683,10 @@ export default {
           "text": "Ev-6",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -81921,10 +81921,10 @@ export default {
           "text": "Ev-7",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -82163,10 +82163,10 @@ export default {
           "text": "Ev-8",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             "Char_ST_Tiamat_N"
@@ -82472,10 +82472,10 @@ export default {
           "text": "Ev-1Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "중장형을 2기 이상 편성해 클리어",
-            "기동형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_ARMOREDMore2",
+            "Mission_StageClear_MOBILITYLess0"
           ],
           "reward_f": [
             {
@@ -82781,10 +82781,10 @@ export default {
           "text": "Ev-2Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "기동형을 2기 이상 편성해 클리어",
-            "경장형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYMore2",
+            "Mission_StageClear_TrooperLess0"
           ],
           "reward_f": [
             {
@@ -83090,10 +83090,10 @@ export default {
           "text": "Ev-3Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "경장형을 2기 이상 편성해 클리어",
-            "중장형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_TrooperMore2",
+            "Mission_StageClear_ARMOREDLess0"
           ],
           "reward_f": [
             {
@@ -83399,10 +83399,10 @@ export default {
           "text": "Ev-4Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "기동형을 3기 이상 편성해 클리어",
-            "경장형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYMore3",
+            "Mission_StageClear_TrooperLess0"
           ],
           "reward_f": [
             {
@@ -83714,10 +83714,10 @@ export default {
           "text": "Ev-5Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "중장형을 3기 이상 편성해 클리어",
-            "기동형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_ARMOREDMore3",
+            "Mission_StageClear_MOBILITYLess0"
           ],
           "reward_f": [
             {
@@ -84029,10 +84029,10 @@ export default {
           "text": "Ev-1ep",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -84264,10 +84264,10 @@ export default {
           "text": "Ev-2ep",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -84504,10 +84504,10 @@ export default {
           "text": "Ev2-1",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -84747,10 +84747,10 @@ export default {
           "text": "Ev2-2",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -84985,10 +84985,10 @@ export default {
           "text": "Ev2-3",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -85227,10 +85227,10 @@ export default {
           "text": "Ev2-4",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -85539,10 +85539,10 @@ export default {
           "text": "Ev2-5",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -85851,10 +85851,10 @@ export default {
           "text": "Ev2-6",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -86163,10 +86163,10 @@ export default {
           "text": "Ev2-1Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "기동형을 2기 이상 편성해 클리어",
-            "경장형을 1기 이상 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYMore2",
+            "Mission_StageClear_TrooperMore1"
           ],
           "reward_f": [
             {
@@ -86472,10 +86472,10 @@ export default {
           "text": "Ev2-2Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "중장형을 2기 이상 편성해 클리어",
-            "경장형을 1기 이상 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_ARMOREDMore2",
+            "Mission_StageClear_TrooperMore1"
           ],
           "reward_f": [
             {
@@ -86784,10 +86784,10 @@ export default {
           "text": "Ev2-3Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "기동형을 3기 이상 편성해 클리어",
-            "경장형을 2기 이상 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYMore3",
+            "Mission_StageClear_TrooperMore2"
           ],
           "reward_f": [
             {
@@ -87108,10 +87108,10 @@ export default {
           "text": "Ev2-4Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "중장형을 3기 이상 편성해 클리어",
-            "경장형을 2기 이상 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_ARMOREDMore3",
+            "Mission_StageClear_TrooperMore2"
           ],
           "reward_f": [
             {
@@ -87444,10 +87444,10 @@ export default {
           "text": "Ev2-5Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "경장형을 편성하지 않고 클리어",
-            "중장형을 3기 이하로 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_TrooperLess0",
+            "Mission_StageClear_ARMOREDLess3"
           ],
           "reward_f": [
             {
@@ -87786,10 +87786,10 @@ export default {
           "text": "Ev2-6Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "기동형을 편성하지 않고 클리어",
-            "중장형을 2기 이하로 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYLess0",
+            "Mission_StageClear_ARMOREDLess2"
           ],
           "reward_f": [
             {
@@ -88128,10 +88128,10 @@ export default {
           "text": "Ev2-1ep",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -88363,10 +88363,10 @@ export default {
           "text": "Ev2-2ep",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -88619,10 +88619,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             "Char_PECS_Empress_N"
@@ -88916,10 +88916,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             "Char_PECS_Sunny_N"
@@ -89213,10 +89213,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -89513,10 +89513,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -89903,10 +89903,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -90203,10 +90203,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -90503,10 +90503,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -90803,10 +90803,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             "Char_3P_SnowFeather_N"
@@ -91176,10 +91176,10 @@ export default {
           "text": "Ev1-2B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -91471,10 +91471,10 @@ export default {
           "text": "Ev1-3B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -91766,10 +91766,10 @@ export default {
           "text": "Ev1-5B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -92061,10 +92061,10 @@ export default {
           "text": "Ev1-6B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             "Char_BR_HongRyun_N"
@@ -92443,10 +92443,10 @@ export default {
           "text": "Ev1-1Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "경장형을 2기 이상 편성해 클리어",
-            "중장형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_TrooperMore2",
+            "Mission_StageClear_ARMOREDLess0"
           ],
           "reward_f": [
             {
@@ -92823,10 +92823,10 @@ export default {
           "text": "Ev1-2Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "기동형을 2기 이상 편성해 클리어",
-            "경장형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYMore2",
+            "Mission_StageClear_TrooperLess0"
           ],
           "reward_f": [
             {
@@ -93206,10 +93206,10 @@ export default {
           "text": "Ev1-3Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "중장형을 2기 이상 편성해 클리어",
-            "기동형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_ARMOREDMore2",
+            "Mission_StageClear_MOBILITYLess0"
           ],
           "reward_f": [
             {
@@ -93611,10 +93611,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -93920,10 +93920,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -94226,10 +94226,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -94535,10 +94535,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -94934,10 +94934,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -95243,10 +95243,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -95552,10 +95552,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -95861,10 +95861,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "10 라운드 이내에 클리어",
-            "피격 횟수 10번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round10",
+            "Mission_StageClear_Beatenless10"
           ],
           "reward_f": [
             "Char_BR_BloodyPanther_N"
@@ -96066,10 +96066,10 @@ export default {
           "text": "Ev2-1B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -96370,10 +96370,10 @@ export default {
           "text": "Ev2-2B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -96674,10 +96674,10 @@ export default {
           "text": "Ev2-3B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -96978,10 +96978,10 @@ export default {
           "text": "Ev2-4B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             "Char_BR_BeastHunter_N"
@@ -97372,10 +97372,10 @@ export default {
           "text": "Ev2-1Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "기동형을 2기 이상 편성해 클리어",
-            "경장형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYMore2",
+            "Mission_StageClear_TrooperLess0"
           ],
           "reward_f": [
             {
@@ -97761,10 +97761,10 @@ export default {
           "text": "Ev2-2Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "중장형을 2기 이상 편성해 클리어",
-            "기동형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_ARMOREDMore2",
+            "Mission_StageClear_MOBILITYLess0"
           ],
           "reward_f": [
             "Char_DS_Atalanta_N"
@@ -98150,10 +98150,10 @@ export default {
           "text": "Ev2-3Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "경장형을 2기 이상 편성해 클리어",
-            "중장형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_TrooperMore2",
+            "Mission_StageClear_ARMOREDLess0"
           ],
           "reward_f": [
             {
@@ -98564,10 +98564,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "12 라운드 이내에 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round12",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -99089,10 +99089,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "12 라운드 이내에 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round12",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             {
@@ -99614,10 +99614,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "12 라운드 이내에 클리어",
-            "하나의 스쿼드만 배치해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round12",
+            "Mission_StageClear_OneSquad"
           ],
           "reward_f": [
             "Char_AGS_MrAlfred2_N"
@@ -100060,10 +100060,10 @@ export default {
           "text": "Ev3-1C",
           "search": null,
           "missions": [
-            "전투 불능 캐릭터 2명 이하로 클리어",
-            "경장형을 편성하지 않고 클리어",
-            "기동형을 편성하지 않고 클리어",
-            "중장형을 편성하지 않고 클리어"
+            "Mission_StageClear_DeadLess2",
+            "Mission_StageClear_TrooperLess0",
+            "Mission_StageClear_MOBILITYLess0",
+            "Mission_StageClear_ARMOREDLess0"
           ],
           "reward_f": [
             {
@@ -100120,10 +100120,10 @@ export default {
           "text": "Ev1-1",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -100487,10 +100487,10 @@ export default {
           "text": "Ev1-2",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -100781,10 +100781,10 @@ export default {
           "text": "Ev1-3",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -101148,10 +101148,10 @@ export default {
           "text": "Ev1-4",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -101442,10 +101442,10 @@ export default {
           "text": "Ev1-5",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -101809,10 +101809,10 @@ export default {
           "text": "Ev1-6",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -102103,10 +102103,10 @@ export default {
           "text": "Ev1-7",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             "Char_BR_ALWraith_N"
@@ -102467,10 +102467,10 @@ export default {
           "text": "Ev1-1Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "중장형을 2기 이상 편성해 클리어",
-            "기동형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_ARMOREDMore2",
+            "Mission_StageClear_MOBILITYLess0"
           ],
           "reward_f": [
             {
@@ -102838,10 +102838,10 @@ export default {
           "text": "Ev1-2Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "기동형을 2기 이상 편성해 클리어",
-            "경장형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYMore2",
+            "Mission_StageClear_TrooperLess0"
           ],
           "reward_f": [
             {
@@ -103211,10 +103211,10 @@ export default {
           "text": "Ev2-1",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -103590,10 +103590,10 @@ export default {
           "text": "Ev2-2",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             "Char_3P_Aurora_N"
@@ -103888,10 +103888,10 @@ export default {
           "text": "Ev2-3",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -104279,10 +104279,10 @@ export default {
           "text": "Ev2-4",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -104589,10 +104589,10 @@ export default {
           "text": "Ev2-5",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "10 라운드 이내에 클리어",
-            "피격 횟수 10번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round10",
+            "Mission_StageClear_Beatenless10"
           ],
           "reward_f": [
             {
@@ -105021,10 +105021,10 @@ export default {
           "text": "Ev2-6",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "10 라운드 이내에 클리어",
-            "피격 횟수 10번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round10",
+            "Mission_StageClear_Beatenless10"
           ],
           "reward_f": [
             {
@@ -105398,10 +105398,10 @@ export default {
           "text": "Ev2-1Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "기동형을 2기 이상 편성해 클리어",
-            "경장형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYMore2",
+            "Mission_StageClear_TrooperLess0"
           ],
           "reward_f": [
             {
@@ -105792,10 +105792,10 @@ export default {
           "text": "Ev2-2Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "경장형을 2기 이상 편성해 클리어",
-            "기동형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_TrooperMore2",
+            "Mission_StageClear_MOBILITYLess0"
           ],
           "reward_f": [
             {
@@ -106204,10 +106204,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             "Char_Core_Normal_N"
@@ -106489,10 +106489,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             "Char_Core_Normal_N"
@@ -106777,10 +106777,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             "Char_Core_Normal_N"
@@ -107068,10 +107068,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             "Char_Core_Normal_N"
@@ -107446,10 +107446,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             "Char_Core_Normal_N"
@@ -107734,10 +107734,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -108024,10 +108024,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             "Char_DS_KunoichiZero_N"
@@ -108311,10 +108311,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -108669,10 +108669,10 @@ export default {
           "text": "Ev1-1B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -108935,10 +108935,10 @@ export default {
           "text": "Ev1-2B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -109201,10 +109201,10 @@ export default {
           "text": "Ev1-6B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -109521,10 +109521,10 @@ export default {
           "text": "Ev1-8B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -109839,10 +109839,10 @@ export default {
           "text": "Ev1-1Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "바이오로이드를 2기 이하로 편성해 클리어",
-            "중장형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_AndroidLess2",
+            "Mission_StageClear_ARMOREDLess0"
           ],
           "reward_f": [
             {
@@ -110235,10 +110235,10 @@ export default {
           "text": "Ev1-2Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "로봇을 편성하지 않고 클리어",
-            "경장형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_RobotLess0",
+            "Mission_StageClear_TrooperLess0"
           ],
           "reward_f": [
             "Char_Core_Special_N"
@@ -110628,10 +110628,10 @@ export default {
           "text": "Ev1-3Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "중장형을 편성하지 않고 클리어",
-            "기동형을 2기 이상 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_ARMOREDLess0",
+            "Mission_StageClear_MOBILITYMore2"
           ],
           "reward_f": [
             {
@@ -111027,10 +111027,10 @@ export default {
           "text": "Ev1-1C",
           "search": null,
           "missions": [
-            "5 라운드 이내에 클리어",
-            "누적 피해량 10만 이상으로 클리어",
-            "누적 피해량 25만 이상으로 클리어",
-            "누적 피해량 40만 이상으로 클리어"
+            "Mission_StageClear_Round5",
+            "Mission_StageClear_Damage100000",
+            "Mission_StageClear_Damage250000",
+            "Mission_StageClear_Damage400000"
           ],
           "reward_f": [
             {
@@ -111096,10 +111096,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -111381,10 +111381,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -111669,10 +111669,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -111957,10 +111957,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -112341,10 +112341,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -112638,10 +112638,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -112931,10 +112931,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -113221,10 +113221,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "12 라운드 이내에 클리어",
-            "피격 횟수 10번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round12",
+            "Mission_StageClear_Beatenless10"
           ],
           "reward_f": [
             {
@@ -113503,10 +113503,10 @@ export default {
           "text": "Ev2-1B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -113766,10 +113766,10 @@ export default {
           "text": "Ev2-4B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -114035,10 +114035,10 @@ export default {
           "text": "Ev2-6B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -114271,10 +114271,10 @@ export default {
           "text": "Ev2-7B",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 5번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless5"
           ],
           "reward_f": [
             {
@@ -114505,10 +114505,10 @@ export default {
           "text": "Ev2-1Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "바이오로이드를 3기 이하로 편성해 클리어",
-            "로봇을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_AndroidLess3",
+            "Mission_StageClear_RobotLess0"
           ],
           "reward_f": [
             "Char_BR_ALWraith_N"
@@ -114895,10 +114895,10 @@ export default {
           "text": "Ev2-2Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "경장형을 편성하지 않고 클리어",
-            "기동형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_TrooperLess0",
+            "Mission_StageClear_MOBILITYLess0"
           ],
           "reward_f": [
             "Char_BR_May_N"
@@ -115288,10 +115288,10 @@ export default {
           "text": "Ev2-3Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "기동형을 편성하지 않고 클리어",
-            "중장형을 2기 이상 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYLess0",
+            "Mission_StageClear_ARMOREDMore2"
           ],
           "reward_f": [
             {
@@ -115687,10 +115687,10 @@ export default {
           "text": "Ev2-1C",
           "search": null,
           "missions": [
-            "누적 피해량 800만 이상으로 클리어",
-            "10 라운드 이내에 클리어",
-            "7 라운드 이내에 클리어",
-            "5 라운드 이내에 클리어"
+            "Mission_StageClear_Damage8000000",
+            "Mission_StageClear_Round10",
+            "Mission_StageClear_Round7",
+            "Mission_StageClear_Round5"
           ],
           "reward_f": [
             {
@@ -115756,10 +115756,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -116200,10 +116200,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -116632,10 +116632,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -117064,10 +117064,10 @@ export default {
             ]
           },
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -117480,10 +117480,10 @@ export default {
           "text": "Ev1-1",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -117762,10 +117762,10 @@ export default {
           "text": "Ev1-2",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "바이오로이드를 2기 이상 편성해 클리어",
-            "안드바리가 생존한 채로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_AndroidMore2",
+            "Mission_StageClear_Live_Char_BR_Andvari_N"
           ],
           "reward_f": [
             "Char_3P_Hirume_N"
@@ -117809,10 +117809,10 @@ export default {
           "text": "Ev1-3",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -118079,10 +118079,10 @@ export default {
           "text": "Ev1-4",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -118424,10 +118424,10 @@ export default {
           "text": "Ev1-5",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -118766,10 +118766,10 @@ export default {
           "text": "Ev1-6",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "8 라운드 이내에 클리어",
-            "피격 횟수 6번 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
           ],
           "reward_f": [
             {
@@ -119179,10 +119179,10 @@ export default {
           "text": "Ev1-1Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "경장형을 편성하지 않고 클리어",
-            "기동형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_TrooperLess0",
+            "Mission_StageClear_MOBILITYLess0"
           ],
           "reward_f": [
             {
@@ -119669,10 +119669,10 @@ export default {
           "text": "Ev1-2Ex",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "중장형을 편성하지 않고 클리어",
-            "경장형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_ARMOREDLess0",
+            "Mission_StageClear_TrooperLess0"
           ],
           "reward_f": [
             {
@@ -120169,10 +120169,10 @@ export default {
           "text": "Cha1-1",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "2 라운드 이내에 클리어",
-            "바이오로이드를 2기 이하로 편성해 클리어",
-            "이그니스를 스쿼드에 포함해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_Round2",
+            "Mission_StageClear_AndroidLess2",
+            "Mission_StageClear_With_Char_PECS_Ignis_N"
           ],
           "reward_f": [
             {
@@ -120292,10 +120292,10 @@ export default {
           "text": "Cha1-2",
           "search": null,
           "missions": [
-            "2 라운드 이내에 클리어",
-            "바이오로이드를 3기 이하로 편성해 클리어",
-            "닥터를 스쿼드에 포함해 클리어",
-            "트리아이나를 스쿼드에 포함해 클리어"
+            "Mission_StageClear_Round2",
+            "Mission_StageClear_AndroidLess3",
+            "Mission_StageClear_With_Char_BR_DrM_N",
+            "Mission_StageClear_With_Char_PECS_Triaina_N"
           ],
           "reward_f": [
             {
@@ -120418,10 +120418,10 @@ export default {
           "text": "Cha1-3",
           "search": null,
           "missions": [
-            "5 라운드 이내에 클리어",
-            "바이오로이드를 3기 이하로 편성해 클리어",
-            "경장형을 1기 이상 편성해 클리어",
-            "칙 커맨더가 파이널 칙 어택을 쓴 적 없이 클리어"
+            "Mission_StageClear_Round5",
+            "Mission_StageClear_AndroidLess3",
+            "Mission_StageClear_TrooperMore1",
+            "Mission_StageClear_No_Skill_MP_EmperorChickSpCH_Challenge1_2"
           ],
           "reward_f": [
             {
@@ -120559,10 +120559,10 @@ export default {
           "text": "Cha1-4",
           "search": null,
           "missions": [
-            "5 라운드 이내에 클리어",
-            "바이오로이드를 4기 이하로 편성해 클리어",
-            "기동형을 1기 이상 편성해 클리어",
-            "칙 커맨더가 파이널 칙 어택을 쓴 적 없이 클리어"
+            "Mission_StageClear_Round5",
+            "Mission_StageClear_AndroidLess4",
+            "Mission_StageClear_MOBILITYMore1",
+            "Mission_StageClear_No_Skill_MP_EmperorChickSpCH_Challenge1_2"
           ],
           "reward_f": [
             {
@@ -120708,10 +120708,10 @@ export default {
           "text": "Cha2-1",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 1명 이하로 클리어",
-            "10 라운드 이내에 클리어",
-            "기동형을 1기 이하로 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess1",
+            "Mission_StageClear_Round10",
+            "Mission_StageClear_MOBILITYLess1"
           ],
           "reward_f": [
             {
@@ -120758,10 +120758,10 @@ export default {
           "text": "Cha2-2",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 1명 이하로 클리어",
-            "10 라운드 이내에 클리어",
-            "경장형을 1기 이하로 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess1",
+            "Mission_StageClear_Round10",
+            "Mission_StageClear_TrooperLess1"
           ],
           "reward_f": [
             {
@@ -120811,10 +120811,10 @@ export default {
           "text": "Cha2-3",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "15 라운드 이내에 클리어",
-            "중장형을 1기 이하로 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round15",
+            "Mission_StageClear_ARMOREDLess1"
           ],
           "reward_f": [
             {
@@ -120864,10 +120864,10 @@ export default {
           "text": "Cha2-4",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "전투 불능 캐릭터 없이 클리어",
-            "15 라운드 이내에 클리어",
-            "기동형을 1기 이하로 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round15",
+            "Mission_StageClear_MOBILITYLess1"
           ],
           "reward_f": [
             {
@@ -120925,10 +120925,10 @@ export default {
           "text": "Cha3-1",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "로봇을 편성하지 않고 클리어",
-            "바이오로이드를 3기 이하로 편성해 클리어",
-            "전투 불능 캐릭터 1명 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_RobotLess0",
+            "Mission_StageClear_AndroidLess3",
+            "Mission_StageClear_DeadLess1"
           ],
           "reward_f": [
             {
@@ -120987,10 +120987,10 @@ export default {
           "text": "Cha3-2",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "로봇을 편성하지 않고 클리어",
-            "바이오로이드를 4기 이하로 편성해 클리어",
-            "전투 불능 캐릭터 1명 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_RobotLess0",
+            "Mission_StageClear_AndroidLess4",
+            "Mission_StageClear_DeadLess1"
           ],
           "reward_f": [
             {
@@ -121055,10 +121055,10 @@ export default {
           "text": "Cha3-3",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "중장형을 편성하지 않고 클리어",
-            "기동형을 편성하지 않고 클리어",
-            "전투 불능 캐릭터 1명 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_ARMOREDLess0",
+            "Mission_StageClear_MOBILITYLess0",
+            "Mission_StageClear_DeadLess1"
           ],
           "reward_f": [
             {
@@ -121120,10 +121120,10 @@ export default {
           "text": "Cha3-4",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "중장형을 편성하지 않고 클리어",
-            "바이오로이드를 4기 이하로 편성해 클리어",
-            "전투 불능 캐릭터 1명 이하로 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_ARMOREDLess0",
+            "Mission_StageClear_AndroidLess4",
+            "Mission_StageClear_DeadLess1"
           ],
           "reward_f": [
             {
@@ -121193,10 +121193,10 @@ export default {
           "text": "Cha5-1",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "레모네이드 알파를 스쿼드에 포함해 클리어",
-            "경장형을 2기 이하로 편성해 클리어",
-            "중장형을 1기 이하로 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_With_Char_PECS_LemonadeAlpha_N",
+            "Mission_StageClear_TrooperLess2",
+            "Mission_StageClear_ARMOREDLess1"
           ],
           "reward_f": [
             {
@@ -121352,10 +121352,10 @@ export default {
           "text": "Cha5-2",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "레모네이드 알파를 스쿼드에 포함해 클리어",
-            "기동형을 2기 이하로 편성해 클리어",
-            "경장형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_With_Char_PECS_LemonadeAlpha_N",
+            "Mission_StageClear_MOBILITYLess2",
+            "Mission_StageClear_TrooperLess0"
           ],
           "reward_f": [
             {
@@ -121511,10 +121511,10 @@ export default {
           "text": "Cha5-3",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "레모네이드 알파를 스쿼드에 포함해 클리어",
-            "중장형을 2기 이하로 편성해 클리어",
-            "기동형을 편성하지 않고 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_With_Char_PECS_LemonadeAlpha_N",
+            "Mission_StageClear_ARMOREDLess2",
+            "Mission_StageClear_MOBILITYLess0"
           ],
           "reward_f": [
             {
@@ -121670,10 +121670,10 @@ export default {
           "text": "Cha5-4",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "레모네이드 알파를 스쿼드에 포함해 클리어",
-            "바이오로이드를 2기 이하로 편성해 클리어",
-            "로봇을 1기 이하로 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_With_Char_PECS_LemonadeAlpha_N",
+            "Mission_StageClear_AndroidLess2",
+            "Mission_StageClear_RobotLess1"
           ],
           "reward_f": [
             {
@@ -121834,10 +121834,10 @@ export default {
           "text": "Cha4-1",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "15 라운드 이내에 클리어",
-            "바이오로이드를 3기 이하로 편성해 클리어",
-            "기동형을 1기 이하로 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_Round15",
+            "Mission_StageClear_AndroidLess3",
+            "Mission_StageClear_MOBILITYLess1"
           ],
           "reward_f": [
             {
@@ -121928,10 +121928,10 @@ export default {
           "text": "Cha4-2",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "15 라운드 이내에 클리어",
-            "바이오로이드를 3기 이하로 편성해 클리어",
-            "경장형을 1기 이하로 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_Round15",
+            "Mission_StageClear_AndroidLess3",
+            "Mission_StageClear_TrooperLess1"
           ],
           "reward_f": [
             {
@@ -122031,10 +122031,10 @@ export default {
           "text": "Cha4-3",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "15 라운드 이내에 클리어",
-            "다곤(대여중)이 심해의 분노를 쓴 적 없이 클리어",
-            "중장형을 1기 이하로 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_Round15",
+            "Mission_StageClear_No_Skill_MP_GigantesDagon_N_1",
+            "Mission_StageClear_ARMOREDLess1"
           ],
           "reward_f": [
             {
@@ -122175,10 +122175,10 @@ export default {
           "text": "Cha4-4",
           "search": null,
           "missions": [
-            "스테이지 클리어",
-            "15 라운드 이내에 클리어",
-            "슈퍼 네리다!가 무차별 난사를 쓴 적 없이 클리어",
-            "기동형을 1기 이하로 편성해 클리어"
+            "Mission_StageClear",
+            "Mission_StageClear_Round15",
+            "Mission_StageClear_No_Skill_MP_Nereid_EV1_2",
+            "Mission_StageClear_MOBILITYLess1"
           ],
           "reward_f": [
             {

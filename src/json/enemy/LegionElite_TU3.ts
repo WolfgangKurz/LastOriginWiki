@@ -1,7 +1,5 @@
 export default {
   "id": "LegionElite_TU3",
-  "name": "엘리트 레기온",
-  "desc": "화력이 좀 더 강한 레기온이야. 난 전혀 구분이 안 가는데 에밀리는 잘 구분하더라구. 이상한 데서 재주가 좋다니까...아! 지휘관 철충과의 연계 공격은 특히 주의해야 해!\n\n\n- 파니 보고함",
   "icon": "TbarIcon_MP_Legion_N",
   "ai": "AI_Mp_LegionElite_Normal_01",
   "rarity": 4,

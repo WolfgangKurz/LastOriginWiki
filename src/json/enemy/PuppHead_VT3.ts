@@ -1,7 +1,5 @@
 export default {
   "id": "PuppHead_VT3",
-  "name": "초코 여왕의 애완기계",
-  "desc": "초코 여왕이 경비용 펍 헤드 기종을 도색해 만들어낸 애완기계입니다. ",
   "icon": "TbarIcon_MP_PuppHead_V2",
   "ai": "AI_Hvst_Normal_02",
   "rarity": 2,

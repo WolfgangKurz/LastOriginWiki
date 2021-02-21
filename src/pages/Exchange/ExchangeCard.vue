@@ -5,18 +5,22 @@
 				<b-col cols="auto" class="mr-2">
 					<b-row no-gutters class="item-icon-row">
 						<b-col class="pt-2 px-2">
-							<unit-face v-if="this.Unit" :uid="this.Unit.uid" size="72" />
-							<equip-icon v-else-if="this.Equip" :image="this.Equip.icon" size="72" />
-							<equip-icon v-else-if="this.Item" :image="this.Item.icon" size="72" />
+							<unit-face v-if="Unit" :uid="Unit.uid" size="72" />
+							<equip-icon v-else-if="Equip" :image="Equip.icon" size="72" />
+							<equip-icon v-else-if="Item" :image="Item.icon" size="72" />
 						</b-col>
 					</b-row>
 					<b-row no-gutters class="item-left-row">
-						<b-col cols="auto" class="px-2">재고</b-col>
+						<b-col cols="auto" class="px-2"><locale k="EXCHANGE_LEFT" /></b-col>
 						<b-col class="text-center">{{ reward.count === 0 ? "??" : reward.count }}</b-col>
 					</b-row>
 				</b-col>
 				<b-col cols="">
-					<div class="text-center py-2">{{ Target.name }}</div>
+					<div class="text-center py-2">
+						<locale v-if="Unit" :k="`UNIT_${Unit.uid}`" />
+						<locale v-else-if="Equip" :k="`EQUIP_${Equip.fullKey}`" />
+						<locale v-else-if="Item" :k="`CONSUMABLE_${Item.key}`" />
+					</div>
 
 					<b-row v-for="(req, i) in Requirements" :key="`exchange-item-${i}`" no-gutters class="requirements mt-1">
 						<b-col cols="auto">

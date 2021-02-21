@@ -1,7 +1,5 @@
 export default {
   "id": "ProgramMobAS_TU2",
-  "name": "철충 사념체 (돌격병)",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_ProgramMobAS_N",
   "ai": "AI_ProgramMobAS_Normal_01",
   "rarity": 4,

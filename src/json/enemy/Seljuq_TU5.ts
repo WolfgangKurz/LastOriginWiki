@@ -1,7 +1,5 @@
 export default {
   "id": "Seljuq_TU5",
-  "name": "양산형 셀주크",
-  "desc": "셀주크의 양산형 기종이다.",
   "icon": "TbarIcon_MP_Seljuq_N",
   "ai": "AI_Mp_Mammoth_01",
   "rarity": 3,

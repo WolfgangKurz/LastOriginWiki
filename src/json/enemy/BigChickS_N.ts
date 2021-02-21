@@ -1,7 +1,5 @@
 export default {
   "id": "BigChickS_N",
-  "name": "빅 칙 실더",
-  "desc": "제법 근성이 있는 녀석이야! 아무리 때려도 잘 쓰러지지 않던데 미호는 잘 처리하더라구. 쓸데 없이 계속 치치말라나 뭐라나…하지만 한 번 붙으면 물러날 내가 아니지~!\n\n\n - 스틸 드라코 보고함",
   "icon": "TbarIcon_MP_BigChickS_N",
   "ai": "AI_BigChickShield_Normal_01",
   "rarity": 4,

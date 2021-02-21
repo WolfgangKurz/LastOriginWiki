@@ -1,7 +1,5 @@
 export default {
   "id": "BigChickSP_N",
-  "name": "강화형 빅 칙",
-  "desc": "평범한 철충이다.",
   "icon": "TbarIcon_MP_BigChick_N",
   "ai": "AI_Ncc_Normal_01",
   "rarity": 3,

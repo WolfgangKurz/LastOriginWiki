@@ -1,7 +1,5 @@
 export default {
   "id": "SeljuqA_VT4",
-  "name": "초코 여왕의 정예 포병",
-  "desc": "화력은 일반형 셀주크보다 떨어지지만 장갑은 더 향상된 것 같아요. 공격을 계속 허용하면 이쪽 움직임에 적응하니 방어 능력이 좋은 소대로 제압하는게 좋을 것 같네요.\n\n\n - 세이렌 보고함",
   "icon": "TbarIcon_MP_SeljuqA_V2",
   "ai": "AI_SeljuqC_Normal_01",
   "rarity": 5,

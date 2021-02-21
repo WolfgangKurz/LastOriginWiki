@@ -1,7 +1,5 @@
 export default {
   "id": "EmperorChickSpCH_Challenge1",
-  "name": "분노한 칙 커맨더",
-  "desc": "외로움이 계속 쌓이면 결국 어떤 식으로든 표출되기 마련이죠. 그런데 이 화가 나 있는 철충은 비슷하게 생긴 친구보다 외로움을 훨씬 많이 타는 것 같군요? 자신을 보호할 생각도 전혀 없어 보이고, 동료를 조금만 잃어도 곧장 폭발해버리는 것 같아요.\n\n\n- 보고자 키르케",
   "icon": "TbarIcon_MP_EmperorChickSpCH_N",
   "ai": "AI_CommanderChick_Challenge_02",
   "rarity": 5,

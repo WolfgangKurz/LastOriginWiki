@@ -36,6 +36,7 @@ const WorldNames: Record<string, string> = {
 	Ev7: "요정 마을의 아리아",
 	Ev8: "흐린 기억 속의 나라",
 	Ev9: "낙원으로부터 온 초대장",
+	Ev10: "누군가 바랐던 소원",
 };
 const skin = glob.sync(
 	path.resolve(__dirname, "..", "external", "assets", "png", "full", "*.png"),

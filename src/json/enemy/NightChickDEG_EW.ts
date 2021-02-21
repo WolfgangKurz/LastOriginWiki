@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickDEG_EW",
-  "name": "나이트 칙 디텍터 G",
-  "desc": "지상전용 레이더 철충이네요. 공중 공격엔 취약하니 기동 부대를 동원해 처리하는 것을 추천드려요.\n\n\n - 다이카 보고함",
   "icon": "TbarIcon_MP_NightChickDEG_N",
   "ai": "AI_NCDetectorG_Normal_01",
   "rarity": 5,

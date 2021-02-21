@@ -1,7 +1,5 @@
 export default {
   "id": "EmperorChickSpCH_N",
-  "name": "칙 커맨더",
-  "desc": "주위 철충들에게 명령을 내리는 칙 커맨더는 마치 훈련 교관처럼 느껴집니다. 철충들이 쓰러질 때마다 분노가 끓어올라 강해지고 쓰러진 철충들을 다시 일으켜 세울 수 있는 막강한 능력이 있습니다. 하지만 적군이 쓰러졌을 시 분노는 가라 앉고 약해지는 것으로 보아 어쩌면... 아군의 희생이 필요할지도 모릅니다.\n\n\n보고자 ???",
   "icon": "TbarIcon_MP_EmperorChickSpCH_N",
   "ai": "AI_CommanderChick_Challenge_01",
   "rarity": 5,

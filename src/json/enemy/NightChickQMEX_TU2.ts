@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickQMEX_TU2",
-  "name": "개량형 칙 쿼터마스터",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_NightChickQM_N",
   "ai": "AI_NightChickQM_Special_02",
   "rarity": 4,

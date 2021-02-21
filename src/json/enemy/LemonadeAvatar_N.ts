@@ -1,7 +1,5 @@
 export default {
   "id": "LemonadeAvatar_N",
-  "name": "레모네이드 아바타",
-  "desc": "내 무기가 전혀 안 먹히는걸? 저 녀석, 이 공간을 완전히 장악했어. 아무리 그래도 혼자서는… 아! 주변의 부하들과 연결되어서 출력을 상승시키고 있는 건가? 내 생각이 맞다면, 부하들을 먼저 쓰러뜨리면 약화시킬 수 있을 거야. 물론 부하들도 연결되어서 강해졌겠지만… 반드시 이겨낼 수 있어. 우린 친구니까!\n\n\n- 리앤",
   "icon": "TbarIcon_MP_LemonadeAvatar_N",
   "ai": "AI_LemonadeAvatar_Normal_01",
   "rarity": 5,

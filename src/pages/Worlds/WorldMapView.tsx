@@ -3,10 +3,12 @@ import "./WorldMapView.scss";
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Watch } from "vue-property-decorator";
+import { LocaleGet } from "@/libs/Locale";
 
 import WorldMapGrid from "./WorldMapGrid.vue";
 import WorldMapSearchInfo from "./Sub/WorldMapSearchInfo.vue";
 
+import UnitReference from "@/components/UnitReference.vue";
 import TbarIcon from "@/components/TbarIcon.vue";
 import DropUnit from "./DropUnit.vue";
 import DropEquip from "./DropEquip.vue";
@@ -15,14 +17,14 @@ import DropRes from "./DropRes.vue";
 
 import EnemyModal from "@/pages/Enemy/EnemyModal.vue";
 
-import { AssetsRoot, ImageExtension, SupplementaryUnit, WorldNames } from "@/libs/Const";
+import { AssetsRoot, ImageExtension, SupplementaryUnit, WorldIds } from "@/libs/Const";
 import { FormatNumber, UpdateTitle } from "@/libs/Functions";
 
 import { FilterableUnit } from "@/libs/Types/Unit.Filterable";
 import { FilterableEquip } from "@/libs/Types/Equip.Filterable";
 import { FilterableEnemy } from "@/libs/Types/Enemy.Filterable";
 
-import { Worlds, MapNodeEntity, MapReward, MapEnemyData } from "@/libs/Types/Map";
+import { MapNodeEntity, MapReward, MapEnemyData } from "@/libs/Types/Map";
 import { Consumable } from "@/libs/Types/Consumable";
 
 import FilterableUnitDB from "@/libs/DB/Unit.Filterable";
@@ -57,6 +59,7 @@ interface WaveEnemyInfo extends MapEnemyData {
 		WorldMapGrid,
 		WorldMapSearchInfo,
 
+		UnitReference,
 		TbarIcon,
 		DropUnit,
 		DropEquip,
@@ -92,14 +95,14 @@ export default class WorldMapView extends Vue {
 	}
 
 	private get WorldName () {
-		return this.world in WorldNames
-			? WorldNames[this.world]
+		return WorldIds.includes(this.world)
+			? LocaleGet(`WORLD_${this.world}`)
 			: this.world;
 	}
 
 	private get AreaName (): string {
 		return (this.world in MapDB) && (this.area in MapDB[this.world])
-			? MapDB[this.world][this.area].title || `${this.area} 구역`
+			? LocaleGet(`WORLD_AREA_${this.world}_${this.area}`) || LocaleGet("WORLDS_AREA_TITLE", this.area)
 			: "???";
 	}
 
@@ -329,7 +332,7 @@ export default class WorldMapView extends Vue {
 		SetMeta(["description", "twitter:description"], `${this.WorldName}의 제 ${this.area}구역 정보를 표시합니다. 지역의 클리어 보상과 드랍 정보, 적 정보를 확인할 수 있습니다.`);
 		SetMeta("keywords", `,${this.WorldName}`, true);
 		SetMeta(["twitter:image", "og:image"], `${AssetsRoot}/world/icons/${this.world}_${this.area}.png`);
-		UpdateTitle("세계정보", this.WorldName, `제 ${this.area}구역`);
+		UpdateTitle(LocaleGet("MENU_WORLDS"), this.WorldName, LocaleGet("WORLDS_AREA_TITLE", this.area));
 	}
 
 	private render () {
@@ -338,7 +341,7 @@ export default class WorldMapView extends Vue {
 				<b-col cols="auto">
 					<b-button variant="dark" onClick={ () => this.GoTo(`/worlds/${this.world}`) }>
 						<b-icon-arrow-left class="mr-1" />
-						구역 목록으로
+						<locale k="WORLDS_BACK_TO_AREAS" />
 					</b-button>
 				</b-col>
 			</b-row>
@@ -349,7 +352,7 @@ export default class WorldMapView extends Vue {
 					{ this.WorldName }
 					<h5 class="m-0 d-inline-block">
 						<b-badge class="ml-2" variant="warning">
-							제 { this.area }구역 :: { this.AreaName }
+							<locale k="WORLDS_AREA_TITLE" p0={ this.area } /> :: { this.AreaName }
 						</b-badge>
 					</h5>
 				</b-card-header>
@@ -400,9 +403,9 @@ export default class WorldMapView extends Vue {
 				? <b-card class="mt-3" bg-variant="dark" text-variant="light">
 					<h5>
 						<b-badge variant="warning" class="mr-2 selected-node-badge">{ this.selected.text }</b-badge>
-						{ this.selected.name }
+						<locale k={ `WORLD_MAP_${this.world}_${this.selected.text}` } />
 					</h5>
-					<div>{ this.selected.desc }</div>
+					<div><locale k={ `WORLD_MAP_DESC_${this.world}_${this.selected.text}` } /></div>
 				</b-card>
 				: _e() }
 
@@ -411,18 +414,22 @@ export default class WorldMapView extends Vue {
 					<b-tab title-link-class="text-dark" active={ this.CurrentTab === "reward" } onClick={ () => (this.CurrentTab = "reward") }>
 						<template slot="title">
 							<b-icon-award-fill class="mr-1" />
-							클리어 보상
+							<locale k="WORLD_VIEW_CLEAR_REWARDS" />
 						</template>
 
 						<b-card-body id="drops" class="p-0">
 							{ !this.selected
-								? <div class="text-center py-4 text-secondary">위 지도에서 지역을 선택해주세요.</div>
+								? <div class="text-center py-4 text-secondary">
+									<locale k="WORLD_VIEW_SELECT_NODE" />
+								</div>
 								: <b-row>
 									<b-col cols="12" md="6">
-										<b-card text-variant="dark" header="클리어 보상">
+										<b-card text-variant="dark" header={ LocaleGet("WORLD_VIEW_CLEAR_REWARDS") }>
 											<b-row cols="1" cols-lg={ this.RewardDrops.filter(x => !x.am).length === 0 ? 1 : 2 }>
 												{ this.RewardDrops.filter(x => !x.am).length === 0
-													? <div class="text-center py-4 text-secondary">클리어 보상 정보 없음</div>
+													? <div class="text-center py-4 text-secondary">
+														<locale k="WORLD_VIEW_CLEAR_REWARDS_NONE" />
+													</div>
 													: this.RewardDrops.filter(x => !x.am)
 														.map((reward, i) => (() => {
 															if ("cash" in reward) {
@@ -478,10 +485,12 @@ export default class WorldMapView extends Vue {
 														})()) }
 											</b-row>
 										</b-card>
-										<b-card text-variant="dark" header="★4 보상" class="mt-2">
+										<b-card text-variant="dark" header={ LocaleGet("WORLD_VIEW_4STAR_REWARDS") } class="mt-2">
 											<b-row cols="1" cols-lg={ this.RewardDrops.filter(x => x.am).length === 0 ? 1 : 2 }>
 												{ this.RewardDrops.filter(x => x.am).length === 0
-													? <div class="text-center py-4 text-secondary">★4 보상 정보 없음</div>
+													? <div class="text-center py-4 text-secondary">
+														<locale k="WORLD_VIEW_4START_REWARDS_NONE" />
+													</div>
 													: this.RewardDrops.filter(x => x.am)
 														.map((reward, i) => (() => {
 															if ("cash" in reward) {
@@ -539,9 +548,11 @@ export default class WorldMapView extends Vue {
 										</b-card>
 									</b-col>
 									<b-col cols="12" md="6" class="mt-md-0 mt-4">
-										<b-card text-variant="dark" header="클리어 조건" no-body>
+										<b-card text-variant="dark" header={ LocaleGet("WORLD_VIEW_CLEAR_CONDITION") } no-body>
 											<b-list-group flush>
-												{ this.selected.missions.map(m => <b-list-group-item>★ { m }</b-list-group-item>) }
+												{ this.selected.missions.map(m => <b-list-group-item>
+													★ <locale k={ m } />
+												</b-list-group-item>) }
 											</b-list-group>
 										</b-card>
 									</b-col>
@@ -551,18 +562,22 @@ export default class WorldMapView extends Vue {
 					<b-tab title-link-class="text-dark" active={ this.CurrentTab === "drop" } onClick={ () => (this.CurrentTab = "drop") }>
 						<template slot="title">
 							<b-icon-gift-fill class="mr-1" />
-							드랍 정보
+							<locale k="WORLD_VIEW_DROPS" />
 						</template>
 
 						<b-card-body id="drops" class="p-0">
 							{ !this.selected
-								? <div class="text-center py-4 text-secondary">위 지도에서 지역을 선택해주세요.</div>
+								? <div class="text-center py-4 text-secondary">
+									<locale k="WORLD_VIEW_SELECT_NODE" />
+								</div>
 								: <b-row>
 									<b-col cols="12" md="6">
-										<b-card text-variant="dark" header="실종 대원 목록">
+										<b-card text-variant="dark" header={ LocaleGet("WORLD_VIEW_DROPS_UNIT") }>
 											<b-row cols="1" cols-lg={ this.UnitDrops.length === 0 ? 1 : 2 } class="text-center px-2">
 												{ this.UnitDrops.length === 0
-													? <div class="text-center py-4 text-secondary">드랍 정보 없음</div>
+													? <div class="text-center py-4 text-secondary">
+														<locale k="WORLD_VIEW_NO_DROPS" />
+													</div>
 													: this.UnitDrops.map((unit, i) => <a
 														key={ `worlds-${this.world}-${this.area}-drop-unit-${i}` }
 														class="drop-unit"
@@ -574,10 +589,12 @@ export default class WorldMapView extends Vue {
 										</b-card>
 									</b-col>
 									<b-col cols="12" md="6" class="mt-md-0 mt-4">
-										<b-card text-variant="dark" header="획득 가능 물품">
+										<b-card text-variant="dark" header={ LocaleGet("WORLD_VIEW_DROPS_ITEMS") }>
 											<b-row cols="1" cols-lg={ this.ItemDrops.length === 0 ? 1 : 2 } class="text-center px-2">
 												{ this.ItemDrops.length === 0
-													? <div class="text-center py-4 text-secondary">드랍 정보 없음</div>
+													? <div class="text-center py-4 text-secondary">
+														<locale k="WORLD_VIEW_NO_DROPS" />
+													</div>
 													: this.ItemDrops.map((item, i) =>
 														"rarity" in item
 															? <a
@@ -600,15 +617,19 @@ export default class WorldMapView extends Vue {
 					<b-tab title-link-class="text-dark" active={ this.CurrentTab === "enemy" } onClick={ () => (this.CurrentTab = "enemy") }>
 						<template slot="title">
 							<b-icon-bug-fill class="mr-1" />
-							적 정보
+							<locale k="WORLD_VIEW_ENEMY" />
 						</template>
 
 						<b-card-body class="p-0 text-center">
 							{ !this.selected
-								? <div class="py-4 text-secondary">위 지도에서 지역을 선택해주세요.</div>
+								? <div class="py-4 text-secondary">
+									<locale k="WORLD_VIEW_SELECT_NODE" />
+								</div>
 								: [
 									<div class="mb-2">
-										<b-badge variant="danger">총 경험치 { this.TotalExp }</b-badge>
+										<b-badge variant="danger">
+											<locale k="WORLD_VIEW_ENEMY_TOTAL_EXP" p0={ this.TotalExp } />
+										</b-badge>
 									</div>,
 									this.Waves.map((wave, waveIdx) => <a
 										key={ `worlds-${this.world}-${this.area}-wave-button-${waveIdx}` }
@@ -641,14 +662,18 @@ export default class WorldMapView extends Vue {
 											</b-button-group>
 										</div>
 										<div class="mb-2">
-											<b-badge variant="warning">웨이브 경험치 { this.CurrentWaveExp }</b-badge>
+											<b-badge variant="warning">
+												<locale k="WORLD_VIEW_ENEMY_WAVE_EXP" p0={ this.CurrentWaveExp } />
+											</b-badge>
 										</div>
 										<div class="enemy-grid">
 											{ this.CurrentWave.map((enemy, pos) => <div key={ `worlds-${this.world}-${this.area}-wave-enemy-${pos}` }>
 												{ enemy !== null
 													? [
 														<img src={ `${AssetsRoot}/${this.ImageExt}/tbar/${enemy.enemy.icon}.${this.ImageExt}` } />,
-														<div>{ enemy.enemy.name }</div>,
+														<div>
+															<locale k={ `ENEMY_${enemy.enemy.id}` } />
+														</div>,
 														<b-badge variant={ enemy.enemy.isBoss ? "danger" : "info" }>lv.{ enemy.lv }</b-badge>,
 
 														<a href="#" class="stretched-link" onClick={ (e: Event) => {
@@ -672,7 +697,7 @@ export default class WorldMapView extends Vue {
 					<b-tab title-link-class="text-dark" active={ this.CurrentTab === "search" } onClick={ () => (this.CurrentTab = "search") }>
 						<template slot="title">
 							<b-icon-search class="mr-1" />
-							탐사 정보
+							<locale k="WORLD_VIEW_EXPLORATION" />
 						</template>
 
 						<world-map-search-info world={ this.world } area={ this.area } search-info={ this.SearchInfo } />

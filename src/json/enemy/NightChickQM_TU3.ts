@@ -1,7 +1,5 @@
 export default {
   "id": "NightChickQM_TU3",
-  "name": "칙 쿼터마스터",
-  "desc": "철충의 보급 기체네요. 공격 저지 능력이 뛰어나니 주력 공격기를 잘 보호해야 장기전을 방지할 수 있어요.\n\n\n- 실키",
   "icon": "TbarIcon_MP_NightChickQM_N",
   "ai": "AI_NightChickQM_Normal_01",
   "rarity": 4,

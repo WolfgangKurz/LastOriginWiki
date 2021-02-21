@@ -2,7 +2,7 @@
 	<b-navbar toggleable="lg" variant="light">
 		<b-navbar-brand>
 			<img :src="`${AssetsRoot}/icon.png`" />
-			멸망 전의 전술 교본
+			<locale k="COMMON_TITLE" />
 		</b-navbar-brand>
 
 		<b-navbar-toggle target="topNavbarList">
@@ -11,7 +11,7 @@
 
 		<b-collapse id="topNavbarList" is-nav>
 			<b-navbar-nav class="mr-auto">
-				<b-nav-item :active="IsRoot" href="/" @click.prevent="GoTo('/')">홈</b-nav-item>
+				<b-nav-item :active="IsRoot" href="/" @click.prevent="GoTo('/')"><locale k="MENU_HOME" /></b-nav-item>
 
 				<!--
 				<b-nav-item :active="IsSimulation" href="/simulator" @click.prevent="GoTo('/simulator')">
@@ -19,32 +19,36 @@
 					<b-badge variant="warning">α</b-badge>
 				</b-nav-item>
 				-->
-
-				<b-nav-item :active="IsUnits" href="/units" @click.prevent="GoTo('/units')">전투원정보</b-nav-item>
-				<b-nav-item :active="IsEquips" href="/equips" @click.prevent="GoTo('/equips')">장비정보</b-nav-item>
-				<b-nav-item :active="IsEnemy" href="/enemy" @click.prevent="GoTo('/enemy')">적 정보</b-nav-item>
-				<b-nav-item :active="IsFacilities" href="/facilities" @click.prevent="GoTo('/facilities')">설비정보</b-nav-item>
-				<b-nav-item :active="IsWorlds" href="/worlds" @click.prevent="GoTo('/worlds')">세계정보</b-nav-item>
-				<b-nav-item :active="IsExchange" href="/exchange" @click.prevent="GoTo('/exchange')">교환소</b-nav-item>
-				<b-nav-item :active="IsChangelog" href="/changelog" @click.prevent="GoTo('/changelog')">Changelog</b-nav-item>
+				<b-nav-item :active="IsUnits" href="/units" @click.prevent="GoTo('/units')"><locale k="MENU_UNITS" /></b-nav-item>
+				<b-nav-item :active="IsEquips" href="/equips" @click.prevent="GoTo('/equips')"><locale k="MENU_EQUIPS" /></b-nav-item>
+				<b-nav-item :active="IsEnemy" href="/enemy" @click.prevent="GoTo('/enemy')"><locale k="MENU_ENEMIES" /></b-nav-item>
+				<b-nav-item :active="IsFacilities" href="/facilities" @click.prevent="GoTo('/facilities')"><locale k="MENU_FACILITIES" /></b-nav-item>
+				<b-nav-item :active="IsWorlds" href="/worlds" @click.prevent="GoTo('/worlds')"><locale k="MENU_WORLDS" /></b-nav-item>
+				<b-nav-item :active="IsExchange" href="/exchange" @click.prevent="GoTo('/exchange')"><locale k="MENU_EXCHANGES" /></b-nav-item>
+				<b-nav-item :active="IsChangelog" href="/changelog" @click.prevent="GoTo('/changelog')"><locale k="MENU_CHANGELOG" /></b-nav-item>
 
 				<b-nav-item-dropdown right>
-					<template #button-content>기타</template>
-					<b-dropdown-item href="/exp" @click.prevent="GoTo('/exp')">
-						경험치 계산기
-						<!--/목록-->
-					</b-dropdown-item>
-					<b-dropdown-item href="/bgm" @click.prevent="GoTo('/bgm')">BGM</b-dropdown-item>
-					<b-dropdown-item href="/eapi" @click.prevent="GoTo('/eapi')">API</b-dropdown-item>
+					<template #button-content><locale k="MENU_ETC" /></template>
+					<b-dropdown-item href="/exp" @click.prevent="GoTo('/exp')"><locale k="MENU_ETC_EXPCALC" /></b-dropdown-item>
+					<b-dropdown-item href="/bgm" @click.prevent="GoTo('/bgm')"><locale k="MENU_ETC_BGM" /></b-dropdown-item>
+					<b-dropdown-item href="/eapi" @click.prevent="GoTo('/eapi')"><locale k="MENU_ETC_API" /></b-dropdown-item>
 					<b-dropdown-divider />
 					<b-dropdown-item href="https://arca.live/b/lastorigin/4474753" target="_blank">
-						지휘의 정석
+						<locale k="MENU_ETC_EX01" />
 						<b-icon-link45deg />
 					</b-dropdown-item>
 					<b-dropdown-item href="https://lastoriginmap.github.io/" target="_blank">
-						지역별 철충 지도
+						<locale k="MENU_ETC_EX02" />
 						<b-icon-link45deg />
 					</b-dropdown-item>
+				</b-nav-item-dropdown>
+				<b-nav-item-dropdown right>
+					<template #button-content>
+						<locale k="COMMON_LANG" />
+					</template>
+					<b-dropdown-item href="#" @click.prevent="ChangeLang('KR')">KR</b-dropdown-item>
+					<b-dropdown-item href="#" @click.prevent="ChangeLang('EN')">EN</b-dropdown-item>
+					<!-- <b-dropdown-item href="#" @click.prevent="ChangeLang('JP')">JP</b-dropdown-item> -->
 				</b-nav-item-dropdown>
 			</b-navbar-nav>
 		</b-collapse>
@@ -116,6 +120,11 @@ export default class NavBar extends Vue {
 	@Emit("goto")
 	private GoTo (destination: string) {
 		return undefined;
+	}
+
+	private ChangeLang (lang: string) {
+		document.cookie = `LO_LANG=${lang}`;
+		window.location.reload(true);
 	}
 }
 </script>

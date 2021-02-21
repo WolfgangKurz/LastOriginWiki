@@ -1,7 +1,5 @@
 export default {
   "id": "ExecutionerRB_EW",
-  "name": "익스큐셔너 실드 블레이드",
-  "desc": "<교전 기록 없음>",
   "icon": "TbarIcon_MP_ExecutionerLB_B06",
   "ai": "AI_ExecutionerRB_01",
   "rarity": 5,
