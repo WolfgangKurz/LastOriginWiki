@@ -277,7 +277,7 @@ export default class WorldMapView extends Vue {
 	private SupplementaryName (text: string) {
 		const unit = FilterableUnitDB.find(x => x.uid === SupplementaryUnit[text]);
 		if (!unit) return "???";
-		return unit.name;
+		return LocaleGet(`UNIT_${unit.uid}`);
 	}
 
 	private NodeChange () {

@@ -185,7 +185,7 @@ export default class EnemyAI extends Vue {
 							return enemy ? LocaleGet(`ENEMY_${enemy.id}`) : "???";
 						} else if (y.startsWith("Char_")) {
 							const unit = FilterableUnitData.find(z => `Char_${z.uid}` === y);
-							return unit ? unit.name : "???";
+							return unit ? LocaleGet(`UNIT_${unit.uid}`) : "???";
 						} else
 							return "???";
 					})

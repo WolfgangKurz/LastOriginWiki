@@ -431,7 +431,7 @@ export default class Units extends Vue {
 			].filter(y => y > -1));
 
 		return FilterableUnitDB
-			.filter(x => x.name.includes(this.SearchText))
+			.filter(x => LocaleGet(`UNIT_${x.uid}`).includes(this.SearchText))
 			.filter((x) => {
 				if (!this.Filters.Rarity[x.rarity]) return false;
 				if (!this.Filters.Type[x.type]) return false;

@@ -133,9 +133,17 @@ module.exports = {
 					reuseExistingChunk: true,
 					enforce: true,
 				},
-				bootstrap: {
-					name: "chunk-bootstrap",
-					test: /[\\/]src[\\/]vbootstrap[\\/]/,
+				// bootstrap: {
+				// 	name: "chunk-bootstrap",
+				// 	test: /[\\/]src[\\/]vbootstrap[\\/]/,
+				// 	priority: -10,
+				// 	chunks: "all",
+				// 	reuseExistingChunk: true,
+				// 	enforce: true,
+				// },
+				locale: {
+					name: "chunk-locale",
+					test: /[\\/]src[\\/]locale/,
 					priority: -10,
 					chunks: "all",
 					reuseExistingChunk: true,
@@ -148,7 +156,7 @@ module.exports = {
 			args[0].chunks.push(
 				"chunk-components",
 				"chunk-libs",
-				"chunk-bootstrap",
+				"chunk-locale",
 				...Object.keys(dbCacheGroups).map(x => dbCacheGroups[x].name),
 			);
 			return args;

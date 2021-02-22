@@ -23,6 +23,7 @@ import { FilterableEquip } from "@/libs/Types/Equip.Filterable";
 import LazyLoad, { LazyDataType } from "@/libs/LazyData";
 import FilterableUnitDB from "@/libs/DB/Unit.Filterable";
 import FilterableEquipDB from "@/libs/DB/Equip.Filterable";
+import { LocaleGet } from "@/libs/Locale";
 
 @Component({
 	components: {
@@ -201,7 +202,9 @@ export default class SkillDescription extends Vue {
 						} else {
 							ret.link = {
 								href,
-								display: <rarity-badge id={ uid } rarity="A">{ unit.name } 🔗</rarity-badge>,
+								display: <rarity-badge id={ uid } rarity="A">
+									<locale k={ `UNIT_${unit.uid}` } /> 🔗
+								</rarity-badge>,
 								tooltip: <b-tooltip target={ uid } placement="top" noninteractive custom-class="badge-tooltip">
 									<unit-card unit={ unit } no-link />
 								</b-tooltip>,
@@ -222,7 +225,7 @@ export default class SkillDescription extends Vue {
 						if (equips.length) equip = equips[0];
 
 						const href = `/equips/${equip ? equip.fullKey : p[1]}`;
-						const name = equip ? equip.name.replace(/ (RE|MP|SP|EX)$/, "") : p[1];
+						const name = equip ? LocaleGet(`EQUIP_${equip.fullKey}`).replace(/ (RE|MP|SP|EX)$/, "") : p[1];
 						ret.link = {
 							href,
 							display: <rarity-badge id={ uid } rarity="A">{ name } 🔗</rarity-badge>,
