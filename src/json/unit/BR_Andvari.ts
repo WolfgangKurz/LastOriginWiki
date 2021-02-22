@@ -53,7 +53,8 @@ export default {
       "Ev:Ev9:Ev2-8"
     ],
     [
-      "Ev:Ev10:Ev1-5"
+      "Ev:Ev10:Ev1-5",
+      "Ev:Ev10:Ev2-6"
     ]
   ]
 };

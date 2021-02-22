@@ -112151,10 +112151,6 @@ export default {
                       "count": 3
                     },
                     {
-                      "id": "Equip_Chip_Ev_T3",
-                      "count": 1
-                    },
-                    {
                       "id": "Equip_Chip_Ev_T1",
                       "count": 1
                     },
@@ -120146,6 +120142,3087 @@ export default {
                     {
                       "id": "FryerHead_TU3",
                       "lv": 65
+                    }
+                  ]
+                },
+                "r": 100
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    "2": {
+      "title": "누군가 바랐던 소원 2부",
+      "list": [
+        {
+          "name": "새해 복 많이 받으세요",
+          "desc": "자칭 진조와 사역마의 합체 기술은 뱀피릭 트윈 차지 외에도 3만 개나 더 존재합니다.",
+          "prev": null,
+          "offset": 8,
+          "text": "Ev2-1",
+          "search": null,
+          "missions": [
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
+          ],
+          "reward_f": [
+            {
+              "count": 1,
+              "item": "Equip_Sub_AntiLightning_T4"
+            }
+          ],
+          "reward_am": [
+            {
+              "cash": 2
+            }
+          ],
+          "wave": [
+            [
+              {
+                "e": {
+                  "exp": 600,
+                  "drops": [
+                    {
+                      "id": "Ev_Consumable_NewYearFood",
+                      "count": 38
+                    },
+                    {
+                      "id": "Ev_Consumable_NewYearGoods",
+                      "count": 2
+                    },
+                    {
+                      "id": "Equip_Chip_Atk_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Acc_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Def_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Ev_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_MPParts",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_AlloyArmor",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Booster",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Weapon",
+                      "count": 1
+                    },
+                    {
+                      "id": "Char_PECS_Serpent_N"
+                    },
+                    {
+                      "id": "Char_BR_Gnome_N"
+                    },
+                    {
+                      "id": "Char_3P_Aqua_N"
+                    },
+                    {
+                      "id": "Char_3P_Fotia_N"
+                    },
+                    {
+                      "id": "Char_BR_SandMan_N"
+                    },
+                    {
+                      "id": "Char_PECS_MissSafety_N"
+                    }
+                  ],
+                  "enemy": [
+                    {
+                      "id": "NightChickM_TU2",
+                      "lv": 29
+                    },
+                    null,
+                    null,
+                    {
+                      "id": "NightChickS_TU2",
+                      "lv": 29
+                    },
+                    {
+                      "id": "NightChickTD_TU",
+                      "lv": 29
+                    },
+                    null,
+                    {
+                      "id": "NightChickM_TU2",
+                      "lv": 29
+                    },
+                    null,
+                    null
+                  ]
+                },
+                "r": 100
+              }
+            ],
+            [
+              {
+                "e": {
+                  "exp": 600,
+                  "drops": [
+                    {
+                      "id": "Ev_Consumable_NewYearFood",
+                      "count": 38
+                    },
+                    {
+                      "id": "Ev_Consumable_NewYearGoods",
+                      "count": 2
+                    },
+                    {
+                      "id": "Equip_Chip_Atk_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Acc_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Def_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Ev_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_MPParts",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_AlloyArmor",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Booster",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Weapon",
+                      "count": 1
+                    },
+                    {
+                      "id": "Char_PECS_Serpent_N"
+                    },
+                    {
+                      "id": "Char_BR_Gnome_N"
+                    },
+                    {
+                      "id": "Char_3P_Aqua_N"
+                    },
+                    {
+                      "id": "Char_3P_Fotia_N"
+                    },
+                    {
+                      "id": "Char_BR_SandMan_N"
+                    },
+                    {
+                      "id": "Char_PECS_MissSafety_N"
+                    }
+                  ],
+                  "enemy": [
+                    {
+                      "id": "NightChickS_TU2",
+                      "lv": 29
+                    },
+                    {
+                      "id": "NightChickM_TU2",
+                      "lv": 29
+                    },
+                    null,
+                    null,
+                    {
+                      "id": "NightChickTD_TU",
+                      "lv": 29
+                    },
+                    null,
+                    {
+                      "id": "NightChickS_TU2",
+                      "lv": 29
+                    },
+                    {
+                      "id": "NightChickM_TU2",
+                      "lv": 29
+                    },
+                    null
+                  ]
+                },
+                "r": 100
+              }
+            ],
+            [
+              {
+                "e": {
+                  "exp": 600,
+                  "drops": [
+                    {
+                      "id": "Ev_Consumable_NewYearFood",
+                      "count": 38
+                    },
+                    {
+                      "id": "Ev_Consumable_NewYearGoods",
+                      "count": 2
+                    },
+                    {
+                      "id": "Equip_Chip_Atk_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Acc_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Def_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Ev_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_MPParts",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_AlloyArmor",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Booster",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Weapon",
+                      "count": 1
+                    },
+                    {
+                      "id": "Char_PECS_Serpent_N"
+                    },
+                    {
+                      "id": "Char_BR_Gnome_N"
+                    },
+                    {
+                      "id": "Char_3P_Aqua_N"
+                    },
+                    {
+                      "id": "Char_3P_Fotia_N"
+                    },
+                    {
+                      "id": "Char_BR_SandMan_N"
+                    },
+                    {
+                      "id": "Char_PECS_MissSafety_N"
+                    }
+                  ],
+                  "enemy": [
+                    {
+                      "id": "NightChickM_TU2",
+                      "lv": 30
+                    },
+                    null,
+                    null,
+                    {
+                      "id": "NightChickTD_TU",
+                      "lv": 30
+                    },
+                    {
+                      "id": "NightChickS_TU2",
+                      "lv": 30
+                    },
+                    {
+                      "id": "NightChickTD_TU",
+                      "lv": 30
+                    },
+                    {
+                      "id": "NightChickM_TU2",
+                      "lv": 30
+                    },
+                    null,
+                    null
+                  ]
+                },
+                "r": 100
+              }
+            ]
+          ]
+        },
+        {
+          "name": "두 얼굴의 천사",
+          "desc": "신성하고 엄숙한 교단의 천사도, 사령관 앞에서는 수줍은 여자일 뿐입니다.",
+          "prev": 8,
+          "offset": 9,
+          "text": "Ev2-2",
+          "search": null,
+          "missions": [
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
+          ],
+          "reward_f": [
+            {
+              "count": 1,
+              "item": "Equip_System_Highspd_T4"
+            }
+          ],
+          "reward_am": [
+            {
+              "cash": 2
+            }
+          ],
+          "wave": [
+            [
+              {
+                "e": {
+                  "exp": 650,
+                  "drops": [
+                    {
+                      "id": "Ev_Consumable_NewYearFood",
+                      "count": 38
+                    },
+                    {
+                      "id": "Ev_Consumable_NewYearGoods",
+                      "count": 2
+                    },
+                    {
+                      "id": "Equip_Chip_Atk_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Acc_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Def_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Ev_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_MPParts",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_AlloyArmor",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Booster",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Weapon",
+                      "count": 1
+                    },
+                    {
+                      "id": "Char_PECS_MightyR_N"
+                    },
+                    {
+                      "id": "Char_BR_Scathy_N"
+                    },
+                    {
+                      "id": "Char_PECS_Tiequan_N"
+                    },
+                    {
+                      "id": "Char_BR_Impet_N"
+                    },
+                    {
+                      "id": "Char_BR_Djinnia_N"
+                    },
+                    {
+                      "id": "Char_BR_Brownie_N"
+                    }
+                  ],
+                  "enemy": [
+                    null,
+                    {
+                      "id": "NightChick_TU2",
+                      "lv": 30
+                    },
+                    null,
+                    {
+                      "id": "NightChickS_TU2",
+                      "lv": 30
+                    },
+                    null,
+                    {
+                      "id": "NightChickTD_TU",
+                      "lv": 30
+                    },
+                    null,
+                    {
+                      "id": "NightChick_TU2",
+                      "lv": 30
+                    },
+                    null
+                  ]
+                },
+                "r": 100
+              }
+            ],
+            [
+              {
+                "e": {
+                  "exp": 650,
+                  "drops": [
+                    {
+                      "id": "Ev_Consumable_NewYearFood",
+                      "count": 38
+                    },
+                    {
+                      "id": "Ev_Consumable_NewYearGoods",
+                      "count": 2
+                    },
+                    {
+                      "id": "Equip_Chip_Atk_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Acc_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Def_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Ev_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_MPParts",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_AlloyArmor",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Booster",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Weapon",
+                      "count": 1
+                    },
+                    {
+                      "id": "Char_PECS_MightyR_N"
+                    },
+                    {
+                      "id": "Char_BR_Scathy_N"
+                    },
+                    {
+                      "id": "Char_PECS_Tiequan_N"
+                    },
+                    {
+                      "id": "Char_BR_Impet_N"
+                    },
+                    {
+                      "id": "Char_BR_Djinnia_N"
+                    },
+                    {
+                      "id": "Char_BR_Brownie_N"
+                    }
+                  ],
+                  "enemy": [
+                    {
+                      "id": "NightChickM_TU2",
+                      "lv": 30
+                    },
+                    {
+                      "id": "NightChickTD_TU",
+                      "lv": 30
+                    },
+                    null,
+                    null,
+                    {
+                      "id": "NightChick_TU2",
+                      "lv": 30
+                    },
+                    null,
+                    {
+                      "id": "NightChickM_TU2",
+                      "lv": 30
+                    },
+                    {
+                      "id": "NightChickTD_TU",
+                      "lv": 30
+                    },
+                    null
+                  ]
+                },
+                "r": 100
+              }
+            ],
+            [
+              {
+                "e": {
+                  "exp": 650,
+                  "drops": [
+                    {
+                      "id": "Ev_Consumable_NewYearFood",
+                      "count": 38
+                    },
+                    {
+                      "id": "Ev_Consumable_NewYearGoods",
+                      "count": 2
+                    },
+                    {
+                      "id": "Equip_Chip_Atk_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Acc_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Def_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Ev_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_MPParts",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_AlloyArmor",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Booster",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Weapon",
+                      "count": 1
+                    },
+                    {
+                      "id": "Char_PECS_MightyR_N"
+                    },
+                    {
+                      "id": "Char_BR_Scathy_N"
+                    },
+                    {
+                      "id": "Char_PECS_Tiequan_N"
+                    },
+                    {
+                      "id": "Char_BR_Impet_N"
+                    },
+                    {
+                      "id": "Char_BR_Djinnia_N"
+                    },
+                    {
+                      "id": "Char_BR_Brownie_N"
+                    }
+                  ],
+                  "enemy": [
+                    {
+                      "id": "NightChickTD_TU",
+                      "lv": 31
+                    },
+                    {
+                      "id": "NightChick_TU2",
+                      "lv": 31
+                    },
+                    null,
+                    {
+                      "id": "NightChickM_TU2",
+                      "lv": 31
+                    },
+                    null,
+                    null,
+                    {
+                      "id": "NightChickTD_TU",
+                      "lv": 31
+                    },
+                    {
+                      "id": "NightChick_TU2",
+                      "lv": 31
+                    },
+                    null
+                  ]
+                },
+                "r": 100
+              }
+            ]
+          ]
+        },
+        {
+          "name": "세 송이 꽃",
+          "desc": "시라유리는 히루메를 보고 무언가 꽂힌 것 같은데요?",
+          "prev": 9,
+          "offset": 10,
+          "text": "Ev2-3",
+          "search": null,
+          "missions": [
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
+          ],
+          "reward_f": [
+            {
+              "count": 2500,
+              "item": "Ev_Consumable_NewYearFood"
+            }
+          ],
+          "reward_am": [
+            {
+              "cash": 2
+            }
+          ],
+          "wave": [
+            [
+              {
+                "e": {
+                  "exp": 700,
+                  "drops": [
+                    {
+                      "id": "Ev_Consumable_NewYearFood",
+                      "count": 38
+                    },
+                    {
+                      "id": "Ev_Consumable_NewYearGoods",
+                      "count": 2
+                    },
+                    {
+                      "id": "Equip_Chip_Cri_T2",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Cri_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_MPParts",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_AlloyArmor",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Booster",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Weapon",
+                      "count": 1
+                    },
+                    {
+                      "id": "Char_PECS_Circe_N"
+                    },
+                    {
+                      "id": "Char_BR_Sylphid_N"
+                    },
+                    {
+                      "id": "Char_BR_Gremlin_N"
+                    },
+                    {
+                      "id": "Char_BR_Brownie_N"
+                    },
+                    {
+                      "id": "Char_PECS_MissSafety_N"
+                    },
+                    {
+                      "id": "Char_BR_Wraithy_N"
+                    }
+                  ],
+                  "enemy": [
+                    {
+                      "id": "NightChickS_TU2",
+                      "lv": 31
+                    },
+                    {
+                      "id": "NightChickTD_TU",
+                      "lv": 31
+                    },
+                    null,
+                    null,
+                    null,
+                    null,
+                    {
+                      "id": "NightChickS_TU2",
+                      "lv": 31
+                    },
+                    {
+                      "id": "NightChickTD_TU",
+                      "lv": 31
+                    },
+                    null
+                  ]
+                },
+                "r": 100
+              }
+            ],
+            [
+              {
+                "e": {
+                  "exp": 700,
+                  "drops": [
+                    {
+                      "id": "Ev_Consumable_NewYearFood",
+                      "count": 38
+                    },
+                    {
+                      "id": "Ev_Consumable_NewYearGoods",
+                      "count": 2
+                    },
+                    {
+                      "id": "Equip_Chip_Cri_T3",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Cri_T2",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Cri_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_MPParts",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_AlloyArmor",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Booster",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Weapon",
+                      "count": 1
+                    },
+                    {
+                      "id": "Char_PECS_Circe_N"
+                    },
+                    {
+                      "id": "Char_BR_Sylphid_N"
+                    },
+                    {
+                      "id": "Char_BR_Gremlin_N"
+                    },
+                    {
+                      "id": "Char_BR_Brownie_N"
+                    },
+                    {
+                      "id": "Char_PECS_MissSafety_N"
+                    },
+                    {
+                      "id": "Char_BR_Wraithy_N"
+                    }
+                  ],
+                  "enemy": [
+                    null,
+                    {
+                      "id": "NightChick_TU2",
+                      "lv": 31
+                    },
+                    null,
+                    {
+                      "id": "NightChickM_TU2",
+                      "lv": 31
+                    },
+                    {
+                      "id": "NightChick_TU2",
+                      "lv": 31
+                    },
+                    {
+                      "id": "NightChickTD_TU",
+                      "lv": 31
+                    },
+                    null,
+                    {
+                      "id": "NightChick_TU2",
+                      "lv": 31
+                    },
+                    null
+                  ]
+                },
+                "r": 100
+              }
+            ],
+            [
+              {
+                "e": {
+                  "exp": 700,
+                  "drops": [
+                    {
+                      "id": "Ev_Consumable_NewYearFood",
+                      "count": 38
+                    },
+                    {
+                      "id": "Ev_Consumable_NewYearGoods",
+                      "count": 2
+                    },
+                    {
+                      "id": "Equip_Chip_Cri_T4",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Cri_T3",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Cri_T2",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Cri_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_MPParts",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_AlloyArmor",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Booster",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Weapon",
+                      "count": 1
+                    },
+                    {
+                      "id": "Char_PECS_Circe_N"
+                    },
+                    {
+                      "id": "Char_BR_Sylphid_N"
+                    },
+                    {
+                      "id": "Char_BR_Gremlin_N"
+                    },
+                    {
+                      "id": "Char_BR_Brownie_N"
+                    },
+                    {
+                      "id": "Char_PECS_MissSafety_N"
+                    },
+                    {
+                      "id": "Char_BR_Wraithy_N"
+                    }
+                  ],
+                  "enemy": [
+                    {
+                      "id": "NightChickM_TU2",
+                      "lv": 32
+                    },
+                    null,
+                    null,
+                    {
+                      "id": "ZapperEX_N",
+                      "lv": 32
+                    },
+                    {
+                      "id": "NightChickS_TU2",
+                      "lv": 32
+                    },
+                    {
+                      "id": "NightChickTD_TU",
+                      "lv": 32
+                    },
+                    {
+                      "id": "NightChickM_TU2",
+                      "lv": 32
+                    },
+                    null,
+                    null
+                  ]
+                },
+                "r": 100
+              }
+            ]
+          ]
+        },
+        {
+          "name": "눈보라 주의보",
+          "desc": "레아를 안절부절하게 하는 존재는 이 세상에 둘도 없을 겁니다.",
+          "prev": 10,
+          "offset": 11,
+          "text": "Ev2-4",
+          "search": null,
+          "missions": [
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
+          ],
+          "reward_f": [
+            {
+              "count": 250,
+              "item": "Ev_Consumable_NewYearGoods"
+            }
+          ],
+          "reward_am": [
+            {
+              "cash": 2
+            }
+          ],
+          "wave": [
+            [
+              {
+                "e": {
+                  "exp": 750,
+                  "drops": [
+                    {
+                      "id": "Ev_Consumable_NewYearFood",
+                      "count": 38
+                    },
+                    {
+                      "id": "Ev_Consumable_NewYearGoods",
+                      "count": 2
+                    },
+                    {
+                      "id": "Equip_Chip_Spd_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_MPParts",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_AlloyArmor",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Booster",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Weapon",
+                      "count": 1
+                    },
+                    {
+                      "id": "Char_3P_Aurora_N"
+                    },
+                    {
+                      "id": "Char_PECS_Fortune_N"
+                    },
+                    {
+                      "id": "Char_BR_Tomoe_N"
+                    },
+                    {
+                      "id": "Char_BR_Wraithy_N"
+                    },
+                    {
+                      "id": "Char_BR_Gremlin_N"
+                    },
+                    {
+                      "id": "Char_BR_SandMan_N"
+                    }
+                  ],
+                  "enemy": [
+                    {
+                      "id": "NightChickS_TU2",
+                      "lv": 32
+                    },
+                    null,
+                    null,
+                    {
+                      "id": "ZapperEX_N",
+                      "lv": 32
+                    },
+                    null,
+                    {
+                      "id": "NightChickTD_TU",
+                      "lv": 32
+                    },
+                    {
+                      "id": "NightChickS_TU2",
+                      "lv": 32
+                    },
+                    null,
+                    null
+                  ]
+                },
+                "r": 100
+              }
+            ],
+            [
+              {
+                "e": {
+                  "exp": 750,
+                  "drops": [
+                    {
+                      "id": "Ev_Consumable_NewYearFood",
+                      "count": 38
+                    },
+                    {
+                      "id": "Ev_Consumable_NewYearGoods",
+                      "count": 2
+                    },
+                    {
+                      "id": "Equip_Chip_Spd_T2",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Spd_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_MPParts",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_AlloyArmor",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Booster",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Weapon",
+                      "count": 1
+                    },
+                    {
+                      "id": "Char_3P_Aurora_N"
+                    },
+                    {
+                      "id": "Char_PECS_Fortune_N"
+                    },
+                    {
+                      "id": "Char_BR_Tomoe_N"
+                    },
+                    {
+                      "id": "Char_BR_Wraithy_N"
+                    },
+                    {
+                      "id": "Char_BR_Gremlin_N"
+                    },
+                    {
+                      "id": "Char_BR_SandMan_N"
+                    }
+                  ],
+                  "enemy": [
+                    {
+                      "id": "ZapperEX_N",
+                      "lv": 32
+                    },
+                    null,
+                    null,
+                    null,
+                    {
+                      "id": "NightChickTD_TU",
+                      "lv": 32
+                    },
+                    {
+                      "id": "NightChickTD_TU",
+                      "lv": 32
+                    },
+                    {
+                      "id": "ZapperEX_N",
+                      "lv": 32
+                    },
+                    null,
+                    null
+                  ]
+                },
+                "r": 100
+              }
+            ],
+            [
+              {
+                "e": {
+                  "exp": 750,
+                  "drops": [
+                    {
+                      "id": "Ev_Consumable_NewYearFood",
+                      "count": 38
+                    },
+                    {
+                      "id": "Ev_Consumable_NewYearGoods",
+                      "count": 2
+                    },
+                    {
+                      "id": "Equip_Chip_Spd_T3",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Spd_T2",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Spd_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_MPParts",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_AlloyArmor",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Booster",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Weapon",
+                      "count": 1
+                    },
+                    {
+                      "id": "Char_3P_Aurora_N"
+                    },
+                    {
+                      "id": "Char_PECS_Fortune_N"
+                    },
+                    {
+                      "id": "Char_BR_Tomoe_N"
+                    },
+                    {
+                      "id": "Char_BR_Wraithy_N"
+                    },
+                    {
+                      "id": "Char_BR_Gremlin_N"
+                    },
+                    {
+                      "id": "Char_BR_SandMan_N"
+                    }
+                  ],
+                  "enemy": [
+                    {
+                      "id": "NightChickM_TU2",
+                      "lv": 32
+                    },
+                    {
+                      "id": "NightChickTD_TU",
+                      "lv": 32
+                    },
+                    null,
+                    {
+                      "id": "ZapperEX_N",
+                      "lv": 32
+                    },
+                    null,
+                    null,
+                    {
+                      "id": "NightChickM_TU2",
+                      "lv": 32
+                    },
+                    {
+                      "id": "NightChickTD_TU",
+                      "lv": 32
+                    },
+                    null
+                  ]
+                },
+                "r": 100
+              }
+            ],
+            [
+              {
+                "e": {
+                  "exp": 750,
+                  "drops": [
+                    {
+                      "id": "Ev_Consumable_NewYearFood",
+                      "count": 38
+                    },
+                    {
+                      "id": "Ev_Consumable_NewYearGoods",
+                      "count": 2
+                    },
+                    {
+                      "id": "Equip_Chip_Spd_T4",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Spd_T3",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Spd_T2",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Spd_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_MPParts",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_AlloyArmor",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Booster",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Weapon",
+                      "count": 1
+                    },
+                    {
+                      "id": "Char_3P_Aurora_N"
+                    },
+                    {
+                      "id": "Char_PECS_Fortune_N"
+                    },
+                    {
+                      "id": "Char_BR_Tomoe_N"
+                    },
+                    {
+                      "id": "Char_BR_Wraithy_N"
+                    },
+                    {
+                      "id": "Char_BR_Gremlin_N"
+                    },
+                    {
+                      "id": "Char_BR_SandMan_N"
+                    }
+                  ],
+                  "enemy": [
+                    {
+                      "id": "ZapperEX_N",
+                      "lv": 33
+                    },
+                    {
+                      "id": "NightChickTD_TU",
+                      "lv": 33
+                    },
+                    null,
+                    null,
+                    null,
+                    {
+                      "id": "NightChickTD_TU",
+                      "lv": 33
+                    },
+                    {
+                      "id": "ZapperEX_N",
+                      "lv": 33
+                    },
+                    {
+                      "id": "NightChickTD_TU",
+                      "lv": 33
+                    },
+                    null
+                  ]
+                },
+                "r": 100
+              }
+            ]
+          ]
+        },
+        {
+          "name": "열 여덟 꼬리의 밤",
+          "desc": "잠든 너에게 속삭이는 고백.",
+          "prev": 11,
+          "offset": 12,
+          "text": "Ev2-5",
+          "search": null,
+          "missions": [
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
+          ],
+          "reward_f": [
+            {
+              "count": 25,
+              "item": "Ev_Consumable_NewYearTalent"
+            }
+          ],
+          "reward_am": [
+            {
+              "cash": 2
+            }
+          ],
+          "wave": [
+            [
+              {
+                "e": {
+                  "exp": 800,
+                  "drops": [
+                    {
+                      "id": "Ev_Consumable_NewYearFood",
+                      "count": 38
+                    },
+                    {
+                      "id": "Ev_Consumable_NewYearGoods",
+                      "count": 2
+                    },
+                    {
+                      "id": "Equip_Chip_Atk_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_MPParts",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_AlloyArmor",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Booster",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Weapon",
+                      "count": 1
+                    },
+                    {
+                      "id": "Char_BR_TalonFeather_N"
+                    },
+                    {
+                      "id": "Char_PECS_BS_N"
+                    },
+                    {
+                      "id": "Char_BR_Efreeti_N"
+                    },
+                    {
+                      "id": "Char_3P_Daphne_N"
+                    },
+                    {
+                      "id": "Char_BR_WarWolf_N"
+                    },
+                    {
+                      "id": "Char_BR_Brownie_N"
+                    },
+                    {
+                      "id": "Char_BR_Impet_N"
+                    },
+                    {
+                      "id": "Char_BR_Gnome_N"
+                    }
+                  ],
+                  "enemy": [
+                    {
+                      "id": "ZapperEX_N",
+                      "lv": 33
+                    },
+                    null,
+                    null,
+                    null,
+                    {
+                      "id": "NightChickS_TU2",
+                      "lv": 33
+                    },
+                    {
+                      "id": "NightChickTD_TU",
+                      "lv": 33
+                    },
+                    {
+                      "id": "ZapperEX_N",
+                      "lv": 33
+                    },
+                    null,
+                    null
+                  ]
+                },
+                "r": 100
+              }
+            ],
+            [
+              {
+                "e": {
+                  "exp": 800,
+                  "drops": [
+                    {
+                      "id": "Ev_Consumable_NewYearFood",
+                      "count": 38
+                    },
+                    {
+                      "id": "Ev_Consumable_NewYearGoods",
+                      "count": 2
+                    },
+                    {
+                      "id": "Equip_Chip_Atk_T2",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Atk_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_MPParts",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_AlloyArmor",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Booster",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Weapon",
+                      "count": 1
+                    },
+                    {
+                      "id": "Char_BR_TalonFeather_N"
+                    },
+                    {
+                      "id": "Char_PECS_BS_N"
+                    },
+                    {
+                      "id": "Char_BR_Efreeti_N"
+                    },
+                    {
+                      "id": "Char_3P_Daphne_N"
+                    },
+                    {
+                      "id": "Char_BR_WarWolf_N"
+                    },
+                    {
+                      "id": "Char_BR_Brownie_N"
+                    },
+                    {
+                      "id": "Char_BR_Impet_N"
+                    },
+                    {
+                      "id": "Char_BR_Gnome_N"
+                    }
+                  ],
+                  "enemy": [
+                    null,
+                    null,
+                    {
+                      "id": "NightChickTD_TU",
+                      "lv": 33
+                    },
+                    {
+                      "id": "ZapperEX_N",
+                      "lv": 33
+                    },
+                    {
+                      "id": "LightningBomberMP_N",
+                      "lv": 23
+                    },
+                    null,
+                    null,
+                    null,
+                    {
+                      "id": "NightChickTD_TU",
+                      "lv": 33
+                    }
+                  ]
+                },
+                "r": 100
+              }
+            ],
+            [
+              {
+                "e": {
+                  "exp": 800,
+                  "drops": [
+                    {
+                      "id": "Ev_Consumable_NewYearFood",
+                      "count": 38
+                    },
+                    {
+                      "id": "Ev_Consumable_NewYearGoods",
+                      "count": 2
+                    },
+                    {
+                      "id": "Equip_Chip_Atk_T3",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Atk_T2",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Atk_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_MPParts",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_AlloyArmor",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Booster",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Weapon",
+                      "count": 1
+                    },
+                    {
+                      "id": "Char_BR_TalonFeather_N"
+                    },
+                    {
+                      "id": "Char_PECS_BS_N"
+                    },
+                    {
+                      "id": "Char_BR_Efreeti_N"
+                    },
+                    {
+                      "id": "Char_3P_Daphne_N"
+                    },
+                    {
+                      "id": "Char_BR_WarWolf_N"
+                    },
+                    {
+                      "id": "Char_BR_Brownie_N"
+                    },
+                    {
+                      "id": "Char_BR_Impet_N"
+                    },
+                    {
+                      "id": "Char_BR_Gnome_N"
+                    }
+                  ],
+                  "enemy": [
+                    {
+                      "id": "ZapperEX_N",
+                      "lv": 33
+                    },
+                    null,
+                    null,
+                    null,
+                    {
+                      "id": "NightChickTD_TU",
+                      "lv": 33
+                    },
+                    {
+                      "id": "LightningBomberMP_N",
+                      "lv": 23
+                    },
+                    {
+                      "id": "ZapperEX_N",
+                      "lv": 33
+                    },
+                    null,
+                    null
+                  ]
+                },
+                "r": 100
+              }
+            ],
+            [
+              {
+                "e": {
+                  "exp": 800,
+                  "drops": [
+                    {
+                      "id": "Ev_Consumable_NewYearFood",
+                      "count": 38
+                    },
+                    {
+                      "id": "Ev_Consumable_NewYearGoods",
+                      "count": 2
+                    },
+                    {
+                      "id": "Equip_Chip_Atk_T4",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Atk_T3",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Atk_T2",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Atk_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_MPParts",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_AlloyArmor",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Booster",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Weapon",
+                      "count": 1
+                    },
+                    {
+                      "id": "Char_BR_TalonFeather_N"
+                    },
+                    {
+                      "id": "Char_PECS_BS_N"
+                    },
+                    {
+                      "id": "Char_BR_Efreeti_N"
+                    },
+                    {
+                      "id": "Char_3P_Daphne_N"
+                    },
+                    {
+                      "id": "Char_BR_WarWolf_N"
+                    },
+                    {
+                      "id": "Char_BR_Brownie_N"
+                    },
+                    {
+                      "id": "Char_BR_Impet_N"
+                    },
+                    {
+                      "id": "Char_BR_Gnome_N"
+                    }
+                  ],
+                  "enemy": [
+                    {
+                      "id": "ZapperEX_N",
+                      "lv": 34
+                    },
+                    {
+                      "id": "LightningBomberMP_N",
+                      "lv": 24
+                    },
+                    null,
+                    null,
+                    {
+                      "id": "NightChickTD_TU",
+                      "lv": 34
+                    },
+                    null,
+                    {
+                      "id": "ZapperEX_N",
+                      "lv": 34
+                    },
+                    {
+                      "id": "LightningBomberMP_N",
+                      "lv": 24
+                    },
+                    null
+                  ]
+                },
+                "r": 100
+              }
+            ]
+          ]
+        },
+        {
+          "name": "갈색빛 제곱",
+          "desc": "아득히 우러러 본 하늘, 네가 초콜릿을 주고 있어.",
+          "prev": 12,
+          "offset": 13,
+          "text": "Ev2-6",
+          "search": null,
+          "missions": [
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_Round8",
+            "Mission_StageClear_Beatenless6"
+          ],
+          "reward_f": [
+            {
+              "count": 5,
+              "item": "Favor_Chocolate"
+            }
+          ],
+          "reward_am": [
+            {
+              "cash": 3
+            }
+          ],
+          "wave": [
+            [
+              {
+                "e": {
+                  "exp": 2000,
+                  "drops": [
+                    {
+                      "id": "Ev_Consumable_NewYearFood",
+                      "count": 39
+                    },
+                    {
+                      "id": "Ev_Consumable_NewYearGoods",
+                      "count": 2
+                    },
+                    {
+                      "id": "RobotParts_MPParts",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Weapon",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_AlloyArmor",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_CalculationControl",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Booster",
+                      "count": 1
+                    },
+                    {
+                      "id": "Char_BR_Leprechaun_N"
+                    },
+                    {
+                      "id": "Char_PECS_DutchGirl_N"
+                    },
+                    {
+                      "id": "Char_DS_Johanna_N"
+                    },
+                    {
+                      "id": "Char_PECS_LRL_N"
+                    }
+                  ],
+                  "enemy": [
+                    null,
+                    {
+                      "id": "ZapperEX_N",
+                      "lv": 34
+                    },
+                    null,
+                    {
+                      "id": "NightChickS_TU2",
+                      "lv": 34
+                    },
+                    {
+                      "id": "NightChickTD_TU",
+                      "lv": 34
+                    },
+                    null,
+                    null,
+                    {
+                      "id": "ZapperEX_N",
+                      "lv": 34
+                    },
+                    null
+                  ]
+                },
+                "r": 100
+              }
+            ],
+            [
+              {
+                "e": {
+                  "exp": 2000,
+                  "drops": [
+                    {
+                      "id": "Ev_Consumable_NewYearFood",
+                      "count": 39
+                    },
+                    {
+                      "id": "Ev_Consumable_NewYearGoods",
+                      "count": 2
+                    },
+                    {
+                      "id": "RobotParts_MPParts",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Weapon",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_AlloyArmor",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_CalculationControl",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Booster",
+                      "count": 1
+                    },
+                    {
+                      "id": "Char_BR_Leona_N"
+                    },
+                    {
+                      "id": "Char_BR_ALWraith_N"
+                    },
+                    {
+                      "id": "Char_BR_Andvari_N"
+                    },
+                    {
+                      "id": "Char_BR_Leprechaun_N"
+                    },
+                    {
+                      "id": "Char_PECS_DutchGirl_N"
+                    },
+                    {
+                      "id": "Char_DS_Johanna_N"
+                    }
+                  ],
+                  "enemy": [
+                    {
+                      "id": "ZapperEX_N",
+                      "lv": 34
+                    },
+                    null,
+                    {
+                      "id": "LightningBomberEX_N",
+                      "lv": 24
+                    },
+                    null,
+                    {
+                      "id": "LightningBomberEX_N",
+                      "lv": 24
+                    },
+                    null,
+                    {
+                      "id": "ZapperEX_N",
+                      "lv": 34
+                    },
+                    null,
+                    null
+                  ]
+                },
+                "r": 100
+              }
+            ],
+            [
+              {
+                "e": {
+                  "exp": 2000,
+                  "drops": [
+                    {
+                      "id": "Ev_Consumable_NewYearFood",
+                      "count": 39
+                    },
+                    {
+                      "id": "Ev_Consumable_NewYearGoods",
+                      "count": 2
+                    },
+                    {
+                      "id": "RobotParts_MPParts",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Weapon",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_AlloyArmor",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_CalculationControl",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Booster",
+                      "count": 1
+                    },
+                    {
+                      "id": "Char_BR_Leona_N"
+                    },
+                    {
+                      "id": "Char_BR_ALWraith_N"
+                    },
+                    {
+                      "id": "Char_BR_Andvari_N"
+                    },
+                    {
+                      "id": "Char_BR_Leprechaun_N"
+                    },
+                    {
+                      "id": "Char_PECS_DutchGirl_N"
+                    },
+                    {
+                      "id": "Char_PECS_LRL_N"
+                    }
+                  ],
+                  "enemy": [
+                    {
+                      "id": "ZapperEX_N",
+                      "lv": 34
+                    },
+                    null,
+                    {
+                      "id": "NightChickTD_TU",
+                      "lv": 34
+                    },
+                    {
+                      "id": "LightningBomberEX_N",
+                      "lv": 24
+                    },
+                    null,
+                    null,
+                    null,
+                    {
+                      "id": "LightningBomberEX_N",
+                      "lv": 24
+                    },
+                    {
+                      "id": "NightChickTD_TU",
+                      "lv": 34
+                    }
+                  ]
+                },
+                "r": 100
+              }
+            ],
+            [
+              {
+                "e": {
+                  "exp": 2000,
+                  "drops": [
+                    {
+                      "id": "Ev_Consumable_NewYearFood",
+                      "count": 39
+                    },
+                    {
+                      "id": "Ev_Consumable_NewYearGoods",
+                      "count": 2
+                    },
+                    {
+                      "id": "RobotParts_MPParts",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Weapon",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_AlloyArmor",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_CalculationControl",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Booster",
+                      "count": 1
+                    },
+                    {
+                      "id": "Char_BR_Leona_N"
+                    },
+                    {
+                      "id": "Char_BR_ALWraith_N"
+                    },
+                    {
+                      "id": "Char_BR_Andvari_N"
+                    },
+                    {
+                      "id": "Char_BR_Leprechaun_N"
+                    },
+                    {
+                      "id": "Char_DS_Johanna_N"
+                    },
+                    {
+                      "id": "Char_PECS_LRL_N"
+                    }
+                  ],
+                  "enemy": [
+                    {
+                      "id": "ZapperEX_N",
+                      "lv": 34
+                    },
+                    {
+                      "id": "NightChickTD_TU",
+                      "lv": 34
+                    },
+                    null,
+                    null,
+                    {
+                      "id": "NightChickTD_TU",
+                      "lv": 34
+                    },
+                    {
+                      "id": "LightningBomberEX_N",
+                      "lv": 24
+                    },
+                    {
+                      "id": "LightningBomberEX_N",
+                      "lv": 24
+                    },
+                    null,
+                    null
+                  ]
+                },
+                "r": 100
+              }
+            ],
+            [
+              {
+                "e": {
+                  "exp": 2000,
+                  "drops": [
+                    {
+                      "id": "Ev_Consumable_NewYearFood",
+                      "count": 39
+                    },
+                    {
+                      "id": "Ev_Consumable_NewYearGoods",
+                      "count": 2
+                    },
+                    {
+                      "id": "RobotParts_MPParts",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Weapon",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_AlloyArmor",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_CalculationControl",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Booster",
+                      "count": 1
+                    },
+                    {
+                      "id": "Char_BR_Leona_N"
+                    },
+                    {
+                      "id": "Char_BR_ALWraith_N"
+                    },
+                    {
+                      "id": "Char_BR_Andvari_N"
+                    },
+                    {
+                      "id": "Char_PECS_DutchGirl_N"
+                    },
+                    {
+                      "id": "Char_DS_Johanna_N"
+                    },
+                    {
+                      "id": "Char_PECS_LRL_N"
+                    }
+                  ],
+                  "enemy": [
+                    {
+                      "id": "LightningBomberEX_N",
+                      "lv": 25
+                    },
+                    {
+                      "id": "LightningBomberEX_N",
+                      "lv": 25
+                    },
+                    null,
+                    {
+                      "id": "ZapperEX_N",
+                      "lv": 35
+                    },
+                    null,
+                    {
+                      "id": "NightChickTD_TU",
+                      "lv": 35
+                    },
+                    {
+                      "id": "ZapperEX_N",
+                      "lv": 35
+                    },
+                    null,
+                    {
+                      "id": "LightningBomberEX_N",
+                      "lv": 25
+                    }
+                  ]
+                },
+                "r": 100
+              }
+            ]
+          ]
+        },
+        {
+          "name": "새해 물자 탐색 III",
+          "desc": "새해맞이 행사를 위한 물자를 보충하도록 합시다.",
+          "prev": 13,
+          "offset": 16,
+          "text": "Ev2-1Ex",
+          "search": null,
+          "missions": [
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_MOBILITYLess0",
+            "Mission_StageClear_ARMOREDLess0"
+          ],
+          "reward_f": [
+            {
+              "count": 1,
+              "item": "Equip_Sub_Barrier_T4"
+            }
+          ],
+          "reward_am": [
+            {
+              "cash": 2
+            }
+          ],
+          "wave": [
+            [
+              {
+                "e": {
+                  "exp": 1750,
+                  "drops": [
+                    {
+                      "id": "Ev_Consumable_NewYearFood",
+                      "count": 41
+                    },
+                    {
+                      "id": "Ev_Consumable_NewYearGoods",
+                      "count": 3
+                    },
+                    {
+                      "id": "RobotParts_MPParts",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_AlloyArmor",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Booster",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Weapon",
+                      "count": 1
+                    },
+                    {
+                      "id": "Char_BR_Spriggan_N"
+                    },
+                    {
+                      "id": "Char_3P_Fotia_N"
+                    },
+                    {
+                      "id": "Char_3P_Aqua_N"
+                    },
+                    {
+                      "id": "Char_PECS_DutchGirl_N"
+                    }
+                  ],
+                  "enemy": [
+                    {
+                      "id": "LightningBomberMP_TU4",
+                      "lv": 60
+                    },
+                    {
+                      "id": "FryerShooter_TU3",
+                      "lv": 60
+                    },
+                    {
+                      "id": "FryerHead_TU3",
+                      "lv": 60
+                    },
+                    null,
+                    null,
+                    null,
+                    {
+                      "id": "LightningBomberMP_TU4",
+                      "lv": 60
+                    },
+                    {
+                      "id": "FryerShooter_TU3",
+                      "lv": 60
+                    },
+                    {
+                      "id": "FryerHead_TU3",
+                      "lv": 60
+                    }
+                  ]
+                },
+                "r": 100
+              }
+            ],
+            [
+              {
+                "e": {
+                  "exp": 1750,
+                  "drops": [
+                    {
+                      "id": "Ev_Consumable_NewYearFood",
+                      "count": 41
+                    },
+                    {
+                      "id": "Ev_Consumable_NewYearGoods",
+                      "count": 3
+                    },
+                    {
+                      "id": "Equip_Chip_DefTypeB_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_MPParts",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_AlloyArmor",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Booster",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Weapon",
+                      "count": 1
+                    },
+                    {
+                      "id": "Char_PECS_HighElven_N"
+                    },
+                    {
+                      "id": "Char_BR_Neodym_N"
+                    },
+                    {
+                      "id": "Char_DS_Atalanta_N"
+                    },
+                    {
+                      "id": "Char_BR_Spriggan_N"
+                    },
+                    {
+                      "id": "Char_3P_Fotia_N"
+                    },
+                    {
+                      "id": "Char_3P_Aqua_N"
+                    },
+                    {
+                      "id": "Char_PECS_DutchGirl_N"
+                    }
+                  ],
+                  "enemy": [
+                    {
+                      "id": "LightningBomberMP_TU4",
+                      "lv": 60
+                    },
+                    {
+                      "id": "FryerShooter_TU3",
+                      "lv": 60
+                    },
+                    null,
+                    {
+                      "id": "FryerShell_TU3",
+                      "lv": 60
+                    },
+                    null,
+                    {
+                      "id": "FryerHead_TU3",
+                      "lv": 60
+                    },
+                    {
+                      "id": "LightningBomberMP_TU4",
+                      "lv": 60
+                    },
+                    {
+                      "id": "FryerShooter_TU3",
+                      "lv": 60
+                    },
+                    null
+                  ]
+                },
+                "r": 100
+              }
+            ],
+            [
+              {
+                "e": {
+                  "exp": 1750,
+                  "drops": [
+                    {
+                      "id": "Ev_Consumable_NewYearFood",
+                      "count": 41
+                    },
+                    {
+                      "id": "Ev_Consumable_NewYearGoods",
+                      "count": 3
+                    },
+                    {
+                      "id": "Equip_Chip_DefTypeB_T2",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_DefTypeB_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_MPParts",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_AlloyArmor",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Booster",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Weapon",
+                      "count": 1
+                    },
+                    {
+                      "id": "Char_PECS_HighElven_N"
+                    },
+                    {
+                      "id": "Char_BR_Neodym_N"
+                    },
+                    {
+                      "id": "Char_DS_Atalanta_N"
+                    },
+                    {
+                      "id": "Char_BR_Spriggan_N"
+                    },
+                    {
+                      "id": "Char_3P_Fotia_N"
+                    },
+                    {
+                      "id": "Char_3P_Aqua_N"
+                    },
+                    {
+                      "id": "Char_PECS_DutchGirl_N"
+                    }
+                  ],
+                  "enemy": [
+                    {
+                      "id": "LightningBomberMP_TU4",
+                      "lv": 60
+                    },
+                    {
+                      "id": "FryerShell_TU3",
+                      "lv": 60
+                    },
+                    null,
+                    {
+                      "id": "FryerShooter_TU3",
+                      "lv": 60
+                    },
+                    {
+                      "id": "NightChickAQG_TU4",
+                      "lv": 60
+                    },
+                    {
+                      "id": "FryerHead_TU3",
+                      "lv": 60
+                    },
+                    {
+                      "id": "LightningBomberMP_TU4",
+                      "lv": 60
+                    },
+                    {
+                      "id": "FryerShell_TU3",
+                      "lv": 60
+                    },
+                    null
+                  ]
+                },
+                "r": 100
+              }
+            ],
+            [
+              {
+                "e": {
+                  "exp": 1750,
+                  "drops": [
+                    {
+                      "id": "Ev_Consumable_NewYearFood",
+                      "count": 41
+                    },
+                    {
+                      "id": "Ev_Consumable_NewYearGoods",
+                      "count": 3
+                    },
+                    {
+                      "id": "Equip_Chip_DefTypeB_T3",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_DefTypeB_T2",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_DefTypeB_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_MPParts",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_AlloyArmor",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Booster",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Weapon",
+                      "count": 1
+                    },
+                    {
+                      "id": "Char_PECS_HighElven_N"
+                    },
+                    {
+                      "id": "Char_BR_Neodym_N"
+                    },
+                    {
+                      "id": "Char_DS_Atalanta_N"
+                    },
+                    {
+                      "id": "Char_BR_Spriggan_N"
+                    },
+                    {
+                      "id": "Char_3P_Fotia_N"
+                    },
+                    {
+                      "id": "Char_3P_Aqua_N"
+                    },
+                    {
+                      "id": "Char_PECS_DutchGirl_N"
+                    }
+                  ],
+                  "enemy": [
+                    {
+                      "id": "FryerShooter_TU3",
+                      "lv": 60
+                    },
+                    {
+                      "id": "FryerShell_TU3",
+                      "lv": 60
+                    },
+                    {
+                      "id": "FryerHead_TU3",
+                      "lv": 60
+                    },
+                    {
+                      "id": "FryerShell_TU3",
+                      "lv": 60
+                    },
+                    null,
+                    null,
+                    {
+                      "id": "FryerShooter_TU3",
+                      "lv": 60
+                    },
+                    {
+                      "id": "FryerShell_TU3",
+                      "lv": 60
+                    },
+                    {
+                      "id": "FryerHead_TU3",
+                      "lv": 60
+                    }
+                  ]
+                },
+                "r": 100
+              }
+            ],
+            [
+              {
+                "e": {
+                  "exp": 1750,
+                  "drops": [
+                    {
+                      "id": "Ev_Consumable_NewYearFood",
+                      "count": 41
+                    },
+                    {
+                      "id": "Ev_Consumable_NewYearGoods",
+                      "count": 3
+                    },
+                    {
+                      "id": "Equip_Chip_DefTypeB_T4",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_DefTypeB_T3",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_DefTypeB_T2",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_DefTypeB_T1",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_MPParts",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_AlloyArmor",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Booster",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Weapon",
+                      "count": 1
+                    },
+                    {
+                      "id": "Char_PECS_HighElven_N"
+                    },
+                    {
+                      "id": "Char_BR_Neodym_N"
+                    },
+                    {
+                      "id": "Char_DS_Atalanta_N"
+                    },
+                    {
+                      "id": "Char_BR_Spriggan_N"
+                    },
+                    {
+                      "id": "Char_3P_Fotia_N"
+                    },
+                    {
+                      "id": "Char_3P_Aqua_N"
+                    },
+                    {
+                      "id": "Char_PECS_DutchGirl_N"
+                    }
+                  ],
+                  "enemy": [
+                    {
+                      "id": "FryerShell_TU3",
+                      "lv": 65
+                    },
+                    {
+                      "id": "FryerHead_TU3",
+                      "lv": 65
+                    },
+                    {
+                      "id": "LightningBomberMP_TU4",
+                      "lv": 65
+                    },
+                    {
+                      "id": "FryerShell_TU3",
+                      "lv": 65
+                    },
+                    null,
+                    {
+                      "id": "NightChickAQG_TU4",
+                      "lv": 65
+                    },
+                    {
+                      "id": "FryerShell_TU3",
+                      "lv": 65
+                    },
+                    {
+                      "id": "FryerHead_TU3",
+                      "lv": 65
+                    },
+                    {
+                      "id": "LightningBomberMP_TU4",
+                      "lv": 65
+                    }
+                  ]
+                },
+                "r": 100
+              }
+            ]
+          ]
+        },
+        {
+          "name": "새해 물자 탐색 IV",
+          "desc": "새해맞이 행사를 위한 물자를 보충하도록 합시다.",
+          "prev": 16,
+          "offset": 17,
+          "text": "Ev2-2Ex",
+          "search": null,
+          "missions": [
+            "Mission_StageClear",
+            "Mission_StageClear_DeadLess0",
+            "Mission_StageClear_AndroidLess3",
+            "Mission_StageClear_RobotLess0"
+          ],
+          "reward_f": [
+            {
+              "count": 1,
+              "item": "Equip_Sub_SpaceArmor_T4"
+            }
+          ],
+          "reward_am": [
+            {
+              "cash": 2
+            }
+          ],
+          "wave": [
+            [
+              {
+                "e": {
+                  "exp": 2000,
+                  "drops": [
+                    {
+                      "id": "Ev_Consumable_NewYearFood",
+                      "count": 43
+                    },
+                    {
+                      "id": "Ev_Consumable_NewYearGoods",
+                      "count": 3
+                    },
+                    {
+                      "id": "RobotParts_MPParts",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_AlloyArmor",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Booster",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Weapon",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_CalculationControl",
+                      "count": 1
+                    },
+                    {
+                      "id": "Char_PECS_Cerberus_N"
+                    },
+                    {
+                      "id": "Char_PECS_MissSafety_N"
+                    },
+                    {
+                      "id": "Char_BR_Wraithy_N"
+                    },
+                    {
+                      "id": "Char_PECS_Tiequan_N"
+                    }
+                  ],
+                  "enemy": [
+                    {
+                      "id": "NightChickShEx_TU3",
+                      "lv": 65
+                    },
+                    null,
+                    null,
+                    {
+                      "id": "NightChickAQ_EV9",
+                      "lv": 65
+                    },
+                    {
+                      "id": "FABigChick_TU4",
+                      "lv": 65
+                    },
+                    {
+                      "id": "NightChickTD_N",
+                      "lv": 65
+                    },
+                    {
+                      "id": "NightChickShEx_TU3",
+                      "lv": 65
+                    },
+                    null,
+                    null
+                  ]
+                },
+                "r": 100
+              }
+            ],
+            [
+              {
+                "e": {
+                  "exp": 2000,
+                  "drops": [
+                    {
+                      "id": "Ev_Consumable_NewYearFood",
+                      "count": 43
+                    },
+                    {
+                      "id": "Ev_Consumable_NewYearGoods",
+                      "count": 3
+                    },
+                    {
+                      "id": "Equip_Chip_Enchant_T3",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_MPParts",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_AlloyArmor",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Booster",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Weapon",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_CalculationControl",
+                      "count": 1
+                    },
+                    {
+                      "id": "Char_3P_Eternity_N"
+                    },
+                    {
+                      "id": "Char_3P_Fenrir_N"
+                    },
+                    {
+                      "id": "Char_3P_Hachiko_N"
+                    },
+                    {
+                      "id": "Char_PECS_Cerberus_N"
+                    },
+                    {
+                      "id": "Char_PECS_MissSafety_N"
+                    },
+                    {
+                      "id": "Char_BR_Wraithy_N"
+                    },
+                    {
+                      "id": "Char_PECS_Tiequan_N"
+                    }
+                  ],
+                  "enemy": [
+                    null,
+                    {
+                      "id": "FABigChick_TU4",
+                      "lv": 65
+                    },
+                    {
+                      "id": "LightningBomberEX_TU4",
+                      "lv": 65
+                    },
+                    {
+                      "id": "PhalangitesH_TU2",
+                      "lv": 65
+                    },
+                    {
+                      "id": "NightChickAQ_EV9",
+                      "lv": 65
+                    },
+                    {
+                      "id": "NightChickTD_N",
+                      "lv": 65
+                    },
+                    null,
+                    {
+                      "id": "FABigChick_TU4",
+                      "lv": 65
+                    },
+                    {
+                      "id": "LightningBomberEX_TU4",
+                      "lv": 65
+                    }
+                  ]
+                },
+                "r": 100
+              }
+            ],
+            [
+              {
+                "e": {
+                  "exp": 2000,
+                  "drops": [
+                    {
+                      "id": "Ev_Consumable_NewYearFood",
+                      "count": 43
+                    },
+                    {
+                      "id": "Ev_Consumable_NewYearGoods",
+                      "count": 3
+                    },
+                    {
+                      "id": "Equip_Chip_Enchant_T3",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_MPParts",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_AlloyArmor",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Booster",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Weapon",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_CalculationControl",
+                      "count": 1
+                    },
+                    {
+                      "id": "Char_3P_Eternity_N"
+                    },
+                    {
+                      "id": "Char_3P_Fenrir_N"
+                    },
+                    {
+                      "id": "Char_3P_Hachiko_N"
+                    },
+                    {
+                      "id": "Char_PECS_Cerberus_N"
+                    },
+                    {
+                      "id": "Char_PECS_MissSafety_N"
+                    },
+                    {
+                      "id": "Char_BR_Wraithy_N"
+                    },
+                    {
+                      "id": "Char_PECS_Tiequan_N"
+                    }
+                  ],
+                  "enemy": [
+                    {
+                      "id": "PhalangitesH_TU2",
+                      "lv": 65
+                    },
+                    {
+                      "id": "FABigChick_TU4",
+                      "lv": 65
+                    },
+                    null,
+                    null,
+                    {
+                      "id": "NightChickTD_N",
+                      "lv": 65
+                    },
+                    {
+                      "id": "NightChickAQ_EV9",
+                      "lv": 65
+                    },
+                    {
+                      "id": "PhalangitesH_TU2",
+                      "lv": 65
+                    },
+                    {
+                      "id": "FABigChick_TU4",
+                      "lv": 65
+                    },
+                    null
+                  ]
+                },
+                "r": 100
+              }
+            ],
+            [
+              {
+                "e": {
+                  "exp": 2000,
+                  "drops": [
+                    {
+                      "id": "Ev_Consumable_NewYearFood",
+                      "count": 43
+                    },
+                    {
+                      "id": "Ev_Consumable_NewYearGoods",
+                      "count": 3
+                    },
+                    {
+                      "id": "Equip_Chip_Enchant_T4",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Enchant_T3",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_MPParts",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_AlloyArmor",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Booster",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Weapon",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_CalculationControl",
+                      "count": 1
+                    },
+                    {
+                      "id": "Char_3P_Eternity_N"
+                    },
+                    {
+                      "id": "Char_3P_Fenrir_N"
+                    },
+                    {
+                      "id": "Char_3P_Hachiko_N"
+                    },
+                    {
+                      "id": "Char_PECS_Cerberus_N"
+                    },
+                    {
+                      "id": "Char_PECS_MissSafety_N"
+                    },
+                    {
+                      "id": "Char_BR_Wraithy_N"
+                    },
+                    {
+                      "id": "Char_PECS_Tiequan_N"
+                    }
+                  ],
+                  "enemy": [
+                    null,
+                    {
+                      "id": "LightningBomberEX_TU4",
+                      "lv": 65
+                    },
+                    {
+                      "id": "NightChickTD_N",
+                      "lv": 65
+                    },
+                    null,
+                    {
+                      "id": "NightChickAQ_EV9",
+                      "lv": 65
+                    },
+                    {
+                      "id": "LightningBomberEX_TU4",
+                      "lv": 65
+                    },
+                    {
+                      "id": "LightningBomberEX_TU4",
+                      "lv": 65
+                    },
+                    null,
+                    null
+                  ]
+                },
+                "r": 100
+              }
+            ],
+            [
+              {
+                "e": {
+                  "exp": 2000,
+                  "drops": [
+                    {
+                      "id": "Ev_Consumable_NewYearFood",
+                      "count": 43
+                    },
+                    {
+                      "id": "Ev_Consumable_NewYearGoods",
+                      "count": 3
+                    },
+                    {
+                      "id": "Equip_Chip_Enchant_T4",
+                      "count": 1
+                    },
+                    {
+                      "id": "Equip_Chip_Enchant_T3",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_MPParts",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_AlloyArmor",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Booster",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_Weapon",
+                      "count": 1
+                    },
+                    {
+                      "id": "RobotParts_CalculationControl",
+                      "count": 1
+                    },
+                    {
+                      "id": "Char_3P_Eternity_N"
+                    },
+                    {
+                      "id": "Char_3P_Fenrir_N"
+                    },
+                    {
+                      "id": "Char_3P_Hachiko_N"
+                    },
+                    {
+                      "id": "Char_PECS_Cerberus_N"
+                    },
+                    {
+                      "id": "Char_PECS_MissSafety_N"
+                    },
+                    {
+                      "id": "Char_BR_Wraithy_N"
+                    },
+                    {
+                      "id": "Char_PECS_Tiequan_N"
+                    }
+                  ],
+                  "enemy": [
+                    {
+                      "id": "PhalangitesH_TU2",
+                      "lv": 70
+                    },
+                    {
+                      "id": "LightningBomberEX_TU4",
+                      "lv": 70
+                    },
+                    {
+                      "id": "NightChickTD_N",
+                      "lv": 70
+                    },
+                    null,
+                    {
+                      "id": "NightChickAQ_EV9",
+                      "lv": 70
+                    },
+                    {
+                      "id": "LightningBomberEX_TU4",
+                      "lv": 70
+                    },
+                    {
+                      "id": "PhalangitesH_TU2",
+                      "lv": 70
+                    },
+                    {
+                      "id": "LightningBomberEX_TU4",
+                      "lv": 70
+                    },
+                    {
+                      "id": "NightChickTD_N",
+                      "lv": 70
                     }
                   ]
                 },

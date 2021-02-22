@@ -6198,6 +6198,10 @@ export default [
     "uid": "BR_Amy",
     "no": 77,
     "rarity": 3,
+    "promo": [
+      4,
+      5
+    ],
     "name": "에이미 레이저",
     "shortname": "에이미",
     "groupKey": "080",
@@ -6241,15 +6245,40 @@ export default [
       ],
       [
         {
+          "target": "team",
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
           "target": "self",
-          "type": 0,
+          "type": 9,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 1,
           "positive": true
         }
       ],
       [
         {
-          "target": "enemy",
-          "type": 48,
+          "target": "team",
+          "type": 20,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 20,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 94,
           "positive": false
         }
       ]
@@ -14097,6 +14126,9 @@ export default [
     "uid": "3P_Dryad",
     "no": 178,
     "rarity": 4,
+    "promo": [
+      5
+    ],
     "name": "드리아드",
     "shortname": "드리아드",
     "groupKey": "3PFairy",
@@ -14162,6 +14194,23 @@ export default [
         {
           "target": "team",
           "type": 13,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 11,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 61,
+          "positive": true
+        },
+        {
+          "target": "self",
+          "type": 1,
           "positive": true
         }
       ]
@@ -15666,6 +15715,80 @@ export default [
       "active2": {
         "elem": 1,
         "grid": true,
+        "guard": false
+      }
+    }
+  },
+  {
+    "uid": "BR_Hyena",
+    "no": 194,
+    "rarity": 3,
+    "name": "T-40 하이에나",
+    "shortname": "T-40 하이에나",
+    "groupKey": "AngerOfTheHorde",
+    "group": "AngerOfTheHorde II",
+    "shortgroup": "AngerOfTheHorde",
+    "type": 0,
+    "role": 1,
+    "body": 0,
+    "craft": 7140,
+    "buffs": [
+      [
+        {
+          "target": "enemy",
+          "type": 48,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 7,
+          "positive": false
+        },
+        {
+          "target": "self",
+          "type": 103,
+          "positive": false
+        },
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        }
+      ],
+      [
+        {
+          "target": "enemy",
+          "type": 83,
+          "positive": true
+        },
+        {
+          "target": "enemy",
+          "type": 3,
+          "positive": false
+        }
+      ],
+      [
+        {
+          "target": "team",
+          "type": 1,
+          "positive": true
+        },
+        {
+          "target": "team",
+          "type": 13,
+          "positive": true
+        }
+      ]
+    ],
+    "skills": {
+      "active1": {
+        "elem": 0,
+        "grid": true,
+        "guard": false
+      },
+      "active2": {
+        "elem": 0,
+        "grid": false,
         "guard": false
       }
     }

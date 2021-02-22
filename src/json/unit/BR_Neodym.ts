@@ -56,6 +56,9 @@ export default {
       "Ev:Ev7:Ev3-2s"
     ],
     [
+      "Ev:Ev10:Ev2-1Ex"
+    ],
+    [
       "Ev:Ev4:1:Exc:HalloweenBat:750"
     ]
   ]

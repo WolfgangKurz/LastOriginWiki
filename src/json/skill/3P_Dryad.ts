@@ -2943,5 +2943,173 @@ export default {
         }
       ]
     }
+  },
+  "passive5": {
+    "key": "passive5",
+    "icon": "TeamAtkBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "3569",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "round",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "애정 갈구 : 회피+{0}%",
+                    "type": 1,
+                    "value": "0.320000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "32%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "애정 갈구 : 대 중장 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.270000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "27%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "애정 갈구 : 공격력+{0}%(자신)",
+                    "type": 1,
+                    "value": "0.270000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 1,
+                    "attack": {
+                      "base": "27%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "round",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "애정 갈구 : 공격력+{0}%",
+                    "type": 1,
+                    "value": "0.270000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "27%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    }
   }
 };

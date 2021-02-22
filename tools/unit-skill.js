@@ -1,3 +1,4 @@
+const zlib = require("zlib");
 const fs = require("fs");
 const path = require("path");
 const { google } = require("googleapis");
@@ -24,17 +25,18 @@ function process (auth) {
 				if (!(unit in ret)) ret[unit] = {};
 
 				const buffs = (() => {
-					if (row[6].startsWith("{")) {
+					const row6 = zlib.gunzipSync(Buffer.from(row[6], "base64"), { level: 9 }).toString("utf-8");
+					if (row6.startsWith("{")) {
 						return {
 							index: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-							data: [JSON.parse(row[6])],
+							data: [JSON.parse(row6)],
 						};
 					}
 
 					const store = [];
 					const indices = [];
 
-					const levels = row[6].split("\n");
+					const levels = row6.split("\n");
 					levels.forEach(x => {
 						const range = x.replace(/^([^:]+):.+$/, "$1");
 

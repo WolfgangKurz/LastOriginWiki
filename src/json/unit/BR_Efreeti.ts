@@ -74,6 +74,9 @@ export default {
       "Ev:Ev9:Ev1-6"
     ],
     [
+      "Ev:Ev10:Ev2-5"
+    ],
+    [
       "Ev:EvA0:3:Exc:FixTool:250"
     ]
   ],

@@ -3601,6 +3601,34 @@ export default {
         "G": false,
         "name": "전투수트 (에이미)",
         "desc": "유혹보다 실용성이 필요할 때 에이미는 이 옷을 입지요. 뭐, 보는 사람에 따라서는 이 수트가 더욱 매혹적이라고 하더라도요."
+      },
+      {
+        "sid": 2,
+        "t": "드림위버 웨딩 스페셜 : 파랑새",
+        "artist": "Taesi",
+        "offset": {
+          "normal": {
+            "n": 0,
+            "d": 0,
+            "s": 0,
+            "x": 0
+          },
+          "google": {
+            "n": 0,
+            "d": 0,
+            "s": 0,
+            "x": 0
+          }
+        },
+        "price": 68,
+        "V": true,
+        "A": false,
+        "D": false,
+        "S": true,
+        "X": false,
+        "G": true,
+        "name": "웨딩드레스 (에이미 레이저)",
+        "desc": "길을 찾아 헤매던 파랑새는 이제야 머물 곳을 찾았습니다. 냉혹한 암살자로 설계된 그녀가, 무기를 내려 놓고 전하는 마음을 들어보세요."
       }
     ]
   },
@@ -7362,7 +7390,37 @@ export default {
     "D": false,
     "S": false,
     "X": false,
-    "G": false
+    "G": false,
+    "skins": [
+      {
+        "sid": 1,
+        "t": "꾀병을 부리는 요정",
+        "artist": "BUMCHa",
+        "offset": {
+          "normal": {
+            "n": "70",
+            "d": 0,
+            "s": "70",
+            "x": 0
+          },
+          "google": {
+            "n": "70",
+            "d": 0,
+            "s": "70",
+            "x": 0
+          }
+        },
+        "price": 91,
+        "V": true,
+        "A": false,
+        "D": false,
+        "S": true,
+        "X": false,
+        "G": true,
+        "name": "환자복 (드리아드)",
+        "desc": "드리아드는 앓아 눕고 말았습니다. 바이오로이드는 감기나 몸살에 걸리지 않지만, 상사병일수도, 아니면 당신의 애정을 받기 위한 꾀병일 수도 있겠죠. 어느쪽이든 당신의 사랑과 관심만이 드리아드를 치유해 줄 수 있을테니, 일단 문진부터 시작해 볼까요?"
+      }
+    ]
   },
   "PECS_Sadius": {
     "sid": null,
@@ -7703,7 +7761,7 @@ export default {
         "price": 136,
         "V": true,
         "A": false,
-        "D": false,
+        "D": true,
         "S": false,
         "X": false,
         "G": true,
@@ -7877,6 +7935,30 @@ export default {
     "A": false,
     "D": false,
     "S": true,
+    "X": false,
+    "G": false
+  },
+  "BR_Hyena": {
+    "sid": null,
+    "artist": "MAR10",
+    "offset": {
+      "normal": {
+        "n": 0,
+        "d": 0,
+        "s": 0,
+        "x": 0
+      },
+      "google": {
+        "n": 0,
+        "d": 0,
+        "s": 0,
+        "x": 0
+      }
+    },
+    "V": true,
+    "A": false,
+    "D": false,
+    "S": false,
     "X": false,
     "G": false
   },

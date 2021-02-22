@@ -82,7 +82,7 @@ export function GetLinkBonus (type: LinkBonusType, links: number): LinkBonusData
 		case "DEF_3":
 			return {
 				Key: type,
-				Name: LocaleGet("LINKBOUNS_DEF"),
+				Name: LocaleGet("LINKBONUS_DEF"),
 				Prefix: "+",
 				Postfix: "%",
 				Value: Decimal.mul(links, 3).toNumber(),
@@ -90,7 +90,7 @@ export function GetLinkBonus (type: LinkBonusType, links: number): LinkBonusData
 		case "DEF_10":
 			return {
 				Key: type,
-				Name: LocaleGet("LINKBOUNS_DEF"),
+				Name: LocaleGet("LINKBONUS_DEF"),
 				Prefix: "+",
 				Postfix: "%",
 				Value: Decimal.mul(links, 5).toNumber(),
@@ -98,7 +98,7 @@ export function GetLinkBonus (type: LinkBonusType, links: number): LinkBonusData
 		case "DEF_15":
 			return {
 				Key: type,
-				Name: LocaleGet("LINKBOUNS_DEF"),
+				Name: LocaleGet("LINKBONUS_DEF"),
 				Prefix: "+",
 				Postfix: "%",
 				Value: Decimal.mul(links, 10).toNumber(),
@@ -106,7 +106,7 @@ export function GetLinkBonus (type: LinkBonusType, links: number): LinkBonusData
 		case "DEF_20":
 			return {
 				Key: type,
-				Name: LocaleGet("LINKBOUNS_DEF"),
+				Name: LocaleGet("LINKBONUS_DEF"),
 				Prefix: "+",
 				Postfix: "%",
 				Value: Decimal.mul(links, 20).toNumber(),
@@ -114,7 +114,7 @@ export function GetLinkBonus (type: LinkBonusType, links: number): LinkBonusData
 		case "DEF_25":
 			return {
 				Key: type,
-				Name: LocaleGet("LINKBOUNS_DEF"),
+				Name: LocaleGet("LINKBONUS_DEF"),
 				Prefix: "+",
 				Postfix: "%",
 				Value: Decimal.mul(links, 30).toNumber(),
@@ -123,7 +123,7 @@ export function GetLinkBonus (type: LinkBonusType, links: number): LinkBonusData
 		case "ACC_5":
 			return {
 				Key: type,
-				Name: LocaleGet("LINKBOUNS_ACC"),
+				Name: LocaleGet("LINKBONUS_ACC"),
 				Prefix: "+",
 				Postfix: "%",
 				Value: Decimal.mul(links, 7).toNumber(),
@@ -134,7 +134,7 @@ export function GetLinkBonus (type: LinkBonusType, links: number): LinkBonusData
 		case "ACC_75":
 			return {
 				Key: type,
-				Name: LocaleGet("LINKBOUNS_ACC"),
+				Name: LocaleGet("LINKBONUS_ACC"),
 				Prefix: "+",
 				Postfix: "%",
 				Value: Decimal.mul(links, v).toNumber(),

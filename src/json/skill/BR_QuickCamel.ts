@@ -4031,7 +4031,8 @@ export default {
                   "Char_BR_Khan_N",
                   "Char_BR_WarWolf_N",
                   "Char_BR_TalonFeather_N",
-                  "Char_BR_Salamander_N"
+                  "Char_BR_Salamander_N",
+                  "Char_BR_Hyena_N"
                 ]
               },
               "body": [
@@ -4079,6 +4080,53 @@ export default {
               "if": {
                 "in_squad": [
                   "Char_BR_Salamander_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "연계 기동 : 행동력+{0}%",
+                    "type": 1,
+                    "value": "0.040000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "4%",
+                      "per": "0.2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "round",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Hyena_N"
                 ]
               },
               "body": [

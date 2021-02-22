@@ -1,3 +1,5 @@
+import "./Buff.scss";
+
 import Vue, { CreateElement } from "vue";
 import { Decimal } from "decimal.js";
 import { LocaleGet } from "@/libs/Locale";
@@ -108,7 +110,7 @@ function convertBuff (name: string) {
 		const unit = FilterableUnitDB.find(x => x.uid === key);
 		if (!unit) return key;
 
-		return <span class="text-primary">
+		return <span class="px-1 text-primary buff-unit-badge">
 			<locale k={ `UNIT_${unit.uid}` } />
 		</span>;
 	} else if (name.startsWith("MOB_")) {
@@ -119,7 +121,7 @@ function convertBuff (name: string) {
 		// const enemy = names[key];
 		// if (!enemy) return key;
 
-		return <span class="text-primary">
+		return <span class="px-1 text-primary buff-unit-badge">
 			<locale k={ `ENEMY_${key}` } />
 		</span>;
 	}
@@ -256,19 +258,25 @@ function getTriggerText (trigger: BuffTrigger) {
 			if (typeof trigger.in_squad === "string")
 				return <locale k="BUFFTRIGGER_IN_SQUAD" p0={ convertBuff(trigger.in_squad) } />;
 			else {
-				return <locale
-					k="BUFFTRIGGER_IN_SQUAD"
-					p0={ ArrayUnique(trigger.in_squad.map(convertBuff)).join(LocaleGet("BUFFTRIGGER_OR")) }
-				/>;
+				const src = ArrayUnique(trigger.in_squad.map(convertBuff));
+				const ret: Array<string | JSX.Element> = [];
+				for (let i = 0; i < src.length; i++) {
+					if (i > 0) ret.push(LocaleGet("BUFFTRIGGER_OR"));
+					ret.push(src[i]);
+				}
+				return <locale k="BUFFTRIGGER_IN_SQUAD" p0={ ret } />;
 			}
 		} else if ("in_enemy" in trigger) {
 			if (typeof trigger.in_enemy === "string")
 				return <locale k="BUFFTRIGGER_IN_ENEMY" p0={ convertBuff(trigger.in_enemy) } />;
 			else {
-				return <locale
-					k="BUFFTRIGGER_IN_ENEMY"
-					p0={ ArrayUnique(trigger.in_enemy.map(convertBuff)).join(LocaleGet("BUFFTRIGGER_OR")) }
-				/>;
+				const src = ArrayUnique(trigger.in_enemy.map(convertBuff));
+				const ret: Array<string | JSX.Element> = [];
+				for (let i = 0; i < src.length; i++) {
+					if (i > 0) ret.push(LocaleGet("BUFFTRIGGER_OR"));
+					ret.push(src[i]);
+				}
+				return <locale k="BUFFTRIGGER_IN_ENEMY" p0={ ret } />;
 			}
 		} else if ("pos" in trigger) {
 			if (typeof trigger.pos === "number") {

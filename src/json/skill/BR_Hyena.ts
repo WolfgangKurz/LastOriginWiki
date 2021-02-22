@@ -1,0 +1,10710 @@
+export default {
+  "active1": {
+    "key": "active1",
+    "icon": "GrenadeAttack_1",
+    "target": "enemy",
+    "buffs": {
+      "index": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "data": [
+        {
+          "rate": 1.59,
+          "type": 0,
+          "range": 2,
+          "ap": 5,
+          "grid": "5689",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(호드대원1)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(호드대원1)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 퀵 카멜 180mm로켓포 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_QuickCamel_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_QuickCamel_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_QuickCamel_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(퀵 카멜)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(퀵 카멜)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Khan_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(신속의 칸)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(신속의 칸)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Salamander_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(샐러맨더)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(샐러맨더)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_TalonFeather_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(탈론페더)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(탈론페더)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_WarWolf_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(워울프)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(워울프)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_QuickCamel_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 퀵 카멜 180mm로켓포 협동 공격",
+                    "type": 1,
+                    "value": "Char_BR_QuickCamel_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_QuickCamel_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(하이에나)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(하이에나)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Khan_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "연계 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.68,
+          "type": 0,
+          "range": 2,
+          "ap": 5,
+          "grid": "5689",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(호드대원1)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(호드대원1)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 퀵 카멜 180mm로켓포 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_QuickCamel_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_QuickCamel_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_QuickCamel_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(퀵 카멜)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(퀵 카멜)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Khan_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(신속의 칸)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(신속의 칸)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Salamander_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(샐러맨더)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(샐러맨더)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_TalonFeather_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(탈론페더)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(탈론페더)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_WarWolf_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(워울프)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(워울프)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_QuickCamel_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 퀵 카멜 180mm로켓포 협동 공격",
+                    "type": 1,
+                    "value": "Char_BR_QuickCamel_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_QuickCamel_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(하이에나)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(하이에나)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Khan_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "연계 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.77,
+          "type": 0,
+          "range": 2,
+          "ap": 5,
+          "grid": "5689",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(호드대원1)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(호드대원1)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 퀵 카멜 180mm로켓포 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_QuickCamel_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_QuickCamel_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_QuickCamel_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(퀵 카멜)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(퀵 카멜)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Khan_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(신속의 칸)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(신속의 칸)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Salamander_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(샐러맨더)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(샐러맨더)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_TalonFeather_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(탈론페더)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(탈론페더)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_WarWolf_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(워울프)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(워울프)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_QuickCamel_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 퀵 카멜 180mm로켓포 협동 공격",
+                    "type": 1,
+                    "value": "Char_BR_QuickCamel_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_QuickCamel_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(하이에나)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(하이에나)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Khan_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "연계 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.86,
+          "type": 0,
+          "range": 2,
+          "ap": 5,
+          "grid": "5689",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(호드대원1)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(호드대원1)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 퀵 카멜 180mm로켓포 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_QuickCamel_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_QuickCamel_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_QuickCamel_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(퀵 카멜)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(퀵 카멜)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Khan_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(신속의 칸)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(신속의 칸)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Salamander_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(샐러맨더)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(샐러맨더)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_TalonFeather_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(탈론페더)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(탈론페더)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_WarWolf_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(워울프)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(워울프)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_QuickCamel_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 퀵 카멜 180mm로켓포 협동 공격",
+                    "type": 1,
+                    "value": "Char_BR_QuickCamel_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_QuickCamel_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(하이에나)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(하이에나)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Khan_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "연계 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.95,
+          "type": 0,
+          "range": 2,
+          "ap": 5,
+          "grid": "5689",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(호드대원1)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(호드대원1)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 퀵 카멜 180mm로켓포 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_QuickCamel_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_QuickCamel_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_QuickCamel_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(퀵 카멜)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(퀵 카멜)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Khan_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(신속의 칸)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(신속의 칸)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Salamander_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(샐러맨더)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(샐러맨더)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_TalonFeather_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(탈론페더)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(탈론페더)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_WarWolf_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(워울프)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(워울프)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_QuickCamel_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 퀵 카멜 180mm로켓포 협동 공격",
+                    "type": 1,
+                    "value": "Char_BR_QuickCamel_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_QuickCamel_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(하이에나)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(하이에나)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Khan_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "연계 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.04,
+          "type": 0,
+          "range": 2,
+          "ap": 5,
+          "grid": "5689",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(호드대원1)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(호드대원1)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 퀵 카멜 180mm로켓포 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_QuickCamel_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_QuickCamel_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_QuickCamel_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(퀵 카멜)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(퀵 카멜)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Khan_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(신속의 칸)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(신속의 칸)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Salamander_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(샐러맨더)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(샐러맨더)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_TalonFeather_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(탈론페더)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(탈론페더)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_WarWolf_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(워울프)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(워울프)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_QuickCamel_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 퀵 카멜 180mm로켓포 협동 공격",
+                    "type": 1,
+                    "value": "Char_BR_QuickCamel_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_QuickCamel_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(하이에나)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(하이에나)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Khan_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "연계 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.13,
+          "type": 0,
+          "range": 2,
+          "ap": 5,
+          "grid": "5689",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(호드대원1)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(호드대원1)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 퀵 카멜 180mm로켓포 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_QuickCamel_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_QuickCamel_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_QuickCamel_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(퀵 카멜)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(퀵 카멜)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Khan_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(신속의 칸)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(신속의 칸)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Salamander_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(샐러맨더)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(샐러맨더)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_TalonFeather_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(탈론페더)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(탈론페더)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_WarWolf_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(워울프)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(워울프)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_QuickCamel_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 퀵 카멜 180mm로켓포 협동 공격",
+                    "type": 1,
+                    "value": "Char_BR_QuickCamel_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_QuickCamel_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(하이에나)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(하이에나)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Khan_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "연계 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.22,
+          "type": 0,
+          "range": 2,
+          "ap": 5,
+          "grid": "5689",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(호드대원1)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(호드대원1)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 퀵 카멜 180mm로켓포 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_QuickCamel_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_QuickCamel_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_QuickCamel_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(퀵 카멜)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(퀵 카멜)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Khan_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(신속의 칸)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(신속의 칸)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Salamander_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(샐러맨더)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(샐러맨더)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_TalonFeather_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(탈론페더)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(탈론페더)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_WarWolf_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(워울프)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(워울프)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_QuickCamel_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 퀵 카멜 180mm로켓포 협동 공격",
+                    "type": 1,
+                    "value": "Char_BR_QuickCamel_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_QuickCamel_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(하이에나)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(하이에나)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Khan_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "연계 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.31,
+          "type": 0,
+          "range": 2,
+          "ap": 5,
+          "grid": "5689",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(호드대원1)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(호드대원1)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 퀵 카멜 180mm로켓포 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_QuickCamel_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_QuickCamel_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_QuickCamel_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(퀵 카멜)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(퀵 카멜)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Khan_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(신속의 칸)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(신속의 칸)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Salamander_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(샐러맨더)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(샐러맨더)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_TalonFeather_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(탈론페더)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(탈론페더)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_WarWolf_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(워울프)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(워울프)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_QuickCamel_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 퀵 카멜 180mm로켓포 협동 공격",
+                    "type": 1,
+                    "value": "Char_BR_QuickCamel_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_QuickCamel_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(하이에나)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(하이에나)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Khan_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "연계 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.4,
+          "type": 0,
+          "range": 2,
+          "ap": 5,
+          "grid": "5689",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(호드대원1)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(호드대원1)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 퀵 카멜 180mm로켓포 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_QuickCamel_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_QuickCamel_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_QuickCamel_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(퀵 카멜)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(퀵 카멜)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Khan_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(신속의 칸)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(신속의 칸)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Salamander_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(샐러맨더)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(샐러맨더)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_TalonFeather_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(탈론페더)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(탈론페더)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_WarWolf_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(워울프)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(워울프)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_QuickCamel_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 퀵 카멜 180mm로켓포 협동 공격",
+                    "type": 1,
+                    "value": "Char_BR_QuickCamel_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_QuickCamel_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 받는 피해+{0}%(하이에나)",
+                    "type": 1,
+                    "value": "0.031000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "3.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "죽여주는 수류탄 : 적중{0}%(하이에나)",
+                    "type": 1,
+                    "value": "-0.053000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-5.3%",
+                      "per": "-0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Khan_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "연계 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "active2": {
+    "key": "active2",
+    "icon": "ShotGun",
+    "target": "enemy",
+    "buffs": {
+      "index": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "data": [
+        {
+          "rate": 2.82,
+          "type": 0,
+          "range": 3,
+          "ap": 7,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "criticaled",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "샷건 연사 : 피해량+{0}%(치명타시)",
+                    "type": 1,
+                    "value": "0.300000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(호드대원1)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_QuickCamel_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(퀵 카멜)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Khan_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(신속의 칸)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Salamander_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(샐러맨더)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_TalonFeather_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(탈론페더)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_WarWolf_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(워울프)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(하이에나)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Khan_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "연계 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.94,
+          "type": 0,
+          "range": 3,
+          "ap": 7,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "criticaled",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "샷건 연사 : 피해량+{0}%(치명타시)",
+                    "type": 1,
+                    "value": "0.300000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(호드대원1)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_QuickCamel_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(퀵 카멜)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Khan_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(신속의 칸)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Salamander_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(샐러맨더)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_TalonFeather_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(탈론페더)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_WarWolf_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(워울프)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(하이에나)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Khan_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "연계 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.06,
+          "type": 0,
+          "range": 3,
+          "ap": 7,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "criticaled",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "샷건 연사 : 피해량+{0}%(치명타시)",
+                    "type": 1,
+                    "value": "0.300000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(호드대원1)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_QuickCamel_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(퀵 카멜)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Khan_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(신속의 칸)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Salamander_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(샐러맨더)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_TalonFeather_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(탈론페더)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_WarWolf_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(워울프)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(하이에나)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Khan_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "연계 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.18,
+          "type": 0,
+          "range": 3,
+          "ap": 7,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "criticaled",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "샷건 연사 : 피해량+{0}%(치명타시)",
+                    "type": 1,
+                    "value": "0.300000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(호드대원1)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_QuickCamel_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(퀵 카멜)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Khan_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(신속의 칸)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Salamander_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(샐러맨더)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_TalonFeather_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(탈론페더)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_WarWolf_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(워울프)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(하이에나)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Khan_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "연계 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.3,
+          "type": 0,
+          "range": 3,
+          "ap": 7,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "criticaled",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "샷건 연사 : 피해량+{0}%(치명타시)",
+                    "type": 1,
+                    "value": "0.300000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(호드대원1)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_QuickCamel_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(퀵 카멜)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Khan_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(신속의 칸)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Salamander_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(샐러맨더)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_TalonFeather_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(탈론페더)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_WarWolf_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(워울프)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(하이에나)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Khan_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "연계 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.42,
+          "type": 0,
+          "range": 3,
+          "ap": 7,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "criticaled",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "샷건 연사 : 피해량+{0}%(치명타시)",
+                    "type": 1,
+                    "value": "0.300000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(호드대원1)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_QuickCamel_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(퀵 카멜)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Khan_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(신속의 칸)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Salamander_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(샐러맨더)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_TalonFeather_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(탈론페더)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_WarWolf_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(워울프)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(하이에나)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Khan_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "연계 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.54,
+          "type": 0,
+          "range": 3,
+          "ap": 7,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "criticaled",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "샷건 연사 : 피해량+{0}%(치명타시)",
+                    "type": 1,
+                    "value": "0.300000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(호드대원1)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_QuickCamel_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(퀵 카멜)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Khan_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(신속의 칸)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Salamander_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(샐러맨더)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_TalonFeather_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(탈론페더)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_WarWolf_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(워울프)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(하이에나)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Khan_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "연계 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.66,
+          "type": 0,
+          "range": 3,
+          "ap": 7,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "criticaled",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "샷건 연사 : 피해량+{0}%(치명타시)",
+                    "type": 1,
+                    "value": "0.300000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(호드대원1)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_QuickCamel_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(퀵 카멜)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Khan_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(신속의 칸)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Salamander_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(샐러맨더)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_TalonFeather_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(탈론페더)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_WarWolf_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(워울프)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(하이에나)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Khan_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "연계 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.78,
+          "type": 0,
+          "range": 3,
+          "ap": 7,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "criticaled",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "샷건 연사 : 피해량+{0}%(치명타시)",
+                    "type": 1,
+                    "value": "0.300000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(호드대원1)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_QuickCamel_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(퀵 카멜)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Khan_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(신속의 칸)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Salamander_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(샐러맨더)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_TalonFeather_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(탈론페더)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_WarWolf_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(워울프)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(하이에나)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Khan_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "연계 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.9,
+          "type": 0,
+          "range": 3,
+          "ap": 7,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "criticaled",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "샷건 연사 : 피해량+{0}%(치명타시)",
+                    "type": 1,
+                    "value": "0.300000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(호드대원1)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_QuickCamel_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(퀵 카멜)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Khan_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(신속의 칸)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Salamander_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(샐러맨더)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_TalonFeather_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(탈론페더)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_WarWolf_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(워울프)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "샷건 연사 : 방어력{0}%(하이에나)",
+                    "type": 1,
+                    "value": "-0.105000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-10.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Khan_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "연계 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "passive3": {
+    "key": "passive3",
+    "icon": "TeamAtkBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "global",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "on": "round",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "돌격 개시 : 공격력+{0}%(호드대원1)",
+                    "type": 1,
+                    "value": "0.055000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 1,
+                    "attack": {
+                      "base": "5.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "돌격 개시 : 행동력+{0}%(호드대원1)",
+                    "type": 1,
+                    "value": "0.021000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "2.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "round",
+              "if": {
+                "in_squad": [
+                  "Char_BR_QuickCamel_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "돌격 개시 : 공격력+{0}%(퀵 카멜)",
+                    "type": 1,
+                    "value": "0.055000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "5.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "돌격 개시 : 행동력+{0}%(퀵 카멜)",
+                    "type": 1,
+                    "value": "0.021000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "2.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "round",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Khan_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "돌격 개시 : 공격력+{0}%(신속의 칸)",
+                    "type": 1,
+                    "value": "0.055000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "5.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "돌격 개시 : 행동력+{0}%(신속의 칸)",
+                    "type": 1,
+                    "value": "0.021000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "2.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "round",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Salamander_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "돌격 개시 : 공격력+{0}%(샐러맨더)",
+                    "type": 1,
+                    "value": "0.055000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "5.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "돌격 개시 : 행동력+{0}%(샐러맨더)",
+                    "type": 1,
+                    "value": "0.021000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "2.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "round",
+              "if": {
+                "in_squad": [
+                  "Char_BR_TalonFeather_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "돌격 개시 : 공격력+{0}%(탈론페더)",
+                    "type": 1,
+                    "value": "0.055000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "5.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "돌격 개시 : 행동력+{0}%(탈론페더)",
+                    "type": 1,
+                    "value": "0.021000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "2.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "round",
+              "if": {
+                "in_squad": [
+                  "Char_BR_WarWolf_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "돌격 개시 : 공격력+{0}%(워울프)",
+                    "type": 1,
+                    "value": "0.055000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "5.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "돌격 개시 : 행동력+{0}%(워울프)",
+                    "type": 1,
+                    "value": "0.021000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "2.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "on": "round",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "돌격 개시 : 공격력+{0}%(하이에나)",
+                    "type": 1,
+                    "value": "0.055000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "5.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "돌격 개시 : 행동력+{0}%(하이에나)",
+                    "type": 1,
+                    "value": "0.021000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "2.1%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    }
+  }
+};

@@ -252,7 +252,9 @@ export default [
       "Ev10": [
         "Ev:Ev10:Ev1-1",
         "Ev:Ev10:Ev1-3",
-        "Ev:Ev10:Ev1-5"
+        "Ev:Ev10:Ev1-5",
+        "Ev:Ev10:Ev2-2",
+        "Ev:Ev10:Ev2-3"
       ]
     }
   },
@@ -466,7 +468,11 @@ export default [
         "Ev:Ev10:Ev1-1",
         "Ev:Ev10:Ev1-3",
         "Ev:Ev10:Ev1-4",
-        "Ev:Ev10:Ev1-5"
+        "Ev:Ev10:Ev1-5",
+        "Ev:Ev10:Ev2-1",
+        "Ev:Ev10:Ev2-2",
+        "Ev:Ev10:Ev2-3",
+        "Ev:Ev10:Ev2-4"
       ]
     }
   },
@@ -674,7 +680,13 @@ export default [
         "Ev:Ev10:Ev1-1",
         "Ev:Ev10:Ev1-3",
         "Ev:Ev10:Ev1-4",
-        "Ev:Ev10:Ev1-5"
+        "Ev:Ev10:Ev1-5",
+        "Ev:Ev10:Ev2-1",
+        "Ev:Ev10:Ev2-2",
+        "Ev:Ev10:Ev2-3",
+        "Ev:Ev10:Ev2-4",
+        "Ev:Ev10:Ev2-5",
+        "Ev:Ev10:Ev2-6"
       ]
     }
   },
@@ -1567,7 +1579,8 @@ export default [
         "Ev:Ev7:Ev1-2Ex"
       ],
       "Ev10": [
-        "Ev:Ev10:Ev1-1Ex"
+        "Ev:Ev10:Ev1-1Ex",
+        "Ev:Ev10:Ev2-2Ex"
       ]
     }
   },
@@ -7155,6 +7168,14 @@ export default [
       ],
       "Ev3": [
         "Ev:Ev3:Ev-4"
+      ],
+      "Ev10": [
+        "Ev:Ev10:Ev2-1",
+        "Ev:Ev10:Ev2-2",
+        "Ev:Ev10:Ev2-3",
+        "Ev:Ev10:Ev2-4",
+        "Ev:Ev10:Ev2-5",
+        "Ev:Ev10:Ev2-6"
       ]
     }
   },
@@ -9489,7 +9510,14 @@ export default [
     "type": 0,
     "role": 2,
     "isBoss": false,
-    "used": {}
+    "used": {
+      "Ev10": [
+        "Ev:Ev10:Ev2-3",
+        "Ev:Ev10:Ev2-4",
+        "Ev:Ev10:Ev2-5",
+        "Ev:Ev10:Ev2-6"
+      ]
+    }
   },
   {
     "id": "CenturionEX_N",
@@ -9541,7 +9569,8 @@ export default [
     "isBoss": false,
     "used": {
       "Ev10": [
-        "Ev:Ev10:Ev1-2Ex"
+        "Ev:Ev10:Ev1-2Ex",
+        "Ev:Ev10:Ev2-2Ex"
       ]
     }
   },
@@ -9727,7 +9756,8 @@ export default [
         "Ev:Ev8:Ev1-2Ex"
       ],
       "Ev10": [
-        "Ev:Ev10:Ev1-1Ex"
+        "Ev:Ev10:Ev1-1Ex",
+        "Ev:Ev10:Ev2-2Ex"
       ]
     }
   },
@@ -12141,7 +12171,8 @@ export default [
         "Ev:Ev8:Ev2-1Ex"
       ],
       "Ev10": [
-        "Ev:Ev10:Ev1-1Ex"
+        "Ev:Ev10:Ev1-1Ex",
+        "Ev:Ev10:Ev2-2Ex"
       ]
     }
   },
@@ -13234,7 +13265,11 @@ export default [
     "type": 2,
     "role": 1,
     "isBoss": false,
-    "used": {}
+    "used": {
+      "Ev10": [
+        "Ev:Ev10:Ev2-5"
+      ]
+    }
   },
   {
     "id": "LightningBomberMP_TU2",
@@ -13271,7 +13306,8 @@ export default [
     "isBoss": false,
     "used": {
       "Ev10": [
-        "Ev:Ev10:Ev1-2Ex"
+        "Ev:Ev10:Ev1-2Ex",
+        "Ev:Ev10:Ev2-1Ex"
       ]
     }
   },
@@ -13612,7 +13648,8 @@ export default [
     "isBoss": false,
     "used": {
       "Ev10": [
-        "Ev:Ev10:Ev1-2Ex"
+        "Ev:Ev10:Ev1-2Ex",
+        "Ev:Ev10:Ev2-1Ex"
       ]
     }
   },
@@ -13676,7 +13713,8 @@ export default [
     "isBoss": false,
     "used": {
       "Ev10": [
-        "Ev:Ev10:Ev1-2Ex"
+        "Ev:Ev10:Ev1-2Ex",
+        "Ev:Ev10:Ev2-1Ex"
       ]
     }
   },
@@ -13740,7 +13778,8 @@ export default [
     "isBoss": false,
     "used": {
       "Ev10": [
-        "Ev:Ev10:Ev1-2Ex"
+        "Ev:Ev10:Ev1-2Ex",
+        "Ev:Ev10:Ev2-1Ex"
       ]
     }
   },
@@ -13981,6 +14020,9 @@ export default [
         "Ev:Ev9:Ev1-3Ex",
         "Ev:Ev9:Ev2-2Ex",
         "Ev:Ev9:Ev2-3Ex"
+      ],
+      "Ev10": [
+        "Ev:Ev10:Ev2-1Ex"
       ]
     }
   },
@@ -14054,6 +14096,9 @@ export default [
       "Ev9": [
         "Ev:Ev9:Ev1-3Ex",
         "Ev:Ev9:Ev2-1Ex"
+      ],
+      "Ev10": [
+        "Ev:Ev10:Ev2-2Ex"
       ]
     }
   },
@@ -14184,7 +14229,8 @@ export default [
     "used": {
       "Ev10": [
         "Ev:Ev10:Ev1-5",
-        "Ev:Ev10:Ev1-6"
+        "Ev:Ev10:Ev1-6",
+        "Ev:Ev10:Ev2-6"
       ]
     }
   },
@@ -14218,7 +14264,8 @@ export default [
     "isBoss": false,
     "used": {
       "Ev10": [
-        "Ev:Ev10:Ev1-1Ex"
+        "Ev:Ev10:Ev1-1Ex",
+        "Ev:Ev10:Ev2-2Ex"
       ]
     }
   },

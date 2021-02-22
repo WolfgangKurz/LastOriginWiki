@@ -4803,7 +4803,7 @@ export default {
           "buff_rate": 100,
           "buffs": [
             {
-              "on": "wave_end",
+              "on": "wave",
               "if": false,
               "body": [
                 0,
