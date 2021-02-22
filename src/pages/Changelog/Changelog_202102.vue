@@ -4,6 +4,7 @@
 			<template #bugfix>
 				<li>Build 8137 이후, 전투원 스킬 정보 일부가 비정상적으로 표시되던 문제를 수정했습니다.</li>
 				<li>Build 8137 이후, 일부 링크 보너스가 올바르지 않은 이름으로 표시되던 문제를 수정했습니다.</li>
+				<li>Build 8137 이후, 일부 페이지가 표시되지 않거나 문자가 표시되지 않던 문제를 수정했습니다.</li>
 			</template>
 			<template #new>
 				<li>신규 전투원 <b-badge variant="warning">T-40 하이에나</b-badge>의 정보가 추가되었습니다.</li>
