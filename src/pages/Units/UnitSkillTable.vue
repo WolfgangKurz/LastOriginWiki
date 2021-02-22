@@ -149,7 +149,7 @@
 						</div>
 
 						<div>
-							<div v-for="(line, lineIdx) in skill.desc" :key="`unit-modal-skill-desc-${lineIdx}`" class="unit-modal-skill">
+							<div v-for="(line, lineIdx) in GetDesc(skill)" :key="`unit-modal-skill-desc-${lineIdx}`" class="unit-modal-skill">
 								<span v-if="!line" class="text-secondary">
 									<locale k="UNIT_SKILL_NO_DESCRIPTION" />
 								</span>

@@ -35,6 +35,9 @@
 			</div>
 		</div>
 
+		<h4 class="my-4">
+			<b-badge variant="danger"><locale k="HOME_TARGET_SERVER" /></b-badge>
+		</h4>
 		<p>
 			<locale k="HOME_DESCRIPTION" />
 		</p>

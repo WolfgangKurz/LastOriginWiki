@@ -2367,7 +2367,8 @@ export default {
                   "Char_BR_QuickCamel_N",
                   "Char_BR_WarWolf_N",
                   "Char_BR_TalonFeather_N",
-                  "Char_BR_Salamander_N"
+                  "Char_BR_Salamander_N",
+                  "Char_BR_Hyena_N"
                 ]
               },
               "body": [

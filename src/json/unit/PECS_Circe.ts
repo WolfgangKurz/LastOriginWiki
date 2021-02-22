@@ -57,6 +57,9 @@ export default {
       "Ev:Ev8:Ev1-1Ex"
     ],
     [
+      "Ev:Ev10:Ev2-3"
+    ],
+    [
       "Ev:Ev4:1:Exc:HalloweenLantern:200"
     ],
     [

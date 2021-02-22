@@ -44,6 +44,7 @@
 				</b-nav-item-dropdown>
 				<b-nav-item-dropdown right>
 					<template #button-content>
+						<b-icon-globe2 class="mr-1" />
 						<locale k="COMMON_LANG" />
 					</template>
 					<b-dropdown-item href="#" @click.prevent="ChangeLang('KR')">KR</b-dropdown-item>

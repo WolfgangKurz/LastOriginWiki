@@ -51,6 +51,9 @@ export default {
     ],
     [
       "Ev:Ev7:*Ev2-2Ex"
+    ],
+    [
+      "Ev:Ev10:Ev2-1Ex"
     ]
   ]
 };

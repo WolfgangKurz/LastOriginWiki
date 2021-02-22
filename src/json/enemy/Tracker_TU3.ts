@@ -81,7 +81,7 @@ export default {
                 "desc": {
                   "desc": "장갑 깎기 : 공격력 {0}%",
                   "type": 1,
-                  "value": "-0.150000"
+                  "value": "-0.300000"
                 },
                 "attr": 1,
                 "erase": {
@@ -91,7 +91,7 @@ export default {
                   "isBuff": true,
                   "type": 1,
                   "attack": {
-                    "base": "-15%",
+                    "base": "-30%",
                     "per": "0%"
                   }
                 },
@@ -102,7 +102,7 @@ export default {
                 "desc": {
                   "desc": "장갑 깎기 : 방어력 {0}%",
                   "type": 1,
-                  "value": "-0.150000"
+                  "value": "-0.400000"
                 },
                 "attr": 1,
                 "erase": {
@@ -112,7 +112,7 @@ export default {
                   "isBuff": true,
                   "type": 3,
                   "defense": {
-                    "base": "-15%",
+                    "base": "-40%",
                     "per": "0%"
                   }
                 },
@@ -123,7 +123,7 @@ export default {
                 "desc": {
                   "desc": "장갑 깎기 : 적중 {0}%",
                   "type": 1,
-                  "value": "-0.150000"
+                  "value": "-0.500000"
                 },
                 "attr": 1,
                 "erase": {
@@ -133,7 +133,7 @@ export default {
                   "isBuff": true,
                   "type": 7,
                   "accuracy": {
-                    "base": "-15%",
+                    "base": "-50%",
                     "per": "0%"
                   }
                 },
@@ -144,7 +144,7 @@ export default {
                 "desc": {
                   "desc": "징벌 : 전기 피해 / 전기 저항 감소",
                   "type": 1,
-                  "value": "-0.150000"
+                  "value": "-0.200000"
                 },
                 "attr": 1,
                 "erase": {
@@ -154,7 +154,7 @@ export default {
                   "isBuff": true,
                   "type": 13,
                   "turnSpeed": {
-                    "base": "-15%",
+                    "base": "-20%",
                     "per": "0%"
                   }
                 },
@@ -195,7 +195,7 @@ export default {
                 "desc": {
                   "desc": "장갑 깎기 : 공격력 {0}%",
                   "type": 1,
-                  "value": "-0.300000"
+                  "value": "-0.500000"
                 },
                 "attr": 1,
                 "erase": {
@@ -205,7 +205,7 @@ export default {
                   "isBuff": true,
                   "type": 1,
                   "attack": {
-                    "base": "-30%",
+                    "base": "-50%",
                     "per": "0%"
                   }
                 },
@@ -216,7 +216,7 @@ export default {
                 "desc": {
                   "desc": "장갑 깎기 : 방어력 {0}%",
                   "type": 1,
-                  "value": "-0.300000"
+                  "value": "-0.800000"
                 },
                 "attr": 1,
                 "erase": {
@@ -226,7 +226,7 @@ export default {
                   "isBuff": true,
                   "type": 3,
                   "defense": {
-                    "base": "-30%",
+                    "base": "-80%",
                     "per": "0%"
                   }
                 },
@@ -237,7 +237,7 @@ export default {
                 "desc": {
                   "desc": "장갑 깎기 : 적중 {0}%",
                   "type": 1,
-                  "value": "-0.300000"
+                  "value": "-0.800000"
                 },
                 "attr": 1,
                 "erase": {
@@ -247,7 +247,7 @@ export default {
                   "isBuff": true,
                   "type": 7,
                   "accuracy": {
-                    "base": "-30%",
+                    "base": "-80%",
                     "per": "0%"
                   }
                 },
@@ -258,7 +258,7 @@ export default {
                 "desc": {
                   "desc": "이단자여, 속죄하라 : 전기 피해 / 전기 저항 감소",
                   "type": 1,
-                  "value": "-0.300000"
+                  "value": "-0.400000"
                 },
                 "attr": 1,
                 "erase": {
@@ -268,7 +268,7 @@ export default {
                   "isBuff": true,
                   "type": 13,
                   "turnSpeed": {
-                    "base": "-30%",
+                    "base": "-40%",
                     "per": "0%"
                   }
                 },
@@ -281,7 +281,7 @@ export default {
       }
     },
     {
-      "key": "Skill_MP_Tracker_N_2",
+      "key": "Skill_MP_Tracker_TU3_2",
       "name": "추격자 2스",
       "icon": "AssaultAttack",
       "desc": "목표 지점에 보호무시의 {0} 피해를 주고 모든 강화효과를 해제하고 <출혈> 효과를 적용합니다. <광란> 상태일 시, <대 출혈> 효과를 적용합니다.",
@@ -373,7 +373,7 @@ export default {
                 "desc": {
                   "desc": "출혈 : 지속 물리 피해 {0}",
                   "type": 0,
-                  "value": "50"
+                  "value": "350"
                 },
                 "attr": 3,
                 "erase": {
@@ -383,7 +383,7 @@ export default {
                   "isBuff": true,
                   "type": 65,
                   "fixed_damage": {
-                    "base": 50,
+                    "base": 350,
                     "per": 0
                   }
                 },
@@ -424,7 +424,7 @@ export default {
                 "desc": {
                   "desc": "출혈 : 지속 물리 피해 {0}",
                   "type": 0,
-                  "value": "100"
+                  "value": "400"
                 },
                 "attr": 3,
                 "erase": {
@@ -434,7 +434,7 @@ export default {
                   "isBuff": true,
                   "type": 65,
                   "fixed_damage": {
-                    "base": 100,
+                    "base": 400,
                     "per": 0
                   }
                 },
@@ -521,7 +521,7 @@ export default {
                 "desc": {
                   "desc": "살육 쾌감 : 적중+{0}%",
                   "type": 1,
-                  "value": "0.300000"
+                  "value": "1"
                 },
                 "attr": 3,
                 "erase": {
@@ -531,7 +531,7 @@ export default {
                   "isBuff": true,
                   "type": 7,
                   "accuracy": {
-                    "base": "30%",
+                    "base": "100%",
                     "per": "0%"
                   }
                 },
@@ -542,7 +542,7 @@ export default {
                 "desc": {
                   "desc": "살육 쾌감 : 행동력+{0}%",
                   "type": 1,
-                  "value": "0.300000"
+                  "value": "0.500000"
                 },
                 "attr": 3,
                 "erase": {
@@ -552,7 +552,7 @@ export default {
                   "isBuff": true,
                   "type": 13,
                   "turnSpeed": {
-                    "base": "30%",
+                    "base": "50%",
                     "per": "0%"
                   }
                 },
@@ -616,7 +616,7 @@ export default {
                 "desc": {
                   "desc": "살육 쾌감 : 적중+{0}%",
                   "type": 1,
-                  "value": "0.300000"
+                  "value": "1"
                 },
                 "attr": 3,
                 "erase": {
@@ -626,7 +626,7 @@ export default {
                   "isBuff": true,
                   "type": 7,
                   "accuracy": {
-                    "base": "30%",
+                    "base": "100%",
                     "per": "0%"
                   }
                 },
@@ -637,7 +637,7 @@ export default {
                 "desc": {
                   "desc": "살육 쾌감 : 행동력+{0}%",
                   "type": 1,
-                  "value": "0.300000"
+                  "value": "0.500000"
                 },
                 "attr": 3,
                 "erase": {
@@ -647,7 +647,7 @@ export default {
                   "isBuff": true,
                   "type": 13,
                   "turnSpeed": {
-                    "base": "30%",
+                    "base": "50%",
                     "per": "0%"
                   }
                 },
@@ -711,7 +711,7 @@ export default {
                 "desc": {
                   "desc": "살육 쾌감 : 적중+{0}%",
                   "type": 1,
-                  "value": "0.300000"
+                  "value": "1"
                 },
                 "attr": 3,
                 "erase": {
@@ -721,7 +721,7 @@ export default {
                   "isBuff": true,
                   "type": 7,
                   "accuracy": {
-                    "base": "30%",
+                    "base": "100%",
                     "per": "0%"
                   }
                 },
@@ -732,7 +732,7 @@ export default {
                 "desc": {
                   "desc": "살육 쾌감 : 행동력+{0}%",
                   "type": 1,
-                  "value": "0.300000"
+                  "value": "0.500000"
                 },
                 "attr": 3,
                 "erase": {
@@ -742,7 +742,7 @@ export default {
                   "isBuff": true,
                   "type": 13,
                   "turnSpeed": {
-                    "base": "30%",
+                    "base": "50%",
                     "per": "0%"
                   }
                 },
@@ -806,7 +806,7 @@ export default {
                 "desc": {
                   "desc": "살육 쾌감 : 적중+{0}%",
                   "type": 1,
-                  "value": "0.300000"
+                  "value": "1"
                 },
                 "attr": 3,
                 "erase": {
@@ -816,7 +816,7 @@ export default {
                   "isBuff": true,
                   "type": 7,
                   "accuracy": {
-                    "base": "30%",
+                    "base": "100%",
                     "per": "0%"
                   }
                 },
@@ -827,7 +827,7 @@ export default {
                 "desc": {
                   "desc": "살육 쾌감 : 행동력+{0}%",
                   "type": 1,
-                  "value": "0.300000"
+                  "value": "0.500000"
                 },
                 "attr": 3,
                 "erase": {
@@ -837,7 +837,7 @@ export default {
                   "isBuff": true,
                   "type": 13,
                   "turnSpeed": {
-                    "base": "30%",
+                    "base": "50%",
                     "per": "0%"
                   }
                 },
@@ -901,7 +901,7 @@ export default {
                 "desc": {
                   "desc": "살육 쾌감 : 적중+{0}%",
                   "type": 1,
-                  "value": "0.300000"
+                  "value": "1"
                 },
                 "attr": 3,
                 "erase": {
@@ -911,7 +911,7 @@ export default {
                   "isBuff": true,
                   "type": 7,
                   "accuracy": {
-                    "base": "30%",
+                    "base": "100%",
                     "per": "0%"
                   }
                 },
@@ -922,7 +922,7 @@ export default {
                 "desc": {
                   "desc": "살육 쾌감 : 행동력+{0}%",
                   "type": 1,
-                  "value": "0.300000"
+                  "value": "0.500000"
                 },
                 "attr": 3,
                 "erase": {
@@ -932,7 +932,7 @@ export default {
                   "isBuff": true,
                   "type": 13,
                   "turnSpeed": {
-                    "base": "30%",
+                    "base": "50%",
                     "per": "0%"
                   }
                 },

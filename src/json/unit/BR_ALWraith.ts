@@ -53,6 +53,9 @@ export default {
       "Ev:Ev9:*Ev2-1Ex"
     ],
     [
+      "Ev:Ev10:Ev2-6"
+    ],
+    [
       "Ev:Ev8:1:Exc:PositiveClue:50"
     ]
   ]

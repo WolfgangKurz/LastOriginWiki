@@ -1,5 +1,25 @@
 <template>
 	<div>
+		<changelog-item title="Build 8197" date="2021-02-22">
+			<template #bugfix>
+				<li>Build 8137 이후, 전투원 스킬 정보 일부가 비정상적으로 표시되던 문제를 수정했습니다.</li>
+				<li>Build 8137 이후, 일부 링크 보너스가 올바르지 않은 이름으로 표시되던 문제를 수정했습니다.</li>
+			</template>
+			<template #new>
+				<li>신규 전투원 <b-badge variant="warning">T-40 하이에나</b-badge>의 정보가 추가되었습니다.</li>
+				<li><b-badge variant="warning">누군가 바랐던 소원</b-badge>의 2부 정보가 추가되었습니다.</li>
+			</template>
+			<template #skin>
+				<li>
+					<b-badge variant="warning">드리아드</b-badge>의 <b-badge variant="danger">꾀병을 부리는 요정</b-badge>의 정보가 추가되었습니다.
+				</li>
+				<li>
+					<b-badge variant="warning">에이미 레이저</b-badge>의 <b-badge variant="danger">드림위버 웨딩 스페셜 : 파랑새</b-badge>의 정보가
+					추가되었습니다.
+				</li>
+			</template>
+		</changelog-item>
+
 		<changelog-item title="Build 8137" date="2021-02-22">
 			<template #site>
 				<li>사이트 언어 기능이 추가되었습니다. 현재 한글과 영문만 사용 가능하며, 영문은 일부만 번역되었습니다.</li>
