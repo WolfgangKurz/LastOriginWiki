@@ -158,7 +158,11 @@ export default class DropItem extends Vue {
 			return ret;
 		}
 
-		return parseText(LocaleGet(`CONSUMABLE_DESC_${this.item.key}`));
+		return parseText(
+			LocaleGet(`CONSUMABLE_DESC_${this.item.key}`)
+				.replaceAll("&lt;", "<")
+				.replaceAll("&gt;", ">"),
+		);
 	}
 
 	private get FunctionBadge () {
