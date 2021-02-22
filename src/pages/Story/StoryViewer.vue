@@ -228,7 +228,7 @@ export default class StoryViewer extends Vue {
 
 							tellerElems.push(
 								<unit-face uid={ unit ? unit.uid : "" } skin={ teller.skin } size="60" />,
-								unit ? unit.name : teller.char,
+								unit ? LocaleGet([`UNIT_${unit.uid}`, ""]) : teller.char,
 							);
 						} else {
 							tellerElems.push(

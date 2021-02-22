@@ -920,7 +920,7 @@ function formatDesc (type: NUM_OUTPUTTYPE, template: string, value: string, shor
 		const unit = FilterableUnitDB.find(x => x.uid === key);
 		if (!unit) return `${template} - ${key}`;
 
-		return `${template} - ${unit.name}`;
+		return `${template} - ${LocaleGet(`UNIT_${unit.uid}`)}`;
 	} else {
 		if (type === NUM_OUTPUTTYPE.INTEGER) {
 			return template.replace(

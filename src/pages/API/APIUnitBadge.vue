@@ -43,6 +43,7 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
+import { LocaleGetL } from "@/libs/Locale";
 
 import { UnitDisplayFilters } from "@/libs/Store";
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE, SKILL_ATTR } from "@/libs/Types/Enums";
@@ -115,7 +116,7 @@ export default class APIUnitBadge extends Vue {
 		if (!this.SelectedUnit) return "";
 
 		const loc = window.location;
-		return `${loc.origin}/api/${this.isSD ? "sd" : "unit"}/${this.SelectedUnit.shortname}`;
+		return `${loc.origin}/api/${this.isSD ? "sd" : "unit"}/${LocaleGetL("KR", `UNIT_SHORT_${this.SelectedUnit.uid}`)}`;
 	}
 
 	private get UnitList () {

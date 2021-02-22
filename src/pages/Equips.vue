@@ -298,16 +298,17 @@ export default class Equips extends Vue {
 
 				SetMeta(
 					["description", "twitter:description"],
-					`${RarityDisplay[eq.rarity]}급 ${EquipTypeDisplay()[eq.type]} ${eq.name}의 정보입니다. 레벨별 효과, 획득처, 강화 비용을 확인할 수 있습니다.`,
+					`${RarityDisplay[eq.rarity]}급 ${EquipTypeDisplay()[eq.type]} ${LocaleGet(`EQUIP_${eq.fullKey}`)}의 정보입니다. ` +
+					"레벨별 효과, 획득처, 강화 비용을 확인할 수 있습니다.",
 				);
-				SetMeta("keywords", `,${eq.name}`, true);
+				SetMeta("keywords", `,${LocaleGet(`EQUIP_${eq.fullKey}`)}`, true);
 				SetMeta(
 					["twitter:image", "og:image"],
 					`${AssetsRoot}/${ImageExtension()}/item/${eq.icon}.${ImageExtension()}`,
 				);
 			}
 
-			UpdateTitle(LocaleGet("MENU_EQUIPS"), `${this.selectedEquip ? this.selectedEquip.name : "???"}`);
+			UpdateTitle(LocaleGet("MENU_EQUIPS"), `${this.selectedEquip ? LocaleGet(`EQUIP_${this.selectedEquip.fullKey}`) : "???"}`);
 		} else {
 			this.equipModalDisplay = false;
 
