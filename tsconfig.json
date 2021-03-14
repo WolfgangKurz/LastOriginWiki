@@ -1,10 +1,12 @@
 {
 	"compilerOptions": {
-		"target": "esnext",
+		"target": "es6",
 		"module": "esnext",
 		"moduleResolution": "node",
 
-		"jsx": "preserve",
+		"jsx": "react",
+		"jsxFactory": "h",
+
 		"strict": true,
 		"importHelpers": true,
 
@@ -15,30 +17,29 @@
 		"removeComments": false,
 		"preserveConstEnums": true,
 		"allowSyntheticDefaultImports": true,
+		"downlevelIteration": true,
 		"sourceMap": true,
 
 		"declaration": true,
 
 		"baseUrl": "./src",
-		"types": [
-			"webpack-env",
-			"jquery",
-			"node"
-		],
-		"paths": {
-			"@/*": ["./*"]
-		},
+		"types": ["node"],
 		"lib": [
+			"es5",
 			"esnext",
 			"dom",
 			"dom.iterable",
 			"scripthost"
-		]
+		],
+		"paths": {
+			"@/*": ["./*"]
+		}
 	},
 	"include": [
+		"src/**/*.js",
+		"src/**/*.jsx",
 		"src/**/*.ts",
-		"src/**/*.tsx",
-		"src/**/*.vue"
+		"src/**/*.tsx"
 	],
 	"exclude": [
 		"node_modules"

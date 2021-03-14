@@ -4,16 +4,10 @@ module.exports = {
 		node: true,
 		jquery: true,
 	},
-	extends: [
-		"eslint:recommended",
-		"plugin:vue/essential",
-		"@vue/standard",
-		"@vue/typescript/recommended",
-	],
+	extends: ["preact", "plugin:@typescript-eslint/recommended"],
 	ignorePatterns: [
 		"/**/node_modules/*",
-		"dist/",
-		"src/json/",
+		"build/",
 	],
 	parserOptions: {
 		ecmaVersion: 2020,
@@ -26,6 +20,7 @@ module.exports = {
 			files: ["*.js"],
 			rules: {
 				"@typescript-eslint/no-var-requires": "off",
+				"@typescript-eslint/explicit-function-return-type": "off",
 			},
 		},
 		{
@@ -98,6 +93,8 @@ module.exports = {
 			code: 150,
 			tabWidth: 4,
 		}],
+
+		"@typescript-eslint/no-non-null-assertion": "off",
 
 		"@typescript-eslint/ban-ts-ignore": "off",
 		"@typescript-eslint/no-explicit-any": "off",

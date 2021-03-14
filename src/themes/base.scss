@@ -1,0 +1,15 @@
+@import "@/../node_modules/bootstrap/scss/functions";
+@import "@/../node_modules/bootstrap/scss/variables";
+@import "@/../node_modules/bootstrap/scss/mixins";
+
+$assetsRoot: "https://lo.swaytwig.com/assets" !default;
+$__theme__loaded: false !default;
+$mode: "PUB" !default;
+
+@if ($__theme__loaded == false) {
+	@if ($NODE_ENV == "development") {
+		$assetsRoot: "http://localhost:5500/assets" !global;
+		$mode: "DEV" !global;
+	}
+	$__theme__loaded: true !global;
+}

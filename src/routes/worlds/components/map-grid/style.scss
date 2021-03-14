@@ -1,0 +1,87 @@
+:global {
+	.world-map-grid {
+		$cols: ();
+		@for $i from 1 through 8 {
+			$cols: append($cols, auto);
+		}
+
+		display: grid;
+		grid-template-columns: repeat(9, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+
+		> svg {
+			width: 100%;
+			height: 100%;
+			grid-column: 1 / 10;
+			grid-row: 1 / 4;
+		}
+
+		%row1 {
+			transform: translateX(-25%);
+		}
+		%row2 {
+			transform: translateX(25%);
+		}
+		%row3 {
+			transform: translateX(75%);
+		}
+
+		> [data-pos] {
+			text-align: center;
+		}
+		@for $j from 1 through 3 {
+			@for $i from 1 through 8 {
+				$x: (($i - 1) * 2) + 1;
+				$offset: ($i - 1) + ($j - 1) * 8;
+
+				> [data-pos="#{$offset}"] {
+					grid-column: $i;
+					grid-row: $j;
+
+					@if $j == 1 {
+						@extend %row1;
+					} @else if $j == 2 {
+						@extend %row2;
+					} @else if $j == 3 {
+						@extend %row3;
+					}
+				}
+			}
+		}
+	}
+
+	.map-node {
+		position: relative;
+		display: inline-block;
+		margin: 0 2px 1em;
+		text-align: center;
+		z-index: 3;
+
+		user-select: none;
+		cursor: pointer;
+
+		&[data-hidden="1"] {
+			visibility: hidden;
+		}
+
+		> img {
+			max-width: 100%;
+		}
+		> div.name {
+			position: absolute;
+			margin-left: -1px;
+			margin-bottom: 0px;
+			padding: 1px 2px;
+			left: 0;
+			right: 0;
+			background-color: rgba(0, 0, 0, 0.6);
+			font-weight: bold;
+			font-size: 11px;
+			color: #fff;
+
+			&[data-active="1"] {
+				background-color: transparentize($primary, 0.4);
+			}
+		}
+	}
+}

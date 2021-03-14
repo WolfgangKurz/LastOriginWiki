@@ -1,0 +1,76 @@
+@import "../../themes/base.scss";
+
+@mixin Build($basis: 14px) {
+	$size: $basis;
+	$w: $size;
+	$h: $size;
+
+	> i {
+		width: $w;
+		height: $h;
+		background-size: ($w * 3) ($h * 2);
+	}
+
+	&[data-black] {
+		color: #000;
+
+		> i {
+			background-position-y: -$h;
+		}
+	}
+
+	&[data-type="0"] > i {
+		background-position-x: 0;
+	}
+	&[data-type="1"] > i {
+		background-position-x: -($w * 2);
+	}
+	&[data-type="2"] > i {
+		background-position-x: -$w;
+	}
+
+	&[data-type="-1"] {
+		&[data-role="0"] > i {
+			background-position-x: -$w;
+		}
+		&[data-role="1"] > i {
+			background-position-x: 0;
+		}
+		&[data-role="2"] > i {
+			background-position-x: -($w * 2);
+		}
+	}
+}
+
+.unit-badge {
+	margin-right: 4px;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	> i {
+		display: inline-block;
+		margin: 0 3px 0 0;
+		background-image: url($assetsRoot + "/unit-type.png");
+		background-position: 0 0;
+		background-repeat: no-repeat;
+		vertical-align: bottom;
+	}
+	&[data-type="-1"] {
+		> i {
+			background-image: url($assetsRoot + "/unit-role.png");
+		}
+
+		&[data-role="-1"] > i {
+			display: none;
+		}
+	}
+
+	@include Build();
+
+	&[data-size="large"] {
+		@include Build(18px);
+		font-size: 18px;
+	}
+}
