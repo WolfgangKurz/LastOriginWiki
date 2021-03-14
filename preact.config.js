@@ -2,11 +2,6 @@ const fs = require("fs");
 const requireFromString = require("require-from-string");
 import path from "path";
 
-const prependData = `${[
-	`$NODE_ENV: "${process.env.NODE_ENV}";`,
-	"@import \"@/themes/base\";",
-].join("\n")}\n`;
-
 (() => {
 	const dest = path.resolve(__dirname, "src", "buildtime.ts");
 
@@ -36,6 +31,11 @@ const prependData = `${[
 export default {
 	// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 	webpack (config, env, helpers, options) {
+		const prependData = `${[
+			`$NODE_ENV: "${env.isProd ? "production" : "development"}";`,
+			"@import \"@/themes/base\";",
+		].join("\n")}\n`;
+		
 		if (env.isProd)
 			config.devtool = false; // disable sourcemaps
 
