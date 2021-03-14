@@ -8,7 +8,7 @@ import { LocaleGet } from "@/components/locale";
 export type ImageExtensionTypes = "webp" | "png";
 export const ImageExtensionList: ImageExtensionTypes[] = ["webp", "png"];
 
-const Host = process.env.NODE_ENV === "development"
+export const Host = process.env.NODE_ENV === "development"
 	? "http://localhost:5500"
 	: "https://lo.swaytwig.com";
 

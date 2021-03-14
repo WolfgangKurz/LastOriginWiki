@@ -1,12 +1,11 @@
-import { Component, createRef, Fragment, FunctionalComponent, h, Ref, RefObject } from "preact";
+import { Component, createRef, Fragment, h, RefObject } from "preact";
 import render from "preact-render-to-string";
 
-import bootstrap from "bootstrap";
+import { Tooltip } from "bootstrap";
 
 import { UniqueID } from "@/libs/Functions";
 
 import "./style.scss";
-import { useRef } from "preact/hooks";
 
 interface BootstrapTooltipProps {
 	placement?: "top" | "left" | "right" | "bottom";
@@ -14,12 +13,10 @@ interface BootstrapTooltipProps {
 }
 
 class BootstrapTooltip extends Component<BootstrapTooltipProps> {
-	private uid: string;
 	private el: RefObject<HTMLSpanElement>;
 
 	constructor () {
 		super();
-		this.uid = UniqueID("bootstrap-tooltip-");
 		this.el = createRef();
 	}
 
@@ -28,10 +25,10 @@ class BootstrapTooltip extends Component<BootstrapTooltipProps> {
 		if (el) {
 			const content = render(this.props.content || <Fragment />);
 
-			const instance = bootstrap.Tooltip.getInstance(el);
+			const instance = Tooltip.getInstance(el);
 			if (instance) instance.hide();
 
-			new bootstrap.Tooltip(el, {
+			new Tooltip(el, {
 				// container: "body",
 				// boundary: "window",
 				delay: 10,
@@ -53,7 +50,7 @@ class BootstrapTooltip extends Component<BootstrapTooltipProps> {
 
 	componentWillUnmount (): void {
 		if (this.el.current) {
-			const instance = bootstrap.Tooltip.getInstance(this.el.current);
+			const instance = Tooltip.getInstance(this.el.current);
 			if (instance) instance.hide();
 		}
 	}

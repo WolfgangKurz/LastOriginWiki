@@ -47,14 +47,14 @@ const skin = glob.sync(
 	path.resolve(__dirname, "..", "external", "assets", "png", "full", "*.png"),
 ).map((x: any) => path.basename(x));
 
-const AssetsRoot = "http://lo.swaytwig.com/assets";
+const AssetsRoot = "https://lo.swaytwig.com/assets";
 // "https://lastorigin-wiki-assets.s3.ap-northeast-2.amazonaws.com";
 const ext = "png";
 
-xml += "<url><loc>http://lo.swaytwig.com/units</loc></url>\n";
+xml += "<url><loc>https://lo.swaytwig.com/units</loc></url>\n";
 Unit.forEach((x: any) => {
 	const content = [
-		`<loc>http://lo.swaytwig.com/units/${x.uid}</loc>`,
+		`<loc>https://lo.swaytwig.com/units/${x.uid}</loc>`,
 	];
 
 	skin
@@ -66,39 +66,39 @@ Unit.forEach((x: any) => {
 	xml += `<url>${content.join("")}</url>\n`;
 });
 
-xml += "<url><loc>http://lo.swaytwig.com/equips</loc></url>\n";
+xml += "<url><loc>https://lo.swaytwig.com/equips</loc></url>\n";
 Equip.forEach((x: any) => {
-	xml += `<url><loc>http://lo.swaytwig.com/equips/${x.fullKey}</loc><image:image><image:loc>${AssetsRoot}/${ext}/item/UI_Icon_Equip_${x.fullKey}.${ext}</image:loc></image:image></url>\n`;
+	xml += `<url><loc>https://lo.swaytwig.com/equips/${x.fullKey}</loc><image:image><image:loc>${AssetsRoot}/${ext}/item/UI_Icon_Equip_${x.fullKey}.${ext}</image:loc></image:image></url>\n`;
 });
 
-xml += "<url><loc>http://lo.swaytwig.com/enemy</loc></url>\n";
+xml += "<url><loc>https://lo.swaytwig.com/enemies</loc></url>\n";
 Enemy.forEach((x: any) => {
-	xml += `<url><loc>http://lo.swaytwig.com/enemy/${x.id}</loc><image:image><image:loc>${AssetsRoot}/${ext}/tbar/TbarIcon_${x.id}.${ext}</image:loc></image:image></url>\n`;
+	xml += `<url><loc>https://lo.swaytwig.com/enemies/${x.id}</loc><image:image><image:loc>${AssetsRoot}/${ext}/tbar/TbarIcon_${x.id}.${ext}</image:loc></image:image></url>\n`;
 });
 
-xml += "<url><loc>http://lo.swaytwig.com/facilities</loc></url>\n";
+xml += "<url><loc>https://lo.swaytwig.com/facilities</loc></url>\n";
 Object.keys(Facility)
 	.forEach(key => {
-		xml += `<url><loc>http://lo.swaytwig.com/facilities/${key}</loc></url>\n`;
+		xml += `<url><loc>https://lo.swaytwig.com/facilities/${key}</loc></url>\n`;
 	});
 
-xml += "<url><loc>http://lo.swaytwig.com/worlds</loc></url>\n";
+xml += "<url><loc>https://lo.swaytwig.com/worlds</loc></url>\n";
 Object.keys(WorldNames)
 	.filter(x => !x.startsWith("EvA"))
 	.forEach(key => {
-		xml += `<url><loc>http://lo.swaytwig.com/worlds/${key}</loc></url>\n`;
+		xml += `<url><loc>https://lo.swaytwig.com/worlds/${key}</loc></url>\n`;
 
 		const map = (MapData as any)[key];
 		Object.keys(map).forEach(y => {
-			xml += `<url><loc>http://lo.swaytwig.com/worlds/${key}/${y}</loc></url>\n`;
-			xml += `<url><loc>http://lo.swaytwig.com/story/${key}/${y}</loc></url>\n`;
+			xml += `<url><loc>https://lo.swaytwig.com/worlds/${key}/${y}</loc></url>\n`;
+			xml += `<url><loc>https://lo.swaytwig.com/story/${key}/${y}</loc></url>\n`;
 		});
 	});
 
-xml += `<url><loc>http://lo.swaytwig.com/changelog</loc></url>
-<url><loc>http://lo.swaytwig.com/exp</loc></url>
-<url><loc>http://lo.swaytwig.com/bgm</loc></url>
-<url><loc>http://lo.swaytwig.com/eapi</loc></url>
+xml += `<url><loc>https://lo.swaytwig.com/changelog</loc></url>
+<url><loc>https://lo.swaytwig.com/exp</loc></url>
+<url><loc>https://lo.swaytwig.com/bgm</loc></url>
+<url><loc>https://lo.swaytwig.com/eapi</loc></url>
 </urlset>`;
 
 // console.log(xml);

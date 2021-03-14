@@ -29,12 +29,14 @@ import WorldView from "@/routes/worlds/world-view";
 import WorldMapView from "@/routes/worlds/map-view";
 
 import Changelog from "@/routes/changelog";
+import { Host } from "@/libs/Const";
 
 const App: FunctionalComponent<{}> = () => (
 	<Provider store={ store }>
 		{JsonLoader(
 			`locale/${CurrentLocale}`,
 			() => <div id="app">
+				<link href={ `${Host}/assets/font/SpoqaHanSans-kr.css` } rel="stylesheet" />
 				<Header />
 
 				<div class="container p-4">

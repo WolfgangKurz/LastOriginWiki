@@ -1,5 +1,5 @@
-import preact, { Component, FunctionalComponent, h } from "preact";
-import { objState } from "@/libs/State";
+import { Fragment, FunctionalComponent, h } from "preact";
+import Icons from "./icons";
 
 import "./style.scss";
 
@@ -264,68 +264,28 @@ export type IconList = "alarm" | "alarm-fill" | "align-bottom" | "align-center" 
 	"wifi" | "wifi-1" | "wifi-2" | "wifi-off" | "wind" | "window" | "window-dock" | "window-sidebar" |
 	"wrench" | "x" | "x-circle" | "x-circle-fill" | "x-diamond" | "x-diamond-fill" | "x-octagon";
 
-interface IconProperty {
+interface IconProps {
 	class?: string;
 	icon: IconList;
 	size?: string | number;
 	color?: string;
 }
 
-interface IconState {
-	content: preact.VNode | undefined;
-	loading: string;
-}
+const Icon: FunctionalComponent<IconProps> = (props) => {
+	const size = props.size || "1em";
+	const color = props.color || "currentColor";
 
-export default class Icon extends Component<IconProperty, IconState> {
-	private disposed: boolean = false;
+	const icon = props.icon in Icons
+		? Icons[props.icon]
+		: <Fragment />;
 
-	constructor () {
-		super();
-		this.state = {
-			content: undefined,
-			loading: "",
-		};
-	}
-
-	update (): void {
-		if (this.state.loading !== this.props.icon) {
-			this.setState({
-				loading: this.props.icon,
-				content: undefined,
-			});
-
-			import(/* webpackChunkName: "bootstrap-icon-[request]" */ `./icons/${this.props.icon}`)
-				.then(x => {
-					if (!this.disposed)
-						this.setState({ content: x.default });
-				});
-		}
-	}
-
-	componentDidMount (): void {
-		this.update();
-	}
-
-	componentDidUpdate (): void {
-		this.update();
-	}
-
-	componentWillUnmount (): void {
-		this.disposed = true;
-	}
-
-	render (): preact.VNode {
-		const props = this.props;
-		const size = props.size || "1em";
-		const color = props.color || "currentColor";
-
-		return <svg
-			class={ `bi bi-${props.icon} ${props.class || ""}` }
-			xmlns="http://www.w3.org/2000/svg"
-			viewBox="0 0 16 16"
-			width={ size }
-			height={ size }
-			fill={ color }
-		>{ this.state.content }</svg>;
-	}
-}
+	return <svg
+		class={ `bi bi-${props.icon} ${props.class || ""}` }
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 16 16"
+		width={ size }
+		height={ size }
+		fill={ color }
+	>{ icon }</svg>;
+};
+export default Icon;

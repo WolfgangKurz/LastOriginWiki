@@ -3,7 +3,7 @@ import { Fragment, FunctionalComponent, h } from "preact";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <Fragment>
-	<ChangelogItem title="Build 10507" date="2021-03-13"
+	<ChangelogItem title="Build 10551" date="2021-03-14"
 		site={ <Fragment>
 			<li>프레임워크를 <span class="badge bg-success">Vue2</span>에서 <span class="badge bg-substory">Preact X</span>로 변경했습니다.</li>
 			<li>
