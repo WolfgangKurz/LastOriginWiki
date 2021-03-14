@@ -224,9 +224,8 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 									value={ targetId.value }
 									onChange={ (e): void => {
 										const value = (e.target as HTMLSelectElement).value;
-										if (props.asSub)
-											targetId.set(value);
-										else
+										targetId.set(value);
+										if (!props.asSub)
 											route(`/enemies/${value}`);
 									} }
 								>
