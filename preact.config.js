@@ -35,15 +35,16 @@ export default {
 			`$NODE_ENV: "${env.isProd ? "production" : "development"}";`,
 			"@import \"@/themes/base\";",
 		].join("\n")}\n`;
-		
-		if (env.isProd)
+
+		if (config.performance)
+			config.performance.hints = false;
+
+		if (env.isProd) {
 			config.devtool = false; // disable sourcemaps
 
-		config.performance.hints = false;
-
-		// config.output.publicPath = "./";
-		config.output.filename = "js/[name].[contenthash:5].js";
-		config.output.chunkFilename = "js/chunk.[name].[contenthash:5].js";
+			config.output.filename = "js/[name].[contenthash:5].js";
+			config.output.chunkFilename = "js/chunk.[name].[contenthash:5].js";
+		}
 
 		const removes = [];
 		config.plugins.forEach((c, i) => {
@@ -59,8 +60,10 @@ export default {
 
 			if ("options" in c) {
 				if ("filename" in c.options && "chunkFilename" in c.options) {
-					c.options.filename = "css/[name].[contenthash:5].css";
-					c.options.chunkFilename = "css/chunk.[name].[contenthash:5].css";
+					if (env.isProd) {
+						c.options.filename = "css/[name].[contenthash:5].css";
+						c.options.chunkFilename = "css/chunk.[name].[contenthash:5].css";
+					}
 					return;
 				}
 				if ("favicon" in c.options && c.options.filename.endsWith("200.html")) { // HtmlWebpackPlugin

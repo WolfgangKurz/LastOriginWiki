@@ -7,7 +7,7 @@ import store from "@/store";
 import Redirect from "@/components/redirect";
 
 import JsonLoader from "@/libs/JsonLoader";
-import { CurrentLocale } from "@/libs/Locale";
+import { CurrentLocale, LocaleTypes } from "@/libs/Locale";
 
 import Header from "@/components/header";
 
@@ -31,9 +31,28 @@ import WorldMapView from "@/routes/worlds/map-view";
 import Changelog from "@/routes/changelog";
 import { Host } from "@/libs/Const";
 
-const App: FunctionalComponent<{}> = () => (
-	<Provider store={ store }>
-		{JsonLoader(
+const App: FunctionalComponent<{}> = () => {
+	if (typeof window !== "undefined") {
+		const html = document.querySelector("html");
+		if (html) {
+			const langTable: Record<LocaleTypes, string> = {
+				EN: "en",
+				JP: "ja",
+				KR: "ko",
+			};
+			html.setAttribute("lang", langTable[CurrentLocale]);
+		}
+
+		const pageonloading = document.querySelector("#pageonloading");
+		if (pageonloading) {
+			const parent = pageonloading.parentNode;
+			if (parent)
+				parent.removeChild(pageonloading);
+		}
+	}
+
+	return <Provider store={ store }>
+		{ JsonLoader(
 			`locale/${CurrentLocale}`,
 			() => <div id="app">
 				<link href={ `${Host}/assets/font/SpoqaHanSans-kr.css` } rel="stylesheet" />
@@ -73,6 +92,6 @@ const App: FunctionalComponent<{}> = () => (
 			</div>,
 			<Fragment />,
 		) }
-	</Provider>
-);
+	</Provider>;
+};
 export default App;
