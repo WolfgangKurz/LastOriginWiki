@@ -7,10 +7,15 @@ const glob = require("glob");
 const path = require("path");
 const fs = require("fs");
 
-const load = (name: string) => fs.readFileSync(path.resolve(__dirname, "..", "src", "json", `${name}.ts`))
-	.toString()
-	.replace("export default ", "")
-	.replace(/;$/, "");
+const load = (name: string) => {
+	const target = ["facility", "map"].includes(name)
+		? "external/json"
+		: "db";
+
+	return fs.readFileSync(path.resolve(__dirname, "..", target, `${name}.json`), { encoding: "utf-8" })
+		.replace("export default ", "")
+		.replace(/;$/, "");
+};
 
 const Unit = JSON.parse(load("unit"));
 const Equip = JSON.parse(load("equip"));

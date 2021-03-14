@@ -1,170 +1,70 @@
-// import * as fs from "fs";
-// import * as path from "path";
 const fs = require("fs");
 const path = require("path");
+const rmfr = require("rmfr");
 
-// import input from "../../src/json/unit";
-// import skill from "../../src/json/unit-skill";
+const sourceDir = path.resolve(__dirname, "..", "..", "db");
+const targetDir = path.resolve(__dirname, "..", "..", "external", "json", "unit");
 
-// import { SkillEntity } from "../../src/libs/DB/Skill";
-// import { BuffEffect, BuffEffectValue, BUFFEFFECT_TYPE } from "../../src/libs/Buffs/BuffEffect";
-// import { TARGET_TYPE } from "../../src/libs/Types/Enums";
+(async () => {
+	const units = JSON.parse(fs.readFileSync(path.resolve(sourceDir, "unit.json"), { encoding: "utf-8" }));
+	const equips = JSON.parse(fs.readFileSync(path.resolve(sourceDir, "equip.json"), { encoding: "utf-8" }));
+	const dialogues = {
+		ko: JSON.parse(fs.readFileSync(path.resolve(sourceDir, "dialogue", "ko.json"), { encoding: "utf-8" })),
+		jp: JSON.parse(fs.readFileSync(path.resolve(sourceDir, "dialogue", "jp.json"), { encoding: "utf-8" })),
+	};
+	const skins = JSON.parse(fs.readFileSync(path.resolve(sourceDir, "unit-skin.json"), { encoding: "utf-8" }));
 
-const input = JSON.parse(
-	fs.readFileSync(path.resolve(__dirname, "..", "..", "src", "json", "unit.ts"), { encoding: "utf-8" })
-		.replace(/export default /, "")
-		.replace(/;$/, ""),
-);
-const skill = JSON.parse(
-	fs.readFileSync(path.resolve(__dirname, "..", "..", "src", "json", "unit-skill.ts"), { encoding: "utf-8" })
-		.replace(/export default /, "")
-		.replace(/;$/, ""),
-);
+	await rmfr(targetDir);
+	fs.mkdirSync(targetDir, { recursive: true });
 
-function isPositiveBuffEffectValue (v) {
-	if (typeof v.base === "number") return v.base >= 0;
-	return !v.base.startsWith("-");
-}
-function v (target, stat) {
-	if (stat.chance === "0%") return undefined;
+	units.forEach(char => {
+		const skills = JSON.parse(fs.readFileSync(path.resolve(sourceDir, "skill", `${char.uid}.json`), { encoding: "utf-8" }));
 
-	const p = (target, t, value) => ({
-		target,
-		type: t,
-		positive: value ? isPositiveBuffEffectValue(value) : false,
+		fs.writeFileSync(
+			path.join(targetDir, `${char.uid}.json`),
+			JSON.stringify({
+				id: char.id,
+				uid: char.uid,
+				// name: char.name,
+				group: char.group,
+				shortgroup: char.shortgroup,
+
+				rarity: char.rarity,
+				type: char.type,
+				role: char.role,
+				body: char.body,
+				slots: char.equip,
+				promotions: char.promotions,
+
+				height: char.height,
+				weight: char.weight,
+				weapon1: char.weapon1,
+				weapon2: char.weapon2,
+
+				marriageVoice: char.marry,
+				favor: char.favor,
+
+				linkBonus: char.linkBonus,
+				fullLinkBonus: char.fullLinkBonus,
+
+				craft: char.craftable,
+				equips: equips.filter(y => y.limit && y.limit.some(z => z === char.uid)).map(y => y.fullKey),
+
+				stat: char.stat.map(x => ({
+					...x,
+					id: undefined,
+					rarity: undefined,
+				})),
+				source: char.source,
+				skills,
+				dialogue: {
+					ko: dialogues.ko[char.uid],
+					jp: dialogues.jp[char.uid],
+				},
+				skins: skins[char.uid],
+			}),
+			{ encoding: "utf-8" },
+		);
 	});
-
-	if ("attack" in stat)
-		return p(target, stat.type, stat.attack);
-	if ("defense" in stat)
-		return p(target, stat.type, stat.defense);
-	if ("hp" in stat)
-		return p(target, stat.type, stat.hp);
-	if ("accuracy" in stat)
-		return p(target, stat.type, stat.accuracy);
-	if ("critical" in stat)
-		return p(target, stat.type, stat.critical);
-	if ("evade" in stat)
-		return p(target, stat.type, stat.evade);
-
-	if ("turnSpeed" in stat)
-		return p(target, stat.type, stat.turnSpeed);
-	if ("ap" in stat)
-		return p(target, stat.type, stat.ap);
-
-	if ("resist" in stat)
-		return p(target, stat.type, stat.resist.value);
-	if ("damage_multiply" in stat)
-		return p(target, stat.type, stat.damage_multiply.value);
-	if ("damage_by_hp" in stat)
-		return p(target, stat.type, stat.damage_by_hp.damage);
-
-	if ("damage_add" in stat) {
-		if ("elem" in stat.damage_add)
-			return p(target, stat.type, stat.damage_add.damage);
-		else
-			return p(target, stat.type, stat.damage_add);
-	}
-	if ("range" in stat)
-		return p(target, stat.type, stat.range);
-	if ("penetration" in stat)
-		return p(target, stat.type, stat.penetration);
-	if ("invokeChance" in stat)
-		return p(target, stat.type, stat.invokeChance);
-	if ("exp" in stat)
-		return p(target, stat.type, stat.exp);
-
-	return p(target, stat.type, undefined);
-}
-
-let reta = [];
-input.forEach((x) => {
-	const se = (() => {
-		const ret = {};
-		Object.keys(skill[x.uid])
-			.filter(k => ["active1", "active2", "Factive1", "Factive2"].includes(k))
-			.map(k => [k, skill[x.uid][k]])
-			.forEach(([k, s]) => (ret[k] = {
-				elem: s.buffs.data[0].type,
-				grid: s.buffs.data[0].target_ground,
-				guard: s.buffs.data[0].dismiss_guard,
-			}));
-		return ret;
-	})();
-
-	const s = Object.keys(skill[x.uid])
-		.map(k => skill[x.uid][k])
-		.map((s) => {
-			// const target = s.target;
-			const buffs = s.buffs;
-
-			const b = {
-				// elem: buffs.data[0].type,
-				effects: (() => {
-					const output = [];
-
-					buffs.data.forEach(d =>
-						d.buffs.forEach(bs => {
-							const ret = {
-								target: "",
-								list: [],
-							};
-
-							if ("target" in bs) {
-								ret.target = bs.target === 0 /* TARGET_TYPE.SELF */
-									? "self"
-									: bs.target === 1 /* TARGET_TYPE.OUR */ || bs.target === 2 /* TARGET_TYPE.OUR_GRID */
-										? "team"
-										: "enemy";
-							}
-
-							if ("type" in bs)
-								ret.list.push(v(ret.target, bs));
-							else
-								ret.list.push(...bs.buffs.map(b => v(ret.target, b.value)));
-
-							ret.list
-								.filter(_ => _)
-								.forEach(c => {
-									if (output.some((z) => z.target === c.target && z.type === c.type && z.positive === c.positive)) return;
-									output.push(c);
-								});
-						}));
-					return output;
-				})(),
-			};
-			// return b;
-			return b.effects;
-		});
-
-	reta.push({
-		uid: x.uid,
-		no: x.id,
-
-		rarity: x.rarity,
-		promo: x.promotions,
-
-		name: x.name,
-		shortname: x.shortname,
-
-		groupKey: x.groupkey,
-		group: x.group,
-		shortgroup: x.shortgroup,
-
-		type: x.type,
-		role: x.role,
-		body: x.body,
-		craft: x.craftable,
-
-		buffs: s,
-		skills: se,
-	});
-});
-
-fs.writeFileSync(
-	path.resolve(__dirname, "..", "..", "src", "json", "unit-filterable.ts"),
-	`export default ${JSON.stringify(reta, undefined, 2)};`,
-	{ encoding: "utf-8" },
-);
-
-reta = [];
+	// console.log(units);
+})();
