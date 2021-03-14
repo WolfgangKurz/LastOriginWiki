@@ -96,7 +96,7 @@ const SummonBadge: FunctionalComponent<SummonBadgeProps> = (props) => {
 					<Icon icon="link-45deg" class="ms-1" />
 				</span>
 
-				<PopupBase class="summon-modal" bodyClass="pb-0" display={ display.value } size="xl" header={
+				<PopupBase class="summon-modal text-center" bodyClass="pb-0" display={ display.value } size="xl" header={
 					<h4>
 						<div class="text-left">
 							<Locale k={ Summon.uid } />
@@ -273,32 +273,34 @@ const SummonBadge: FunctionalComponent<SummonBadgeProps> = (props) => {
 									"mt-1",
 									displayTab.value === `skill${idx + 1}` ? "border border-bottom-0" : "border-bottom",
 								].join(" ") }
-							>
-								<a href="#" onClick={ (e): void => {
+								role="button"
+								onClick={ (e): void => {
 									e.preventDefault();
 									displayTab.set(`skill${idx + 1}`);
-								} }>
-									{ skill
-										? <img
-											class="skill-icon my-2"
-											src={ [
-												AssetsRoot,
-												imageExt,
-												"skill",
-												`${skill.icon}_${skill.passive ? "passive" : "active"}.${imageExt}`,
-											].join("/") }
-										/>
-										: <Fragment />
-									}
-								</a>
+								} }
+							>
+								{ skill
+									? <img
+										class="skill-icon my-2"
+										src={ [
+											AssetsRoot,
+											imageExt,
+											"skill",
+											`${skill.icon}_${skill.passive ? "passive" : "active"}.${imageExt}`,
+										].join("/") }
+									/>
+									: <Fragment />
+								}
 							</div>) }
-							<div class={ `col mt-1 ${displayTab.value === "ai" ? "border border-bottom-0" : "border-bottom"}` }>
-								<a href="#" onClick={ (e): void => {
+							<div
+								class={ `col mt-1 ${displayTab.value === "ai" ? "border border-bottom-0" : "border-bottom"}` }
+								role="button"
+								onClick={ (e): void => {
 									e.preventDefault();
 									displayTab.set("ai");
-								} }>
-									<Icon icon="cpu-fill" class="my-2" />
-								</a>
+								} }
+							>
+								<Icon icon="cpu-fill" class="my-2" />
 							</div>
 						</div>
 
