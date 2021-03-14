@@ -41,7 +41,7 @@ export default {
 
 		config.performance.hints = false;
 
-		config.output.publicPath = "./";
+		// config.output.publicPath = "./";
 		config.output.filename = "js/[name].[contenthash:5].js";
 		config.output.chunkFilename = "js/chunk.[name].[contenthash:5].js";
 
