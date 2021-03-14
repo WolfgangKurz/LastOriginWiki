@@ -1,4 +1,4 @@
-import bootstrap from "bootstrap";
+import { Modal } from "bootstrap";
 import preact, { Component, Fragment, h } from "preact";
 
 import { UniqueID } from "@/libs/Functions";
@@ -31,7 +31,7 @@ interface PopupBaseProps {
 export default class PopupBase extends Component<PopupBaseProps> {
 	private uid: string = UniqueID("popup-modal-");
 
-	private instance: bootstrap.Modal | null = null;
+	private instance: Modal | null = null;
 	private disposing = false;
 
 	updateBootstrap (): void {
@@ -39,7 +39,7 @@ export default class PopupBase extends Component<PopupBaseProps> {
 			const el = document.querySelector(`#${this.uid}`);
 			if (!el) return;
 
-			const instance = bootstrap.Modal.getInstance(el) || new bootstrap.Modal(el);
+			const instance = Modal.getInstance(el) || new Modal(el);
 			if (!instance) return;
 			this.instance = instance;
 		}

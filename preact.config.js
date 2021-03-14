@@ -36,7 +36,43 @@ const prependData = `${[
 export default {
 	// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 	webpack (config, env, helpers, options) {
-		config.output.chunkFilename = "[name].js";
+		if (env.isProd)
+			config.devtool = false; // disable sourcemaps
+
+		config.performance.hints = false;
+
+		config.output.publicPath = "./";
+		config.output.filename = "js/[name].[contenthash:5].js";
+		config.output.chunkFilename = "js/chunk.[name].[contenthash:5].js";
+
+		const removes = [];
+		config.plugins.forEach((c, i) => {
+			if ("location_" in c) { // PrerenderDataExtractPlugin
+				removes.splice(0, 0, i);
+				return;
+			}
+
+			if ("config" in c && "swSrc" in c.config) {
+				removes.splice(0, 0, i);
+				return;
+			}
+
+			if ("options" in c) {
+				if ("filename" in c.options && "chunkFilename" in c.options) {
+					c.options.filename = "css/[name].[contenthash:5].css";
+					c.options.chunkFilename = "css/chunk.[name].[contenthash:5].css";
+					return;
+				}
+				if ("favicon" in c.options && c.options.filename.endsWith("200.html")) { // HtmlWebpackPlugin
+					removes.splice(0, 0, i);
+					return;
+				}
+			}
+		});
+		removes.forEach(i => config.plugins.splice(i, 1));
+
+		// console.log(config);
+		// throw "";
 
 		config.resolve.alias = {
 			...config.resolve.alias,
