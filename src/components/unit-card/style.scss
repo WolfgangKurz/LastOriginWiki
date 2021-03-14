@@ -1,0 +1,116 @@
+:global .unit-card {
+	position: relative;
+	cursor: pointer;
+
+	&.card {
+		border-radius: 9px;
+
+		.card-img-top {
+			position: relative;
+
+			.unit-face {
+				width: 100%;
+			}
+			.card-img-badge {
+				position: absolute;
+				left: 4px;
+				bottom: 4px;
+
+				> .unit-badge {
+					box-shadow: 0 0 4px #000;
+				}
+			}
+		}
+		.card-body {
+			padding: 1em 0;
+
+			.card-title {
+				position: relative;
+				margin: 0;
+				font-size: 14px;
+				word-break: keep-all;
+			}
+
+			.unit-info {
+				font-size: 85%;
+
+				> .rarity-badge {
+					margin-right: 0.5em;
+					font-size: 100%;
+				}
+				> span:not(.badge) {
+					opacity: 0.72;
+
+					i {
+						$basis: 18px;
+						display: inline-block;
+						width: $basis;
+						height: $basis;
+						margin-left: 4px;
+						background-size: ($basis * 3) ($basis * 2);
+						background-position: 0 0;
+						background-repeat: no-repeat;
+						vertical-align: bottom;
+
+						&[data-type] {
+							background-image: url($assetsRoot + "/unit-type.png");
+							&[data-type="0"] {
+								background-position-x: 0px;
+							}
+							&[data-type="2"] {
+								background-position-x: -$basis;
+							}
+							&[data-type="1"] {
+								background-position-x: -($basis * 2);
+							}
+						}
+						&[data-role] {
+							background-image: url($assetsRoot + "/unit-role.png");
+							&[data-role="1"] {
+								background-position-x: 0px;
+							}
+							&[data-role="0"] {
+								background-position-x: -$basis;
+							}
+							&[data-role="2"] {
+								background-position-x: -($basis * 2);
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.unit-role-icon {
+			position: absolute;
+			left: -1em;
+			top: -2em;
+			pointer-events: none;
+
+			> img {
+				width: 6em;
+				height: 6em;
+			}
+		}
+
+		.unit-badges {
+			position: absolute;
+			top: -2.5em;
+			right: 0.125em;
+			line-height: 0;
+			font-size: 16px;
+
+			> .badge {
+				box-shadow: 0 0 4px #000;
+
+				&:not(.badge-info) {
+					color: #000;
+				}
+			}
+		}
+	}
+
+	a.stretched-link {
+		text-decoration: none;
+	}
+}

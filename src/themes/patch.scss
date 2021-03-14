@@ -1,0 +1,40 @@
+.thead-dark th,
+td.bg-dark,
+th.bg-dark {
+	color: #fff;
+	background-color: #212529;
+	border-color: #454d55 !important;
+}
+
+table.table:not(.table-borderless) > tbody,
+table.table:not(.table-borderless) > thead {
+	> tr {
+		border-width: 0 !important;
+
+		> td,
+		> th {
+			border-width: 1px !important;
+		}
+	}
+}
+
+.card-header[role="button"]:focus,
+.nav-tabs .nav-link:focus {
+	outline: none;
+}
+
+table.table-fixed {
+	table-layout: fixed;
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($breakpoint) {
+		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+		@for $i from 7 through 10 {
+			.row-cols#{$infix}-#{$i} {
+				@include row-cols($i);
+			}
+		}
+	}
+}

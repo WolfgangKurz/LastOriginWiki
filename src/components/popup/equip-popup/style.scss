@@ -1,0 +1,66 @@
+:global .equip-modal {
+	.unknown-status {
+		user-select: none;
+		cursor: pointer;
+	}
+	.badge.unit-name-badge {
+		white-space: normal;
+		word-break: keep-all;
+	}
+
+	.white-pre-line {
+		white-space: pre-line;
+	}
+
+	.table-equip-modal.container {
+		margin-bottom: 0 !important;
+
+		.col {
+			margin-bottom: -1px;
+			padding: 0.75rem;
+			border: 1px solid #dee2e6;
+
+			&.icon-container {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				.equip-level {
+					position: absolute;
+					top: 0;
+					right: 0.25em;
+
+					font-weight: bold;
+					color: #fff;
+					text-shadow: 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 5px rgba(0, 0, 0, 0.6),
+						0 0 6px rgba(0, 0, 0, 0.6), 0 0 7px rgba(0, 0, 0, 0.6), 0 0 8px rgba(0, 0, 0, 0.6);
+				}
+			}
+
+			&.bg-dark {
+				border-color: #454d55;
+				font-weight: bold;
+			}
+			&.nested {
+				display: flex;
+				padding: 0;
+				border-left: 0;
+				border-top: 0;
+				border-right: 0;
+
+				> .row {
+					margin: 0;
+				}
+			}
+		}
+	}
+
+	.res-icon {
+		margin-right: 0.125em;
+		width: 24px;
+	}
+	.upmodule-icon {
+		margin: 0;
+		width: 32px;
+	}
+}

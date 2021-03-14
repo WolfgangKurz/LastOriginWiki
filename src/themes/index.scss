@@ -1,0 +1,122 @@
+html,
+body {
+	text-align: center;
+}
+
+html,
+body,
+body .popover,
+body .tooltip {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: "Spoqa Han Sans", sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+}
+.btn-group > .btn.active + .btn.active,
+.btn-group > .btn.active + .btn:focus,
+.btn-group > .btn.active + .btn:hover,
+.btn-group > .btn:focus + .btn.active,
+.btn-group > .btn:hover + .btn.active {
+	border-left: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+$rarities: (
+	B: #e2f0d9,
+	A: #deebf7,
+	S: #fff2cc,
+	SS: #fce391,
+);
+@each $rarity, $value in $rarities {
+	.rarity-#{$rarity} {
+		background-color: $value;
+		border-color: darken($value, 15%);
+	}
+	.rarity-#{$rarity}-force {
+		background-color: $value !important;
+		border-color: darken($value, 15%) !important;
+	}
+
+	.rarity-#{$rarity}-border {
+		border-color: darken($value, 15%);
+	}
+	.rarity-#{$rarity}-border-force {
+		border-color: darken($value, 15%) !important;
+	}
+}
+
+$colors: (
+	"black": #000,
+	"stat-atk": #fd4280,
+	"stat-def": #0cb9eb,
+	"stat-hp": #98d718,
+	"stat-acc": #98d718,
+	"stat-eva": #98d718,
+	"stat-crit": #fe4d3f,
+	"substory": #07499b,
+	"event-exchange": #d040e0,
+	"event-exchange-old": #701080,
+	"exchange": #0cb9eb,
+	"exchange-old": #06798b,
+	"rarity-B": #e2f0d9,
+	"rarity-A": #deebf7,
+	"rarity-S": #fff2cc,
+	"rarity-SS": #fce391,
+);
+@each $key, $value in $colors {
+	.bg-#{$key} {
+		background-color: $value;
+	}
+	.text-#{$key} {
+		color: $value;
+	}
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($breakpoint) {
+		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+		$aligns: left, center, right;
+		@each $align in $aligns {
+			.text#{$infix}-#{$align} {
+				text-align: $align;
+			}
+		}
+
+		$floats: left, right, none;
+		@each $float in $floats {
+			.float#{$infix}-#{$float} {
+				float: $float;
+			}
+		}
+
+		.clearfix#{$infix}::after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+	}
+}
+
+.word-keep {
+	word-break: keep-all;
+}
+.white-space-pre {
+	white-space: pre-wrap;
+}
+
+.flex-1 {
+	flex: 1;
+}
+
+.preload-area {
+	position: absolute;
+	display: inline-block;
+	left: 0;
+	top: 0;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	pointer-events: none;
+	opacity: 0.000001;
+}

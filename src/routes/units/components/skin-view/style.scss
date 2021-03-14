@@ -1,0 +1,240 @@
+.ratio-2x5 {
+	--bs-aspect-ratio: calc(5 / 2 * 100%);
+}
+
+:global .unit-skin-view {
+	.unit-full {
+		position: relative;
+		padding: 0;
+		overflow: hidden;
+
+		.unit-full-bg {
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			background-image: url($assetsRoot + "/bg/unit-bg.png");
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				transform-origin: 50% 50%;
+				background-image: url($assetsRoot + "/bg/unit-bg-net.png");
+				background-position: center bottom;
+				background-repeat: no-repeat;
+				background-size: 100%;
+			}
+			&::before {
+				transform: translateY(-20%) rotate(180deg) scale(1.1);
+			}
+			&::after {
+				transform: translateY(20%) scale(1.1);
+			}
+		}
+		.unit-full-group {
+			position: absolute;
+			display: flex;
+			padding: 0;
+			left: 4px;
+			top: 4px;
+			max-height: 40%;
+			text-align: left;
+			overflow: hidden;
+
+			> div {
+				flex: 1;
+			}
+		}
+		.unit-full-unit {
+			position: absolute;
+			display: flex;
+			padding: 4%;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			justify-content: center;
+
+			> img {
+				margin: auto;
+			}
+		}
+
+		&:not(.unit-full-collapsed) {
+			.unit-full-unit > img {
+				max-width: 100%;
+				max-height: 100%;
+			}
+		}
+		&.unit-full-collapsed {
+			.unit-full-unit > img {
+				height: 100%;
+			}
+		}
+
+		.skin-toggle {
+			position: absolute;
+			background-repeat: no-repeat;
+			filter: drop-shadow(0 0 4px #000);
+			cursor: pointer;
+			z-index: 4;
+
+			&.skin-toggle-damaged {
+				top: 0px;
+				right: 0px;
+				width: 64px;
+				height: 62px;
+				background-image: url($assetsRoot + "/damaged-icon.png");
+				background-size: 128px 62px;
+
+				&[data-damaged="1"] {
+					background-position-x: -64px;
+				}
+			}
+			&.skin-toggle-simplified {
+				top: 70px;
+				right: 18px;
+				width: 28px;
+				height: 28px;
+				background-image: url($assetsRoot + "/simplify-icon.png");
+				background-position-x: -28px;
+				background-size: 56px 28px;
+
+				&[data-simplified="1"] {
+					background-position-x: 0;
+				}
+			}
+			&.skin-toggle-platform {
+				top: 130px;
+				right: 18px;
+				width: 28px;
+				height: 28px;
+				background-image: url($assetsRoot + "/icon-platform.png");
+				background-position-x: -28px;
+				background-size: 56px 28px;
+
+				&[data-platform="1"] {
+					background-position-x: 0;
+				}
+			}
+		}
+
+		.skin-detail {
+			position: absolute;
+			right: 10px;
+			bottom: 10px;
+			width: 22px;
+			height: 22px;
+			background-image: url($assetsRoot + "/icon-detail.png");
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 22px 22px;
+			filter: drop-shadow(0 0 4px #000);
+			cursor: pointer;
+			z-index: 4;
+		}
+
+		.skin-marry,
+		.unit-skin-animated,
+		.unit-skin-voice,
+		.unit-skin-effect,
+		.unit-skin-motion {
+			position: absolute;
+			width: 38px;
+			height: 34px;
+			line-height: 26px;
+			font-size: 22px;
+
+			.alert {
+				margin: 0;
+				padding: 0;
+				height: 34px;
+			}
+		}
+
+		.unit-skin-animated {
+			bottom: 10px;
+			left: 10px;
+			user-select: none;
+			z-index: 10;
+		}
+		.unit-skin-voice {
+			bottom: 10px;
+			left: 50px;
+			user-select: none;
+			z-index: 10;
+		}
+		.unit-skin-effect {
+			bottom: 10px;
+			left: 90px;
+			user-select: none;
+			z-index: 10;
+		}
+		.unit-skin-motion {
+			bottom: 10px;
+			left: 130px;
+			user-select: none;
+			z-index: 10;
+		}
+
+		.skin-marry {
+			position: absolute;
+			bottom: 50px;
+			left: 10px;
+			background-image: url($assetsRoot + "/icon-marry.png");
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 38px 34px;
+		}
+		.skin-price {
+			position: absolute;
+			padding: 1px 6px 3px;
+			bottom: 5px;
+			right: 5px;
+			border-radius: 4px;
+			background-color: rgba(0, 0, 0, 0.6);
+			text-shadow: 0 0 4px #000;
+			color: #fff;
+
+			> img {
+				height: 20px;
+			}
+		}
+		&.unit-full-collapsed .skin-price {
+			bottom: 40px;
+		}
+
+		.unit-full-group {
+			> div > img {
+				height: 100%;
+				opacity: 0.22;
+			}
+		}
+
+		&.unit-full-collapsed .unit-full-group {
+			z-index: 3;
+
+			> div > img {
+				width: auto;
+				height: 25%;
+				opacity: 0.9;
+				filter: drop-shadow(0 0 4px #000);
+			}
+		}
+	}
+	.skin-name-desc {
+		word-break: keep-all;
+		.card-body {
+			font-size: 90%;
+		}
+	}
+}

@@ -1,0 +1,37 @@
+:global .row.dialogue-row {
+	$sm: map-get($grid-breakpoints, "sm");
+	margin: 0 0.25rem;
+
+	&:not(:first-child) > div:nth-child(2) {
+		border-top: 0 !important;
+	}
+
+	> div {
+		&:not(:last-child) {
+			padding-top: 0.25rem;
+			padding-bottom: 0.25rem;
+
+			@media (min-width: $sm) {
+				border-right: 0 !important;
+			}
+		}
+		&:last-child {
+			padding: 0;
+		}
+	}
+
+	> div:last-child,
+	audio {
+		width: 100%;
+		vertical-align: middle;
+
+		@media (min-width: $sm) {
+			width: auto;
+			min-width: 300px;
+		}
+	}
+
+	.dialogue {
+		word-break: keep-all;
+	}
+}
