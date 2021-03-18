@@ -20,11 +20,12 @@ import DropRes from "@/components/drop-res";
 import DropUnit from "@/components/drop-unit";
 import DropEquip from "@/components/drop-equip";
 import TbarIcon from "@/components/tbar-icon";
+import UnitFace from "@/components/unit-face";
 import EnemyPopup from "@/components/popup/enemy-popup";
-import MapSearchInfo from "../components/map-search-info";
-import UnitReference from "@/components/unit-reference";
 import EquipPopup from "@/components/popup/equip-popup";
+import UnitReference from "@/components/unit-reference";
 import MapGrid from "../components/map-grid";
+import MapSearchInfo from "../components/map-search-info";
 
 import "./style.scss";
 
@@ -381,6 +382,13 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 					? <div class="card mt-3 bg-dark text-light">
 						<div class="card-body">
 							<h5>
+								{ props.wid === "Sub"
+									? <div class="float-left me-3">
+										<UnitFace uid={ SubStoryUnit[selectedValue.text] } size="56" />
+									</div>
+									: <Fragment />
+								}
+
 								<span class="badge bg-warning text-dark me-2 selected-node-badge">
 									{ props.wid === "Sub"
 										? SubstoryName(selectedValue.text)

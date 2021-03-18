@@ -1,18 +1,21 @@
 import { Fragment, FunctionalComponent, h } from "preact";
+import { Link } from "preact-router";
 
-import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { AssetsRoot, CurrentEvent, EventFrom, EventTo, ImageExtension } from "@/libs/Const";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
+import { CurrentLocale } from "@/libs/Locale";
 
 import Locale from "@/components/locale";
 import HomeConfigSelector from "@/components/home-config-selector";
 
 import BuildInfo from "@/buildtime";
 
-import style from "./style.css";
+import style from "./style.scss";
+import Icon from "@/components/bootstrap-icon";
 
 const Home: FunctionalComponent = () => {
+	const pad = (x: number, y: number): string => x.toString().padStart(y, "0");
 	const BuildTime = ((): string => {
-		const pad = (x: number, y: number): string => x.toString().padStart(y, "0");
 		const dt = new Date(BuildInfo.time);
 		const y = dt.getFullYear();
 		const m = dt.getMonth() + 1;
@@ -22,6 +25,13 @@ const Home: FunctionalComponent = () => {
 		const s = dt.getSeconds();
 		return `${pad(y, 4)}-${pad(m, 2)}-${pad(d, 2)} ${pad(h, 2)}:${pad(i, 2)}:${pad(s, 2)}`;
 	})();
+
+	function DateText (date: Date): string {
+		if (CurrentLocale === "EN")
+			return `${date.getDate()}. ${date.getMonth() + 1}. ${date.getFullYear()}`;
+		return `${date.getFullYear()}-${pad(date.getMonth() + 1, 2)}-${pad(date.getDate(), 2)}`;
+	}
+
 	const BuildVersion = BuildInfo.build;
 
 	const now = Date.now();
@@ -57,6 +67,27 @@ const Home: FunctionalComponent = () => {
 					</span>,
 				] } /> }
 		</div>
+
+		{ CurrentEvent
+			? <div class="alert alert-danger" role="alert">
+				<Link href={ `/worlds/${CurrentEvent}` } class="text-dark" style={ { textDecoration: "none" } }>
+					<img
+						src={ `${AssetsRoot}/world/event-${CurrentLocale}.png` }
+						class="me-3"
+						height="24"
+						style={ { verticalAlign: "text-bottom" } }
+					/>
+					<strong>
+						<Locale k={ `WORLD_${CurrentEvent}` } />
+					</strong>
+					<span class="ps-3">
+						<Icon icon="calendar3" class="me-1 mb-1" />
+						{ DateText(EventFrom) } ~ { DateText(EventTo) }
+					</span>
+				</Link>
+			</div>
+			: <Fragment />
+		}
 
 		<h2>
 			<img class={ `${style["heading-icon"]} heading-icon` } src={ `${AssetsRoot}/icon.png` } />
