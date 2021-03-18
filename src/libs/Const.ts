@@ -9,7 +9,7 @@ export type ImageExtensionTypes = "webp" | "png";
 export const ImageExtensionList: ImageExtensionTypes[] = ["webp", "png"];
 
 export const Host = process.env.NODE_ENV === "development"
-	? "http://localhost:5500"
+	? "http://121.157.45.156:5500"
 	: "https://lo.swaytwig.com";
 
 export const AssetsRoot = `${Host}/assets`;
@@ -534,9 +534,14 @@ export const SubStoryUnit: Record<string, string> = {
 	"S10-1": "AGS_Rampart",
 	"S11-1": "3P_Aurora",
 	"S12-1": "3P_CSPerrault",
+	"S13-1": "3P_BlackLilith",
+	"S14-1": "BR_Brownie",
 };
 
-export const CurrentEvent = "Ev10";
+export const CurrentEvent = "Ev5";
+export const EventFrom = new Date(2021, 3, 15);
+export const EventTo = new Date(2021, 4, 19);
+
 export const CurrentDate = ((): string => {
 	const d = new Date();
 	const y = d.getUTCFullYear() % 100;
