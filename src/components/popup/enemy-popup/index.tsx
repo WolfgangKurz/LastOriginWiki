@@ -213,6 +213,8 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 
 					if (props.onHidden)
 						props.onHidden();
+
+					targetId.set("");
 				} }
 			>
 				{ target
