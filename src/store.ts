@@ -15,6 +15,7 @@ const states = {
 			[ACTOR_GRADE.A]: true,
 			[ACTOR_GRADE.S]: true,
 			[ACTOR_GRADE.SS]: true,
+			[ACTOR_GRADE.SSS]: true,
 		},
 		Type: {
 			[ACTOR_CLASS.LIGHT]: true,
@@ -49,11 +50,11 @@ const states = {
 			.map(x => {
 				if (x.pm) {
 					return [
-						{ ...x, pmType: 1, selected: true },
-						{ ...x, pmType: -1, selected: true },
+						{ ...x, pmType: 1, selected: false },
+						{ ...x, pmType: -1, selected: false },
 					];
 				}
-				return { ...x, selected: true };
+				return { ...x, selected: false };
 			}) as EffectFilterListType,
 
 		DisplayType: "table" as ("table" | "list" | "group" | "time"),
@@ -97,11 +98,11 @@ const states = {
 			.map(x => {
 				if (x.pm) {
 					return [
-						{ ...x, pmType: 1, selected: true },
-						{ ...x, pmType: -1, selected: true },
+						{ ...x, pmType: 1, selected: false },
+						{ ...x, pmType: -1, selected: false },
 					];
 				}
-				return { ...x, selected: true };
+				return { ...x, selected: false };
 			}) as EffectFilterListType,
 	},
 };
@@ -154,9 +155,11 @@ export const actions: ActionsTypeInternal<StoreType> = {
 		if (index >= 0) {
 			const list = [...state.Units.EffectTarget];
 			list.splice(index, 1);
-			return merge(state, { Units: { EffectTarget: list } });
+			return merge(merge(state, { Units: { EffectTarget: "" } }), { Units: { EffectTarget: list } });
 		}
-		return merge(state, { Units: { EffectTarget: [...state.Units.EffectTarget, type] } });
+
+		const list = [...state.Units.EffectTarget, type];
+		return merge(merge(state, { Units: { EffectTarget: "" } }), { Units: { EffectTarget: list } });
 	},
 
 	setUnitEffectFilters: (state, list: EffectFilterListType) => {
@@ -192,7 +195,7 @@ export const actions: ActionsTypeInternal<StoreType> = {
 
 	setEquipEffectFilters: (state, list: EffectFilterListType) => {
 		state.Equips.EffectFilters = [];
-		return merge(state, { Equips: { EffectFilters: list } });
+		return merge(merge(state, { Equips: { EffectFilters: "" } }), { Equips: { EffectFilters: list } });
 	},
 };
 

@@ -7,7 +7,7 @@ import { isActive } from "@/libs/Functions";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE, SKILL_ATTR } from "@/types/Enums";
-import { EffectFilterListItemPM, EffectFilterListType } from "@/types/Buff";
+import { EffectFilterListItemPM, EffectFilterListItemSingle, EffectFilterListType } from "@/types/Buff";
 import { BuffEffectList, BuffEffectListGroupKeys } from "@/types/BuffEffect";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
@@ -112,16 +112,19 @@ const Units: FunctionalComponent = () => {
 				const target = FilterableUnitDB.find(x => x.uid === unit.uid);
 				if (!target) return false;
 
-				return target.buffs.some(x => x.some(y => {
-					if (!Filters.EffectTarget.includes(y.target)) return false;
-
-					return Filters.EffectFilters.some(z => Array.isArray(z)
-						? z.some(_ => _.selected &&
-							_.type.includes(y.type) &&
-							((_.pmType > 0 && y.positive) || (_.pmType < 0 && !y.positive)),
-						)
-						: z.selected && z.type.includes(y.type));
-				}));
+				return Filters.EffectFilters
+					.reduce((p, c) => Array.isArray(c) ? [...p, ...c] : [...p, c], [] as Array<EffectFilterListItemSingle | EffectFilterListItemPM>)
+					.filter(x => x.selected)
+					.every(selectedBuff => {
+						return target.buffs.flat()
+							.filter(targetBuff => Filters.EffectTarget.includes(targetBuff.target))
+							.filter(targetBuff => selectedBuff.type.includes(targetBuff.type))
+							.some(targetBuff => {
+								if ("pmType" in selectedBuff)
+									return (selectedBuff.pmType > 0 && targetBuff.positive) || (selectedBuff.pmType < 0 && !targetBuff.positive);
+								return true;
+							});
+					});
 			}
 
 			function UnitList (): FilterableUnit[] {

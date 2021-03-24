@@ -3,6 +3,24 @@ import { Fragment, FunctionalComponent, h } from "preact";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <Fragment>
+	<ChangelogItem title="Build 10571" date="2021-03-25"
+		bugfix={ <Fragment>
+			<li><span class="badge bg-danger">세인트 오르카의 비밀작전</span>의 이벤트 기간이 잘못 작성되어있던 점을 수정했습니다.</li>
+			<li>장비 팝업의 등급 선택에서 SSS급의 텍스트가 표시되지 않던 문제를 수정했습니다.</li>
+			<li>효과 필터에서 증가/감소 필터가 같이 켜지고 꺼지는 문제를 수정했습니다.</li>
+			<li><span class="badge bg-warning text-dark">전투원정보</span>의 대상 필터가 작동하지 않는 문제를 수정했습니다.</li>
+		</Fragment> }
+		new={ <Fragment>
+			<li>장비 팝업의 제목에 장비 유형 아이콘을 추가했습니다.</li>
+		</Fragment> }
+		update={ <Fragment>
+			<li>
+				<span class="badge bg-warning text-dark">전투원정보</span>, <span class="badge bg-warning text-dark">장비정보</span>의 효과 필터의 작동을 수정했습니다.<br />
+				기존의 작동은 OR 선택이었지만 이제 AND 선택으로 작동합니다.
+			</li>
+		</Fragment> }
+	/>
+
 	<ChangelogItem title="Build 10568" date="2021-03-25"
 		bugfix={ <Fragment>
 			<li>적 정보 팝업을 닫고 새로 열 때, 이전 적 정보가 표시되는 문제를 수정했습니다.</li>

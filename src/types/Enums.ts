@@ -276,6 +276,7 @@ export enum ACTOR_GRADE {
 	A = 3,
 	S = 4,
 	SS = 5,
+	SSS = 6,
 }
 
 /** 설명 텍스트 값 출력 방식 */
