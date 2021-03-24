@@ -9,16 +9,18 @@ const Changelog: FunctionalComponent = () => <Fragment>
 			<li>대사가 줄바꿈되지 않고 표시되는 문제를 수정했습니다.</li>
 		</Fragment> }
 		new={ <Fragment>
-			<li><span class="badge bg-warning">스트롱홀드</span>의 정보가 추가되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">스트롱홀드</span>의 정보가 추가되었습니다.</li>
 			<li>홈 화면에 진행중인 이벤트 정보가 추가되었습니다.</li>
 		</Fragment> }
 		skin={ <Fragment>
-			<li><span class="badge bg-warning">철혈의 레오나</span>의 스킨 <span class="badge bg-danger">드림위버 웨딩 스페셜 : 완벽한 날</span>의 정보가 추가되었습니다.</li>
-			<li><span class="badge bg-warning">AT-4 파니</span>의 스킨 <span class="badge bg-danger">코트 위의 에이스</span>의 정보가 추가되었습니다.</li>
-			<li><span class="badge bg-warning">A-6 이오</span>의 스킨 <span class="badge bg-danger">한겨울의 약속</span>의 중파 이미지가 추가되었습니다.</li>
+			<li>
+				<span class="badge bg-warning text-dark">철혈의 레오나</span>의 스킨 <span class="badge bg-danger">드림위버 웨딩 스페셜 : 완벽한 날</span>의 정보가 추가되었습니다.
+			</li>
+			<li><span class="badge bg-warning text-dark">AT-4 파니</span>의 스킨 <span class="badge bg-danger">코트 위의 에이스</span>의 정보가 추가되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">A-6 이오</span>의 스킨 <span class="badge bg-danger">한겨울의 약속</span>의 중파 이미지가 추가되었습니다.</li>
 		</Fragment> }
 		delete={ <Fragment>
-			<li><span class="badge bg-warning">전투원정보</span>의 스테이터스 탭을 삭제했습니다.</li>
+			<li><span class="badge bg-warning text-dark">전투원정보</span>의 스테이터스 탭을 삭제했습니다.</li>
 		</Fragment> }
 	/>
 
