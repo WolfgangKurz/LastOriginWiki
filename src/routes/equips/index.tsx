@@ -2,13 +2,12 @@ import { FunctionalComponent, h } from "preact";
 import { Link } from "preact-router";
 import { actions, ActionsType, Connect, StoreType } from "@/store";
 
-import { EffectFilterListItemPM, EffectFilterListType } from "@/types/Buff";
+import { EffectFilterListItemPM, EffectFilterListItemSingle, EffectFilterListType } from "@/types/Buff";
 import { BuffEffectList, BuffEffectListGroupKeys } from "@/types/BuffEffect";
 import { ITEM_TYPE } from "@/types/Enums";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 
-import { objState } from "@/libs/State";
 import JsonLoader, { DBSourceConverter, GetJson, StaticDB } from "@/libs/JsonLoader";
 import { AssetsRoot, CurrentDate, CurrentEvent, EquipTypeDisplay, ImageExtension, RarityDisplay } from "@/libs/Const";
 import { groupBy, isActive } from "@/libs/Functions";
@@ -156,11 +155,18 @@ const Equips: FunctionalComponent<EquipsProps> = (props) => {
 			})();
 
 			function HasFilteredEffect (eq: FilterableEquip): boolean {
-				return eq.effects.some(y => {
-					return Filters.EffectFilters.some(z => Array.isArray(z)
-						? z.some(_ => _.selected && _.type.includes(y.type) && ((_.pmType > 0 && y.positive) || (_.pmType < 0 && !y.positive)))
-						: z.selected && z.type.includes(y.type));
-				});
+				return Filters.EffectFilters
+					.reduce((p, c) => Array.isArray(c) ? [...p, ...c] : [...p, c], [] as Array<EffectFilterListItemSingle | EffectFilterListItemPM>)
+					.filter(x => x.selected)
+					.every(selectedBuff => {
+						return eq.effects
+							.filter(targetBuff => selectedBuff.type.includes(targetBuff.type))
+							.some(targetBuff => {
+								if ("pmType" in selectedBuff)
+									return (selectedBuff.pmType > 0 && targetBuff.positive) || (selectedBuff.pmType < 0 && !targetBuff.positive);
+								return true;
+							});
+					});
 			}
 
 			const EquipGroups = ((): EquipGroupEntity[] => {

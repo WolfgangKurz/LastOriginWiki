@@ -480,6 +480,122 @@ export const SortieCost: SortieCostType = {
 			},
 		},
 	},
+	[ACTOR_GRADE.SSS]: {
+		[ACTOR_CLASS.LIGHT]: {
+			[ROLE_TYPE.DEFENDER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+			},
+			[ROLE_TYPE.ATTACKER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+			},
+			[ROLE_TYPE.SUPPORTER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+			},
+		},
+		[ACTOR_CLASS.HEAVY]: {
+			[ROLE_TYPE.DEFENDER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+			},
+			[ROLE_TYPE.ATTACKER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+			},
+			[ROLE_TYPE.SUPPORTER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+			},
+		},
+		[ACTOR_CLASS.AIR]: {
+			[ROLE_TYPE.DEFENDER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+			},
+			[ROLE_TYPE.ATTACKER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+			},
+			[ROLE_TYPE.SUPPORTER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+			},
+		},
+	},
 };
 
 export const RarityDisplay: Record<ACTOR_GRADE, string> = {
@@ -487,6 +603,7 @@ export const RarityDisplay: Record<ACTOR_GRADE, string> = {
 	[ACTOR_GRADE.A]: "A",
 	[ACTOR_GRADE.S]: "S",
 	[ACTOR_GRADE.SS]: "SS",
+	[ACTOR_GRADE.SSS]: "SSS",
 };
 
 export function EquipTypeDisplay (): Record<ITEM_TYPE, string> {
@@ -539,8 +656,8 @@ export const SubStoryUnit: Record<string, string> = {
 };
 
 export const CurrentEvent = "Ev5";
-export const EventFrom = new Date(2021, 3, 15);
-export const EventTo = new Date(2021, 4, 19);
+export const EventFrom = new Date(2021, 2, 15);
+export const EventTo = new Date(2021, 3, 19);
 
 export const CurrentDate = ((): string => {
 	const d = new Date();

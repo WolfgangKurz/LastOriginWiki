@@ -57,7 +57,7 @@ const EffectFilterPopup: FunctionalComponent<EffectFilterPopupProps> = (props) =
 		const list: EffectFilterListType = [];
 		props.list.forEach(x => {
 			if (Array.isArray(x)) {
-				list.push(x.map(y => y.text === targetText
+				list.push(x.map(y => `${y.text}_${y.pmType}` === targetText
 					? { ...y, selected: !y.selected }
 					: { ...y },
 				));
@@ -100,7 +100,7 @@ const EffectFilterPopup: FunctionalComponent<EffectFilterPopupProps> = (props) =
 								? <div class="btn-group me-1 mb-1">
 									{ entity.map((subentity, sei) => <button
 										class={ `btn btn-outline-secondary ${isActive(subentity.selected)}` }
-										onClick={ (): void => toggle(subentity.text) }
+										onClick={ (): void => toggle(`${subentity.text}_${subentity.pmType}`) }
 									>
 										<Locale k={ subentity.text } p={ [
 											subentity.pmType > 0

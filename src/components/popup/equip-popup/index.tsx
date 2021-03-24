@@ -178,6 +178,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 				[ACTOR_GRADE.A]: Decimal.div(5, 6),
 				[ACTOR_GRADE.S]: Decimal.div(7, 10),
 				[ACTOR_GRADE.SS]: Decimal.div(11, 20),
+				[ACTOR_GRADE.SSS]: new Decimal(0),
 			};
 
 			function UpgradeCost (level: number, sum: boolean = false): number {
@@ -204,15 +205,34 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 
 			const UpgradeCostText = (level: number, sum: boolean = false): string => FormatNumber(UpgradeCost(level, sum));
 
+			const iconType: Record<ITEM_TYPE, string> = {
+				[ITEM_TYPE.CHIP]: "Chip",
+				[ITEM_TYPE.SPCHIP]: "OS",
+				[ITEM_TYPE.SUBEQ]: "Item",
+				[ITEM_TYPE.PCITEM]: "",
+				[ITEM_TYPE.CONSUMABLE]: "",
+				[ITEM_TYPE.MATERIAL]: "",
+			};
+
 			return <PopupBase
 				class="equip-modal"
 				bodyClass="pb-0"
 				display={ props.display && target !== null }
 				header={ target
-					? <div class="text-left">
-						<Locale k={ `EQUIP_${target.fullKey}` } />
-						<div style="font-size: 60%">{ target.fullKey }</div>
-					</div>
+					? <Fragment>
+						<div class="row">
+							<div class="col-auto">
+								<img
+									class="equip-rarity-icon"
+									src={ `${AssetsRoot}/icons/Item_${iconType[target.type]}${RarityDisplay[target.rarity]}.png` }
+								/>
+							</div>
+							<div class="col text-left">
+								<Locale k={ `EQUIP_${target.fullKey}` } />
+								<div style="font-size: 60%">{ target.fullKey }</div>
+							</div>
+						</div>
+					</Fragment>
 					: <Fragment />
 				}
 				onHidden={ (): void => {
