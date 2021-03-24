@@ -3,13 +3,34 @@ import { Fragment, FunctionalComponent, h } from "preact";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <Fragment>
+	<ChangelogItem title="Build 10568" date="2021-03-25"
+		bugfix={ <Fragment>
+			<li>적 정보 팝업을 닫고 새로 열 때, 이전 적 정보가 표시되는 문제를 수정했습니다.</li>
+			<li>대사가 줄바꿈되지 않고 표시되는 문제를 수정했습니다.</li>
+		</Fragment> }
+		new={ <Fragment>
+			<li><span class="badge bg-warning">스트롱홀드</span>의 정보가 추가되었습니다.</li>
+			<li>홈 화면에 진행중인 이벤트 정보가 추가되었습니다.</li>
+		</Fragment> }
+		skin={ <Fragment>
+			<li><span class="badge bg-warning">철혈의 레오나</span>의 스킨 <span class="badge bg-danger">드림위버 웨딩 스페셜 : 완벽한 날</span>의 정보가 추가되었습니다.</li>
+			<li><span class="badge bg-warning">AT-4 파니</span>의 스킨 <span class="badge bg-danger">코트 위의 에이스</span>의 정보가 추가되었습니다.</li>
+			<li><span class="badge bg-warning">A-6 이오</span>의 스킨 <span class="badge bg-danger">한겨울의 약속</span>의 중파 이미지가 추가되었습니다.</li>
+		</Fragment> }
+		delete={ <Fragment>
+			<li><span class="badge bg-warning">전투원정보</span>의 스테이터스 탭을 삭제했습니다.</li>
+		</Fragment> }
+	/>
+
 	<ChangelogItem title="Build 10562" date="2021-03-14"
 		bugfix={ <Fragment>
 			<li>일부 환경에서 사이트 번역 기능이 올바르지 않게 작동하는 문제를 수정했습니다.</li>
 			<li>적 팝업에서 적 정보가 변경되지 않는 문제를 수정했습니다.</li>
 			<li>소환물 팝업의 탭이 비정상적으로 표시되던 문제를 수정했습니다.</li>
 		</Fragment> }
-	/><ChangelogItem title="Build 10554" date="2021-03-14"
+	/>
+
+	<ChangelogItem title="Build 10554" date="2021-03-14"
 		site={ <Fragment>
 			<li>프레임워크를 <span class="badge bg-success">Vue2</span>에서 <span class="badge bg-substory">Preact X</span>로 변경했습니다.</li>
 			<li>
@@ -37,6 +58,7 @@ const Changelog: FunctionalComponent = () => <Fragment>
 			<li><span class="badge bg-light text-dark">KST 2021-03-14 03:39:11</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
 		</Fragment> }
 	/>
+
 	<ChangelogItem title="Build 10554" date="2021-03-14"
 		site={ <Fragment>
 			<li>프레임워크를 <span class="badge bg-success">Vue2</span>에서 <span class="badge bg-substory">Preact X</span>로 변경했습니다.</li>

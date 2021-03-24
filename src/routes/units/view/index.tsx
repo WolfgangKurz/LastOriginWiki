@@ -31,7 +31,7 @@ import UnitDialogue, { VoiceItem } from "../components/unit-dialogue";
 
 import "./style.scss";
 
-type TabTypes = "basic" | "skills" | "dialogue" | "status";
+type TabTypes = "basic" | "skills" | "dialogue";
 
 interface SkinItem extends UnitSkin {
 	isDef: boolean;
@@ -738,19 +738,6 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 								>
 									<Icon icon="chat-text-fill" class="me-1" />
 									<Locale k="UNIT_VIEW_TAB_DIALOGUE" />
-								</a>
-							</li>
-							<li class="nav-item">
-								<a
-									href="#"
-									class={ `nav-link text-dark ${isActive(DisplayTab.value === "status")}` }
-									onClick={ (e): void => {
-										e.preventDefault();
-										DisplayTab.set("status");
-									} }
-								>
-									<Icon icon="calculator" class="me-1" />
-									<Locale k="UNIT_VIEW_TAB_CALC" />
 								</a>
 							</li>
 						</ul>

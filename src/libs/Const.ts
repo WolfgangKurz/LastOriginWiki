@@ -9,7 +9,7 @@ export type ImageExtensionTypes = "webp" | "png";
 export const ImageExtensionList: ImageExtensionTypes[] = ["webp", "png"];
 
 export const Host = process.env.NODE_ENV === "development"
-	? "http://121.157.45.156:5500"
+	? "http://121.157.45.209:5500"
 	: "https://lo.swaytwig.com";
 
 export const AssetsRoot = `${Host}/assets`;
