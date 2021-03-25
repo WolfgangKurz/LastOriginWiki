@@ -103,7 +103,7 @@ xml += `<url><loc>https://lo.swaytwig.com/changelog</loc></url>
 
 // console.log(xml);
 fs.writeFileSync(
-	path.resolve(__dirname, "..", "public", "sitemap.xml"),
+	path.resolve(__dirname, "..", "src", "assets", "sitemap.xml"),
 	xml,
 	{ encoding: "utf-8" },
 );
