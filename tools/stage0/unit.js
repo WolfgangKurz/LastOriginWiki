@@ -33,9 +33,9 @@ function process (auth) {
 				const ATK = [parseFloat(row[5]), parseFloat(row[6])];
 				const DEF = [parseFloat(row[7]), parseFloat(row[8])];
 				const SPD = parseFloat(row[9]);
-				const Cri = parseFloat(row[10]);
+				const CRI = parseFloat(row[10]);
 				const ACC = parseFloat(row[11]);
-				const EV = parseFloat(row[12]);
+				const EVA = parseFloat(row[12]);
 				const Resist = {
 					fire: parseFloat(row[13]),
 					ice: parseFloat(row[14]),
@@ -52,9 +52,9 @@ function process (auth) {
 					ATK,
 					DEF,
 					SPD,
-					Cri,
+					CRI,
 					ACC,
-					EV,
+					EVA,
 					Resist,
 				});
 			});

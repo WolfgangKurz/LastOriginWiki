@@ -102,8 +102,8 @@ const Horizontal: FunctionalComponent<UnitCardProps> = (props) => {
 	const isPromoted = (props.unit.promo || []).includes(rarity);
 	const leftPromotions = (props.unit.promo || []).filter(x => x > rarity);
 
-	return <div class={ `unit-card text-left clearfix ${props.class || ""}` } onClick={ props.onClick }>
-		<UnitFace uid={ props.unit.uid } class="float-left" />
+	return <div class={ `unit-card text-start clearfix ${props.class || ""}` } onClick={ props.onClick }>
+		<UnitFace uid={ props.unit.uid } class="float-start" />
 
 		<div class="unit-name">
 			<Locale k={ `UNIT_${props.unit.uid}` } />
@@ -124,7 +124,7 @@ const Horizontal: FunctionalComponent<UnitCardProps> = (props) => {
 			}
 
 			{ leftPromotions
-				? <div class="float-right">
+				? <div class="float-end">
 					{ leftPromotions.map(pro => <RarityBadge rarity={ pro } class="ms-1">
 						<Locale k="UNIT_CARD_PROMOTION_BADGE" p={ [RarityDisplay[pro]] } />
 					</RarityBadge>) }

@@ -98,7 +98,7 @@ const SummonBadge: FunctionalComponent<SummonBadgeProps> = (props) => {
 
 				<PopupBase class="summon-modal text-center" bodyClass="pb-0" display={ display.value } size="xl" header={
 					<h4>
-						<div class="text-left">
+						<div class="text-start">
 							<Locale k={ Summon.uid } />
 							<div style="font-size: 60%">{ Summon.uid }</div>
 						</div>
@@ -197,26 +197,26 @@ const SummonBadge: FunctionalComponent<SummonBadgeProps> = (props) => {
 									<table class="table table-borderless mb-0">
 										<tbody>
 											<tr>
-												<td class="text-left">
+												<td class="text-start">
 													<StatIcon inline stat="HP" />
 													<span class="status-col-head"><Locale k="ENEMY_VIEW_STAT_HP" /></span>
 												</td>
 												<td>
 													<div class="status-col-value">{ StatValue(Summon.stat.hp) }</div>
 												</td>
-												<td class="text-left" />
+												<td class="text-start" />
 												<td />
 											</tr>
 
 											<tr>
-												<td class="text-left">
+												<td class="text-start">
 													<StatIcon inline stat="ATK" />
 													<span class="status-col-head"><Locale k="ENEMY_VIEW_STAT_ATK" /></span>
 												</td>
 												<td>
 													<div class="status-col-value">{ StatValue(Summon.stat.atk) }</div>
 												</td>
-												<td class="text-left">
+												<td class="text-start">
 													<StatIcon inline stat="ACC" />
 													<span class="status-col-head"><Locale k="ENEMY_VIEW_STAT_ACC" /></span>
 												</td>
@@ -226,14 +226,14 @@ const SummonBadge: FunctionalComponent<SummonBadgeProps> = (props) => {
 											</tr>
 
 											<tr>
-												<td class="text-left">
-													<StatIcon inline stat="Cri" />
+												<td class="text-start">
+													<StatIcon inline stat="CRI" />
 													<span class="status-col-head"><Locale k="ENEMY_VIEW_STAT_CRIT" /></span>
 												</td>
 												<td>
 													<div class="status-col-value">{ Summon.stat.cri }%</div>
 												</td>
-												<td class="text-left">
+												<td class="text-start">
 													<StatIcon inline stat="DEF" />
 													<span class="status-col-head"><Locale k="ENEMY_VIEW_STAT_DEF" /></span>
 												</td>
@@ -243,14 +243,14 @@ const SummonBadge: FunctionalComponent<SummonBadgeProps> = (props) => {
 											</tr>
 
 											<tr>
-												<td class="text-left">
-													<StatIcon inline stat="EV" />
+												<td class="text-start">
+													<StatIcon inline stat="EVA" />
 													<span class="status-col-head"><Locale k="ENEMY_VIEW_STAT_EVA" /></span>
 												</td>
 												<td>
 													<div class="status-col-value">{ Summon.stat.eva }%</div>
 												</td>
-												<td class="text-left">
+												<td class="text-start">
 													<StatIcon inline stat="SPD" />
 													<span class="status-col-head"><Locale k="ENEMY_VIEW_STAT_SPD" /></span>
 												</td>
@@ -306,7 +306,7 @@ const SummonBadge: FunctionalComponent<SummonBadgeProps> = (props) => {
 
 						{ Skills.map((skill, idx) => displayTab.value === `skill${idx + 1}` && skill
 							? <div class="row">
-								<div class="col border border-top-0 text-left p-3">
+								<div class="col border border-top-0 text-start p-3">
 									<ElemIcon elem={ skill.type } />
 									<strong>{ skill.name }</strong>
 									<small class="ms-1">Lv.1</small>
@@ -372,7 +372,7 @@ const SummonBadge: FunctionalComponent<SummonBadgeProps> = (props) => {
 
 						{ displayTab.value === "ai"
 							? <div class="row">
-								<div class="col border border-top-0 text-left p-3">
+								<div class="col border border-top-0 text-start p-3">
 									<AIList
 										ai={ Summon.ai }
 										skills={ Skills.filter(x => x) as unknown as SkillEntity[] }

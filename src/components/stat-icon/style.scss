@@ -13,7 +13,7 @@
 	background-size: ($size * 7) $size;
 	background-position: $size 0;
 
-	$stat-list: ATK, DEF, HP, ACC, EV, Cri, SPD;
+	$stat-list: ATK, DEF, HP, ACC, EVA, CRI, SPD;
 	@each $stat in $stat-list {
 		&[data-stat="#{$stat}"] {
 			background-position: (-$size * (index($stat-list, $stat) - 1)) 0;

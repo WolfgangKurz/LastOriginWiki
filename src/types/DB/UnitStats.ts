@@ -2,13 +2,13 @@ export interface UnitStats {
 	// id: number;
 	// rarity: ACTOR_GRADE;
 
-	HP: number[];
-	ATK: number[];
-	DEF: number[];
+	HP: [number, number];
+	ATK: [number, number];
+	DEF: [number, number];
 	SPD: number;
-	Cri: number;
+	CRI: number;
 	ACC: number;
-	EV: number;
+	EVA: number;
 
 	Resist: {
 		fire: number;
@@ -21,9 +21,9 @@ export interface UnitStatsPoint {
 	ATK: number;
 	DEF: number;
 	SPD: number;
-	Cri: number;
+	CRI: number;
 	ACC: number;
-	EV: number;
+	EVA: number;
 }
 
 /* eslint-disable-next-line @typescript-eslint/no-namespace */
@@ -36,9 +36,9 @@ export namespace UnitStats {
 		ATK: [0, 0],
 		DEF: [0, 0],
 		SPD: 0,
-		Cri: 0,
+		CRI: 0,
 		ACC: 0,
-		EV: 0,
+		EVA: 0,
 
 		Resist: {
 			fire: 0,
@@ -50,9 +50,9 @@ export namespace UnitStats {
 		HP: 0,
 		ATK: 0,
 		DEF: 0,
-		Cri: 0,
+		CRI: 0,
 		ACC: 0,
-		EV: 0,
+		EVA: 0,
 		SPD: 0,
 	};
 }

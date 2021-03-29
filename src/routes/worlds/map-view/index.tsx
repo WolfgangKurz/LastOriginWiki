@@ -301,7 +301,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 				enemyModalDisplay.set(true);
 			}
 
-			return <div class="worlds-map text-left">
+			return <div class="worlds-map text-start">
 				<div class="row">
 					<div class="col-auto">
 						<button class="btn btn-dark" onClick={ (): void => {
@@ -383,7 +383,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 						<div class="card-body">
 							<h5>
 								{ props.wid === "Sub"
-									? <div class="float-left me-3">
+									? <div class="float-start me-3">
 										<UnitFace uid={ SubStoryUnit[selectedValue.text] } size="56" />
 									</div>
 									: <Fragment />

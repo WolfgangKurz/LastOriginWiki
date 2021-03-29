@@ -189,7 +189,7 @@ const DropItem: FunctionalComponent<DropItemProps> = (props) => {
 		<div class={ `card bg-${variant} text-${text} drop-item` }>
 			<div class="card-body">
 				<EquipIcon class="float-start me-2" image={ props.item.icon } />
-				<div class="text-left">
+				<div class="text-start">
 					<Locale k={ `CONSUMABLE_${props.item.key}` } />
 
 					{ count > 1
@@ -201,7 +201,7 @@ const DropItem: FunctionalComponent<DropItemProps> = (props) => {
 							? <span class="badge bg-light text-dark">{ chance }%</span>
 							: <Fragment />
 						}
-						<Icon icon="info-circle-fill" class="float-right mt-1" />
+						<Icon icon="info-circle-fill" class="float-end mt-1" />
 					</div>
 				</div>
 			</div>
@@ -219,11 +219,11 @@ const DropItem: FunctionalComponent<DropItemProps> = (props) => {
 			footerVariant="dark"
 			footerText="white"
 			footerClass="justify-content-start"
-			header={ <div class="text-left">
+			header={ <div class="text-start">
 				<Locale k={ `CONSUMABLE_${props.item.key}` } />
 				<div style="font-size: 60%">{ props.item.key }</div>
 			</div> }
-			footer={ <div class="text-left p-2">
+			footer={ <div class="text-start p-2">
 				<div class="desc-text">{ ParsedDesc }</div>
 				{ FunctionBadge
 					? <div>{ FunctionBadge }</div>

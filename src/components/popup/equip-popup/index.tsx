@@ -227,7 +227,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 									src={ `${AssetsRoot}/icons/Item_${iconType[target.type]}${RarityDisplay[target.rarity]}.png` }
 								/>
 							</div>
-							<div class="col text-left">
+							<div class="col text-start">
 								<Locale k={ `EQUIP_${target.fullKey}` } />
 								<div style="font-size: 60%">{ target.fullKey }</div>
 							</div>

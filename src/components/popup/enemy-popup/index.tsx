@@ -194,7 +194,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 				display={ props.display && target !== null }
 				size="xl"
 				header={ target
-					? <div class="text-left">
+					? <div class="text-start">
 						<Locale k={ `ENEMY_${target.id}` } />
 						{ isEWEnemy
 							? <span class="badge bg-warning text-dark ms-2">
@@ -337,7 +337,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 											<table class="table table-borderless mb-0">
 												<tbody>
 													<tr>
-														<td class="text-left">
+														<td class="text-start">
 															<StatIcon inline stat="HP" />
 															<span class="status-col-head"><Locale k="ENEMY_VIEW_STAT_HP" /></span>
 														</td>
@@ -346,12 +346,12 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 																{ StatValue(targetEnemy.value.stat.hp) }
 															</div>
 														</td>
-														<td class="text-left" />
+														<td class="text-start" />
 														<td />
 													</tr>
 
 													<tr>
-														<td class="text-left">
+														<td class="text-start">
 															<StatIcon inline stat="ATK" />
 															<span class="status-col-head"><Locale k="ENEMY_VIEW_STAT_ATK" /></span>
 														</td>
@@ -360,7 +360,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 																{ StatValue(targetEnemy.value.stat.atk) }
 															</div>
 														</td>
-														<td class="text-left">
+														<td class="text-start">
 															<StatIcon inline stat="ACC" />
 															<span class="status-col-head"><Locale k="ENEMY_VIEW_STAT_ACC" /></span>
 														</td>
@@ -370,14 +370,14 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 													</tr>
 
 													<tr>
-														<td class="text-left">
-															<StatIcon inline stat="Cri" />
+														<td class="text-start">
+															<StatIcon inline stat="CRI" />
 															<span class="status-col-head"><Locale k="ENEMY_VIEW_STAT_CRIT" /></span>
 														</td>
 														<td>
 															<div class="status-col-value">{ targetEnemy.value.stat.cri }%</div>
 														</td>
-														<td class="text-left">
+														<td class="text-start">
 															<StatIcon inline stat="DEF" />
 															<span class="status-col-head"><Locale k="ENEMY_VIEW_STAT_DEF" /></span>
 														</td>
@@ -389,14 +389,14 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 													</tr>
 
 													<tr>
-														<td class="text-left">
-															<StatIcon inline stat="EV" />
+														<td class="text-start">
+															<StatIcon inline stat="EVA" />
 															<span class="status-col-head"><Locale k="ENEMY_VIEW_STAT_EVA" /></span>
 														</td>
 														<td>
 															<div class="status-col-value">{ targetEnemy.value.stat.eva }%</div>
 														</td>
-														<td class="text-left">
+														<td class="text-start">
 															<StatIcon inline stat="SPD" />
 															<span class="status-col-head"><Locale k="ENEMY_VIEW_STAT_SPD" /></span>
 														</td>
@@ -454,7 +454,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 									{ Skills.map((skill, idx) =>
 										displayTab.value === `skill${idx + 1}` && skill
 											? <div class="row">
-												<div class="col border border-top-0 text-left p-3">
+												<div class="col border border-top-0 text-start p-3">
 													<ElemIcon elem={ skill.type } />
 													<strong>{ skill.name }</strong>
 													<small class="ms-1">Lv.1</small>
@@ -523,7 +523,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 									}
 									{ displayTab.value === "ai"
 										? <div class="row">
-											<div class="col border border-top-0 text-left p-3">
+											<div class="col border border-top-0 text-start p-3">
 												<AIList ai={ targetEnemy.value.ai } skills={ Skills } enemy />
 											</div>
 										</div>
@@ -531,7 +531,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 									}
 									{ displayTab.value === "desc"
 										? <div class="row">
-											<div class="col break-keep white-pre-line border border-top-0 text-left p-1">
+											<div class="col break-keep white-pre-line border border-top-0 text-start p-1">
 												<div class="bg-dark text-light p-3"><Locale k={ `ENEMY_INTRO_${target.id}` } /></div>
 											</div>
 										</div>

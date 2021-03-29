@@ -30,7 +30,7 @@ const EquipCard: FunctionalComponent<EquipCardProps> = (props) => {
 		<div class="card-header position-relative">
 			<EquipIcon image={ equip.icon } size="big" />
 			{ Sources.length > 0
-				? <div class="equip-sources text-left">
+				? <div class="equip-sources text-start">
 					{ Sources.map(source => <SourceBadge class="mb-1" source={ source } minimum />) }
 				</div>
 				: <Fragment /> }

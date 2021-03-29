@@ -31,7 +31,7 @@ const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 			const Worlds = Object.keys(MapDB[props.wid])
 				.map(x => LocaleGet(`WORLD_WORLD_${props.wid}_${x}`));
 
-			return <div class="worlds-world text-left">
+			return <div class="worlds-world text-start">
 				<div class="row">
 					<div class="col-auto">
 						<button class="btn btn-dark" onClick={ (): void => void (route("/worlds")) }>

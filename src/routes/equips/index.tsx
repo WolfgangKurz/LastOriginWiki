@@ -312,7 +312,7 @@ const Equips: FunctionalComponent<EquipsProps> = (props) => {
 			})();
 
 			return <div class="equips">
-				<div class="card text-left">
+				<div class="card text-start">
 					<div class="card-body">
 						<div class="row">
 							<div class="col-12 col-md-auto filter-label">
@@ -354,7 +354,7 @@ const Equips: FunctionalComponent<EquipsProps> = (props) => {
 							</div>
 							<div class="col-12 col-md">
 								<div class="clearfix">
-									<div class="btn-group float-left d-block mb-1">
+									<div class="btn-group float-start d-block mb-1">
 										<button class="btn btn-primary" onClick={ (): void => FillSourceFilters(true) }>
 											<Locale k="EQUIP_FILTER_SELECTALL" />
 										</button>
@@ -497,7 +497,7 @@ const Equips: FunctionalComponent<EquipsProps> = (props) => {
 					</div>
 				</div>
 
-				<div class="mb-2 text-left clearfix">
+				<div class="mb-2 text-start clearfix">
 					<Locale k="EQUIP_RESULT_COUNT" p={ [EquipGroups.length] } />
 				</div>
 

@@ -1,0 +1,89 @@
+:global .simulator-slot {
+	@mixin shadow {
+		text-shadow: 0 0 2px #000, 0 0 2px #000;
+	}
+
+	position: relative;
+	margin: 0.25em;
+	padding: 0.25em;
+	border: 1px solid $secondary !important;
+	border-radius: 0.25em;
+	background-color: transparentize($secondary, 0.35) !important;
+	box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+	user-select: none;
+
+	transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+
+	> .slot-indicator {
+		@include shadow();
+
+		position: absolute;
+		top: 0;
+		right: 0.125em;
+
+		line-height: 1;
+		font-family: "Exo 2", sans-serif;
+		font-weight: 700;
+		font-size: 175%;
+		color: #fff;
+		z-index: 9;
+
+		pointer-events: none;
+	}
+
+	> .slot-adder {
+		display: none;
+	}
+
+	&[data-empty] {
+		> .slot-face,
+		> .slot-props {
+			visibility: hidden;
+		}
+
+		> .slot-adder {
+			position: absolute;
+			display: flex;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			justify-content: center;
+			align-items: center;
+			font-size: 300%;
+			color: #fff;
+		}
+	}
+
+	&[data-selected] {
+		$c: $substory;
+		border-color: $c !important;
+		background-color: transparentize($c, 0.35) !important;
+		transform: scale(1.06, 1.06);
+		box-shadow: 0 0 11px rgba(0, 0, 0, 0.6);
+	}
+
+	> div.slot-face {
+		position: relative;
+
+		> .flag-leader {
+			position: absolute;
+			padding: 0.35em 0.5em;
+			left: 0.25em;
+			top: 0.25em;
+			color: $warning;
+		}
+
+		> .flag-rarity {
+			position: absolute;
+			padding: 0.35em 0.5em;
+			left: 0.25em;
+			bottom: 0.25em;
+		}
+
+		> .unit-face {
+			width: 80px;
+			height: 80px;
+		}
+	}
+}

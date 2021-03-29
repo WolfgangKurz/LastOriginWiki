@@ -324,7 +324,7 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 							: <Fragment />
 						}
 						{ "list" in ai
-							? <ul class="list-group text-left mt-2">
+							? <ul class="list-group text-start mt-2">
 								{ ai.chance !== undefined
 									? <li class="list-group-item bg-warning text-dark">
 										<Locale k="AI_CHANCE" p={ [ai.chance] } />
@@ -349,7 +349,7 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 									}
 								</li>) }
 							</ul>
-							: <ul class="list-group text-left mt-2">
+							: <ul class="list-group text-start mt-2">
 								<li class="list-group-item">
 									{ ai.chance !== undefined
 										? <span class="badge bg-warning text-dark me-2">
