@@ -291,7 +291,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 								: <Fragment />
 						}
 					</td>
-					<td class="text-left d-none d-md-table-cell">{ tableContent(skill) }</td>
+					<td class="text-start d-none d-md-table-cell">{ tableContent(skill) }</td>
 					<th class="bg-dark text-light text-center">
 						<SkillBound
 							passive={ skill.isPassive }
@@ -303,7 +303,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 					</th>
 				</tr>
 				<tr class="d-table-row d-md-none">
-					<td class="text-left" colSpan={ 2 }>{ tableContent(skill) }</td>
+					<td class="text-start" colSpan={ 2 }>{ tableContent(skill) }</td>
 				</tr>
 			</Fragment>) }
 		</tbody>

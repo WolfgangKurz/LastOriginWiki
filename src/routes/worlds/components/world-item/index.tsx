@@ -16,7 +16,7 @@ const WorldItem: FunctionalComponent<WorldItemProps> = (props) => {
 
 	return <div class="card world-item mb-4 bg-dark text-light">
 		<div class="card-body">
-			<div class="row text-left">
+			<div class="row text-start">
 				<div class="col-auto">
 					<img src={ `${AssetsRoot}/world/icons/${WorldIcon}.png` } />
 				</div>

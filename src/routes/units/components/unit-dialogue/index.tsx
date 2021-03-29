@@ -160,7 +160,7 @@ const UnitDialogue: FunctionalComponent<UnitDialogueProps> = (props) => {
 	const collapseId = UniqueID("unit-dialogue-");
 
 	return IsVoiceAvailable
-		? <div class="card mt-2 text-left" lang={ props.lang }>
+		? <div class="card mt-2 text-start" lang={ props.lang }>
 			<div
 				class="card-header"
 				data-bs-toggle="collapse"

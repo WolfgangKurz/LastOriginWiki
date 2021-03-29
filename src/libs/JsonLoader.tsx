@@ -1,6 +1,6 @@
 import EntitySource from "@/libs/EntitySource";
 import { objState } from "@/libs/State";
-import { Fragment, FunctionalComponent, h } from "preact";
+import preact, { Fragment, FunctionalComponent, h } from "preact";
 
 import { DataRoot } from "./Const";
 
@@ -92,6 +92,17 @@ export function JsonLoaderCore (json: string | string[] | undefined): Promise<vo
 	return Promise.all(list.map(x => Load(x)));
 }
 
+export function FailedToLoadBadge (list: string[]): preact.VNode {
+	return <span class="badge bg-danger">
+		Failed to load data { list.map(x => <strong>"{ x }"</strong>).gap(", ") }.<br />
+		Please retry or report to developer.
+	</span>;
+}
+
+export function LoadingBadge (): preact.VNode {
+	return <span class="text-secondary">Loading data</span>;
+}
+
 export default function JsonLoader (
 	json: string | string[] | undefined,
 	doneNode: FunctionalComponent,
@@ -122,9 +133,6 @@ export default function JsonLoader (
 	return fulfilled.value
 		? doneNode({}) || <Fragment />
 		: errored.value
-			? errorNode || <span class="badge bg-danger">
-				Failed to load data { list.map(x => <strong>"{ x }"</strong>).gap(", ") }.<br />
-				Please retry or report to developer.
-			</span>
-			: loadingNode || <span class="text-secondary">Loading data</span>;
+			? errorNode || FailedToLoadBadge(list)
+			: loadingNode || LoadingBadge();
 }

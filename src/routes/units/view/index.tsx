@@ -3,15 +3,14 @@ import { route } from "preact-router";
 import Decimal from "decimal.js";
 
 import { SelectOption } from "@/types/Helper";
-import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, CURRENCY_TYPE, ROLE_TYPE } from "@/types/Enums";
-import { SortieCostBody } from "@/types/Cost";
+import { ACTOR_GRADE } from "@/types/Enums";
 import { LinkBonusType, Unit, UnitSkin } from "@/types/DB/Unit";
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 import { UnitDialogueDataType } from "@/types/DB/Dialogue";
 
 import { ObjectState, objState } from "@/libs/State";
 import JsonLoader, { DBSourceConverter, GetJson, StaticDB } from "@/libs/JsonLoader";
-import { AssetsRoot, ImageExtension, RarityDisplay, SortieCost, UnitClassDisplay, UnitRoleDisplay } from "@/libs/Const";
+import { AssetsRoot, ImageExtension, RarityDisplay, UnitClassDisplay, UnitRoleDisplay } from "@/libs/Const";
 import { isActive } from "@/libs/Functions";
 import EntitySource from "@/libs/EntitySource";
 import { GetLinkBonus } from "@/libs/LinkBonus";
@@ -30,18 +29,13 @@ import SkillTable from "../components/skill-table";
 import UnitDialogue, { VoiceItem } from "../components/unit-dialogue";
 
 import "./style.scss";
+import { GetRequireResource } from "@/libs/Cost";
 
 type TabTypes = "basic" | "skills" | "dialogue";
 
 interface SkinItem extends UnitSkin {
 	isDef: boolean;
 	isPro: boolean;
-}
-
-interface SortieCostResourceText {
-	metal: [number, number, number, number, number, number];
-	nutrient: [number, number, number, number, number, number];
-	power: [number, number, number, number, number, number];
 }
 
 interface SubpageProps {
@@ -340,49 +334,7 @@ const SkillTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 			return "text-primary";
 		return "";
 	}
-	function GetRequireResource (
-		rarity: ACTOR_GRADE,
-		type: ACTOR_CLASS,
-		role: ROLE_TYPE,
-		body: ACTOR_BODY_TYPE,
-		fullLinkBonus: LinkBonusType,
-	): SortieCostResourceText {
-		const table = ((): SortieCostResourceText => {
-			const o = SortieCost[rarity][type][role][body as keyof SortieCostBody];
-			return {
-				metal: [...o[CURRENCY_TYPE.METAL]],
-				nutrient: [...o[CURRENCY_TYPE.NUTRIENT]],
-				power: [...o[CURRENCY_TYPE.POWER]],
-			};
-		})();
 
-		const discount = (x: number): number => {
-			switch (fullLinkBonus) {
-				case "Cost_20":
-					return Decimal.mul(x, 0.8)
-						.ceil()
-						.toNumber();
-				case "Cost_25":
-					return Decimal.mul(x, 0.75)
-						.ceil()
-						.toNumber();
-				case "Cost_30":
-					return Decimal.mul(x, 0.7)
-						.ceil()
-						.toNumber();
-				case "Cost_35":
-					return Decimal.mul(x, 0.65)
-						.ceil()
-						.toNumber();
-			}
-			return x;
-		};
-
-		table.metal[5] = discount(table.metal[5]);
-		table.nutrient[5] = discount(table.nutrient[5]);
-		table.power[5] = discount(table.power[5]);
-		return table;
-	}
 	const CostTable = GetRequireResource(
 		costRarity.value,
 		unit.type,
@@ -466,7 +418,7 @@ const SkillTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 			</div>
 
 			<div class="col-12 col-md-4 fulllink-table">
-				<table class="table table-bordered table-fixed text-left table-unit-modal">
+				<table class="table table-bordered table-fixed text-start table-unit-modal">
 					<thead class="thead-dark">
 						<tr>
 							<th class="text-center"><Locale k="UNIT_VIEW_FULL_LINKBONUS" /></th>
@@ -476,7 +428,7 @@ const SkillTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 						<tr>
 							<td>
 								<Locale k="LINKBONUS_NONE" />
-								<div class="form-check float-right">
+								<div class="form-check float-end">
 									<input
 										class="form-check-input"
 										type="radio"
@@ -495,7 +447,7 @@ const SkillTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 									{ fl.Postfix }
 								</span>
 
-								<div class="form-check float-right">
+								<div class="form-check float-end">
 									<input
 										class="form-check-input"
 										type="radio"
@@ -694,7 +646,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 
 			return <div class="unit-view">
 				<div class="row">
-					<div class="col-12 col-md-auto text-left">
+					<div class="col-12 col-md-auto text-start">
 						<button class="btn btn-dark" onClick={ (): void => GoBack() }>
 							<Locale k="COMMON_BACK" />
 						</button>

@@ -16,7 +16,7 @@ const Worlds: FunctionalComponent = () => {
 	SetMeta(["twitter:image", "og:image"], null);
 	UpdateTitle(LocaleGet("MENU_WORLDS"));
 	
-	return <div class="worlds text-left">
+	return <div class="worlds text-start">
 		<h2>
 			<Locale k="MENU_WORLDS" />
 		</h2>

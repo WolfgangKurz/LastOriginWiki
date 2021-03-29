@@ -75,9 +75,11 @@ export function map<T, K extends string, U> (object: object, callbackfn: (value:
 		.map(k => callbackfn((object as any)[k], k as K, object));
 }
 
-export function isActive<T> (value: boolean | ObjectState<T>): "active" | "" {
-	if (typeof value === "boolean") return value ? "active" : "";
-	return value.value ? "active" : "";
+export function isActive<T> (value: boolean | ObjectState<T>): "active" | "";
+export function isActive<T> (value: boolean | ObjectState<T>, active: string, inactive: string): "active" | "" | string;
+export function isActive<T> (value: boolean | ObjectState<T>, active?: string, inactive?: string): "active" | "" | string {
+	if (typeof value === "boolean") return value ? active || "active" : inactive || "";
+	return value.value ? active || "active" : inactive || "";
 }
 
 export function ArrayElse<T> (list: T[], t: (x: T[]) => preact.VNode, f: preact.VNode): preact.VNode {

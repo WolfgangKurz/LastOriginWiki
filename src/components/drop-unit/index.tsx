@@ -29,9 +29,9 @@ const DropUnit: FunctionalComponent<DropUnitProps> = (props) => {
 
 			return <div class="drop-unit p-2 text-dark">
 				{ unit
-					? <div class={ `card text-left rarity-${RarityDisplay[unit.rarity]}` }>
+					? <div class={ `card text-start rarity-${RarityDisplay[unit.rarity]}` }>
 						<div class="card-body">
-							<UnitFace class="float-left me-2" uid={ unit.uid } size="48" type="mini" />
+							<UnitFace class="float-start me-2" uid={ unit.uid } size="48" type="mini" />
 							<div>
 								<span class="badge bg-secondary me-1 bordered">{ RarityDisplay[unit.rarity] }</span>
 								<span class="unit-info">
@@ -39,7 +39,7 @@ const DropUnit: FunctionalComponent<DropUnitProps> = (props) => {
 									<i class="unit-role" data-role={ unit.role } />
 								</span>
 							</div>
-							<div class="float-left">
+							<div class="float-start">
 								<Locale k={ `UNIT_${unit.uid}` } />
 							</div>
 							{ chance < 100

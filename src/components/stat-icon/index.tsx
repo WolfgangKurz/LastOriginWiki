@@ -3,14 +3,16 @@ import { FunctionalComponent, h } from "preact";
 import "./style.scss";
 
 interface StatIconProps {
-	stat: "ATK" | "DEF" | "HP" | "ACC" | "EV" | "Cri" | "SPD" | string;
+	class?: string;
+
+	stat: "ATK" | "DEF" | "HP" | "ACC" | "EVA" | "CRI" | "SPD" | string;
 	inline?: boolean;
 }
 
 const StatIcon: FunctionalComponent<StatIconProps> = (props) => {
-	const list = ["ATK", "DEF", "HP", "ACC", "EV", "Cri", "SPD"];
+	const list = ["ATK", "DEF", "HP", "ACC", "EVA", "CRI", "SPD"];
 	if (!list.includes(props.stat)) return <i />;
 
-	return <div class="stat-icon" data-stat={ props.stat } data-inline={ props.inline ? 1 : 0 } />;
+	return <div class={ `stat-icon ${props.class || ""}` } data-stat={ props.stat } data-inline={ props.inline ? 1 : 0 } />;
 };
 export default StatIcon;

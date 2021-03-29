@@ -42,7 +42,7 @@ const Changelog: FunctionalComponent = () => {
 	SetMeta(["twitter:image", "og:image"], null);
 	UpdateTitle("Changelog");
 
-	return <div class="changelog text-left">
+	return <div class="changelog text-start">
 		<h2>
 			<Locale k="CHANGELOG_TITLE" />
 		</h2>

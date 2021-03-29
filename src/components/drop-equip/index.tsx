@@ -20,8 +20,8 @@ const DropEquip: FunctionalComponent<DropEquipProps> = (props) => {
 	return <div class="drop-equip p-2 text-dark">
 		<div class={ `card rarity-${RarityDisplay[props.equip.rarity]}` }>
 			<div class="card-body">
-				<EquipIcon class="float-left me-2" image={ props.equip.icon } />
-				<div class="text-left">
+				<EquipIcon class="float-start me-2" image={ props.equip.icon } />
+				<div class="text-start">
 					<span class="badge bg-secondary me-1">{ RarityDisplay[props.equip.rarity] }</span>
 					<Locale k={ `EQUIP_${props.equip.fullKey}` } />
 					{ chance < 100

@@ -19,8 +19,17 @@ export function GetUnitFaceURL (uid: string, skin: number = 0, sd: boolean = fal
 	if (uid.startsWith("Core_") || uid.startsWith("Module_"))
 		return `${AssetsRoot}/${ext}/face/${uid}_0.${ext}`;
 
-	if (sd)
-		return `${AssetsRoot}/${ext}/tbar/${uid}.${ext}`;
+	if (sd) {
+		if (uid.startsWith("TbarIcon_"))
+			return `${AssetsRoot}/${ext}/tbar/${uid}.${ext}`;
+
+		if (skin === 20)
+			return `${AssetsRoot}/${ext}/tbar/TbarIcon_${uid}_PS1.${ext}`;
+		else if (skin > 0)
+			return `${AssetsRoot}/${ext}/tbar/TbarIcon_${uid}_NS${skin}.${ext}`;
+
+		return `${AssetsRoot}/${ext}/tbar/TbarIcon_${uid}_N.${ext}`;
+	}
 
 	return `${AssetsRoot}/${ext}/face/${uid}_${skin}.${ext}`;
 }

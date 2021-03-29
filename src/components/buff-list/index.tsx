@@ -951,22 +951,22 @@ const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 		}
 
 		if ("attack" in stat)
-			return Convert(nsignedValue(stat.attack, level), StatPointValue.ATK);
+			return Convert(nsignedValue(stat.attack, level), StatPointValue.ATK || 0);
 
 		if ("defense" in stat)
-			return Convert(nsignedValue(stat.defense, level), StatPointValue.DEF);
+			return Convert(nsignedValue(stat.defense, level), StatPointValue.DEF || 0);
 
 		if ("hp" in stat)
-			return Convert(nsignedValue(stat.hp, level), StatPointValue.HP);
+			return Convert(nsignedValue(stat.hp, level), StatPointValue.HP || 0);
 
 		if ("accuracy" in stat)
-			return Convert(nsignedValue(stat.accuracy, level).replace("%", ""), StatPointValue.ACC);
+			return Convert(nsignedValue(stat.accuracy, level).replace("%", ""), StatPointValue.ACC || 0);
 
 		if ("critical" in stat)
-			return Convert(nsignedValue(stat.critical, level).replace("%", ""), StatPointValue.Cri);
+			return Convert(nsignedValue(stat.critical, level).replace("%", ""), StatPointValue.CRI || 0);
 
 		if ("evade" in stat)
-			return Convert(nsignedValue(stat.evade, level).replace("%", ""), StatPointValue.EV);
+			return Convert(nsignedValue(stat.evade, level).replace("%", ""), StatPointValue.EVA || 0);
 
 		return <Fragment />;
 	}
@@ -991,11 +991,11 @@ const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					</div>
 
 					<div class="ps-3">
-						<div class="float-left">
+						<div class="float-start">
 							{ getBuffText(buff.value, level) }
 							{ getChanceText(buff.value.chance) }
 						</div>
-						<div class="float-right text-right">
+						<div class="float-end text-end">
 							{ on
 								? <span class="badge bg-success ms-1 text-wrap">{ on }</span>
 								: <Fragment />
@@ -1043,13 +1043,13 @@ const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 						return "ACC";
 					case BUFFEFFECT_TYPE.STAT_CRITICAL_RATIO:
 					case BUFFEFFECT_TYPE.STAT_CRITICAL_VALUE:
-						return "Cri";
+						return "CRI";
 					case BUFFEFFECT_TYPE.STAT_HP_RATIO:
 					case BUFFEFFECT_TYPE.STAT_HP_VALUE:
 						return "HP";
 					case BUFFEFFECT_TYPE.STAT_AVOID_RATIO:
 					case BUFFEFFECT_TYPE.STAT_AVOID_VALUE:
-						return "EV";
+						return "EVA";
 					case BUFFEFFECT_TYPE.STAT_SPEED_RATIO:
 					case BUFFEFFECT_TYPE.STAT_SPEED_VALUE:
 						return "SPD";
@@ -1084,12 +1084,12 @@ const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 
 			elems.push(<div class="clearfix">
 				<div>
-					<div class="float-left">
+					<div class="float-start">
 						{ statType ? <StatIcon stat={ statType } /> : <Fragment /> }
 						{ marginFix(getBuffText(buff, level)) }
 					</div>
 					{ isStatable(buff.type)
-						? <div class="float-right text-right">
+						? <div class="float-end text-end">
 							<span class="badge bg-dark">
 								<Locale k="BUFFPOINT" p={ [toStatablePoint(buff, level)] } />
 							</span>
@@ -1101,12 +1101,12 @@ const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 		});
 	} else if (stat.chance !== "0%") {
 		elems.push(<div class="clearfix">
-			<div class="float-left">
+			<div class="float-start">
 				{ getBuffText(stat, level) }
 				{ getChanceText(stat.chance) }
 			</div>
 			{ isStatable(stat.type)
-				? <div class="float-right text-right">
+				? <div class="float-end text-end">
 					<span class="badge bg-dark">
 						<Locale k="BUFFPOINT" p={ [toStatablePoint(stat, level)] } />
 					</span>
@@ -1134,10 +1134,10 @@ const BuffList: FunctionalComponent<BuffListProps> = (props) => {
 			const staticList = list.filter(x => !("buffs" in x));
 			const dynamicList = list.filter(x => "buffs" in x).map(stat => <BuffRenderer stat={ stat } level={ level } />);
 			return <div class="buff-list mt-2">
-				<ul class="list-group text-left mt-2">
+				<ul class="list-group text-start mt-2">
 					<BuffRenderer stat={ staticList } level={ level } />
 				</ul>
-				{ dynamicList.map(stats => <ul class="list-group text-left mt-2">{ stats }</ul>) }
+				{ dynamicList.map(stats => <ul class="list-group text-start mt-2">{ stats }</ul>) }
 			</div>;
 		},
 	);

@@ -223,7 +223,7 @@ const Units: FunctionalComponent = () => {
 					</div>
 				</div>
 
-				<div class="card text-left mb-4">
+				<div class="card text-start mb-4">
 					<div class="card-body">
 						<div class="row mb-2">
 							<div class="col">

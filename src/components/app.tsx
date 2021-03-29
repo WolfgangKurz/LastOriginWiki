@@ -1,12 +1,9 @@
 import { Fragment, FunctionalComponent, h } from "preact";
 import { Route, Router } from "preact-router";
 
-import { Provider } from "unistore/preact";
-import store from "@/store";
-
 import Redirect from "@/components/redirect";
 
-import JsonLoader from "@/libs/JsonLoader";
+import { FailedToLoadBadge, JsonLoaderCore, LoadingBadge } from "@/libs/JsonLoader";
 import { CurrentLocale, LocaleTypes } from "@/libs/Locale";
 
 import Header from "@/components/header";
@@ -29,9 +26,13 @@ import WorldView from "@/routes/worlds/world-view";
 import WorldMapView from "@/routes/worlds/map-view";
 
 import Changelog from "@/routes/changelog";
-import { Host } from "@/libs/Const";
 
-const App: FunctionalComponent<{}> = () => {
+import Simulator from "@/routes/simulator";
+
+import { Host } from "@/libs/Const";
+import { objState } from "@/libs/State";
+
+const App: FunctionalComponent = () => {
 	if (typeof window !== "undefined") {
 		const html = document.querySelector("html");
 		if (html) {
@@ -51,11 +52,12 @@ const App: FunctionalComponent<{}> = () => {
 		}
 	}
 
-	return <Provider store={ store }>
-		{ JsonLoader(
-			`locale/${CurrentLocale}`,
-			() => <div id="app">
-				<link href={ `${Host}/assets/font/SpoqaHanSans-kr.css` } rel="stylesheet" />
+	const content = objState<preact.VNode | null>(null);
+	if (content.value === null) {
+		content.set(LoadingBadge());
+
+		JsonLoaderCore(`locale/${CurrentLocale}`)
+			.then(() => content.set(<Fragment>
 				<Header />
 
 				<div class="container p-4">
@@ -86,12 +88,18 @@ const App: FunctionalComponent<{}> = () => {
 
 						<Route path="/changelog" component={ Changelog } />
 
+						<Route path="/simulator" component={ Simulator } />
+
 						<NotFoundPage default />
 					</Router>
 				</div>
-			</div>,
-			<Fragment />,
-		) }
-	</Provider>;
+			</Fragment>))
+			.catch(() => content.set(FailedToLoadBadge([`locale/${CurrentLocale}`])));
+	}
+
+	return <div id="app">
+		<link href={ `${Host}/assets/font/SpoqaHanSans-kr.css` } rel="stylesheet" />
+		{ content.value }
+	</div>;
 };
 export default App;

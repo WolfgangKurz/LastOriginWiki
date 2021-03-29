@@ -40,8 +40,8 @@ const DropRes: FunctionalComponent<DropResProps> = (props) => {
 	return <div class="drop-res p-2 text-dark" data-count={ count }>
 		<div class={ `card bg-${am ? "warning" : "secondary"} text-${am ? "dark" : "light"}` }>
 			<div class="card-body">
-				<EquipIcon class="float-left me-2" image={ Icon } />
-				<div class="text-left">
+				<EquipIcon class="float-start me-2" image={ Icon } />
+				<div class="text-start">
 					{ Name }
 					{ count !== 1
 						? <span class="badge bg-dark ms-1">x{ FormatNumber(count) }</span>
