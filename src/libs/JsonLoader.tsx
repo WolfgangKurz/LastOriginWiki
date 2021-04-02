@@ -86,7 +86,10 @@ export function JsonLoaderCore (json: string | string[] | undefined): Promise<vo
 			? [json]
 			: json;
 
-	if (list.length === 0 || list.every(x => x in CachedJson))
+	if (list.length === 0)
+		return new Promise<void[]>((resolve) => resolve([]));
+
+	if (list.every(x => x in CachedJson))
 		return new Promise<void[]>((resolve) => resolve([]));
 
 	return Promise.all(list.map(x => Load(x)));
@@ -125,6 +128,9 @@ export default function JsonLoader (
 		errored.set(false);
 		return <Fragment />;
 	}
+
+	if (list.every(e => e in CachedJson))
+		return doneNode({}) || <Fragment />;
 
 	JsonLoaderCore(list)
 		.then(() => fulfilled.set(true))

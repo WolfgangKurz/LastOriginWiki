@@ -112,7 +112,7 @@ const SimulatorUpgrade: FunctionalComponent<SimulatorUpgradeProps> = (props) => 
 								props.onUpdateLevel(parseInt((e.target as HTMLInputElement).value, 10));
 						} }
 					/>
-					<div class="input-group-text">
+					<div class="input-group-text d-none d-sm-flex">
 						<div class="btn-group">
 							{ rarities.map(rarity => rarity >= unit.rarity && rarity <= (unitInfo.stat.length + unit.rarity - 1)
 								? <button
@@ -136,6 +136,21 @@ const SimulatorUpgrade: FunctionalComponent<SimulatorUpgradeProps> = (props) => 
 					</button>
 				</div>
 
+				<div class="btn-group mt-1 d-block d-sm-none">
+					{ rarities.map(rarity => rarity >= unit.rarity && rarity <= (unitInfo.stat.length + unit.rarity - 1)
+						? <button
+							class={ `btn btn-sm btn-outline-dark ${isActive(slot.rarity === rarity)}` }
+							onClick={ (): void => {
+								if (props.onUpdateRarity)
+									props.onUpdateRarity(rarity);
+							} }
+						>
+							{ RarityDisplay[rarity] }
+						</button>
+						: <Fragment />,
+					) }
+				</div>
+
 				<hr />
 
 				<div class="mb-1">
@@ -145,7 +160,7 @@ const SimulatorUpgrade: FunctionalComponent<SimulatorUpgradeProps> = (props) => 
 						</strong>
 					</div>
 					<div class="float-end d-flex align-items-center">
-						<span class="me-2">
+						<span class="d-none d-sm-inline me-2">
 							<Locale k="SIMULATOR_CORELINKS_QUICKSET" />
 						</span>
 
@@ -160,8 +175,8 @@ const SimulatorUpgrade: FunctionalComponent<SimulatorUpgradeProps> = (props) => 
 					</div>
 					<div class="clearfix" />
 				</div>
-				<div class="row row-cols-5 mb-3">
-					{ slot.links.map((link, index) => <div class="col">
+				<div class="row row-cols-2 row-cols-sm-3 row-cols-md-5 mb-3">
+					{ slot.links.map((link, index) => <div class="col py-1 py-md-0">
 						<select
 							class="form-select form-select-sm"
 							value={ link }
@@ -183,8 +198,8 @@ const SimulatorUpgrade: FunctionalComponent<SimulatorUpgradeProps> = (props) => 
 					</div>
 					<div class="clearfix" />
 				</div>
-				<div class="row row-cols-4 mb-2">
-					{ LinkBonus.map((lb) => <div class="col">
+				<div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 mb-2">
+					{ LinkBonus.map((lb) => <div class="col py-md-0 py-1">
 						<Locale k={ lb.Name } />
 						<span class="d-inline-block ps-1">
 							{ lb.Prefix }
@@ -278,7 +293,7 @@ const SimulatorUpgrade: FunctionalComponent<SimulatorUpgradeProps> = (props) => 
 								<span class="stat-level">
 									<input
 										type="text"
-										class={ `${style["stat-input"]} form-control form-control-xs` }
+										class={ `${style["stat-input"]} form-control form-control-sm` }
 										min={ 0 }
 										max={ 300 }
 										value={ slot.stats[stat] }
@@ -289,7 +304,7 @@ const SimulatorUpgrade: FunctionalComponent<SimulatorUpgradeProps> = (props) => 
 									/>
 								</span>
 							</td>
-							<td class="align-middle px-4">
+							<td class="align-middle d-none d-sm-table-cell px-4">
 								<input
 									type="range"
 									class="progress-stat form-range"

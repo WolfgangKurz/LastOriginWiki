@@ -12,14 +12,15 @@ import SimulatorSlot from "./components/simulator-slot";
 import SimulatorSummary from "./components/simulator-summary";
 import SimulatorUpgrade from "./components/simulator-upgrade";
 
-import { SimulatorSlotType } from "@/routes/simulator/types/Slot";
+import { SimulatorSlotType, SimulatorSlotItem } from "@/routes/simulator/types/Slot";
 
 import "./style.scss";
+import SimulatorEquips from "@/routes/simulator/components/simulator-equips";
 
 const Simulator: FunctionalComponent = () => {
 	const kidx = (row: number, col: number): number => (2 - row) * 3 + (col % 3) + 1;
 
-	const editTab = objState<number>(0);
+	const editTab = objState<number>(1);
 	const Grid = ((): ObjectState<SimulatorSlotType>[][] => new Array(3)
 		.fill(0)
 		.map(_ => new Array(3)
@@ -31,13 +32,15 @@ const Simulator: FunctionalComponent = () => {
 
 	if (Grid[1][1].value === null) {
 		Grid[1][1].set({
-			uid: "PECS_LRL",
+			uid: "PECS_Rena",
 			leader: true,
 			level: 100,
 			rarity: ACTOR_GRADE.SS,
 
 			links: [0, 0, 0, 0, 0],
 			linkBonus: "",
+
+			equips: [null, null, null, null],
 
 			hp: 3000,
 			stats: {
@@ -186,6 +189,48 @@ const Simulator: FunctionalComponent = () => {
 												...target.value.stats,
 												[t]: v,
 											},
+										});
+									}
+								} }
+							/>
+							: <Fragment />
+						}
+
+						{ editTab.value === 1
+							? <SimulatorEquips
+								slot={ FlattenGrid[selectedSlot.value].value }
+								onLevel={ (idx, level): void => {
+									const target = FlattenGrid[selectedSlot.value];
+									if (target.value) {
+										const e = [...target.value.equips];
+										if (!e[idx]) return;
+
+										e[idx]!.level = level;
+										target.set({
+											...target.value,
+											equips: e as SimulatorSlotItem["equips"],
+										});
+									}
+								} }
+								onEquip={ (idx, equip): void => {
+									const target = FlattenGrid[selectedSlot.value];
+									if (target.value) {
+										const e = [...target.value.equips];
+
+										if (e[idx] && equip)
+											e[idx]!.uid = equip;
+										else if (e[idx])
+											e.splice(idx, 1, null);
+										else if (equip) {
+											e[idx] = {
+												uid: equip,
+												level: 10,
+											};
+										} // 둘 다 null이면 처리 필요 없음
+
+										target.set({
+											...target.value,
+											equips: e as SimulatorSlotItem["equips"],
 										});
 									}
 								} }

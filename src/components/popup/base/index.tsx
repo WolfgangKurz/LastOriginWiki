@@ -1,5 +1,5 @@
 import { Modal } from "bootstrap";
-import preact, { Component, Fragment, h } from "preact";
+import { Component, Fragment, h } from "preact";
 
 import { UniqueID } from "@/libs/Functions";
 
@@ -14,6 +14,8 @@ interface PopupBaseProps {
 	headerClass?: string;
 	headerVariant?: string;
 	headerText?: string;
+
+	headerEnd?: preact.VNode;
 
 	bodyClass?: string;
 
@@ -91,7 +93,18 @@ export default class PopupBase extends Component<PopupBaseProps> {
 							? <h5 class="modal-title">{ this.props.header }</h5>
 							: <Fragment />
 						}
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+						{ this.props.headerEnd
+							? <div class="modal-title-end" style={ { marginLeft: "auto" } }>
+								{ this.props.headerEnd }
+							</div>
+							: <Fragment />
+						}
+						<button
+							type="button"
+							class={ `btn-close ${this.props.headerEnd ? "ms-1" : ""}` }
+							data-bs-dismiss="modal"
+							aria-label="Close"
+						/>
 					</div>
 					<div class={ `modal-body ${this.props.bodyClass || ""}` }>{ this.props.children }</div>
 					{ this.props.footer

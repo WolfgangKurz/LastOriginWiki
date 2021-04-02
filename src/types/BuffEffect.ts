@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/class-name-casing */
 /* eslint-disable camelcase */
-import { LocaleGet } from "../components/locale";
 import { BUFF_ATTR_TYPE } from "./Enums";
 
 /** 버프로 작동하는 수치 변동 종류 */
