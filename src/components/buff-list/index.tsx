@@ -987,7 +987,10 @@ const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				elems.push(<div class="clearfix" title={ formatDesc(buff.desc.type, buff.desc.desc, buff.desc.value) }>
 					<div>
 						<img class="me-1" width="25" src={ `${AssetsRoot}/${ext}/buff/${buff.icon}.${ext}` } />
-						<strong class="align-middle">{ formatDesc(buff.desc.type, buff.desc.desc, buff.desc.value, true) }</strong>
+						<strong class="align-middle">
+							<Locale k={ stat.key } />
+							{/* { formatDesc(buff.desc.type, buff.desc.desc, buff.desc.value, true) } */ }
+						</strong>
 					</div>
 
 					<div class="ps-3">
@@ -1120,6 +1123,8 @@ const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 };
 
 interface BuffListProps {
+	class?: string;
+
 	list?: BuffStat[];
 	level?: number;
 }
@@ -1133,11 +1138,11 @@ const BuffList: FunctionalComponent<BuffListProps> = (props) => {
 
 			const staticList = list.filter(x => !("buffs" in x));
 			const dynamicList = list.filter(x => "buffs" in x).map(stat => <BuffRenderer stat={ stat } level={ level } />);
-			return <div class="buff-list mt-2">
-				<ul class="list-group text-start mt-2">
+			return <div class={ `buff-list text-dark ${props.class || ""}` }>
+				<ul class="list-group text-start">
 					<BuffRenderer stat={ staticList } level={ level } />
 				</ul>
-				{ dynamicList.map(stats => <ul class="list-group text-start mt-2">{ stats }</ul>) }
+				{ dynamicList.map(stats => <ul class="list-group text-start">{ stats }</ul>) }
 			</div>;
 		},
 	);

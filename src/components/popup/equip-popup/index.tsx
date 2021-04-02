@@ -27,25 +27,7 @@ import UnitCard from "@/components/unit-card";
 import UnitFace from "@/components/unit-face";
 
 import "./style.scss";
-
-interface EquipLevelProps {
-	level: number | string;
-	size?: number;
-}
-
-const EquipLevel: FunctionalComponent<EquipLevelProps> = (props) => {
-	const lv = ((): number => {
-		if (typeof props.level === "string") {
-			const p = parseInt(props.level, 10);
-			if (isNaN(p) || p <= 0) return 0;
-			return p;
-		}
-		return props.level;
-	})();
-	return lv > 0
-		? <div class="equip-level" style={ { fontSize: `${props.size || 20}px` } }>+{ lv }</div>
-		: <Fragment />;
-};
+import EquipLevel from "@/components/equip-level";
 
 type EquipLevelType = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 
@@ -398,7 +380,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 										</tbody>
 									</table>
 
-									{ StatusList ? <BuffList list={ StatusList.value } /> : <Fragment /> }
+									{ StatusList ? <BuffList class="mt-2" list={ StatusList.value } /> : <Fragment /> }
 								</Fragment>
 								: <Fragment />
 							}

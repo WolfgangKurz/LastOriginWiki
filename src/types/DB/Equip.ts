@@ -3,39 +3,31 @@ import { BuffStat } from "@/types/Buffs";
 import EntitySource from "@/libs/EntitySource";
 
 export interface Equip {
-	available: boolean;
-	rarity: ACTOR_GRADE;
+	uid: string;
 	type: ITEM_TYPE;
 	key: string;
-	fullKey: string;
+	rarity: ACTOR_GRADE;
 
-	// name: string;
-	desc: string;
-	icon: string;
 	craft: false | number;
-
-	limit: string[] | null;
-	source: EntitySource[][];
 	upgrade: number;
+	limit: string[] | null;
+
+	source: EntitySource[][];
 	stats: BuffStat[][];
 }
 /* eslint-disable-next-line @typescript-eslint/no-namespace */
 export namespace Equip {
 	export const Empty: Equip = {
-		available: false,
-		rarity: ACTOR_GRADE.B,
+		uid: "__T1",
 		type: ITEM_TYPE.CHIP,
 		key: "",
+		rarity: ACTOR_GRADE.B,
 
-		fullKey: "__T1",
-		// name: "",
-		desc: "",
-		icon: "none",
 		craft: false,
-
-		limit: null,
-		source: [],
 		upgrade: 0,
+		limit: null,
+
+		source: [],
 		stats: [],
 	};
 }

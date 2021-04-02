@@ -11,6 +11,7 @@ export type BuffStatStatic = BuffEffect & {
 	chance: undefined;
 };
 export interface BuffStatBuff {
+	key: string;
 	on: BuffTrigger;
 	if: BuffTrigger;
 
