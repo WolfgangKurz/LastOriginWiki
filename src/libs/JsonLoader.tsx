@@ -1,6 +1,6 @@
 import EntitySource from "@/libs/EntitySource";
 import { objState } from "@/libs/State";
-import preact, { Fragment, FunctionalComponent, h } from "preact";
+import { Fragment, FunctionalComponent, h } from "preact";
 
 import { DataRoot } from "./Const";
 

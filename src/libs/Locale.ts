@@ -14,4 +14,18 @@ function LangValidation (name: string | undefined): LocaleTypes {
 	return name as LocaleTypes;
 }
 
-export const CurrentLocale = LangValidation(getCookie("LO_LANG"));
+const defaultLang = ((): LocaleTypes => {
+	const lang = ((window.navigator as any).userLanguage || window.navigator.language) as string;
+	const langp = lang.split("-")[0].toLowerCase();
+	switch (langp) {
+		case "ja":
+			return "JP";
+		case "en":
+			return "EN";
+		case "ko":
+		default:
+			return "KR";
+	}
+})();
+
+export const CurrentLocale = LangValidation(getCookie("LO_LANG", defaultLang));

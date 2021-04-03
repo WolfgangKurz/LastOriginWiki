@@ -18,28 +18,72 @@ import Icon from "@/components/bootstrap-icon";
 import StatIcon from "@/components/stat-icon";
 
 import style from "./style.scss";
+import UnitSelectorPopup from "@/components/popup/unit-selector-popup";
 
 interface SimulatorUpgradeProps {
 	slot: SimulatorSlotType;
+
+	/**
+	 * 더 이상 전투원 추가가 불가능한 경우
+	 */
+	limited?: boolean;
+
+	using?: string[];
 
 	onUpdateLevel?: (level: number) => void;
 	onUpdateRarity?: (rarity: ACTOR_GRADE) => void;
 	onUpdateLink?: (index: number, value: number) => void;
 	onUpdateLinkBonus?: (bonus: LinkBonusType) => void;
 	onUpdateStat?: (stat: BaseStatType, value: number) => void;
+	onUpdateUnit?: (unit: string | null) => void;
 }
 
 const SimulatorUpgrade: FunctionalComponent<SimulatorUpgradeProps> = (props) => {
+	const displayUnitPopup = objState<boolean>(false);
+
 	const slot = props.slot;
-	if (!slot) return <Fragment />;
+	if (!slot) {
+		return <Fragment>
+			<UnitSelectorPopup
+				display={ displayUnitPopup.value }
+				noClear
+				ban={ props.using }
+				onHidden={ (): void => displayUnitPopup.set(false) }
+				onSelect={ (uid): void => {
+					if (props.onUpdateUnit)
+						props.onUpdateUnit(uid);
+				} }
+			/>
+
+			<div class="btn-group mb-2">
+				<button
+					class="btn btn-primary"
+					disabled={ !slot && props.limited }
+					onClick={ (): void => displayUnitPopup.set(true) }
+				>
+					<Locale k="SIMULATOR_UNIT_SELECT" />
+				</button>
+				<button
+					class="btn btn-danger"
+					onClick={ (): void => {
+						if (props.onUpdateUnit)
+							props.onUpdateUnit(null);
+					} }
+				>
+					<Locale k="SIMULATOR_UNIT_CLEAR" />
+				</button>
+			</div>
+		</Fragment>;
+	}
 
 	const uid = slot.uid;
-
 	const stats: BaseStatType[] = ["ATK", "DEF", "HP", "ACC", "EVA", "CRI"];
 
+	const latestUid = objState<string | null>(null);
 	const data = objState<Unit | false | null>(null);
-	if (data.value === null) {
+	if (slot && data.value === null || latestUid.value !== slot.uid) {
 		data.set(false);
+		latestUid.set(slot.uid);
 
 		JsonLoaderCore(`unit/${slot.uid}`)
 			.then(() => {
@@ -96,6 +140,35 @@ const SimulatorUpgrade: FunctionalComponent<SimulatorUpgradeProps> = (props) => 
 			}
 
 			return <Fragment>
+				<UnitSelectorPopup
+					display={ displayUnitPopup.value }
+					noClear
+					onHidden={ (): void => displayUnitPopup.set(false) }
+					onSelect={ (uid): void => {
+						if (props.onUpdateUnit)
+							props.onUpdateUnit(uid);
+					} }
+				/>
+
+				<div class="btn-group mb-2">
+					<button
+						class="btn btn-primary"
+						disabled={ !slot && props.limited }
+						onClick={ (): void => displayUnitPopup.set(true) }
+					>
+						<Locale k="SIMULATOR_UNIT_SELECT" />
+					</button>
+					<button
+						class="btn btn-danger"
+						onClick={ (): void => {
+							if (props.onUpdateUnit)
+								props.onUpdateUnit(null);
+						} }
+					>
+						<Locale k="SIMULATOR_UNIT_CLEAR" />
+					</button>
+				</div>
+
 				<div class="input-group">
 					<button class="btn btn-sm btn-secondary" onClick={ (): void => {
 						if (props.onUpdateLevel)
@@ -114,7 +187,7 @@ const SimulatorUpgrade: FunctionalComponent<SimulatorUpgradeProps> = (props) => 
 					/>
 					<div class="input-group-text d-none d-sm-flex">
 						<div class="btn-group">
-							{ rarities.map(rarity => rarity >= unit.rarity && rarity <= (unitInfo.stat.length + unit.rarity - 1)
+							{ rarities.map(rarity => rarity >= unit.rarity && rarity < (unitInfo.stat.length + unit.rarity)
 								? <button
 									class={ `btn btn-sm btn-outline-dark ${isActive(slot.rarity === rarity)}` }
 									onClick={ (): void => {

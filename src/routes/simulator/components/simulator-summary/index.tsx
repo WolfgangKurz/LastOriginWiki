@@ -62,6 +62,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 	if (!slot) return <Fragment />;
 
 	const uid = slot.uid;
+	const latestUid = objState<string | null>(null);
 
 	const UnitTypeTable: Record<ACTOR_CLASS, string> = {
 		[ACTOR_CLASS.LIGHT]: "LIGHT",
@@ -74,6 +75,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 		[ROLE_TYPE.SUPPORTER]: "SUPPORTER",
 	};
 
+	const linksRequire = [10, 30, 50, 70, 90];
 	const ratioValues = ["ACC", "CRI", "EVA"];
 	const floorValues = ["HP", "ATK", "DEF"];
 	const bonusTable: Record<string, string> = {
@@ -90,8 +92,9 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 	};
 
 	const data = objState<Unit | false | null>(null);
-	if (data.value === null) {
+	if (data.value === null || latestUid.value !== slot.uid) {
 		data.set(false);
+		latestUid.set(slot.uid);
 
 		JsonLoaderCore(`unit/${slot.uid}`)
 			.then(() => {
@@ -245,7 +248,11 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 
 				const calc = (key: BaseStatType): StatCalcType => {
 					const links = Decimal
-						.div(slot.links.reduce((p, c) => p + c, 0), 100)
+						.div(slot.links.reduce((p, c, index) => {
+							if (slot.level < linksRequire[index]) // 레벨에 맞지 않는 링크 제외
+								return p;
+							return p + c;
+						}, 0), 100)
 						.toNumber();
 
 					const bonusValue = unitInfo.linkBonus
@@ -290,6 +297,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 								const force = [
 									c.buff.on === "round" || c.buff.on === "wave",
 									!b.value.chance || b.value.chance === "100%",
+									c.buff.if === false,
 								].every(x => x);
 
 								const bkey = `${c.buff.key}_${bi}`;
@@ -329,6 +337,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 								const force = [
 									c.buff.on === "round" || c.buff.on === "wave",
 									!b.value.chance || b.value.chance === "100%",
+									c.buff.if === false,
 								].every(x => x);
 
 								const bkey = `${c.buff.key}_${bi}`;
@@ -428,6 +437,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 								const force = [
 									c.buff.on === "round" || c.buff.on === "wave",
 									!b.value.chance || b.value.chance === "100%",
+									c.buff.if === false,
 								].every(x => x);
 
 								const bkey = `${c.buff.key}_${bi}`;
@@ -495,7 +505,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 					slot.linkBonus,
 				);
 
-				const links = slot.links.filter(x => x > 0).length;
+				const links = slot.links.filter((x, index) => x > 0 && slot.level >= linksRequire[index]).length;
 				const base = {
 					metal: CostTable.metal[links],
 					nutrient: CostTable.nutrient[links],
@@ -514,8 +524,6 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 					discountedPower: base.power - final.power,
 				};
 			})();
-
-			const linksRequire = [10, 30, 50, 70, 90];
 
 			const statList1: Array<{
 				stat: StatType;
@@ -678,11 +686,17 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 											const s = statValues[stat];
 											return typeof s === "number"
 												? <Fragment>
-													{ s }
+													{ s < 0
+														? <span class="text-danger">{ s }</span>
+														: s
+													}
 													{ postfix }
 												</Fragment>
 												: <Fragment>
-													{ s.final }
+													{ s.final < s.base
+														? <span class="text-danger">{ s.final }</span>
+														: s.final
+													}
 													{ s.base !== s.final
 														? <span class={ `value-diff diff-${s.final > s.base ? "plus" : "minus"}` }>{ s.up }</span>
 														: <Fragment />
@@ -695,7 +709,6 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 
 								<hr />
 
-
 								{ statList2.map(({ stat, icon, postfix }) => <Fragment>
 									<span class="body-label">
 										<BuffIcon buff={ icon } />
@@ -706,11 +719,26 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 											const s = statValues[stat];
 											return typeof s === "number"
 												? <Fragment>
-													{ s }
+													{ s < 0
+														? <span class="text-danger">
+															{ stat === "Range"
+																? s > 0 ? "+" : s < 0 ? "" : <Fragment />
+																: <Fragment />
+															}
+															{ s }
+														</span>
+														: stat === "Range"
+															? s > 0 ? "+" : s < 0 ? "" : <Fragment />
+															: s
+													}
+
 													{ postfix }
 												</Fragment>
 												: <Fragment>
-													{ s.final }
+													{ s.final < s.base
+														? <span class="text-danger">{ s.final }</span>
+														: s.final
+													}
 													{ s.base !== s.final
 														? <span class={ `value-diff diff-${s.final > s.base ? "plus" : "minus"}` }>{ s.up }</span>
 														: <Fragment />

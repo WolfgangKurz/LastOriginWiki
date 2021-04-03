@@ -154,7 +154,7 @@ const DropItem: FunctionalComponent<DropItemProps> = (props) => {
 				/* eslint-enable camelcase */
 			};
 			return <span class="badge bg-danger">
-				<Locale k="ITEM_FUNCTION_FAVOR" p={ [favorLimitTable[props.item.func].toFixed(2)] } />
+				<Locale k="ITEM_FUNCTION_FAVOR_LIMIT" p={ [favorLimitTable[props.item.func].toFixed(2)] } />
 			</span>;
 		} else if (props.item.func === "Consumable_CommanderDiary") // 사령관의 일지
 			return <Locale k="ITEM_FUNCTION_COMMANDERDIARY" />;
