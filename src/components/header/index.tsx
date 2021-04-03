@@ -36,7 +36,9 @@ const Header: FunctionalComponent = () => {
 			<div class="container-fluid">
 				<div class={ `${style["navbar-brand"]} navbar-brand` }>
 					<img src={ `${AssetsRoot}/icon.png` } />
-					<Locale k="COMMON_TITLE" />
+					<span>
+						<Locale k="MENU_TITLE" />
+					</span>
 				</div>
 
 				<button
@@ -56,9 +58,13 @@ const Header: FunctionalComponent = () => {
 						<NavItem href="/" text="MENU_HOME" />
 						<NavItem href="/units" text="MENU_UNITS" />
 						<NavItem href="/equips" text="MENU_EQUIPS" />
-						<NavItem href="/enemies" text="MENU_ENEMIES" />
 						<NavItem href="/facilities" text="MENU_FACILITIES" />
+
+						<NavItem href="/enemies" text="MENU_ENEMIES" />
 						<NavItem href="/worlds" text="MENU_WORLDS" />
+
+						<NavItem href="/simulator" text="MENU_SIMULATOR" />
+
 						<NavItem href="/changelog" text="MENU_CHANGELOG" />
 
 						<li class="nav-item dropdown">
@@ -86,7 +92,6 @@ const Header: FunctionalComponent = () => {
 								</DropdownItem>
 								<DropdownItem href="/bgm">
 									<Locale k="MENU_ETC_BGM" />
-									<span class="badge bg-secondary ms-2">TBA</span>
 								</DropdownItem>
 								<DropdownItem href="/eapi">
 									<Locale k="MENU_ETC_API" />

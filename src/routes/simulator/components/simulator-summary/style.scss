@@ -138,7 +138,7 @@
 		}
 
 		@include media-breakpoint-up(md) {
-			grid-template-columns: auto auto 1fr;
+			grid-template-columns: auto minmax(168px, auto) 1fr;
 
 			.unit-type,
 			.unit-info,
@@ -176,7 +176,7 @@
 			> :first-child {
 				margin-bottom: 0.25em;
 			}
-			
+
 			> .equip-slot-icon {
 				min-height: calc(76px);
 				background-position: center;

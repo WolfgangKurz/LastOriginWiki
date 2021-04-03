@@ -459,7 +459,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 													<strong>{ skill.name }</strong>
 													<small class="ms-1">Lv.1</small>
 
-													<div class="float-md-right bg-dark ms-md-2 mt-2 mt-md-0 p-2 text-center">
+													<div class="float-md-end bg-dark ms-md-2 mt-2 mt-md-0 p-2 text-center">
 														<SkillBound
 															target={ skill.target }
 															buffs={ skill.buff }

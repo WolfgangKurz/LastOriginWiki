@@ -938,6 +938,7 @@ const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				const force = [
 					stat.on === "round" || stat.on === "wave",
 					!buff.value.chance || buff.value.chance === "100%",
+					stat.if === false,
 				].every(x => x);
 				const key = `${stat.key}_${buffIdx}`;
 
