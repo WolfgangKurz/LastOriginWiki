@@ -1,11 +1,13 @@
-let xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n`;
+/* eslint-disable max-len, @typescript-eslint/explicit-function-return-type, @typescript-eslint/no-var-requires */
 
 // import * as glob from "glob";
 // import * as path from "path";
 const glob = require("glob");
 const path = require("path");
 const fs = require("fs");
+
+let xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n`;
 
 const load = (name: string) => {
 	const target = ["facility", "map"].includes(name)
@@ -71,16 +73,16 @@ Equip.forEach((x: any) => {
 	xml += `<url><loc>https://lo.swaytwig.com/equips/${x.fullKey}</loc><image:image><image:loc>${AssetsRoot}/${ext}/item/UI_Icon_Equip_${x.fullKey}.${ext}</image:loc></image:image></url>\n`;
 });
 
-xml += "<url><loc>https://lo.swaytwig.com/enemies</loc></url>\n";
-Enemy.forEach((x: any) => {
-	xml += `<url><loc>https://lo.swaytwig.com/enemies/${x.id}</loc><image:image><image:loc>${AssetsRoot}/${ext}/tbar/TbarIcon_${x.id}.${ext}</image:loc></image:image></url>\n`;
-});
-
 xml += "<url><loc>https://lo.swaytwig.com/facilities</loc></url>\n";
 Object.keys(Facility)
 	.forEach(key => {
 		xml += `<url><loc>https://lo.swaytwig.com/facilities/${key}</loc></url>\n`;
 	});
+
+xml += "<url><loc>https://lo.swaytwig.com/enemies</loc></url>\n";
+Enemy.forEach((x: any) => {
+	xml += `<url><loc>https://lo.swaytwig.com/enemies/${x.id}</loc><image:image><image:loc>${AssetsRoot}/${ext}/tbar/TbarIcon_${x.id}.${ext}</image:loc></image:image></url>\n`;
+});
 
 xml += "<url><loc>https://lo.swaytwig.com/worlds</loc></url>\n";
 Object.keys(WorldNames)
@@ -95,11 +97,14 @@ Object.keys(WorldNames)
 		});
 	});
 
-xml += `<url><loc>https://lo.swaytwig.com/changelog</loc></url>
-<url><loc>https://lo.swaytwig.com/exp</loc></url>
+xml += `<url><loc>https://lo.swaytwig.com/simulator</loc></url>
+<url><loc>https://lo.swaytwig.com/changelog</loc></url>
 <url><loc>https://lo.swaytwig.com/bgm</loc></url>
-<url><loc>https://lo.swaytwig.com/eapi</loc></url>
 </urlset>`;
+
+// <url><loc>https://lo.swaytwig.com/exp</loc></url>
+// <url><loc>https://lo.swaytwig.com/bgm</loc></url>
+// <url><loc>https://lo.swaytwig.com/eapi</loc></url>
 
 // console.log(xml);
 fs.writeFileSync(
