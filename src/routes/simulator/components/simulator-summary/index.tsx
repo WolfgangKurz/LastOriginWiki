@@ -727,9 +727,13 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 															}
 															{ s }
 														</span>
-														: stat === "Range"
-															? s > 0 ? "+" : s < 0 ? "" : <Fragment />
-															: s
+														: <Fragment>
+															{ stat === "Range"
+																? s > 0 ? "+" : s < 0 ? "" : <Fragment />
+																: <Fragment />
+															}
+															{ s }
+														</Fragment>
 													}
 
 													{ postfix }
