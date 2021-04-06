@@ -17,8 +17,8 @@ const BGM: FunctionalComponent = () => {
 		"Title", "Lobby",
 		"Talk_01", "Talk_02", "Talk_03", "Talk_04", "Talk_05", "Talk_06", "Talk_07",
 		"Thrill_01",
-		"Battle_01", "Battle_02", "Battle_03", "Battle_04",
-		"Battle_Boss_01", "Battle_Boss_02", "Battle_Boss_03",
+		"Battle_01", "Battle_02", "Battle_03", "Battle_04", "Battle_05",
+		"Battle_Boss_01", "Battle_Boss_02", "Battle_Boss_03", "Battle_Boss_03b",
 		"IronPrince",
 		"Marriage_01", "Marriage_02",
 		"Summer_01", "Summer_02",
@@ -26,6 +26,7 @@ const BGM: FunctionalComponent = () => {
 		"Forest_of_Elves",
 		"Valentine",
 		"Mystic", "Noire_01", "Noire_02",
+		"Sanctum",
 	];
 
 	return <div class="bgm">
