@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h, options } from "preact";
+import { Fragment, FunctionalComponent, h } from "preact";
 
 import { Unit } from "@/types/DB/Unit";
 import { SkillEntity, SkillGroup } from "@/types/DB/Skill";
@@ -13,10 +13,9 @@ import Locale, { LocaleExists, LocaleGet } from "@/components/locale";
 import ElemIcon from "@/components/elem-icon";
 import RarityBadge from "@/components/rarity-badge";
 import SkillBound from "@/components/skill-bound";
-
-import SummonBadge from "../../components/summon-badge";
 import SkillDescription from "@/components/skill-description/SkillDescription";
-import BuffRenderer from "@/components/buff-list";
+import SummonBadge from "../../components/summon-badge";
+import BuffList from "@/components/buff-list";
 
 interface SkillItem extends SkillEntity {
 	index: number;
@@ -228,7 +227,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 		}
 
 		{ displayBuffList.value && buffList[skill.key].length > 0
-			? <BuffRenderer list={ buffList[skill.key] } level={ finalSkillLevel } />
+			? <BuffList list={ buffList[skill.key] } level={ finalSkillLevel } />
 			: <Fragment />
 		}
 	</Fragment>;

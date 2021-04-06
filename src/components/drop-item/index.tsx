@@ -1,4 +1,4 @@
-import preact, { Fragment, FunctionalComponent, h } from "preact";
+import { Fragment, FunctionalComponent, h } from "preact";
 import { Link } from "preact-router";
 
 import { Consumable } from "@/types/DB/Consumable";

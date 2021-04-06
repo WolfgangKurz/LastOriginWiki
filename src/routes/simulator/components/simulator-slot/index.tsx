@@ -1,12 +1,14 @@
 import { Fragment, FunctionalComponent, h } from "preact";
 
+import { ACTOR_GRADE } from "@/types/Enums";
+import { SimulatorSlotType } from "../../types/Slot";
+
+import { RarityDisplay } from "@/libs/Const";
+
+import Icon from "@/components/bootstrap-icon";
 import UnitFace from "@/components/unit-face";
 
 import "./style.scss";
-import Icon from "@/components/bootstrap-icon";
-import { ACTOR_GRADE } from "@/types/Enums";
-import { RarityDisplay } from "@/libs/Const";
-import { SimulatorSlotType } from "@/routes/simulator/types/Slot";
 
 interface SimulatorSlotProps {
 	idx: number;

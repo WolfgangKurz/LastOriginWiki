@@ -1,4 +1,4 @@
-import preact, { Fragment, FunctionalComponent, h } from "preact";
+import { Fragment, FunctionalComponent, h } from "preact";
 import { Link, route } from "preact-router";
 
 import { MapEnemyData, MapNodeEntity, MapReward, Worlds } from "@/types/DB/Map";
@@ -8,11 +8,11 @@ import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 import { Consumable } from "@/types/DB/Consumable";
 
 import { objState } from "@/libs/State";
-import JsonLoader, { GetJson, StaticDB } from "@/libs/JsonLoader";
 import { AssetsRoot, ImageExtension, SubStoryUnit } from "@/libs/Const";
 import { FormatNumber, isActive } from "@/libs/Functions";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
+import Loader, { GetJson, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
 import Icon from "@/components/bootstrap-icon";
 import DropItem from "@/components/drop-item";
@@ -97,15 +97,15 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 	else
 		UpdateTitle(LocaleGet("MENU_WORLDS"), LocaleGet(`WORLD_${props.wid}`), LocaleGet("WORLDS_WORLD_TITLE", props.mid));
 
-	return JsonLoader(
-		[
+	return <Loader
+		json={ [
 			StaticDB.Map,
 			StaticDB.FilterableUnit,
 			StaticDB.FilterableEquip,
 			StaticDB.FilterableEnemy,
 			StaticDB.Consumable,
-		],
-		() => {
+		] }
+		content={ ((): preact.VNode => {
 			const MapDB = GetJson<Worlds>(StaticDB.Map);
 			const FilterableUnitDB = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
 			const FilterableEquipDB = GetJson<FilterableEquip[]>(StaticDB.FilterableEquip);
@@ -778,7 +778,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 					}
 				</div>
 			</div>;
-		},
-	);
+		}) }
+	/>;
 };
 export default MapView;

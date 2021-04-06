@@ -1,4 +1,5 @@
-import preact, { Fragment, FunctionalComponent, h } from "preact";
+import { Fragment, FunctionalComponent, h } from "preact";
+import render from "preact-render-to-string";
 import Decimal from "decimal.js";
 
 import { BuffEffectValue, BUFFEFFECT_TYPE, BuffEffect } from "@/types/BuffEffect";
@@ -9,15 +10,14 @@ import { UNIT_POSITION, BUFF_ATTR_TYPE, SKILL_ATTR, ACTOR_BODY_TYPE, ACTOR_CLASS
 import { StatPointValue } from "@/types/Stat";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
-import JsonLoader, { GetJson, StaticDB } from "@/libs/JsonLoader";
 import { ImageExtension, AssetsRoot } from "@/libs/Const";
 
+import Loader, { GetJson, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
+import StatIcon from "@/components/stat-icon";
 import ElemIcon from "@/components/elem-icon";
 
 import style from "./style.scss";
-import StatIcon from "@/components/stat-icon";
-import render from "preact-render-to-string";
 
 interface BuffRendererProps {
 	stat: BuffStat | BuffStat[];
@@ -1130,21 +1130,18 @@ interface BuffListProps {
 }
 
 const BuffList: FunctionalComponent<BuffListProps> = (props) => {
-	return JsonLoader(
-		StaticDB.FilterableUnit,
-		() => {
-			const list = props.list || [];
-			const level = props.level || 0;
+	return <Loader json={ StaticDB.FilterableUnit } content={ ((): preact.VNode => {
+		const list = props.list || [];
+		const level = props.level || 0;
 
-			const staticList = list.filter(x => !("buffs" in x));
-			const dynamicList = list.filter(x => "buffs" in x).map(stat => <BuffRenderer stat={ stat } level={ level } />);
-			return <div class={ `buff-list text-dark ${props.class || ""}` }>
-				<ul class="list-group text-start">
-					<BuffRenderer stat={ staticList } level={ level } />
-				</ul>
-				{ dynamicList.map(stats => <ul class="list-group text-start">{ stats }</ul>) }
-			</div>;
-		},
-	);
+		const staticList = list.filter(x => !("buffs" in x));
+		const dynamicList = list.filter(x => "buffs" in x).map(stat => <BuffRenderer stat={ stat } level={ level } />);
+		return <div class={ `buff-list text-dark ${props.class || ""}` }>
+			<ul class="list-group text-start">
+				<BuffRenderer stat={ staticList } level={ level } />
+			</ul>
+			{ dynamicList.map(stats => <ul class="list-group text-start">{ stats }</ul>) }
+		</div>;
+	}) } />;
 };
 export default BuffList;

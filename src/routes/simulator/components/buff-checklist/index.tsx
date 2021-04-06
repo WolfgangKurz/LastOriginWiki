@@ -1,4 +1,4 @@
-import preact, { Fragment, FunctionalComponent, h } from "preact";
+import { Fragment, FunctionalComponent, h } from "preact";
 import Decimal from "decimal.js";
 import render from "preact-render-to-string";
 
@@ -9,9 +9,9 @@ import { BuffTrigger } from "@/types/BuffTrigger";
 import { UNIT_POSITION, BUFF_ATTR_TYPE, SKILL_ATTR, ACTOR_BODY_TYPE, ACTOR_CLASS, ROLE_TYPE, TARGET_TYPE, NUM_OUTPUTTYPE } from "@/types/Enums";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
-import JsonLoader, { GetJson, StaticDB } from "@/libs/JsonLoader";
 import { ImageExtension, AssetsRoot } from "@/libs/Const";
 
+import Loader, { GetJson, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
 import Icon from "@/components/bootstrap-icon";
 import ElemIcon from "@/components/elem-icon";
@@ -1053,9 +1053,8 @@ interface BuffListProps {
 	onStack?: (key: string, value: number) => void;
 }
 
-const BuffChecklist: FunctionalComponent<BuffListProps> = (props) => JsonLoader(
-	StaticDB.FilterableUnit,
-	() => {
+const BuffChecklist: FunctionalComponent<BuffListProps> = (props) =>
+	<Loader json={ StaticDB.FilterableUnit } content={ ((): preact.VNode => {
 		const list = props.list || [];
 
 		const buffs = list.map((stat, index) => <BuffRenderer
@@ -1076,6 +1075,6 @@ const BuffChecklist: FunctionalComponent<BuffListProps> = (props) => JsonLoader(
 		return <div class={ `buff-checklist text-dark ${props.class || ""}` }>
 			{ buffs.map(stats => <ul class="list-group text-start">{ stats }</ul>) }
 		</div>;
-	},
-);
+	}) }
+	/>;
 export default BuffChecklist;

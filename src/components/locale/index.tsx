@@ -1,7 +1,8 @@
-import { Component, ComponentType, Fragment, FunctionalComponent, h } from "preact";
+import { ComponentType, Fragment, FunctionalComponent, h } from "preact";
 
-import { GetJson } from "@/libs/JsonLoader";
 import { CurrentLocale } from "@/libs/Locale";
+
+import { GetJson } from "@/components/loader";
 
 type LocaleComponentProp<T> = Record<string, ComponentType<T>>;
 
