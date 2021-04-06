@@ -62,7 +62,8 @@ export type BuffTrigger = BuffTrigger_Unknown | BuffTrigger_Always | BuffTrigger
 	BuffTrigger_HPDown | BuffTrigger_HPUp | BuffTrigger_HPLess | BuffTrigger_HPMore | BuffTrigger_UnitIn | BuffTrigger_UnitDead |
 	BuffTrigger_Always | BuffTrigger_EveryWave | BuffTrigger_EveryRound | BuffTrigger_Attack | BuffTrigger_Attacked | BuffTrigger_Wait |
 	BuffTrigger_Move | BuffTrigger_Evade | BuffTrigger_WaveEnd | BuffTrigger_EnemyKilled | BuffTrigger_Position | BuffTrigger_Criticaled |
-	BuffTrigger_Revive | BuffTrigger_On | BuffTrigger_Target | BuffTrigger_UnitCount | BuffTrigger_Round | BuffTrigger_NotInBattle;
+	BuffTrigger_Revive | BuffTrigger_On | BuffTrigger_Target | BuffTrigger_UnitCount | BuffTrigger_Round | BuffTrigger_NotInBattle |
+	BuffTrigger_TroopCategory;
 
 /** 구현을 알 수 없는 발동 조건 */
 interface BuffTrigger_Unknown {
@@ -242,4 +243,9 @@ interface BuffTrigger_Round {
 interface BuffTrigger_NotInBattle {
 	/** OR 인지 AND 인지 아직 모름 (네스트만 사용중) */
 	notInBattle: string[];
+}
+
+interface BuffTrigger_TroopCategory {
+	/** 아직 뭔지 모름 */
+	troop: string[];
 }

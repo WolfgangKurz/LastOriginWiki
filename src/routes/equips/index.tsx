@@ -8,12 +8,12 @@ import { ITEM_TYPE } from "@/types/Enums";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 
-import JsonLoader, { DBSourceConverter, GetJson, StaticDB } from "@/libs/JsonLoader";
 import { AssetsRoot, CurrentDate, CurrentEvent, EquipTypeDisplay, ImageExtension, RarityDisplay } from "@/libs/Const";
 import { groupBy, isActive } from "@/libs/Functions";
 import EntitySource from "@/libs/EntitySource";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
+import Loader, { DBSourceConverter, GetJson, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
 import EquipCard from "@/components/equip-card";
 import EffectFilterPopup from "@/components/popup/effect-filter-popup";
@@ -38,12 +38,8 @@ const Equips: FunctionalComponent<EquipsProps> = (props) => {
 		UpdateTitle(LocaleGet("MENU_EQUIPS"));
 	}
 
-	return Connect("Equips", actions, (store: any): preact.VNode => JsonLoader(
-		[
-			StaticDB.FilterableUnit,
-			StaticDB.FilterableEquip,
-		],
-		(): preact.VNode => {
+	return Connect("Equips", actions, (store: any): preact.VNode =>
+		<Loader json={ [StaticDB.FilterableUnit, StaticDB.FilterableEquip] } content={ ((): preact.VNode => {
 			const Filters = store.Equips as StoreType["Equips"];
 			const {
 				toggleEquipTypeChip,
@@ -511,7 +507,7 @@ const Equips: FunctionalComponent<EquipsProps> = (props) => {
 					</div>) }
 				</div>
 			</div>;
-		},
-	));
+		}) } />,
+	);
 };
 export default Equips;

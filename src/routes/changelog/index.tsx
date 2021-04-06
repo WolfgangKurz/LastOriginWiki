@@ -1,4 +1,4 @@
-import preact, { Fragment, FunctionalComponent, h } from "preact";
+import { Fragment, FunctionalComponent, h } from "preact";
 
 import { objState } from "@/libs/State";
 import { SetMeta, UpdateTitle } from "@/libs/Site";

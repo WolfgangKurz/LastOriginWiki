@@ -1,4 +1,4 @@
-import preact, { Component, RenderableProps } from "preact";
+import { Component, RenderableProps } from "preact";
 import { route } from "preact-router";
 
 interface RedirectProps {

@@ -1,12 +1,11 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent, h } from "preact";
 import { Route, Router } from "preact-router";
 import Redirect from "@/components/redirect";
 
-import { objState } from "@/libs/State";
-import { FailedToLoadBadge, JsonLoaderCore, LoadingBadge } from "@/libs/JsonLoader";
 import { CurrentLocale, LocaleTypes } from "@/libs/Locale";
 import { Host } from "@/libs/Const";
 
+import Loader from "@/components/loader";
 import Header from "@/components/header";
 
 import NotFoundPage from "@/routes/notfound";
@@ -52,56 +51,47 @@ const App: FunctionalComponent = () => {
 		}
 	}
 
-	const content = objState<preact.VNode | null>(null);
-	if (content.value === null) {
-		content.set(LoadingBadge());
-
-		JsonLoaderCore(`locale/${CurrentLocale}`)
-			.then(() => content.set(<Fragment>
-				<Header />
-
-				<div class="container p-4">
-					<Router>
-						<Route path="/" component={ Home } />
-
-						<Route path="/units" component={ Units } />
-						<Route path="/units/:uid" component={ UnitsView } />
-
-						<Route path="/equips/:uid?" component={ Equips } />
-
-						<Route path="/facilities" component={ Facilities } />
-						<Route path="/facilities/:uid" component={ FacilitiesView } />
-
-						<Route path="/enemies/:uid?/:level?" component={ Enemies } />
-						<Redirect
-							path="/enemy/:uid?/:level?"
-							to={ (p): string => p.uid
-								? p.level
-									? `/enemies/${p.uid}/${p.level}`
-									: `/enemies/${p.uid}`
-								: "/enemies" }
-						/>
-
-						<Route path="/worlds" component={ Worlds } />
-						<Route path="/worlds/:wid" component={ WorldView } />
-						<Route path="/worlds/:wid/:mid/:node?" component={ WorldMapView } />
-
-						<Route path="/simulator" component={ Simulator } />
-
-						<Route path="/changelog" component={ Changelog } />
-
-						<Route path="/bgm" component={ BGM } />
-
-						<NotFoundPage default />
-					</Router>
-				</div>
-			</Fragment>))
-			.catch(() => content.set(FailedToLoadBadge([`locale/${CurrentLocale}`])));
-	}
-
 	return <div id="app">
 		<link href={ `${Host}/assets/font/SpoqaHanSans-kr.css` } rel="stylesheet" />
-		{ content.value }
+		<Loader json={ `locale/${CurrentLocale}` }>
+			<Header />
+
+			<div class="container p-4">
+				<Router>
+					<Route path="/" component={ Home } />
+
+					<Route path="/units" component={ Units } />
+					<Route path="/units/:uid" component={ UnitsView } />
+
+					<Route path="/equips/:uid?" component={ Equips } />
+
+					<Route path="/facilities" component={ Facilities } />
+					<Route path="/facilities/:uid" component={ FacilitiesView } />
+
+					<Route path="/enemies/:uid?/:level?" component={ Enemies } />
+					<Redirect
+						path="/enemy/:uid?/:level?"
+						to={ (p): string => p.uid
+							? p.level
+								? `/enemies/${p.uid}/${p.level}`
+								: `/enemies/${p.uid}`
+							: "/enemies" }
+					/>
+
+					<Route path="/worlds" component={ Worlds } />
+					<Route path="/worlds/:wid" component={ WorldView } />
+					<Route path="/worlds/:wid/:mid/:node?" component={ WorldMapView } />
+
+					<Route path="/simulator" component={ Simulator } />
+
+					<Route path="/changelog" component={ Changelog } />
+
+					<Route path="/bgm" component={ BGM } />
+
+					<NotFoundPage default />
+				</Router>
+			</div>
+		</Loader>
 	</div>;
 };
 export default App;

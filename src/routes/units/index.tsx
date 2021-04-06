@@ -2,7 +2,6 @@ import { h, Fragment, FunctionalComponent } from "preact";
 
 import { actions, ActionsType, Connect, StoreType } from "@/store";
 
-import JsonLoader, { GetJson, StaticDB } from "@/libs/JsonLoader";
 import { isActive } from "@/libs/Functions";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
@@ -11,6 +10,7 @@ import { EffectFilterListItemPM, EffectFilterListItemSingle, EffectFilterListTyp
 import { BuffEffectList, BuffEffectListGroupKeys } from "@/types/BuffEffect";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
+import Loader, { GetJson, StaticDB, SubComponent } from "@/components/loader";
 import Icon from "@/components/bootstrap-icon";
 import Locale, { LocaleGet } from "@/components/locale";
 import ElemIcon from "@/components/elem-icon";
@@ -30,9 +30,8 @@ const Units: FunctionalComponent = () => {
 	SetMeta(["twitter:image", "og:image"], null);
 	UpdateTitle(LocaleGet("MENU_UNITS"));
 
-	return Connect("Units", actions, (store: any): preact.VNode => JsonLoader(
-		[StaticDB.FilterableUnit],
-		(): preact.VNode => {
+	return Connect("Units", actions, (store: any): preact.VNode =>
+		<Loader json={ StaticDB.FilterableUnit } content={ ((): preact.VNode => {
 			const Filters = store.Units as StoreType["Units"];
 			const {
 				toggleUnitsFilterRarityB,
@@ -231,27 +230,19 @@ const Units: FunctionalComponent = () => {
 									<button
 										class={ `btn btn-outline-danger ${isActive(Filters.Rarity[ACTOR_GRADE.SS])}` }
 										onClick={ toggleUnitsFilterRaritySS }
-									>
-										SS
-									</button>
+									>SS</button>
 									<button
 										class={ `btn btn-outline-danger ${isActive(Filters.Rarity[ACTOR_GRADE.S])}` }
 										onClick={ toggleUnitsFilterRarityS }
-									>
-										S
-									</button>
+									>S</button>
 									<button
 										class={ `btn btn-outline-danger ${isActive(Filters.Rarity[ACTOR_GRADE.A])}` }
 										onClick={ toggleUnitsFilterRarityA }
-									>
-										A
-									</button>
+									>A</button>
 									<button
 										class={ `btn btn-outline-danger ${isActive(Filters.Rarity[ACTOR_GRADE.B])}` }
 										onClick={ toggleUnitsFilterRarityB }
-									>
-										B
-									</button>
+									>B</button>
 								</div>
 								<div class="btn-group mx-2 mb-2">
 									<button
@@ -450,8 +441,8 @@ const Units: FunctionalComponent = () => {
 				{ Filters.DisplayType === "group" ? <UnitsGroup list={ UnitList() } /> : <Fragment /> }
 				{ Filters.DisplayType === "time" ? <UnitsTimetable list={ UnitList() } /> : <Fragment /> }
 			</div>;
-		},
-	));
+		}) } />,
+	);
 };
 
 export default Units;

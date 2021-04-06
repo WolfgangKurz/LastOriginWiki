@@ -1,4 +1,4 @@
-import preact, { Fragment, FunctionalComponent, h } from "preact";
+import { Fragment, FunctionalComponent, h } from "preact";
 import { Link, route } from "preact-router";
 
 import { ROLE_TYPE } from "@/types/Enums";
@@ -6,8 +6,11 @@ import { FacilityEntity, FacilityUpgradeRequiredMaterial, FactilityProduct } fro
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { Consumable } from "@/types/DB/Consumable";
 
-import JsonLoader, { GetJson, StaticDB } from "@/libs/JsonLoader";
+import { objState } from "@/libs/State";
+import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { SetMeta, UpdateTitle } from "@/libs/Site";
 
+import Loader, { GetJson, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import Icon from "@/components/bootstrap-icon";
@@ -16,14 +19,10 @@ import RarityBadge from "@/components/rarity-badge";
 import UnitCard from "@/components/unit-card";
 import UnitFace from "@/components/unit-face";
 import ItemIcon from "@/components/item-icon";
-
 import FacilityIcon from "../components/facility-icon";
 import DropItem from "@/components/drop-item";
 
 import "./style.scss";
-import { objState } from "@/libs/State";
-import { AssetsRoot, ImageExtension } from "@/libs/Const";
-import { SetMeta, UpdateTitle } from "@/libs/Site";
 
 interface FacilityViewProps {
 	uid: string;
@@ -47,13 +46,13 @@ const FacilityView: FunctionalComponent<FacilityViewProps> = (props) => {
 		return <Fragment>{ dt }</Fragment>;
 	}
 
-	return JsonLoader(
-		[
+	return <Loader
+		json={ [
 			DBKey,
 			StaticDB.FilterableUnit,
 			StaticDB.Consumable,
-		],
-		() => {
+		] }
+		content={ ((): preact.VNode => {
 			const facility = GetJson<FacilityEntity>(DBKey);
 			const FilterableUnitDB = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
 			const ConsumableDB = GetJson<Consumable[]>(StaticDB.Consumable);
@@ -426,7 +425,7 @@ const FacilityView: FunctionalComponent<FacilityViewProps> = (props) => {
 					</div>
 				</div>
 			</div>;
-		},
-	);
+		}) }
+	/>;
 };
 export default FacilityView;
