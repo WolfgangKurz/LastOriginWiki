@@ -1,7 +1,8 @@
 import { Fragment, FunctionalComponent, h } from "preact";
 import { Link, route } from "preact-router";
 
-import { MapEnemyData, MapNodeEntity, MapReward, Worlds } from "@/types/DB/Map";
+import { MapEnemyData, MapNodeEntity, Worlds } from "@/types/DB/Map";
+import { RawReward, RewardTypeBase } from "@/types/Reward";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
@@ -29,33 +30,7 @@ import MapSearchInfo from "../components/map-search-info";
 
 import "./style.scss";
 
-interface RewardDropTypeUnit {
-	unit: FilterableUnit;
-}
-interface RewardDropTypeEquip {
-	equip: FilterableEquip;
-	count: number;
-}
-interface RewardDropTypeConsumable {
-	consumable: Consumable;
-	count: number;
-}
-interface RewardDropTypeCash {
-	cash: number;
-}
-interface RewardDropTypeMetal {
-	metal: number;
-}
-interface RewardDropTypeNutrient {
-	nutrient: number;
-}
-interface RewardDropTypePower {
-	power: number;
-}
-type RewardDropTypeBase = RewardDropTypeUnit | RewardDropTypeEquip | RewardDropTypeConsumable |
-	RewardDropTypeCash | RewardDropTypeMetal | RewardDropTypeNutrient | RewardDropTypePower;
-
-type RewardDropType = RewardDropTypeBase & {
+type RewardDropType = RewardTypeBase & {
 	am?: true;
 };
 
@@ -202,7 +177,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 			const RewardDrops = ((): RewardDropType[] => {
 				if (!selectedValue) return [];
 
-				const f = (x: MapReward): RewardDropType | null => {
+				const f = (x: RawReward): RewardDropType | null => {
 					if (typeof x === "string") {
 						const k = x.replace(/Char_(.+)_N/, "$1");
 						const u = FilterableUnitDB.find(y => y.uid === k);

@@ -577,3 +577,183 @@ export enum CURRENCY_TYPE {
 	CHALLENGESTAGE_TICKET = 6,
 	// __MAX__ = 7,
 }
+
+export enum ROGUE_LIMIT_EFFECT_CATEGORY {
+	NONE = 0,
+	DIFFICULT_INCREASE = 1,
+	DEBUFF = 2,
+	BUFF = 3,
+	ENEMY_BUFF = 4,
+}
+
+export enum ROGUE_LIMIT_EFFECT_CONDITION {
+	NONE = 0,
+	CELL_MOVE_LIMIT = 1,
+	STAGE_CLEAR_LIMIT = 2,
+	FLOOR_CLEAR_LIMIT = 3,
+}
+
+export enum ROGUE_LIMIT_EFFECT_OVERLAP {
+	NONE = 0,
+	CONDITION_VALUE_INC = 1,
+}
+
+export enum ROGUE_LIMIT_EFFECT_SHOW_TYPE {
+	NONE = 0,
+	SHOW_EFFECT_APPLY = 1,
+}
+
+export enum ROGUE_LIMIT_EFFECT_TYPE {
+	NONE = 0,
+	DIFFICULT_INCREASE = 1,
+	CELL_MOVE_HP_DOWN = 2,
+	BUFF_SPC_KEY_GIVE = 3,
+	TRAP_OBJECT_IGNORE = 4,
+	DEBUFF_TRAP_OBJECT_IGNORE = 5,
+	STEALTH_MONSTER_OBJECT_IGNORE = 6,
+	ROGUE_POINT_RATE_INC = 7,
+}
+
+export enum ROGUE_QUEST_OBJECT_TYPE {
+	NONE = 0,
+
+	/** 특정 타입의 노드 삭제 */
+	ROGUE_OBJECT_SPC_TYPE_REMOVE = 1,
+
+	/** 특정 타입의 아이템 획득 */
+	ROGUE_ITEM_SPC_TYPE_GAIN = 2,
+
+	/** 층 돌파 */
+	ROGUE_FLOOR_CLEAR = 3,
+
+	/** 특정 패시브 이펙트 획득 */
+	ROGUE_EFFECT_SPC_TYPE_GAIN = 4,
+
+	/** 특정 등급 패시브 이펙트 획득 */
+	ROGUE_EFFECT_SPC_GRADE_GAIN = 5,
+
+	/** 전투 완료 */
+	ROGUE_STAGE_CLEAR = 6,
+
+	/** 적 처리 */
+	ROGUE_KILL_MONSTER = 7,
+
+	/** 특정 적 처리 */
+	ROGUE_KILL_MONSTER_SPC = 8,
+
+	/** 특정 유형 적 처리 */
+	ROGUE_KILL_MONSTER_TYPE = 9,
+
+	/** 특정 역할 적 처리 */
+	ROGUE_KILL_MONSTER_ROLE = 10,
+}
+
+export enum ROGUE_CELL_TYPE {
+	NONE = 0,
+	BLANK = 1,
+
+	STARTPOINT = 2,
+	BOSSMOB = 3,
+	MOB = 4,
+
+	/** 아군 신호 탐색 */
+	ACTOR = 5,
+
+	/** 오염된 군수 공장 */
+	EFFECT = 6,
+
+	/** 긴급 수복 스테이션 */
+	RECOVERY = 7,
+
+	/** 예상치 못한 사고 (물리, 지뢰지대) */
+	TRAP = 8,
+
+	/** 관측소 */
+	OBSERVE = 9,
+
+	/** 삼안 물자취급소 */
+	SHOP = 10,
+
+	/** 지휘 결심 체계 */
+	QUEST = 11,
+
+	/** 특수 밀봉 컨테이너 */
+	TREASURE = 12,
+
+	/** 공기 정화 시설 */
+	THOUSE = 13,
+
+	/** PECS 방문 카드 습득 */
+	KEY = 14,
+
+	TRACKER = 15,
+
+	/** 고준위 방사능 오염 */
+	POISON = 16,
+
+	/** 혼돈 엔트로피 */
+	DEBUFF = 17,
+
+	/** 예상치 못한 사고 (화염, 소이탄 저장고) */
+	FIRE_TRAP = 18,
+
+	/** 예상치 못한 사고 (냉기, 냉매 보관소) */
+	ICE_TRAP = 19,
+
+	/** 예상치 못한 사고 (전기, 고전류 발전 시설) */
+	LIGHTNING_TRAP = 20,
+}
+
+export enum ROGUEEFFECTTYPE {
+	NONE = 0,
+
+	/** 강습의 */
+	AMP = 1,
+
+	/** 장사정의 */
+	OBSERVE = 2,
+
+	/** 철갑의 */
+	ARMOR = 3,
+
+	/** 방공의 */
+	BARRIER = 4,
+
+	/** 요새의 */
+	GIFT = 5,
+
+	/** 기갑의 */
+	RAPID = 6,
+
+	/** 기만의 */
+	PREDICT = 7,
+
+	/** 유도의 */
+	DETAIL = 8,
+
+	/** 섬멸의 */
+	RESPONSE = 9,
+
+	/** 대구경의 */
+	PENETRATE = 10,
+
+	/** 전천후의 */
+	COATING = 11,
+
+	/** 제독의 */
+	VACCINE = 12,
+}
+
+export enum ROGUE_SKILL_TYPE {
+	NONE = 0,
+	SCOUT = 1,
+	SUPPORT_ATK = 2,
+	TREASURE_HUNTER = 3,
+	TRAP_DIS = 4,
+	DEBUFF_DIS = 5,
+	BOMB = 6,
+	STEALTH = 7,
+	SCOUTER = 8,
+	CREATOR = 9,
+	ROGUE_POINT_RATE_INC = 10,
+}

@@ -246,6 +246,6 @@ interface BuffTrigger_NotInBattle {
 }
 
 interface BuffTrigger_TroopCategory {
-	/** 아직 뭔지 모름 */
+	/** 전투원 그룹 목록 */
 	troop: string[];
 }

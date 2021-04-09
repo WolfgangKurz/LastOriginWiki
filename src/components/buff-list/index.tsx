@@ -10,7 +10,7 @@ import { UNIT_POSITION, BUFF_ATTR_TYPE, SKILL_ATTR, ACTOR_BODY_TYPE, ACTOR_CLASS
 import { StatPointValue } from "@/types/Stat";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
-import { ImageExtension, AssetsRoot } from "@/libs/Const";
+import { ImageExtension, AssetsRoot, TroopNameTable } from "@/libs/Const";
 
 import Loader, { GetJson, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
@@ -348,6 +348,9 @@ const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			case BUFFEFFECT_TYPE.STAGE_TOGETHER_ATTACK_ACTIVE_SKILL_1: // 102
 			case BUFFEFFECT_TYPE.STAGE_TOGETHER_ATTACK_ACTIVE_SKILL_2: // 103
 				return <Locale k="BUFFTYPE_TOGETHER" />;
+			case BUFFEFFECT_TYPE.STAT_MAXHP_VALUE: // 104
+			case BUFFEFFECT_TYPE.STAT_MAXHP_RATIO: // 105
+				return <Locale k="BUFFTYPE_MAXHP" p={ [p] } />;
 		}
 		return <Fragment>???</Fragment>;
 	}
@@ -615,6 +618,16 @@ const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				return <Locale k={ `BUFFTRIGGER_ROUND_${trigger.round.operator}` } p={ [trigger.round.round] } />;
 			else if ("notInBattle" in trigger)
 				return <Locale k="BUFFTRIGGER_NOT_IN_BATTLE" p={ [trigger.notInBattle.join(",")] } />;
+			else if ("troop" in trigger) {
+				return <Locale k="BUFFTRIGGER_TROOP" p={ [<Fragment>{
+					trigger.troop
+						.map(x => <span class={ `on-subbadge ${style["on-subbadge"]}` }>
+							<Locale k={ TroopNameTable[x] } />
+						</span>)
+						.gap(<Locale k="BUFFTRIGGER_OR" />)
+				}</Fragment>] } />;
+			}
+
 			return <Fragment>???</Fragment>;
 		}
 		return <Fragment />;
@@ -834,7 +847,9 @@ const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					<Locale k={ `UNIT_SKILL_active${stat.collaborate.skill}_${convertBuffToUid(stat.collaborate.with)}` } />
 				</span>,
 			] } />;
-		}
+		} else if ("max_hp" in stat)
+			return <Locale k="BUFFEFFECT_MAXHP" p={ [signedValue(stat.max_hp, level)] } />;
+
 		return <Fragment>{ JSON.stringify(stat) }</Fragment>; // "???";
 	}
 	function getEraseText (erase: BuffErase): preact.VNode {
@@ -1137,9 +1152,12 @@ const BuffList: FunctionalComponent<BuffListProps> = (props) => {
 		const staticList = list.filter(x => !("buffs" in x));
 		const dynamicList = list.filter(x => "buffs" in x).map(stat => <BuffRenderer stat={ stat } level={ level } />);
 		return <div class={ `buff-list text-dark ${props.class || ""}` }>
-			<ul class="list-group text-start">
-				<BuffRenderer stat={ staticList } level={ level } />
-			</ul>
+			{ staticList.length > 0
+				? <ul class="list-group text-start">
+					<BuffRenderer stat={ staticList } level={ level } />
+				</ul>
+				: <Fragment />
+			}
 			{ dynamicList.map(stats => <ul class="list-group text-start">{ stats }</ul>) }
 		</div>;
 	}) } />;

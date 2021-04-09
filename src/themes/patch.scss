@@ -31,6 +31,10 @@ table.table-fixed {
 	@include media-breakpoint-up($breakpoint) {
 		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
+		&.d#{$infix}-inline-grid {
+			display: inline-grid !important;
+		}
+
 		@for $i from 7 through 10 {
 			.row-cols#{$infix}-#{$i} {
 				@include row-cols($i);

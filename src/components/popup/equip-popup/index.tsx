@@ -47,6 +47,8 @@ interface EquipPopupProps {
 }
 
 const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
+	const latestUid = objState<string>("");
+
 	const imageExt = ImageExtension();
 
 	const level = objState<EquipLevelType>(10);
@@ -55,6 +57,16 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 	const displayTab = objState<"info" | "drop" | "upgrade">("info");
 
 	const StatusList = objState<BuffStat[]>([]);
+
+	if ((latestUid.value && !props.equip) || (props.equip && latestUid.value !== props.equip.fullKey)) {
+		if (props.equip) {
+			latestUid.set(props.equip.fullKey);
+
+			level.set(10);
+			rarity.set(props.equip.rarity);
+		} else
+			latestUid.set("");
+	}
 
 	return <Loader json={ [StaticDB.FilterableUnit, StaticDB.FilterableEquip] } content={ ((): preact.VNode => {
 		const FilterableUnitDB = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);

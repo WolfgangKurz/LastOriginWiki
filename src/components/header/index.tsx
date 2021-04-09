@@ -63,7 +63,7 @@ const Header: FunctionalComponent = () => {
 						<NavItem href="/enemies" text="MENU_ENEMIES" />
 						<NavItem href="/worlds" text="MENU_WORLDS" />
 
-						<NavItem href="/simulator" text="MENU_SIMULATOR" />
+						<NavItem href="/roguelike" text="MENU_ROGUELIKE" />
 
 						<NavItem href="/changelog" text="MENU_CHANGELOG" />
 
@@ -79,6 +79,10 @@ const Header: FunctionalComponent = () => {
 								<Locale k="MENU_ETC" />
 							</a>
 							<ul class="dropdown-menu" aria-labelledby="topNavbarDropdown">
+								<DropdownItem href="/simulator">
+									<Locale k="MENU_SIMULATOR" />
+								</DropdownItem>
+
 								<DropdownItem href="/exp">
 									<Locale k="MENU_ETC_EXPCALC" />
 									<span class="badge bg-secondary ms-2">TBA</span>

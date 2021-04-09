@@ -353,6 +353,9 @@ const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			case BUFFEFFECT_TYPE.STAGE_TOGETHER_ATTACK_ACTIVE_SKILL_1: // 102
 			case BUFFEFFECT_TYPE.STAGE_TOGETHER_ATTACK_ACTIVE_SKILL_2: // 103
 				return <Locale k="BUFFTYPE_TOGETHER" />;
+			case BUFFEFFECT_TYPE.STAT_MAXHP_VALUE: // 104
+			case BUFFEFFECT_TYPE.STAT_MAXHP_RATIO: // 105
+				return <Locale k="BUFFTYPE_MAXHP" p={ [p] } />;
 		}
 		return <Fragment>???</Fragment>;
 	}
@@ -839,7 +842,9 @@ const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					<Locale k={ `UNIT_SKILL_active${stat.collaborate.skill}_${convertBuffToUid(stat.collaborate.with)}` } />
 				</span>,
 			] } />;
-		}
+		} else if ("max_hp" in stat)
+			return <Locale k="BUFFEFFECT_MAXHP" p={ [signedValue(stat.max_hp, level)] } />;
+
 		return <Fragment>{ JSON.stringify(stat) }</Fragment>; // "???";
 	}
 	function getEraseText (erase: BuffErase): preact.VNode {

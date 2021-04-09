@@ -1,5 +1,5 @@
 import { BUFFEFFECT_TYPE } from "../BuffEffect";
-import { SKILL_ATTR, ACTOR_GRADE, ACTOR_CLASS, ROLE_TYPE, ACTOR_BODY_TYPE } from "../Enums";
+import { SKILL_ATTR, ACTOR_GRADE, ACTOR_CLASS, ROLE_TYPE, ACTOR_BODY_TYPE, ROGUE_SKILL_TYPE } from "../Enums";
 
 export interface FilterableUnitBuff {
 	target: "self" | "team" | "enemy";
@@ -45,6 +45,8 @@ export interface FilterableUnit {
 		Factive1?: FilterableUnitSkill;
 		Factive2?: FilterableUnitSkill;
 	};
+
+	roguelike: ROGUE_SKILL_TYPE[];
 }
 
 /* eslint-disable-next-line @typescript-eslint/no-namespace */
@@ -76,6 +78,8 @@ export namespace FilterableUnit {
 				elem: SKILL_ATTR.PHYSICS,
 			},
 		},
+
+		roguelike: [],
 	};
 
 	/* eslint-disable camelcase */

@@ -23,7 +23,10 @@ import RarityBadge from "@/components/rarity-badge";
 import UnitFace from "@/components/unit-face";
 import UnitBadge from "@/components/unit-badge";
 import ElemIcon from "@/components/elem-icon";
+import EquipIcon from "@/components/equip-icon";
 import SourceBadge from "@/components/source-badge";
+import RoguelikeEffectBadge from "@/components/roguelike-effect-badge";
+import RoguelikeItemBadge from "@/components/roguelike-item-badge";
 
 import SkinView from "../components/skin-view";
 import SkillTable from "../components/skill-table";
@@ -31,7 +34,7 @@ import UnitDialogue, { VoiceItem } from "../components/unit-dialogue";
 
 import "./style.scss";
 
-type TabTypes = "basic" | "skills" | "dialogue";
+type TabTypes = "basic" | "skills" | "roguelike" | "dialogue";
 
 interface SkinItem extends UnitSkin {
 	isDef: boolean;
@@ -516,6 +519,58 @@ const SkillTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 	</div>;
 };
 
+const RoguelikeTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex, SkinList }) => {
+	const skills = unit.roguelike.filter(x => x.type !== 0);
+
+	return <div style={ { display: display ? "" : "none" } }>
+		{ skills.length > 0
+			? <div class="row row-cols-1 row-cols-md-2">
+				{ skills.map(x => <div class="col">
+					<div class="card bg-dark text-light m-4">
+						<div class="card-body">
+							<div class="float-start me-4 card bg-dark text-light">
+								<div class="card-body">
+									<div>
+										<EquipIcon image={ x.icon } size="big" />
+									</div>
+									<div>
+										<Locale k={ `RogueSkill_${x.type}` } />
+									</div>
+									<div>
+										<RarityBadge rarity={ x.grade } />
+									</div>
+								</div>
+							</div>
+
+							<div class="text-start">
+								<Locale k={ `RogueSkill_${x.type}_DESC` } />
+								<span class="badge bg-warning text-dark ms-3">
+									<Locale k="UNIT_ROGUELIKE_COUNT" p={ [x.count] } />
+								</span>
+
+								<hr />
+
+								{ x.limitEffect
+									? <div class="col">
+										<RoguelikeEffectBadge effect={ x.limitEffect } />
+									</div>
+									: <Fragment />
+								}
+								{ x.items.map(y => <div class="col">
+									<RoguelikeItemBadge item={ y } />
+								</div>) }
+							</div>
+						</div>
+					</div>
+				</div>) }
+			</div>
+			: <div class="p-5 text-secondary">
+				<Locale k="UNIT_ROGUELIKE_EMPTY" />
+			</div>
+		}
+	</div>;
+};
+
 const DialogueTab: FunctionalComponent<SubpageProps> = ({ display, unit, SkinList }) => {
 	const dialogueLang = objState<keyof UnitDialogueDataType>("ko");
 
@@ -677,6 +732,19 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 						<li class="nav-item">
 							<a
 								href="#"
+								class={ `nav-link text-dark ${isActive(DisplayTab.value === "roguelike")}` }
+								onClick={ (e): void => {
+									e.preventDefault();
+									DisplayTab.set("roguelike");
+								} }
+							>
+								<Icon icon="controller" class="me-1" />
+								<Locale k="UNIT_VIEW_TAB_ROGUELIKE" />
+							</a>
+						</li>
+						<li class="nav-item">
+							<a
+								href="#"
 								class={ `nav-link text-dark ${isActive(DisplayTab.value === "dialogue")}` }
 								onClick={ (e): void => {
 									e.preventDefault();
@@ -693,6 +761,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 
 			<BasicTab display={ DisplayTab.value === "basic" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } />
 			<SkillTab display={ DisplayTab.value === "skills" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } />
+			<RoguelikeTab display={ DisplayTab.value === "roguelike" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } />
 			<DialogueTab display={ DisplayTab.value === "dialogue" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } />
 		</div>;
 	}) } />;

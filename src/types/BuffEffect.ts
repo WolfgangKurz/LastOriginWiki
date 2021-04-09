@@ -108,6 +108,8 @@ export enum BUFFEFFECT_TYPE {
 	STAGE_IMMUNITY_DEBUFF = 101,
 	STAGE_TOGETHER_ATTACK_ACTIVE_SKILL_1 = 102,
 	STAGE_TOGETHER_ATTACK_ACTIVE_SKILL_2 = 103,
+	STAT_MAXHP_VALUE = 104,
+	STAT_MAXHP_RATIO = 105,
 }
 
 export type BuffEffect = BuffEffect_Base & {
@@ -129,7 +131,8 @@ type BuffEffect_Body = BuffEffect_Unknown | BuffEffect_Off | BuffEffect_Attack |
 	BuffEffect_DamageAdd | BuffEffect_Barrier | BuffEffect_Guard | BuffEffect_Position | BuffEffect_NextCritical | BuffEffect_Range |
 	BuffEffect_Penetration | BuffEffect_Metamolphosis | BuffEffect_FixedDamage | BuffEffect_Provoke | BuffEffect_AttackSupport |
 	BuffEffect_Immovable | BuffEffect_SkillDisable | BuffEffect_Revive | BuffEffect_AttackTarget | BuffEffect_InvokeChance |
-	BuffEffect_SummonRemove | BuffEffect_PenetrationForce | BuffEffect_Exp | BuffEffect_DebuffImmune | BuffEffect_Collaborate;
+	BuffEffect_SummonRemove | BuffEffect_PenetrationForce | BuffEffect_Exp | BuffEffect_DebuffImmune | BuffEffect_Collaborate |
+	BuffEffect_MaxHP;
 
 // #region BuffEffect
 interface BuffEffect_Unknown {
@@ -376,6 +379,10 @@ interface BuffEffect_Collaborate {
 		with: string;
 	};
 }
+
+interface BuffEffect_MaxHP {
+	max_hp: BuffEffectValue;
+}
 // #endregion
 
 export interface BuffEffectInfo {
@@ -397,6 +404,7 @@ export const BuffEffectList = {
 		{ pm: true, text: "BUFF_ACC", type: [BUFFEFFECT_TYPE.STAT_RATING_VALUE, BUFFEFFECT_TYPE.STAT_RATING_RATIO] },
 		{ pm: true, text: "BUFF_CRIT", type: [BUFFEFFECT_TYPE.STAT_CRITICAL_VALUE, BUFFEFFECT_TYPE.STAT_CRITICAL_RATIO] },
 		{ pm: true, text: "BUFF_EVA", type: [BUFFEFFECT_TYPE.STAT_AVOID_VALUE, BUFFEFFECT_TYPE.STAT_AVOID_RATIO] },
+		{ pm: true, text: "BUFF_MAXHP", type: [BUFFEFFECT_TYPE.STAT_MAXHP_VALUE, BUFFEFFECT_TYPE.STAT_MAXHP_RATIO] },
 	],
 	damageAdd: [
 		{ pm: true, text: "BUFF_ANTI_LIGHT", type: [BUFFEFFECT_TYPE.STAGE_TROOPERTYPEDMGBONUS_RATIO] },

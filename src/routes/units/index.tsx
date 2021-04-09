@@ -55,6 +55,7 @@ const Units: FunctionalComponent = () => {
 				setUnitsFilterSkillDismissGuardType,
 
 				toggleUnitsFilterEffectTarget,
+				toggleUnitsFilterRoguelikeSkill,
 				setUnitEffectFilters,
 
 				setDisplayType,
@@ -141,6 +142,11 @@ const Units: FunctionalComponent = () => {
 
 				return FilterableUnitDB
 					.filter(x => LocaleGet(`UNIT_${x.uid}`).includes(Filters.SearchText))
+					.filter(x => {
+						if (Filters.RoguelikeSkill.length > 0)
+							return Filters.RoguelikeSkill.some(y => x.roguelike.includes(y));
+						return true;
+					})
 					.filter(x => {
 						if (!Filters.Rarity[x.rarity]) return false;
 						if (!Filters.Type[x.type]) return false;
@@ -431,6 +437,26 @@ const Units: FunctionalComponent = () => {
 									list={ Filters.EffectFilters }
 									setter={ setUnitEffectFilters }
 								/>
+							</div>
+						</div>
+						<hr class="my-2" />
+
+						<div class="row">
+							<div class="col-md-auto col-12 filter-label">
+								<Locale k="UNIT_FILTERS_ROGUELIKE_SKILL" />
+							</div>
+							<div class="col-md col-12">
+								<div class="btn-group me-1">
+									{ new Array(11)
+										.fill(0)
+										.map((_, i) => <button
+											class={ `btn btn-outline-substory ${isActive(Filters.RoguelikeSkill.includes(i))}` }
+											onClick={ (): void => toggleUnitsFilterRoguelikeSkill(i) }
+										>
+											<Locale k={ `RogueSkill_${i}` } />
+										</button>)
+									}
+								</div>
 							</div>
 						</div>
 					</div>

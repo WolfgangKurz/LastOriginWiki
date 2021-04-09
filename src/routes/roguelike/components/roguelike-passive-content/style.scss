@@ -1,0 +1,75 @@
+.effect-icon {
+	max-width: 5em;
+
+	&.button {
+		max-height: 3em;
+	}
+}
+
+.subbadge {
+	margin-right: 0.25em;
+	font-size: 100%;
+}
+
+:global {
+	.table-effect.container {
+		margin-bottom: 0 !important;
+
+		> .row > .col,
+		> .row > .col-auto {
+			&,
+			&.nested > .row > .col {
+				margin-bottom: -1px;
+				padding: 0.75rem;
+				border: 1px solid #dee2e6;
+				word-break: keep-all;
+
+				&.bg-dark {
+					border-color: #454d55;
+					font-weight: bold;
+				}
+			}
+
+			&.icon-container {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				.icon-back {
+					display: inline-block;
+					padding: 1em;
+					background-position: center;
+					background-repeat: no-repeat;
+					background-size: contain;
+
+					$rarities: (
+						B: 1,
+						A: 2,
+						S: 3,
+						SS: 4,
+						SSS: 5,
+					);
+					$exts: png, webp;
+					@each $rarity, $grade in $rarities {
+						@each $ext in $exts {
+							&[data-ext="#{$ext}"][data-grade="#{$grade}"] {
+								background-image: url($assetsRoot + "/" + $ext + "/item/UI_ICON_EffectObjBg" + $rarity + "." + $ext);
+							}
+						}
+					}
+				}
+			}
+
+			&.nested {
+				padding: 0;
+				border-left: 0;
+				border-top: 0;
+				border-right: 0;
+
+				> .row {
+					margin: 0;
+				}
+			}
+		}
+	}
+}

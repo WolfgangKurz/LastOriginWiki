@@ -129,7 +129,7 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 						return <Locale k="COMMON_SOURCE_EXCHANGE_EVENT" />;
 					return <Fragment>
 						{ event }&nbsp;
-							<Locale k="COMMON_SOURCE_EXCHANGE" />
+						<Locale k="COMMON_SOURCE_EXCHANGE" />
 					</Fragment>;
 				}
 				const data = Source.MonthlyData || { year: "?", month: "?" };
