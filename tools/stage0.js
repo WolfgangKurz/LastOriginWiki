@@ -22,6 +22,7 @@ const list =
 			"facility",
 			"summon",
 			"unit", "unit-dialogue", "unit-skill", "unit-skin",
+			"roguelike-skill",
 		].map(x => `stage0/${x}`),
 	];
 

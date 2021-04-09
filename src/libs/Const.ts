@@ -629,6 +629,57 @@ export const UnitRoleDisplay: Record<ROLE_TYPE, string> = {
 	[ROLE_TYPE.SUPPORTER]: "지원기",
 };
 
+export const TroopNameTable: Record<string, string> = {
+	/* eslint-disable camelcase */
+	Squad_080_1: "UNIT_GROUP_080",
+	Squad_3PFairy_1: "UNIT_GROUP_3PFairy",
+	Squad_3PFairy_2: "UNIT_GROUP_3PFairy II",
+	Squad_AACannonier_1: "UNIT_GROUP_AACannonier",
+	Squad_AGSRoboTech_1: "UNIT_GROUP_AGSRoboTech",
+	Squad_AGSRoboTech_2: "UNIT_GROUP_AGSRoboTech II",
+	Squad_AGSRoboTech_3: "UNIT_GROUP_AGSRoboTech III",
+	Squad_AGSRoboTech_4: "UNIT_GROUP_AGSRoboTech IV",
+	Squad_AmuseAttendant: "UNIT_GROUP_AmuseAttendant",
+	Squad_AngerOfTheHorde_1: "UNIT_GROUP_AngerOfTheHorde",
+	Squad_AngerOfTheHorde_2: "UNIT_GROUP_AngerOfTheHorde II",
+	Squad_AnywhereSeries_1: "UNIT_GROUP_AnywhereSeries",
+	Squad_AnywhereSeries_2: "UNIT_GROUP_AnywhereSeries II",
+	Squad_ArmoredMaiden_1: "UNIT_GROUP_ArmoredMaiden",
+	Squad_BattleMaid_1: "UNIT_GROUP_BattleMaid",
+	Squad_BattleMaid_2: "UNIT_GROUP_BattleMaid II",
+	Squad_Bermuda_1: "UNIT_GROUP_Bermuda",
+	Squad_Bermuda_2: "UNIT_GROUP_Bermuda II",
+	Squad_Bismarck: "UNIT_GROUP_Bismarck",
+	Squad_CityGuard_1: "UNIT_GROUP_CityGuard",
+	Squad_CityGuard_2: "UNIT_GROUP_CityGuard II",
+	Squad_CompanionSeries_1: "UNIT_GROUP_CompanionSeries",
+	Squad_CompanionSeries_2: "UNIT_GROUP_CompanionSeries II",
+	Squad_Dentertainment_1: "UNIT_GROUP_Dentertainment",
+	Squad_Dentertainment_2: "UNIT_GROUP_Dentertainment II",
+	Squad_Dentertainment_3: "UNIT_GROUP_Dentertainment III",
+	Squad_DoomBringer_1: "UNIT_GROUP_DoomBringer",
+	Squad_DoomBringer_2: "UNIT_GROUP_DoomBringer II",
+	Squad_GoldenWorkers_1: "UNIT_GROUP_GoldenWorkers",
+	Squad_GoldenWorkers_2: "UNIT_GROUP_GoldenWorkers II",
+	Squad_Horizon_1: "UNIT_GROUP_Horizon",
+	Squad_Kouhei: "UNIT_GROUP_Kouhei",
+	Squad_OrbitalWatcher_1: "UNIT_GROUP_OrbitalWatcher",
+	Squad_PublicServant_1: "UNIT_GROUP_PublicServant",
+	Squad_PublicServant_2: "UNIT_GROUP_PublicServant II",
+	Squad_PublicServant_3: "UNIT_GROUP_PublicServant III",
+	Squad_SkyKnight_1: "UNIT_GROUP_SkyKnight",
+	Squad_SkyKnight_2: "UNIT_GROUP_SkyKnight II",
+	Squad_SmartEnjoy: "UNIT_GROUP_SmartEnjoy",
+	Squad_SteelLine_1: "UNIT_GROUP_SteelLine",
+	Squad_SteelLine_2: "UNIT_GROUP_SteelLine II",
+	Squad_Strikers: "UNIT_GROUP_Strikers",
+	Squad_TeamMongus_1: "UNIT_GROUP_TeamMongus",
+	Squad_Walhalla_1: "UNIT_GROUP_Walhalla",
+	Squad_Walhalla_2: "UNIT_GROUP_Walhalla II",
+	Squad_WatcherOfNature: "UNIT_GROUP_WatcherOfNature",
+	/* eslint-enable camelcase */
+};
+
 export function ImageExtension (): ImageExtensionTypes {
 	// return webpAvailable ? "webp" : "png";
 	const list = ImageExtensionList as string[];

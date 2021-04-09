@@ -80,11 +80,10 @@ const UnitBadge: FunctionalComponent<UnitBadgeProps> = (props) => {
 		<i />
 		{
 			type !== -1 && role !== -1
-				? <Fragment>
-					<Locale k={ `COMMON_UNIT_TYPE_SHORT_${TypeName}` } />
-					&nbsp;
-					<Locale k={ `COMMON_UNIT_ROLE_${RoleName}` } />
-				</Fragment>
+				? [
+					<Locale k={ `COMMON_UNIT_TYPE_SHORT_${TypeName}` } />,
+					<Locale k={ `COMMON_UNIT_ROLE_${RoleName}` } />,
+				].gap(" ")
 				: type !== -1
 					? <Locale k={ `COMMON_UNIT_TYPE_${TypeName}` } />
 					: <Locale k={ `COMMON_UNIT_ROLE_${RoleName}` } />

@@ -66,6 +66,12 @@ export const StaticDB = {
 	EXP: "exp",
 	Map: "map",
 	Story: "story",
+	RoguelikeLimitEffects: "roguelike/limiteffects",
+	RoguelikeBuffEffects: "roguelike/buffeffects",
+	RoguelikeEffects: "roguelike/effects",
+	RoguelikeNode: "roguelike/node",
+	RoguelikeQuest: "roguelike/quest",
+	RoguelikeItem: "roguelike/item",
 };
 
 export type JsonDataConverter<T> = (data: T) => T;

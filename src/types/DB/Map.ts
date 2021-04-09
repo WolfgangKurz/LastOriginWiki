@@ -1,22 +1,4 @@
-type MapRewardChar = string;
-interface MapRewardItem {
-	item: string;
-	count: number;
-	chance?: number;
-}
-interface MapRewardCash {
-	cash: number;
-}
-interface MapRewardMetal {
-	metal: number;
-}
-interface MapRewardNutrient {
-	nutrient: number;
-}
-interface MapRewardPower {
-	power: number;
-}
-export type MapReward = MapRewardChar | MapRewardItem | MapRewardCash | MapRewardMetal | MapRewardNutrient | MapRewardPower;
+import { RawRewardItem, RawReward } from "@/types/Reward";
 
 export interface MapEnemyData {
 	id: string;
@@ -46,7 +28,7 @@ export interface MapSearch {
 	power: number;
 	units: number;
 	unitsLv: number;
-	items: MapRewardItem[];
+	items: RawRewardItem[];
 }
 
 export interface MapNodeEntity {
@@ -61,8 +43,8 @@ export interface MapNodeEntity {
 
 	missions: string[];
 	/* eslint-disable camelcase */
-	reward_f: MapReward[];
-	reward_am: MapReward[];
+	reward_f: RawReward[];
+	reward_am: RawReward[];
 	/* eslint-enable camelcase */
 
 	wave?: Array<MapWaveGroup[]>;

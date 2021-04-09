@@ -3,7 +3,7 @@ import createStore, { ActionCreator, StateMapper } from "unistore";
 import { connect } from "unistore/preact";
 import merge from "deepmerge";
 
-import { ACTOR_GRADE, ACTOR_CLASS, ROLE_TYPE, ACTOR_BODY_TYPE, SKILL_ATTR } from "@/types/Enums";
+import { ACTOR_GRADE, ACTOR_CLASS, ROLE_TYPE, ACTOR_BODY_TYPE, SKILL_ATTR, ROGUE_SKILL_TYPE } from "@/types/Enums";
 import { AllOnlyExcept, SkillFilter } from "@/types/Internal";
 import { BuffEffectList, BuffEffectListGroupKeys } from "@/types/BuffEffect";
 import { EffectFilterListType } from "@/types/Buff";
@@ -56,6 +56,8 @@ const states = {
 				}
 				return { ...x, selected: false };
 			}) as EffectFilterListType,
+
+		RoguelikeSkill: [] as ROGUE_SKILL_TYPE[],
 
 		DisplayType: "table" as ("table" | "list" | "group" | "time"),
 		SearchText: "",
@@ -155,11 +157,23 @@ export const actions: ActionsTypeInternal<StoreType> = {
 		if (index >= 0) {
 			const list = [...state.Units.EffectTarget];
 			list.splice(index, 1);
-			return merge(merge(state, { Units: { EffectTarget: "" } }), { Units: { EffectTarget: list } });
+			return merge(merge(state, { Units: { EffectTarget: null } }), { Units: { EffectTarget: list } });
 		}
 
 		const list = [...state.Units.EffectTarget, type];
-		return merge(merge(state, { Units: { EffectTarget: "" } }), { Units: { EffectTarget: list } });
+		return merge(merge(state, { Units: { EffectTarget: null } }), { Units: { EffectTarget: list } });
+	},
+
+	toggleUnitsFilterRoguelikeSkill: (state, type: ROGUE_SKILL_TYPE) => {
+		const index = state.Units.RoguelikeSkill.indexOf(type);
+		if (index >= 0) {
+			const list = [...state.Units.RoguelikeSkill];
+			list.splice(index, 1);
+			return merge(merge(state, { Units: { RoguelikeSkill: null } }), { Units: { RoguelikeSkill: list } });
+		}
+
+		const list = [...state.Units.RoguelikeSkill, type];
+		return merge(merge(state, { Units: { RoguelikeSkill: null } }), { Units: { RoguelikeSkill: list } });
 	},
 
 	setUnitEffectFilters: (state, list: EffectFilterListType) => {

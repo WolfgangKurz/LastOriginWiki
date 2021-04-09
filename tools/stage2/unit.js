@@ -13,6 +13,7 @@ const targetDir = path.resolve(__dirname, "..", "..", "external", "json", "unit"
 		jp: JSON.parse(fs.readFileSync(path.resolve(sourceDir, "dialogue", "jp.json"), { encoding: "utf-8" })),
 	};
 	const skins = JSON.parse(fs.readFileSync(path.resolve(sourceDir, "unit-skin.json"), { encoding: "utf-8" }));
+	const roguelikeSkills = JSON.parse(fs.readFileSync(path.resolve(sourceDir, "roguelike-skill.json"), { encoding: "utf-8" }));
 
 	await rmfr(targetDir);
 	fs.mkdirSync(targetDir, { recursive: true });
@@ -62,6 +63,8 @@ const targetDir = path.resolve(__dirname, "..", "..", "external", "json", "unit"
 					jp: dialogues.jp[char.uid],
 				},
 				skins: skins[char.uid],
+
+				roguelike: roguelikeSkills.filter(y => y.unit === `Char_${char.uid}_N`),
 			}),
 			{ encoding: "utf-8" },
 		);

@@ -3,6 +3,7 @@ import { UnitDialogueDataType } from "@/types/DB/Dialogue";
 import { SkillGroup } from "@/types/DB/Skill";
 import { UnitStats } from "@/types/DB/UnitStats";
 import { ACTOR_GRADE, ACTOR_CLASS, ROLE_TYPE, ACTOR_BODY_TYPE, ITEM_TYPE } from "@/types/Enums";
+import RoguelikeSkill from "./Roguelike.Skill";
 
 export type LinkBonusType =
 	"" |
@@ -121,6 +122,8 @@ export interface Unit {
 	skills: Partial<SkillGroup>;
 	dialogue: UnitDialogueDataType;
 	skins: UnitSkin;
+
+	roguelike: RoguelikeSkill[];
 }
 /* eslint-disable-next-line @typescript-eslint/no-namespace */
 export namespace Unit {
@@ -185,6 +188,8 @@ export namespace Unit {
 			},
 			sid: 0,
 		},
+
+		roguelike: [],
 	};
 }
 

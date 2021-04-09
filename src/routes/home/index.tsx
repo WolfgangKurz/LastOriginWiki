@@ -14,6 +14,8 @@ import style from "./style.scss";
 import Icon from "@/components/bootstrap-icon";
 
 const Home: FunctionalComponent = () => {
+	const ext = ImageExtension();
+
 	const pad = (x: number, y: number): string => x.toString().padStart(y, "0");
 	const BuildTime = ((): string => {
 		const dt = new Date(BuildInfo.time);
@@ -108,19 +110,13 @@ const Home: FunctionalComponent = () => {
 		</p>
 		<hr />
 
-		{ ImageExtension() === "png" ? <div class="alert alert-danger">
+		{ ext === "png" ? <div class="alert alert-danger">
 			<Locale k="HOME_WEBP_UNAVAILABLE" />
 		</div> : <Fragment /> }
 
-		<div class="alert alert-success">
-			모든 전투원의 대사 입력이 완료되었습니다. 참여해주신 모든 분들께 감사드립니다.<br />
-			<a
-				href="https://docs.google.com/spreadsheets/d/1TrLn5czFe2Ww1xg4HiFsDzZDcnphxV3AqP_DgNqaU00"
-				target="_blank"
-				rel="noreferrer"
-			>전투원 대사 DB</a>는 항상 열려있습니다.<br />
-			대사가 잘못되었거나 오타가 있는 경우 얼마든지 수정해주셔도 됩니다.
-		</div>
+		<Link class={ style["roguelike-button"] } data-ext={ ext } href="/roguelike">
+			<Locale k="MENU_ROGUELIKE" />
+		</Link>
 		<hr />
 
 		<Locale k="HOME_DEVELOPER" />

@@ -25,10 +25,11 @@ import Worlds from "@/routes/worlds";
 import WorldView from "@/routes/worlds/world-view";
 import WorldMapView from "@/routes/worlds/map-view";
 
-import Simulator from "@/routes/simulator";
+import Roguelike from "@/routes/roguelike";
 
 import Changelog from "@/routes/changelog";
 
+import Simulator from "@/routes/simulator";
 import BGM from "@/routes/bgm";
 
 const App: FunctionalComponent = () => {
@@ -82,10 +83,11 @@ const App: FunctionalComponent = () => {
 					<Route path="/worlds/:wid" component={ WorldView } />
 					<Route path="/worlds/:wid/:mid/:node?" component={ WorldMapView } />
 
-					<Route path="/simulator" component={ Simulator } />
+					<Route path="/roguelike" component={ Roguelike } />
 
 					<Route path="/changelog" component={ Changelog } />
 
+					<Route path="/simulator" component={ Simulator } />
 					<Route path="/bgm" component={ BGM } />
 
 					<NotFoundPage default />

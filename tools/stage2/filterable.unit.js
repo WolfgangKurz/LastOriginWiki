@@ -12,16 +12,9 @@ const path = require("path");
 
 const targetDir = path.resolve(__dirname, "..", "..", "external", "json");
 
-const input = JSON.parse(
-	fs.readFileSync(path.resolve(__dirname, "..", "..", "db", "unit.json"), { encoding: "utf-8" })
-		.replace(/export default /, "")
-		.replace(/;$/, ""),
-);
-const skill = JSON.parse(
-	fs.readFileSync(path.resolve(__dirname, "..", "..", "db", "unit-skill.json"), { encoding: "utf-8" })
-		.replace(/export default /, "")
-		.replace(/;$/, ""),
-);
+const input = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "..", "db", "unit.json"), { encoding: "utf-8" }));
+const skill = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "..", "db", "unit-skill.json"), { encoding: "utf-8" }));
+const roguelikeSkills = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "..", "db", "roguelike-skill.json"), { encoding: "utf-8" }));
 
 function isPositiveBuffEffectValue (v) {
 	if (typeof v.base === "number") return v.base >= 0;
@@ -160,6 +153,8 @@ input.forEach((x) => {
 
 		buffs: s,
 		skills: se,
+
+		roguelike: roguelikeSkills.filter(y => y.unit === `Char_${x.uid}_N`).map(y => y.type),
 	});
 });
 
