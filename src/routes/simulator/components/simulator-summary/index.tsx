@@ -309,41 +309,41 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 					return 0;
 				})();
 
-				const bonusRatio = unitInfo.linkBonus
+				const linkRatio = unitInfo.linkBonus
 					.filter(x => x.startsWith(bonusTable[key]))
 					.reduce((p, c) => {
 						const lb = GetLinkBonus(c, links);
 						if (!ratioValues.includes(key) && lb.Postfix === "%") // % 표기되는 유형이 아니고 % 값인 경우
 							return p + Decimal.div(lb.Value, 100).toNumber();
 						return p;
-					}, 1) +
-					buffList.reduce((p, c) => {
-						if (!c.enabled) return p;
+					}, 1);
+				const bonusRatio = buffList.reduce((p, c) => {
+					if (!c.enabled) return p;
 
-						let v = 0;
-						c.buff.buffs.forEach((b, bi) => {
-							const force = [
-								c.buff.on === "round" || c.buff.on === "wave",
-								!b.value.chance || b.value.chance === "100%",
-								c.buff.if === false,
-							].every(x => x);
+					let v = 0;
+					c.buff.buffs.forEach((b, bi) => {
+						const force = [
+							c.buff.on === "round" || c.buff.on === "wave",
+							!b.value.chance || b.value.chance === "100%",
+							c.buff.if === false,
+						].every(x => x);
 
-							const bkey = `${c.buff.key}_${bi}`;
-							if (!force && !usingBuffs.value.includes(bkey)) return;
+						const bkey = `${c.buff.key}_${bi}`;
+						if (!force && !usingBuffs.value.includes(bkey)) return;
 
-							const y = b.value;
-							if (key === "ATK" && "attack" in y)
-								v += levelV(y.attack, c.level, 2) * (buffStacks.value[bkey] || 1);
-							else if (key === "DEF" && "defense" in y)
-								v += levelV(y.defense, c.level, 2) * (buffStacks.value[bkey] || 1);
-							else if (key === "HP" && "hp" in y)
-								v += levelV(y.hp, c.level, 2) * (buffStacks.value[bkey] || 1);
-							else if (key === "SPD" && "turnSpeed" in y)
-								v += levelV(y.turnSpeed, c.level, 2) * (buffStacks.value[bkey] || 1);
-						});
-						return Decimal.add(p, Decimal.div(v, 100))
-							.toNumber();
-					}, 0);
+						const y = b.value;
+						if (key === "ATK" && "attack" in y)
+							v += levelV(y.attack, c.level, 2) * (buffStacks.value[bkey] || 1);
+						else if (key === "DEF" && "defense" in y)
+							v += levelV(y.defense, c.level, 2) * (buffStacks.value[bkey] || 1);
+						else if (key === "HP" && "hp" in y)
+							v += levelV(y.hp, c.level, 2) * (buffStacks.value[bkey] || 1);
+						else if (key === "SPD" && "turnSpeed" in y)
+							v += levelV(y.turnSpeed, c.level, 2) * (buffStacks.value[bkey] || 1);
+					});
+					return Decimal.add(p, Decimal.div(v, 100))
+						.toNumber();
+				}, 1);
 				const fullBonusRatio = ((): number => {
 					if (links !== 5 || !slot.linkBonus.startsWith(bonusTable[key])) return 0;
 					const lb = GetLinkBonus(slot.linkBonus, 1);
@@ -358,6 +358,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 
 				const final = base
 					.add(Decimal.mul(slot.stats[key], StatPointValue[key]))
+					.mul(linkRatio)
 					.mul(bonusRatio + fullBonusRatio);
 
 				if (floorValues.includes(key)) {

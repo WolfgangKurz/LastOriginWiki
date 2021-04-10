@@ -17,6 +17,8 @@ function run (cmd) {
 const list =
 	[
 		...[
+			"buff",
+			"summon",
 			"filterable.unit",
 			"filterable.equip",
 			"filterable.enemy",

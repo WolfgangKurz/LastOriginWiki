@@ -3,6 +3,13 @@ import { Fragment, FunctionalComponent, h } from "preact";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <Fragment>
+	<ChangelogItem title="Build 10753" date="2021-04-10"
+		bugfix={ <Fragment>
+			<li>장비 선택 팝업이 이전 선택한 장비가 선택된 것 처럼 표시되던 문제가 수정되었습니다.</li>
+			<li>시뮬레이터의 링크 보너스 계산이 잘못되어있던 점을 수정했습니다.</li>
+		</Fragment> }
+	/>
+
 	<ChangelogItem title="Build 10750" date="2021-04-09"
 		site={ <Fragment>
 			<li>

@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const https = require("https");
 
-const base = path.resolve(__dirname, "external", "json");
+const base = path.resolve(__dirname, "..", "external", "json");
 function travel (dir, callback) {
 	fs.readdirSync(dir)
 		.forEach(x => {
@@ -19,8 +19,8 @@ const list = [];
 travel(base, (p) => {
 	const prefix = "https://lo.swaytwig.com/json/";
 	const m = p.substr(base.length + 1).replace(/\\/g, "/");
-	if (m.startsWith("unit/"))
-		list.push(prefix + m);
+	// if (m.includes("unit"))
+	list.push(prefix + m);
 
 	if (list.length >= 20) {
 		lists.push([...list]);

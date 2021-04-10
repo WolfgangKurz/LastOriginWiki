@@ -20,7 +20,7 @@ const list =
 			"consumable", "exc",
 			"exp",
 			"map",
-			"locale",
+			// "locale",
 			"story",
 			"roguelike",
 		].map(x => `stage1/${x}`),
