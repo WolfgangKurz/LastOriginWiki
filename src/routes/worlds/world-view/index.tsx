@@ -1,5 +1,5 @@
-import { FunctionalComponent, h } from "preact";
-import { route } from "preact-router";
+import { Fragment, FunctionalComponent, h } from "preact";
+import { Link, route } from "preact-router";
 
 import { Worlds } from "@/types/DB/Map";
 
@@ -24,10 +24,16 @@ const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 	UpdateTitle(LocaleGet("MENU_WORLDS"), LocaleGet(`WORLD_${props.wid}`));
 
 	return <Loader json={ StaticDB.Map } content={ ((): preact.VNode => {
+		const nonStory = ["Sub", "Cha", "Daily"].includes(props.wid);
+
 		const MapDB = GetJson<Worlds>(StaticDB.Map);
 
 		const Worlds = Object.keys(MapDB[props.wid])
 			.map(x => LocaleGet(`WORLD_WORLD_${props.wid}_${x}`));
+
+		const rows = nonStory
+			? "row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6"
+			: "row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4";
 
 		return <div class="worlds-world text-start">
 			<div class="row">
@@ -42,7 +48,7 @@ const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 
 			<WorldItem wid={ props.wid } />
 
-			<div class="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+			<div class={ `row justify-content-center ${rows}` }>
 				{ Worlds.map((world, i) => <div class="col">
 					<div class="card worlds-world text-center mt-4 bg-dark text-light">
 						<div class="card-body">
@@ -57,12 +63,15 @@ const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 									<Icon icon="compass" class="me-1" />
 									<Locale k="WORLDS_WORLD_MAP" />
 								</button>
-								<button class="btn btn-light" disabled>
-									{/* onClick={ (): void => void (route(`/story/${props.wid}/${i + 1}`)) } */ }
-									<Icon icon="chat-left-quote" class="me-1" />
-									<Locale k="WORLDS_WORLD_STORY" />
-									<span class="badge bg-secondary ms-1">TBA</span>
-								</button>
+								{ nonStory
+									? <Fragment />
+									: <button class="btn btn-light" disabled>
+										{/* onClick={ (): void => void (route(`/story/${props.wid}/${i + 1}`)) } */ }
+										<Icon icon="chat-left-quote" class="me-1" />
+										<Locale k="WORLDS_WORLD_STORY" />
+										<span class="badge bg-secondary ms-1">TBA</span>
+									</button>
+								}
 							</div>
 						</div>
 					</div>

@@ -245,7 +245,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 							<div class="col nested">
 								<div class="row row-cols-2">
 									<div class="col bg-dark text-light"><Locale k="EQUIP_VIEW_TYPE" /></div>
-									<div class="col">
+									<div class="col badge-container">
 										{ isUninstalled
 											? <span class="badge bg-dark"><Locale k="EQUIP_VIEW_TYPE_NOT_IMPLEMENTED" /></span>
 											: <Fragment />
@@ -279,7 +279,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 										}
 									</div>
 									<div class="col bg-dark text-light"><Locale k="EQUIP_VIEW_LIMIT" /></div>
-									<div class="col">
+									<div class="col badge-container">
 										{ Limits.length === 0
 											? <span class="text-secondary"><Locale k="EQUIP_VIEW_LIMIT_NOT" /></span>
 											: Limits.map(limit => <span>
@@ -314,7 +314,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 						</div>
 						<div class="row">
 							<div class="col break-keep white-pre-line">
-								<Locale k={ `EQUIP_DESC_${target.fullKey}` } />
+								<Locale k={ `EQUIP_DESC_${target.fullKey}` } plain />
 							</div>
 						</div>
 					</div>

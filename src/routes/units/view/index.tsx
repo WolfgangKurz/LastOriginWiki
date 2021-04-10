@@ -1,5 +1,5 @@
 import { Fragment, FunctionalComponent, h } from "preact";
-import { route } from "preact-router";
+import { Link } from "preact-router";
 import Decimal from "decimal.js";
 
 import { SelectOption } from "@/types/Helper";
@@ -33,6 +33,8 @@ import SkillTable from "../components/skill-table";
 import UnitDialogue, { VoiceItem } from "../components/unit-dialogue";
 
 import "./style.scss";
+import DropEquip from "@/components/drop-equip";
+import EquipPopup from "@/components/popup/equip-popup";
 
 type TabTypes = "basic" | "skills" | "roguelike" | "dialogue";
 
@@ -51,6 +53,9 @@ interface SubpageProps {
 const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex, SkinList }) => {
 	const FilterableEquipDB = GetJson<FilterableEquip[]>(StaticDB.FilterableEquip, DBSourceConverter);
 
+	const selectedEquip = objState<FilterableEquip | null>(null);
+	const equipPopupDisplay = objState<boolean>(false);
+
 	const CurrentSkinPostfix = ((): string => {
 		const skin = SkinList[skinIndex.value];
 		if (!skin || skin.isDef) return "N";
@@ -59,11 +64,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 	})();
 
 	const ExclusiveEquip = FilterableEquipDB
-		.filter(x => x.limit && x.limit.some(y => y === unit.uid))
-		.map(x => ({
-			equip: x,
-			url: `/equips/${x.fullKey}`,
-		}));
+		.filter(x => x.limit && x.limit.some(y => y === unit.uid));
 
 	const CraftTime = ((): string => {
 		const duration = unit.craft;
@@ -143,7 +144,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 				</div>
 
 				<div class="card bg-dark text-light introduce-text mx-3 mt-3 p-3">
-					<Locale k={ `UNIT_INTRO_${unit.uid}` } />
+					<Locale k={ `UNIT_INTRO_${unit.uid}` } plain />
 				</div>
 
 				{ ExclusiveEquip.length > 0
@@ -151,15 +152,25 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 						<div>
 							<Locale k="UNIT_VIEW_PRIVATE_EQUIP" />
 						</div>
-						{ ExclusiveEquip.map(limited => <a
-							href={ limited.url }
+						<EquipPopup
+							asSub
+							equip={ selectedEquip.value }
+							display={ equipPopupDisplay.value }
+							onHidden={ (): void => {
+								equipPopupDisplay.set(false);
+								selectedEquip.set(null);
+							} }
+						/>
+						{ ExclusiveEquip.map(limited => <Link
+							href="#"
 							onClick={ (e): void => {
 								e.preventDefault();
-								route(limited.url);
+								selectedEquip.set(limited);
+								equipPopupDisplay.set(true);
 							} }
 						>
-							{/* <drop-equip class="limited-item-card" :equip="limited.equip" /> */ }
-						</a>) }
+							<DropEquip class="limited-item-card" equip={ limited } />
+						</Link>) }
 					</div>
 					: <Fragment />
 				}

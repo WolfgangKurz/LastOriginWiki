@@ -93,6 +93,7 @@ interface LocaleProps<T> {
 	p?: Array<string | number | boolean | preact.VNode>;
 	fallback?: string | number | boolean | preact.VNode;
 	components?: LocaleComponentProp<T>;
+	plain?: boolean;
 }
 
 const Locale: FunctionalComponent<LocaleProps<any>> = (props) => {
@@ -100,7 +101,26 @@ const Locale: FunctionalComponent<LocaleProps<any>> = (props) => {
 
 	if (locale) {
 		const t = locale[props.k];
-		if (t) return <Fragment>{ parseVNode(locale[props.k] || props.k, props.p, props.components || {}) }</Fragment>;
+		if (t) {
+			if (props.plain) {
+				return <Fragment>{ (locale[props.k] || props.k).split(paramRegex).map(x => {
+					const r = paramRegex.exec(x);
+					return r
+						? ((): preact.VNode => {
+							const idx = parseInt(r[1].substr(1, r[1].length - 2), 10);
+							if (props.p) {
+								const v = props.p[idx];
+								if (typeof v === "string" || typeof v === "number" || typeof v === "boolean")
+									return <Fragment>{ props.p[idx] }</Fragment>;
+								return v;
+							}
+							return <Fragment />;
+						})()
+						: <Fragment>{ x }</Fragment>;
+				}) }</Fragment>;
+			}
+			return <Fragment>{ parseVNode(locale[props.k] || props.k, props.p, props.components || {}) }</Fragment>;
+		}
 
 		return typeof props.fallback === "string" ||
 			typeof props.fallback === "number" ||

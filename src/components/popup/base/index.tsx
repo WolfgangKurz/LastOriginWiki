@@ -71,7 +71,7 @@ export default class PopupBase extends Component<PopupBaseProps> {
 		// if (!this.props.display) return <Fragment />;
 
 		return <div
-			class={ `modal fade ${this.props.class || ""}` }
+			class={ `modal fade ${this.props.class || ""} text-dark` }
 			tabIndex={ -1 }
 			id={ this.uid }
 			{ ...{
