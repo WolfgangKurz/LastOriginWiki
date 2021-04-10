@@ -12,7 +12,9 @@ interface WorldItemProps {
 import "./style.scss";
 
 const WorldItem: FunctionalComponent<WorldItemProps> = (props) => {
-	const WorldIcon = props.wid === "Cha" ? "Cha_0" : `${props.wid}_1`;
+	const WorldIcon = ["Cha", "Daily"].includes(props.wid)
+		? `${props.wid}_0`
+		: `${props.wid}_1`;
 
 	return <div class="card world-item mb-4 bg-dark text-light">
 		<div class="card-body">
@@ -33,7 +35,7 @@ const WorldItem: FunctionalComponent<WorldItemProps> = (props) => {
 		</div>
 		{ props.linked
 			? props.wid === "Sub"
-				? <Link href="/worlds/Sub/1/" class="stretched-link" />
+				? <Link href={ `/worlds/${props.wid}/1/` } class="stretched-link" />
 				: <Link href={ `/worlds/${props.wid}` } class="stretched-link" />
 			: <Fragment />
 		}

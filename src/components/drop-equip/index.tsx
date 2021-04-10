@@ -10,6 +10,8 @@ import EquipIcon from "@/components/equip-icon";
 import "./style.scss";
 
 interface DropEquipProps {
+	class?: string;
+
 	equip: FilterableEquip;
 	chance?: number;
 }
@@ -17,7 +19,7 @@ interface DropEquipProps {
 const DropEquip: FunctionalComponent<DropEquipProps> = (props) => {
 	const chance = props.chance || 100;
 
-	return <div class="drop-equip p-2 text-dark">
+	return <div class={ `drop-equip p-2 text-dark ${props.class || ""}` }>
 		<div class={ `card rarity-${RarityDisplay[props.equip.rarity]}` }>
 			<div class="card-body">
 				<EquipIcon class="float-start me-2" image={ props.equip.icon } />

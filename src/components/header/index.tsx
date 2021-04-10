@@ -30,6 +30,15 @@ const DropdownItem: FunctionalComponent<LinkData> = (props) => (
 	</li>
 );
 
+const DropdownExternal: FunctionalComponent<LinkData> = (props) => (
+	<li>
+		<a href={ props.href } target="_blank" rel="noreferrer" class="dropdown-item">
+			{ props.children ? props.children : <Locale k={ props.text || "" } /> }
+			<Icon icon="link-45deg" class="ms-1" />
+		</a>
+	</li>
+);
+
 const Header: FunctionalComponent = () => {
 	return (
 		<nav class={ `${style.navbar} navbar navbar-expand-lg navbar-dark bg-dark px-3` }>
@@ -104,14 +113,12 @@ const Header: FunctionalComponent = () => {
 
 								<li><hr class="dropdown-divider" /></li>
 
-								<DropdownItem href="https://arca.live/b/lastorigin/4474753" text="MENU_ETC_BGM">
+								<DropdownExternal href="https://arca.live/b/lastorigin/4474753">
 									<Locale k="MENU_ETC_EX01" />
-									<Icon icon="link-45deg" class="ms-1" />
-								</DropdownItem>
-								<DropdownItem href="https://lastoriginmap.github.io/" text="MENU_ETC_BGM">
+								</DropdownExternal>
+								<DropdownExternal href="https://lastoriginmap.github.io/">
 									<Locale k="MENU_ETC_EX02" />
-									<Icon icon="link-45deg" class="ms-1" />
-								</DropdownItem>
+								</DropdownExternal>
 							</ul>
 						</li>
 					</ul>

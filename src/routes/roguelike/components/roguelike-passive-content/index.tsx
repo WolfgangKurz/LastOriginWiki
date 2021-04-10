@@ -109,7 +109,7 @@ const RoguelikePassiveContent: FunctionalComponent = () => {
 					</ul>
 				</div>
 
-				<div class="btn-group mb-4 d-none d-md-block">
+				<div class="btn-group mb-4 d-block">
 					{ grades.map(x => <button
 						class={ `btn btn-substory ${isActive(selectedGrade.value === x)}` }
 						onClick={ (e): void => {

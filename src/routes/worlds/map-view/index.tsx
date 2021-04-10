@@ -326,7 +326,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 										<Locale k={ `WORLD_MAP_Sub_${x.text}` } />
 									</button>
 								</Link>)
-								: props.wid === "Cha"
+								: props.wid === "Daily"
 									? NodeList.map(x => <Link
 										href={ `/worlds/${props.wid}/${props.mid}/${x.text}` }
 										onClick={ (): void => {
@@ -334,20 +334,32 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 											NodeChange(x);
 										} }
 									>
-										<button class={ `btn btn-${selectedValue === x ? "warning" : "light"} m-2` }>
-											{ x.name.replace(/.+\(([^)]+)\)$/, "$1") }
+										<button class={ `btn btn-${selectedValue === x ? "stat-hp" : "light"} m-2` }>
+											<Locale k={ `WORLD_MAP_Daily_${x.text}` } />
 										</button>
 									</Link>)
-									: <MapGrid
-										nodes={ NodeMap }
-										wid={ props.wid }
-										mid={ props.mid }
-										onSelect={ (node: MapNodeEntity): void => {
-											selected.set(node);
-											NodeChange(node);
-										} }
-										selected={ selected.value }
-									/>
+									: props.wid === "Cha"
+										? NodeList.map(x => <Link
+											href={ `/worlds/${props.wid}/${props.mid}/${x.text}` }
+											onClick={ (): void => {
+												selected.set(x);
+												NodeChange(x);
+											} }
+										>
+											<button class={ `btn btn-${selectedValue === x ? "warning" : "light"} m-2` }>
+												{ x.name.replace(/.+\(([^)]+)\)$/, "$1") }
+											</button>
+										</Link>)
+										: <MapGrid
+											nodes={ NodeMap }
+											wid={ props.wid }
+											mid={ props.mid }
+											onSelect={ (node: MapNodeEntity): void => {
+												selected.set(node);
+												NodeChange(node);
+											} }
+											selected={ selected.value }
+										/>
 							}
 						</div>
 					</div>

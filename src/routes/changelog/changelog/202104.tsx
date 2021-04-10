@@ -3,6 +3,23 @@ import { Fragment, FunctionalComponent, h } from "preact";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <Fragment>
+	<ChangelogItem title="Build 10754" date="2021-04-12"
+		bugfix={ <Fragment>
+			<li>헤더의 외부 링크가 작동하지 않던 문제를 수정했습니다.</li>
+			<li>전투원 정보에서 전용 장비가 표시되지 않던 문제를 수정했습니다.</li>
+			<li><span class="badge bg-warning text-dark">촙 메이커 II</span>의 버프 이름에 오류가 있던 문제를 수정했습니다.</li>
+			<li>장비 팝업의 유형 뱃지와 전투원 뱃지가 칸을 넘어가는 문제를 수정했습니다.</li>
+			<li>
+				<span class="badge bg-warning text-dark">철의 탑</span>의
+				<span class="badge bg-warning text-dark">오염된 군수 공장</span> 페이지에서
+				모바일일 때 등급 버튼이 표시되지 않는 문제를 수정했습니다.
+			</li>
+		</Fragment> }
+		new={ <Fragment>
+			<li><span class="badge bg-warning text-dark">세계 정보</span>에 <span class="badge bg-success">일일 훈련</span> 정보가 추가되었습니다.</li>
+		</Fragment> }
+	/>
+
 	<ChangelogItem title="Build 10753" date="2021-04-10"
 		bugfix={ <Fragment>
 			<li>장비 선택 팝업이 이전 선택한 장비가 선택된 것 처럼 표시되던 문제가 수정되었습니다.</li>
