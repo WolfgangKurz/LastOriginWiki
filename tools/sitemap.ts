@@ -97,7 +97,8 @@ Object.keys(WorldNames)
 		});
 	});
 
-xml += `<url><loc>https://lo.swaytwig.com/simulator</loc></url>
+xml += `<url><loc>https://lo.swaytwig.com/roguelike</loc></url>
+<url><loc>https://lo.swaytwig.com/simulator</loc></url>
 <url><loc>https://lo.swaytwig.com/changelog</loc></url>
 <url><loc>https://lo.swaytwig.com/bgm</loc></url>
 </urlset>`;
