@@ -120,6 +120,7 @@ const EquipSelectorPopup: FunctionalComponent<EquipSelectorPopupProps> = (props)
 			</div> }
 			onHidden={ (): void => {
 				value.set("");
+				typeKey.set("");
 
 				if (props.onHidden)
 					props.onHidden();
