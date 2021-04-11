@@ -3,7 +3,7 @@ import { Fragment, FunctionalComponent, h } from "preact";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <Fragment>
-	<ChangelogItem title="Build 10754" date="2021-04-12"
+	<ChangelogItem title="Build 10754" date="2021-04-11"
 		bugfix={ <Fragment>
 			<li>헤더의 외부 링크가 작동하지 않던 문제를 수정했습니다.</li>
 			<li>전투원 정보에서 전용 장비가 표시되지 않던 문제를 수정했습니다.</li>
