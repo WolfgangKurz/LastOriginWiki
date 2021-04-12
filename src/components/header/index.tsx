@@ -74,7 +74,7 @@ const Header: FunctionalComponent = () => {
 
 						<NavItem href="/roguelike" text="MENU_ROGUELIKE" />
 
-						<NavItem href="/changelog" text="MENU_CHANGELOG" />
+						<NavItem href="/simulator" text="MENU_SIMULATOR" />
 
 						<li class="nav-item dropdown">
 							<a
@@ -88,9 +88,11 @@ const Header: FunctionalComponent = () => {
 								<Locale k="MENU_ETC" />
 							</a>
 							<ul class="dropdown-menu" aria-labelledby="topNavbarDropdown">
-								<DropdownItem href="/simulator">
-									<Locale k="MENU_SIMULATOR" />
+								<DropdownItem href="/changelog">
+									<Locale k="MENU_CHANGELOG" />
 								</DropdownItem>
+
+								<li><hr class="dropdown-divider" /></li>
 
 								<DropdownItem href="/exp">
 									<Locale k="MENU_ETC_EXPCALC" />

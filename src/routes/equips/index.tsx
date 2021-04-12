@@ -169,8 +169,8 @@ const Equips: FunctionalComponent<EquipsProps> = (props) => {
 				const group = groupBy(FilterableEquipDB, (x) => `${x.type}_${x.key}`);
 				return Object.keys(group)
 					.map(x => group[x])
-					.map(x_ => {
-						const last = [...x_].sort((a, b) => b.rarity - a.rarity)[0];
+					.map(x => {
+						const last = [...x].sort((a, b) => b.rarity - a.rarity)[0];
 
 						const source = ((items): EntitySource[] => {
 							const list: EntitySource[] = [];
@@ -211,13 +211,13 @@ const Equips: FunctionalComponent<EquipsProps> = (props) => {
 								output.splice(0, output.length, new EntitySource("Limited"), ...output.filter(y => y.IsPrivateItem));
 
 							return output;
-						})(x_);
+						})(x);
 
 						return {
-							equips: x_,
+							equips: x,
 							last,
 							source,
-							sourceRaw: x_.reduce(
+							sourceRaw: x.reduce(
 								(p, c) => [
 									...(
 										c.limit && c.limit.every(y => FilterableUnitDB.some(z => z.uid === y))
@@ -254,7 +254,7 @@ const Equips: FunctionalComponent<EquipsProps> = (props) => {
 							return false;
 
 						// 획득처
-						const sources = x.sourceRaw.unique(y => y.toShort());
+						const sources = x.source.unique(y => y.toShort());
 
 						if (Filters.Source.EndlessWar && sources.some(y => y.IsEndlessWar)) return true;
 
