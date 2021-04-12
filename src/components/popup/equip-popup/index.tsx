@@ -167,7 +167,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 			[ACTOR_GRADE.A]: Decimal.div(5, 6),
 			[ACTOR_GRADE.S]: Decimal.div(7, 10),
 			[ACTOR_GRADE.SS]: Decimal.div(11, 20),
-			[ACTOR_GRADE.SSS]: new Decimal(0),
+			[ACTOR_GRADE.SSS]: Decimal.div(11, 20),
 		};
 
 		function UpgradeCost (level: number, sum: boolean = false): number {
