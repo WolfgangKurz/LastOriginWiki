@@ -3,6 +3,18 @@ import { Fragment, FunctionalComponent, h } from "preact";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <Fragment>
+	<ChangelogItem title="Build 10758" date="2021-04-12"
+		update={ <Fragment>
+			<li>장비 팝업의 SSS 등급 강화 비용 정보가 갱신되었습니다.</li>
+		</Fragment> }
+		skin={ <Fragment>
+			<li>
+				<span class="badge bg-warning text-dark">블랙 웜 S9</span>의 스킨
+				<span class="badge bg-danger">드림위버 웨딩 스페셜 : 되찾은 마음</span>의 가격이 잘못되어있던 점을 수정했습니다.
+			</li>
+		</Fragment> }
+	/>
+
 	<ChangelogItem title="Build 10757" date="2021-04-11"
 		bugfix={ <Fragment>
 			<li>Build 10754의 배포 시간이 잘못 지정되어있던 문제를 수정했습니다.</li>
