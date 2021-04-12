@@ -3,6 +3,22 @@ import { Fragment, FunctionalComponent, h } from "preact";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <Fragment>
+	<ChangelogItem title="Build 10761" date="2021-04-12"
+		bugfix={ <Fragment>
+			<li>시뮬레이터에서 일부 장비의 버프 이름에 오류가 있던 문제를 수정했습니다.</li>
+		</Fragment> }
+		update={ <Fragment>
+			<li>
+				<span class="badge bg-warning text-dark">철의 탑</span>의
+				<span class="badge bg-warning text-dark">오염된 군수 공장</span>의 정보가 갱신되었습니다.
+				<br />
+				<span class="badge bg-success">명예로운 극지부대</span> 시리즈가 추가되었으며,
+				<span class="badge bg-success">이상을 실현한 존재</span> 시리즈 조건에
+				<span class="badge bg-stat-acc">스마트 엔조이</span> 부대가 추가되었습니다.
+			</li>
+		</Fragment> }
+	/>
+
 	<ChangelogItem title="Build 10758" date="2021-04-12"
 		update={ <Fragment>
 			<li>장비 팝업의 SSS 등급 강화 비용 정보가 갱신되었습니다.</li>
