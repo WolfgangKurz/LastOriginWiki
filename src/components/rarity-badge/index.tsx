@@ -8,7 +8,7 @@ import style from "./style.scss";
 
 interface RarityBadgeProps {
 	class?: string;
-	rarity: "B" | "A" | "S" | "SS" | ACTOR_GRADE;
+	rarity: "B" | "A" | "S" | "SS" | "SSS" | ACTOR_GRADE;
 	size?: "normal" | "medium" | "large";
 	border?: boolean;
 }

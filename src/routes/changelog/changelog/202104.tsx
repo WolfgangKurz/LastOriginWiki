@@ -1,3 +1,4 @@
+import RarityBadge from "@/components/rarity-badge";
 import { Fragment, FunctionalComponent, h } from "preact";
 
 import ChangelogItem from "../components/changelog-item";
@@ -15,6 +16,8 @@ const Changelog: FunctionalComponent = () => <Fragment>
 				<span class="badge bg-success">명예로운 극지부대</span> 시리즈가 추가되었으며,
 				<span class="badge bg-success">이상을 실현한 존재</span> 시리즈 조건에
 				<span class="badge bg-stat-acc">스마트 엔조이</span> 부대가 추가되었습니다.
+				<br />
+				<RarityBadge rarity="SSS" />급 패시브의 부대 제한이 정상 작동하도록 수정되었습니다.
 			</li>
 		</Fragment> }
 	/>
