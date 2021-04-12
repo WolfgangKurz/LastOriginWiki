@@ -3,6 +3,20 @@ import { Fragment, FunctionalComponent, h } from "preact";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <Fragment>
+	<ChangelogItem title="Build 10757" date="2021-04-11"
+		bugfix={ <Fragment>
+			<li>Build 10754의 배포 시간이 잘못 지정되어있던 문제를 수정했습니다.</li>
+			<li>장비 목록에서 일부 장비가 표시되지 않던 문제를 수정했습니다.</li>
+		</Fragment> }
+		update={ <Fragment>
+			<li>
+				<span class="badge bg-warning text-dark">Simulator<sup>β</sup></span> 메뉴가 밖으로 나오고,
+				<span class="badge bg-warning text-dark">Changelog</span> 메뉴가
+				<span class="badge bg-warning text-dark">기타</span> 메뉴의 하위로 이동했습니다.
+			</li>
+		</Fragment> }
+	/>
+
 	<ChangelogItem title="Build 10754" date="2021-04-11"
 		bugfix={ <Fragment>
 			<li>헤더의 외부 링크가 작동하지 않던 문제를 수정했습니다.</li>
