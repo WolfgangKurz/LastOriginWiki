@@ -348,7 +348,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 					if (links !== 5 || !slot.linkBonus.startsWith(bonusTable[key])) return 0;
 					const lb = GetLinkBonus(slot.linkBonus, 1);
 					if (!ratioValues.includes(key) && lb.Postfix === "%") // % 표기되는 유형이 아니고 % 값인 경우
-						return lb.Value;
+						return Decimal.div(lb.Value, 100).toNumber();
 					return 0;
 				})();
 
