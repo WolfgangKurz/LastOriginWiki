@@ -4,6 +4,12 @@ import { Fragment, FunctionalComponent, h } from "preact";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <Fragment>
+	<ChangelogItem title="Build 10762" date="2021-04-12"
+		bugfix={ <Fragment>
+			<li>일부 환경에서 세계 정보를 열람 시 사이트가 동작하지 않는 문제를 수정중입니다.</li>
+		</Fragment> }
+	/>
+
 	<ChangelogItem title="Build 10761" date="2021-04-12"
 		bugfix={ <Fragment>
 			<li>시뮬레이터에서 일부 장비의 버프 이름에 오류가 있던 문제를 수정했습니다.</li>
