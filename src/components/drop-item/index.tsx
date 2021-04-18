@@ -129,9 +129,9 @@ const DropItem: FunctionalComponent<DropItemProps> = (props) => {
 		}
 
 		return parseText(
-			LocaleGet(`CONSUMABLE_DESC_${props.item.key}`)
-				.replaceAll("&lt;", "<")
-				.replaceAll("&gt;", ">"),
+			(LocaleGet(`CONSUMABLE_DESC_${props.item.key}`) || "")
+				.toString()
+				.replace(/&([lg]t);/g, (p0, p1) => p1 === "lt" ? "<" : ">"),
 		);
 	})();
 
