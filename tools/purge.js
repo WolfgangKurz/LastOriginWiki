@@ -14,13 +14,15 @@ function travel (dir, callback) {
 		});
 }
 
+const target = ["unit","locale","enemy","map","equip","buffs","consumable"];
+
 const lists = [];
 const list = [];
 travel(base, (p) => {
 	const prefix = "https://lo.swaytwig.com/json/";
 	const m = p.substr(base.length + 1).replace(/\\/g, "/");
-	// if (m.includes("unit"))
-	list.push(prefix + m);
+	if (target.some(t => m.includes(t)))
+		list.push(prefix + m);
 
 	if (list.length >= 20) {
 		lists.push([...list]);
