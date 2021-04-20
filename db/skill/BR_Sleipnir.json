@@ -20,14 +20,14 @@
         {
           "rate": 1.365,
           "type": 0,
-          "range": 3,
+          "range": 2,
           "ap": 6,
           "grid": "single",
           "target_ground": false,
           "summon": null,
           "use": null,
           "dismiss_guard": false,
-          "acc_bonus": 0,
+          "acc_bonus": 9,
           "buff_rate": 100,
           "buffs": [
             {
@@ -130,6 +130,28 @@
                     "turnSpeed": {
                       "base": "-10%",
                       "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "혼란 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
                     }
                   },
                   "overlap": 4
@@ -294,7 +316,7 @@
                   "desc": {
                     "desc": "잡을 수 있겠어? : 회피+{0}%",
                     "type": 1,
-                    "value": "0.225000"
+                    "value": "0.530000"
                   },
                   "attr": 0,
                   "erase": {
@@ -304,28 +326,76 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "22.5%",
-                      "per": "2.5%"
+                      "base": "53%",
+                      "per": "3%"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 4
+              "maxStack": 3
+            },
+            {
+              "key": "Effect_BR_Sleipnir_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Harpy_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "혼란 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
         {
           "rate": 1.485,
           "type": 0,
-          "range": 3,
+          "range": 2,
           "ap": 6,
           "grid": "single",
           "target_ground": false,
           "summon": null,
           "use": null,
           "dismiss_guard": false,
-          "acc_bonus": 0,
+          "acc_bonus": 18,
           "buff_rate": 100,
           "buffs": [
             {
@@ -428,6 +498,28 @@
                     "turnSpeed": {
                       "base": "-10%",
                       "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "혼란 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
                     }
                   },
                   "overlap": 4
@@ -592,7 +684,7 @@
                   "desc": {
                     "desc": "잡을 수 있겠어? : 회피+{0}%",
                     "type": 1,
-                    "value": "0.225000"
+                    "value": "0.530000"
                   },
                   "attr": 0,
                   "erase": {
@@ -602,28 +694,76 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "22.5%",
-                      "per": "2.5%"
+                      "base": "53%",
+                      "per": "3%"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 4
+              "maxStack": 3
+            },
+            {
+              "key": "Effect_BR_Sleipnir_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Harpy_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "혼란 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
         {
           "rate": 1.605,
           "type": 0,
-          "range": 3,
+          "range": 2,
           "ap": 6,
           "grid": "single",
           "target_ground": false,
           "summon": null,
           "use": null,
           "dismiss_guard": false,
-          "acc_bonus": 0,
+          "acc_bonus": 27,
           "buff_rate": 100,
           "buffs": [
             {
@@ -726,6 +866,28 @@
                     "turnSpeed": {
                       "base": "-10%",
                       "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "혼란 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
                     }
                   },
                   "overlap": 4
@@ -890,7 +1052,7 @@
                   "desc": {
                     "desc": "잡을 수 있겠어? : 회피+{0}%",
                     "type": 1,
-                    "value": "0.225000"
+                    "value": "0.530000"
                   },
                   "attr": 0,
                   "erase": {
@@ -900,28 +1062,76 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "22.5%",
-                      "per": "2.5%"
+                      "base": "53%",
+                      "per": "3%"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 4
+              "maxStack": 3
+            },
+            {
+              "key": "Effect_BR_Sleipnir_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Harpy_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "혼란 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
         {
           "rate": 1.725,
           "type": 0,
-          "range": 3,
+          "range": 2,
           "ap": 6,
           "grid": "single",
           "target_ground": false,
           "summon": null,
           "use": null,
           "dismiss_guard": false,
-          "acc_bonus": 0,
+          "acc_bonus": 36,
           "buff_rate": 100,
           "buffs": [
             {
@@ -1024,6 +1234,28 @@
                     "turnSpeed": {
                       "base": "-10%",
                       "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "혼란 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
                     }
                   },
                   "overlap": 4
@@ -1188,7 +1420,7 @@
                   "desc": {
                     "desc": "잡을 수 있겠어? : 회피+{0}%",
                     "type": 1,
-                    "value": "0.225000"
+                    "value": "0.530000"
                   },
                   "attr": 0,
                   "erase": {
@@ -1198,28 +1430,76 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "22.5%",
-                      "per": "2.5%"
+                      "base": "53%",
+                      "per": "3%"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 4
+              "maxStack": 3
+            },
+            {
+              "key": "Effect_BR_Sleipnir_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Harpy_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "혼란 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
         {
           "rate": 1.845,
           "type": 0,
-          "range": 3,
+          "range": 2,
           "ap": 6,
           "grid": "single",
           "target_ground": false,
           "summon": null,
           "use": null,
           "dismiss_guard": false,
-          "acc_bonus": 0,
+          "acc_bonus": 45,
           "buff_rate": 100,
           "buffs": [
             {
@@ -1322,6 +1602,28 @@
                     "turnSpeed": {
                       "base": "-10%",
                       "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "혼란 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
                     }
                   },
                   "overlap": 4
@@ -1486,7 +1788,7 @@
                   "desc": {
                     "desc": "잡을 수 있겠어? : 회피+{0}%",
                     "type": 1,
-                    "value": "0.225000"
+                    "value": "0.530000"
                   },
                   "attr": 0,
                   "erase": {
@@ -1496,28 +1798,76 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "22.5%",
-                      "per": "2.5%"
+                      "base": "53%",
+                      "per": "3%"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 4
+              "maxStack": 3
+            },
+            {
+              "key": "Effect_BR_Sleipnir_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Harpy_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "혼란 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
         {
           "rate": 1.965,
           "type": 0,
-          "range": 3,
+          "range": 2,
           "ap": 6,
           "grid": "single",
           "target_ground": false,
           "summon": null,
           "use": null,
           "dismiss_guard": false,
-          "acc_bonus": 0,
+          "acc_bonus": 54,
           "buff_rate": 100,
           "buffs": [
             {
@@ -1620,6 +1970,28 @@
                     "turnSpeed": {
                       "base": "-10%",
                       "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "혼란 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
                     }
                   },
                   "overlap": 4
@@ -1784,7 +2156,7 @@
                   "desc": {
                     "desc": "잡을 수 있겠어? : 회피+{0}%",
                     "type": 1,
-                    "value": "0.225000"
+                    "value": "0.530000"
                   },
                   "attr": 0,
                   "erase": {
@@ -1794,28 +2166,76 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "22.5%",
-                      "per": "2.5%"
+                      "base": "53%",
+                      "per": "3%"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 4
+              "maxStack": 3
+            },
+            {
+              "key": "Effect_BR_Sleipnir_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Harpy_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "혼란 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
         {
           "rate": 2.085,
           "type": 0,
-          "range": 3,
+          "range": 2,
           "ap": 6,
           "grid": "single",
           "target_ground": false,
           "summon": null,
           "use": null,
           "dismiss_guard": false,
-          "acc_bonus": 0,
+          "acc_bonus": 63,
           "buff_rate": 100,
           "buffs": [
             {
@@ -1918,6 +2338,28 @@
                     "turnSpeed": {
                       "base": "-10%",
                       "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "혼란 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
                     }
                   },
                   "overlap": 4
@@ -2082,7 +2524,7 @@
                   "desc": {
                     "desc": "잡을 수 있겠어? : 회피+{0}%",
                     "type": 1,
-                    "value": "0.225000"
+                    "value": "0.530000"
                   },
                   "attr": 0,
                   "erase": {
@@ -2092,28 +2534,76 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "22.5%",
-                      "per": "2.5%"
+                      "base": "53%",
+                      "per": "3%"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 4
+              "maxStack": 3
+            },
+            {
+              "key": "Effect_BR_Sleipnir_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Harpy_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "혼란 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
         {
           "rate": 2.205,
           "type": 0,
-          "range": 3,
+          "range": 2,
           "ap": 6,
           "grid": "single",
           "target_ground": false,
           "summon": null,
           "use": null,
           "dismiss_guard": false,
-          "acc_bonus": 0,
+          "acc_bonus": 72,
           "buff_rate": 100,
           "buffs": [
             {
@@ -2216,6 +2706,28 @@
                     "turnSpeed": {
                       "base": "-10%",
                       "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "혼란 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
                     }
                   },
                   "overlap": 4
@@ -2380,7 +2892,7 @@
                   "desc": {
                     "desc": "잡을 수 있겠어? : 회피+{0}%",
                     "type": 1,
-                    "value": "0.225000"
+                    "value": "0.530000"
                   },
                   "attr": 0,
                   "erase": {
@@ -2390,28 +2902,76 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "22.5%",
-                      "per": "2.5%"
+                      "base": "53%",
+                      "per": "3%"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 4
+              "maxStack": 3
+            },
+            {
+              "key": "Effect_BR_Sleipnir_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Harpy_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "혼란 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
         {
           "rate": 2.325,
           "type": 0,
-          "range": 3,
+          "range": 2,
           "ap": 6,
           "grid": "single",
           "target_ground": false,
           "summon": null,
           "use": null,
           "dismiss_guard": false,
-          "acc_bonus": 0,
+          "acc_bonus": 81,
           "buff_rate": 100,
           "buffs": [
             {
@@ -2514,6 +3074,28 @@
                     "turnSpeed": {
                       "base": "-10%",
                       "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "혼란 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
                     }
                   },
                   "overlap": 4
@@ -2678,7 +3260,7 @@
                   "desc": {
                     "desc": "잡을 수 있겠어? : 회피+{0}%",
                     "type": 1,
-                    "value": "0.225000"
+                    "value": "0.530000"
                   },
                   "attr": 0,
                   "erase": {
@@ -2688,28 +3270,76 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "22.5%",
-                      "per": "2.5%"
+                      "base": "53%",
+                      "per": "3%"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 4
+              "maxStack": 3
+            },
+            {
+              "key": "Effect_BR_Sleipnir_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Harpy_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "혼란 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
         {
           "rate": 2.445,
           "type": 0,
-          "range": 3,
+          "range": 2,
           "ap": 6,
           "grid": "single",
           "target_ground": false,
           "summon": null,
           "use": null,
           "dismiss_guard": false,
-          "acc_bonus": 0,
+          "acc_bonus": 90,
           "buff_rate": 100,
           "buffs": [
             {
@@ -2812,6 +3442,28 @@
                     "turnSpeed": {
                       "base": "-10%",
                       "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "혼란 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
                     }
                   },
                   "overlap": 4
@@ -2976,7 +3628,7 @@
                   "desc": {
                     "desc": "잡을 수 있겠어? : 회피+{0}%",
                     "type": 1,
-                    "value": "0.225000"
+                    "value": "0.530000"
                   },
                   "attr": 0,
                   "erase": {
@@ -2986,14 +3638,62 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "22.5%",
-                      "per": "2.5%"
+                      "base": "53%",
+                      "per": "3%"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 4
+              "maxStack": 3
+            },
+            {
+              "key": "Effect_BR_Sleipnir_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Harpy_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "혼란 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         }
@@ -3028,7 +3728,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": true,
-          "acc_bonus": 0,
+          "acc_bonus": 9,
           "buff_rate": 100,
           "buffs": [
             {
@@ -3121,7 +3821,7 @@
                 {
                   "icon": "BuffIcon_REMOVE_BUFF",
                   "desc": {
-                    "desc": "소닉붐 : 반격 효과 해제",
+                    "desc": "소닉붐 : 반격 효과 해제 / 이동 불가 / 표식",
                     "type": 0,
                     "value": "29"
                   },
@@ -3136,6 +3836,28 @@
                     "off": {
                       "type": 29,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "소닉붐 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.480000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "48%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -3267,7 +3989,7 @@
                   "desc": {
                     "desc": "잡을 수 있겠어? : 회피+{0}%",
                     "type": 1,
-                    "value": "0.225000"
+                    "value": "0.530000"
                   },
                   "attr": 0,
                   "erase": {
@@ -3277,14 +3999,14 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "22.5%",
-                      "per": "2.5%"
+                      "base": "53%",
+                      "per": "3%"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 4
+              "maxStack": 3
             },
             {
               "key": "Effect_BR_Sleipnir_N_19",
@@ -3353,7 +4075,7 @@
                 {
                   "icon": "BuffIcon_REMOVE_BUFF",
                   "desc": {
-                    "desc": "소닉붐 : 반격 효과 해제",
+                    "desc": "소닉붐 : 반격 효과 해제 / 이동 불가 / 표식",
                     "type": 0,
                     "value": "29"
                   },
@@ -3367,6 +4089,109 @@
                     "off": {
                       "type": 29,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Sleipnir_N_201",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "돌진 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "초고속 돌진 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Sleipnir_N_202",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "초코속 돌진 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.480000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "48%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -3386,7 +4211,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": true,
-          "acc_bonus": 0,
+          "acc_bonus": 18,
           "buff_rate": 100,
           "buffs": [
             {
@@ -3479,7 +4304,7 @@
                 {
                   "icon": "BuffIcon_REMOVE_BUFF",
                   "desc": {
-                    "desc": "소닉붐 : 반격 효과 해제",
+                    "desc": "소닉붐 : 반격 효과 해제 / 이동 불가 / 표식",
                     "type": 0,
                     "value": "29"
                   },
@@ -3494,6 +4319,28 @@
                     "off": {
                       "type": 29,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "소닉붐 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.480000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "48%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -3625,7 +4472,7 @@
                   "desc": {
                     "desc": "잡을 수 있겠어? : 회피+{0}%",
                     "type": 1,
-                    "value": "0.225000"
+                    "value": "0.530000"
                   },
                   "attr": 0,
                   "erase": {
@@ -3635,14 +4482,14 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "22.5%",
-                      "per": "2.5%"
+                      "base": "53%",
+                      "per": "3%"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 4
+              "maxStack": 3
             },
             {
               "key": "Effect_BR_Sleipnir_N_19",
@@ -3711,7 +4558,7 @@
                 {
                   "icon": "BuffIcon_REMOVE_BUFF",
                   "desc": {
-                    "desc": "소닉붐 : 반격 효과 해제",
+                    "desc": "소닉붐 : 반격 효과 해제 / 이동 불가 / 표식",
                     "type": 0,
                     "value": "29"
                   },
@@ -3725,6 +4572,109 @@
                     "off": {
                       "type": 29,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Sleipnir_N_201",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "돌진 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "초고속 돌진 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Sleipnir_N_202",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "초코속 돌진 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.480000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "48%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -3744,7 +4694,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": true,
-          "acc_bonus": 0,
+          "acc_bonus": 27,
           "buff_rate": 100,
           "buffs": [
             {
@@ -3837,7 +4787,7 @@
                 {
                   "icon": "BuffIcon_REMOVE_BUFF",
                   "desc": {
-                    "desc": "소닉붐 : 반격 효과 해제",
+                    "desc": "소닉붐 : 반격 효과 해제 / 이동 불가 / 표식",
                     "type": 0,
                     "value": "29"
                   },
@@ -3852,6 +4802,28 @@
                     "off": {
                       "type": 29,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "소닉붐 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.480000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "48%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -3983,7 +4955,7 @@
                   "desc": {
                     "desc": "잡을 수 있겠어? : 회피+{0}%",
                     "type": 1,
-                    "value": "0.225000"
+                    "value": "0.530000"
                   },
                   "attr": 0,
                   "erase": {
@@ -3993,14 +4965,14 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "22.5%",
-                      "per": "2.5%"
+                      "base": "53%",
+                      "per": "3%"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 4
+              "maxStack": 3
             },
             {
               "key": "Effect_BR_Sleipnir_N_19",
@@ -4069,7 +5041,7 @@
                 {
                   "icon": "BuffIcon_REMOVE_BUFF",
                   "desc": {
-                    "desc": "소닉붐 : 반격 효과 해제",
+                    "desc": "소닉붐 : 반격 효과 해제 / 이동 불가 / 표식",
                     "type": 0,
                     "value": "29"
                   },
@@ -4083,6 +5055,109 @@
                     "off": {
                       "type": 29,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Sleipnir_N_201",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "돌진 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "초고속 돌진 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Sleipnir_N_202",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "초코속 돌진 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.480000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "48%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -4102,7 +5177,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": true,
-          "acc_bonus": 0,
+          "acc_bonus": 36,
           "buff_rate": 100,
           "buffs": [
             {
@@ -4195,7 +5270,7 @@
                 {
                   "icon": "BuffIcon_REMOVE_BUFF",
                   "desc": {
-                    "desc": "소닉붐 : 반격 효과 해제",
+                    "desc": "소닉붐 : 반격 효과 해제 / 이동 불가 / 표식",
                     "type": 0,
                     "value": "29"
                   },
@@ -4210,6 +5285,28 @@
                     "off": {
                       "type": 29,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "소닉붐 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.480000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "48%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -4341,7 +5438,7 @@
                   "desc": {
                     "desc": "잡을 수 있겠어? : 회피+{0}%",
                     "type": 1,
-                    "value": "0.225000"
+                    "value": "0.530000"
                   },
                   "attr": 0,
                   "erase": {
@@ -4351,14 +5448,14 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "22.5%",
-                      "per": "2.5%"
+                      "base": "53%",
+                      "per": "3%"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 4
+              "maxStack": 3
             },
             {
               "key": "Effect_BR_Sleipnir_N_19",
@@ -4427,7 +5524,7 @@
                 {
                   "icon": "BuffIcon_REMOVE_BUFF",
                   "desc": {
-                    "desc": "소닉붐 : 반격 효과 해제",
+                    "desc": "소닉붐 : 반격 효과 해제 / 이동 불가 / 표식",
                     "type": 0,
                     "value": "29"
                   },
@@ -4441,6 +5538,109 @@
                     "off": {
                       "type": 29,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Sleipnir_N_201",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "돌진 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "초고속 돌진 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Sleipnir_N_202",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "초코속 돌진 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.480000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "48%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -4460,7 +5660,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": true,
-          "acc_bonus": 0,
+          "acc_bonus": 45,
           "buff_rate": 100,
           "buffs": [
             {
@@ -4553,7 +5753,7 @@
                 {
                   "icon": "BuffIcon_REMOVE_BUFF",
                   "desc": {
-                    "desc": "소닉붐 : 반격 효과 해제",
+                    "desc": "소닉붐 : 반격 효과 해제 / 이동 불가 / 표식",
                     "type": 0,
                     "value": "29"
                   },
@@ -4568,6 +5768,28 @@
                     "off": {
                       "type": 29,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "소닉붐 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.480000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "48%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -4699,7 +5921,7 @@
                   "desc": {
                     "desc": "잡을 수 있겠어? : 회피+{0}%",
                     "type": 1,
-                    "value": "0.225000"
+                    "value": "0.530000"
                   },
                   "attr": 0,
                   "erase": {
@@ -4709,14 +5931,14 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "22.5%",
-                      "per": "2.5%"
+                      "base": "53%",
+                      "per": "3%"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 4
+              "maxStack": 3
             },
             {
               "key": "Effect_BR_Sleipnir_N_19",
@@ -4785,7 +6007,7 @@
                 {
                   "icon": "BuffIcon_REMOVE_BUFF",
                   "desc": {
-                    "desc": "소닉붐 : 반격 효과 해제",
+                    "desc": "소닉붐 : 반격 효과 해제 / 이동 불가 / 표식",
                     "type": 0,
                     "value": "29"
                   },
@@ -4799,6 +6021,109 @@
                     "off": {
                       "type": 29,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Sleipnir_N_201",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "돌진 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "초고속 돌진 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Sleipnir_N_202",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "초코속 돌진 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.480000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "48%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -4818,7 +6143,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": true,
-          "acc_bonus": 0,
+          "acc_bonus": 54,
           "buff_rate": 100,
           "buffs": [
             {
@@ -4911,7 +6236,7 @@
                 {
                   "icon": "BuffIcon_REMOVE_BUFF",
                   "desc": {
-                    "desc": "소닉붐 : 반격 효과 해제",
+                    "desc": "소닉붐 : 반격 효과 해제 / 이동 불가 / 표식",
                     "type": 0,
                     "value": "29"
                   },
@@ -4926,6 +6251,28 @@
                     "off": {
                       "type": 29,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "소닉붐 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.480000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "48%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -5057,7 +6404,7 @@
                   "desc": {
                     "desc": "잡을 수 있겠어? : 회피+{0}%",
                     "type": 1,
-                    "value": "0.225000"
+                    "value": "0.530000"
                   },
                   "attr": 0,
                   "erase": {
@@ -5067,14 +6414,14 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "22.5%",
-                      "per": "2.5%"
+                      "base": "53%",
+                      "per": "3%"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 4
+              "maxStack": 3
             },
             {
               "key": "Effect_BR_Sleipnir_N_19",
@@ -5143,7 +6490,7 @@
                 {
                   "icon": "BuffIcon_REMOVE_BUFF",
                   "desc": {
-                    "desc": "소닉붐 : 반격 효과 해제",
+                    "desc": "소닉붐 : 반격 효과 해제 / 이동 불가 / 표식",
                     "type": 0,
                     "value": "29"
                   },
@@ -5157,6 +6504,109 @@
                     "off": {
                       "type": 29,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Sleipnir_N_201",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "돌진 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "초고속 돌진 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Sleipnir_N_202",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "초코속 돌진 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.480000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "48%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -5176,7 +6626,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": true,
-          "acc_bonus": 0,
+          "acc_bonus": 63,
           "buff_rate": 100,
           "buffs": [
             {
@@ -5269,7 +6719,7 @@
                 {
                   "icon": "BuffIcon_REMOVE_BUFF",
                   "desc": {
-                    "desc": "소닉붐 : 반격 효과 해제",
+                    "desc": "소닉붐 : 반격 효과 해제 / 이동 불가 / 표식",
                     "type": 0,
                     "value": "29"
                   },
@@ -5284,6 +6734,28 @@
                     "off": {
                       "type": 29,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "소닉붐 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.480000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "48%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -5415,7 +6887,7 @@
                   "desc": {
                     "desc": "잡을 수 있겠어? : 회피+{0}%",
                     "type": 1,
-                    "value": "0.225000"
+                    "value": "0.530000"
                   },
                   "attr": 0,
                   "erase": {
@@ -5425,14 +6897,14 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "22.5%",
-                      "per": "2.5%"
+                      "base": "53%",
+                      "per": "3%"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 4
+              "maxStack": 3
             },
             {
               "key": "Effect_BR_Sleipnir_N_19",
@@ -5501,7 +6973,7 @@
                 {
                   "icon": "BuffIcon_REMOVE_BUFF",
                   "desc": {
-                    "desc": "소닉붐 : 반격 효과 해제",
+                    "desc": "소닉붐 : 반격 효과 해제 / 이동 불가 / 표식",
                     "type": 0,
                     "value": "29"
                   },
@@ -5515,6 +6987,109 @@
                     "off": {
                       "type": 29,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Sleipnir_N_201",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "돌진 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "초고속 돌진 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Sleipnir_N_202",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "초코속 돌진 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.480000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "48%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -5534,7 +7109,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": true,
-          "acc_bonus": 0,
+          "acc_bonus": 72,
           "buff_rate": 100,
           "buffs": [
             {
@@ -5627,7 +7202,7 @@
                 {
                   "icon": "BuffIcon_REMOVE_BUFF",
                   "desc": {
-                    "desc": "소닉붐 : 반격 효과 해제",
+                    "desc": "소닉붐 : 반격 효과 해제 / 이동 불가 / 표식",
                     "type": 0,
                     "value": "29"
                   },
@@ -5642,6 +7217,28 @@
                     "off": {
                       "type": 29,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "소닉붐 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.480000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "48%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -5773,7 +7370,7 @@
                   "desc": {
                     "desc": "잡을 수 있겠어? : 회피+{0}%",
                     "type": 1,
-                    "value": "0.225000"
+                    "value": "0.530000"
                   },
                   "attr": 0,
                   "erase": {
@@ -5783,14 +7380,14 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "22.5%",
-                      "per": "2.5%"
+                      "base": "53%",
+                      "per": "3%"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 4
+              "maxStack": 3
             },
             {
               "key": "Effect_BR_Sleipnir_N_19",
@@ -5859,7 +7456,7 @@
                 {
                   "icon": "BuffIcon_REMOVE_BUFF",
                   "desc": {
-                    "desc": "소닉붐 : 반격 효과 해제",
+                    "desc": "소닉붐 : 반격 효과 해제 / 이동 불가 / 표식",
                     "type": 0,
                     "value": "29"
                   },
@@ -5873,6 +7470,109 @@
                     "off": {
                       "type": 29,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Sleipnir_N_201",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "돌진 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "초고속 돌진 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Sleipnir_N_202",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "초코속 돌진 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.480000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "48%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -5892,7 +7592,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": true,
-          "acc_bonus": 0,
+          "acc_bonus": 81,
           "buff_rate": 100,
           "buffs": [
             {
@@ -5985,7 +7685,7 @@
                 {
                   "icon": "BuffIcon_REMOVE_BUFF",
                   "desc": {
-                    "desc": "소닉붐 : 반격 효과 해제",
+                    "desc": "소닉붐 : 반격 효과 해제 / 이동 불가 / 표식",
                     "type": 0,
                     "value": "29"
                   },
@@ -6000,6 +7700,28 @@
                     "off": {
                       "type": 29,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "소닉붐 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.480000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "48%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -6131,7 +7853,7 @@
                   "desc": {
                     "desc": "잡을 수 있겠어? : 회피+{0}%",
                     "type": 1,
-                    "value": "0.225000"
+                    "value": "0.530000"
                   },
                   "attr": 0,
                   "erase": {
@@ -6141,14 +7863,14 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "22.5%",
-                      "per": "2.5%"
+                      "base": "53%",
+                      "per": "3%"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 4
+              "maxStack": 3
             },
             {
               "key": "Effect_BR_Sleipnir_N_19",
@@ -6217,7 +7939,7 @@
                 {
                   "icon": "BuffIcon_REMOVE_BUFF",
                   "desc": {
-                    "desc": "소닉붐 : 반격 효과 해제",
+                    "desc": "소닉붐 : 반격 효과 해제 / 이동 불가 / 표식",
                     "type": 0,
                     "value": "29"
                   },
@@ -6231,6 +7953,109 @@
                     "off": {
                       "type": 29,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Sleipnir_N_201",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "돌진 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "초고속 돌진 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Sleipnir_N_202",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "초코속 돌진 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.480000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "48%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -6250,7 +8075,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": true,
-          "acc_bonus": 0,
+          "acc_bonus": 90,
           "buff_rate": 100,
           "buffs": [
             {
@@ -6343,7 +8168,7 @@
                 {
                   "icon": "BuffIcon_REMOVE_BUFF",
                   "desc": {
-                    "desc": "소닉붐 : 반격 효과 해제",
+                    "desc": "소닉붐 : 반격 효과 해제 / 이동 불가 / 표식",
                     "type": 0,
                     "value": "29"
                   },
@@ -6358,6 +8183,28 @@
                     "off": {
                       "type": 29,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "소닉붐 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.480000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "48%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -6489,7 +8336,7 @@
                   "desc": {
                     "desc": "잡을 수 있겠어? : 회피+{0}%",
                     "type": 1,
-                    "value": "0.225000"
+                    "value": "0.530000"
                   },
                   "attr": 0,
                   "erase": {
@@ -6499,14 +8346,14 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "22.5%",
-                      "per": "2.5%"
+                      "base": "53%",
+                      "per": "3%"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 4
+              "maxStack": 3
             },
             {
               "key": "Effect_BR_Sleipnir_N_19",
@@ -6575,7 +8422,7 @@
                 {
                   "icon": "BuffIcon_REMOVE_BUFF",
                   "desc": {
-                    "desc": "소닉붐 : 반격 효과 해제",
+                    "desc": "소닉붐 : 반격 효과 해제 / 이동 불가 / 표식",
                     "type": 0,
                     "value": "29"
                   },
@@ -6589,6 +8436,109 @@
                     "off": {
                       "type": 29,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Sleipnir_N_201",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "돌진 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "초고속 돌진 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Sleipnir_N_202",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "초코속 돌진 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.480000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "48%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -7299,7 +9249,7 @@
                   "desc": {
                     "desc": "여기야 여기! : 회피+{0}%",
                     "type": 1,
-                    "value": "0.030000"
+                    "value": "0.330000"
                   },
                   "attr": 0,
                   "erase": {},
@@ -7308,7 +9258,7 @@
                     "chance": "0%",
                     "type": 11,
                     "evade": {
-                      "base": "3%",
+                      "base": "33%",
                       "per": "3%"
                     }
                   },
@@ -7319,16 +9269,8 @@
             },
             {
               "key": "Effect_BR_Sleipnir_N_17",
-              "on": "round",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Sleipnir_N_4"
-                  ],
-                  "attr": 6
-                }
-              },
+              "on": "attacked",
+              "if": false,
               "body": [
                 0,
                 1
@@ -7350,22 +9292,24 @@
                   "desc": {
                     "desc": "여기야 여기! : 회피+{0}%",
                     "type": 1,
-                    "value": "0.030000"
+                    "value": "0.330000"
                   },
                   "attr": 0,
-                  "erase": {},
+                  "erase": {
+                    "rounds": 2
+                  },
                   "value": {
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "3%",
+                      "base": "33%",
                       "per": "3%"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 3
+              "maxStack": 2
             }
           ]
         }
@@ -7492,7 +9436,7 @@
                   "desc": {
                     "desc": "잡을 수 있겠어? : 회피+{0}% (공격 시)",
                     "type": 1,
-                    "value": "0.225000"
+                    "value": "0.530000"
                   },
                   "attr": 0,
                   "erase": {
@@ -7503,8 +9447,8 @@
                     "chance": "0%",
                     "type": 11,
                     "evade": {
-                      "base": "22.5%",
-                      "per": "2.5%"
+                      "base": "53%",
+                      "per": "3%"
                     }
                   },
                   "overlap": 4

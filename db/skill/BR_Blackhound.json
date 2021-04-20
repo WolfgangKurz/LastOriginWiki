@@ -27,7 +27,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": false,
-          "acc_bonus": 0,
+          "acc_bonus": 9,
           "buff_rate": 100,
           "buffs": [
             {
@@ -98,6 +98,28 @@
                     "accuracy": {
                       "base": "-20%",
                       "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "빈틈 포착 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
                     }
                   },
                   "overlap": 4
@@ -182,7 +204,7 @@
                   "desc": {
                     "desc": "급속 기동 : 회피+{0}%",
                     "type": 1,
-                    "value": "0.175000"
+                    "value": "0.225000"
                   },
                   "attr": 0,
                   "erase": {
@@ -192,7 +214,7 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "17.5%",
+                      "base": "22.5%",
                       "per": "2.5%"
                     }
                   },
@@ -200,6 +222,54 @@
                 }
               ],
               "maxStack": 3
+            },
+            {
+              "key": "Effect_BR_Blackhound_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Harpy_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "빈틈 포착 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -213,7 +283,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": false,
-          "acc_bonus": 0,
+          "acc_bonus": 18,
           "buff_rate": 100,
           "buffs": [
             {
@@ -284,6 +354,28 @@
                     "accuracy": {
                       "base": "-20%",
                       "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "빈틈 포착 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
                     }
                   },
                   "overlap": 4
@@ -368,7 +460,7 @@
                   "desc": {
                     "desc": "급속 기동 : 회피+{0}%",
                     "type": 1,
-                    "value": "0.175000"
+                    "value": "0.225000"
                   },
                   "attr": 0,
                   "erase": {
@@ -378,7 +470,7 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "17.5%",
+                      "base": "22.5%",
                       "per": "2.5%"
                     }
                   },
@@ -386,6 +478,54 @@
                 }
               ],
               "maxStack": 3
+            },
+            {
+              "key": "Effect_BR_Blackhound_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Harpy_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "빈틈 포착 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -399,7 +539,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": false,
-          "acc_bonus": 0,
+          "acc_bonus": 27,
           "buff_rate": 100,
           "buffs": [
             {
@@ -470,6 +610,28 @@
                     "accuracy": {
                       "base": "-20%",
                       "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "빈틈 포착 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
                     }
                   },
                   "overlap": 4
@@ -554,7 +716,7 @@
                   "desc": {
                     "desc": "급속 기동 : 회피+{0}%",
                     "type": 1,
-                    "value": "0.175000"
+                    "value": "0.225000"
                   },
                   "attr": 0,
                   "erase": {
@@ -564,7 +726,7 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "17.5%",
+                      "base": "22.5%",
                       "per": "2.5%"
                     }
                   },
@@ -572,6 +734,54 @@
                 }
               ],
               "maxStack": 3
+            },
+            {
+              "key": "Effect_BR_Blackhound_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Harpy_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "빈틈 포착 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -585,7 +795,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": false,
-          "acc_bonus": 0,
+          "acc_bonus": 36,
           "buff_rate": 100,
           "buffs": [
             {
@@ -656,6 +866,28 @@
                     "accuracy": {
                       "base": "-20%",
                       "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "빈틈 포착 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
                     }
                   },
                   "overlap": 4
@@ -740,7 +972,7 @@
                   "desc": {
                     "desc": "급속 기동 : 회피+{0}%",
                     "type": 1,
-                    "value": "0.175000"
+                    "value": "0.225000"
                   },
                   "attr": 0,
                   "erase": {
@@ -750,7 +982,7 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "17.5%",
+                      "base": "22.5%",
                       "per": "2.5%"
                     }
                   },
@@ -758,6 +990,54 @@
                 }
               ],
               "maxStack": 3
+            },
+            {
+              "key": "Effect_BR_Blackhound_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Harpy_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "빈틈 포착 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -771,7 +1051,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": false,
-          "acc_bonus": 0,
+          "acc_bonus": 45,
           "buff_rate": 100,
           "buffs": [
             {
@@ -842,6 +1122,28 @@
                     "accuracy": {
                       "base": "-20%",
                       "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "빈틈 포착 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
                     }
                   },
                   "overlap": 4
@@ -926,7 +1228,7 @@
                   "desc": {
                     "desc": "급속 기동 : 회피+{0}%",
                     "type": 1,
-                    "value": "0.175000"
+                    "value": "0.225000"
                   },
                   "attr": 0,
                   "erase": {
@@ -936,7 +1238,7 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "17.5%",
+                      "base": "22.5%",
                       "per": "2.5%"
                     }
                   },
@@ -944,6 +1246,54 @@
                 }
               ],
               "maxStack": 3
+            },
+            {
+              "key": "Effect_BR_Blackhound_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Harpy_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "빈틈 포착 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -957,7 +1307,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": false,
-          "acc_bonus": 0,
+          "acc_bonus": 54,
           "buff_rate": 100,
           "buffs": [
             {
@@ -1028,6 +1378,28 @@
                     "accuracy": {
                       "base": "-20%",
                       "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "빈틈 포착 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
                     }
                   },
                   "overlap": 4
@@ -1112,7 +1484,7 @@
                   "desc": {
                     "desc": "급속 기동 : 회피+{0}%",
                     "type": 1,
-                    "value": "0.175000"
+                    "value": "0.225000"
                   },
                   "attr": 0,
                   "erase": {
@@ -1122,7 +1494,7 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "17.5%",
+                      "base": "22.5%",
                       "per": "2.5%"
                     }
                   },
@@ -1130,6 +1502,54 @@
                 }
               ],
               "maxStack": 3
+            },
+            {
+              "key": "Effect_BR_Blackhound_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Harpy_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "빈틈 포착 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -1143,7 +1563,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": false,
-          "acc_bonus": 0,
+          "acc_bonus": 63,
           "buff_rate": 100,
           "buffs": [
             {
@@ -1214,6 +1634,28 @@
                     "accuracy": {
                       "base": "-20%",
                       "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "빈틈 포착 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
                     }
                   },
                   "overlap": 4
@@ -1298,7 +1740,7 @@
                   "desc": {
                     "desc": "급속 기동 : 회피+{0}%",
                     "type": 1,
-                    "value": "0.175000"
+                    "value": "0.225000"
                   },
                   "attr": 0,
                   "erase": {
@@ -1308,7 +1750,7 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "17.5%",
+                      "base": "22.5%",
                       "per": "2.5%"
                     }
                   },
@@ -1316,6 +1758,54 @@
                 }
               ],
               "maxStack": 3
+            },
+            {
+              "key": "Effect_BR_Blackhound_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Harpy_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "빈틈 포착 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -1329,7 +1819,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": false,
-          "acc_bonus": 0,
+          "acc_bonus": 72,
           "buff_rate": 100,
           "buffs": [
             {
@@ -1400,6 +1890,28 @@
                     "accuracy": {
                       "base": "-20%",
                       "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "빈틈 포착 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
                     }
                   },
                   "overlap": 4
@@ -1484,7 +1996,7 @@
                   "desc": {
                     "desc": "급속 기동 : 회피+{0}%",
                     "type": 1,
-                    "value": "0.175000"
+                    "value": "0.225000"
                   },
                   "attr": 0,
                   "erase": {
@@ -1494,7 +2006,7 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "17.5%",
+                      "base": "22.5%",
                       "per": "2.5%"
                     }
                   },
@@ -1502,6 +2014,54 @@
                 }
               ],
               "maxStack": 3
+            },
+            {
+              "key": "Effect_BR_Blackhound_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Harpy_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "빈틈 포착 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -1515,7 +2075,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": false,
-          "acc_bonus": 0,
+          "acc_bonus": 81,
           "buff_rate": 100,
           "buffs": [
             {
@@ -1586,6 +2146,28 @@
                     "accuracy": {
                       "base": "-20%",
                       "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "빈틈 포착 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
                     }
                   },
                   "overlap": 4
@@ -1670,7 +2252,7 @@
                   "desc": {
                     "desc": "급속 기동 : 회피+{0}%",
                     "type": 1,
-                    "value": "0.175000"
+                    "value": "0.225000"
                   },
                   "attr": 0,
                   "erase": {
@@ -1680,7 +2262,7 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "17.5%",
+                      "base": "22.5%",
                       "per": "2.5%"
                     }
                   },
@@ -1688,6 +2270,54 @@
                 }
               ],
               "maxStack": 3
+            },
+            {
+              "key": "Effect_BR_Blackhound_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Harpy_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "빈틈 포착 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -1701,7 +2331,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": false,
-          "acc_bonus": 0,
+          "acc_bonus": 90,
           "buff_rate": 100,
           "buffs": [
             {
@@ -1772,6 +2402,28 @@
                     "accuracy": {
                       "base": "-20%",
                       "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "빈틈 포착 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
                     }
                   },
                   "overlap": 4
@@ -1856,7 +2508,7 @@
                   "desc": {
                     "desc": "급속 기동 : 회피+{0}%",
                     "type": 1,
-                    "value": "0.175000"
+                    "value": "0.225000"
                   },
                   "attr": 0,
                   "erase": {
@@ -1866,7 +2518,7 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "17.5%",
+                      "base": "22.5%",
                       "per": "2.5%"
                     }
                   },
@@ -1874,6 +2526,54 @@
                 }
               ],
               "maxStack": 3
+            },
+            {
+              "key": "Effect_BR_Blackhound_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Harpy_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "빈틈 포착 : [풀 버스트] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Harpy_N"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Harpy_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         }
@@ -1908,7 +2608,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": false,
-          "acc_bonus": 0,
+          "acc_bonus": 9,
           "buff_rate": 100,
           "buffs": [
             {
@@ -1990,6 +2690,44 @@
                     }
                   },
                   "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "EMP 미사일 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "EMP 미사일 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 0
                 }
               ],
               "maxStack": 0
@@ -2027,7 +2765,7 @@
                   "desc": {
                     "desc": "급속 기동 : 회피+{0}%",
                     "type": 1,
-                    "value": "0.175000"
+                    "value": "0.225000"
                   },
                   "attr": 0,
                   "erase": {
@@ -2037,7 +2775,7 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "17.5%",
+                      "base": "22.5%",
                       "per": "2.5%"
                     }
                   },
@@ -2045,6 +2783,65 @@
                 }
               ],
               "maxStack": 3
+            },
+            {
+              "key": "Effect_BR_Blackhound_N_201",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "EMP 미사일 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "EMP 미사일 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -2058,7 +2855,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": false,
-          "acc_bonus": 0,
+          "acc_bonus": 18,
           "buff_rate": 100,
           "buffs": [
             {
@@ -2140,6 +2937,44 @@
                     }
                   },
                   "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "EMP 미사일 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "EMP 미사일 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 0
                 }
               ],
               "maxStack": 0
@@ -2177,7 +3012,7 @@
                   "desc": {
                     "desc": "급속 기동 : 회피+{0}%",
                     "type": 1,
-                    "value": "0.175000"
+                    "value": "0.225000"
                   },
                   "attr": 0,
                   "erase": {
@@ -2187,7 +3022,7 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "17.5%",
+                      "base": "22.5%",
                       "per": "2.5%"
                     }
                   },
@@ -2195,6 +3030,65 @@
                 }
               ],
               "maxStack": 3
+            },
+            {
+              "key": "Effect_BR_Blackhound_N_201",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "EMP 미사일 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "EMP 미사일 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -2208,7 +3102,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": false,
-          "acc_bonus": 0,
+          "acc_bonus": 27,
           "buff_rate": 100,
           "buffs": [
             {
@@ -2290,6 +3184,44 @@
                     }
                   },
                   "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "EMP 미사일 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "EMP 미사일 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 0
                 }
               ],
               "maxStack": 0
@@ -2327,7 +3259,7 @@
                   "desc": {
                     "desc": "급속 기동 : 회피+{0}%",
                     "type": 1,
-                    "value": "0.175000"
+                    "value": "0.225000"
                   },
                   "attr": 0,
                   "erase": {
@@ -2337,7 +3269,7 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "17.5%",
+                      "base": "22.5%",
                       "per": "2.5%"
                     }
                   },
@@ -2345,6 +3277,65 @@
                 }
               ],
               "maxStack": 3
+            },
+            {
+              "key": "Effect_BR_Blackhound_N_201",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "EMP 미사일 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "EMP 미사일 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -2358,7 +3349,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": false,
-          "acc_bonus": 0,
+          "acc_bonus": 36,
           "buff_rate": 100,
           "buffs": [
             {
@@ -2440,6 +3431,44 @@
                     }
                   },
                   "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "EMP 미사일 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "EMP 미사일 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 0
                 }
               ],
               "maxStack": 0
@@ -2477,7 +3506,7 @@
                   "desc": {
                     "desc": "급속 기동 : 회피+{0}%",
                     "type": 1,
-                    "value": "0.175000"
+                    "value": "0.225000"
                   },
                   "attr": 0,
                   "erase": {
@@ -2487,7 +3516,7 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "17.5%",
+                      "base": "22.5%",
                       "per": "2.5%"
                     }
                   },
@@ -2495,6 +3524,65 @@
                 }
               ],
               "maxStack": 3
+            },
+            {
+              "key": "Effect_BR_Blackhound_N_201",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "EMP 미사일 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "EMP 미사일 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -2508,7 +3596,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": false,
-          "acc_bonus": 0,
+          "acc_bonus": 45,
           "buff_rate": 100,
           "buffs": [
             {
@@ -2590,6 +3678,44 @@
                     }
                   },
                   "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "EMP 미사일 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "EMP 미사일 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 0
                 }
               ],
               "maxStack": 0
@@ -2627,7 +3753,7 @@
                   "desc": {
                     "desc": "급속 기동 : 회피+{0}%",
                     "type": 1,
-                    "value": "0.175000"
+                    "value": "0.225000"
                   },
                   "attr": 0,
                   "erase": {
@@ -2637,7 +3763,7 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "17.5%",
+                      "base": "22.5%",
                       "per": "2.5%"
                     }
                   },
@@ -2645,6 +3771,65 @@
                 }
               ],
               "maxStack": 3
+            },
+            {
+              "key": "Effect_BR_Blackhound_N_201",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "EMP 미사일 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "EMP 미사일 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -2658,7 +3843,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": false,
-          "acc_bonus": 0,
+          "acc_bonus": 54,
           "buff_rate": 100,
           "buffs": [
             {
@@ -2740,6 +3925,44 @@
                     }
                   },
                   "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "EMP 미사일 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "EMP 미사일 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 0
                 }
               ],
               "maxStack": 0
@@ -2777,7 +4000,7 @@
                   "desc": {
                     "desc": "급속 기동 : 회피+{0}%",
                     "type": 1,
-                    "value": "0.175000"
+                    "value": "0.225000"
                   },
                   "attr": 0,
                   "erase": {
@@ -2787,7 +4010,7 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "17.5%",
+                      "base": "22.5%",
                       "per": "2.5%"
                     }
                   },
@@ -2795,6 +4018,65 @@
                 }
               ],
               "maxStack": 3
+            },
+            {
+              "key": "Effect_BR_Blackhound_N_201",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "EMP 미사일 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "EMP 미사일 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -2808,7 +4090,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": false,
-          "acc_bonus": 0,
+          "acc_bonus": 63,
           "buff_rate": 100,
           "buffs": [
             {
@@ -2890,6 +4172,44 @@
                     }
                   },
                   "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "EMP 미사일 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "EMP 미사일 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 0
                 }
               ],
               "maxStack": 0
@@ -2927,7 +4247,7 @@
                   "desc": {
                     "desc": "급속 기동 : 회피+{0}%",
                     "type": 1,
-                    "value": "0.175000"
+                    "value": "0.225000"
                   },
                   "attr": 0,
                   "erase": {
@@ -2937,7 +4257,7 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "17.5%",
+                      "base": "22.5%",
                       "per": "2.5%"
                     }
                   },
@@ -2945,6 +4265,65 @@
                 }
               ],
               "maxStack": 3
+            },
+            {
+              "key": "Effect_BR_Blackhound_N_201",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "EMP 미사일 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "EMP 미사일 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -2958,7 +4337,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": false,
-          "acc_bonus": 0,
+          "acc_bonus": 72,
           "buff_rate": 100,
           "buffs": [
             {
@@ -3040,6 +4419,44 @@
                     }
                   },
                   "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "EMP 미사일 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "EMP 미사일 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 0
                 }
               ],
               "maxStack": 0
@@ -3077,7 +4494,7 @@
                   "desc": {
                     "desc": "급속 기동 : 회피+{0}%",
                     "type": 1,
-                    "value": "0.175000"
+                    "value": "0.225000"
                   },
                   "attr": 0,
                   "erase": {
@@ -3087,7 +4504,7 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "17.5%",
+                      "base": "22.5%",
                       "per": "2.5%"
                     }
                   },
@@ -3095,6 +4512,65 @@
                 }
               ],
               "maxStack": 3
+            },
+            {
+              "key": "Effect_BR_Blackhound_N_201",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "EMP 미사일 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "EMP 미사일 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -3108,7 +4584,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": false,
-          "acc_bonus": 0,
+          "acc_bonus": 81,
           "buff_rate": 100,
           "buffs": [
             {
@@ -3190,6 +4666,44 @@
                     }
                   },
                   "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "EMP 미사일 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "EMP 미사일 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 0
                 }
               ],
               "maxStack": 0
@@ -3227,7 +4741,7 @@
                   "desc": {
                     "desc": "급속 기동 : 회피+{0}%",
                     "type": 1,
-                    "value": "0.175000"
+                    "value": "0.225000"
                   },
                   "attr": 0,
                   "erase": {
@@ -3237,7 +4751,7 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "17.5%",
+                      "base": "22.5%",
                       "per": "2.5%"
                     }
                   },
@@ -3245,6 +4759,65 @@
                 }
               ],
               "maxStack": 3
+            },
+            {
+              "key": "Effect_BR_Blackhound_N_201",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "EMP 미사일 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "EMP 미사일 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -3258,7 +4831,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": false,
-          "acc_bonus": 0,
+          "acc_bonus": 90,
           "buff_rate": 100,
           "buffs": [
             {
@@ -3340,6 +4913,44 @@
                     }
                   },
                   "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "EMP 미사일 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "EMP 미사일 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 0
                 }
               ],
               "maxStack": 0
@@ -3377,7 +4988,7 @@
                   "desc": {
                     "desc": "급속 기동 : 회피+{0}%",
                     "type": 1,
-                    "value": "0.175000"
+                    "value": "0.225000"
                   },
                   "attr": 0,
                   "erase": {
@@ -3387,7 +4998,7 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "17.5%",
+                      "base": "22.5%",
                       "per": "2.5%"
                     }
                   },
@@ -3395,6 +5006,65 @@
                 }
               ],
               "maxStack": 3
+            },
+            {
+              "key": "Effect_BR_Blackhound_N_201",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "EMP 미사일 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "EMP 미사일 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
             }
           ]
         }
@@ -3446,14 +5116,15 @@
                 2
               ],
               "role": [
-                1
+                1,
+                2
               ],
               "target": 2,
               "buffs": [
                 {
                   "icon": "BuffIcon_DEF_Char",
                   "desc": {
-                    "desc": "긴급 호위 : 지정 대상 보호 (공격기)",
+                    "desc": "긴급 호위 : 지정 대상 보호 (공격기/지원기)",
                     "type": 0,
                     "value": "0"
                   },
@@ -3512,7 +5183,8 @@
                 2
               ],
               "role": [
-                1
+                1,
+                2
               ],
               "target": 2,
               "buffs": [
@@ -3569,14 +5241,15 @@
                 2
               ],
               "role": [
-                1
+                1,
+                2
               ],
               "target": 2,
               "buffs": [
                 {
                   "icon": "BuffIcon_DEF_Char",
                   "desc": {
-                    "desc": "긴급 호위 : 지정 대상 보호 (공격기)",
+                    "desc": "긴급 호위 : 지정 대상 보호 (공격기/지원기)",
                     "type": 0,
                     "value": "0"
                   },
@@ -3635,7 +5308,8 @@
                 2
               ],
               "role": [
-                1
+                1,
+                2
               ],
               "target": 2,
               "buffs": [
@@ -3670,7 +5344,7 @@
           "type": 0,
           "range": 0,
           "ap": 0,
-          "grid": "around",
+          "grid": "global",
           "target_ground": false,
           "summon": null,
           "use": null,
@@ -3692,14 +5366,15 @@
                 2
               ],
               "role": [
-                1
+                1,
+                2
               ],
               "target": 2,
               "buffs": [
                 {
                   "icon": "BuffIcon_DEF_Char",
                   "desc": {
-                    "desc": "긴급 호위 : 지정 대상 보호 (공격기)",
+                    "desc": "긴급 호위 : 지정 대상 보호 (공격기/지원기)",
                     "type": 0,
                     "value": "0"
                   },
@@ -3758,7 +5433,8 @@
                 2
               ],
               "role": [
-                1
+                1,
+                2
               ],
               "target": 2,
               "buffs": [
@@ -3868,7 +5544,7 @@
                   "desc": {
                     "desc": "VIFF 기동 : 회피+{0}%",
                     "type": 1,
-                    "value": "0.350000"
+                    "value": "0.450000"
                   },
                   "attr": 0,
                   "erase": {
@@ -3879,7 +5555,7 @@
                     "chance": "0%",
                     "type": 11,
                     "evade": {
-                      "base": "35%",
+                      "base": "45%",
                       "per": "5%"
                     }
                   },
@@ -3890,7 +5566,7 @@
                   "desc": {
                     "desc": "급속 기동 : 회피+{0}% (공격 시)",
                     "type": 1,
-                    "value": "0.175000"
+                    "value": "0.225000"
                   },
                   "attr": 0,
                   "erase": {
@@ -3901,7 +5577,7 @@
                     "chance": "0%",
                     "type": 11,
                     "evade": {
-                      "base": "17.5%",
+                      "base": "22.5%",
                       "per": "2.5%"
                     }
                   },
@@ -3935,7 +5611,7 @@
                   "desc": {
                     "desc": "VIFF 기동 : 회피+{0}%",
                     "type": 1,
-                    "value": "0.350000"
+                    "value": "0.450000"
                   },
                   "attr": 0,
                   "erase": {
@@ -3945,7 +5621,7 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "35%",
+                      "base": "45%",
                       "per": "5%"
                     }
                   },
