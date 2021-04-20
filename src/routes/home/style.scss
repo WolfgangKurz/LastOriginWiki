@@ -8,34 +8,4 @@
 		border-radius: 3px;
 		background-color: #eee;
 	}
-
-	.roguelike-button {
-		display: inline-flex;
-		width: 160px;
-		height: 160px;
-		justify-content: center;
-		align-items: center;
-
-		text-decoration: none;
-		font-weight: bold;
-		font-size: 1.5em;
-		color: $light;
-
-		$size: 0.25em;
-		$loop: 10;
-		$list: ();
-		@for $i from 0 to $loop {
-			$list: append($list, 0 0 $size $dark, comma);
-		}
-		text-shadow: $list;
-
-		$exts: png, webp;
-		@each $ext in $exts {
-			&[data-ext="#{$ext}"] {
-				background-image: url($assetsRoot + "/#{$ext}/rogue/world_btn.#{$ext}");
-			}
-		}
-		background-repeat: no-repeat;
-		background-position: center;
-	}
 }

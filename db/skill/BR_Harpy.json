@@ -55,7 +55,7 @@
                   "desc": {
                     "desc": "정밀 폭격 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000"
+                    "value": "0.270000"
                   },
                   "attr": 1,
                   "erase": {
@@ -66,8 +66,8 @@
                     "chance": "0%",
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
+                      "base": "27%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -117,6 +117,28 @@
                     }
                   },
                   "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "NARAAK : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
+                    }
+                  },
+                  "overlap": 0
                 }
               ],
               "maxStack": 0
@@ -156,7 +178,7 @@
                   "desc": {
                     "desc": "정밀 폭격 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000"
+                    "value": "0.270000"
                   },
                   "attr": 3,
                   "erase": {
@@ -166,8 +188,8 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
+                      "base": "27%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -215,6 +237,54 @@
                         "base": "15%",
                         "per": "0.75%"
                       }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Harpy_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Sleipnir_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "정밀 폭격 : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
                     }
                   },
                   "overlap": 4
@@ -262,7 +332,7 @@
                   "desc": {
                     "desc": "정밀 폭격 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000"
+                    "value": "0.270000"
                   },
                   "attr": 1,
                   "erase": {
@@ -273,8 +343,8 @@
                     "chance": "0%",
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
+                      "base": "27%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -324,6 +394,28 @@
                     }
                   },
                   "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "NARAAK : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
+                    }
+                  },
+                  "overlap": 0
                 }
               ],
               "maxStack": 0
@@ -363,7 +455,7 @@
                   "desc": {
                     "desc": "정밀 폭격 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000"
+                    "value": "0.270000"
                   },
                   "attr": 3,
                   "erase": {
@@ -373,8 +465,8 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
+                      "base": "27%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -422,6 +514,54 @@
                         "base": "15%",
                         "per": "0.75%"
                       }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Harpy_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Sleipnir_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "정밀 폭격 : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
                     }
                   },
                   "overlap": 4
@@ -469,7 +609,7 @@
                   "desc": {
                     "desc": "정밀 폭격 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000"
+                    "value": "0.270000"
                   },
                   "attr": 1,
                   "erase": {
@@ -480,8 +620,8 @@
                     "chance": "0%",
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
+                      "base": "27%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -531,6 +671,28 @@
                     }
                   },
                   "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "NARAAK : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
+                    }
+                  },
+                  "overlap": 0
                 }
               ],
               "maxStack": 0
@@ -570,7 +732,7 @@
                   "desc": {
                     "desc": "정밀 폭격 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000"
+                    "value": "0.270000"
                   },
                   "attr": 3,
                   "erase": {
@@ -580,8 +742,8 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
+                      "base": "27%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -629,6 +791,54 @@
                         "base": "15%",
                         "per": "0.75%"
                       }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Harpy_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Sleipnir_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "정밀 폭격 : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
                     }
                   },
                   "overlap": 4
@@ -676,7 +886,7 @@
                   "desc": {
                     "desc": "정밀 폭격 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000"
+                    "value": "0.270000"
                   },
                   "attr": 1,
                   "erase": {
@@ -687,8 +897,8 @@
                     "chance": "0%",
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
+                      "base": "27%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -738,6 +948,28 @@
                     }
                   },
                   "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "NARAAK : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
+                    }
+                  },
+                  "overlap": 0
                 }
               ],
               "maxStack": 0
@@ -777,7 +1009,7 @@
                   "desc": {
                     "desc": "정밀 폭격 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000"
+                    "value": "0.270000"
                   },
                   "attr": 3,
                   "erase": {
@@ -787,8 +1019,8 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
+                      "base": "27%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -836,6 +1068,54 @@
                         "base": "15%",
                         "per": "0.75%"
                       }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Harpy_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Sleipnir_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "정밀 폭격 : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
                     }
                   },
                   "overlap": 4
@@ -883,7 +1163,7 @@
                   "desc": {
                     "desc": "정밀 폭격 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000"
+                    "value": "0.270000"
                   },
                   "attr": 1,
                   "erase": {
@@ -894,8 +1174,8 @@
                     "chance": "0%",
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
+                      "base": "27%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -945,6 +1225,28 @@
                     }
                   },
                   "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "NARAAK : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
+                    }
+                  },
+                  "overlap": 0
                 }
               ],
               "maxStack": 0
@@ -984,7 +1286,7 @@
                   "desc": {
                     "desc": "정밀 폭격 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000"
+                    "value": "0.270000"
                   },
                   "attr": 3,
                   "erase": {
@@ -994,8 +1296,8 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
+                      "base": "27%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -1043,6 +1345,54 @@
                         "base": "15%",
                         "per": "0.75%"
                       }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Harpy_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Sleipnir_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "정밀 폭격 : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
                     }
                   },
                   "overlap": 4
@@ -1090,7 +1440,7 @@
                   "desc": {
                     "desc": "정밀 폭격 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000"
+                    "value": "0.270000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1101,8 +1451,8 @@
                     "chance": "0%",
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
+                      "base": "27%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -1152,6 +1502,28 @@
                     }
                   },
                   "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "NARAAK : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
+                    }
+                  },
+                  "overlap": 0
                 }
               ],
               "maxStack": 0
@@ -1191,7 +1563,7 @@
                   "desc": {
                     "desc": "정밀 폭격 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000"
+                    "value": "0.270000"
                   },
                   "attr": 3,
                   "erase": {
@@ -1201,8 +1573,8 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
+                      "base": "27%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -1250,6 +1622,54 @@
                         "base": "15%",
                         "per": "0.75%"
                       }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Harpy_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Sleipnir_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "정밀 폭격 : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
                     }
                   },
                   "overlap": 4
@@ -1297,7 +1717,7 @@
                   "desc": {
                     "desc": "정밀 폭격 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000"
+                    "value": "0.270000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1308,8 +1728,8 @@
                     "chance": "0%",
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
+                      "base": "27%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -1359,6 +1779,28 @@
                     }
                   },
                   "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "NARAAK : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
+                    }
+                  },
+                  "overlap": 0
                 }
               ],
               "maxStack": 0
@@ -1398,7 +1840,7 @@
                   "desc": {
                     "desc": "정밀 폭격 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000"
+                    "value": "0.270000"
                   },
                   "attr": 3,
                   "erase": {
@@ -1408,8 +1850,8 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
+                      "base": "27%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -1457,6 +1899,54 @@
                         "base": "15%",
                         "per": "0.75%"
                       }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Harpy_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Sleipnir_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "정밀 폭격 : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
                     }
                   },
                   "overlap": 4
@@ -1504,7 +1994,7 @@
                   "desc": {
                     "desc": "정밀 폭격 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000"
+                    "value": "0.270000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1515,8 +2005,8 @@
                     "chance": "0%",
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
+                      "base": "27%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -1566,6 +2056,28 @@
                     }
                   },
                   "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "NARAAK : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
+                    }
+                  },
+                  "overlap": 0
                 }
               ],
               "maxStack": 0
@@ -1605,7 +2117,7 @@
                   "desc": {
                     "desc": "정밀 폭격 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000"
+                    "value": "0.270000"
                   },
                   "attr": 3,
                   "erase": {
@@ -1615,8 +2127,8 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
+                      "base": "27%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -1664,6 +2176,54 @@
                         "base": "15%",
                         "per": "0.75%"
                       }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Harpy_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Sleipnir_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "정밀 폭격 : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
                     }
                   },
                   "overlap": 4
@@ -1711,7 +2271,7 @@
                   "desc": {
                     "desc": "정밀 폭격 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000"
+                    "value": "0.270000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1722,8 +2282,8 @@
                     "chance": "0%",
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
+                      "base": "27%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -1773,6 +2333,28 @@
                     }
                   },
                   "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "NARAAK : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
+                    }
+                  },
+                  "overlap": 0
                 }
               ],
               "maxStack": 0
@@ -1812,7 +2394,7 @@
                   "desc": {
                     "desc": "정밀 폭격 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000"
+                    "value": "0.270000"
                   },
                   "attr": 3,
                   "erase": {
@@ -1822,8 +2404,8 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
+                      "base": "27%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -1871,6 +2453,54 @@
                         "base": "15%",
                         "per": "0.75%"
                       }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Harpy_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Sleipnir_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "정밀 폭격 : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
                     }
                   },
                   "overlap": 4
@@ -1918,7 +2548,7 @@
                   "desc": {
                     "desc": "정밀 폭격 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000"
+                    "value": "0.270000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1929,8 +2559,8 @@
                     "chance": "0%",
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
+                      "base": "27%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -1980,6 +2610,28 @@
                     }
                   },
                   "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "NARAAK : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
+                    }
+                  },
+                  "overlap": 0
                 }
               ],
               "maxStack": 0
@@ -2019,7 +2671,7 @@
                   "desc": {
                     "desc": "정밀 폭격 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000"
+                    "value": "0.270000"
                   },
                   "attr": 3,
                   "erase": {
@@ -2029,8 +2681,8 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
+                      "base": "27%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -2084,6 +2736,54 @@
                 }
               ],
               "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Harpy_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Sleipnir_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "정밀 폭격 : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         }
@@ -2118,7 +2818,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": true,
-          "acc_bonus": 4,
+          "acc_bonus": 9,
           "buff_rate": 100,
           "buffs": [
             {
@@ -2186,6 +2886,66 @@
                     }
                   },
                   "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.055000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "5.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "풀 버스트 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "풀 버스트 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
                 }
               ],
               "maxStack": 0
@@ -2354,6 +3114,109 @@
                 }
               ],
               "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Harpy_N_201",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.055000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "5.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Harpy_N_202",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "풀 버스트 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "풀 버스트 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -2367,7 +3230,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": true,
-          "acc_bonus": 8,
+          "acc_bonus": 18,
           "buff_rate": 100,
           "buffs": [
             {
@@ -2435,6 +3298,66 @@
                     }
                   },
                   "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.055000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "5.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "풀 버스트 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "풀 버스트 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
                 }
               ],
               "maxStack": 0
@@ -2603,6 +3526,109 @@
                 }
               ],
               "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Harpy_N_201",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.055000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "5.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Harpy_N_202",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "풀 버스트 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "풀 버스트 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -2616,7 +3642,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": true,
-          "acc_bonus": 12,
+          "acc_bonus": 27,
           "buff_rate": 100,
           "buffs": [
             {
@@ -2684,6 +3710,66 @@
                     }
                   },
                   "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.055000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "5.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "풀 버스트 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "풀 버스트 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
                 }
               ],
               "maxStack": 0
@@ -2852,1256 +3938,114 @@
                 }
               ],
               "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Harpy_N_201",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.055000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "5.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Harpy_N_202",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "풀 버스트 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "풀 버스트 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
         {
           "rate": 2.655,
-          "type": 0,
-          "range": 5,
-          "ap": 8,
-          "grid": "single",
-          "target_ground": false,
-          "summon": null,
-          "use": null,
-          "dismiss_guard": true,
-          "acc_bonus": 16,
-          "buff_rate": 100,
-          "buffs": [
-            {
-              "key": "Effect_BR_Harpy_N_2",
-              "on": "criticaled",
-              "if": false,
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_PhyATK_UP",
-                  "desc": {
-                    "desc": "회심의 일격 : 피해량+{0}%",
-                    "type": 1,
-                    "value": "0.250000"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 83,
-                    "damage_add": {
-                      "base": "25%",
-                      "per": "1.25%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_TROOPER_DMG_UP",
-                  "desc": {
-                    "desc": "풀 버스트 : 대 타입 피해량+{0}%",
-                    "type": 1,
-                    "value": "0.100000"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 60,
-                    "damage_multiply": {
-                      "target": "light",
-                      "value": {
-                        "base": "10%",
-                        "per": "0.5%"
-                      }
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_BR_Harpy_N_12",
-              "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    60
-                  ],
-                  "attr": 3
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_TROOPER_DMG_UP",
-                  "desc": {
-                    "desc": "풀 버스트 : 대 경장 피해량+{0}%",
-                    "type": 1,
-                    "value": "0.100000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 60,
-                    "damage_multiply": {
-                      "target": "light",
-                      "value": {
-                        "base": "10%",
-                        "per": "0.5%"
-                      }
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 1
-            },
-            {
-              "key": "Effect_BR_Harpy_N_13",
-              "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    61
-                  ],
-                  "attr": 3
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_ARMORED_DMG_UP",
-                  "desc": {
-                    "desc": "풀 버스트 : 대 중장 피해량+{0}%",
-                    "type": 1,
-                    "value": "0.100000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 61,
-                    "damage_multiply": {
-                      "target": "heavy",
-                      "value": {
-                        "base": "10%",
-                        "per": "0.5%"
-                      }
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 1
-            },
-            {
-              "key": "Effect_BR_Harpy_N_14",
-              "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    62
-                  ],
-                  "attr": 3
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_MOBILITY_DMG_UP",
-                  "desc": {
-                    "desc": "풀 버스트 : 대 기동 피해량+{0}%",
-                    "type": 1,
-                    "value": "0.100000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 62,
-                    "damage_multiply": {
-                      "target": "air",
-                      "value": {
-                        "base": "10%",
-                        "per": "0.5%"
-                      }
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 1
-            }
-          ]
-        },
-        {
-          "rate": 2.84,
-          "type": 0,
-          "range": 5,
-          "ap": 8,
-          "grid": "single",
-          "target_ground": false,
-          "summon": null,
-          "use": null,
-          "dismiss_guard": true,
-          "acc_bonus": 20,
-          "buff_rate": 100,
-          "buffs": [
-            {
-              "key": "Effect_BR_Harpy_N_2",
-              "on": "criticaled",
-              "if": false,
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_PhyATK_UP",
-                  "desc": {
-                    "desc": "회심의 일격 : 피해량+{0}%",
-                    "type": 1,
-                    "value": "0.250000"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 83,
-                    "damage_add": {
-                      "base": "25%",
-                      "per": "1.25%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_TROOPER_DMG_UP",
-                  "desc": {
-                    "desc": "풀 버스트 : 대 타입 피해량+{0}%",
-                    "type": 1,
-                    "value": "0.100000"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 60,
-                    "damage_multiply": {
-                      "target": "light",
-                      "value": {
-                        "base": "10%",
-                        "per": "0.5%"
-                      }
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_BR_Harpy_N_12",
-              "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    60
-                  ],
-                  "attr": 3
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_TROOPER_DMG_UP",
-                  "desc": {
-                    "desc": "풀 버스트 : 대 경장 피해량+{0}%",
-                    "type": 1,
-                    "value": "0.100000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 60,
-                    "damage_multiply": {
-                      "target": "light",
-                      "value": {
-                        "base": "10%",
-                        "per": "0.5%"
-                      }
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 1
-            },
-            {
-              "key": "Effect_BR_Harpy_N_13",
-              "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    61
-                  ],
-                  "attr": 3
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_ARMORED_DMG_UP",
-                  "desc": {
-                    "desc": "풀 버스트 : 대 중장 피해량+{0}%",
-                    "type": 1,
-                    "value": "0.100000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 61,
-                    "damage_multiply": {
-                      "target": "heavy",
-                      "value": {
-                        "base": "10%",
-                        "per": "0.5%"
-                      }
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 1
-            },
-            {
-              "key": "Effect_BR_Harpy_N_14",
-              "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    62
-                  ],
-                  "attr": 3
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_MOBILITY_DMG_UP",
-                  "desc": {
-                    "desc": "풀 버스트 : 대 기동 피해량+{0}%",
-                    "type": 1,
-                    "value": "0.100000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 62,
-                    "damage_multiply": {
-                      "target": "air",
-                      "value": {
-                        "base": "10%",
-                        "per": "0.5%"
-                      }
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 1
-            }
-          ]
-        },
-        {
-          "rate": 3.025,
-          "type": 0,
-          "range": 5,
-          "ap": 8,
-          "grid": "single",
-          "target_ground": false,
-          "summon": null,
-          "use": null,
-          "dismiss_guard": true,
-          "acc_bonus": 24,
-          "buff_rate": 100,
-          "buffs": [
-            {
-              "key": "Effect_BR_Harpy_N_2",
-              "on": "criticaled",
-              "if": false,
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_PhyATK_UP",
-                  "desc": {
-                    "desc": "회심의 일격 : 피해량+{0}%",
-                    "type": 1,
-                    "value": "0.250000"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 83,
-                    "damage_add": {
-                      "base": "25%",
-                      "per": "1.25%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_TROOPER_DMG_UP",
-                  "desc": {
-                    "desc": "풀 버스트 : 대 타입 피해량+{0}%",
-                    "type": 1,
-                    "value": "0.100000"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 60,
-                    "damage_multiply": {
-                      "target": "light",
-                      "value": {
-                        "base": "10%",
-                        "per": "0.5%"
-                      }
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_BR_Harpy_N_12",
-              "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    60
-                  ],
-                  "attr": 3
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_TROOPER_DMG_UP",
-                  "desc": {
-                    "desc": "풀 버스트 : 대 경장 피해량+{0}%",
-                    "type": 1,
-                    "value": "0.100000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 60,
-                    "damage_multiply": {
-                      "target": "light",
-                      "value": {
-                        "base": "10%",
-                        "per": "0.5%"
-                      }
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 1
-            },
-            {
-              "key": "Effect_BR_Harpy_N_13",
-              "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    61
-                  ],
-                  "attr": 3
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_ARMORED_DMG_UP",
-                  "desc": {
-                    "desc": "풀 버스트 : 대 중장 피해량+{0}%",
-                    "type": 1,
-                    "value": "0.100000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 61,
-                    "damage_multiply": {
-                      "target": "heavy",
-                      "value": {
-                        "base": "10%",
-                        "per": "0.5%"
-                      }
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 1
-            },
-            {
-              "key": "Effect_BR_Harpy_N_14",
-              "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    62
-                  ],
-                  "attr": 3
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_MOBILITY_DMG_UP",
-                  "desc": {
-                    "desc": "풀 버스트 : 대 기동 피해량+{0}%",
-                    "type": 1,
-                    "value": "0.100000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 62,
-                    "damage_multiply": {
-                      "target": "air",
-                      "value": {
-                        "base": "10%",
-                        "per": "0.5%"
-                      }
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 1
-            }
-          ]
-        },
-        {
-          "rate": 3.21,
-          "type": 0,
-          "range": 5,
-          "ap": 8,
-          "grid": "single",
-          "target_ground": false,
-          "summon": null,
-          "use": null,
-          "dismiss_guard": true,
-          "acc_bonus": 28,
-          "buff_rate": 100,
-          "buffs": [
-            {
-              "key": "Effect_BR_Harpy_N_2",
-              "on": "criticaled",
-              "if": false,
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_PhyATK_UP",
-                  "desc": {
-                    "desc": "회심의 일격 : 피해량+{0}%",
-                    "type": 1,
-                    "value": "0.250000"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 83,
-                    "damage_add": {
-                      "base": "25%",
-                      "per": "1.25%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_TROOPER_DMG_UP",
-                  "desc": {
-                    "desc": "풀 버스트 : 대 타입 피해량+{0}%",
-                    "type": 1,
-                    "value": "0.100000"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 60,
-                    "damage_multiply": {
-                      "target": "light",
-                      "value": {
-                        "base": "10%",
-                        "per": "0.5%"
-                      }
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_BR_Harpy_N_12",
-              "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    60
-                  ],
-                  "attr": 3
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_TROOPER_DMG_UP",
-                  "desc": {
-                    "desc": "풀 버스트 : 대 경장 피해량+{0}%",
-                    "type": 1,
-                    "value": "0.100000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 60,
-                    "damage_multiply": {
-                      "target": "light",
-                      "value": {
-                        "base": "10%",
-                        "per": "0.5%"
-                      }
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 1
-            },
-            {
-              "key": "Effect_BR_Harpy_N_13",
-              "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    61
-                  ],
-                  "attr": 3
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_ARMORED_DMG_UP",
-                  "desc": {
-                    "desc": "풀 버스트 : 대 중장 피해량+{0}%",
-                    "type": 1,
-                    "value": "0.100000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 61,
-                    "damage_multiply": {
-                      "target": "heavy",
-                      "value": {
-                        "base": "10%",
-                        "per": "0.5%"
-                      }
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 1
-            },
-            {
-              "key": "Effect_BR_Harpy_N_14",
-              "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    62
-                  ],
-                  "attr": 3
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_MOBILITY_DMG_UP",
-                  "desc": {
-                    "desc": "풀 버스트 : 대 기동 피해량+{0}%",
-                    "type": 1,
-                    "value": "0.100000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 62,
-                    "damage_multiply": {
-                      "target": "air",
-                      "value": {
-                        "base": "10%",
-                        "per": "0.5%"
-                      }
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 1
-            }
-          ]
-        },
-        {
-          "rate": 3.395,
-          "type": 0,
-          "range": 5,
-          "ap": 8,
-          "grid": "single",
-          "target_ground": false,
-          "summon": null,
-          "use": null,
-          "dismiss_guard": true,
-          "acc_bonus": 32,
-          "buff_rate": 100,
-          "buffs": [
-            {
-              "key": "Effect_BR_Harpy_N_2",
-              "on": "criticaled",
-              "if": false,
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_PhyATK_UP",
-                  "desc": {
-                    "desc": "회심의 일격 : 피해량+{0}%",
-                    "type": 1,
-                    "value": "0.250000"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 83,
-                    "damage_add": {
-                      "base": "25%",
-                      "per": "1.25%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_TROOPER_DMG_UP",
-                  "desc": {
-                    "desc": "풀 버스트 : 대 타입 피해량+{0}%",
-                    "type": 1,
-                    "value": "0.100000"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 60,
-                    "damage_multiply": {
-                      "target": "light",
-                      "value": {
-                        "base": "10%",
-                        "per": "0.5%"
-                      }
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_BR_Harpy_N_12",
-              "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    60
-                  ],
-                  "attr": 3
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_TROOPER_DMG_UP",
-                  "desc": {
-                    "desc": "풀 버스트 : 대 경장 피해량+{0}%",
-                    "type": 1,
-                    "value": "0.100000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 60,
-                    "damage_multiply": {
-                      "target": "light",
-                      "value": {
-                        "base": "10%",
-                        "per": "0.5%"
-                      }
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 1
-            },
-            {
-              "key": "Effect_BR_Harpy_N_13",
-              "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    61
-                  ],
-                  "attr": 3
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_ARMORED_DMG_UP",
-                  "desc": {
-                    "desc": "풀 버스트 : 대 중장 피해량+{0}%",
-                    "type": 1,
-                    "value": "0.100000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 61,
-                    "damage_multiply": {
-                      "target": "heavy",
-                      "value": {
-                        "base": "10%",
-                        "per": "0.5%"
-                      }
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 1
-            },
-            {
-              "key": "Effect_BR_Harpy_N_14",
-              "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    62
-                  ],
-                  "attr": 3
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_MOBILITY_DMG_UP",
-                  "desc": {
-                    "desc": "풀 버스트 : 대 기동 피해량+{0}%",
-                    "type": 1,
-                    "value": "0.100000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 62,
-                    "damage_multiply": {
-                      "target": "air",
-                      "value": {
-                        "base": "10%",
-                        "per": "0.5%"
-                      }
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 1
-            }
-          ]
-        },
-        {
-          "rate": 3.58,
           "type": 0,
           "range": 5,
           "ap": 8,
@@ -4178,6 +4122,66 @@
                     }
                   },
                   "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.055000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "5.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "풀 버스트 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "풀 버스트 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
                 }
               ],
               "maxStack": 0
@@ -4346,11 +4350,114 @@
                 }
               ],
               "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Harpy_N_201",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.055000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "5.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Harpy_N_202",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "풀 버스트 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "풀 버스트 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
         {
-          "rate": 3.765,
+          "rate": 2.84,
           "type": 0,
           "range": 5,
           "ap": 8,
@@ -4359,7 +4466,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": true,
-          "acc_bonus": 40,
+          "acc_bonus": 45,
           "buff_rate": 100,
           "buffs": [
             {
@@ -4427,6 +4534,66 @@
                     }
                   },
                   "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.055000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "5.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "풀 버스트 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "풀 버스트 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
                 }
               ],
               "maxStack": 0
@@ -4595,6 +4762,2169 @@
                 }
               ],
               "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Harpy_N_201",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.055000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "5.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Harpy_N_202",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "풀 버스트 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "풀 버스트 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.025,
+          "type": 0,
+          "range": 5,
+          "ap": 8,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 54,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Harpy_N_2",
+              "on": "criticaled",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "회심의 일격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.250000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TROOPER_DMG_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 대 타입 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 60,
+                    "damage_multiply": {
+                      "target": "light",
+                      "value": {
+                        "base": "10%",
+                        "per": "0.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.055000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "5.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "풀 버스트 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "풀 버스트 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Harpy_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    60
+                  ],
+                  "attr": 3
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TROOPER_DMG_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 대 경장 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 60,
+                    "damage_multiply": {
+                      "target": "light",
+                      "value": {
+                        "base": "10%",
+                        "per": "0.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Harpy_N_13",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    61
+                  ],
+                  "attr": 3
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 대 중장 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "10%",
+                        "per": "0.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Harpy_N_14",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    62
+                  ],
+                  "attr": 3
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 대 기동 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "10%",
+                        "per": "0.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Harpy_N_201",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.055000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "5.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Harpy_N_202",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "풀 버스트 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "풀 버스트 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.21,
+          "type": 0,
+          "range": 5,
+          "ap": 8,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 63,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Harpy_N_2",
+              "on": "criticaled",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "회심의 일격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.250000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TROOPER_DMG_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 대 타입 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 60,
+                    "damage_multiply": {
+                      "target": "light",
+                      "value": {
+                        "base": "10%",
+                        "per": "0.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.055000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "5.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "풀 버스트 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "풀 버스트 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Harpy_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    60
+                  ],
+                  "attr": 3
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TROOPER_DMG_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 대 경장 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 60,
+                    "damage_multiply": {
+                      "target": "light",
+                      "value": {
+                        "base": "10%",
+                        "per": "0.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Harpy_N_13",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    61
+                  ],
+                  "attr": 3
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 대 중장 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "10%",
+                        "per": "0.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Harpy_N_14",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    62
+                  ],
+                  "attr": 3
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 대 기동 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "10%",
+                        "per": "0.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Harpy_N_201",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.055000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "5.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Harpy_N_202",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "풀 버스트 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "풀 버스트 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.395,
+          "type": 0,
+          "range": 5,
+          "ap": 8,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 72,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Harpy_N_2",
+              "on": "criticaled",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "회심의 일격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.250000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TROOPER_DMG_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 대 타입 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 60,
+                    "damage_multiply": {
+                      "target": "light",
+                      "value": {
+                        "base": "10%",
+                        "per": "0.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.055000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "5.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "풀 버스트 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "풀 버스트 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Harpy_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    60
+                  ],
+                  "attr": 3
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TROOPER_DMG_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 대 경장 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 60,
+                    "damage_multiply": {
+                      "target": "light",
+                      "value": {
+                        "base": "10%",
+                        "per": "0.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Harpy_N_13",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    61
+                  ],
+                  "attr": 3
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 대 중장 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "10%",
+                        "per": "0.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Harpy_N_14",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    62
+                  ],
+                  "attr": 3
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 대 기동 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "10%",
+                        "per": "0.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Harpy_N_201",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.055000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "5.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Harpy_N_202",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "풀 버스트 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "풀 버스트 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.58,
+          "type": 0,
+          "range": 5,
+          "ap": 8,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 82,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Harpy_N_2",
+              "on": "criticaled",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "회심의 일격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.250000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TROOPER_DMG_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 대 타입 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 60,
+                    "damage_multiply": {
+                      "target": "light",
+                      "value": {
+                        "base": "10%",
+                        "per": "0.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.055000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "5.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "풀 버스트 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "풀 버스트 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Harpy_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    60
+                  ],
+                  "attr": 3
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TROOPER_DMG_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 대 경장 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 60,
+                    "damage_multiply": {
+                      "target": "light",
+                      "value": {
+                        "base": "10%",
+                        "per": "0.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Harpy_N_13",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    61
+                  ],
+                  "attr": 3
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 대 중장 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "10%",
+                        "per": "0.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Harpy_N_14",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    62
+                  ],
+                  "attr": 3
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 대 기동 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "10%",
+                        "per": "0.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Harpy_N_201",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.055000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "5.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Harpy_N_202",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "풀 버스트 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "풀 버스트 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.765,
+          "type": 0,
+          "range": 5,
+          "ap": 8,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 90,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Harpy_N_2",
+              "on": "criticaled",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "회심의 일격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.250000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TROOPER_DMG_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 대 타입 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 60,
+                    "damage_multiply": {
+                      "target": "light",
+                      "value": {
+                        "base": "10%",
+                        "per": "0.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.055000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "5.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "풀 버스트 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "풀 버스트 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Harpy_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    60
+                  ],
+                  "attr": 3
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TROOPER_DMG_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 대 경장 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 60,
+                    "damage_multiply": {
+                      "target": "light",
+                      "value": {
+                        "base": "10%",
+                        "per": "0.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Harpy_N_13",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    61
+                  ],
+                  "attr": 3
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 대 중장 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "10%",
+                        "per": "0.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Harpy_N_14",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    62
+                  ],
+                  "attr": 3
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 대 기동 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "10%",
+                        "per": "0.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Harpy_N_201",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "풀 버스트 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.055000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "5.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Harpy_N_202",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "풀 버스트 : 이동 불가",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "풀 버스트 : 표식",
+                    "type": 0,
+                    "value": "1"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
             }
           ]
         }
@@ -4700,7 +7030,7 @@
                   "desc": {
                     "desc": "위장 공격 : 공격력+{0}% (스텔스 위장 상태)",
                     "type": 1,
-                    "value": "0.150000"
+                    "value": "0.160000"
                   },
                   "attr": 0,
                   "erase": {
@@ -4711,8 +7041,8 @@
                     "chance": "0%",
                     "type": 1,
                     "attack": {
-                      "base": "15%",
-                      "per": "0.5%"
+                      "base": "16%",
+                      "per": "1%"
                     }
                   },
                   "overlap": 4
@@ -4799,7 +7129,7 @@
                   "desc": {
                     "desc": "위장 공격 : 공격력+{0}%",
                     "type": 1,
-                    "value": "0.150000"
+                    "value": "0.160000"
                   },
                   "attr": 0,
                   "erase": {
@@ -4809,8 +7139,8 @@
                     "isBuff": true,
                     "type": 1,
                     "attack": {
-                      "base": "15%",
-                      "per": "0.5%"
+                      "base": "16%",
+                      "per": "1%"
                     }
                   },
                   "overlap": 4
@@ -4901,7 +7231,7 @@
                   "desc": {
                     "desc": "위장 공격 : 공격력+{0}% (스텔스 위장 상태)",
                     "type": 1,
-                    "value": "0.150000"
+                    "value": "0.160000"
                   },
                   "attr": 0,
                   "erase": {
@@ -4912,8 +7242,8 @@
                     "chance": "0%",
                     "type": 1,
                     "attack": {
-                      "base": "15%",
-                      "per": "0.5%"
+                      "base": "16%",
+                      "per": "1%"
                     }
                   },
                   "overlap": 4
@@ -5000,7 +7330,7 @@
                   "desc": {
                     "desc": "위장 공격 : 공격력+{0}%",
                     "type": 1,
-                    "value": "0.150000"
+                    "value": "0.160000"
                   },
                   "attr": 0,
                   "erase": {
@@ -5010,8 +7340,8 @@
                     "isBuff": true,
                     "type": 1,
                     "attack": {
-                      "base": "15%",
-                      "per": "0.5%"
+                      "base": "16%",
+                      "per": "1%"
                     }
                   },
                   "overlap": 4
@@ -5099,7 +7429,7 @@
                   "desc": {
                     "desc": "통합 항전 정보처리 : 치명타+{0}%",
                     "type": 1,
-                    "value": "0.080000"
+                    "value": "0.160000"
                   },
                   "attr": 0,
                   "erase": {
@@ -5110,8 +7440,8 @@
                     "chance": "0%",
                     "type": 9,
                     "critical": {
-                      "base": "8%",
-                      "per": "0.5%"
+                      "base": "16%",
+                      "per": "1%"
                     }
                   },
                   "overlap": 4
@@ -5186,7 +7516,7 @@
                   "desc": {
                     "desc": "통합 항전 정보처리 : 치명타+{0}%",
                     "type": 1,
-                    "value": "0.080000"
+                    "value": "0.160000"
                   },
                   "attr": 0,
                   "erase": {
@@ -5196,8 +7526,8 @@
                     "isBuff": true,
                     "type": 9,
                     "critical": {
-                      "base": "8%",
-                      "per": "0.5%"
+                      "base": "16%",
+                      "per": "1%"
                     }
                   },
                   "overlap": 4
@@ -5271,7 +7601,7 @@
                   "desc": {
                     "desc": "통합 항전 정보처리 : 치명타+{0}%",
                     "type": 1,
-                    "value": "0.040000"
+                    "value": "0.080000"
                   },
                   "attr": 0,
                   "erase": {
@@ -5281,8 +7611,8 @@
                     "isBuff": true,
                     "type": 9,
                     "critical": {
-                      "base": "4%",
-                      "per": "0.25%"
+                      "base": "8%",
+                      "per": "0.5%"
                     }
                   },
                   "overlap": 4
@@ -5393,7 +7723,7 @@
                   "desc": {
                     "desc": "NVEL 시스템 : 공격력+{0}%",
                     "type": 1,
-                    "value": "0.150000"
+                    "value": "0.160000"
                   },
                   "attr": 0,
                   "erase": {
@@ -5403,8 +7733,8 @@
                     "isBuff": true,
                     "type": 1,
                     "attack": {
-                      "base": "15%",
-                      "per": "0.5%"
+                      "base": "16%",
+                      "per": "1%"
                     }
                   },
                   "overlap": 4

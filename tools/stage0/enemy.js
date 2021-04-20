@@ -40,14 +40,14 @@ function process (auth) {
 
 				const [
 					id,
-					// name,
+					name,
 					rarity,
 					cls,
 					role,
 					isBoss,
 					icon,
 					ai,
-					// desc,
+					desc,
 					hp, hpPer,
 					atk, atkPer,
 					def, defPer,

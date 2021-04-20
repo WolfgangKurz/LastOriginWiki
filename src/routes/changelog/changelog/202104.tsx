@@ -4,6 +4,42 @@ import { Fragment, FunctionalComponent, h } from "preact";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <Fragment>
+	<ChangelogItem title="Build 10772" date="2021-04-20"
+		bugfix={ <Fragment>
+			<li>일부 전투원 스킨의 SD 아이콘이 표시되지 않는 문제를 수정했습니다.</li>
+		</Fragment> }
+		new={ <Fragment>
+			<li>
+				신규 이벤트 <span class="badge bg-success">Project ORCA, 별밤의 무대</span> 정보가 추가되었습니다.
+			</li>
+			<li>신규 전투원 <span class="badge bg-warning text-dark">뮤즈</span>의 정보가 추가되었습니다.</li>
+			<li>신규 장비 <span class="badge bg-warning text-dark">LRAD 강화 시스템</span>의 정보가 추가되었습니다.</li>
+			<li>신규 장비 <span class="badge bg-warning text-dark">S#.42 ad-lib 회로</span>의 정보가 추가되었습니다.</li>
+		</Fragment> }
+		update={ <Fragment>
+			<li>스카이나이츠 소속 전투원들의 정보가 갱신되었습니다.</li>
+			<li>BGM 정보가 갱신되었습니다.</li>
+		</Fragment> }
+		skin={ <Fragment>
+			<li>
+				<span class="badge bg-warning text-dark">P/A-00 그리폰</span>의 스킨
+				<span class="badge bg-danger">프로젝트 오르카 : 그리폰</span>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<span class="badge bg-warning text-dark">P/A-8 블랙 하운드</span>의 스킨
+				<span class="badge bg-danger">프로젝트 오르카 : 블랙 하운드</span>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<span class="badge bg-warning text-dark">P-29 린트블룸</span>의 스킨
+				<span class="badge bg-danger">프로젝트 오르카 : 린트블룸</span>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<span class="badge bg-warning text-dark">랜서 미나</span>의 스킨
+				<span class="badge bg-danger">천상의 기사 미나</span>의 중파 정보가 추가되었습니다.
+			</li>
+		</Fragment> }
+	/>
+
 	<ChangelogItem title="Build 10769" date="2021-04-19"
 		bugfix={ <Fragment>
 			<li>일부 전투원의 제조 시간이 입력되지 않은 문제를 수정했습니다.</li>

@@ -8,7 +8,7 @@ import WorldItem from "@/routes/worlds/components/world-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Worlds: FunctionalComponent = () => {
-	const Tops = ["Story", "Ev5"];
+	const Tops = ["Story", "Ev11"];
 	const Subs = ["Sub", "Cha", "Daily"];
 	const List = WorldIds.filter(x => !x.startsWith("EvA") && !Tops.includes(x) && !Subs.includes(x));
 

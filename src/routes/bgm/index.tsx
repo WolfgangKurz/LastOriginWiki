@@ -27,6 +27,8 @@ const BGM: FunctionalComponent = () => {
 		"Valentine",
 		"Mystic", "Noire_01", "Noire_02",
 		"Sanctum",
+		"LoverLover",
+		"HeartbeatOME",
 	];
 
 	return <div class="bgm">

@@ -108,15 +108,28 @@ const Home: FunctionalComponent = () => {
 		<p>
 			<Locale k="HOME_DESCRIPTION" />
 		</p>
+		<p>
+			<a href="https://docs.google.com/spreadsheets/d/1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4" target="_blank" rel="noreferrer">
+				<Icon icon="link-45deg" class="me-1" />
+				<span>Database SpreadSheet</span>
+			</a>
+		</p>
 		<hr />
 
 		{ ext === "png" ? <div class="alert alert-danger">
 			<Locale k="HOME_WEBP_UNAVAILABLE" />
 		</div> : <Fragment /> }
 
-		<Link class={ style["roguelike-button"] } data-ext={ ext } href="/roguelike">
-			<Locale k="MENU_ROGUELIKE" />
-		</Link>
+		<div class="alert alert-warning">
+			<p class="mb-1">Translation support needed!</p>
+			<p class="mb-1">翻訳サポートがひつようです！</p>
+			<p class="mb-0">
+				<a href="https://docs.google.com/spreadsheets/d/1Q2tpfQntZxmI0Xbx9HZo0vjBY7kQGZGmH1MBGTzrnvo" target="_blank" rel="noreferrer">
+					<Icon icon="link-45deg" class="me-1" />
+					<span>Locale SpreadSheet</span>
+				</a>
+			</p>
+		</div>
 		<hr />
 
 		<Locale k="HOME_DEVELOPER" />

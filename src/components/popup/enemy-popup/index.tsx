@@ -529,7 +529,9 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 								{ displayTab.value === "desc"
 									? <div class="row">
 										<div class="col break-keep white-pre-line border border-top-0 text-start p-1">
-											<div class="bg-dark text-light p-3"><Locale k={ `ENEMY_INTRO_${target.id}` } /></div>
+											<div class="bg-dark text-light p-3">
+												<Locale plain k={ `ENEMY_INTRO_${target.id}` } />
+											</div>
 										</div>
 									</div>
 									: <Fragment />

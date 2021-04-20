@@ -25,6 +25,8 @@ export function GetUnitFaceURL (uid: string, skin: number = 0, sd: boolean = fal
 
 		if (skin === 20)
 			return `${AssetsRoot}/${ext}/tbar/TbarIcon_${uid}_PS1.${ext}`;
+		else if (skin === 21)
+			return `${AssetsRoot}/${ext}/tbar/TbarIcon_${uid}_SS1.${ext}`;
 		else if (skin > 0)
 			return `${AssetsRoot}/${ext}/tbar/TbarIcon_${uid}_NS${skin}.${ext}`;
 

@@ -56,12 +56,12 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 	const selectedEquip = objState<FilterableEquip | null>(null);
 	const equipPopupDisplay = objState<boolean>(false);
 
-	const CurrentSkinPostfix = ((): string => {
-		const skin = SkinList[skinIndex.value];
-		if (!skin || skin.isDef) return "N";
-		if (skin.isPro) return "PS1";
-		return `NS${skin.sid}`;
-	})();
+	// const CurrentSkinPostfix = ((): string => {
+	// 	const skin = SkinList[skinIndex.value];
+	// 	if (!skin || skin.isDef) return "N";
+	// 	if (skin.isPro) return "PS1";
+	// 	return `NS${skin.sid}`;
+	// })();
 
 	const ExclusiveEquip = FilterableEquipDB
 		.filter(x => x.limit && x.limit.some(y => y === unit.uid));
@@ -134,7 +134,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 					</div>
 					<div class="col-auto">
 						<UnitFace
-							uid={ `TbarIcon_${unit.uid}_${CurrentSkinPostfix}` }
+							uid={ unit.uid }
 							skin={ SkinList[skinIndex.value].sid || 0 }
 							sd
 							size="88"
@@ -271,9 +271,11 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 						<tr>
 							<td class="px-0 py-1 drop-list">
 								{ unit.source.length === 0 && !unit.craft
-									? <span class="text-secondary">
-										<Locale k="UNIT_VIEW_DROPS_EMPTY" />
-									</span>
+									? <div class="p-3">
+										<span class="text-secondary">
+											<Locale k="UNIT_VIEW_DROPS_EMPTY" />
+										</span>
+									</div>
 									: <Fragment>
 										{ unit.craft
 											? <span class="badge bg-dark my-1">
