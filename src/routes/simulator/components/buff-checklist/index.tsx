@@ -3,7 +3,7 @@ import Decimal from "decimal.js";
 import render from "preact-render-to-string";
 
 import { BuffEffectValue, BUFFEFFECT_TYPE, BuffEffect } from "@/types/BuffEffect";
-import { BuffStatBuff } from "@/types/Buffs";
+import { BuffStat, BuffStatBuff } from "@/types/Buffs";
 import { BuffErase } from "@/types/BuffErase";
 import { BuffTrigger } from "@/types/BuffTrigger";
 import { UNIT_POSITION, BUFF_ATTR_TYPE, SKILL_ATTR, ACTOR_BODY_TYPE, ACTOR_CLASS, ROLE_TYPE, TARGET_TYPE, NUM_OUTPUTTYPE } from "@/types/Enums";
@@ -15,10 +15,12 @@ import Loader, { GetJson, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
 import Icon from "@/components/bootstrap-icon";
 import ElemIcon from "@/components/elem-icon";
+import { BuffRenderer } from "@/components/buff-list";
 
 import style from "./style.scss";
 
 interface BuffRendererProps {
+	idx: number;
 	stat: BuffStatBuff | BuffStatBuff[];
 	level?: number;
 
@@ -29,7 +31,7 @@ interface BuffRendererProps {
 	onStack?: (key: string, value: number) => void;
 }
 
-const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
+const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 	const FilterableUnitDB = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
 
 	const VNodeUnique = (entity: preact.VNode): string => render(entity);
@@ -949,7 +951,7 @@ const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					!buff.value.chance || buff.value.chance === "100%",
 					stat.if === false,
 				].every(x => x);
-				const key = `${stat.key}_${buffIdx}`;
+				const key = `${props.idx}_${buffIdx}`;
 
 				elems.push(<div class="clearfix" title={ formatDesc(buff.desc.type, buff.desc.desc, buff.desc.value) }>
 					<div class="clearfix">
@@ -1046,17 +1048,12 @@ const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 	return <Fragment>{ elems.map(x => <li class="list-group-item">{ x }</li>) }</Fragment>;
 };
 
-export interface BuffChecklistEntity {
-	enabled: string[];
-	buff: BuffStatBuff;
-	level: number;
-}
-
 interface BuffListProps {
 	class?: string;
 
-	list?: BuffChecklistEntity[];
-	stacks: Record<string, number>;
+	level?: number;
+	list?: BuffStat[];
+	buffTable: Record<string, number>;
 
 	onUpdate?: (key: string, checked: boolean) => void;
 	onStack?: (key: string, value: number) => void;
@@ -1065,23 +1062,40 @@ interface BuffListProps {
 const BuffChecklist: FunctionalComponent<BuffListProps> = (props) =>
 	<Loader json={ StaticDB.FilterableUnit } content={ ((): preact.VNode => {
 		const list = props.list || [];
+		const level = props.level || 0;
 
-		const buffs = list.map((stat, index) => <BuffRenderer
-			stat={ stat.buff }
-			level={ stat.level }
-			enabled={ stat.enabled }
-			stacks={ props.stacks }
-			onUpdate={ (key, checked): void => {
-				if (props.onUpdate)
-					props.onUpdate(key, checked);
-			} }
-			onStack={ (key, value): void => {
-				if (props.onStack)
-					props.onStack(key, value);
-			} }
-		/>);
+		const staticList = list.filter(x => !("buffs" in x)) as BuffStat[];
+		const buffs = list
+			.filter(x => "buffs" in x)
+			.map((stat, si) => {
+				const x = stat as BuffStatBuff;
+				const enabled = x.buffs
+					.map((_, i) => `${si}_${i}`)
+					.filter(y => y in props.buffTable);
+				return <CheckableBuffRenderer
+					idx={ si }
+					stat={ x }
+					level={ level }
+					enabled={ enabled }
+					stacks={ props.buffTable }
+					onUpdate={ (key, checked): void => {
+						if (props.onUpdate)
+							props.onUpdate(key, checked);
+					} }
+					onStack={ (key, value): void => {
+						if (props.onStack)
+							props.onStack(key, value);
+					} }
+				/>;
+			});
 
 		return <div class={ `buff-checklist text-dark ${props.class || ""}` }>
+			{ staticList.length > 0
+				? <ul class="list-group text-start">
+					<BuffRenderer stat={ staticList } level={ level } />
+				</ul>
+				: <Fragment />
+			}
 			{ buffs.map(stats => <ul class="list-group text-start">{ stats }</ul>) }
 		</div>;
 	}) }

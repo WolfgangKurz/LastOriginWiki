@@ -1,5 +1,6 @@
 import { h } from "preact";
 
+import { Store } from "unistore";
 import { Provider } from "unistore/preact";
 import store from "@/store";
 
@@ -9,7 +10,6 @@ import "@/themes/index.scss";
 import "@/themes/patch.scss";
 
 import { Extend } from "@/libs/Functions";
-import { Store } from "unistore";
 
 Extend();
 export default (): preact.VNode => h(Provider, { store: store as Store<unknown> }, h(App, {}));

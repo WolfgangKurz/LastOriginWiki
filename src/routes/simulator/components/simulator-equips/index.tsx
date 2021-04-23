@@ -6,13 +6,14 @@ import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 import { SimulatorSlotType } from "../../types/Slot";
 
 import { objState } from "@/libs/State";
+import { GetBuffList } from "../../libs/buff";
 
 import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 import Locale from "@/components/locale";
 import EquipIcon from "@/components/equip-icon";
 import EquipLevel from "@/components/equip-level";
-import BuffList from "@/components/buff-list";
 import EquipSelectorPopup from "@/components/popup/equip-selector-popup";
+import BuffChecklist from "../buff-checklist";
 
 import "./style.scss";
 
@@ -20,7 +21,10 @@ interface SimulatorEquipProps {
 	slot: SimulatorSlotType;
 
 	onLevel?: (index: number, value: number) => void;
-	onEquip?: (index: number, uid: string | null) => void;
+	onEquip?: (index: number, uid: string | null, buffs: Record<string, number>) => void;
+
+	onBuffUpdate?: (index: number, key: string, checked: boolean) => void;
+	onStack?: (index: number, key: string, value: number) => void;
 }
 
 const SimulatorEquips: FunctionalComponent<SimulatorEquipProps> = (props) => {
@@ -73,7 +77,7 @@ const SimulatorEquips: FunctionalComponent<SimulatorEquipProps> = (props) => {
 				noClear
 				onSelect={ (uid): void => {
 					if (props.onEquip)
-						props.onEquip(currentPopupIndex.value, uid);
+						props.onEquip(currentPopupIndex.value, uid, {});
 				} }
 				onHidden={ (): void => EquipPopupDisplay.set(false) }
 			/>
@@ -127,7 +131,7 @@ const SimulatorEquips: FunctionalComponent<SimulatorEquipProps> = (props) => {
 						</button>
 						<button class="btn btn-sm btn-danger" disabled={ !equip } onClick={ (): void => {
 							if (props.onEquip)
-								props.onEquip(eidx, null);
+								props.onEquip(eidx, null, {});
 						} }>
 							<Locale k="SIMULATOR_EQUIP_UNEQUIP" />
 						</button>
@@ -138,7 +142,20 @@ const SimulatorEquips: FunctionalComponent<SimulatorEquipProps> = (props) => {
 					? <Fragment>
 						<hr class="my-2" />
 
-						<BuffList class="equip-buffs" list={ e.stats[equip.level] } />
+						<BuffChecklist
+							class="equip-buffs"
+							list={ e.stats[equip.level] }
+							level={ equip.level }
+							buffTable={ equip.buffs }
+							onUpdate={ (key, checked): void => {
+								if (props.onBuffUpdate)
+									props.onBuffUpdate(eidx, key, checked);
+							} }
+							onStack={ (key, value): void => {
+								if (props.onStack)
+									props.onStack(eidx, key, value);
+							} }
+						/>
 					</Fragment>
 					: <Fragment />
 				)(equipList[eidx]) }
