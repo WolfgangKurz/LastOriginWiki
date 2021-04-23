@@ -4,7 +4,7 @@ import { LinkBonusType } from "@/types/DB/Unit";
 
 import SimulatorEquip from "./Equip";
 
-export interface SimulatorSlotItem {
+export interface SimulatorSlotEntity {
 	uid: string;
 	level: number;
 	rarity: ACTOR_GRADE;
@@ -25,4 +25,4 @@ export interface SimulatorSlotItem {
 	stats: StatPointValueType;
 }
 
-export type SimulatorSlotType = SimulatorSlotItem | null;
+export type SimulatorSlotType = SimulatorSlotEntity | null;

@@ -34,16 +34,6 @@ import BGM from "@/routes/bgm";
 
 const App: FunctionalComponent = () => {
 	if (typeof window !== "undefined") {
-		const html = document.querySelector("html");
-		if (html) {
-			const langTable: Record<LocaleTypes, string> = {
-				EN: "en",
-				JP: "ja",
-				KR: "ko",
-			};
-			html.setAttribute("lang", langTable[CurrentLocale]);
-		}
-
 		const pageonloading = document.querySelector("#pageonloading");
 		if (pageonloading) {
 			const parent = pageonloading.parentNode;

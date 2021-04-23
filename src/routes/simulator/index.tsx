@@ -2,7 +2,7 @@ import { Fragment, FunctionalComponent, h } from "preact";
 
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { Unit } from "@/types/DB/Unit";
-import { SimulatorSlotType, SimulatorSlotItem } from "./types/Slot";
+import { SimulatorSlotType, SimulatorSlotEntity } from "./types/Slot";
 
 import { ObjectState, objState } from "@/libs/State";
 import { isActive } from "@/libs/Functions";
@@ -22,7 +22,6 @@ const Simulator: FunctionalComponent = () => {
 	SetMeta(["description", "twitter:description"], "전투원의 스테이터스를 계산해볼 수 있는 시뮬레이터입니다.");
 	SetMeta(["twitter:image", "og:image"], null);
 	UpdateTitle("Simulator");
-
 
 	const kidx = (row: number, col: number): number => (2 - row) * 3 + (col % 3) + 1;
 
@@ -192,7 +191,7 @@ const Simulator: FunctionalComponent = () => {
 										const target = FlattenGrid[selectedSlot.value];
 										if (target.value) {
 											const links = target.value.links;
-											links[index] = value;
+											links[index] = isNaN(value) ? 0 : value;
 
 											target.set({
 												...target.value,
@@ -236,11 +235,11 @@ const Simulator: FunctionalComponent = () => {
 											e[idx]!.level = level;
 											target.set({
 												...target.value,
-												equips: e as SimulatorSlotItem["equips"],
+												equips: e as SimulatorSlotEntity["equips"],
 											});
 										}
 									} }
-									onEquip={ (idx, equip): void => {
+									onEquip={ (idx, equip, buffs): void => {
 										const target = FlattenGrid[selectedSlot.value];
 										if (target.value) {
 											const e = [...target.value.equips];
@@ -253,14 +252,43 @@ const Simulator: FunctionalComponent = () => {
 												e[idx] = {
 													uid: equip,
 													level: 10,
+													buffs,
 												};
 											} // 둘 다 null이면 처리 필요 없음
 
 											target.set({
 												...target.value,
-												equips: e as SimulatorSlotItem["equips"],
+												equips: e as SimulatorSlotEntity["equips"],
 											});
 										}
+									} }
+									onBuffUpdate={ (idx, key, checked): void => {
+										const target = FlattenGrid[selectedSlot.value];
+										if (!target.value) return;
+
+										const n = Object.assign({}, target.value);
+
+										const e = n.equips[idx];
+										if (!e) return;
+
+										if (checked && !(key in e.buffs))
+											e.buffs[key] = 1;
+										else
+											delete e.buffs[key];
+
+										target.set(n);
+									} }
+									onStack={ (idx, key, value): void => {
+										const target = FlattenGrid[selectedSlot.value];
+										if (!target.value) return;
+
+										const n = Object.assign({}, target.value);
+
+										const e = n.equips[idx];
+										if (!e) return;
+
+										e.buffs[key] = value;
+										target.set(n);
 									} }
 								/>
 								: <Fragment />

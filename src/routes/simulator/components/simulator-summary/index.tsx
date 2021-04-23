@@ -23,7 +23,6 @@ import BuffIcon from "@/components/buff-icon";
 import UnitFace from "@/components/unit-face";
 import EquipIcon from "@/components/equip-icon";
 import EquipLevel from "@/components/equip-level";
-import BuffChecklist, { BuffChecklistEntity } from "../buff-checklist";
 
 import "./style.scss";
 
@@ -97,9 +96,6 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 	const equipList = equips.value;
 	let equipUpdated = false;
 
-	const usingBuffs = objState<string[]>([]);
-	const buffStacks = objState<Record<string, number>>({});
-
 	slot.equips.forEach((x, i) => {
 		const v = equips.value[i];
 		if (!x && v !== null) { // 원본은 없는데 비어있지 않은 경우
@@ -163,33 +159,6 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 			"",
 		);
 
-		const buffList = ((): BuffChecklistEntity[] => {
-			const ret: BuffChecklistEntity[] = [];
-			if (!slot) return ret;
-
-			const aliasTarget = [TARGET_TYPE.SELF, TARGET_TYPE.OUR, TARGET_TYPE.OUR_GRID, TARGET_TYPE.ALL_GRID, TARGET_TYPE.ALL_UNIT];
-			slot.equips.forEach((c, i) => {
-				const e = equipList[i];
-				if (!c || !e) return;
-
-				const eq = e.stats[c.level];
-				eq.forEach(b => {
-					if ("type" in b) return; // 확률 스탯... 이딴건 없음
-
-					// 아군 또는 본인 대상일 경우에만
-					if (!aliasTarget.includes(b.target)) return;
-
-					ret.push({
-						enabled: usingBuffs.value,
-						buff: b,
-						level: c.level,
-					});
-				});
-			});
-
-			return ret;
-		})();
-
 		const statValues = ((): StatsType => {
 			const empty = { base: 0, final: 0, up: 0 };
 			if (!baseStats) {
@@ -235,6 +204,8 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 			}
 
 			const calc = (key: BaseStatType): StatCalcType => {
+				const aliasTarget = [TARGET_TYPE.SELF, TARGET_TYPE.OUR, TARGET_TYPE.OUR_GRID, TARGET_TYPE.ALL_GRID, TARGET_TYPE.ALL_UNIT];
+
 				const links = Decimal
 					.div(slot.links.reduce((p, c, index) => {
 						if (slot.level < linksRequire[index]) // 레벨에 맞지 않는 링크 제외
@@ -256,8 +227,30 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 						if (!e || !c) return p;
 
 						const eq = e.stats[c.level];
-						eq.forEach(y => {
-							if (!("type" in y)) return;
+						eq.forEach((y, yi) => {
+							if (!("type" in y) && !aliasTarget.includes(y.target)) return;
+
+							if (!("type" in y)) {
+								y.buffs.forEach((b, bi) => {
+									const force = [
+										y.on === "round" || y.on === "wave",
+										!b.value.chance || b.value.chance === "100%",
+										y.if === false,
+									].every(x => x);
+
+									const bkey = `${yi}_${bi}`;
+									if (!force && !(bkey in c.buffs)) return;
+
+									const z = b.value;
+									if (key === "ACC" && "accuracy" in z)
+										p += levelV(z.accuracy, c.level, 2) * (c.buffs[bkey] || 1);
+									else if (key === "CRI" && "critical" in z)
+										p += levelV(z.critical, c.level, 2) * (c.buffs[bkey] || 1);
+									else if (key === "EVA" && "evade" in z)
+										p += levelV(z.evade, c.level, 2) * (c.buffs[bkey] || 1);
+								});
+								return;
+							}
 
 							if (key === "ATK" && "attack" in y)
 								p += levelV(y.attack, c.level, 1);
@@ -276,30 +269,6 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 						});
 
 						return p;
-					}, 0) +
-					buffList.reduce((p, c) => {
-						if (!c.enabled) return p;
-
-						let v = 0;
-						c.buff.buffs.forEach((b, bi) => {
-							const force = [
-								c.buff.on === "round" || c.buff.on === "wave",
-								!b.value.chance || b.value.chance === "100%",
-								c.buff.if === false,
-							].every(x => x);
-
-							const bkey = `${c.buff.key}_${bi}`;
-							if (!force && !usingBuffs.value.includes(bkey)) return;
-
-							const y = b.value;
-							if (key === "ACC" && "accuracy" in y)
-								v += levelV(y.accuracy, c.level, 2) * (buffStacks.value[bkey] || 1);
-							else if (key === "CRI" && "critical" in y)
-								v += levelV(y.critical, c.level, 2) * (buffStacks.value[bkey] || 1);
-							else if (key === "EVA" && "evade" in y)
-								v += levelV(y.evade, c.level, 2) * (buffStacks.value[bkey] || 1);
-						});
-						return Decimal.add(p, v).toNumber();
 					}, 0);
 				const fullBonusValue = ((): number => {
 					if (links !== 5 || !slot.linkBonus.startsWith(bonusTable[key])) return 0;
@@ -317,29 +286,35 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 							return p + Decimal.div(lb.Value, 100).toNumber();
 						return p;
 					}, 1);
-				const bonusRatio = buffList.reduce((p, c) => {
-					if (!c.enabled) return p;
+				const bonusRatio = slot.equips.reduce((p, c, i) => {
+					const e = equipList[i];
+					if (!e || !c) return p;
 
 					let v = 0;
-					c.buff.buffs.forEach((b, bi) => {
-						const force = [
-							c.buff.on === "round" || c.buff.on === "wave",
-							!b.value.chance || b.value.chance === "100%",
-							c.buff.if === false,
-						].every(x => x);
 
-						const bkey = `${c.buff.key}_${bi}`;
-						if (!force && !usingBuffs.value.includes(bkey)) return;
+					const eq = e.stats[c.level];
+					eq.forEach((y, yi) => {
+						if ("type" in y) return;
+						y.buffs.forEach((b, bi) => {
+							const force = [
+								y.on === "round" || y.on === "wave",
+								!b.value.chance || b.value.chance === "100%",
+								y.if === false,
+							].every(x => x);
 
-						const y = b.value;
-						if (key === "ATK" && "attack" in y)
-							v += levelV(y.attack, c.level, 2) * (buffStacks.value[bkey] || 1);
-						else if (key === "DEF" && "defense" in y)
-							v += levelV(y.defense, c.level, 2) * (buffStacks.value[bkey] || 1);
-						else if (key === "HP" && "hp" in y)
-							v += levelV(y.hp, c.level, 2) * (buffStacks.value[bkey] || 1);
-						else if (key === "SPD" && "turnSpeed" in y)
-							v += levelV(y.turnSpeed, c.level, 2) * (buffStacks.value[bkey] || 1);
+							const bkey = `${yi}_${bi}`;
+							if (!force && !(bkey in c.buffs)) return;
+
+							const z = b.value;
+							if (key === "ATK" && "attack" in z)
+								v += levelV(z.attack, c.level, 2) * (c.buffs[bkey] || 1);
+							else if (key === "DEF" && "defense" in z)
+								v += levelV(z.defense, c.level, 2) * (c.buffs[bkey] || 1);
+							else if (key === "HP" && "hp" in z)
+								v += levelV(z.hp, c.level, 2) * (c.buffs[bkey] || 1);
+							else if (key === "SPD" && "turnSpeed" in z)
+								v += levelV(z.turnSpeed, c.level, 2) * (c.buffs[bkey] || 1);
+						});
 					});
 					return Decimal.add(p, Decimal.div(v, 100))
 						.toNumber();
@@ -397,58 +372,37 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 						if (!e || !c) return p;
 
 						const eq = e.stats[c.level];
-						eq.forEach(y => {
-							if (!("type" in y)) return;
+						eq.forEach((y, yi) => {
+							if ("type" in y) return;
+							y.buffs.forEach((b, bi) => {
+								const force = [
+									y.on === "round" || y.on === "wave",
+									!b.value.chance || b.value.chance === "100%",
+									y.if === false,
+								].every(x => x);
 
-							if (key === "ResistFire" && "resist" in y && "elem" in y.resist && y.resist.elem === "fire")
-								p += levelV(y.resist.value, c.level);
-							else if (key === "ResistIce" && "resist" in y && "elem" in y.resist && y.resist.elem === "ice")
-								p += levelV(y.resist.value, c.level);
-							else if (key === "ResistLightning" && "resist" in y && "elem" in y.resist && y.resist.elem === "lightning")
-								p += levelV(y.resist.value, c.level);
-							else if (key === "DEFPenetration" && "penetration" in y)
-								p += levelV(y.penetration, c.level);
-							else if (key === "Range" && "range" in y)
-								p += levelV(y.range, c.level);
-							else if (key === "DMGTakenInc" && "damage_increase" in y)
-								p += levelV(y.damage_increase, c.level);
-							else if (key === "DMGTakenDec" && "damage_reduce" in y)
-								p += levelV(y.damage_reduce, c.level);
+								const bkey = `${yi}_${bi}`;
+								if (!force && !(bkey in c.buffs)) return;
+
+								const z = b.value;
+								if (key === "ResistFire" && "resist" in z && "elem" in z.resist && z.resist.elem === "fire")
+									p += levelV(z.resist.value, c.level);
+								else if (key === "ResistIce" && "resist" in z && "elem" in z.resist && z.resist.elem === "ice")
+									p += levelV(z.resist.value, c.level);
+								else if (key === "ResistLightning" && "resist" in z && "elem" in z.resist && z.resist.elem === "lightning")
+									p += levelV(z.resist.value, c.level);
+								else if (key === "DEFPenetration" && "penetration" in z)
+									p += levelV(z.penetration, c.level);
+								else if (key === "Range" && "range" in z)
+									p += levelV(z.range, c.level);
+								else if (key === "DMGTakenInc" && "damage_increase" in z)
+									p += levelV(z.damage_increase, c.level);
+								else if (key === "DMGTakenDec" && "damage_reduce" in z)
+									p += levelV(z.damage_reduce, c.level);
+							});
 						});
 
 						return p;
-					}, 0) +
-					buffList.reduce((p, c) => {
-						if (!c.enabled) return p;
-
-						let v = 0;
-						c.buff.buffs.forEach((b, bi) => {
-							const force = [
-								c.buff.on === "round" || c.buff.on === "wave",
-								!b.value.chance || b.value.chance === "100%",
-								c.buff.if === false,
-							].every(x => x);
-
-							const bkey = `${c.buff.key}_${bi}`;
-							if (!force && !usingBuffs.value.includes(bkey)) return;
-
-							const y = b.value;
-							if (key === "ResistFire" && "resist" in y && "elem" in y.resist && y.resist.elem === "fire")
-								v += levelV(y.resist.value, c.level) * (buffStacks.value[bkey] || 1);
-							else if (key === "ResistIce" && "resist" in y && "elem" in y.resist && y.resist.elem === "ice")
-								v += levelV(y.resist.value, c.level) * (buffStacks.value[bkey] || 1);
-							else if (key === "ResistLightning" && "resist" in y && "elem" in y.resist && y.resist.elem === "lightning")
-								v += levelV(y.resist.value, c.level) * (buffStacks.value[bkey] || 1);
-							else if (key === "DEFPenetration" && "penetration" in y)
-								v += levelV(y.penetration, c.level) * (buffStacks.value[bkey] || 1);
-							else if (key === "Range" && "range" in y)
-								v += levelV(y.range, c.level) * (buffStacks.value[bkey] || 1);
-							else if (key === "DMGTakenInc" && "damage_increase" in y)
-								v += levelV(y.damage_increase, c.level) * (buffStacks.value[bkey] || 1);
-							else if (key === "DMGTakenDec" && "damage_reduce" in y)
-								v += levelV(y.damage_reduce, c.level) * (buffStacks.value[bkey] || 1);
-						});
-						return Decimal.add(p, v).toNumber();
 					}, 0);
 
 				const fullBonusValue = links === 5 && slot.linkBonus.startsWith(bonusTable[key])
@@ -763,7 +717,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 							</span>
 						</div>
 
-						<div class="buff-list mt-3">
+						{/* <div class="buff-list mt-3">
 							<div class="buff-list-head">
 								<Locale k="SIMULATOR_BUFFLIST" />
 							</div>
@@ -788,7 +742,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 									buffStacks.set(table);
 								} }
 							/>
-						</div>
+						</div> */}
 					</Fragment>
 					: <Fragment />
 				}

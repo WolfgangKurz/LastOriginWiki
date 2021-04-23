@@ -26,7 +26,7 @@ interface BuffRendererProps {
 	level?: number;
 }
 
-const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
+export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 	const FilterableUnitDB = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
 
 	const VNodeUnique = (entity: preact.VNode): string => render(entity);

@@ -383,9 +383,9 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 									}
 								</span>
 
-								<Locale k={ `WORLD_MAP_${props.wid}_${selectedValue.text}` } />
+								<Locale plain k={ `WORLD_MAP_${props.wid}_${selectedValue.text}` } />
 							</h5>
-							<div><Locale k={ `WORLD_MAP_DESC_${props.wid}_${selectedValue.text}` } /></div>
+							<div><Locale plain k={ `WORLD_MAP_DESC_${props.wid}_${selectedValue.text}` } /></div>
 						</div>
 					</div>
 					: <Fragment />

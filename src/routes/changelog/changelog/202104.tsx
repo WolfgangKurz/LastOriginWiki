@@ -4,6 +4,22 @@ import { Fragment, FunctionalComponent, h } from "preact";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <Fragment>
+	<ChangelogItem title="Build 10782" date="2021-04-24"
+		bugfix={ <Fragment>
+			<li>구글 크롬 브라우저에서 페이지 번역이 잘못 작동하는 문제를 수정했습니다.</li>
+		</Fragment> }
+		update={ <Fragment>
+			<li>
+				<span class="badge bg-warning text-dark">Simulator<sup>β</sup></span>의
+				버프 목록을 장비별 영역으로 변경했습니다.
+			</li>
+			<li><span class="badge bg-warning text-dark">포츈</span>의 기본 스킨 이미지가 추가되었습니다.</li>
+			<li>일부 영문/일문 번역이 추가/수정되었습니다.</li>
+			<li>Some EN/JP translation has added/updated.</li>
+			<li>一部の英語・日本語の翻訳が追加・修正されました。</li>
+		</Fragment> }
+	/>
+
 	<ChangelogItem title="Build 10772" date="2021-04-20"
 		bugfix={ <Fragment>
 			<li>일부 전투원 스킨의 SD 아이콘이 표시되지 않는 문제를 수정했습니다.</li>
