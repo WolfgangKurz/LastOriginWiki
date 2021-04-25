@@ -26,6 +26,7 @@ export interface BuffStatBuff {
 			desc: string;
 			type: NUM_OUTPUTTYPE;
 			value: string;
+			level: string;
 		};
 		erase: BuffErase;
 		value: BuffEffect;

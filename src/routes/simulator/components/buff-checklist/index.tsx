@@ -637,11 +637,11 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 				return <Locale plain k="BUFFEFFECT_OFF" p={ [stat.off] } />;
 			else if (typeof stat.off === "number") {
 				const target = {
-					0: <Locale plain k="BUFFEFFECT_OFF_TYPE_0" />,
-					1: <Locale plain k="BUFFEFFECT_OFF_TYPE_1" />,
-					2: <Locale plain k="BUFFEFFECT_OFF_TYPE_2" />,
-					3: <Locale plain k="BUFFEFFECT_OFF_TYPE_3" />,
-					4: <Locale plain k="BUFFEFFECT_OFF_TYPE_4" />,
+					0: <Locale plain k="BUFFEFFECT_ATTR_0" />,
+					1: <Locale plain k="BUFFEFFECT_ATTR_1" />,
+					2: <Locale plain k="BUFFEFFECT_ATTR_2" />,
+					3: <Locale plain k="BUFFEFFECT_ATTR_3" />,
+					4: <Locale plain k="BUFFEFFECT_ATTR_4" />,
 				}[stat.off];
 				return <Locale plain k="BUFFEFFECT_OFF" p={ [target] } />;
 			} else if ("target" in stat.off)
@@ -908,9 +908,16 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 		</Fragment>;
 	}
 
-	function formatDesc (type: NUM_OUTPUTTYPE, template: string, value: string, shortize: boolean = false): string {
-		if (shortize)
-			template = template.replace(/:.+$/, "").trim();
+	function formatDesc (
+		type: NUM_OUTPUTTYPE,
+		template: string,
+		value: string,
+		per: string,
+		level: number | undefined,
+		shortize: number = 0,
+	): string {
+		if (shortize === 1 || shortize === 2)
+			template = template.replace(/^(.+)(:.+)$/, `$${shortize}`).trim();
 
 		if (value.startsWith("Char_")) {
 			const key = value.replace(/Char_(.+)_N/, "$1");
@@ -921,13 +928,16 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 		}
 
 		if (type === NUM_OUTPUTTYPE.INTEGER) {
-			const v = new Decimal(value)
+			const v = Decimal.mul(per, level || 0)
+				.add(value)
 				.toNumber()
 				.toString();
 			return template.replace(/\{0\}/g, v);
 		}
 
-		const v = Decimal.mul(value, 100)
+		const v = Decimal.mul(per, level || 0)
+			.add(value)
+			.mul(100)
 			.toNumber()
 			.toString();
 		return template.replace(/\{0\}/g, v);
@@ -953,11 +963,16 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 				].every(x => x);
 				const key = `${props.idx}_${buffIdx}`;
 
-				elems.push(<div class="clearfix" title={ formatDesc(buff.desc.type, buff.desc.desc, buff.desc.value) }>
+				console.log(buff);
+				// title={ formatDesc(buff.desc.type, buff.desc.desc, buff.desc.value) }
+				elems.push(<div class="clearfix">
 					<div class="clearfix">
 						<img class="me-1" width="25" src={ `${AssetsRoot}/${ext}/buff/${buff.icon}.${ext}` } />
 						<strong class="align-middle">
 							<Locale plain k={ stat.key } />
+							<small class="ms-2 text-primary">
+								{ formatDesc(buff.desc.type, buff.desc.desc, buff.desc.value, buff.desc.level, level, 2) }
+							</small>
 						</strong>
 
 						<div class="float-end buff-checkbox">
@@ -1005,6 +1020,10 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 								} }
 								disabled={ force }
 							/>
+
+							{ <span class="badge bg-substory ms-2 text-wrap">
+								<Locale k={ `BUFFEFFECT_ATTR_${buff.attr}` } />
+							</span> }
 						</div>
 					</div>
 
