@@ -21,6 +21,7 @@ const Changelog: FunctionalComponent = () => <Fragment>
 				<span class="badge bg-substory ms-1"><Locale k="BUFFEFFECT_ATTR_0" /></span>
 				<span class="badge bg-substory ms-1"><Locale k="BUFFEFFECT_ATTR_1" /></span>
 				<span class="badge bg-substory ms-1"><Locale k="BUFFEFFECT_ATTR_2" /></span>
+				<span class="badge bg-substory ms-1"><Locale k="BUFFEFFECT_ATTR_3" /></span>
 			</li>
 			<li>일부 영문/일문 번역이 추가/수정되었습니다.</li>
 			<li>Some EN/JP translation has added/updated.</li>
