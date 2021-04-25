@@ -340,7 +340,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 													</td>
 													<td>
 														<div class="status-col-value">
-															{ StatValue(targetEnemy.value.stat.hp) }
+															{ StatValue(targetEnemy.value.stat.hp, true) }
 														</div>
 													</td>
 													<td class="text-start" />

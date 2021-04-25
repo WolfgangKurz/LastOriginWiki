@@ -8,7 +8,7 @@ function process (auth) {
 		spreadsheetId: "1V_hVRBcvg5tYwPQOLHxcsFxwvDOJrWJYfmZ65AVCd7E",
 		range: "Equipment!A3:Y",
 	}, (err, res) => {
-		if (err) return console.log("The API returned an error: " + err);
+		if (err) return console.log(`The API returned an error: ${  err}`);
 
 		const rarities = {
 			B: 2,

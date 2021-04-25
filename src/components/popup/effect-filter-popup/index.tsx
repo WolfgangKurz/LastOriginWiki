@@ -3,13 +3,13 @@ import { Fragment, FunctionalComponent, h } from "preact";
 import { EffectFilterListType } from "@/types/Buff";
 import { BuffEffectListGroupKeys } from "@/types/BuffEffect";
 
+import { objState } from "@/libs/State";
 import { isActive } from "@/libs/Functions";
 
 import Locale from "@/components/locale";
+import PopupBase from "@/components/popup/base";
 
 import style from "./style.scss";
-import { objState } from "@/libs/State";
-import PopupBase from "@/components/popup/base";
 
 interface EffectFilterPopupProps {
 	class?: string;

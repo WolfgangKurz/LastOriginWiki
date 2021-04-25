@@ -1,9 +1,36 @@
-import RarityBadge from "@/components/rarity-badge";
 import { Fragment, FunctionalComponent, h } from "preact";
+
+import Locale from "@/components/locale";
+import RarityBadge from "@/components/rarity-badge";
 
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <Fragment>
+	<ChangelogItem title="Build 10784" date="2021-04-25"
+		bugfix={ <Fragment>
+			<li>적의 체력이 올바르지 않은 수치로 표시되는 문제를 수정했습니다.</li>
+			<li>
+				<span class="badge bg-warning text-dark">피해 무효 n회</span>가
+				<span class="badge bg-warning text-dark">n이하 피해 무효</span>로 표시되던 문제를 수정했습니다.
+			</li>
+		</Fragment> }
+		update={ <Fragment>
+			<li>버프의 이름에 추가 내용이 표시되도록 변경했습니다.</li>
+			<li>
+				버프 구분 표시를 추가했습니다.
+				<span class="badge bg-substory ms-1"><Locale k="BUFFEFFECT_ATTR_0" /></span>
+				<span class="badge bg-substory ms-1"><Locale k="BUFFEFFECT_ATTR_1" /></span>
+				<span class="badge bg-substory ms-1"><Locale k="BUFFEFFECT_ATTR_2" /></span>
+			</li>
+			<li>일부 영문/일문 번역이 추가/수정되었습니다.</li>
+			<li>Some EN/JP translation has added/updated.</li>
+			<li>一部の英語・日本語の翻訳が追加・修正されました。</li>
+		</Fragment> }
+		dialogue={ <Fragment>
+			<li><span class="badge bg-light text-dark">KST 2021-04-25 22:52:14</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</Fragment> }
+	/>
+
 	<ChangelogItem title="Build 10782" date="2021-04-24"
 		bugfix={ <Fragment>
 			<li>구글 크롬 브라우저에서 페이지 번역이 잘못 작동하는 문제를 수정했습니다.</li>

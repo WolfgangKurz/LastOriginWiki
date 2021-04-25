@@ -647,11 +647,11 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				return <Locale plain k="BUFFEFFECT_OFF" p={ [stat.off] } />;
 			else if (typeof stat.off === "number") {
 				const target = {
-					0: <Locale plain k="BUFFEFFECT_OFF_TYPE_0" />,
-					1: <Locale plain k="BUFFEFFECT_OFF_TYPE_1" />,
-					2: <Locale plain k="BUFFEFFECT_OFF_TYPE_2" />,
-					3: <Locale plain k="BUFFEFFECT_OFF_TYPE_3" />,
-					4: <Locale plain k="BUFFEFFECT_OFF_TYPE_4" />,
+					0: <Locale plain k="BUFFEFFECT_ATTR_0" />,
+					1: <Locale plain k="BUFFEFFECT_ATTR_1" />,
+					2: <Locale plain k="BUFFEFFECT_ATTR_2" />,
+					3: <Locale plain k="BUFFEFFECT_ATTR_3" />,
+					4: <Locale plain k="BUFFEFFECT_ATTR_4" />,
 				}[stat.off];
 				return <Locale plain k="BUFFEFFECT_OFF" p={ [target] } />;
 			} else if ("target" in stat.off)
@@ -918,9 +918,21 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 		</Fragment>;
 	}
 
-	function formatDesc (type: NUM_OUTPUTTYPE, template: string, value: string, shortize: boolean = false): string {
-		if (shortize)
-			template = template.replace(/:.+$/, "").trim();
+	function formatDesc (
+		type: NUM_OUTPUTTYPE,
+		template: string,
+		value: string,
+		per: string | undefined,
+		level: number | undefined,
+		shortize: number = 0,
+	): string {
+		if (shortize === 1 || shortize === 2) {
+			const regex = /^(.+)(:.+)$/;
+			if (regex.test(template))
+				template = template.replace(regex, `$${shortize}`).trim();
+			else if (shortize === 2)
+				return "";
+		}
 
 		if (value.startsWith("Char_")) {
 			const key = value.replace(/Char_(.+)_N/, "$1");
@@ -931,13 +943,16 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 		}
 
 		if (type === NUM_OUTPUTTYPE.INTEGER) {
-			const v = new Decimal(value)
+			const v = Decimal.mul(per || "0", level || 0)
+				.add(value)
 				.toNumber()
 				.toString();
 			return template.replace(/\{0\}/g, v);
 		}
 
-		const v = Decimal.mul(value, 100)
+		const v = Decimal.mul(per || "0", level || 0)
+			.add(value)
+			.mul(100)
 			.toNumber()
 			.toString();
 		return template.replace(/\{0\}/g, v);
@@ -1010,13 +1025,21 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			const apply = getTriggerText(stat.if);
 
 			if (buff.value.chance !== "0%") {
-				elems.push(<div class="clearfix" title={ formatDesc(buff.desc.type, buff.desc.desc, buff.desc.value) }>
+				// title={ formatDesc(buff.desc.type, buff.desc.desc, buff.desc.value, buff.desc.level, level) }
+				elems.push(<div class="clearfix">
 					<div>
 						<img class="me-1" width="25" src={ `${AssetsRoot}/${ext}/buff/${buff.icon}.${ext}` } />
 						<strong class="align-middle">
 							<Locale plain k={ stat.key } />
-							{/* { formatDesc(buff.desc.type, buff.desc.desc, buff.desc.value, true) } */ }
+							<small class="ms-2 text-primary">
+								{ formatDesc(buff.desc.type, buff.desc.desc, buff.desc.value, buff.desc.level, level, 2) }
+							</small>
 						</strong>
+						<div class="float-end">
+							{ <span class="badge bg-substory ms-2 text-wrap">
+								<Locale k={ `BUFFEFFECT_ATTR_${buff.attr}` } />
+							</span> }
+						</div>
 					</div>
 
 					<div class="ps-3">

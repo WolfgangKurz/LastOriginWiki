@@ -9,7 +9,7 @@ function process (auth) {
 		spreadsheetId: "14OedgRcIIyF772ak-r5U5A9Nu5y58deGgCp6x_mqqiE",
 		range: "UnitSkill!A2:H",
 	}, (err, res) => {
-		if (err) return console.log("The API returned an error: " + err);
+		if (err) return console.log(`The API returned an error: ${  err}`);
 
 		const ret = {};
 		const rows = res.data.values;
@@ -46,8 +46,7 @@ function process (auth) {
 									parseInt(range.replace(/(.+)~.+/, "$1"), 10),
 									parseInt(range.replace(/.+~(.+)/, "$1"), 10),
 								];
-							} else
-								return [parseInt(range, 10), parseInt(range, 10)];
+							} return [parseInt(range, 10), parseInt(range, 10)];
 						})();
 
 						const body = x.replace(/^[^:]+:(.+)$/, "$1");
@@ -102,7 +101,7 @@ function process (auth) {
 		spreadsheetId: "14OedgRcIIyF772ak-r5U5A9Nu5y58deGgCp6x_mqqiE",
 		range: "BuffNames!A2:B",
 	}, (err, res) => {
-		if (err) return console.log("The API returned an error: " + err);
+		if (err) return console.log(`The API returned an error: ${  err}`);
 
 		const ret = {};
 		const rows = res.data.values;
