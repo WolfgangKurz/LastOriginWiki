@@ -113,8 +113,8 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 
 					<span>
 						{ skin.sid === null
-							? <Locale k={ `UNIT_${unit.uid}` } />
-							: <Locale k={ `UNIT_SKIN_${unit.uid}_${skin.sid}` } /> }
+							? <Locale plain k={ `UNIT_${unit.uid}` } />
+							: <Locale plain k={ `UNIT_SKIN_${unit.uid}_${skin.sid}` } /> }
 					</span>
 				</a>
 			</li>) }

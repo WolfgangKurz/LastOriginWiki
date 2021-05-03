@@ -196,7 +196,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 								<div class="modal-content">
 									<div class="modal-header">
 										<h5 class="modal-title">
-											<Locale k={ skin.sid ? `UNIT_SKIN_${unit.uid}_${skin.sid}` : `UNIT_${unit.uid}` } />
+											<Locale plain k={ skin.sid ? `UNIT_SKIN_${unit.uid}_${skin.sid}` : `UNIT_${unit.uid}` } />
 										</h5>
 										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" />
 									</div>

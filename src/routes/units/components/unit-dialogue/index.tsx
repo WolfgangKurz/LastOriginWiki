@@ -170,8 +170,8 @@ const UnitDialogue: FunctionalComponent<UnitDialogueProps> = (props) => {
 				role="button"
 			>
 				{ props.voice.sid === null
-					? <Locale k={ `UNIT_${unit.uid}` } />
-					: <Locale k={ `UNIT_SKIN_${unit.uid}_${voice.sid}` } />
+					? <Locale plain k={ `UNIT_${unit.uid}` } />
+					: <Locale plain k={ `UNIT_SKIN_${unit.uid}_${voice.sid}` } />
 				}
 
 				{ voice.isMarriage
