@@ -16,7 +16,6 @@ import { FormatNumber, isActive } from "@/libs/Functions";
 import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 import Locale from "@/components/locale";
 import Icon from "@/components/bootstrap-icon";
-import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import PopupBase from "@/components/popup/base";
 import EquipIcon from "@/components/equip-icon";
 import EquipLevel from "@/components/equip-level";
@@ -24,8 +23,7 @@ import UnitBadge from "@/components/unit-badge";
 import SourceBadge from "@/components/source-badge";
 import BuffList from "@/components/buff-list";
 import RarityBadge from "@/components/rarity-badge";
-import UnitCard from "@/components/unit-card";
-import UnitFace from "@/components/unit-face";
+import UnitLink from "@/components/unit-link";
 
 import "./style.scss";
 
@@ -285,26 +283,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 											: Limits.map(limit => <span>
 												{ ReservedLimit(limit.id)
 													? <UnitBadge limit={ limit.id } />
-													: limit.unit
-														? <Link href={ `/units/${limit.id}` } >
-															<BootstrapTooltip
-																placement="top"
-																content={ <UnitCard.Card
-																	unit={ limit.unit }
-																	rarity={ limit.unit.rarity }
-																	no-link
-																/> }
-															>
-																<span class="badge bg-primary mx-1">
-																	<Locale k={ `UNIT_${limit.id}` } />
-																	<Icon icon="link-45deg" class="ms-1" />
-																</span>
-															</BootstrapTooltip>
-															<div class="preload-area">
-																<UnitFace uid={ limit.id } />
-															</div>
-														</Link>
-														: <span class="badge bg-info">{ limit.id }</span>
+													: <UnitLink uid={limit.id} />
 												}
 											</span>)
 										}

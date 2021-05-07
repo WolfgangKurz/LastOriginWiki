@@ -94,13 +94,20 @@ const SummonBadge: FunctionalComponent<SummonBadgeProps> = (props) => {
 				<Icon icon="link-45deg" class="ms-1" />
 			</span>
 
-			<PopupBase class="summon-modal text-center" bodyClass="pb-0" display={ display.value } size="xl" header={
-				<h4>
-					<div class="text-start">
-						<Locale k={ Summon.uid } />
-						<div style="font-size: 60%">{ Summon.uid }</div>
-					</div>
-				</h4> }
+			<PopupBase
+				class="summon-modal text-center"
+				bodyClass="pb-0"
+				display={ display.value }
+				size="xl"
+				header={
+					<h4>
+						<div class="text-start">
+							<Locale k={ Summon.uid } />
+							<div style="font-size: 60%">{ Summon.uid }</div>
+						</div>
+					</h4>
+				}
+				onHidden={ (): void => display.set(false) }
 			>
 				<table class="table table-bordered table-fixed table-summon-modal mt-2 text-center">
 					<tbody>
@@ -309,7 +316,7 @@ const SummonBadge: FunctionalComponent<SummonBadgeProps> = (props) => {
 								<strong>{ skill.name }</strong>
 								<small class="ms-1">Lv.1</small>
 
-								<div class="float-md-right bg-dark ms-md-2 mt-2 mt-md-0 p-2 text-center">
+								<div class="float-md-end bg-dark ms-md-2 mt-2 mt-md-0 p-2 text-center">
 									<SkillBound
 										target={ skill.target }
 										buffs={ skill.buff }
@@ -339,7 +346,7 @@ const SummonBadge: FunctionalComponent<SummonBadgeProps> = (props) => {
 											? <span class="badge bg-success me-1">
 												<Locale k="ENEMY_SKILL_ACC_BONUS" />
 												{ (skill.buff.acc_bonus > 0 ? "+" : "") + skill.buff.acc_bonus }%
-												</span>
+											</span>
 											: <Fragment />
 										}
 									</div>

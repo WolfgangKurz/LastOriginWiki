@@ -12,15 +12,13 @@ import { SetMeta, UpdateTitle } from "@/libs/Site";
 
 import Loader, { GetJson, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
-import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import Icon from "@/components/bootstrap-icon";
 import UnitBadge from "@/components/unit-badge";
 import RarityBadge from "@/components/rarity-badge";
-import UnitCard from "@/components/unit-card";
-import UnitFace from "@/components/unit-face";
 import ItemIcon from "@/components/item-icon";
 import FacilityIcon from "../components/facility-icon";
 import DropItem from "@/components/drop-item";
+import UnitLink from "@/components/unit-link";
 
 import "./style.scss";
 
@@ -93,20 +91,7 @@ const FacilityView: FunctionalComponent<FacilityViewProps> = (props) => {
 									const unit = FilterableUnitDB.find(z => z.id.toString() === y);
 									if (!unit) return <span class="badge bg-secondary">???</span>;
 
-									return <Link href={ `/units/${unit.uid}` }>
-										<BootstrapTooltip
-											placement="top"
-											content={ <UnitCard.Card unit={ unit } rarity={ unit.rarity } no-link /> }
-										>
-											<RarityBadge class="mx-1" rarity="A">
-												<Locale k={ `UNIT_${unit.uid}` } />
-												<Icon icon="link-45deg" class="ms-1" />
-											</RarityBadge>
-										</BootstrapTooltip>
-										<div class="preload-area">
-											<UnitFace uid={ unit.uid } />
-										</div>
-									</Link>;
+									return <UnitLink uid={unit.uid} />;
 								}
 								return <Fragment>{ y }</Fragment>;
 						}

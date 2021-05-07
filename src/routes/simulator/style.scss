@@ -12,4 +12,67 @@
 			}
 		}
 	}
+
+	.simulator-cost-total {
+		display: grid;
+		margin: -1.5em 0 0.5em;
+		grid-template-columns: 1fr auto auto auto 3em auto auto auto 1fr;
+		column-gap: 1em;
+		align-self: center;
+		text-align: right;
+		font-weight: bold;
+		font-size: 90%;
+
+		img {
+			margin-right: 0.25em;
+			height: 20px;
+		}
+
+		span > i {
+			$size: 14px;
+			$w: $size;
+			$h: $size;
+
+			display: inline-block;
+			margin: 0 0.5em 0 0;
+			width: $w;
+			height: $h;
+			background-image: url($assetsRoot + "/unit-role.png");
+			background-position: 0 0;
+			background-size: ($w * 3) ($h * 2);
+			background-repeat: no-repeat;
+			vertical-align: middle;
+
+			&[data-role="0"] {
+				background-position-x: -$w;
+			}
+			&[data-role="1"] {
+				background-position-x: 0;
+			}
+			&[data-role="2"] {
+				background-position-x: -($w * 2);
+			}
+			background-position-y: -$h;
+		}
+
+		> span:nth-child(1) {
+			grid-column: 2;
+		}
+		> span:nth-child(2) {
+			grid-column: 3;
+		}
+		> span:nth-child(3) {
+			grid-column: 4;
+		}
+
+		> span:nth-child(4) {
+			grid-column: 6;
+		}
+		> span:nth-child(5) {
+			grid-column: 7;
+		}
+		> span:nth-child(6) {
+			grid-column: 8;
+		}
+	}
 }

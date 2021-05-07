@@ -64,6 +64,12 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		return `${AssetsRoot}/${ext}/full/${unit.uid}_${skinId}_${skin.G && IsGoogle.value ? "G" : "O"}${postfix}.${ext}`;
 	})();
 
+	const ssid = skin && skin.sid
+		? skin.sid >= 20
+			? `S${skin.sid - 20}`
+			: skin.sid?.toString()
+		: "";
+
 	return <div class="unit-skin-view">
 		<div class={ `ratio ${Aspect} unit-full ${props.collapsed ? "unit-full-collapsed" : ""}` }>
 			<div>
@@ -223,6 +229,9 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 				}
 				{ skin.sid && !skin.isPro
 					? <div class={ `card mb-2 skin-name-desc ${!skin.artist ? "mt-2" : ""}` }>
+						<div class="card-header">
+							<Locale k={ `CONSUMABLE_Skin_${unit.uid}_${ssid}` } />
+						</div>
 						<div class="card-body">
 							<Locale k={ `CONSUMABLE_DESC_Skin_${unit.uid}_${skin.sid}` } />
 						</div>

@@ -5,7 +5,7 @@
 	"scripts": {
 		"build": "preact build --no-prerender --no-sw --no-esm",
 		"serve": "sirv build --port 8080 --cors --single",
-		"dev": "preact watch",
+		"dev": "node tools/debug",
 		"lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'"
 	},
 	"dependencies": {
@@ -24,8 +24,10 @@
 		"@typescript-eslint/eslint-plugin": "^2.25.0",
 		"@typescript-eslint/parser": "^2.25.0",
 		"bootstrap": "^5.0.0-beta2",
+		"chalk": "^2.4.2",
 		"eslint": "^6.8.0",
 		"eslint-config-preact": "^1.1.1",
+		"express": "^4.17.1",
 		"googleapis": "^67.1.1",
 		"node-sass": "^5.0.0",
 		"preact-cli": "^3.0.0",

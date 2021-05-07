@@ -6,6 +6,42 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <Fragment>
+	<ChangelogItem title="Build 10811" date="2021-05-07"
+		bugfix={ <Fragment>
+			<li>전투원의 스킨 아이템 이름이 표시되지 않던 문제를 수정했습니다.</li>
+			<li>소환물 창을 닫으면 다시 열 수 없던 문제를 수정했습니다.</li>
+			<li>소환물 창의 사거리/범위가 항상 크게 보이는 문제를 수정했습니다.</li>
+		</Fragment> }
+		update={ <Fragment>
+			<li>
+				<span class="badge bg-warning text-dark">레나 더 챔피언</span>의
+				<span class="badge bg-warning text-dark">태그팀 피니쉬 무브</span>의 협동 공격 순서가 갱신되었습니다.
+			</li>
+			<li>협동 공격의 버프 표시가 개선되었습니다.</li>
+			<li>스킬 정보에서 스킬 명에 존재하는 뱃지를 스킬의 속성 옆으로 이동하였습니다.</li>
+
+			<li>일부 영문/일문 번역이 추가/수정되었습니다.</li>
+			<li>Some EN/JP translation has added/updated.</li>
+			<li>一部の英語・日本語の翻訳が追加・修正されました。</li>
+		</Fragment> }
+		new={ <Fragment>
+			<li>
+				<span class="badge bg-warning text-dark">Simulator<sup>β</sup></span>의 개요에
+				<span class="badge bg-warning text-dark">버프 수치 포함</span> 체크박스가 추가되었습니다.
+			</li>
+			<li>
+				<span class="badge bg-warning text-dark">Simulator<sup>β</sup></span>의 편성 상단에
+				자원 총합 및 편성 현황 표시를 추가했습니다.
+			</li>
+		</Fragment> }
+		skin={ <Fragment>
+			<li>
+				<span class="badge bg-warning text-dark">무적의 용</span>의 스킨
+				<span class="badge bg-danger">세일러 용</span>의 로비 애니메이션 및 가격 정보가 갱신되었습니다.
+			</li>
+		</Fragment> }
+	/>
+
 	<ChangelogItem title="Build 10787" date="2021-05-04"
 		bugfix={ <Fragment>
 			<li>전투원 카드에서 전투원의 분류/역할이 제대로 표시되지 않던 문제를 수정했습니다.</li>

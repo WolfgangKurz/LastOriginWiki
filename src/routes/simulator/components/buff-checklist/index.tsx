@@ -15,9 +15,12 @@ import Loader, { GetJson, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
 import Icon from "@/components/bootstrap-icon";
 import ElemIcon from "@/components/elem-icon";
+import UnitLink from "@/components/unit-link";
 import { BuffRenderer } from "@/components/buff-list";
 
 import style from "./style.scss";
+
+type BuffColors = "primary" | "secondary" | "danger" | "warning" | "info" | "dark" | "light";
 
 interface BuffRendererProps {
 	idx: number;
@@ -115,22 +118,27 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 		return p ? ifTrue : ifFalse;
 	}
 
-	function convertBuff (name: string): preact.VNode {
+	function convertBuff (name: string,): preact.VNode;
+	function convertBuff (name: string, color: BuffColors): preact.VNode;
+	function convertBuff (name: string, color?: BuffColors): preact.VNode {
+		if (![undefined, "primary", "secondary", "danger", "warning", "info", "dark", "light"].includes(color))
+			color = undefined;
+
 		if (name.startsWith("Char_")) {
 			const key = name.replace(/Char_(.+)_N/, "$1");
 			const unit = FilterableUnitDB.find(x => x.uid === key);
 			if (!unit) return <Fragment>{ key }</Fragment>;
 
-			return <span class={ `on-subbadge ${style["on-subbadge"]}` }>
+			return <span class={ `on-subbadge ${style["on-subbadge"]} ${color ? `text-${color}` : ""}` }>
 				<Locale plain k={ `UNIT_${unit.uid}` } />
 			</span>;
 		} else if (name.startsWith("MOB_")) {
 			const key = name.replace(/MOB_MP_(.+)/, "$1");
-			return <span class={ `on-subbadge ${style["on-subbadge"]}` }>
+			return <span class={ `on-subbadge ${style["on-subbadge"]} ${color ? `text-${color}` : ""}` }>
 				<Locale plain k={ `ENEMY_${key}` } />
 			</span>;
 		}
-		return <span class={ `on-subbadge ${style["on-subbadge"]}` }>
+		return <span class={ `on-subbadge ${style["on-subbadge"]} ${color ? `text-${color}` : ""}` }>
 			<Locale plain k={ name } />
 		</span>;
 	}
@@ -145,6 +153,9 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 			return key;
 		}
 		return name;
+	}
+	function convertChar (key: string): string {
+		return key.replace(/Char_(.+)_N/, "$1");
 	}
 
 	function getChanceText (chance: string | undefined): preact.VNode {
@@ -842,10 +853,20 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 		else if ("debuff_immune" in stat)
 			return <Locale plain k="BUFFEFFECT_DEBUFF_IMMUNE" p={ [getBuffEffectTypeText(stat.debuff_immune, BUFF_ATTR_TYPE.DEBUFF)] } />;
 		else if ("collaborate" in stat) {
-			return <Locale plain k="BUFFEFFECT_TOGETHER" p={ [
-				convertBuff(stat.collaborate.with),
+			return <Locale plain k="BUFFEFFECT_COOP" p={ [
+				<UnitLink uid={ convertChar(stat.collaborate.with) } />, // convertBuff(stat.collaborate.with, "primary"),
+				<span class="text-danger">#{ stat.collaborate.skill }</span>,
 				<span class="text-danger">
-					<Locale plain k={ `UNIT_SKILL_active${stat.collaborate.skill}_${convertBuffToUid(stat.collaborate.with)}` } />
+					{ [
+						<Locale plain k={ `UNIT_SKILL_active${stat.collaborate.skill}_${convertBuffToUid(stat.collaborate.with)}` } />,
+						LocaleGet(`UNIT_SKILL_Factive${stat.collaborate.skill}_${convertBuffToUid(stat.collaborate.with)}`)
+							.startsWith("UNIT_SKILL_Factive")
+							? <Fragment />
+							: [
+								" / ",
+								<Locale plain k={ `UNIT_SKILL_Factive${stat.collaborate.skill}_${convertBuffToUid(stat.collaborate.with)}` } />,
+							],
+					] }
 				</span>,
 			] } />;
 		} else if ("max_hp" in stat)

@@ -2,6 +2,9 @@ import { Fragment, FunctionalComponent, h } from "preact";
 
 import { SkillEntryData, SkillEntity } from "@/types/DB/Skill";
 
+import { objState } from "@/libs/State";
+import { groupBy, isActive } from "@/libs/Functions";
+
 import Locale from "@/components/locale";
 
 import "./style.scss";
@@ -10,6 +13,11 @@ interface BoundData {
 	match: string;
 	offset: number;
 	global: boolean;
+}
+
+interface BoundListEntity {
+	level: number;
+	bound: BoundData;
 }
 
 interface SkillBoundProps {
@@ -28,8 +36,8 @@ const SkillBound: FunctionalComponent<SkillBoundProps> = ({ target, buffs, level
 	const AP = Skill.ap;
 	const Range = Skill.range;
 
-	const Bound = ((): BoundData => {
-		let match = Skill.grid;
+	function GetBound (skill: SkillEntryData): BoundData {
+		let match = skill.grid;
 		let offset = 5;
 		let global = false;
 
@@ -56,7 +64,48 @@ const SkillBound: FunctionalComponent<SkillBoundProps> = ({ target, buffs, level
 			match = match.substr(match.indexOf(">") + 1);
 		}
 		return { match, offset, global };
-	})();
+	}
+	const BoundList = "index" in buffs
+		? ((): BoundListEntity[] => {
+			const indicies: number[] = [];
+			const ret: BoundListEntity[] = [];
+			for (let i = 0; i < 10; i++) {
+				const idx = buffs.index[i];
+				if (indicies.includes(idx)) continue;
+
+				indicies.push(idx);
+				ret.push({
+					level: i,
+					bound: GetBound(buffs.data[idx]),
+				});
+			}
+			return ret.reduce((p, c) => {
+				if (p.some(x => c.bound.global === x.bound.global &&
+					c.bound.match === x.bound.match &&
+					c.bound.offset === x.bound.offset)) return p;
+				return [...p, c];
+			}, [] as BoundListEntity[]);
+		})()
+		: [{
+			level: 1,
+			bound: GetBound(Skill),
+		}];
+
+	const prevLevel = objState<number>(level);
+
+	const currentBoundLevel = objState<number>(BoundList.length - 1);
+	const Bound = BoundList[currentBoundLevel.value].bound;
+
+	if (prevLevel.value !== level) {
+		prevLevel.set(level);
+
+		for (let i = 0; i < BoundList.length; i++) {
+			const item = BoundList[i];
+
+			if (level >= item.level + 1)
+				currentBoundLevel.set(i);
+		}
+	}
 
 	const IsGlobal = Bound.global;
 
@@ -132,6 +181,23 @@ const SkillBound: FunctionalComponent<SkillBoundProps> = ({ target, buffs, level
 					: <Locale k="UNIT_SKILL_BOUND_TEAM" />
 				}
 			</div>
+			: <Fragment />
+		}
+
+		{ BoundList.length > 1
+			? Object.values(groupBy(BoundList, (v, i) => Math.floor(i / 3)))
+				.map(g => <div class="level-selector btn-group">
+					{ g.map((x, i) => <button
+						class={ `btn btn-sm btn-outline-light ${isActive(currentBoundLevel.value === i)}` }
+						onClick={ (e): void => {
+							e.preventDefault();
+							e.stopPropagation();
+							currentBoundLevel.set(i);
+						} }
+					>
+						Lv.<strong>{ x.level + 1 }</strong>
+					</button>) }
+				</div>)
 			: <Fragment />
 		}
 	</div>;
