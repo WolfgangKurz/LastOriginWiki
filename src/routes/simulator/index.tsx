@@ -1,12 +1,15 @@
 import { Fragment, FunctionalComponent, h } from "preact";
 
+import { ROLE_TYPE } from "@/types/Enums";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { Unit } from "@/types/DB/Unit";
 import { SimulatorSlotType, SimulatorSlotEntity } from "./types/Slot";
 
 import { ObjectState, objState } from "@/libs/State";
+import { AssetsRoot } from "@/libs/Const";
 import { isActive } from "@/libs/Functions";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
+import { GetRequireResource } from "@/libs/Cost";
 
 import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 import Locale from "@/components/locale";
@@ -74,6 +77,67 @@ const Simulator: FunctionalComponent = () => {
 				});
 		}
 
+		const linksRequire = [10, 30, 50, 70, 90];
+		const squadSummary = ((): {
+			metal: number;
+			nutrient: number;
+			power: number;
+
+			attacker: number;
+			defender: number;
+			supporter: number;
+		} => FlattenGrid.map(slot => slot.value)
+			.filter(x => x)
+			.map(slot => {
+				if (!slot) throw new Error("invalid process");
+
+				const unit = FilterableUnit.find(x => x.uid === slot.uid);
+				if (!unit) {
+					return {
+						metal: 0,
+						nutrient: 0,
+						power: 0,
+						role: -1,
+					};
+				}
+
+				const Discounted = GetRequireResource(
+					slot.rarity,
+					unit.type,
+					unit.role,
+					unit.body,
+					slot.linkBonus,
+				);
+
+				const links = slot.links.filter((x, index) => x > 0 && slot.level >= linksRequire[index]).length;
+				return {
+					metal: Discounted.metal[links],
+					nutrient: Discounted.nutrient[links],
+					power: Discounted.power[links],
+					role: unit.role,
+				};
+			})
+			.reduce((p, c) => {
+				if (c === null) return p;
+				p.metal += c.metal;
+				p.nutrient += c.nutrient;
+				p.power += c.power;
+
+				switch (c.role) {
+					case ROLE_TYPE.ATTACKER:
+						p.attacker++;
+						break;
+					case ROLE_TYPE.DEFENDER:
+						p.defender++;
+						break;
+					case ROLE_TYPE.SUPPORTER:
+						p.supporter++;
+						break;
+				}
+				return p;
+			}, { metal: 0, nutrient: 0, power: 0, attacker: 0, defender: 0, supporter: 0 })
+		)();
+
 		return <div class="simulator">
 			<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;700&amp;display=swap" rel="stylesheet" />
 
@@ -92,6 +156,35 @@ const Simulator: FunctionalComponent = () => {
 			<div class="row justify-content-center mt-2">
 				<div class="col-xl-6 col-12">
 					<div class="row justify-content-center mt-4">
+						<div class="simulator-cost-total">
+							<span>
+								<img src={ `${AssetsRoot}/res-component.png` } />
+								{ squadSummary.metal }
+							</span>
+							<span>
+								<img src={ `${AssetsRoot}/res-nutrition.png` } />
+								{ squadSummary.nutrient }
+							</span>
+							<span>
+								<img src={ `${AssetsRoot}/res-power.png` } />
+								{ squadSummary.power }
+							</span>
+
+							<span>
+								<i data-role="1" />
+								{ squadSummary.attacker }
+							</span>
+							<span>
+								<i data-role="0" />
+								{ squadSummary.defender }
+							</span>
+							<span>
+								<i data-role="2" />
+								{ squadSummary.supporter }
+							</span>
+						</div>
+
+
 						<div class="col-auto">
 							<table class="table">
 								{ Grid.map((_, j) => <tr>

@@ -275,14 +275,13 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 						/>
 						<div class="text-bold">
 							<Locale k={ `UNIT_SKILL_${skill.key}_${unit.uid}` } />
-							<br />
-							<ElemIcon elem={ skill.buffs.data[skill.buffs.index[skillLevel.value]].type } class="mx-0" />
 						</div>
 
+						<ElemIcon elem={ skill.buffs.data[skill.buffs.index[skillLevel.value]].type } class="mx-0" />
 						{ skill.index > endRarity
-							? <span class="badge bg-substory"><Locale k="UNIT_SKILL_DUMMY" /></span>
+							? <span class="ms-2 badge bg-substory"><Locale k="UNIT_SKILL_DUMMY" /></span>
 							: skill.isPassive && skill.index > unit.rarity
-								? <RarityBadge rarity={ skill.index }>
+								? <RarityBadge class="ms-2" rarity={ skill.index }>
 									{ RarityDisplay[skill.index as ACTOR_GRADE] }
 									&nbsp;
 									<Locale k="UNIT_SKILL_PROMOTION_SKILL" />

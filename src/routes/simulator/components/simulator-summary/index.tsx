@@ -25,6 +25,7 @@ import EquipIcon from "@/components/equip-icon";
 import EquipLevel from "@/components/equip-level";
 
 import "./style.scss";
+import { isActive } from "@/libs/Functions";
 
 interface StatCalcType {
 	base: number;
@@ -61,7 +62,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 	if (!slot) return <Fragment />;
 
 	const uid = slot.uid;
-	const latestUid = objState<string | null>(null);
+	const includeBuffs = objState<boolean>(true);
 
 	const UnitTypeTable: Record<ACTOR_CLASS, string> = {
 		[ACTOR_CLASS.LIGHT]: "LIGHT",
@@ -331,10 +332,14 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 					.add(bonusValue)
 					.add(fullBonusValue);
 
-				const final = base
-					.add(Decimal.mul(slot.stats[key], StatPointValue[key]))
-					.mul(linkRatio)
-					.mul(bonusRatio + fullBonusRatio);
+				const final = includeBuffs.value
+					? base
+						.add(Decimal.mul(slot.stats[key], StatPointValue[key]))
+						.mul(linkRatio)
+						.mul(bonusRatio + fullBonusRatio)
+					: base
+						.add(Decimal.mul(slot.stats[key], StatPointValue[key]))
+						.mul(linkRatio);
 
 				if (floorValues.includes(key)) {
 					return {
@@ -618,6 +623,27 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 							) }
 						</div>
 
+						<div class="switches">
+							<div class="form-check d-inline-block">
+								<input
+									class="form-check-input"
+									type="checkbox"
+									id="simulator_summary_include_buffs"
+									checked={ includeBuffs.value }
+									onClick={ (e): void => {
+										// e.preventDefault();
+										// e.stopPropagation();
+
+										includeBuffs.set(!includeBuffs.value);
+										// (e.target as HTMLInputElement).checked = !includeBuffs.value;
+									} }
+								/>
+								<label class="form-check-label" for="simulator_summary_include_buffs">
+									<Locale k="SIMULATOR_TOGGLE_BUFFS" />
+								</label>
+							</div>
+						</div>
+
 						<div class="body-grid">
 							{ statList1.map(({ stat, postfix }) => <Fragment>
 								<span class="body-label">
@@ -716,33 +742,6 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 								{ statValues.ResistLightning }%
 							</span>
 						</div>
-
-						{/* <div class="buff-list mt-3">
-							<div class="buff-list-head">
-								<Locale k="SIMULATOR_BUFFLIST" />
-							</div>
-
-							<BuffChecklist
-								list={ buffList }
-								stacks={ buffStacks.value }
-								onUpdate={ (key, checked): void => {
-									if (checked && !usingBuffs.value.includes(key)) {
-										const list = [...usingBuffs.value, key];
-										usingBuffs.set(list);
-									} else if (!checked && usingBuffs.value.includes(key)) {
-										const list = [...usingBuffs.value];
-										const index = list.indexOf(key);
-										list.splice(index, 1);
-										usingBuffs.set(list);
-									}
-								} }
-								onStack={ (key, value): void => {
-									const table = { ...buffStacks.value };
-									table[key] = value;
-									buffStacks.set(table);
-								} }
-							/>
-						</div> */}
 					</Fragment>
 					: <Fragment />
 				}
