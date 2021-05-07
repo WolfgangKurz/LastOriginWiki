@@ -13,6 +13,7 @@ const Changelog: FunctionalComponent = () => <Fragment>
 			<li>소환물 창의 사거리/범위가 항상 크게 보이는 문제를 수정했습니다.</li>
 		</Fragment> }
 		update={ <Fragment>
+			<li>전투원의 스킬 정보의 범위 표시를 개선했습니다.</li>
 			<li>
 				<span class="badge bg-warning text-dark">레나 더 챔피언</span>의
 				<span class="badge bg-warning text-dark">태그팀 피니쉬 무브</span>의 협동 공격 순서가 갱신되었습니다.
