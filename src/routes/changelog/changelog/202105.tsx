@@ -6,6 +6,15 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <Fragment>
+	<ChangelogItem title="Build 10816" date="2021-05-09"
+		bugfix={ <Fragment>
+			<li><span class="badge bg-warning text-dark">적 정보</span>의 적 카드에 표시되는 적 유형/역할이 잘못 표시되는 문제를 수정했습니다.</li>
+		</Fragment> }
+		dialogue={ <Fragment>
+			<li><span class="badge bg-light text-dark">KST 2021-05-09 18:36:27</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</Fragment> }
+	/>
+
 	<ChangelogItem title="Build 10814" date="2021-05-09"
 		bugfix={ <Fragment>
 			<li>
