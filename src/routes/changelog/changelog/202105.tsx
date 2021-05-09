@@ -6,6 +6,21 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <Fragment>
+	<ChangelogItem title="Build 10814" date="2021-05-09"
+		bugfix={ <Fragment>
+			<li>
+				<span class="badge bg-warning text-dark">Simulator<sup>β</sup></span>의
+				<span class="badge bg-warning text-dark">버프 수치 포함</span> 기능이
+				<span class="badge bg-dark">적중률, 치명타, 회피율</span>에는 반영되지 않는 문제를 수정했습니다.
+			</li>
+		</Fragment> }
+		update={ <Fragment>
+			<li>일부 영문/일문 번역이 추가/수정되었습니다.</li>
+			<li>Some EN/JP translation has added/updated.</li>
+			<li>一部の英語・日本語の翻訳が追加・修正されました。</li>
+		</Fragment> }
+	/>
+
 	<ChangelogItem title="Build 10811" date="2021-05-07"
 		bugfix={ <Fragment>
 			<li>전투원의 스킨 아이템 이름이 표시되지 않던 문제를 수정했습니다.</li>

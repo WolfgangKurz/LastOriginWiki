@@ -232,6 +232,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 							if (!("type" in y) && !aliasTarget.includes(y.target)) return;
 
 							if (!("type" in y)) {
+								if (!includeBuffs.value) return;
 								y.buffs.forEach((b, bi) => {
 									const force = [
 										y.on === "round" || y.on === "wave",
@@ -319,7 +320,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 					});
 					return Decimal.add(p, Decimal.div(v, 100))
 						.toNumber();
-				}, 1);
+				}, 0);
 				const fullBonusRatio = ((): number => {
 					if (links !== 5 || !slot.linkBonus.startsWith(bonusTable[key])) return 0;
 					const lb = GetLinkBonus(slot.linkBonus, 1);
@@ -336,10 +337,11 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 					? base
 						.add(Decimal.mul(slot.stats[key], StatPointValue[key]))
 						.mul(linkRatio)
-						.mul(bonusRatio + fullBonusRatio)
+						.mul(1 + bonusRatio + fullBonusRatio)
 					: base
 						.add(Decimal.mul(slot.stats[key], StatPointValue[key]))
-						.mul(linkRatio);
+						.mul(linkRatio)
+						.mul(1 + fullBonusRatio);
 
 				if (floorValues.includes(key)) {
 					return {
@@ -379,6 +381,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 						const eq = e.stats[c.level];
 						eq.forEach((y, yi) => {
 							if ("type" in y) return;
+							if (!includeBuffs.value) return;
 							y.buffs.forEach((b, bi) => {
 								const force = [
 									y.on === "round" || y.on === "wave",
