@@ -36,25 +36,25 @@
 
 						&[data-type] {
 							background-image: url($assetsRoot + "/unit-type.png");
-							&[data-type="light"] {
+							&[data-type="0"] { // light
 								background-position-x: 0px;
 							}
-							&[data-type="air"] {
+							&[data-type="2"] { // flying
 								background-position-x: -$basis;
 							}
-							&[data-type="heavy"] {
+							&[data-type="1"] { // heavy
 								background-position-x: -($basis * 2);
 							}
 						}
 						&[data-role] {
 							background-image: url($assetsRoot + "/unit-role.png");
-							&[data-role="attacker"] {
+							&[data-role="1"] { // attacker
 								background-position-x: 0px;
 							}
-							&[data-role="defender"] {
+							&[data-role="0"] { // defender
 								background-position-x: -$basis;
 							}
-							&[data-role="supporter"] {
+							&[data-role="2"] { // supporter
 								background-position-x: -($basis * 2);
 							}
 						}
