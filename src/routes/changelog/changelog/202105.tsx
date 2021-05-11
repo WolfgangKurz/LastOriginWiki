@@ -6,6 +6,28 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <Fragment>
+	<ChangelogItem title="Build 10827" date="2021-05-12"
+		bugfix={ <Fragment>
+			<li>
+				<span class="badge bg-warning text-dark">적 정보</span> 및 <span class="badge bg-warning text-dark">소환물 정보</span>의
+				<span class="badge bg-primary">행동 패턴</span>에 표시되는 타깃이 분리되어 표시되던 문제가 수정되었습니다.
+			</li>
+			<li><span class="badge bg-warning text-dark">T-60 불가사리</span>의 스킬 설명이 제대로 표시되지 않던 점을 수정했습니다.</li>
+		</Fragment> }
+		new={ <Fragment>
+			<li>전투원 <span class="badge bg-warning text-dark">CT66 램파트</span>의 <span class="badge bg-rarity-SS text-dark">SS승급</span>정보가 추가되었습니다.</li>
+		</Fragment> }
+		update={ <Fragment>
+			<li>
+				<span class="badge bg-warning text-dark">적 정보</span> 및 <span class="badge bg-warning text-dark">소환물 정보</span>의
+				<span class="badge bg-primary">행동 패턴</span>에 표시되는 스킬이 이름으로 표시되도록 갱신되었습니다.
+			</li>
+			<li>일부 영문/일문 번역이 추가/수정되었습니다.</li>
+			<li>Some EN/JP translation has added/updated.</li>
+			<li>一部の英語・日本語の翻訳が追加・修正されました。</li>
+		</Fragment> }
+	/>
+
 	<ChangelogItem title="Build 10816" date="2021-05-09"
 		bugfix={ <Fragment>
 			<li><span class="badge bg-warning text-dark">적 정보</span>의 적 카드에 표시되는 적 유형/역할이 잘못 표시되는 문제를 수정했습니다.</li>

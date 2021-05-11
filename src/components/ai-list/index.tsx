@@ -136,10 +136,12 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 
 			const entities: preact.VNode[] = [];
 			to.forEach(x => {
-				entities.push(
-					...x.sort((a, b) => toSortTable[a] - toSortTable[b])
-						.map(_ => compile(_)),
-				);
+				entities.push(<Fragment>{
+					x
+						.sort((a, b) => toSortTable[a] - toSortTable[b])
+						.map(_ => compile(_))
+						.gap(" ")
+				}</Fragment>);
 			});
 
 			return entities
@@ -172,7 +174,7 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 							const name = skill
 								? <Fragment>
 									{ superscript[cond.skill] }
-									{ skill.key }
+									<Locale k={ skill.key } />
 								</Fragment>
 								: <Locale k="AI_SKILL_NO" p={ [cond.skill] } />;
 
@@ -191,14 +193,19 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 							return <Locale k="AIIF_IN_RANGE" p={ [
 								filter,
 								target,
-								<span class="badge bg-info">{ name }</span>,
+								<span class="badge bg-substory">{ name }</span>,
 							] } />;
 						})();
 					case "canusepos":
 						return ((): preact.VNode => {
 							const skill = skills[cond.skill - 1];
-							const name = (skill && [superscript[cond.skill], skill.key]) || [`${cond.skill}번`];
-							return <Locale k="AIIF_USABLE_EXIST" p={ [<span class="badge bg-info">{ name }</span>] } />;
+							const name = skill
+								? <Fragment>
+									{ superscript[cond.skill] }
+									<Locale k={ skill.key } />
+								</Fragment>
+								: [`${cond.skill}번`];
+							return <Locale k="AIIF_USABLE_EXIST" p={ [<span class="badge bg-substory">{ name }</span>] } />;
 						})();
 					case "canmove":
 						if (typeof cond.to === "string" && cond.to[0] === "!")
@@ -273,7 +280,7 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 				const name = skill
 					? <Fragment>
 						{ superscript[act.skill] }
-						{ skill.key }
+						<Locale k={ skill.key } />
 					</Fragment>
 					: <Locale k="AI_SKILL_NO" p={ [act.skill] } />;
 				const to = buildTo(act.to, true);
@@ -283,7 +290,7 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 					: [];
 
 				return <Locale k="AIACT_USE" p={ [
-					<span class="badge bg-info">{ name }</span>,
+					<span class="badge bg-substory">{ name }</span>,
 					<Fragment>{ filter }</Fragment>,
 					<Fragment>{ to }</Fragment>,
 				] } />;
@@ -293,11 +300,11 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 					const name = skill
 						? <Fragment>
 							{ superscript[act.skill] }
-							{ skill.key }
+							<Locale k={ skill.key } />
 						</Fragment>
 						: <Locale k="AI_SKILL_NO" p={ [act.skill] } />;
 
-					return <Locale k="AIACT_MOVE_USABLE" p={ [<span class="badge bg-info">{ name }</span>] } />;
+					return <Locale k="AIACT_MOVE_USABLE" p={ [<span class="badge bg-substory">{ name }</span>] } />;
 				}
 				return <Locale k="AIACT_MOVE" p={ [<Fragment>{ buildTo([[act.move]], false, "stat-hp") }</Fragment>] } />;
 			} else if ("wait" in act)
