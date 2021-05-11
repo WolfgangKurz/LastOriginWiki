@@ -220,7 +220,10 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 								};
 							} else {
 								const href = `/equips/${equip ? equip.fullKey : p[1]}`;
-								const name = equip ? LocaleGet(`EQUIP_${equip.fullKey}`).replace(/ (RE|MP|SP|EX)$/, "") : p[1];
+								const name = equip
+									? LocaleGet(`EQUIP_${equip.fullKey}`).replace(/ (RE|MP|SP|EX)$/, "")
+									: p[1];
+
 								ret.link = {
 									href,
 									node: <BootstrapTooltip placement="top" content={ <EquipCard equip={ equip } no-link /> }>
@@ -237,7 +240,7 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 									},
 								};
 							}
-							ret.preload.push(<EquipIcon image={ equip ? equip.fullKey : p[1] } />);
+							ret.preload.push(<EquipIcon image={ equip ? equip.icon : p[1] } />);
 						}
 					}
 				});

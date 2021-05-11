@@ -145,7 +145,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 		function Description (skill: EnemySkill): string {
 			if (!targetEnemy.value) return "";
 
-			return skill.desc
+			return LocaleGet(`${skill.key}_DESC`)
 				.replace(/\{0\}/g, `[@::0~0: (${skill.buff.rate}배)]`)
 				.replace(/\. /g, ".\n");
 		}
@@ -453,7 +453,9 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 										? <div class="row">
 											<div class="col border border-top-0 text-start p-3">
 												<ElemIcon elem={ skill.type } />
-												<strong>{ skill.name }</strong>
+												<strong>
+													<Locale k={ skill.key } />
+												</strong>
 												<small class="ms-1">Lv.1</small>
 
 												<div class="float-md-end bg-dark ms-md-2 mt-2 mt-md-0 p-2 text-center">
