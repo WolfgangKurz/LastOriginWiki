@@ -656,6 +656,8 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					2: <Locale plain k="BUFFEFFECT_ATTR_2" />,
 					3: <Locale plain k="BUFFEFFECT_ATTR_3" />,
 					4: <Locale plain k="BUFFEFFECT_ATTR_4" />,
+					5: <Locale plain k="BUFFEFFECT_ATTR_5" />,
+					6: <Locale plain k="BUFFEFFECT_ATTR_6" />,
 				}[stat.off];
 				return <Locale plain k="BUFFEFFECT_OFF" p={ [target] } />;
 			} else if ("target" in stat.off)

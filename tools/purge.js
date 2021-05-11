@@ -14,7 +14,7 @@ function travel (dir, callback) {
 		});
 }
 
-const target = ["locale"];
+const target = ["locale", "unit", "skill", "enemy", "roguelike"];
 
 const lists = [];
 const list = [];
