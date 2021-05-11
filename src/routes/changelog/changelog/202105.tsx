@@ -6,13 +6,14 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <Fragment>
-	<ChangelogItem title="Build 10829" date="2021-05-12"
+	<ChangelogItem title="Build 10830" date="2021-05-12"
 		bugfix={ <Fragment>
 			<li>
 				<span class="badge bg-warning text-dark">적 정보</span> 및 <span class="badge bg-warning text-dark">소환물 정보</span>의
 				<span class="badge bg-primary">행동 패턴</span>에 표시되는 타깃이 분리되어 표시되던 문제가 수정되었습니다.
 			</li>
 			<li><span class="badge bg-warning text-dark">T-60 불가사리</span>의 스킬 설명이 제대로 표시되지 않던 점을 수정했습니다.</li>
+			<li><span class="badge bg-warning text-dark">AL 레이스</span>의 스킬 설명이 제대로 표시되지 않던 점을 수정했습니다.</li>
 			<li>일부 획득처의 이름 잘못 표시되던 점을 수정했습니다.</li>
 			<li>일부 효과의 유형이 잘못 표시되던 점을 수정했습니다.</li>
 			<li>
