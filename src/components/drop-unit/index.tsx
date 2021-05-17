@@ -1,5 +1,6 @@
 import { Fragment, FunctionalComponent, h } from "preact";
 
+import { ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/types/Enums";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
 import { RarityDisplay } from "@/libs/Const";
@@ -10,6 +11,13 @@ import UnitFace from "@/components/unit-face";
 
 import "./style.scss";
 
+interface ModuleUnit {
+	uid: string;
+	type: ACTOR_CLASS;
+	role: ROLE_TYPE;
+	rarity: ACTOR_GRADE;
+}
+
 interface DropUnitProps {
 	id: string | number;
 	chance?: number;
@@ -18,12 +26,35 @@ interface DropUnitProps {
 const DropUnit: FunctionalComponent<DropUnitProps> = (props) => {
 	const chance = props.chance || 100;
 
+	const moduleRegex = /^Module_([TACM]{2})_([BAS]+)$/;
+
+	const isModule = moduleRegex.test(props.id.toString());
+
+	function getModule (uid: string): ModuleUnit | null {
+		const rarityTable = ["D", "C", "B", "A", "S", "SS"];
+		const ret = moduleRegex.exec(uid);
+		if (!ret) return null;
+
+		const types = ["T", "A", "M"];
+		const roles = ["T", "A", "C"];
+		const r = rarityTable.indexOf(ret[2]);
+
+		return {
+			uid,
+			rarity: r,
+			type: types.indexOf(ret[1][0]) as ACTOR_CLASS,
+			role: roles.indexOf(ret[1][1]) as ROLE_TYPE,
+		};
+	}
+
 	return <Loader json={ StaticDB.FilterableUnit } content={ ((): preact.VNode => {
 		const FilterableUnitDB = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
 
 		const unit = typeof props.id === "number"
 			? FilterableUnitDB.find(x => x.id === props.id)
-			: FilterableUnitDB.find(x => x.uid === props.id);
+			: isModule
+				? getModule(props.id)
+				: FilterableUnitDB.find(x => x.uid === props.id);
 
 		return <div class="drop-unit p-2 text-dark">
 			{ unit

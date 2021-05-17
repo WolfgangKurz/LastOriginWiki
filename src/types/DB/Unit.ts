@@ -77,6 +77,9 @@ export interface UnitSkinEntity {
 	/** Damaged Simplified */
 	X: boolean;
 
+	/** Premium Skin? */
+	Pre: boolean;
+
 	// /** Skin Item Name */
 	// name: string;
 
@@ -181,6 +184,7 @@ export namespace Unit {
 			D: false,
 			S: false,
 			X: false,
+			Pre: false,
 			artist: "",
 			offset: {
 				normal: { n: 0, d: 0, s: 0, x: 0 },

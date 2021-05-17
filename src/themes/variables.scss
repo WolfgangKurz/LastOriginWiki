@@ -1,4 +1,5 @@
 $rarities: (
+	C: #cecece,
 	B: #e2f0d9,
 	A: #deebf7,
 	S: #fff2cc,
@@ -17,11 +18,13 @@ $event-exchange: #d040e0;
 $event-exchange-old: #701080;
 $exchange: #0cb9eb;
 $exchange-old: #06798b;
-$rarity-B: #e2f0d9;
-$rarity-A: #deebf7;
-$rarity-S: #fff2cc;
-$rarity-SS: #fce391;
-$rarity-SSS: #fd8386;
+
+$rarity-C: map-get($rarities, C);
+$rarity-B: map-get($rarities, B);
+$rarity-A: map-get($rarities, A);
+$rarity-S: map-get($rarities, S);
+$rarity-SS:map-get($rarities, SS);
+$rarity-SSS:map-get($rarities, SSS);
 
 $colors: (
 	"black": #000,
@@ -36,6 +39,7 @@ $colors: (
 	"event-exchange-old": $event-exchange-old,
 	"exchange": $exchange,
 	"exchange-old": $exchange-old,
+	"rarity-C": $rarity-C,
 	"rarity-B": $rarity-B,
 	"rarity-A": $rarity-A,
 	"rarity-S": $rarity-S,

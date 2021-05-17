@@ -20,12 +20,15 @@ import DropUnit from "@/components/drop-unit";
 interface QuestGroup {
 	titleBase: string;
 	rarityBadge: preact.VNode[];
+	rarityText: string;
 }
 
 type TitledQuest = RoguelikeQuest & QuestGroup;
 
 const RoguelikeQuestContent: FunctionalComponent = () => {
 	const selectedQuestGroup = objState<string>("");
+
+	const RarityOrder = ["C", "B", "A", "S", "SS", "SSS"];
 
 	return <Loader
 		json={ [
@@ -43,19 +46,21 @@ const RoguelikeQuestContent: FunctionalComponent = () => {
 
 			const list: TitledQuest[] = Quests.map(x => {
 				const titleBase = LocaleGet(x.key);
-				const regex = /^(.+)(?: ([BAS]+))$/.exec(titleBase);
+				const regex = /^(.+)(?: ([CBAS]+))$/.exec(titleBase);
 
 				if (regex) {
 					return {
 						...x,
 						titleBase: regex[1],
 						rarityBadge: [<span class={ `badge bg-rarity-${regex[2]} text-dark ms-2` }>{ regex[2] }</span>],
+						rarityText: regex[2],
 					};
 				}
 				return {
 					...x,
 					titleBase: LocaleGet(x.key),
 					rarityBadge: [<Fragment />],
+					rarityText: "",
 				};
 			});
 
@@ -65,12 +70,20 @@ const RoguelikeQuestContent: FunctionalComponent = () => {
 				list.map(x => ({
 					titleBase: x.titleBase,
 					rarityBadge: x.rarityBadge,
+					rarityText: x.rarityText,
 				}))
+					.reduce((p, c) => {
+						if (p.some(x => x.titleBase === c.titleBase && x.rarityText === c.rarityText))
+							return p;
+						return [...p, c];
+					}, [] as QuestGroup[])
+					.sort((a, b) => RarityOrder.indexOf(a.rarityText) - RarityOrder.indexOf(b.rarityText))
 					.forEach(x => {
 						if (!(x.titleBase in ret)) {
 							ret[x.titleBase] = {
 								titleBase: x.titleBase,
 								rarityBadge: [...x.rarityBadge],
+								rarityText: x.rarityText,
 							};
 						} else
 							ret[x.titleBase].rarityBadge.push(...x.rarityBadge);

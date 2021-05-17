@@ -170,6 +170,19 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					</div>
 					: <Fragment />
 				}
+				{ skin.Pre
+					? <div class="unit-skin-premium">
+						<BootstrapTooltip
+							placement="top"
+							content={ <span class="word-keep"><Locale k="UNIT_VIEW_SKIN_PREMIUM" /></span> }
+						>
+							<div class="position-relative text-dark alert alert-warning">
+								<Icon icon="award-fill" />
+							</div>
+						</BootstrapTooltip>
+					</div>
+					: <Fragment />
+				}
 
 				{ (!IsSimplified.value && skin.D) || (IsSimplified.value && skin.X)
 					? <div class="skin-toggle skin-toggle-damaged"

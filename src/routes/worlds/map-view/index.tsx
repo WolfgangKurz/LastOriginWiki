@@ -1,6 +1,7 @@
 import { Fragment, FunctionalComponent, h } from "preact";
 import { Link, route } from "preact-router";
 
+import { ACTOR_GRADE } from "@/types/Enums";
 import { MapEnemyData, MapNodeEntity, Worlds } from "@/types/DB/Map";
 import { RawReward, RewardTypeBase } from "@/types/Reward";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
@@ -29,6 +30,12 @@ import MapGrid from "../components/map-grid";
 import MapSearchInfo from "../components/map-search-info";
 
 import "./style.scss";
+
+interface ModuleUnit {
+	type: "module";
+	uid: string;
+	rarity: ACTOR_GRADE;
+}
 
 type RewardDropType = RewardTypeBase & {
 	am?: true;
@@ -114,11 +121,12 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 					});
 			})();
 
-			const UnitDrops = ((): FilterableUnit[] => {
+			const UnitDrops = ((): Array<FilterableUnit | ModuleUnit> => {
 				if (!selectedValue) return [];
 
+				const rarityTable = ["D", "C", "B", "A", "S", "SS"];
 				const ids: string[] = [];
-				const ret: FilterableUnit[] = [];
+				const ret: Array<FilterableUnit | ModuleUnit> = [];
 				Waves.forEach(_ => {
 					_.forEach(__ => {
 						__.e.drops
@@ -128,10 +136,19 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 								ids.push(x.id);
 
 								const k = x.id.replace(/Char_(.+)_N/, "$1");
+								if (k.startsWith("Module")) {
+									const rk = x.id.replace(/^Char_Module_.+_([BAS]+)_N$/, "$1");
+									const r = rarityTable.indexOf(rk);
+									return {
+										type: "module",
+										uid: x.id.replace(/^Char_(.+)_N$/, "$1"),
+										rarity: r as ACTOR_GRADE,
+									};
+								}
 								return FilterableUnitDB.find(y => y.uid === k);
 							})
 							.filter(x => x)
-							.forEach(x => ret.push(x as FilterableUnit));
+							.forEach(x => ret.push(x as (FilterableUnit | ModuleUnit)));
 					});
 				});
 				return ret.sort((a, b) => b.rarity - a.rarity);
@@ -206,7 +223,10 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 
 				return [
 					...selectedValue.reward_f.map(x => f(x)),
-					...selectedValue.reward_am.map(x => ({ ...f(x), am: true })),
+					...selectedValue.reward_am
+						.map(x => f(x))
+						.filter(x => x)
+						.map(x => ({ ...x, am: true })),
 				].filter(x => x) as RewardDropType[];
 			})();
 
@@ -508,11 +528,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 																			equipModalDisplay.set(true);
 																		} }
 																	>
-																		<DropEquip equip={ reward.equip } />
-																		{ reward.count > 1
-																			? `x${reward.count}`
-																			: <Fragment />
-																		}
+																		<DropEquip equip={ reward.equip } count={ reward.count } />
 																	</Link>;
 																}
 																return <DropItem item={ reward.consumable } count={ reward.count } />;
@@ -559,11 +575,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 																			equipModalDisplay.set(true);
 																		} }
 																	>
-																		<DropEquip equip={ reward.equip } />
-																		{ reward.count > 1
-																			? `x${reward.count}`
-																			: <Fragment />
-																		}
+																		<DropEquip equip={ reward.equip } count={ reward.count } />
 																	</Link>;
 																}
 																return <DropItem item={ reward.consumable } count={ reward.count } />;
@@ -612,9 +624,14 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 															<Locale k="WORLD_VIEW_NO_DROPS" />
 														</div>
 														: UnitDrops
-															.map(unit => <Link class="drop-unit" href={ `/units/${unit.uid}` }>
-																<DropUnit id={ unit.uid } />
-															</Link>)
+															.map(unit => {
+																if (unit.uid.startsWith("Module_"))
+																	return <DropUnit id={ unit.uid } />;
+
+																return <Link class="drop-unit" href={ `/units/${unit.uid}` }>
+																	<DropUnit id={ unit.uid } />
+																</Link>;
+															})
 															.map(el => <div class="p-0">{ el }</div>)
 													}
 												</div>
