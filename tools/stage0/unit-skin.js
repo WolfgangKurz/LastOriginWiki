@@ -6,7 +6,7 @@ function process (auth) {
 	const sheets = google.sheets({ version: "v4", auth });
 	sheets.spreadsheets.values.get({
 		spreadsheetId: "1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4",
-		range: "UnitSkin!A2:S",
+		range: "UnitSkin!A2:T",
 	}, (err, res) => {
 		if (err) return console.log("The API returned an error: " + err);
 
@@ -32,8 +32,9 @@ function process (auth) {
 				const D = !!row[14];
 				const S = !!row[15];
 				const X = !!row[16];
-				const name = row[17];
-				const desc = row[18];
+				const Pre = !!row[17];
+				const name = row[18];
+				const desc = row[19];
 
 				const offset = ((x) => {
 					const output = {
@@ -60,7 +61,7 @@ function process (auth) {
 					return output;
 				})(offsets);
 
-				const info = { G, V, E, M, A, Stage, D, S, X };
+				const info = { G, V, E, M, A, Stage, D, S, X, Pre };
 				const base = { sid: skinId, artist, offset, price, ...info, name, desc };
 
 				if (!(uid in ret))

@@ -9,7 +9,7 @@ function process (auth) {
 		spreadsheetId: "1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4",
 		range: "World!A2:ZZ",
 	}, (err, res) => {
-		if (err) return console.log("The API returned an error: " + err);
+		if (err) return console.log(`The API returned an error: ${err}`);
 
 		const ret = {};
 		const rows = res.data.values;

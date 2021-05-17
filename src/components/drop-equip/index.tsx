@@ -13,10 +13,12 @@ interface DropEquipProps {
 	class?: string;
 
 	equip: FilterableEquip;
+	count?: number;
 	chance?: number;
 }
 
 const DropEquip: FunctionalComponent<DropEquipProps> = (props) => {
+	const count = props.count || 1;
 	const chance = props.chance || 100;
 
 	return <div class={ `drop-equip p-2 text-dark ${props.class || ""}` }>
@@ -26,6 +28,11 @@ const DropEquip: FunctionalComponent<DropEquipProps> = (props) => {
 				<div class="text-start">
 					<span class="badge bg-secondary me-1">{ RarityDisplay[props.equip.rarity] }</span>
 					<Locale k={ `EQUIP_${props.equip.fullKey}` } />
+
+					{ count > 1
+						? <span class="badge bg-dark ms-1">x{ count }</span>
+						: <Fragment />
+					}
 					{ chance < 100
 						? <small class="ps-1 text-bold">({ chance }%)</small>
 						: <Fragment />

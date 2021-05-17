@@ -77,6 +77,18 @@ const Roguelike: FunctionalComponent = () => {
 							<Locale k="ROGUELIKE_PASSIVE" />
 						</a>
 					</li>
+					<li class="nav-item">
+						<a
+							class="nav-link text-dark"
+							href="https://lomap.swaytwig.com/"
+							target="_blank"
+							rel="noreferrer"
+						>
+							<Icon icon="compass" class="me-2" />
+							<Locale k="ROGUELIKE_MAP" />
+							<span class="badge bg-secondary ms-1" style="font-size: 0.7em;">KR only</span>
+						</a>
+					</li>
 				</ul>
 				<div class="border border-top-0 p-3">
 					{ tabIndex.value === 0

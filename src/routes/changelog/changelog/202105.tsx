@@ -6,6 +6,43 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <Fragment>
+	<ChangelogItem title="Build 10844" date="2021-05-18"
+		bugfix={ <Fragment>
+			<li>
+				<span class="badge bg-warning text-dark">세계 정보</span>의 <span class="badge bg-warning text-dark">일일 훈련</span>의
+				드랍 정보가 제대로 표시되지 않는 문제를 수정했습니다.
+			</li>
+			<li><span class="badge bg-warning text-dark">P-49 슬레이프니르</span>의 스킬 설명이 갱신되지 않았던 점을 수정했습니다.</li>
+			<li>전투원 스킨의 소모품 이름이 잘못 연결되어있던 점을 수정했습니다.</li>
+		</Fragment> }
+		new={ <Fragment>
+			<li>신규 이벤트 지역 <span class="badge bg-success">Project ORCA, 별밤의 무대 3부</span> 정보가 추가되었습니다.</li>
+			<li>신규 전투원 <span class="badge bg-warning text-dark">니키 트레이시</span>의 정보가 추가되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">철의 탑</span>의 퀘스트가 추가되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">철의 탑</span>에 지도 외부 링크가 추가되었습니다.</li>
+			<li>전투원 스킨 정보에 <span class="badge bg-warning text-dark">프리미엄 스킨</span> 여부 표시가 추가되었습니다.</li>
+		</Fragment> }
+		update={ <Fragment>
+			<li><span class="badge bg-warning text-dark">철의 탑</span>의 퀘스트 등급 뱃지를 정리했습니다.</li>
+			<li>일부 영문/일문 번역이 추가/수정되었습니다.</li>
+			<li>Some EN/JP translation has added/updated.</li>
+			<li>一部の英語・日本語の翻訳が追加・修正されました。</li>
+		</Fragment> }
+		skin={ <Fragment>
+			<li>
+				<span class="badge bg-warning text-dark">뮤즈</span>의 스킨
+				<span class="badge bg-danger">프로젝트 오르카 : 뮤즈</span>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<span class="badge bg-warning text-dark">블랙 웜 S9</span>의 스킨
+				<span class="badge bg-danger">드림위버 웨딩 스페셜 : 되찾은 마음</span>의 중파 정보가 추가되었습니다.
+			</li>
+		</Fragment> }
+		dialogue={ <Fragment>
+			<li><span class="badge bg-light text-dark">KST 2021-05-18 03:20:11</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</Fragment> }
+	/>
+
 	<ChangelogItem title="Build 10830" date="2021-05-12"
 		bugfix={ <Fragment>
 			<li>
