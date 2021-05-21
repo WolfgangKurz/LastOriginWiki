@@ -6,6 +6,20 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <Fragment>
+	<ChangelogItem title="Build 10845" date="2021-05-21"
+		bugfix={ <Fragment>
+			<li>
+				<span class="badge bg-warning text-dark">철의 탑</span>의
+				<span class="badge bg-warning text-dark">오염된 군수 공장</span>의 공격력/방어력 수치가 %로 표시되던 점을 수정했습니다.
+				(Build 10830 롤백)
+			</li>
+			<li>
+				<span class="badge bg-warning text-dark">공진의 알렉산드라</span>의 스킨
+				<span class="badge bg-danger">5월의 여왕 : 미스 퍼펙트</span>의 보이스가 존재하지 않던 점을 수정했습니다.
+			</li>
+		</Fragment> }
+	/>
+
 	<ChangelogItem title="Build 10844" date="2021-05-18"
 		bugfix={ <Fragment>
 			<li>
