@@ -1,6 +1,6 @@
 import { Fragment, FunctionalComponent, h } from "preact";
 
-import { ACTOR_GRADE, BUFF_ATTR_TYPE, ROGUEEFFECTTYPE } from "@/types/Enums";
+import { ACTOR_GRADE, ROGUEEFFECTTYPE } from "@/types/Enums";
 import { BuffStatBuff } from "@/types/Buffs";
 import RoguelikeEffect from "@/types/DB/Roguelike.Effect";
 
@@ -14,7 +14,6 @@ import RarityBadge from "@/components/rarity-badge";
 import BuffList from "@/components/buff-list";
 
 import style from "./style.scss";
-import { BUFFEFFECT_TYPE } from "@/types/BuffEffect";
 
 interface TypeGroup {
 	type: ROGUEEFFECTTYPE;
@@ -156,30 +155,9 @@ const RoguelikePassiveContent: FunctionalComponent = () => {
 												<Locale k="ROGUELIKE_NODE_EFFECTS_EMPTY" />
 											</span>
 											: <BuffList list={
-												(x.buffIndex
+												x.buffIndex
 													.map(y => RoguelikeBuffEffectDB.find(z => z.key === y))
 													.filter(y => y) as BuffStatBuff[]
-												).map(y => {
-													y.buffs.forEach(b => {
-														if (b.attr !== BUFF_ATTR_TYPE.ROGUEBUFF && b.attr !== BUFF_ATTR_TYPE.ROGUEDEBUFF) return;
-
-														if ("attack" in b.value && b.value.type === BUFFEFFECT_TYPE.STAT_ATK_VALUE) {
-															if (typeof b.value.attack.base === "number")
-																b.value.attack.base = `${b.value.attack.base}%`;
-
-															if (typeof b.value.attack.per === "number")
-																b.value.attack.per = `${b.value.attack.per}%`;
-														}
-														else if ("defense" in b.value && b.value.type === BUFFEFFECT_TYPE.STAT_DEF_VALUE) {
-															if (typeof b.value.defense.base === "number")
-																b.value.defense.base = `${b.value.defense.base}%`;
-
-															if (typeof b.value.defense.per === "number")
-																b.value.defense.per = `${b.value.defense.per}%`;
-														}
-													});
-													return y;
-												})
 											} />
 										}
 									</div>
