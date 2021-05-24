@@ -1,4 +1,4 @@
-import { ComponentType, Fragment, FunctionalComponent, h } from "preact";
+import { ComponentType, FunctionalComponent, h } from "preact";
 
 import { CurrentLocale } from "@/libs/Locale";
 
@@ -28,12 +28,12 @@ function traverseVNode<T> (nodes: Node[] | NodeListOf<ChildNode>, p: LocaleProps
 									if (p) {
 										const v = p[idx];
 										if (typeof v === "string" || typeof v === "number" || typeof v === "boolean")
-											return <Fragment>{ p[idx] }</Fragment>;
+											return <>{ p[idx] }</>;
 										return v;
 									}
-									return <Fragment />;
+									return <></>;
 								})()
-								: <Fragment>{ x }</Fragment>;
+								: <>{ x }</>;
 						}),
 					);
 				}
@@ -103,7 +103,7 @@ const Locale: FunctionalComponent<LocaleProps<any>> = (props) => {
 		const t = locale[props.k];
 		if (t) {
 			if (props.plain) {
-				return <Fragment>{ (locale[props.k] || props.k).split(paramRegex).map(x => {
+				return <>{ (locale[props.k] || props.k).split(paramRegex).map(x => {
 					const r = paramRegex.exec(x);
 					return r
 						? ((): preact.VNode => {
@@ -111,26 +111,26 @@ const Locale: FunctionalComponent<LocaleProps<any>> = (props) => {
 							if (props.p) {
 								const v = props.p[idx];
 								if (typeof v === "string" || typeof v === "number" || typeof v === "boolean")
-									return <Fragment>{ props.p[idx] }</Fragment>;
+									return <>{ props.p[idx] }</>;
 								return v;
 							}
-							return <Fragment />;
+							return <></>;
 						})()
-						: <Fragment>{ x }</Fragment>;
-				}) }</Fragment>;
+						: <>{ x }</>;
+				}) }</>;
 			}
-			return <Fragment>{ parseVNode(locale[props.k] || props.k, props.p, props.components || {}) }</Fragment>;
+			return <>{ parseVNode(locale[props.k] || props.k, props.p, props.components || {}) }</>;
 		}
 
 		return typeof props.fallback === "string" ||
 			typeof props.fallback === "number" ||
 			typeof props.fallback === "boolean"
-			? <Fragment>{ props.fallback }</Fragment>
+			? <>{ props.fallback }</>
 			: typeof props.fallback === "undefined"
-				? <Fragment>{ props.k }</Fragment>
+				? <>{ props.k }</>
 				: props.fallback;
 	}
-	return <Fragment>{ props.k }</Fragment>;
+	return <>{ props.k }</>;
 };
 export default Locale;
 

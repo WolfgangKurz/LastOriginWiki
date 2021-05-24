@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 import { Link } from "preact-router";
 
 import RoguelikeItem from "@/types/DB/Roguelike.Item";
@@ -42,7 +42,7 @@ const RoguelikeItemBadge: FunctionalComponent<RoguelikeItemBadgeProps> = (props)
 						? <small class="me-2">
 							* <Locale k="ROGUELIKE_NODE_ITEM_OPTIONAL" />
 						</small>
-						: <Fragment />
+						: <></>
 					}
 					<Icon icon="info-circle-fill" class="float-end mt-1" />
 				</div>

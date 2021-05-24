@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 import { Link } from "preact-router";
 
 import { AssetsRoot } from "@/libs/Const";
@@ -37,7 +37,7 @@ const WorldItem: FunctionalComponent<WorldItemProps> = (props) => {
 			? props.wid === "Sub"
 				? <Link href={ `/worlds/${props.wid}/1/` } class="stretched-link" />
 				: <Link href={ `/worlds/${props.wid}` } class="stretched-link" />
-			: <Fragment />
+			: <></>
 		}
 	</div>;
 };

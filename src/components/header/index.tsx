@@ -1,4 +1,4 @@
-import { FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 import { Link } from "preact-router/match";
 
 import { AssetsRoot } from "@/libs/Const";

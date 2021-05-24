@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 import { Link } from "preact-router";
 import Decimal from "decimal.js";
 
@@ -109,7 +109,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 							: <RarityBadge rarity="SS" class="me-1">
 								<Locale k="UNIT_CARD_PROMOTION_BADGE" p={ ["SS"] } />
 							</RarityBadge>
-						: <Fragment /> }
+						: <></> }
 
 					<span>
 						{ skin.sid === null
@@ -124,7 +124,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 			<div class="col-12 col-md-3">
 				{ SkinList[skinIndex.value]
 					? <SkinView unit={ unit } skin={ SkinList[skinIndex.value] } collapsed detailable />
-					: <Fragment /> }
+					: <></> }
 			</div>
 			<div class="mt-3 col-md-9 col-12">
 				<div class="row">
@@ -172,7 +172,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 							<DropEquip class="limited-item-card" equip={ limited } />
 						</Link>) }
 					</div>
-					: <Fragment />
+					: <></>
 				}
 
 				<div class="container table-unit-modal my-3">
@@ -276,18 +276,18 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 											<Locale k="UNIT_VIEW_DROPS_EMPTY" />
 										</span>
 									</div>
-									: <Fragment>
+									: <>
 										{ unit.craft
 											? <span class="badge bg-dark my-1">
 												<Icon icon="hammer" class="me-1" />
 												<Locale k="UNIT_VIEW_DROPS_CREATIONTIME" />
 												<span class="ms-1">{ CraftTime }</span>
 											</span>
-											: <Fragment />
+											: <></>
 										}
 
 										{ unit.source.map((area, aindex) => <div>
-											{ unit.craft || aindex > 0 ? <hr class="my-1" /> : <Fragment /> }
+											{ unit.craft || aindex > 0 ? <hr class="my-1" /> : <></> }
 											{ area.length > 0 && area[0].IsEvent
 												? <h6 style="font-weight: bold">
 													<Locale k={ area[0].EventName } />
@@ -300,12 +300,12 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 														? <h6 style="font-weight: bold">
 															<Locale k="COMMON_SOURCE_SUBSTORY_SINGLE" />
 														</h6>
-														: <Fragment />
+														: <></>
 											}
 
 											{ area.map(source => <SourceBadge class="my-1" source={ source } linked />) }
 										</div>) }
-									</Fragment>
+									</>
 								}
 							</td>
 						</tr>
@@ -497,7 +497,7 @@ const SkillTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 											{ option.text }
 										</option>) }
 									</select>
-									: <Fragment />
+									: <></>
 								}
 							</th>
 						</tr>
@@ -567,7 +567,7 @@ const RoguelikeTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIn
 									? <div class="col">
 										<RoguelikeEffectBadge effect={ x.limitEffect } />
 									</div>
-									: <Fragment />
+									: <></>
 								}
 								{ x.items.map(y => <div class="col">
 									<RoguelikeItemBadge item={ y } />

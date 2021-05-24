@@ -1,4 +1,4 @@
-import { FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 import { Link } from "preact-router";
 
 import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";

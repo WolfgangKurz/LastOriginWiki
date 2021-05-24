@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 import { route } from "preact-router";
 
 import { Connect, StoreType } from "@/store";
@@ -111,14 +111,14 @@ const UnitsTable: FunctionalComponent<UnitsListProps> = (props) => {
 									.map(role => <td>
 										{ ArrayElse(
 											UnitList(rarity, type, role),
-											x => <Fragment>{
+											x => <>{
 												x.map(unit => <UnitCard.Horizontal
 													class="unit-list-item"
 													unit={ unit }
 													rarity={ rarity }
 													onClick={ (): void => void (route(`/units/${unit.uid}`)) }
 												/>)
-											}</Fragment>,
+											}</>,
 											<span class="text-secondary">
 												<Locale k="UNIT_TABLE_EMPTY" />
 											</span>,
@@ -127,7 +127,7 @@ const UnitsTable: FunctionalComponent<UnitsListProps> = (props) => {
 							</tr>) }
 					</tbody>
 				</table>
-				: <Fragment />) }
+				: <></>) }
 		</div>;
 	});
 };

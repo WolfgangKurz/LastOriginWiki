@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 import { Link, route } from "preact-router";
 
 import { Worlds } from "@/types/DB/Map";
@@ -64,7 +64,7 @@ const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 									<Locale k="WORLDS_WORLD_MAP" />
 								</button>
 								{ nonStory
-									? <Fragment />
+									? <></>
 									: <button class="btn btn-light" disabled>
 										{/* onClick={ (): void => void (route(`/story/${props.wid}/${i + 1}`)) } */ }
 										<Icon icon="chat-left-quote" class="me-1" />

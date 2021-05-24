@@ -3,7 +3,7 @@
 		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
 		@for $i from 1 through 12 {
-			&.btn-grid#{$infix}-#{$i} {
+			.btn-grid#{$infix}-#{$i} {
 				display: inline-grid;
 				grid-template-columns: repeat($i, 1fr);
 				grid-auto-rows: 1fr;

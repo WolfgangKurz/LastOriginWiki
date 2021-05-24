@@ -1,4 +1,4 @@
-import { Component, createRef, Fragment, h, RefObject } from "preact";
+import { Component, createRef, RefObject } from "preact";
 import render from "preact-render-to-string";
 
 import { Tooltip } from "bootstrap";
@@ -23,7 +23,7 @@ class BootstrapTooltip extends Component<BootstrapTooltipProps> {
 	updateBootstrap (): void {
 		const el = this.el.current;
 		if (el) {
-			const content = render(this.props.content || <Fragment />);
+			const content = render(this.props.content || <></>);
 
 			const instance = Tooltip.getInstance(el);
 			if (instance) instance.hide();

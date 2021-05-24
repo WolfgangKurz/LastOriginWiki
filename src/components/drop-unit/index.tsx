@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 
 import { ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/types/Enums";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
@@ -73,11 +73,11 @@ const DropUnit: FunctionalComponent<DropUnitProps> = (props) => {
 						</div>
 						{ chance < 100
 							? <small class="ms-1 text-bold">({ chance }%)</small>
-							: <Fragment />
+							: <></>
 						}
 					</div>
 				</div>
-				: <Fragment />
+				: <></>
 			}
 		</div>;
 	}) } />;

@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 
@@ -33,7 +33,7 @@ const EquipCard: FunctionalComponent<EquipCardProps> = (props) => {
 				? <div class="equip-sources text-start">
 					{ Sources.map(source => <SourceBadge class="mb-1" source={ source } minimum />) }
 				</div>
-				: <Fragment /> }
+				: <></> }
 		</div>
 		<div class="card-body">
 			<div class="equip-name">{ Name }</div>

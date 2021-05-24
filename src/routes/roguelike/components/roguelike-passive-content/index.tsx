@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 
 import { ACTOR_GRADE, ROGUEEFFECTTYPE } from "@/types/Enums";
 import { BuffStatBuff } from "@/types/Buffs";
@@ -79,14 +79,14 @@ const RoguelikePassiveContent: FunctionalComponent = () => {
 						aria-expanded="false"
 					>
 						{ selectedTypeValue
-							? <Fragment>
+							? <>
 								<img
 									class={ `${style["effect-icon"]} ${style["button"]} me-3` }
 									src={ `${AssetsRoot}/${ext}/item/${selectedTypeValue.imgName}.${ext}` }
 								/>
 								<Locale k={ `RogueEffect_Type_${selectedTypeValue.type}` } />
-							</Fragment>
-							: <Fragment />
+							</>
+							: <></>
 						}
 					</button>
 					<ul class="dropdown-menu">

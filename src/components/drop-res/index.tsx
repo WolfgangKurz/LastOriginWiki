@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 
 import { FormatNumber } from "@/libs/Functions";
 
@@ -33,7 +33,7 @@ const DropRes: FunctionalComponent<DropResProps> = (props) => {
 			case "nutrient": return <Locale k="COMMON_RES_NUTRIENTS" />;
 			case "power": return <Locale k="COMMON_RES_POWER" />;
 			case "cash": return <Locale k="COMMON_RES_TUNA" />;
-			default: return <Fragment>???</Fragment>;
+			default: return <>???</>;
 		}
 	})();
 
@@ -45,7 +45,7 @@ const DropRes: FunctionalComponent<DropResProps> = (props) => {
 					{ Name }
 					{ count !== 1
 						? <span class="badge bg-dark ms-1">x{ FormatNumber(count) }</span>
-						: <Fragment />
+						: <></>
 					}
 				</div>
 			</div>

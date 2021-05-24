@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 
 import { Unit } from "@/types/DB/Unit";
 import { Equip } from "@/types/DB/Equip";
@@ -29,7 +29,7 @@ interface SimulatorEquipProps {
 
 const SimulatorEquips: FunctionalComponent<SimulatorEquipProps> = (props) => {
 	const slot = props.slot;
-	if (!slot) return <Fragment />;
+	if (!slot) return <></>;
 
 	const equips = objState<Array<Equip | false | null>>([null, null, null, null]);
 	const equipList = equips.value;
@@ -67,7 +67,7 @@ const SimulatorEquips: FunctionalComponent<SimulatorEquipProps> = (props) => {
 	return <Loader json={ [StaticDB.FilterableEquip, `unit/${slot.uid}`] } content={ ((): preact.VNode => {
 		const FilterableEquip = GetJson<FilterableEquip[]>(StaticDB.FilterableEquip);
 		const unit = GetJson<Unit>(`unit/${slot.uid}`);
-		if (!unit) return <Fragment />;
+		if (!unit) return <></>;
 
 		return <div class="simulator-equips">
 			<EquipSelectorPopup
@@ -89,12 +89,12 @@ const SimulatorEquips: FunctionalComponent<SimulatorEquipProps> = (props) => {
 							<EquipIcon image={ `${FilterableEquip.find(x => x.fullKey === equip.uid)!.icon}` } size="76" />
 							<EquipLevel level={ equip.level } size={ 14 } />
 						</div>
-						: <Fragment />
+						: <></>
 					}
 				</div>
 
 				{ ((e): preact.VNode => equip && e
-					? <Fragment>
+					? <>
 						<div class="equip-title">
 							<Locale k={ `EQUIP_${e.uid}` } />
 						</div>
@@ -105,19 +105,19 @@ const SimulatorEquips: FunctionalComponent<SimulatorEquipProps> = (props) => {
 									props.onLevel(eidx, value);
 							} } />
 						</div>
-					</Fragment>
+					</>
 					: equip
-						? <Fragment>
+						? <>
 							<div class="equip-title">&nbsp;</div>
 							<div class="equip-level">
 								<input type="range" class="form-range" min="0" max="10" value={ equip ? equip.level : 10 } disabled />
 							</div>
-						</Fragment>
-						: <Fragment>
+						</>
+						: <>
 							<div class="equip-empty">
 								<Locale k="SIMULATOR_EQUIP_EMPTY" />
 							</div>
-						</Fragment>
+						</>
 				)(equipList[eidx]) }
 
 				<div class="equip-functions">
@@ -139,7 +139,7 @@ const SimulatorEquips: FunctionalComponent<SimulatorEquipProps> = (props) => {
 				</div>
 
 				{ ((e): preact.VNode => equip && e
-					? <Fragment>
+					? <>
 						<hr class="my-2" />
 
 						<BuffChecklist
@@ -156,8 +156,8 @@ const SimulatorEquips: FunctionalComponent<SimulatorEquipProps> = (props) => {
 									props.onStack(eidx, key, value);
 							} }
 						/>
-					</Fragment>
-					: <Fragment />
+					</>
+					: <></>
 				)(equipList[eidx]) }
 			</div>) }
 		</div>;

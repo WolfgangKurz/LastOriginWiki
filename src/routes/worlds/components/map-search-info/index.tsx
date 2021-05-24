@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 
 import { Consumable } from "@/types/DB/Consumable";
 import { MapSearch } from "@/types/DB/Map";
@@ -32,7 +32,7 @@ const MapSearchInfo: FunctionalComponent<MapSearchInfoProps> = (props) => {
 			return ConsumableDB.find(y => y.key === item);
 		}
 
-		return <Fragment>
+		return <>
 			{ SearchInfo === null
 				? <div class="py-4 text-secondary">
 					<Locale k="WORLD_VIEW_SELECT_NODE" />
@@ -41,7 +41,7 @@ const MapSearchInfo: FunctionalComponent<MapSearchInfoProps> = (props) => {
 					? <div class="py-4 text-secondary">
 						<Locale k="WORLD_VIEW_NOT_EXPLORABLE" />
 					</div>
-					: <Fragment>
+					: <>
 						<div class="row row-cols-1 row-cols-lg-2">
 							<div class="col">
 								<div class="card text-dark">
@@ -101,7 +101,7 @@ const MapSearchInfo: FunctionalComponent<MapSearchInfoProps> = (props) => {
 												? <div class="py-4 text-secondary">
 													<Locale k="WORLD_VIEW_EXPLORATION_REWARDS_ITEM_NO" />
 												</div>
-												: <Fragment />
+												: <></>
 											}
 
 											<div class="row row-cols-2">
@@ -115,7 +115,7 @@ const MapSearchInfo: FunctionalComponent<MapSearchInfoProps> = (props) => {
 															count={ entry.item.count }
 															chance={ entry.item.chance }
 														/>
-														: <Fragment />,
+														: <></>,
 													)
 												}
 											</div>
@@ -124,9 +124,9 @@ const MapSearchInfo: FunctionalComponent<MapSearchInfoProps> = (props) => {
 								</div>
 							</div>
 						</div>
-					</Fragment>
+					</>
 			}
-		</Fragment>;
+		</>;
 	}) } />;
 };
 export default MapSearchInfo;

@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 
 import { AI, AIAction, AICondition, AIContainer, AIFilter, AIFunc, AIPosPositive, AIPosSpecific, AITarget } from "@/types/DB/AI";
 import { SkillEntity } from "@/types/DB/Skill";
@@ -57,7 +57,7 @@ interface AIListProps {
 }
 
 const AIList: FunctionalComponent<AIListProps> = (props) => {
-	const UnknownFragment = <Fragment>???</Fragment>;
+	const UnknownFragment = <>???</>;
 
 	return <Loader json={ [StaticDB.FilterableEnemy, StaticDB.FilterableUnit] } content={ ((): preact.VNode => {
 		const FilterableUnitData = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
@@ -136,12 +136,12 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 
 			const entities: preact.VNode[] = [];
 			to.forEach(x => {
-				entities.push(<Fragment>{
+				entities.push(<>{
 					x
 						.sort((a, b) => toSortTable[a] - toSortTable[b])
 						.map(_ => compile(_))
 						.gap(" ")
-				}</Fragment>);
+				}</>);
 			});
 
 			return entities
@@ -172,10 +172,10 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 						return ((): preact.VNode => {
 							const skill = skills[cond.skill - 1];
 							const name = skill
-								? <Fragment>
+								? <>
 									{ superscript[cond.skill] }
 									<Locale k={ skill.key } />
-								</Fragment>
+								</>
 								: <Locale k="AI_SKILL_NO" p={ [cond.skill] } />;
 
 							const target = skill && skill.target === "enemy"
@@ -188,7 +188,7 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 
 							const filter = cond.filter
 								? buildFilter(cond.filter)
-								: <Fragment />;
+								: <></>;
 
 							return <Locale k="AIIF_IN_RANGE" p={ [
 								filter,
@@ -200,10 +200,10 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 						return ((): preact.VNode => {
 							const skill = skills[cond.skill - 1];
 							const name = skill
-								? <Fragment>
+								? <>
 									{ superscript[cond.skill] }
 									<Locale k={ skill.key } />
-								</Fragment>
+								</>
 								: [`${cond.skill}번`];
 							return <Locale k="AIIF_USABLE_EXIST" p={ [<span class="badge bg-substory">{ name }</span>] } />;
 						})();
@@ -212,7 +212,7 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 							throw new Error("Something wrong");
 						return <Locale
 							k="AIIF_MOVABLE"
-							p={ [<Fragment>{ buildTo([[cond.to as AIPosPositive]], false, "stat-hp") }</Fragment>] }
+							p={ [<>{ buildTo([[cond.to as AIPosPositive]], false, "stat-hp") }</>] }
 						/>;
 					case "action":
 						return <Locale k="AIIF_ACTIONS" p={ [<span class="badge bg-stat-def">{ buildFunc(cond.func, cond.action) }</span>] } />;
@@ -239,49 +239,49 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 								2: "AIIF_BUFF?",
 								3: "AIIF_BUFF?_NEG",
 							};
-							return <Locale k={ table[v] } p={ [<Fragment>{ concat(compile(cond.buff)) }</Fragment>] } />;
+							return <Locale k={ table[v] } p={ [<>{ concat(compile(cond.buff)) }</>] } />;
 						})();
 					case "cri100":
 						return <Locale k="AIIF_NEXT_CRIT" />;
 					case "exist":
 						return <Locale
 							k="AIIF_EXISTS"
-							p={ [<Fragment>{ buildTo(Array.isArray(cond.who) ? cond.who : [[cond.who]]) }</Fragment>] }
+							p={ [<>{ buildTo(Array.isArray(cond.who) ? cond.who : [[cond.who]]) }</>] }
 						/>;
 					case "!exist":
 						return <Locale
 							k="AIIF_!EXISTS"
-							p={ [<Fragment>{ buildTo(Array.isArray(cond.who) ? cond.who : [[cond.who]]) }</Fragment>] }
+							p={ [<>{ buildTo(Array.isArray(cond.who) ? cond.who : [[cond.who]]) }</>] }
 						/>;
 					case "hp":
 						return <Locale k="AIIF_HP" p={ [<span class="badge bg-stat-def">{ buildFunc(cond.func, cond.hp, "%") }</span>] } />;
 					case "pos":
 						if (typeof cond.pos === "string" && cond.pos[0] === "!")
-							return <Locale k="AIIF_POS_SELF" p={ [<Fragment>{ buildTo([[cond.pos.substr(1) as AIPosPositive]]) }</Fragment>] } />;
+							return <Locale k="AIIF_POS_SELF" p={ [<>{ buildTo([[cond.pos.substr(1) as AIPosPositive]]) }</>] } />;
 
 						else if (Array.isArray(cond.pos))
-							return <Locale k="AIIF_POS_SELF" p={ [<Fragment>{ buildTo(cond.pos.map(p => [p])) }</Fragment>] } />;
+							return <Locale k="AIIF_POS_SELF" p={ [<>{ buildTo(cond.pos.map(p => [p])) }</>] } />;
 
 						return <Locale
 							k="AIIF!_POS_SELF"
-							p={ [<Fragment>{ buildTo([[cond.pos as AIPosPositive | AIPosSpecific]]) }</Fragment>] }
+							p={ [<>{ buildTo([[cond.pos as AIPosPositive | AIPosSpecific]]) }</>] }
 						/>;
 					default:
 						return UnknownFragment;
 				}
 			});
 
-			return <Locale k="AIJOIN_LAST" p={ [<Fragment>{ t.gap(<Locale k="AIJOIN_AND" />) }</Fragment>] } />;
+			return <Locale k="AIJOIN_LAST" p={ [<>{ t.gap(<Locale k="AIJOIN_AND" />) }</>] } />;
 		}
 
 		function buildAct (act: AIAction): preact.VNode {
 			if ("skill" in act && "to" in act) {
 				const skill = skills[act.skill - 1];
 				const name = skill
-					? <Fragment>
+					? <>
 						{ superscript[act.skill] }
 						<Locale k={ skill.key } />
-					</Fragment>
+					</>
 					: <Locale k="AI_SKILL_NO" p={ [act.skill] } />;
 				const to = buildTo(act.to, true);
 
@@ -291,22 +291,22 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 
 				return <Locale k="AIACT_USE" p={ [
 					<span class="badge bg-substory">{ name }</span>,
-					<Fragment>{ filter }</Fragment>,
-					<Fragment>{ to }</Fragment>,
+					<>{ filter }</>,
+					<>{ to }</>,
 				] } />;
 			} else if ("move" in act) {
 				if (act.move === "canuse") {
 					const skill = skills[act.skill - 1];
 					const name = skill
-						? <Fragment>
+						? <>
 							{ superscript[act.skill] }
 							<Locale k={ skill.key } />
-						</Fragment>
+						</>
 						: <Locale k="AI_SKILL_NO" p={ [act.skill] } />;
 
 					return <Locale k="AIACT_MOVE_USABLE" p={ [<span class="badge bg-substory">{ name }</span>] } />;
 				}
-				return <Locale k="AIACT_MOVE" p={ [<Fragment>{ buildTo([[act.move]], false, "stat-hp") }</Fragment>] } />;
+				return <Locale k="AIACT_MOVE" p={ [<>{ buildTo([[act.move]], false, "stat-hp") }</>] } />;
 			} else if ("wait" in act)
 				return <span class="badge bg-dark"><Locale k="AIACT_WAIT" /></span>;
 
@@ -319,10 +319,10 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 			</div>
 
 			{ List.map((ai, idx) => {
-				return <Fragment>
+				return <>
 					{ idx > 0 ?
 						<div class="text-center"><Icon icon="arrow-down" class="mt-2" /></div>
-						: <Fragment />
+						: <></>
 					}
 					{ "list" in ai
 						? <ul class="list-group text-start mt-2">
@@ -330,7 +330,7 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 								? <li class="list-group-item bg-warning text-dark">
 									<Locale k="AI_CHANCE" p={ [ai.chance] } />
 								</li>
-								: <Fragment />
+								: <></>
 							}
 
 							{ ai.list.map(ai => <li class="list-group-item">
@@ -338,11 +338,11 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 									? <span class="badge bg-warning tetx-dark me-2">
 										<Locale k="AI_CHANCE" p={ [ai.chance] } />
 									</span>
-									: <Fragment />
+									: <></>
 								}
 								{ ai.if
 									? buildIf(ai.if)
-									: <Fragment />
+									: <></>
 								}
 								{ ai.act
 									? buildAct(ai.act)
@@ -356,11 +356,11 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 									? <span class="badge bg-warning text-dark me-2">
 										<Locale k="AI_CHANCE" p={ [ai.chance] } />
 									</span>
-									: <Fragment />
+									: <></>
 								}
 								{ ai.if
 									? buildIf(ai.if)
-									: <Fragment />
+									: <></>
 								}
 								{ ai.act
 									? buildAct(ai.act)
@@ -369,7 +369,7 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 							</li>
 						</ul>
 					}
-				</Fragment>;
+				</>;
 			}) }
 		</div>;
 	}) } />;

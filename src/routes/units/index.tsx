@@ -1,4 +1,4 @@
-import { h, Fragment, FunctionalComponent } from "preact";
+import { FunctionalComponent } from "preact";
 
 import { actions, ActionsType, Connect, StoreType } from "@/store";
 
@@ -325,7 +325,7 @@ const Units: FunctionalComponent = () => {
 
 						<hr class="my-2" />
 
-						{ [0, 1].map(i => <Fragment>
+						{ [0, 1].map(i => <>
 							<div class="row">
 								<div class=" col-md-auto col-12 filter-label">
 									<Locale k="UNITS_FILTERS_ACTIVE_LABEL" p={ [i + 1] } />
@@ -402,7 +402,7 @@ const Units: FunctionalComponent = () => {
 								</div>
 							</div>
 							<hr class="my-2" />
-						</Fragment>) }
+						</>) }
 
 						<div class="row">
 							<div class="col-md-auto col-12 filter-label">
@@ -462,10 +462,10 @@ const Units: FunctionalComponent = () => {
 					</div>
 				</div>
 
-				{ Filters.DisplayType === "table" ? <UnitsTable list={ UnitList() } /> : <Fragment /> }
-				{ Filters.DisplayType === "list" ? <UnitsList list={ UnitList() } /> : <Fragment /> }
-				{ Filters.DisplayType === "group" ? <UnitsGroup list={ UnitList() } /> : <Fragment /> }
-				{ Filters.DisplayType === "time" ? <UnitsTimetable list={ UnitList() } /> : <Fragment /> }
+				{ Filters.DisplayType === "table" ? <UnitsTable list={ UnitList() } /> : <></> }
+				{ Filters.DisplayType === "list" ? <UnitsList list={ UnitList() } /> : <></> }
+				{ Filters.DisplayType === "group" ? <UnitsGroup list={ UnitList() } /> : <></> }
+				{ Filters.DisplayType === "time" ? <UnitsTimetable list={ UnitList() } /> : <></> }
 			</div>;
 		}) } />,
 	);

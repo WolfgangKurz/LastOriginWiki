@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 import { Link } from "preact-router";
 import Decimal from "decimal.js";
 
@@ -32,7 +32,7 @@ const RoguelikeEffectBadge: FunctionalComponent<RoguelikeEffectBadgeProps> = (pr
 			const RoguelikeBuffEffectDB = GetJson<BuffStatBuff[]>(StaticDB.RoguelikeBuffEffects);
 
 			const found = RoguelikeLimitEffectDB.find(x => x.key === props.effect);
-			if (!found) return <Fragment />;
+			if (!found) return <></>;
 
 			const literalValueType: ROGUE_LIMIT_EFFECT_TYPE[] = [
 				ROGUE_LIMIT_EFFECT_TYPE.CELL_MOVE_HP_DOWN,

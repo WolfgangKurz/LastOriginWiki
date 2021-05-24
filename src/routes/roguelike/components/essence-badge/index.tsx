@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 
 import { FormatNumber } from "@/libs/Functions";
 
@@ -29,7 +29,7 @@ const EssenceBadge: FunctionalComponent<EssenceBadgeProps> = (props) => {
 							* <Locale k="ROGUELIKE_NODE_REWARD_REFUND" />
 						</small>
 					</div>
-					: <Fragment />
+					: <></>
 				}
 			</div>
 		</div>

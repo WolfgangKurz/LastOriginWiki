@@ -1,4 +1,4 @@
-import { FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 
 import { AssetsRoot } from "@/libs/Const";
 import { SetMeta, UpdateTitle } from "@/libs/Site";

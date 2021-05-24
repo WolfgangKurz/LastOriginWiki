@@ -1,4 +1,4 @@
-import { FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 
 import { ImageExtension, ImageExtensionList } from "@/libs/Const";
 import { ChangeLanguage, CurrentLocale, LocaleList } from "@/libs/Locale";

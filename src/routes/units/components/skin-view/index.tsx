@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 
 import { Unit, UnitSkin } from "@/types/DB/Unit";
 
@@ -88,7 +88,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 						<img src={ `${AssetsRoot}/tuna.png` } />
 						{ skin.price }
 					</div>
-					: <Fragment />
+					: <></>
 				}
 
 				{ unit.marriageVoice
@@ -102,7 +102,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 							</div>
 						</BootstrapTooltip>
 					</div>
-					: <Fragment />
+					: <></>
 				}
 
 				{ skin.A
@@ -127,7 +127,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 								</div>
 							</BootstrapTooltip>
 						</div>
-					: <Fragment />
+					: <></>
 				}
 				{ skin.V
 					? <div class="unit-skin-voice">
@@ -142,7 +142,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 							</div>
 						</BootstrapTooltip>
 					</div>
-					: <Fragment />
+					: <></>
 				}
 				{ skin.E
 					? <div class="unit-skin-effect">
@@ -155,7 +155,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 							</div>
 						</BootstrapTooltip>
 					</div>
-					: <Fragment />
+					: <></>
 				}
 				{ skin.M
 					? <div class="unit-skin-motion">
@@ -168,7 +168,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 							</div>
 						</BootstrapTooltip>
 					</div>
-					: <Fragment />
+					: <></>
 				}
 				{ skin.Pre
 					? <div class="unit-skin-premium">
@@ -181,7 +181,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 							</div>
 						</BootstrapTooltip>
 					</div>
-					: <Fragment />
+					: <></>
 				}
 
 				{ (!IsSimplified.value && skin.D) || (IsSimplified.value && skin.X)
@@ -189,14 +189,14 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 						data-damaged={ IsDamaged.value ? 1 : 0 }
 						onClick={ (): void => IsDamaged.set(!IsDamaged.value) }
 					/>
-					: <Fragment />
+					: <></>
 				}
 				{ (!IsDamaged.value && skin.S) || (IsDamaged.value && skin.X)
 					? <div class="skin-toggle skin-toggle-simplified"
 						data-simplified={ IsSimplified.value ? 1 : 0 }
 						onClick={ (): void => IsSimplified.set(!IsSimplified.value) }
 					/>
-					: <Fragment />
+					: <></>
 				}
 				{ skin.G
 					? <div
@@ -204,11 +204,11 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 						data-platform={ IsGoogle.value ? 1 : 0 }
 						onClick={ (): void => IsGoogle.set(!IsGoogle.value) }
 					/>
-					: <Fragment />
+					: <></>
 				}
 
 				{ props.detailable
-					? <Fragment>
+					? <>
 						<div class="skin-detail" data-bs-toggle="modal" data-bs-target="#unit-skin-view-detail" />
 						<div class="modal fade" tabIndex={ -1 } id="unit-skin-view-detail">
 							<div class="modal-dialog modal-xl modal-dialog-centered">
@@ -226,19 +226,19 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 							</div>
 						</div>
 
-					</Fragment>
-					: <Fragment />
+					</>
+					: <></>
 				}
 			</div>
 		</div>
 
 		{ props.collapsed
-			? <Fragment>
+			? <>
 				{ skin.artist
 					? <div class="alert alert-primary">
 						<Locale k="UNIT_VIEW_ILLUSTRATOR" /> : { skin.artist }
 					</div>
-					: <Fragment />
+					: <></>
 				}
 				{ skin.sid && !skin.isPro
 					? <div class={ `card mb-2 skin-name-desc ${!skin.artist ? "mt-2" : ""}` }>
@@ -249,10 +249,10 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 							<Locale k={ `CONSUMABLE_DESC_Skin_${unit.uid}_${skin.sid}` } />
 						</div>
 					</div>
-					: <Fragment />
+					: <></>
 				}
-			</Fragment>
-			: <Fragment />
+			</>
+			: <></>
 		}
 	</div>;
 };

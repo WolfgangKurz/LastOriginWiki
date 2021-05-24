@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 import { Link, route } from "preact-router";
 
 import { ROLE_TYPE } from "@/types/Enums";
@@ -16,9 +16,10 @@ import Icon from "@/components/bootstrap-icon";
 import UnitBadge from "@/components/unit-badge";
 import RarityBadge from "@/components/rarity-badge";
 import ItemIcon from "@/components/item-icon";
-import FacilityIcon from "../components/facility-icon";
 import DropItem from "@/components/drop-item";
 import UnitLink from "@/components/unit-link";
+
+import FacilityIcon from "../components/facility-icon";
 
 import "./style.scss";
 
@@ -41,7 +42,7 @@ const FacilityView: FunctionalComponent<FacilityViewProps> = (props) => {
 			const d = Math.floor(duration / 86400);
 			return <Locale k="FACILITY_TIME_DAY_FORMAT" p={ [d, dt] } />;
 		}
-		return <Fragment>{ dt }</Fragment>;
+		return <>{ dt }</>;
 	}
 
 	return <Loader
@@ -86,14 +87,12 @@ const FacilityView: FunctionalComponent<FacilityViewProps> = (props) => {
 							case "Defender":
 							case "Supporter":
 								return <UnitBadge class="mx-1" role={ roleTable[y] } />;
-							default:
-								if (/^[0-9]+$/.test(y)) {
-									const unit = FilterableUnitDB.find(z => z.id.toString() === y);
-									if (!unit) return <span class="badge bg-secondary">???</span>;
+							default: {
+								const unit = FilterableUnitDB.find(z => z.uid === y);
+								if (!unit) return <span class="badge bg-secondary">???</span>;
 
-									return <UnitLink uid={unit.uid} />;
-								}
-								return <Fragment>{ y }</Fragment>;
+								return <UnitLink uid={ unit.uid } />;
+							}
 						}
 					}),
 				);
@@ -231,7 +230,7 @@ const FacilityView: FunctionalComponent<FacilityViewProps> = (props) => {
 				.filter((x, i) => i > 0)
 				.map(x => {
 					const Material = getUpgradeRequired(x.upgradeRequired.Material);
-					return <Fragment>
+					return <>
 						<tr>
 							<td class="bg-dark text-light" colSpan={ 6 }>
 								{ x.level - 1 }
@@ -279,7 +278,7 @@ const FacilityView: FunctionalComponent<FacilityViewProps> = (props) => {
 						<tr>
 							<td colSpan={ 6 } />
 						</tr>
-					</Fragment>;
+					</>;
 				});
 
 			const entry = facility.list[level.value - 1];
@@ -357,7 +356,7 @@ const FacilityView: FunctionalComponent<FacilityViewProps> = (props) => {
 										? <span class="text-secondary">
 											<Locale k="FACILITY_COST_NO" />
 										</span>
-										: <Fragment>
+										: <>
 											<span class="badge bg-warning text-dark mx-1">
 												<Locale k="COMMON_RES_PARTS" /> { entry.cost[0] }
 											</span>
@@ -367,7 +366,7 @@ const FacilityView: FunctionalComponent<FacilityViewProps> = (props) => {
 											<span class="badge bg-primary mx-1">
 												<Locale k="COMMON_RES_POWER" /> { entry.cost[2] }
 											</span>
-										</Fragment>
+										</>
 									}
 								</div>
 

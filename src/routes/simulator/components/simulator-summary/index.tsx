@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 import Decimal from "decimal.js";
 
 import { ACTOR_CLASS, ROLE_TYPE, TARGET_TYPE } from "@/types/Enums";
@@ -59,7 +59,7 @@ interface SimulatorSummaryProps {
 
 const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => {
 	const slot = props.slot;
-	if (!slot) return <Fragment />;
+	if (!slot) return <></>;
 
 	const uid = slot.uid;
 	const includeBuffs = objState<boolean>(true);
@@ -138,10 +138,10 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 		const FilterableEquip = GetJson<FilterableEquip[]>(StaticDB.FilterableEquip);
 
 		const unit = FilterableUnit.find(x => x.uid === uid);
-		if (!unit) return <Fragment />;
+		if (!unit) return <></>;
 
 		const unitInfo = GetJson<Unit>(`unit/${slot.uid}`);
-		if (!unitInfo) return <Fragment />;
+		if (!unitInfo) return <></>;
 
 		const baseStats = unitInfo
 			? unitInfo.stat[slot.rarity - unitInfo.rarity]
@@ -500,7 +500,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 		return <div class="card bg-dark text-light simulator-summary">
 			<div class="card-body text-start">
 				{ baseStats
-					? <Fragment>
+					? <>
 						<div class="head-grid">
 							<UnitFace uid={ unitUid } size="80" />
 
@@ -537,21 +537,21 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 
 							<div class="unit-linkbonus">
 								{ slot.links.reduce((p, c) => p + c, 0) !== 500 || slot.linkBonus === ""
-									? <Fragment>
+									? <>
 										<span class="me-1">
 											<Locale k="UNIT_VIEW_FULL_LINKBONUS" />
 										</span>
 										<Locale k="LINKBONUS_NONE" />
-									</Fragment>
+									</>
 									: ((): preact.VNode => {
 										const fl = GetLinkBonus(slot.linkBonus, 1);
 
-										return <Fragment>
+										return <>
 											<span class="me-1">
 												<Locale k={ fl.Name } />
 											</span>
 											{ fl.Prefix }{ fl.Value }{ fl.Postfix }
-										</Fragment>;
+										</>;
 									})()
 								}
 							</div>
@@ -562,7 +562,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 									{ costData.metal }
 									{/* slot.linkBonus.startsWith("Cost")
 											? <span class="value-diff diff-minus">{ costData.discountedMetal }</span>
-											: <Fragment />*/
+											: <></>*/
 									}
 								</span>
 
@@ -586,7 +586,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 										? <span class={ `value-diff diff-${statValues.HP.final > statValues.HP.base ? "plus" : "minus"}` }>
 											{ statValues.HP.up }
 										</span>
-										: <Fragment />
+										: <></>
 									}
 								</strong>
 								<div class="hp-bar">
@@ -648,7 +648,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 						</div>
 
 						<div class="body-grid">
-							{ statList1.map(({ stat, postfix }) => <Fragment>
+							{ statList1.map(({ stat, postfix }) => <>
 								<span class="body-label">
 									<StatIcon stat={ stat } />
 									<Locale k={ `SIMULATOR_${stat}` } />
@@ -657,31 +657,31 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 									{ ((): preact.VNode => {
 										const s = statValues[stat];
 										return typeof s === "number"
-											? <Fragment>
+											? <>
 												{ s < 0
 													? <span class="text-danger">{ s }</span>
 													: s
 												}
 												{ postfix }
-											</Fragment>
-											: <Fragment>
+											</>
+											: <>
 												{ s.final < s.base
 													? <span class="text-danger">{ s.final }</span>
 													: s.final
 												}
 												{ s.base !== s.final
 													? <span class={ `value-diff diff-${s.final > s.base ? "plus" : "minus"}` }>{ s.up }</span>
-													: <Fragment />
+													: <></>
 												}
 												{ postfix }
-											</Fragment>;
+											</>;
 									})() }
 								</span>
-							</Fragment>) }
+							</>) }
 
 							<hr />
 
-							{ statList2.map(({ stat, icon, postfix }) => <Fragment>
+							{ statList2.map(({ stat, icon, postfix }) => <>
 								<span class="body-label">
 									<BuffIcon buff={ icon } />
 									<Locale k={ `SIMULATOR_${stat}` } />
@@ -690,40 +690,40 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 									{ ((): preact.VNode => {
 										const s = statValues[stat];
 										return typeof s === "number"
-											? <Fragment>
+											? <>
 												{ s < 0
 													? <span class="text-danger">
 														{ stat === "Range"
-															? s > 0 ? "+" : s < 0 ? "" : <Fragment />
-															: <Fragment />
+															? s > 0 ? "+" : s < 0 ? "" : <></>
+															: <></>
 														}
 														{ s }
 													</span>
-													: <Fragment>
+													: <>
 														{ stat === "Range"
-															? s > 0 ? "+" : s < 0 ? "" : <Fragment />
-															: <Fragment />
+															? s > 0 ? "+" : s < 0 ? "" : <></>
+															: <></>
 														}
 														{ s }
-													</Fragment>
+													</>
 												}
 
 												{ postfix }
-											</Fragment>
-											: <Fragment>
+											</>
+											: <>
 												{ s.final < s.base
 													? <span class="text-danger">{ s.final }</span>
 													: s.final
 												}
 												{ s.base !== s.final
 													? <span class={ `value-diff diff-${s.final > s.base ? "plus" : "minus"}` }>{ s.up }</span>
-													: <Fragment />
+													: <></>
 												}
 												{ postfix }
-											</Fragment>;
+											</>;
 									})() }
 								</span>
-							</Fragment>) }
+							</>) }
 
 							<hr />
 						</div>
@@ -745,8 +745,8 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 								{ statValues.ResistLightning }%
 							</span>
 						</div>
-					</Fragment>
-					: <Fragment />
+					</>
+					: <></>
 				}
 			</div>
 		</div>;

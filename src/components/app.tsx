@@ -1,4 +1,4 @@
-import { FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 import { Route, Router } from "preact-router";
 import Redirect from "@/components/redirect";
 

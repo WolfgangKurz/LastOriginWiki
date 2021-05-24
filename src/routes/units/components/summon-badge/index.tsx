@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 import Decimal from "decimal.js";
 
 import { SkillEntity, SkillSummonInfo } from "@/types/DB/Skill";
@@ -31,14 +31,14 @@ interface SummonBadgeProps {
 
 const SummonBadge: FunctionalComponent<SummonBadgeProps> = (props) => {
 	const summon = props.summon;
-	if (!summon) return <Fragment />;
+	if (!summon) return <></>;
 
 	const display = objState<boolean>(false);
 	const displayTab = objState<string>("skill1");
 
 	return <Loader json={ `summon/${summon.char}` } content={ ((): preact.VNode => {
 		const Summon = GetJson<Summon>(`summon/${summon.char}`);
-		if (!Summon) return <Fragment />;
+		if (!Summon) return <></>;
 
 		const uid = UniqueID("summon-badge-modal-");
 		const imageExt = ImageExtension();
@@ -294,7 +294,7 @@ const SummonBadge: FunctionalComponent<SummonBadgeProps> = (props) => {
 										`${skill.icon}_${skill.passive ? "passive" : "active"}.${imageExt}`,
 									].join("/") }
 								/>
-								: <Fragment />
+								: <></>
 							}
 						</div>) }
 						<div
@@ -334,20 +334,20 @@ const SummonBadge: FunctionalComponent<SummonBadgeProps> = (props) => {
 											? <span class="badge bg-warning text-dark me-1">
 												<Locale k="ENEMY_SKILL_DISMISS_GUARD" />
 											</span>
-											: <Fragment />
+											: <></>
 										}
 										{ skill.buff.target_ground
 											? <span class="badge bg-danger me-1" title={ LocaleGet("ENEMY_SKILL_GRID_TARGET_TIP") }>
 												<Locale k="ENEMY_SKILL_GRID_TARGET" />
 											</span>
-											: <Fragment />
+											: <></>
 										}
 										{ skill.buff.acc_bonus
 											? <span class="badge bg-success me-1">
 												<Locale k="ENEMY_SKILL_ACC_BONUS" />
 												{ (skill.buff.acc_bonus > 0 ? "+" : "") + skill.buff.acc_bonus }%
 											</span>
-											: <Fragment />
+											: <></>
 										}
 									</div>
 									<hr class="my-1" />
@@ -369,11 +369,11 @@ const SummonBadge: FunctionalComponent<SummonBadgeProps> = (props) => {
 
 								{ buffList[skill.key].length > 0
 									? <BuffList list={ buffList[skill.key] } />
-									: <Fragment />
+									: <></>
 								}
 							</div>
 						</div>
-						: <Fragment />) }
+						: <></>) }
 
 					{ displayTab.value === "ai"
 						? <div class="row">
@@ -385,7 +385,7 @@ const SummonBadge: FunctionalComponent<SummonBadgeProps> = (props) => {
 								/>
 							</div>
 						</div>
-						: <Fragment />
+						: <></>
 					}
 				</div>
 			</PopupBase>

@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 import { Link } from "preact-router";
 
 import { ROGUE_CELL_TYPE } from "@/types/Enums";
@@ -89,7 +89,7 @@ const RoguelikeNodeContent: FunctionalComponent = () => {
 				return getItemCache[item];
 			}
 
-			const dropdownContent = <Fragment>
+			const dropdownContent = <>
 				<button
 					class="btn btn-secondary dropdown-toggle"
 					type="button"
@@ -122,7 +122,7 @@ const RoguelikeNodeContent: FunctionalComponent = () => {
 						</a>
 					</li>) }
 				</ul>
-			</Fragment>;
+			</>;
 
 			const QuestRewards = ((): Record<string, RewardTypeBase[]> => {
 				const f = (x: RawReward): RewardTypeBase | null => {
@@ -219,7 +219,7 @@ const RoguelikeNodeContent: FunctionalComponent = () => {
 											<DropEquip equip={ reward.equip } />
 											{ reward.count > 1
 												? `x${reward.count}`
-												: <Fragment />
+												: <></>
 											}
 										</Link>;
 									}
@@ -259,7 +259,7 @@ const RoguelikeNodeContent: FunctionalComponent = () => {
 								<div class="col icon-container bg-light">
 									{ x.icon
 										? <img class={ style["node-icon"] } src={ `${AssetsRoot}/${ext}/rogue/${x.icon}.${ext}` } />
-										: <Fragment />
+										: <></>
 									}
 								</div>
 								<div class="col nested">
@@ -302,26 +302,26 @@ const RoguelikeNodeContent: FunctionalComponent = () => {
 										? <span class="text-secondary">
 											<Locale k="ROGUELIKE_NODE_REWARD_EMPTY" />
 										</span>
-										: <Fragment />
+										: <></>
 									}
 
 									{ rewards.length === 0
-										? <Fragment />
-										: <Fragment>
+										? <></>
+										: <>
 											{ randomType.includes(x.type)
 												? <Locale k="ROGUELIKE_NODE_REWARD_RANDOM_DESC" />
-												: <Fragment />
+												: <></>
 											}
 											<div class="row row-cols-1 row-cols-md-2">{ rewards }</div>
-										</Fragment>
+										</>
 									}
-									{ rewards.length > 0 && buffs.length > 0 ? <hr /> : <Fragment /> }
+									{ rewards.length > 0 && buffs.length > 0 ? <hr /> : <></> }
 									{ buffs.length > 0
-										? <Fragment>
+										? <>
 											<Locale k="ROGUELIKE_NODE_EFFECTS_DESC" />
 											<div class="row row-cols-1 row-cols-md-2">{ buffs }</div>
-										</Fragment>
-										: <Fragment />
+										</>
+										: <></>
 									}
 								</div>
 							</div>
