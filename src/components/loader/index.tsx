@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 
 import { objState } from "@/libs/State";
 import { DataRoot } from "@/libs/Const";
@@ -152,7 +152,7 @@ const Loader: FunctionalComponent<LoaderProps> = (props) => {
 	if (state.value === LoaderState.EMPTY) {
 		if (target.every(x => x in CachedJson)) {
 			state.set(LoaderState.DONE);
-			return <Fragment>{ props.content ? props.content() : props.children }</Fragment>;
+			return <>{ props.content ? props.content() : props.children }</>;
 		}
 
 		state.set(LoaderState.REQUEST);
@@ -163,13 +163,13 @@ const Loader: FunctionalComponent<LoaderProps> = (props) => {
 
 	switch (state.value) {
 		case LoaderState.DONE:
-			return <Fragment>{ props.content ? props.content() : props.children }</Fragment>;
+			return <>{ props.content ? props.content() : props.children }</>;
 		case LoaderState.REQUEST:
 			return props.loading || LoadingBadge();
 		case LoaderState.ERROR:
 			return props.error || FailedToLoadBadge(target);
 		default:
-			return <Fragment />;
+			return <></>;
 	}
 };
 export default Loader;

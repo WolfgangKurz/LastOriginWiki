@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 
 import { ROLE_TYPE } from "@/types/Enums";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
@@ -150,7 +150,7 @@ const Simulator: FunctionalComponent = () => {
 					<Icon icon="bug-fill" class="me-1" />
 					<span>DevMode</span>
 				</span>
-				: <Fragment />
+				: <></>
 			}
 
 			<div class="row justify-content-center mt-2">
@@ -314,7 +314,7 @@ const Simulator: FunctionalComponent = () => {
 										}
 									} }
 								/>
-								: <Fragment />
+								: <></>
 							}
 							{ editTab.value === 1
 								? <SimulatorEquips
@@ -384,21 +384,21 @@ const Simulator: FunctionalComponent = () => {
 										target.set(n);
 									} }
 								/>
-								: <Fragment />
+								: <></>
 							}
 
 							{ editTab.value === 2
 								? <div class="my-3 text-secondary">
 									<Locale k="SIMULATOR_TBA_3" />
 								</div>
-								: <Fragment />
+								: <></>
 							}
 
 							{ !FlattenGrid[selectedSlot.value].value && editTab.value === 1
 								? <div class="my-3 text-secondary">
 									<Locale k="SIMULATOR_SELECT_FIRST" />
 								</div>
-								: <Fragment />
+								: <></>
 							}
 						</div>
 					</div>

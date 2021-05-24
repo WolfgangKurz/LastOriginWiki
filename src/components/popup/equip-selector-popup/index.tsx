@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 import { ACTOR_GRADE, ITEM_GRADE, ITEM_TYPE } from "@/types/Enums";
@@ -112,7 +112,7 @@ const EquipSelectorPopup: FunctionalComponent<EquipSelectorPopupProps> = (props)
 					<Locale k="POPUP_EQUIP_SELECT" />
 				</button>
 				{ props.noClear
-					? <Fragment />
+					? <></>
 					: <button class="btn btn-danger">
 						<Locale k="POPUP_EQUIP_CLEAR" />
 					</button>

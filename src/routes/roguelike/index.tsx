@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 
 import { objState } from "@/libs/State";
 import { isActive } from "@/libs/Functions";
@@ -93,15 +93,15 @@ const Roguelike: FunctionalComponent = () => {
 				<div class="border border-top-0 p-3">
 					{ tabIndex.value === 0
 						? <RoguelikeQuestContent />
-						: <Fragment />
+						: <></>
 					}
 					{ tabIndex.value === 1
 						? <RoguelikeNodeContent />
-						: <Fragment />
+						: <></>
 					}
 					{ tabIndex.value === 2
 						? <RoguelikePassiveContent />
-						: <Fragment />
+						: <></>
 					}
 				</div>
 			</div >;

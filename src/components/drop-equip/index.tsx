@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 
@@ -31,11 +31,11 @@ const DropEquip: FunctionalComponent<DropEquipProps> = (props) => {
 
 					{ count > 1
 						? <span class="badge bg-dark ms-1">x{ count }</span>
-						: <Fragment />
+						: <></>
 					}
 					{ chance < 100
 						? <small class="ps-1 text-bold">({ chance }%)</small>
-						: <Fragment />
+						: <></>
 					}
 				</div>
 			</div>

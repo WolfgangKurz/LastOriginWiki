@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 
 import { ACTOR_GRADE } from "@/types/Enums";
 import { SimulatorSlotType } from "../../types/Slot";
@@ -36,7 +36,7 @@ const SimulatorSlot: FunctionalComponent<SimulatorSlotProps> = (props) => {
 				? <span class="badge bg-dark flag-leader">
 					<Icon icon="flag-fill" />
 				</span>
-				: <Fragment />
+				: <></>
 			}
 			<UnitFace uid={ uid } sd />
 			<span class={ `badge bg-dark rarity-${rarity}-text flag-rarity` }>{ rarity }</span>
@@ -46,19 +46,19 @@ const SimulatorSlot: FunctionalComponent<SimulatorSlotProps> = (props) => {
 		</div>
 
 		{ props.settable
-			? <Fragment>
+			? <>
 				{ !slot
 					? <div class="slot-adder" >
 						<Icon icon="plus" />
 					</div>
-					: <Fragment />
+					: <></>
 				}
 				<a href="#" class="stretched-link" onClick={ (e): void => {
 					e.preventDefault();
 					if (props.onSelect) props.onSelect(e);
 				} } />
-			</Fragment>
-			: <Fragment />
+			</>
+			: <></>
 		}
 	</div>;
 };

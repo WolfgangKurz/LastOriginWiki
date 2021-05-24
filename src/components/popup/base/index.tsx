@@ -1,5 +1,5 @@
 import { Modal } from "bootstrap";
-import { Component, Fragment, h } from "preact";
+import { Component } from "preact";
 
 import { UniqueID } from "@/libs/Functions";
 
@@ -68,7 +68,7 @@ export default class PopupBase extends Component<PopupBaseProps> {
 	}
 
 	render (): preact.VNode {
-		// if (!this.props.display) return <Fragment />;
+		// if (!this.props.display) return <></>;
 
 		return <div
 			class={ `modal fade ${this.props.class || ""} text-dark` }
@@ -91,13 +91,13 @@ export default class PopupBase extends Component<PopupBaseProps> {
 					].filter(x => x).join(" ") }>
 						{ this.props.header
 							? <h5 class="modal-title">{ this.props.header }</h5>
-							: <Fragment />
+							: <></>
 						}
 						{ this.props.headerEnd
 							? <div class="modal-title-end" style={ { marginLeft: "auto" } }>
 								{ this.props.headerEnd }
 							</div>
-							: <Fragment />
+							: <></>
 						}
 						<button
 							type="button"
@@ -116,7 +116,7 @@ export default class PopupBase extends Component<PopupBaseProps> {
 						].filter(x => x).join(" ") }>
 							{ this.props.footer }
 						</div>
-						: <Fragment />
+						: <></>
 					}
 				</div>
 			</div>

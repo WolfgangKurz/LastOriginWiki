@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 import Decimal from "decimal.js";
 import render from "preact-render-to-string";
 
@@ -127,7 +127,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 		if (name.startsWith("Char_")) {
 			const key = name.replace(/Char_(.+)_N/, "$1");
 			const unit = FilterableUnitDB.find(x => x.uid === key);
-			if (!unit) return <Fragment>{ key }</Fragment>;
+			if (!unit) return <>{ key }</>;
 
 			return <span class={ `on-subbadge ${style["on-subbadge"]} ${color ? `text-${color}` : ""}` }>
 				<Locale plain k={ `UNIT_${unit.uid}` } />
@@ -160,7 +160,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 
 	function getChanceText (chance: string | undefined): preact.VNode {
 		if (!chance) chance = "100%";
-		if (chance === "100%") return <Fragment />;
+		if (chance === "100%") return <></>;
 
 		return <span class="badge bg-success ms-3">
 			<Locale plain k="BUFFCHANCE" p={ [chance] } />
@@ -196,22 +196,22 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 				return <Locale plain k="BUFFTYPE_SPD" p={ [p] } />;
 			case BUFFEFFECT_TYPE.STAT_RESFIRE_VALUE: // 14
 			case BUFFEFFECT_TYPE.STAT_RESFIRE_RATIO: // 15
-				return <Fragment>
+				return <>
 					<ElemIcon elem="fire" class="me-1 mb-0" />
 					<Locale plain k="BUFFTYPE_FIRE_RES" p={ [p] } />
-				</Fragment>;
+				</>;
 			case BUFFEFFECT_TYPE.STAT_RESICE_VALUE: // 16
 			case BUFFEFFECT_TYPE.STAT_RESICE_RATIO: // 17
-				return <Fragment>
+				return <>
 					<ElemIcon elem="ice" class="me-1 mb-0" />
 					<Locale plain k="BUFFTYPE_ICE_RES" p={ [p] } />
-				</Fragment>;
+				</>;
 			case BUFFEFFECT_TYPE.STAT_RESLIGHTNING_VALUE: // 18
 			case BUFFEFFECT_TYPE.STAT_RESLIGHTNING_RATIO: // 19
-				return <Fragment>
+				return <>
 					<ElemIcon elem="lightning" class="me-1 mb-0" />
 					<Locale plain k="BUFFTYPE_THUNDER_RES" p={ [p] } />
-				</Fragment>;
+				</>;
 			case BUFFEFFECT_TYPE.STAGE_AP_VALUE: // 20
 			case BUFFEFFECT_TYPE.STAGE_AP_SHIFT: // 21
 				return <Locale plain k="BUFFTYPE_AP" p={ [p] } />;
@@ -220,33 +220,33 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 			case BUFFEFFECT_TYPE.UI_INFO_NEXTENEMY: // 23
 				return <Locale plain k="BUFFTYPE_SCOUT" />;
 			case BUFFEFFECT_TYPE.STAGE_THORNS_RATIO: // 24
-				return <Fragment>STAGE_THORNS_RATIO{ p }</Fragment>; // 사용처 없음, 알 수 없음 (이름으로 보아, 공격 시 공격 일부가 반사되는 것으로 보임)
+				return <>STAGE_THORNS_RATIO{ p }</>; // 사용처 없음, 알 수 없음 (이름으로 보아, 공격 시 공격 일부가 반사되는 것으로 보임)
 			case BUFFEFFECT_TYPE.STAGE_REFLECTPHYSICS_VALUE: // 25
-				return <Fragment>STAGE_REFLECTPHYSICS_VALUE{ p }</Fragment>; // 사용처 없음, 알 수 없음 (위와 동일하게 반사되는 것으로 보임, 물리 속성으로)
+				return <>STAGE_REFLECTPHYSICS_VALUE{ p }</>; // 사용처 없음, 알 수 없음 (위와 동일하게 반사되는 것으로 보임, 물리 속성으로)
 			case BUFFEFFECT_TYPE.STAGE_REFLECTFIRE_VALUE: // 26
-				return <Fragment>STAGE_REFLECTFIRE_VALUE{ p }</Fragment>; // 사용처 없음, 알 수 없음 (위와 동일하게 반사되는 것으로 보임, 화염 속성으로)
+				return <>STAGE_REFLECTFIRE_VALUE{ p }</>; // 사용처 없음, 알 수 없음 (위와 동일하게 반사되는 것으로 보임, 화염 속성으로)
 			case BUFFEFFECT_TYPE.STAGE_REFLECTICE_VALUE: // 27
-				return <Fragment>STAGE_REFLECTICE_VALUE{ p }</Fragment>; // 사용처 없음, 알 수 없음 (위와 동일하게 반사되는 것으로 보임, 냉기 속성으로)
+				return <>STAGE_REFLECTICE_VALUE{ p }</>; // 사용처 없음, 알 수 없음 (위와 동일하게 반사되는 것으로 보임, 냉기 속성으로)
 			case BUFFEFFECT_TYPE.STAGE_REFLECTLIGHTNIG_VALUE: // 28
-				return <Fragment>STAGE_REFLECTLIGHTNIG_VALUE{ p }</Fragment>; // 사용처 없음, 알 수 없음 (위와 동일하게 반사되는 것으로 보임, 전기 속성으로)
+				return <>STAGE_REFLECTLIGHTNIG_VALUE{ p }</>; // 사용처 없음, 알 수 없음 (위와 동일하게 반사되는 것으로 보임, 전기 속성으로)
 			case BUFFEFFECT_TYPE.STAGE_REFLECTPHYSICS_RATIO_DEFENDER: // 29
 				return <Locale plain k="BUFFTYPE_COUNT" />; // 피격자가 물리 반격
 			case BUFFEFFECT_TYPE.STAGE_REFLECTFIRE_RATIO_DEFENDER: // 30
-				return <Fragment>STAGE_REFLECTFIRE_RATIO_DEFENDER{ p }</Fragment>; // 사용처 없음, 알 수 없음
+				return <>STAGE_REFLECTFIRE_RATIO_DEFENDER{ p }</>; // 사용처 없음, 알 수 없음
 			case BUFFEFFECT_TYPE.STAGE_REFLECTICE_RATIO_DEFENDER: // 31
-				return <Fragment>STAGE_REFLECTICE_RATIO_DEFENDER{ p }</Fragment>; // 사용처 없음, 알 수 없음
+				return <>STAGE_REFLECTICE_RATIO_DEFENDER{ p }</>; // 사용처 없음, 알 수 없음
 			case BUFFEFFECT_TYPE.STAGE_REFLECTLIGHTNIG_RATIO_DEFENDER: // 32
-				return <Fragment>STAGE_REFLECTLIGHTNIG_RATIO_DEFENDER{ p }</Fragment>; // 사용처 없음, 알 수 없음
+				return <>STAGE_REFLECTLIGHTNIG_RATIO_DEFENDER{ p }</>; // 사용처 없음, 알 수 없음
 			case BUFFEFFECT_TYPE.STAGE_IMMUNESHIELD_TIME: // 33
 				return <Locale plain k="BUFFTYPE_DMG_IMMUNE" />; // 피해 무효화
 			case BUFFEFFECT_TYPE.STAGE_SHIELD_VALUE: // 34
 				return <Locale plain k="BUFFTYPE_DMG_MINIMIZE" />; // value 이하 피해 1로 적용
 			case BUFFEFFECT_TYPE.STAGE_SHIELD_VALUE_LIMITED: // 35
-				return <Fragment>STAGE_SHIELD_VALUE_LIMITED{ p }</Fragment>; // 사용처 없음, 알 수 없음
+				return <>STAGE_SHIELD_VALUE_LIMITED{ p }</>; // 사용처 없음, 알 수 없음
 			case BUFFEFFECT_TYPE.STAGE_SHIELD_RATIO: // 36
 				return <Locale plain k="BUFFTYPE_GET_DMG_DOWN" />; // 받는 피해 감소
 			case BUFFEFFECT_TYPE.STAGE_SHIELD_RATIO_LIMITED: // 37
-				return <Fragment>STAGE_SHIELD_RATIO_LIMITED{ p }</Fragment>; // 사용처 없음, 알 수 없음
+				return <>STAGE_SHIELD_RATIO_LIMITED{ p }</>; // 사용처 없음, 알 수 없음
 			case BUFFEFFECT_TYPE.STAGE_IMMUNESHIELD_VALUE: // 38
 				return <Locale plain k="BUFFTYPE_BARRIER" />; // 방어막
 			case BUFFEFFECT_TYPE.STAGE_DAMAGEPHYSICS_RATIO: // 39
@@ -262,15 +262,15 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 			case BUFFEFFECT_TYPE.STAGE_DAMAGELIGHTNING_VALUE: // 46
 				return <Locale plain k="BUFFTYPE_ADDDMG_THUNDER" />;
 			case BUFFEFFECT_TYPE.STAGE_LOCKON01_TIME: // 47
-				return <Fragment>STAGE_LOCKON01_TIME{ p }</Fragment>; // 사용처 없음, 알 수 없음
+				return <>STAGE_LOCKON01_TIME{ p }</>; // 사용처 없음, 알 수 없음
 			case BUFFEFFECT_TYPE.STAGE_ADDDAMAGE_RATIO: // 48
 				return <Locale plain k="BUFFTYPE_GET_DMG_UP" />; // 받는 피해 증가 %
 			case BUFFEFFECT_TYPE.STAGE_ADDDAMAGE_VALUE: // 49
-				return <Fragment>STAGE_ADDDAMAGE_VALUE{ p }</Fragment>; // 사용처 없음, 받는 피해 증가 고정값
+				return <>STAGE_ADDDAMAGE_VALUE{ p }</>; // 사용처 없음, 받는 피해 증가 고정값
 			case BUFFEFFECT_TYPE.STAGE_BLOCK_COLUMN: // 50
 				return <Locale plain k="BUFFTYPE_BLOCK_COLUMN" />; // 행 보호
 			case BUFFEFFECT_TYPE.STAGE_BLOCK_GRID: // 51
-				return <Fragment>STAGE_BLOCK_GRID{ p }</Fragment>; // 사용처 없음, 격자 보호?
+				return <>STAGE_BLOCK_GRID{ p }</>; // 사용처 없음, 격자 보호?
 			case BUFFEFFECT_TYPE.STAGE_MOVE_BACK: // 52
 				return <Locale plain k="BUFFTYPE_PUSH" />;
 			case BUFFEFFECT_TYPE.STAGE_MOVE_FRONT: // 53
@@ -280,13 +280,13 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 			case BUFFEFFECT_TYPE.STAT_RANGE_VALUE: // 55
 				return <Locale plain k="BUFFTYPE_RANGE" p={ [p] } />;
 			case BUFFEFFECT_TYPE.STAGE_AGRO_VALUE: // 56
-				return <Fragment>STAGE_AGRO_VALUE{ p }</Fragment>; // 사용처 없음, 알 수 없음
+				return <>STAGE_AGRO_VALUE{ p }</>; // 사용처 없음, 알 수 없음
 			case BUFFEFFECT_TYPE.STAGE_DEFPIERCE_VALUE: // 57
-				return <Fragment>STAGE_DEFPIERCE_VALUE{ p }</Fragment>; // 방어 관통 고정값?
+				return <>STAGE_DEFPIERCE_VALUE{ p }</>; // 방어 관통 고정값?
 			case BUFFEFFECT_TYPE.STAGE_DEFPIERCE_RATIO: // 58
 				return <Locale plain k="DEF_PIERCE" p={ [p] } />;
 			case BUFFEFFECT_TYPE.STAGE_GRID_CHANGE: // 59
-				return <Fragment>STAGE_GRID_CHANGE{ p }</Fragment>; // 사용처 없음, 알 수 없음
+				return <>STAGE_GRID_CHANGE{ p }</>; // 사용처 없음, 알 수 없음
 			case BUFFEFFECT_TYPE.STAGE_TROOPERTYPEDMGBONUS_RATIO: // 60
 				return <Locale plain k="BUFFTYPE_ANTI_LIGHT_DMG" p={ [p] } />;
 			case BUFFEFFECT_TYPE.STAGE_ARMOREDTYPEDMGBONUS_RATIO: // 61
@@ -360,7 +360,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 			case BUFFEFFECT_TYPE.STAGE_EXP_UP: // 95
 				return <Locale plain k="BUFFTYPE_EXP" p={ [p] } />;
 			case BUFFEFFECT_TYPE.STAGE_ANALYZE: // 96
-				return <Fragment>STAGE_ANALYZE{ p }</Fragment>; // 사용처 없음, 알 수 없음
+				return <>STAGE_ANALYZE{ p }</>; // 사용처 없음, 알 수 없음
 			case BUFFEFFECT_TYPE.STAGE_IMMUNITY_DEBUFF: // 101
 				return <Locale plain k="BUFFTYPE_DEBUFF_IMMUNE" p={ [p] } />; // 효과 면역
 			case BUFFEFFECT_TYPE.STAGE_TOGETHER_ATTACK_ACTIVE_SKILL_1: // 102
@@ -370,7 +370,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 			case BUFFEFFECT_TYPE.STAT_MAXHP_RATIO: // 105
 				return <Locale plain k="BUFFTYPE_MAXHP" p={ [p] } />;
 		}
-		return <Fragment>???</Fragment>;
+		return <>???</>;
 	}
 	function getTriggerText (trigger: BuffTrigger): preact.VNode {
 		if (typeof trigger === "string") {
@@ -410,7 +410,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 			}
 		} else if (trigger) {
 			if ("_comment" in trigger)
-				return <Fragment>{ trigger._comment }</Fragment>;
+				return <>{ trigger._comment }</>;
 			else if ("after" in trigger) {
 				switch (trigger.after) {
 					case "counter":
@@ -421,20 +421,20 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 			} else if ("damaged" in trigger) {
 				switch (trigger.damaged) {
 					case "fire":
-						return <Fragment>
+						return <>
 							<ElemIcon elem={ trigger.damaged } class="me-1 mb-0" />
 							<Locale plain k="BUFFTRIGGER_DAMAGED_FIRE" />
-						</Fragment>;
+						</>;
 					case "ice":
-						return <Fragment>
+						return <>
 							<ElemIcon elem={ trigger.damaged } class="me-1 mb-0" />
 							<Locale plain k="BUFFTRIGGER_DAMAGED_ICE" />
-						</Fragment>;
+						</>;
 					case "lightning":
-						return <Fragment>
+						return <>
 							<ElemIcon elem={ trigger.damaged } class="me-1 mb-0" />
 							<Locale plain k="BUFFTRIGGER_DAMAGED_THUNDER" />
-						</Fragment>;
+						</>;
 				}
 			} else if ("hp>=" in trigger) {
 				if (typeof trigger["hp>="] === "string")
@@ -480,7 +480,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 					.map(convertBuff)
 					.unique(VNodeUnique);
 				return <Locale plain k="BUFFTRIGGER_IN_SQUAD" p={ [
-					<Fragment>{ src.gap(<Locale plain k="BUFFTRIGGER_OR" />) }</Fragment>,
+					<>{ src.gap(<Locale plain k="BUFFTRIGGER_OR" />) }</>,
 				] } />;
 			} else if ("in_enemy" in trigger) {
 				if (typeof trigger.in_enemy === "string")
@@ -490,7 +490,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 					.map(convertBuff)
 					.unique(VNodeUnique);
 				return <Locale plain k="BUFFTRIGGER_IN_ENEMY" p={ [
-					<Fragment>{ src.gap(<Locale plain k="BUFFTRIGGER_OR" />) }</Fragment>,
+					<>{ src.gap(<Locale plain k="BUFFTRIGGER_OR" />) }</>,
 				] } />;
 			} else if ("pos" in trigger) {
 				if (typeof trigger.pos === "number") {
@@ -529,7 +529,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 						return <Locale plain k={ `BUFFTRIGGER_ON_SINGLE_${trigger.on.func}` } p={ [select[0]] } />;
 
 					return <Locale plain k={ `BUFFTRIGGER_ON_MULTIPLE_${trigger.on.func}` } p={ [
-						<Fragment>{ select.gap(", ") }</Fragment>,
+						<>{ select.gap(", ") }</>,
 					] } />;
 				} else if ("target" in trigger.on && "stack" in trigger.on) {
 					const select = (trigger.on.select as string[])
@@ -540,7 +540,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 					const target = <Locale plain k={ `BUFFTARGET_${trigger.on.target.toUpperCase()}` } />;
 					const params = [
 						target,
-						<Fragment>{ select.gap(", ") }</Fragment>,
+						<>{ select.gap(", ") }</>,
 						trigger.on.stack,
 					];
 					return <Locale plain k={ `BUFFTRIGGER_ON_STACK_TARGET_${select.length === 1 ? "SINGLE" : "MULTIPLE"}` } p={ params } />;
@@ -565,14 +565,14 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 						// BuffTrigger_On_BuffTypeExists
 						return <Locale plain k={ `BUFFTRIGGER_ON_TARGET_MULTIPLE_${trigger.on.func}` } p={ [
 							target,
-							<Fragment>{ out }</Fragment>,
+							<>{ out }</>,
 						] } />;
 					}
 
 					// BuffTrigger_On_BuffExists
 					return <Locale plain k={ `BUFFTRIGGER_ON_TARGET_MULTIPLE_${trigger.on.func}` } p={ [
 						target,
-						<Fragment>{ out }</Fragment>,
+						<>{ out }</>,
 					] } />;
 				}
 			} else if ("target" in trigger) {
@@ -583,7 +583,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 					.map(convertBuff)
 					.unique(VNodeUnique);
 				return <Locale plain k="BUFFTRIGGER_ON_TARGET_SINGLE_OR" p={ [
-					<Fragment>{ list.gap(", ") }</Fragment>,
+					<>{ list.gap(", ") }</>,
 				] } />;
 			} else if ("unitCount" in trigger) {
 				const filters = typeof trigger.unitCount.filter === "string"
@@ -598,14 +598,14 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 					<Locale plain k="COMMON_UNIT_TYPE_MOBILITY" />,
 				];
 				const typeText = type.length === 3
-					? [<Fragment />]
+					? [<></>]
 					: type.map(x => _classes[x]).gap("/");
 
 				const typeCountParams = [
-					<Fragment>{ typeText }</Fragment>,
-					<Fragment>{ typeof count === "number" ? count : count.gap("/") }</Fragment>,
+					<>{ typeText }</>,
+					<>{ typeof count === "number" ? count : count.gap("/") }</>,
 				];
-				const countParams = [<Fragment>{ count }</Fragment>];
+				const countParams = [<>{ count }</>];
 
 				if (filters.includes("all")) {
 					if (filters.includes("bioroid"))
@@ -636,13 +636,13 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 				return <Locale plain k={ `BUFFTRIGGER_ROUND_${trigger.round.operator}` } p={ [trigger.round.round] } />;
 			else if ("notInBattle" in trigger)
 				return <Locale plain k="BUFFTRIGGER_NOT_IN_BATTLE" p={ [trigger.notInBattle.join(",")] } />;
-			return <Fragment>???</Fragment>;
+			return <>???</>;
 		}
-		return <Fragment />;
+		return <></>;
 	}
 	function getBuffText (stat: BuffEffect, level?: number): preact.VNode {
 		if ("_comment" in stat)
-			return <Fragment>{ stat._comment }</Fragment>;
+			return <>{ stat._comment }</>;
 		else if ("off" in stat) {
 			if (typeof stat.off === "string")
 				return <Locale plain k="BUFFEFFECT_OFF" p={ [stat.off] } />;
@@ -683,20 +683,20 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 			if ("elem" in stat.resist) {
 				switch (stat.resist.elem) {
 					case "fire":
-						return <Fragment>
+						return <>
 							<ElemIcon elem={ stat.resist.elem } class="mx-1 mb-0" />
 							<Locale plain k="BUFFEFFECT_FIRE_RES" p={ [signedValue(stat.resist.value, level)] } />
-						</Fragment>;
+						</>;
 					case "ice":
-						return <Fragment>
+						return <>
 							<ElemIcon elem={ stat.resist.elem } class="mx-1 mb-0" />
 							<Locale plain k="BUFFEFFECT_ICE_RES" p={ [signedValue(stat.resist.value, level)] } />
-						</Fragment>;
+						</>;
 					case "lightning":
-						return <Fragment>
+						return <>
 							<ElemIcon elem={ stat.resist.elem } class="mx-1 mb-0" />
 							<Locale plain k="BUFFEFFECT_THUNDER_RES" p={ [signedValue(stat.resist.value, level)] } />
-						</Fragment>;
+						</>;
 				}
 			}
 
@@ -722,20 +722,20 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 			if ("elem" in stat.damage) {
 				switch (stat.damage.elem) {
 					case "fire":
-						return <Fragment>
+						return <>
 							<ElemIcon elem={ stat.damage.elem } class="me-1 mb-0" />
 							<Locale plain k="BUFFEFFECT_ADDDMG_FIRE" p={ [nsignedValue(stat.damage.damage, level)] } />
-						</Fragment>;
+						</>;
 					case "ice":
-						return <Fragment>
+						return <>
 							<ElemIcon elem={ stat.damage.elem } class="me-1 mb-0" />
 							<Locale plain k="BUFFEFFECT_ADDDMG_ICE" p={ [nsignedValue(stat.damage.damage, level)] } />
-						</Fragment>;
+						</>;
 					case "lightning":
-						return <Fragment>
+						return <>
 							<ElemIcon elem={ stat.damage.elem } class="me-1 mb-0" />
 							<Locale plain k="BUFFEFFECT_ADDDMG_THUNDER" p={ [nsignedValue(stat.damage.damage, level)] } />
-						</Fragment>;
+						</>;
 				}
 			}
 			return <Locale plain k="BUFFEFFECT_ADDDMG_PHYSICS" p={ [nsignedValue(stat.damage, level)] } />;
@@ -757,20 +757,20 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 			if ("elem" in stat.damage_add) {
 				switch (stat.damage_add.elem) {
 					case "fire":
-						return <Fragment>
+						return <>
 							<ElemIcon elem={ stat.damage_add.elem } class="me-1 mb-0" />
 							<Locale plain k="BUFFEFFECT_DMG_FIRE" p={ [signedValue(stat.damage_add.damage, level)] } />
-						</Fragment>;
+						</>;
 					case "ice":
-						return <Fragment>
+						return <>
 							<ElemIcon elem={ stat.damage_add.elem } class="me-1 mb-0" />
 							<Locale plain k="BUFFEFFECT_DMG_ICE" p={ [signedValue(stat.damage_add.damage, level)] } />
-						</Fragment>;
+						</>;
 					case "lightning":
-						return <Fragment>
+						return <>
 							<ElemIcon elem={ stat.damage_add.elem } class="me-1 mb-0" />
 							<Locale plain k="BUFFEFFECT_DMG_THUNDER" p={ [signedValue(stat.damage_add.damage, level)] } />
-						</Fragment>;
+						</>;
 				}
 			}
 			return <Locale plain k="BUFFEFFECT_DMG" p={ [signedValue(stat.damage_add, level)] } />;
@@ -863,7 +863,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 						<Locale plain k={ `UNIT_SKILL_active${stat.collaborate.skill}_${convertBuffToUid(stat.collaborate.with)}` } />,
 						LocaleGet(`UNIT_SKILL_Factive${stat.collaborate.skill}_${convertBuffToUid(stat.collaborate.with)}`)
 							.startsWith("UNIT_SKILL_Factive")
-							? <Fragment />
+							? <></>
 							: [
 								" / ",
 								<Locale plain k={ `UNIT_SKILL_Factive${stat.collaborate.skill}_${convertBuffToUid(stat.collaborate.with)}` } />,
@@ -874,7 +874,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 		} else if ("max_hp" in stat)
 			return <Locale plain k="BUFFEFFECT_MAXHP" p={ [signedValue(stat.max_hp, level)] } />;
 
-		return <Fragment>{ JSON.stringify(stat) }</Fragment>; // "???";
+		return <>{ JSON.stringify(stat) }</>; // "???";
 	}
 	function getEraseText (erase: BuffErase): preact.VNode {
 		if ("trigger" in erase) {
@@ -888,7 +888,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 				return <Locale plain k="BUFFERASE_ROUND_TRIGGER" p={ [erase.rounds, trigger] } />;
 			return <Locale plain k="BUFFERASE_TRIGGER" p={ [trigger] } />;
 		} else if ("rounds" in erase) {
-			if (erase.rounds === 0) return <Fragment />;
+			if (erase.rounds === 0) return <></>;
 			return <Locale plain k="BUFFERASE_ROUND" p={ [erase.rounds] } />;
 		}
 		return <Locale plain k="BUFFERASE_PERMANENT" />;
@@ -925,10 +925,10 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 			? null
 			: role.map(x => _roles[x]).gap("/");
 
-		return <Fragment>
+		return <>
 			{ [b, c, r].filter(x => x !== null).gap("/") }
 			<span> { targetSide }</span>
-		</Fragment>;
+		</>;
 	}
 
 	function formatDesc (
@@ -1031,7 +1031,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 										<Icon icon="plus" />
 									</button>
 								</div>
-								: <Fragment />
+								: <></>
 							}
 							<input
 								class="form-check-input"
@@ -1058,27 +1058,27 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 						<div class="float-end text-end">
 							{ on
 								? <span class="badge bg-success ms-1 text-wrap">{ on }</span>
-								: <Fragment />
+								: <></>
 							}
 							{ target
 								? <span class="badge bg-stat-def ms-1 text-wrap">
 									<Locale plain k="BUFFTARGET_TO" p={ [target] } />
 								</span>
-								: <Fragment />
+								: <></>
 							}
 							{ apply
 								? <span class="badge bg-danger ms-1 text-wrap">{ apply }</span>
-								: <Fragment />
+								: <></>
 							}
 							{ erase
 								? <span class="badge bg-warning text-dark ms-1 text-wrap">{ erase }</span>
-								: <Fragment />
+								: <></>
 							}
 							{ stat.maxStack > 0
 								? <span class="badge bg-dark ms-1 text-wrap">
 									<Locale plain k="BUFFSTACK" p={ [stat.maxStack] } />
 								</span>
-								: <Fragment />
+								: <></>
 							}
 						</div>
 					</div>
@@ -1087,7 +1087,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 		});
 	}
 
-	return <Fragment>{ elems.map(x => <li class="list-group-item">{ x }</li>) }</Fragment>;
+	return <>{ elems.map(x => <li class="list-group-item">{ x }</li>) }</>;
 };
 
 interface BuffListProps {
@@ -1136,7 +1136,7 @@ const BuffChecklist: FunctionalComponent<BuffListProps> = (props) =>
 				? <ul class="list-group text-start">
 					<BuffRenderer stat={ staticList } level={ level } />
 				</ul>
-				: <Fragment />
+				: <></>
 			}
 			{ buffs.map(stats => <ul class="list-group text-start">{ stats }</ul>) }
 		</div>;

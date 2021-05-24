@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 import merge from "deepmerge";
 
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
@@ -90,7 +90,7 @@ const UnitSelectorPopup: FunctionalComponent<UnitSelectorPopupProps> = (props) =
 					<Locale k="POPUP_UNIT_SELECT" />
 				</button>
 				{ props.noClear
-					? <Fragment />
+					? <></>
 					: <button class="btn btn-danger">
 						<Locale k="POPUP_UNIT_CLEAR" />
 					</button>

@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 import { Link, route } from "preact-router";
 
 import { ACTOR_GRADE } from "@/types/Enums";
@@ -97,7 +97,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 			const WorldName = <Locale k={ `WORLD_${props.wid}` } fallback={ props.wid } />;
 			const AreaName = (props.wid in MapDB) && (props.mid in MapDB[props.wid])
 				? <Locale k={ `WORLD_WORLD_${props.wid}_${props.mid}` } fallback={ <Locale k={ "WORLDS_WORLD_TITLE" } p={ [props.mid] } /> } />
-				: <Fragment>???</Fragment>;
+				: <>???</>;
 
 			const selectedValue = selected.value;
 
@@ -275,7 +275,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 
 			function SubstoryName (text: string): preact.VNode {
 				const unit = FilterableUnitDB.find(x => x.uid === SubStoryUnit[text]);
-				if (!unit) return <Fragment>???</Fragment>;
+				if (!unit) return <>???</>;
 				return <Locale k={ `UNIT_${unit.uid}` } />;
 			}
 
@@ -319,14 +319,14 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 					<div class="card-header">
 						{ props.wid === "Sub"
 							? <h5 class="m-0 d-inline-block">{ WorldName }</h5>
-							: <Fragment>
+							: <>
 								{ WorldName }
 								<h5 class="m-0 d-inline-block">
 									<span class="badge bg-warning text-dark ms-2">
 										<Locale k="WORLDS_WORLD_TITLE" p={ [props.mid] } /> :: { AreaName }
 									</span>
 								</h5>
-							</Fragment>
+							</>
 						}
 					</div>
 					<div class="worlds-map-bg">
@@ -393,7 +393,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 									? <div class="float-start me-3">
 										<UnitFace uid={ SubStoryUnit[selectedValue.text] } size="56" />
 									</div>
-									: <Fragment />
+									: <></>
 								}
 
 								<span class="badge bg-warning text-dark me-2 selected-node-badge">
@@ -408,7 +408,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 							<div><Locale plain k={ `WORLD_MAP_DESC_${props.wid}_${selectedValue.text}` } /></div>
 						</div>
 					</div>
-					: <Fragment />
+					: <></>
 				}
 
 				<EnemyPopup
@@ -603,7 +603,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 								</div>
 							}
 						</div>
-						: <Fragment />
+						: <></>
 					}
 					{ CurrentTab.value === "drop"
 						? <div id="world-map-drops" class="card-body">
@@ -671,7 +671,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 									</div>
 								</div> }
 						</div>
-						: <Fragment />
+						: <></>
 					}
 					{ CurrentTab.value === "enemy"
 						? <div id="world-map-enemies" class="card-body text-center">
@@ -679,7 +679,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 								? <div class="py-4 text-secondary">
 									<Locale k="WORLD_VIEW_SELECT_NODE" />
 								</div>
-								: <Fragment>
+								: <>
 									<div class="mb-2">
 										<span class="badge bg-danger">
 											<Locale k="WORLD_VIEW_ENEMY_TOTAL_EXP" p={ [TotalExp] } />
@@ -737,7 +737,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 										<div class="enemy-grid">
 											{ CurrentWave.map((enemy, pos) => <div>
 												{ enemy
-													? <Fragment>
+													? <>
 														<img src={ `${AssetsRoot}/${ImageExt}/tbar/${enemy.enemy.icon}.${ImageExt}` } />
 														<div class="my-1" style="font-size:0.8em;font-weight:bold">
 															<Locale k={ `ENEMY_${enemy.enemy.id}` } />
@@ -750,8 +750,8 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 															e.preventDefault();
 															OpenEnemyInfo(enemy.enemy, enemy.lv);
 														} } />
-													</Fragment>
-													: <Fragment />
+													</>
+													: <></>
 												}
 											</div>) }
 										</div>
@@ -770,15 +770,15 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 											<Icon icon="chevron-right" />
 										</span>
 									</div>
-								</Fragment> }
+								</> }
 						</div>
-						: <Fragment />
+						: <></>
 					}
 					{ CurrentTab.value === "search"
 						? <div id="world-map-search" class="card-body text-center">
 							<MapSearchInfo searchInfo={ SearchInfo } />
 						</div>
-						: <Fragment />
+						: <></>
 					}
 				</div>
 			</div>;

@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 
 import { RawUnitDialogueEntity, UnitDialogueDataType } from "@/types/DB/Dialogue";
 import { Unit, UnitSkin } from "@/types/DB/Unit";
@@ -176,13 +176,13 @@ const UnitDialogue: FunctionalComponent<UnitDialogueProps> = (props) => {
 
 				{ voice.isMarriage
 					? <strong class="text-danger ps-4"><Locale k="UNIT_DIALOGUE_MARRIAGE" /></strong>
-					: <Fragment />
+					: <></>
 				}
 				{ IsMissing
 					? <span class="badge bg-danger ms-3"><Locale k="UNIT_DIALOGUE_EMPTY" /></span>
 					: IsPartial
 						? <span class="badge bg-warning text-dark ms-3"><Locale k="UNIT_DIALOGUE_MISSING" /></span>
-						: <Fragment />
+						: <></>
 				}
 			</div>
 			<div id={ collapseId } class="collapse">
@@ -197,6 +197,6 @@ const UnitDialogue: FunctionalComponent<UnitDialogueProps> = (props) => {
 				</div>
 			</div>
 		</div>
-		: <Fragment />;
+		: <></>;
 };
 export default UnitDialogue;

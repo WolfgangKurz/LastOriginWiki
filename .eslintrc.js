@@ -46,6 +46,8 @@ module.exports = {
 		quotes: ["warn", "double"],
 		"no-tabs": "off",
 
+		"react/jsx-key": "off",
+
 		indent: ["warn", "tab", {
 			SwitchCase: 1,
 		}],

@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 import { Link, route } from "preact-router";
 import Decimal from "decimal.js";
 
@@ -197,12 +197,12 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 						? <span class="badge bg-warning text-dark ms-2">
 							<Locale k="ENEMY_VIEW_EW" />
 						</span>
-						: <Fragment />
+						: <></>
 					}
-					{ target.isBoss ? <span class="badge bg-danger ms-2">BOSS</span> : <Fragment /> }
+					{ target.isBoss ? <span class="badge bg-danger ms-2">BOSS</span> : <></> }
 					<div style="font-size: 60%">{ target.id }</div>
 				</div>
-				: <Fragment />
+				: <></>
 			}
 			onHidden={ (): void => {
 				if (!props.asSub && window.location.pathname !== "/enemies")
@@ -215,7 +215,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 			} }
 		>
 			{ target
-				? <Fragment>
+				? <>
 					{ FamilyList.length > 1
 						? <div class="mb-1">
 							<select
@@ -231,7 +231,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 								{ FamilyList.map(x => <option value={ x.value }>{ x.text }</option>) }
 							</select>
 						</div>
-						: <Fragment />
+						: <></>
 					}
 
 					<a href={ EnemyLink } class="text-secondary">
@@ -404,14 +404,14 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 											</tbody>
 										</table>
 									</td>
-									: <Fragment />
+									: <></>
 								}
 							</tr>
 						</tbody>
 					</table>
 
 					{ targetEnemy.value
-						? <Fragment>
+						? <>
 							<div class="container">
 								<div class="row row-cols-4 row-cols-md-8 enemy-display-tabs mt-1">
 									{ SkillsTab.map((skill, idx) => skill
@@ -476,7 +476,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 															? <span class="badge bg-warning text-dark me-1">
 																<Locale k="ENEMY_SKILL_DISMISS_GUARD" />
 															</span>
-															: <Fragment />
+															: <></>
 														}
 														{ skill.buff.target_ground
 															? <span
@@ -485,14 +485,14 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 															>
 																<Locale k="ENEMY_SKILL_GRID_TARGET" />
 															</span>
-															: <Fragment />
+															: <></>
 														}
 														{ skill.buff.acc_bonus
 															? <span class="badge bg-success me-1">
 																<Locale k="ENEMY_SKILL_ACC_BONUS" />
 																{ (skill.buff.acc_bonus > 0 ? "+" : "") + skill.buff.acc_bonus }%
 															</span>
-															: <Fragment />
+															: <></>
 														}
 													</div>
 													<hr class="my-1" />
@@ -514,11 +514,11 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 
 												{ buffList[skill.key].length > 0
 													? <BuffList list={ buffList[skill.key] } />
-													: <Fragment />
+													: <></>
 												}
 											</div>
 										</div>
-										: <Fragment />)
+										: <></>)
 								}
 								{ displayTab.value === "ai"
 									? <div class="row">
@@ -526,7 +526,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 											<AIList ai={ targetEnemy.value.ai } skills={ Skills } enemy />
 										</div>
 									</div>
-									: <Fragment />
+									: <></>
 								}
 								{ displayTab.value === "desc"
 									? <div class="row">
@@ -536,7 +536,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 											</div>
 										</div>
 									</div>
-									: <Fragment />
+									: <></>
 								}
 							</div>
 
@@ -546,7 +546,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 								</div>
 								<div class="card-body p-2">
 									{ Sources.map((area, aindex) => <div>
-										{ aindex > 0 ? <hr class="my-2" /> : <Fragment /> }
+										{ aindex > 0 ? <hr class="my-2" /> : <></> }
 										{ area.length > 0 && area[0].IsEvent
 											? <h6 style="font-weight: bold">
 												<Locale k={ area[0].EventName } />
@@ -559,31 +559,31 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 													? <h6 style="font-weight: bold">
 														<Locale k="COMMON_SOURCE_SUBSTORY_SINGLE" />
 													</h6>
-													: <Fragment />
+													: <></>
 										}
 
 										{ area.map(source => <SourceBadge class="my-1" source={ source } linked />) }
 									</div>) }
 									{ isEWEnemy
-										? <Fragment>
-											{ Sources.length > 0 ? <hr class="my-2" /> : <Fragment /> }
+										? <>
+											{ Sources.length > 0 ? <hr class="my-2" /> : <></> }
 											<span class="badge bg-dark text-light">
 												<Locale k="ENEMY_VIEW_EW" />
 											</span>
-										</Fragment>
+										</>
 										: Object.keys(Sources).length === 0
 											? <div class="secondary">
 												<Locale k="ENEMY_VIEW_STAGE_NONE" />
 											</div>
-											: <Fragment />
+											: <></>
 									}
 								</div>
 							</div>
-						</Fragment>
-						: <Fragment />
+						</>
+						: <></>
 					}
-				</Fragment>
-				: <Fragment />
+				</>
+				: <></>
 			}
 		</PopupBase>;
 	}) } />;

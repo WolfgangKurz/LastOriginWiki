@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h, render } from "preact";
+import { FunctionalComponent } from "preact";
 import { route } from "preact-router";
 
 import Decimal from "decimal.js";
@@ -340,7 +340,7 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 							? <span class="badge bg-success ms-1">
 								▲ { Decimal.div(props.skillBonus, 100).toNumber() }
 							</span>
-							: <Fragment />;
+							: <></>;
 
 						const signF = (x: string | Array<string | preact.VNode | preact.VNode[]>): string => {
 							if (Array.isArray(x)) {

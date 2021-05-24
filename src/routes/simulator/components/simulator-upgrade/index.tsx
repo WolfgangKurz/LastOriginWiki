@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 import Decimal from "decimal.js";
 
 import { ACTOR_GRADE } from "@/types/Enums";
@@ -43,7 +43,7 @@ const SimulatorUpgrade: FunctionalComponent<SimulatorUpgradeProps> = (props) => 
 
 	const slot = props.slot;
 	if (!slot) {
-		return <Fragment>
+		return <>
 			<UnitSelectorPopup
 				display={ displayUnitPopup.value }
 				noClear
@@ -73,7 +73,7 @@ const SimulatorUpgrade: FunctionalComponent<SimulatorUpgradeProps> = (props) => 
 					<Locale k="SIMULATOR_UNIT_CLEAR" />
 				</button>
 			</div>
-		</Fragment>;
+		</>;
 	}
 
 	const uid = slot.uid;
@@ -82,10 +82,10 @@ const SimulatorUpgrade: FunctionalComponent<SimulatorUpgradeProps> = (props) => 
 	return <Loader json={ [StaticDB.FilterableUnit, `unit/${slot.uid}`] } content={ ((): preact.VNode => {
 		const FilterableUnit = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
 		const unit = FilterableUnit.find(x => x.uid === uid);
-		if (!unit) return <Fragment />;
+		if (!unit) return <></>;
 
 		const unitInfo = GetJson<Unit>(`unit/${slot.uid}`);
-		if (!unitInfo) return <Fragment />;
+		if (!unitInfo) return <></>;
 
 		const UsedPoints = Object.values(slot.stats).reduce((p, c) => p + c, 0);
 		const LeftPoints = (slot.level * 3) - UsedPoints;
@@ -125,7 +125,7 @@ const SimulatorUpgrade: FunctionalComponent<SimulatorUpgradeProps> = (props) => 
 			}
 		}
 
-		return <Fragment>
+		return <>
 			<UnitSelectorPopup
 				display={ displayUnitPopup.value }
 				noClear
@@ -183,7 +183,7 @@ const SimulatorUpgrade: FunctionalComponent<SimulatorUpgradeProps> = (props) => 
 							>
 								{ RarityDisplay[rarity] }
 							</button>
-							: <Fragment />,
+							: <></>,
 						) }
 					</div>
 				</div>
@@ -206,7 +206,7 @@ const SimulatorUpgrade: FunctionalComponent<SimulatorUpgradeProps> = (props) => 
 					>
 						{ RarityDisplay[rarity] }
 					</button>
-					: <Fragment />,
+					: <></>,
 				) }
 			</div>
 
@@ -316,7 +316,7 @@ const SimulatorUpgrade: FunctionalComponent<SimulatorUpgradeProps> = (props) => 
 						</tr>) }
 					</tbody>
 				</table>
-				: <Fragment />
+				: <></>
 			}
 
 			<hr />
@@ -379,7 +379,7 @@ const SimulatorUpgrade: FunctionalComponent<SimulatorUpgradeProps> = (props) => 
 					</tr>) }
 				</tbody>
 			</table>
-		</Fragment>;
+		</>;
 	}) } />;
 };
 export default SimulatorUpgrade;

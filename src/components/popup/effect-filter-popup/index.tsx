@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 
 import { EffectFilterListType } from "@/types/Buff";
 import { BuffEffectListGroupKeys } from "@/types/BuffEffect";
@@ -69,7 +69,7 @@ const EffectFilterPopup: FunctionalComponent<EffectFilterPopupProps> = (props) =
 		props.setter(list);
 	}
 
-	return <Fragment>
+	return <>
 		<button class={ `btn btn-dark ${props.class || ""}` } onClick={ (): void => popupDisplay.set(true) }>
 			{ typeof props.display === "string" ? <Locale k={ props.display } /> : props.display }
 		</button>
@@ -121,6 +121,6 @@ const EffectFilterPopup: FunctionalComponent<EffectFilterPopupProps> = (props) =
 				</tbody>
 			</table>
 		</PopupBase>
-	</Fragment>;
+	</>;
 };
 export default EffectFilterPopup;

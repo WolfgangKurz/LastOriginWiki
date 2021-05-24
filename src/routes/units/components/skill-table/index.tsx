@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 
 import { Unit } from "@/types/DB/Unit";
 import { SkillEntity, SkillGroup } from "@/types/DB/Skill";
@@ -55,7 +55,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 			});
 		return table;
 	})();
-	if (!skills) return <Fragment />;
+	if (!skills) return <></>;
 
 	const formState = objState<"normal" | "change">("normal");
 	const skillLevel = objState<LevelType>(9);
@@ -121,7 +121,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 			.map(x => skill.buffs.data[x].rate);
 	}
 
-	const skillHeader = <Fragment>
+	const skillHeader = <>
 		<Locale k="UNIT_SKILL_DESCRIPTION" />
 		<select
 			class="form-select form-select-sm table-unit-level-select"
@@ -162,15 +162,15 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 				</label>
 			</div>
 		</div>
-	</Fragment>;
+	</>;
 
-	const tableContent = (skill: SkillItem): preact.VNode => <Fragment>
+	const tableContent = (skill: SkillItem): preact.VNode => <>
 		<div class="unit-modal-skill">
 			{ skill.buffs.data[skill.buffs.index[skillLevel.value]].dismiss_guard
 				? <span class="badge bg-warning text-dark me-1">
 					<Locale k="UNIT_SKILL_DISMISS_GUARD" />
 				</span>
-				: <Fragment />
+				: <></>
 			}
 
 			{ skill.buffs.data[skill.buffs.index[skillLevel.value]].target_ground && !skill.isPassive
@@ -179,7 +179,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 				>
 					<Locale k="UNIT_SKILL_GRID_TARGET" />
 				</span>
-				: <Fragment />
+				: <></>
 			}
 
 			{ skill.buffs.data[skill.buffs.index[skillLevel.value]].acc_bonus
@@ -190,7 +190,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 						skill.buffs.data[skill.buffs.index[skillLevel.value]].acc_bonus
 					}%
 				</span>
-				: <Fragment />
+				: <></>
 			}
 
 			<SummonBadge summon={ skill.buffs.data[skill.buffs.index[skillLevel.value]].summon } class="me-1" />
@@ -223,14 +223,14 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 					<Locale k="UNIT_SKILL_BUFF_RATE_DESC" />
 				</small>
 			</div>
-			: <Fragment />
+			: <></>
 		}
 
 		{ displayBuffList.value && buffList[skill.key].length > 0
 			? <BuffList list={ buffList[skill.key] } level={ finalSkillLevel } />
-			: <Fragment />
+			: <></>
 		}
-	</Fragment>;
+	</>;
 
 	const endRarity = unit.promotions
 		? Math.max(unit.rarity, ...unit.promotions)
@@ -252,7 +252,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 								onClick={ (): void => formState.set("change") }
 							>F.Change</button>
 						</div>
-						: <Fragment />
+						: <></>
 					}
 				</th>
 			</tr>
@@ -266,7 +266,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 			</tr>
 		</thead>
 		<tbody>
-			{ Skills.map(skill => <Fragment>
+			{ Skills.map(skill => <>
 				<tr>
 					<td>
 						<img
@@ -286,7 +286,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 									&nbsp;
 									<Locale k="UNIT_SKILL_PROMOTION_SKILL" />
 								</RarityBadge>
-								: <Fragment />
+								: <></>
 						}
 					</td>
 					<td class="text-start d-none d-md-table-cell">{ tableContent(skill) }</td>
@@ -303,7 +303,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 				<tr class="d-table-row d-md-none">
 					<td class="text-start" colSpan={ 2 }>{ tableContent(skill) }</td>
 				</tr>
-			</Fragment>) }
+			</>) }
 		</tbody>
 	</table>;
 };

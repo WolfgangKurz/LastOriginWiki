@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 import { Link, route } from "preact-router";
 import Decimal from "decimal.js";
 
@@ -90,7 +90,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 		const isExclusive: boolean = target !== null && target.limit !== null && target.limit.every(y => typeof y === "number");
 
 		const EquipType = ((): preact.VNode => {
-			if (!props.equip) return <Fragment>???</Fragment>;
+			if (!props.equip) return <>???</>;
 
 			const table: Record<ITEM_TYPE, string> = {
 				[ITEM_TYPE.CHIP]: "EQUIP_FILTER_TYPE_CHIP",
@@ -206,7 +206,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 			bodyClass="pb-0"
 			display={ props.display && target !== null }
 			header={ target
-				? <Fragment>
+				? <>
 					<div class="row">
 						<div class="col-auto">
 							<img
@@ -219,8 +219,8 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 							<div style="font-size: 60%">{ target.fullKey }</div>
 						</div>
 					</div>
-				</Fragment>
-				: <Fragment />
+				</>
+				: <></>
 			}
 			onHidden={ (): void => {
 				if (!props.asSub && window.location.pathname !== "/equips")
@@ -231,7 +231,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 			} }
 		>
 			{ target
-				? <Fragment>
+				? <>
 					<div class="container table-equip-modal mb-3 text-center">
 						<div class="row row-cols-1 row-cols-md-2">
 							<div class="col icon-container">
@@ -246,15 +246,15 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 									<div class="col badge-container">
 										{ isUninstalled
 											? <span class="badge bg-dark"><Locale k="EQUIP_VIEW_TYPE_NOT_IMPLEMENTED" /></span>
-											: <Fragment />
+											: <></>
 										}
 										{ isRoguelike
 											? <span class="badge bg-warning text-dark"><Locale k="EQUIP_VIEW_TYPE_ROGUELIKE" /></span>
-											: <Fragment />
+											: <></>
 										}
 										{ isExclusive
 											? <span class="badge bg-primary"><Locale k="EQUIP_VIEW_TYPE_EXCLUSIVE" /></span>
-											: <Fragment />
+											: <></>
 										}
 										<div>
 											<span class="badge bg-success">{ EquipType }</span>
@@ -341,7 +341,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 					</ul>
 					<div class="mb-3">
 						{ displayTab.value === "info"
-							? <Fragment>
+							? <>
 								<table class="table table-bordered table-fixed text-center mb-0">
 									<tbody>
 										<tr>
@@ -366,9 +366,9 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 									</tbody>
 								</table>
 
-								{ StatusList ? <BuffList class="mt-2" list={ StatusList.value } /> : <Fragment /> }
-							</Fragment>
-							: <Fragment />
+								{ StatusList ? <BuffList class="mt-2" list={ StatusList.value } /> : <></> }
+							</>
+							: <></>
 						}
 						{ displayTab.value === "drop"
 							? <div class="container">
@@ -378,18 +378,18 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 											? <span class="text-secondary">
 												<Locale k="UNIT_VIEW_DROPS_EMPTY" />
 											</span>
-											: <Fragment>
+											: <>
 												{ target.craft
 													? <span class="badge bg-dark my-1">
 														<Icon icon="hammer" class="me-1" />
 														<Locale k="UNIT_VIEW_DROPS_CREATIONTIME" />
 														<span class="ms-1">{ CraftTime }</span>
 													</span>
-													: <Fragment />
+													: <></>
 												}
 
 												{ target.source.map((area, aindex) => <div>
-													{ target.craft || aindex > 0 ? <hr class="my-1" /> : <Fragment /> }
+													{ target.craft || aindex > 0 ? <hr class="my-1" /> : <></> }
 													{ area.length > 0 && area[0].IsEvent
 														? <h6 style="font-weight: bold">
 															<Locale k={ area[0].EventName } />
@@ -402,17 +402,17 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 																? <h6 style="font-weight: bold">
 																	<Locale k="COMMON_SOURCE_SUBSTORY_SINGLE" />
 																</h6>
-																: <Fragment />
+																: <></>
 													}
 
 													{ area.map(source => <SourceBadge class="my-1" source={ source } linked />) }
 												</div>) }
-											</Fragment>
+											</>
 										}
 									</div>
 								</div>
 							</div>
-							: <Fragment />
+							: <></>
 						}
 						{ displayTab.value === "upgrade"
 							? <table class="table table-bordered text-center">
@@ -452,11 +452,11 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 									}
 								</tbody>
 							</table>
-							: <Fragment />
+							: <></>
 						}
 					</div>
-				</Fragment>
-				: <Fragment />
+				</>
+				: <></>
 			}
 		</PopupBase>;
 	}) } />;

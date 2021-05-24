@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 import { Link } from "preact-router";
 
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
@@ -41,11 +41,11 @@ const Card: FunctionalComponent<UnitCardProps> = (props) => {
 			const sname = LocaleGet(`UNIT_SHORT_${unit.uid}`);
 
 			if (name === sname)
-				return <Fragment>{ name }</Fragment>;
+				return <>{ name }</>;
 
 			return name
 				.split(sname)
-				.map(x => x.length === 0 ? <Fragment>{ sname }</Fragment> : <span class="text-secondary">{ x }</span>);
+				.map(x => x.length === 0 ? <>{ sname }</> : <span class="text-secondary">{ x }</span>);
 		}
 		return <Locale k={ `UNIT_${unit.uid}` } />;
 	})();
@@ -59,7 +59,7 @@ const Card: FunctionalComponent<UnitCardProps> = (props) => {
 				? <div class="unit-role-icon">
 					<img src={ `${AssetsRoot}/icons/CHA_${RoleIconId}${RarityDisplay[unit.rarity]}.png` } />
 				</div>
-				: <Fragment />
+				: <></>
 			}
 
 			<h4 class="card-title">
@@ -78,20 +78,20 @@ const Card: FunctionalComponent<UnitCardProps> = (props) => {
 				<div class="unit-badges">
 					{ unit.body === 1
 						? <span class="badge bg-info ms-1"><Locale k="COMMON_UNIT_BODY_AGS" /></span>
-						: <Fragment />
+						: <></>
 					}
 
 					{ leftPromotions
 						? leftPromotions.map(pro => <RarityBadge class="ms-1" rarity={ pro }>
 							<Locale k="UNIT_CARD_PROMOTION_BADGE" p={ [RarityDisplay[pro]] } />
 						</RarityBadge>)
-						: <Fragment />
+						: <></>
 					}
 				</div>
 			</h4>
 			{ !props.noLink
 				? <Link class="stretched-link unit-stretched" href={ `/units/${unit.uid}` } />
-				: <Fragment />
+				: <></>
 			}
 		</div>
 	</div>;
@@ -114,13 +114,13 @@ const Horizontal: FunctionalComponent<UnitCardProps> = (props) => {
 				? <span class="badge bg-info me-1">
 					<Locale k="COMMON_UNIT_BODY_AGS" />
 				</span>
-				: <Fragment />
+				: <></>
 			}
 			{ isPromoted
 				? <span class="badge bg-danger me-1">
 					<Locale k="UNIT_CARD_PROMOTION_AFTER" />
 				</span>
-				: <Fragment />
+				: <></>
 			}
 
 			{ leftPromotions
@@ -129,7 +129,7 @@ const Horizontal: FunctionalComponent<UnitCardProps> = (props) => {
 						<Locale k="UNIT_CARD_PROMOTION_BADGE" p={ [RarityDisplay[pro]] } />
 					</RarityBadge>) }
 				</div>
-				: <Fragment />
+				: <></>
 			}
 		</div>
 	</div>;

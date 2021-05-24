@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 import Icons from "./icons";
 
 import "./style.scss";
@@ -277,7 +277,7 @@ const Icon: FunctionalComponent<IconProps> = (props) => {
 
 	const icon = props.icon in Icons
 		? Icons[props.icon]
-		: <Fragment />;
+		: <></>;
 
 	return <svg
 		class={ `bi bi-${props.icon} ${props.class || ""}` }

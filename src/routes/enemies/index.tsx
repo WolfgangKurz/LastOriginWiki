@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 
 import { ACTOR_CLASS, ROLE_TYPE } from "@/types/Enums";
 import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
@@ -173,7 +173,7 @@ const Enemies: FunctionalComponent<EnemiesProps> = (props) => {
 				? <div class="alert alert-success">
 					<Locale k="ENEMY_EW_TIP" />
 				</div>
-				: <Fragment />
+				: <></>
 			}
 
 			<EnemyPopup enemy={ selectedEnemy } level={ props.level ? parseInt(props.level, 10) : 1 } display />

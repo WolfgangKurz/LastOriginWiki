@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 import { Link } from "preact-router";
 
 import RoguelikeQuest from "@/types/DB/Roguelike.Quest";
@@ -59,7 +59,7 @@ const RoguelikeQuestContent: FunctionalComponent = () => {
 				return {
 					...x,
 					titleBase: LocaleGet(x.key),
-					rarityBadge: [<Fragment />],
+					rarityBadge: [<></>],
 					rarityText: "",
 				};
 			});
@@ -132,7 +132,7 @@ const RoguelikeQuestContent: FunctionalComponent = () => {
 				return ret;
 			})();
 
-			const dropdownContent = <Fragment>
+			const dropdownContent = <>
 				<button
 					class="btn btn-secondary dropdown-toggle"
 					type="button"
@@ -140,10 +140,10 @@ const RoguelikeQuestContent: FunctionalComponent = () => {
 					aria-expanded="false"
 				>
 					{ selectedGroup
-						? <Fragment>
+						? <>
 							{ selectedGroup.titleBase }
 							{ selectedGroup.rarityBadge }
-						</Fragment>
+						</>
 						: selectedQuestGroup.value
 					}
 				</button>
@@ -162,7 +162,7 @@ const RoguelikeQuestContent: FunctionalComponent = () => {
 						</a>
 					</li>) }
 				</ul>
-			</Fragment>;
+			</>;
 
 			return <div>
 				<div class="text-start mb-3">
@@ -205,13 +205,13 @@ const RoguelikeQuestContent: FunctionalComponent = () => {
 											</Link>;
 										}
 										if ("equip" in reward) {
-											return <Fragment>
+											return <>
 												<DropEquip equip={ reward.equip } />
 												{ reward.count > 1
 													? `x${reward.count}`
-													: <Fragment />
+													: <></>
 												}
-											</Fragment>;
+											</>;
 										}
 										return <DropItem item={ reward.consumable } count={ reward.count } />;
 									}) }

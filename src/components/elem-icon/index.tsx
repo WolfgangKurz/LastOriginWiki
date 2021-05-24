@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 
 import { SKILL_ATTR } from "@/types/Enums";
 
@@ -13,6 +13,6 @@ interface ElemIconProps {
 const ElemIcon: FunctionalComponent<ElemIconProps> = (props) => (
 	props.elem !== undefined
 		? <div class={`elem-icon ${style["elem-icon"]} ${props.class || ""}`} data-elem={ props.elem } data-inline={ props.inline } />
-		: <Fragment />
+		: <></>
 );
 export default ElemIcon;

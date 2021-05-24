@@ -1,4 +1,4 @@
-import { FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 
 import { FilterableFacility } from "@/types/DB/Facility.Filterable";
 

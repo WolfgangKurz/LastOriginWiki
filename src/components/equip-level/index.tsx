@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 
 import style from "./style.scss";
 
@@ -18,6 +18,6 @@ const EquipLevel: FunctionalComponent<EquipLevelProps> = (props) => {
 	})();
 	return lv > 0
 		? <div class={ style["equip-level"] } style={ { fontSize: `${props.size || 20}px` } }>+{ lv }</div>
-		: <Fragment />;
+		: <></>;
 };
 export default EquipLevel;

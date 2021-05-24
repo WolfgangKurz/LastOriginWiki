@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 
 import { SkillEntryData, SkillEntity } from "@/types/DB/Skill";
 
@@ -94,7 +94,7 @@ const SkillBound: FunctionalComponent<SkillBoundProps> = ({ target, buffs, level
 	const prevLevel = objState<number>(level);
 
 	const currentBoundLevel = objState<number>(BoundList.length - 1);
-	const Bound = BoundList[currentBoundLevel.value].bound;
+	const Bound = BoundList[Math.min(BoundList.length - 1, currentBoundLevel.value)].bound;
 
 	if (prevLevel.value !== level) {
 		prevLevel.set(level);
@@ -162,7 +162,7 @@ const SkillBound: FunctionalComponent<SkillBoundProps> = ({ target, buffs, level
 		<div class="skill-grid">
 			{ gridBack }
 			{ IsGlobal
-				? <Fragment />
+				? <></>
 				: <span class="offset" data-pos={ offset } />
 			}
 			{ targets }
@@ -172,7 +172,7 @@ const SkillBound: FunctionalComponent<SkillBoundProps> = ({ target, buffs, level
 			? <div class="global-text">
 				<Locale k="UNIT_SKILL_BOUND_FIXED" />
 			</div>
-			: <Fragment />
+			: <></>
 		}
 		{ target === "team"
 			? <div class="team-text">
@@ -181,7 +181,7 @@ const SkillBound: FunctionalComponent<SkillBoundProps> = ({ target, buffs, level
 					: <Locale k="UNIT_SKILL_BOUND_TEAM" />
 				}
 			</div>
-			: <Fragment />
+			: <></>
 		}
 
 		{ BoundList.length > 1
@@ -198,7 +198,7 @@ const SkillBound: FunctionalComponent<SkillBoundProps> = ({ target, buffs, level
 						Lv.<strong>{ x.level + 1 }</strong>
 					</button>) }
 				</div>)
-			: <Fragment />
+			: <></>
 		}
 	</div>;
 };

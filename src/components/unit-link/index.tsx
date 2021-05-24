@@ -1,4 +1,4 @@
-import preact, { FunctionalComponent, h } from "preact";
+import preact, { FunctionalComponent } from "preact";
 import { Link } from "preact-router";
 
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";

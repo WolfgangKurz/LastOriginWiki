@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 import { Link, route } from "preact-router";
 
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
@@ -57,14 +57,14 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 			else if (Source.IsPrivateItem) {
 				const unit = FilterableUnitDB.find(x => x.uid === Source.PrivateId);
 				if (unit) return <Locale k={ `UNIT_${unit.uid}` } />;
-				return <Fragment>{ Source.PrivateId }</Fragment>;
+				return <>{ Source.PrivateId }</>;
 			} else if (Source.IsLimited)
 				return <Locale k="COMMON_SOURCE_LIMITED" />;
 			else if (Source.IsChallenge) {
 				const key = `COMMON_CHALLENGE_${Source.ChallengeId}`;
 				const name = LocaleExists(key)
 					? <Locale k={ `COMMON_CHALLENGE_${Source.ChallengeId}` } />
-					: <Fragment>{ Source.ChallengeId }</Fragment>;
+					: <>{ Source.ChallengeId }</>;
 
 				const text = Source.IsReward
 					? <Locale k="COMMON_SOURCE_FINISH_REWARD" />
@@ -80,19 +80,19 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 				if (props.minimum)
 					return <Locale k="COMMON_SOURCE_CHALLENGE" />;
 				else if (props.detail) {
-					return <Fragment>{
+					return <>{
 						[
 							<Locale k="COMMON_SOURCE_CHALLENGE" />,
-							<Fragment>({ name }&nbsp;{ Source.ChallengeDifficulty })</Fragment>,
+							<>({ name }&nbsp;{ Source.ChallengeDifficulty })</>,
 							text,
-						].filter(x => x).gap(<Fragment>&nbsp;</Fragment>)
-					}</Fragment>;
+						].filter(x => x).gap(<>&nbsp;</>)
+					}</>;
 				}
-				return <Fragment>{
+				return <>{
 					[name, Source.ChallengeDifficulty]
 						.filter(x => x)
-						.gap(<Fragment>&nbsp;</Fragment>)
-				}</Fragment>;
+						.gap(<>&nbsp;</>)
+				}</>;
 			} else if (Source.IsEndlessWar) {
 				if (props.detail)
 					return <Locale k="COMMON_SOURCE_EW_RESOURCES" p={ [Source.EndlessWarPrice] } />;
@@ -100,15 +100,15 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 			} else if (Source.IsSubStory) {
 				const text = Source.IsReward
 					? <Locale k="COMMON_SOURCE_CLEAR_REWARD" />
-					: <Fragment />;
+					: <></>;
 				if (!props.minimum) {
-					return <Fragment>
+					return <>
 						<Locale
 							k="COMMON_SOURCE_SUBSTORY"
 							p={ [<Locale k={ `UNIT_${Source.SubStoryUnit}` } fallback={ Source.Map } />] }
 						/>
 							 &nbsp;{ text }
-					</Fragment>;
+					</>;
 				}
 				return <Locale k="COMMON_SOURCE_SUBSTORY_SINGLE" />;
 			} else if (Source.IsExchange) {
@@ -118,19 +118,19 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 					const item = Source.ExchangeItemName;
 
 					if (props.detail) {
-						return <Fragment>{
+						return <>{
 							[
 								<Locale k={ event } />,
 								`'${item}'`, // 아이템 아이콘 컴포넌트
 								<Locale k="COMMON_SOURCE_EXCHANGE_COUNT" p={ [data.value] } />,
-							].filter(x => x).gap(<Fragment>&nbsp;</Fragment>)
-						}</Fragment>;
+							].filter(x => x).gap(<>&nbsp;</>)
+						}</>;
 					} else if (props.minimum)
 						return <Locale k="COMMON_SOURCE_EXCHANGE_EVENT" />;
-					return <Fragment>
+					return <>
 						{ event }&nbsp;
 						<Locale k="COMMON_SOURCE_EXCHANGE" />
-					</Fragment>;
+					</>;
 				}
 				const data = Source.MonthlyData || { year: "?", month: "?" };
 				if (!props.minimum)
@@ -139,13 +139,13 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 			}
 			const text = Source.IsReward
 				? <Locale k="COMMON_SOURCE_CLEAR_REWARD" />
-				: <Fragment />;
+				: <></>;
 
 			if (Source.IsEvent) {
 				const event = Source.FullEventName;
 
 				if (props.detail) {
-					return <Fragment>{
+					return <>{
 						[
 							<Locale k={ event } />,
 							Source.Map,
@@ -153,7 +153,7 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 						]
 							.filter(x => x)
 							.gap("&nbsp;")
-					}</Fragment>;
+					}</>;
 				}
 				// else if (minimum && Source.IsExMap)
 				// 	return "이벤트 Ex";
@@ -162,18 +162,18 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 				else if (props.minimum)
 					return <Locale k="COMMON_SOURCE_EVENT" />;
 
-				return <Fragment>{
+				return <>{
 					[
 						Source.Map,
 						text,
-					].filter(x => x).gap(<Fragment>&nbsp;</Fragment>)
-				}</Fragment>;
+					].filter(x => x).gap(<>&nbsp;</>)
+				}</>;
 			}
-			return <Fragment>{
+			return <>{
 				(!props.minimum ? [Source.Map, text] : [Source.Map])
 					.filter(x => x)
-					.gap(<Fragment>&nbsp;</Fragment>)
-			}</Fragment>;
+					.gap(<>&nbsp;</>)
+			}</>;
 		})();
 
 		if (props.linked && (Source.IsMap || Source.IsChallenge || Source.IsSubStory)) {

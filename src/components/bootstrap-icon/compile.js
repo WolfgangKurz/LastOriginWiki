@@ -5,10 +5,10 @@ const dir = __dirname;
 
 const source = path.join(dir, "source");
 // const icons = path.join(dir, "icons");
-const output = path.join(dir, `icons.tsx`);
+const output = path.join(dir, "icons.tsx");
 
-let result = `/* eslint-disable */\nimport { Fragment, h } from "preact";\n`;
-result += `export default {\n`;
+let result = "/* eslint-disable */\n";
+result += "export default {\n";
 
 const dirs = fs.readdirSync(source, { encoding: "utf-8" })
 	.filter(x => x.endsWith(".svg"));
@@ -20,10 +20,10 @@ for (const x of dirs) {
 	content = content.replace(/<\/?svg[^>]*>/g, "");
 
 	if (content.length - content.replaceAll("/>", "").length > 2)
-		result += `"${base}": <Fragment>${content}</Fragment>,\n`;
+		result += `"${base}": <>${content}</>,\n`;
 	else
 		result += `"${base}": ${content.trim()},\n`;
 }
-result += `};\n`;
+result += "};\n";
 
 fs.writeFileSync(output, result, { encoding: "utf-8" });

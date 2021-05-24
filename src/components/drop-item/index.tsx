@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 import { Link } from "preact-router";
 
 import { Consumable } from "@/types/DB/Consumable";
@@ -73,7 +73,7 @@ const DropItem: FunctionalComponent<DropItemProps> = (props) => {
 								} else if (parseItalic)
 									ret.push(<i>{ text }</i>);
 								else
-									ret.push(<Fragment>{ text }</Fragment>);
+									ret.push(<>{ text }</>);
 							}
 
 							parsePhase = 1;
@@ -123,7 +123,7 @@ const DropItem: FunctionalComponent<DropItemProps> = (props) => {
 				} else if (parseItalic)
 					ret.push(<i>{ text }</i>);
 				else
-					ret.push(<Fragment>{ text }</Fragment>);
+					ret.push(<>{ text }</>);
 			}
 			return ret;
 		}
@@ -182,7 +182,7 @@ const DropItem: FunctionalComponent<DropItemProps> = (props) => {
 			</span>;
 		}
 
-		return <Fragment />;
+		return <></>;
 	})();
 
 	return <div class="p-2 text-dark drop-item">
@@ -194,12 +194,12 @@ const DropItem: FunctionalComponent<DropItemProps> = (props) => {
 
 					{ count > 1
 						? <span class="badge bg-dark ms-1">x{ count }</span>
-						: <Fragment />
+						: <></>
 					}
 					<div>
 						{ chance < 100
 							? <span class="badge bg-light text-dark">{ chance }%</span>
-							: <Fragment />
+							: <></>
 						}
 						<Icon icon="info-circle-fill" class="float-end mt-1" />
 					</div>
@@ -227,7 +227,7 @@ const DropItem: FunctionalComponent<DropItemProps> = (props) => {
 				<div class="desc-text">{ ParsedDesc }</div>
 				{ FunctionBadge
 					? <div>{ FunctionBadge }</div>
-					: <Fragment />
+					: <></>
 				}
 			</div> }
 			onHidden={ (): void => display.set(false) }

@@ -1,11 +1,11 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 
 import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
-const Changelog: FunctionalComponent = () => <Fragment>
+const Changelog: FunctionalComponent = () => <>
 	<ChangelogItem title="Build r20200629" date="2020-06-29"
-		new={ <Fragment>
+		new={ <>
 			<li><span class="badge bg-warning text-dark">이그니스</span>정보에 <span class="badge bg-danger">서약 대사 존재 여부</span>가 추가되었습니다.</li>
 			<li><span class="badge bg-warning text-dark">샬럿</span>정보에 <span class="badge bg-danger">서약 대사 존재 여부</span>가 추가되었습니다.</li>
 			<li><span class="badge bg-warning text-dark">콘스탄챠 S2</span>정보에 <span class="badge bg-danger">서약 대사 존재 여부</span>가 추가되었습니다.</li>
@@ -47,11 +47,11 @@ const Changelog: FunctionalComponent = () => <Fragment>
 			<li><span class="badge bg-warning text-dark">블랙 웜 S9</span>정보에 <span class="badge bg-danger">서약 대사 존재 여부</span>가 추가되었습니다.</li>
 			<li><span class="badge bg-warning text-dark">쿠노이치 제로</span>정보에 <span class="badge bg-danger">서약 대사 존재 여부</span>가 추가되었습니다.</li>
 			<li><span class="badge bg-warning text-dark">럼버제인</span>정보에 <span class="badge bg-danger">서약 대사 존재 여부</span>가 추가되었습니다.</li>
-		</Fragment> }
-		update={ <Fragment>
+		</> }
+		update={ <>
 			<li><span class="badge bg-warning text-dark">모의전투</span>레이아웃 변경</li>
-		</Fragment> }
-		skin={ <Fragment>
+		</> }
+		skin={ <>
 			<li>
 				<span class="badge bg-warning text-dark">멸망의 메이</span>의 <span class="badge bg-substory">드림위버 웨딩 스페셜 : 5월의 신부</span>스킨의
 				<span class="badge bg-danger">로비 애니메이션</span>여부와 가격이 변경되었습니다.
@@ -60,11 +60,11 @@ const Changelog: FunctionalComponent = () => <Fragment>
 				<span class="badge bg-warning text-dark">이그니스</span>의 <span class="badge bg-substory">대마왕 뽀끄루의 첫 번째 심복</span>스킨의
 				<span class="badge bg-danger">로비 애니메이션</span>여부와 가격이 변경되었습니다.
 			</li>
-		</Fragment> }
+		</> }
 	/>
 
 	<ChangelogItem title="Build r20200625" date="2020-06-25"
-		new={ <Fragment>
+		new={ <>
 			<li>
 				전 전투원의
 				<span class="badge bg-substory">획득처</span>에 <span class="badge bg-exchange">교환소</span>,
@@ -85,18 +85,18 @@ const Changelog: FunctionalComponent = () => <Fragment>
 				<span class="badge bg-success">사이드 맵</span>, <span class="badge bg-warning text-dark">일반 맵</span>은 해당 맵이 유일한 드랍 장소일 때에만
 		표시됩니다.
 			</li>
-		</Fragment> }
+		</> }
 	/>
 
 	<ChangelogItem title="Build r20200623" date="2020-06-23"
-		bugfix={ <Fragment>
+		bugfix={ <>
 			<li><span class="badge bg-warning text-dark">쿠노이치 제로</span>의 1번째 액티브 스킬 <span class="badge bg-substory">은밀</span>의 공격력 배수 수정</li>
 			<li><span class="badge bg-warning text-dark">쿠노이치 제로</span>의 2번째 액티브 스킬 <span class="badge bg-substory">뇌신 일섬</span>의 행동력 계수 수정</li>
 			<li><span class="badge bg-warning text-dark">SS등급 보조 에너지 팩</span>의 AP 증가치 수정</li>
 			<li><span class="badge bg-warning text-dark">CS 페로</span>의 3번째 패시브 <span class="badge bg-substory">상처 가르기</span>의 설명 오타 수정</li>
 			<li><span class="badge bg-substory">전투원보기</span>의 <span class="badge bg-substory">스킨 상세 보기</span>가 이미지를 제대로 표시하지 않는 문제가 수정되었습니다.</li>
-		</Fragment> }
-		new={ <Fragment>
+		</> }
+		new={ <>
 			<li>전 전투원에 <span class="badge bg-substory">획득처</span>가 추가되었습니다.<br />이벤트 드랍 및 제조는 포함되지 않았습니다.</li>
 			<li><span class="badge bg-warning text-dark">쿠노이치 제로</span>의 스테이터스 정보가 추가되었습니다.</li>
 			<li>
@@ -111,8 +111,8 @@ const Changelog: FunctionalComponent = () => <Fragment>
 			<li><span class="badge bg-warning text-dark">분석 회로 베타</span>장비 정보가 추가되었습니다.</li>
 			<li><span class="badge bg-warning text-dark">회로 내구 강화 베타</span>장비 정보가 추가되었습니다.</li>
 			<li><span class="badge bg-warning text-dark">정밀형 관측 장비</span>장비 정보가 추가되었습니다.</li>
-		</Fragment> }
-		skin={ <Fragment>
+		</> }
+		skin={ <>
 			<li>
 				<span class="badge bg-warning text-dark">T-9 그렘린</span>의 <span class="badge bg-substory">휴일의 그렘린</span>스킨 정보가 추가되었습니다.
 				해당 스킨은 <span class="badge bg-danger">플레이스토어 버전 CG</span>가 포함되어있습니다.
@@ -130,14 +130,14 @@ const Changelog: FunctionalComponent = () => <Fragment>
 				<span class="badge bg-warning text-dark">로열 아스널</span>의
 				<span class="badge bg-substory">드림위버 웨딩 스페셜 : 이 마음을 그대에게</span>스킨의 가격이 변경되었습니다.
 			</li>
-		</Fragment> }
+		</> }
 	/>
 
 	<ChangelogItem title="Build r20200621" date="2020-06-21"
-		new={ <Fragment>
+		new={ <>
 			<li><span class="badge bg-substory">전투원정보</span>의 스킨에 <span class="badge bg-warning text-dark">가격 표시</span>가 추가됩니다.</li>
-		</Fragment> }
-		update={ <Fragment>
+		</> }
+		update={ <>
 			<li><span class="badge bg-substory">유닛정보</span>페이지가 <span class="badge bg-substory">전투원정보</span>로 명칭이 변경되었습니다.</li>
 			<li><span class="badge bg-substory">전투원정보</span>의 기본 모드를 <span class="badge bg-warning text-dark">테이블보기</span>로 변경했습니다.</li>
 			<li><span class="badge bg-substory">전투원정보</span>의 <span class="badge bg-warning text-dark">상세보기</span>페이지 레이아웃이 변경되었습니다.</li>
@@ -145,31 +145,31 @@ const Changelog: FunctionalComponent = () => <Fragment>
 				페이지를 이동해도 이전에 선택한 옵션이 유지되도록 변경되었습니다.<br />
 				단, <span class="badge bg-danger">새로고침</span>을 하는 경우에는 초기화됩니다.
 			</li>
-		</Fragment> }
+		</> }
 	/>
 
 	<ChangelogItem title="Build r20200618" date="2020-06-18"
-		bugfix={ <Fragment>
+		bugfix={ <>
 			<li><span class="badge bg-substory">모의 전투</span>수치에 링크 보너스 수치가 중복 반영되는 문제 수정</li>
 			<li><span class="badge bg-substory">모의 전투</span>수치에 링크 보너스 수치가 반영되지 않는 문제 수정</li>
 			<li><span class="badge bg-substory">모의 전투</span>장비의 % 수치가 변동치로 취급되지 않아 변동량 표시가 보이지 않던 문제 수정</li>
-		</Fragment> }
-		new={ <Fragment>
+		</> }
+		new={ <>
 			<li><span class="badge bg-substory">모의 전투</span>기능 <span class="badge bg-warning text-dark">ALPHA</span>버전 공개</li>
-		</Fragment> }
-		update={ <Fragment>
+		</> }
+		update={ <>
 			<li><span class="badge bg-substory">Changelog</span>를 접고 펼 수 있게, 짝수 줄 배경색을 다르게 수정</li>
-		</Fragment> }
+		</> }
 	/>
 
 	<ChangelogItem title="Build r20200617" date="2020-06-17"
-		bugfix={ <Fragment>
+		bugfix={ <>
 			<li>보호기의 <span class="badge bg-danger">풀링크 보너스</span>중 <span class="badge bg-substory">회피</span>수치 오류 수정</li>
-		</Fragment> }
+		</> }
 	/>
 
 	<ChangelogItem title="Build r20200615" date="2020-06-15"
-		bugfix={ <Fragment>
+		bugfix={ <>
 			<li>기동 보호기의 <span class="badge bg-danger">풀링크 보너스</span>중 <span class="badge bg-substory">회피</span>수치 오류 수정</li>
 			<li>
 				<span class="badge bg-warning text-dark">A-1 블러디 팬서</span>의 3번째 패시브
@@ -378,29 +378,29 @@ const Changelog: FunctionalComponent = () => <Fragment>
 				<span class="badge bg-warning text-dark">화롯가의 포티아</span>의 2번째 스킬
 				<span class="badge bg-warning text-dark">파이어레인</span>의 스킬 범위 오류, 지속 화염 피해 누락 오류 수정
 			</li>
-		</Fragment> }
-		new={ <Fragment>
+		</> }
+		new={ <>
 			<li><span class="badge bg-danger">링크 보너스</span>및 <span class="badge bg-danger">풀링크 보너스</span>정보 추가</li>
-		</Fragment> }
+		</> }
 	/>
 
 	<ChangelogItem title="Build r20200610" date="2020-06-10"
-		bugfix={ <Fragment>
+		bugfix={ <>
 			<li>
 				<span class="badge bg-warning text-dark">T-10 님프</span>의 2번째 액티브 스킬
 				<span class="badge bg-warning text-dark">제압 난사</span>의 공격력 계수가 잘못 기입된 점 수정
 			</li>
-		</Fragment> }
+		</> }
 	/>
 
 	<ChangelogItem title="Build r20200609" date="2020-06-09"
-		site={ <Fragment>
+		site={ <>
 			<li><span class="badge bg-warning text-dark">Vue-Router</span>적용</li>
-		</Fragment> }
+		</> }
 	/>
 
 	<ChangelogItem title="Build r20200608" date="2020-06-08"
-		bugfix={ <Fragment>
+		bugfix={ <>
 			<li><span class="badge bg-warning text-dark">신속의 칸</span>의 1번째 패시브 스킬 설명 일부가 누락된 점 수정</li>
 			<li>
 				<span class="badge bg-warning text-dark">에키드나</span>의 1번째 액티브 스킬
@@ -409,8 +409,8 @@ const Changelog: FunctionalComponent = () => <Fragment>
 			<li><span class="badge bg-warning text-dark">정밀형 전투 시스템</span>명칭이 <span class="badge bg-substory">정밀형 OS 시스템</span>으로 표시되던 점 수정</li>
 			<li><span class="badge bg-warning text-dark">초정밀 조준기</span>의 치명타 속성이 <span class="badge bg-substory">공격력</span>으로 표시되던 점 수정</li>
 			<li>일부 장비의 <span class="badge bg-warning text-dark">특정 효과 해제</span>속성이 <span class="badge bg-substory">해로운 효과 해제</span>로 표시되던 점 수정</li>
-		</Fragment> }
-		skin={ <Fragment>
+		</> }
+		skin={ <>
 			<li>
 				<span class="badge bg-warning text-dark">콘스탄챠 S2</span>의 <span class="badge bg-substory">기본 스킨</span>,
 				<span class="badge bg-substory">안경을 벗은 콘스탄챠</span>스킨에 <span class="badge bg-danger">플레이스토어 버전 CG</span>시험 추가
@@ -472,11 +472,11 @@ const Changelog: FunctionalComponent = () => <Fragment>
 				<span class="badge bg-warning text-dark">T-8W 발키리</span>의 <span class="badge bg-substory">1년간의 추억</span>스킨에
 				<span class="badge bg-danger">플레이스토어 버전 CG</span>시험 추가
 			</li>
-		</Fragment> }
+		</> }
 	/>
 
 	<ChangelogItem title="Build r20200607" date="2020-06-07"
-		bugfix={ <Fragment>
+		bugfix={ <>
 			<li>
 				<span class="badge bg-warning text-dark">철혈의 레오나</span>의 2번째 액티브 스킬
 				<span class="badge bg-warning text-dark">돌격 명령</span>의 AP 고정 수치가 표시되지 않는 문제 수정
@@ -532,12 +532,12 @@ const Changelog: FunctionalComponent = () => <Fragment>
 				<span class="badge bg-warning text-dark">장비 속성</span>의 <span class="badge bg-substory">HP 50%</span>,
 				<span class="badge bg-substory">HP 25%</span>의 이상/이하 조건이 반대로 표시되던 문제 수정
 			</li>
-		</Fragment> }
-		new={ <Fragment>
+		</> }
+		new={ <>
 			<li><span class="badge bg-warning text-dark">블랙 웜 S9</span>의 스킬 정보 추가</li>
 			<li><span class="badge bg-warning text-dark">럼버제인</span>의 스킬 정보 추가</li>
-		</Fragment> }
-		skin={ <Fragment>
+		</> }
+		skin={ <>
 			<li>
 				<span class="badge bg-warning text-dark">라비아타 프로토타입</span>의
 				<span class="badge bg-substory">한겨울의 만찬 라비아타</span>스킨에 안경 ON/OFF 기능 추가
@@ -547,14 +547,14 @@ const Changelog: FunctionalComponent = () => <Fragment>
 				<span class="badge bg-warning text-dark">MH-4 테티스</span>
 				<span class="badge bg-substory">기본 스킨</span>에 <span class="badge bg-danger">플레이스토어 버전 CG</span>시험 추가
 			</li>
-		</Fragment> }
+		</> }
 	/>
 
 	<ChangelogItem title="Build r20200606" date="2020-06-06"
-		site={ <Fragment>
+		site={ <>
 			<li>배포 시작</li>
-		</Fragment> }
-		bugfix={ <Fragment>
+		</> }
+		bugfix={ <>
 			<li>레벨 10 이상의 스킬 범위가 정상적으로 표시되지 않는 문제 수정</li>
 			<li>
 				<span class="badge bg-warning text-dark">오베로니아 레아</span>의 2번째 패시브 스킬
@@ -576,23 +576,23 @@ const Changelog: FunctionalComponent = () => <Fragment>
 				<span class="badge bg-warning text-dark">라비아타 프로토타입</span>의 2번째 액티브 스킬
 				<span class="badge bg-warning text-dark">철충 대파괴</span>의 AP가 누락되어있던 문제 수정
 			</li>
-		</Fragment> }
+		</> }
 	/>
 
 	<ChangelogItem title="Build r20200605" date="2020-06-05"
-		new={ <Fragment>
+		new={ <>
 			<li>
 				<span class="badge bg-warning text-dark">켈베로스 "드림위버 웨딩 스페셜 : 오늘은 얌전히!"</span>,
 				<span class="badge bg-warning text-dark">세띠 "드림위버 웨딩 스페셜 : 안식처"</span>, <span class="badge bg-warning text-dark">블랙 웜 S9</span>스킨 추가
 			</li>
 			<li><span class="badge bg-warning text-dark">세띠</span>스킬 정보 추가</li>
-		</Fragment> }
+		</> }
 	/>
 
 	<ChangelogItem title="Build r20200604" date="2020-06-04"
-		new={ <Fragment>
+		new={ <>
 			<li>유닛 스킬 정보 작성 완료 (세띠, 럼버제인 제외)</li>
-		</Fragment> }
+		</> }
 	/>
-</Fragment>;
+</>;
 export default Changelog;

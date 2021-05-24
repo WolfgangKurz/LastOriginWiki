@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 import { Link } from "preact-router";
 
 import { AssetsRoot, CurrentEvent, EventFrom, EventTo, ImageExtension } from "@/libs/Const";
@@ -88,7 +88,7 @@ const Home: FunctionalComponent = () => {
 					</span>
 				</Link>
 			</div>
-			: <Fragment />
+			: <></>
 		}
 
 		<h2>
@@ -118,7 +118,7 @@ const Home: FunctionalComponent = () => {
 
 		{ ext === "png" ? <div class="alert alert-danger">
 			<Locale k="HOME_WEBP_UNAVAILABLE" />
-		</div> : <Fragment /> }
+		</div> : <></> }
 
 		<div class="alert alert-warning">
 			<p class="mb-1">Translation support needed!</p>

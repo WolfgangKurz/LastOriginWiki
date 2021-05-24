@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent, h } from "preact";
+import { FunctionalComponent } from "preact";
 
 import { ACTOR_CLASS, ROLE_TYPE } from "@/types/Enums";
 
