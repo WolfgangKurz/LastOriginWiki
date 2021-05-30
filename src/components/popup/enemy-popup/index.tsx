@@ -85,7 +85,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 			if (!target) return "";
 
 			const loc = window.location;
-			return `${loc.origin}/enemies/${target.id}/${level.value}`;
+			return `${loc.origin}/enemies/list/${target.id}/${level.value}`;
 		})();
 
 		if (props.enemy && !FamilyList.some(x => x.value === targetId.value)) {
@@ -205,8 +205,8 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 				: <></>
 			}
 			onHidden={ (): void => {
-				if (!props.asSub && window.location.pathname !== "/enemies")
-					route("/enemies");
+				if (!props.asSub && window.location.pathname !== "/enemies/list")
+					route("/enemies/list");
 
 				if (props.onHidden)
 					props.onHidden();
