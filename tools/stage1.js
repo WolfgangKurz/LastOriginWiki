@@ -23,6 +23,7 @@ const list =
 			// "locale",
 			"story",
 			"roguelike",
+			"enemygroup",
 		].map(x => `stage1/${x}`),
 	];
 

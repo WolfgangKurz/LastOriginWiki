@@ -6,6 +6,20 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 10859" date="2021-05-30"
+
+		update={ <>
+			<li>더 이상 기존의 <span class="badge bg-secondary">/enemy/~~</span> 주소가 리디렉션되지 않습니다.</li>
+			<li>일부 영문/일문 번역이 추가/수정되었습니다.</li>
+			<li>Some EN/JP translation has added/updated.</li>
+			<li>一部の英語・日本語の翻訳が追加・修正されました。</li>
+		</> }
+		new={ <>
+			<li>적 그룹 목록이 추가되었습니다. 현재 임시로 제공하고 있습니다.</li>
+			<li>적 그룹 목록이 추가되면서 적 정보 주소 규격이 달라졌습니다. 기존 링크는 유효하지 않습니다.</li>
+		</> }
+	/>
+
 	<ChangelogItem title="Build 10855" date="2021-05-25"
 		bugfix={ <>
 			<li>일부 전투원의 폼 체인지 스킬을 본 이후 페이지가 조작되지 않는 문제를 수정했습니다.</li>

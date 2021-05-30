@@ -61,6 +61,7 @@ export const StaticDB = {
 	FilterableEquip: "filterable.equip",
 	FilterableEnemy: "filterable.enemy",
 	FilterableFacility: "filterable.facility",
+	EnemyGroup: "enemygroup",
 	Consumable: "consumable",
 	Exchange: "exchange",
 	EXP: "exp",

@@ -7,11 +7,11 @@ import { CurrentLocale } from "@/libs/Locale";
 
 import Locale from "@/components/locale";
 import HomeConfigSelector from "@/components/home-config-selector";
+import Icon from "@/components/bootstrap-icon";
 
 import BuildInfo from "@/buildtime";
 
 import style from "./style.scss";
-import Icon from "@/components/bootstrap-icon";
 
 const Home: FunctionalComponent = () => {
 	const ext = ImageExtension();

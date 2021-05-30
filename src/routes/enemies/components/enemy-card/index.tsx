@@ -41,7 +41,7 @@ const EnemyCard: FunctionalComponent<EnemyCardProps> = (props) => {
 
 		<Link
 			class="stretched-link enemy-strected"
-			href={ `/enemies/${enemy.id}` }
+			href={ `/enemies/list/${enemy.id}` }
 		/>
 	</div>;
 };

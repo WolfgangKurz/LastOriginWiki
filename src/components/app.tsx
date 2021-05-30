@@ -2,7 +2,7 @@ import { FunctionalComponent } from "preact";
 import { Route, Router } from "preact-router";
 import Redirect from "@/components/redirect";
 
-import { CurrentLocale, LocaleTypes } from "@/libs/Locale";
+import { CurrentLocale } from "@/libs/Locale";
 import { Host } from "@/libs/Const";
 
 import Loader from "@/components/loader";
@@ -20,6 +20,8 @@ import Facilities from "@/routes/facilities";
 import FacilitiesView from "@/routes/facilities/view";
 
 import Enemies from "@/routes/enemies";
+import EnemiesList from "@/routes/enemies/list";
+import EnemiesGroup from "@/routes/enemies/group";
 
 import Worlds from "@/routes/worlds";
 import WorldView from "@/routes/worlds/world-view";
@@ -49,7 +51,7 @@ const App: FunctionalComponent = () => {
 
 			<div class="container p-4">
 				<Router>
-					<Route path="/" component={ Home } />
+					<Home path="/" />
 
 					<Route path="/units" component={ Units } />
 					<Route path="/units/:uid" component={ UnitsView } />
@@ -59,15 +61,9 @@ const App: FunctionalComponent = () => {
 					<Route path="/facilities" component={ Facilities } />
 					<Route path="/facilities/:uid" component={ FacilitiesView } />
 
-					<Route path="/enemies/:uid?/:level?" component={ Enemies } />
-					<Redirect
-						path="/enemy/:uid?/:level?"
-						to={ (p): string => p.uid
-							? p.level
-								? `/enemies/${p.uid}/${p.level}`
-								: `/enemies/${p.uid}`
-							: "/enemies" }
-					/>
+					<Route path="/enemies" component={ Enemies } />
+					<Route path="/enemies/list/:uid?/:level?" component={ EnemiesList } />
+					<Route path="/enemies/group" component={ EnemiesGroup } />
 
 					<Route path="/worlds" component={ Worlds } />
 					<Route path="/worlds/:wid" component={ WorldView } />
