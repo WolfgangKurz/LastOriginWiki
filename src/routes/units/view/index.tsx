@@ -3,7 +3,7 @@ import { Link } from "preact-router";
 import Decimal from "decimal.js";
 
 import { SelectOption } from "@/types/Helper";
-import { ACTOR_GRADE } from "@/types/Enums";
+import { ACTOR_BODY_TYPE, ACTOR_GRADE } from "@/types/Enums";
 import { LinkBonusType, Unit, UnitSkin } from "@/types/DB/Unit";
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 import { UnitDialogueDataType } from "@/types/DB/Dialogue";
@@ -222,44 +222,47 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 					</div>
 				</div>
 
-				<table class="table table-bordered table-fixed text-center table-unit-modal">
-					<thead class="thead-dark">
-						<tr>
-							<th><Locale k="UNIT_VIEW_FAVOR_PRESENT" /></th>
-							<th><Locale k="UNIT_VIEW_FAVOR_VICTORY" /></th>
-							<th class="d-none d-md-table-cell"><Locale k="UNIT_VIEW_FAVOR_RETIRE" /></th>
-							<th class="d-none d-md-table-cell"><Locale k="UNIT_VIEW_FAVOR_ASSISTANT" /></th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr class="text-center">
-							<td>
-								<Locale k="UNIT_VIEW_FAVOR_MULTIPLY" p={ [unit.favor.present.toFixed(2)] } />
-							</td>
-							<td>
-								<span class="badge bg-danger"><Locale k="UNIT_VIEW_FAVOR_P" p={ [Favor.clear] } /></span>
-							</td>
-							<td class="d-none d-md-table-cell">
-								<span class="badge bg-danger"><Locale k="UNIT_VIEW_FAVOR_M" p={ [Favor.death] } /></span>
-							</td>
-							<td class="d-none d-md-table-cell">
-								<span class="badge bg-danger"><Locale k="UNIT_VIEW_FAVOR_P" p={ [Favor.assistant] } /></span>
-							</td>
-						</tr>
-						<tr class="d-md-none">
-							<th class="bg-dark text-white"><Locale k="UNIT_VIEW_FAVOR_RETIRE" /></th>
-							<th class="bg-dark text-white"><Locale k="UNIT_VIEW_FAVOR_ASSISTANT" /></th>
-						</tr>
-						<tr class="d-md-none text-center">
-							<td>
-								<span class="badge bg-danger"><Locale k="UNIT_VIEW_FAVOR_M" p={ [Favor.death] } /></span>
-							</td>
-							<td>
-								<span class="badge bg-danger"><Locale k="UNIT_VIEW_FAVOR_P" p={ [Favor.assistant] } /></span>
-							</td>
-						</tr>
-					</tbody>
-				</table>
+				{ unit.body !== ACTOR_BODY_TYPE.AGS
+					? <table class="table table-bordered table-fixed text-center table-unit-modal">
+						<thead class="thead-dark">
+							<tr>
+								<th><Locale k="UNIT_VIEW_FAVOR_PRESENT" /></th>
+								<th><Locale k="UNIT_VIEW_FAVOR_VICTORY" /></th>
+								<th class="d-none d-md-table-cell"><Locale k="UNIT_VIEW_FAVOR_RETIRE" /></th>
+								<th class="d-none d-md-table-cell"><Locale k="UNIT_VIEW_FAVOR_ASSISTANT" /></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="text-center">
+								<td>
+									<Locale k="UNIT_VIEW_FAVOR_MULTIPLY" p={ [unit.favor.present.toFixed(2)] } />
+								</td>
+								<td>
+									<span class="badge bg-danger"><Locale k="UNIT_VIEW_FAVOR_P" p={ [Favor.clear] } /></span>
+								</td>
+								<td class="d-none d-md-table-cell">
+									<span class="badge bg-danger"><Locale k="UNIT_VIEW_FAVOR_M" p={ [Favor.death] } /></span>
+								</td>
+								<td class="d-none d-md-table-cell">
+									<span class="badge bg-danger"><Locale k="UNIT_VIEW_FAVOR_P" p={ [Favor.assistant] } /></span>
+								</td>
+							</tr>
+							<tr class="d-md-none">
+								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_FAVOR_RETIRE" /></th>
+								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_FAVOR_ASSISTANT" /></th>
+							</tr>
+							<tr class="d-md-none text-center">
+								<td>
+									<span class="badge bg-danger"><Locale k="UNIT_VIEW_FAVOR_M" p={ [Favor.death] } /></span>
+								</td>
+								<td>
+									<span class="badge bg-danger"><Locale k="UNIT_VIEW_FAVOR_P" p={ [Favor.assistant] } /></span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					: <></>
+				}
 
 				<table class="table table-bordered table-fixed text-center table-unit-modal">
 					<thead class="thead-dark">

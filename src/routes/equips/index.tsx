@@ -171,6 +171,7 @@ const Equips: FunctionalComponent<EquipsProps> = (props) => {
 					.map(x => group[x])
 					.map(x => {
 						const last = [...x].sort((a, b) => b.rarity - a.rarity)[0];
+						const makable = x.some(y => y.craft);
 
 						const source = ((items): EntitySource[] => {
 							const list: EntitySource[] = [];
@@ -207,8 +208,18 @@ const Equips: FunctionalComponent<EquipsProps> = (props) => {
 							const output = list.unique(y => y.toShort());
 							const isPriv = output.some(y => y.IsPrivateItem);
 
-							if (((isPriv && output.length === 1) || output.length === 0) && !map)
-								output.splice(0, output.length, new EntitySource("Limited"), ...output.filter(y => y.IsPrivateItem));
+							if (
+								((isPriv && output.length === 1) || output.length === 0) && // 전용장비 여부를 제외하고 획득처가 없으며
+								!map && // 드랍이 아니며
+								!makable // 제조도 불가능하면
+							) {
+								output.splice( // 한정임
+									0,
+									output.length,
+									new EntitySource("Limited"),
+									...output.filter(y => y.IsPrivateItem),
+								);
+							}
 
 							return output;
 						})(x);
@@ -287,7 +298,7 @@ const Equips: FunctionalComponent<EquipsProps> = (props) => {
 						) return true;
 						if (Filters.Source.Map && sources.some(y => y.IsMap && !y.IsExMap && !y.IsSideMap && !y.IsEvent)) return true;
 
-						if (Filters.Source.Limited && (sources.some(y => y.IsLimited) || (sources.length === 0))) return true;
+						if (Filters.Source.Limited && sources.some(y => y.IsLimited)) return true;
 
 						if (Filters.Source.Challenge && sources.some(y => y.IsChallenge)) return true;
 

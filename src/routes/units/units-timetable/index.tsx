@@ -39,7 +39,7 @@ const UnitsTimetable: FunctionalComponent<UnitsListProps> = (props) => {
 					<td>
 						<div class="row row-cols-8 row-cols-lg-6 row-cols-md-4 row-cols-sm-2 justify-content-center">
 							{ TimeList[time].map(unit => <div class="col">
-								<UnitCard.Card class="unit-list-item" unit={ unit } />
+								<UnitCard class="unit-list-item" unit={ unit } />
 							</div>) }
 						</div>
 					</td>

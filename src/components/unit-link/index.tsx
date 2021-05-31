@@ -26,7 +26,7 @@ const UnitLink: FunctionalComponent<UnitLinkProps> = (props) =>
 		return <Link href={ `/units/${id}` }>
 			<BootstrapTooltip
 				placement="top"
-				content={ <UnitCard.Card
+				content={ <UnitCard
 					unit={ unit }
 					rarity={ unit.rarity }
 					no-link

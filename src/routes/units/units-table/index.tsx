@@ -116,7 +116,7 @@ const UnitsTable: FunctionalComponent<UnitsListProps> = (props) => {
 													class="unit-list-item"
 													unit={ unit }
 													rarity={ rarity }
-													onClick={ (): void => void (route(`/units/${unit.uid}`)) }
+													// onClick={ (): void => void (route(`/units/${unit.uid}`)) }
 												/>)
 											}</>,
 											<span class="text-secondary">

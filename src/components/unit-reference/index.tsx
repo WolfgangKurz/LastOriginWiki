@@ -34,7 +34,7 @@ const UnitReference: FunctionalComponent<UnitReferenceProps> = (props) => {
 			return <Link href={ `/units/${unit}` } >
 				<BootstrapTooltip
 					placement="top"
-					content={ <UnitCard.Card
+					content={ <UnitCard
 						unit={ found }
 						rarity={ found.rarity }
 						no-link

@@ -23,7 +23,52 @@ interface UnitCardProps {
 	onClick?: (e: Event) => void;
 }
 
-const Card: FunctionalComponent<UnitCardProps> = (props) => {
+const Horizontal: FunctionalComponent<UnitCardProps> = (props) => {
+	const rarity = props.rarity || ACTOR_GRADE.B;
+	const isPromoted = (props.unit.promo || []).includes(rarity);
+	const leftPromotions = (props.unit.promo || []).filter(x => x > rarity);
+
+	return <div class={ `unit-card text-start clearfix ${props.class || ""}` } onClick={ props.onClick }>
+		<UnitFace uid={ props.unit.uid } class="float-start" />
+
+		<div class="unit-name">
+			<Locale k={ `UNIT_${props.unit.uid}` } />
+		</div>
+
+		<div class="unit-flag">
+			{ props.unit.body === ACTOR_BODY_TYPE.AGS
+				? <span class="badge bg-info me-1">
+					<Locale k="COMMON_UNIT_BODY_AGS" />
+				</span>
+				: <></>
+			}
+			{ isPromoted
+				? <span class="badge bg-danger me-1">
+					<Locale k="UNIT_CARD_PROMOTION_AFTER" />
+				</span>
+				: <></>
+			}
+
+			{ leftPromotions
+				? <div class="float-end">
+					{ leftPromotions.map(pro => <RarityBadge rarity={ pro } class="ms-1">
+						<Locale k="UNIT_CARD_PROMOTION_BADGE" p={ [RarityDisplay[pro]] } />
+					</RarityBadge>) }
+				</div>
+				: <></>
+			}
+
+			{ !props.noLink
+				? <Link class="stretched-link unit-stretched" href={ `/units/${props.unit.uid}` } />
+				: <></>
+			}
+		</div>
+	</div>;
+};
+
+const UnitCard: FunctionalComponent<UnitCardProps> & {
+	Horizontal: typeof Horizontal;
+} = (props) => {
 	const unit = props.unit;
 	const rarity = props.rarity || ACTOR_GRADE.B;
 
@@ -96,47 +141,5 @@ const Card: FunctionalComponent<UnitCardProps> = (props) => {
 		</div>
 	</div>;
 };
-
-const Horizontal: FunctionalComponent<UnitCardProps> = (props) => {
-	const rarity = props.rarity || ACTOR_GRADE.B;
-	const isPromoted = (props.unit.promo || []).includes(rarity);
-	const leftPromotions = (props.unit.promo || []).filter(x => x > rarity);
-
-	return <div class={ `unit-card text-start clearfix ${props.class || ""}` } onClick={ props.onClick }>
-		<UnitFace uid={ props.unit.uid } class="float-start" />
-
-		<div class="unit-name">
-			<Locale k={ `UNIT_${props.unit.uid}` } />
-		</div>
-
-		<div class="unit-flag">
-			{ props.unit.body === ACTOR_BODY_TYPE.AGS
-				? <span class="badge bg-info me-1">
-					<Locale k="COMMON_UNIT_BODY_AGS" />
-				</span>
-				: <></>
-			}
-			{ isPromoted
-				? <span class="badge bg-danger me-1">
-					<Locale k="UNIT_CARD_PROMOTION_AFTER" />
-				</span>
-				: <></>
-			}
-
-			{ leftPromotions
-				? <div class="float-end">
-					{ leftPromotions.map(pro => <RarityBadge rarity={ pro } class="ms-1">
-						<Locale k="UNIT_CARD_PROMOTION_BADGE" p={ [RarityDisplay[pro]] } />
-					</RarityBadge>) }
-				</div>
-				: <></>
-			}
-		</div>
-	</div>;
-};
-
-const UnitCard = {
-	Card,
-	Horizontal,
-};
+UnitCard.Horizontal = Horizontal;
 export default UnitCard;

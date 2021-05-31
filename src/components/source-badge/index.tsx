@@ -128,7 +128,7 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 					} else if (props.minimum)
 						return <Locale k="COMMON_SOURCE_EXCHANGE_EVENT" />;
 					return <>
-						{ event }&nbsp;
+						<Locale k={ event } />&nbsp;
 						<Locale k="COMMON_SOURCE_EXCHANGE" />
 					</>;
 				}
