@@ -55,6 +55,8 @@ const RoguelikePassiveContent: FunctionalComponent = () => {
 				.reduce((p, c) => p.includes(c) ? p : [...p, c], [] as number[]);
 
 			const selected = Effects.filter(x => x.type === selectedType.value && x.grade === selectedGrade.value);
+			if (selected.length === 0)
+				selectedGrade.set(grades[0]);
 
 			return <div>
 				<div class="btn-grid d-none d-md-inline-grid btn-grid-6 mb-4">
@@ -132,10 +134,10 @@ const RoguelikePassiveContent: FunctionalComponent = () => {
 									<div class="col nested">
 										<div class="row row-cols-1">
 											<div class="col bg-dark text-light">
-												<Locale k={ `RogueEffect_${x.key}` } components={ { badge: SubBadge } } />
+												<Locale k={ `${x.key}` } components={ { badge: SubBadge } } />
 											</div>
 											<div class="col bg-light">
-												<Locale k={ `RogueEffect_${x.key}_COND` } />
+												<Locale k={ `${x.key}_COND` } />
 											</div>
 											<div class="col bg-light">
 												<RarityBadge border rarity={ (x.grade + 1) } />
@@ -145,7 +147,7 @@ const RoguelikePassiveContent: FunctionalComponent = () => {
 								</div>
 								<div class="row">
 									<div class="col bg-light break-keep white-pre-line">
-										<Locale k={ `RogueEffect_${x.key}_DESC` } />
+										<Locale k={ `${x.key}_DESC` } />
 									</div>
 								</div>
 								<div class="row">

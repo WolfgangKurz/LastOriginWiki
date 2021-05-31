@@ -70,6 +70,19 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 			: skin.sid?.toString()
 		: "";
 
+	if (!skin.G && IsGoogle.value)
+		IsGoogle.set(false);
+
+	if (!skin.X && IsDamaged.value && IsSimplified.value) {
+		if (skin.S)
+			IsDamaged.set(false);
+		else
+			IsSimplified.set(false);
+	} else if (!skin.D && IsDamaged.value && !IsSimplified.value)
+		IsDamaged.set(false);
+	else if (!skin.S && IsSimplified.value && !IsDamaged.value)
+		IsSimplified.set(false);
+
 	return <div class="unit-skin-view">
 		<div class={ `ratio ${Aspect} unit-full ${props.collapsed ? "unit-full-collapsed" : ""}` }>
 			<div>

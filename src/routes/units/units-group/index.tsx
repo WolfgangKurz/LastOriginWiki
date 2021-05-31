@@ -55,7 +55,7 @@ const UnitsGroup: FunctionalComponent<UnitsListProps> = (props) => {
 				<div class="col-12 col-lg-10 col-md-9">
 					<div class="row row-cols-2 row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-3">
 						{ GroupedList[group].map(unit => <div class="col unit-list-item">
-							<UnitCard.Card unit={ unit } />
+							<UnitCard unit={ unit } />
 						</div>) }
 					</div>
 				</div>

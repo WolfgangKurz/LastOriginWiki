@@ -186,7 +186,7 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 									href,
 									node: <BootstrapTooltip
 										placement="top"
-										content={ <UnitCard.Card unit={ unit } rarity={ unit.rarity } no-link /> }
+										content={ <UnitCard unit={ unit } rarity={ unit.rarity } no-link /> }
 									>
 										<RarityBadge rarity="A">
 											<Locale k={ `UNIT_${unit.uid}` } />
