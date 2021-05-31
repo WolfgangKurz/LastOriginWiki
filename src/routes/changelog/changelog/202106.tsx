@@ -9,15 +9,15 @@ const Changelog: FunctionalComponent = () => <>
 	<ChangelogItem title="Build 10864" date="2021-06-01"
 		bugfix={ <>
 			<li>
-				<span class="badge bg-wawrning text-dark">장비정보</span>에서 제조 가능한 장비가
+				<span class="badge bg-warning text-dark">장비정보</span>에서 제조 가능한 장비가
 				<span class="badge bg-secondary">한정</span>으로 분류되는 문제를 수정했습니다.
 			</li>
 			<li>
-				<span class="badge bg-wawrning text-dark">전투원정보</span>에서 전투원이 링크로 구성되어있지 않아서
+				<span class="badge bg-warning text-dark">전투원정보</span>에서 전투원이 링크로 구성되어있지 않아서
 				새 탭 열기 또는 메뉴 열기가 불가능했던 점을 수정했습니다.
 			</li>
 			<li>전투원 스킨의 옵션을 켠 후에 다른 스킨을 열람하면 옵션이 유지되어 다른 스킨이 표시되지 않던 문제를 수정했습니다.</li>
-			<li><span class="badge bg-wawrning text-dark">획득처</span>의 이벤트 교환소가 올바르지 않게 표시되던 문제를 수정했습니다.</li>
+			<li><span class="badge bg-warning text-dark">획득처</span>의 이벤트 교환소가 올바르지 않게 표시되던 문제를 수정했습니다.</li>
 		</> }
 		update={ <>
 			<li>이제 AGS의 호감도 표가 표시되지 않습니다.</li>
