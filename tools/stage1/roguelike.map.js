@@ -14,7 +14,7 @@ function process (auth) {
 		const rows = res.data.values;
 		if (rows.length) {
 			fs.mkdirSync(
-				path.resolve(__dirname, "..", "..", "..", "lo-roguelike-map", "src", "assets", "json"),
+				path.resolve(__dirname, "..", "..", "..", "LastOrigin-Roguelike-Map", "src", "assets", "json"),
 				{ recursive: true },
 			);
 
@@ -24,7 +24,7 @@ function process (auth) {
 				const [floor, ...data] = row;
 
 				fs.writeFileSync(
-					path.resolve(__dirname, "..", "..", "..", "lo-roguelike-map", "src", "assets", "json", `${floor}.json`),
+					path.resolve(__dirname, "..", "..", "..", "LastOrigin-Roguelike-Map", "src", "assets", "json", `${floor}.json`),
 					JSON.stringify(data.map(x => {
 						const d = x.split("/");
 						return {
