@@ -66,7 +66,7 @@ function process (auth) {
 			if (!(unit in ret[lang])) ret[lang][unit] = {};
 			if (!(skin in ret[lang][unit])) ret[lang][unit][skin] = {};
 
-			ret[lang][unit][skin][type] = dialogue || "";
+			ret[lang][unit][skin][type] = (dialogue || "").trim();
 		});
 	}
 
