@@ -24,14 +24,19 @@ const Changelog: FunctionalComponent = () => <>
 			<li>일본어 전투원 대사가 잘못 표시되던 문제를 수정했습니다.</li>
 		</> }
 		update={ <>
-			<li>
-				<span class="badge bg-warning text-dark">장비정보</span>에 <span class="badge bg-dark">기본</span> 획득처 필터가 추가되었습니다.
-				제조로만 획득 가능한 장비들이 포함됩니다.
-			</li>
 			<li>일본어 폰트가 추가되었습니다.</li>
 			<li>일부 영문/일문 번역이 추가/수정되었습니다.</li>
 			<li>Some EN/JP translation has added/updated.</li>
 			<li>一部の英語・日本語の翻訳が追加・修正されました。</li>
+		</> }
+		new={ <>
+			<li>
+				<span class="badge bg-warning text-dark">장비정보</span>에 <span class="badge bg-warning text-dark">제조 시간</span> 보기가 추가되었습니다.
+			</li>
+			<li>
+				<span class="badge bg-warning text-dark">장비정보</span>에 <span class="badge bg-dark">기본</span> 획득처 필터가 추가되었습니다.
+				제조로만 획득 가능한 장비들이 포함됩니다.
+			</li>
 		</> }
 		dialogue={ <>
 			<li><span class="badge bg-light text-dark">KST 2021-06-06 00:43:22</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
