@@ -79,6 +79,12 @@ export default class EntitySource {
 			case "Battery4FM": return "대형 배터리";
 			case "BatteryFC-1": return "중형 배터리";
 			case "BatteryAA": return "소형 배터리";
+			case "NewYearTalent": return "오르카 달란트";
+			case "NewYearGoods": return "신년 행사 용품";
+			case "NewYearFood": return "신년 떡 세트";
+			case "SkyIdolGoods1": return "스카이나이츠 캔뱃지";
+			case "SkyIdolGoods10": return "스카이나이츠 응원봉";
+			case "SkyIdolGoods100": return "공연 입장 티켓";
 		}
 		return "???";
 	}
