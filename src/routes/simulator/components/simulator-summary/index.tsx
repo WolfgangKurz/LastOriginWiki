@@ -25,7 +25,6 @@ import EquipIcon from "@/components/equip-icon";
 import EquipLevel from "@/components/equip-level";
 
 import "./style.scss";
-import { isActive } from "@/libs/Functions";
 
 interface StatCalcType {
 	base: number;
@@ -287,7 +286,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 						if (!ratioValues.includes(key) && lb.Postfix === "%") // % 표기되는 유형이 아니고 % 값인 경우
 							return p + Decimal.div(lb.Value, 100).toNumber();
 						return p;
-					}, 1);
+					}, 0);
 				const bonusRatio = slot.equips.reduce((p, c, i) => {
 					const e = equipList[i];
 					if (!e || !c) return p;
@@ -329,19 +328,20 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 					return 0;
 				})();
 
+				if (key === "HP") debugger;
 				const base = new Decimal(levelValue((baseStats as any)[key], slot.level))
 					.add(bonusValue)
 					.add(fullBonusValue);
 
+				const perStatPoint = StatPointValue[key];
 				const final = includeBuffs.value
 					? base
-						.add(Decimal.mul(slot.stats[key], StatPointValue[key]))
-						.mul(linkRatio)
-						.mul(1 + bonusRatio + fullBonusRatio)
+						.add(Decimal.mul(slot.stats[key], perStatPoint))
+						.mul(1 + linkRatio + fullBonusRatio)
+						.mul(1 + bonusRatio)
 					: base
-						.add(Decimal.mul(slot.stats[key], StatPointValue[key]))
-						.mul(linkRatio)
-						.mul(1 + fullBonusRatio);
+						.add(Decimal.mul(slot.stats[key], perStatPoint))
+						.mul(1 + linkRatio + fullBonusRatio);
 
 				if (floorValues.includes(key)) {
 					return {
@@ -580,7 +580,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 							<div class="unit-hp">
 								<StatIcon stat="HP" class="float-start me-1" />
 								<strong>
-									{ slot.hp } / { statValues.HP.final }
+									{ Decimal.div(statValues.HP.final, 4).floor().toNumber() } / { statValues.HP.final }
 
 									{ statValues.HP.base !== statValues.HP.final
 										? <span class={ `value-diff diff-${statValues.HP.final > statValues.HP.base ? "plus" : "minus"}` }>
@@ -593,7 +593,8 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 									<div
 										class="hp-progress"
 										style={ {
-											width: `${Decimal.min(100, Decimal.div(slot.hp, statValues.HP.final).mul(100))}%`,
+											// width: `${Decimal.min(100, Decimal.div(slot.hp, statValues.HP.final).mul(100))}%`,
+											width: "25%",
 										} }
 									/>
 								</div>

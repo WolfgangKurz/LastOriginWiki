@@ -4,12 +4,12 @@ const { google } = require("googleapis");
 
 function process (auth) {
 	const sheets = google.sheets({ version: "v4", auth });
-	sheets.spreadsheets.values.get({
-		spreadsheetId: "1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4",
-		range: "UnitDialogue!A2:G",
-	}, (err, res) => {
-		if (err) return console.log("The API returned an error: " + err);
 
+	const ret = {
+		ko: {},
+		jp: {},
+	};
+	function procLang (lang, rows) {
 		const typeTable = {
 			획득: "Join",
 
@@ -55,35 +55,70 @@ function process (auth) {
 			"전투 MVP": "MVP",
 		};
 
-		const ret = {
-			ko: {},
-			jp: {},
-		};
-		const rows = res.data.values;
-		if (rows.length) {
-			["ko", "jp"].forEach(lang => {
-				rows.map((row) => {
-					if (!row[0] || row[0].length === 0 || row[0][0] === "#") return;
+		rows.map((row) => {
+			if (!row[0] || row[0].length === 0 || row[0][0] === "#") return;
 
-					const unit = row[0];
-					const skin = row[2] || "0";
-					const type = typeTable[row[4]];
-					const dialogue = row[lang === "ko" ? 5 : 6];
+			const unit = row[0];
+			const skin = row[2] || "0";
+			const type = typeTable[row[4]];
+			const dialogue = row[5];
 
-					if (!(unit in ret[lang])) ret[lang][unit] = {};
-					if (!(skin in ret[lang][unit])) ret[lang][unit][skin] = {};
+			if (!(unit in ret[lang])) ret[lang][unit] = {};
+			if (!(skin in ret[lang][unit])) ret[lang][unit][skin] = {};
 
-					ret[lang][unit][skin][type] = dialogue || "";
-				});
+			ret[lang][unit][skin][type] = dialogue || "";
+		});
+	}
 
-				fs.mkdirSync(path.resolve(__dirname, "..", "..", "db", "dialogue"), { recursive: true });
-				fs.writeFileSync(
-					path.resolve(__dirname, "..", "..", "db", "dialogue", `${lang}.json`),
-					JSON.stringify(ret[lang], null, 2),
-				);
+	Promise.all([
+		new Promise((resolve, reject) => {
+			sheets.spreadsheets.values.get({
+				spreadsheetId: "1TrLn5czFe2Ww1xg4HiFsDzZDcnphxV3AqP_DgNqaU00",
+				range: "UnitDialogue (KR)!A3:F",
+			}, (err, res) => {
+				if (err) {
+					console.log(`The API returned an error: ${err}`);
+					return reject();
+				}
+
+				const rows = res.data.values;
+				if (rows.length)
+					procLang("ko", rows);
+				else {
+					console.log("No data found.");
+					return reject();
+				}
+				resolve();
 			});
-		} else
-			console.log("No data found.");
+		}),
+		new Promise((resolve, reject) => {
+			sheets.spreadsheets.values.get({
+				spreadsheetId: "1TrLn5czFe2Ww1xg4HiFsDzZDcnphxV3AqP_DgNqaU00",
+				range: "UnitDialogue (JP)!A3:F",
+			}, (err, res) => {
+				if (err) {
+					console.log(`The API returned an error: ${err}`);
+					return reject();
+				}
+
+				const rows = res.data.values;
+				if (rows.length)
+					procLang("jp", rows);
+				else {
+					console.log("No data found.");
+					return reject();
+				}
+				resolve();
+			});
+		}),
+	]).then(() => {
+		fs.mkdirSync(path.resolve(__dirname, "..", "..", "db", "dialogue"), { recursive: true });
+		["ko", "jp"].forEach(lang => {
+			fs.writeFileSync(
+				path.resolve(__dirname, "..", "..", "db", "dialogue", `${lang}.json`),
+				JSON.stringify(ret[lang], null, 2),
+			);
+		});
 	});
 }
 

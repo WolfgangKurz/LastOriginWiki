@@ -33,6 +33,7 @@ import Changelog from "@/routes/changelog";
 
 import Simulator from "@/routes/simulator";
 import BGM from "@/routes/bgm";
+import Store from "@/store";
 
 const App: FunctionalComponent = () => {
 	if (typeof window !== "undefined") {
@@ -44,42 +45,46 @@ const App: FunctionalComponent = () => {
 		}
 	}
 
-	return <div id="app">
-		<link href={ `${Host}/assets/font/SpoqaHanSans-kr.css` } rel="stylesheet" />
-		<Loader json={ `locale/${CurrentLocale}` }>
-			<Header />
+	return <Store.Provider>
+		<div id="app">
+			<link href={ `${Host}/assets/font/SpoqaHanSans-kr.css` } rel="stylesheet" />
+			<link href={ `${Host}/assets/font/SpoqaHanSans-jp.css` } rel="stylesheet" />
 
-			<div class="container p-4">
-				<Router>
-					<Home path="/" />
+			<Loader json={ `locale/${CurrentLocale}` }>
+				<Header />
 
-					<Route path="/units" component={ Units } />
-					<Route path="/units/:uid" component={ UnitsView } />
+				<div class="container p-4">
+					<Router>
+						<Home path="/" />
 
-					<Route path="/equips/:uid?" component={ Equips } />
+						<Route path="/units" component={ Units } />
+						<Route path="/units/:uid" component={ UnitsView } />
 
-					<Route path="/facilities" component={ Facilities } />
-					<Route path="/facilities/:uid" component={ FacilitiesView } />
+						<Route path="/equips/:uid?" component={ Equips } />
 
-					<Route path="/enemies" component={ Enemies } />
-					<Route path="/enemies/list/:uid?/:level?" component={ EnemiesList } />
-					<Route path="/enemies/group" component={ EnemiesGroup } />
+						<Route path="/facilities" component={ Facilities } />
+						<Route path="/facilities/:uid" component={ FacilitiesView } />
 
-					<Route path="/worlds" component={ Worlds } />
-					<Route path="/worlds/:wid" component={ WorldView } />
-					<Route path="/worlds/:wid/:mid/:node?" component={ WorldMapView } />
+						<Route path="/enemies" component={ Enemies } />
+						<Route path="/enemies/list/:uid?/:level?" component={ EnemiesList } />
+						<Route path="/enemies/group" component={ EnemiesGroup } />
 
-					<Route path="/roguelike" component={ Roguelike } />
+						<Route path="/worlds" component={ Worlds } />
+						<Route path="/worlds/:wid" component={ WorldView } />
+						<Route path="/worlds/:wid/:mid/:node?" component={ WorldMapView } />
 
-					<Route path="/changelog" component={ Changelog } />
+						<Route path="/roguelike" component={ Roguelike } />
 
-					<Route path="/simulator" component={ Simulator } />
-					<Route path="/bgm" component={ BGM } />
+						<Route path="/changelog" component={ Changelog } />
 
-					<NotFoundPage default />
-				</Router>
-			</div>
-		</Loader>
-	</div>;
+						<Route path="/simulator" component={ Simulator } />
+						<Route path="/bgm" component={ BGM } />
+
+						<NotFoundPage default />
+					</Router>
+				</div>
+			</Loader>
+		</div>
+	</Store.Provider>;
 };
 export default App;

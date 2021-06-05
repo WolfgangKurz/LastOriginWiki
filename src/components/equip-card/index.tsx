@@ -2,6 +2,7 @@ import { FunctionalComponent } from "preact";
 
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 
+import { CurrentDate, CurrentEvent } from "@/libs/Const";
 import EntitySource from "@/libs/EntitySource";
 
 import EquipIcon from "@/components/equip-icon";
@@ -24,6 +25,12 @@ const EquipCard: FunctionalComponent<EquipCardProps> = (props) => {
 		.replace(/ (RE|MP|SP|EX)$/, "");
 
 	const Sources = (props.source || [])
+		.filter(x => {
+			let b = true;
+			if(x.IsEvent && x.EventId !== CurrentEvent) b = false;
+			if(x.IsExchange && !x.IsEvent && x.ExchangeDate !== CurrentDate) b = false;
+			return b;
+		})
 		.reduce((p, c) => [...p, c], [] as EntitySource[]);
 
 	return <div class={ `card my-1 equip-card bg-dark text-light ${props.class || ""}` }>

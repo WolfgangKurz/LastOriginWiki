@@ -25,7 +25,7 @@ const UnitsTimetable: FunctionalComponent<UnitsListProps> = (props) => {
 		return groupBy(units, x => x.craft as number);
 	})();
 
-	return <div class="unit-table">
+	return <div class="unit-time-table">
 		<table class="table table-striped unit-table mb-3">
 			<thead class="thead-dark">
 				<tr>

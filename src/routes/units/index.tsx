@@ -1,8 +1,8 @@
 import { FunctionalComponent } from "preact";
 
-import { actions, ActionsType, Connect, StoreType } from "@/store";
+import Store from "@/store";
 
-import { isActive } from "@/libs/Functions";
+import { groupBy, isActive } from "@/libs/Functions";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE, SKILL_ATTR } from "@/types/Enums";
@@ -30,38 +30,37 @@ const Units: FunctionalComponent = () => {
 	SetMeta(["twitter:image", "og:image"], null);
 	UpdateTitle(LocaleGet("MENU_UNITS"));
 
-	return Connect("Units", actions, (store: any): preact.VNode =>
-		<Loader json={ StaticDB.FilterableUnit } content={ ((): preact.VNode => {
-			const Filters = store.Units as StoreType["Units"];
-			const {
-				toggleUnitsFilterRarityB,
-				toggleUnitsFilterRarityA,
-				toggleUnitsFilterRarityS,
-				toggleUnitsFilterRaritySS,
+	return Store.ConnectDirect(
+		"Units",
+		({
+			Units: Filters,
+			toggleUnitsFilterRarityB,
+			toggleUnitsFilterRarityA,
+			toggleUnitsFilterRarityS,
+			toggleUnitsFilterRaritySS,
 
-				toggleUnitsFilterTypeLight,
-				toggleUnitsFilterTypeMobility,
-				toggleUnitsFilterTypeHeavy,
+			toggleUnitsFilterTypeLight,
+			toggleUnitsFilterTypeMobility,
+			toggleUnitsFilterTypeHeavy,
 
-				toggleUnitsFilterRoleAttacker,
-				toggleUnitsFilterRoleDefender,
-				toggleUnitsFilterRoleSupporter,
+			toggleUnitsFilterRoleAttacker,
+			toggleUnitsFilterRoleDefender,
+			toggleUnitsFilterRoleSupporter,
 
-				toggleUnitsFilterBodyBioroid,
-				toggleUnitsFilterBodyAGS,
+			toggleUnitsFilterBodyBioroid,
+			toggleUnitsFilterBodyAGS,
 
-				toggleUnitsFilterSkillElem,
-				setUnitsFilterSkillGridType,
-				setUnitsFilterSkillDismissGuardType,
+			toggleUnitsFilterSkillElem,
+			setUnitsFilterSkillGridType,
+			setUnitsFilterSkillDismissGuardType,
 
-				toggleUnitsFilterEffectTarget,
-				toggleUnitsFilterRoguelikeSkill,
-				setUnitEffectFilters,
+			toggleUnitsFilterEffectTarget,
+			toggleUnitsFilterRoguelikeSkill,
+			setUnitEffectFilters,
 
-				setDisplayType,
-				setSearchText,
-			} = store as ActionsType<StoreType>;
-
+			setDisplayType,
+			setSearchText,
+		}) => <Loader json={ StaticDB.FilterableUnit } content={ ((): preact.VNode => {
 			const UnitEffects = ((): Record<string, EffectFilterListType> => {
 				const ret: EffectFilterListType = [];
 				const _ = <T extends unknown> (__: T | undefined): T => __ as T;
@@ -446,17 +445,33 @@ const Units: FunctionalComponent = () => {
 								<Locale k="UNIT_FILTERS_ROGUELIKE_SKILL" />
 							</div>
 							<div class="col-md col-12">
-								<div class="btn-group me-1">
+								<button
+									class="btn btn-substory dropdown-toggle"
+									type="button"
+									data-bs-toggle="dropdown"
+									data-bs-auto-close="outside"
+									aria-expanded="false"
+								>
+									<Locale k="UNIT_FILTERS_ROGUELIKE_SKILL_BUTTON" />
+								</button>
+								<ul class="dropdown-menu">
 									{ new Array(11)
 										.fill(0)
-										.map((_, i) => <button
-											class={ `btn btn-outline-substory ${isActive(Filters.RoguelikeSkill.includes(i))}` }
-											onClick={ (): void => toggleUnitsFilterRoguelikeSkill(i) }
-										>
-											<Locale k={ `RogueSkill_${i}` } />
-										</button>)
+										.map((_, i) => <li>
+											<a
+												href="#"
+												class={ `dropdown-item ${isActive(Filters.RoguelikeSkill.includes(i))}` }
+												onClick={ (e): void => {
+													e.preventDefault();
+													e.stopPropagation();
+													toggleUnitsFilterRoguelikeSkill(i);
+												} }
+											>
+												<Locale k={ `RogueSkill_${i}` } />
+											</a>
+										</li>)
 									}
-								</div>
+								</ul>
 							</div>
 						</div>
 					</div>
@@ -470,5 +485,4 @@ const Units: FunctionalComponent = () => {
 		}) } />,
 	);
 };
-
 export default Units;
