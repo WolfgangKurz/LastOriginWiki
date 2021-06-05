@@ -1,7 +1,6 @@
 import { FunctionalComponent } from "preact";
-import { route } from "preact-router";
 
-import { Connect, StoreType } from "@/store";
+import Store from "@/store";
 
 import { ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/types/Enums";
 import { UnitsListProps } from "../";
@@ -53,9 +52,7 @@ const UnitsTable: FunctionalComponent<UnitsListProps> = (props) => {
 			});
 	}
 
-	return Connect("Units", {}, (store: any): preact.VNode => {
-		const Filters = store.Units as StoreType["Units"];
-
+	return Store.ConnectDirect("Units", ({ Units: Filters }) => {
 		return <div class="unit-table">
 			<div class="mb-2">
 				<div class="btn-group mx-2 mb-2">
@@ -116,7 +113,7 @@ const UnitsTable: FunctionalComponent<UnitsListProps> = (props) => {
 													class="unit-list-item"
 													unit={ unit }
 													rarity={ rarity }
-													// onClick={ (): void => void (route(`/units/${unit.uid}`)) }
+												// onClick={ (): void => void (route(`/units/${unit.uid}`)) }
 												/>)
 											}</>,
 											<span class="text-secondary">

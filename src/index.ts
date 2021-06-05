@@ -12,4 +12,4 @@ import "@/themes/patch.scss";
 import { Extend } from "@/libs/Functions";
 
 Extend();
-export default (): preact.VNode => h(Provider, { store: store as Store<unknown> }, h(App, {}));
+export default App;

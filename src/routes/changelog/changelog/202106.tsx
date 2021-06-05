@@ -6,6 +6,38 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 10870" date="2021-06-06"
+		bugfix={ <>
+			<li><span class="badge bg-warning text-dark">장비정보</span>에서 제조 가능한 장비가 표시되지 않는 문제를 수정했습니다.</li>
+			<li>
+				<span class="badge bg-warning text-dark">장비정보</span>에서
+				<span class="badge bg-danger">지난 이벤트 맵</span> 및 <span class="badge bg-danger">지난 이벤트 교환소</span>가 제대로 작동하지 않던 문제를 수정했습니다.
+			</li>
+			<li><span class="badge bg-warning text-dark">Simulator</span>에서 링크 보너스 및 풀링크 보너스 수치 계산이 잘못되어있던 점을 수정했습니다.</li>
+			<li><span class="badge bg-warning text-dark">전투원정보</span>의 로그라이크 스킬 필터가 제대로 표시되지 않는 문제를 수정했습니다.</li>
+			<li><span class="badge bg-warning text-dark">획득처</span>의 이벤트 교환소가 올바르지 않게 표시되던 문제를 수정했습니다.</li>
+			<li>
+				<span class="badge bg-warning text-dark">글라시아스</span>의 2번째 액티브 스킬
+				<span class="badge bg-info text-dark">니플헤임의 폭풍</span>의
+				<span class="badge bg-info text-dark">추가 냉기 피해</span> 수치가 잘못 표시되던 문제를 수정했습니다.
+			</li>
+			<li>일본어 전투원 대사가 잘못 표시되던 문제를 수정했습니다.</li>
+		</> }
+		update={ <>
+			<li>
+				<span class="badge bg-warning text-dark">장비정보</span>에 <span class="badge bg-dark">기본</span> 획득처 필터가 추가되었습니다.
+				제조로만 획득 가능한 장비들이 포함됩니다.
+			</li>
+			<li>일본어 폰트가 추가되었습니다.</li>
+			<li>일부 영문/일문 번역이 추가/수정되었습니다.</li>
+			<li>Some EN/JP translation has added/updated.</li>
+			<li>一部の英語・日本語の翻訳が追加・修正されました。</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2021-06-06 00:43:22</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
+
 	<ChangelogItem title="Build 10864" date="2021-06-01"
 		bugfix={ <>
 			<li>
