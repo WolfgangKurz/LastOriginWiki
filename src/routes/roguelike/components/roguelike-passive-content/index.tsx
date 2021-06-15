@@ -156,7 +156,7 @@ const RoguelikePassiveContent: FunctionalComponent = () => {
 											? <span class="text-secondary">
 												<Locale k="ROGUELIKE_NODE_EFFECTS_EMPTY" />
 											</span>
-											: <BuffList list={
+											: <BuffList invert list={
 												x.buffIndex
 													.map(y => RoguelikeBuffEffectDB.find(z => z.key === y))
 													.filter(y => y) as BuffStatBuff[]

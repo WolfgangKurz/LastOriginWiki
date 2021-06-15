@@ -6,6 +6,44 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 10897" date="2021-06-16"
+		update={ <>
+			<li>철의 탑 오염된 군수공장 버프의 대상 표시가 적군으로 표시되는 것을 아군으로 표시되도록 개선했습니다.</li>
+			<li>램파트 및 알바트로스, 타이런트의 "출력 제한 해제 장치" 관련 스킬 정보를 "개량형 출력 제한 해제 장치"로도 가능하다는 내용을 추가했습니다.</li>
+			<li>이상한 나라의 초코 여왕의 맵 정보가 갱신되었습니다.</li>
+			<li>현재 진행중인 이벤트 정보가 갱신되었습니다.</li>
+			<li>변경된 버프 아이콘이 반영되었습니다. 스탯 아이콘은 변경하지 않았습니다.</li>
+			<li>일부 영문/일문 번역이 추가/수정되었습니다.</li>
+			<li>Some EN/JP translation has added/updated.</li>
+			<li>一部の英語・日本語の翻訳が追加・修正されました。</li>
+		</> }
+		new={ <>
+			<li>신규 장비 <span class="badge bg-warning text-dark">HQ1 커맨더 시스템</span>의 정보가 추가되었습니다.</li>
+			<li>신규 전투원 <span class="badge bg-warning text-dark">므네모시네</span>의 정보가 추가되었습니다.</li>
+			<li>신규 적의 정보가 추가되었습니다.</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2021-06-16 03:04:16</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<span class="badge bg-warning text-dark">퀸 오브 메인</span>의 구글 버전 일러스트가 추가되었습니다.
+			</li>
+			<li>
+				<span class="badge bg-warning text-dark">해체자 아자즈</span>의 스킨
+				<span class="badge bg-danger">5월의 여왕 : 색다른 경험</span>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<span class="badge bg-warning text-dark">S12 쉐이드</span>의 스킨
+				<span class="badge bg-danger">생명을 거두는 자</span>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<span class="badge bg-warning text-dark">블랙 리리스</span>의 스킨
+				<span class="badge bg-danger">리리스의 본 목적을 벗어난 수영복</span>의 중파 정보가 추가되었습니다.
+			</li>
+		</> }
+	/>
+
 	<ChangelogItem title="Build 10870" date="2021-06-06"
 		bugfix={ <>
 			<li><span class="badge bg-warning text-dark">장비정보</span>에서 제조 가능한 장비가 표시되지 않는 문제를 수정했습니다.</li>

@@ -1,6 +1,6 @@
 import { FunctionalComponent } from "preact";
 
-import { WorldIds } from "@/libs/Const";
+import { CurrentEvent, WorldIds } from "@/libs/Const";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
 import Locale, { LocaleGet } from "@/components/locale";
@@ -8,7 +8,7 @@ import WorldItem from "@/routes/worlds/components/world-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Worlds: FunctionalComponent = () => {
-	const Tops = ["Story", "Ev11"];
+	const Tops = ["Story", CurrentEvent];
 	const Subs = ["Sub", "Cha", "Daily"];
 	const List = WorldIds.filter(x => !x.startsWith("EvA") && !Tops.includes(x) && !Subs.includes(x));
 

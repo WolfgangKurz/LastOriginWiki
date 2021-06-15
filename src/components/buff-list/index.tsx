@@ -25,6 +25,7 @@ type BuffColors = "primary" | "secondary" | "danger" | "warning" | "info" | "dar
 interface BuffRendererProps {
 	stat: BuffStat | BuffStat[];
 	level?: number;
+	invert?: boolean;
 }
 
 export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
@@ -915,8 +916,12 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 		const targetSide = target === TARGET_TYPE.SELF
 			? <Locale plain k="BUFFTARGET_SELF" />
 			: target === TARGET_TYPE.OUR || target === TARGET_TYPE.OUR_GRID
-				? <Locale plain k="BUFFTARGET_TEAM" />
-				: <Locale plain k="BUFFTARGET_ENEMY" />;
+				? props.invert
+					? <Locale plain k="BUFFTARGET_ENEMY" />
+					: <Locale plain k="BUFFTARGET_TEAM" />
+				: props.invert
+					? <Locale plain k="BUFFTARGET_TEAM" />
+					: <Locale plain k="BUFFTARGET_ENEMY" />;
 
 		const b = body.length === 2
 			? null
@@ -1192,6 +1197,7 @@ interface BuffListProps {
 
 	list?: BuffStat[];
 	level?: number;
+	invert?: boolean;
 }
 
 const BuffList: FunctionalComponent<BuffListProps> = (props) => {
@@ -1200,11 +1206,11 @@ const BuffList: FunctionalComponent<BuffListProps> = (props) => {
 		const level = props.level || 0;
 
 		const staticList = list.filter(x => !("buffs" in x));
-		const dynamicList = list.filter(x => "buffs" in x).map(stat => <BuffRenderer stat={ stat } level={ level } />);
+		const dynamicList = list.filter(x => "buffs" in x).map(stat => <BuffRenderer stat={ stat } level={ level } invert={ props.invert } />);
 		return <div class={ `buff-list text-dark ${props.class || ""}` }>
 			{ staticList.length > 0
 				? <ul class="list-group text-start">
-					<BuffRenderer stat={ staticList } level={ level } />
+					<BuffRenderer stat={ staticList } level={ level } invert={ props.invert } />
 				</ul>
 				: <></>
 			}
