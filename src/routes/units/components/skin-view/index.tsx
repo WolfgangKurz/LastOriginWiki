@@ -256,10 +256,10 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 				{ skin.sid && !skin.isPro
 					? <div class={ `card mb-2 skin-name-desc ${!skin.artist ? "mt-2" : ""}` }>
 						<div class="card-header">
-							<Locale k={ `CONSUMABLE_Skin_${unit.uid}_${ssid}` } />
+							<Locale k={ `CONSUMABLE_Skin_${unit.uid}_${ssid}` } plain />
 						</div>
 						<div class="card-body">
-							<Locale k={ `CONSUMABLE_DESC_Skin_${unit.uid}_${skin.sid}` } />
+							<Locale k={ `CONSUMABLE_DESC_Skin_${unit.uid}_${skin.sid}` } plain />
 						</div>
 					</div>
 					: <></>

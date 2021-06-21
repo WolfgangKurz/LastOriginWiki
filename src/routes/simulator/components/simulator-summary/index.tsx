@@ -215,8 +215,10 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 					.toNumber();
 
 				const bonusValue = unitInfo.linkBonus
-					.filter(x => x.startsWith(bonusTable[key]))
+					.filter(x => x && x.startsWith(bonusTable[key]))
 					.reduce((p, c) => {
+						if (!c) return p;
+
 						const lb = GetLinkBonus(c, links);
 						if (ratioValues.includes(key) || (lb.Postfix !== "%")) // 애초에 % 표기되는 유형이거나 % 값이 아닌 경우
 							return p + lb.Value;
@@ -273,6 +275,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 					}, 0);
 				const fullBonusValue = ((): number => {
 					if (links !== 5 || !slot.linkBonus.startsWith(bonusTable[key])) return 0;
+
 					const lb = GetLinkBonus(slot.linkBonus, 1);
 					if (ratioValues.includes(key) || (lb.Postfix !== "%")) // 애초에 % 표기되는 유형이거나 % 값이 아닌 경우
 						return lb.Value;
@@ -280,7 +283,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 				})();
 
 				const linkRatio = unitInfo.linkBonus
-					.filter(x => x.startsWith(bonusTable[key]))
+					.filter(x => x && x.startsWith(bonusTable[key]))
 					.reduce((p, c) => {
 						const lb = GetLinkBonus(c, links);
 						if (!ratioValues.includes(key) && lb.Postfix === "%") // % 표기되는 유형이 아니고 % 값인 경우
@@ -328,7 +331,6 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 					return 0;
 				})();
 
-				if (key === "HP") debugger;
 				const base = new Decimal(levelValue((baseStats as any)[key], slot.level))
 					.add(bonusValue)
 					.add(fullBonusValue);
@@ -369,7 +371,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 					.toNumber();
 
 				const bonusValue = unitInfo.linkBonus
-					.filter(x => x.startsWith(bonusTable[key]))
+					.filter(x => x && x.startsWith(bonusTable[key]))
 					.reduce((p, c) => {
 						const lb = GetLinkBonus(c, links);
 						return p + lb.Value;

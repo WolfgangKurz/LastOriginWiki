@@ -112,8 +112,12 @@ const SimulatorUpgrade: FunctionalComponent<SimulatorUpgradeProps> = (props) => 
 		];
 
 		const LinkCount = Decimal.div(slot.links.reduce((p, c) => p + c, 0), 100).toNumber();
-		const LinkBonus = unitInfo.linkBonus.map(x => GetLinkBonus(x, LinkCount));
-		const FullLinkBonus = unitInfo.fullLinkBonus.map(x => GetLinkBonus(x, 1));
+		const LinkBonus = unitInfo.linkBonus
+			.filter(x => x)
+			.map(x => GetLinkBonus(x, LinkCount));
+		const FullLinkBonus = unitInfo.fullLinkBonus
+			.filter(x => x)
+			.map(x => GetLinkBonus(x, 1));
 
 		function reset (range: number): void {
 			if (props.onUpdateLink) {

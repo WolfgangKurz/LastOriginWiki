@@ -21,17 +21,20 @@ function process (auth) {
 			rows.map((row) => {
 				if (!row[0]) return;
 
-				const [floor, ...data] = row;
+				const [floor, count, ...data] = row;
 
 				fs.writeFileSync(
 					path.resolve(__dirname, "..", "..", "..", "LastOrigin-Roguelike-Map", "src", "assets", "json", `${floor}.json`),
-					JSON.stringify(data.map(x => {
-						const d = x.split("/");
-						return {
-							size: [parseInt(d[0], 10), parseInt(d[1], 10)],
-							data: d.slice(2),
-						};
-					})),
+					JSON.stringify({
+						count: parseInt(count, 10),
+						list: data.map(x => {
+							const d = x.split("/");
+							return {
+								size: [parseInt(d[0], 10), parseInt(d[1], 10)],
+								data: d.slice(2),
+							};
+						}),
+					}),
 				);
 			});
 		} else

@@ -14,7 +14,7 @@ function travel (dir, callback) {
 		});
 }
 
-const target = ["locale", "unit", "equip"];
+const target = ["locale"];
 
 const lists = [];
 const list = [];
