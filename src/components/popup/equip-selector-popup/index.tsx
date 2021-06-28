@@ -59,7 +59,7 @@ const EquipSelectorPopup: FunctionalComponent<EquipSelectorPopupProps> = (props)
 		const source = props.type !== undefined
 			? FilterableEquip.filter(x => x.type === props.type)
 			: FilterableEquip;
-		const groups = groupBy(source, x => `${TypeTable[x.type]}_${x.key}`);
+		const groups = groupBy(source, x => `${TypeTable[x.type]}_${x.key}` as string);
 
 		function updateRarity (): void {
 			const g = groups[typeKey.value];

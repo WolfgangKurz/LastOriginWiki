@@ -62,6 +62,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 
 	const favorBonus = objState<boolean>(false);
 	const displayBuffList = objState<boolean>(false);
+	const displayBuffDummy = objState<boolean>(false);
 
 	const HasFormChange = ((): boolean => {
 		const raw = skills;
@@ -161,6 +162,18 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 					<Locale k="UNIT_SKILL_DISPLAY_BUFF" />
 				</label>
 			</div>
+			<div class="form-check d-inline-block me-2">
+				<label>
+					<input
+						class="form-check-input"
+						type="checkbox"
+						disabled={ !displayBuffList.value }
+						checked={ displayBuffDummy.value }
+						onChange={ (): void => displayBuffDummy.set(!displayBuffDummy.value) }
+					/>
+					<Locale k="UNIT_SKILL_DISPLAY_DUMMY" />
+				</label>
+			</div>
 		</div>
 	</>;
 
@@ -227,7 +240,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 		}
 
 		{ displayBuffList.value && buffList[skill.key].length > 0
-			? <BuffList list={ buffList[skill.key] } level={ finalSkillLevel } />
+			? <BuffList list={ buffList[skill.key] } level={ finalSkillLevel } dummy={ displayBuffDummy.value } />
 			: <></>
 		}
 	</>;
