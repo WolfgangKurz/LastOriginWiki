@@ -6,6 +6,42 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 10937" date="2021-06-29"
+		bugfix={ <>
+			<li>일부 코드명으로 노출되던 번역을 수정했습니다.</li>
+		</> }
+		update={ <>
+			<li>버프 목록에 0% 확률 버프도 표시되도록 변경되었습니다. 전투원 스킬 버프 목록은 더미 표시 옵션을 활성화해야 표시됩니다.</li>
+			<li>Some EN/JP translation has added/updated.</li>
+			<li>一部の英語・日本語の翻訳が追加・修正されました。</li>
+		</> }
+		new={ <>
+			<li>신규 전투원 <span class="badge bg-warning text-dark">AC-6 후사르</span>의 정보가 추가되었습니다.</li>
+			<li>신규 전투원 <span class="badge bg-warning text-dark">오렐리아</span>의 정보가 추가되었습니다.</li>
+			<li>신규 장비 <span class="badge bg-warning text-dark">원소의 심장(화염) EX</span>의 정보가 추가되었습니다.</li>
+			<li>신규 장비 <span class="badge bg-warning text-dark">원소의 심장(냉기) EX</span>의 정보가 추가되었습니다.</li>
+			<li>신규 장비 <span class="badge bg-warning text-dark">원소의 심장(전기) EX</span>의 정보가 추가되었습니다.</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2021-06-29 00:35:11</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+		skin={ <>
+			<li><span class="badge bg-warning text-dark">타치</span>의 기본 일러스트 정보가 수정되었습니다.</li>
+			<li>
+				<span class="badge bg-warning text-dark">해체자 아자즈</span>의 스킨
+				<span class="badge bg-danger">5월의 여왕 : 색다른 경험</span>의 중파 이미지 정보가 추가되었습니다.
+			</li>
+			<li>
+				<span class="badge bg-warning text-dark">천공의 엘라</span>의 스킨
+				<span class="badge bg-danger">귀염냉혹 듀얼리스트</span>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<span class="badge bg-warning text-dark">레모네이드 알파</span>의 스킨
+				<span class="badge bg-danger">칠죄종 : 해방된 각인</span>의 정보가 추가되었습니다.
+			</li>
+		</> }
+	/>
+
 	<ChangelogItem title="Build 10897" date="2021-06-16"
 		update={ <>
 			<li>철의 탑 오염된 군수공장 버프의 대상 표시가 적군으로 표시되는 것을 아군으로 표시되도록 개선했습니다.</li>
