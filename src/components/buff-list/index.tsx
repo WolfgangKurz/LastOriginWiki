@@ -1212,13 +1212,19 @@ const BuffList: FunctionalComponent<BuffListProps> = (props) => {
 	return <Loader json={ StaticDB.FilterableUnit } content={ ((): preact.VNode => {
 		const list = props.list || [];
 		const level = props.level || 0;
+		const dummy = props.dummy || false;
 
 		const staticList = list.filter(x => !("buffs" in x));
-		const dynamicList = list.filter(x => "buffs" in x).map(stat => <BuffRenderer stat={ stat } level={ level } invert={ props.invert } />);
+		const dynamicList = list.filter(x => "buffs" in x).map(stat => <BuffRenderer
+			stat={ stat }
+			level={ level }
+			invert={ props.invert }
+			dummy={ dummy }
+		/>);
 		return <div class={ `buff-list text-dark ${props.class || ""}` }>
 			{ staticList.length > 0
 				? <ul class="list-group text-start">
-					<BuffRenderer stat={ staticList } level={ level } invert={ props.invert } dummy={ props.dummy } />
+					<BuffRenderer stat={ staticList } level={ level } invert={ props.invert } dummy={ dummy } />
 				</ul>
 				: <></>
 			}

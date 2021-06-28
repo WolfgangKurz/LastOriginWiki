@@ -6,8 +6,11 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 10937" date="2021-06-29"
+	<ChangelogItem title="Build 10939" date="2021-06-29"
 		bugfix={ <>
+			<li><span class="badge bg-warning text-dark">장비목록</span>의 기본 필터가 정상 작동하지 않던 점을 수정했습니다.</li>
+			<li><span class="badge bg-warning text-dark">적 정보</span>의 적 팝업에서 적의 다른 유형을 볼 수 없던 문제를 수정했습니다.</li>
+			<li><span class="badge bg-warning text-dark">적 정보</span>의 적 팝업에서 더미 스킬을 포함한 모든 스킬이 표시되도록 수정했습니다.</li>
 			<li>일부 코드명으로 노출되던 번역을 수정했습니다.</li>
 		</> }
 		update={ <>
