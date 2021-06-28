@@ -121,9 +121,10 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 
 		const Skills = ((): EnemySkill[] => {
 			if (!targetEnemy.value) return [];
-			const list: EnemySkill[] = targetEnemy.value.rarity === ACTOR_GRADE.SS
-				? targetEnemy.value.skills
-				: targetEnemy.value.skills.slice(0, targetEnemy.value.rarity);
+			// const list: EnemySkill[] = targetEnemy.value.rarity === ACTOR_GRADE.SS
+			// 	? targetEnemy.value.skills
+			// 	: targetEnemy.value.skills.slice(0, targetEnemy.value.rarity);
+			const list = targetEnemy.value.skills;
 
 			let passive = false;
 			for (let i = 0; i < list.length; i++) {
@@ -225,7 +226,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 									const value = (e.target as HTMLSelectElement).value;
 									targetId.set(value);
 									if (!props.asSub)
-										route(`/enemies/${value}`);
+										route(`/enemies/list/${value}`);
 								} }
 							>
 								{ FamilyList.map(x => <option value={ x.value }>{ x.text }</option>) }

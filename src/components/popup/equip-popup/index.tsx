@@ -367,7 +367,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 									</tbody>
 								</table>
 
-								{ StatusList ? <BuffList class="mt-2" list={ StatusList.value } dummy /> : <></> }
+								{ StatusList && <BuffList class="mt-2" list={ StatusList.value } dummy /> }
 							</>
 							: <></>
 						}

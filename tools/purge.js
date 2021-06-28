@@ -14,7 +14,7 @@ function travel (dir, callback) {
 		});
 }
 
-const target = ["locale"];
+const target = ["skill"];
 
 const lists = [];
 const list = [];

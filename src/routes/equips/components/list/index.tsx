@@ -167,7 +167,7 @@ const EquipList: FunctionalComponent<EquipsProps> = (props) => {
 				}
 
 				const EquipGroups = ((): EquipGroupEntity[] => {
-					const group = groupBy(FilterableEquipDB, (x) => `${x.type}_${x.key}`);
+					const group = groupBy(FilterableEquipDB, (x) => `${x.type}_${x.key}` as string);
 					return Object.keys(group)
 						.map(x => group[x])
 						.map(x => {
@@ -304,7 +304,8 @@ const EquipList: FunctionalComponent<EquipsProps> = (props) => {
 							if (Filters.Source.Uninstalled && sources.some(y => y.IsUninstalled)) return true;
 							if (Filters.Source.Roguelike && sources.some(y => y.IsRoguelike)) return true;
 
-							if (Filters.Source.General && sources.length === 0 && x.equips.some(y => y.craft)) return true;
+							if (Filters.Source.General && sources.filter(y => !y.IsPrivateItem).length === 0 && x.equips.some(y => y.craft))
+								return true;
 
 							return false;
 						})
