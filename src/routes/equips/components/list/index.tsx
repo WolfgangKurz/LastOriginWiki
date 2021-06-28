@@ -254,7 +254,7 @@ const EquipList: FunctionalComponent<EquipsProps> = (props) => {
 								if (!Filters.Type.Exclusive)
 									return false; // 전용 장비 필터가 꺼짐
 							} else { // 그 외 유형
-								const types = [];
+								const types: ITEM_TYPE[] = [];
 								if (Filters.Type.Chip) types.push(ITEM_TYPE.CHIP);
 								if (Filters.Type.OS) types.push(ITEM_TYPE.SPCHIP);
 								if (Filters.Type.Item) types.push(ITEM_TYPE.SUBEQ);

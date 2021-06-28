@@ -204,6 +204,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 		return <PopupBase
 			class="equip-modal"
 			bodyClass="pb-0"
+			size="lg"
 			display={ props.display && target !== null }
 			header={ target
 				? <>
@@ -366,7 +367,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 									</tbody>
 								</table>
 
-								{ StatusList ? <BuffList class="mt-2" list={ StatusList.value } /> : <></> }
+								{ StatusList ? <BuffList class="mt-2" list={ StatusList.value } dummy /> : <></> }
 							</>
 							: <></>
 						}

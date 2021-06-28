@@ -26,6 +26,7 @@ interface BuffRendererProps {
 	stat: BuffStat | BuffStat[];
 	level?: number;
 	invert?: boolean;
+	dummy?: boolean;
 }
 
 export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
@@ -155,6 +156,12 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 	function getChanceText (chance: string | undefined): preact.VNode {
 		if (!chance) chance = "100%";
 		if (chance === "100%") return <></>;
+
+		if (chance === "0%") {
+			return <span class="badge bg-success-dark ms-3" title={ LocaleGet("BUFFCHANCE", "0%") }>
+				<Locale plain k="BUFFCHANCE_0" />
+			</span>;
+		}
 
 		return <span class="badge bg-success ms-3">
 			<Locale plain k="BUFFCHANCE" p={ [chance] } />
@@ -1045,8 +1052,8 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			const on = getTriggerText(stat.on);
 			const apply = getTriggerText(stat.if);
 
-			if (buff.value.chance !== "0%") {
-				// title={ formatDesc(buff.desc.type, buff.desc.desc, buff.desc.value, buff.desc.level, level) }
+			// title={ formatDesc(buff.desc.type, buff.desc.desc, buff.desc.value, buff.desc.level, level) }
+			if (buff.value.chance !== "0%" || props.dummy) {
 				elems.push(<div class="clearfix">
 					<div>
 						<img class="me-1" width="25" src={ `${AssetsRoot}/${ext}/buff/${buff.icon}.${ext}` } />
@@ -1198,6 +1205,7 @@ interface BuffListProps {
 	list?: BuffStat[];
 	level?: number;
 	invert?: boolean;
+	dummy?: boolean;
 }
 
 const BuffList: FunctionalComponent<BuffListProps> = (props) => {
@@ -1210,7 +1218,7 @@ const BuffList: FunctionalComponent<BuffListProps> = (props) => {
 		return <div class={ `buff-list text-dark ${props.class || ""}` }>
 			{ staticList.length > 0
 				? <ul class="list-group text-start">
-					<BuffRenderer stat={ staticList } level={ level } invert={ props.invert } />
+					<BuffRenderer stat={ staticList } level={ level } invert={ props.invert } dummy={ props.dummy } />
 				</ul>
 				: <></>
 			}

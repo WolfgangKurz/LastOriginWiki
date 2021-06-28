@@ -35,7 +35,7 @@ interface UnitBadgeProps {
 
 const UnitBadge: FunctionalComponent<UnitBadgeProps> = (props) => {
 	const limit = (props.limit || "").toLowerCase();
-	const type = ((): ACTOR_CLASS => {
+	const type = ((): ACTOR_CLASS | -1 => {
 		const table: Record<string, ACTOR_CLASS> = {
 			light: ACTOR_CLASS.LIGHT,
 			air: ACTOR_CLASS.AIR,
@@ -51,7 +51,7 @@ const UnitBadge: FunctionalComponent<UnitBadgeProps> = (props) => {
 		const type = props.type;
 		return type === undefined ? -1 : type;
 	})();
-	const role = ((): ROLE_TYPE => {
+	const role = ((): ROLE_TYPE | -1 => {
 		const table: Record<string, ROLE_TYPE> = {
 			attacker: ROLE_TYPE.ATTACKER,
 			defender: ROLE_TYPE.DEFENDER,
@@ -78,15 +78,14 @@ const UnitBadge: FunctionalComponent<UnitBadgeProps> = (props) => {
 		data-black={ props.black }
 	>
 		<i />
-		{
-			type !== -1 && role !== -1
-				? [
-					<Locale k={ `COMMON_UNIT_TYPE_SHORT_${TypeName}` } />,
-					<Locale k={ `COMMON_UNIT_ROLE_${RoleName}` } />,
-				].gap(" ")
-				: type !== -1
-					? <Locale k={ `COMMON_UNIT_TYPE_${TypeName}` } />
-					: <Locale k={ `COMMON_UNIT_ROLE_${RoleName}` } />
+		{ type !== -1 && role !== -1
+			? [
+				<Locale k={ `COMMON_UNIT_TYPE_SHORT_${TypeName}` } />,
+				<Locale k={ `COMMON_UNIT_ROLE_${RoleName}` } />,
+			].gap(" ")
+			: type !== -1
+				? <Locale k={ `COMMON_UNIT_TYPE_${TypeName}` } />
+				: <Locale k={ `COMMON_UNIT_ROLE_${RoleName}` } />
 		}
 	</span>;
 };
