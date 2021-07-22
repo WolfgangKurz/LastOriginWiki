@@ -14,7 +14,7 @@ function travel (dir, callback) {
 		});
 }
 
-const target = ["locale", "unit"];
+const target = ["locale"];
 
 const lists = [];
 const list = [];

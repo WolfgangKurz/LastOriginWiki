@@ -11,8 +11,8 @@ let xml = `<?xml version="1.0" encoding="UTF-8"?>
 
 const load = (name: string) => {
 	const target = ["facility", "map"].includes(name)
-		? "external/json"
-		: "db";
+		? "external/json/korea"
+		: "db/korea";
 
 	return fs.readFileSync(path.resolve(__dirname, "..", target, `${name}.json`), { encoding: "utf-8" })
 		.replace("export default ", "")
@@ -22,7 +22,9 @@ const load = (name: string) => {
 const Unit = JSON.parse(load("unit"));
 const Equip = JSON.parse(load("equip"));
 const Enemy = JSON.parse(load("enemy"));
-const Facility = JSON.parse(load("facility"));
+const Facility = glob.sync(
+	path.resolve(__dirname, "..", "external", "json", "korea", "facility", "*.json"),
+).map((x: any) => path.basename(x));
 const MapData = JSON.parse(load("map"));
 // import Unit from "../src/json/unit";
 // import Equip from "../src/json/equip";
@@ -44,6 +46,8 @@ const WorldNames: Record<string, string> = {
 	Ev8: "흐린 기억 속의 나라",
 	Ev9: "낙원으로부터 온 초대장",
 	Ev10: "누군가 바랐던 소원",
+	Ev11: "Project ORCA, 별밤의 무대",
+	Ev12: "빛이 들지 않는 성역",
 };
 const skin = glob.sync(
 	path.resolve(__dirname, "..", "external", "assets", "png", "full", "*.png"),
