@@ -6,7 +6,7 @@ import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 import { SimulatorSlotType } from "../../types/Slot";
 
 import { objState } from "@/libs/State";
-import { GetBuffList } from "../../libs/buff";
+import { CurrentDB } from "@/libs/DB";
 
 import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 import Locale from "@/components/locale";
@@ -47,7 +47,7 @@ const SimulatorEquips: FunctionalComponent<SimulatorEquipProps> = (props) => {
 				equipList.splice(i, 1, false);
 				equipUpdated = true;
 
-				JsonLoaderCore(`equip/${x.uid}`)
+				JsonLoaderCore(CurrentDB, `equip/${x.uid}`)
 					.then(() => {
 						const json = GetJson<Equip>(`equip/${x.uid}`);
 						equipList.splice(i, 1, json);

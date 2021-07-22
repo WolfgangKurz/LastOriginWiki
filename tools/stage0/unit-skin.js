@@ -3,86 +3,69 @@ const path = require("path");
 const { google } = require("googleapis");
 
 function process (auth) {
-	const sheets = google.sheets({ version: "v4", auth });
-	sheets.spreadsheets.values.get({
-		spreadsheetId: "1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4",
-		range: "UnitSkin!A2:T",
-	}, (err, res) => {
-		if (err) return console.log("The API returned an error: " + err);
+	const targetDBs = require("../targets");
+	targetDBs.forEach(targetDB => {
+		const sheets = google.sheets({ version: "v4", auth });
+		sheets.spreadsheets.values.get({
+			spreadsheetId: targetDB === "korea"
+				? "11IxebdUQ_VHbaP79sN8KxZ87n3c5rG42DL8TQOK9h1k"
+				: "1ohSOKdl1IZq8aOsWPJ74yX01Ave7FkSrUFG5MSbfZN8",
+			range: "UnitSkin!A2:T",
+		}, (err, res) => {
+			if (err) return console.log(`The API returned an error: ${err}`);
 
-		const ret = {};
-		const rows = res.data.values;
-		if (rows.length) {
-			rows.map((row) => {
-				if (row.every(x => !x || x.length === 0)) return;
+			const ret = {};
+			const rows = res.data.values;
+			if (rows && rows.length) {
+				rows.map((row) => {
+					if (row.every(x => !x || x.length === 0)) return;
 
-				const uid = row[0];
-				const skin = row[2];
-				const skinId = parseInt(row[3], 10);
-				const artist = row[4];
-				const offsets = row[5];
-				const price = /^[0-9]+$/.test(row[6]) ? parseInt(row[6], 10) : undefined;
-				const Pro = !!row[7];
-				const G = !!row[8];
-				const V = !!row[9];
-				const E = !!row[10];
-				const M = !!row[11];
-				const A = !!row[12];
-				const Stage = !!row[13];
-				const D = !!row[14];
-				const S = !!row[15];
-				const X = !!row[16];
-				const Pre = !!row[17];
-				const name = row[18];
-				const desc = row[19];
-
-				const offset = ((x) => {
-					const output = {
-						normal: { n: 0, d: 0, s: 0, x: 0 },
-						google: { n: 0, d: 0, s: 0, x: 0 },
+					const uid = row[0];
+					const skin = row[1];
+					const skinId = parseInt(row[2], 10);
+					const price = /^[0-9]+$/.test(row[3]) ? parseInt(row[3], 10) : undefined;
+					const Pro = parseInt(row[4], 10) === 1;
+					const V = parseInt(row[5], 10) === 1;
+					const G = parseInt(row[6], 10) === 1;
+					const E = parseInt(row[7], 10) === 1;
+					const M = parseInt(row[8], 10) === 1;
+					const A = parseInt(row[9], 10) === 1;
+					const Stage = parseInt(row[10], 10) === 1;
+					const D = parseInt(row[11], 10) === 1;
+					const S = parseInt(row[12], 10) === 1;
+					const X = parseInt(row[13], 10) === 1;
+					const Pre = parseInt(row[14], 10) === 1;
+					const artist = row[15];
+					const offset = {
+						n: parseInt(row[16] || "0", 10),
+						d: parseInt(row[17] || "0", 10),
+						s: parseInt(row[18] || "0", 10),
+						x: parseInt(row[19] || "0", 10),
 					};
 
-					const keys = ["normal", "google"];
-					const cols = ["n", "d", "s", "x"];
+					const info = { G, V, E, M, A, Stage, D, S, X, Pre };
+					const base = { sid: skinId, artist, offset, price, ...info };
 
-					const lines = (x || "").split("\n");
-					lines.forEach((y, i) => {
-						const target = output[keys[i]];
-						y.split(",")
-							.forEach((z, j) => {
-								if (!z) z = 0;
-								target[cols[j]] = z;
-							});
-					});
+					if (!(uid in ret))
+						ret[uid] = { ...base };
+					else if (Pro)
+						ret[uid].P = { ...base };
+					else {
+						if (!("skins" in ret[uid]))
+							ret[uid].skins = [];
 
-					if (lines.length === 1)
-						output.google = output.normal;
+						ret[uid].skins.push({ ...base });
+					}
+				});
+			} else
+				console.log("No data found.");
 
-					return output;
-				})(offsets);
-
-				const info = { G, V, E, M, A, Stage, D, S, X, Pre };
-				const base = { sid: skinId, artist, offset, price, ...info, name, desc };
-
-				if (!(uid in ret))
-					ret[uid] = { ...base };
-				else if (Pro)
-					ret[uid].P = { t: skin, ...base };
-				else {
-					if (!("skins" in ret[uid]))
-						ret[uid].skins = [];
-
-					ret[uid].skins.push({ t: skin, ...base });
-				}
-			});
-
-			fs.mkdirSync(path.resolve(__dirname, "..", "..", "db"), { recursive: true });
+			fs.mkdirSync(path.resolve(__dirname, "..", "..", "db", targetDB), { recursive: true });
 			fs.writeFileSync(
-				path.resolve(__dirname, "..", "..", "db", "unit-skin.json"),
+				path.resolve(__dirname, "..", "..", "db", targetDB, "unit-skin.json"),
 				JSON.stringify(ret, null, 2),
 			);
-		} else
-			console.log("No data found.");
+		});
 	});
 }
 

@@ -152,32 +152,32 @@ const Units: FunctionalComponent = () => {
 						if (!Filters.Role[x.role]) return false;
 						if (!Filters.Body[x.body]) return false;
 
-						const elem1 = elem[0].some(y => y === x.skills.active1.elem || (x.skills.Factive1 && y === x.skills.Factive1.elem));
+						const elem1 = elem[0].some(y => y === x.skills[1].elem || (x.skills.F1 && y === x.skills.F1.elem));
 						const grid1 = Filters.Skill[0].GridType === 0 ||
-							(Filters.Skill[0].GridType === 1 && (x.skills.active1.grid || (x.skills.Factive1 && x.skills.Factive1.grid))) ||
-							(Filters.Skill[0].GridType === 2 && !(x.skills.active1.grid || (x.skills.Factive1 && x.skills.Factive1.grid)));
+							(Filters.Skill[0].GridType === 1 && (x.skills[1].grid || (x.skills.F1 && x.skills.F1.grid))) ||
+							(Filters.Skill[0].GridType === 2 && !(x.skills[1].grid || (x.skills.F1 && x.skills.F1.grid)));
 						const guard1 = Filters.Skill[0].DismissGuardType === 0 ||
 							(
 								Filters.Skill[0].DismissGuardType === 1 &&
-								(x.skills.active1.guard || (x.skills.Factive1 && x.skills.Factive1.guard))
+								(x.skills[1].guard || (x.skills.F1 && x.skills.F1.guard))
 							) ||
 							(
 								Filters.Skill[0].DismissGuardType === 2 &&
-								!(x.skills.active1.guard || (x.skills.Factive1 && x.skills.Factive1.guard))
+								!(x.skills[1].guard || (x.skills.F1 && x.skills.F1.guard))
 							);
 
-						const elem2 = elem[1].some(y => y === x.skills.active2.elem || (x.skills.Factive2 && y === x.skills.Factive2.elem));
+						const elem2 = elem[1].some(y => y === x.skills[2].elem || (x.skills["F2"] && y === x.skills["F2"].elem));
 						const grid2 = Filters.Skill[1].GridType === 0 ||
-							(Filters.Skill[1].GridType === 1 && (x.skills.active2.grid || (x.skills.Factive2 && x.skills.Factive2.grid))) ||
-							(Filters.Skill[1].GridType === 2 && !(x.skills.active2.grid || (x.skills.Factive2 && x.skills.Factive2.grid)));
+							(Filters.Skill[1].GridType === 1 && (x.skills[2].grid || (x.skills["F2"] && x.skills["F2"].grid))) ||
+							(Filters.Skill[1].GridType === 2 && !(x.skills[2].grid || (x.skills["F2"] && x.skills["F2"].grid)));
 						const guard2 = Filters.Skill[1].DismissGuardType === 0 ||
 							(
 								Filters.Skill[1].DismissGuardType === 1 &&
-								(x.skills.active2.guard || (x.skills.Factive2 && x.skills.Factive2.guard))
+								(x.skills[2].guard || (x.skills["F2"] && x.skills["F2"].guard))
 							) ||
 							(
 								Filters.Skill[1].DismissGuardType === 2 &&
-								!(x.skills.active2.guard || (x.skills.Factive2 && x.skills.Factive2.guard))
+								!(x.skills[2].guard || (x.skills["F2"] && x.skills["F2"].guard))
 							);
 
 						if (!(

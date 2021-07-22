@@ -15,21 +15,22 @@ async function process (auth) {
 
 	const data = {};
 
-	for (const type of types) {
-		console.log(type);
-		await new Promise((resolve, reject) => {
-			sheets.spreadsheets.values.get({
-				spreadsheetId,
-				range: `${type}!A1:ZZ`,
-			}, (err, res) => {
-				if (err) {
-					console.log(`The API returned an error: ${err}`);
-					reject(err);
-				}
+	await new Promise((resolve, reject) => {
+		sheets.spreadsheets.values.batchGet({
+			spreadsheetId,
+			ranges: types.map(type => `${type}!A1:ZZ`),
+		}, (err, res) => {
+			if (err) {
+				console.log(`The API returned an error: ${err}`);
+				reject(err);
+			}
 
-				const rows = res.data.values;
-				if (rows.length) {
-					const locales = rows[0].slice(1).filter(x => x);
+			res.data.valueRanges.forEach(d => {
+				const rows = d.values;
+				if (rows && rows.length) {
+					const locales = rows.splice(0, 1)[0]
+						.slice(1)
+						.filter(x => x);
 					locales.forEach((x, i) => {
 						if (!(x in data)) data[x] = {};
 					});
@@ -42,12 +43,12 @@ async function process (auth) {
 						});
 					});
 				} else
-					console.log("No data found.");
-
-				resolve();
+					console.log(`No data found. - ${d.range || ""}`);
 			});
+
+			resolve();
 		});
-	}
+	});
 
 	// fs.writeFileSync(
 	// 	path.resolve(__dirname, "..", "db", "locale.json"),

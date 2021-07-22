@@ -48,6 +48,8 @@ const Home: FunctionalComponent = () => {
 
 	return <div class={ `${style.home} home` }>
 		<div class="alert alert-primary" role="alert">
+			<span class="pe-3">[KR]</span>
+
 			{ IsEW
 				? <Locale k="HOME_EW_REMAIN" p={ [
 					<span class="badge bg-light text-dark" style="font-size: 100%">

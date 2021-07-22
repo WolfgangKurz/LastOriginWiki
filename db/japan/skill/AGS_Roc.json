@@ -1,0 +1,6700 @@
+{
+  "1": {
+    "key": "1",
+    "icon": "WideLightning",
+    "target": "enemy",
+    "buffs": {
+      "index": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "data": [
+        {
+          "rate": 1.265,
+          "type": 3,
+          "range": 3,
+          "ap": 8,
+          "grid": "258",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Roc_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "感電：AP{0}",
+                    "type": 0,
+                    "value": "-0.4",
+                    "level": "-0.02"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -0.4,
+                      "per": -0.02
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "感電：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "精密攻撃：ダメージ量+{0}%(標的/移動不可)",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "精密攻撃：ダメージ量+{0}%(標的/移動不可)",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_19",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Roc_N_5"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "電磁気誘導：攻撃力{0}%の固定ダメージ",
+                    "type": 1,
+                    "value": "0.22",
+                    "level": "0.02"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "22%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.38,
+          "type": 3,
+          "range": 3,
+          "ap": 8,
+          "grid": "258",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Roc_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "感電：AP{0}",
+                    "type": 0,
+                    "value": "-0.4",
+                    "level": "-0.02"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -0.4,
+                      "per": -0.02
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "感電：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "精密攻撃：ダメージ量+{0}%(標的/移動不可)",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "精密攻撃：ダメージ量+{0}%(標的/移動不可)",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_19",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Roc_N_5"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "電磁気誘導：攻撃力{0}%の固定ダメージ",
+                    "type": 1,
+                    "value": "0.22",
+                    "level": "0.02"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "22%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.495,
+          "type": 3,
+          "range": 3,
+          "ap": 8,
+          "grid": "258",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Roc_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "感電：AP{0}",
+                    "type": 0,
+                    "value": "-0.4",
+                    "level": "-0.02"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -0.4,
+                      "per": -0.02
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "感電：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "精密攻撃：ダメージ量+{0}%(標的/移動不可)",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "精密攻撃：ダメージ量+{0}%(標的/移動不可)",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_19",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Roc_N_5"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "電磁気誘導：攻撃力{0}%の固定ダメージ",
+                    "type": 1,
+                    "value": "0.22",
+                    "level": "0.02"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "22%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.61,
+          "type": 3,
+          "range": 3,
+          "ap": 8,
+          "grid": "258",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Roc_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "感電：AP{0}",
+                    "type": 0,
+                    "value": "-0.4",
+                    "level": "-0.02"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -0.4,
+                      "per": -0.02
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "感電：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "精密攻撃：ダメージ量+{0}%(標的/移動不可)",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "精密攻撃：ダメージ量+{0}%(標的/移動不可)",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_19",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Roc_N_5"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "電磁気誘導：攻撃力{0}%の固定ダメージ",
+                    "type": 1,
+                    "value": "0.22",
+                    "level": "0.02"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "22%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.725,
+          "type": 3,
+          "range": 3,
+          "ap": 8,
+          "grid": "258",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Roc_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "感電：AP{0}",
+                    "type": 0,
+                    "value": "-0.4",
+                    "level": "-0.02"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -0.4,
+                      "per": -0.02
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "感電：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "精密攻撃：ダメージ量+{0}%(標的/移動不可)",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "精密攻撃：ダメージ量+{0}%(標的/移動不可)",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_19",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Roc_N_5"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "電磁気誘導：攻撃力{0}%の固定ダメージ",
+                    "type": 1,
+                    "value": "0.22",
+                    "level": "0.02"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "22%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.84,
+          "type": 3,
+          "range": 3,
+          "ap": 8,
+          "grid": "258",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Roc_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "感電：AP{0}",
+                    "type": 0,
+                    "value": "-0.4",
+                    "level": "-0.02"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -0.4,
+                      "per": -0.02
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "感電：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "精密攻撃：ダメージ量+{0}%(標的/移動不可)",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "精密攻撃：ダメージ量+{0}%(標的/移動不可)",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_19",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Roc_N_5"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "電磁気誘導：攻撃力{0}%の固定ダメージ",
+                    "type": 1,
+                    "value": "0.22",
+                    "level": "0.02"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "22%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.955,
+          "type": 3,
+          "range": 3,
+          "ap": 8,
+          "grid": "258",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Roc_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "感電：AP{0}",
+                    "type": 0,
+                    "value": "-0.4",
+                    "level": "-0.02"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -0.4,
+                      "per": -0.02
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "感電：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "精密攻撃：ダメージ量+{0}%(標的/移動不可)",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "精密攻撃：ダメージ量+{0}%(標的/移動不可)",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_19",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Roc_N_5"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "電磁気誘導：攻撃力{0}%の固定ダメージ",
+                    "type": 1,
+                    "value": "0.22",
+                    "level": "0.02"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "22%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.07,
+          "type": 3,
+          "range": 3,
+          "ap": 8,
+          "grid": "258",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Roc_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "感電：AP{0}",
+                    "type": 0,
+                    "value": "-0.4",
+                    "level": "-0.02"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -0.4,
+                      "per": -0.02
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "感電：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "精密攻撃：ダメージ量+{0}%(標的/移動不可)",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "精密攻撃：ダメージ量+{0}%(標的/移動不可)",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_19",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Roc_N_5"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "電磁気誘導：攻撃力{0}%の固定ダメージ",
+                    "type": 1,
+                    "value": "0.22",
+                    "level": "0.02"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "22%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.185,
+          "type": 3,
+          "range": 3,
+          "ap": 8,
+          "grid": "258",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Roc_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "感電：AP{0}",
+                    "type": 0,
+                    "value": "-0.4",
+                    "level": "-0.02"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -0.4,
+                      "per": -0.02
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "感電：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "精密攻撃：ダメージ量+{0}%(標的/移動不可)",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "精密攻撃：ダメージ量+{0}%(標的/移動不可)",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_19",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Roc_N_5"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "電磁気誘導：攻撃力{0}%の固定ダメージ",
+                    "type": 1,
+                    "value": "0.22",
+                    "level": "0.02"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "22%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.3,
+          "type": 3,
+          "range": 3,
+          "ap": 8,
+          "grid": "258",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Roc_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "感電：AP{0}",
+                    "type": 0,
+                    "value": "-0.4",
+                    "level": "-0.02"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -0.4,
+                      "per": -0.02
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "感電：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "精密攻撃：ダメージ量+{0}%(標的/移動不可)",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "精密攻撃：ダメージ量+{0}%(標的/移動不可)",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_19",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Roc_N_5"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "電磁気誘導：攻撃力{0}%の固定ダメージ",
+                    "type": 1,
+                    "value": "0.22",
+                    "level": "0.02"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "22%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_AP_DOWN@-0.4~-0.02,BuffIcon_EVADE_DOWN@-0.3,BuffIcon_LightningATK_UP@0.2~0.01,BuffIcon_LightningATK_UP@0.2~0.01,BuffIcon_PhyATK_UP@0.22~0.02"
+  },
+  "2": {
+    "key": "2",
+    "icon": "AssaultAttack",
+    "target": "enemy",
+    "buffs": {
+      "index": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "data": [
+        {
+          "rate": 2.195,
+          "type": 3,
+          "range": 3,
+          "ap": 9,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Roc_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "感電：AP{0}",
+                    "type": 0,
+                    "value": "-0.6",
+                    "level": "-0.03"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -0.6,
+                      "per": -0.03
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "感電：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.4",
+                    "level": "-0.02"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-40%",
+                      "per": "-2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "処刑：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "30%",
+                        "per": "1.5%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空攻撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_20",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Roc_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_BARRIER_PIERCE",
+                  "desc": {
+                    "desc": "S.ユピテルストライク：バリア/ダメージ減少無視",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 94,
+                    "penetration_force": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_12",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "処刑：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "30%",
+                        "per": "1.5%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_13",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空攻撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_Roc_N_19",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Roc_N_5"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "電磁気誘導：攻撃力{0}%の固定ダメージ",
+                    "type": 1,
+                    "value": "0.22",
+                    "level": "0.02"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "22%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.39,
+          "type": 3,
+          "range": 3,
+          "ap": 9,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Roc_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "感電：AP{0}",
+                    "type": 0,
+                    "value": "-0.6",
+                    "level": "-0.03"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -0.6,
+                      "per": -0.03
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "感電：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.4",
+                    "level": "-0.02"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-40%",
+                      "per": "-2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "処刑：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "30%",
+                        "per": "1.5%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空攻撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_20",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Roc_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_BARRIER_PIERCE",
+                  "desc": {
+                    "desc": "S.ユピテルストライク：バリア/ダメージ減少無視",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 94,
+                    "penetration_force": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_12",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "処刑：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "30%",
+                        "per": "1.5%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_13",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空攻撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_Roc_N_19",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Roc_N_5"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "電磁気誘導：攻撃力{0}%の固定ダメージ",
+                    "type": 1,
+                    "value": "0.22",
+                    "level": "0.02"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "22%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.585,
+          "type": 3,
+          "range": 3,
+          "ap": 9,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Roc_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "感電：AP{0}",
+                    "type": 0,
+                    "value": "-0.6",
+                    "level": "-0.03"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -0.6,
+                      "per": -0.03
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "感電：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.4",
+                    "level": "-0.02"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-40%",
+                      "per": "-2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "処刑：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "30%",
+                        "per": "1.5%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空攻撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_20",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Roc_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_BARRIER_PIERCE",
+                  "desc": {
+                    "desc": "S.ユピテルストライク：バリア/ダメージ減少無視",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 94,
+                    "penetration_force": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_12",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "処刑：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "30%",
+                        "per": "1.5%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_13",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空攻撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_Roc_N_19",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Roc_N_5"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "電磁気誘導：攻撃力{0}%の固定ダメージ",
+                    "type": 1,
+                    "value": "0.22",
+                    "level": "0.02"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "22%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.78,
+          "type": 3,
+          "range": 3,
+          "ap": 9,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Roc_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "感電：AP{0}",
+                    "type": 0,
+                    "value": "-0.6",
+                    "level": "-0.03"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -0.6,
+                      "per": -0.03
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "感電：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.4",
+                    "level": "-0.02"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-40%",
+                      "per": "-2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "処刑：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "30%",
+                        "per": "1.5%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空攻撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_20",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Roc_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_BARRIER_PIERCE",
+                  "desc": {
+                    "desc": "S.ユピテルストライク：バリア/ダメージ減少無視",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 94,
+                    "penetration_force": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_12",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "処刑：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "30%",
+                        "per": "1.5%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_13",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空攻撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_Roc_N_19",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Roc_N_5"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "電磁気誘導：攻撃力{0}%の固定ダメージ",
+                    "type": 1,
+                    "value": "0.22",
+                    "level": "0.02"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "22%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.975,
+          "type": 3,
+          "range": 3,
+          "ap": 9,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Roc_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "感電：AP{0}",
+                    "type": 0,
+                    "value": "-0.6",
+                    "level": "-0.03"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -0.6,
+                      "per": -0.03
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "感電：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.4",
+                    "level": "-0.02"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-40%",
+                      "per": "-2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "処刑：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "30%",
+                        "per": "1.5%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空攻撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_20",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Roc_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_BARRIER_PIERCE",
+                  "desc": {
+                    "desc": "S.ユピテルストライク：バリア/ダメージ減少無視",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 94,
+                    "penetration_force": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_12",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "処刑：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "30%",
+                        "per": "1.5%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_13",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空攻撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_Roc_N_19",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Roc_N_5"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "電磁気誘導：攻撃力{0}%の固定ダメージ",
+                    "type": 1,
+                    "value": "0.22",
+                    "level": "0.02"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "22%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.17,
+          "type": 3,
+          "range": 3,
+          "ap": 9,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Roc_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "感電：AP{0}",
+                    "type": 0,
+                    "value": "-0.6",
+                    "level": "-0.03"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -0.6,
+                      "per": -0.03
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "感電：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.4",
+                    "level": "-0.02"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-40%",
+                      "per": "-2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "処刑：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "30%",
+                        "per": "1.5%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空攻撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_20",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Roc_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_BARRIER_PIERCE",
+                  "desc": {
+                    "desc": "S.ユピテルストライク：バリア/ダメージ減少無視",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 94,
+                    "penetration_force": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_12",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "処刑：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "30%",
+                        "per": "1.5%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_13",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空攻撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_Roc_N_19",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Roc_N_5"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "電磁気誘導：攻撃力{0}%の固定ダメージ",
+                    "type": 1,
+                    "value": "0.22",
+                    "level": "0.02"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "22%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.365,
+          "type": 3,
+          "range": 3,
+          "ap": 9,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Roc_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "感電：AP{0}",
+                    "type": 0,
+                    "value": "-0.6",
+                    "level": "-0.03"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -0.6,
+                      "per": -0.03
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "感電：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.4",
+                    "level": "-0.02"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-40%",
+                      "per": "-2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "処刑：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "30%",
+                        "per": "1.5%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空攻撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_20",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Roc_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_BARRIER_PIERCE",
+                  "desc": {
+                    "desc": "S.ユピテルストライク：バリア/ダメージ減少無視",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 94,
+                    "penetration_force": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_12",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "処刑：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "30%",
+                        "per": "1.5%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_13",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空攻撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_Roc_N_19",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Roc_N_5"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "電磁気誘導：攻撃力{0}%の固定ダメージ",
+                    "type": 1,
+                    "value": "0.22",
+                    "level": "0.02"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "22%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.56,
+          "type": 3,
+          "range": 3,
+          "ap": 9,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Roc_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "感電：AP{0}",
+                    "type": 0,
+                    "value": "-0.6",
+                    "level": "-0.03"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -0.6,
+                      "per": -0.03
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "感電：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.4",
+                    "level": "-0.02"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-40%",
+                      "per": "-2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "処刑：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "30%",
+                        "per": "1.5%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空攻撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_20",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Roc_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_BARRIER_PIERCE",
+                  "desc": {
+                    "desc": "S.ユピテルストライク：バリア/ダメージ減少無視",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 94,
+                    "penetration_force": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_12",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "処刑：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "30%",
+                        "per": "1.5%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_13",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空攻撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_Roc_N_19",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Roc_N_5"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "電磁気誘導：攻撃力{0}%の固定ダメージ",
+                    "type": 1,
+                    "value": "0.22",
+                    "level": "0.02"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "22%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.755,
+          "type": 3,
+          "range": 3,
+          "ap": 9,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Roc_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "感電：AP{0}",
+                    "type": 0,
+                    "value": "-0.6",
+                    "level": "-0.03"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -0.6,
+                      "per": -0.03
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "感電：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.4",
+                    "level": "-0.02"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-40%",
+                      "per": "-2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "処刑：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "30%",
+                        "per": "1.5%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空攻撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_20",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Roc_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_BARRIER_PIERCE",
+                  "desc": {
+                    "desc": "S.ユピテルストライク：バリア/ダメージ減少無視",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 94,
+                    "penetration_force": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_12",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "処刑：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "30%",
+                        "per": "1.5%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_13",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空攻撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_Roc_N_19",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Roc_N_5"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "電磁気誘導：攻撃力{0}%の固定ダメージ",
+                    "type": 1,
+                    "value": "0.22",
+                    "level": "0.02"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "22%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.95,
+          "type": 3,
+          "range": 3,
+          "ap": 9,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Roc_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "感電：AP{0}",
+                    "type": 0,
+                    "value": "-0.6",
+                    "level": "-0.03"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -0.6,
+                      "per": -0.03
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "感電：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.4",
+                    "level": "-0.02"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-40%",
+                      "per": "-2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "処刑：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "30%",
+                        "per": "1.5%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空攻撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_20",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Roc_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_BARRIER_PIERCE",
+                  "desc": {
+                    "desc": "S.ユピテルストライク：バリア/ダメージ減少無視",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 94,
+                    "penetration_force": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_12",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_LightningATK_UP",
+                  "desc": {
+                    "desc": "処刑：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 86,
+                    "damage_add": {
+                      "elem": "lightning",
+                      "damage": {
+                        "base": "30%",
+                        "per": "1.5%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Roc_N_13",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空攻撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_Roc_N_19",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Roc_N_5"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "電磁気誘導：攻撃力{0}%の固定ダメージ",
+                    "type": 1,
+                    "value": "0.22",
+                    "level": "0.02"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "22%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_AP_DOWN@-0.6~-0.03,BuffIcon_EVADE_DOWN@-0.4~-0.02,BuffIcon_LightningATK_UP@0.3,BuffIcon_MOBILITY_DMG_UP@0.2~0.01,BuffIcon_BARRIER_PIERCE@0~0,BuffIcon_LightningATK_UP@0.3,BuffIcon_MOBILITY_DMG_UP@0.2~0.01,BuffIcon_PhyATK_UP@0.22~0.02"
+  },
+  "3": {
+    "key": "3",
+    "icon": "TeamSpdBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "258",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Roc_N_3",
+              "on": "round",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "電磁気波かく乱：回避率+{0}%(1回)",
+                    "type": 1,
+                    "value": "0.35",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "until": {
+                      "after": "counter"
+                    }
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "35%",
+                      "per": "5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_COUNTER",
+                  "desc": {
+                    "desc": "電磁気波かく乱：{0}%の威力で反撃(1回)",
+                    "type": 1,
+                    "value": "0.35",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "until": {
+                      "after": "counter"
+                    }
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 29,
+                    "counter": {
+                      "base": "35%",
+                      "per": "5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_Roc_N_14",
+              "on": "round",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_COUNTER",
+                  "desc": {
+                    "desc": "電磁気波かく乱：{0}%の威力で反撃(1回)",
+                    "type": 1,
+                    "value": "0.35",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "until": {
+                      "after": "counter"
+                    }
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 29,
+                    "counter": {
+                      "base": "35%",
+                      "per": "5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_Roc_N_15",
+              "on": "round",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "照準撹乱：回避率+{0}%",
+                    "type": 1,
+                    "value": "0.35",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "35%",
+                      "per": "5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_Roc_N_16",
+              "on": "evade",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_COUNTER",
+                  "desc": {
+                    "desc": "電磁気波かく乱：{0}%の威力で反撃",
+                    "type": 1,
+                    "value": "0.35",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "until": {
+                      "after": "counter"
+                    }
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 29,
+                    "counter": {
+                      "base": "35%",
+                      "per": "5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        },
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "24568",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Roc_N_3",
+              "on": "round",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "電磁気波かく乱：回避率+{0}%(1回)",
+                    "type": 1,
+                    "value": "0.35",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "until": {
+                      "after": "counter"
+                    }
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "35%",
+                      "per": "5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_COUNTER",
+                  "desc": {
+                    "desc": "電磁気波かく乱：{0}%の威力で反撃(1回)",
+                    "type": 1,
+                    "value": "0.35",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "until": {
+                      "after": "counter"
+                    }
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 29,
+                    "counter": {
+                      "base": "35%",
+                      "per": "5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_Roc_N_14",
+              "on": "round",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_COUNTER",
+                  "desc": {
+                    "desc": "電磁気波かく乱：{0}%の威力で反撃(1回)",
+                    "type": 1,
+                    "value": "0.35",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "until": {
+                      "after": "counter"
+                    }
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 29,
+                    "counter": {
+                      "base": "35%",
+                      "per": "5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_Roc_N_15",
+              "on": "round",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "照準撹乱：回避率+{0}%",
+                    "type": 1,
+                    "value": "0.35",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "35%",
+                      "per": "5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_Roc_N_16",
+              "on": "evade",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_COUNTER",
+                  "desc": {
+                    "desc": "電磁気波かく乱：{0}%の威力で反撃",
+                    "type": 1,
+                    "value": "0.35",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "until": {
+                      "after": "counter"
+                    }
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 29,
+                    "counter": {
+                      "base": "35%",
+                      "per": "5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_EVADE_UP@0.35~0.05,BuffIcon_COUNTER@0.35~0.05,BuffIcon_COUNTER@0.35~0.05,BuffIcon_EVADE_UP@0.35~0.05,BuffIcon_COUNTER@0.35~0.05"
+  },
+  "4": {
+    "key": "4",
+    "icon": "SelfAtkBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "self",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Roc_N_4",
+              "on": "round",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_LIGHTNINGRES_UP",
+                  "desc": {
+                    "desc": "エネルギーコンバート：電気耐性+{0}%",
+                    "type": 1,
+                    "value": "0.5",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 19,
+                    "resist": {
+                      "elem": "lightning",
+                      "value": {
+                        "base": "50%",
+                        "per": "5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "エネルギーコンバート：攻撃力+{0}%",
+                    "type": 1,
+                    "value": "0.12",
+                    "level": "6.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 1,
+                    "attack": {
+                      "base": "12%",
+                      "per": "0.6%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "最大充電：行動力+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_Roc_N_17",
+              "on": "round",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "エネルギーコンバート：攻撃力+{0}%",
+                    "type": 1,
+                    "value": "0.12",
+                    "level": "6.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "12%",
+                      "per": "0.6%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 3
+            },
+            {
+              "key": "Effect_AGS_Roc_N_18",
+              "on": "round",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_AGS_Roc_N_17"
+                  ],
+                  "stack": 3,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "最大充電：行動力+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_LIGHTNINGRES_UP@0.5~0.05,BuffIcon_ATK_UP@0.12,BuffIcon_AP_UP@0.2~0.01,BuffIcon_ATK_UP@0.12,BuffIcon_AP_UP@0.2~0.01"
+  },
+  "5": {
+    "key": "5",
+    "icon": "SelfAtkBuff",
+    "target": "enemy",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "F>24568",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Roc_N_5",
+              "on": "round",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    19
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 4,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_LIGHTNINGRES_DOWN",
+                  "desc": {
+                    "desc": "電磁気誘導：誘導対象",
+                    "type": 0,
+                    "value": "-0.01",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 19,
+                    "resist": {
+                      "elem": "lightning",
+                      "value": {
+                        "base": "-1%",
+                        "per": "0%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "電磁気誘導：攻撃力{0}%の固定ダメージ",
+                    "type": 1,
+                    "value": "0.22",
+                    "level": "0.02"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "22%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        },
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "global",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Roc_N_5",
+              "on": "round",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    19
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 4,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_LIGHTNINGRES_DOWN",
+                  "desc": {
+                    "desc": "電磁気誘導：誘導対象",
+                    "type": 0,
+                    "value": "-0.01",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 19,
+                    "resist": {
+                      "elem": "lightning",
+                      "value": {
+                        "base": "-1%",
+                        "per": "0%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "電磁気誘導：攻撃力{0}%の固定ダメージ",
+                    "type": 1,
+                    "value": "0.22",
+                    "level": "0.02"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "22%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_LIGHTNINGRES_DOWN@-0.01~0,BuffIcon_PhyATK_UP@0.22~0.02"
+  }
+}

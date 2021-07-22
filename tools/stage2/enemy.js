@@ -2,48 +2,52 @@ const fs = require("fs");
 const path = require("path");
 const rmfr = require("rmfr");
 
-const sourceDir = path.resolve(__dirname, "..", "..", "db");
-const targetDir = path.resolve(__dirname, "..", "..", "external", "json", "enemy");
 
-(async () => {
-	const enemies = JSON.parse(fs.readFileSync(path.resolve(sourceDir, "enemy.json"), { encoding: "utf-8" }));
-	const ais = JSON.parse(fs.readFileSync(path.resolve(sourceDir, "ai.json"), { encoding: "utf-8" }));
+const targetDBs = require("../targets");
+targetDBs.forEach(targetDB => {
+	const sourceDir = path.resolve(__dirname, "..", "..", "db", targetDB);
+	const targetDir = path.resolve(__dirname, "..", "..", "external", "json", targetDB, "enemy");
 
-	await rmfr(targetDir);
-	fs.mkdirSync(targetDir, { recursive: true });
+	(async () => {
+		const enemies = JSON.parse(fs.readFileSync(path.resolve(sourceDir, "enemy.json"), { encoding: "utf-8" }));
+		const ais = JSON.parse(fs.readFileSync(path.resolve(sourceDir, "ai.json"), { encoding: "utf-8" }));
 
-	enemies.forEach(char => {
-		let ai = ais.find(y => y.ai === char.ai);
-		if (!ai) ai = [];
-		else ai = ai.pattern;
+		await rmfr(targetDir);
+		fs.mkdirSync(targetDir, { recursive: true });
 
-		fs.writeFileSync(
-			path.join(targetDir, `${char.id}.json`),
-			JSON.stringify({
-				uid: char.id,
+		enemies.forEach(char => {
+			let ai = ais.find(y => y.ai === char.ai);
+			if (!ai) ai = [];
+			else ai = ai.pattern;
 
-				rarity: char.rarity,
-				type: char.type,
-				role: char.role,
+			fs.writeFileSync(
+				path.join(targetDir, `${char.id}.json`),
+				JSON.stringify({
+					uid: char.id,
 
-				isBoss: char.isBoss,
+					rarity: char.rarity,
+					type: char.type,
+					role: char.role,
 
-				stat: {
-					hp: char.hp,
-					atk: char.atk,
-					def: char.def,
-					spd: char.spd,
-					cri: char.cri,
-					acc: char.acc,
-					eva: char.eva,
-					res: char.res,
-				},
+					isBoss: char.isBoss,
 
-				skills: char.skills,
-				ai: ai || [],
-			}),
-			{ encoding: "utf-8" },
-		);
-	});
-	// console.log(units);
-})();
+					stat: {
+						hp: char.hp,
+						atk: char.atk,
+						def: char.def,
+						spd: char.spd,
+						cri: char.cri,
+						acc: char.acc,
+						eva: char.eva,
+						res: char.res,
+					},
+
+					skills: char.skills,
+					ai: ai || [],
+				}),
+				{ encoding: "utf-8" },
+			);
+		});
+		// console.log(units);
+	})();
+});

@@ -10,6 +10,7 @@ import { AssetsRoot } from "@/libs/Const";
 import { isActive } from "@/libs/Functions";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 import { GetRequireResource } from "@/libs/Cost";
+import { CurrentDB } from "@/libs/DB";
 
 import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 import Locale from "@/components/locale";
@@ -47,7 +48,7 @@ const Simulator: FunctionalComponent = () => {
 			const u = FilterableUnit.find(x => x.uid === uid);
 			if (!u) return;
 
-			JsonLoaderCore(`unit/${uid}`)
+			JsonLoaderCore(CurrentDB, `unit/${uid}`)
 				.then(() => {
 					const unit = GetJson<Unit>(`unit/${uid}`);
 					if (!unit) return;

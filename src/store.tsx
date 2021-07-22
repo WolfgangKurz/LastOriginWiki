@@ -201,7 +201,7 @@ const Store = new StoreClass(
 
 				Challenge: true,
 
-				Uninstalled: false,
+				Uninstalled: true,
 
 				Roguelike: true,
 			},

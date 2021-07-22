@@ -1,0 +1,3201 @@
+{
+  "1": {
+    "key": "1",
+    "icon": "ARShot",
+    "target": "enemy",
+    "buffs": {
+      "index": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "data": [
+        {
+          "rate": 1.17,
+          "type": 0,
+          "range": 4,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_SpartanC_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "ターゲット設定：標的",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "ターゲット設定：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "ターゲット設定：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_SpartanC_N_11",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "ターゲット設定：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_SpartanC_N_15",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_AGS_SpartanC_N_4"
+                  ],
+                  "stack": 2,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "データリンク：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-25%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_SpartanC_N_16",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_AGS_SpartanC_N_4"
+                  ],
+                  "stack": 3,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "データリンク：強化効果解除",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.27,
+          "type": 0,
+          "range": 4,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_SpartanC_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "ターゲット設定：標的",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "ターゲット設定：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "ターゲット設定：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_SpartanC_N_11",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "ターゲット設定：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_SpartanC_N_15",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_AGS_SpartanC_N_4"
+                  ],
+                  "stack": 2,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "データリンク：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-25%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_SpartanC_N_16",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_AGS_SpartanC_N_4"
+                  ],
+                  "stack": 3,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "データリンク：強化効果解除",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.37,
+          "type": 0,
+          "range": 4,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_SpartanC_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "ターゲット設定：標的",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "ターゲット設定：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "ターゲット設定：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_SpartanC_N_11",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "ターゲット設定：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_SpartanC_N_15",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_AGS_SpartanC_N_4"
+                  ],
+                  "stack": 2,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "データリンク：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-25%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_SpartanC_N_16",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_AGS_SpartanC_N_4"
+                  ],
+                  "stack": 3,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "データリンク：強化効果解除",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.47,
+          "type": 0,
+          "range": 4,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_SpartanC_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "ターゲット設定：標的",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "ターゲット設定：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "ターゲット設定：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_SpartanC_N_11",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "ターゲット設定：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_SpartanC_N_15",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_AGS_SpartanC_N_4"
+                  ],
+                  "stack": 2,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "データリンク：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-25%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_SpartanC_N_16",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_AGS_SpartanC_N_4"
+                  ],
+                  "stack": 3,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "データリンク：強化効果解除",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.57,
+          "type": 0,
+          "range": 4,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_SpartanC_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "ターゲット設定：標的",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "ターゲット設定：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "ターゲット設定：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_SpartanC_N_11",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "ターゲット設定：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_SpartanC_N_15",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_AGS_SpartanC_N_4"
+                  ],
+                  "stack": 2,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "データリンク：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-25%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_SpartanC_N_16",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_AGS_SpartanC_N_4"
+                  ],
+                  "stack": 3,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "データリンク：強化効果解除",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.67,
+          "type": 0,
+          "range": 4,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_SpartanC_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "ターゲット設定：標的",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "ターゲット設定：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "ターゲット設定：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_SpartanC_N_11",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "ターゲット設定：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_SpartanC_N_15",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_AGS_SpartanC_N_4"
+                  ],
+                  "stack": 2,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "データリンク：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-25%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_SpartanC_N_16",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_AGS_SpartanC_N_4"
+                  ],
+                  "stack": 3,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "データリンク：強化効果解除",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.77,
+          "type": 0,
+          "range": 4,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_SpartanC_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "ターゲット設定：標的",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "ターゲット設定：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "ターゲット設定：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_SpartanC_N_11",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "ターゲット設定：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_SpartanC_N_15",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_AGS_SpartanC_N_4"
+                  ],
+                  "stack": 2,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "データリンク：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-25%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_SpartanC_N_16",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_AGS_SpartanC_N_4"
+                  ],
+                  "stack": 3,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "データリンク：強化効果解除",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.87,
+          "type": 0,
+          "range": 4,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_SpartanC_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "ターゲット設定：標的",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "ターゲット設定：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "ターゲット設定：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_SpartanC_N_11",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "ターゲット設定：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_SpartanC_N_15",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_AGS_SpartanC_N_4"
+                  ],
+                  "stack": 2,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "データリンク：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-25%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_SpartanC_N_16",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_AGS_SpartanC_N_4"
+                  ],
+                  "stack": 3,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "データリンク：強化効果解除",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.97,
+          "type": 0,
+          "range": 4,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_SpartanC_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "ターゲット設定：標的",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "ターゲット設定：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "ターゲット設定：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_SpartanC_N_11",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "ターゲット設定：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_SpartanC_N_15",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_AGS_SpartanC_N_4"
+                  ],
+                  "stack": 2,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "データリンク：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-25%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_SpartanC_N_16",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_AGS_SpartanC_N_4"
+                  ],
+                  "stack": 3,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "データリンク：強化効果解除",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.07,
+          "type": 0,
+          "range": 4,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_SpartanC_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "ターゲット設定：標的",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "ターゲット設定：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "ターゲット設定：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_SpartanC_N_11",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "ターゲット設定：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_SpartanC_N_15",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_AGS_SpartanC_N_4"
+                  ],
+                  "stack": 2,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "データリンク：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-25%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_SpartanC_N_16",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_AGS_SpartanC_N_4"
+                  ],
+                  "stack": 3,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "データリンク：強化効果解除",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_MARKING@0~0,BuffIcon_EVADE_DOWN@-0.3,BuffIcon_VULNERABLE@0.2~0.01,BuffIcon_VULNERABLE@0.2~0.01,BuffIcon_ACCURACY_DOWN@-0.25~0,BuffIcon_REMOVE_BUFF@0~0"
+  },
+  "2": {
+    "key": "2",
+    "icon": "SelfAtkBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 6,
+          "ap": 6,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 999,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_SpartanC_N_2",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "目標指示：攻撃力+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "目標指示：クリティカル率+{0}%",
+                    "type": 1,
+                    "value": "0.1",
+                    "level": "5.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "目標指示：行動力+{0}%",
+                    "type": 1,
+                    "value": "0.1",
+                    "level": "5.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_SpartanC_N_12",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "目標指示：攻撃力+{0}%(ロボット)",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "目標指示：クリティカル率+{0}%(ロボット)",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "目標指示：行動力+{0}%(ロボット)",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_ATK_UP@0.2~0.01,BuffIcon_CRITICAL_UP@0.1,BuffIcon_AP_UP@0.1,BuffIcon_ATK_UP@0.3,BuffIcon_CRITICAL_UP@0.15,BuffIcon_AP_UP@0.15"
+  },
+  "3": {
+    "key": "3",
+    "icon": "SelfAtkBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "global",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_SpartanC_N_3",
+              "on": "round",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_SpartanA_N_7"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SUPPORT_ATTACK",
+                  "desc": {
+                    "desc": "スパルタンフォーメーション：攻撃支援",
+                    "type": 1,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 77,
+                    "attack_support": {
+                      "base": "100%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "スパルタンフォーメーション：受けるダメージ{0}%減少",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "スパルタンフォーメーション：行動力+{0}%",
+                    "type": 1,
+                    "value": "0.1",
+                    "level": "5.0000000000000001E-3"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "スパルタンフォーメーション：攻撃力+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 1,
+                    "attack": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_SpartanC_N_13",
+              "on": "round",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_SpartanA_N_7"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "スパルタンフォーメーション：受けるダメージ{0}%減少",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_SpartanC_N_14",
+              "on": "round",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_SpartanA_N_7"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "スパルタンフォーメーション：行動力+{0}%",
+                    "type": 1,
+                    "value": "0.1",
+                    "level": "5.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_SUPPORT_ATTACK@1~0,BuffIcon_DAMAGE_REDUCE@0.2~0.01,BuffIcon_AP_UP@0.1,BuffIcon_ATK_UP@0.2~0.01,BuffIcon_DAMAGE_REDUCE@0.2~0.01,BuffIcon_AP_UP@0.1"
+  },
+  "4": {
+    "key": "4",
+    "icon": "Scan",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "global",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_SpartanC_N_4",
+              "on": "round",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "データリンク：クリティカル率+{0}%",
+                    "type": 1,
+                    "value": "0.1",
+                    "level": "5.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 3
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_CRITICAL_UP@0.1"
+  }
+}

@@ -11,6 +11,7 @@ import { BuffEffectValue } from "@/types/BuffEffect";
 import { SimulatorSlotType } from "../../types/Slot";
 
 import { AssetsRoot, RarityDisplay } from "@/libs/Const";
+import { CurrentDB } from "@/libs/DB";
 import { GetLinkBonus } from "@/libs/LinkBonus";
 import { GetRequireResource } from "@/libs/Cost";
 import { objState } from "@/libs/State";
@@ -105,7 +106,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 			equipList.splice(i, 1, false);
 			equipUpdated = true;
 
-			JsonLoaderCore(`equip/${x.uid}`)
+			JsonLoaderCore(CurrentDB, `equip/${x.uid}`)
 				.then(() => {
 					equipList.splice(i, 1, GetJson<Equip>(`equip/${x.uid}`));
 					equips.set(equipList);

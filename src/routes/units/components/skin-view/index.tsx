@@ -39,7 +39,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		if (!props.collapsed) return {};
 
 		const base = skin.offset;
-		const platform = IsGoogle.value ? "google" : "normal";
+		// const platform = IsGoogle.value ? "google" : "normal";
 		const target = IsDamaged.value && IsSimplified.value
 			? "x"
 			: IsDamaged.value
@@ -48,7 +48,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					? "s"
 					: "n";
 
-		return { "margin-left": `${base[platform][target]}%` };
+		return { "margin-left": `${base[target]}%` };
 	})();
 	const SkinImageURL = ((): string => {
 		const skinId = skin.isDef ? 0 : skin.sid;
@@ -89,7 +89,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 				<div class="unit-full-bg" />
 				<div class="unit-full-group">
 					<div>
-						<img src={ `${AssetsRoot}/${imageExt}/group/${unit.shortgroup}.${imageExt}` } />
+						<img src={ `${AssetsRoot}/${imageExt}/group/${unit.group.replace(/_[0-9]+$/, "")}.${imageExt}` } />
 					</div>
 				</div>
 				<div class="unit-full-unit">

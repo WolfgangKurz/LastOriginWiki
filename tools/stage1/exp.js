@@ -3,54 +3,57 @@ const path = require("path");
 const { google } = require("googleapis");
 
 function process (auth) {
-	const sheets = google.sheets({ version: "v4", auth });
-	sheets.spreadsheets.values.get({
-		spreadsheetId: "1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4",
-		range: "EXP!A2:T",
-	}, (err, res) => {
-		if (err) return console.log("The API returned an error: " + err);
 
-		const ret = {};
-		const rows = res.data.values;
-		if (rows.length) {
-			const ret = {
-				map: {},
-				table: [],
-			};
+	const targetDBs = require("../targets");
+	targetDBs.forEach(targetDB => {
+		const sheets = google.sheets({ version: "v4", auth });
+		sheets.spreadsheets.values.get({
+			spreadsheetId: "1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4",
+			range: "EXP!A2:T",
+		}, (err, res) => {
+			if (err) return console.log(`The API returned an error: ${err}`);
 
-			rows.map((row) => {
-				if (!row[1]) return;
+			const rows = res.data.values;
+			if (rows && rows.length) {
+				const ret = {
+					map: {},
+					table: [],
+				};
 
-				const [type, world, map] = row;
+				rows.map((row) => {
+					if (!row[1]) return;
 
-				const wave = row.slice(3, 3 + 8);
-				const enemies = row.slice(3 + 8, 3 + 8 + 8);
+					const [type, world, map] = row;
 
-				if (!(world in ret.map))
-					ret.map[world] = { type };
+					const wave = row.slice(3, 3 + 8);
+					const enemies = row.slice(3 + 8, 3 + 8 + 8);
 
-				ret.map[world][map] = wave
-					.filter(x => x)
-					.map((x, i) => ({
-						exp: parseInt(x, 10),
-						enemies: parseInt(enemies[i], 10),
-					}));
-			});
-			rows.map((row) => {
-				if (!row[3 + 8 + 8]) return;
+					if (!(world in ret.map))
+						ret.map[world] = { type };
 
-				ret.table.push(
-					parseInt(row[3 + 8 + 8], 10),
+					ret.map[world][map] = wave
+						.filter(x => x)
+						.map((x, i) => ({
+							exp: parseInt(x, 10),
+							enemies: parseInt(enemies[i], 10),
+						}));
+				});
+				rows.map((row) => {
+					if (!row[3 + 8 + 8]) return;
+
+					ret.table.push(
+						parseInt(row[3 + 8 + 8], 10),
+					);
+				});
+
+				fs.mkdirSync(path.resolve(__dirname, "..", "..", "external", "json", targetDB), { recursive: true });
+				fs.writeFileSync(
+					path.resolve(__dirname, "..", "..", "external", "json", targetDB, "exp.json"),
+					JSON.stringify(ret),
 				);
-			});
-
-			fs.mkdirSync(path.resolve(__dirname, "..", "..", "external", "json"), { recursive: true });
-			fs.writeFileSync(
-				path.resolve(__dirname, "..", "..", "external", "json", "exp.json"),
-				JSON.stringify(ret),
-			);
-		} else
-			console.log("No data found.");
+			} else
+				console.log("No data found.");
+		});
 	});
 }
 

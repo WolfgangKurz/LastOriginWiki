@@ -1,0 +1,5416 @@
+{
+  "1": {
+    "key": "1",
+    "icon": "ARShot",
+    "target": "enemy",
+    "buffs": {
+      "index": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "data": [
+        {
+          "rate": 1.17,
+          "type": 0,
+          "range": 4,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_Vanilla_N_1",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "다리 노리기 : 이동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "다리노리기 : 행동력 {0}%",
+                    "type": 1,
+                    "value": "-0.050000",
+                    "level": "-0.002500"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    11,
+                    78
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "직격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_13",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 공격력+{0}%",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "15%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_14",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 적중+{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        },
+        {
+          "rate": 1.27,
+          "type": 0,
+          "range": 4,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_Vanilla_N_1",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "다리 노리기 : 이동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "다리노리기 : 행동력 {0}%",
+                    "type": 1,
+                    "value": "-0.050000",
+                    "level": "-0.002500"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    11,
+                    78
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "직격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_13",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 공격력+{0}%",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "15%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_14",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 적중+{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        },
+        {
+          "rate": 1.37,
+          "type": 0,
+          "range": 4,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_Vanilla_N_1",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "다리 노리기 : 이동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "다리노리기 : 행동력 {0}%",
+                    "type": 1,
+                    "value": "-0.050000",
+                    "level": "-0.002500"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    11,
+                    78
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "직격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_13",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 공격력+{0}%",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "15%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_14",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 적중+{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        },
+        {
+          "rate": 1.47,
+          "type": 0,
+          "range": 4,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_Vanilla_N_1",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "다리 노리기 : 이동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "다리노리기 : 행동력 {0}%",
+                    "type": 1,
+                    "value": "-0.050000",
+                    "level": "-0.002500"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    11,
+                    78
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "직격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_13",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 공격력+{0}%",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "15%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_14",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 적중+{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        },
+        {
+          "rate": 1.57,
+          "type": 0,
+          "range": 4,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_Vanilla_N_1",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "다리 노리기 : 이동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "다리노리기 : 행동력 {0}%",
+                    "type": 1,
+                    "value": "-0.050000",
+                    "level": "-0.002500"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    11,
+                    78
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "직격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_13",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 공격력+{0}%",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "15%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_14",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 적중+{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        },
+        {
+          "rate": 1.67,
+          "type": 0,
+          "range": 4,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_Vanilla_N_1",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "다리 노리기 : 이동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "다리노리기 : 행동력 {0}%",
+                    "type": 1,
+                    "value": "-0.050000",
+                    "level": "-0.002500"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    11,
+                    78
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "직격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_13",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 공격력+{0}%",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "15%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_14",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 적중+{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        },
+        {
+          "rate": 1.77,
+          "type": 0,
+          "range": 4,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_Vanilla_N_1",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "다리 노리기 : 이동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "다리노리기 : 행동력 {0}%",
+                    "type": 1,
+                    "value": "-0.050000",
+                    "level": "-0.002500"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    11,
+                    78
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "직격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_13",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 공격력+{0}%",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "15%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_14",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 적중+{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        },
+        {
+          "rate": 1.87,
+          "type": 0,
+          "range": 4,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_Vanilla_N_1",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "다리 노리기 : 이동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "다리노리기 : 행동력 {0}%",
+                    "type": 1,
+                    "value": "-0.050000",
+                    "level": "-0.002500"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    11,
+                    78
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "직격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_13",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 공격력+{0}%",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "15%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_14",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 적중+{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        },
+        {
+          "rate": 1.97,
+          "type": 0,
+          "range": 4,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_Vanilla_N_1",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "다리 노리기 : 이동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "다리노리기 : 행동력 {0}%",
+                    "type": 1,
+                    "value": "-0.050000",
+                    "level": "-0.002500"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    11,
+                    78
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "직격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_13",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 공격력+{0}%",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "15%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_14",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 적중+{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        },
+        {
+          "rate": 2.07,
+          "type": 0,
+          "range": 4,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_Vanilla_N_1",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "다리 노리기 : 이동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "다리노리기 : 행동력 {0}%",
+                    "type": 1,
+                    "value": "-0.050000",
+                    "level": "-0.002500"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    11,
+                    78
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "직격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_13",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 공격력+{0}%",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "15%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_14",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 적중+{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_SNARE@0~0,BuffIcon_AP_DOWN@-0.05~-0.0025,BuffIcon_PhyATK_UP@0.2~0.01,BuffIcon_PhyATK_UP@0.2~0.01,BuffIcon_ATK_UP@0.15~0.005,BuffIcon_ACCURACY_UP@0.25~0.0125"
+  },
+  "2": {
+    "key": "2",
+    "icon": "GrenadeAttack_2",
+    "target": "enemy",
+    "buffs": {
+      "index": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "data": [
+        {
+          "rate": 1.435,
+          "type": 1,
+          "range": 3,
+          "ap": 6,
+          "grid": "5$6",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_Vanilla_N_2",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    11,
+                    78
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "25%",
+                        "per": "1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Ignis_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Ignis_N_2"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "인화물 폭발 : 공격력 {0}% 고정 피해",
+                    "type": 1,
+                    "value": "0.500000",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "50%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_13",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 공격력+{0}%",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "15%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_14",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 적중+{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        },
+        {
+          "rate": 1.565,
+          "type": 1,
+          "range": 3,
+          "ap": 6,
+          "grid": "5$6",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_Vanilla_N_2",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    11,
+                    78
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "25%",
+                        "per": "1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Ignis_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Ignis_N_2"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "인화물 폭발 : 공격력 {0}% 고정 피해",
+                    "type": 1,
+                    "value": "0.500000",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "50%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_13",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 공격력+{0}%",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "15%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_14",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 적중+{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        },
+        {
+          "rate": 1.695,
+          "type": 1,
+          "range": 3,
+          "ap": 6,
+          "grid": "5$6",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_Vanilla_N_2",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    11,
+                    78
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "25%",
+                        "per": "1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Ignis_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Ignis_N_2"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "인화물 폭발 : 공격력 {0}% 고정 피해",
+                    "type": 1,
+                    "value": "0.500000",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "50%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_13",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 공격력+{0}%",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "15%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_14",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 적중+{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        },
+        {
+          "rate": 1.825,
+          "type": 1,
+          "range": 3,
+          "ap": 6,
+          "grid": "5$6",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_Vanilla_N_2",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    11,
+                    78
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "25%",
+                        "per": "1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Ignis_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Ignis_N_2"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "인화물 폭발 : 공격력 {0}% 고정 피해",
+                    "type": 1,
+                    "value": "0.500000",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "50%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_13",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 공격력+{0}%",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "15%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_14",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 적중+{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        },
+        {
+          "rate": 1.955,
+          "type": 1,
+          "range": 3,
+          "ap": 6,
+          "grid": "5$6",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_Vanilla_N_2",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    11,
+                    78
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "25%",
+                        "per": "1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Ignis_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Ignis_N_2"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "인화물 폭발 : 공격력 {0}% 고정 피해",
+                    "type": 1,
+                    "value": "0.500000",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "50%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_13",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 공격력+{0}%",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "15%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_14",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 적중+{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        },
+        {
+          "rate": 2.085,
+          "type": 1,
+          "range": 3,
+          "ap": 6,
+          "grid": "5$6",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_Vanilla_N_2",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    11,
+                    78
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "25%",
+                        "per": "1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Ignis_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Ignis_N_2"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "인화물 폭발 : 공격력 {0}% 고정 피해",
+                    "type": 1,
+                    "value": "0.500000",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "50%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_13",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 공격력+{0}%",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "15%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_14",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 적중+{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        },
+        {
+          "rate": 2.215,
+          "type": 1,
+          "range": 3,
+          "ap": 6,
+          "grid": "5$6",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_Vanilla_N_2",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    11,
+                    78
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "25%",
+                        "per": "1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Ignis_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Ignis_N_2"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "인화물 폭발 : 공격력 {0}% 고정 피해",
+                    "type": 1,
+                    "value": "0.500000",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "50%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_13",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 공격력+{0}%",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "15%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_14",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 적중+{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        },
+        {
+          "rate": 2.345,
+          "type": 1,
+          "range": 3,
+          "ap": 6,
+          "grid": "5$6",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_Vanilla_N_2",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    11,
+                    78
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "25%",
+                        "per": "1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Ignis_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Ignis_N_2"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "인화물 폭발 : 공격력 {0}% 고정 피해",
+                    "type": 1,
+                    "value": "0.500000",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "50%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_13",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 공격력+{0}%",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "15%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_14",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 적중+{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        },
+        {
+          "rate": 2.475,
+          "type": 1,
+          "range": 3,
+          "ap": 6,
+          "grid": "5$6",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_Vanilla_N_2",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    11,
+                    78
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "25%",
+                        "per": "1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Ignis_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Ignis_N_2"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "인화물 폭발 : 공격력 {0}% 고정 피해",
+                    "type": 1,
+                    "value": "0.500000",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "50%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_13",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 공격력+{0}%",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "15%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_14",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 적중+{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        },
+        {
+          "rate": 2.605,
+          "type": 1,
+          "range": 3,
+          "ap": 6,
+          "grid": "5$6",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_Vanilla_N_2",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    11,
+                    78
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "25%",
+                        "per": "1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Ignis_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Ignis_N_2"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "인화물 폭발 : 공격력 {0}% 고정 피해",
+                    "type": 1,
+                    "value": "0.500000",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "50%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_13",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 공격력+{0}%",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "15%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_14",
+              "on": "attack",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    76,
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 적중+{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_FireATK_UP@0.25~0.0125,BuffIcon_PhyATK_UP@0.5~0,BuffIcon_ATK_UP@0.15~0.005,BuffIcon_ACCURACY_UP@0.25~0.0125"
+  },
+  "3": {
+    "key": "3",
+    "icon": "SelfAtkBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "28",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_Vanilla_N_3",
+              "on": "attack",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SUPPORT_ATTACK",
+                  "desc": {
+                    "desc": "뒷정리 : 공격 지원 (공격/지원기)",
+                    "type": 1,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 77,
+                    "attack_support": {
+                      "base": "100%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "뒷정리 : AP+{0} (적 처치 시)",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0.050000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 공격력+{0}% (자신)",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 1,
+                    "attack": {
+                      "base": "15%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "뒷정리 : 적중+{0}% (자신)",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Vanilla_N_12",
+              "on": "enemy_killed",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_3P_Vanilla_N_3"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "뒷정리 : AP+{0} (공격/지원기)",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0.050000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_SUPPORT_ATTACK@1~0,BuffIcon_AP_UP@1~0.05,BuffIcon_ATK_UP@0.15~0.005,BuffIcon_ACCURACY_UP@0.25~0.0125,BuffIcon_AP_UP@1~0.05"
+  },
+  "4": {
+    "key": "4",
+    "icon": "SelfDefBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "6",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_Vanilla_N_4",
+              "on": "round",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_Line",
+                  "desc": {
+                    "desc": "앞장서시죠 : 행 보호",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 50,
+                    "guard": "col"
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "앞장서시죠 : 공격력+{0}%",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.007500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "앞장서시죠 : 적중+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "앞장서시죠 : 행동력+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SUPPORT_ATTACK",
+                  "desc": {
+                    "desc": "앞장서시죠 : 공격 지원",
+                    "type": 1,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 77,
+                    "attack_support": {
+                      "base": "100%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_DEF_Line@0~0,BuffIcon_ATK_UP@0.15~0.0075,BuffIcon_ACCURACY_UP@0.2~0.01,BuffIcon_AP_UP@0.1~0.005,BuffIcon_SUPPORT_ATTACK@1~0"
+  }
+}

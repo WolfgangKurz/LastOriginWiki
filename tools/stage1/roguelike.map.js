@@ -12,7 +12,7 @@ function process (auth) {
 
 		const ret = [];
 		const rows = res.data.values;
-		if (rows.length) {
+		if (rows && rows.length) {
 			fs.mkdirSync(
 				path.resolve(__dirname, "..", "..", "..", "LastOrigin-Roguelike-Map", "src", "assets", "json"),
 				{ recursive: true },

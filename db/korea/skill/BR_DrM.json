@@ -1,0 +1,5579 @@
+{
+  "1": {
+    "key": "1",
+    "icon": "MeleeAttack",
+    "target": "enemy",
+    "buffs": {
+      "index": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "data": [
+        {
+          "rate": 2.62,
+          "type": 0,
+          "range": 2,
+          "ap": 10,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_DrM_N_1",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "내구력 테스트! : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.500000",
+                    "level": "-0.025000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-50%",
+                      "per": "-2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "내구력 테스트! : 받는 피해+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_Push",
+                  "desc": {
+                    "desc": "테스트 불합격! : 뒤로 {0}칸 밀기",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 52,
+                    "position": {
+                      "type": "push",
+                      "range": {
+                        "base": 1,
+                        "per": 0
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_DrM_N_4",
+                    "Effect_BR_DrM_N_16"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_STUN",
+                  "desc": {
+                    "desc": "테스트 완료! : 행동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "50%",
+                    "type": 22,
+                    "stun": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "테스트 완료! : 받는 피해+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.005000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.85,
+          "type": 0,
+          "range": 2,
+          "ap": 10,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_DrM_N_1",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "내구력 테스트! : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.500000",
+                    "level": "-0.025000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-50%",
+                      "per": "-2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "내구력 테스트! : 받는 피해+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_Push",
+                  "desc": {
+                    "desc": "테스트 불합격! : 뒤로 {0}칸 밀기",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 52,
+                    "position": {
+                      "type": "push",
+                      "range": {
+                        "base": 1,
+                        "per": 0
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_DrM_N_4",
+                    "Effect_BR_DrM_N_16"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_STUN",
+                  "desc": {
+                    "desc": "테스트 완료! : 행동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "50%",
+                    "type": 22,
+                    "stun": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "테스트 완료! : 받는 피해+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.005000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.08,
+          "type": 0,
+          "range": 2,
+          "ap": 10,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_DrM_N_1",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "내구력 테스트! : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.500000",
+                    "level": "-0.025000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-50%",
+                      "per": "-2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "내구력 테스트! : 받는 피해+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_Push",
+                  "desc": {
+                    "desc": "테스트 불합격! : 뒤로 {0}칸 밀기",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 52,
+                    "position": {
+                      "type": "push",
+                      "range": {
+                        "base": 1,
+                        "per": 0
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_DrM_N_4",
+                    "Effect_BR_DrM_N_16"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_STUN",
+                  "desc": {
+                    "desc": "테스트 완료! : 행동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "50%",
+                    "type": 22,
+                    "stun": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "테스트 완료! : 받는 피해+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.005000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.31,
+          "type": 0,
+          "range": 2,
+          "ap": 10,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_DrM_N_1",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "내구력 테스트! : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.500000",
+                    "level": "-0.025000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-50%",
+                      "per": "-2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "내구력 테스트! : 받는 피해+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_Push",
+                  "desc": {
+                    "desc": "테스트 불합격! : 뒤로 {0}칸 밀기",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 52,
+                    "position": {
+                      "type": "push",
+                      "range": {
+                        "base": 1,
+                        "per": 0
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_DrM_N_4",
+                    "Effect_BR_DrM_N_16"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_STUN",
+                  "desc": {
+                    "desc": "테스트 완료! : 행동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "50%",
+                    "type": 22,
+                    "stun": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "테스트 완료! : 받는 피해+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.005000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.54,
+          "type": 0,
+          "range": 2,
+          "ap": 10,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_DrM_N_1",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "내구력 테스트! : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.500000",
+                    "level": "-0.025000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-50%",
+                      "per": "-2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "내구력 테스트! : 받는 피해+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_Push",
+                  "desc": {
+                    "desc": "테스트 불합격! : 뒤로 {0}칸 밀기",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 52,
+                    "position": {
+                      "type": "push",
+                      "range": {
+                        "base": 1,
+                        "per": 0
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_DrM_N_4",
+                    "Effect_BR_DrM_N_16"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_STUN",
+                  "desc": {
+                    "desc": "테스트 완료! : 행동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "50%",
+                    "type": 22,
+                    "stun": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "테스트 완료! : 받는 피해+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.005000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.77,
+          "type": 0,
+          "range": 2,
+          "ap": 10,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_DrM_N_1",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "내구력 테스트! : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.500000",
+                    "level": "-0.025000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-50%",
+                      "per": "-2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "내구력 테스트! : 받는 피해+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_Push",
+                  "desc": {
+                    "desc": "테스트 불합격! : 뒤로 {0}칸 밀기",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 52,
+                    "position": {
+                      "type": "push",
+                      "range": {
+                        "base": 1,
+                        "per": 0
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_DrM_N_4",
+                    "Effect_BR_DrM_N_16"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_STUN",
+                  "desc": {
+                    "desc": "테스트 완료! : 행동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "50%",
+                    "type": 22,
+                    "stun": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "테스트 완료! : 받는 피해+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.005000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 4,
+          "type": 0,
+          "range": 2,
+          "ap": 10,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_DrM_N_1",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "내구력 테스트! : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.500000",
+                    "level": "-0.025000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-50%",
+                      "per": "-2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "내구력 테스트! : 받는 피해+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_Push",
+                  "desc": {
+                    "desc": "테스트 불합격! : 뒤로 {0}칸 밀기",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 52,
+                    "position": {
+                      "type": "push",
+                      "range": {
+                        "base": 1,
+                        "per": 0
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_DrM_N_4",
+                    "Effect_BR_DrM_N_16"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_STUN",
+                  "desc": {
+                    "desc": "테스트 완료! : 행동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "50%",
+                    "type": 22,
+                    "stun": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "테스트 완료! : 받는 피해+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.005000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 4.23,
+          "type": 0,
+          "range": 2,
+          "ap": 10,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_DrM_N_1",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "내구력 테스트! : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.500000",
+                    "level": "-0.025000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-50%",
+                      "per": "-2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "내구력 테스트! : 받는 피해+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_Push",
+                  "desc": {
+                    "desc": "테스트 불합격! : 뒤로 {0}칸 밀기",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 52,
+                    "position": {
+                      "type": "push",
+                      "range": {
+                        "base": 1,
+                        "per": 0
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_DrM_N_4",
+                    "Effect_BR_DrM_N_16"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_STUN",
+                  "desc": {
+                    "desc": "테스트 완료! : 행동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "50%",
+                    "type": 22,
+                    "stun": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "테스트 완료! : 받는 피해+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.005000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 4.46,
+          "type": 0,
+          "range": 2,
+          "ap": 10,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_DrM_N_1",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "내구력 테스트! : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.500000",
+                    "level": "-0.025000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-50%",
+                      "per": "-2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "내구력 테스트! : 받는 피해+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_Push",
+                  "desc": {
+                    "desc": "테스트 불합격! : 뒤로 {0}칸 밀기",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 52,
+                    "position": {
+                      "type": "push",
+                      "range": {
+                        "base": 1,
+                        "per": 0
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_DrM_N_4",
+                    "Effect_BR_DrM_N_16"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_STUN",
+                  "desc": {
+                    "desc": "테스트 완료! : 행동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "50%",
+                    "type": 22,
+                    "stun": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "테스트 완료! : 받는 피해+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.005000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 4.69,
+          "type": 0,
+          "range": 2,
+          "ap": 10,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_DrM_N_1",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "내구력 테스트! : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.500000",
+                    "level": "-0.025000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-50%",
+                      "per": "-2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "내구력 테스트! : 받는 피해+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_Push",
+                  "desc": {
+                    "desc": "테스트 불합격! : 뒤로 {0}칸 밀기",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 52,
+                    "position": {
+                      "type": "push",
+                      "range": {
+                        "base": 1,
+                        "per": 0
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_DrM_N_4",
+                    "Effect_BR_DrM_N_16"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_STUN",
+                  "desc": {
+                    "desc": "테스트 완료! : 행동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "50%",
+                    "type": 22,
+                    "stun": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "테스트 완료! : 받는 피해+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.005000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_DEF_DOWN@-0.5~-0.025,BuffIcon_VULNERABLE@0.2~0.01,BuffIcon_Push@1~0,BuffIcon_STUN@0~0,BuffIcon_VULNERABLE@0.1~0.005"
+  },
+  "2": {
+    "key": "2",
+    "icon": "Hang",
+    "target": "enemy",
+    "buffs": {
+      "index": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "data": [
+        {
+          "rate": 1.22,
+          "type": 0,
+          "range": 3,
+          "ap": 8,
+          "grid": "258",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_DrM_N_2",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Pull",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 앞으로 {0}칸 이동",
+                    "type": 0,
+                    "value": "2",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 53,
+                    "position": {
+                      "type": "pull",
+                      "range": {
+                        "base": 2,
+                        "per": 0
+                      }
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 이동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 강화 해제 (50% 확률)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_20",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 강화 효과 해제 (50% 확률)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "50%",
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_14",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "실험 대상 모집! : AP {0}",
+                    "type": 0,
+                    "value": "-1",
+                    "level": "-0.050000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1,
+                      "per": -0.05
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_DrM_N_4",
+                    "Effect_BR_DrM_N_16"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 강화 효과 해제",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.325,
+          "type": 0,
+          "range": 3,
+          "ap": 8,
+          "grid": "258",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_DrM_N_2",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Pull",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 앞으로 {0}칸 이동",
+                    "type": 0,
+                    "value": "2",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 53,
+                    "position": {
+                      "type": "pull",
+                      "range": {
+                        "base": 2,
+                        "per": 0
+                      }
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 이동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 강화 해제 (50% 확률)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_20",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 강화 효과 해제 (50% 확률)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "50%",
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_14",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "실험 대상 모집! : AP {0}",
+                    "type": 0,
+                    "value": "-1",
+                    "level": "-0.050000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1,
+                      "per": -0.05
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_DrM_N_4",
+                    "Effect_BR_DrM_N_16"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 강화 효과 해제",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.43,
+          "type": 0,
+          "range": 3,
+          "ap": 8,
+          "grid": "258",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_DrM_N_2",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Pull",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 앞으로 {0}칸 이동",
+                    "type": 0,
+                    "value": "2",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 53,
+                    "position": {
+                      "type": "pull",
+                      "range": {
+                        "base": 2,
+                        "per": 0
+                      }
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 이동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 강화 해제 (50% 확률)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_20",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 강화 효과 해제 (50% 확률)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "50%",
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_14",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "실험 대상 모집! : AP {0}",
+                    "type": 0,
+                    "value": "-1",
+                    "level": "-0.050000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1,
+                      "per": -0.05
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_DrM_N_4",
+                    "Effect_BR_DrM_N_16"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 강화 효과 해제",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.535,
+          "type": 0,
+          "range": 3,
+          "ap": 8,
+          "grid": "258",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_DrM_N_2",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Pull",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 앞으로 {0}칸 이동",
+                    "type": 0,
+                    "value": "2",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 53,
+                    "position": {
+                      "type": "pull",
+                      "range": {
+                        "base": 2,
+                        "per": 0
+                      }
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 이동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 강화 해제 (50% 확률)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_20",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 강화 효과 해제 (50% 확률)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "50%",
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_14",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "실험 대상 모집! : AP {0}",
+                    "type": 0,
+                    "value": "-1",
+                    "level": "-0.050000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1,
+                      "per": -0.05
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_DrM_N_4",
+                    "Effect_BR_DrM_N_16"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 강화 효과 해제",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.64,
+          "type": 0,
+          "range": 3,
+          "ap": 8,
+          "grid": "258",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_DrM_N_2",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Pull",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 앞으로 {0}칸 이동",
+                    "type": 0,
+                    "value": "2",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 53,
+                    "position": {
+                      "type": "pull",
+                      "range": {
+                        "base": 2,
+                        "per": 0
+                      }
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 이동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 강화 해제 (50% 확률)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_20",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 강화 효과 해제 (50% 확률)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "50%",
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_14",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "실험 대상 모집! : AP {0}",
+                    "type": 0,
+                    "value": "-1",
+                    "level": "-0.050000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1,
+                      "per": -0.05
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_DrM_N_4",
+                    "Effect_BR_DrM_N_16"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 강화 효과 해제",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.745,
+          "type": 0,
+          "range": 3,
+          "ap": 8,
+          "grid": "258",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_DrM_N_2",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Pull",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 앞으로 {0}칸 이동",
+                    "type": 0,
+                    "value": "2",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 53,
+                    "position": {
+                      "type": "pull",
+                      "range": {
+                        "base": 2,
+                        "per": 0
+                      }
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 이동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 강화 해제 (50% 확률)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_20",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 강화 효과 해제 (50% 확률)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "50%",
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_14",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "실험 대상 모집! : AP {0}",
+                    "type": 0,
+                    "value": "-1",
+                    "level": "-0.050000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1,
+                      "per": -0.05
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_DrM_N_4",
+                    "Effect_BR_DrM_N_16"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 강화 효과 해제",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.85,
+          "type": 0,
+          "range": 3,
+          "ap": 8,
+          "grid": "258",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_DrM_N_2",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Pull",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 앞으로 {0}칸 이동",
+                    "type": 0,
+                    "value": "2",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 53,
+                    "position": {
+                      "type": "pull",
+                      "range": {
+                        "base": 2,
+                        "per": 0
+                      }
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 이동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 강화 해제 (50% 확률)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_20",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 강화 효과 해제 (50% 확률)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "50%",
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_14",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "실험 대상 모집! : AP {0}",
+                    "type": 0,
+                    "value": "-1",
+                    "level": "-0.050000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1,
+                      "per": -0.05
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_DrM_N_4",
+                    "Effect_BR_DrM_N_16"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 강화 효과 해제",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.955,
+          "type": 0,
+          "range": 3,
+          "ap": 8,
+          "grid": "258",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_DrM_N_2",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Pull",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 앞으로 {0}칸 이동",
+                    "type": 0,
+                    "value": "2",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 53,
+                    "position": {
+                      "type": "pull",
+                      "range": {
+                        "base": 2,
+                        "per": 0
+                      }
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 이동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 강화 해제 (50% 확률)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_20",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 강화 효과 해제 (50% 확률)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "50%",
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_14",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "실험 대상 모집! : AP {0}",
+                    "type": 0,
+                    "value": "-1",
+                    "level": "-0.050000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1,
+                      "per": -0.05
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_DrM_N_4",
+                    "Effect_BR_DrM_N_16"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 강화 효과 해제",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.06,
+          "type": 0,
+          "range": 3,
+          "ap": 8,
+          "grid": "258",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_DrM_N_2",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Pull",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 앞으로 {0}칸 이동",
+                    "type": 0,
+                    "value": "2",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 53,
+                    "position": {
+                      "type": "pull",
+                      "range": {
+                        "base": 2,
+                        "per": 0
+                      }
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 이동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 강화 해제 (50% 확률)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_20",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 강화 효과 해제 (50% 확률)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "50%",
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_14",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "실험 대상 모집! : AP {0}",
+                    "type": 0,
+                    "value": "-1",
+                    "level": "-0.050000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1,
+                      "per": -0.05
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_DrM_N_4",
+                    "Effect_BR_DrM_N_16"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 강화 효과 해제",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.165,
+          "type": 0,
+          "range": 3,
+          "ap": 8,
+          "grid": "258",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_DrM_N_2",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Pull",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 앞으로 {0}칸 이동",
+                    "type": 0,
+                    "value": "2",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 53,
+                    "position": {
+                      "type": "pull",
+                      "range": {
+                        "base": 2,
+                        "per": 0
+                      }
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 이동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 강화 해제 (50% 확률)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_20",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 강화 효과 해제 (50% 확률)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "50%",
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_14",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "실험 대상 모집! : AP {0}",
+                    "type": 0,
+                    "value": "-1",
+                    "level": "-0.050000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1,
+                      "per": -0.05
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_DrM_N_4",
+                    "Effect_BR_DrM_N_16"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "실험 대상 모집! : 강화 효과 해제",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_Pull@2~0,BuffIcon_SNARE@0~0,BuffIcon_REMOVE_BUFF@0~0,BuffIcon_REMOVE_BUFF@0~0,BuffIcon_AP_DOWN@-1~-0.05,BuffIcon_REMOVE_BUFF@0~0"
+  },
+  "3": {
+    "key": "3",
+    "icon": "TeamAtkBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "28",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_DrM_N_3",
+              "on": "round",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    1
+                  ],
+                  "attr": 0
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "수상한 무기 : 공격력+{0}%",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.007500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "수상한 분석기 : 치명타+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 9,
+                    "critical": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "수상한 보조 장치 : 행동력+{0}%",
+                    "type": 1,
+                    "value": "0.050000",
+                    "level": "0.002500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "5%",
+                      "per": "0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "수상한 조준기 : 적중+{0}%",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.015000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "수상한 외장 장갑 : 받는 피해 {0}% 감소",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_DrM_N_15",
+              "on": "round",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    9
+                  ],
+                  "attr": 0
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "수상한 분석기 : 치명타+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_DrM_N_17",
+              "on": "round",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    7
+                  ],
+                  "attr": 0
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "수상한 조준기 : 적중+{0}%",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.015000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_DrM_N_18",
+              "on": "round",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    13
+                  ],
+                  "attr": 0
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "수상한 보조 장치 : 행동력+{0}%",
+                    "type": 1,
+                    "value": "0.050000",
+                    "level": "0.002500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "5%",
+                      "per": "0.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_DrM_N_19",
+              "on": "round",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    36
+                  ],
+                  "attr": 0
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "수상한 외장 장갑 : 받는 피해 {0}% 감소",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        },
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "2468",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_DrM_N_3",
+              "on": "round",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    1
+                  ],
+                  "attr": 0
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "수상한 무기 : 공격력+{0}%",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.007500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "수상한 분석기 : 치명타+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 9,
+                    "critical": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "수상한 보조 장치 : 행동력+{0}%",
+                    "type": 1,
+                    "value": "0.050000",
+                    "level": "0.002500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "5%",
+                      "per": "0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "수상한 조준기 : 적중+{0}%",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.015000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "수상한 외장 장갑 : 받는 피해 {0}% 감소",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_DrM_N_15",
+              "on": "round",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    9
+                  ],
+                  "attr": 0
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "수상한 분석기 : 치명타+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_DrM_N_17",
+              "on": "round",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    7
+                  ],
+                  "attr": 0
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "수상한 조준기 : 적중+{0}%",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.015000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_DrM_N_18",
+              "on": "round",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    13
+                  ],
+                  "attr": 0
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "수상한 보조 장치 : 행동력+{0}%",
+                    "type": 1,
+                    "value": "0.050000",
+                    "level": "0.002500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "5%",
+                      "per": "0.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_DrM_N_19",
+              "on": "round",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    36
+                  ],
+                  "attr": 0
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "수상한 외장 장갑 : 받는 피해 {0}% 감소",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_ATK_UP@0.15~0.0075,BuffIcon_CRITICAL_UP@0.1~0.005,BuffIcon_AP_UP@0.05~0.0025,BuffIcon_ACCURACY_UP@0.3~0.015,BuffIcon_DAMAGE_REDUCE@0.1~0.005,BuffIcon_CRITICAL_UP@0.1~0.005,BuffIcon_ACCURACY_UP@0.3~0.015,BuffIcon_AP_UP@0.05~0.0025,BuffIcon_DAMAGE_REDUCE@0.1~0.005"
+  },
+  "4": {
+    "key": "4",
+    "icon": "SelfAtkBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "self",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_DrM_N_4",
+              "on": "wait",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "출력 전개! : 공격력+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "출력 전개! : 행동력+{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "출력 전개! : 치명타+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_13",
+              "on": "wave",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "분석 개시! : AP+{0}",
+                    "type": 0,
+                    "value": "4",
+                    "level": "0.200000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 4,
+                      "per": 0.2
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_21",
+              "on": "wave_end",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SCOUTING",
+                  "desc": {
+                    "desc": "분석했어요! : 다음 적 정보 획득",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "type": 23,
+                    "scout": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        },
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "self",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_DrM_N_16",
+              "on": "wait",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "출력 전개! : 공격력+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "출력 전개! : 행동력+{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "출력 전개! : 치명타+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_13",
+              "on": "wave",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "분석 개시! : AP+{0}",
+                    "type": 0,
+                    "value": "4",
+                    "level": "0.200000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 4,
+                      "per": 0.2
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_DrM_N_21",
+              "on": "wave_end",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SCOUTING",
+                  "desc": {
+                    "desc": "분석했어요! : 다음 적 정보 획득",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "type": 23,
+                    "scout": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_ATK_UP@0.2~0.01,BuffIcon_AP_UP@0.25~0.0125,BuffIcon_CRITICAL_UP@0.1~0.005,BuffIcon_AP_UP@4~0.2,BuffIcon_SCOUTING@0~0"
+  },
+  "5": {
+    "key": "5",
+    "icon": "EnemyDetect",
+    "target": "enemy",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "global",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_DrM_N_5",
+              "on": "wave",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    23
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 4,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "분석 개시! : AP+{0}",
+                    "type": 0,
+                    "value": "4",
+                    "level": "0.200000"
+                  },
+                  "attr": 1,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 20,
+                    "ap": {
+                      "base": 4,
+                      "per": 0.2
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SCOUTING",
+                  "desc": {
+                    "desc": "분석했어요! : 다음 적 정보 획득",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 23,
+                    "scout": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "분석 완료! : 공격력 {0}%",
+                    "type": 1,
+                    "value": "-0.006000",
+                    "level": "-0.004000"
+                  },
+                  "attr": 1,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-0.6%",
+                      "per": "-0.4%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "공격 패턴 예측! : 치명타 {0}%",
+                    "type": 1,
+                    "value": "-0.006000",
+                    "level": "-0.004000"
+                  },
+                  "attr": 1,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-0.6%",
+                      "per": "-0.4%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_AP_UP@4~0.2,BuffIcon_SCOUTING@0~0,BuffIcon_ATK_DOWN@-0.006~-0.004,BuffIcon_CRITICAL_DOWN@-0.006~-0.004"
+  }
+}

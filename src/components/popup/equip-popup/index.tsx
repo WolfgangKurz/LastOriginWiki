@@ -11,6 +11,7 @@ import { Equip } from "@/types/DB/Equip";
 
 import { objState } from "@/libs/State";
 import { AssetsRoot, ImageExtension, RarityDisplay } from "@/libs/Const";
+import { CurrentDB } from "@/libs/DB";
 import { FormatNumber, isActive } from "@/libs/Functions";
 
 import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
@@ -137,7 +138,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 
 		if (target) {
 			const equipKey = `equip/${target.fullKey}`;
-			JsonLoaderCore(equipKey)
+			JsonLoaderCore(CurrentDB, equipKey)
 				.then(() => {
 					const detail = GetJson<Equip>(equipKey);
 					if (!detail) return;
@@ -284,7 +285,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 											: Limits.map(limit => <span>
 												{ ReservedLimit(limit.id)
 													? <UnitBadge limit={ limit.id } />
-													: <UnitLink uid={limit.id} />
+													: <UnitLink uid={ limit.id } />
 												}
 											</span>)
 										}

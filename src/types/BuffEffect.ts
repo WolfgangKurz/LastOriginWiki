@@ -110,6 +110,9 @@ export enum BUFFEFFECT_TYPE {
 	STAGE_TOGETHER_ATTACK_ACTIVE_SKILL_2 = 103,
 	STAT_MAXHP_VALUE = 104,
 	STAT_MAXHP_RATIO = 105,
+	STAT_SKILL_RATIO = 106,
+	STAT_RANGE_VALUE_ACTIVE_SKILL_1 = 107,
+	STAT_RANGE_VALUE_ACTIVE_SKILL_2 = 108,
 }
 
 export type BuffEffect = BuffEffect_Base & {
@@ -132,7 +135,7 @@ type BuffEffect_Body = BuffEffect_Unknown | BuffEffect_Off | BuffEffect_Attack |
 	BuffEffect_Penetration | BuffEffect_Metamolphosis | BuffEffect_FixedDamage | BuffEffect_Provoke | BuffEffect_AttackSupport |
 	BuffEffect_Immovable | BuffEffect_SkillDisable | BuffEffect_Revive | BuffEffect_AttackTarget | BuffEffect_InvokeChance |
 	BuffEffect_SummonRemove | BuffEffect_PenetrationForce | BuffEffect_Exp | BuffEffect_DebuffImmune | BuffEffect_Collaborate |
-	BuffEffect_MaxHP;
+	BuffEffect_MaxHP | BuffEffect_SkillRatio | BuffEffect_SkillRange;
 
 // #region BuffEffect
 interface BuffEffect_Unknown {
@@ -382,6 +385,15 @@ interface BuffEffect_Collaborate {
 
 interface BuffEffect_MaxHP {
 	max_hp: BuffEffectValue;
+}
+
+interface BuffEffect_SkillRatio {
+	skill_ratio: BuffEffectValue;
+}
+
+interface BuffEffect_SkillRange {
+	skill: 1 | 2;
+	range: BuffEffectValue;
 }
 // #endregion
 

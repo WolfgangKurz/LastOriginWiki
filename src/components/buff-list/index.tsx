@@ -805,9 +805,11 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			}
 		} else if ("next_crit" in stat)
 			return <Locale plain k="BUFFEFFECT_CRIT_NEXT" p={ [signedValue(stat.next_crit, level)] } />;
-		else if ("range" in stat)
+		else if ("range" in stat) {
+			if ("skill" in stat)
+				return <Locale plain k="BUFFEFFECT_RANGE_SKILL" p={ [stat.skill, signedInteger(stat.range, level)] } />;
 			return <Locale plain k="BUFFEFFECT_RANGE" p={ [signedInteger(stat.range, level)] } />;
-		else if ("penetration" in stat)
+		} else if ("penetration" in stat)
 			return <Locale plain k="BUFFEFFECT_DEFPIERCE" p={ [signedValue(stat.penetration, level)] } />;
 		else if ("metamolphosis" in stat)
 			return <Locale plain k="BUFFEFFECT_TRANSFORM" />;
@@ -884,6 +886,8 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			] } />;
 		} else if ("max_hp" in stat)
 			return <Locale plain k="BUFFEFFECT_MAXHP" p={ [signedValue(stat.max_hp, level)] } />;
+		else if ("skill_ratio" in stat)
+			return <Locale plain k="BUFFEFFECT_SKILL_RATIO" p={ [signedValue(stat.skill_ratio, level)] } />;
 
 		return <>{ JSON.stringify(stat) }</>; // "???";
 	}

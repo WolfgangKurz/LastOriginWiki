@@ -32,8 +32,8 @@ export interface MapSearch {
 }
 
 export interface MapNodeEntity {
-	name: string;
-	desc: string;
+	// name: string;
+	// desc: string;
 
 	prev: number | null;
 	offset: number;
@@ -52,8 +52,8 @@ export interface MapNodeEntity {
 /* eslint-disable-next-line @typescript-eslint/no-namespace */
 export namespace MapNodeEntity {
 	export const Empty: MapNodeEntity = {
-		name: "",
-		desc: "",
+		// name: "",
+		// desc: "",
 		prev: null,
 		offset: 0,
 		text: "",
@@ -68,9 +68,6 @@ export namespace MapNodeEntity {
 
 export interface Worlds {
 	[key: string]: {
-		[key: string]: {
-			title: string;
-			list: MapNodeEntity[];
-		};
+		[key: string]: MapNodeEntity[];
 	};
 }
