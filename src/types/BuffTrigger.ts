@@ -55,6 +55,9 @@ export enum BUFFEFFECT_TRIGGER_TYPE {
 	ON_EVADE_ACTIVESKILL = 46,
 	SUMMON_CREATE = 47,
 	ATTACK_SUCCESS_ACTIVESKILL = 48,
+	BEATEN_ACTIVE_SKILL_KEY = 49,
+	USE_ACTIVE_SKILL_1 = 50,
+	USE_ACTIVE_SKILL_2 = 51,
 }
 
 /** 계산된 발동 조건 */
@@ -63,7 +66,7 @@ export type BuffTrigger = BuffTrigger_Unknown | BuffTrigger_Always | BuffTrigger
 	BuffTrigger_Always | BuffTrigger_EveryWave | BuffTrigger_EveryRound | BuffTrigger_Attack | BuffTrigger_Attacked | BuffTrigger_Wait |
 	BuffTrigger_Move | BuffTrigger_Evade | BuffTrigger_WaveEnd | BuffTrigger_EnemyKilled | BuffTrigger_Position | BuffTrigger_Criticaled |
 	BuffTrigger_Revive | BuffTrigger_On | BuffTrigger_Target | BuffTrigger_UnitCount | BuffTrigger_Round | BuffTrigger_NotInBattle |
-	BuffTrigger_TroopCategory;
+	BuffTrigger_TroopCategory | BuffTrigger_UseSkill;
 
 /** 구현을 알 수 없는 발동 조건 */
 interface BuffTrigger_Unknown {
@@ -248,4 +251,9 @@ interface BuffTrigger_NotInBattle {
 interface BuffTrigger_TroopCategory {
 	/** 전투원 그룹 목록 */
 	troop: string[];
+}
+
+/** 스킬 사용시 */
+interface BuffTrigger_UseSkill {
+	use_skill: 1 | 2;
 }

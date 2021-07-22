@@ -1,0 +1,4452 @@
+{
+  "1": {
+    "key": "1",
+    "icon": "MGShot",
+    "target": "enemy",
+    "buffs": {
+      "index": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "data": [
+        {
+          "rate": 1.415,
+          "type": 0,
+          "range": 3,
+          "ap": 6,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_RedHood_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "4連装機関砲：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "4連装機関砲：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "集中攻撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_RedHood_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    3,
+                    11
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "集中攻撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.54,
+          "type": 0,
+          "range": 3,
+          "ap": 6,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_RedHood_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "4連装機関砲：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "4連装機関砲：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "集中攻撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_RedHood_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    3,
+                    11
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "集中攻撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.665,
+          "type": 0,
+          "range": 3,
+          "ap": 6,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_RedHood_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "4連装機関砲：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "4連装機関砲：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "集中攻撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_RedHood_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    3,
+                    11
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "集中攻撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.79,
+          "type": 0,
+          "range": 3,
+          "ap": 6,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_RedHood_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "4連装機関砲：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "4連装機関砲：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "集中攻撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_RedHood_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    3,
+                    11
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "集中攻撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.915,
+          "type": 0,
+          "range": 3,
+          "ap": 6,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_RedHood_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "4連装機関砲：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "4連装機関砲：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "集中攻撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_RedHood_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    3,
+                    11
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "集中攻撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.04,
+          "type": 0,
+          "range": 3,
+          "ap": 6,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_RedHood_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "4連装機関砲：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "4連装機関砲：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "集中攻撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_RedHood_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    3,
+                    11
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "集中攻撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.165,
+          "type": 0,
+          "range": 3,
+          "ap": 6,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_RedHood_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "4連装機関砲：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "4連装機関砲：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "集中攻撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_RedHood_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    3,
+                    11
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "集中攻撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.29,
+          "type": 0,
+          "range": 3,
+          "ap": 6,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_RedHood_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "4連装機関砲：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "4連装機関砲：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "集中攻撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_RedHood_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    3,
+                    11
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "集中攻撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.415,
+          "type": 0,
+          "range": 3,
+          "ap": 6,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_RedHood_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "4連装機関砲：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "4連装機関砲：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "集中攻撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_RedHood_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    3,
+                    11
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "集中攻撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.54,
+          "type": 0,
+          "range": 3,
+          "ap": 6,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_RedHood_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "4連装機関砲：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "4連装機関砲：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "集中攻撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_RedHood_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    3,
+                    11
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "集中攻撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_ATK_DOWN@-0.1,BuffIcon_CRITICAL_DOWN@-0.05,BuffIcon_PhyATK_UP@0.2~0.01,BuffIcon_PhyATK_UP@0.2~0.01"
+  },
+  "2": {
+    "key": "2",
+    "icon": "MGWideShot",
+    "target": "enemy",
+    "buffs": {
+      "index": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "data": [
+        {
+          "rate": 1.435,
+          "type": 1,
+          "range": 4,
+          "ap": 8,
+          "grid": "258",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_RedHood_N_2",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "処刑：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.25",
+                    "level": "1.2500000000000001E-2"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "25%",
+                        "per": "1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "点火：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "40",
+                    "level": "30"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 40,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_RedHood_N_18",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "点火：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "40",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 40,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Ignis_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Ignis_N_2"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "引火物爆発：攻撃力{0}%固定ダメージ",
+                    "type": 1,
+                    "value": "0.5",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "50%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.565,
+          "type": 1,
+          "range": 4,
+          "ap": 8,
+          "grid": "258",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_RedHood_N_2",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "処刑：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.25",
+                    "level": "1.2500000000000001E-2"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "25%",
+                        "per": "1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "点火：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "40",
+                    "level": "30"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 40,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_RedHood_N_18",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "点火：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "40",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 40,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Ignis_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Ignis_N_2"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "引火物爆発：攻撃力{0}%固定ダメージ",
+                    "type": 1,
+                    "value": "0.5",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "50%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.695,
+          "type": 1,
+          "range": 4,
+          "ap": 8,
+          "grid": "258",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_RedHood_N_2",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "処刑：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.25",
+                    "level": "1.2500000000000001E-2"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "25%",
+                        "per": "1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "点火：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "40",
+                    "level": "30"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 40,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_RedHood_N_18",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "点火：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "40",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 40,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Ignis_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Ignis_N_2"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "引火物爆発：攻撃力{0}%固定ダメージ",
+                    "type": 1,
+                    "value": "0.5",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "50%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.825,
+          "type": 1,
+          "range": 4,
+          "ap": 8,
+          "grid": "258",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_RedHood_N_2",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "処刑：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.25",
+                    "level": "1.2500000000000001E-2"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "25%",
+                        "per": "1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "点火：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "40",
+                    "level": "30"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 40,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_RedHood_N_18",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "点火：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "40",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 40,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Ignis_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Ignis_N_2"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "引火物爆発：攻撃力{0}%固定ダメージ",
+                    "type": 1,
+                    "value": "0.5",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "50%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.955,
+          "type": 1,
+          "range": 4,
+          "ap": 8,
+          "grid": "258",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_RedHood_N_2",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "処刑：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.25",
+                    "level": "1.2500000000000001E-2"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "25%",
+                        "per": "1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "点火：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "40",
+                    "level": "30"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 40,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_RedHood_N_18",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "点火：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "40",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 40,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Ignis_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Ignis_N_2"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "引火物爆発：攻撃力{0}%固定ダメージ",
+                    "type": 1,
+                    "value": "0.5",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "50%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.085,
+          "type": 1,
+          "range": 4,
+          "ap": 8,
+          "grid": "258",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_RedHood_N_2",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "処刑：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.25",
+                    "level": "1.2500000000000001E-2"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "25%",
+                        "per": "1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "点火：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "40",
+                    "level": "30"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 40,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_RedHood_N_18",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "点火：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "40",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 40,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Ignis_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Ignis_N_2"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "引火物爆発：攻撃力{0}%固定ダメージ",
+                    "type": 1,
+                    "value": "0.5",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "50%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.215,
+          "type": 1,
+          "range": 4,
+          "ap": 8,
+          "grid": "258",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_RedHood_N_2",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "処刑：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.25",
+                    "level": "1.2500000000000001E-2"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "25%",
+                        "per": "1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "点火：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "40",
+                    "level": "30"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 40,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_RedHood_N_18",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "点火：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "40",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 40,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Ignis_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Ignis_N_2"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "引火物爆発：攻撃力{0}%固定ダメージ",
+                    "type": 1,
+                    "value": "0.5",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "50%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.345,
+          "type": 1,
+          "range": 4,
+          "ap": 8,
+          "grid": "258",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_RedHood_N_2",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "処刑：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.25",
+                    "level": "1.2500000000000001E-2"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "25%",
+                        "per": "1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "点火：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "40",
+                    "level": "30"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 40,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_RedHood_N_18",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "点火：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "40",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 40,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Ignis_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Ignis_N_2"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "引火物爆発：攻撃力{0}%固定ダメージ",
+                    "type": 1,
+                    "value": "0.5",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "50%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.475,
+          "type": 1,
+          "range": 4,
+          "ap": 8,
+          "grid": "258",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_RedHood_N_2",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "処刑：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.25",
+                    "level": "1.2500000000000001E-2"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "25%",
+                        "per": "1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "点火：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "40",
+                    "level": "30"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 40,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_RedHood_N_18",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "点火：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "40",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 40,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Ignis_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Ignis_N_2"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "引火物爆発：攻撃力{0}%固定ダメージ",
+                    "type": 1,
+                    "value": "0.5",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "50%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.605,
+          "type": 1,
+          "range": 4,
+          "ap": 8,
+          "grid": "258",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_RedHood_N_2",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "処刑：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.25",
+                    "level": "1.2500000000000001E-2"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "25%",
+                        "per": "1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "点火：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "40",
+                    "level": "30"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 40,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_RedHood_N_18",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "点火：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "40",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 40,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Ignis_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Ignis_N_2"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "引火物爆発：攻撃力{0}%固定ダメージ",
+                    "type": 1,
+                    "value": "0.5",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "50%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_FireATK_UP@0.25,BuffIcon_FireDMG_DOT@40~30,BuffIcon_FireDMG_DOT@40~30,BuffIcon_PhyATK_UP@0.5~0"
+  },
+  "3": {
+    "key": "3",
+    "icon": "TeamAtkBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "369",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_RedHood_N_3",
+              "on": "round",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "怯むな！：攻撃力+{0}%",
+                    "type": 1,
+                    "value": "0.1",
+                    "level": "5.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEBUFF_PERDOWN",
+                  "desc": {
+                    "desc": "怯むな！：状態異常耐性+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 91,
+                    "resist": {
+                      "type": "debuff",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "怯むな！：行動力+{0}%",
+                    "type": 1,
+                    "value": "0.05",
+                    "level": "2.5000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "5%",
+                      "per": "0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_phyDMG_DOT",
+                  "desc": {
+                    "desc": "早く突撃しろ！：{0}固定ダメージ",
+                    "type": 0,
+                    "value": "30",
+                    "level": "30"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 65,
+                    "fixed_damage": {
+                      "base": 30,
+                      "per": 30
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "早く突撃しろ！：AP+{0}",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_RedHood_N_12",
+              "on": "wait",
+              "if": {
+                "hp>=": {
+                  "target": "target",
+                  "value": "25%"
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_phyDMG_DOT",
+                  "desc": {
+                    "desc": "早く突撃しろ！：{0}固定ダメージ",
+                    "type": 0,
+                    "value": "30",
+                    "level": "30"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 65,
+                    "fixed_damage": {
+                      "base": 30,
+                      "per": 30
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_RedHood_N_13",
+              "on": "self_dead",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "後は任せた…：AP+{0}",
+                    "type": 0,
+                    "value": "2",
+                    "level": "0.1"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 2,
+                      "per": 0.1
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_RedHood_N_17",
+              "on": "wait",
+              "if": {
+                "hp>=": {
+                  "target": "target",
+                  "value": "25%"
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "早く突撃しろ！：AP+{0}",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_ATK_UP@0.1,BuffIcon_DEBUFF_PERDOWN@0.2~0.01,BuffIcon_AP_UP@0.05,BuffIcon_phyDMG_DOT@30~30,BuffIcon_AP_UP@1~0.05,BuffIcon_phyDMG_DOT@30~30,BuffIcon_AP_UP@2~0.1,BuffIcon_AP_UP@1~0.05"
+  },
+  "4": {
+    "key": "4",
+    "icon": "SelfAtkBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "self",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_RedHood_N_4",
+              "on": "round",
+              "if": {
+                "pos": 0
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "撤退は無い！：攻撃力+{0}%",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "撤退は無い！：クリティカル率+{0}%",
+                    "type": 1,
+                    "value": "0.1",
+                    "level": "5.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "撤退は無い！：防御貫通+{0}%",
+                    "type": 1,
+                    "value": "0.24",
+                    "level": "0.03"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "24%",
+                      "per": "3%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "撤退は無い！：受けるダメージ{0}%減少",
+                    "type": 1,
+                    "value": "0.18",
+                    "level": "0.02"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "18%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "ブラウニー一等兵！！！：行動力+{0}%",
+                    "type": 1,
+                    "value": "0.1",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_RedHood_N_14",
+              "on": "round",
+              "if": {
+                "pos": 1
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "撤退は無い！：攻撃力+{0}%",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "撤退は無い！：クリティカル率+{0}%",
+                    "type": 1,
+                    "value": "0.1",
+                    "level": "5.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "撤退は無い！：防御貫通+{0}%",
+                    "type": 1,
+                    "value": "0.24",
+                    "level": "0.03"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "24%",
+                      "per": "3%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "撤退は無い！：受けるダメージ{0}%減少",
+                    "type": 1,
+                    "value": "0.18",
+                    "level": "0.02"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "18%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_RedHood_N_15",
+              "on": "round",
+              "if": {
+                "pos": 2
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "撤退は無い…：攻撃力+{0}%",
+                    "type": 1,
+                    "value": "7.4999999999999997E-2",
+                    "level": "3.7499999999999999E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "7.5%",
+                      "per": "0.375%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "撤退は無い…：クリティカル率+{0}%",
+                    "type": 1,
+                    "value": "0.05",
+                    "level": "2.5000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "5%",
+                      "per": "0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "撤退は無い…：防御貫通+{0}%",
+                    "type": 1,
+                    "value": "0.12",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "12%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "撤退は無い…：受けるダメージ{0}%減少",
+                    "type": 1,
+                    "value": "0.09",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "9%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_RedHood_N_16",
+              "on": {
+                "in_squad": "Char_BR_Brownie_N"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "ブラウニー一等兵！！！：行動力+{0}%",
+                    "type": 1,
+                    "value": "0.1",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_ATK_UP@0.15,BuffIcon_CRITICAL_UP@0.1,BuffIcon_DEF_PIERCE_UP@0.24~0.03,BuffIcon_DAMAGE_REDUCE@0.18~0.02,BuffIcon_AP_UP@0.1~0.01,BuffIcon_ATK_UP@0.15,BuffIcon_CRITICAL_UP@0.1,BuffIcon_DEF_PIERCE_UP@0.24~0.03,BuffIcon_DAMAGE_REDUCE@0.18~0.02,BuffIcon_ATK_UP@7.4999999999999997E-2,BuffIcon_CRITICAL_UP@0.05,BuffIcon_DEF_PIERCE_UP@0.12,BuffIcon_DAMAGE_REDUCE@0.09~0.01,BuffIcon_AP_UP@0.1~0.01"
+  }
+}

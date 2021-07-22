@@ -50,7 +50,7 @@ const App: FunctionalComponent = () => {
 			<link href={ `${Host}/assets/font/SpoqaHanSans-kr.css` } rel="stylesheet" />
 			<link href={ `${Host}/assets/font/SpoqaHanSans-jp.css` } rel="stylesheet" />
 
-			<Loader json={ `locale/${CurrentLocale}` }>
+			<Loader db="!" json={ `locale/${CurrentLocale}` }>
 				<Header />
 
 				<div class="container p-4">

@@ -706,9 +706,9 @@ export const SubStoryUnit: Record<string, string> = {
 	"S14-1": "BR_Brownie",
 };
 
-export const CurrentEvent = "Ev6";
-export const EventFrom = new Date(2021, 6 - 1, 14);
-export const EventTo = new Date(2021, 7 - 1, 12);
+export const CurrentEvent = "Ev12";
+export const EventFrom = new Date(2021, 7 - 1, 12);
+export const EventTo = new Date(2021, 8 - 1, 23);
 
 export const CurrentDate = ((): string => {
 	const d = new Date();

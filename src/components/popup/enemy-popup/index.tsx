@@ -10,6 +10,7 @@ import { Enemy, EnemySkill } from "@/types/DB/Enemy";
 
 import { objState } from "@/libs/State";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { CurrentDB } from "@/libs/DB";
 import EntitySource from "@/libs/EntitySource";
 
 import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
@@ -109,7 +110,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 
 		if (target) {
 			const enemyKey = `enemy/${target.id}`;
-			JsonLoaderCore(enemyKey)
+			JsonLoaderCore(CurrentDB, enemyKey)
 				.then(() => {
 					const detail = GetJson<Enemy>(enemyKey);
 					if (!detail) return;

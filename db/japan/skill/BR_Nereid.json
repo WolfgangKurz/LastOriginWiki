@@ -1,0 +1,3918 @@
+{
+  "1": {
+    "key": "1",
+    "icon": "MGShot",
+    "target": "enemy",
+    "buffs": {
+      "index": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "data": [
+        {
+          "rate": 1.375,
+          "type": 0,
+          "range": 4,
+          "ap": 5,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Nereid_N_1",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    3,
+                    11
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "集中攻撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空射撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Nereid_N_11",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空射撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Nereid_N_12",
+              "on": "enemy_killed",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "ワクワクする！：AP+{0}",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.5,
+          "type": 0,
+          "range": 4,
+          "ap": 5,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Nereid_N_1",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    3,
+                    11
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "集中攻撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空射撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Nereid_N_11",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空射撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Nereid_N_12",
+              "on": "enemy_killed",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "ワクワクする！：AP+{0}",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.625,
+          "type": 0,
+          "range": 4,
+          "ap": 5,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Nereid_N_1",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    3,
+                    11
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "集中攻撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空射撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Nereid_N_11",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空射撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Nereid_N_12",
+              "on": "enemy_killed",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "ワクワクする！：AP+{0}",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.75,
+          "type": 0,
+          "range": 4,
+          "ap": 5,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Nereid_N_1",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    3,
+                    11
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "集中攻撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空射撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Nereid_N_11",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空射撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Nereid_N_12",
+              "on": "enemy_killed",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "ワクワクする！：AP+{0}",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.875,
+          "type": 0,
+          "range": 4,
+          "ap": 5,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Nereid_N_1",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    3,
+                    11
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "集中攻撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空射撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Nereid_N_11",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空射撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Nereid_N_12",
+              "on": "enemy_killed",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "ワクワクする！：AP+{0}",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2,
+          "type": 0,
+          "range": 4,
+          "ap": 5,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Nereid_N_1",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    3,
+                    11
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "集中攻撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空射撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Nereid_N_11",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空射撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Nereid_N_12",
+              "on": "enemy_killed",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "ワクワクする！：AP+{0}",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.125,
+          "type": 0,
+          "range": 4,
+          "ap": 5,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Nereid_N_1",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    3,
+                    11
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "集中攻撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空射撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Nereid_N_11",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空射撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Nereid_N_12",
+              "on": "enemy_killed",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "ワクワクする！：AP+{0}",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.25,
+          "type": 0,
+          "range": 4,
+          "ap": 5,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Nereid_N_1",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    3,
+                    11
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "集中攻撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空射撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Nereid_N_11",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空射撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Nereid_N_12",
+              "on": "enemy_killed",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "ワクワクする！：AP+{0}",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.375,
+          "type": 0,
+          "range": 4,
+          "ap": 5,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Nereid_N_1",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    3,
+                    11
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "集中攻撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空射撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Nereid_N_11",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空射撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Nereid_N_12",
+              "on": "enemy_killed",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "ワクワクする！：AP+{0}",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.5,
+          "type": 0,
+          "range": 4,
+          "ap": 5,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Nereid_N_1",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    3,
+                    11
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "集中攻撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空射撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Nereid_N_11",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "対空射撃：対機動型ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Nereid_N_12",
+              "on": "enemy_killed",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "ワクワクする！：AP+{0}",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_PhyATK_UP@0.2~0.01,BuffIcon_MOBILITY_DMG_UP@0.2~0.01,BuffIcon_MOBILITY_DMG_UP@0.2~0.01,BuffIcon_AP_UP@1~0.05"
+  },
+  "2": {
+    "key": "2",
+    "icon": "MGWideShot",
+    "target": "enemy",
+    "buffs": {
+      "index": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "data": [
+        {
+          "rate": 1.32,
+          "type": 0,
+          "range": 4,
+          "ap": 8,
+          "grid": "3569",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Nereid_N_2",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "ワクワクする！：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.25",
+                    "level": "1.2500000000000001E-2"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Nereid_N_12",
+              "on": "enemy_killed",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "ワクワクする！：AP+{0}",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.44,
+          "type": 0,
+          "range": 4,
+          "ap": 8,
+          "grid": "3569",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Nereid_N_2",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "ワクワクする！：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.25",
+                    "level": "1.2500000000000001E-2"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Nereid_N_12",
+              "on": "enemy_killed",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "ワクワクする！：AP+{0}",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.56,
+          "type": 0,
+          "range": 4,
+          "ap": 8,
+          "grid": "3569",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Nereid_N_2",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "ワクワクする！：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.25",
+                    "level": "1.2500000000000001E-2"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Nereid_N_12",
+              "on": "enemy_killed",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "ワクワクする！：AP+{0}",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.68,
+          "type": 0,
+          "range": 4,
+          "ap": 8,
+          "grid": "3569",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Nereid_N_2",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "ワクワクする！：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.25",
+                    "level": "1.2500000000000001E-2"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Nereid_N_12",
+              "on": "enemy_killed",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "ワクワクする！：AP+{0}",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.8,
+          "type": 0,
+          "range": 4,
+          "ap": 8,
+          "grid": "3569",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Nereid_N_2",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "ワクワクする！：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.25",
+                    "level": "1.2500000000000001E-2"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Nereid_N_12",
+              "on": "enemy_killed",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "ワクワクする！：AP+{0}",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.92,
+          "type": 0,
+          "range": 4,
+          "ap": 8,
+          "grid": "3569",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Nereid_N_2",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "ワクワクする！：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.25",
+                    "level": "1.2500000000000001E-2"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Nereid_N_12",
+              "on": "enemy_killed",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "ワクワクする！：AP+{0}",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.04,
+          "type": 0,
+          "range": 4,
+          "ap": 8,
+          "grid": "3569",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Nereid_N_2",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "ワクワクする！：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.25",
+                    "level": "1.2500000000000001E-2"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Nereid_N_12",
+              "on": "enemy_killed",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "ワクワクする！：AP+{0}",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.16,
+          "type": 0,
+          "range": 4,
+          "ap": 8,
+          "grid": "3569",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Nereid_N_2",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "ワクワクする！：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.25",
+                    "level": "1.2500000000000001E-2"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Nereid_N_12",
+              "on": "enemy_killed",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "ワクワクする！：AP+{0}",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.28,
+          "type": 0,
+          "range": 4,
+          "ap": 8,
+          "grid": "3569",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Nereid_N_2",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "ワクワクする！：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.25",
+                    "level": "1.2500000000000001E-2"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Nereid_N_12",
+              "on": "enemy_killed",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "ワクワクする！：AP+{0}",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.400000000000001,
+          "type": 0,
+          "range": 4,
+          "ap": 8,
+          "grid": "3569",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Nereid_N_2",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "ワクワクする！：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.25",
+                    "level": "1.2500000000000001E-2"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Nereid_N_12",
+              "on": "enemy_killed",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "ワクワクする！：AP+{0}",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_PhyATK_UP@0.25,BuffIcon_AP_UP@1~0.05"
+  },
+  "3": {
+    "key": "3",
+    "icon": "SelfAtkBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "self",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Nereid_N_3",
+              "on": "round",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DamageAmp_Me",
+                  "desc": {
+                    "desc": "かかってこい！：自分のHP%が低いほどダメージ量増加(最大+{0}%)",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.02"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 80,
+                    "damage_by_hp": {
+                      "target": "self",
+                      "damage": {
+                        "base": "20%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "かかってこい！：受けるダメージ{0}%減少(最大)",
+                    "type": 1,
+                    "value": "0.24",
+                    "level": "0.03"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "24%",
+                      "per": "3%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "ネリの勝利～！：攻撃力+{0}%(敵撃破時)",
+                    "type": 1,
+                    "value": "0.06",
+                    "level": "3.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 1,
+                    "attack": {
+                      "base": "6%",
+                      "per": "0.3%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "ほほう？：行動力+{0}%(被撃時)",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "ワクワクする！：AP+{0}(敵撃破時)",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Nereid_N_13",
+              "on": "round",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "かかってこい：受けるダメージ{0}%減少",
+                    "type": 1,
+                    "value": "0.08",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "8%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Nereid_N_14",
+              "on": {
+                "hp<=": "75%"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "かかってこい！：受けるダメージ{0}%減少",
+                    "type": 1,
+                    "value": "0.08",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "8%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Nereid_N_15",
+              "on": {
+                "hp<=": "50%"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "どんどんかかってこい！：受けるダメージ{0}%減少",
+                    "type": 1,
+                    "value": "0.08",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "8%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Nereid_N_17",
+              "on": "enemy_killed",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "ネリの勝利～！：攻撃力+{0}%",
+                    "type": 1,
+                    "value": "0.06",
+                    "level": "3.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "6%",
+                      "per": "0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Nereid_N_18",
+              "on": "damaged",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "ほほう？：行動力+{0}%",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_DamageAmp_Me@0.2~0.02,BuffIcon_DAMAGE_REDUCE@0.24~0.03,BuffIcon_ATK_UP@0.06,BuffIcon_AP_UP@0.15,BuffIcon_AP_UP@1~0.05,BuffIcon_DAMAGE_REDUCE@0.08~0.01,BuffIcon_DAMAGE_REDUCE@0.08~0.01,BuffIcon_DAMAGE_REDUCE@0.08~0.01,BuffIcon_ATK_UP@0.06,BuffIcon_AP_UP@0.15"
+  },
+  "4": {
+    "key": "4",
+    "icon": "SelfDefBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "self",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Nereid_N_4",
+              "on": "wave",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_RESSURRECT",
+                  "desc": {
+                    "desc": "バトルジャンキー：{0}HPで戦闘続行(解除不可)",
+                    "type": 0,
+                    "value": "120",
+                    "level": "120"
+                  },
+                  "attr": 3,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "type": 82,
+                    "revive": {
+                      "base": 120,
+                      "per": 120
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "2回戦の始まり！：攻撃力+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 1,
+                    "attack": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "2回戦の始まり！：クリティカル率+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 9,
+                    "critical": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "2回戦の始まり！：行動力+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_BARRIER_PIERCE",
+                  "desc": {
+                    "desc": "2回戦の始まり！：バリア/ダメージ減少無視",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 94,
+                    "penetration_force": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Nereid_N_16",
+              "on": "revive",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "2回戦の始まり！：攻撃力+{0}%(解除不可)",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Nereid_N_19",
+              "on": "revive",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "2回戦の始まり！：クリティカル率+{0}%(解除不可)",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Nereid_N_20",
+              "on": "revive",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "2回戦の始まり！：行動力+{0}%(解除不可)",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Nereid_N_21",
+              "on": "revive",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_BARRIER_PIERCE",
+                  "desc": {
+                    "desc": "2回戦の始まり！：バリア/ダメージ減少無視(解除不可)",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "type": 94,
+                    "penetration_force": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_DEF_RESSURRECT@120~120,BuffIcon_ATK_UP@0.2~0.01,BuffIcon_CRITICAL_UP@0.2~0.01,BuffIcon_AP_UP@0.2~0.01,BuffIcon_BARRIER_PIERCE@0~0,BuffIcon_ATK_UP@0.2~0.01,BuffIcon_CRITICAL_UP@0.2~0.01,BuffIcon_AP_UP@0.2~0.01,BuffIcon_BARRIER_PIERCE@0~0"
+  }
+}

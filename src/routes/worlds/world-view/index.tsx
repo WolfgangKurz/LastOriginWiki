@@ -28,8 +28,7 @@ const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 
 		const MapDB = GetJson<Worlds>(StaticDB.Map);
 
-		const Worlds = Object.keys(MapDB[props.wid])
-			.map(x => LocaleGet(`WORLD_WORLD_${props.wid}_${x}`));
+		const Worlds = Object.keys(MapDB[props.wid]);
 
 		const rows = nonStory
 			? "row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6"
@@ -52,24 +51,25 @@ const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 				{ Worlds.map((world, i) => <div class="col">
 					<div class="card worlds-world text-center mt-4 bg-dark text-light">
 						<div class="card-body">
-							<img src={ `${AssetsRoot}/world/icons/${props.wid}_${i + 1}.png` } />
+							<img src={ `${AssetsRoot}/world/icons/${props.wid}_${world}.png` } />
 							<div class="worlds-world-number text-warning">
 								<Locale k="WORLDS_WORLD_TITLE" p={ [i + 1] } />
 							</div>
-							<div class="worlds-world-name">{ world }</div>
+							<div class="worlds-world-name">
+								<Locale k={ `WORLD_WORLD_${props.wid}_${world}` } />
+							</div>
 
 							<div class="btn-group mt-2">
-								<button class="btn btn-warning" onClick={ (): void => void (route(`/worlds/${props.wid}/${i + 1}`)) }>
+								<button class="btn btn-warning" onClick={ (): void => void (route(`/worlds/${props.wid}/${world}`)) }>
 									<Icon icon="compass" class="me-1" />
 									<Locale k="WORLDS_WORLD_MAP" />
 								</button>
 								{ nonStory
 									? <></>
 									: <button class="btn btn-light" disabled>
-										{/* onClick={ (): void => void (route(`/story/${props.wid}/${i + 1}`)) } */ }
+										{/* onClick={ (): void => void (route(`/story/${props.wid}/${world}`)) } */ }
 										<Icon icon="chat-left-quote" class="me-1" />
 										<Locale k="WORLDS_WORLD_STORY" />
-										<span class="badge bg-secondary ms-1">TBA</span>
 									</button>
 								}
 							</div>

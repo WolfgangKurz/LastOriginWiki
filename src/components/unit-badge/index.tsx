@@ -18,7 +18,7 @@ const roleName: Record<ROLE_TYPE, string> = {
 };
 const typeList = [
 	"light",
-	"air",
+	"flying",
 	"heavy",
 ];
 
@@ -38,7 +38,7 @@ const UnitBadge: FunctionalComponent<UnitBadgeProps> = (props) => {
 	const type = ((): ACTOR_CLASS | -1 => {
 		const table: Record<string, ACTOR_CLASS> = {
 			light: ACTOR_CLASS.LIGHT,
-			air: ACTOR_CLASS.AIR,
+			flying: ACTOR_CLASS.AIR,
 			heavy: ACTOR_CLASS.HEAVY,
 		};
 		if (limit) {

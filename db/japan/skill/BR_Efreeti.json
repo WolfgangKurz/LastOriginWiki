@@ -1,0 +1,6828 @@
+{
+  "1": {
+    "key": "1",
+    "icon": "CannonShot",
+    "target": "enemy",
+    "buffs": {
+      "index": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "data": [
+        {
+          "rate": 2.1,
+          "type": 0,
+          "range": 5,
+          "ap": 8,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Efreeti_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Push",
+                  "desc": {
+                    "desc": "榴弾爆発：後方へ{0}マス突き飛ばす",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 52,
+                    "position": {
+                      "type": "push",
+                      "range": {
+                        "base": 1,
+                        "per": 0
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "榴弾爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1.5",
+                    "level": "-7.4999999999999997E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 20,
+                    "ap": {
+                      "base": -1.5,
+                      "per": -0.075
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "精密砲撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_11",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "榴弾爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1.5",
+                    "level": "-7.4999999999999997E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1.5,
+                      "per": -0.075
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "精密砲撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_14",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_4",
+                    "Effect_BR_Efreeti_N_15"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：列保護解除",
+                    "type": 0,
+                    "value": "75",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 75,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：指定保護解除",
+                    "type": 0,
+                    "value": "76",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 76,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.285,
+          "type": 0,
+          "range": 5,
+          "ap": 8,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Efreeti_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Push",
+                  "desc": {
+                    "desc": "榴弾爆発：後方へ{0}マス突き飛ばす",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 52,
+                    "position": {
+                      "type": "push",
+                      "range": {
+                        "base": 1,
+                        "per": 0
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "榴弾爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1.5",
+                    "level": "-7.4999999999999997E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 20,
+                    "ap": {
+                      "base": -1.5,
+                      "per": -0.075
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "精密砲撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_11",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "榴弾爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1.5",
+                    "level": "-7.4999999999999997E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1.5,
+                      "per": -0.075
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "精密砲撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_14",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_4",
+                    "Effect_BR_Efreeti_N_15"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：列保護解除",
+                    "type": 0,
+                    "value": "75",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 75,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：指定保護解除",
+                    "type": 0,
+                    "value": "76",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 76,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.47,
+          "type": 0,
+          "range": 5,
+          "ap": 8,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Efreeti_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Push",
+                  "desc": {
+                    "desc": "榴弾爆発：後方へ{0}マス突き飛ばす",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 52,
+                    "position": {
+                      "type": "push",
+                      "range": {
+                        "base": 1,
+                        "per": 0
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "榴弾爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1.5",
+                    "level": "-7.4999999999999997E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 20,
+                    "ap": {
+                      "base": -1.5,
+                      "per": -0.075
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "精密砲撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_11",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "榴弾爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1.5",
+                    "level": "-7.4999999999999997E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1.5,
+                      "per": -0.075
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "精密砲撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_14",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_4",
+                    "Effect_BR_Efreeti_N_15"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：列保護解除",
+                    "type": 0,
+                    "value": "75",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 75,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：指定保護解除",
+                    "type": 0,
+                    "value": "76",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 76,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.655,
+          "type": 0,
+          "range": 5,
+          "ap": 8,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Efreeti_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Push",
+                  "desc": {
+                    "desc": "榴弾爆発：後方へ{0}マス突き飛ばす",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 52,
+                    "position": {
+                      "type": "push",
+                      "range": {
+                        "base": 1,
+                        "per": 0
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "榴弾爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1.5",
+                    "level": "-7.4999999999999997E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 20,
+                    "ap": {
+                      "base": -1.5,
+                      "per": -0.075
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "精密砲撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_11",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "榴弾爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1.5",
+                    "level": "-7.4999999999999997E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1.5,
+                      "per": -0.075
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "精密砲撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_14",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_4",
+                    "Effect_BR_Efreeti_N_15"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：列保護解除",
+                    "type": 0,
+                    "value": "75",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 75,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：指定保護解除",
+                    "type": 0,
+                    "value": "76",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 76,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.84,
+          "type": 0,
+          "range": 5,
+          "ap": 8,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Efreeti_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Push",
+                  "desc": {
+                    "desc": "榴弾爆発：後方へ{0}マス突き飛ばす",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 52,
+                    "position": {
+                      "type": "push",
+                      "range": {
+                        "base": 1,
+                        "per": 0
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "榴弾爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1.5",
+                    "level": "-7.4999999999999997E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 20,
+                    "ap": {
+                      "base": -1.5,
+                      "per": -0.075
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "精密砲撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_11",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "榴弾爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1.5",
+                    "level": "-7.4999999999999997E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1.5,
+                      "per": -0.075
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "精密砲撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_14",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_4",
+                    "Effect_BR_Efreeti_N_15"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：列保護解除",
+                    "type": 0,
+                    "value": "75",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 75,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：指定保護解除",
+                    "type": 0,
+                    "value": "76",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 76,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.025000000000001,
+          "type": 0,
+          "range": 5,
+          "ap": 8,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Efreeti_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Push",
+                  "desc": {
+                    "desc": "榴弾爆発：後方へ{0}マス突き飛ばす",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 52,
+                    "position": {
+                      "type": "push",
+                      "range": {
+                        "base": 1,
+                        "per": 0
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "榴弾爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1.5",
+                    "level": "-7.4999999999999997E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 20,
+                    "ap": {
+                      "base": -1.5,
+                      "per": -0.075
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "精密砲撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_11",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "榴弾爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1.5",
+                    "level": "-7.4999999999999997E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1.5,
+                      "per": -0.075
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "精密砲撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_14",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_4",
+                    "Effect_BR_Efreeti_N_15"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：列保護解除",
+                    "type": 0,
+                    "value": "75",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 75,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：指定保護解除",
+                    "type": 0,
+                    "value": "76",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 76,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.21,
+          "type": 0,
+          "range": 5,
+          "ap": 8,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Efreeti_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Push",
+                  "desc": {
+                    "desc": "榴弾爆発：後方へ{0}マス突き飛ばす",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 52,
+                    "position": {
+                      "type": "push",
+                      "range": {
+                        "base": 1,
+                        "per": 0
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "榴弾爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1.5",
+                    "level": "-7.4999999999999997E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 20,
+                    "ap": {
+                      "base": -1.5,
+                      "per": -0.075
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "精密砲撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_11",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "榴弾爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1.5",
+                    "level": "-7.4999999999999997E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1.5,
+                      "per": -0.075
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "精密砲撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_14",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_4",
+                    "Effect_BR_Efreeti_N_15"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：列保護解除",
+                    "type": 0,
+                    "value": "75",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 75,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：指定保護解除",
+                    "type": 0,
+                    "value": "76",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 76,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.395,
+          "type": 0,
+          "range": 5,
+          "ap": 8,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Efreeti_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Push",
+                  "desc": {
+                    "desc": "榴弾爆発：後方へ{0}マス突き飛ばす",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 52,
+                    "position": {
+                      "type": "push",
+                      "range": {
+                        "base": 1,
+                        "per": 0
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "榴弾爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1.5",
+                    "level": "-7.4999999999999997E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 20,
+                    "ap": {
+                      "base": -1.5,
+                      "per": -0.075
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "精密砲撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_11",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "榴弾爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1.5",
+                    "level": "-7.4999999999999997E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1.5,
+                      "per": -0.075
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "精密砲撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_14",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_4",
+                    "Effect_BR_Efreeti_N_15"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：列保護解除",
+                    "type": 0,
+                    "value": "75",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 75,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：指定保護解除",
+                    "type": 0,
+                    "value": "76",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 76,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.58,
+          "type": 0,
+          "range": 5,
+          "ap": 8,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Efreeti_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Push",
+                  "desc": {
+                    "desc": "榴弾爆発：後方へ{0}マス突き飛ばす",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 52,
+                    "position": {
+                      "type": "push",
+                      "range": {
+                        "base": 1,
+                        "per": 0
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "榴弾爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1.5",
+                    "level": "-7.4999999999999997E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 20,
+                    "ap": {
+                      "base": -1.5,
+                      "per": -0.075
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "精密砲撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_11",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "榴弾爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1.5",
+                    "level": "-7.4999999999999997E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1.5,
+                      "per": -0.075
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "精密砲撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_14",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_4",
+                    "Effect_BR_Efreeti_N_15"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：列保護解除",
+                    "type": 0,
+                    "value": "75",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 75,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：指定保護解除",
+                    "type": 0,
+                    "value": "76",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 76,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.765,
+          "type": 0,
+          "range": 5,
+          "ap": 8,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Efreeti_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Push",
+                  "desc": {
+                    "desc": "榴弾爆発：後方へ{0}マス突き飛ばす",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 52,
+                    "position": {
+                      "type": "push",
+                      "range": {
+                        "base": 1,
+                        "per": 0
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "榴弾爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1.5",
+                    "level": "-7.4999999999999997E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 20,
+                    "ap": {
+                      "base": -1.5,
+                      "per": -0.075
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "精密砲撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_11",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "榴弾爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1.5",
+                    "level": "-7.4999999999999997E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1.5,
+                      "per": -0.075
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "精密砲撃：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_14",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_4",
+                    "Effect_BR_Efreeti_N_15"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：列保護解除",
+                    "type": 0,
+                    "value": "75",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 75,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：指定保護解除",
+                    "type": 0,
+                    "value": "76",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 76,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_Push@1~0,BuffIcon_AP_DOWN@-1.5,BuffIcon_PhyATK_UP@0.2~0.01,BuffIcon_AP_DOWN@-1.5,BuffIcon_PhyATK_UP@0.2~0.01,BuffIcon_REMOVE_BUFF@75~0,BuffIcon_REMOVE_BUFF@76~0"
+  },
+  "2": {
+    "key": "2",
+    "icon": "CannonShotDelay",
+    "target": "enemy",
+    "buffs": {
+      "index": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "data": [
+        {
+          "rate": 2.1,
+          "type": 0,
+          "range": 5,
+          "ap": 10,
+          "grid": "single",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 0,
+          "buffs": [
+            {
+              "key": "Effect_BR_Efreeti_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "衝撃爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1",
+                    "level": "-0.05"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1,
+                      "per": -0.05
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "衝撃爆発：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "時間差攻撃：反撃効果解除",
+                    "type": 0,
+                    "value": "29",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 29,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.285,
+          "type": 0,
+          "range": 5,
+          "ap": 10,
+          "grid": "single",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 0,
+          "buffs": [
+            {
+              "key": "Effect_BR_Efreeti_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "衝撃爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1",
+                    "level": "-0.05"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1,
+                      "per": -0.05
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "衝撃爆発：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "時間差攻撃：反撃効果解除",
+                    "type": 0,
+                    "value": "29",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 29,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.47,
+          "type": 0,
+          "range": 5,
+          "ap": 10,
+          "grid": "single",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 0,
+          "buffs": [
+            {
+              "key": "Effect_BR_Efreeti_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "衝撃爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1",
+                    "level": "-0.05"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1,
+                      "per": -0.05
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "衝撃爆発：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "時間差攻撃：反撃効果解除",
+                    "type": 0,
+                    "value": "29",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 29,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.655,
+          "type": 0,
+          "range": 5,
+          "ap": 10,
+          "grid": "single",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 0,
+          "buffs": [
+            {
+              "key": "Effect_BR_Efreeti_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "衝撃爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1",
+                    "level": "-0.05"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1,
+                      "per": -0.05
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "衝撃爆発：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "時間差攻撃：反撃効果解除",
+                    "type": 0,
+                    "value": "29",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 29,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.84,
+          "type": 0,
+          "range": 5,
+          "ap": 10,
+          "grid": "single",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 0,
+          "buffs": [
+            {
+              "key": "Effect_BR_Efreeti_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "衝撃爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1",
+                    "level": "-0.05"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1,
+                      "per": -0.05
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "衝撃爆発：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "時間差攻撃：反撃効果解除",
+                    "type": 0,
+                    "value": "29",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 29,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.025000000000001,
+          "type": 0,
+          "range": 5,
+          "ap": 10,
+          "grid": "single",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 0,
+          "buffs": [
+            {
+              "key": "Effect_BR_Efreeti_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "衝撃爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1",
+                    "level": "-0.05"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1,
+                      "per": -0.05
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "衝撃爆発：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "時間差攻撃：反撃効果解除",
+                    "type": 0,
+                    "value": "29",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 29,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.21,
+          "type": 0,
+          "range": 5,
+          "ap": 10,
+          "grid": "single",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 0,
+          "buffs": [
+            {
+              "key": "Effect_BR_Efreeti_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "衝撃爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1",
+                    "level": "-0.05"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1,
+                      "per": -0.05
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "衝撃爆発：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "時間差攻撃：反撃効果解除",
+                    "type": 0,
+                    "value": "29",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 29,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.395,
+          "type": 0,
+          "range": 5,
+          "ap": 10,
+          "grid": "single",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 0,
+          "buffs": [
+            {
+              "key": "Effect_BR_Efreeti_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "衝撃爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1",
+                    "level": "-0.05"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1,
+                      "per": -0.05
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "衝撃爆発：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "時間差攻撃：反撃効果解除",
+                    "type": 0,
+                    "value": "29",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 29,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.58,
+          "type": 0,
+          "range": 5,
+          "ap": 10,
+          "grid": "single",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 0,
+          "buffs": [
+            {
+              "key": "Effect_BR_Efreeti_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "衝撃爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1",
+                    "level": "-0.05"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1,
+                      "per": -0.05
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "衝撃爆発：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "時間差攻撃：反撃効果解除",
+                    "type": 0,
+                    "value": "29",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 29,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.765,
+          "type": 0,
+          "range": 5,
+          "ap": 10,
+          "grid": "single",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 0,
+          "buffs": [
+            {
+              "key": "Effect_BR_Efreeti_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "衝撃爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1",
+                    "level": "-0.05"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1,
+                      "per": -0.05
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "衝撃爆発：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "時間差攻撃：反撃効果解除",
+                    "type": 0,
+                    "value": "29",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 29,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_AP_DOWN@-1~-0.05,BuffIcon_VULNERABLE@0.2~0.01,BuffIcon_REMOVE_BUFF@29~0"
+  },
+  "3": {
+    "key": "3",
+    "icon": "TeamAtkBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "global",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Efreeti_N_3",
+              "on": "round",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "照明弾支援：命中率+{0}%",
+                    "type": 1,
+                    "value": "0.25",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "25%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "照明弾支援：クリティカル率+{0}%",
+                    "type": 1,
+                    "value": "0.1",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_ACCURACY_UP@0.25,BuffIcon_CRITICAL_UP@0.1~0.01"
+  },
+  "4": {
+    "key": "4",
+    "icon": "SelfAtkBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "self",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Efreeti_N_4",
+              "on": "round",
+              "if": {
+                "pos": 1
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "腔線型迫撃砲：攻撃力+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "腔線型迫撃砲：命中率+{0}%",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "腔線型迫撃砲：防御貫通+{0}%",
+                    "type": 1,
+                    "value": "0.25",
+                    "level": "0.03"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "25%",
+                      "per": "3%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "精密砲撃支援：アクティブスキル強化",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 1,
+                    "attack": {
+                      "base": "0%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_15",
+              "on": "round",
+              "if": {
+                "pos": 2
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "腔線型迫撃砲：攻撃力+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "腔線型迫撃砲：命中率+{0}%",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "腔線型迫撃砲：防御貫通+{0}%",
+                    "type": 1,
+                    "value": "0.25",
+                    "level": "0.03"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "25%",
+                      "per": "3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_ATK_UP@0.2~0.01,BuffIcon_ACCURACY_UP@0.15,BuffIcon_DEF_PIERCE_UP@0.25~0.03,BuffIcon_ATK_UP@0~0,BuffIcon_ATK_UP@0.2~0.01,BuffIcon_ACCURACY_UP@0.15,BuffIcon_DEF_PIERCE_UP@0.25~0.03"
+  },
+  "7": {
+    "key": "7",
+    "icon": "Missile",
+    "target": "enemy",
+    "buffs": {
+      "index": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "data": [
+        {
+          "rate": 2,
+          "type": 0,
+          "range": 5,
+          "ap": 0,
+          "grid": "single",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Efreeti_N_7",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "衝撃爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1",
+                    "level": "-0.05"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1,
+                      "per": -0.05
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_13",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "衝撃爆発：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_14",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_4",
+                    "Effect_BR_Efreeti_N_15"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：列保護解除",
+                    "type": 0,
+                    "value": "75",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 75,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：指定保護解除",
+                    "type": 0,
+                    "value": "76",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 76,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_99",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "時間差攻撃：反撃効果解除",
+                    "type": 0,
+                    "value": "29",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 29,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.1,
+          "type": 0,
+          "range": 5,
+          "ap": 0,
+          "grid": "single",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Efreeti_N_7",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "衝撃爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1",
+                    "level": "-0.05"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1,
+                      "per": -0.05
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_13",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "衝撃爆発：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_14",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_4",
+                    "Effect_BR_Efreeti_N_15"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：列保護解除",
+                    "type": 0,
+                    "value": "75",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 75,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：指定保護解除",
+                    "type": 0,
+                    "value": "76",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 76,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_99",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "時間差攻撃：反撃効果解除",
+                    "type": 0,
+                    "value": "29",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 29,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.2,
+          "type": 0,
+          "range": 5,
+          "ap": 0,
+          "grid": "single",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Efreeti_N_7",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "衝撃爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1",
+                    "level": "-0.05"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1,
+                      "per": -0.05
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_13",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "衝撃爆発：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_14",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_4",
+                    "Effect_BR_Efreeti_N_15"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：列保護解除",
+                    "type": 0,
+                    "value": "75",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 75,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：指定保護解除",
+                    "type": 0,
+                    "value": "76",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 76,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_99",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "時間差攻撃：反撃効果解除",
+                    "type": 0,
+                    "value": "29",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 29,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.3,
+          "type": 0,
+          "range": 5,
+          "ap": 0,
+          "grid": "single",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Efreeti_N_7",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "衝撃爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1",
+                    "level": "-0.05"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1,
+                      "per": -0.05
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_13",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "衝撃爆発：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_14",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_4",
+                    "Effect_BR_Efreeti_N_15"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：列保護解除",
+                    "type": 0,
+                    "value": "75",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 75,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：指定保護解除",
+                    "type": 0,
+                    "value": "76",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 76,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_99",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "時間差攻撃：反撃効果解除",
+                    "type": 0,
+                    "value": "29",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 29,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.4,
+          "type": 0,
+          "range": 5,
+          "ap": 0,
+          "grid": "single",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Efreeti_N_7",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "衝撃爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1",
+                    "level": "-0.05"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1,
+                      "per": -0.05
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_13",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "衝撃爆発：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_14",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_4",
+                    "Effect_BR_Efreeti_N_15"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：列保護解除",
+                    "type": 0,
+                    "value": "75",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 75,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：指定保護解除",
+                    "type": 0,
+                    "value": "76",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 76,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_99",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "時間差攻撃：反撃効果解除",
+                    "type": 0,
+                    "value": "29",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 29,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.5,
+          "type": 0,
+          "range": 5,
+          "ap": 0,
+          "grid": "single",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Efreeti_N_7",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "衝撃爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1",
+                    "level": "-0.05"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1,
+                      "per": -0.05
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_13",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "衝撃爆発：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_14",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_4",
+                    "Effect_BR_Efreeti_N_15"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：列保護解除",
+                    "type": 0,
+                    "value": "75",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 75,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：指定保護解除",
+                    "type": 0,
+                    "value": "76",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 76,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_99",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "時間差攻撃：反撃効果解除",
+                    "type": 0,
+                    "value": "29",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 29,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.6,
+          "type": 0,
+          "range": 5,
+          "ap": 0,
+          "grid": "single",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Efreeti_N_7",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "衝撃爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1",
+                    "level": "-0.05"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1,
+                      "per": -0.05
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_13",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "衝撃爆発：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_14",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_4",
+                    "Effect_BR_Efreeti_N_15"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：列保護解除",
+                    "type": 0,
+                    "value": "75",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 75,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：指定保護解除",
+                    "type": 0,
+                    "value": "76",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 76,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_99",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "時間差攻撃：反撃効果解除",
+                    "type": 0,
+                    "value": "29",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 29,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.7,
+          "type": 0,
+          "range": 5,
+          "ap": 0,
+          "grid": "single",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Efreeti_N_7",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "衝撃爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1",
+                    "level": "-0.05"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1,
+                      "per": -0.05
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_13",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "衝撃爆発：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_14",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_4",
+                    "Effect_BR_Efreeti_N_15"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：列保護解除",
+                    "type": 0,
+                    "value": "75",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 75,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：指定保護解除",
+                    "type": 0,
+                    "value": "76",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 76,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_99",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "時間差攻撃：反撃効果解除",
+                    "type": 0,
+                    "value": "29",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 29,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.8,
+          "type": 0,
+          "range": 5,
+          "ap": 0,
+          "grid": "single",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Efreeti_N_7",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "衝撃爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1",
+                    "level": "-0.05"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1,
+                      "per": -0.05
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_13",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "衝撃爆発：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_14",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_4",
+                    "Effect_BR_Efreeti_N_15"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：列保護解除",
+                    "type": 0,
+                    "value": "75",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 75,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：指定保護解除",
+                    "type": 0,
+                    "value": "76",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 76,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_99",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "時間差攻撃：反撃効果解除",
+                    "type": 0,
+                    "value": "29",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 29,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.9,
+          "type": 0,
+          "range": 5,
+          "ap": 0,
+          "grid": "single",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Efreeti_N_7",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "衝撃爆発：AP{0}",
+                    "type": 0,
+                    "value": "-1",
+                    "level": "-0.05"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -1,
+                      "per": -0.05
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_13",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "衝撃爆発：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_14",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_4",
+                    "Effect_BR_Efreeti_N_15"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：列保護解除",
+                    "type": 0,
+                    "value": "75",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 75,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "精密砲撃支援：指定保護解除",
+                    "type": 0,
+                    "value": "76",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 76,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_99",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "時間差攻撃：反撃効果解除",
+                    "type": 0,
+                    "value": "29",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 29,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_AP_DOWN@-1~-0.05,BuffIcon_VULNERABLE@0.2~0.01,BuffIcon_REMOVE_BUFF@75~0,BuffIcon_REMOVE_BUFF@76~0,BuffIcon_REMOVE_BUFF@29~0"
+  }
+}

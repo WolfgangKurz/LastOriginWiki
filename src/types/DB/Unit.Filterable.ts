@@ -40,10 +40,10 @@ export interface FilterableUnit {
 
 	buffs: FilterableUnitBuff[][]; // FilterableUnitBuffGroup[];
 	skills: {
-		active1: FilterableUnitSkill;
-		active2: FilterableUnitSkill;
-		Factive1?: FilterableUnitSkill;
-		Factive2?: FilterableUnitSkill;
+		1: FilterableUnitSkill;
+		2: FilterableUnitSkill;
+		F1?: FilterableUnitSkill;
+		F2?: FilterableUnitSkill;
 	};
 
 	roguelike: ROGUE_SKILL_TYPE[];
@@ -67,12 +67,12 @@ export namespace FilterableUnit {
 
 		buffs: [],
 		skills: {
-			active1: {
+			1: {
 				grid: false,
 				guard: false,
 				elem: SKILL_ATTR.PHYSICS,
 			},
-			active2: {
+			2: {
 				grid: false,
 				guard: false,
 				elem: SKILL_ATTR.PHYSICS,

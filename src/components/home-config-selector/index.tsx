@@ -1,20 +1,30 @@
 import { FunctionalComponent } from "preact";
 
 import { ImageExtension, ImageExtensionList } from "@/libs/Const";
+import { ChangeImage } from "@/libs/Functions";
 import { ChangeLanguage, CurrentLocale, LocaleList } from "@/libs/Locale";
+// import { LangValidation, LocaleGet } from "@/libs/Locale";
+import { ChangeDB, CurrentDB, DBList, DBTypes } from "@/libs/DB";
 
 import Icon from "../bootstrap-icon";
-import { ChangeImage } from "@/libs/Functions";
-// import { LangValidation, LocaleGet } from "@/libs/Locale";
 
-const HomeConfigSelector: FunctionalComponent = () => (
-	<div class="my-4">
+const HomeConfigSelector: FunctionalComponent = () => {
+	const DBDisp: Record<DBTypes, string> = {
+		korea: "KR",
+		japan: "JP",
+	};
+
+	return <div class="my-4">
 		<div class="input-group justify-content-center my-1">
 			<div class="input-group-text">
 				<Icon icon="server" class="me-1" />
 			</div>
-			<button class="btn btn-danger">KR</button>
-			<button class="btn btn-outline-secondary" disabled>JP</button>
+			{ DBList.map(db => <button
+				class={ `btn btn-${CurrentDB === db ? "danger" : "outline-danger"}` }
+				onClick={ (): void => ChangeDB(db) }
+			>
+				{ DBDisp[db] }
+			</button>) }
 		</div>
 		<div class="input-group justify-content-center my-1">
 			<div class="input-group-text">
@@ -40,6 +50,6 @@ const HomeConfigSelector: FunctionalComponent = () => (
 				{ ext }
 			</button>) }
 		</div>
-	</div>
-);
+	</div>;
+};
 export default HomeConfigSelector;

@@ -44,13 +44,14 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 			.forEach(x => {
 				const t = db[x as keyof SkillGroup]!;
 
-				const y = /(passive|active)([0-9]+)/.exec(t.key);
+				const y = /(F?)([0-9]+)/.exec(t.key);
 				if (!y) return;
 
+				const idx = parseInt(y[2], 10);
 				table[x] = {
 					...t,
-					index: parseInt(y[2], 10),
-					isPassive: y[1].includes("passive"),
+					index: idx,
+					isPassive: idx >= 3,
 				};
 			});
 		return table;

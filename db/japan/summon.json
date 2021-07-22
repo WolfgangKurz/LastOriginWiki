@@ -1,0 +1,2727 @@
+[
+  {
+    "id": "SUMMON_SU_TestSInstall_N",
+    "icon": "TbarIcon_MP_Scout_N",
+    "rarity": 2,
+    "type": 0,
+    "role": 2,
+    "use": true,
+    "summonType": 0,
+    "pos": 0,
+    "overlap": 2,
+    "turn": 0,
+    "deflv": 1,
+    "lifecycle": 4,
+    "shelter": true,
+    "ai": "AI_Jako_Normal_01",
+    "hp": [
+      10,
+      10
+    ],
+    "atk": [
+      1,
+      1
+    ],
+    "def": [
+      1,
+      1
+    ],
+    "spd": 0,
+    "cri": 0,
+    "acc": 100,
+    "eva": 0,
+    "res": {
+      "fire": 0,
+      "chill": 0,
+      "thunder": 0
+    },
+    "skills": [
+      {
+        "key": "Skill_SU_TestSInstall_N_1",
+        "name": "能動防御装置",
+        "icon": "ShieldWall",
+        "desc": "味方にバリアを張ります。",
+        "passive": true,
+        "type": 0,
+        "target": "team",
+        "buff": {
+          "rate": 0,
+          "range": 0,
+          "ap": 8,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_SU_TestSInstall_N_1",
+              "on": {
+                "hp<=": "100%"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DAMAGE_ABSORB",
+                  "desc": {
+                    "desc": "{0}ダメージ吸収バリア適用",
+                    "type": 0,
+                    "value": "50",
+                    "level": "30"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "until": "self_dead"
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 38,
+                    "barrier": {
+                      "base": 50,
+                      "per": 30
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      },
+      {
+        "key": "Skill_SU_TestSInstall_N_2",
+        "name": "シェルター機能",
+        "icon": "ShieldWall",
+        "desc": "味方にダメージ減少効果を与えます。",
+        "passive": true,
+        "type": 0,
+        "target": "team",
+        "buff": {
+          "rate": 0,
+          "range": 0,
+          "ap": 8,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_SU_TestSInstall_N_2",
+              "on": {
+                "hp<=": "100%"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "受けるダメージ{0}%減少",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.03"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "until": "self_dead"
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "20%",
+                      "per": "3%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "SUMMON_SU_TestSEnv_N",
+    "icon": "TbarIcon_MP_Scout_N",
+    "rarity": 2,
+    "type": 2,
+    "role": 2,
+    "use": true,
+    "summonType": 1,
+    "pos": 1,
+    "overlap": 2,
+    "turn": 0,
+    "deflv": 1,
+    "lifecycle": 4,
+    "shelter": false,
+    "ai": "AI_Jako_Normal_01",
+    "hp": [
+      10,
+      10
+    ],
+    "atk": [
+      1,
+      1
+    ],
+    "def": [
+      1,
+      1
+    ],
+    "spd": 0,
+    "cri": 0,
+    "acc": 100,
+    "eva": 0,
+    "res": {
+      "fire": 0,
+      "chill": 0,
+      "thunder": 0
+    },
+    "skills": [
+      {
+        "key": "Skill_SU_TestSEnv_N_1",
+        "name": "点火付与",
+        "icon": "MultiMissile",
+        "desc": "同じグリッドにいる敵に点火効果を与えます。",
+        "passive": true,
+        "type": 0,
+        "target": "enemy",
+        "buff": {
+          "rate": 0,
+          "range": 0,
+          "ap": 8,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_SU_TestSEnv_N_1",
+              "on": {
+                "hp<=": "100%"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 4,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "10",
+                    "level": "5"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1,
+                    "until": "self_dead"
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 10,
+                        "per": 5
+                      }
+                    }
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      },
+      {
+        "key": "Skill_SU_TestSEnv_N_2",
+        "name": "経路遮断",
+        "icon": "MultiMissile",
+        "desc": "同じグリッドにいる敵に確率で移動不可効果を与えます。",
+        "passive": true,
+        "type": 0,
+        "target": "enemy",
+        "buff": {
+          "rate": 0,
+          "range": 0,
+          "ap": 8,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 50,
+          "buffs": [
+            {
+              "key": "Effect_SU_TestSEnv_N_2",
+              "on": {
+                "hp<=": "100%"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 4,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "移動不可",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1,
+                    "until": "self_dead"
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "SUMMON_SU_RabbitBarrier_N",
+    "icon": "TbarIcon_SU_RabbitBarrier_N",
+    "rarity": 2,
+    "type": 0,
+    "role": 0,
+    "use": true,
+    "summonType": 2,
+    "pos": 0,
+    "overlap": 1,
+    "turn": 1,
+    "deflv": 1,
+    "lifecycle": 10,
+    "shelter": true,
+    "ai": "AI_UnderWatcherGene_01",
+    "hp": [
+      200,
+      2675
+    ],
+    "atk": [
+      1,
+      1
+    ],
+    "def": [
+      10,
+      307
+    ],
+    "spd": 10,
+    "cri": 0,
+    "acc": 999,
+    "eva": -100,
+    "res": {
+      "fire": 20,
+      "chill": 20,
+      "thunder": 20
+    },
+    "skills": [
+      {
+        "key": "Skill_SU_RabbitBarrier_N_1",
+        "name": "バリア強化",
+        "icon": "Barrier",
+        "desc": "2ラウンドの間、行保護を有効化し、受けるダメージが減少します。",
+        "passive": false,
+        "type": 0,
+        "target": "team",
+        "buff": {
+          "rate": 0,
+          "range": 6,
+          "ap": 10,
+          "grid": "self",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_SU_RabbitBarrier_N_1",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1,
+                2
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "受けるダメージ{0}%減少",
+                    "type": 1,
+                    "value": "0.1",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_Line",
+                  "desc": {
+                    "desc": "行保護",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 50,
+                    "guard": "col"
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      },
+      {
+        "key": "Skill_SU_RabbitBarrier_N_2",
+        "name": "堅固なバリア",
+        "icon": "ShieldWall",
+        "desc": "2ラウンドの間、行保護を有効化し、防御力が増加します。",
+        "passive": false,
+        "type": 0,
+        "target": "team",
+        "buff": {
+          "rate": 0,
+          "range": 6,
+          "ap": 10,
+          "grid": "self",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_SU_RabbitBarrier_N_2",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1,
+                2
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_UP",
+                  "desc": {
+                    "desc": "防御力+{0}",
+                    "type": 1,
+                    "value": "100",
+                    "level": "50"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 2,
+                    "defense": {
+                      "base": 100,
+                      "per": 50
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_Line",
+                  "desc": {
+                    "desc": "行保護",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 50,
+                    "guard": "col"
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      },
+      {
+        "key": "Skill_SU_RabbitBarrier_N_3",
+        "name": "特殊バリア展開",
+        "icon": "TeamDefBuff",
+        "desc": "行保護効果を有効化します。",
+        "passive": true,
+        "type": 0,
+        "target": "team",
+        "buff": {
+          "rate": 0,
+          "range": 6,
+          "ap": 0,
+          "grid": "self",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_SU_RabbitBarrier_N_3",
+              "on": false,
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1,
+                2
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_Line",
+                  "desc": {
+                    "desc": "行保護",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "type": 50,
+                    "guard": "col"
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "SUMMON_SU_AMG11_N",
+    "icon": "TbarIcon_SU_AMG11_N",
+    "rarity": 2,
+    "type": 0,
+    "role": 1,
+    "use": true,
+    "summonType": 2,
+    "pos": 0,
+    "overlap": 1,
+    "turn": 1,
+    "deflv": 1,
+    "lifecycle": 999,
+    "shelter": false,
+    "ai": "AI_AMG11_01",
+    "hp": [
+      120,
+      1308
+    ],
+    "atk": [
+      50,
+      842
+    ],
+    "def": [
+      10,
+      109
+    ],
+    "spd": 10,
+    "cri": 5,
+    "acc": 180,
+    "eva": -100,
+    "res": {
+      "fire": 0,
+      "chill": 0,
+      "thunder": 0
+    },
+    "skills": [
+      {
+        "key": "Skill_SU_AMG11_N_1",
+        "name": "目標設定",
+        "icon": "ARShot",
+        "desc": "マシンガンを発射し{0}のダメージを与え、対象を挑発します。",
+        "passive": false,
+        "type": 0,
+        "target": "enemy",
+        "buff": {
+          "rate": 1,
+          "range": 4,
+          "ap": 7,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_SU_AMG11_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PROVOKE",
+                  "desc": {
+                    "desc": "対象を挑発",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 74,
+                    "provoke": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      },
+      {
+        "key": "Skill_SU_AMG11_N_2",
+        "name": "目標破壊",
+        "icon": "ARShot",
+        "desc": "マシンガンを照準射撃し{0}のダメージを与え、対象を挑発します。",
+        "passive": false,
+        "type": 0,
+        "target": "enemy",
+        "buff": {
+          "rate": 1.4,
+          "range": 2,
+          "ap": 9,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_SU_AMG11_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PROVOKE",
+                  "desc": {
+                    "desc": "対象を挑発",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 74,
+                    "provoke": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "SUMMON_SU_AMG11_N2",
+    "icon": "TbarIcon_SU_AMG11_N",
+    "rarity": 2,
+    "type": 0,
+    "role": 1,
+    "use": true,
+    "summonType": 2,
+    "pos": 0,
+    "overlap": 2,
+    "turn": 1,
+    "deflv": 1,
+    "lifecycle": 999,
+    "shelter": false,
+    "ai": "AI_AMG11_01",
+    "hp": [
+      160,
+      1645
+    ],
+    "atk": [
+      75,
+      1065
+    ],
+    "def": [
+      20,
+      168.5
+    ],
+    "spd": 10,
+    "cri": 10,
+    "acc": 320,
+    "eva": -100,
+    "res": {
+      "fire": 10,
+      "chill": 10,
+      "thunder": 10
+    },
+    "skills": [
+      {
+        "key": "Skill_SU_AMG11_N_1",
+        "name": "目標設定",
+        "icon": "ARShot",
+        "desc": "マシンガンを発射し{0}のダメージを与え、対象を挑発します。",
+        "passive": false,
+        "type": 0,
+        "target": "enemy",
+        "buff": {
+          "rate": 1,
+          "range": 4,
+          "ap": 7,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_SU_AMG11_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PROVOKE",
+                  "desc": {
+                    "desc": "対象を挑発",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 74,
+                    "provoke": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      },
+      {
+        "key": "Skill_SU_AMG11_N_2",
+        "name": "目標破壊",
+        "icon": "ARShot",
+        "desc": "マシンガンを照準射撃し{0}のダメージを与え、対象を挑発します。",
+        "passive": false,
+        "type": 0,
+        "target": "enemy",
+        "buff": {
+          "rate": 1.4,
+          "range": 2,
+          "ap": 9,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_SU_AMG11_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PROVOKE",
+                  "desc": {
+                    "desc": "対象を挑発",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 74,
+                    "provoke": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "SUMMON_SU_C4Bomb_N",
+    "icon": "TbarIcon_SU_AMG11_N",
+    "rarity": 2,
+    "type": 0,
+    "role": 2,
+    "use": true,
+    "summonType": 0,
+    "pos": 1,
+    "overlap": 3,
+    "turn": 0,
+    "deflv": 1,
+    "lifecycle": 9,
+    "shelter": false,
+    "ai": "AI_Jako_Normal_01",
+    "hp": [
+      10,
+      10
+    ],
+    "atk": [
+      50,
+      1040
+    ],
+    "def": [
+      1,
+      1
+    ],
+    "spd": 0,
+    "cri": 0,
+    "acc": 100,
+    "eva": 0,
+    "res": {
+      "fire": 0,
+      "chill": 0,
+      "thunder": 0
+    },
+    "skills": [
+      {
+        "key": "Skill_SU_C4Bomb_N_1",
+        "name": "感知爆発",
+        "icon": "Scan",
+        "desc": "設置されたグリッドに敵が進入すると物理ダメージを与えます。ダメージ減少、バリア効果を無視します。",
+        "passive": true,
+        "type": 0,
+        "target": "team",
+        "buff": {
+          "rate": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_SU_C4Bomb_N_1",
+              "on": {
+                "_comment": "IF_CHAR_INGRID"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "攻撃力{0}%物理ダメージ",
+                    "type": 1,
+                    "value": "1",
+                    "level": "0.05"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "100%",
+                      "per": "5%"
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_SUMMON_INSTENV",
+                  "desc": {
+                    "desc": "感知爆発",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 93,
+                    "summon_remove": true
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      },
+      {
+        "key": "Skill_SU_C4Bomb_N_2",
+        "name": "起爆爆発",
+        "icon": "Scan",
+        "desc": "粘着爆弾の投擲により起爆させると、爆発し周辺に物理ダメージを与えます。ダメージ減少、バリア効果を無視します。",
+        "passive": true,
+        "type": 0,
+        "target": "team",
+        "buff": {
+          "rate": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "24568",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_SU_C4Bomb_N_2",
+              "on": "self_dead",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Phantom_N_2"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "攻撃力{0}%物理ダメージ",
+                    "type": 0,
+                    "value": "2",
+                    "level": "0.1"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "200%",
+                      "per": "10%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "SUMMON_SU_LMMine_N",
+    "icon": "TbarIcon_SU_AMG11_N",
+    "rarity": 2,
+    "type": 0,
+    "role": 1,
+    "use": true,
+    "summonType": 0,
+    "pos": 1,
+    "overlap": 2,
+    "turn": 0,
+    "deflv": 1,
+    "lifecycle": 5,
+    "shelter": false,
+    "ai": "AI_Jako_Normal_01",
+    "hp": [
+      10,
+      10
+    ],
+    "atk": [
+      300,
+      1290
+    ],
+    "def": [
+      1,
+      1
+    ],
+    "spd": 0,
+    "cri": 0,
+    "acc": 999,
+    "eva": 0,
+    "res": {
+      "fire": 0,
+      "chill": 0,
+      "thunder": 0
+    },
+    "skills": [
+      {
+        "key": "Skill_SU_LMMine_N_1",
+        "name": "対歩兵反応地雷",
+        "icon": "Scan",
+        "desc": "軽装型または重装型ユニットが踏むと大ダメージを与えます。設置後、5ラウンドが経過すると自動的に破壊されます。",
+        "passive": true,
+        "type": 0,
+        "target": "team",
+        "buff": {
+          "rate": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_SU_LMMine_N_1",
+              "on": {
+                "_comment": "IF_CHAR_INGRID"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "反応爆弾：{0}%物理ダメージ",
+                    "type": 0,
+                    "value": "4",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "400%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_SUMMON_INSTENV",
+                  "desc": {
+                    "desc": "地雷除去済",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 93,
+                    "summon_remove": true
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      },
+      {
+        "key": "Skill_SU_LMMine_N_2",
+        "name": "対歩兵反応地雷D",
+        "icon": "Scan",
+        "desc": "軽装型または重装型ユニットが踏むと大ダメージを与えます。設置後、5ラウンドが経過すると自動的に破壊されます。",
+        "passive": true,
+        "type": 0,
+        "target": "team",
+        "buff": {
+          "rate": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 0,
+          "buffs": [
+            {
+              "key": "Effect_SU_LMMine_N_2",
+              "on": {
+                "_comment": "IF_CHAR_INGRID"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "反応爆弾：{0}%物理ダメージ",
+                    "type": 0,
+                    "value": "4",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "400%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_SUMMON_INSTENV",
+                  "desc": {
+                    "desc": "地雷除去済",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 93,
+                    "summon_remove": true
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "SUMMON_SU_RaiderBomb_N",
+    "icon": "TbarIcon_SU_AMG11_N",
+    "rarity": 2,
+    "type": 0,
+    "role": 1,
+    "use": true,
+    "summonType": 0,
+    "pos": 1,
+    "overlap": 3,
+    "turn": 0,
+    "deflv": 1,
+    "lifecycle": 2,
+    "shelter": false,
+    "ai": "AI_Jako_Normal_01",
+    "hp": [
+      10,
+      10
+    ],
+    "atk": [
+      500,
+      1490
+    ],
+    "def": [
+      1,
+      1
+    ],
+    "spd": 0,
+    "cri": 0,
+    "acc": 999,
+    "eva": 0,
+    "res": {
+      "fire": 0,
+      "chill": 0,
+      "thunder": 0
+    },
+    "skills": [
+      {
+        "key": "Skill_SU_RaiderBomb_N_1",
+        "name": "遅延爆弾",
+        "icon": "Scan",
+        "desc": "設置後、2ラウンドが経過すると爆発し大ダメージを与えます。",
+        "passive": true,
+        "type": 0,
+        "target": "team",
+        "buff": {
+          "rate": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_SU_RaiderBomb_N_1",
+              "on": "self_dead",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "遅延爆弾：{0}%物理ダメージ",
+                    "type": 1,
+                    "value": "3",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "300%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      },
+      {
+        "key": "Skill_SU_RaiderBomb_N_2",
+        "name": "遅延爆弾D",
+        "icon": "Scan",
+        "desc": "設置後、2ラウンドが経過すると爆発し大ダメージを与えます。",
+        "passive": true,
+        "type": 0,
+        "target": "team",
+        "buff": {
+          "rate": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 0,
+          "buffs": [
+            {
+              "key": "Effect_SU_RaiderBomb_N_2",
+              "on": "self_dead",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "遅延爆弾：{0}%物理ダメージ",
+                    "type": 1,
+                    "value": "3",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "300%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "SUMMON_SU_TrenchBomb_N",
+    "icon": "TbarIcon_SU_TrenchBomb_N",
+    "rarity": 3,
+    "type": 0,
+    "role": 0,
+    "use": true,
+    "summonType": 2,
+    "pos": 0,
+    "overlap": 1,
+    "turn": 1,
+    "deflv": 1,
+    "lifecycle": 9,
+    "shelter": true,
+    "ai": "AI_UnderWatcherGene_01",
+    "hp": [
+      180,
+      2160
+    ],
+    "atk": [
+      1,
+      1
+    ],
+    "def": [
+      25,
+      520
+    ],
+    "spd": 5,
+    "cri": 0,
+    "acc": 999,
+    "eva": -100,
+    "res": {
+      "fire": 35,
+      "chill": 35,
+      "thunder": 35
+    },
+    "skills": [
+      {
+        "key": "Skill_SU_TrenchBomb_N_1",
+        "name": "コンクリート硬化",
+        "icon": "TeamDefBuff",
+        "desc": "スキル発動時、防御力が増加します。",
+        "passive": false,
+        "type": 0,
+        "target": "team",
+        "buff": {
+          "rate": 0,
+          "range": 6,
+          "ap": 10,
+          "grid": "self",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_SU_TrenchBomb_N_1",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1,
+                2
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_UP",
+                  "desc": {
+                    "desc": "コンクリート硬化：防御力+{0}",
+                    "type": 0,
+                    "value": "40",
+                    "level": "5"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 9
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 2,
+                    "defense": {
+                      "base": 40,
+                      "per": 5
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        }
+      },
+      {
+        "key": "Skill_SU_TrenchBomb_N_2",
+        "name": "最大硬化",
+        "icon": "TeamDefBuff",
+        "desc": "スキル発動時、受けるダメージが減少します。",
+        "passive": false,
+        "type": 0,
+        "target": "team",
+        "buff": {
+          "rate": 0,
+          "range": 6,
+          "ap": 10,
+          "grid": "self",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_SU_TrenchBomb_N_2",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1,
+                2
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "最大硬化：受けるダメージ{0}%減少",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "15%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        }
+      },
+      {
+        "key": "Skill_SU_TrenchBomb_N_3",
+        "name": "塹壕機能",
+        "icon": "TeamDefBuff",
+        "desc": "ラウンド開始時、行保護が有効化されます。",
+        "passive": true,
+        "type": 0,
+        "target": "team",
+        "buff": {
+          "rate": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "self",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_SU_TrenchBomb_N_3",
+              "on": "round",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1,
+                2
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_Line",
+                  "desc": {
+                    "desc": "塹壕機能：行保護",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 50,
+                    "guard": "col"
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "SUMMON_SU_HoloTiger_N",
+    "icon": "TbarIcon_SU_HoloTiger_N",
+    "rarity": 3,
+    "type": 0,
+    "role": 0,
+    "use": true,
+    "summonType": 2,
+    "pos": 0,
+    "overlap": 1,
+    "turn": 1,
+    "deflv": 1,
+    "lifecycle": 9,
+    "shelter": true,
+    "ai": "AI_AMG11_01",
+    "hp": [
+      1,
+      1
+    ],
+    "atk": [
+      1,
+      1
+    ],
+    "def": [
+      10,
+      10
+    ],
+    "spd": 10,
+    "cri": 0,
+    "acc": 999,
+    "eva": -999,
+    "res": {
+      "fire": 0,
+      "chill": 0,
+      "thunder": 0
+    },
+    "skills": [
+      {
+        "key": "Skill_SU_HoloTiger_N_1",
+        "name": "脅威的な咆哮",
+        "icon": "TeamAtkDeBuff",
+        "desc": "範囲内の敵に{0}保護無視ダメージを与え、2ラウンドの間、対象の命中率を減少させます。最大2回までスタックされます。",
+        "passive": false,
+        "type": 0,
+        "target": "enemy",
+        "buff": {
+          "rate": 1,
+          "range": 4,
+          "ap": 8,
+          "grid": "fill",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_SU_HoloTiger_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "脅威的な咆哮：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 2
+            }
+          ]
+        }
+      },
+      {
+        "key": "Skill_SU_HoloTiger_N_2",
+        "name": "気になる咆哮",
+        "icon": "TeamAtkDeBuff",
+        "desc": "範囲内の敵に{0}保護無視ダメージを与え、2ラウンドの間、対象の命中率を減少させます。最大2回までスタックされます。",
+        "passive": false,
+        "type": 0,
+        "target": "enemy",
+        "buff": {
+          "rate": 1,
+          "range": 2,
+          "ap": 6,
+          "grid": "fill",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_SU_HoloTiger_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "気になる咆哮：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 2
+            }
+          ]
+        }
+      },
+      {
+        "key": "Skill_SU_HoloTiger_N_3",
+        "name": "タイガーサプライズ",
+        "icon": "SuicideBomb",
+        "desc": "スキル命中時、自分を標的に指定します。",
+        "passive": true,
+        "type": 0,
+        "target": "team",
+        "buff": {
+          "rate": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "self",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_SU_HoloTiger_N_3",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1,
+                2
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "タイガーサプライズ！：標的",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "SUMMON_SU_HoloTiger_N2",
+    "icon": "TbarIcon_SU_HoloTiger_N",
+    "rarity": 3,
+    "type": 0,
+    "role": 0,
+    "use": true,
+    "summonType": 2,
+    "pos": 0,
+    "overlap": 2,
+    "turn": 1,
+    "deflv": 1,
+    "lifecycle": 9,
+    "shelter": true,
+    "ai": "AI_AMG11_01",
+    "hp": [
+      1,
+      1
+    ],
+    "atk": [
+      1,
+      1
+    ],
+    "def": [
+      10,
+      10
+    ],
+    "spd": 10,
+    "cri": 0,
+    "acc": 999,
+    "eva": -999,
+    "res": {
+      "fire": 0,
+      "chill": 0,
+      "thunder": 0
+    },
+    "skills": [
+      {
+        "key": "Skill_SU_HoloTiger_N_1",
+        "name": "脅威的な咆哮",
+        "icon": "TeamAtkDeBuff",
+        "desc": "範囲内の敵に{0}保護無視ダメージを与え、2ラウンドの間、対象の命中率を減少させます。最大2回までスタックされます。",
+        "passive": false,
+        "type": 0,
+        "target": "enemy",
+        "buff": {
+          "rate": 1,
+          "range": 4,
+          "ap": 8,
+          "grid": "fill",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_SU_HoloTiger_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "脅威的な咆哮：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 2
+            }
+          ]
+        }
+      },
+      {
+        "key": "Skill_SU_HoloTiger_N_2",
+        "name": "気になる咆哮",
+        "icon": "TeamAtkDeBuff",
+        "desc": "範囲内の敵に{0}保護無視ダメージを与え、2ラウンドの間、対象の命中率を減少させます。最大2回までスタックされます。",
+        "passive": false,
+        "type": 0,
+        "target": "enemy",
+        "buff": {
+          "rate": 1,
+          "range": 2,
+          "ap": 6,
+          "grid": "fill",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_SU_HoloTiger_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "気になる咆哮：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 2
+            }
+          ]
+        }
+      },
+      {
+        "key": "Skill_SU_HoloTiger_N_3",
+        "name": "タイガーサプライズ",
+        "icon": "SuicideBomb",
+        "desc": "スキル命中時、自分を標的に指定します。",
+        "passive": true,
+        "type": 0,
+        "target": "team",
+        "buff": {
+          "rate": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "self",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_SU_HoloTiger_N_3",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1,
+                2
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "タイガーサプライズ！：標的",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "SUMMON_SU_GoldenFactory_N",
+    "icon": "TbarIcon_SU_GoldenFactory_N",
+    "rarity": 3,
+    "type": 0,
+    "role": 0,
+    "use": true,
+    "summonType": 2,
+    "pos": 0,
+    "overlap": 1,
+    "turn": 1,
+    "deflv": 1,
+    "lifecycle": 4,
+    "shelter": false,
+    "ai": "AI_UnderWatcherGene_01",
+    "hp": [
+      12,
+      12
+    ],
+    "atk": [
+      1,
+      1
+    ],
+    "def": [
+      99999999,
+      99999999
+    ],
+    "spd": 10,
+    "cri": 0,
+    "acc": 999,
+    "eva": -999,
+    "res": {
+      "fire": 0,
+      "chill": 0,
+      "thunder": 0
+    },
+    "skills": [
+      {
+        "key": "Skill_SU_GoldenFactory_N_1",
+        "name": "広範囲バリア生成",
+        "icon": "Barrier",
+        "desc": "3ラウンドの間、すべての味方にバリアを付与します。",
+        "passive": false,
+        "type": 0,
+        "target": "team",
+        "buff": {
+          "rate": 0,
+          "range": 6,
+          "ap": 8,
+          "grid": "self",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_SU_GoldenFactory_N_1",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "ゴールデンファクトリー：標的",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_DAMAGE_ABSORB",
+                  "desc": {
+                    "desc": "広範囲バリア生成：バリア+{0}",
+                    "type": 0,
+                    "value": "300",
+                    "level": "50"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 38,
+                    "barrier": {
+                      "base": 300,
+                      "per": 50
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      },
+      {
+        "key": "Skill_SU_GoldenFactory_N_2",
+        "name": "広範囲攻撃力増加",
+        "icon": "TeamAtkBuff",
+        "desc": "3ラウンドの間、攻撃機、保護機の味方全体の攻撃力を増加させます。",
+        "passive": false,
+        "type": 0,
+        "target": "team",
+        "buff": {
+          "rate": 0,
+          "range": 6,
+          "ap": 6,
+          "grid": "self",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_SU_GoldenFactory_N_2",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "ゴールデンファクトリー：標的",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "広範囲攻撃力増加：攻撃力+{0}%(攻撃/保護機)",
+                    "type": 1,
+                    "value": "5.0000000000000001E-3",
+                    "level": "5.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 1,
+                    "attack": {
+                      "base": "0.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      },
+      {
+        "key": "Skill_SU_GoldenFactory_N_3",
+        "name": "広範囲行動力増加",
+        "icon": "TeamSpdBuff",
+        "desc": "3ラウンドの間、攻撃機、保護機の味方全体の行動力を増加させます。",
+        "passive": true,
+        "type": 0,
+        "target": "team",
+        "buff": {
+          "rate": 0,
+          "range": 6,
+          "ap": 0,
+          "grid": "self",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_SU_GoldenFactory_N_3",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "ゴールデンファクトリー：標的",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "広範囲行動力増加：行動力+{0}%(攻撃/保護機)",
+                    "type": 0,
+                    "value": "7.0000000000000001E-3",
+                    "level": "2E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "0.7%",
+                      "per": "0.2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,4930 @@
+{
+  "1": {
+    "key": "1",
+    "icon": "MGShot",
+    "target": "enemy",
+    "buffs": {
+      "index": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "data": [
+        {
+          "rate": 1.27,
+          "type": 0,
+          "range": 3,
+          "ap": 5,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Lindwurm_N_1",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    11,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "대공 기관포 : 대 기동형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "정밀 사격 : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_11",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "대공 기관포 : 대 기동형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Sleipnir_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "정밀 사격 : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.38,
+          "type": 0,
+          "range": 3,
+          "ap": 5,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Lindwurm_N_1",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    11,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "대공 기관포 : 대 기동형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "정밀 사격 : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_11",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "대공 기관포 : 대 기동형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Sleipnir_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "정밀 사격 : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.49,
+          "type": 0,
+          "range": 3,
+          "ap": 5,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Lindwurm_N_1",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    11,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "대공 기관포 : 대 기동형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "정밀 사격 : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_11",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "대공 기관포 : 대 기동형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Sleipnir_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "정밀 사격 : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.6,
+          "type": 0,
+          "range": 3,
+          "ap": 5,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Lindwurm_N_1",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    11,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "대공 기관포 : 대 기동형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "정밀 사격 : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_11",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "대공 기관포 : 대 기동형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Sleipnir_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "정밀 사격 : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.71,
+          "type": 0,
+          "range": 3,
+          "ap": 5,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Lindwurm_N_1",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    11,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "대공 기관포 : 대 기동형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "정밀 사격 : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_11",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "대공 기관포 : 대 기동형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Sleipnir_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "정밀 사격 : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.82,
+          "type": 0,
+          "range": 3,
+          "ap": 5,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Lindwurm_N_1",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    11,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "대공 기관포 : 대 기동형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "정밀 사격 : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_11",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "대공 기관포 : 대 기동형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Sleipnir_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "정밀 사격 : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.93,
+          "type": 0,
+          "range": 3,
+          "ap": 5,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Lindwurm_N_1",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    11,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "대공 기관포 : 대 기동형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "정밀 사격 : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_11",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "대공 기관포 : 대 기동형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Sleipnir_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "정밀 사격 : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.04,
+          "type": 0,
+          "range": 3,
+          "ap": 5,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Lindwurm_N_1",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    11,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "대공 기관포 : 대 기동형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "정밀 사격 : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_11",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "대공 기관포 : 대 기동형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Sleipnir_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "정밀 사격 : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.15,
+          "type": 0,
+          "range": 3,
+          "ap": 5,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Lindwurm_N_1",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    11,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "대공 기관포 : 대 기동형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "정밀 사격 : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_11",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "대공 기관포 : 대 기동형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Sleipnir_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "정밀 사격 : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.26,
+          "type": 0,
+          "range": 3,
+          "ap": 5,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Lindwurm_N_1",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    11,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "대공 기관포 : 대 기동형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "정밀 사격 : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_11",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "대공 기관포 : 대 기동형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_101",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Sleipnir_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "정밀 사격 : [한계돌파] 협동 공격",
+                    "type": 0,
+                    "value": "Char_BR_Sleipnir_N",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Sleipnir_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_PhyATK_UP@0.2~0.01,BuffIcon_MOBILITY_DMG_UP@0.2~0.01,BuffIcon_TOGETHER_ATTACK@Char_BR_Sleipnir_N,BuffIcon_MOBILITY_DMG_UP@0.2~0.01,BuffIcon_TOGETHER_ATTACK@Char_BR_Sleipnir_N"
+  },
+  "2": {
+    "key": "2",
+    "icon": "Missile",
+    "target": "enemy",
+    "buffs": {
+      "index": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "data": [
+        {
+          "rate": 2.415,
+          "type": 0,
+          "range": 4,
+          "ap": 8,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Lindwurm_N_2",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 폭격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.270000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "27%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 대 중장형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.040000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "30%",
+                      "per": "4%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_12",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 대 중장형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.040000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "30%",
+                      "per": "4%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.63,
+          "type": 0,
+          "range": 4,
+          "ap": 8,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Lindwurm_N_2",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 폭격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.270000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "27%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 대 중장형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.040000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "30%",
+                      "per": "4%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_12",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 대 중장형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.040000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "30%",
+                      "per": "4%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.845,
+          "type": 0,
+          "range": 4,
+          "ap": 8,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Lindwurm_N_2",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 폭격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.270000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "27%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 대 중장형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.040000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "30%",
+                      "per": "4%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_12",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 대 중장형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.040000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "30%",
+                      "per": "4%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.06,
+          "type": 0,
+          "range": 4,
+          "ap": 8,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Lindwurm_N_2",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 폭격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.270000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "27%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 대 중장형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.040000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "30%",
+                      "per": "4%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_12",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 대 중장형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.040000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "30%",
+                      "per": "4%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.275,
+          "type": 0,
+          "range": 4,
+          "ap": 8,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Lindwurm_N_2",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 폭격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.270000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "27%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 대 중장형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.040000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "30%",
+                      "per": "4%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_12",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 대 중장형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.040000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "30%",
+                      "per": "4%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.49,
+          "type": 0,
+          "range": 4,
+          "ap": 8,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Lindwurm_N_2",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 폭격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.270000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "27%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 대 중장형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.040000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "30%",
+                      "per": "4%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_12",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 대 중장형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.040000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "30%",
+                      "per": "4%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.705,
+          "type": 0,
+          "range": 4,
+          "ap": 8,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Lindwurm_N_2",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 폭격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.270000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "27%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 대 중장형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.040000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "30%",
+                      "per": "4%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_12",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 대 중장형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.040000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "30%",
+                      "per": "4%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.92,
+          "type": 0,
+          "range": 4,
+          "ap": 8,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Lindwurm_N_2",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 폭격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.270000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "27%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 대 중장형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.040000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "30%",
+                      "per": "4%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_12",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 대 중장형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.040000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "30%",
+                      "per": "4%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 4.135,
+          "type": 0,
+          "range": 4,
+          "ap": 8,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Lindwurm_N_2",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 폭격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.270000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "27%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 대 중장형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.040000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "30%",
+                      "per": "4%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_12",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 대 중장형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.040000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "30%",
+                      "per": "4%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 4.35,
+          "type": 0,
+          "range": 4,
+          "ap": 8,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Lindwurm_N_2",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 폭격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.270000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "27%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 대 중장형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.040000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "30%",
+                      "per": "4%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_12",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 대 중장형 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.040000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "30%",
+                      "per": "4%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_PhyATK_UP@0.27~0.02,BuffIcon_ARMORED_DMG_UP@0.2~0.01,BuffIcon_DEF_PIERCE_UP@0.3~0.04,BuffIcon_ARMORED_DMG_UP@0.2~0.01,BuffIcon_DEF_PIERCE_UP@0.3~0.04"
+  },
+  "3": {
+    "key": "3",
+    "icon": "SelfAtkBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "self",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Lindwurm_N_3",
+              "on": "round",
+              "if": {
+                "pos": 0
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "압도적 귀여움? : 회피+{0}% (최대)",
+                    "type": 1,
+                    "value": "0.350000",
+                    "level": "0.050000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "35%",
+                      "per": "5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "압도적 귀여움? : 적중+{0}% (최대)",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.030000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "20%",
+                      "per": "3%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_COUNTER",
+                  "desc": {
+                    "desc": "압도적 귀여움? : {0}% 위력 반격 (회피 시)",
+                    "type": 1,
+                    "value": "0.670000",
+                    "level": "0.040000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 29,
+                    "counter": {
+                      "base": "67%",
+                      "per": "4%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "압도적 귀여움? : 공격력+{0}% (회피 시)",
+                    "type": 1,
+                    "value": "0.160000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 1,
+                    "attack": {
+                      "base": "16%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_13",
+              "on": "round",
+              "if": {
+                "pos": 1
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "압도적 귀여움? : 회피+{0}%",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.040000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "30%",
+                      "per": "4%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "압도적 귀여움? : 적중+{0}%",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "15%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_14",
+              "on": "round",
+              "if": {
+                "pos": 2
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "압도적 귀여움? : 회피+{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.030000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "25%",
+                      "per": "3%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "압도적 귀여움? : 적중+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_15",
+              "on": "evade",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_COUNTER",
+                  "desc": {
+                    "desc": "압도적 귀여움? : {0}% 위력 반격",
+                    "type": 1,
+                    "value": "0.670000",
+                    "level": "0.040000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "until": {
+                      "after": "counter"
+                    }
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 29,
+                    "counter": {
+                      "base": "67%",
+                      "per": "4%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_16",
+              "on": "evade",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "압도적 귀여움? : 공격력+{0}%",
+                    "type": 1,
+                    "value": "0.160000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "until": "damaged"
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "16%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 3
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_EVADE_UP@0.35~0.05,BuffIcon_ACCURACY_UP@0.2~0.03,BuffIcon_COUNTER@0.67~0.04,BuffIcon_ATK_UP@0.16~0.01,BuffIcon_EVADE_UP@0.3~0.04,BuffIcon_ACCURACY_UP@0.15~0.02,BuffIcon_EVADE_UP@0.25~0.03,BuffIcon_ACCURACY_UP@0.1~0.01,BuffIcon_COUNTER@0.67~0.04,BuffIcon_ATK_UP@0.16~0.01"
+  },
+  "4": {
+    "key": "4",
+    "icon": "SelfSpdBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "self",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Lindwurm_N_4",
+              "on": "wave",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "모두 주목해주세요-! : 표식 지정 (2r)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "한눈팔면 안 돼요~ : 회피+{0}% (2r)",
+                    "type": 1,
+                    "value": "0.350000",
+                    "level": "0.050000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "35%",
+                      "per": "5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "치명적인 귀여움-! : 치명타+{0}%",
+                    "type": 1,
+                    "value": "0.160000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 9,
+                    "critical": {
+                      "base": "16%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "제가 최고에요~! : AP+{0} (적 처치 시)",
+                    "type": 0,
+                    "value": "0.100000",
+                    "level": "0.100000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 20,
+                    "ap": {
+                      "base": 0.1,
+                      "per": 0.1
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_18",
+              "on": "round",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "치명적인 귀여움-! : 치명타+{0}%",
+                    "type": 1,
+                    "value": "0.160000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "16%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_20",
+              "on": "enemy_killed",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "제가 최고에요~! : AP+{0}",
+                    "type": 0,
+                    "value": "0.100000",
+                    "level": "0.100000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 0.1,
+                      "per": 0.1
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "self",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Lindwurm_N_17",
+              "on": "wave",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "모두 주목해주세요-!! : 표식 지정 (3r)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "한눈팔면 안 돼요~ : 회피+{0}% (3r)",
+                    "type": 1,
+                    "value": "0.350000",
+                    "level": "0.050000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "35%",
+                      "per": "5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "치명적인 귀여움-! : 치명타+{0}%",
+                    "type": 1,
+                    "value": "0.160000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 9,
+                    "critical": {
+                      "base": "16%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "제가 최고에요~! : AP+{0} (적 처치 시)",
+                    "type": 0,
+                    "value": "0.100000",
+                    "level": "0.100000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 20,
+                    "ap": {
+                      "base": 0.1,
+                      "per": 0.1
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_18",
+              "on": "round",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "치명적인 귀여움-! : 치명타+{0}%",
+                    "type": 1,
+                    "value": "0.160000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "16%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Lindwurm_N_20",
+              "on": "enemy_killed",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "제가 최고에요~! : AP+{0}",
+                    "type": 0,
+                    "value": "0.100000",
+                    "level": "0.100000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 0.1,
+                      "per": 0.1
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_MARKING@0~0,BuffIcon_EVADE_UP@0.35~0.05,BuffIcon_CRITICAL_UP@0.16~0.01,BuffIcon_AP_UP@0.1~0.1,BuffIcon_CRITICAL_UP@0.16~0.01,BuffIcon_AP_UP@0.1~0.1"
+  }
+}

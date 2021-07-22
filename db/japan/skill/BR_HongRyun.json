@@ -1,0 +1,5282 @@
+{
+  "1": {
+    "key": "1",
+    "icon": "IceShot",
+    "target": "enemy",
+    "buffs": {
+      "index": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "data": [
+        {
+          "rate": 1.135,
+          "type": 2,
+          "range": 4,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_HongRyun_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "氷結ボルト：標的",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "氷結ボルト：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "氷結ボルト：行動力{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-2.5000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "氷結ボルト：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "改良型複合装甲：火炎耐性+{0}%",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 1,
+                    "attack": {
+                      "base": "0%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_Flood_N_1",
+                    "Effect_BUFF_Flood_N_2",
+                    "Effect_BUFF_Flood_N_3",
+                    "Effect_BUFF_Flood_N_4",
+                    "Effect_BUFF_Flood_N_5",
+                    "Effect_BUFF_Flood_N_6",
+                    "Effect_BUFF_Flood_N_7",
+                    "Effect_BUFF_Flood_N_8",
+                    "Effect_BUFF_Flood_N_9",
+                    "Effect_BUFF_Flood_N_11",
+                    "Effect_BUFF_Flood_N_12",
+                    "Effect_BUFF_Flood_N_13",
+                    "Effect_BUFF_Flood_N_14",
+                    "Effect_BUFF_Flood_N_15",
+                    "Effect_BUFF_Flood_N_16"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "急速氷結：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.15",
+                    "level": "-7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-15%",
+                      "per": "-0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "急速氷結：行動力{0}%",
+                    "type": 1,
+                    "value": "-2.5000000000000001E-2",
+                    "level": "-1.25E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-2.5%",
+                      "per": "-0.125%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_12",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "氷結ボルト：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_13",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_Flood_N_1",
+                    "Effect_BUFF_Flood_N_2",
+                    "Effect_BUFF_Flood_N_3",
+                    "Effect_BUFF_Flood_N_4",
+                    "Effect_BUFF_Flood_N_5",
+                    "Effect_BUFF_Flood_N_6",
+                    "Effect_BUFF_Flood_N_7",
+                    "Effect_BUFF_Flood_N_8",
+                    "Effect_BUFF_Flood_N_9",
+                    "Effect_BUFF_Flood_N_11",
+                    "Effect_BUFF_Flood_N_12",
+                    "Effect_BUFF_Flood_N_13",
+                    "Effect_BUFF_Flood_N_14",
+                    "Effect_BUFF_Flood_N_15",
+                    "Effect_BUFF_Flood_N_16"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "急速氷結：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "7.4999999999999997E-2",
+                    "level": "3.7499999999999999E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "7.5%",
+                      "per": "0.375%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_101",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "氷結ボルトスキル使用",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 99
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "0%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.23,
+          "type": 2,
+          "range": 4,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_HongRyun_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "氷結ボルト：標的",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "氷結ボルト：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "氷結ボルト：行動力{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-2.5000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "氷結ボルト：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "改良型複合装甲：火炎耐性+{0}%",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 1,
+                    "attack": {
+                      "base": "0%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_Flood_N_1",
+                    "Effect_BUFF_Flood_N_2",
+                    "Effect_BUFF_Flood_N_3",
+                    "Effect_BUFF_Flood_N_4",
+                    "Effect_BUFF_Flood_N_5",
+                    "Effect_BUFF_Flood_N_6",
+                    "Effect_BUFF_Flood_N_7",
+                    "Effect_BUFF_Flood_N_8",
+                    "Effect_BUFF_Flood_N_9",
+                    "Effect_BUFF_Flood_N_11",
+                    "Effect_BUFF_Flood_N_12",
+                    "Effect_BUFF_Flood_N_13",
+                    "Effect_BUFF_Flood_N_14",
+                    "Effect_BUFF_Flood_N_15",
+                    "Effect_BUFF_Flood_N_16"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "急速氷結：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.15",
+                    "level": "-7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-15%",
+                      "per": "-0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "急速氷結：行動力{0}%",
+                    "type": 1,
+                    "value": "-2.5000000000000001E-2",
+                    "level": "-1.25E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-2.5%",
+                      "per": "-0.125%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_12",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "氷結ボルト：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_13",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_Flood_N_1",
+                    "Effect_BUFF_Flood_N_2",
+                    "Effect_BUFF_Flood_N_3",
+                    "Effect_BUFF_Flood_N_4",
+                    "Effect_BUFF_Flood_N_5",
+                    "Effect_BUFF_Flood_N_6",
+                    "Effect_BUFF_Flood_N_7",
+                    "Effect_BUFF_Flood_N_8",
+                    "Effect_BUFF_Flood_N_9",
+                    "Effect_BUFF_Flood_N_11",
+                    "Effect_BUFF_Flood_N_12",
+                    "Effect_BUFF_Flood_N_13",
+                    "Effect_BUFF_Flood_N_14",
+                    "Effect_BUFF_Flood_N_15",
+                    "Effect_BUFF_Flood_N_16"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "急速氷結：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "7.4999999999999997E-2",
+                    "level": "3.7499999999999999E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "7.5%",
+                      "per": "0.375%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_101",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "氷結ボルトスキル使用",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 99
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "0%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.325,
+          "type": 2,
+          "range": 4,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_HongRyun_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "氷結ボルト：標的",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "氷結ボルト：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "氷結ボルト：行動力{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-2.5000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "氷結ボルト：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "改良型複合装甲：火炎耐性+{0}%",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 1,
+                    "attack": {
+                      "base": "0%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_Flood_N_1",
+                    "Effect_BUFF_Flood_N_2",
+                    "Effect_BUFF_Flood_N_3",
+                    "Effect_BUFF_Flood_N_4",
+                    "Effect_BUFF_Flood_N_5",
+                    "Effect_BUFF_Flood_N_6",
+                    "Effect_BUFF_Flood_N_7",
+                    "Effect_BUFF_Flood_N_8",
+                    "Effect_BUFF_Flood_N_9",
+                    "Effect_BUFF_Flood_N_11",
+                    "Effect_BUFF_Flood_N_12",
+                    "Effect_BUFF_Flood_N_13",
+                    "Effect_BUFF_Flood_N_14",
+                    "Effect_BUFF_Flood_N_15",
+                    "Effect_BUFF_Flood_N_16"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "急速氷結：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.15",
+                    "level": "-7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-15%",
+                      "per": "-0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "急速氷結：行動力{0}%",
+                    "type": 1,
+                    "value": "-2.5000000000000001E-2",
+                    "level": "-1.25E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-2.5%",
+                      "per": "-0.125%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_12",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "氷結ボルト：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_13",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_Flood_N_1",
+                    "Effect_BUFF_Flood_N_2",
+                    "Effect_BUFF_Flood_N_3",
+                    "Effect_BUFF_Flood_N_4",
+                    "Effect_BUFF_Flood_N_5",
+                    "Effect_BUFF_Flood_N_6",
+                    "Effect_BUFF_Flood_N_7",
+                    "Effect_BUFF_Flood_N_8",
+                    "Effect_BUFF_Flood_N_9",
+                    "Effect_BUFF_Flood_N_11",
+                    "Effect_BUFF_Flood_N_12",
+                    "Effect_BUFF_Flood_N_13",
+                    "Effect_BUFF_Flood_N_14",
+                    "Effect_BUFF_Flood_N_15",
+                    "Effect_BUFF_Flood_N_16"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "急速氷結：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "7.4999999999999997E-2",
+                    "level": "3.7499999999999999E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "7.5%",
+                      "per": "0.375%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_101",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "氷結ボルトスキル使用",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 99
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "0%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.42,
+          "type": 2,
+          "range": 4,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_HongRyun_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "氷結ボルト：標的",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "氷結ボルト：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "氷結ボルト：行動力{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-2.5000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "氷結ボルト：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "改良型複合装甲：火炎耐性+{0}%",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 1,
+                    "attack": {
+                      "base": "0%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_Flood_N_1",
+                    "Effect_BUFF_Flood_N_2",
+                    "Effect_BUFF_Flood_N_3",
+                    "Effect_BUFF_Flood_N_4",
+                    "Effect_BUFF_Flood_N_5",
+                    "Effect_BUFF_Flood_N_6",
+                    "Effect_BUFF_Flood_N_7",
+                    "Effect_BUFF_Flood_N_8",
+                    "Effect_BUFF_Flood_N_9",
+                    "Effect_BUFF_Flood_N_11",
+                    "Effect_BUFF_Flood_N_12",
+                    "Effect_BUFF_Flood_N_13",
+                    "Effect_BUFF_Flood_N_14",
+                    "Effect_BUFF_Flood_N_15",
+                    "Effect_BUFF_Flood_N_16"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "急速氷結：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.15",
+                    "level": "-7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-15%",
+                      "per": "-0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "急速氷結：行動力{0}%",
+                    "type": 1,
+                    "value": "-2.5000000000000001E-2",
+                    "level": "-1.25E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-2.5%",
+                      "per": "-0.125%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_12",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "氷結ボルト：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_13",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_Flood_N_1",
+                    "Effect_BUFF_Flood_N_2",
+                    "Effect_BUFF_Flood_N_3",
+                    "Effect_BUFF_Flood_N_4",
+                    "Effect_BUFF_Flood_N_5",
+                    "Effect_BUFF_Flood_N_6",
+                    "Effect_BUFF_Flood_N_7",
+                    "Effect_BUFF_Flood_N_8",
+                    "Effect_BUFF_Flood_N_9",
+                    "Effect_BUFF_Flood_N_11",
+                    "Effect_BUFF_Flood_N_12",
+                    "Effect_BUFF_Flood_N_13",
+                    "Effect_BUFF_Flood_N_14",
+                    "Effect_BUFF_Flood_N_15",
+                    "Effect_BUFF_Flood_N_16"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "急速氷結：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "7.4999999999999997E-2",
+                    "level": "3.7499999999999999E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "7.5%",
+                      "per": "0.375%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_101",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "氷結ボルトスキル使用",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 99
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "0%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.515,
+          "type": 2,
+          "range": 4,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_HongRyun_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "氷結ボルト：標的",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "氷結ボルト：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "氷結ボルト：行動力{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-2.5000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "氷結ボルト：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "改良型複合装甲：火炎耐性+{0}%",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 1,
+                    "attack": {
+                      "base": "0%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_Flood_N_1",
+                    "Effect_BUFF_Flood_N_2",
+                    "Effect_BUFF_Flood_N_3",
+                    "Effect_BUFF_Flood_N_4",
+                    "Effect_BUFF_Flood_N_5",
+                    "Effect_BUFF_Flood_N_6",
+                    "Effect_BUFF_Flood_N_7",
+                    "Effect_BUFF_Flood_N_8",
+                    "Effect_BUFF_Flood_N_9",
+                    "Effect_BUFF_Flood_N_11",
+                    "Effect_BUFF_Flood_N_12",
+                    "Effect_BUFF_Flood_N_13",
+                    "Effect_BUFF_Flood_N_14",
+                    "Effect_BUFF_Flood_N_15",
+                    "Effect_BUFF_Flood_N_16"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "急速氷結：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.15",
+                    "level": "-7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-15%",
+                      "per": "-0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "急速氷結：行動力{0}%",
+                    "type": 1,
+                    "value": "-2.5000000000000001E-2",
+                    "level": "-1.25E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-2.5%",
+                      "per": "-0.125%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_12",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "氷結ボルト：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_13",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_Flood_N_1",
+                    "Effect_BUFF_Flood_N_2",
+                    "Effect_BUFF_Flood_N_3",
+                    "Effect_BUFF_Flood_N_4",
+                    "Effect_BUFF_Flood_N_5",
+                    "Effect_BUFF_Flood_N_6",
+                    "Effect_BUFF_Flood_N_7",
+                    "Effect_BUFF_Flood_N_8",
+                    "Effect_BUFF_Flood_N_9",
+                    "Effect_BUFF_Flood_N_11",
+                    "Effect_BUFF_Flood_N_12",
+                    "Effect_BUFF_Flood_N_13",
+                    "Effect_BUFF_Flood_N_14",
+                    "Effect_BUFF_Flood_N_15",
+                    "Effect_BUFF_Flood_N_16"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "急速氷結：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "7.4999999999999997E-2",
+                    "level": "3.7499999999999999E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "7.5%",
+                      "per": "0.375%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_101",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "氷結ボルトスキル使用",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 99
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "0%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.61,
+          "type": 2,
+          "range": 4,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_HongRyun_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "氷結ボルト：標的",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "氷結ボルト：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "氷結ボルト：行動力{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-2.5000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "氷結ボルト：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "改良型複合装甲：火炎耐性+{0}%",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 1,
+                    "attack": {
+                      "base": "0%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_Flood_N_1",
+                    "Effect_BUFF_Flood_N_2",
+                    "Effect_BUFF_Flood_N_3",
+                    "Effect_BUFF_Flood_N_4",
+                    "Effect_BUFF_Flood_N_5",
+                    "Effect_BUFF_Flood_N_6",
+                    "Effect_BUFF_Flood_N_7",
+                    "Effect_BUFF_Flood_N_8",
+                    "Effect_BUFF_Flood_N_9",
+                    "Effect_BUFF_Flood_N_11",
+                    "Effect_BUFF_Flood_N_12",
+                    "Effect_BUFF_Flood_N_13",
+                    "Effect_BUFF_Flood_N_14",
+                    "Effect_BUFF_Flood_N_15",
+                    "Effect_BUFF_Flood_N_16"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "急速氷結：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.15",
+                    "level": "-7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-15%",
+                      "per": "-0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "急速氷結：行動力{0}%",
+                    "type": 1,
+                    "value": "-2.5000000000000001E-2",
+                    "level": "-1.25E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-2.5%",
+                      "per": "-0.125%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_12",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "氷結ボルト：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_13",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_Flood_N_1",
+                    "Effect_BUFF_Flood_N_2",
+                    "Effect_BUFF_Flood_N_3",
+                    "Effect_BUFF_Flood_N_4",
+                    "Effect_BUFF_Flood_N_5",
+                    "Effect_BUFF_Flood_N_6",
+                    "Effect_BUFF_Flood_N_7",
+                    "Effect_BUFF_Flood_N_8",
+                    "Effect_BUFF_Flood_N_9",
+                    "Effect_BUFF_Flood_N_11",
+                    "Effect_BUFF_Flood_N_12",
+                    "Effect_BUFF_Flood_N_13",
+                    "Effect_BUFF_Flood_N_14",
+                    "Effect_BUFF_Flood_N_15",
+                    "Effect_BUFF_Flood_N_16"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "急速氷結：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "7.4999999999999997E-2",
+                    "level": "3.7499999999999999E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "7.5%",
+                      "per": "0.375%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_101",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "氷結ボルトスキル使用",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 99
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "0%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.705,
+          "type": 2,
+          "range": 4,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_HongRyun_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "氷結ボルト：標的",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "氷結ボルト：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "氷結ボルト：行動力{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-2.5000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "氷結ボルト：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "改良型複合装甲：火炎耐性+{0}%",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 1,
+                    "attack": {
+                      "base": "0%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_Flood_N_1",
+                    "Effect_BUFF_Flood_N_2",
+                    "Effect_BUFF_Flood_N_3",
+                    "Effect_BUFF_Flood_N_4",
+                    "Effect_BUFF_Flood_N_5",
+                    "Effect_BUFF_Flood_N_6",
+                    "Effect_BUFF_Flood_N_7",
+                    "Effect_BUFF_Flood_N_8",
+                    "Effect_BUFF_Flood_N_9",
+                    "Effect_BUFF_Flood_N_11",
+                    "Effect_BUFF_Flood_N_12",
+                    "Effect_BUFF_Flood_N_13",
+                    "Effect_BUFF_Flood_N_14",
+                    "Effect_BUFF_Flood_N_15",
+                    "Effect_BUFF_Flood_N_16"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "急速氷結：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.15",
+                    "level": "-7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-15%",
+                      "per": "-0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "急速氷結：行動力{0}%",
+                    "type": 1,
+                    "value": "-2.5000000000000001E-2",
+                    "level": "-1.25E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-2.5%",
+                      "per": "-0.125%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_12",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "氷結ボルト：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_13",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_Flood_N_1",
+                    "Effect_BUFF_Flood_N_2",
+                    "Effect_BUFF_Flood_N_3",
+                    "Effect_BUFF_Flood_N_4",
+                    "Effect_BUFF_Flood_N_5",
+                    "Effect_BUFF_Flood_N_6",
+                    "Effect_BUFF_Flood_N_7",
+                    "Effect_BUFF_Flood_N_8",
+                    "Effect_BUFF_Flood_N_9",
+                    "Effect_BUFF_Flood_N_11",
+                    "Effect_BUFF_Flood_N_12",
+                    "Effect_BUFF_Flood_N_13",
+                    "Effect_BUFF_Flood_N_14",
+                    "Effect_BUFF_Flood_N_15",
+                    "Effect_BUFF_Flood_N_16"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "急速氷結：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "7.4999999999999997E-2",
+                    "level": "3.7499999999999999E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "7.5%",
+                      "per": "0.375%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_101",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "氷結ボルトスキル使用",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 99
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "0%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.8,
+          "type": 2,
+          "range": 4,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_HongRyun_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "氷結ボルト：標的",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "氷結ボルト：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "氷結ボルト：行動力{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-2.5000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "氷結ボルト：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "改良型複合装甲：火炎耐性+{0}%",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 1,
+                    "attack": {
+                      "base": "0%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_Flood_N_1",
+                    "Effect_BUFF_Flood_N_2",
+                    "Effect_BUFF_Flood_N_3",
+                    "Effect_BUFF_Flood_N_4",
+                    "Effect_BUFF_Flood_N_5",
+                    "Effect_BUFF_Flood_N_6",
+                    "Effect_BUFF_Flood_N_7",
+                    "Effect_BUFF_Flood_N_8",
+                    "Effect_BUFF_Flood_N_9",
+                    "Effect_BUFF_Flood_N_11",
+                    "Effect_BUFF_Flood_N_12",
+                    "Effect_BUFF_Flood_N_13",
+                    "Effect_BUFF_Flood_N_14",
+                    "Effect_BUFF_Flood_N_15",
+                    "Effect_BUFF_Flood_N_16"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "急速氷結：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.15",
+                    "level": "-7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-15%",
+                      "per": "-0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "急速氷結：行動力{0}%",
+                    "type": 1,
+                    "value": "-2.5000000000000001E-2",
+                    "level": "-1.25E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-2.5%",
+                      "per": "-0.125%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_12",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "氷結ボルト：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_13",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_Flood_N_1",
+                    "Effect_BUFF_Flood_N_2",
+                    "Effect_BUFF_Flood_N_3",
+                    "Effect_BUFF_Flood_N_4",
+                    "Effect_BUFF_Flood_N_5",
+                    "Effect_BUFF_Flood_N_6",
+                    "Effect_BUFF_Flood_N_7",
+                    "Effect_BUFF_Flood_N_8",
+                    "Effect_BUFF_Flood_N_9",
+                    "Effect_BUFF_Flood_N_11",
+                    "Effect_BUFF_Flood_N_12",
+                    "Effect_BUFF_Flood_N_13",
+                    "Effect_BUFF_Flood_N_14",
+                    "Effect_BUFF_Flood_N_15",
+                    "Effect_BUFF_Flood_N_16"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "急速氷結：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "7.4999999999999997E-2",
+                    "level": "3.7499999999999999E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "7.5%",
+                      "per": "0.375%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_101",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "氷結ボルトスキル使用",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 99
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "0%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.895,
+          "type": 2,
+          "range": 4,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_HongRyun_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "氷結ボルト：標的",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "氷結ボルト：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "氷結ボルト：行動力{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-2.5000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "氷結ボルト：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "改良型複合装甲：火炎耐性+{0}%",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 1,
+                    "attack": {
+                      "base": "0%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_Flood_N_1",
+                    "Effect_BUFF_Flood_N_2",
+                    "Effect_BUFF_Flood_N_3",
+                    "Effect_BUFF_Flood_N_4",
+                    "Effect_BUFF_Flood_N_5",
+                    "Effect_BUFF_Flood_N_6",
+                    "Effect_BUFF_Flood_N_7",
+                    "Effect_BUFF_Flood_N_8",
+                    "Effect_BUFF_Flood_N_9",
+                    "Effect_BUFF_Flood_N_11",
+                    "Effect_BUFF_Flood_N_12",
+                    "Effect_BUFF_Flood_N_13",
+                    "Effect_BUFF_Flood_N_14",
+                    "Effect_BUFF_Flood_N_15",
+                    "Effect_BUFF_Flood_N_16"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "急速氷結：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.15",
+                    "level": "-7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-15%",
+                      "per": "-0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "急速氷結：行動力{0}%",
+                    "type": 1,
+                    "value": "-2.5000000000000001E-2",
+                    "level": "-1.25E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-2.5%",
+                      "per": "-0.125%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_12",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "氷結ボルト：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_13",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_Flood_N_1",
+                    "Effect_BUFF_Flood_N_2",
+                    "Effect_BUFF_Flood_N_3",
+                    "Effect_BUFF_Flood_N_4",
+                    "Effect_BUFF_Flood_N_5",
+                    "Effect_BUFF_Flood_N_6",
+                    "Effect_BUFF_Flood_N_7",
+                    "Effect_BUFF_Flood_N_8",
+                    "Effect_BUFF_Flood_N_9",
+                    "Effect_BUFF_Flood_N_11",
+                    "Effect_BUFF_Flood_N_12",
+                    "Effect_BUFF_Flood_N_13",
+                    "Effect_BUFF_Flood_N_14",
+                    "Effect_BUFF_Flood_N_15",
+                    "Effect_BUFF_Flood_N_16"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "急速氷結：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "7.4999999999999997E-2",
+                    "level": "3.7499999999999999E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "7.5%",
+                      "per": "0.375%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_101",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "氷結ボルトスキル使用",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 99
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "0%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.99,
+          "type": 2,
+          "range": 4,
+          "ap": 4,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_HongRyun_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "氷結ボルト：標的",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "氷結ボルト：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "氷結ボルト：行動力{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-2.5000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "氷結ボルト：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "改良型複合装甲：火炎耐性+{0}%",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 1,
+                    "attack": {
+                      "base": "0%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_Flood_N_1",
+                    "Effect_BUFF_Flood_N_2",
+                    "Effect_BUFF_Flood_N_3",
+                    "Effect_BUFF_Flood_N_4",
+                    "Effect_BUFF_Flood_N_5",
+                    "Effect_BUFF_Flood_N_6",
+                    "Effect_BUFF_Flood_N_7",
+                    "Effect_BUFF_Flood_N_8",
+                    "Effect_BUFF_Flood_N_9",
+                    "Effect_BUFF_Flood_N_11",
+                    "Effect_BUFF_Flood_N_12",
+                    "Effect_BUFF_Flood_N_13",
+                    "Effect_BUFF_Flood_N_14",
+                    "Effect_BUFF_Flood_N_15",
+                    "Effect_BUFF_Flood_N_16"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "急速氷結：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.15",
+                    "level": "-7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-15%",
+                      "per": "-0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "急速氷結：行動力{0}%",
+                    "type": 1,
+                    "value": "-2.5000000000000001E-2",
+                    "level": "-1.25E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-2.5%",
+                      "per": "-0.125%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_12",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "氷結ボルト：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_13",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_Flood_N_1",
+                    "Effect_BUFF_Flood_N_2",
+                    "Effect_BUFF_Flood_N_3",
+                    "Effect_BUFF_Flood_N_4",
+                    "Effect_BUFF_Flood_N_5",
+                    "Effect_BUFF_Flood_N_6",
+                    "Effect_BUFF_Flood_N_7",
+                    "Effect_BUFF_Flood_N_8",
+                    "Effect_BUFF_Flood_N_9",
+                    "Effect_BUFF_Flood_N_11",
+                    "Effect_BUFF_Flood_N_12",
+                    "Effect_BUFF_Flood_N_13",
+                    "Effect_BUFF_Flood_N_14",
+                    "Effect_BUFF_Flood_N_15",
+                    "Effect_BUFF_Flood_N_16"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "急速氷結：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "7.4999999999999997E-2",
+                    "level": "3.7499999999999999E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "7.5%",
+                      "per": "0.375%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_101",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "氷結ボルトスキル使用",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 99
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "0%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_MARKING@0~0,BuffIcon_EVADE_DOWN@-0.3,BuffIcon_AP_DOWN@-0.05,BuffIcon_VULNERABLE@0.15,BuffIcon_ATK_UP@0~0,BuffIcon_EVADE_DOWN@-0.15,BuffIcon_AP_DOWN@-2.5000000000000001E-2,BuffIcon_VULNERABLE@0.15,BuffIcon_VULNERABLE@7.4999999999999997E-2,BuffIcon_ATK_UP@0~0"
+  },
+  "2": {
+    "key": "2",
+    "icon": "Scan",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 6,
+          "ap": 10,
+          "grid": "global",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 999,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_HongRyun_N_2",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "戦場掌握：AP+{0}",
+                    "type": 0,
+                    "value": "1.05",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 1.05,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "戦場掌握：攻撃力+{0}%",
+                    "type": 1,
+                    "value": "0.105",
+                    "level": "5.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 1,
+                    "attack": {
+                      "base": "10.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "戦場掌握：命中率+{0}%",
+                    "type": 1,
+                    "value": "0.21",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "21%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "脆弱点看破：防御貫通+{0}%",
+                    "type": 1,
+                    "value": "0.16",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "16%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_14",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "戦場掌握：攻撃力+{0}%",
+                    "type": 1,
+                    "value": "0.105",
+                    "level": "5.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "10.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "戦場掌握：命中率+{0}%",
+                    "type": 1,
+                    "value": "0.21",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "21%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_15",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "脆弱点看破：防御貫通+{0}%",
+                    "type": 1,
+                    "value": "0.16",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "16%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_AP_UP@1.05~0.05,BuffIcon_ATK_UP@0.105,BuffIcon_ACCURACY_UP@0.21~0.01,BuffIcon_DEF_PIERCE_UP@0.16~0.01,BuffIcon_ATK_UP@0.105,BuffIcon_ACCURACY_UP@0.21~0.01,BuffIcon_DEF_PIERCE_UP@0.16~0.01"
+  },
+  "3": {
+    "key": "3",
+    "icon": "Command",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "global",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_HongRyun_N_3",
+              "on": "round",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Miho_N_3",
+                    "Effect_BR_Miho_N_4",
+                    "Effect_BR_Miho_N_11",
+                    "Effect_BR_Miho_N_12",
+                    "Effect_BR_PoniesAnger_N_2",
+                    "Effect_BR_PoniesAnger_N_3",
+                    "Effect_BR_PoniesAnger_N_4",
+                    "Effect_BR_PoniesAnger_N_11",
+                    "Effect_BR_PoniesAnger_N_12",
+                    "Effect_BR_PoniesAnger_N_13",
+                    "Effect_BR_PoniesAnger_N_15",
+                    "Effect_BR_PoniesAnger_N_18",
+                    "Effect_BR_AS12TurtleDragon_N_2",
+                    "Effect_BR_AS12TurtleDragon_N_3",
+                    "Effect_BR_AS12TurtleDragon_N_4",
+                    "Effect_BR_AS12TurtleDragon_N_11",
+                    "Effect_BR_AS12TurtleDragon_N_12",
+                    "Effect_BR_AS12TurtleDragon_N_13",
+                    "Effect_BR_Bulgasari_N_3",
+                    "Effect_BR_Bulgasari_N_4",
+                    "Effect_BR_PoniesAnger_N_20"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "対テロ指揮：攻撃力+{0}%(マングースチーム効果対象)",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "対テロ指揮：行動力+{0}%(マングースチーム効果対象)",
+                    "type": 1,
+                    "value": "0.1",
+                    "level": "5.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_301",
+              "on": "round",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_BR_HongRyun_N_101"
+                  ],
+                  "stack": 3,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "戦場掌握：AP+{0}",
+                    "type": 0,
+                    "value": "1.05",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 1.05,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "戦場掌握：攻撃力+{0}%",
+                    "type": 1,
+                    "value": "0.105",
+                    "level": "5.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "10.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "戦場掌握：命中率+{0}%",
+                    "type": 1,
+                    "value": "0.21",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "21%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "脆弱点看破：防御貫通+{0}%",
+                    "type": 1,
+                    "value": "0.16",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "16%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_302",
+              "on": "round",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_BR_HongRyun_N_101"
+                  ],
+                  "stack": 3,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_ATK_UP@0.15,BuffIcon_AP_UP@0.1,BuffIcon_AP_UP@1.05~0.05,BuffIcon_ATK_UP@0.105,BuffIcon_ACCURACY_UP@0.21~0.01,BuffIcon_DEF_PIERCE_UP@0.16~0.01"
+  },
+  "4": {
+    "key": "4",
+    "icon": "TeamDefBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "369",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_HongRyun_N_4",
+              "on": "wave",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "鎮圧隊形編成：AP+{0}(保護機)",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "鎮圧隊形編成：受けるダメージ{0}%減少(保護機)",
+                    "type": 1,
+                    "value": "0.1",
+                    "level": "5.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "鎮圧隊形編成：回避率+{0}%(保護機)",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "5.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "15%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_Line",
+                  "desc": {
+                    "desc": "鎮圧隊形編成：行保護(保護機)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 50,
+                    "guard": "col"
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_16",
+              "on": "round",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "鎮圧隊形編成：受けるダメージ{0}%減少(保護機)",
+                    "type": 1,
+                    "value": "0.1",
+                    "level": "5.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "鎮圧隊形編成：回避率+{0}%(保護機)",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "5.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "15%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_Line",
+                  "desc": {
+                    "desc": "鎮圧隊形編成：行保護(保護機)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 50,
+                    "guard": "col"
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "23689",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_HongRyun_N_4",
+              "on": "wave",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "鎮圧隊形編成：AP+{0}(保護機)",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "鎮圧隊形編成：受けるダメージ{0}%減少(保護機)",
+                    "type": 1,
+                    "value": "0.1",
+                    "level": "5.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "鎮圧隊形編成：回避率+{0}%(保護機)",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "5.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "15%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_Line",
+                  "desc": {
+                    "desc": "鎮圧隊形編成：行保護(保護機)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 50,
+                    "guard": "col"
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_HongRyun_N_16",
+              "on": "round",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "鎮圧隊形編成：受けるダメージ{0}%減少(保護機)",
+                    "type": 1,
+                    "value": "0.1",
+                    "level": "5.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "鎮圧隊形編成：回避率+{0}%(保護機)",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "5.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "15%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_Line",
+                  "desc": {
+                    "desc": "鎮圧隊形編成：行保護(保護機)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 50,
+                    "guard": "col"
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_AP_UP@1~0.05,BuffIcon_DAMAGE_REDUCE@0.1,BuffIcon_EVADE_UP@0.15,BuffIcon_DEF_Line@0~0,BuffIcon_DAMAGE_REDUCE@0.1,BuffIcon_EVADE_UP@0.15,BuffIcon_DEF_Line@0~0"
+  },
+  "5": {
+    "key": "5",
+    "icon": "TeamAtkBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "F>147",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_HongRyun_N_5",
+              "on": "round",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0
+              ],
+              "role": [
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "精密狙撃指示：攻撃力+{0}%(軽装型攻撃/支援)",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "精密狙撃指示：命中率+{0}%(軽装型攻撃/支援)",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "精密狙撃指示：クリティカル率+{0}%(軽装型攻撃/支援)",
+                    "type": 1,
+                    "value": "0.1",
+                    "level": "5.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "精密狙撃指示：防御貫通+{0}%(軽装型攻撃/支援)",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_ATK_UP@0.15,BuffIcon_ACCURACY_UP@0.2~0.01,BuffIcon_CRITICAL_UP@0.1,BuffIcon_DEF_PIERCE_UP@0.2~0.01"
+  }
+}

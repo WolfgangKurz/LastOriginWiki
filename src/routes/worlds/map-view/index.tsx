@@ -106,6 +106,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 				: [];
 			const CurrentWave = ((): Array<WaveEnemyInfo | null> => {
 				if (!selectedValue) return new Array(9).fill(null);
+				if (!Waves[selectedWave.value][selectedWaveIndex.value].e) return new Array(9).fill(null);
 
 				return Waves[selectedWave.value][selectedWaveIndex.value].e.enemy
 					.map(x => {
@@ -129,26 +130,28 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 				const ret: Array<FilterableUnit | ModuleUnit> = [];
 				Waves.forEach(_ => {
 					_.forEach(__ => {
-						__.e.drops
-							.filter(x => x.id.startsWith("Char_"))
-							.map(x => {
-								if (ids.includes(x.id)) return null;
-								ids.push(x.id);
+						if (__.e) {
+							__.e.drops
+								.filter(x => x.id.startsWith("Char_"))
+								.map(x => {
+									if (ids.includes(x.id)) return null;
+									ids.push(x.id);
 
-								const k = x.id.replace(/Char_(.+)_N/, "$1");
-								if (k.startsWith("Module")) {
-									const rk = x.id.replace(/^Char_Module_.+_([BAS]+)_N$/, "$1");
-									const r = rarityTable.indexOf(rk);
-									return {
-										type: "module",
-										uid: x.id.replace(/^Char_(.+)_N$/, "$1"),
-										rarity: r as ACTOR_GRADE,
-									};
-								}
-								return FilterableUnitDB.find(y => y.uid === k);
-							})
-							.filter(x => x)
-							.forEach(x => ret.push(x as (FilterableUnit | ModuleUnit)));
+									const k = x.id.replace(/Char_(.+)_N/, "$1");
+									if (k.startsWith("Module")) {
+										const rk = x.id.replace(/^Char_Module_.+_([BAS]+)_N$/, "$1");
+										const r = rarityTable.indexOf(rk);
+										return {
+											type: "module",
+											uid: x.id.replace(/^Char_(.+)_N$/, "$1"),
+											rarity: r as ACTOR_GRADE,
+										};
+									}
+									return FilterableUnitDB.find(y => y.uid === k);
+								})
+								.filter(x => x)
+								.forEach(x => ret.push(x as (FilterableUnit | ModuleUnit)));
+						}
 					});
 				});
 				return ret.sort((a, b) => b.rarity - a.rarity);
@@ -160,24 +163,26 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 				const ret: Array<FilterableEquip | Consumable> = [];
 				Waves.forEach(_ => {
 					_.forEach(__ => {
-						__.e.drops
-							.filter(x => !x.id.startsWith("Char_"))
-							.map(x => {
-								if (ids.includes(x.id)) return null;
-								ids.push(x.id);
+						if (__.e) {
+							__.e.drops
+								.filter(x => !x.id.startsWith("Char_"))
+								.map(x => {
+									if (ids.includes(x.id)) return null;
+									ids.push(x.id);
 
-								if (x.id.startsWith("Equip_")) {
-									const k = x.id.substr(6);
-									const eq = FilterableEquipDB.find(y => y.fullKey === k);
-									if (eq) return eq;
-								} else {
-									const cs = ConsumableDB.find(y => y.key === x.id);
-									if (cs) return cs;
-								}
-								return null;
-							})
-							.filter(x => x)
-							.forEach(x => ret.push(x as (FilterableEquip | Consumable)));
+									if (x.id.startsWith("Equip_")) {
+										const k = x.id.substr(6);
+										const eq = FilterableEquipDB.find(y => y.fullKey === k);
+										if (eq) return eq;
+									} else {
+										const cs = ConsumableDB.find(y => y.key === x.id);
+										if (cs) return cs;
+									}
+									return null;
+								})
+								.filter(x => x)
+								.forEach(x => ret.push(x as (FilterableEquip | Consumable)));
+						}
 					});
 				});
 				// (); .sort((a, b) => b.rarity - a.rarity);
@@ -238,7 +243,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 				const world = MapDB[props.wid];
 				if (!world) return ret;
 
-				const area = world[props.mid]?.list;
+				const area = world[props.mid];
 				if (!area) return ret;
 
 				for (const n of area) ret[n.offset] = n;
@@ -250,7 +255,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 				const world = MapDB[props.wid];
 				if (!world) return ret;
 
-				const area = world[props.mid]?.list;
+				const area = world[props.mid];
 				if (!area) return ret;
 
 				if (props.wid === "Sub")
@@ -261,12 +266,12 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 				return ret;
 			})();
 
-			const CurrentWaveExp = selectedValue
+			const CurrentWaveExp = selectedValue && Waves[selectedWave.value][selectedWaveIndex.value].e
 				? FormatNumber(Waves[selectedWave.value][selectedWaveIndex.value].e.exp)
 				: 0;
 
 			const TotalExp = selectedValue
-				? FormatNumber(Waves.reduce((p, c) => (p + c.reduce((p1, c1) => Math.max(p1, c1.e.exp), 0) || 0), 0))
+				? FormatNumber(Waves.reduce((p, c) => (p + c.reduce((p1, c1) => Math.max(p1, (c1.e && c1.e.exp) || 0), 0) || 0), 0))
 				: 0;
 
 			const SearchInfo = selectedValue
@@ -319,14 +324,21 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 					<div class="card-header">
 						{ props.wid === "Sub"
 							? <h5 class="m-0 d-inline-block">{ WorldName }</h5>
-							: <>
-								{ WorldName }
-								<h5 class="m-0 d-inline-block">
-									<span class="badge bg-warning text-dark ms-2">
-										<Locale k="WORLDS_WORLD_TITLE" p={ [props.mid] } /> :: { AreaName }
-									</span>
-								</h5>
-							</>
+							: props.wid === "Daily"
+								? <>
+									{ WorldName }
+									<h5 class="m-0 d-inline-block">
+										<span class="badge bg-warning text-dark ms-2">{ AreaName }</span>
+									</h5>
+								</>
+								: <>
+									{ WorldName }
+									<h5 class="m-0 d-inline-block">
+										<span class="badge bg-warning text-dark ms-2">
+											<Locale k="WORLDS_WORLD_TITLE" p={ [props.mid] } /> :: { AreaName }
+										</span>
+									</h5>
+								</>
 						}
 					</div>
 					<div class="worlds-map-bg">
@@ -367,7 +379,8 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 											} }
 										>
 											<button class={ `btn btn-${selectedValue === x ? "warning" : "light"} m-2` }>
-												{ x.name.replace(/.+\(([^)]+)\)$/, "$1") }
+												<Locale k={ `WORLD_MAP_Cha_${x.text}` } />
+												{/* { x.name.replace(/.+\(([^)]+)\)$/, "$1") } */ }
 											</button>
 										</Link>)
 										: <MapGrid

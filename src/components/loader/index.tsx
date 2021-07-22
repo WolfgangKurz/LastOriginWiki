@@ -2,6 +2,7 @@ import { FunctionalComponent } from "preact";
 
 import { objState } from "@/libs/State";
 import { DataRoot } from "@/libs/Const";
+import { CurrentDB } from "@/libs/DB";
 import EntitySource from "@/libs/EntitySource";
 
 interface SubComponentBase {
@@ -10,6 +11,7 @@ interface SubComponentBase {
 export type SubComponent<T> = SubComponentBase & T;
 
 interface LoaderProps {
+	db?: string;
 	json?: string | string[];
 
 	content?: () => preact.VNode;
@@ -27,7 +29,7 @@ enum LoaderState {
 const LoadQueue: Record<string, Array<() => void>> = {};
 const CachedJson: Record<string, any> = {};
 
-function Load<T = any> (json: string): Promise<void> {
+function Load<T = any> (db: string, json: string): Promise<void> {
 	return new Promise<void>((resolve, reject) => {
 		if (json in CachedJson) return resolve();
 
@@ -41,7 +43,7 @@ function Load<T = any> (json: string): Promise<void> {
 		if (!first) return;
 
 		const xhr = new XMLHttpRequest();
-		xhr.open("GET", `${DataRoot}/${json}.json`);
+		xhr.open("GET", `${DataRoot}/${db}/${json}.json`);
 		xhr.addEventListener("load", (e) => {
 			if (Math.floor(xhr.status / 100) === 2) {
 				const data = JSON.parse(xhr.responseText) as T;
@@ -103,7 +105,7 @@ export function GetJson<T> (json: string, converter?: JsonDataConverter<T>): T {
 	if (converter) return converter(CachedJson[json] as T);
 	return CachedJson[json] as T;
 }
-export function JsonLoaderCore (json: string | string[] | undefined): Promise<void[]> {
+export function JsonLoaderCore (db: string, json: string | string[] | undefined): Promise<void[]> {
 	const list = typeof json === "undefined"
 		? []
 		: typeof json === "string"
@@ -116,7 +118,7 @@ export function JsonLoaderCore (json: string | string[] | undefined): Promise<vo
 	if (list.every(x => x in CachedJson))
 		return new Promise<void[]>((resolve) => resolve([]));
 
-	return Promise.all(list.map(x => Load(x)));
+	return Promise.all(list.map(x => Load(db, x)));
 }
 
 const Loader: FunctionalComponent<LoaderProps> = (props) => {
@@ -130,9 +132,9 @@ const Loader: FunctionalComponent<LoaderProps> = (props) => {
 		return a.every((v, i) => v === b[i]);
 	}
 
-	function FailedToLoadBadge (list: string[]): preact.VNode {
+	function FailedToLoadBadge (db: string, list: string[]): preact.VNode {
 		return <span class="badge bg-danger">
-			Failed to load data { list.map(x => <strong>"{ x }"</strong>).gap(", ") }.<br />
+			Failed to load data { list.map(x => <strong>"{ db }/{ x }"</strong>).gap(", ") }.<br />
 			Please retry or report to developer.
 		</span>;
 	}
@@ -140,6 +142,9 @@ const Loader: FunctionalComponent<LoaderProps> = (props) => {
 		return <span class="text-secondary">Loading data</span>;
 	}
 
+	const db = props.db === "!"
+		? ""
+		: props.db || CurrentDB;
 	const target = flatten(props.json);
 
 	const list = objState<string[]>([]);
@@ -157,7 +162,7 @@ const Loader: FunctionalComponent<LoaderProps> = (props) => {
 		}
 
 		state.set(LoaderState.REQUEST);
-		JsonLoaderCore(target)
+		JsonLoaderCore(db, target)
 			.then(() => state.set(LoaderState.DONE))
 			.catch(() => state.set(LoaderState.ERROR));
 	}
@@ -168,7 +173,7 @@ const Loader: FunctionalComponent<LoaderProps> = (props) => {
 		case LoaderState.REQUEST:
 			return props.loading || LoadingBadge();
 		case LoaderState.ERROR:
-			return props.error || FailedToLoadBadge(target);
+			return props.error || FailedToLoadBadge(db, target);
 		default:
 			return <></>;
 	}

@@ -20,16 +20,11 @@ export type LinkBonusType =
 	"Skill_2" | "Skill_5" | "Skill_10" | "Skill_15" | "Skill_20" | "Skill_25" | "Skill_30" | "Skill_35" |
 	"Cost_20" | "Cost_25" | "Cost_30" | "Cost_35";
 
-interface SkinOffsetPart {
+export interface SkinOffset {
 	n: number;
 	d: number;
 	s: number;
 	x: number;
-}
-
-export interface SkinOffset {
-	normal: SkinOffsetPart;
-	google: SkinOffsetPart;
 }
 
 export interface UnitSkin extends UnitSkinEntity {
@@ -186,10 +181,7 @@ export namespace Unit {
 			X: false,
 			Pre: false,
 			artist: "",
-			offset: {
-				normal: { n: 0, d: 0, s: 0, x: 0 },
-				google: { n: 0, d: 0, s: 0, x: 0 },
-			},
+			offset: { n: 0, d: 0, s: 0, x: 0 },
 			sid: 0,
 		},
 

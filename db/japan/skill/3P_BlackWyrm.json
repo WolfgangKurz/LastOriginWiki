@@ -1,0 +1,5549 @@
+{
+  "1": {
+    "key": "1",
+    "icon": "MeleeAttack",
+    "target": "enemy",
+    "buffs": {
+      "index": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "data": [
+        {
+          "rate": 1.915,
+          "type": 0,
+          "range": 3,
+          "ap": 6,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_BlackWyrm_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "黒鉄の鱗：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-30%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "黒鉄の鱗：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-25%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.23",
+                    "level": "0.03"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "23%",
+                        "per": "3%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    66
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.23",
+                    "level": "0.03"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "23%",
+                      "per": "3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.085,
+          "type": 0,
+          "range": 3,
+          "ap": 6,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_BlackWyrm_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "黒鉄の鱗：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-30%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "黒鉄の鱗：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-25%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.23",
+                    "level": "0.03"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "23%",
+                        "per": "3%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    66
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.23",
+                    "level": "0.03"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "23%",
+                      "per": "3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.255,
+          "type": 0,
+          "range": 3,
+          "ap": 6,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_BlackWyrm_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "黒鉄の鱗：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-30%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "黒鉄の鱗：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-25%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.23",
+                    "level": "0.03"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "23%",
+                        "per": "3%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    66
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.23",
+                    "level": "0.03"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "23%",
+                      "per": "3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.425,
+          "type": 0,
+          "range": 3,
+          "ap": 6,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_BlackWyrm_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "黒鉄の鱗：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-30%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "黒鉄の鱗：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-25%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.23",
+                    "level": "0.03"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "23%",
+                        "per": "3%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    66
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.23",
+                    "level": "0.03"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "23%",
+                      "per": "3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.595,
+          "type": 0,
+          "range": 3,
+          "ap": 6,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_BlackWyrm_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "黒鉄の鱗：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-30%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "黒鉄の鱗：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-25%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.23",
+                    "level": "0.03"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "23%",
+                        "per": "3%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    66
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.23",
+                    "level": "0.03"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "23%",
+                      "per": "3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.765,
+          "type": 0,
+          "range": 3,
+          "ap": 6,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_BlackWyrm_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "黒鉄の鱗：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-30%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "黒鉄の鱗：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-25%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.23",
+                    "level": "0.03"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "23%",
+                        "per": "3%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    66
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.23",
+                    "level": "0.03"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "23%",
+                      "per": "3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.935,
+          "type": 0,
+          "range": 3,
+          "ap": 6,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_BlackWyrm_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "黒鉄の鱗：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-30%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "黒鉄の鱗：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-25%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.23",
+                    "level": "0.03"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "23%",
+                        "per": "3%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    66
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.23",
+                    "level": "0.03"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "23%",
+                      "per": "3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.105000000000001,
+          "type": 0,
+          "range": 3,
+          "ap": 6,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_BlackWyrm_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "黒鉄の鱗：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-30%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "黒鉄の鱗：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-25%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.23",
+                    "level": "0.03"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "23%",
+                        "per": "3%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    66
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.23",
+                    "level": "0.03"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "23%",
+                      "per": "3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.275000000000001,
+          "type": 0,
+          "range": 3,
+          "ap": 6,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_BlackWyrm_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "黒鉄の鱗：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-30%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "黒鉄の鱗：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-25%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.23",
+                    "level": "0.03"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "23%",
+                        "per": "3%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    66
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.23",
+                    "level": "0.03"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "23%",
+                      "per": "3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.445000000000001,
+          "type": 0,
+          "range": 3,
+          "ap": 6,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_BlackWyrm_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "黒鉄の鱗：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.3",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-30%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "黒鉄の鱗：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-25%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.23",
+                    "level": "0.03"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "23%",
+                        "per": "3%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    66
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%",
+                    "type": 1,
+                    "value": "0.23",
+                    "level": "0.03"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "23%",
+                      "per": "3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_ATK_DOWN@-0.3~-0.01,BuffIcon_EVADE_DOWN@-0.25~-0.01,BuffIcon_FireATK_UP@0.23~0.03,BuffIcon_PhyATK_UP@0.23~0.03"
+  },
+  "2": {
+    "key": "2",
+    "icon": "WideFireShot",
+    "target": "enemy",
+    "buffs": {
+      "index": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "data": [
+        {
+          "rate": 1.805,
+          "type": 1,
+          "range": 5,
+          "ap": 9,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_BlackWyrm_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "炎の爪：防御力{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FIRERES_DOWN",
+                  "desc": {
+                    "desc": "炎の爪：火炎耐性{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 15,
+                    "resist": {
+                      "elem": "fire",
+                      "value": {
+                        "base": "-20%",
+                        "per": "-1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "炎の爪：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-10%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ+{0}%(クリティカル/点火それぞれ)",
+                    "type": 1,
+                    "value": "0.16",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "16%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "黒鉄の鱗：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "30",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 30,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_21",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%(クリティカル)",
+                    "type": 1,
+                    "value": "0.16",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "16%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_22",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    66
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%(敵点火)",
+                    "type": 1,
+                    "value": "0.16",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "16%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_23",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "黒鉄の鱗：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "30",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 30,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.965,
+          "type": 1,
+          "range": 5,
+          "ap": 9,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_BlackWyrm_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "炎の爪：防御力{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FIRERES_DOWN",
+                  "desc": {
+                    "desc": "炎の爪：火炎耐性{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 15,
+                    "resist": {
+                      "elem": "fire",
+                      "value": {
+                        "base": "-20%",
+                        "per": "-1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "炎の爪：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-10%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ+{0}%(クリティカル/点火それぞれ)",
+                    "type": 1,
+                    "value": "0.16",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "16%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "黒鉄の鱗：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "30",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 30,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_21",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%(クリティカル)",
+                    "type": 1,
+                    "value": "0.16",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "16%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_22",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    66
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%(敵点火)",
+                    "type": 1,
+                    "value": "0.16",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "16%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_23",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "黒鉄の鱗：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "30",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 30,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.125,
+          "type": 1,
+          "range": 5,
+          "ap": 9,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_BlackWyrm_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "炎の爪：防御力{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FIRERES_DOWN",
+                  "desc": {
+                    "desc": "炎の爪：火炎耐性{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 15,
+                    "resist": {
+                      "elem": "fire",
+                      "value": {
+                        "base": "-20%",
+                        "per": "-1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "炎の爪：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-10%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ+{0}%(クリティカル/点火それぞれ)",
+                    "type": 1,
+                    "value": "0.16",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "16%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "黒鉄の鱗：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "30",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 30,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_21",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%(クリティカル)",
+                    "type": 1,
+                    "value": "0.16",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "16%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_22",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    66
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%(敵点火)",
+                    "type": 1,
+                    "value": "0.16",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "16%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_23",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "黒鉄の鱗：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "30",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 30,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.285,
+          "type": 1,
+          "range": 5,
+          "ap": 9,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_BlackWyrm_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "炎の爪：防御力{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FIRERES_DOWN",
+                  "desc": {
+                    "desc": "炎の爪：火炎耐性{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 15,
+                    "resist": {
+                      "elem": "fire",
+                      "value": {
+                        "base": "-20%",
+                        "per": "-1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "炎の爪：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-10%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ+{0}%(クリティカル/点火それぞれ)",
+                    "type": 1,
+                    "value": "0.16",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "16%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "黒鉄の鱗：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "30",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 30,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_21",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%(クリティカル)",
+                    "type": 1,
+                    "value": "0.16",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "16%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_22",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    66
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%(敵点火)",
+                    "type": 1,
+                    "value": "0.16",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "16%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_23",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "黒鉄の鱗：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "30",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 30,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.445,
+          "type": 1,
+          "range": 5,
+          "ap": 9,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_BlackWyrm_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "炎の爪：防御力{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FIRERES_DOWN",
+                  "desc": {
+                    "desc": "炎の爪：火炎耐性{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 15,
+                    "resist": {
+                      "elem": "fire",
+                      "value": {
+                        "base": "-20%",
+                        "per": "-1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "炎の爪：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-10%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ+{0}%(クリティカル/点火それぞれ)",
+                    "type": 1,
+                    "value": "0.16",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "16%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "黒鉄の鱗：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "30",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 30,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_21",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%(クリティカル)",
+                    "type": 1,
+                    "value": "0.16",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "16%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_22",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    66
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%(敵点火)",
+                    "type": 1,
+                    "value": "0.16",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "16%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_23",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "黒鉄の鱗：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "30",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 30,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.605,
+          "type": 1,
+          "range": 5,
+          "ap": 9,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_BlackWyrm_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "炎の爪：防御力{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FIRERES_DOWN",
+                  "desc": {
+                    "desc": "炎の爪：火炎耐性{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 15,
+                    "resist": {
+                      "elem": "fire",
+                      "value": {
+                        "base": "-20%",
+                        "per": "-1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "炎の爪：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-10%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ+{0}%(クリティカル/点火それぞれ)",
+                    "type": 1,
+                    "value": "0.16",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "16%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "黒鉄の鱗：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "30",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 30,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_21",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%(クリティカル)",
+                    "type": 1,
+                    "value": "0.16",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "16%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_22",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    66
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%(敵点火)",
+                    "type": 1,
+                    "value": "0.16",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "16%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_23",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "黒鉄の鱗：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "30",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 30,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.765,
+          "type": 1,
+          "range": 5,
+          "ap": 9,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_BlackWyrm_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "炎の爪：防御力{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FIRERES_DOWN",
+                  "desc": {
+                    "desc": "炎の爪：火炎耐性{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 15,
+                    "resist": {
+                      "elem": "fire",
+                      "value": {
+                        "base": "-20%",
+                        "per": "-1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "炎の爪：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-10%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ+{0}%(クリティカル/点火それぞれ)",
+                    "type": 1,
+                    "value": "0.16",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "16%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "黒鉄の鱗：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "30",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 30,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_21",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%(クリティカル)",
+                    "type": 1,
+                    "value": "0.16",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "16%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_22",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    66
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%(敵点火)",
+                    "type": 1,
+                    "value": "0.16",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "16%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_23",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "黒鉄の鱗：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "30",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 30,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.925,
+          "type": 1,
+          "range": 5,
+          "ap": 9,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_BlackWyrm_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "炎の爪：防御力{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FIRERES_DOWN",
+                  "desc": {
+                    "desc": "炎の爪：火炎耐性{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 15,
+                    "resist": {
+                      "elem": "fire",
+                      "value": {
+                        "base": "-20%",
+                        "per": "-1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "炎の爪：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-10%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ+{0}%(クリティカル/点火それぞれ)",
+                    "type": 1,
+                    "value": "0.16",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "16%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "黒鉄の鱗：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "30",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 30,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_21",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%(クリティカル)",
+                    "type": 1,
+                    "value": "0.16",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "16%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_22",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    66
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%(敵点火)",
+                    "type": 1,
+                    "value": "0.16",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "16%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_23",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "黒鉄の鱗：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "30",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 30,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.085,
+          "type": 1,
+          "range": 5,
+          "ap": 9,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_BlackWyrm_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "炎の爪：防御力{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FIRERES_DOWN",
+                  "desc": {
+                    "desc": "炎の爪：火炎耐性{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 15,
+                    "resist": {
+                      "elem": "fire",
+                      "value": {
+                        "base": "-20%",
+                        "per": "-1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "炎の爪：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-10%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ+{0}%(クリティカル/点火それぞれ)",
+                    "type": 1,
+                    "value": "0.16",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "16%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "黒鉄の鱗：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "30",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 30,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_21",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%(クリティカル)",
+                    "type": 1,
+                    "value": "0.16",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "16%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_22",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    66
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%(敵点火)",
+                    "type": 1,
+                    "value": "0.16",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "16%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_23",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "黒鉄の鱗：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "30",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 30,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.245,
+          "type": 1,
+          "range": 5,
+          "ap": 9,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_BlackWyrm_N_2",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "炎の爪：防御力{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FIRERES_DOWN",
+                  "desc": {
+                    "desc": "炎の爪：火炎耐性{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 15,
+                    "resist": {
+                      "elem": "fire",
+                      "value": {
+                        "base": "-20%",
+                        "per": "-1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "炎の爪：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-10%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ+{0}%(クリティカル/点火それぞれ)",
+                    "type": 1,
+                    "value": "0.16",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "16%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "黒鉄の鱗：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "30",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 30,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_21",
+              "on": "criticaled",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%(クリティカル)",
+                    "type": 1,
+                    "value": "0.16",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "16%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_22",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    66
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireATK_UP",
+                  "desc": {
+                    "desc": "黒鉄の鱗：ダメージ量+{0}%(敵点火)",
+                    "type": 1,
+                    "value": "0.16",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 84,
+                    "damage_add": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": "16%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_23",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "黒鉄の鱗：持続火炎ダメージ{0}",
+                    "type": 0,
+                    "value": "30",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 30,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_DEF_DOWN@-0.25~-0.01,BuffIcon_FIRERES_DOWN@-0.2~-0.01,BuffIcon_CRITICAL_DOWN@-0.1~-0.01,BuffIcon_FireATK_UP@0.16~0.01,BuffIcon_FireDMG_DOT@30~30,BuffIcon_FireATK_UP@0.16~0.01,BuffIcon_FireATK_UP@0.16~0.01,BuffIcon_FireDMG_DOT@30~30"
+  },
+  "3": {
+    "key": "3",
+    "icon": "SelfDefBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "self",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_BlackWyrm_N_3",
+              "on": "round",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_UP",
+                  "desc": {
+                    "desc": "後ろに下がってください！：防御力+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "0.02"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "30%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "後ろに下がってください！：受けるダメージ{0}%減少(スタック)",
+                    "type": 1,
+                    "value": "0.05",
+                    "level": "5.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 4
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FIRERES_UP",
+                  "desc": {
+                    "desc": "後ろに下がってください！：火炎耐性+{0}%(火炎属性被撃時)",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "0.02"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 15,
+                    "resist": {
+                      "elem": "fire",
+                      "value": {
+                        "base": "30%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "後ろに下がってください！：受けるダメージ{0}%減少(火炎属性被撃時)",
+                    "type": 1,
+                    "value": "0.1",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_31",
+              "on": {
+                "damaged": "fire"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FIRERES_UP",
+                  "desc": {
+                    "desc": "後ろに下がってください！：火炎耐性+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "0.02"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 15,
+                    "resist": {
+                      "elem": "fire",
+                      "value": {
+                        "base": "30%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_32",
+              "on": "round",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "後ろに下がってください！：受けるダメージ{0}%減少(スタック)",
+                    "type": 1,
+                    "value": "0.05",
+                    "level": "5.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 4
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 3
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_33",
+              "on": {
+                "damaged": "fire"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "後ろに下がってください！：受けるダメージ{0}%減少(火炎属性被撃時)",
+                    "type": 1,
+                    "value": "0.1",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_DEF_UP@0.3~0.02,BuffIcon_DAMAGE_REDUCE@0.05,BuffIcon_FIRERES_UP@0.3~0.02,BuffIcon_DAMAGE_REDUCE@0.1~0.01,BuffIcon_FIRERES_UP@0.3~0.02,BuffIcon_DAMAGE_REDUCE@0.05,BuffIcon_DAMAGE_REDUCE@0.1~0.01"
+  },
+  "4": {
+    "key": "4",
+    "icon": "TeamDefBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "6>1457",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_BlackWyrm_N_4",
+              "on": "round",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FIRERES_UP",
+                  "desc": {
+                    "desc": "熱気保護：火炎耐性+{0}%",
+                    "type": 1,
+                    "value": "0.45",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 15,
+                    "resist": {
+                      "elem": "fire",
+                      "value": {
+                        "base": "45%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEBUFF_PERDOWN",
+                  "desc": {
+                    "desc": "熱気保護：状態異常耐性+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 91,
+                    "resist": {
+                      "type": "debuff",
+                      "value": {
+                        "base": "20%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "熱気保護：行動力+{0}%",
+                    "type": 1,
+                    "value": "0.05",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "5%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_Char",
+                  "desc": {
+                    "desc": "熱気保護：指定対象保護",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 76,
+                    "guard": "target"
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackWyrm_N_41",
+              "on": "round",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_Char",
+                  "desc": {
+                    "desc": "熱気保護：指定対象保護",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 76,
+                    "guard": "target"
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_FIRERES_UP@0.45~0.01,BuffIcon_DEBUFF_PERDOWN@0.2~0.01,BuffIcon_AP_UP@0.05~0.01,BuffIcon_DEF_Char@0~0,BuffIcon_DEF_Char@0~0"
+  },
+  "5": {
+    "key": "5",
+    "icon": "TeamAtkBuff",
+    "target": "enemy",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "global",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_BlackWyrm_N_5",
+              "on": "round",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 4,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FIRERES_DOWN",
+                  "desc": {
+                    "desc": "黒い粉塵：火炎耐性{0}%",
+                    "type": 1,
+                    "value": "-0.12",
+                    "level": "-0.02"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 4
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 15,
+                    "resist": {
+                      "elem": "fire",
+                      "value": {
+                        "base": "-12%",
+                        "per": "-2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 2
+            }
+          ]
+        }
+      ]
+    },
+    "values": "BuffIcon_FIRERES_DOWN@-0.12~-0.02"
+  }
+}
