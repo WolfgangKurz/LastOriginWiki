@@ -7,6 +7,9 @@ import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
 	<ChangelogItem title="Build 11075" date="2021-07-26"
+		new={ <>
+			<li>신규 전투원 <span class="badge bg-warning text-dark">라미엘</span>의 정보가 추가되었습니다.</li>
+		</> }
 		update={ <>
 			<li><span class="badge bg-warning text-dark">빛이 들지 않는 성역</span> 이벤트 2부 정보가 추가되었습니다.</li>
 			<li>장비 <span class="badge bg-warning text-dark">경화기용 장전기</span>의 정보가 갱신되었습니다.</li>
@@ -14,9 +17,6 @@ const Changelog: FunctionalComponent = () => <>
 			<li>일부 적 정보가 갱신되었습니다.</li>
 			<li>Some EN/JP translation has added/updated.</li>
 			<li>一部の英語・日本語の翻訳が追加・修正されました。</li>
-		</> }
-		new={ <>
-			<li>신규 전투원 <span class="badge bg-warning text-dark">라미엘</span>의 정보가 추가되었습니다.</li>
 		</> }
 		skin={ <>
 			<li>
@@ -34,6 +34,9 @@ const Changelog: FunctionalComponent = () => <>
 			<li>
 				<span class="badge bg-warning text-dark">질주하는 아탈란테</span>의 스킨 <span class="badge bg-danger">다른 운명의 칼리스토</span>의 로비 애니메이션 정보가 추가되었습니다.
 			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2021-07-26 04:03:22</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
 		</> }
 	/>
 	<ChangelogItem title="Build 11073" date="2021-07-22"
