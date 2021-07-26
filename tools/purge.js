@@ -4,17 +4,20 @@ const https = require("https");
 
 const base = path.resolve(__dirname, "..", "external", "json");
 function travel (dir, callback) {
+	const dirs = [];
 	fs.readdirSync(dir)
 		.forEach(x => {
 			const p = path.resolve(dir, x);
 			if (fs.statSync(p).isDirectory())
-				travel(p, callback);
+				dirs.push(p);
 			else
 				callback(p);
 		});
+
+	dirs.forEach(p => travel(p, callback));
 }
 
-const target = ["locale", "unit", "skill", "equip", "enemy", "map", "world"];
+const target = ["map", "group", "unit", "locale"];
 
 const lists = [];
 const list = [];
@@ -24,7 +27,7 @@ travel(base, (p) => {
 	if (target.some(t => m.includes(t)))
 		list.push(prefix + m);
 
-	if (list.length >= 20) {
+	if (list.length >= 30) {
 		lists.push([...list]);
 		list.splice(0, list.length);
 	}
@@ -65,6 +68,8 @@ const requestLine = () => {
 
 	const list = lists[0];
 	lists.splice(0, 1);
-	request(list, requestLine);
+	setTimeout(() => {
+		request(list, requestLine);
+	}, 1000);
 };
 requestLine();
