@@ -36,7 +36,7 @@ const EquipSelectorPopup: FunctionalComponent<EquipSelectorPopupProps> = (props)
 	const rarities = objState<ITEM_GRADE[]>([]);
 
 	const TypeTable = ["Chip", "System", "Sub"];
-	const RarityTable = ["", "", "T1", "T2", "T3", "T4", "T0"];
+	const RarityTable = ["", "", "T1", "T2", "T3", "T4", "T5"];
 
 	function updateTypeKey (): void {
 		const kv = /^([^_]+)_(.+)_([^_]+)$/.exec(value.value);
@@ -94,6 +94,7 @@ const EquipSelectorPopup: FunctionalComponent<EquipSelectorPopupProps> = (props)
 					onClick={ (e): void => {
 						e.preventDefault();
 						rarity.set(r);
+						value.set(`${typeKey.value}_${RarityTable[rarity.value]}`);
 					} }
 				>
 					{ RarityDisplay[r] }

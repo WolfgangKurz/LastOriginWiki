@@ -6,6 +6,14 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11080" date="2021-07-27"
+		bugfix={ <>
+			<li><span class="badge bg-warning text-dark">적 정보</span>에서 적 스킬의 피해량이 표시되지 않던 문제를 수정했습니다.</li>
+			<li><span class="badge bg-warning text-dark">Simulator<sup>β</sup></span>에서 장비의 등급을 선택해도 바로 변경되지 않던 문제를 수정했습니다.</li>
+			<li><span class="badge bg-warning text-dark">Simulator<sup>β</sup></span>에서 SSS 등급의 장비를 선택하면 페이지가 작동하지 않던 문제를 수정했습니다.</li>
+			<li><span class="badge bg-warning text-dark">Simulator<sup>β</sup></span>에서 속성 저항이 계산되지 않던 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11075" date="2021-07-26"
 		new={ <>
 			<li>신규 전투원 <span class="badge bg-warning text-dark">라미엘</span>의 정보가 추가되었습니다.</li>

@@ -383,7 +383,18 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 
 						const eq = e.stats[c.level];
 						eq.forEach((y, yi) => {
-							if ("type" in y) return;
+							if ("type" in y) {
+								const z = y;
+								if (key === "ResistFire" && "resist" in z && "elem" in z.resist && z.resist.elem === "fire")
+									p += levelV(z.resist.value, c.level);
+								else if (key === "ResistIce" && "resist" in z && "elem" in z.resist && z.resist.elem === "ice")
+									p += levelV(z.resist.value, c.level);
+								else if (key === "ResistLightning" && "resist" in z && "elem" in z.resist && z.resist.elem === "lightning")
+									p += levelV(z.resist.value, c.level);
+
+								return;
+							}
+
 							if (!includeBuffs.value) return;
 							y.buffs.forEach((b, bi) => {
 								const force = [
@@ -396,13 +407,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 								if (!force && !(bkey in c.buffs)) return;
 
 								const z = b.value;
-								if (key === "ResistFire" && "resist" in z && "elem" in z.resist && z.resist.elem === "fire")
-									p += levelV(z.resist.value, c.level);
-								else if (key === "ResistIce" && "resist" in z && "elem" in z.resist && z.resist.elem === "ice")
-									p += levelV(z.resist.value, c.level);
-								else if (key === "ResistLightning" && "resist" in z && "elem" in z.resist && z.resist.elem === "lightning")
-									p += levelV(z.resist.value, c.level);
-								else if (key === "DEFPenetration" && "penetration" in z)
+								if (key === "DEFPenetration" && "penetration" in z)
 									p += levelV(z.penetration, c.level);
 								else if (key === "Range" && "range" in z)
 									p += levelV(z.range, c.level);
