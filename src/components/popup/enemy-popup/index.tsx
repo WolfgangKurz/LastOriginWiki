@@ -1,8 +1,7 @@
 import { FunctionalComponent } from "preact";
-import { Link, route } from "preact-router";
+import { route } from "preact-router";
 import Decimal from "decimal.js";
 
-import { ACTOR_GRADE } from "@/types/Enums";
 import { SelectOption } from "@/types/Helper";
 import { BuffStat } from "@/types/Buffs";
 import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
@@ -147,8 +146,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 		function Description (skill: EnemySkill): string {
 			if (!targetEnemy.value) return "";
 
-			return LocaleGet(`${skill.key}_DESC`)
-				.replace(/\{0\}/g, `[@::0~0: (${skill.buff.rate}배)]`)
+			return LocaleGet(`${skill.key}_DESC`, `[@::0~0: (공격력 ${skill.buff.rate}배)]`)
 				.replace(/\. /g, ".\n");
 		}
 
