@@ -11,8 +11,8 @@ const Changelog: FunctionalComponent = () => <>
 	<ChangelogItem title="Build 11087" date="2021-08-05"
 		update={ <>
 			<li><span class="badge bg-warning text-dark">경험치 계산기</span> 리팩토링이 완료되었습니다.</li>
-			<li><img src={`${AssetsRoot}/flags/zhTW.png`} alt="zhTW" /> 대만 언어 지원이 추가되었습니다.</li>
-			<li><img src={`${AssetsRoot}/flags/zhTW.png`} alt="zhTW" /> Taiwan(Republic of China) language support has added.</li>
+			<li><img src={`${AssetsRoot}/flags/zhTW.png`} alt="zhTW" /> 대만(중화민국) 언어 지원이 추가되었습니다.</li>
+			<li><img src={`${AssetsRoot}/flags/zhTW.png`} alt="zhTW" /> Taiwan(Republic of China) language support has been added.</li>
 			<li>Some EN/JP translation has added/updated.</li>
 			<li>一部の英語・日本語の翻訳が追加・修正されました。</li>
 		</> }
