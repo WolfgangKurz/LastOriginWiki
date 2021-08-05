@@ -147,7 +147,9 @@ const Header: FunctionalComponent = () => {
 									<a href="#" class="dropdown-item" onClick={ (e): void => {
 										e.preventDefault();
 										ChangeDB(db);
-									} }>{ DBDisp[db] }</a>
+									} }>
+										<img src={ `${AssetsRoot}/flags/${DBDisp[db]}.png` } alt={ DBDisp[db] } />
+									</a>
 								</li>) }
 							</ul>
 						</li>
@@ -168,7 +170,9 @@ const Header: FunctionalComponent = () => {
 									<a href="#" class="dropdown-item" onClick={ (e): void => {
 										e.preventDefault();
 										ChangeLanguage(lang);
-									} }>{ lang }</a>
+									} }>
+										<img src={ `${AssetsRoot}/flags/${lang}.png` } alt={ lang } />
+									</a>
 								</li>) }
 							</ul>
 						</li>
