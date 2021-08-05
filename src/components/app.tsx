@@ -29,10 +29,12 @@ import WorldMapView from "@/routes/worlds/map-view";
 
 import Roguelike from "@/routes/roguelike";
 
-import Changelog from "@/routes/changelog";
-
 import Simulator from "@/routes/simulator";
+
+import Changelog from "@/routes/changelog";
+import EXPCalc from "@/routes/calc/exp";
 import BGM from "@/routes/bgm";
+
 import Store from "@/store";
 
 const App: FunctionalComponent = () => {
@@ -75,9 +77,10 @@ const App: FunctionalComponent = () => {
 
 						<Route path="/roguelike" component={ Roguelike } />
 
-						<Route path="/changelog" component={ Changelog } />
-
 						<Route path="/simulator" component={ Simulator } />
+
+						<Route path="/changelog" component={ Changelog } />
+						<Route path="/calc/exp" component={ EXPCalc } />
 						<Route path="/bgm" component={ BGM } />
 
 						<NotFoundPage default />

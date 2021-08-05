@@ -55,8 +55,7 @@ export interface SkillEntity {
 }
 /* eslint-enable camelcase */
 
-export type SkillSlotKey = "active1" | "active2" | "passive1" | "passive2" | "passive3" |
-	"Factive1" | "Factive2" | "Fpassive1" | "Fpassive2" | "Fpassive3";
+export type SkillSlotKey = "1" | "2" | "3" | "4" | "5" | "F1" | "F2" | "F3" | "F4" | "F5";
 
 export type SkillGroup = {
 	[key in SkillSlotKey]: SkillEntity;

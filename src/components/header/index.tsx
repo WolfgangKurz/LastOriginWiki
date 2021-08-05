@@ -99,9 +99,8 @@ const Header: FunctionalComponent = () => {
 
 							<li><hr class="dropdown-divider" /></li>
 
-							<DropdownItem href="/exp">
+							<DropdownItem href="/calc/exp">
 								<Locale k="MENU_ETC_EXPCALC" />
-								<span class="badge bg-secondary ms-2">TBA</span>
 							</DropdownItem>
 
 							<li><hr class="dropdown-divider" /></li>

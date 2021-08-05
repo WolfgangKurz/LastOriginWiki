@@ -48,7 +48,9 @@ const Home: FunctionalComponent = () => {
 
 	return <div class={ `${style.home} home` }>
 		<div class="alert alert-primary" role="alert">
-			<span class="pe-3">[KR]</span>
+			<span class="pe-3">
+				<img src={ `${AssetsRoot}/flags/KR.png` } alt="[KR]" />
+			</span>
 
 			{ IsEW
 				? <Locale k="HOME_EW_REMAIN" p={ [
@@ -74,6 +76,10 @@ const Home: FunctionalComponent = () => {
 
 		{ CurrentEvent
 			? <div class="alert alert-danger" role="alert">
+				<span class="pe-3">
+					<img src={ `${AssetsRoot}/flags/KR.png` } alt="[KR]" />
+				</span>
+
 				<Link href={ `/worlds/${CurrentEvent}` } class="text-dark" style={ { textDecoration: "none" } }>
 					<img
 						src={ `${AssetsRoot}/world/event-${CurrentLocale}.png` }

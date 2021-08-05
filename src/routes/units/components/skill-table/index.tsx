@@ -16,6 +16,7 @@ import SkillBound from "@/components/skill-bound";
 import SkillDescription from "@/components/skill-description/SkillDescription";
 import SummonBadge from "../../components/summon-badge";
 import BuffList from "@/components/buff-list";
+import SkillIcon from "@/components/skill-icon";
 
 interface SkillItem extends SkillEntity {
 	index: number;
@@ -283,10 +284,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 			{ Skills.map(skill => <>
 				<tr>
 					<td>
-						<img
-							class="skill-icon"
-							src={ `${AssetsRoot}/${imageExt}/skill/${skill.icon}_${skill.isPassive ? "passive" : "active"}.${imageExt}` }
-						/>
+						<SkillIcon icon={skill.icon} passive={skill.isPassive} />
 						<div class="text-bold">
 							<Locale k={ `UNIT_SKILL_${skill.key}_${unit.uid}` } />
 						</div>
