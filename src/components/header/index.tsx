@@ -140,7 +140,7 @@ const Header: FunctionalComponent = () => {
 								aria-expanded="false"
 							>
 								<Icon icon="server" class="me-1" />
-								<img class="me-3" src={ `${AssetsRoot}/flags/${DBDisp[CurrentDB]}.png` } alt={ DBDisp[CurrentDB] } />
+								<img class="mx-1" src={ `${AssetsRoot}/flags/${DBDisp[CurrentDB]}.png` } alt={ DBDisp[CurrentDB] } />
 								{ DBDisp[CurrentDB] }
 							</a>
 							<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="topNavbarDropdown2">
@@ -149,7 +149,7 @@ const Header: FunctionalComponent = () => {
 										e.preventDefault();
 										ChangeDB(db);
 									} }>
-										<img class="mx-1" src={ `${AssetsRoot}/flags/${DBDisp[db]}.png` } alt={ DBDisp[db] } />
+										<img class="me-3" src={ `${AssetsRoot}/flags/${DBDisp[db]}.png` } alt={ DBDisp[db] } />
 										{ DBDisp[db] }
 									</a>
 								</li>) }
