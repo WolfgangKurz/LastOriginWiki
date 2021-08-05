@@ -10,6 +10,8 @@ interface UnitFaceProps {
 	size?: number | string;
 	type?: "mini";
 	sd?: boolean;
+
+	style?: Record<string, string> | string;
 }
 
 export function GetUnitFaceURL (uid: string, skin: number = 0, sd: boolean = false): string {
@@ -45,11 +47,14 @@ const UnitFace: FunctionalComponent<UnitFaceProps> = (props) => {
 			src={ path }
 			width={ props.size }
 			height={ props.size }
+			style={ props.style }
 		/>;
 	}
-	return <img class={ `unit-face ${props.class || ""} ${style["unit-face"]}` }
+	return <img
+		class={ `unit-face ${props.class || ""} ${style["unit-face"]}` }
 		data-type={ props.type }
 		src={ path }
+		style={ props.style }
 	/>;
 };
 export default UnitFace;

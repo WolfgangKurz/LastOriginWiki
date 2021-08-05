@@ -1,3 +1,14 @@
+@each $rarity, $color in $rarities {
+	.btn.btn-outline-rarity-#{$rarity} {
+		$c: darken($color, 50%);
+		border-color: $c;
+
+		&:not(.active) {
+			color: $c;
+		}
+	}
+}
+
 .thead-dark th,
 td.bg-dark,
 th.bg-dark {

@@ -2,16 +2,20 @@ import { StateUpdater, useState } from "preact/hooks";
 
 export interface ObjectState<T> {
 	readonly value: T;
-	set (value: T | ((prevState: T) => T)): void;
+	set: StateUpdater<T>;
 }
+type Updater<T> = (prevState: T) => T;
 
 export function objStated<T> (state: [T, StateUpdater<T>]): ObjectState<T> {
 	const [value, updator] = state;
 	return {
 		value,
-		set (value: T): void {
-			(this.value as T) = value;
-			updator(value);
+		set (value: T | Updater<T>): void {
+			if (typeof value === "function")
+				(this.value as T) = (value as Updater<T>)(this.value);
+			else
+				(this.value as T) = value;
+			updator(this.value);
 		},
 	};
 }

@@ -1,12 +1,14 @@
 import { FunctionalComponent } from "preact";
 
-import { ImageExtension, ImageExtensionList } from "@/libs/Const";
-import { ChangeImage } from "@/libs/Functions";
+import { AssetsRoot, ImageExtension, ImageExtensionList } from "@/libs/Const";
+import { ChangeImage, isActive } from "@/libs/Functions";
 import { ChangeLanguage, CurrentLocale, LocaleList } from "@/libs/Locale";
 // import { LangValidation, LocaleGet } from "@/libs/Locale";
 import { ChangeDB, CurrentDB, DBList, DBTypes } from "@/libs/DB";
 
 import Icon from "../bootstrap-icon";
+
+import style from "./style.scss";
 
 const HomeConfigSelector: FunctionalComponent = () => {
 	const DBDisp: Record<DBTypes, string> = {
@@ -14,16 +16,16 @@ const HomeConfigSelector: FunctionalComponent = () => {
 		japan: "JP",
 	};
 
-	return <div class="my-4">
+	return <div class={`${style.HomeConfigSelector} my-4`}>
 		<div class="input-group justify-content-center my-1">
 			<div class="input-group-text">
 				<Icon icon="server" class="me-1" />
 			</div>
 			{ DBList.map(db => <button
-				class={ `btn btn-${CurrentDB === db ? "danger" : "outline-danger"}` }
+				class={ `btn btn-danger ${isActive(CurrentDB === db)}` }
 				onClick={ (): void => ChangeDB(db) }
 			>
-				{ DBDisp[db] }
+				<img src={ `${AssetsRoot}/flags/${DBDisp[db]}.png` } alt={ DBDisp[db] || db } />
 			</button>) }
 		</div>
 		<div class="input-group justify-content-center my-1">
@@ -32,10 +34,10 @@ const HomeConfigSelector: FunctionalComponent = () => {
 			</div>
 
 			{ LocaleList.map(locale => <button
-				class={ `btn btn-${CurrentLocale === locale ? "primary" : "outline-primary"}` }
+				class={ `btn btn-primary ${isActive(CurrentLocale === locale)}` }
 				onClick={ (): void => ChangeLanguage(locale) }
 			>
-				{ locale }
+				<img src={ `${AssetsRoot}/flags/${locale}.png` } alt={ locale } />
 			</button>) }
 		</div>
 		<div class="input-group justify-content-center my-1">
@@ -44,7 +46,7 @@ const HomeConfigSelector: FunctionalComponent = () => {
 			</div>
 
 			{ ImageExtensionList.map(ext => <button
-				class={ `btn btn-${ImageExtension() === ext ? "success" : "outline-success"}` }
+				class={ `btn btn-success ${isActive(ImageExtension() === ext)}` }
 				onClick={ (): void => ChangeImage(ext) }
 			>
 				{ ext }
