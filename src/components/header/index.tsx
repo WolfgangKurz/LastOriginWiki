@@ -2,7 +2,7 @@ import { FunctionalComponent } from "preact";
 import { Link } from "preact-router/match";
 
 import { AssetsRoot } from "@/libs/Const";
-import { ChangeLanguage, LocaleList } from "@/libs/Locale";
+import { ChangeLanguage, CurrentLocale, LocaleList } from "@/libs/Locale";
 import { ChangeDB, CurrentDB, DBList, DBTypes } from "@/libs/DB";
 
 import Locale from "@/components/locale";
@@ -140,6 +140,7 @@ const Header: FunctionalComponent = () => {
 								aria-expanded="false"
 							>
 								<Icon icon="server" class="me-1" />
+								<img class="me-3" src={ `${AssetsRoot}/flags/${DBDisp[CurrentDB]}.png` } alt={ DBDisp[CurrentDB] } />
 								{ DBDisp[CurrentDB] }
 							</a>
 							<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="topNavbarDropdown2">
@@ -148,7 +149,8 @@ const Header: FunctionalComponent = () => {
 										e.preventDefault();
 										ChangeDB(db);
 									} }>
-										<img src={ `${AssetsRoot}/flags/${DBDisp[db]}.png` } alt={ DBDisp[db] } />
+										<img class="me-3" src={ `${AssetsRoot}/flags/${DBDisp[db]}.png` } alt={ DBDisp[db] } />
+										{ DBDisp[db] }
 									</a>
 								</li>) }
 							</ul>
@@ -163,7 +165,8 @@ const Header: FunctionalComponent = () => {
 								aria-expanded="false"
 							>
 								<Icon icon="globe2" class="me-1" />
-								<Locale k="COMMON_LANG" />
+								<img class="me-3" src={ `${AssetsRoot}/flags/${CurrentLocale}.png` } alt={ CurrentLocale } />
+								{ CurrentLocale }
 							</a>
 							<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="topNavbarDropdown2">
 								{ LocaleList.map(lang => <li>
@@ -171,7 +174,8 @@ const Header: FunctionalComponent = () => {
 										e.preventDefault();
 										ChangeLanguage(lang);
 									} }>
-										<img src={ `${AssetsRoot}/flags/${lang}.png` } alt={ lang } />
+										<img class="me-3" src={ `${AssetsRoot}/flags/${lang}.png` } alt={ lang } />
+										{ lang }
 									</a>
 								</li>) }
 							</ul>
