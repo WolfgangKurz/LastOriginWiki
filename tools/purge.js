@@ -17,7 +17,7 @@ function travel (dir, callback) {
 	dirs.forEach(p => travel(p, callback));
 }
 
-const target = ["locale", "unit"];
+const target = ["locale", "unit", "world", "map", "equip", "enemy"];
 
 const lists = [];
 const list = [];

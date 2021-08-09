@@ -9,6 +9,12 @@ import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
 	<ChangelogItem title="Build 11096" date="2021-08-10"
+		bugfix={ <>
+			<li>
+				<span class="badge bg-warning text-dark">전투원정보</span>의
+				<span class="badge bg-warning text-dark">그룹별 보기</span>에서 그룹 아이콘 및 합치기가 올바르지 않게 작동하던 점을 수정했습니다.
+			</li>
+		</> }
 		new={ <>
 			<li>신규 전투원 <span class="badge bg-warning text-dark">N2E-888 아라크네</span>의 정보가 추가되었습니다.</li>
 			<li><span class="badge bg-warning text-dark">빛이 들지 않는 성역</span> 이벤트 3부 정보가 추가되었습니다.</li>
@@ -21,6 +27,12 @@ const Changelog: FunctionalComponent = () => <>
 			<li>一部の英語・日本語・台湾語の翻訳が追加・修正されました。</li>
 		</> }
 		skin={ <>
+			<li>
+				<span class="badge bg-warning text-dark">아자젤</span>의 기본 스킨의 구글판 이미지 정보가 추가되었습니다.
+			</li>
+			<li>
+				<span class="badge bg-warning text-dark">아자젤</span>의 스킨 <span class="badge bg-danger">반려의 의무</span>의 구글판 이미지 정보가 추가되었습니다.
+			</li>
 			<li>
 				<span class="badge bg-warning text-dark">아자젤</span>의 스킨 <span class="badge bg-danger">수영복 콘테스트 : 한결같은 마음</span>의 정보가 추가되었습니다.
 			</li>

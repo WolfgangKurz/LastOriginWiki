@@ -30,7 +30,7 @@ targetDBs.forEach(targetDB => {
 					uid: char.uid,
 					// name: char.name,
 					group: char.group,
-					shortgroup: char.shortgroup,
+					// shortgroup: char.shortgroup,
 
 					rarity: char.rarity,
 					type: char.type,

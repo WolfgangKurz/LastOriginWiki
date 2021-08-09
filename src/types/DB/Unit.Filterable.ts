@@ -33,7 +33,7 @@ export interface FilterableUnit {
 	// shortname: string;
 
 	group: string;
-	shortgroup: string;
+	// shortgroup: string;
 	// groupKey: string;
 
 	craft: false | number;
@@ -61,7 +61,7 @@ export namespace FilterableUnit {
 		body: ACTOR_BODY_TYPE.BIOROID,
 
 		group: "",
-		shortgroup: "",
+		// shortgroup: "",
 
 		craft: false,
 

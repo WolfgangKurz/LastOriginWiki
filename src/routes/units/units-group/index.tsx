@@ -7,7 +7,7 @@ import { objState } from "@/libs/State";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { groupBy, isActive } from "@/libs/Functions";
 
-import Locale, { LocaleGet } from "@/components/locale";
+import Locale, { LocaleExists, LocaleGet } from "@/components/locale";
 import UnitCard from "@/components/unit-card";
 
 import "./style.scss";
@@ -18,16 +18,24 @@ const UnitsGroup: FunctionalComponent<UnitsListProps> = (props) => {
 	const Merge = objState<boolean>(false);
 
 	const GroupKeyTable = ((): Record<string, string> => {
-		const g = groupBy(props.list, x => LocaleGet(`UNIT_GROUP_${Merge.value ? x.shortgroup : x.group}`));
+		const g = groupBy(props.list, x => x.group);
 		const r: Record<string, string> = {};
-		for (const k in g) r[k] = g[k][0].shortgroup;
+		for (const k in g) {
+			const _k = k.replace(/_[0-9]+$/, "");
+
+			r[k] = g[k][0].group;
+			if (!(_k in r)) {
+				const lk = `UNIT_GROUP_${Merge.value ? r[k].replace(/_[0-9]+$/, "") : r[k]}`;
+				r[_k] = LocaleExists(lk) ? LocaleGet(lk) : LocaleGet(`${lk}_1`);
+			}
+		}
 		return r;
 	})();
 
 	const GroupedList = ((): Record<string, FilterableUnit[]> => {
 		const list = props.list;
 
-		const g = groupBy(list, x => LocaleGet(`UNIT_GROUP_${Merge.value ? x.shortgroup : x.group}`));
+		const g = groupBy(list, x => Merge.value ? x.group.replace(/_[0-9]+$/, "") : x.group);
 		const r: Record<string, FilterableUnit[]> = {};
 		Object.keys(g)
 			.sort()
@@ -47,9 +55,9 @@ const UnitsGroup: FunctionalComponent<UnitsListProps> = (props) => {
 		{ Object.keys(GroupedList).map(group => <div class="container unit-group mb-3">
 			<div class="row text-center">
 				<div class="col-12 col-lg-2 col-md-3 bg-dark text-light">
-					<img src={ `${AssetsRoot}/${imageExt}/group/${GroupKeyTable[group]}.${imageExt}` } />
+					<img src={ `${AssetsRoot}/${imageExt}/group/${group.replace(/_[0-9]+$/, "")}.${imageExt}` } />
 					<div>
-						<Locale k={ group } />
+						<Locale k={ `UNIT_GROUP_${group}` } fallback={ <Locale k={ `UNIT_GROUP_${group}_1` } /> } />
 					</div>
 				</div>
 				<div class="col-12 col-lg-10 col-md-9">
