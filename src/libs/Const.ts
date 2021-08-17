@@ -689,7 +689,10 @@ export function ImageExtension (): ImageExtensionTypes {
 }
 
 
-export const WorldIds: string[] = ["Story", "Sub", "Cha", "Ev1", "Ev2", "Ev3", "Ev4", "Ev5", "Ev6", "EvA0", "Ev7", "Ev8", "Ev9", "Ev10", "Ev11"];
+export const WorldIds: string[] = [
+	"Story", "Sub", "Cha",
+	"Ev1", "Ev2", "Ev3", "Ev4", "Ev5", "Ev6", "EvA0", "Ev7", "Ev8", "Ev9", "Ev10", "Ev11", "Ev12",
+];
 export const SubStoryUnit: Record<string, string> = {
 	"S1-1": "AGS_Rampart",
 	"S1-2": "3P_ConstantiaS2",
@@ -706,6 +709,7 @@ export const SubStoryUnit: Record<string, string> = {
 	"S14-1": "BR_Brownie",
 };
 
+export const PermanentEvents: string[] = ["Ev1", "Ev2"];
 export const CurrentEvent = "Ev12";
 export const EventFrom = new Date(2021, 7 - 1, 12);
 export const EventTo = new Date(2021, 8 - 1, 23);
