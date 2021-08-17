@@ -8,6 +8,29 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11102" date="2021-08-17"
+		new={ <>
+			<li><span class="badge bg-warning text-dark">세계정보</span>에 <span class="badge bg-warning text-dark">상시 이벤트</span> 영역이 추가되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">더치걸</span>의 특수 터치 대사 및 서약 후 대사가 추가되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">아쿠아</span>의 특수 터치 대사 및 서약 후 대사가 추가/변경되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">코코 인 화이트셸</span>의 특수 터치 대사 및 서약 후 대사가 추가되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">LRL</span>의 특수 터치 대사 및 서약 후 대사가 추가되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">LRL</span>의 특수 터치 대사가 추가되었습니다.</li>
+		</> }
+		update={ <>
+			<li>Some EN/JP/TW translation has added/updated.</li>
+			<li>一部の英語・日本語・台湾語の翻訳が追加・修正されました。</li>
+		</> }
+		skin={ <>
+			<li>
+				<span class="badge bg-warning text-dark">베로니카</span>의 스킨 <span class="badge bg-danger">이단 심문관 베로니카</span>의 로비 애니메이션 정보가 갱신되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2021-08-17 13:11:10</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+			<li>일부 전투원의 대사가 잘못 기입되어있던 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11096" date="2021-08-10"
 		bugfix={ <>
 			<li>
