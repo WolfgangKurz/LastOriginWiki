@@ -15,7 +15,6 @@ const Changelog: FunctionalComponent = () => <>
 			<li><span class="badge bg-warning text-dark">아쿠아</span>의 특수 터치 대사 및 서약 후 대사가 추가/변경되었습니다.</li>
 			<li><span class="badge bg-warning text-dark">코코 인 화이트셸</span>의 특수 터치 대사 및 서약 후 대사가 추가되었습니다.</li>
 			<li><span class="badge bg-warning text-dark">LRL</span>의 특수 터치 대사 및 서약 후 대사가 추가되었습니다.</li>
-			<li><span class="badge bg-warning text-dark">LRL</span>의 특수 터치 대사가 추가되었습니다.</li>
 		</> }
 		update={ <>
 			<li>Some EN/JP/TW translation has added/updated.</li>
