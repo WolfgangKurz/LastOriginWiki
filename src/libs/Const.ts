@@ -650,6 +650,7 @@ export const TroopNameTable: Record<string, string> = {
 	Squad_Bermuda_1: "UNIT_GROUP_Bermuda",
 	Squad_Bermuda_2: "UNIT_GROUP_Bermuda II",
 	Squad_Bismarck: "UNIT_GROUP_Bismarck",
+	Squad_Bismarck_2: "UNIT_GROUP_Bismarck",
 	Squad_CityGuard_1: "UNIT_GROUP_CityGuard",
 	Squad_CityGuard_2: "UNIT_GROUP_CityGuard II",
 	Squad_CompanionSeries_1: "UNIT_GROUP_CompanionSeries",
