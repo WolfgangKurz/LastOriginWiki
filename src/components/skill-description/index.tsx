@@ -2,7 +2,10 @@ import { createElement, FunctionalComponent, FunctionComponent } from "preact";
 
 import { ComponentTable, parseVNode } from "@/libs/VNode";
 
+import EquipPopup from "@/components/popup/equip-popup";
 import * as Components from "./components";
+import { objState } from "@/libs/State";
+import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 
 export interface SkillDescriptionValueData {
 	base: number;
@@ -27,6 +30,8 @@ interface SkillDescriptionProps {
 
 const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => {
 	const rates = props.rates || [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+	const displayEquip = objState(false);
+	const selectedEquip = objState<FilterableEquip | null>(null);
 
 	function compile (text: string): Array<preact.VNode[] | preact.VNode | string> {
 		if (!text) return [];
@@ -131,7 +136,15 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 				chance,
 
 				char: Components.Char,
-				equip: Components.Equip,
+				equip: (p) => createElement(
+					Components.Equip,
+					{
+						...p,
+						onEquip: (eq) => {
+							selectedEquip.set(eq);
+							displayEquip.set(true);
+						},
+					}),
 
 				elem: Components.Elem,
 			} as unknown as ComponentTable<any>);
@@ -142,6 +155,13 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 	}
 
 	return <span id={ props.id } class={ `skill-description ${props.class || ""}` }>
+		<EquipPopup
+			asSub
+			fullGroup
+			display={ displayEquip.value }
+			equip={ selectedEquip.value }
+			onHidden={ (): void => displayEquip.set(false) }
+		/>
 		{ compile(props.text) }
 	</span>;
 };
