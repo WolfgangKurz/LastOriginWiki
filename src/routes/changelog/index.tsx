@@ -11,11 +11,12 @@ interface DateData {
 }
 
 const Changelog: FunctionalComponent = () => {
-	const currentDate = objState<number>(202108);
+	const currentDate = objState<number>(202109);
 	const loading = objState<number>(0);
 	const content = objState<preact.VNode | undefined>(undefined);
 
 	const Dates: DateData[] = [
+		{ value: 202109, text: "2021-09" },
 		{ value: 202108, text: "2021-08" },
 		{ value: 202107, text: "2021-07" },
 		{ value: 202106, text: "2021-06" },
