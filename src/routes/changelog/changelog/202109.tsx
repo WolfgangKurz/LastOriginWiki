@@ -29,6 +29,12 @@ const Changelog: FunctionalComponent = () => <>
 			<li>
 				<span class="badge bg-warning text-dark">드라큐리나</span>의 스킨 <span class="badge bg-danger">뙤약볕의 흡혈귀</span>의 로비 애니메이션 정보가 추가되었습니다.
 			</li>
+			<li>
+				<span class="badge bg-warning text-dark">베로니카</span>의 스킨 <span class="badge bg-danger">수녀님의 휴일</span>이 추가되었습니다.
+			</li>
+			<li>
+				<span class="badge bg-warning text-dark">마법소녀 매지컬 모모</span>의 스킨 <span class="badge bg-danger">드림위버 웨딩 스페셜: 배반의 흑장미</span>가 추가되었습니다.
+			</li>
 		</> }
 		dialogue={ <>
 			<li><span class="badge bg-light text-dark">KST 2021-09-06 01:53:31</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
