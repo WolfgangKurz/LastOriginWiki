@@ -18,7 +18,7 @@ import UnitBadge from "@/components/unit-badge";
 import RarityBadge from "@/components/rarity-badge";
 import ElemIcon from "@/components/elem-icon";
 import SkillBound from "@/components/skill-bound";
-import SkillDescription from "@/components/skill-description/SkillDescription";
+import SkillDescription from "@/components/skill-description";
 import BuffList from "@/components/buff-list";
 import AIList from "@/components/ai-list";
 

@@ -1,5 +1,5 @@
 import { BuffStat } from "@/types/Buffs";
-import { SKILL_ATTR } from "@/types/Enums";
+import { NUM_OUTPUTTYPE, SKILL_ATTR } from "@/types/Enums";
 
 /* eslint-disable camelcase */
 export interface RawSkillEntity {
@@ -39,6 +39,18 @@ export interface SkillEntryData {
 	buff_rate: number;
 	buffs: BuffStat[];
 }
+export interface SkillValueData {
+	icon: string;
+	base: number;
+	per: number;
+	chance: string;
+	desc: {
+		type: NUM_OUTPUTTYPE;
+		desc: string;
+		value: string;
+		level: string;
+	};
+}
 export interface SkillEntity {
 	key: string;
 	// name: string;
@@ -50,6 +62,10 @@ export interface SkillEntity {
 	buffs: {
 		index: number[];
 		data: SkillEntryData[];
+	};
+	values: {
+		index: number[];
+		data: SkillValueData[][];
 	};
 	// desc: string[];
 }

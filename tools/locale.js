@@ -11,7 +11,7 @@ async function process (auth) {
 	const types = (await sheets.spreadsheets.get({ spreadsheetId }))
 		.data.sheets
 		.map(x => x.properties.title)
-		.filter(x => x !== "Announcement");
+		.filter(x => x[0] !== "#");
 
 	const data = {};
 

@@ -113,6 +113,13 @@ export enum BUFFEFFECT_TYPE {
 	STAT_SKILL_RATIO = 106,
 	STAT_RANGE_VALUE_ACTIVE_SKILL_1 = 107,
 	STAT_RANGE_VALUE_ACTIVE_SKILL_2 = 108,
+	FOCUSED_ATTACK = 109,
+	DAMAGE_DISPERSE = 110,
+	EVADE_SKILLDMGUP_ME = 111,
+	EVADE_SKILLDMGDOWN = 112,
+	DEF_SKILLDMGUP_ME = 113,
+	DEF_CRTDOWN = 114,
+	BUFFER_ATK_ATKUP = 115,
 }
 
 export type BuffEffect = BuffEffect_Base & {
@@ -135,7 +142,7 @@ type BuffEffect_Body = BuffEffect_Unknown | BuffEffect_Off | BuffEffect_Attack |
 	BuffEffect_Penetration | BuffEffect_Metamolphosis | BuffEffect_FixedDamage | BuffEffect_Provoke | BuffEffect_AttackSupport |
 	BuffEffect_Immovable | BuffEffect_SkillDisable | BuffEffect_Revive | BuffEffect_AttackTarget | BuffEffect_InvokeChance |
 	BuffEffect_SummonRemove | BuffEffect_PenetrationForce | BuffEffect_Exp | BuffEffect_DebuffImmune | BuffEffect_Collaborate |
-	BuffEffect_MaxHP | BuffEffect_SkillRatio | BuffEffect_SkillRange;
+	BuffEffect_MaxHP | BuffEffect_SkillRatio | BuffEffect_SkillRange | BuffEffect_Disperse | BuffEffect_ValueBy;
 
 // #region BuffEffect
 interface BuffEffect_Unknown {
@@ -394,6 +401,19 @@ interface BuffEffect_SkillRatio {
 interface BuffEffect_SkillRange {
 	skill: 1 | 2;
 	range: BuffEffectValue;
+}
+
+interface BuffEffect_Disperse {
+	disperse: BuffEffectValue;
+}
+
+interface BuffEffect_ValueBy {
+	value: "skill_ratio" | "atk" | "crit";
+	by: BuffEffectValue & {
+		type: "up" | "down";
+		target: "self" | "target" | "attacker";
+		by: "evade" | "defense" | "atk";
+	};
 }
 // #endregion
 

@@ -1829,7 +1829,84 @@
         }
       ]
     },
-    "values": "BuffIcon_DEF_DOWN@-0.5~-0.025,BuffIcon_VULNERABLE@0.2~0.01,BuffIcon_Push@1~0,BuffIcon_STUN@0~0,BuffIcon_VULNERABLE@0.1~0.005"
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_DEF_DOWN",
+            "desc": {
+              "desc": "내구력 테스트! : 방어력 {0}%",
+              "type": 1,
+              "value": "-0.500000",
+              "level": "-0.025000"
+            },
+            "base": -0.5,
+            "per": -0.025,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_VULNERABLE",
+            "desc": {
+              "desc": "내구력 테스트! : 받는 피해+{0}%",
+              "type": 1,
+              "value": "0.200000",
+              "level": "0.010000"
+            },
+            "base": 0.2,
+            "per": 0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_Push",
+            "desc": {
+              "desc": "테스트 불합격! : 뒤로 {0}칸 밀기",
+              "type": 0,
+              "value": "1",
+              "level": "0"
+            },
+            "base": 1,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_STUN",
+            "desc": {
+              "desc": "테스트 완료! : 행동 불가",
+              "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 0.5
+          },
+          {
+            "icon": "BuffIcon_VULNERABLE",
+            "desc": {
+              "desc": "테스트 완료! : 받는 피해+{0}%",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.005000"
+            },
+            "base": 0.1,
+            "per": 0.005,
+            "chance": 1
+          }
+        ]
+      ]
+    }
   },
   "2": {
     "key": "2",
@@ -4261,7 +4338,96 @@
         }
       ]
     },
-    "values": "BuffIcon_Pull@2~0,BuffIcon_SNARE@0~0,BuffIcon_REMOVE_BUFF@0~0,BuffIcon_REMOVE_BUFF@0~0,BuffIcon_AP_DOWN@-1~-0.05,BuffIcon_REMOVE_BUFF@0~0"
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_Pull",
+            "desc": {
+              "desc": "실험 대상 모집! : 앞으로 {0}칸 이동",
+              "type": 0,
+              "value": "2",
+              "level": "0"
+            },
+            "base": 2,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_SNARE",
+            "desc": {
+              "desc": "실험 대상 모집! : 이동 불가",
+              "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_BUFF",
+            "desc": {
+              "desc": "실험 대상 모집! : 강화 해제 (50% 확률)",
+              "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_REMOVE_BUFF",
+            "desc": {
+              "desc": "실험 대상 모집! : 강화 효과 해제 (50% 확률)",
+              "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 0.5
+          },
+          {
+            "icon": "BuffIcon_AP_DOWN",
+            "desc": {
+              "desc": "실험 대상 모집! : AP {0}",
+              "type": 0,
+              "value": "-1",
+              "level": "-0.050000"
+            },
+            "base": -1,
+            "per": -0.05,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_BUFF",
+            "desc": {
+              "desc": "실험 대상 모집! : 강화 효과 해제",
+              "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 1
+          }
+        ]
+      ]
+    }
   },
   "3": {
     "key": "3",
@@ -4301,6 +4467,7 @@
                 "on": {
                   "func": "OR",
                   "select": [
+                    0,
                     1
                   ],
                   "attr": 0
@@ -4446,6 +4613,7 @@
                 "on": {
                   "func": "OR",
                   "select": [
+                    8,
                     9
                   ],
                   "attr": 0
@@ -4499,6 +4667,7 @@
                 "on": {
                   "func": "OR",
                   "select": [
+                    6,
                     7
                   ],
                   "attr": 0
@@ -4552,6 +4721,7 @@
                 "on": {
                   "func": "OR",
                   "select": [
+                    12,
                     13
                   ],
                   "attr": 0
@@ -4673,6 +4843,7 @@
                 "on": {
                   "func": "OR",
                   "select": [
+                    0,
                     1
                   ],
                   "attr": 0
@@ -4818,6 +4989,7 @@
                 "on": {
                   "func": "OR",
                   "select": [
+                    8,
                     9
                   ],
                   "attr": 0
@@ -4871,6 +5043,7 @@
                 "on": {
                   "func": "OR",
                   "select": [
+                    6,
                     7
                   ],
                   "attr": 0
@@ -4924,6 +5097,7 @@
                 "on": {
                   "func": "OR",
                   "select": [
+                    12,
                     13
                   ],
                   "attr": 0
@@ -5027,7 +5201,132 @@
         }
       ]
     },
-    "values": "BuffIcon_ATK_UP@0.15~0.0075,BuffIcon_CRITICAL_UP@0.1~0.005,BuffIcon_AP_UP@0.05~0.0025,BuffIcon_ACCURACY_UP@0.3~0.015,BuffIcon_DAMAGE_REDUCE@0.1~0.005,BuffIcon_CRITICAL_UP@0.1~0.005,BuffIcon_ACCURACY_UP@0.3~0.015,BuffIcon_AP_UP@0.05~0.0025,BuffIcon_DAMAGE_REDUCE@0.1~0.005"
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "수상한 무기 : 공격력+{0}%",
+              "type": 1,
+              "value": "0.150000",
+              "level": "0.007500"
+            },
+            "base": 0.15,
+            "per": 0.0075,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_CRITICAL_UP",
+            "desc": {
+              "desc": "수상한 분석기 : 치명타+{0}%",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.005000"
+            },
+            "base": 0.1,
+            "per": 0.005,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "수상한 보조 장치 : 행동력+{0}%",
+              "type": 1,
+              "value": "0.050000",
+              "level": "0.002500"
+            },
+            "base": 0.05,
+            "per": 0.0025,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_ACCURACY_UP",
+            "desc": {
+              "desc": "수상한 조준기 : 적중+{0}%",
+              "type": 1,
+              "value": "0.300000",
+              "level": "0.015000"
+            },
+            "base": 0.3,
+            "per": 0.015,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_DAMAGE_REDUCE",
+            "desc": {
+              "desc": "수상한 외장 장갑 : 받는 피해 {0}% 감소",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.005000"
+            },
+            "base": 0.1,
+            "per": 0.005,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_CRITICAL_UP",
+            "desc": {
+              "desc": "수상한 분석기 : 치명타+{0}%",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.005000"
+            },
+            "base": 0.1,
+            "per": 0.005,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ACCURACY_UP",
+            "desc": {
+              "desc": "수상한 조준기 : 적중+{0}%",
+              "type": 1,
+              "value": "0.300000",
+              "level": "0.015000"
+            },
+            "base": 0.3,
+            "per": 0.015,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "수상한 보조 장치 : 행동력+{0}%",
+              "type": 1,
+              "value": "0.050000",
+              "level": "0.002500"
+            },
+            "base": 0.05,
+            "per": 0.0025,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DAMAGE_REDUCE",
+            "desc": {
+              "desc": "수상한 외장 장갑 : 받는 피해 {0}% 감소",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.005000"
+            },
+            "base": 0.1,
+            "per": 0.005,
+            "chance": 1
+          }
+        ]
+      ]
+    }
   },
   "4": {
     "key": "4",
@@ -5427,7 +5726,84 @@
         }
       ]
     },
-    "values": "BuffIcon_ATK_UP@0.2~0.01,BuffIcon_AP_UP@0.25~0.0125,BuffIcon_CRITICAL_UP@0.1~0.005,BuffIcon_AP_UP@4~0.2,BuffIcon_SCOUTING@0~0"
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "출력 전개! : 공격력+{0}%",
+              "type": 1,
+              "value": "0.200000",
+              "level": "0.010000"
+            },
+            "base": 0.2,
+            "per": 0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "출력 전개! : 행동력+{0}%",
+              "type": 1,
+              "value": "0.250000",
+              "level": "0.012500"
+            },
+            "base": 0.25,
+            "per": 0.0125,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_CRITICAL_UP",
+            "desc": {
+              "desc": "출력 전개! : 치명타+{0}%",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.005000"
+            },
+            "base": 0.1,
+            "per": 0.005,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "분석 개시! : AP+{0}",
+              "type": 0,
+              "value": "4",
+              "level": "0.200000"
+            },
+            "base": 4,
+            "per": 0.2,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_SCOUTING",
+            "desc": {
+              "desc": "분석했어요! : 다음 적 정보 획득",
+              "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 1
+          }
+        ]
+      ]
+    }
   },
   "5": {
     "key": "5",
@@ -5574,6 +5950,71 @@
         }
       ]
     },
-    "values": "BuffIcon_AP_UP@4~0.2,BuffIcon_SCOUTING@0~0,BuffIcon_ATK_DOWN@-0.006~-0.004,BuffIcon_CRITICAL_DOWN@-0.006~-0.004"
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "분석 개시! : AP+{0}",
+              "type": 0,
+              "value": "4",
+              "level": "0.200000"
+            },
+            "base": 4,
+            "per": 0.2,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_SCOUTING",
+            "desc": {
+              "desc": "분석했어요! : 다음 적 정보 획득",
+              "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_ATK_DOWN",
+            "desc": {
+              "desc": "분석 완료! : 공격력 {0}%",
+              "type": 1,
+              "value": "-0.006000",
+              "level": "-0.004000"
+            },
+            "base": -0.006,
+            "per": -0.004,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_CRITICAL_DOWN",
+            "desc": {
+              "desc": "공격 패턴 예측! : 치명타 {0}%",
+              "type": 1,
+              "value": "-0.006000",
+              "level": "-0.004000"
+            },
+            "base": -0.006,
+            "per": -0.004,
+            "chance": 1
+          }
+        ]
+      ]
+    }
   }
 }

@@ -74,7 +74,7 @@ const Home: FunctionalComponent = () => {
 				] } /> }
 		</div>
 
-		{ CurrentEvent
+		{ CurrentEvent && (new Date() < EventTo)
 			? <div class="alert alert-danger" role="alert">
 				<span class="pe-3">
 					<img src={ `${AssetsRoot}/flags/KR.png` } alt="[KR]" />

@@ -11,7 +11,7 @@ function process (auth) {
 			spreadsheetId: targetDB === "korea"
 				? "11IxebdUQ_VHbaP79sN8KxZ87n3c5rG42DL8TQOK9h1k"
 				: "1ohSOKdl1IZq8aOsWPJ74yX01Ave7FkSrUFG5MSbfZN8",
-			range: "UnitSkill!A2:H",
+			range: "UnitSkill!A2:G",
 		}, (err, res) => {
 			if (err) return console.log(`The API returned an error: ${err}`);
 
@@ -27,7 +27,6 @@ function process (auth) {
 					const icon = row[3];
 					const target = row[4];
 					const data = row[5];
-					const values = row[6];
 
 					const key = `${fchange ? "F" : ""}${slot}`;
 					if (!(unit in ret)) ret[unit] = {};
@@ -74,6 +73,57 @@ function process (auth) {
 						return {
 							index: indices,
 							data: store.map(x => JSON.parse(x)),
+						};
+					})();
+
+					const values = (() => {
+						const row7 = row[6];
+						if (!row7) {
+							return {
+								index: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+								data: [[]],
+							};
+						}
+						if (row7.startsWith("{")) {
+							return {
+								index: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+								data: [JSON.parse(`[${row7}]`)],
+							};
+						}
+
+						const store = [];
+						const indices = [];
+
+						const levels = row7.split("\n");
+						levels.forEach(x => {
+							const range = x.replace(/^([^:]+):.+$/, "$1");
+
+							const [from, to] = (() => {
+								if (range.includes("~")) {
+									return [
+										parseInt(range.replace(/(.+)~.+/, "$1"), 10),
+										parseInt(range.replace(/.+~(.+)/, "$1"), 10),
+									];
+								} return [parseInt(range, 10), parseInt(range, 10)];
+							})();
+
+							const body = x.replace(/^[^:]+:(.+)$/, "$1");
+
+							for (let i = from; i <= to; i++) {
+								const index = store.indexOf(body);
+								if (index >= 0) {
+									indices.push(index);
+									continue;
+								}
+
+								indices.push(store.length);
+								store.push(body);
+							}
+						});
+
+						return {
+							index: indices,
+							data: store.map(x => JSON.parse(`[${x}]`)),
 						};
 					})();
 

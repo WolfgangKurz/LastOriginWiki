@@ -579,7 +579,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 				if (trigger.target.length === 1)
 					return <Locale plain k="BUFFTRIGGER_ON_TARGET_SINGLE_OR" p={ [convertBuff(trigger.target[0])] } />;
 
-				const list = trigger.target
+				const list = (typeof trigger.target === "string" ? [trigger.target] : trigger.target)
 					.map(convertBuff)
 					.unique(VNodeUnique);
 				return <Locale plain k="BUFFTRIGGER_ON_TARGET_SINGLE_OR" p={ [
