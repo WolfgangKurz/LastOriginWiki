@@ -4,6 +4,7 @@ import Decimal from "decimal.js";
 
 import { SelectOption } from "@/types/Helper";
 import { BuffStat } from "@/types/Buffs";
+import { SKILL_ATTR } from "@/types/Enums";
 import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 import { Enemy, EnemySkill } from "@/types/DB/Enemy";
 
@@ -21,7 +22,7 @@ import RarityBadge from "@/components/rarity-badge";
 import ElemIcon from "@/components/elem-icon";
 import StatIcon from "@/components/stat-icon";
 import SkillBound from "@/components/skill-bound";
-import SkillDescription from "@/components/skill-description/SkillDescription";
+import SkillDescription, { SkillDescriptionValueData } from "@/components/skill-description";
 import BuffList from "@/components/buff-list";
 import AIList from "@/components/ai-list";
 import SourceBadge from "@/components/source-badge";
@@ -146,7 +147,15 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 		function Description (skill: EnemySkill): string {
 			if (!targetEnemy.value) return "";
 
-			return LocaleGet(`${skill.key}_DESC`, `[@::0~0: (공격력 ${skill.buff.rate}배)]`)
+			const table: Record<SKILL_ATTR, string> = {
+				[SKILL_ATTR.PHYSICS]: "physics",
+				[SKILL_ATTR.FIRE]: "fire",
+				[SKILL_ATTR.ICE]: "ice",
+				[SKILL_ATTR.LIGHTNING]: "lightning",
+			};
+			const elem = table[skill.buff.type];
+
+			return LocaleGet(`${skill.key}_DESC`, `<edmg rate="${skill.buff.rate}" type="${elem}" />`)
 				.replace(/\. /g, ".\n");
 		}
 
@@ -500,8 +509,9 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 													<div class="break-keep white-pre-line">
 														<SkillDescription
 															text={ Description(skill) }
-															level={ 0 }
 															rates={ GetRates(skill) }
+															level={ 0 }
+															slot={ idx.toString() }
 															buffBonus={ false }
 															favorBonus={ false }
 															skillBonus={ 0 }

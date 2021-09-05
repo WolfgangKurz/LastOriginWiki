@@ -1,7 +1,7 @@
 import { FunctionalComponent } from "preact";
 
 import { Unit } from "@/types/DB/Unit";
-import { SkillEntity, SkillGroup } from "@/types/DB/Skill";
+import { SkillEntity, SkillGroup, SkillValueData } from "@/types/DB/Skill";
 import { ACTOR_GRADE } from "@/types/Enums";
 import { BuffStat } from "@/types/Buffs";
 
@@ -13,12 +13,13 @@ import Locale, { LocaleExists, LocaleGet } from "@/components/locale";
 import ElemIcon from "@/components/elem-icon";
 import RarityBadge from "@/components/rarity-badge";
 import SkillBound from "@/components/skill-bound";
-import SkillDescription from "@/components/skill-description/SkillDescription";
+import SkillDescription, { SkillDescriptionValueData } from "@/components/skill-description";
 import SummonBadge from "../../components/summon-badge";
 import BuffList from "@/components/buff-list";
 import SkillIcon from "@/components/skill-icon";
 
 interface SkillItem extends SkillEntity {
+	slot: string;
 	index: number;
 	isPassive: boolean;
 }
@@ -53,6 +54,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 					...t,
 					index: idx,
 					isPassive: idx >= 3,
+					slot: t.key.replace(/^F/, "CH_"),
 				};
 			});
 		return table;
@@ -123,6 +125,18 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 		return skill.buffs.index
 			.map(x => skill.buffs.data[x].rate);
 	}
+
+	const Values: Record<string, SkillDescriptionValueData[]> = {};
+	Object.keys(skills)
+		.forEach(_ => {
+			const src = skills[_].values.data[skills[_].values.index[skillLevel.value]];
+			Values[_] = src
+				.map(v => ({
+					base: v.base,
+					per: v.per,
+					chance: parseFloat(v.chance),
+				}) as SkillDescriptionValueData);
+		});
 
 	const skillHeader = <>
 		<Locale k="UNIT_SKILL_DESCRIPTION" />
@@ -221,6 +235,8 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 						text={ line }
 						rates={ GetRates(skill) }
 						level={ skillLevel.value }
+						values={ Values }
+						slot={ skill.slot }
 						buffBonus={ props.buffBonus }
 						skillBonus={ props.skillBonus }
 						favorBonus={ favorBonus.value }
@@ -284,7 +300,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 			{ Skills.map(skill => <>
 				<tr>
 					<td>
-						<SkillIcon icon={skill.icon} passive={skill.isPassive} />
+						<SkillIcon icon={ skill.icon } passive={ skill.isPassive } />
 						<div class="text-bold">
 							<Locale k={ `UNIT_SKILL_${skill.key}_${unit.uid}` } />
 						</div>

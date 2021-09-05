@@ -66,7 +66,7 @@ export type BuffTrigger = BuffTrigger_Unknown | BuffTrigger_Always | BuffTrigger
 	BuffTrigger_Always | BuffTrigger_EveryWave | BuffTrigger_EveryRound | BuffTrigger_Attack | BuffTrigger_Attacked | BuffTrigger_Wait |
 	BuffTrigger_Move | BuffTrigger_Evade | BuffTrigger_WaveEnd | BuffTrigger_EnemyKilled | BuffTrigger_Position | BuffTrigger_Criticaled |
 	BuffTrigger_Revive | BuffTrigger_On | BuffTrigger_Target | BuffTrigger_UnitCount | BuffTrigger_Round | BuffTrigger_NotInBattle |
-	BuffTrigger_TroopCategory | BuffTrigger_UseSkill;
+	BuffTrigger_TroopCategory | BuffTrigger_UseSkill | BuffTrigger_Test;
 
 /** 구현을 알 수 없는 발동 조건 */
 interface BuffTrigger_Unknown {
@@ -256,4 +256,12 @@ interface BuffTrigger_TroopCategory {
 /** 스킬 사용시 */
 interface BuffTrigger_UseSkill {
 	use_skill: 1 | 2;
+}
+
+/** 값 비교 */
+interface BuffTrigger_Test {
+	test: "lower" | "higher";
+	target: "self" | "target";
+	operand: "ATK" | "DEF" | "EVD" | "SPD";
+	than: "ATK" | "DEF" | "EVD" | "SPD";
 }
