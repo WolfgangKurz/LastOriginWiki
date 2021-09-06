@@ -5527,6 +5527,156 @@
       ]
     }
   },
+  "F3": {
+    "key": "F3",
+    "icon": "SelfDefBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "self",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_BloodyPanther_CH_3",
+              "on": "round",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    63
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_Line",
+                  "desc": {
+                    "desc": "장갑 전개 : 행 보호",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 50,
+                    "guard": "col"
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "장갑 전개 : 받는 피해 {0}% 감소",
+                    "type": 1,
+                    "value": "0.230000",
+                    "level": "0.030000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "23%",
+                      "per": "3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_DEF_Line",
+            "desc": {
+              "desc": "장갑 전개 : 행 보호",
+              "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DAMAGE_REDUCE",
+            "desc": {
+              "desc": "장갑 전개 : 받는 피해 {0}% 감소",
+              "type": 1,
+              "value": "0.230000",
+              "level": "0.030000"
+            },
+            "base": 0.23,
+            "per": 0.03,
+            "chance": 1
+          }
+        ]
+      ]
+    }
+  },
   "F5": {
     "key": "F5",
     "icon": "FormChange",

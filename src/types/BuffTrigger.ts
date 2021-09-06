@@ -66,7 +66,7 @@ export type BuffTrigger = BuffTrigger_Unknown | BuffTrigger_Always | BuffTrigger
 	BuffTrigger_Always | BuffTrigger_EveryWave | BuffTrigger_EveryRound | BuffTrigger_Attack | BuffTrigger_Attacked | BuffTrigger_Wait |
 	BuffTrigger_Move | BuffTrigger_Evade | BuffTrigger_WaveEnd | BuffTrigger_EnemyKilled | BuffTrigger_Position | BuffTrigger_Criticaled |
 	BuffTrigger_Revive | BuffTrigger_On | BuffTrigger_Target | BuffTrigger_UnitCount | BuffTrigger_Round | BuffTrigger_NotInBattle |
-	BuffTrigger_TroopCategory | BuffTrigger_UseSkill | BuffTrigger_Test;
+	BuffTrigger_TroopCategory | BuffTrigger_UseSkill | BuffTrigger_Test | BuffTrigger_AttackBy | BuffTrigger_Fail;
 
 /** 구현을 알 수 없는 발동 조건 */
 interface BuffTrigger_Unknown {
@@ -264,4 +264,12 @@ interface BuffTrigger_Test {
 	target: "self" | "target";
 	operand: "ATK" | "DEF" | "EVD" | "SPD";
 	than: "ATK" | "DEF" | "EVD" | "SPD";
+}
+
+interface BuffTrigger_AttackBy {
+	after: "support" | "together";
+}
+
+interface BuffTrigger_Fail {
+	fail: "active" | "passive";
 }

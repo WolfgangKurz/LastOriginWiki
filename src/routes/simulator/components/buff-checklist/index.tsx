@@ -9,7 +9,7 @@ import { BuffTrigger } from "@/types/BuffTrigger";
 import { UNIT_POSITION, BUFF_ATTR_TYPE, SKILL_ATTR, ACTOR_BODY_TYPE, ACTOR_CLASS, ROLE_TYPE, TARGET_TYPE, NUM_OUTPUTTYPE } from "@/types/Enums";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
-import { ImageExtension, AssetsRoot } from "@/libs/Const";
+import { ImageExtension, AssetsRoot, TroopNameTable } from "@/libs/Const";
 
 import Loader, { GetJson, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
@@ -417,6 +417,10 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 						return <Locale plain k="BUFFTRIGGER_AFTER_COUNTER" />;
 					case "use_skill":
 						return <Locale plain k="BUFFTRIGGER_AFTER_SKILL" />;
+					case "support":
+						return <Locale plain k="BUFFTRIGGER_AFTER_SUPPORT" />;
+					case "together":
+						return <Locale plain k="BUFFTRIGGER_AFTER_TOGETHER" />;
 				}
 			} else if ("damaged" in trigger) {
 				switch (trigger.damaged) {
@@ -575,6 +579,27 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 						<>{ out }</>,
 					] } />;
 				}
+			} else if ("test" in trigger) {
+				const list: string[] = ["", ""];
+
+				if (trigger.target === "self")
+					list[0] = "SELF";
+				else
+					list[0] = "TARGET";
+
+				if (trigger.test === "higher")
+					list[1] = "HIGHER";
+				else
+					list[1] = "LOWER";
+
+				return <Locale
+					plain
+					k={ `BUFFTRIGGER_TEST_${list.join("_")}` }
+					p={ [
+						<Locale plain k={ `BUFFTRIGGER_TEST_${trigger.operand}` } />,
+						<Locale plain k={ `BUFFTRIGGER_TEST_${trigger.than}` } />,
+					] }
+				/>;
 			} else if ("target" in trigger) {
 				if (trigger.target.length === 1)
 					return <Locale plain k="BUFFTRIGGER_ON_TARGET_SINGLE_OR" p={ [convertBuff(trigger.target[0])] } />;
@@ -636,6 +661,25 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 				return <Locale plain k={ `BUFFTRIGGER_ROUND_${trigger.round.operator}` } p={ [trigger.round.round] } />;
 			else if ("notInBattle" in trigger)
 				return <Locale plain k="BUFFTRIGGER_NOT_IN_BATTLE" p={ [trigger.notInBattle.join(",")] } />;
+			else if ("troop" in trigger) {
+				return <Locale plain k="BUFFTRIGGER_TROOP" p={ [<>{
+					trigger.troop
+						.map(x => <span class={ `on-subbadge ${style["on-subbadge"]}` }>
+							<Locale plain k={ TroopNameTable[x] } />
+						</span>)
+						.gap(<Locale plain k="BUFFTRIGGER_OR" />)
+				}</>] } />;
+			} else if ("use_skill" in trigger)
+				return <Locale plain k="BUFFTRIGGER_USE_SKILL" p={ [trigger.use_skill] } />;
+			else if ("fail" in trigger) {
+				switch (trigger.fail) {
+					case "active":
+						return <Locale plain k="BUFFTRIGGER_FAIL_ACTIVE" />;
+					case "passive":
+						return <Locale plain k="BUFFTRIGGER_FAIL_PASSIVE" />;
+				}
+			}
+
 			return <>???</>;
 		}
 		return <></>;
@@ -873,6 +917,8 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 			] } />;
 		} else if ("max_hp" in stat)
 			return <Locale plain k="BUFFEFFECT_MAXHP" p={ [signedValue(stat.max_hp, level)] } />;
+		else if ("skill_ratio" in stat)
+			return <Locale plain k="BUFFEFFECT_SKILL_RATIO" p={ [signedValue(stat.skill_ratio, level)] } />;
 
 		return <>{ JSON.stringify(stat) }</>; // "???";
 	}
@@ -1060,24 +1106,24 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 								? <span class="badge bg-success ms-1 text-wrap">{ on }</span>
 								: <></>
 							}
+							{ apply
+								? <span class="badge bg-danger ms-1 text-wrap">{ apply }</span>
+								: <></>
+							}
 							{ target
 								? <span class="badge bg-stat-def ms-1 text-wrap">
 									<Locale plain k="BUFFTARGET_TO" p={ [target] } />
 								</span>
 								: <></>
 							}
-							{ apply
-								? <span class="badge bg-danger ms-1 text-wrap">{ apply }</span>
-								: <></>
-							}
-							{ erase
-								? <span class="badge bg-warning text-dark ms-1 text-wrap">{ erase }</span>
-								: <></>
-							}
 							{ stat.maxStack > 0
 								? <span class="badge bg-dark ms-1 text-wrap">
 									<Locale plain k="BUFFSTACK" p={ [stat.maxStack] } />
 								</span>
+								: <></>
+							}
+							{ erase
+								? <span class="badge bg-warning text-dark ms-1 text-wrap">{ erase }</span>
 								: <></>
 							}
 						</div>

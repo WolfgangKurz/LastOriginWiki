@@ -18,7 +18,7 @@
       ],
       "data": [
         {
-          "rate": 1.315,
+          "rate": 1.565,
           "type": 0,
           "range": 3,
           "ap": 6,
@@ -33,14 +33,27 @@
             {
               "key": "Effect_BR_NightAngel_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    10,
+                    11,
+                    12,
+                    13
+                  ],
+                  "attr": 1
+                }
+              },
               "body": [
                 0,
                 1
               ],
               "class": [
                 0,
-                1
+                1,
+                2
               ],
               "role": [
                 0,
@@ -52,7 +65,7 @@
                 {
                   "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
-                    "desc": "ATS 미사일 : 피해량+{0}% (경장/중장)",
+                    "desc": "직격 : 피해량+{0}%",
                     "type": 1,
                     "value": "0.200000",
                     "level": "0.010000"
@@ -69,15 +82,15 @@
                       "per": "1%"
                     }
                   },
-                  "overlap": 0
+                  "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "icon": "BuffIcon_TROOPER_DMG_UP",
                   "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통 {0}%",
+                    "desc": "ATS 미사일 : 대 경장 피해량+{0}%",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
+                    "value": "0.100000",
+                    "level": "0.020000"
                   },
                   "attr": 3,
                   "erase": {
@@ -86,10 +99,39 @@
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
+                    "type": 60,
+                    "damage_multiply": {
+                      "target": "light",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "ATS 미사일 : 대 중장 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
                     }
                   },
                   "overlap": 4
@@ -98,7 +140,7 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_NightAngel_N_13",
+              "key": "Effect_BR_NightAngel_N_14",
               "on": "attack_success",
               "if": false,
               "body": [
@@ -118,12 +160,12 @@
               "target": 0,
               "buffs": [
                 {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "icon": "BuffIcon_TROOPER_DMG_UP",
                   "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+                    "desc": "ATS 미사일 : 대 경장 피해량+{0}%",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
+                    "value": "0.100000",
+                    "level": "0.020000"
                   },
                   "attr": 0,
                   "erase": {
@@ -131,10 +173,38 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
+                    "type": 60,
+                    "damage_multiply": {
+                      "target": "light",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "ATS 미사일 : 대 중장 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
                     }
                   },
                   "overlap": 4
@@ -145,7 +215,7 @@
           ]
         },
         {
-          "rate": 1.43,
+          "rate": 1.78,
           "type": 0,
           "range": 3,
           "ap": 6,
@@ -160,14 +230,27 @@
             {
               "key": "Effect_BR_NightAngel_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    10,
+                    11,
+                    12,
+                    13
+                  ],
+                  "attr": 1
+                }
+              },
               "body": [
                 0,
                 1
               ],
               "class": [
                 0,
-                1
+                1,
+                2
               ],
               "role": [
                 0,
@@ -179,7 +262,7 @@
                 {
                   "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
-                    "desc": "ATS 미사일 : 피해량+{0}% (경장/중장)",
+                    "desc": "직격 : 피해량+{0}%",
                     "type": 1,
                     "value": "0.200000",
                     "level": "0.010000"
@@ -196,15 +279,15 @@
                       "per": "1%"
                     }
                   },
-                  "overlap": 0
+                  "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "icon": "BuffIcon_TROOPER_DMG_UP",
                   "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통 {0}%",
+                    "desc": "ATS 미사일 : 대 경장 피해량+{0}%",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
+                    "value": "0.100000",
+                    "level": "0.020000"
                   },
                   "attr": 3,
                   "erase": {
@@ -213,10 +296,39 @@
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
+                    "type": 60,
+                    "damage_multiply": {
+                      "target": "light",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "ATS 미사일 : 대 중장 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
                     }
                   },
                   "overlap": 4
@@ -225,7 +337,7 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_NightAngel_N_13",
+              "key": "Effect_BR_NightAngel_N_14",
               "on": "attack_success",
               "if": false,
               "body": [
@@ -245,12 +357,12 @@
               "target": 0,
               "buffs": [
                 {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "icon": "BuffIcon_TROOPER_DMG_UP",
                   "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+                    "desc": "ATS 미사일 : 대 경장 피해량+{0}%",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
+                    "value": "0.100000",
+                    "level": "0.020000"
                   },
                   "attr": 0,
                   "erase": {
@@ -258,10 +370,38 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
+                    "type": 60,
+                    "damage_multiply": {
+                      "target": "light",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "ATS 미사일 : 대 중장 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
                     }
                   },
                   "overlap": 4
@@ -272,7 +412,7 @@
           ]
         },
         {
-          "rate": 1.545,
+          "rate": 1.995,
           "type": 0,
           "range": 3,
           "ap": 6,
@@ -287,14 +427,27 @@
             {
               "key": "Effect_BR_NightAngel_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    10,
+                    11,
+                    12,
+                    13
+                  ],
+                  "attr": 1
+                }
+              },
               "body": [
                 0,
                 1
               ],
               "class": [
                 0,
-                1
+                1,
+                2
               ],
               "role": [
                 0,
@@ -306,7 +459,7 @@
                 {
                   "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
-                    "desc": "ATS 미사일 : 피해량+{0}% (경장/중장)",
+                    "desc": "직격 : 피해량+{0}%",
                     "type": 1,
                     "value": "0.200000",
                     "level": "0.010000"
@@ -323,15 +476,15 @@
                       "per": "1%"
                     }
                   },
-                  "overlap": 0
+                  "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "icon": "BuffIcon_TROOPER_DMG_UP",
                   "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통 {0}%",
+                    "desc": "ATS 미사일 : 대 경장 피해량+{0}%",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
+                    "value": "0.100000",
+                    "level": "0.020000"
                   },
                   "attr": 3,
                   "erase": {
@@ -340,10 +493,39 @@
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
+                    "type": 60,
+                    "damage_multiply": {
+                      "target": "light",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "ATS 미사일 : 대 중장 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
                     }
                   },
                   "overlap": 4
@@ -352,7 +534,7 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_NightAngel_N_13",
+              "key": "Effect_BR_NightAngel_N_14",
               "on": "attack_success",
               "if": false,
               "body": [
@@ -372,12 +554,12 @@
               "target": 0,
               "buffs": [
                 {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "icon": "BuffIcon_TROOPER_DMG_UP",
                   "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+                    "desc": "ATS 미사일 : 대 경장 피해량+{0}%",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
+                    "value": "0.100000",
+                    "level": "0.020000"
                   },
                   "attr": 0,
                   "erase": {
@@ -385,10 +567,38 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
+                    "type": 60,
+                    "damage_multiply": {
+                      "target": "light",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "ATS 미사일 : 대 중장 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
                     }
                   },
                   "overlap": 4
@@ -399,7 +609,7 @@
           ]
         },
         {
-          "rate": 1.66,
+          "rate": 2.21,
           "type": 0,
           "range": 3,
           "ap": 6,
@@ -414,14 +624,27 @@
             {
               "key": "Effect_BR_NightAngel_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    10,
+                    11,
+                    12,
+                    13
+                  ],
+                  "attr": 1
+                }
+              },
               "body": [
                 0,
                 1
               ],
               "class": [
                 0,
-                1
+                1,
+                2
               ],
               "role": [
                 0,
@@ -433,7 +656,7 @@
                 {
                   "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
-                    "desc": "ATS 미사일 : 피해량+{0}% (경장/중장)",
+                    "desc": "직격 : 피해량+{0}%",
                     "type": 1,
                     "value": "0.200000",
                     "level": "0.010000"
@@ -450,15 +673,15 @@
                       "per": "1%"
                     }
                   },
-                  "overlap": 0
+                  "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "icon": "BuffIcon_TROOPER_DMG_UP",
                   "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통 {0}%",
+                    "desc": "ATS 미사일 : 대 경장 피해량+{0}%",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
+                    "value": "0.100000",
+                    "level": "0.020000"
                   },
                   "attr": 3,
                   "erase": {
@@ -467,10 +690,39 @@
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
+                    "type": 60,
+                    "damage_multiply": {
+                      "target": "light",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "ATS 미사일 : 대 중장 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
                     }
                   },
                   "overlap": 4
@@ -479,7 +731,7 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_NightAngel_N_13",
+              "key": "Effect_BR_NightAngel_N_14",
               "on": "attack_success",
               "if": false,
               "body": [
@@ -499,12 +751,12 @@
               "target": 0,
               "buffs": [
                 {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "icon": "BuffIcon_TROOPER_DMG_UP",
                   "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+                    "desc": "ATS 미사일 : 대 경장 피해량+{0}%",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
+                    "value": "0.100000",
+                    "level": "0.020000"
                   },
                   "attr": 0,
                   "erase": {
@@ -512,10 +764,38 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
+                    "type": 60,
+                    "damage_multiply": {
+                      "target": "light",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "ATS 미사일 : 대 중장 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
                     }
                   },
                   "overlap": 4
@@ -526,7 +806,7 @@
           ]
         },
         {
-          "rate": 1.775,
+          "rate": 2.425,
           "type": 0,
           "range": 3,
           "ap": 6,
@@ -541,14 +821,27 @@
             {
               "key": "Effect_BR_NightAngel_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    10,
+                    11,
+                    12,
+                    13
+                  ],
+                  "attr": 1
+                }
+              },
               "body": [
                 0,
                 1
               ],
               "class": [
                 0,
-                1
+                1,
+                2
               ],
               "role": [
                 0,
@@ -560,7 +853,7 @@
                 {
                   "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
-                    "desc": "ATS 미사일 : 피해량+{0}% (경장/중장)",
+                    "desc": "직격 : 피해량+{0}%",
                     "type": 1,
                     "value": "0.200000",
                     "level": "0.010000"
@@ -577,15 +870,15 @@
                       "per": "1%"
                     }
                   },
-                  "overlap": 0
+                  "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "icon": "BuffIcon_TROOPER_DMG_UP",
                   "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통 {0}%",
+                    "desc": "ATS 미사일 : 대 경장 피해량+{0}%",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
+                    "value": "0.100000",
+                    "level": "0.020000"
                   },
                   "attr": 3,
                   "erase": {
@@ -594,10 +887,39 @@
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
+                    "type": 60,
+                    "damage_multiply": {
+                      "target": "light",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "ATS 미사일 : 대 중장 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
                     }
                   },
                   "overlap": 4
@@ -606,7 +928,7 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_NightAngel_N_13",
+              "key": "Effect_BR_NightAngel_N_14",
               "on": "attack_success",
               "if": false,
               "body": [
@@ -626,12 +948,12 @@
               "target": 0,
               "buffs": [
                 {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "icon": "BuffIcon_TROOPER_DMG_UP",
                   "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+                    "desc": "ATS 미사일 : 대 경장 피해량+{0}%",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
+                    "value": "0.100000",
+                    "level": "0.020000"
                   },
                   "attr": 0,
                   "erase": {
@@ -639,10 +961,38 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
+                    "type": 60,
+                    "damage_multiply": {
+                      "target": "light",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "ATS 미사일 : 대 중장 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
                     }
                   },
                   "overlap": 4
@@ -653,7 +1003,7 @@
           ]
         },
         {
-          "rate": 1.89,
+          "rate": 2.64,
           "type": 0,
           "range": 3,
           "ap": 6,
@@ -668,14 +1018,27 @@
             {
               "key": "Effect_BR_NightAngel_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    10,
+                    11,
+                    12,
+                    13
+                  ],
+                  "attr": 1
+                }
+              },
               "body": [
                 0,
                 1
               ],
               "class": [
                 0,
-                1
+                1,
+                2
               ],
               "role": [
                 0,
@@ -687,7 +1050,7 @@
                 {
                   "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
-                    "desc": "ATS 미사일 : 피해량+{0}% (경장/중장)",
+                    "desc": "직격 : 피해량+{0}%",
                     "type": 1,
                     "value": "0.200000",
                     "level": "0.010000"
@@ -704,15 +1067,15 @@
                       "per": "1%"
                     }
                   },
-                  "overlap": 0
+                  "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "icon": "BuffIcon_TROOPER_DMG_UP",
                   "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통 {0}%",
+                    "desc": "ATS 미사일 : 대 경장 피해량+{0}%",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
+                    "value": "0.100000",
+                    "level": "0.020000"
                   },
                   "attr": 3,
                   "erase": {
@@ -721,10 +1084,39 @@
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
+                    "type": 60,
+                    "damage_multiply": {
+                      "target": "light",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "ATS 미사일 : 대 중장 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
                     }
                   },
                   "overlap": 4
@@ -733,7 +1125,7 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_NightAngel_N_13",
+              "key": "Effect_BR_NightAngel_N_14",
               "on": "attack_success",
               "if": false,
               "body": [
@@ -753,12 +1145,12 @@
               "target": 0,
               "buffs": [
                 {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "icon": "BuffIcon_TROOPER_DMG_UP",
                   "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+                    "desc": "ATS 미사일 : 대 경장 피해량+{0}%",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
+                    "value": "0.100000",
+                    "level": "0.020000"
                   },
                   "attr": 0,
                   "erase": {
@@ -766,10 +1158,38 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
+                    "type": 60,
+                    "damage_multiply": {
+                      "target": "light",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "ATS 미사일 : 대 중장 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
                     }
                   },
                   "overlap": 4
@@ -780,7 +1200,7 @@
           ]
         },
         {
-          "rate": 2.005,
+          "rate": 2.855,
           "type": 0,
           "range": 3,
           "ap": 6,
@@ -795,14 +1215,27 @@
             {
               "key": "Effect_BR_NightAngel_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    10,
+                    11,
+                    12,
+                    13
+                  ],
+                  "attr": 1
+                }
+              },
               "body": [
                 0,
                 1
               ],
               "class": [
                 0,
-                1
+                1,
+                2
               ],
               "role": [
                 0,
@@ -814,7 +1247,7 @@
                 {
                   "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
-                    "desc": "ATS 미사일 : 피해량+{0}% (경장/중장)",
+                    "desc": "직격 : 피해량+{0}%",
                     "type": 1,
                     "value": "0.200000",
                     "level": "0.010000"
@@ -831,15 +1264,15 @@
                       "per": "1%"
                     }
                   },
-                  "overlap": 0
+                  "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "icon": "BuffIcon_TROOPER_DMG_UP",
                   "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통 {0}%",
+                    "desc": "ATS 미사일 : 대 경장 피해량+{0}%",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
+                    "value": "0.100000",
+                    "level": "0.020000"
                   },
                   "attr": 3,
                   "erase": {
@@ -848,10 +1281,39 @@
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
+                    "type": 60,
+                    "damage_multiply": {
+                      "target": "light",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "ATS 미사일 : 대 중장 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
                     }
                   },
                   "overlap": 4
@@ -860,7 +1322,7 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_NightAngel_N_13",
+              "key": "Effect_BR_NightAngel_N_14",
               "on": "attack_success",
               "if": false,
               "body": [
@@ -880,12 +1342,12 @@
               "target": 0,
               "buffs": [
                 {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "icon": "BuffIcon_TROOPER_DMG_UP",
                   "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+                    "desc": "ATS 미사일 : 대 경장 피해량+{0}%",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
+                    "value": "0.100000",
+                    "level": "0.020000"
                   },
                   "attr": 0,
                   "erase": {
@@ -893,10 +1355,38 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
+                    "type": 60,
+                    "damage_multiply": {
+                      "target": "light",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "ATS 미사일 : 대 중장 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
                     }
                   },
                   "overlap": 4
@@ -907,7 +1397,7 @@
           ]
         },
         {
-          "rate": 2.12,
+          "rate": 3.07,
           "type": 0,
           "range": 3,
           "ap": 6,
@@ -922,14 +1412,27 @@
             {
               "key": "Effect_BR_NightAngel_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    10,
+                    11,
+                    12,
+                    13
+                  ],
+                  "attr": 1
+                }
+              },
               "body": [
                 0,
                 1
               ],
               "class": [
                 0,
-                1
+                1,
+                2
               ],
               "role": [
                 0,
@@ -941,7 +1444,7 @@
                 {
                   "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
-                    "desc": "ATS 미사일 : 피해량+{0}% (경장/중장)",
+                    "desc": "직격 : 피해량+{0}%",
                     "type": 1,
                     "value": "0.200000",
                     "level": "0.010000"
@@ -958,15 +1461,15 @@
                       "per": "1%"
                     }
                   },
-                  "overlap": 0
+                  "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "icon": "BuffIcon_TROOPER_DMG_UP",
                   "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통 {0}%",
+                    "desc": "ATS 미사일 : 대 경장 피해량+{0}%",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
+                    "value": "0.100000",
+                    "level": "0.020000"
                   },
                   "attr": 3,
                   "erase": {
@@ -975,10 +1478,39 @@
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
+                    "type": 60,
+                    "damage_multiply": {
+                      "target": "light",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "ATS 미사일 : 대 중장 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
                     }
                   },
                   "overlap": 4
@@ -987,7 +1519,7 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_NightAngel_N_13",
+              "key": "Effect_BR_NightAngel_N_14",
               "on": "attack_success",
               "if": false,
               "body": [
@@ -1007,12 +1539,12 @@
               "target": 0,
               "buffs": [
                 {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "icon": "BuffIcon_TROOPER_DMG_UP",
                   "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+                    "desc": "ATS 미사일 : 대 경장 피해량+{0}%",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
+                    "value": "0.100000",
+                    "level": "0.020000"
                   },
                   "attr": 0,
                   "erase": {
@@ -1020,10 +1552,38 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
+                    "type": 60,
+                    "damage_multiply": {
+                      "target": "light",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "ATS 미사일 : 대 중장 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
                     }
                   },
                   "overlap": 4
@@ -1034,7 +1594,7 @@
           ]
         },
         {
-          "rate": 2.235,
+          "rate": 3.285,
           "type": 0,
           "range": 3,
           "ap": 6,
@@ -1049,14 +1609,27 @@
             {
               "key": "Effect_BR_NightAngel_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    10,
+                    11,
+                    12,
+                    13
+                  ],
+                  "attr": 1
+                }
+              },
               "body": [
                 0,
                 1
               ],
               "class": [
                 0,
-                1
+                1,
+                2
               ],
               "role": [
                 0,
@@ -1068,7 +1641,7 @@
                 {
                   "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
-                    "desc": "ATS 미사일 : 피해량+{0}% (경장/중장)",
+                    "desc": "직격 : 피해량+{0}%",
                     "type": 1,
                     "value": "0.200000",
                     "level": "0.010000"
@@ -1085,15 +1658,15 @@
                       "per": "1%"
                     }
                   },
-                  "overlap": 0
+                  "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "icon": "BuffIcon_TROOPER_DMG_UP",
                   "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통 {0}%",
+                    "desc": "ATS 미사일 : 대 경장 피해량+{0}%",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
+                    "value": "0.100000",
+                    "level": "0.020000"
                   },
                   "attr": 3,
                   "erase": {
@@ -1102,10 +1675,39 @@
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
+                    "type": 60,
+                    "damage_multiply": {
+                      "target": "light",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "ATS 미사일 : 대 중장 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
                     }
                   },
                   "overlap": 4
@@ -1114,7 +1716,7 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_NightAngel_N_13",
+              "key": "Effect_BR_NightAngel_N_14",
               "on": "attack_success",
               "if": false,
               "body": [
@@ -1134,12 +1736,12 @@
               "target": 0,
               "buffs": [
                 {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "icon": "BuffIcon_TROOPER_DMG_UP",
                   "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+                    "desc": "ATS 미사일 : 대 경장 피해량+{0}%",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
+                    "value": "0.100000",
+                    "level": "0.020000"
                   },
                   "attr": 0,
                   "erase": {
@@ -1147,10 +1749,38 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
+                    "type": 60,
+                    "damage_multiply": {
+                      "target": "light",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "ATS 미사일 : 대 중장 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
                     }
                   },
                   "overlap": 4
@@ -1161,7 +1791,7 @@
           ]
         },
         {
-          "rate": 2.35,
+          "rate": 3.5,
           "type": 0,
           "range": 3,
           "ap": 6,
@@ -1176,14 +1806,27 @@
             {
               "key": "Effect_BR_NightAngel_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    10,
+                    11,
+                    12,
+                    13
+                  ],
+                  "attr": 1
+                }
+              },
               "body": [
                 0,
                 1
               ],
               "class": [
                 0,
-                1
+                1,
+                2
               ],
               "role": [
                 0,
@@ -1195,7 +1838,7 @@
                 {
                   "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
-                    "desc": "ATS 미사일 : 피해량+{0}% (경장/중장)",
+                    "desc": "직격 : 피해량+{0}%",
                     "type": 1,
                     "value": "0.200000",
                     "level": "0.010000"
@@ -1212,15 +1855,15 @@
                       "per": "1%"
                     }
                   },
-                  "overlap": 0
+                  "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "icon": "BuffIcon_TROOPER_DMG_UP",
                   "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통 {0}%",
+                    "desc": "ATS 미사일 : 대 경장 피해량+{0}%",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
+                    "value": "0.100000",
+                    "level": "0.020000"
                   },
                   "attr": 3,
                   "erase": {
@@ -1229,10 +1872,39 @@
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
+                    "type": 60,
+                    "damage_multiply": {
+                      "target": "light",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "ATS 미사일 : 대 중장 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
                     }
                   },
                   "overlap": 4
@@ -1241,7 +1913,7 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_NightAngel_N_13",
+              "key": "Effect_BR_NightAngel_N_14",
               "on": "attack_success",
               "if": false,
               "body": [
@@ -1261,12 +1933,12 @@
               "target": 0,
               "buffs": [
                 {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "icon": "BuffIcon_TROOPER_DMG_UP",
                   "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+                    "desc": "ATS 미사일 : 대 경장 피해량+{0}%",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
+                    "value": "0.100000",
+                    "level": "0.020000"
                   },
                   "attr": 0,
                   "erase": {
@@ -1274,10 +1946,38 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
+                    "type": 60,
+                    "damage_multiply": {
+                      "target": "light",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "ATS 미사일 : 대 중장 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
                     }
                   },
                   "overlap": 4
@@ -1307,7 +2007,7 @@
           {
             "icon": "BuffIcon_PhyATK_UP",
             "desc": {
-              "desc": "ATS 미사일 : 피해량+{0}% (경장/중장)",
+              "desc": "직격 : 피해량+{0}%",
               "type": 1,
               "value": "0.200000",
               "level": "0.010000"
@@ -1317,27 +2017,51 @@
             "chance": 1
           },
           {
-            "icon": "BuffIcon_DEF_PIERCE_UP",
+            "icon": "BuffIcon_TROOPER_DMG_UP",
             "desc": {
-              "desc": "대 장갑 미사일 : 방어 관통 {0}%",
+              "desc": "ATS 미사일 : 대 경장 피해량+{0}%",
               "type": 1,
-              "value": "0.300000",
-              "level": "0.040000"
+              "value": "0.100000",
+              "level": "0.020000"
             },
-            "base": 0.3,
-            "per": 0.04,
+            "base": 0.1,
+            "per": 0.02,
             "chance": 0
           },
           {
-            "icon": "BuffIcon_DEF_PIERCE_UP",
+            "icon": "BuffIcon_ARMORED_DMG_UP",
             "desc": {
-              "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+              "desc": "ATS 미사일 : 대 중장 피해량+{0}%",
               "type": 1,
-              "value": "0.300000",
-              "level": "0.040000"
+              "value": "0.100000",
+              "level": "0.020000"
             },
-            "base": 0.3,
-            "per": 0.04,
+            "base": 0.1,
+            "per": 0.02,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_TROOPER_DMG_UP",
+            "desc": {
+              "desc": "ATS 미사일 : 대 경장 피해량+{0}%",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.020000"
+            },
+            "base": 0.1,
+            "per": 0.02,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ARMORED_DMG_UP",
+            "desc": {
+              "desc": "ATS 미사일 : 대 중장 피해량+{0}%",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.020000"
+            },
+            "base": 0.1,
+            "per": 0.02,
             "chance": 1
           }
         ]
@@ -1362,282 +2086,6 @@
         9
       ],
       "data": [
-        {
-          "rate": 1.27,
-          "type": 0,
-          "range": 4,
-          "ap": 9,
-          "grid": "4>456",
-          "target_ground": true,
-          "summon": null,
-          "use": null,
-          "dismiss_guard": true,
-          "acc_bonus": 0,
-          "buff_rate": 100,
-          "buffs": [
-            {
-              "key": "Effect_BR_NightAngel_N_2",
-              "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    78,
-                    87
-                  ],
-                  "attr": 1
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_PhyATK_UP",
-                  "desc": {
-                    "desc": "정밀 폭격 : 피해량+{0}%",
-                    "type": 1,
-                    "value": "0.300000",
-                    "level": "0.015000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 83,
-                    "damage_add": {
-                      "base": "30%",
-                      "per": "1.5%"
-                    }
-                  },
-                  "overlap": 0
-                },
-                {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
-                  "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통 {0}%",
-                    "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_BR_NightAngel_N_13",
-              "on": "attack_success",
-              "if": false,
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
-                  "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
-                    "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            }
-          ]
-        },
-        {
-          "rate": 1.385,
-          "type": 0,
-          "range": 4,
-          "ap": 9,
-          "grid": "4>456",
-          "target_ground": true,
-          "summon": null,
-          "use": null,
-          "dismiss_guard": true,
-          "acc_bonus": 0,
-          "buff_rate": 100,
-          "buffs": [
-            {
-              "key": "Effect_BR_NightAngel_N_2",
-              "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    78,
-                    87
-                  ],
-                  "attr": 1
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_PhyATK_UP",
-                  "desc": {
-                    "desc": "정밀 폭격 : 피해량+{0}%",
-                    "type": 1,
-                    "value": "0.300000",
-                    "level": "0.015000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 83,
-                    "damage_add": {
-                      "base": "30%",
-                      "per": "1.5%"
-                    }
-                  },
-                  "overlap": 0
-                },
-                {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
-                  "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통 {0}%",
-                    "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_BR_NightAngel_N_13",
-              "on": "attack_success",
-              "if": false,
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
-                  "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
-                    "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            }
-          ]
-        },
         {
           "rate": 1.5,
           "type": 0,
@@ -1701,74 +2149,6 @@
                       "per": "1.5%"
                     }
                   },
-                  "overlap": 0
-                },
-                {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
-                  "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통 {0}%",
-                    "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_BR_NightAngel_N_13",
-              "on": "attack_success",
-              "if": false,
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
-                  "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
-                    "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
-                    }
-                  },
                   "overlap": 4
                 }
               ],
@@ -1777,7 +2157,7 @@
           ]
         },
         {
-          "rate": 1.615,
+          "rate": 1.7,
           "type": 0,
           "range": 4,
           "ap": 9,
@@ -1839,74 +2219,6 @@
                       "per": "1.5%"
                     }
                   },
-                  "overlap": 0
-                },
-                {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
-                  "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통 {0}%",
-                    "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_BR_NightAngel_N_13",
-              "on": "attack_success",
-              "if": false,
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
-                  "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
-                    "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
-                    }
-                  },
                   "overlap": 4
                 }
               ],
@@ -1915,7 +2227,7 @@
           ]
         },
         {
-          "rate": 1.73,
+          "rate": 1.9,
           "type": 0,
           "range": 4,
           "ap": 9,
@@ -1977,74 +2289,6 @@
                       "per": "1.5%"
                     }
                   },
-                  "overlap": 0
-                },
-                {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
-                  "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통 {0}%",
-                    "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_BR_NightAngel_N_13",
-              "on": "attack_success",
-              "if": false,
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
-                  "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
-                    "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
-                    }
-                  },
                   "overlap": 4
                 }
               ],
@@ -2053,7 +2297,7 @@
           ]
         },
         {
-          "rate": 1.845,
+          "rate": 2.1,
           "type": 0,
           "range": 4,
           "ap": 9,
@@ -2115,74 +2359,6 @@
                       "per": "1.5%"
                     }
                   },
-                  "overlap": 0
-                },
-                {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
-                  "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통 {0}%",
-                    "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_BR_NightAngel_N_13",
-              "on": "attack_success",
-              "if": false,
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
-                  "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
-                    "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
-                    }
-                  },
                   "overlap": 4
                 }
               ],
@@ -2191,7 +2367,7 @@
           ]
         },
         {
-          "rate": 1.96,
+          "rate": 2.3,
           "type": 0,
           "range": 4,
           "ap": 9,
@@ -2253,74 +2429,6 @@
                       "per": "1.5%"
                     }
                   },
-                  "overlap": 0
-                },
-                {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
-                  "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통 {0}%",
-                    "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_BR_NightAngel_N_13",
-              "on": "attack_success",
-              "if": false,
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
-                  "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
-                    "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
-                    }
-                  },
                   "overlap": 4
                 }
               ],
@@ -2329,7 +2437,7 @@
           ]
         },
         {
-          "rate": 2.075,
+          "rate": 2.5,
           "type": 0,
           "range": 4,
           "ap": 9,
@@ -2391,74 +2499,6 @@
                       "per": "1.5%"
                     }
                   },
-                  "overlap": 0
-                },
-                {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
-                  "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통 {0}%",
-                    "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_BR_NightAngel_N_13",
-              "on": "attack_success",
-              "if": false,
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
-                  "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
-                    "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
-                    }
-                  },
                   "overlap": 4
                 }
               ],
@@ -2467,7 +2507,7 @@
           ]
         },
         {
-          "rate": 2.19,
+          "rate": 2.7,
           "type": 0,
           "range": 4,
           "ap": 9,
@@ -2529,74 +2569,6 @@
                       "per": "1.5%"
                     }
                   },
-                  "overlap": 0
-                },
-                {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
-                  "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통 {0}%",
-                    "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_BR_NightAngel_N_13",
-              "on": "attack_success",
-              "if": false,
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
-                  "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
-                    "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
-                    }
-                  },
                   "overlap": 4
                 }
               ],
@@ -2605,7 +2577,7 @@
           ]
         },
         {
-          "rate": 2.305,
+          "rate": 2.9,
           "type": 0,
           "range": 4,
           "ap": 9,
@@ -2667,38 +2639,40 @@
                       "per": "1.5%"
                     }
                   },
-                  "overlap": 0
-                },
-                {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
-                  "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통 {0}%",
-                    "type": 1,
-                    "value": "0.300000",
-                    "level": "0.040000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 58,
-                    "penetration": {
-                      "base": "30%",
-                      "per": "4%"
-                    }
-                  },
                   "overlap": 4
                 }
               ],
               "maxStack": 0
-            },
+            }
+          ]
+        },
+        {
+          "rate": 3.1,
+          "type": 0,
+          "range": 4,
+          "ap": 9,
+          "grid": "4>456",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
             {
-              "key": "Effect_BR_NightAngel_N_13",
+              "key": "Effect_BR_NightAngel_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
               "body": [
                 0,
                 1
@@ -2713,15 +2687,15 @@
                 1,
                 2
               ],
-              "target": 0,
+              "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
-                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+                    "desc": "정밀 폭격 : 피해량+{0}%",
                     "type": 1,
                     "value": "0.300000",
-                    "level": "0.040000"
+                    "level": "0.015000"
                   },
                   "attr": 0,
                   "erase": {
@@ -2729,10 +2703,80 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 58,
-                    "penetration": {
+                    "type": 83,
+                    "damage_add": {
                       "base": "30%",
-                      "per": "4%"
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 3.3,
+          "type": 0,
+          "range": 4,
+          "ap": 9,
+          "grid": "4>456",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_NightAngel_N_2",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78,
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 폭격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.015000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "30%",
+                      "per": "1.5%"
                     }
                   },
                   "overlap": 4
@@ -2769,30 +2813,6 @@
             },
             "base": 0.3,
             "per": 0.015,
-            "chance": 1
-          },
-          {
-            "icon": "BuffIcon_DEF_PIERCE_UP",
-            "desc": {
-              "desc": "대 장갑 미사일 : 방어 관통 {0}%",
-              "type": 1,
-              "value": "0.300000",
-              "level": "0.040000"
-            },
-            "base": 0.3,
-            "per": 0.04,
-            "chance": 0
-          },
-          {
-            "icon": "BuffIcon_DEF_PIERCE_UP",
-            "desc": {
-              "desc": "대 장갑 미사일 : 방어 관통+{0}%",
-              "type": 1,
-              "value": "0.300000",
-              "level": "0.040000"
-            },
-            "base": 0.3,
-            "per": 0.04,
             "chance": 1
           }
         ]
@@ -2855,7 +2875,7 @@
                 {
                   "icon": "BuffIcon_EVADE_UP",
                   "desc": {
-                    "desc": "요철 없음 : 회피+{0}% (최대)",
+                    "desc": "요철 없음 : 회피+{0}%",
                     "type": 1,
                     "value": "0.500000",
                     "level": "0.040000"
@@ -2899,7 +2919,7 @@
                 {
                   "icon": "BuffIcon_ACCURACY_UP",
                   "desc": {
-                    "desc": "레이더 드론 : 적중+{0}% (최대)",
+                    "desc": "레이더 드론 : 적중+{0}%",
                     "type": 1,
                     "value": "0.500000",
                     "level": "0.025000"
@@ -2914,6 +2934,29 @@
                     "accuracy": {
                       "base": "50%",
                       "per": "2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 방어 관통 {0}%",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.040000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "30%",
+                      "per": "4%"
                     }
                   },
                   "overlap": 4
@@ -2948,8 +2991,8 @@
                   "desc": {
                     "desc": "요철 없음 : 회피+{0}%",
                     "type": 1,
-                    "value": "0.250000",
-                    "level": "0.020000"
+                    "value": "0.500000",
+                    "level": "0.040000"
                   },
                   "attr": 0,
                   "erase": {
@@ -2959,8 +3002,8 @@
                     "isBuff": true,
                     "type": 11,
                     "evade": {
-                      "base": "25%",
-                      "per": "2%"
+                      "base": "50%",
+                      "per": "4%"
                     }
                   },
                   "overlap": 4
@@ -2992,8 +3035,8 @@
                   "desc": {
                     "desc": "레이더 드론 : 적중+{0}%",
                     "type": 1,
-                    "value": "0.250000",
-                    "level": "0.012500"
+                    "value": "0.500000",
+                    "level": "0.025000"
                   },
                   "attr": 0,
                   "erase": {
@@ -3003,14 +3046,59 @@
                     "isBuff": true,
                     "type": 7,
                     "accuracy": {
-                      "base": "25%",
-                      "per": "1.25%"
+                      "base": "50%",
+                      "per": "2.5%"
                     }
                   },
                   "overlap": 4
                 }
               ],
               "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_NightAngel_N_13",
+              "on": "round",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.040000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "30%",
+                      "per": "4%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
             }
           ]
         }
@@ -3034,7 +3122,7 @@
           {
             "icon": "BuffIcon_EVADE_UP",
             "desc": {
-              "desc": "요철 없음 : 회피+{0}% (최대)",
+              "desc": "요철 없음 : 회피+{0}%",
               "type": 1,
               "value": "0.500000",
               "level": "0.040000"
@@ -3058,7 +3146,7 @@
           {
             "icon": "BuffIcon_ACCURACY_UP",
             "desc": {
-              "desc": "레이더 드론 : 적중+{0}% (최대)",
+              "desc": "레이더 드론 : 적중+{0}%",
               "type": 1,
               "value": "0.500000",
               "level": "0.025000"
@@ -3068,15 +3156,27 @@
             "chance": 1
           },
           {
+            "icon": "BuffIcon_DEF_PIERCE_UP",
+            "desc": {
+              "desc": "대 장갑 미사일 : 방어 관통 {0}%",
+              "type": 1,
+              "value": "0.300000",
+              "level": "0.040000"
+            },
+            "base": 0.3,
+            "per": 0.04,
+            "chance": 0
+          },
+          {
             "icon": "BuffIcon_EVADE_UP",
             "desc": {
               "desc": "요철 없음 : 회피+{0}%",
               "type": 1,
-              "value": "0.250000",
-              "level": "0.020000"
+              "value": "0.500000",
+              "level": "0.040000"
             },
-            "base": 0.25,
-            "per": 0.02,
+            "base": 0.5,
+            "per": 0.04,
             "chance": 1
           },
           {
@@ -3096,11 +3196,23 @@
             "desc": {
               "desc": "레이더 드론 : 적중+{0}%",
               "type": 1,
-              "value": "0.250000",
-              "level": "0.012500"
+              "value": "0.500000",
+              "level": "0.025000"
             },
-            "base": 0.25,
-            "per": 0.0125,
+            "base": 0.5,
+            "per": 0.025,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DEF_PIERCE_UP",
+            "desc": {
+              "desc": "대 장갑 미사일 : 방어 관통+{0}%",
+              "type": 1,
+              "value": "0.300000",
+              "level": "0.040000"
+            },
+            "base": 0.3,
+            "per": 0.04,
             "chance": 1
           }
         ]
@@ -3163,7 +3275,7 @@
                   "desc": {
                     "desc": "극도의 불편함 : 공격력+{0}%",
                     "type": 1,
-                    "value": "0.100000",
+                    "value": "0.125000",
                     "level": "0.005000"
                   },
                   "attr": 0,
@@ -3174,7 +3286,7 @@
                     "isBuff": true,
                     "type": 1,
                     "attack": {
-                      "base": "10%",
+                      "base": "12.5%",
                       "per": "0.5%"
                     }
                   },
@@ -3254,7 +3366,7 @@
                   "desc": {
                     "desc": "압도적 불편함 : 공격력+{0}%",
                     "type": 1,
-                    "value": "0.200000",
+                    "value": "0.250000",
                     "level": "0.010000"
                   },
                   "attr": 0,
@@ -3263,7 +3375,7 @@
                     "isBuff": true,
                     "type": 1,
                     "attack": {
-                      "base": "20%",
+                      "base": "25%",
                       "per": "1%"
                     }
                   },
@@ -3336,10 +3448,10 @@
             "desc": {
               "desc": "극도의 불편함 : 공격력+{0}%",
               "type": 1,
-              "value": "0.100000",
+              "value": "0.125000",
               "level": "0.005000"
             },
-            "base": 0.1,
+            "base": 0.125,
             "per": 0.005,
             "chance": 1
           },
@@ -3372,10 +3484,10 @@
             "desc": {
               "desc": "압도적 불편함 : 공격력+{0}%",
               "type": 1,
-              "value": "0.200000",
+              "value": "0.250000",
               "level": "0.010000"
             },
-            "base": 0.2,
+            "base": 0.25,
             "per": 0.01,
             "chance": 1
           },
@@ -3422,7 +3534,7 @@
         0,
         0,
         0,
-        0
+        1
       ],
       "data": [
         {
@@ -3484,6 +3596,29 @@
                     }
                   },
                   "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "스텔스 모드 : 피해 최소화 (1회)",
+                    "type": 0,
+                    "value": "9999999",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 34,
+                    "damage_minimize": {
+                      "base": 9999999,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
                 }
               ],
               "maxStack": 0
@@ -3536,6 +3671,235 @@
                 }
               ],
               "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_NightAngel_N_53",
+              "on": "wave",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "스텔스 모드 : 피해 최소화 (1회)",
+                    "type": 0,
+                    "value": "9999999",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "count": 1,
+                    "trigger": "damaged"
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 34,
+                    "damage_minimize": {
+                      "base": 9999999,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        },
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "self",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_NightAngel_N_52",
+              "on": "round",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SKILL_UP",
+                  "desc": {
+                    "desc": "스텔스 모드 : 회피 수치의 {0}%만큼 스킬 위력 증가",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.030000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 111,
+                    "value": "skill_ratio",
+                    "by": {
+                      "base": "20%",
+                      "per": "3%",
+                      "type": "up",
+                      "target": "self",
+                      "by": "evade"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "스텔스 모드 : 피해 최소화 (2회)",
+                    "type": 0,
+                    "value": "9999999",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 34,
+                    "damage_minimize": {
+                      "base": 9999999,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_NightAngel_N_51",
+              "on": "round",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SKILL_UP",
+                  "desc": {
+                    "desc": "스텔스 모드 : 스킬 위력+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.030000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 111,
+                    "value": "skill_ratio",
+                    "by": {
+                      "base": "20%",
+                      "per": "3%",
+                      "type": "up",
+                      "target": "self",
+                      "by": "evade"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_NightAngel_N_54",
+              "on": "wave",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "스텔스 모드 : 피해 최소화 (2회)",
+                    "type": 0,
+                    "value": "9999999",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "count": 2,
+                    "trigger": "damaged"
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 34,
+                    "damage_minimize": {
+                      "base": 9999999,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
             }
           ]
         }
@@ -3552,7 +3916,7 @@
         0,
         0,
         0,
-        0
+        1
       ],
       "data": [
         [
@@ -3569,6 +3933,18 @@
             "chance": 0
           },
           {
+            "icon": "BuffIcon_DAMAGE_REDUCE",
+            "desc": {
+              "desc": "스텔스 모드 : 피해 최소화 (1회)",
+              "type": 0,
+              "value": "9999999",
+              "level": "0"
+            },
+            "base": 9999999,
+            "per": 0,
+            "chance": 0
+          },
+          {
             "icon": "BuffIcon_SKILL_UP",
             "desc": {
               "desc": "스텔스 모드 : 스킬 위력+{0}%",
@@ -3578,6 +3954,68 @@
             },
             "base": 0.2,
             "per": 0.03,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DAMAGE_REDUCE",
+            "desc": {
+              "desc": "스텔스 모드 : 피해 최소화 (1회)",
+              "type": 0,
+              "value": "9999999",
+              "level": "0"
+            },
+            "base": 9999999,
+            "per": 0,
+            "chance": 1
+          }
+        ],
+        [
+          {
+            "icon": "BuffIcon_SKILL_UP",
+            "desc": {
+              "desc": "스텔스 모드 : 회피 수치의 {0}%만큼 스킬 위력 증가",
+              "type": 1,
+              "value": "0.200000",
+              "level": "0.030000"
+            },
+            "base": 0.2,
+            "per": 0.03,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_DAMAGE_REDUCE",
+            "desc": {
+              "desc": "스텔스 모드 : 피해 최소화 (2회)",
+              "type": 0,
+              "value": "9999999",
+              "level": "0"
+            },
+            "base": 9999999,
+            "per": 0,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_SKILL_UP",
+            "desc": {
+              "desc": "스텔스 모드 : 스킬 위력+{0}%",
+              "type": 1,
+              "value": "0.200000",
+              "level": "0.030000"
+            },
+            "base": 0.2,
+            "per": 0.03,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DAMAGE_REDUCE",
+            "desc": {
+              "desc": "스텔스 모드 : 피해 최소화 (2회)",
+              "type": 0,
+              "value": "9999999",
+              "level": "0"
+            },
+            "base": 9999999,
+            "per": 0,
             "chance": 1
           }
         ]

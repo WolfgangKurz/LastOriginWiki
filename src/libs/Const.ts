@@ -692,7 +692,7 @@ export function ImageExtension (): ImageExtensionTypes {
 
 export const WorldIds: string[] = [
 	"Story", "Sub", "Cha",
-	"Ev1", "Ev2", "Ev3", "Ev4", "Ev5", "Ev6", "EvA0", "Ev7", "Ev8", "Ev9", "Ev10", "Ev11", "Ev12",
+	"Ev1", "Ev2", "Ev3", "Ev4", "Ev5", "Ev6", "EvA0", "Ev7", "Ev8", "Ev9", "Ev10", "Ev11", "Ev12", "Ev13",
 ];
 export const SubStoryUnit: Record<string, string> = {
 	"S1-1": "AGS_Rampart",

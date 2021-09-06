@@ -1,4 +1,4 @@
-import { Fragment, FunctionalComponent } from "preact";
+import preact, { Fragment, FunctionalComponent } from "preact";
 import render from "preact-render-to-string";
 import Decimal from "decimal.js";
 
@@ -418,6 +418,10 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 						return <Locale plain k="BUFFTRIGGER_AFTER_COUNTER" />;
 					case "use_skill":
 						return <Locale plain k="BUFFTRIGGER_AFTER_SKILL" />;
+					case "support":
+						return <Locale plain k="BUFFTRIGGER_AFTER_SUPPORT" />;
+					case "together":
+						return <Locale plain k="BUFFTRIGGER_AFTER_TOGETHER" />;
 				}
 			} else if ("damaged" in trigger) {
 				switch (trigger.damaged) {
@@ -576,6 +580,27 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 						<>{ out }</>,
 					] } />;
 				}
+			} else if ("test" in trigger) {
+				const list: string[] = ["", ""];
+
+				if (trigger.target === "self")
+					list[0] = "SELF";
+				else
+					list[0] = "TARGET";
+
+				if (trigger.test === "higher")
+					list[1] = "HIGHER";
+				else
+					list[1] = "LOWER";
+
+				return <Locale
+					plain
+					k={ `BUFFTRIGGER_TEST_${list.join("_")}` }
+					p={ [
+						<Locale plain k={ `BUFFTRIGGER_TEST_${trigger.operand}` } />,
+						<Locale plain k={ `BUFFTRIGGER_TEST_${trigger.than}` } />,
+					] }
+				/>;
 			} else if ("target" in trigger) {
 				if (trigger.target.length === 1)
 					return <Locale plain k="BUFFTRIGGER_ON_TARGET_SINGLE_OR" p={ [convertBuff(trigger.target[0])] } />;
@@ -645,6 +670,15 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 						</span>)
 						.gap(<Locale plain k="BUFFTRIGGER_OR" />)
 				}</>] } />;
+			} else if ("use_skill" in trigger)
+				return <Locale plain k="BUFFTRIGGER_USE_SKILL" p={ [trigger.use_skill] } />;
+			else if ("fail" in trigger) {
+				switch (trigger.fail) {
+					case "active":
+						return <Locale plain k="BUFFTRIGGER_FAIL_ACTIVE" />;
+					case "passive":
+						return <Locale plain k="BUFFTRIGGER_FAIL_PASSIVE" />;
+				}
 			}
 
 			return <>???</>;
@@ -1084,24 +1118,24 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 								? <span class="badge bg-success ms-1 text-wrap">{ on }</span>
 								: <></>
 							}
+							{ apply
+								? <span class="badge bg-danger ms-1 text-wrap">{ apply }</span>
+								: <></>
+							}
 							{ target
 								? <span class="badge bg-stat-def ms-1 text-wrap">
 									<Locale plain k="BUFFTARGET_TO" p={ [target] } />
 								</span>
 								: <></>
 							}
-							{ apply
-								? <span class="badge bg-danger ms-1 text-wrap">{ apply }</span>
-								: <></>
-							}
-							{ erase
-								? <span class="badge bg-warning text-dark ms-1 text-wrap">{ erase }</span>
-								: <></>
-							}
 							{ stat.maxStack > 0
 								? <span class="badge bg-dark ms-1 text-wrap">
 									<Locale plain k="BUFFSTACK" p={ [stat.maxStack] } />
 								</span>
+								: <></>
+							}
+							{ erase
+								? <span class="badge bg-warning text-dark ms-1 text-wrap">{ erase }</span>
 								: <></>
 							}
 						</div>

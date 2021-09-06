@@ -4519,5 +4519,365 @@
         ]
       ]
     }
+  },
+  "F5": {
+    "key": "F5",
+    "icon": "EnemyDetect",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "global",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Leona_CH_5",
+              "on": "round",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "冷徹な分析：行動力+{0}%",
+                    "type": 1,
+                    "value": "0.06",
+                    "level": "3.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "6%",
+                      "per": "0.3%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SCOUTING",
+                  "desc": {
+                    "desc": "冷徹な分析：次の敵の情報獲得",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 23,
+                    "scout": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "先制打撃：AP+{0}(偵察時/攻撃機)",
+                    "type": 0,
+                    "value": "0.18",
+                    "level": "0.12"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 20,
+                    "ap": {
+                      "base": 0.18,
+                      "per": 0.12
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Leona_N_11",
+              "on": "wave_end",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SCOUTING",
+                  "desc": {
+                    "desc": "冷徹な分析：次の敵の情報獲得",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "type": 23,
+                    "scout": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Leona_N_13",
+              "on": "wave",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    23
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                1
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "先制打撃：AP+{0}",
+                    "type": 0,
+                    "value": "0.18",
+                    "level": "0.12"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 0.18,
+                      "per": 0.12
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Leona_N_17",
+              "on": "wait",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "攻撃指揮転換：攻撃指揮モード",
+                    "type": 0,
+                    "value": "63",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 63
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "冷徹な分析：行動力+{0}%",
+              "type": 1,
+              "value": "0.06",
+              "level": "3.0000000000000001E-3"
+            },
+            "value": "0.06",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_SCOUTING",
+            "desc": {
+              "desc": "冷徹な分析：次の敵の情報獲得",
+              "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "先制打撃：AP+{0}(偵察時/攻撃機)",
+              "type": 0,
+              "value": "0.18",
+              "level": "0.12"
+            },
+            "base": 0.18,
+            "per": 0.12,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_SCOUTING",
+            "desc": {
+              "desc": "冷徹な分析：次の敵の情報獲得",
+              "type": 1,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "先制打撃：AP+{0}",
+              "type": 0,
+              "value": "0.18",
+              "level": "0.12"
+            },
+            "base": 0.18,
+            "per": 0.12,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_DEBUFF",
+            "desc": {
+              "desc": "攻撃指揮転換：攻撃指揮モード",
+              "type": 0,
+              "value": "63",
+              "level": "0"
+            },
+            "base": 63,
+            "per": 0,
+            "chance": 1
+          }
+        ]
+      ]
+    }
   }
 }
