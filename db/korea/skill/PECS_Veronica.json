@@ -4811,5 +4811,444 @@
         ]
       ]
     }
+  },
+  "5": {
+    "key": "5",
+    "icon": "SelfAtkBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "self",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Veronica_N_5",
+              "on": "wave",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_RESSURRECT",
+                  "desc": {
+                    "desc": "빛의 가호 : {0}% HP 전투 속행",
+                    "type": 1,
+                    "value": "0.050000",
+                    "level": "0.005000"
+                  },
+                  "attr": 3,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "type": 98,
+                    "revive": {
+                      "base": "5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "빛의 가호 : 치명타+{0}%",
+                    "type": 1,
+                    "value": "0.050000",
+                    "level": "0.005000"
+                  },
+                  "attr": 3,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 9,
+                    "critical": {
+                      "base": "5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_RANGE_UP",
+                  "desc": {
+                    "desc": "빛의 가호 : 사거리+{0}",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 55,
+                    "range": {
+                      "base": 1,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "빛의 가호 : 공격력+{0}% (해제 불가)",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 1,
+                    "attack": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_PECS_Veronica_N_51",
+              "on": "round",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_RANGE_UP",
+                  "desc": {
+                    "desc": "빛의 가호 : 사거리+{0}",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 55,
+                    "range": {
+                      "base": 1,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_PECS_Veronica_N_52",
+              "on": "revive",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "빛의 가호 : 공격력+{0}% (해제 불가)",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Veronica_N_53",
+              "on": "wave",
+              "if": {
+                "in_squad": [
+                  "Char_DS_Ramiel_N",
+                  "Char_DS_Angel_N",
+                  "Char_DS_Saraqael_N",
+                  "Char_DS_Azazel_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_RESSURRECT",
+                  "desc": {
+                    "desc": "빛의 가호 : {0}% HP 전투 속행 (코헤이)",
+                    "type": 1,
+                    "value": "0.050000",
+                    "level": "0.005000"
+                  },
+                  "attr": 3,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "type": 98,
+                    "revive": {
+                      "base": "5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_PECS_Veronica_N_54",
+              "on": "round",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "빛의 가호 : 치명타+{0}%",
+                    "type": 1,
+                    "value": "0.050000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        }
+      ]
+    },
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_DEF_RESSURRECT",
+            "desc": {
+              "desc": "빛의 가호 : {0}% HP 전투 속행",
+              "type": 1,
+              "value": "0.050000",
+              "level": "0.005000"
+            },
+            "base": 0.05,
+            "per": 0.005,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_CRITICAL_UP",
+            "desc": {
+              "desc": "빛의 가호 : 치명타+{0}%",
+              "type": 1,
+              "value": "0.050000",
+              "level": "0.005000"
+            },
+            "base": 0.05,
+            "per": 0.005,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_RANGE_UP",
+            "desc": {
+              "desc": "빛의 가호 : 사거리+{0}",
+              "type": 0,
+              "value": "1",
+              "level": "0"
+            },
+            "base": 1,
+            "per": 0,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "빛의 가호 : 공격력+{0}% (해제 불가)",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.010000"
+            },
+            "base": 0.1,
+            "per": 0.01,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_RANGE_UP",
+            "desc": {
+              "desc": "빛의 가호 : 사거리+{0}",
+              "type": 0,
+              "value": "1",
+              "level": "0"
+            },
+            "base": 1,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "빛의 가호 : 공격력+{0}% (해제 불가)",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.010000"
+            },
+            "base": 0.1,
+            "per": 0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DEF_RESSURRECT",
+            "desc": {
+              "desc": "빛의 가호 : {0}% HP 전투 속행 (코헤이)",
+              "type": 1,
+              "value": "0.050000",
+              "level": "0.005000"
+            },
+            "base": 0.05,
+            "per": 0.005,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_CRITICAL_UP",
+            "desc": {
+              "desc": "빛의 가호 : 치명타+{0}%",
+              "type": 1,
+              "value": "0.050000",
+              "level": "0.005000"
+            },
+            "base": 0.05,
+            "per": 0.005,
+            "chance": 1
+          }
+        ]
+      ]
+    }
   }
 }

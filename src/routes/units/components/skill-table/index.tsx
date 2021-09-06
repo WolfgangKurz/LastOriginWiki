@@ -129,8 +129,12 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 	const Values: Record<string, SkillDescriptionValueData[]> = {};
 	Object.keys(skills)
 		.forEach(_ => {
+			const rkey = _.startsWith("F")
+				? `CH_${_.substr(1)}`
+				: _;
+
 			const src = skills[_].values.data[skills[_].values.index[skillLevel.value]];
-			Values[_] = src
+			Values[rkey] = src
 				.map(v => ({
 					base: v.base,
 					per: v.per,

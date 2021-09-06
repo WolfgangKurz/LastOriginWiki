@@ -9016,5 +9016,188 @@
         ]
       ]
     }
+  },
+  "F4": {
+    "key": "F4",
+    "icon": "SelfAtkBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "around",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_3P_Alexandra_CH_4",
+              "on": "round",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_LIGHTNINGRES_UP",
+                  "desc": {
+                    "desc": "電磁場刺激！：電気耐性+{0}%",
+                    "type": 1,
+                    "value": "0.375",
+                    "level": "1.8749999999999999E-2"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 19,
+                    "resist": {
+                      "elem": "lightning",
+                      "value": {
+                        "base": "37.5%",
+                        "per": "1.875%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "電磁場刺激！：回避率+{0}%",
+                    "type": 1,
+                    "value": "0.25",
+                    "level": "1.2500000000000001E-2"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "電磁場刺激！：行動力+{0}%",
+                    "type": 1,
+                    "value": "0.05",
+                    "level": "2.5000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "5%",
+                      "per": "0.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_LIGHTNINGRES_UP",
+            "desc": {
+              "desc": "電磁場刺激！：電気耐性+{0}%",
+              "type": 1,
+              "value": "0.375",
+              "level": "1.8749999999999999E-2"
+            },
+            "value": "0.375",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_EVADE_UP",
+            "desc": {
+              "desc": "電磁場刺激！：回避率+{0}%",
+              "type": 1,
+              "value": "0.25",
+              "level": "1.2500000000000001E-2"
+            },
+            "value": "0.25",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "電磁場刺激！：行動力+{0}%",
+              "type": 1,
+              "value": "0.05",
+              "level": "2.5000000000000001E-3"
+            },
+            "value": "0.05",
+            "chance": 1
+          }
+        ]
+      ]
+    }
   }
 }

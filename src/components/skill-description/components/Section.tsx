@@ -27,7 +27,7 @@ export const Section: FunctionalComponent<SectionProps> = (props) => {
 		case "important":
 			return <span class={ `badge bg-primary ${style.Section}` }>{ props.children }</span>;
 		case "attr":
-			return <span class={ `badge bg-danger ${style.Section}` }>{ props.children }</span>;
+			return <span class={ `badge bg-warning text-dark ${style.Section}` }>{ props.children }</span>;
 		case "cond":
 			return <span class={ `badge bg-dark ${style.Section}` }>{ props.children }</span>;
 		case "chance":
