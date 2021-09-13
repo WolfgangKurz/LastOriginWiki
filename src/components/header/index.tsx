@@ -43,7 +43,7 @@ const DropdownExternal: FunctionalComponent<LinkData> = (props) => (
 const Header: FunctionalComponent = () => {
 	const DBDisp: Record<DBTypes, string> = {
 		korea: "KR",
-		japan: "JP",
+		// japan: "JP",
 	};
 
 	return <nav class={ `${style.navbar} navbar navbar-expand-lg navbar-dark bg-dark px-3` }>

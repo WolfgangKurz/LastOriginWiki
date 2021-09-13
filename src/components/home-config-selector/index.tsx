@@ -13,7 +13,7 @@ import style from "./style.scss";
 const HomeConfigSelector: FunctionalComponent = () => {
 	const DBDisp: Record<DBTypes, string> = {
 		korea: "KR",
-		japan: "JP",
+		// japan: "JP",
 	};
 
 	return <div class={`${style.HomeConfigSelector} my-4`}>

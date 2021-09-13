@@ -263,6 +263,7 @@ interface BuffTrigger_Test {
 	test: "lower" | "higher";
 	target: "self" | "target";
 	operand: "ATK" | "DEF" | "EVD" | "SPD";
+	ratio: number;
 	than: "ATK" | "DEF" | "EVD" | "SPD";
 }
 

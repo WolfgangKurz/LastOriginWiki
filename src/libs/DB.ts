@@ -2,11 +2,13 @@ import { getCookie } from "@/libs/Functions";
 
 export function ChangeDB (db: DBTypes): void {
 	document.cookie = `LO_DB=${db}; path=/`;
-	window.location.reload(true);
+	window.location.reload();
 }
 
-export type DBTypes = "korea" | "japan";
-export const DBList: DBTypes[] = ["korea", "japan"];
+// export type DBTypes = "korea" | "japan";
+// export const DBList: DBTypes[] = ["korea", "japan"];
+export type DBTypes = "korea";
+export const DBList: DBTypes[] = ["korea"];
 
 function DBValidation (name: string | undefined): DBTypes {
 	const list = DBList as string[];
