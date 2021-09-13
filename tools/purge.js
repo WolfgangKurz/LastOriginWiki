@@ -17,7 +17,7 @@ function travel (dir, callback) {
 	dirs.forEach(p => travel(p, callback));
 }
 
-const target = ["unit"];
+const target = ["locale"];
 
 const lists = [];
 const list = [];
@@ -70,6 +70,6 @@ const requestLine = () => {
 	lists.splice(0, 1);
 	setTimeout(() => {
 		request(list, requestLine);
-	}, 1000);
+	}, 1500);
 };
 requestLine();

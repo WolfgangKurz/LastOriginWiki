@@ -2,7 +2,7 @@ import { getCookie } from "@/libs/Functions";
 
 export function ChangeLanguage (lang: LocaleTypes): void {
 	document.cookie = `LO_LANG=${lang}; path=/`;
-	window.location.reload(true);
+	window.location.reload();
 }
 
 export type LocaleTypes = "KR" | "EN" | "JP" | "zhTW";

@@ -919,6 +919,8 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 			return <Locale plain k="BUFFEFFECT_MAXHP" p={ [signedValue(stat.max_hp, level)] } />;
 		else if ("skill_ratio" in stat)
 			return <Locale plain k="BUFFEFFECT_SKILL_RATIO" p={ [signedValue(stat.skill_ratio, level)] } />;
+		else if ("less_target" in stat)
+			return <Locale plain k="BUFFEFFECT_LESS_TARGET" p={ [signedValue(stat.less_target, level)] } />;
 
 		return <>{ JSON.stringify(stat) }</>; // "???";
 	}

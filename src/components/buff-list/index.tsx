@@ -593,11 +593,23 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				else
 					list[1] = "LOWER";
 
+				const value = Decimal.mul(trigger.ratio, 100).toNumber();
+				if (trigger.ratio === 0) {
+					return <Locale
+						plain
+						k={ `BUFFTRIGGER_TEST0_${list.join("_")}` }
+						p={ [
+							<Locale plain k={ `BUFFTRIGGER_TEST_${trigger.operand}` } />,
+							<Locale plain k={ `BUFFTRIGGER_TEST_${trigger.than}` } />,
+						] }
+					/>;
+				}
 				return <Locale
 					plain
 					k={ `BUFFTRIGGER_TEST_${list.join("_")}` }
 					p={ [
 						<Locale plain k={ `BUFFTRIGGER_TEST_${trigger.operand}` } />,
+						`${value}%`,
 						<Locale plain k={ `BUFFTRIGGER_TEST_${trigger.than}` } />,
 					] }
 				/>;
@@ -687,7 +699,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 	}
 	function getBuffText (stat: BuffEffect, level?: number): preact.VNode {
 		if ("_comment" in stat)
-			return <>{ stat._comment }</>;
+			return <>#{ stat._comment }</>;
 		else if ("off" in stat) {
 			if (typeof stat.off === "string")
 				return <Locale plain k="BUFFEFFECT_OFF" p={ [stat.off] } />;
@@ -922,6 +934,8 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			return <Locale plain k="BUFFEFFECT_MAXHP" p={ [signedValue(stat.max_hp, level)] } />;
 		else if ("skill_ratio" in stat)
 			return <Locale plain k="BUFFEFFECT_SKILL_RATIO" p={ [signedValue(stat.skill_ratio, level)] } />;
+		else if ("less_target" in stat)
+			return <Locale plain k="BUFFEFFECT_LESS_TARGET" p={ [signedValue(stat.less_target, level)] } />;
 
 		return <>{ JSON.stringify(stat) }</>; // "???";
 	}

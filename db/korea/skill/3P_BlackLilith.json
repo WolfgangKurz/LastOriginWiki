@@ -18,7 +18,7 @@
       ],
       "data": [
         {
-          "rate": 1.215,
+          "rate": 1.275,
           "type": 0,
           "range": 3,
           "ap": 5,
@@ -118,8 +118,8 @@
                   "desc": {
                     "desc": "빈틈 포착 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.030000"
+                    "value": "0.300000",
+                    "level": "0.020000"
                   },
                   "attr": 1,
                   "erase": {
@@ -130,8 +130,31 @@
                     "chance": "0%",
                     "type": 83,
                     "damage_add": {
+                      "base": "30%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "집속 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 109,
+                    "less_target": {
                       "base": "20%",
-                      "per": "3%"
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -143,10 +166,14 @@
               "key": "Effect_3P_BlackLilith_N_15",
               "on": "attack_success",
               "if": {
-                "test": "higher",
-                "target": "target",
-                "operand": "SPD",
-                "than": "SPD"
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    74
+                  ],
+                  "attr": 1
+                }
               },
               "body": [
                 0,
@@ -169,8 +196,8 @@
                   "desc": {
                     "desc": "꺄하핫! : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.030000"
+                    "value": "0.300000",
+                    "level": "0.020000"
                   },
                   "attr": 3,
                   "erase": {
@@ -180,19 +207,72 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "3%"
+                      "base": "30%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
                 }
               ],
               "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackLilith_N_111",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_3P_BlackLilith_N_41"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "집속 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 109,
+                    "less_target": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
             }
           ]
         },
         {
-          "rate": 1.33,
+          "rate": 1.4,
           "type": 0,
           "range": 3,
           "ap": 5,
@@ -292,8 +372,8 @@
                   "desc": {
                     "desc": "빈틈 포착 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.030000"
+                    "value": "0.300000",
+                    "level": "0.020000"
                   },
                   "attr": 1,
                   "erase": {
@@ -304,8 +384,31 @@
                     "chance": "0%",
                     "type": 83,
                     "damage_add": {
+                      "base": "30%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "집속 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 109,
+                    "less_target": {
                       "base": "20%",
-                      "per": "3%"
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -317,10 +420,14 @@
               "key": "Effect_3P_BlackLilith_N_15",
               "on": "attack_success",
               "if": {
-                "test": "higher",
-                "target": "target",
-                "operand": "SPD",
-                "than": "SPD"
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    74
+                  ],
+                  "attr": 1
+                }
               },
               "body": [
                 0,
@@ -343,8 +450,8 @@
                   "desc": {
                     "desc": "꺄하핫! : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.030000"
+                    "value": "0.300000",
+                    "level": "0.020000"
                   },
                   "attr": 3,
                   "erase": {
@@ -354,19 +461,72 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "3%"
+                      "base": "30%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
                 }
               ],
               "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackLilith_N_111",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_3P_BlackLilith_N_41"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "집속 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 109,
+                    "less_target": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
             }
           ]
         },
         {
-          "rate": 1.445,
+          "rate": 1.525,
           "type": 0,
           "range": 3,
           "ap": 5,
@@ -466,8 +626,8 @@
                   "desc": {
                     "desc": "빈틈 포착 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.030000"
+                    "value": "0.300000",
+                    "level": "0.020000"
                   },
                   "attr": 1,
                   "erase": {
@@ -478,8 +638,31 @@
                     "chance": "0%",
                     "type": 83,
                     "damage_add": {
+                      "base": "30%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "집속 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 109,
+                    "less_target": {
                       "base": "20%",
-                      "per": "3%"
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -491,10 +674,14 @@
               "key": "Effect_3P_BlackLilith_N_15",
               "on": "attack_success",
               "if": {
-                "test": "higher",
-                "target": "target",
-                "operand": "SPD",
-                "than": "SPD"
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    74
+                  ],
+                  "attr": 1
+                }
               },
               "body": [
                 0,
@@ -517,8 +704,8 @@
                   "desc": {
                     "desc": "꺄하핫! : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.030000"
+                    "value": "0.300000",
+                    "level": "0.020000"
                   },
                   "attr": 3,
                   "erase": {
@@ -528,19 +715,72 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "3%"
+                      "base": "30%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
                 }
               ],
               "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackLilith_N_111",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_3P_BlackLilith_N_41"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "집속 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 109,
+                    "less_target": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
             }
           ]
         },
         {
-          "rate": 1.56,
+          "rate": 1.65,
           "type": 0,
           "range": 3,
           "ap": 5,
@@ -640,8 +880,8 @@
                   "desc": {
                     "desc": "빈틈 포착 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.030000"
+                    "value": "0.300000",
+                    "level": "0.020000"
                   },
                   "attr": 1,
                   "erase": {
@@ -652,8 +892,31 @@
                     "chance": "0%",
                     "type": 83,
                     "damage_add": {
+                      "base": "30%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "집속 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 109,
+                    "less_target": {
                       "base": "20%",
-                      "per": "3%"
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -665,10 +928,14 @@
               "key": "Effect_3P_BlackLilith_N_15",
               "on": "attack_success",
               "if": {
-                "test": "higher",
-                "target": "target",
-                "operand": "SPD",
-                "than": "SPD"
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    74
+                  ],
+                  "attr": 1
+                }
               },
               "body": [
                 0,
@@ -691,8 +958,8 @@
                   "desc": {
                     "desc": "꺄하핫! : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.030000"
+                    "value": "0.300000",
+                    "level": "0.020000"
                   },
                   "attr": 3,
                   "erase": {
@@ -702,19 +969,72 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "3%"
+                      "base": "30%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
                 }
               ],
               "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackLilith_N_111",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_3P_BlackLilith_N_41"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "집속 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 109,
+                    "less_target": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
             }
           ]
         },
         {
-          "rate": 1.675,
+          "rate": 1.775,
           "type": 0,
           "range": 3,
           "ap": 5,
@@ -814,8 +1134,8 @@
                   "desc": {
                     "desc": "빈틈 포착 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.030000"
+                    "value": "0.300000",
+                    "level": "0.020000"
                   },
                   "attr": 1,
                   "erase": {
@@ -826,8 +1146,31 @@
                     "chance": "0%",
                     "type": 83,
                     "damage_add": {
+                      "base": "30%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "집속 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 109,
+                    "less_target": {
                       "base": "20%",
-                      "per": "3%"
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -839,10 +1182,14 @@
               "key": "Effect_3P_BlackLilith_N_15",
               "on": "attack_success",
               "if": {
-                "test": "higher",
-                "target": "target",
-                "operand": "SPD",
-                "than": "SPD"
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    74
+                  ],
+                  "attr": 1
+                }
               },
               "body": [
                 0,
@@ -865,8 +1212,8 @@
                   "desc": {
                     "desc": "꺄하핫! : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.030000"
+                    "value": "0.300000",
+                    "level": "0.020000"
                   },
                   "attr": 3,
                   "erase": {
@@ -876,19 +1223,72 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "3%"
+                      "base": "30%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
                 }
               ],
               "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackLilith_N_111",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_3P_BlackLilith_N_41"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "집속 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 109,
+                    "less_target": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
             }
           ]
         },
         {
-          "rate": 1.79,
+          "rate": 1.9,
           "type": 0,
           "range": 3,
           "ap": 5,
@@ -988,8 +1388,8 @@
                   "desc": {
                     "desc": "빈틈 포착 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.030000"
+                    "value": "0.300000",
+                    "level": "0.020000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1000,8 +1400,31 @@
                     "chance": "0%",
                     "type": 83,
                     "damage_add": {
+                      "base": "30%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "집속 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 109,
+                    "less_target": {
                       "base": "20%",
-                      "per": "3%"
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -1013,10 +1436,14 @@
               "key": "Effect_3P_BlackLilith_N_15",
               "on": "attack_success",
               "if": {
-                "test": "higher",
-                "target": "target",
-                "operand": "SPD",
-                "than": "SPD"
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    74
+                  ],
+                  "attr": 1
+                }
               },
               "body": [
                 0,
@@ -1039,8 +1466,8 @@
                   "desc": {
                     "desc": "꺄하핫! : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.030000"
+                    "value": "0.300000",
+                    "level": "0.020000"
                   },
                   "attr": 3,
                   "erase": {
@@ -1050,19 +1477,72 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "3%"
+                      "base": "30%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
                 }
               ],
               "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackLilith_N_111",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_3P_BlackLilith_N_41"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "집속 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 109,
+                    "less_target": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
             }
           ]
         },
         {
-          "rate": 1.905,
+          "rate": 2.025,
           "type": 0,
           "range": 3,
           "ap": 5,
@@ -1162,8 +1642,8 @@
                   "desc": {
                     "desc": "빈틈 포착 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.030000"
+                    "value": "0.300000",
+                    "level": "0.020000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1174,8 +1654,31 @@
                     "chance": "0%",
                     "type": 83,
                     "damage_add": {
+                      "base": "30%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "집속 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 109,
+                    "less_target": {
                       "base": "20%",
-                      "per": "3%"
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -1187,10 +1690,14 @@
               "key": "Effect_3P_BlackLilith_N_15",
               "on": "attack_success",
               "if": {
-                "test": "higher",
-                "target": "target",
-                "operand": "SPD",
-                "than": "SPD"
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    74
+                  ],
+                  "attr": 1
+                }
               },
               "body": [
                 0,
@@ -1213,8 +1720,8 @@
                   "desc": {
                     "desc": "꺄하핫! : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.030000"
+                    "value": "0.300000",
+                    "level": "0.020000"
                   },
                   "attr": 3,
                   "erase": {
@@ -1224,19 +1731,72 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "3%"
+                      "base": "30%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
                 }
               ],
               "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackLilith_N_111",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_3P_BlackLilith_N_41"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "집속 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 109,
+                    "less_target": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
             }
           ]
         },
         {
-          "rate": 2.02,
+          "rate": 2.15,
           "type": 0,
           "range": 3,
           "ap": 5,
@@ -1336,8 +1896,8 @@
                   "desc": {
                     "desc": "빈틈 포착 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.030000"
+                    "value": "0.300000",
+                    "level": "0.020000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1348,8 +1908,31 @@
                     "chance": "0%",
                     "type": 83,
                     "damage_add": {
+                      "base": "30%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "집속 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 109,
+                    "less_target": {
                       "base": "20%",
-                      "per": "3%"
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -1361,10 +1944,14 @@
               "key": "Effect_3P_BlackLilith_N_15",
               "on": "attack_success",
               "if": {
-                "test": "higher",
-                "target": "target",
-                "operand": "SPD",
-                "than": "SPD"
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    74
+                  ],
+                  "attr": 1
+                }
               },
               "body": [
                 0,
@@ -1387,8 +1974,8 @@
                   "desc": {
                     "desc": "꺄하핫! : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.030000"
+                    "value": "0.300000",
+                    "level": "0.020000"
                   },
                   "attr": 3,
                   "erase": {
@@ -1398,19 +1985,72 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "3%"
+                      "base": "30%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
                 }
               ],
               "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackLilith_N_111",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_3P_BlackLilith_N_41"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "집속 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 109,
+                    "less_target": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
             }
           ]
         },
         {
-          "rate": 2.135,
+          "rate": 2.275,
           "type": 0,
           "range": 3,
           "ap": 5,
@@ -1510,8 +2150,8 @@
                   "desc": {
                     "desc": "빈틈 포착 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.030000"
+                    "value": "0.300000",
+                    "level": "0.020000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1522,8 +2162,31 @@
                     "chance": "0%",
                     "type": 83,
                     "damage_add": {
+                      "base": "30%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "집속 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 109,
+                    "less_target": {
                       "base": "20%",
-                      "per": "3%"
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -1535,10 +2198,14 @@
               "key": "Effect_3P_BlackLilith_N_15",
               "on": "attack_success",
               "if": {
-                "test": "higher",
-                "target": "target",
-                "operand": "SPD",
-                "than": "SPD"
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    74
+                  ],
+                  "attr": 1
+                }
               },
               "body": [
                 0,
@@ -1561,8 +2228,8 @@
                   "desc": {
                     "desc": "꺄하핫! : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.030000"
+                    "value": "0.300000",
+                    "level": "0.020000"
                   },
                   "attr": 3,
                   "erase": {
@@ -1572,19 +2239,72 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "3%"
+                      "base": "30%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
                 }
               ],
               "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackLilith_N_111",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_3P_BlackLilith_N_41"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "집속 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 109,
+                    "less_target": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
             }
           ]
         },
         {
-          "rate": 2.25,
+          "rate": 2.4,
           "type": 0,
           "range": 3,
           "ap": 5,
@@ -1684,8 +2404,8 @@
                   "desc": {
                     "desc": "빈틈 포착 : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.030000"
+                    "value": "0.300000",
+                    "level": "0.020000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1696,8 +2416,31 @@
                     "chance": "0%",
                     "type": 83,
                     "damage_add": {
+                      "base": "30%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "집속 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 109,
+                    "less_target": {
                       "base": "20%",
-                      "per": "3%"
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -1709,10 +2452,14 @@
               "key": "Effect_3P_BlackLilith_N_15",
               "on": "attack_success",
               "if": {
-                "test": "higher",
-                "target": "target",
-                "operand": "SPD",
-                "than": "SPD"
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    74
+                  ],
+                  "attr": 1
+                }
               },
               "body": [
                 0,
@@ -1735,8 +2482,8 @@
                   "desc": {
                     "desc": "꺄하핫! : 피해량+{0}%",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.030000"
+                    "value": "0.300000",
+                    "level": "0.020000"
                   },
                   "attr": 3,
                   "erase": {
@@ -1746,14 +2493,67 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "3%"
+                      "base": "30%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
                 }
               ],
               "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_BlackLilith_N_111",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_3P_BlackLilith_N_41"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "집속 공격 : 피해량+{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 109,
+                    "less_target": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
             }
           ]
         }
@@ -1815,11 +2615,23 @@
             "desc": {
               "desc": "빈틈 포착 : 피해량+{0}%",
               "type": 1,
+              "value": "0.300000",
+              "level": "0.020000"
+            },
+            "base": 0.3,
+            "per": 0.02,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "집속 공격 : 피해량+{0}%",
+              "type": 1,
               "value": "0.200000",
-              "level": "0.030000"
+              "level": "0.020000"
             },
             "base": 0.2,
-            "per": 0.03,
+            "per": 0.02,
             "chance": 0
           },
           {
@@ -1827,11 +2639,23 @@
             "desc": {
               "desc": "꺄하핫! : 피해량+{0}%",
               "type": 1,
+              "value": "0.300000",
+              "level": "0.020000"
+            },
+            "base": 0.3,
+            "per": 0.02,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "집속 공격 : 피해량+{0}%",
+              "type": 1,
               "value": "0.200000",
-              "level": "0.030000"
+              "level": "0.020000"
             },
             "base": 0.2,
-            "per": 0.03,
+            "per": 0.02,
             "chance": 1
           }
         ]
@@ -2469,7 +3293,7 @@
                     "desc": "더~! 좀 더! : {0}% HP로 전투 속행 (조건부)",
                     "type": 1,
                     "value": "0.100000",
-                    "level": "0.020000"
+                    "level": "0.030000"
                   },
                   "attr": 0,
                   "erase": {},
@@ -2479,7 +3303,7 @@
                     "type": 98,
                     "revive": {
                       "base": "10%",
-                      "per": "2%"
+                      "per": "3%"
                     }
                   },
                   "overlap": 4
@@ -2596,6 +3420,7 @@
                 "test": "lower",
                 "target": "self",
                 "operand": "ATK",
+                "ratio": 0.25,
                 "than": "DEF"
               },
               "body": [
@@ -2620,7 +3445,7 @@
                     "desc": "더~! 좀 더! : {0}% HP로 전투 속행",
                     "type": 1,
                     "value": "0.100000",
-                    "level": "0.020000"
+                    "level": "0.030000"
                   },
                   "attr": 3,
                   "erase": {},
@@ -2629,7 +3454,7 @@
                     "type": 98,
                     "revive": {
                       "base": "10%",
-                      "per": "2%"
+                      "per": "3%"
                     }
                   },
                   "overlap": 4
@@ -2753,10 +3578,10 @@
               "desc": "더~! 좀 더! : {0}% HP로 전투 속행 (조건부)",
               "type": 1,
               "value": "0.100000",
-              "level": "0.020000"
+              "level": "0.030000"
             },
             "base": 0.1,
-            "per": 0.02,
+            "per": 0.03,
             "chance": 0
           },
           {
@@ -2789,10 +3614,10 @@
               "desc": "더~! 좀 더! : {0}% HP로 전투 속행",
               "type": 1,
               "value": "0.100000",
-              "level": "0.020000"
+              "level": "0.030000"
             },
             "base": 0.1,
-            "per": 0.02,
+            "per": 0.03,
             "chance": 1
           },
           {
@@ -2849,6 +3674,7 @@
                 "test": "higher",
                 "target": "self",
                 "operand": "ATK",
+                "ratio": 0.25,
                 "than": "DEF"
               },
               "body": [
@@ -2971,7 +3797,7 @@
             },
             {
               "key": "Effect_3P_BlackLilith_N_17",
-              "on": "enemy_killed",
+              "on": "enemy_dead",
               "if": false,
               "body": [
                 0,
@@ -3355,7 +4181,7 @@
                   "desc": {
                     "desc": "스토킹 : 행동력+{0}%",
                     "type": 1,
-                    "value": "0.030000",
+                    "value": "0.050000",
                     "level": "0.005000"
                   },
                   "attr": 0,
@@ -3366,7 +4192,7 @@
                     "isBuff": true,
                     "type": 13,
                     "turnSpeed": {
-                      "base": "3%",
+                      "base": "5%",
                       "per": "0.5%"
                     }
                   },
@@ -3377,7 +4203,7 @@
                   "desc": {
                     "desc": "스토킹 : 공격력+{0}%",
                     "type": 1,
-                    "value": "0.060000",
+                    "value": "0.100000",
                     "level": "0.010000"
                   },
                   "attr": 0,
@@ -3388,7 +4214,7 @@
                     "isBuff": true,
                     "type": 1,
                     "attack": {
-                      "base": "6%",
+                      "base": "10%",
                       "per": "1%"
                     }
                   },
@@ -3427,6 +4253,7 @@
                 "test": "higher",
                 "target": "target",
                 "operand": "ATK",
+                "ratio": 0,
                 "than": "ATK"
               },
               "body": [
@@ -3450,7 +4277,7 @@
                   "desc": {
                     "desc": "등 뒤에 뭔가... : 행동력+{0}%",
                     "type": 1,
-                    "value": "0.015000",
+                    "value": "0.025000",
                     "level": "0.002500"
                   },
                   "attr": 0,
@@ -3461,7 +4288,7 @@
                     "isBuff": true,
                     "type": 13,
                     "turnSpeed": {
-                      "base": "1.5%",
+                      "base": "2.5%",
                       "per": "0.25%"
                     }
                   },
@@ -3472,7 +4299,7 @@
                   "desc": {
                     "desc": "등 뒤에 뭔가... : 공격력+{0}%",
                     "type": 1,
-                    "value": "0.030000",
+                    "value": "0.050000",
                     "level": "0.005000"
                   },
                   "attr": 0,
@@ -3483,7 +4310,7 @@
                     "isBuff": true,
                     "type": 1,
                     "attack": {
-                      "base": "3%",
+                      "base": "5%",
                       "per": "0.5%"
                     }
                   },
@@ -3521,6 +4348,7 @@
                 "test": "higher",
                 "target": "target",
                 "operand": "SPD",
+                "ratio": 0,
                 "than": "SPD"
               },
               "body": [
@@ -3566,7 +4394,7 @@
                   "desc": {
                     "desc": "놓치지 않아요! : 공격력+{0}%",
                     "type": 1,
-                    "value": "0.030000",
+                    "value": "0.050000",
                     "level": "0.005000"
                   },
                   "attr": 1,
@@ -3577,7 +4405,7 @@
                     "isBuff": true,
                     "type": 1,
                     "attack": {
-                      "base": "3%",
+                      "base": "5%",
                       "per": "0.5%"
                     }
                   },
@@ -3644,10 +4472,10 @@
             "desc": {
               "desc": "스토킹 : 행동력+{0}%",
               "type": 1,
-              "value": "0.030000",
+              "value": "0.050000",
               "level": "0.005000"
             },
-            "base": 0.03,
+            "base": 0.05,
             "per": 0.005,
             "chance": 1
           },
@@ -3656,10 +4484,10 @@
             "desc": {
               "desc": "스토킹 : 공격력+{0}%",
               "type": 1,
-              "value": "0.060000",
+              "value": "0.100000",
               "level": "0.010000"
             },
-            "base": 0.06,
+            "base": 0.1,
             "per": 0.01,
             "chance": 1
           },
@@ -3680,10 +4508,10 @@
             "desc": {
               "desc": "등 뒤에 뭔가... : 행동력+{0}%",
               "type": 1,
-              "value": "0.015000",
+              "value": "0.025000",
               "level": "0.002500"
             },
-            "base": 0.015,
+            "base": 0.025,
             "per": 0.0025,
             "chance": 1
           },
@@ -3692,10 +4520,10 @@
             "desc": {
               "desc": "등 뒤에 뭔가... : 공격력+{0}%",
               "type": 1,
-              "value": "0.030000",
+              "value": "0.050000",
               "level": "0.005000"
             },
-            "base": 0.03,
+            "base": 0.05,
             "per": 0.005,
             "chance": 1
           },
@@ -3728,10 +4556,10 @@
             "desc": {
               "desc": "놓치지 않아요! : 공격력+{0}%",
               "type": 1,
-              "value": "0.030000",
+              "value": "0.050000",
               "level": "0.005000"
             },
-            "base": 0.03,
+            "base": 0.05,
             "per": 0.005,
             "chance": 1
           },
