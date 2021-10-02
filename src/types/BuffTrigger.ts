@@ -58,6 +58,10 @@ export enum BUFFEFFECT_TRIGGER_TYPE {
 	BEATEN_ACTIVE_SKILL_KEY = 49,
 	USE_ACTIVE_SKILL_1 = 50,
 	USE_ACTIVE_SKILL_2 = 51,
+	AFTER_SUPPORT_ATTACK_PASSIVE = 52,
+	AFTER_TOGETHER_ATTACK_PASSIVE = 53,
+	ATTACK_FAIL = 54,
+	ATTACK_FAIL_PASSIVE = 55,
 }
 
 /** 계산된 발동 조건 */
@@ -66,7 +70,7 @@ export type BuffTrigger = BuffTrigger_Unknown | BuffTrigger_Always | BuffTrigger
 	BuffTrigger_Always | BuffTrigger_EveryWave | BuffTrigger_EveryRound | BuffTrigger_Attack | BuffTrigger_Attacked | BuffTrigger_Wait |
 	BuffTrigger_Move | BuffTrigger_Evade | BuffTrigger_WaveEnd | BuffTrigger_EnemyKilled | BuffTrigger_Position | BuffTrigger_Criticaled |
 	BuffTrigger_Revive | BuffTrigger_On | BuffTrigger_Target | BuffTrigger_UnitCount | BuffTrigger_Round | BuffTrigger_NotInBattle |
-	BuffTrigger_TroopCategory | BuffTrigger_UseSkill | BuffTrigger_Test | BuffTrigger_AttackBy | BuffTrigger_Fail;
+	BuffTrigger_TroopCategory | BuffTrigger_UseSkill | BuffTrigger_Test | BuffTrigger_AttackBy | BuffTrigger_Fail | BuffTrigger_Near;
 
 /** 구현을 알 수 없는 발동 조건 */
 interface BuffTrigger_Unknown {
@@ -81,7 +85,11 @@ interface BuffTrigger_After {
 /** 본인 회피 제외 */
 type BuffTrigger_Damaged = "damaged" | {
 	damaged: "fire" | "ice" | "lightning";
+} | {
+	damaged: "skill";
+	key: string;
 };
+
 /** 대상 회피 제외 */
 type BuffTrigger_AttackSuccess = "attack_success";
 
@@ -196,7 +204,8 @@ interface BuffTrigger_On_BuffKey {
 }
 interface BuffTrigger_On_BuffStack {
 	on: {
-		target: "self" | "target";
+		target: "self" | "target" | "squad";
+		func?: BuffTrigger_On_Function;
 		select: string[];
 		stack: number;
 		attr: BUFF_ATTR_TYPE;
@@ -204,7 +213,7 @@ interface BuffTrigger_On_BuffStack {
 }
 interface BuffTrigger_On_BuffTypeExists {
 	on: {
-		target: "self" | "target";
+		target: "self" | "target" | "squad";
 		func: BuffTrigger_On_Function;
 		select: BUFFEFFECT_TYPE[];
 		attr: BUFF_ATTR_TYPE;
@@ -212,7 +221,7 @@ interface BuffTrigger_On_BuffTypeExists {
 }
 interface BuffTrigger_On_BuffExists {
 	on: {
-		target: "self" | "target";
+		target: "self" | "target" | "squad";
 		func: BuffTrigger_On_Function;
 		select: string[];
 		attr: BUFF_ATTR_TYPE;
@@ -236,10 +245,16 @@ interface BuffTrigger_UnitCount {
 	};
 }
 
-interface BuffTrigger_Round {
+type BuffTrigger_Round = BuffTrigger_Round_Value | BuffTrigger_Round_EvenOdd;
+interface BuffTrigger_Round_Value {
 	round: {
 		operator: "=" | "<=" | ">=";
 		round: number;
+	};
+}
+interface BuffTrigger_Round_EvenOdd {
+	round: {
+		operator: "even" | "odd";
 	};
 }
 
@@ -273,4 +288,8 @@ interface BuffTrigger_AttackBy {
 
 interface BuffTrigger_Fail {
 	fail: "active" | "passive";
+}
+
+interface BuffTrigger_Near {
+	near: boolean;
 }

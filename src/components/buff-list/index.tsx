@@ -548,7 +548,20 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 						<>{ select.gap(", ") }</>,
 						trigger.on.stack,
 					];
-					return <Locale plain k={ `BUFFTRIGGER_ON_STACK_TARGET_${select.length === 1 ? "SINGLE" : "MULTIPLE"}` } p={ params } />;
+					console.log([
+						"BUFFTRIGGER_ON_STACK_TARGET",
+						select.length === 1 ? "SINGLE" : "MULTIPLE",
+						trigger.on.func === "UNFILLED" ? "UNFILLED" : "",
+					].filter(x => x).join("_"));
+					return <Locale
+						plain
+						k={ [
+							"BUFFTRIGGER_ON_STACK_TARGET",
+							select.length === 1 ? "SINGLE" : "MULTIPLE",
+							trigger.on.func === "UNFILLED" ? "UNFILLED" : "",
+						].filter(x => x).join("_") }
+						p={ params }
+					/>;
 				} else if ("target" in trigger.on && "func" in trigger.on) {
 					const select = typeof trigger.on.select[0] === "string"
 						// BuffTrigger_On_BuffExists
@@ -670,9 +683,12 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 						return <Locale plain k="BUFFTRIGGER_ENEMY_TYPE" p={ typeCountParams } />;
 					return <Locale plain k="BUFFTRIGGER_ENEMY_ALL" p={ countParams } />;
 				}
-			} else if ("round" in trigger)
-				return <Locale plain k={ `BUFFTRIGGER_ROUND_${trigger.round.operator}` } p={ [trigger.round.round] } />;
-			else if ("notInBattle" in trigger)
+			} else if ("round" in trigger) {
+				if (trigger.round.operator === "even" || trigger.round.operator === "odd")
+					return <Locale plain k={ `BUFFTRIGGER_ROUND_${trigger.round.operator}` } />;
+				else if (trigger.round.operator === "=" || trigger.round.operator === "<=" || trigger.round.operator === ">=")
+					return <Locale plain k={ `BUFFTRIGGER_ROUND_${trigger.round.operator}` } p={ [trigger.round.round] } />;
+			} else if ("notInBattle" in trigger)
 				return <Locale plain k="BUFFTRIGGER_NOT_IN_BATTLE" p={ [trigger.notInBattle.join(",")] } />;
 			else if ("troop" in trigger) {
 				return <Locale plain k="BUFFTRIGGER_TROOP" p={ [<>{
@@ -691,6 +707,11 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					case "passive":
 						return <Locale plain k="BUFFTRIGGER_FAIL_PASSIVE" />;
 				}
+			}
+			else if ("near" in trigger) {
+				if (trigger.near)
+					return <Locale plain k="BUFFTRIGGER_NEAR_EXISTS" />;
+				return <Locale plain k="BUFFTRIGGER_NEAR_NOTEXISTS" />;
 			}
 
 			return <>???</>;
@@ -740,16 +761,70 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			if ("elem" in stat.resist) {
 				switch (stat.resist.elem) {
 					case "fire":
+						if ("min" in stat.resist) {
+							return <>
+								<ElemIcon elem={ stat.resist.elem } class="mx-1 mb-0" />
+								<Locale plain k="BUFFEFFECT_FIRE_RES_MIN" p={ [signedValue(stat.resist.min, level)] } />
+							</>;
+						}
+						if ("fix" in stat.resist) {
+							return <>
+								<ElemIcon elem={ stat.resist.elem } class="mx-1 mb-0" />
+								<Locale plain k="BUFFEFFECT_FIRE_RES_FIX" p={ [signedValue(stat.resist.fix, level)] } />
+							</>;
+						}
+						if ("reverse" in stat.resist) {
+							return <>
+								<ElemIcon elem={ stat.resist.elem } class="mx-1 mb-0" />
+								<Locale plain k="BUFFEFFECT_FIRE_RES_REVERSE" />
+							</>;
+						}
 						return <>
 							<ElemIcon elem={ stat.resist.elem } class="mx-1 mb-0" />
 							<Locale plain k="BUFFEFFECT_FIRE_RES" p={ [signedValue(stat.resist.value, level)] } />
 						</>;
 					case "ice":
+						if ("min" in stat.resist) {
+							return <>
+								<ElemIcon elem={ stat.resist.elem } class="mx-1 mb-0" />
+								<Locale plain k="BUFFEFFECT_ICE_RES_MIN" p={ [signedValue(stat.resist.min, level)] } />
+							</>;
+						}
+						if ("fix" in stat.resist) {
+							return <>
+								<ElemIcon elem={ stat.resist.elem } class="mx-1 mb-0" />
+								<Locale plain k="BUFFEFFECT_ICE_RES_FIX" p={ [signedValue(stat.resist.fix, level)] } />
+							</>;
+						}
+						if ("reverse" in stat.resist) {
+							return <>
+								<ElemIcon elem={ stat.resist.elem } class="mx-1 mb-0" />
+								<Locale plain k="BUFFEFFECT_ICE_RES_REVERSE" />
+							</>;
+						}
 						return <>
 							<ElemIcon elem={ stat.resist.elem } class="mx-1 mb-0" />
 							<Locale plain k="BUFFEFFECT_ICE_RES" p={ [signedValue(stat.resist.value, level)] } />
 						</>;
 					case "lightning":
+						if ("min" in stat.resist) {
+							return <>
+								<ElemIcon elem={ stat.resist.elem } class="mx-1 mb-0" />
+								<Locale plain k="BUFFEFFECT_THUNDER_RES_MIN" p={ [signedValue(stat.resist.min, level)] } />
+							</>;
+						}
+						if ("fix" in stat.resist) {
+							return <>
+								<ElemIcon elem={ stat.resist.elem } class="mx-1 mb-0" />
+								<Locale plain k="BUFFEFFECT_THUNDER_RES_FIX" p={ [signedValue(stat.resist.fix, level)] } />
+							</>;
+						}
+						if ("reverse" in stat.resist) {
+							return <>
+								<ElemIcon elem={ stat.resist.elem } class="mx-1 mb-0" />
+								<Locale plain k="BUFFEFFECT_THUNDER_RES_REVERSE" />
+							</>;
+						}
 						return <>
 							<ElemIcon elem={ stat.resist.elem } class="mx-1 mb-0" />
 							<Locale plain k="BUFFEFFECT_THUNDER_RES" p={ [signedValue(stat.resist.value, level)] } />
@@ -760,6 +835,8 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			switch (stat.resist.type) {
 				case "debuff":
 					return <Locale plain k="BUFFEFFECT_RES_DEBUFF" p={ [signedValue(stat.resist.value, level)] } />;
+				case "off":
+					return <Locale plain k="BUFFEFFECT_RES_OFF" p={ [signedValue(stat.resist.value, level)] } />;
 			}
 		} else if ("ap_stop" in stat)
 			return <Locale plain k="BUFFEFFECT_STUN" />;
@@ -887,17 +964,27 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				nsignedValue(stat.fixed_damage, level),
 				<ElemIcon elem={ SKILL_ATTR.PHYSICS } class="me-1 mb-0" />,
 			] } />;
-		} else if ("provoke" in stat)
-			return <Locale plain k="BUFFEFFECT_PROVOKE" />;
-		else if ("stun" in stat)
+		} else if ("provoke" in stat) {
+			if (stat.provoke === "self")
+				return <Locale plain k="BUFFEFFECT_PROVOKE" />;
+			return <Locale plain k="BUFFEFFECT_PROVOKE_TARGET" />;
+		} else if ("stun" in stat)
 			return <Locale plain k="BUFFEFFECT_STUN" />;
 		else if ("attack_support" in stat)
 			return <Locale plain k="BUFFEFFECT_SUPPORT_ATK" p={ [nsignedValue(stat.attack_support, level)] } />;
 		else if ("immovable" in stat)
 			return <Locale plain k="BUFFEFFECT_SNARE" />;
-		else if ("skill_disable" in stat)
-			return <Locale plain k="BUFFEFFECT_SEAL" />;
-		else if ("revive" in stat) {
+		else if ("skill_disable" in stat) {
+			switch (stat.skill_disable) {
+				case 0:
+					return <Locale plain k="BUFFEFFECT_SEAL_PASSIVE" />;
+				case 1:
+				case 2:
+					return <Locale plain k="BUFFEFFECT_SEAL_ACTIVE" p={ [stat.skill_disable] } />;
+				case true:
+					return <Locale plain k="BUFFEFFECT_SEAL" />;
+			}
+		} else if ("revive" in stat) {
 			if (typeof stat.revive.base === "string")
 				return <Locale plain k="BUFFEFFECT_RESURRECT_MAXIMUM" p={ [nsignedValue(stat.revive, level)] } />;
 			return <Locale plain k="BUFFEFFECT_RESURRECT" p={ [nsignedValue(stat.revive, level)] } />;
@@ -936,6 +1023,19 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			return <Locale plain k="BUFFEFFECT_SKILL_RATIO" p={ [signedValue(stat.skill_ratio, level)] } />;
 		else if ("less_target" in stat)
 			return <Locale plain k="BUFFEFFECT_LESS_TARGET" p={ [signedValue(stat.less_target, level)] } />;
+		else if ("disperse" in stat)
+			return <Locale plain k="BUFFEFFECT_DISPERSE" p={ [nsignedValue(stat.disperse, level)] } />;
+		else if ("by" in stat) {
+			return <Locale plain k="BUFFEFFECT_BY" p={ [
+				<Locale plain k={ `BUFFTARGET_${stat.by.target.toUpperCase()}` } />,
+				<Locale plain k={ `BUFFEFFECT_BY_${stat.by.by.toUpperCase()}` } />,
+				nsignedValue(stat.by, level),
+				<Locale plain k={ `BUFFEFFECT_BY_${stat.value.toUpperCase()}` } />,
+				<Locale plain k={ `BUFFTYPE_${stat.by.type.toUpperCase()}` } />,
+			] } />;
+		}
+		else if ("act_count" in stat)
+			return <Locale plain k="BUFFEFFECT_ACT_COUNT" p={ [stat.act_count] } />;
 
 		return <>{ JSON.stringify(stat) }</>; // "???";
 	}
