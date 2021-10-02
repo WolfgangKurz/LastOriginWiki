@@ -84,7 +84,10 @@ const EnemiesList: FunctionalComponent<EnemiesListProps> = (props) => {
 				if (Filters.BossOnly.value && !x.isBoss) return false;
 				if (Filters.UsedOnly.value && !UsedEnemies.includes(x.id)) return false;
 
-				if (SearchText.value && !LocaleGet(`ENEMY_${x.id}`).includes(SearchText.value)) return false;
+				if (SearchText.value) {
+					if (!new RegExp(SearchText.value, "i").test(LocaleGet(`ENEMY_${x.id}`)))
+						return false;
+				}
 				return true;
 			})
 			.reduce((p, c) => {

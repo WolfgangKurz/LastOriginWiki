@@ -120,6 +120,28 @@ export enum BUFFEFFECT_TYPE {
 	DEF_SKILLDMGUP_ME = 113,
 	DEF_CRTDOWN = 114,
 	BUFFER_ATK_ATKUP = 115,
+	RESFIRE_VALUE_MIN = 116,
+	RESICE_VALUE_MIN = 117,
+	RESLIGHTNING_VALUE_MIN = 118,
+	RESFIRE_VALUE_FIX = 119,
+	RESICE_VALUE_FIX = 120,
+	RESLIGHTNING_VALUE_FIX = 121,
+	RESFIRE_DEBUFF_REVERSE = 122,
+	RESICE_DEBUFF_REVERSE = 123,
+	RESLIGHTNING_DEBUFF_REVERSE = 124,
+	BUFF_DISALLOW = 125,
+	REMOVE_BUFF_RESIST = 126,
+	ACTION_NUMBER_CHANGE = 127,
+	PROVOKE_ATTACKER = 128,
+	CURRENT_HP_PIERCEDOWN = 129,
+	GUARDPIERCE_APPLY = 130,
+	GUARDPIERCE_NO_APPLY = 131,
+	DAMAGE_RECOVER_THISROUND = 132,
+	SAME_SKILL_HIT_DAMAGE_REDUCE = 133,
+	STAGE_SEAL_SKILL_ACTIVE_1 = 134,
+	STAGE_SEAL_SKILL_ACTIVE_2 = 135,
+	STAGE_SEAL_SKILL_PASSIVE = 136,
+	ADD_ROLE_TYPE = 137,
 }
 
 export type BuffEffect = BuffEffect_Base & {
@@ -142,7 +164,8 @@ type BuffEffect_Body = BuffEffect_Unknown | BuffEffect_Off | BuffEffect_Attack |
 	BuffEffect_Penetration | BuffEffect_Metamolphosis | BuffEffect_FixedDamage | BuffEffect_Provoke | BuffEffect_AttackSupport |
 	BuffEffect_Immovable | BuffEffect_SkillDisable | BuffEffect_Revive | BuffEffect_AttackTarget | BuffEffect_InvokeChance |
 	BuffEffect_SummonRemove | BuffEffect_PenetrationForce | BuffEffect_Exp | BuffEffect_DebuffImmune | BuffEffect_Collaborate |
-	BuffEffect_MaxHP | BuffEffect_SkillRatio | BuffEffect_SkillRange | BuffEffect_Disperse | BuffEffect_ValueBy | BuffEffect_LessTarget;
+	BuffEffect_MaxHP | BuffEffect_SkillRatio | BuffEffect_SkillRange | BuffEffect_Disperse | BuffEffect_ValueBy | BuffEffect_LessTarget |
+	BuffEffect_ActCount;
 
 // #region BuffEffect
 interface BuffEffect_Unknown {
@@ -204,17 +227,39 @@ interface BuffEffect_TurnSpeed {
 	turnSpeed: BuffEffectValue;
 }
 
-type BuffEffect_Resist = BuffEffect_Resist_Elem | BuffEffect_Resist_Debuff;
+type BuffEffect_Resist = BuffEffect_Resist_Elem | BuffEffect_ResistMin_Elem | BuffEffect_ResistFix_Elem | BuffEffect_ResistReverse_Elem |
+	BuffEffect_Resist_Debuff;
 interface BuffEffect_Resist_Elem {
 	resist: {
 		elem: "fire" | "ice" | "lightning";
 		value: BuffEffectValue_Percent;
 	};
 }
-/** 효과 저항 증가/감소 */
+/** 속성 저항, 하한선 */
+interface BuffEffect_ResistMin_Elem {
+	resist: {
+		elem: "fire" | "ice" | "lightning";
+		min: BuffEffectValue_Percent;
+	};
+}
+/** 속성 저항, 고정값 */
+interface BuffEffect_ResistFix_Elem {
+	resist: {
+		elem: "fire" | "ice" | "lightning";
+		fix: BuffEffectValue_Percent;
+	};
+}
+/** 속성 저항, 반전 */
+interface BuffEffect_ResistReverse_Elem {
+	resist: {
+		elem: "fire" | "ice" | "lightning";
+		reverse: true;
+	};
+}
+/** 효과저항/강화해제 증가/감소 */
 interface BuffEffect_Resist_Debuff {
 	resist: {
-		type: "debuff";
+		type: "debuff" | "off";
 		value: BuffEffectValue_Percent;
 	};
 }
@@ -343,13 +388,18 @@ interface BuffEffect_AtkFixedDamage_Elem {
 }
 
 interface BuffEffect_Provoke {
-	provoke: true;
+	provoke: "self" | "target";
 }
 interface BuffEffect_Immovable {
 	immovable: true;
 }
 interface BuffEffect_SkillDisable {
-	skill_disable: true;
+	/**
+	 * 0 : 패시브
+	 * 1, 2 : 해당 액티브 스킬
+	 * true : 모든 액티브 스킬
+	 */
+	skill_disable: true | 0 | 1 | 2;
 }
 interface BuffEffect_AttackTarget {
 	attack_target: true;
@@ -418,6 +468,10 @@ interface BuffEffect_ValueBy {
 
 interface BuffEffect_LessTarget {
 	less_target: BuffEffectValue;
+}
+
+interface BuffEffect_ActCount {
+	act_count: number;
 }
 // #endregion
 

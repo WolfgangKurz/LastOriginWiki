@@ -139,8 +139,9 @@ const Units: FunctionalComponent = () => {
 				const FilterableUnitDB = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
 				if (!FilterableUnitDB) return [];
 
+
 				return FilterableUnitDB
-					.filter(x => LocaleGet(`UNIT_${x.uid}`).includes(Filters.SearchText))
+					.filter(x => new RegExp(Filters.SearchText, "i").test(LocaleGet(`UNIT_${x.uid}`)))
 					.filter(x => {
 						if (Filters.RoguelikeSkill.length > 0)
 							return Filters.RoguelikeSkill.some(y => x.roguelike.includes(y));

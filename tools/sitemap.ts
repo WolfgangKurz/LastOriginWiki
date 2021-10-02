@@ -48,6 +48,7 @@ const WorldNames: Record<string, string> = {
 	Ev10: "누군가 바랐던 소원",
 	Ev11: "Project ORCA, 별밤의 무대",
 	Ev12: "빛이 들지 않는 성역",
+	Ev13: "연꽃 위에 피는 장미",
 };
 const skin = glob.sync(
 	path.resolve(__dirname, "..", "external", "assets", "png", "full", "*.png"),

@@ -204,6 +204,12 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 					.toNumber();
 			}
 
+			const resFix = {
+				fire: false,
+				ice: false,
+				electric: false,
+			};
+
 			const calc = (key: BaseStatType): StatCalcType => {
 				const aliasTarget = [TARGET_TYPE.SELF, TARGET_TYPE.OUR, TARGET_TYPE.OUR_GRID, TARGET_TYPE.ALL_GRID, TARGET_TYPE.ALL_UNIT];
 
@@ -385,13 +391,37 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 						eq.forEach((y, yi) => {
 							if ("type" in y) {
 								const z = y;
-								if (key === "ResistFire" && "resist" in z && "elem" in z.resist && z.resist.elem === "fire")
-									p += levelV(z.resist.value, c.level);
-								else if (key === "ResistIce" && "resist" in z && "elem" in z.resist && z.resist.elem === "ice")
-									p += levelV(z.resist.value, c.level);
-								else if (key === "ResistLightning" && "resist" in z && "elem" in z.resist && z.resist.elem === "lightning")
-									p += levelV(z.resist.value, c.level);
-
+								if (key === "ResistFire" && "resist" in z && "elem" in z.resist && z.resist.elem === "fire") {
+									if ("min" in z.resist)
+										p = Math.max(p, levelV(z.resist.min, c.level));
+									else if ("fix" in z.resist) {
+										p = levelV(z.resist.fix, c.level);
+										resFix.fire = true;
+									} else if ("reverse" in z.resist)
+										p = -p;
+									else if (!resFix.fire)
+										p += levelV(z.resist.value, c.level);
+								} else if (key === "ResistIce" && "resist" in z && "elem" in z.resist && z.resist.elem === "ice") {
+									if ("min" in z.resist)
+										p = Math.max(p, levelV(z.resist.min, c.level));
+									else if ("fix" in z.resist) {
+										p = levelV(z.resist.fix, c.level);
+										resFix.ice = true;
+									} else if ("reverse" in z.resist)
+										p = -p;
+									else if (!resFix.ice)
+										p += levelV(z.resist.value, c.level);
+								} else if (key === "ResistLightning" && "resist" in z && "elem" in z.resist && z.resist.elem === "lightning") {
+									if ("min" in z.resist)
+										p = Math.max(p, levelV(z.resist.min, c.level));
+									else if ("fix" in z.resist) {
+										p = levelV(z.resist.fix, c.level);
+										resFix.electric = true;
+									} else if ("reverse" in z.resist)
+										p = -p;
+									else if (!resFix.electric)
+										p += levelV(z.resist.value, c.level);
+								}
 								return;
 							}
 
