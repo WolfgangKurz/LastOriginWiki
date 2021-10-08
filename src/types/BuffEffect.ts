@@ -461,7 +461,7 @@ interface BuffEffect_ValueBy {
 	value: "skill_ratio" | "atk" | "crit";
 	by: BuffEffectValue & {
 		type: "up" | "down";
-		target: "self" | "target" | "attacker";
+		target: "self" | "target" | "attacker" | "buffer";
 		by: "evade" | "defense" | "atk";
 	};
 }
