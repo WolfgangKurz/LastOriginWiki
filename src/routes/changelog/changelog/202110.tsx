@@ -6,6 +6,16 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11123" date="2021-10-08"
+		update={ <>
+			<li>일부 전투원의 승급 정보가 갱신되었습니다.</li>
+			<li>일부 전투원의 스킬 정보가 갱신되었습니다.</li>
+		</> }
+		dialogue={ <>
+			<li>일부 전투원의 서약 대사가 추가되었습니다.</li>
+			<li><span class="badge bg-light text-dark">KST 2021-10-08 21:40:16</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11118" date="2021-10-03"
 		new={ <>
 			<li>신규 전투원 <span class="badge bg-warning text-dark">엘리 퀵핸드</span>의 정보가 추가되었습니다.</li>

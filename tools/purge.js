@@ -17,6 +17,7 @@ function travel (dir, callback) {
 	dirs.forEach(p => travel(p, callback));
 }
 
+const locales = ["korea"];
 const target = ["locale"];
 
 const lists = [];
@@ -24,7 +25,7 @@ const list = [];
 travel(base, (p) => {
 	const prefix = "https://lo.swaytwig.com/json/";
 	const m = p.substr(base.length + 1).replace(/\\/g, "/");
-	if (target.some(t => m.includes(t)))
+	if (target.some(t => (locales.length === 0 || locales.some(locale => m.includes(`${locale}/`))) && m.includes(t)))
 		list.push(prefix + m);
 
 	if (list.length >= 30) {

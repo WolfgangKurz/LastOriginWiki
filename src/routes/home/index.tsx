@@ -37,8 +37,9 @@ const Home: FunctionalComponent = () => {
 	const BuildVersion = BuildInfo.build;
 
 	const now = Date.now();
-	const EWCount = Math.floor(now / (24 * 60 * 60 * 1000) + 3) % 28;
-	const EWNo = Math.floor((now / (24 * 60 * 60 * 1000) + 3) / 28) - 648;
+	const EWAdjust = 3 + 7; // 3
+	const EWCount = Math.floor(now / (24 * 60 * 60 * 1000) + EWAdjust) % 28;
+	const EWNo = Math.floor((now / (24 * 60 * 60 * 1000) + EWAdjust) / 28) - 648;
 	const IsEW = EWCount >= 14;
 	const LeftEW = 27 - EWCount;
 
