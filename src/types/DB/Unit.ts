@@ -75,6 +75,11 @@ export interface UnitSkinEntity {
 	/** Premium Skin? */
 	Pre: boolean;
 
+	/** Animated, Video? */
+	AV: boolean;
+	/** Animated, Video? - Google ver */
+	AVG: boolean;
+
 	// /** Skin Item Name */
 	// name: string;
 
@@ -180,6 +185,8 @@ export namespace Unit {
 			S: false,
 			X: false,
 			Pre: false,
+			AV: false,
+			AVG: false,
 			artist: "",
 			offset: { n: 0, d: 0, s: 0, x: 0 },
 			sid: 0,

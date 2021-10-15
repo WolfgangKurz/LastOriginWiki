@@ -54,14 +54,14 @@ const UnitsGroup: FunctionalComponent<UnitsListProps> = (props) => {
 
 		{ Object.keys(GroupedList).map(group => <div class="container unit-group mb-3">
 			<div class="row text-center">
-				<div class="col-12 col-lg-2 col-md-3 bg-dark text-light">
+				<div class="col-12 col-md-3 col-lg-2 bg-dark text-light">
 					<img src={ `${AssetsRoot}/${imageExt}/group/${group.replace(/_[0-9]+$/, "")}.${imageExt}` } />
 					<div>
 						<Locale k={ `UNIT_GROUP_${group}` } fallback={ <Locale k={ `UNIT_GROUP_${group}_1` } /> } />
 					</div>
 				</div>
-				<div class="col-12 col-lg-10 col-md-9">
-					<div class="row row-cols-2 row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-3">
+				<div class="col-12 col-md-9 col-lg-10">
+					<div class="row row-cols-2 row-cols-sm-3 row-cols-md-3 row-cols-lg-5 row-cols-xl-6">
 						{ GroupedList[group].map(unit => <div class="col unit-list-item">
 							<UnitCard unit={ unit } />
 						</div>) }
