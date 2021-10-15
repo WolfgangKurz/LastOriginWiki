@@ -10,7 +10,7 @@ function process (auth) {
 			spreadsheetId: targetDB === "korea"
 				? "11IxebdUQ_VHbaP79sN8KxZ87n3c5rG42DL8TQOK9h1k"
 				: "1ohSOKdl1IZq8aOsWPJ74yX01Ave7FkSrUFG5MSbfZN8",
-			range: "UnitSkin!A2:T",
+			range: "UnitSkin!A2:V",
 		}, (err, res) => {
 			if (err) return console.log(`The API returned an error: ${err}`);
 
@@ -42,8 +42,10 @@ function process (auth) {
 						s: parseInt(row[18] || "0", 10),
 						x: parseInt(row[19] || "0", 10),
 					};
+					const AV = parseInt(row[20], 10) === 1;
+					const AVG = parseInt(row[21], 10) === 1;
 
-					const info = { G, V, E, M, A, Stage, D, S, X, Pre };
+					const info = { G, V, E, M, A, Stage, D, S, X, Pre, AV, AVG };
 					const base = { sid: skinId, artist, offset, price, ...info };
 
 					if (!(uid in ret))

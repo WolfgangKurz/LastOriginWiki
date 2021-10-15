@@ -63,6 +63,22 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 
 		return `${AssetsRoot}/${ext}/full/${unit.uid}_${skinId}_${skin.G && IsGoogle.value ? "G" : "O"}${postfix}.${ext}`;
 	})();
+	const SkinVideoURL = ((): string => {
+		if (!props.collapsed || (
+			(!IsGoogle.value && !skin.AV) ||
+			(IsGoogle.value && !skin.AVG)
+		) || IsDamaged.value || IsSimplified.value) return "";
+		const skinId = skin.isDef ? 0 : skin.sid;
+
+		const postfix = ((): string => {
+			const ret: string[] = [];
+			if (IsDamaged.value) ret.push("D");
+			if (IsSimplified.value) ret.push("S");
+			return (ret.length > 0 ? "_" : "") + ret.join("");
+		})();
+
+		return `${AssetsRoot}/webm/${unit.uid}_${skinId}_${skin.G && IsGoogle.value ? "G" : "O"}${postfix}.webm`;
+	})();
 
 	const ssid = skin && skin.sid
 		? skin.sid >= 20
@@ -93,7 +109,10 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					</div>
 				</div>
 				<div class="unit-full-unit">
-					<img style={ ImageStyle } src={ SkinImageURL } />
+					{ SkinVideoURL
+						? <video style={ ImageStyle } src={ SkinVideoURL } autoPlay muted loop />
+						: <img style={ ImageStyle } src={ SkinImageURL } />
+					}
 				</div>
 
 				{ !(skin.isPro || skin.isDef) && skin.price

@@ -118,6 +118,9 @@ const Home: FunctionalComponent = () => {
 			<Locale k="HOME_DESCRIPTION" />
 		</p>
 		<p>
+			<video src={ `${AssetsRoot}/webm/BR_Phoenix_0_SD.webm` } muted loop autoPlay />
+		</p>
+		<p>
 			<a href="https://docs.google.com/spreadsheets/d/1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4" target="_blank" rel="noreferrer">
 				<Icon icon="link-45deg" class="me-1" />
 				<span>Database SpreadSheet</span>
