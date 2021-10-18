@@ -1,3 +1,4 @@
+import Decimal from "decimal.js";
 import { FunctionalComponent } from "preact";
 
 import { SkillEntryData, SkillEntity } from "@/types/DB/Skill";
@@ -123,24 +124,13 @@ const SkillBound: FunctionalComponent<SkillBoundProps> = ({ target, buffs, level
 
 	const targets: preact.VNode[] = [];
 
-	const t = Bound.match;
+	const t = Bound.match.split(",");
 	const offset = Bound.offset;
 
 	for (let i = 0; i < t.length; i++) {
-		// @ 25%, # 50%, $ 75%
-		// ^ value 50%, display 25%
-		// & value 75%, display 50%
 		const c = t[i];
-
-		const cTable: Record<string, number> = {
-			"@": 25,
-			"#": 50,
-			$: 75,
-		};
-		if (c in cTable)
-			targets.push(<span class={ `target target-${cTable[c]} ${target}` } data-pos={ t[++i] } />);
-		else
-			targets.push(<span class={ `target ${target}` } data-pos={ c } />);
+		const v = Decimal.mul(100, c).toString();
+		targets.push(<span class={ `target target-${v} ${target}` } data-pos={ i + 1 } />);
 	}
 
 	return <div class="skill-bound" data-passive={ passive ? 1 : 0 }>

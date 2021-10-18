@@ -6,17 +6,35 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11139" date="2021-10-18"
+		bugfix={ <>
+			<li>스킬 범위에서 10% 영역이 표시되지 않던 점을 수정했습니다.</li>
+		</> }
+		new={ <>
+			<li>신규 전투원 <span class="badge bg-warning text-dark">스트라토 엔젤</span>의 정보가 추가되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">에키드나</span>의 서약 대사 세트가 추가되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">퀵 카멜</span>의 서약 대사 세트가 추가되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">마이티R</span>의 서약 대사 세트가 추가되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">T-9 그렘린</span>의 서약 대사 세트가 추가되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<span class="badge bg-warning text-dark">C-33 안드바리</span>의 스킨 <span class="badge bg-danger">첫 번째 수업</span>의 로비 애니메이션 정보 및 영상이 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2021-10-18 12:28:37</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11137" date="2021-10-16"
-		new={
-			<>
-				<li>신규 전투원 <span class="badge bg-warning text-dark">사멸의 세크메트</span>의 정보가 추가되었습니다.</li>
-				<li>
-					전투원 정보의 스킨 미리보기에 <span class="badge bg-dark text-light">로비 애니메이션</span> 영상이 추가되었습니다.<br />
-					일부 로비 애니메이션은 모션이 올바르지 않을 수도 있으며, 영상이 존재하지 않는 전투원도 있습니다.<br />
-					<span class="badge bg-danger ms-0 mt-1">이제 움직입니다!</span>
-				</li>
-			</>
-		}
+		new={ <>
+			<li>신규 전투원 <span class="badge bg-warning text-dark">사멸의 세크메트</span>의 정보가 추가되었습니다.</li>
+			<li>
+				전투원 정보의 스킨 미리보기에 <span class="badge bg-dark text-light">로비 애니메이션</span> 영상이 추가되었습니다.<br />
+				일부 로비 애니메이션은 모션이 올바르지 않을 수도 있으며, 영상이 존재하지 않는 전투원도 있습니다.<br />
+				<span class="badge bg-danger ms-0 mt-1">이제 움직입니다!</span>
+			</li>
+		</> }
 		update={ <>
 			<li>
 				<span class="badge bg-warning text-dark">전투원목록</span>의
