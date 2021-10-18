@@ -17,46 +17,46 @@
 		width: $w;
 		height: $h;
 
-		background-image: url($assetsRoot + "/skill-parallelogram.png");
+		background-image: url($assetsRoot + "/skill-parallelogram.png?20211018");
 		background-repeat: no-repeat;
-		background-size: ($w * 10) $h;
+		background-size: ($w * 11) $h;
 
 		&.offset {
 			background-position-x: -$w;
 			z-index: 2;
 		}
-		&.target,
-		&.target-50,
-		&.target-25 {
+		&.target {
 			margin-top: -2px;
 			margin-left: -2px;
-			z-index: 2;
-		}
-		&.target {
 			background-position-x: -($w * 2);
-		}
-		&.target-75 {
-			background-position-x: -($w * 3);
-		}
-		&.target-50 {
-			background-position-x: -($w * 4);
-		}
-		&.target-25 {
-			background-position-x: -($w * 5);
+			z-index: 2;
+
+			&.target-75 {
+				background-position-x: -($w * 3);
+			}
+			&.target-50 {
+				background-position-x: -($w * 4);
+			}
+			&.target-25 {
+				background-position-x: -($w * 5);
+			}
+			&.target-10 {
+				background-position-x: -($w * 6);
+			}
 		}
 		&.range {
-			background-position-x: -($w * 6);
+			background-position-x: -($w * 7);
 		}
 		/*
 		&.target.team {
-			background-position-x: -($w * 6);
+			background-position-x: -($w * 8);
 		}
 		&.target-75.team,
 		&.target-50.team {
-			background-position-x: -($w * 7);
+			background-position-x: -($w * 9);
 		}
 		&.target-25.team {
-			background-position-x: -($w * 8);
+			background-position-x: -($w * 10);
 		}
 		*/
 	}
@@ -170,6 +170,6 @@
 	.level-selector > button {
 		margin-top: 0.5em;
 		padding: 0.125em 0.5em;
-		font-size: .675rem;
+		font-size: 0.675rem;
 	}
 }
