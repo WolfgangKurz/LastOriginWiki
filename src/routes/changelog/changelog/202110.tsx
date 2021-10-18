@@ -11,7 +11,6 @@ const Changelog: FunctionalComponent = () => <>
 			<li>스킬 범위에서 10% 영역이 표시되지 않던 점을 수정했습니다.</li>
 		</> }
 		new={ <>
-			<li>신규 전투원 <span class="badge bg-warning text-dark">스트라토 엔젤</span>의 정보가 추가되었습니다.</li>
 			<li><span class="badge bg-warning text-dark">에키드나</span>의 서약 대사 세트가 추가되었습니다.</li>
 			<li><span class="badge bg-warning text-dark">퀵 카멜</span>의 서약 대사 세트가 추가되었습니다.</li>
 			<li><span class="badge bg-warning text-dark">마이티R</span>의 서약 대사 세트가 추가되었습니다.</li>
