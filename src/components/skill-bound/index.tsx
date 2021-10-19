@@ -124,11 +124,13 @@ const SkillBound: FunctionalComponent<SkillBoundProps> = ({ target, buffs, level
 
 	const targets: preact.VNode[] = [];
 
-	const t = Bound.match.split(",").filter(x => x !== "0");
+	const t = Bound.match.split(",");
 	const offset = Bound.offset;
 
 	for (let i = 0; i < t.length; i++) {
 		const c = t[i];
+		if (c === "0") continue;
+
 		const v = Decimal.mul(100, c).toString();
 		targets.push(<span class={ `target target-${v} ${target}` } data-pos={ i + 1 } />);
 	}
