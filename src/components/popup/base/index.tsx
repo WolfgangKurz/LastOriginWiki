@@ -37,6 +37,8 @@ export default class PopupBase extends Component<PopupBaseProps> {
 	private disposing = false;
 
 	updateBootstrap (): void {
+		if (this.disposing) return;
+
 		if (!this.instance) {
 			const el = document.querySelector(`#${this.uid}`);
 			if (!el) return;
@@ -64,6 +66,7 @@ export default class PopupBase extends Component<PopupBaseProps> {
 		this.disposing = true;
 		if (!this.instance) return;
 		this.instance.hide();
+		this.instance = null;
 		// this.instance.dispose();
 	}
 

@@ -21,6 +21,7 @@ interface SkinViewProps {
 	unit: Unit;
 	collapsed?: boolean;
 	detailable?: boolean;
+	animate?: boolean;
 }
 
 const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
@@ -32,6 +33,8 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 	const IsDamaged = objState<boolean>(false);
 	const IsSimplified = objState<boolean>(false);
 	const IsGoogle = objState<boolean>(false);
+
+	const IsAnimating = objState<boolean>(false);
 
 	const Aspect = props.collapsed ? style["ratio-2x5"] : "ratio-4x3";
 
@@ -64,10 +67,11 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		return `${AssetsRoot}/${ext}/full/${unit.uid}_${skinId}_${skin.G && IsGoogle.value ? "G" : "O"}${postfix}.${ext}`;
 	})();
 	const SkinVideoURL = ((): string => {
-		if (!props.collapsed || (
-			(!IsGoogle.value && !skin.AV) ||
-			(IsGoogle.value && !skin.AVG)
-		) || IsDamaged.value || IsSimplified.value) return "";
+		if (!props.collapsed && !props.animate) return "";
+
+		if ((!IsGoogle.value && !skin.AV) || (IsGoogle.value && !skin.AVG)) return "";
+		if (IsDamaged.value || IsSimplified.value) return "";
+
 		const skinId = skin.isDef ? 0 : skin.sid;
 
 		const postfix = ((): string => {
@@ -77,7 +81,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 			return (ret.length > 0 ? "_" : "") + ret.join("");
 		})();
 
-		return `${AssetsRoot}/webm/${unit.uid}_${skinId}_${skin.G && IsGoogle.value ? "G" : "O"}${postfix}.webm`;
+		return `${AssetsRoot}/webm/HD/${unit.uid}_${skinId}_${skin.G && IsGoogle.value ? "G" : "O"}${postfix}.webm`;
 	})();
 
 	const ssid = skin && skin.sid
@@ -249,15 +253,30 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 										<h5 class="modal-title">
 											<Locale plain k={ skin.sid ? `UNIT_SKIN_${unit.uid}_${skin.sid}` : `UNIT_${unit.uid}` } />
 										</h5>
+										{ (!IsGoogle.value && skin.AV) || (IsGoogle.value && skin.AVG)
+											? <div class="text-end flex-1 me-3">
+												<div class="form-check form-switch">
+													<label class="form-check-label">
+														<input
+															class="form-check-input"
+															type="checkbox"
+															checked={ IsAnimating.value }
+															onClick={ (): void => IsAnimating.set(!IsAnimating.value) }
+														/>
+														<Locale k="UNIT_VIEW_SKIN_ANIMATION_SWITCH" />
+													</label>
+												</div>
+											</div>
+											: <></>
+										}
 										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" />
 									</div>
 									<div class="modal-body">
-										<SkinView unit={ unit } skin={ skin } />
+										<SkinView unit={ unit } skin={ skin } animate={ IsAnimating.value } />
 									</div>
 								</div>
 							</div>
 						</div>
-
 					</>
 					: <></>
 				}

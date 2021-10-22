@@ -6,6 +6,25 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11146" date="2021-10-22"
+		bugfix={ <>
+			<li><span class="badge bg-warning text-dark">사멸의 세크메트</span>의 일부 대사가 재생되지 않던 문제가 수정되었습니다.</li>
+			<li>일부 스킨이 표시되지 않던 문제를 수정했습니다.</li>
+			<li>
+				<span class="badge bg-warning text-dark">사라카엘</span>의 스킬 설명에
+				<span class="badge bg-warning text-dark">코헤이 교단</span> 소속 전투원 목록이 잘못 표기되어있던 점이 수정되었습니다.
+			</li>
+		</> }
+		new={ <>
+			<li>전투원 스킨의 "크게 보기" 상태에서 로비 애니메이션을 볼 수 있는 스위치가 추가되었습니다.</li>
+		</> }
+		update={ <>
+			<li>로비 애니메이션 영상의 화질을 개선했습니다.</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2021-10-22 18:23:10</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11139" date="2021-10-18"
 		bugfix={ <>
 			<li>스킬 범위에서 10% 영역이 표시되지 않던 점을 수정했습니다.</li>

@@ -8,7 +8,7 @@ import { ChangeDB, CurrentDB, DBList, DBTypes } from "@/libs/DB";
 import Locale from "@/components/locale";
 import Icon from "@/components/bootstrap-icon";
 
-import style from "./style.css";
+import style from "./style.scss";
 
 interface LinkData {
 	href: string;
@@ -51,6 +51,9 @@ const Header: FunctionalComponent = () => {
 			<div class={ `${style["navbar-brand"]} navbar-brand` }>
 				<img src={ `${AssetsRoot}/icon.png` } />
 				<span>
+					<i class={ style["_official"] } data-locale={ CurrentLocale }>
+						<Locale k="COMMON_AUTHORIZED?" />
+					</i>
 					<Locale k="MENU_TITLE" />
 				</span>
 			</div>
