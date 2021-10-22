@@ -1035,7 +1035,14 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			] } />;
 		}
 		else if ("act_count" in stat)
-			return <Locale plain k="BUFFEFFECT_ACT_COUNT" p={ [stat.act_count] } />;
+			return <Locale plain k="BUFFEFFECT_ACT_COUNT" p={ [stat.act_count > 0 ? `+${stat.act_count}` : stat.act_count] } />;
+		else if ("guardpierce_apply" in stat) {
+			if (stat.guardpierce_apply)
+				return <Locale plain k="BUFFEFFECT_GUARDPIERCE_APPLY" />;
+			return <Locale plain k="BUFFEFFECT_GUARDPIERCE_NO_APPLY" />;
+		}
+		else if ("buff_disallow" in stat)
+			return <Locale plain k="BUFFEFFECT_BUFF_DISALLOW" />;
 
 		return <>{ JSON.stringify(stat) }</>; // "???";
 	}
@@ -1123,19 +1130,27 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 		}
 
 		if (type === NUM_OUTPUTTYPE.INTEGER) {
+			try {
+				const v = Decimal.mul(per || "0", level || 0)
+					.add(value)
+					.toNumber()
+					.toString();
+				return template.replace(/\{0\}/g, v);
+			} catch {
+				return template;
+			}
+		}
+
+		try {
 			const v = Decimal.mul(per || "0", level || 0)
 				.add(value)
+				.mul(100)
 				.toNumber()
 				.toString();
 			return template.replace(/\{0\}/g, v);
+		} catch {
+			return template;
 		}
-
-		const v = Decimal.mul(per || "0", level || 0)
-			.add(value)
-			.mul(100)
-			.toNumber()
-			.toString();
-		return template.replace(/\{0\}/g, v);
 	}
 
 	function isStatable (type: BUFFEFFECT_TYPE): boolean {

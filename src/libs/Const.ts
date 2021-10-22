@@ -8,9 +8,13 @@ import { LocaleGet } from "@/components/locale";
 export type ImageExtensionTypes = "webp" | "png";
 export const ImageExtensionList: ImageExtensionTypes[] = ["webp", "png"];
 
+export const IsBeta = true;
+
 export const Host = process.env.NODE_ENV === "development"
 	? "http://121.157.45.209:5500"
-	: "https://lo.swaytwig.com";
+	: IsBeta
+		? "https://lobeta.swaytwig.com"
+		: "https://lo.swaytwig.com";
 
 export const AssetsRoot = `${Host}/assets`;
 export const DataRoot = `${Host}/json`;

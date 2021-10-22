@@ -996,6 +996,26 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 			return <Locale plain k="BUFFEFFECT_SKILL_RATIO" p={ [signedValue(stat.skill_ratio, level)] } />;
 		else if ("less_target" in stat)
 			return <Locale plain k="BUFFEFFECT_LESS_TARGET" p={ [signedValue(stat.less_target, level)] } />;
+		else if ("disperse" in stat)
+			return <Locale plain k="BUFFEFFECT_DISPERSE" p={ [nsignedValue(stat.disperse, level)] } />;
+		else if ("by" in stat) {
+			return <Locale plain k="BUFFEFFECT_BY" p={ [
+				<Locale plain k={ `BUFFTARGET_${stat.by.target.toUpperCase()}` } />,
+				<Locale plain k={ `BUFFEFFECT_BY_${stat.by.by.toUpperCase()}` } />,
+				nsignedValue(stat.by, level),
+				<Locale plain k={ `BUFFEFFECT_BY_${stat.value.toUpperCase()}` } />,
+				<Locale plain k={ `BUFFTYPE_${stat.by.type.toUpperCase()}` } />,
+			] } />;
+		}
+		else if ("act_count" in stat)
+			return <Locale plain k="BUFFEFFECT_ACT_COUNT" p={ [stat.act_count > 0 ? `+${stat.act_count}` : stat.act_count] } />;
+		else if ("guardpierce_apply" in stat) {
+			if (stat.guardpierce_apply)
+				return <Locale plain k="BUFFEFFECT_GUARDPIERCE_APPLY" />;
+			return <Locale plain k="BUFFEFFECT_GUARDPIERCE_NO_APPLY" />;
+		}
+		else if ("buff_disallow" in stat)
+			return <Locale plain k="BUFFEFFECT_BUFF_DISALLOW" />;
 
 		return <>{ JSON.stringify(stat) }</>; // "???";
 	}
@@ -1074,19 +1094,27 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 		}
 
 		if (type === NUM_OUTPUTTYPE.INTEGER) {
+			try {
+				const v = Decimal.mul(per, level || 0)
+					.add(value)
+					.toNumber()
+					.toString();
+				return template.replace(/\{0\}/g, v);
+			} catch {
+				return template;
+			}
+		}
+
+		try {
 			const v = Decimal.mul(per, level || 0)
 				.add(value)
+				.mul(100)
 				.toNumber()
 				.toString();
 			return template.replace(/\{0\}/g, v);
+		} catch {
+			return template;
 		}
-
-		const v = Decimal.mul(per, level || 0)
-			.add(value)
-			.mul(100)
-			.toNumber()
-			.toString();
-		return template.replace(/\{0\}/g, v);
 	}
 
 	const stat = props.stat;

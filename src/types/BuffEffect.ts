@@ -165,7 +165,7 @@ type BuffEffect_Body = BuffEffect_Unknown | BuffEffect_Off | BuffEffect_Attack |
 	BuffEffect_Immovable | BuffEffect_SkillDisable | BuffEffect_Revive | BuffEffect_AttackTarget | BuffEffect_InvokeChance |
 	BuffEffect_SummonRemove | BuffEffect_PenetrationForce | BuffEffect_Exp | BuffEffect_DebuffImmune | BuffEffect_Collaborate |
 	BuffEffect_MaxHP | BuffEffect_SkillRatio | BuffEffect_SkillRange | BuffEffect_Disperse | BuffEffect_ValueBy | BuffEffect_LessTarget |
-	BuffEffect_ActCount;
+	BuffEffect_ActCount | BuffEffect_GuardPierceApply | BuffEffect_BuffDisallow;
 
 // #region BuffEffect
 interface BuffEffect_Unknown {
@@ -472,6 +472,14 @@ interface BuffEffect_LessTarget {
 
 interface BuffEffect_ActCount {
 	act_count: number;
+}
+
+interface BuffEffect_GuardPierceApply {
+	guardpierce_apply: boolean;
+}
+
+interface BuffEffect_BuffDisallow {
+	buff_disallow: true;
 }
 // #endregion
 
