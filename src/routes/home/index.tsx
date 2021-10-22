@@ -1,7 +1,7 @@
 import { FunctionalComponent } from "preact";
 import { Link } from "preact-router";
 
-import { AssetsRoot, CurrentEvent, EventFrom, EventTo, ImageExtension } from "@/libs/Const";
+import { AssetsRoot, CurrentEvent, EventFrom, EventTo, ImageExtension, IsBeta } from "@/libs/Const";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 import { CurrentLocale } from "@/libs/Locale";
 
@@ -37,44 +37,12 @@ const Home: FunctionalComponent = () => {
 	const BuildVersion = BuildInfo.build;
 
 	const now = Date.now();
-	const EWAdjust = 3 + 7; // 3
-	const EWCount = Math.floor(now / (24 * 60 * 60 * 1000) + EWAdjust) % 28;
-	const EWNo = Math.floor((now / (24 * 60 * 60 * 1000) + EWAdjust) / 28) - 648;
-	const IsEW = EWCount >= 14;
-	const LeftEW = 27 - EWCount;
 
 	SetMeta(["description", "twitter:description"], null);
 	SetMeta(["twitter:image", "og:image"], null);
 	UpdateTitle();
 
 	return <div class={ `${style.home} home` }>
-		<div class="alert alert-primary" role="alert">
-			<span class="pe-3">
-				<img src={ `${AssetsRoot}/flags/KR.png` } alt="[KR]" />
-			</span>
-
-			{ IsEW
-				? <Locale k="HOME_EW_REMAIN" p={ [
-					<span class="badge bg-light text-dark" style="font-size: 100%">
-						<Locale k="HOME_EW" p={ [EWNo] } />
-					</span>,
-					<span class="badge bg-danger" style="font-size: 100%">
-						<Locale k="HOME_EW_DAYS" p={ [LeftEW] } />
-					</span>,
-				] } />
-				: <Locale k="HOME_EW_ENDED" p={ [
-					<span class="badge bg-light text-dark" style="font-size: 100%">
-						<Locale k="HOME_EW" p={ [EWNo - 1] } />
-					</span>,
-					<span class="badge bg-light text-dark" style="font-size: 100%">
-						<Locale k="HOME_EW" p={ [EWNo] } />
-					</span>,
-					<span class="badge bg-danger" style="font-size: 100%">
-						<Locale k="HOME_EW_DAYS" p={ [LeftEW - 14 + 1] } />
-					</span>,
-				] } /> }
-		</div>
-
 		{ CurrentEvent && (new Date() < EventTo)
 			? <div class="alert alert-danger" role="alert">
 				<span class="pe-3">
@@ -104,7 +72,10 @@ const Home: FunctionalComponent = () => {
 			<img class={ `${style["heading-icon"]} heading-icon` } src={ `${AssetsRoot}/icon.png` } />
 			<span class={ style["home-title"] }>
 				<i class={ style["_official"] }>
-					<Locale k="COMMON_AUTHORIZED?" />
+					{ IsBeta
+						? <>BETA</>
+						: <Locale k="COMMON_AUTHORIZED?" />
+					}
 				</i>
 				<Locale k="COMMON_TITLE" />
 			</span>

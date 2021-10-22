@@ -6,6 +6,21 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11201" date="2021-10-23"
+		new={ <>
+			<li>신규 전투원 <span class="badge bg-warning text-dark">엠피트리테</span>의 정보가 추가되었습니다.</li>
+			<li>신규 전투원 <span class="badge bg-warning text-dark">살라시아</span>의 정보가 추가되었습니다.</li>
+			<li>신규 전투원 <span class="badge bg-warning text-dark">오렌지에이드</span>의 정보가 추가되었습니다.</li>
+			<li>신규 장비 <span class="badge bg-warning text-dark">강행 전투 보조장치</span>의 정보가 추가되었습니다.</li>
+			<li>신규 장비 <span class="badge bg-warning text-dark">스파이크 실드</span>의 정보가 추가되었습니다.</li>
+			<li>신규 장비 <span class="badge bg-warning text-dark">암습형 전투 시스템</span>의 정보가 추가되었습니다.</li>
+			<li>신규 적의 정보가 추가되었습니다.</li>
+			<li>2부 1지역 (9지역) 정보가 추가되었습니다.</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2021-10-23 04:24:02</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11146" date="2021-10-22"
 		bugfix={ <>
 			<li><span class="badge bg-warning text-dark">사멸의 세크메트</span>의 일부 대사가 재생되지 않던 문제가 수정되었습니다.</li>

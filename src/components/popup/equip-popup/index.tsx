@@ -422,34 +422,14 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 									<tr>
 										<th class="bg-dark text-light"><Locale k="EQUIP_VIEW_COST_LEVEL" /></th>
 										<th class="bg-dark text-light"><Locale k="EQUIP_VIEW_COST_COST" /></th>
-										<th class="bg-dark text-light">
-											<img
-												class="upmodule-icon"
-												src={ `${AssetsRoot}/${imageExt}/item/UI_Icon_Equip_ChipSet_T4.${imageExt}` }
-											/>
-										</th>
 										<th class="bg-dark text-light"><Locale k="EQUIP_VIEW_COST_TOTALCOST" /></th>
-										<th class="bg-dark text-light">
-											<img
-												class="upmodule-icon"
-												src={ `${AssetsRoot}/${imageExt}/item/UI_Icon_Equip_ChipSet_T4.${imageExt}` }
-											/>
-										</th>
 									</tr>
 									{ new Array(10)
 										.fill(0)
 										.map((_, lv) => <tr>
 											<th class="bg-dark text-light">+{ lv + 1 }</th>
 											<td>{ UpgradeCostText(lv + 1) }</td>
-											<td>
-												<span class="text-secondary">x</span>
-												{ Math.ceil(UpgradeCost(lv + 1) / 400) }
-											</td>
 											<td>{ UpgradeCostText(lv + 1, true) }</td>
-											<td>
-												<span class="text-secondary">x</span>
-												{ Math.ceil(UpgradeCost(lv + 1, true) / 400) }
-											</td>
 										</tr>)
 									}
 								</tbody>

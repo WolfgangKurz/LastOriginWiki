@@ -1,7 +1,7 @@
 import { FunctionalComponent } from "preact";
 import { Link } from "preact-router/match";
 
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot, IsBeta } from "@/libs/Const";
 import { ChangeLanguage, CurrentLocale, LocaleList } from "@/libs/Locale";
 import { ChangeDB, CurrentDB, DBList, DBTypes } from "@/libs/DB";
 
@@ -52,7 +52,10 @@ const Header: FunctionalComponent = () => {
 				<img src={ `${AssetsRoot}/icon.png` } />
 				<span>
 					<i class={ style["_official"] } data-locale={ CurrentLocale }>
-						<Locale k="COMMON_AUTHORIZED?" />
+						{ IsBeta
+							? <>BETA</>
+							: <Locale k="COMMON_AUTHORIZED?" />
+						}
 					</i>
 					<Locale k="MENU_TITLE" />
 				</span>
