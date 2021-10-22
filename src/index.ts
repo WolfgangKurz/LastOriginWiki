@@ -12,4 +12,5 @@ import "@/themes/patch.scss";
 import { Extend } from "@/libs/Functions";
 
 Extend();
+
 export default App;

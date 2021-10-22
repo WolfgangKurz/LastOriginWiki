@@ -1,0 +1,42 @@
+.navbar {
+	.navbar-brand {
+		> img {
+			width: 32px;
+			height: 32px;
+		}
+		> span {
+			position: relative;
+			display: inline-block;
+			margin-left: 0.75em;
+			margin-right: 1.5em;
+			line-height: 1.2;
+			font-weight: bold;
+			font-size: 0.75em;
+			vertical-align: middle;
+
+			._official {
+				position: absolute;
+				margin-left: 0.25em;
+				left: 100%;
+				top: -0.3em;
+				transform: rotate(10deg) translate(-40%, 0);
+				font-style: normal;
+				font-size: 60%;
+				white-space: nowrap;
+				pointer-events: none !important;
+				user-select: none !important;
+				opacity: 0.5;
+
+				&[data-locale="KR"] {
+					top: -1em;
+				}
+				&[data-locale="JP"] {
+					top: -0.7em;
+				}
+			}
+		}
+	}
+	.navbar-nav .nav-item {
+		padding: 0 0.2em;
+	}
+}

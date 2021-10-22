@@ -102,7 +102,12 @@ const Home: FunctionalComponent = () => {
 
 		<h2>
 			<img class={ `${style["heading-icon"]} heading-icon` } src={ `${AssetsRoot}/icon.png` } />
-			<Locale k="COMMON_TITLE" />
+			<span class={ style["home-title"] }>
+				<i class={ style["_official"] }>
+					<Locale k="COMMON_AUTHORIZED?" />
+				</i>
+				<Locale k="COMMON_TITLE" />
+			</span>
 		</h2>
 		<div class="mb-4 text-secondary">
 			<div>
@@ -118,7 +123,7 @@ const Home: FunctionalComponent = () => {
 			<Locale k="HOME_DESCRIPTION" />
 		</p>
 		<p>
-			<video src={ `${AssetsRoot}/webm/BR_Phoenix_0_SD.webm` } muted loop autoPlay />
+			<video src={ `${AssetsRoot}/webm/SD/BR_Phoenix_0_SD.webm` } muted loop autoPlay />
 		</p>
 		<p>
 			<a href="https://docs.google.com/spreadsheets/d/1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4" target="_blank" rel="noreferrer">
