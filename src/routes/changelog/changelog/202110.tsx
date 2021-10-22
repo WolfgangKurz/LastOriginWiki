@@ -36,6 +36,20 @@ const Changelog: FunctionalComponent = () => <>
 		update={ <>
 			<li>로비 애니메이션 영상의 화질을 개선했습니다.</li>
 		</> }
+		skin={ <>
+			<li>
+				<span class="badge bg-warning text-dark">MH-4 테티스</span>의 스킨
+				<span class="badge bg-danger">CAFÉ Horizon : CAFÉ Thetis♡</span>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<span class="badge bg-warning text-dark">C-77 홍련</span>의 스킨
+				<span class="badge bg-danger">애프터 웨딩 : 퇴근 뒤의 저녁식사</span>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<span class="badge bg-warning text-dark">포이</span>의 스킨
+				<span class="badge bg-danger">수영복 콘테스트 : 포이는 물이 싫어</span>의 중파 이미지가 추가되었습니다.
+			</li>
+		</> }
 		dialogue={ <>
 			<li><span class="badge bg-light text-dark">KST 2021-10-22 18:23:10</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
 		</> }

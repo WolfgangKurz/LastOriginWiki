@@ -18,7 +18,7 @@ function travel (dir, callback) {
 }
 
 const locales = ["korea"];
-const target = ["locale", "unit", "world", "map", "consumable", "enemy", "skill", "skin", "dialogue", "quote"];
+const target = ["locale", "unit"];
 
 const lists = [];
 const list = [];
