@@ -1,5 +1,6 @@
 import { FunctionalComponent } from "preact";
 import { Link } from "preact-router";
+import { createPortal } from "preact/compat";
 
 import { Consumable } from "@/types/DB/Consumable";
 
@@ -15,10 +16,18 @@ import "./style.scss";
 
 interface DropItemProps {
 	item: Consumable;
+
 	count?: number;
+	countPart?: preact.VNode;
+
 	chance?: number;
+	chancePart?: preact.VNode;
+
 	variant?: string;
 	text?: string;
+
+	noIcon?: boolean;
+	transcluent?: boolean;
 }
 
 const DropItem: FunctionalComponent<DropItemProps> = (props) => {
@@ -185,23 +194,18 @@ const DropItem: FunctionalComponent<DropItemProps> = (props) => {
 		return <></>;
 	})();
 
-	return <div class="p-2 text-dark drop-item">
+	return <div class={ `p-2 text-dark drop-item ${props.transcluent ? "transcluent" : ""}` }>
 		<div class={ `card bg-${variant} text-${text} drop-item` }>
 			<div class="card-body">
 				<EquipIcon class="float-start me-2" image={ props.item.icon } />
 				<div class="text-start">
 					<Locale k={ `CONSUMABLE_${props.item.key}` } />
 
-					{ count > 1
-						? <span class="badge bg-dark ms-1">x{ count }</span>
-						: <></>
-					}
+					{ props.countPart || (count > 1 ? <span class="badge bg-dark ms-1">x{ count }</span> : <></>) }
 					<div>
-						{ chance < 100
-							? <span class="badge bg-light text-dark">{ chance }%</span>
-							: <></>
-						}
-						<Icon icon="info-circle-fill" class="float-end mt-1" />
+						{ props.chancePart || (chance < 100 ? <span class="badge bg-light text-dark">{ chance }%</span> : <></>) }
+
+						{ !props.noIcon ? <Icon icon="info-circle-fill" class="float-end mt-1" /> : <></> }
 					</div>
 				</div>
 			</div>
@@ -212,7 +216,7 @@ const DropItem: FunctionalComponent<DropItemProps> = (props) => {
 			} } />
 		</div>
 
-		<PopupBase
+		{ createPortal(<PopupBase
 			display={ display.value }
 			contentClass="item-modal"
 			bodyClass="pb-0"
@@ -238,7 +242,7 @@ const DropItem: FunctionalComponent<DropItemProps> = (props) => {
 					<Locale k={ `CONSUMABLE_${props.item.key}` } />
 				</h5>
 			</div>
-		</PopupBase>
+		</PopupBase>, document.body) }
 	</div>;
 };
 export default DropItem;

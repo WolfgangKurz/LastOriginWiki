@@ -27,15 +27,17 @@ import Worlds from "@/routes/worlds";
 import WorldView from "@/routes/worlds/world-view";
 import WorldMapView from "@/routes/worlds/map-view";
 
-import Roguelike from "@/routes/roguelike";
+import EternalWar from "@/routes/eternalwar";
 
 import Simulator from "@/routes/simulator";
 
 import Changelog from "@/routes/changelog";
 import EXPCalc from "@/routes/calc/exp";
+import Roguelike from "@/routes/roguelike";
 import BGM from "@/routes/bgm";
 
 import Store from "@/store";
+import { LocaleGet } from "@/components/locale";
 
 const App: FunctionalComponent = () => {
 	if (typeof window !== "undefined") {
@@ -46,6 +48,14 @@ const App: FunctionalComponent = () => {
 				parent.removeChild(pageonloading);
 		}
 	}
+
+	const TitleChanger = (): void => {
+		if (LocaleGet("COMMON_TITLE") !== "COMMON_TITLE")
+			document.title = LocaleGet("COMMON_TITLE");
+		else
+			setTimeout(TitleChanger, 10);
+	};
+	TitleChanger();
 
 	return <Store.Provider>
 		<div id="app">
@@ -75,12 +85,14 @@ const App: FunctionalComponent = () => {
 						<Route path="/worlds/:wid" component={ WorldView } />
 						<Route path="/worlds/:wid/:mid/:node?" component={ WorldMapView } />
 
-						<Route path="/roguelike" component={ Roguelike } />
+						<Route path="/eternalwar" component={ EternalWar } />
+						<Route path="/eternalwar/:mid" component={ EternalWar } />
 
 						<Route path="/simulator" component={ Simulator } />
 
 						<Route path="/changelog" component={ Changelog } />
 						<Route path="/calc/exp" component={ EXPCalc } />
+						<Route path="/roguelike" component={ Roguelike } />
 						<Route path="/bgm" component={ BGM } />
 
 						<NotFoundPage default />

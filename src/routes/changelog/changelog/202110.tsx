@@ -6,6 +6,20 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11211" date="2021-10-27"
+		new={ <>
+			<li>신규 메뉴 <span class="badge bg-warning text-dark">변화의 성소</span>의 정보가 추가되었습니다.</li>
+		</> }
+		update={ <>
+			<li>
+				기존 메뉴 <span class="badge bg-warning text-dark">철의 탑</span>은
+				<span class="badge bg-warning text-dark">기타</span>의 하위 메뉴로 이동되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2021-10-27 03:28:18</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11201" date="2021-10-23"
 		new={ <>
 			<li>신규 전투원 <span class="badge bg-warning text-dark">엠피트리테</span>의 정보가 추가되었습니다.</li>
@@ -20,7 +34,7 @@ const Changelog: FunctionalComponent = () => <>
 		skin={ <>
 			<li>
 				<span class="badge bg-warning text-dark">MH-4 테티스</span>의 스킨
-				<span class="badge bg-danger">CAFÉ Horizon : CAFÉ Thetis♡</span>의 정보가 추가되었습니다.
+				<span class="badge bg-danger">CAFE Horizon : CAFE Thetis♡</span>의 정보가 추가되었습니다.
 			</li>
 			<li>
 				<span class="badge bg-warning text-dark">C-77 홍련</span>의 스킨

@@ -68,6 +68,7 @@ export const StaticDB = {
 	Exchange: "exchange",
 	EXP: "exp",
 	Map: "map",
+	EW: "ew",
 	Story: "story",
 	RoguelikeLimitEffects: "roguelike/limiteffects",
 	RoguelikeBuffEffects: "roguelike/buffeffects",
