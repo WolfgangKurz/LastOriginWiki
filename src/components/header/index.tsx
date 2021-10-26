@@ -83,7 +83,7 @@ const Header: FunctionalComponent = () => {
 					<NavItem href="/enemies" text="MENU_ENEMIES" />
 					<NavItem href="/worlds" text="MENU_WORLDS" />
 
-					<NavItem href="/roguelike" text="MENU_ROGUELIKE" />
+					<NavItem href="/eternalwar" text="MENU_ETERNALWAR" />
 
 					<NavItem href="/simulator" text="MENU_SIMULATOR" />
 
@@ -111,17 +111,20 @@ const Header: FunctionalComponent = () => {
 
 							<li><hr class="dropdown-divider" /></li>
 
-							<DropdownItem href="/exchange">
+							<DropdownItem href="/roguelike">
+								<Locale k="MENU_ROGUELIKE" />
+							</DropdownItem>
+							{/* <DropdownItem href="/exchange">
 								<Locale k="MENU_EXCHANGES" />
 								<span class="badge bg-secondary ms-2">TBA</span>
-							</DropdownItem>
+							</DropdownItem> */}
 							<DropdownItem href="/bgm">
 								<Locale k="MENU_ETC_BGM" />
 							</DropdownItem>
-							<DropdownItem href="/eapi">
+							{/* <DropdownItem href="/eapi">
 								<Locale k="MENU_ETC_API" />
 								<span class="badge bg-secondary ms-2">TBA</span>
-							</DropdownItem>
+							</DropdownItem> */}
 
 							<li><hr class="dropdown-divider" /></li>
 
