@@ -6,6 +6,15 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11213" date="2021-10-31"
+		update={ <>
+			<li>장비 정보의 강화 비용이 최신 정보로 갱신되었습니다.</li>
+		</> }
+		dialogue={ <>
+			<li>JP 서버의 대사 음성들이 최신 정보로 갱신되었습니다.</li>
+			<li><span class="badge bg-light text-dark">KST 2021-10-31 03:47:37</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11211" date="2021-10-27"
 		new={ <>
 			<li>신규 메뉴 <span class="badge bg-warning text-dark">변화의 성소</span>의 정보가 추가되었습니다.</li>

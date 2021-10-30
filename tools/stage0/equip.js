@@ -44,7 +44,7 @@ function process (auth) {
 					const craftable = !row[7] ? false : parseInt(row[7], 10);
 					const limit = row[8] ? row[8].split(",").filter(f => f) : null;
 
-					const upgrade = parseInt(row[9], 10);
+					const upgrade = JSON.parse(row[9]);
 
 					const source = [
 						...(!row[21]

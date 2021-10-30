@@ -304,7 +304,11 @@ class EternalWar extends Component<EternalWarProps, EternalWarState> {
 											onClick={ (e): void => {
 												e.preventDefault();
 												e.stopPropagation();
-												this.setState({ sid });
+												this.setState({
+													sid,
+													selectedWave: 0,
+													selectedWaveIndex: 0,
+												});
 											} }
 										>
 											<Locale k={ `EW_STAGE_SIMPLE_${mid}_Stage_${`0${sid}`.substr(-2)}` } />

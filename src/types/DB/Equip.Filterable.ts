@@ -1,5 +1,6 @@
 import EntitySource from "@/libs/EntitySource";
 import { BUFFEFFECT_TYPE } from "@/types/BuffEffect";
+import { EquipUpgradeCost } from "@/types/DB/Equip";
 import { ACTOR_GRADE, ITEM_TYPE } from "@/types/Enums";
 
 export interface FilterableEquipBuff {
@@ -23,7 +24,7 @@ export interface FilterableEquip {
 
 	limit: string[] | null;
 	source: EntitySource[][];
-	upgrade: number;
+	upgrade: EquipUpgradeCost[];
 
 	effects: FilterableEquipBuff[];
 }
