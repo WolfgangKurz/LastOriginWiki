@@ -2,6 +2,14 @@ import { ACTOR_GRADE, ITEM_TYPE } from "@/types/Enums";
 import { BuffStat } from "@/types/Buffs";
 import EntitySource from "@/libs/EntitySource";
 
+export interface EquipUpgradeCost {
+	res: number;
+	item: Array<{
+		item: string;
+		count: number;
+	}>;
+}
+
 export interface Equip {
 	uid: string;
 	type: ITEM_TYPE;
@@ -9,7 +17,7 @@ export interface Equip {
 	rarity: ACTOR_GRADE;
 
 	craft: false | number;
-	upgrade: number;
+	upgrade: EquipUpgradeCost[];
 	limit: string[] | null;
 
 	source: EntitySource[][];
@@ -24,7 +32,7 @@ export namespace Equip {
 		rarity: ACTOR_GRADE.B,
 
 		craft: false,
-		upgrade: 0,
+		upgrade: [],
 		limit: null,
 
 		source: [],

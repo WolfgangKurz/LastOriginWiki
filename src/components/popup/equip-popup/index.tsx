@@ -7,19 +7,22 @@ import { SelectOption } from "@/types/Helper";
 import { BuffStat } from "@/types/Buffs";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
+import { Consumable } from "@/types/DB/Consumable";
 import { Equip } from "@/types/DB/Equip";
 
 import { objState } from "@/libs/State";
-import { AssetsRoot, ImageExtension, RarityDisplay } from "@/libs/Const";
+import { AssetsRoot, RarityDisplay } from "@/libs/Const";
 import { CurrentDB } from "@/libs/DB";
 import { FormatNumber, isActive } from "@/libs/Functions";
 
 import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 import Locale from "@/components/locale";
 import Icon from "@/components/bootstrap-icon";
+import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import PopupBase from "@/components/popup/base";
 import EquipIcon from "@/components/equip-icon";
 import EquipLevel from "@/components/equip-level";
+import ItemIcon from "@/components/item-icon";
 import UnitBadge from "@/components/unit-badge";
 import SourceBadge from "@/components/source-badge";
 import BuffList from "@/components/buff-list";
@@ -48,12 +51,12 @@ interface EquipPopupProps {
 const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 	const latestUid = objState<string>("");
 
-	const imageExt = ImageExtension();
-
 	const level = objState<EquipLevelType>(10);
 	const rarity = objState<ITEM_GRADE>(ACTOR_GRADE.SS);
 
 	const displayTab = objState<"info" | "drop" | "upgrade">("info");
+
+	const costChecks = objState<boolean[]>(new Array(10).fill(true));
 
 	const StatusList = objState<BuffStat[]>([]);
 
@@ -63,13 +66,15 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 
 			level.set(10);
 			rarity.set(props.equip.rarity);
+			costChecks.set(new Array(10).fill(true));
 		} else
 			latestUid.set("");
 	}
 
-	return <Loader json={ [StaticDB.FilterableUnit, StaticDB.FilterableEquip] } content={ ((): preact.VNode => {
+	return <Loader json={ [StaticDB.FilterableUnit, StaticDB.FilterableEquip, StaticDB.Consumable] } content={ ((): preact.VNode => {
 		const FilterableUnitDB = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
 		const FilterableEquipDB = GetJson<FilterableEquip[]>(StaticDB.FilterableEquip);
+		const ConsumableDB = GetJson<Consumable[]>(StaticDB.Consumable);
 
 		const target = ((): FilterableEquip | null => {
 			const equip = props.equip;
@@ -159,39 +164,59 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 			return `${(`0${h}`).substr(-2)}:${(`0${m}`).substr(-2)}:${(`0${s}`).substr(-2)}`;
 		})();
 
+		const UpgradeCostTable = ((): preact.VNode[][] => {
+			if (!target) return [];
 
-		/** 1 레벨 강화당 상승하는 필요치 배율 */
-		const UpgradeIncrementals: Record<ITEM_GRADE, Decimal> = {
-			[ACTOR_GRADE.B]: Decimal.div(3, 4),
-			[ACTOR_GRADE.A]: Decimal.div(5, 6),
-			[ACTOR_GRADE.S]: Decimal.div(7, 10),
-			[ACTOR_GRADE.SS]: Decimal.div(11, 20),
-			[ACTOR_GRADE.SSS]: Decimal.div(11, 20),
-		};
+			const maxCols = Math.max(...target.upgrade.map(y => y.item.length));
+			const ret: preact.VNode[][] = [];
 
-		function UpgradeCost (level: number, sum: boolean = false): number {
-			if (!target) return 0;
+			const sums = new Array(maxCols + 1)
+				.fill(0)
+				.map(_ => new Decimal(0));
 
-			const base = target.upgrade;
-			const per = UpgradeIncrementals[rarity.value];
+			target.upgrade.forEach((v, i) => {
+				if (costChecks.value[i])
+					sums[0] = sums[0].add(v.res);
 
-			if (sum) {
-				let v = new Decimal(0);
-				for (let i = 1; i <= level; i++)
-					v = v.add(UpgradeCost(i, false));
+				ret[i] = [
+					<>{ FormatNumber(v.res) }</>,
+					...v.item.map((y, j) => {
+						if (costChecks.value[i])
+							sums[j + 1] = sums[j + 1].add(y.count);
 
-				return v
-					.floor()
-					.toNumber();
-			}
-			return Decimal.mul(per, level - 1)
-				.add(1)
-				.mul(base)
-				.floor()
-				.toNumber();
-		}
+						const item = ConsumableDB.find(z => z.key === y.item);
+						const icon = item ? <ItemIcon item={ item.icon } /> : <>???</>;
 
-		const UpgradeCostText = (level: number, sum: boolean = false): string => FormatNumber(UpgradeCost(level, sum));
+						return <BootstrapTooltip
+							placement="top"
+							content={ <Locale k={ `CONSUMABLE_${y.item}` } /> }
+						>
+							<span class="badge bg-warning text-dark cost-badge">
+								{ icon } x{ FormatNumber(y.count) }
+							</span>
+						</BootstrapTooltip>;
+					}),
+					...new Array(maxCols - v.item.length).fill(<></>),
+				];
+			});
+			ret[10] = [
+				<>{ FormatNumber(sums[0].toNumber()) }</>,
+				...target.upgrade[target.upgrade.length - 1].item.map((y, j) => {
+					const item = ConsumableDB.find(z => z.key === y.item);
+					const icon = item ? <ItemIcon item={ item.icon } /> : <>???</>;
+
+					return <BootstrapTooltip
+						placement="top"
+						content={ <Locale k={ `CONSUMABLE_${y.item}` } /> }
+					>
+						<span class="badge bg-warning text-dark cost-badge">
+							{ icon } x{ FormatNumber(sums[j + 1].toNumber()) }
+						</span>
+					</BootstrapTooltip>;
+				}),
+			];
+			return ret;
+		})();
 
 		const iconType: Record<ITEM_TYPE, string> = {
 			[ITEM_TYPE.CHIP]: "Chip",
@@ -420,18 +445,39 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 							? <table class="table table-bordered text-center">
 								<tbody>
 									<tr>
-										<th class="bg-dark text-light"><Locale k="EQUIP_VIEW_COST_LEVEL" /></th>
-										<th class="bg-dark text-light"><Locale k="EQUIP_VIEW_COST_COST" /></th>
-										<th class="bg-dark text-light"><Locale k="EQUIP_VIEW_COST_TOTALCOST" /></th>
+										<th class="bg-dark text-light">
+											<Locale k="EQUIP_VIEW_COST_LEVEL" />
+										</th>
+										<th class="bg-dark text-light">
+											<img class="res-icon" src={ `${AssetsRoot}/res-component.png` } />
+											<img class="res-icon" src={ `${AssetsRoot}/res-nutrition.png` } />
+											<img class="res-icon" src={ `${AssetsRoot}/res-power.png` } />
+										</th>
+										<th class="bg-dark text-light" colSpan={ UpgradeCostTable[0].length - 1 }>
+											<Locale k="EQUIP_VIEW_COST_CONSUMABLE" />
+										</th>
 									</tr>
-									{ new Array(10)
-										.fill(0)
-										.map((_, lv) => <tr>
-											<th class="bg-dark text-light">+{ lv + 1 }</th>
-											<td>{ UpgradeCostText(lv + 1) }</td>
-											<td>{ UpgradeCostText(lv + 1, true) }</td>
-										</tr>)
-									}
+									{ UpgradeCostTable.map((row, lv) => <tr>
+										<th class="bg-dark text-light">
+											{ lv < 10
+												? <>
+													<input
+														class="me-2"
+														type="checkbox"
+														checked={ costChecks.value[lv] }
+														onClick={ (): void => {
+															const arr = [...costChecks.value];
+															arr[lv] = !arr[lv];
+															costChecks.set(arr);
+														} }
+													/>
+													Lv.{ lv + 1 }
+												</>
+												: <Locale k="EQUIP_VIEW_COST_TOTALCOST" />
+											}
+										</th>
+										{ row.map(col => <td>{ col }</td>) }
+									</tr>) }
 								</tbody>
 							</table>
 							: <></>
