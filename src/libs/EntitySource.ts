@@ -248,9 +248,14 @@ export default class EntitySource {
 		return this.Parts[0] === "EndlessWar";
 	}
 
+	/** 변화의성소 획득 여부 */
+	public get IsNewEndlessWar (): boolean {
+		return this.Parts[0] === "NewEndlessWar";
+	}
+
 	/** 광물 가격 */
 	public get EndlessWarPrice (): number {
-		if (!this.IsEndlessWar) return 0;
+		if (!this.IsEndlessWar && !this.IsNewEndlessWar) return 0;
 		return parseInt(this.Parts[1], 10);
 	}
 	// -------------- 영전
@@ -331,6 +336,8 @@ export default class EntitySource {
 				output.push(`Challenge:${this.ChallengeId}:${this.ChallengeDifficulty}`);
 		} else if (this.IsEndlessWar)
 			output.push("EW");
+		else if (this.IsNewEndlessWar)
+			output.push("NEW");
 		else if (this.IsSubStory)
 			output.push(`SubStory:${this.SubStoryUnit}`);
 		else if (this.IsExchange) {
