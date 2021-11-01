@@ -7,6 +7,14 @@ import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
 	<ChangelogItem title="Build 11216" date="2021-11-01"
+		update={ <>
+			<li>
+				<span class="badge bg-warning text-dark">살라시아</span>의 스킬 정보가 갱신되었습니다.
+			</li>
+			<li>
+				<span class="badge bg-warning text-dark">골타리온 XIII세</span>의 스킬 정보가 갱신되었습니다.
+			</li>
+		</> }
 		skin={ <>
 			<li>
 				<span class="badge bg-warning text-dark">해체자 아자즈</span>의 스킨
