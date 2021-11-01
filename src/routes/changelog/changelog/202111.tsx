@@ -14,6 +14,9 @@ const Changelog: FunctionalComponent = () => <>
 			</li>
 		</> }
 		dialogue={ <>
+			<li><span class="badge bg-warning text-dark">AT-100 비스트헌터</span>의 서약 대사 세트가 추가되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">A-54 칼리스타</span>의 서약 대사 세트가 추가되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">키르케</span>의 서약 대사 세트가 추가되었습니다.</li>
 			<li><span class="badge bg-light text-dark">KST 2021-11-01 14:30:01</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
 		</> }
 	/>
