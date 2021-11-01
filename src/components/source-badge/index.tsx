@@ -29,7 +29,7 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 		if (Source.IsChallenge) return "primary";
 		if (Source.IsPrivateItem) return "stat-acc text-dark";
 		if (Source.IsLimited) return "secondary";
-		if (Source.IsEndlessWar) return props.minimum ? "light text-dark" : "dark";
+		if (Source.IsEndlessWar || Source.IsNewEndlessWar) return props.minimum ? "light text-dark" : "dark";
 		if (Source.IsSideMap) return "success";
 		if (Source.IsExMap) return "danger";
 		if (Source.IsMap) return "warning text-dark";
@@ -97,6 +97,10 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 				if (props.detail)
 					return <Locale k="COMMON_SOURCE_EW_RESOURCES" p={ [Source.EndlessWarPrice] } />;
 				return <Locale k="COMMON_SOURCE_EW" />;
+			} else if (Source.IsNewEndlessWar) {
+				if (props.detail)
+					return <Locale k="COMMON_SOURCE_NEW_RESOURCES" p={ [Source.EndlessWarPrice] } />;
+				return <Locale k="COMMON_SOURCE_NEW" />;
 			} else if (Source.IsSubStory) {
 				const text = Source.IsReward
 					? <Locale k="COMMON_SOURCE_CLEAR_REWARD" />
@@ -107,7 +111,7 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 							k="COMMON_SOURCE_SUBSTORY"
 							p={ [<Locale k={ `UNIT_${Source.SubStoryUnit}` } fallback={ Source.Map } />] }
 						/>
-							 &nbsp;{ text }
+						&nbsp;{ text }
 					</>;
 				}
 				return <Locale k="COMMON_SOURCE_SUBSTORY_SINGLE" />;
