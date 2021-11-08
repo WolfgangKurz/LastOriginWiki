@@ -6,7 +6,7 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 11238" date="2021-11-08"
+	<ChangelogItem title="Build 11239" date="2021-11-08"
 		new={ <>
 			<li>신규 전투원 <span class="badge bg-warning text-dark">프리가</span>의 정보가 추가되었습니다.</li>
 			<li>신규 전투원 <span class="badge bg-warning text-dark">트리톤</span>의 정보가 추가되었습니다.</li>
