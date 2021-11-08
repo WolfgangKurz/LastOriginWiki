@@ -7572,6 +7572,95 @@
                 }
               ],
               "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Nereid_N_62",
+              "on": "wave",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "대공 포메이션! : 공격력{0}%",
+                    "type": 1,
+                    "value": "0.080000",
+                    "level": "0.008000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 999
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "8%",
+                      "per": "0.8%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "대공 포메이션! : 적중{0}%",
+                    "type": 1,
+                    "value": "0.160000",
+                    "level": "0.016000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 999
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "16%",
+                      "per": "1.6%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "대공 포메이션! : AP{0}",
+                    "type": 0,
+                    "value": "0.060000",
+                    "level": "0.060000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 0.06,
+                      "per": 0.06
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         }
@@ -8022,6 +8111,42 @@
             },
             "base": 0.03,
             "per": 0.03,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "대공 포메이션! : 공격력{0}%",
+              "type": 1,
+              "value": "0.080000",
+              "level": "0.008000"
+            },
+            "base": 0.08,
+            "per": 0.008,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ACCURACY_UP",
+            "desc": {
+              "desc": "대공 포메이션! : 적중{0}%",
+              "type": 1,
+              "value": "0.160000",
+              "level": "0.016000"
+            },
+            "base": 0.16,
+            "per": 0.016,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "대공 포메이션! : AP{0}",
+              "type": 0,
+              "value": "0.060000",
+              "level": "0.060000"
+            },
+            "base": 0.06,
+            "per": 0.06,
             "chance": 1
           }
         ]

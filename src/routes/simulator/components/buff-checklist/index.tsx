@@ -979,13 +979,13 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 				<span class="text-danger">#{ stat.collaborate.skill }</span>,
 				<span class="text-danger">
 					{ [
-						<Locale plain k={ `UNIT_SKILL_active${stat.collaborate.skill}_${convertBuffToUid(stat.collaborate.with)}` } />,
-						LocaleGet(`UNIT_SKILL_Factive${stat.collaborate.skill}_${convertBuffToUid(stat.collaborate.with)}`)
-							.startsWith("UNIT_SKILL_Factive")
+						<Locale plain k={ `UNIT_SKILL_${stat.collaborate.skill}_${convertBuffToUid(stat.collaborate.with)}` } />,
+						LocaleGet(`UNIT_SKILL_F${stat.collaborate.skill}_${convertBuffToUid(stat.collaborate.with)}`)
+							.startsWith("UNIT_SKILL_F")
 							? <></>
 							: [
 								" / ",
-								<Locale plain k={ `UNIT_SKILL_Factive${stat.collaborate.skill}_${convertBuffToUid(stat.collaborate.with)}` } />,
+								<Locale plain k={ `UNIT_SKILL_F${stat.collaborate.skill}_${convertBuffToUid(stat.collaborate.with)}` } />,
 							],
 					] }
 				</span>,
