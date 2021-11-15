@@ -33,7 +33,7 @@ import Simulator from "@/routes/simulator";
 
 import Changelog from "@/routes/changelog";
 import EXPCalc from "@/routes/calc/exp";
-import Roguelike from "@/routes/roguelike";
+// import Roguelike from "@/routes/roguelike";
 import BGM from "@/routes/bgm";
 
 import Store from "@/store";
@@ -92,7 +92,7 @@ const App: FunctionalComponent = () => {
 
 						<Route path="/changelog" component={ Changelog } />
 						<Route path="/calc/exp" component={ EXPCalc } />
-						<Route path="/roguelike" component={ Roguelike } />
+						{/* <Route path="/roguelike" component={ Roguelike } /> */}
 						<Route path="/bgm" component={ BGM } />
 
 						<NotFoundPage default />

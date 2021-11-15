@@ -55,7 +55,7 @@ const Units: FunctionalComponent = () => {
 			setUnitsFilterSkillDismissGuardType,
 
 			toggleUnitsFilterEffectTarget,
-			toggleUnitsFilterRoguelikeSkill,
+			// toggleUnitsFilterRoguelikeSkill,
 			setUnitEffectFilters,
 
 			setDisplayType,
@@ -142,11 +142,11 @@ const Units: FunctionalComponent = () => {
 
 				return FilterableUnitDB
 					.filter(x => new RegExp(Filters.SearchText, "i").test(LocaleGet(`UNIT_${x.uid}`)))
-					.filter(x => {
-						if (Filters.RoguelikeSkill.length > 0)
-							return Filters.RoguelikeSkill.some(y => x.roguelike.includes(y));
-						return true;
-					})
+					// .filter(x => {
+					// 	if (Filters.RoguelikeSkill.length > 0)
+					// 		return Filters.RoguelikeSkill.some(y => x.roguelike.includes(y));
+					// 	return true;
+					// })
 					.filter(x => {
 						if (!Filters.Rarity[x.rarity]) return false;
 						if (!Filters.Type[x.type]) return false;
@@ -441,7 +441,7 @@ const Units: FunctionalComponent = () => {
 						</div>
 						<hr class="my-2" />
 
-						<div class="row">
+						{/* <div class="row">
 							<div class="col-md-auto col-12 filter-label">
 								<Locale k="UNIT_FILTERS_ROGUELIKE_SKILL" />
 							</div>
@@ -474,7 +474,7 @@ const Units: FunctionalComponent = () => {
 									}
 								</ul>
 							</div>
-						</div>
+						</div> */}
 					</div>
 				</div>
 

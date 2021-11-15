@@ -2802,6 +2802,29 @@
                     }
                   },
                   "overlap": 4
+                },
+                {
+                  "icon": "",
+                  "desc": {
+                    "desc": "뭔가 떨어졌는데? : AP{0}",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 0
                 }
               ],
               "maxStack": 0
@@ -2902,7 +2925,9 @@
             },
             {
               "key": "Effect_BR_PXSilky_N_402",
-              "on": "attack_success",
+              "on": {
+                "use_skill": 1
+              },
               "if": false,
               "body": [
                 0,
@@ -2997,6 +3022,18 @@
             },
             "base": -0.2,
             "per": -0.01,
+            "chance": 0
+          },
+          {
+            "icon": "",
+            "desc": {
+              "desc": "뭔가 떨어졌는데? : AP{0}",
+              "type": 0,
+              "value": "1",
+              "level": "0"
+            },
+            "base": 1,
+            "per": 0,
             "chance": 0
           },
           {
@@ -3133,6 +3170,52 @@
                     }
                   },
                   "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "안돼요! : 방어 관통{0}% (스틸라인)",
+                    "type": 1,
+                    "value": "0.050000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "5%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "안돼요! : 행동력{0}% (행동력)",
+                    "type": 1,
+                    "value": "0.050000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
                 }
               ],
               "maxStack": 0
@@ -3143,14 +3226,10 @@
               "if": {
                 "target": [
                   "Char_BR_Marie_N",
-                  "Char_BR_Brownie_N",
                   "Char_BR_Leprechaun_N",
-                  "Char_BR_Efreeti_N",
+                  "Char_BR_Brownie_N",
                   "Char_BR_Impet_N",
-                  "Char_BR_PXSilky_N",
-                  "Char_BR_Gnome_N",
-                  "Char_BR_RedHood_N",
-                  "Char_BR_Phoenix_N"
+                  "Char_BR_Gnome_N"
                 ]
               },
               "body": [
@@ -3375,6 +3454,30 @@
             "base": 0.03,
             "per": 0.002,
             "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DEF_PIERCE_UP",
+            "desc": {
+              "desc": "안돼요! : 방어 관통{0}% (스틸라인)",
+              "type": 1,
+              "value": "0.050000",
+              "level": "0.020000"
+            },
+            "base": 0.05,
+            "per": 0.02,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "안돼요! : 행동력{0}% (행동력)",
+              "type": 1,
+              "value": "0.050000",
+              "level": "0.005000"
+            },
+            "base": 0.05,
+            "per": 0.005,
+            "chance": 0
           },
           {
             "icon": "BuffIcon_ATK_UP",

@@ -12,11 +12,17 @@
 	vertical-align: text-bottom;
 }
 
-:global .buff-list > .list-group {
-	margin-top: 0.5em;
-	font-weight: normal;
+:global .buff-list {
+	.empty-icon {
+		display: inline-block;
+		width: 25px;
+	}
+	> .list-group {
+		margin-top: 0.5em;
+		font-weight: normal;
 
-	&:first-child {
-		margin-top: 0;
+		&:first-child {
+			margin-top: 0;
+		}
 	}
 }

@@ -111,9 +111,9 @@ const Header: FunctionalComponent = () => {
 
 							<li><hr class="dropdown-divider" /></li>
 
-							<DropdownItem href="/roguelike">
+							{/* <DropdownItem href="/roguelike">
 								<Locale k="MENU_ROGUELIKE" />
-							</DropdownItem>
+							</DropdownItem> */}
 							{/* <DropdownItem href="/exchange">
 								<Locale k="MENU_EXCHANGES" />
 								<span class="badge bg-secondary ms-2">TBA</span>

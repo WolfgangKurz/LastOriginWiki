@@ -6,7 +6,8 @@ import devtools from "unistore/devtools";
 
 import merge from "deepmerge";
 
-import { ACTOR_GRADE, ACTOR_CLASS, ROLE_TYPE, ACTOR_BODY_TYPE, SKILL_ATTR, ROGUE_SKILL_TYPE } from "@/types/Enums";
+// import { ACTOR_GRADE, ACTOR_CLASS, ROLE_TYPE, ACTOR_BODY_TYPE, SKILL_ATTR, ROGUE_SKILL_TYPE } from "@/types/Enums";
+import { ACTOR_GRADE, ACTOR_CLASS, ROLE_TYPE, ACTOR_BODY_TYPE, SKILL_ATTR } from "@/types/Enums";
 import { AllOnlyExcept, SkillFilter } from "@/types/Internal";
 import { BuffEffectList, BuffEffectListGroupKeys } from "@/types/BuffEffect";
 import { EffectFilterListType } from "@/types/Buff";
@@ -168,8 +169,6 @@ const Store = new StoreClass(
 					return { ...x, selected: false };
 				}) as EffectFilterListType,
 
-			RoguelikeSkill: [] as ROGUE_SKILL_TYPE[],
-
 			DisplayType: "table" as ("table" | "list" | "group" | "time"),
 			SearchText: "",
 		},
@@ -280,29 +279,29 @@ const Store = new StoreClass(
 			};
 		},
 
-		toggleUnitsFilterRoguelikeSkill (state, type: ROGUE_SKILL_TYPE) {
-			const index = state.Units.RoguelikeSkill.indexOf(type);
-			if (index >= 0) {
-				const list = [...state.Units.RoguelikeSkill];
-				list.splice(index, 1);
-				return {
-					...state,
-					Units: {
-						...state.Units,
-						RoguelikeSkill: list,
-					},
-				};
-			}
+		// toggleUnitsFilterRoguelikeSkill (state, type: ROGUE_SKILL_TYPE) {
+		// 	const index = state.Units.RoguelikeSkill.indexOf(type);
+		// 	if (index >= 0) {
+		// 		const list = [...state.Units.RoguelikeSkill];
+		// 		list.splice(index, 1);
+		// 		return {
+		// 			...state,
+		// 			Units: {
+		// 				...state.Units,
+		// 				RoguelikeSkill: list,
+		// 			},
+		// 		};
+		// 	}
 
-			const list = [...state.Units.RoguelikeSkill, type];
-			return {
-				...state,
-				Units:{
-					...state.Units,
-					RoguelikeSkill: list,
-				},
-			};
-		},
+		// 	const list = [...state.Units.RoguelikeSkill, type];
+		// 	return {
+		// 		...state,
+		// 		Units:{
+		// 			...state.Units,
+		// 			RoguelikeSkill: list,
+		// 		},
+		// 	};
+		// },
 
 		setUnitEffectFilters (state, list: EffectFilterListType) {
 			state.Units.EffectFilters = [];
