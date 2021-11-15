@@ -66,7 +66,7 @@ targetDBs.forEach(targetDB => {
 					},
 					skins: skins[char.uid],
 
-					roguelike: roguelikeSkills.filter(y => y.unit === `Char_${char.uid}_N`),
+					// roguelike: roguelikeSkills.filter(y => y.unit === `Char_${char.uid}_N`),
 				}),
 				{ encoding: "utf-8" },
 			);

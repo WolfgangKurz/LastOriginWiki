@@ -1223,12 +1223,16 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			if (buff.value.chance !== "0%" || props.dummy) {
 				elems.push(<div class="clearfix">
 					<div>
-						<img class="me-1" width="25" src={ `${AssetsRoot}/${ext}/buff/${buff.icon}.${ext}` } />
+						{ buff.icon
+							? <img class="me-1" width="25" src={ `${AssetsRoot}/${ext}/buff/${buff.icon}.${ext}` } />
+							: <span class="me-1 empty-icon" />
+						}
 						<strong class="align-middle">
 							<Locale plain k={ stat.key } />
 							<small class="ms-2 text-primary">
 								{ formatDesc(buff.desc.type, buff.desc.desc, buff.desc.value, buff.desc.level, level, 2) }
 							</small>
+							{ getChanceText(buff.value.chance) }
 						</strong>
 						<div class="float-end">
 							{ <span class="badge bg-substory ms-2 text-wrap">
@@ -1240,7 +1244,6 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					<div class="ps-3">
 						<div class="float-start">
 							{ getBuffText(buff.value, level) }
-							{ getChanceText(buff.value.chance) }
 						</div>
 						<div class="float-end text-end">
 							{ on

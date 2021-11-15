@@ -6,6 +6,29 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11243" date="2021-11-16"
+		bugfix={ <>
+			<li>일부 스킬/장비의 효과가 버프 목록에 표기되지 않던 문제를 수정했습니다.</li>
+			<li>적 정보의 적 그룹 목록의 맵 버튼이 최신 정보로 갱신되지 않았던 점을 수정했습니다.</li>
+		</> }
+		delete={ <>
+			<li>로그라이크(철의 탑) 관련 정보들이 삭제되었습니다.</li>
+		</> }
+		update={ <>
+			<li>상설 이벤트 목록이 갱신되었습니다.</li>
+			<li>일부 전투원의 스킬 정보가 갱신되었습니다.</li>
+			<li>변화의 성소 내 웨이브 정보에서 오해될 수 있는 확률 표기를 제거했습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<span class="badge bg-warning text-dark">AT72 라인리터</span>의 스킨
+				<span class="badge bg-danger">마법소녀의 수호수</span>의 로비 애니메이션 정보가 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2021-11-16 03:01:56</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11239" date="2021-11-08"
 		new={ <>
 			<li>신규 전투원 <span class="badge bg-warning text-dark">프리가</span>의 정보가 추가되었습니다.</li>

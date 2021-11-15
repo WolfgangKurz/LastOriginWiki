@@ -27,12 +27,12 @@ const EnemiesGroup: FunctionalComponent<EnemiesGroupProps> = (props) => {
 		const ret: string[][] = [];
 
 		ret.push(
-			new Array(8)
+			new Array(9)
 				.fill(0)
 				.map((_, i) => `World${i + 1}`),
 		);
 		ret.push(
-			new Array(11)
+			new Array(13)
 				.fill(0)
 				.map((_, i) => `Ev${i + 1}`),
 		);
@@ -41,6 +41,7 @@ const EnemiesGroup: FunctionalComponent<EnemiesGroupProps> = (props) => {
 			"Daily",
 			"Challenge",
 			"EW",
+			"NEW",
 			"Roguelike",
 			"Others",
 		]);
@@ -68,6 +69,7 @@ const EnemiesGroup: FunctionalComponent<EnemiesGroupProps> = (props) => {
 						/^BATTLE_Daily-/,
 						/^BATTLE_Cha-/,
 						/^BATTLE_EW-/,
+						/^BATTLE_NEW-/,
 						/^BATTLE_Rog-/,
 
 						new RegExp("^BATTLE_[0-9]{2}-[0-9]{2}(Ex|B|S|C)?-"),
@@ -80,7 +82,8 @@ const EnemiesGroup: FunctionalComponent<EnemiesGroupProps> = (props) => {
 					if (cat === "Daily") return regs[3].test(g.id);
 					if (cat === "Challenge") return regs[4].test(g.id);
 					if (cat === "EW") return regs[5].test(g.id);
-					if (cat === "Roguelike") return regs[6].test(g.id);
+					if (cat === "NEW") return regs[6].test(g.id);
+					if (cat === "Roguelike") return regs[7].test(g.id);
 					if (cat === "Others") return !regs.some(r => r.test(g.id));
 					return false;
 				});
@@ -98,7 +101,10 @@ const EnemiesGroup: FunctionalComponent<EnemiesGroupProps> = (props) => {
 										Category.set(cat);
 									} }
 								>
-									<Locale k={ `ENEMY_GROUP_G_${cat}` } />
+									<Locale
+										k={ `ENEMY_GROUP_G_${cat.replace(/[0-9]+$/, "")}` }
+										p={ [cat.replace(/^.+?([0-9]+)$/, "$1")] }
+									/>
 								</button>) }
 							</div>) }
 					</div>) }

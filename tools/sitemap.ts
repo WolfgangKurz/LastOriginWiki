@@ -102,7 +102,7 @@ Object.keys(WorldNames)
 		});
 	});
 
-xml += `<url><loc>https://lo.swaytwig.com/roguelike</loc></url>
+xml += `<url><loc>https://lo.swaytwig.com/eternalwar</loc></url>
 <url><loc>https://lo.swaytwig.com/simulator</loc></url>
 <url><loc>https://lo.swaytwig.com/changelog</loc></url>
 <url><loc>https://lo.swaytwig.com/bgm</loc></url>

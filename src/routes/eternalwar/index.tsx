@@ -166,7 +166,8 @@ class EternalWar extends Component<EternalWarProps, EternalWarState> {
 											aria-expanded="false"
 										>
 											#{ state.selectedWaveIndex + 1 }
-											<span class="badge bg-warning text-dark ms-1">
+											<small class="ms-1">/ {(Waves && Waves[state.selectedWave].length) || "???"}</small>
+											{/* <span class="badge bg-warning text-dark ms-1">
 												{ new Decimal(
 													(Waves &&
 														Waves[state.selectedWave] &&
@@ -176,7 +177,7 @@ class EternalWar extends Component<EternalWarProps, EternalWarState> {
 													.toFixed(3)
 													.replace(/\.?0+$/, "")
 												}%
-											</span>
+											</span> */}
 										</button>
 										<ul class={ `dropdown-menu ${style.DropDown}` }>
 											{ Waves[state.selectedWave].map((_, idx) => <li>
@@ -190,12 +191,13 @@ class EternalWar extends Component<EternalWarProps, EternalWarState> {
 													} }
 												>
 													#{ idx + 1 }
-													<span class="badge bg-warning text-dark ms-1">
+													<small class="ms-1">/ {(Waves && Waves[state.selectedWave].length) || "???"}</small>
+													{/* <span class="badge bg-warning text-dark ms-1">
 														{ new Decimal(_.r || "0")
 															.toFixed(3)
 															.replace(/\.?0+$/, "")
 														}%
-													</span>
+													</span> */}
 												</a>
 											</li>) }
 										</ul>

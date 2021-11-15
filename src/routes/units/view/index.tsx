@@ -25,8 +25,8 @@ import UnitBadge from "@/components/unit-badge";
 import ElemIcon from "@/components/elem-icon";
 import EquipIcon from "@/components/equip-icon";
 import SourceBadge from "@/components/source-badge";
-import RoguelikeEffectBadge from "@/components/roguelike-effect-badge";
-import RoguelikeItemBadge from "@/components/roguelike-item-badge";
+// import RoguelikeEffectBadge from "@/components/roguelike-effect-badge";
+// import RoguelikeItemBadge from "@/components/roguelike-item-badge";
 
 import SkinView from "../components/skin-view";
 import SkillTable from "../components/skill-table";
@@ -36,7 +36,8 @@ import "./style.scss";
 import DropEquip from "@/components/drop-equip";
 import EquipPopup from "@/components/popup/equip-popup";
 
-type TabTypes = "basic" | "skills" | "roguelike" | "dialogue";
+// type TabTypes = "basic" | "skills" | "roguelike" | "dialogue";
+type TabTypes = "basic" | "skills" | "dialogue";
 
 interface SkinItem extends UnitSkin {
 	isDef: boolean;
@@ -535,6 +536,7 @@ const SkillTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 	</div>;
 };
 
+/*
 const RoguelikeTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex, SkinList }) => {
 	const skills = unit.roguelike.filter(x => x.type !== 0);
 
@@ -586,6 +588,7 @@ const RoguelikeTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIn
 		}
 	</div>;
 };
+*/
 
 const DialogueTab: FunctionalComponent<SubpageProps> = ({ display, unit, SkinList }) => {
 	const dialogueLang = objState<keyof UnitDialogueDataType>("ko");
@@ -745,7 +748,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 								<Locale k="UNIT_VIEW_TAB_SKILLS" />
 							</a>
 						</li>
-						<li class="nav-item">
+						{/* <li class="nav-item">
 							<a
 								href="#"
 								class={ `nav-link text-dark ${isActive(DisplayTab.value === "roguelike")}` }
@@ -757,7 +760,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 								<Icon icon="controller" class="me-1" />
 								<Locale k="UNIT_VIEW_TAB_ROGUELIKE" />
 							</a>
-						</li>
+						</li> */}
 						<li class="nav-item">
 							<a
 								href="#"
@@ -777,7 +780,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 
 			<BasicTab display={ DisplayTab.value === "basic" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } />
 			<SkillTab display={ DisplayTab.value === "skills" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } />
-			<RoguelikeTab display={ DisplayTab.value === "roguelike" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } />
+			{/* <RoguelikeTab display={ DisplayTab.value === "roguelike" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } /> */}
 			<DialogueTab display={ DisplayTab.value === "dialogue" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } />
 		</div>;
 	}) } />;

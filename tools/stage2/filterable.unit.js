@@ -157,11 +157,11 @@ targetDBs.forEach(targetDB => {
 			buffs: s,
 			skills: se,
 
-			roguelike: (() => {
-				const list = roguelikeSkills.filter(y => y.unit === `Char_${x.uid}_N`).map(y => y.type);
-				if (list.length === 0) return [0];
-				return list;
-			})().reduce((p, c) => p.includes(c) ? p : [...p, c], []),
+			// roguelike: (() => {
+			// 	const list = roguelikeSkills.filter(y => y.unit === `Char_${x.uid}_N`).map(y => y.type);
+			// 	if (list.length === 0) return [0];
+			// 	return list;
+			// })().reduce((p, c) => p.includes(c) ? p : [...p, c], []),
 		});
 	});
 

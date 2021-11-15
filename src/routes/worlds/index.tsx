@@ -11,7 +11,7 @@ import Icon from "@/components/bootstrap-icon";
 import style from "./style.scss";
 
 const Worlds: FunctionalComponent = () => {
-	const Tops = ["Story", CurrentEvent];
+	const Tops = ["Story", CurrentEvent].filter(x => x);
 	const Subs = ["Sub", "Cha", "Daily"];
 	const List = WorldIds.filter(x => !x.startsWith("EvA") && !Tops.includes(x) && !Subs.includes(x) && !PermanentEvents.includes(x));
 
