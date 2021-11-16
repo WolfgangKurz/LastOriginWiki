@@ -696,9 +696,11 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 		if ("_comment" in stat)
 			return <>{ stat._comment }</>;
 		else if ("off" in stat) {
-			if (typeof stat.off === "string")
-				return <Locale plain k="BUFFEFFECT_OFF" p={ [stat.off] } />;
-			else if (typeof stat.off === "number") {
+			if (typeof stat.off === "string") {
+				return <Locale plain k="BUFFEFFECT_OFF" p={ [<span class="badge bg-warning text-dark">
+					<Locale plain k={ stat.off } />
+				</span>] } />;
+			} else if (typeof stat.off === "number") {
 				const target = {
 					0: <Locale plain k="BUFFEFFECT_ATTR_0" />,
 					1: <Locale plain k="BUFFEFFECT_ATTR_1" />,
