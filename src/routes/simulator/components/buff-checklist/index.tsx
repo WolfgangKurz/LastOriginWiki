@@ -8,10 +8,13 @@ import { BuffErase } from "@/types/BuffErase";
 import { BuffTrigger } from "@/types/BuffTrigger";
 import { UNIT_POSITION, BUFF_ATTR_TYPE, SKILL_ATTR, ACTOR_BODY_TYPE, ACTOR_CLASS, ROLE_TYPE, TARGET_TYPE, NUM_OUTPUTTYPE } from "@/types/Enums";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
+import { Enemy } from "@/types/DB/Enemy";
 
+import { objState } from "@/libs/State";
 import { ImageExtension, AssetsRoot, TroopNameTable } from "@/libs/Const";
+import { CurrentDB } from "@/libs/DB";
 
-import Loader, { GetJson, StaticDB } from "@/components/loader";
+import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
 import Icon from "@/components/bootstrap-icon";
 import ElemIcon from "@/components/elem-icon";
@@ -36,6 +39,7 @@ interface BuffRendererProps {
 
 const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 	const FilterableUnitDB = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
+	const ReferencedEnemy = objState<Enemy | null>(null);
 
 	const VNodeUnique = (entity: preact.VNode): string => render(entity);
 
@@ -715,9 +719,12 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 				return <Locale plain k="BUFFEFFECT_OFF" p={ [getBuffEffectTypeText(stat.off.type, stat.off.target)] } />;
 
 			return <Locale plain k="BUFFEFFECT_OFF" p={ [getBuffEffectTypeText(stat.off.type, BUFF_ATTR_TYPE.NO_MATTER)] } />;
-		} else if ("attack" in stat)
+		} else if ("attack" in stat) {
+			if (stat.attack.base === 0 && stat.attack.per === 0)
+				return <></>; // Placeholder 버프
+
 			return <Locale plain k="BUFFEFFECT_ATK" p={ [signedValue(stat.attack, level)] } />;
-		else if ("defense" in stat)
+		} else if ("defense" in stat)
 			return <Locale plain k="BUFFEFFECT_DEF" p={ [signedValue(stat.defense, level)] } />;
 		else if ("hp" in stat)
 			return <Locale plain k="BUFFEFFECT_HP" p={ [signedValue(stat.hp, level)] } />;
@@ -976,19 +983,40 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 		else if ("debuff_immune" in stat)
 			return <Locale plain k="BUFFEFFECT_DEBUFF_IMMUNE" p={ [getBuffEffectTypeText(stat.debuff_immune, BUFF_ATTR_TYPE.DEBUFF)] } />;
 		else if ("collaborate" in stat) {
+			const uid = convertBuffToUid(stat.collaborate.with);
+
+			if (stat.collaborate.with.startsWith("MOB_")) {
+				const enemyKey = `enemy/${uid}`;
+				JsonLoaderCore(CurrentDB, enemyKey)
+					.then(() => {
+						const detail = GetJson<Enemy>(enemyKey);
+						if (!detail) return;
+
+						ReferencedEnemy.set(detail);
+					});
+
+				if (!ReferencedEnemy.value) return <></>;
+
+				return <Locale plain k="BUFFEFFECT_COOP" p={ [
+					<strong>
+						<Locale k={ `ENEMY_${uid}` } />
+					</strong>,
+					<span class="text-danger">#{ stat.collaborate.skill }</span>,
+					<span class="text-danger">
+						<Locale plain k={ ReferencedEnemy.value.skills[stat.collaborate.skill - 1].key } />
+					</span>,
+				] } />;
+			}
+
 			return <Locale plain k="BUFFEFFECT_COOP" p={ [
 				<UnitLink uid={ convertChar(stat.collaborate.with) } />, // convertBuff(stat.collaborate.with, "primary"),
 				<span class="text-danger">#{ stat.collaborate.skill }</span>,
 				<span class="text-danger">
 					{ [
-						<Locale plain k={ `UNIT_SKILL_${stat.collaborate.skill}_${convertBuffToUid(stat.collaborate.with)}` } />,
-						LocaleGet(`UNIT_SKILL_F${stat.collaborate.skill}_${convertBuffToUid(stat.collaborate.with)}`)
-							.startsWith("UNIT_SKILL_F")
+						<Locale plain k={ `UNIT_SKILL_${uid}_${stat.collaborate.skill}` } />,
+						LocaleGet(`UNIT_SKILL_${uid}_F${stat.collaborate.skill}`).startsWith("UNIT_SKILL_F")
 							? <></>
-							: [
-								" / ",
-								<Locale plain k={ `UNIT_SKILL_F${stat.collaborate.skill}_${convertBuffToUid(stat.collaborate.with)}` } />,
-							],
+							: [" / ", <Locale plain k={ `UNIT_SKILL_${uid}_F${stat.collaborate.skill}` } />],
 					] }
 				</span>,
 			] } />;
