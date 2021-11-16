@@ -6,6 +6,12 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11248" date="2021-11-16"
+		bugfix={ <>
+			<li>적의 스킬이 표시되지 않던 점을 수정했습니다.</li>
+			<li>적 스킬 정보의 협동 공격이 올바르지 않게 표시되던 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11243" date="2021-11-16"
 		bugfix={ <>
 			<li>일부 스킬/장비의 효과가 버프 목록에 표기되지 않던 문제를 수정했습니다.</li>

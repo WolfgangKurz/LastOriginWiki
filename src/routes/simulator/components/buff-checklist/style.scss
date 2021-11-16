@@ -6,13 +6,18 @@
 	color: $dark;
 }
 
-:global .badge > .elem-icon,
-:global .badge .on-subbadge > .elem-icon {
-	margin: 0 4px 0 0;
-	vertical-align: text-bottom;
-}
-
 :global .buff-checklist > .list-group {
+	.badge {
+		padding: 0.1em 0.65em;
+		line-height: 1.8;
+
+		> .elem-icon,
+		.on-subbadge > .elem-icon {
+			margin: 0 4px 0 0;
+			vertical-align: text-bottom;
+		}
+	}
+
 	margin-top: 0.5em;
 	font-weight: normal;
 
