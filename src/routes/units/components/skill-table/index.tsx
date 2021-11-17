@@ -18,6 +18,8 @@ import SummonBadge from "../../components/summon-badge";
 import BuffList from "@/components/buff-list";
 import SkillIcon from "@/components/skill-icon";
 
+import style from "./style.scss";
+
 interface SkillItem extends SkillEntity {
 	slot: string;
 	index: number;
@@ -116,7 +118,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 	})();
 
 	function GetDesc (skill: SkillItem): string[] {
-		const key = `UNIT_SKILL_DESC_${skill.key}_${unit.uid}`;
+		const key = `UNIT_SKILL_DESC_${unit.uid}_${skill.key}`;
 		return LocaleExists(key)
 			? LocaleGet(key).split("\n")
 			: [""];
@@ -302,11 +304,11 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 		</thead>
 		<tbody>
 			{ Skills.map(skill => <>
-				<tr>
+				<tr class={skill.key.startsWith("F") ? style.SkillTableFChange : ""}>
 					<td>
 						<SkillIcon icon={ skill.icon } passive={ skill.isPassive } />
 						<div class="text-bold">
-							<Locale k={ `UNIT_SKILL_${skill.key}_${unit.uid}` } />
+							<Locale k={ `UNIT_SKILL_${unit.uid}_${skill.key}` } />
 						</div>
 
 						<ElemIcon elem={ skill.buffs.data[skill.buffs.index[skillLevel.value]].type } class="mx-0" />
