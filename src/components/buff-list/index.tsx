@@ -1041,7 +1041,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				<span class="text-danger">
 					{ [
 						<Locale plain k={ `UNIT_SKILL_${uid}_${stat.collaborate.skill}` } />,
-						LocaleGet(`UNIT_SKILL_${uid}_F${stat.collaborate.skill}`).startsWith("UNIT_SKILL_F")
+						LocaleGet(`UNIT_SKILL_${uid}_F${stat.collaborate.skill}`).startsWith("UNIT_SKILL_")
 							? <></>
 							: [" / ", <Locale plain k={ `UNIT_SKILL_${uid}_F${stat.collaborate.skill}` } />],
 					] }
