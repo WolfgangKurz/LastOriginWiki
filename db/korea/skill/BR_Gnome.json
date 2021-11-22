@@ -1853,6 +1853,50 @@
                 }
               ],
               "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Gnome_N_24",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Current_Hp_Piercedown",
+                  "desc": {
+                    "desc": "방벽 생성 : 방어 관통 저항 {0}% (최대)",
+                    "type": 1,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 129,
+                    "_comment": "CURRENT_HP_PIERCEDOWN"
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
             }
           ]
         }
@@ -1955,6 +1999,18 @@
             },
             "base": 0.2,
             "per": 0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_Current_Hp_Piercedown",
+            "desc": {
+              "desc": "방벽 생성 : 방어 관통 저항 {0}% (최대)",
+              "type": 1,
+              "value": "1",
+              "level": "0"
+            },
+            "base": 1,
+            "per": 0,
             "chance": 1
           }
         ]

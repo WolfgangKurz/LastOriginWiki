@@ -159,7 +159,7 @@ export default class EntitySource {
 				case "4":
 					return ["", "TROOPER", "MOBILITY", "ARMORED", "MAX"];
 				default:
-					return ["", "NORMAL", "HARD", "VERY HARD", "EXETREAM"];
+					return ["", "NORMAL", "HARD", "VERY HARD", "EXTREME"];
 			}
 		})();
 		return difficulty[parseInt(this.Parts[0].replace(/^\*?Cha[0-9]+-(.+)$/, "$1"), 10)];

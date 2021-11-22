@@ -39,6 +39,8 @@ import BGM from "@/routes/bgm";
 import Store from "@/store";
 import { LocaleGet } from "@/components/locale";
 
+import AIList from "@/components/ai-list/new.index";
+
 const App: FunctionalComponent = () => {
 	if (typeof window !== "undefined") {
 		const pageonloading = document.querySelector("#pageonloading");
@@ -92,8 +94,10 @@ const App: FunctionalComponent = () => {
 
 						<Route path="/changelog" component={ Changelog } />
 						<Route path="/calc/exp" component={ EXPCalc } />
-						{/* <Route path="/roguelike" component={ Roguelike } /> */}
+						{/* <Route path="/roguelike" component={ Roguelike } /> */ }
 						<Route path="/bgm" component={ BGM } />
+
+						<Route path="/test" component={ AIList } />
 
 						<NotFoundPage default />
 					</Router>
