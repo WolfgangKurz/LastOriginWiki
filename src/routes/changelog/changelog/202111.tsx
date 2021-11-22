@@ -6,6 +6,33 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11259" date="2021-11-22"
+		new={ <>
+			<li>신규 전투원 <span class="badge bg-warning text-dark">X-02 우르</span>의 정보가 추가되었습니다.</li>
+		</> }
+		bugfix={ <>
+			<li>일부 스킬의 수치가 잘못 표시되던 문제를 수정했습니다.</li>
+		</> }
+		update={ <>
+			<li>스킬 버프의 내용에 "이로운/해로운" 등의 세부 표기가 추가되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<span class="badge bg-warning text-dark">멸망의 메이</span>의 스킨
+				<span class="badge bg-danger">미스오르카 : My Love</span> 정보가 추가되었습니다.
+			</li>
+			<li>
+				<span class="badge bg-warning text-dark">B-11 나이트 앤젤</span>의 스킨
+				<span class="badge bg-danger">미스오르카 : FLIGHT AGAIN</span> 정보가 추가되었습니다.
+			</li>
+			<li>
+				<span class="badge bg-warning text-dark">장화</span> 기본 스킨의 중파 정보가 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2021-11-22 09:12:54</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11250" date="2021-11-18"
 		bugfix={ <>
 			<li>일부 스킬의 수치가 잘못 표시되던 문제를 수정했습니다.</li>
