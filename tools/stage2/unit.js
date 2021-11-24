@@ -13,6 +13,7 @@ targetDBs.forEach(targetDB => {
 		const dialogues = {
 			ko: JSON.parse(fs.readFileSync(path.resolve(sourceDir, "..", "dialogue", "ko.json"), { encoding: "utf-8" })),
 			jp: JSON.parse(fs.readFileSync(path.resolve(sourceDir, "..", "dialogue", "jp.json"), { encoding: "utf-8" })),
+			jpdmm: JSON.parse(fs.readFileSync(path.resolve(sourceDir, "..", "dialogue", "jpdmm.json"), { encoding: "utf-8" })),
 		};
 		const skins = JSON.parse(fs.readFileSync(path.resolve(sourceDir, "unit-skin.json"), { encoding: "utf-8" }));
 		const roguelikeSkills = JSON.parse(fs.readFileSync(path.resolve(sourceDir, "roguelike-skill.json"), { encoding: "utf-8" }));
@@ -63,6 +64,7 @@ targetDBs.forEach(targetDB => {
 					dialogue: {
 						ko: dialogues.ko[char.uid],
 						jp: dialogues.jp[char.uid],
+						jpdmm: dialogues.jpdmm[char.uid],
 					},
 					skins: skins[char.uid],
 

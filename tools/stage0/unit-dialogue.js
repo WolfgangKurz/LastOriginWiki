@@ -8,6 +8,7 @@ function process (auth) {
 	const ret = {
 		ko: {},
 		jp: {},
+		jpdmm: {},
 	};
 	function procLang (lang, rows) {
 		const typeTable = {
@@ -111,9 +112,29 @@ function process (auth) {
 				resolve();
 			});
 		}),
+		new Promise((resolve, reject) => {
+			sheets.spreadsheets.values.get({
+				spreadsheetId: "1TrLn5czFe2Ww1xg4HiFsDzZDcnphxV3AqP_DgNqaU00",
+				range: "UnitDialogue (JPDMM)!A3:F",
+			}, (err, res) => {
+				if (err) {
+					console.log(`The API returned an error: ${err}`);
+					return reject();
+				}
+
+				const rows = res.data.values;
+				if (rows.length)
+					procLang("jpdmm", rows);
+				else {
+					console.log("No data found.");
+					return reject();
+				}
+				resolve();
+			});
+		}),
 	]).then(() => {
 		fs.mkdirSync(path.resolve(__dirname, "..", "..", "db", "dialogue"), { recursive: true });
-		["ko", "jp"].forEach(lang => {
+		["ko", "jp", "jpdmm"].forEach(lang => {
 			fs.writeFileSync(
 				path.resolve(__dirname, "..", "..", "db", "dialogue", `${lang}.json`),
 				JSON.stringify(ret[lang], null, 2),

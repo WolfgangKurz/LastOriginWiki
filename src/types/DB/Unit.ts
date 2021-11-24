@@ -173,6 +173,7 @@ export namespace Unit {
 		dialogue: {
 			ko: null,
 			jp: null,
+			jpdmm: null,
 		},
 		skins: {
 			G: false,
