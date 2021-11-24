@@ -6,6 +6,17 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11263" date="2021-11-24"
+		new={ <>
+			<li>JP DMM 보이스가 추가되었습니다.</li>
+		</> }
+		bugfix={ <>
+			<li><span class="badge bg-warning text-dark">랜서 미나</span>의 이미지가 수정되었습니다.</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2021-11-24 23:03:22</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11259" date="2021-11-22"
 		new={ <>
 			<li>신규 전투원 <span class="badge bg-warning text-dark">X-02 우르</span>의 정보가 추가되었습니다.</li>

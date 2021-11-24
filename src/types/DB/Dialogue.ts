@@ -52,4 +52,5 @@ export interface RawUnitDialogue {
 export interface UnitDialogueDataType {
 	ko: RawUnitDialogue | false | null;
 	jp: RawUnitDialogue | false | null;
+	jpdmm: RawUnitDialogue | false | null;
 }
