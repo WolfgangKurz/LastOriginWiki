@@ -42,7 +42,7 @@ const UnitFace: FunctionalComponent<UnitFaceProps> = (props) => {
 	const path = GetUnitFaceURL(props.uid, props.skin || 0, props.sd || false);
 	if (props.size) {
 		return <img
-			class={ `unit-face ${props.class || ""} ${style["unit-face"]}` }
+			class={ `unit-face ${props.class || ""} ${style.UnitFace}` }
 			data-type={ props.type }
 			src={ path }
 			width={ props.size }
@@ -51,7 +51,7 @@ const UnitFace: FunctionalComponent<UnitFaceProps> = (props) => {
 		/>;
 	}
 	return <img
-		class={ `unit-face ${props.class || ""} ${style["unit-face"]}` }
+		class={ `unit-face ${props.class || ""} ${style.UnitFace}` }
 		data-type={ props.type }
 		src={ path }
 		style={ props.style }

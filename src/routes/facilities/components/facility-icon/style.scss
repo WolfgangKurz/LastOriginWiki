@@ -1,4 +1,4 @@
-:global .facility-icon {
+.facility-icon {
 	position: relative;
 	display: inline-block;
 
@@ -15,7 +15,7 @@
 				$_w: $w * $i;
 				// $_h: $w * (244px / (230px * $i));
 				max-width: $_w;
-				height: (100% * $h / $_w);
+				height: (100% * math.div($h, $_w));
 				background-size: $_w ($h * 5);
 			}
 		}

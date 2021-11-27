@@ -1,6 +1,6 @@
-:global .skill-bound {
+.skill-bound {
 	$w: 14px;
-	$h: ($w / 38) * 34;
+	$h: math.div($w, 38) * 34;
 
 	$highlited: #00efef;
 
@@ -138,8 +138,8 @@
 
 			@for $i from 0 to 9 {
 				&[data-pos="#{$i + 1}"] {
-					top: (2px + nth($y, floor($i / 3) + 1));
-					left: (2px + nth($x, ($i % 3) + 1) + floor($i / 3) * 2);
+					top: (2px + nth($y, floor(math.div($i, 3)) + 1));
+					left: (2px + nth($x, ($i % 3) + 1) + floor(math.div($i, 3)) * 2);
 				}
 			}
 		}

@@ -10,12 +10,7 @@ import preact from "@preact/preset-vite";
 	const code = fs.readFileSync(dest, { encoding: "utf-8" })
 		.toString()
 		.replace("export default ", "return ");
-
-	let prev = new Function(code)();
-	if (typeof prev === "string")
-		prev = { time: prev, build: 0 };
-
-	if (isNaN(prev.build)) prev.build = 0;
+	const prev = new Function(code)();
 
 	fs.writeFileSync(
 		dest,
@@ -34,6 +29,7 @@ export default ({ mode }) => {
 	process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
 
 	const prependData = `${[
+		"@use \"sass:math\";",
 		`$NODE_ENV: "${process.env.PROD ? "production" : "development"}";`,
 		`@import "${path.resolve(__dirname, "src", "themes", "base").replace(/\\/g, "/")}";`,
 	].join("\n")}\n`;
