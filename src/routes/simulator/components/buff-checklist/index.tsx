@@ -21,7 +21,7 @@ import ElemIcon from "@/components/elem-icon";
 import UnitLink from "@/components/unit-link";
 import { BuffRenderer } from "@/components/buff-list";
 
-import style from "./style.scss";
+import style from "./style.module.scss";
 
 type BuffColors = "primary" | "secondary" | "danger" | "warning" | "info" | "dark" | "light";
 

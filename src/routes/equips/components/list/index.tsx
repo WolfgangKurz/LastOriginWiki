@@ -19,7 +19,7 @@ import EquipCard from "@/components/equip-card";
 import EffectFilterPopup from "@/components/popup/effect-filter-popup";
 import EquipPopup from "@/components/popup/equip-popup";
 
-import style from "./style.scss";
+import style from "./style.module.scss";
 
 interface EquipGroupEntity {
 	equip: FilterableEquip;

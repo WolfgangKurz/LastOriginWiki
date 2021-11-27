@@ -4,12 +4,12 @@ import { Link } from "preact-router";
 import { AssetsRoot } from "@/libs/Const";
 import Locale from "@/components/locale";
 
+import "./style.module.scss";
+
 interface WorldItemProps {
 	wid: string;
 	linked?: boolean;
 }
-
-import "./style.scss";
 
 const WorldItem: FunctionalComponent<WorldItemProps> = (props) => {
 	const WorldIcon = ["Cha", "Daily"].includes(props.wid)

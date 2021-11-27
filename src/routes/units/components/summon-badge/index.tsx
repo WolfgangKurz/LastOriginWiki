@@ -22,7 +22,7 @@ import SkillDescription from "@/components/skill-description";
 import BuffList from "@/components/buff-list";
 import AIList from "@/components/ai-list";
 
-import "./style.scss";
+import "./style.module.scss";
 
 interface SummonBadgeProps {
 	class?: string;

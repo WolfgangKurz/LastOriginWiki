@@ -2,7 +2,7 @@ import { FunctionalComponent } from "preact";
 
 import { SKILL_ATTR } from "@/types/Enums";
 
-import style from "./style.scss";
+import style from "./style.module.scss";
 
 interface ElemIconProps {
 	class?: string;

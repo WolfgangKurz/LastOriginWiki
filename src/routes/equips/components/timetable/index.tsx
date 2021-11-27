@@ -3,13 +3,13 @@ import { FunctionalComponent } from "preact";
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 
 import { groupBy, isActive } from "@/libs/Functions";
+import { objState } from "@/libs/State";
 
 import Loader, { GetJson, StaticDB } from "@/components/loader";
 import Locale from "@/components/locale";
 import EquipCard from "@/components/equip-card";
 
 import "./style.scss";
-import { objState } from "@/libs/State";
 
 const EquipTimetable: FunctionalComponent = () => {
 	const CraftableOnly = objState(false);

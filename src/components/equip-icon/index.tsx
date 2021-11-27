@@ -2,7 +2,7 @@ import { FunctionalComponent } from "preact";
 
 import { ImageExtension, AssetsRoot } from "@/libs/Const";
 
-import style from "./style.scss";
+import style from "./style.module.scss";
 
 interface EquipIconProps {
 	class?: string;

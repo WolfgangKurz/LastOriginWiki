@@ -7,9 +7,10 @@ import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import Locale from "@/components/locale";
 import { objState } from "@/libs/State";
 
-import style from "./style.scss";
 import Icon from "@/components/bootstrap-icon";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
+
+import style from "./style.module.scss";
 
 interface SkinItem extends UnitSkin {
 	isDef: boolean;

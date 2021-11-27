@@ -25,7 +25,7 @@ import DropUnit from "@/components/drop-unit";
 import EquipPopup from "@/components/popup/equip-popup";
 import EssenceBadge from "../essence-badge";
 
-import style from "./style.scss";
+import style from "./style.module.scss";
 
 const RoguelikeNodeContent: FunctionalComponent = () => {
 	const nodeDropdownIndex = objState<number>(2);

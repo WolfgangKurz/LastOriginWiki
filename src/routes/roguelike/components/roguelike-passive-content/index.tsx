@@ -13,7 +13,7 @@ import Locale from "@/components/locale";
 import RarityBadge from "@/components/rarity-badge";
 import BuffList from "@/components/buff-list";
 
-import style from "./style.scss";
+import style from "./style.module.scss";
 
 interface TypeGroup {
 	type: ROGUEEFFECTTYPE;

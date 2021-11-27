@@ -18,7 +18,7 @@ import Icon from "@/components/bootstrap-icon";
 import StatIcon from "@/components/stat-icon";
 import UnitSelectorPopup from "@/components/popup/unit-selector-popup";
 
-import style from "./style.scss";
+import style from "./style.module.scss";
 
 interface SimulatorUpgradeProps {
 	slot: SimulatorSlotType;

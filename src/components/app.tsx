@@ -39,7 +39,7 @@ import BGM from "@/routes/bgm";
 import Store from "@/store";
 import { LocaleGet } from "@/components/locale";
 
-import AIList from "@/components/ai-list/new.index";
+// import AIList from "@/components/ai-list/new.index";
 
 const App: FunctionalComponent = () => {
 	if (typeof window !== "undefined") {
@@ -97,7 +97,7 @@ const App: FunctionalComponent = () => {
 						{/* <Route path="/roguelike" component={ Roguelike } /> */ }
 						<Route path="/bgm" component={ BGM } />
 
-						<Route path="/test" component={ AIList } />
+						{/* <Route path="/test" component={ AIList } /> */}
 
 						<NotFoundPage default />
 					</Router>

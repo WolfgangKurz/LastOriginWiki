@@ -8,7 +8,7 @@ import { ChangeDB, CurrentDB, DBList, DBTypes } from "@/libs/DB";
 import Locale from "@/components/locale";
 import Icon from "@/components/bootstrap-icon";
 
-import style from "./style.scss";
+import style from "./style.module.scss";
 
 interface LinkData {
 	href: string;

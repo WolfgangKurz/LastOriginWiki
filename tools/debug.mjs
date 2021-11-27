@@ -1,10 +1,16 @@
-const cp = require("child_process");
-const express = require("express");
-const chalk = require("chalk");
-const path = require("path");
+import path from "path";
+import cp from "child_process";
+import { fileURLToPath } from "url";
+
+import chalk from "chalk";
+import express from "express";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const app = express();
 const port = 5500;
+
+const runCommand = "vite";
 
 app.all("/*", (req, res, next) => {
 	res.header("Access-Control-Allow-Origin", "*");
@@ -20,11 +26,11 @@ app.listen(port, () => {
 
 	console.log([
 		"run ",
-		chalk.cyan("preact watch"),
+		chalk.cyan(runCommand),
 	].join(""));
 
 	const cmd = "npx.cmd";
-	const pr = cp.spawn(cmd, ["preact", "watch"], {
+	const pr = cp.spawn(cmd, runCommand.split(" "), {
 		stdio: "inherit",
 		cwd: path.resolve(__dirname, ".."),
 	});
