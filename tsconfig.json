@@ -4,8 +4,9 @@
 		"module": "esnext",
 		"moduleResolution": "node",
 
-		"jsx": "react-jsx",
-		"jsxImportSource": "preact",
+		"jsx": "preserve",
+		"jsxFactory": "h",
+		"jsxFragmentFactory": "Fragment",
 
 		"strict": true,
 		"importHelpers": true,
@@ -18,6 +19,7 @@
 		"removeComments": false,
 		"preserveConstEnums": true,
 		"allowSyntheticDefaultImports": true,
+		"useDefineForClassFields": true,
 		"downlevelIteration": true,
 		"sourceMap": true,
 
@@ -30,11 +32,9 @@
 			"vite/client"
 		],
 		"lib": [
-			"es6",
 			"esnext",
 			"dom",
-			"dom.iterable",
-			"scripthost"
+			"dom.iterable"
 		],
 		"paths": {
 			"@/*": ["./*"]

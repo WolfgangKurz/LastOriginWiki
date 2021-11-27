@@ -10,7 +10,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
 const port = 5500;
 
-const runCommand = "vite";
+const runCommand = "yarn vite";
 
 app.all("/*", (req, res, next) => {
 	res.header("Access-Control-Allow-Origin", "*");

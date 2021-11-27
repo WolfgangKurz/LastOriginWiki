@@ -94,7 +94,7 @@ const Home: FunctionalComponent = () => {
 			<Locale k="HOME_DESCRIPTION" />
 		</p>
 		<p>
-			<video src={ `${AssetsRoot}/webm/SD/BR_Phoenix_0_SD.webm` } muted loop autoPlay />
+			<video src={ `${AssetsRoot}/webm/SD/BR_Sirene_2_SD.webm` } muted loop autoPlay />
 		</p>
 		<p>
 			<a href="https://docs.google.com/spreadsheets/d/1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4" target="_blank" rel="noreferrer">
@@ -115,6 +115,11 @@ const Home: FunctionalComponent = () => {
 				<a href="https://docs.google.com/spreadsheets/d/1Q2tpfQntZxmI0Xbx9HZo0vjBY7kQGZGmH1MBGTzrnvo" target="_blank" rel="noreferrer">
 					<Icon icon="link-45deg" class="me-1" />
 					<span>Locale SpreadSheet</span>
+				</a>
+				<span class="px-2">|</span>
+				<a href="https://docs.google.com/spreadsheets/d/1TrLn5czFe2Ww1xg4HiFsDzZDcnphxV3AqP_DgNqaU00" target="_blank" rel="noreferrer">
+					<Icon icon="link-45deg" class="me-1" />
+					<span>Quotes SpreadSheet</span>
 				</a>
 			</p>
 		</div>
