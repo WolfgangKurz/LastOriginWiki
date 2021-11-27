@@ -8,7 +8,7 @@ import { ChangeDB, CurrentDB, DBList, DBTypes } from "@/libs/DB";
 
 import Icon from "../bootstrap-icon";
 
-import style from "./style.scss";
+import style from "./style.module.scss";
 
 const HomeConfigSelector: FunctionalComponent = () => {
 	const DBDisp: Record<DBTypes, string> = {

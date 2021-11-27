@@ -10,7 +10,7 @@ import Loader, { StaticDB, GetJson } from "@/components/loader";
 import Locale from "@/components/locale";
 import EnemyPopup from "@/components/popup/enemy-popup";
 
-import style from "./style.scss";
+import style from "./style.module.scss";
 
 interface EnemyGroupCardProps {
 	group: EnemyGroupEnetity;

@@ -5,7 +5,7 @@ import { SetMeta, UpdateTitle } from "@/libs/Site";
 
 import Locale from "@/components/locale";
 
-import style from "./style.scss";
+import style from "./style.module.scss";
 
 const BGM: FunctionalComponent = () => {
 	SetMeta(["description", "twitter:description"], "라스트오리진(LastOrigin)에 사용된 BGM 목록과 플레이어입니다.");

@@ -29,7 +29,7 @@ import UnitReference from "@/components/unit-reference";
 import MapGrid from "../components/map-grid";
 import MapSearchInfo from "../components/map-search-info";
 
-import "./style.scss";
+import "./style.module.scss";
 
 interface ModuleUnit {
 	type: "module";

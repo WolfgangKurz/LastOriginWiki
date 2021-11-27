@@ -4,14 +4,14 @@ import { Link, route } from "preact-router";
 import { Worlds } from "@/types/DB/Map";
 
 import { AssetsRoot } from "@/libs/Const";
+import { SetMeta, UpdateTitle } from "@/libs/Site";
 
 import Loader, { GetJson, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
 import Icon from "@/components/bootstrap-icon";
 import WorldItem from "../components/world-item";
 
-import "./style.scss";
-import { SetMeta, UpdateTitle } from "@/libs/Site";
+import "./style.module.scss";
 
 interface WORLDViewProps {
 	wid: string;

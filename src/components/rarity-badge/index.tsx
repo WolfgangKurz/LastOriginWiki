@@ -4,7 +4,7 @@ import { ACTOR_GRADE } from "@/types/Enums";
 
 import { RarityDisplay } from "@/libs/Const";
 
-import style from "./style.scss";
+import style from "./style.module.scss";
 
 interface RarityBadgeProps {
 	class?: string;

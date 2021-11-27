@@ -1,4 +1,4 @@
-import { h } from "preact";
+import { render, h } from "preact";
 
 import { Store } from "unistore";
 import { Provider } from "unistore/preact";
@@ -12,5 +12,4 @@ import "@/themes/patch.scss";
 import { Extend } from "@/libs/Functions";
 
 Extend();
-
-export default App;
+render(h(App, {}), document.getElementById("app")!);

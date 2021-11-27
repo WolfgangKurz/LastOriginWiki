@@ -8,7 +8,7 @@ import Locale, { LocaleGet } from "@/components/locale";
 import WorldItem from "@/routes/worlds/components/world-item";
 import Icon from "@/components/bootstrap-icon";
 
-import style from "./style.scss";
+import style from "./style.module.scss";
 
 const Worlds: FunctionalComponent = () => {
 	const Tops = ["Story", CurrentEvent].filter(x => x);

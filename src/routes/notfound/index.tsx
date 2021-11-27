@@ -1,6 +1,7 @@
 import { FunctionalComponent } from "preact";
 import { Link } from "preact-router/match";
-import style from "./style.css";
+
+import style from "./style.module.scss";
 
 const Notfound: FunctionalComponent = () => (
 	<div class={ style.notfound }>

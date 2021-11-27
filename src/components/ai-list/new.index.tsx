@@ -1,12 +1,11 @@
 import { FunctionalComponent } from "preact";
-import ReactFlow, { addEdge, ArrowHeadType, Background, BackgroundVariant, Edge, Elements, Node as _Node, Position } from "react-flow-renderer";
+import { CSSProperties } from "react";
+import ReactFlow, { ArrowHeadType, Background, BackgroundVariant, Edge, Elements, Node as _Node, Position } from "react-flow-renderer";
 import * as acorn from "acorn";
-
 
 import Locale from "@/components/locale";
 
-import style from "./style.scss";
-import { CSSProperties } from "react";
+import style from "./style.module.scss";
 
 const edgeBase: Partial<Edge<any>> = {
 	type: "straight",

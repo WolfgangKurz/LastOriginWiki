@@ -17,7 +17,7 @@ import DropItem from "@/components/drop-item";
 import TbarIcon from "@/components/tbar-icon";
 import EnemyPopup from "@/components/popup/enemy-popup";
 
-import style from "./style.scss";
+import style from "./style.module.scss";
 
 interface EternalWarProps {
 	mid?: string;

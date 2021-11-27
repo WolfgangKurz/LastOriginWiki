@@ -1,7 +1,7 @@
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { FunctionalComponent } from "preact";
 
-import style from "./style.scss";
+import style from "./style.module.scss";
 
 interface UnitFaceProps {
 	class?: string;

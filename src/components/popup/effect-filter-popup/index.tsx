@@ -9,7 +9,7 @@ import { isActive } from "@/libs/Functions";
 import Locale from "@/components/locale";
 import PopupBase from "@/components/popup/base";
 
-import style from "./style.scss";
+import style from "./style.module.scss";
 
 interface EffectFilterPopupProps {
 	class?: string;

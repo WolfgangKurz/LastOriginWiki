@@ -18,7 +18,7 @@ import SummonBadge from "../../components/summon-badge";
 import BuffList from "@/components/buff-list";
 import SkillIcon from "@/components/skill-icon";
 
-import style from "./style.scss";
+import style from "./style.module.scss";
 
 interface SkillItem extends SkillEntity {
 	slot: string;

@@ -4,6 +4,7 @@ import Decimal from "decimal.js";
 import { ACTOR_GRADE, ITEM_GRADE } from "@/types/Enums";
 import { MapWaveGroup, Worlds } from "@/types/DB/Map";
 import { Equip } from "@/types/DB/Equip";
+import { Unit } from "@/types/DB/Unit";
 
 import { objState } from "@/libs/State";
 import { RarityDisplay } from "@/libs/Const";
@@ -17,8 +18,7 @@ import UnitFace from "@/components/unit-face";
 import SkillIcon from "@/components/skill-icon";
 import EquipIcon from "@/components/equip-icon";
 
-import style from "./style.scss";
-import { Unit } from "@/types/DB/Unit";
+import style from "./style.module.scss";
 
 interface BonusCharInfo {
 	uid: string;

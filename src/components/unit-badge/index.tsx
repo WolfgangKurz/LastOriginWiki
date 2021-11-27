@@ -4,7 +4,7 @@ import { ACTOR_CLASS, ROLE_TYPE } from "@/types/Enums";
 
 import Locale from "@/components/locale";
 
-import style from "./style.scss";
+import style from "./style.module.scss";
 
 const typeName: Record<ACTOR_CLASS, string> = {
 	[ACTOR_CLASS.LIGHT]: "LIGHT",

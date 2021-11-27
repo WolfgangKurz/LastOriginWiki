@@ -25,6 +25,8 @@ import UnitBadge from "@/components/unit-badge";
 import ElemIcon from "@/components/elem-icon";
 import EquipIcon from "@/components/equip-icon";
 import SourceBadge from "@/components/source-badge";
+import DropEquip from "@/components/drop-equip";
+import EquipPopup from "@/components/popup/equip-popup";
 // import RoguelikeEffectBadge from "@/components/roguelike-effect-badge";
 // import RoguelikeItemBadge from "@/components/roguelike-item-badge";
 
@@ -33,8 +35,6 @@ import SkillTable from "../components/skill-table";
 import UnitDialogue, { VoiceItem } from "../components/unit-dialogue";
 
 import "./style.scss";
-import DropEquip from "@/components/drop-equip";
-import EquipPopup from "@/components/popup/equip-popup";
 
 // type TabTypes = "basic" | "skills" | "roguelike" | "dialogue";
 type TabTypes = "basic" | "skills" | "dialogue";

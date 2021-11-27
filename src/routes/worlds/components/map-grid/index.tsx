@@ -6,7 +6,7 @@ import { MapNodeEntity } from "@/types/DB/Map";
 
 import { AssetsRoot } from "@/libs/Const";
 
-import "./style.scss";
+import "./style.module.scss";
 
 interface LineData {
 	x1: string;
