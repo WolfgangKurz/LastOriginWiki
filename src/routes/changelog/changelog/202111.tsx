@@ -6,6 +6,11 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11390" date="2021-11-28"
+		site={ <>
+			<li>웹사이트를 vite + preact 구조로 변경했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11263" date="2021-11-24"
 		new={ <>
 			<li>JP DMM 보이스가 추가되었습니다.</li>

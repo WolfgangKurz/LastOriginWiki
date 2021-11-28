@@ -1,5 +1,6 @@
-import { FunctionalComponent } from "preact";
+import { Component, FunctionalComponent } from "preact";
 import { Link } from "preact-router/match";
+// import { Dropdown } from "bootstrap";
 
 import { AssetsRoot, IsBeta } from "@/libs/Const";
 import { ChangeLanguage, CurrentLocale, LocaleList } from "@/libs/Locale";
@@ -40,160 +41,166 @@ const DropdownExternal: FunctionalComponent<LinkData> = (props) => (
 	</li>
 );
 
-const Header: FunctionalComponent = () => {
-	const DBDisp: Record<DBTypes, string> = {
-		korea: "KR",
-		// japan: "JP",
-	};
+const DBDisp: Record<DBTypes, string> = {
+	korea: "KR",
+	// japan: "JP",
+};
 
-	return <nav class={ `${style.navbar} navbar navbar-expand-lg navbar-dark bg-dark px-3` }>
-		<div class="container-fluid">
-			<div class={ `${style["navbar-brand"]} navbar-brand` }>
-				<img src={ `${AssetsRoot}/icon.png` } />
-				<span>
-					<i class={ style["_official"] } data-locale={ CurrentLocale }>
-						{ IsBeta
-							? <>BETA</>
-							: <Locale k="COMMON_AUTHORIZED?" />
-						}
-					</i>
-					<Locale k="MENU_TITLE" />
-				</span>
-			</div>
+class Header extends Component {
+	// componentDidUpdate () {
+	// 	const dropdownElementList = [].slice.call(document.querySelectorAll(".dropdown-toggle"));
+	// 	dropdownElementList.forEach((dropdownToggleEl) => new Dropdown(dropdownToggleEl));
+	// }
 
-			<button
-				class="navbar-toggler"
-				type="button"
-				data-bs-toggle="collapse"
-				data-bs-target="#topNavbarList"
-				aria-controls="topNavbarList"
-				aria-expanded="false"
-				aria-label="Toggle navigation"
-			>
-				<span class="navbar-toggler-icon" />
-			</button>
+	render () {
+		return <nav class={ `${style.navbar} navbar navbar-expand-lg navbar-dark bg-dark px-3` }>
+			<div class="container-fluid">
+				<div class={ `${style["navbar-brand"]} navbar-brand` }>
+					<img src={ `${AssetsRoot}/icon.png` } />
+					<span>
+						<i class={ style["_official"] } data-locale={ CurrentLocale }>
+							{ IsBeta
+								? <>BETA</>
+								: <Locale k="COMMON_AUTHORIZED?" />
+							}
+						</i>
+						<Locale k="MENU_TITLE" />
+					</span>
+				</div>
 
-			<div class="collapse navbar-collapse" id="topNavbarList">
-				<ul class={ `${style["navbar-nav"]} navbar-nav me-auto mb-2 mb-lg-0` }>
-					<NavItem href="/" text="MENU_HOME" />
-					<NavItem href="/units" text="MENU_UNITS" />
-					<NavItem href="/equips" text="MENU_EQUIPS" />
-					<NavItem href="/facilities" text="MENU_FACILITIES" />
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#topNavbarList"
+					aria-controls="topNavbarList"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon" />
+				</button>
 
-					<NavItem href="/enemies" text="MENU_ENEMIES" />
-					<NavItem href="/worlds" text="MENU_WORLDS" />
+				<div class="collapse navbar-collapse" id="topNavbarList">
+					<ul class={ `${style["navbar-nav"]} navbar-nav me-auto mb-2 mb-lg-0` }>
+						<NavItem href="/" text="MENU_HOME" />
+						<NavItem href="/units" text="MENU_UNITS" />
+						<NavItem href="/equips" text="MENU_EQUIPS" />
+						<NavItem href="/facilities" text="MENU_FACILITIES" />
 
-					<NavItem href="/eternalwar" text="MENU_ETERNALWAR" />
+						<NavItem href="/enemies" text="MENU_ENEMIES" />
+						<NavItem href="/worlds" text="MENU_WORLDS" />
 
-					<NavItem href="/simulator" text="MENU_SIMULATOR" />
+						<NavItem href="/eternalwar" text="MENU_ETERNALWAR" />
 
-					<li class="nav-item dropdown">
-						<a
-							class="nav-link dropdown-toggle"
-							href="#"
-							id="topNavbarDropdown"
-							role="button"
-							data-bs-toggle="dropdown"
-							aria-expanded="false"
-						>
-							<Locale k="MENU_ETC" />
-						</a>
-						<ul class="dropdown-menu" aria-labelledby="topNavbarDropdown">
-							<DropdownItem href="/changelog">
-								<Locale k="MENU_CHANGELOG" />
-							</DropdownItem>
+						<NavItem href="/simulator" text="MENU_SIMULATOR" />
 
-							<li><hr class="dropdown-divider" /></li>
+						<li class="nav-item dropdown">
+							<a
+								class="nav-link dropdown-toggle"
+								href="#"
+								id="topNavbarDropdown"
+								role="button"
+								data-bs-toggle="dropdown"
+								aria-expanded="false"
+							>
+								<Locale k="MENU_ETC" />
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="topNavbarDropdown">
+								<DropdownItem href="/changelog">
+									<Locale k="MENU_CHANGELOG" />
+								</DropdownItem>
 
-							<DropdownItem href="/calc/exp">
-								<Locale k="MENU_ETC_EXPCALC" />
-							</DropdownItem>
+								<li><hr class="dropdown-divider" /></li>
 
-							<li><hr class="dropdown-divider" /></li>
+								<DropdownItem href="/calc/exp">
+									<Locale k="MENU_ETC_EXPCALC" />
+								</DropdownItem>
 
-							{/* <DropdownItem href="/roguelike">
+								<li><hr class="dropdown-divider" /></li>
+
+								{/* <DropdownItem href="/roguelike">
 								<Locale k="MENU_ROGUELIKE" />
 							</DropdownItem> */}
-							{/* <DropdownItem href="/exchange">
+								{/* <DropdownItem href="/exchange">
 								<Locale k="MENU_EXCHANGES" />
 								<span class="badge bg-secondary ms-2">TBA</span>
 							</DropdownItem> */}
-							<DropdownItem href="/bgm">
-								<Locale k="MENU_ETC_BGM" />
-							</DropdownItem>
-							{/* <DropdownItem href="/eapi">
+								<DropdownItem href="/bgm">
+									<Locale k="MENU_ETC_BGM" />
+								</DropdownItem>
+								{/* <DropdownItem href="/eapi">
 								<Locale k="MENU_ETC_API" />
 								<span class="badge bg-secondary ms-2">TBA</span>
 							</DropdownItem> */}
 
-							<li><hr class="dropdown-divider" /></li>
+								<li><hr class="dropdown-divider" /></li>
 
-							<DropdownExternal href="https://arca.live/b/lastorigin/4474753">
-								<Locale k="MENU_ETC_EX01" />
-							</DropdownExternal>
-							<DropdownExternal href="https://lastoriginmap.github.io/">
-								<Locale k="MENU_ETC_EX02" />
-							</DropdownExternal>
-						</ul>
-					</li>
-				</ul>
-				<div class="d-flex">
-					<ul class={ `${style["navbar-nav"]} navbar-nav me-auto mb-2 mb-lg-0` }>
-						<li class="nav-item dropdown">
-							<a
-								class="nav-link dropdown-toggle"
-								href="#"
-								id="topNavbarDropdown2"
-								role="button"
-								data-bs-toggle="dropdown"
-								aria-expanded="false"
-							>
-								<Icon icon="server" class="me-1" />
-								<img class="mx-1" src={ `${AssetsRoot}/flags/${DBDisp[CurrentDB]}.png` } alt={ DBDisp[CurrentDB] } />
-								{ DBDisp[CurrentDB] }
-							</a>
-							<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="topNavbarDropdown2">
-								{ DBList.map(db => <li>
-									<a href="#" class="dropdown-item" onClick={ (e): void => {
-										e.preventDefault();
-										ChangeDB(db);
-									} }>
-										<img class="me-3" src={ `${AssetsRoot}/flags/${DBDisp[db]}.png` } alt={ DBDisp[db] } />
-										{ DBDisp[db] }
-									</a>
-								</li>) }
-							</ul>
-						</li>
-						<li class="nav-item dropdown">
-							<a
-								class="nav-link dropdown-toggle"
-								href="#"
-								id="topNavbarDropdown2"
-								role="button"
-								data-bs-toggle="dropdown"
-								aria-expanded="false"
-							>
-								<Icon icon="globe2" class="me-1" />
-								<img class="mx-1" src={ `${AssetsRoot}/flags/${CurrentLocale}.png` } alt={ CurrentLocale } />
-								{ CurrentLocale }
-							</a>
-							<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="topNavbarDropdown2">
-								{ LocaleList.map(lang => <li>
-									<a href="#" class="dropdown-item" onClick={ (e): void => {
-										e.preventDefault();
-										ChangeLanguage(lang);
-									} }>
-										<img class="me-3" src={ `${AssetsRoot}/flags/${lang}.png` } alt={ lang } />
-										{ lang }
-									</a>
-								</li>) }
+								<DropdownExternal href="https://arca.live/b/lastorigin/4474753">
+									<Locale k="MENU_ETC_EX01" />
+								</DropdownExternal>
+								<DropdownExternal href="https://lastoriginmap.github.io/">
+									<Locale k="MENU_ETC_EX02" />
+								</DropdownExternal>
 							</ul>
 						</li>
 					</ul>
+					<div class="d-flex">
+						<ul class={ `${style["navbar-nav"]} navbar-nav me-auto mb-2 mb-lg-0` }>
+							<li class="nav-item dropdown">
+								<a
+									class="nav-link dropdown-toggle"
+									href="#"
+									id="topNavbarDropdown2"
+									role="button"
+									data-bs-toggle="dropdown"
+									aria-expanded="false"
+								>
+									<Icon icon="server" class="me-1" />
+									<img class="mx-1" src={ `${AssetsRoot}/flags/${DBDisp[CurrentDB]}.png` } alt={ DBDisp[CurrentDB] } />
+									{ DBDisp[CurrentDB] }
+								</a>
+								<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="topNavbarDropdown2">
+									{ DBList.map(db => <li>
+										<a href="#" class="dropdown-item" onClick={ (e): void => {
+											e.preventDefault();
+											ChangeDB(db);
+										} }>
+											<img class="me-3" src={ `${AssetsRoot}/flags/${DBDisp[db]}.png` } alt={ DBDisp[db] } />
+											{ DBDisp[db] }
+										</a>
+									</li>) }
+								</ul>
+							</li>
+							<li class="nav-item dropdown">
+								<a
+									class="nav-link dropdown-toggle"
+									href="#"
+									id="topNavbarDropdown2"
+									role="button"
+									data-bs-toggle="dropdown"
+									aria-expanded="false"
+								>
+									<Icon icon="globe2" class="me-1" />
+									<img class="mx-1" src={ `${AssetsRoot}/flags/${CurrentLocale}.png` } alt={ CurrentLocale } />
+									{ CurrentLocale }
+								</a>
+								<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="topNavbarDropdown2">
+									{ LocaleList.map(lang => <li>
+										<a href="#" class="dropdown-item" onClick={ (e): void => {
+											e.preventDefault();
+											ChangeLanguage(lang);
+										} }>
+											<img class="me-3" src={ `${AssetsRoot}/flags/${lang}.png` } alt={ lang } />
+											{ lang }
+										</a>
+									</li>) }
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
-		</div>
-	</nav>;
-};
-
+		</nav>;
+	}
+}
 export default Header;

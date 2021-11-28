@@ -1,5 +1,6 @@
 import { FunctionalComponent } from "preact";
 import { Route, Router } from "preact-router";
+
 import Redirect from "@/components/redirect";
 
 import { CurrentLocale } from "@/libs/Locale";

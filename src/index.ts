@@ -6,6 +6,9 @@ import store from "@/store";
 
 import App from "@/components/app";
 
+import "bootstrap/scss/bootstrap.scss";
+// import "bootstrap";
+
 import "@/themes/index.scss";
 import "@/themes/patch.scss";
 
