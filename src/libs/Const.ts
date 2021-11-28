@@ -10,7 +10,7 @@ export const ImageExtensionList: ImageExtensionTypes[] = ["webp", "png"];
 
 export const IsBeta = false;
 
-export const Host = process.env.NODE_ENV === "development"
+export const Host = import.meta.env.DEV
 	? "http://121.157.45.209:5500"
 	: IsBeta
 		? "https://loearlyaccess.swaytwig.com"

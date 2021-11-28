@@ -41,7 +41,7 @@ const Changelog: FunctionalComponent = () => {
 		loading.set(currentDate.value);
 
 		content.set(undefined);
-		import(/* webpackChunkName: "changelog-[request]" */`./changelog/${currentDate.value}`)
+		import(`./changelog/${currentDate.value}.tsx`)
 			.then(x => content.set(x.default))
 			.catch(() => content.set(<h5 class="text-secondary text-center m-4">Failed to load</h5>));
 	}
