@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import util from "util";
-import { defineConfig, loadEnv } from "vite";
+import { defineConfig } from "vite";
 import preact from "@preact/preset-vite";
 
 // buildtime
