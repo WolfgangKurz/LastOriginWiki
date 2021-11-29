@@ -701,7 +701,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				}
 			} else if ("round" in trigger) {
 				if (trigger.round.operator === "even" || trigger.round.operator === "odd")
-					return <Locale plain k={ `BUFFTRIGGER_ROUND_${trigger.round.operator}` } />;
+					return <Locale plain k={ `BUFFTRIGGER_ROUND_${trigger.round.operator.toUpperCase()}` } />;
 				else if (trigger.round.operator === "=" || trigger.round.operator === "<=" || trigger.round.operator === ">=")
 					return <Locale plain k={ `BUFFTRIGGER_ROUND_${trigger.round.operator}` } p={ [trigger.round.round] } />;
 			} else if ("notInBattle" in trigger)

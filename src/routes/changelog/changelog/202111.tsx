@@ -6,6 +6,26 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11402" date="2021-11-29"
+		new={ <>
+			<li>신규 장비 <span class="badge bg-warning text-dark">전장 리부트 시스템 알파</span>의 정보가 추가되었습니다.</li>
+			<li>신규 장비 <span class="badge bg-warning text-dark">전장 리부트 시스템 베타</span>의 정보가 추가되었습니다.</li>
+			<li>신규 장비 <span class="badge bg-warning text-dark">전장 리부트 시스템 감마</span>의 정보가 추가되었습니다.</li>
+			<li>신규 장비 <span class="badge bg-warning text-dark">W.R.I.I 시스템</span>의 정보가 추가되었습니다.</li>
+			<li>신규 변화의 성소 <span class="badge bg-warning text-dark">제3작전구역</span> 정보가 추가되었습니다.</li>
+			<li>신규 적 정보가 추가되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<span class="badge bg-warning text-dark">M-5 이프리트</span>의 스킨
+				<span class="badge bg-danger">하계 전투복 이프리트</span>의 로비 애니메이션 정보가 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-warning text-dark">B-11 나이트 앤젤</span>의 서약 대사 세트가 추가되었습니다.</li>
+			<li><span class="badge bg-light text-dark">KST 2021-11-29 12:42:33</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11390" date="2021-11-28"
 		site={ <>
 			<li>웹사이트를 vite + preact 구조로 변경했습니다.</li>

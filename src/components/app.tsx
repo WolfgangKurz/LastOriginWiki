@@ -98,7 +98,7 @@ const App: FunctionalComponent = () => {
 						{/* <Route path="/roguelike" component={ Roguelike } /> */ }
 						<Route path="/bgm" component={ BGM } />
 
-						{/* <Route path="/test" component={ AIList } /> */}
+						{/* <Route path="/test" component={ AIList } /> */ }
 
 						<NotFoundPage default />
 					</Router>
