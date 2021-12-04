@@ -140,7 +140,7 @@ const Loader: FunctionalComponent<LoaderProps> = (props) => {
 		</span>;
 	}
 	function LoadingBadge (): preact.VNode {
-		return <span class="text-secondary">Loading data</span>;
+		return <span class="text-secondary">Data loading</span>;
 	}
 
 	const db = props.db === "!"

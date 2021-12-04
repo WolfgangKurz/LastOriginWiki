@@ -6,7 +6,7 @@ import { BuffEffectValue, BUFFEFFECT_TYPE, BuffEffect } from "@/types/BuffEffect
 import { BuffStatStatic, BuffStat } from "@/types/Buffs";
 import { BuffErase } from "@/types/BuffErase";
 import { BuffTrigger } from "@/types/BuffTrigger";
-import { UNIT_POSITION, BUFF_ATTR_TYPE, SKILL_ATTR, ACTOR_BODY_TYPE, ACTOR_CLASS, ROLE_TYPE, TARGET_TYPE, NUM_OUTPUTTYPE } from "@/types/Enums";
+import { UNIT_POSITION, BUFF_ATTR_TYPE, SKILL_ATTR, ACTOR_BODY_TYPE, ACTOR_CLASS, ROLE_TYPE, TARGET_TYPE, NUM_OUTPUTTYPE, BUFF_OVERLAP_TYPE } from "@/types/Enums";
 import { StatPointValue } from "@/types/Stat";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { Enemy } from "@/types/DB/Enemy";
@@ -1254,6 +1254,14 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 
 			// title={ formatDesc(buff.desc.type, buff.desc.desc, buff.desc.value, buff.desc.level, level) }
 			if (buff.value.chance !== "0%" || props.dummy) {
+				const StackTable: Record<BUFF_OVERLAP_TYPE, preact.VNode> = {
+					[BUFF_OVERLAP_TYPE.NONE]: <Locale plain k="BUFFSTACK_INSTANCE" />,
+					[BUFF_OVERLAP_TYPE.RENEW]: <Locale plain k="BUFFSTACK_RENEW" />,
+					[BUFF_OVERLAP_TYPE.ADDTURN]: <Locale plain k="BUFFSTACK_ADDTURN" />,
+					[BUFF_OVERLAP_TYPE.OVERLAP]: <Locale plain k="BUFFSTACK_OVERLAP" />,
+					[BUFF_OVERLAP_TYPE.CREATE]: <Locale plain k="BUFFSTACK_CREATE" />,
+				};
+
 				elems.push(<div class="clearfix">
 					<div>
 						{ buff.icon
@@ -1268,9 +1276,13 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 							{ getChanceText(buff.value.chance) }
 						</strong>
 						<div class="float-end">
-							{ <span class="badge bg-substory ms-2 text-wrap">
-								<Locale k={ `BUFFEFFECT_ATTR_${buff.attr}` } />
-							</span> }
+							<span class="badge bg-event-exchange-old ms-2 text-wrap">
+								{ StackTable[buff.overlap] }
+							</span>
+
+							<span class="badge bg-substory ms-2 text-wrap">
+								<Locale plain k={ `BUFFEFFECT_ATTR_${buff.attr}` } />
+							</span>
 						</div>
 					</div>
 

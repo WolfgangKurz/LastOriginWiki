@@ -56,7 +56,10 @@ export default ({ mode }) => {
 					inlineDynamicImports: false,
 					manualChunks (id) {
 						// entry
-						if (id.includes("/src/components/app.")) return undefined;
+						if (
+							id.includes("/src/components/app.") ||
+							id.includes("/src/components/dynamic-route/")
+						) return undefined;
 
 						// vendor
 						if (id.includes("/node_modules/bootstrap")) return "vendor.bootstrap";

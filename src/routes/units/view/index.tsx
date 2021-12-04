@@ -217,9 +217,9 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 						<div class="col bg-dark text-white"><Locale k="UNIT_VIEW_WEIGHT" /></div>
 						<div class="col">{ unit.weight }</div>
 						<div class="col bg-dark text-white"><Locale k="UNIT_VIEW_BATTLESTYLE" /></div>
-						<div class="col">{ unit.weapon1 }</div>
+						<div class="col text-break">{ unit.weapon1 }</div>
 						<div class="col bg-dark text-white"><Locale k="UNIT_VIEW_WEAPON" /></div>
-						<div class="col">{ unit.weapon2 }</div>
+						<div class="col text-break">{ unit.weapon2 }</div>
 					</div>
 				</div>
 
