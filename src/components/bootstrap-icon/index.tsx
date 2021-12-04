@@ -1,4 +1,4 @@
-import { FunctionalComponent } from "preact";
+import { Component, RenderableProps } from "preact";
 import Icons from "./icons";
 
 import "./style.scss";
@@ -271,21 +271,54 @@ interface IconProps {
 	color?: string;
 }
 
-const Icon: FunctionalComponent<IconProps> = (props) => {
-	const size = props.size || "1em";
-	const color = props.color || "currentColor";
+interface IconState {
+	child: preact.VNode;
+}
 
-	const icon = props.icon in Icons
-		? Icons[props.icon]
-		: <></>;
+class Icon extends Component<IconProps, IconState> {
+	private mounted: boolean = true;
 
-	return <svg
-		class={ `bi bi-${props.icon} ${props.class || ""}` }
-		xmlns="http://www.w3.org/2000/svg"
-		viewBox="0 0 16 16"
-		width={ size }
-		height={ size }
-		fill={ color }
-	>{ icon }</svg>;
+	constructor (props: RenderableProps<IconProps>) {
+		super();
+
+		this.state = { child: <></> };
+		this.UpdateIcon(props.icon);
+	}
+
+	UpdateIcon (iconId: IconList) {
+		const icon: Promise<{ default: preact.VNode; }> | null = Icons.includes(iconId)
+			? import(`./es/${iconId}.ts`)
+			: null;
+
+		this.setState({ child: <></> });
+		if (icon !== null) {
+			icon.then(node => {
+				if (this.mounted)
+					this.setState(s => ({ ...s, child: node.default }));
+			});
+		}
+	}
+
+	componentWillUnmount () {
+		this.mounted = false;
+	}
+
+	componentWillReceiveProps (nextProps: RenderableProps<IconProps>) {
+		this.UpdateIcon(nextProps.icon);
+	}
+
+	render (props: RenderableProps<IconProps>, state: IconState) {
+		const size = props.size || "1em";
+		const color = props.color || "currentColor";
+
+		return <svg
+			class={ `bi bi-${props.icon} ${props.class || ""}` }
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 16 16"
+			width={ size }
+			height={ size }
+			fill={ color }
+		>{ state.child }</svg>;
+	}
 };
 export default Icon;

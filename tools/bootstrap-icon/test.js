@@ -13,14 +13,19 @@ function toCamelCase (str) {
 }
 
 const generate = (ast, options) => {
-	return astring.generate(ast, Object.assign({
-		generator: Object.assign(
-			{},
-			astring.GENERATOR,
-			astringJSX,
+	return astring.generate(
+		ast,
+		Object.assign(
+			{
+				generator: Object.assign(
+					{},
+					astring.GENERATOR,
+					astringJSX,
+				)
+			},
+			options,
 		),
-		options,
-	}));
+	);
 };
 
 const parsed = acorn.Parser.extend(jsx())
@@ -30,6 +35,7 @@ const parsed = acorn.Parser.extend(jsx())
 	});
 
 const imports = [];
+const values = [];
 parsed
 	.body[1]
 	.declaration
@@ -50,8 +56,10 @@ parsed
 				}],
 			],
 		}).code;
-		imports.push(`import ${toCamelCase(k)} from "./es/${k}";`);
-		prop.value = acorn.parse(toCamelCase(k)/*`import("./es/${k}")`*/, { ecmaVersion: "latest" }).body[0].expression;
+		// imports.push(`import ${toCamelCase(k)} from "./es/${k}";`);
+		// prop.value = acorn.parse(toCamelCase(k), { ecmaVersion: "latest" }).body[0].expression;
+		// prop.value = acorn.parse(`import("./es/${k}.ts")`, { ecmaVersion: "latest" }).body[0].expression;
+		values.push(k);
 
 		fs.writeFileSync(
 			path.resolve(__dirname, "..", "..", "src", "components", "bootstrap-icon", "es", `${k}.ts`),
@@ -59,9 +67,17 @@ parsed
 			"utf-8",
 		);
 	});
+
+
+parsed
+	.body[1]
+	.declaration = acorn.parse(JSON.stringify(values)).body[0].expression;
+
 // console.log(generate(parsed));
 fs.writeFileSync(
-	path.resolve(__dirname, "..", "..", "src", "components", "bootstrap-icon", "icons2.ts"),
-	imports.join("\n") + generate(parsed),
+	path.resolve(__dirname, "..", "..", "src", "components", "bootstrap-icon", "icons.ts"),
+	imports.join("\n") + generate(parsed, {
+		indent: "\t",
+	}),
 	"utf-8",
 );

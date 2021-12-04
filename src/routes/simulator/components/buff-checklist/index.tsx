@@ -6,7 +6,7 @@ import { BuffEffectValue, BUFFEFFECT_TYPE, BuffEffect } from "@/types/BuffEffect
 import { BuffStat, BuffStatBuff } from "@/types/Buffs";
 import { BuffErase } from "@/types/BuffErase";
 import { BuffTrigger } from "@/types/BuffTrigger";
-import { UNIT_POSITION, BUFF_ATTR_TYPE, SKILL_ATTR, ACTOR_BODY_TYPE, ACTOR_CLASS, ROLE_TYPE, TARGET_TYPE, NUM_OUTPUTTYPE } from "@/types/Enums";
+import { UNIT_POSITION, BUFF_ATTR_TYPE, SKILL_ATTR, ACTOR_BODY_TYPE, ACTOR_CLASS, ROLE_TYPE, TARGET_TYPE, NUM_OUTPUTTYPE, BUFF_OVERLAP_TYPE } from "@/types/Enums";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { Enemy } from "@/types/DB/Enemy";
 
@@ -1167,7 +1167,15 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 				].every(x => x);
 				const key = `${props.idx}_${buffIdx}`;
 
-				console.log(buff);
+				const StackTable: Record<BUFF_OVERLAP_TYPE, preact.VNode> = {
+					[BUFF_OVERLAP_TYPE.NONE]: <Locale plain k="BUFFSTACK_INSTANCE" />,
+					[BUFF_OVERLAP_TYPE.RENEW]: <Locale plain k="BUFFSTACK_RENEW" />,
+					[BUFF_OVERLAP_TYPE.ADDTURN]: <Locale plain k="BUFFSTACK_ADDTURN" />,
+					[BUFF_OVERLAP_TYPE.OVERLAP]: <Locale plain k="BUFFSTACK_OVERLAP" />,
+					[BUFF_OVERLAP_TYPE.CREATE]: <Locale plain k="BUFFSTACK_CREATE" />,
+				};
+
+				// console.log(buff);
 				// title={ formatDesc(buff.desc.type, buff.desc.desc, buff.desc.value) }
 				elems.push(<div class="clearfix">
 					<div class="clearfix">
@@ -1225,9 +1233,13 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 								disabled={ force }
 							/>
 
-							{ <span class="badge bg-substory ms-2 text-wrap">
+							<span class="badge bg-event-exchange-old ms-2 text-wrap">
+								{ StackTable[buff.overlap] }
+							</span>
+
+							<span class="badge bg-substory ms-2 text-wrap">
 								<Locale k={ `BUFFEFFECT_ATTR_${buff.attr}` } />
-							</span> }
+							</span>
 						</div>
 					</div>
 
