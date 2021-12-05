@@ -3,7 +3,7 @@ import { Link } from "preact-router";
 import Decimal from "decimal.js";
 
 import { SelectOption } from "@/types/Helper";
-import { ACTOR_BODY_TYPE, ACTOR_GRADE } from "@/types/Enums";
+import { ACTOR_BODY_TYPE, ACTOR_GRADE, ITEM_TYPE } from "@/types/Enums";
 import { LinkBonusType, Unit, UnitSkin } from "@/types/DB/Unit";
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 import { UnitDialogueDataType } from "@/types/DB/Dialogue";
@@ -390,6 +390,24 @@ const SkillTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 	})();
 
 	return <div style={ { display: display ? "" : "none" } }>
+		<div class="row justify-content-center">
+			<div class="col col-12 col-sm-10 col-md-8 col-lg-6 equip-grid">
+				{ unit.slots.map((equip, i) => {
+					const type = {
+						[ITEM_TYPE.CHIP]: "CHIP",
+						[ITEM_TYPE.SPCHIP]: "OS",
+						[ITEM_TYPE.SUBEQ]: "ITEM",
+					}[equip] || "";
+
+					return <div class="equip-slot" data-type={ equip }>
+						<div>Lv. { (i + 1) * 20 }</div>
+						<div class="equip-slot-icon" />
+						<div><Locale k={ `COMMON_EQUIP_TYPE_${type}` } /></div>
+					</div>;
+				}) }
+			</div>
+		</div>
+
 		<div class="row">
 			<div class="col-12 col-md-4">
 				<table class="table table-bordered table-fixed text-center table-unit-modal">
@@ -535,60 +553,6 @@ const SkillTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 		/>
 	</div>;
 };
-
-/*
-const RoguelikeTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex, SkinList }) => {
-	const skills = unit.roguelike.filter(x => x.type !== 0);
-
-	return <div style={ { display: display ? "" : "none" } }>
-		{ skills.length > 0
-			? <div class="row row-cols-1 row-cols-md-2">
-				{ skills.map(x => <div class="col">
-					<div class="card bg-dark text-light m-4">
-						<div class="card-body">
-							<div class="float-start me-4 card bg-dark text-light">
-								<div class="card-body">
-									<div>
-										<EquipIcon image={ x.icon } size="big" />
-									</div>
-									<div>
-										<Locale k={ `RogueSkill_${x.type}` } />
-									</div>
-									<div>
-										<RarityBadge rarity={ x.grade } />
-									</div>
-								</div>
-							</div>
-
-							<div class="text-start">
-								<Locale k={ `RogueSkill_${x.type}_DESC` } />
-								<span class="badge bg-warning text-dark ms-3">
-									<Locale k="UNIT_ROGUELIKE_COUNT" p={ [x.count] } />
-								</span>
-
-								<hr />
-
-								{ x.limitEffect
-									? <div class="col">
-										<RoguelikeEffectBadge effect={ x.limitEffect } />
-									</div>
-									: <></>
-								}
-								{ x.items.map(y => <div class="col">
-									<RoguelikeItemBadge item={ y } />
-								</div>) }
-							</div>
-						</div>
-					</div>
-				</div>) }
-			</div>
-			: <div class="p-5 text-secondary">
-				<Locale k="UNIT_ROGUELIKE_EMPTY" />
-			</div>
-		}
-	</div>;
-};
-*/
 
 const DialogueTab: FunctionalComponent<SubpageProps> = ({ display, unit, SkinList }) => {
 	const dialogueLang = objState<keyof UnitDialogueDataType>("ko");
@@ -784,7 +748,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 
 			<BasicTab display={ DisplayTab.value === "basic" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } />
 			<SkillTab display={ DisplayTab.value === "skills" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } />
-			{/* <RoguelikeTab display={ DisplayTab.value === "roguelike" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } /> */}
+			{/* <RoguelikeTab display={ DisplayTab.value === "roguelike" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } /> */ }
 			<DialogueTab display={ DisplayTab.value === "dialogue" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } />
 		</div>;
 	}) } />;

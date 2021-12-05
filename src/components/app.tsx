@@ -1,4 +1,4 @@
-import { FunctionalComponent } from "preact";
+import { Component, FunctionalComponent, RenderableProps } from "preact";
 import { Router } from "preact-router";
 import AsyncRoute from "preact-async-route";
 
@@ -15,16 +15,6 @@ import NotFoundPage from "@/routes/notfound";
 import Store from "@/store";
 
 // import AIList from "@/components/ai-list/new.index";
-
-interface RouteProps {
-	path: string;
-	component: () => Promise<any>;
-}
-const Route: FunctionalComponent<RouteProps> = (props) => <AsyncRoute
-	loading={ () => <span class="text-secondary">Loading page</span> }
-	path={ props.path }
-	getComponent={ () => props.component().then(x => x.default) }
-/>;
 
 const App: FunctionalComponent = () => {
 	if (typeof window !== "undefined") {
@@ -44,6 +34,11 @@ const App: FunctionalComponent = () => {
 	};
 	TitleChanger();
 
+	const pRoute = (component: () => Promise<any>): Partial<AsyncRoute["props"]> => ({
+		loading: () => <span class="text-secondary">Loading page</span>,
+		getComponent: () => component().then(x => x.default),
+	});
+
 	return <Store.Provider>
 		<div id="app">
 			<link href={ `${Host}/assets/font/SpoqaHanSans-kr.css` } rel="stylesheet" />
@@ -54,35 +49,35 @@ const App: FunctionalComponent = () => {
 
 				<div class="container p-4">
 					<Router>
-						<Route path="/" component={ () => import("@/routes/home") } />
+						<AsyncRoute path="/" { ...pRoute(() => import("@/routes/home")) } />
 
-						<Route path="/units" component={ () => import("@/routes/units") } />
-						<Route path="/units/:uid" component={ () => import("@/routes/units/view") } />
+						<AsyncRoute path="/units" { ...pRoute(() => import("@/routes/units")) } />
+						<AsyncRoute path="/units/:uid" { ...pRoute(() => import("@/routes/units/view")) } />
 
-						<Route path="/equips/:uid?" component={ () => import("@/routes/equips") } />
+						<AsyncRoute path="/equips/:uid?" { ...pRoute(() => import("@/routes/equips")) } />
 
-						<Route path="/facilities" component={ () => import("@/routes/facilities") } />
-						<Route path="/facilities/:uid" component={ () => import("@/routes/facilities/view") } />
+						<AsyncRoute path="/facilities" { ...pRoute(() => import("@/routes/facilities")) } />
+						<AsyncRoute path="/facilities/:uid" { ...pRoute(() => import("@/routes/facilities/view")) } />
 
-						<Route path="/enemies" component={ () => import("@/routes/enemies") } />
-						<Route path="/enemies/list/:uid?/:level?" component={ () => import("@/routes/enemies/list") } />
-						<Route path="/enemies/group" component={ () => import("@/routes/enemies/group") } />
+						<AsyncRoute path="/enemies" { ...pRoute(() => import("@/routes/enemies")) } />
+						<AsyncRoute path="/enemies/list/:uid?/:level?" { ...pRoute(() => import("@/routes/enemies/list")) } />
+						<AsyncRoute path="/enemies/group" { ...pRoute(() => import("@/routes/enemies/group")) } />
 
-						<Route path="/worlds" component={ () => import("@/routes/worlds") } />
-						<Route path="/worlds/:wid" component={ () => import("@/routes/worlds/world-view") } />
-						<Route path="/worlds/:wid/:mid/:node?" component={ () => import("@/routes/worlds/map-view") } />
+						<AsyncRoute path="/worlds" { ...pRoute(() => import("@/routes/worlds")) } />
+						<AsyncRoute path="/worlds/:wid" { ...pRoute(() => import("@/routes/worlds/world-view")) } />
+						<AsyncRoute path="/worlds/:wid/:mid/:node?" { ...pRoute(() => import("@/routes/worlds/map-view")) } />
 
-						<Route path="/eternalwar" component={ () => import("@/routes/eternalwar") } />
-						<Route path="/eternalwar/:mid" component={ () => import("@/routes/eternalwar") } />
+						<AsyncRoute path="/eternalwar" { ...pRoute(() => import("@/routes/eternalwar")) } />
+						<AsyncRoute path="/eternalwar/:mid" { ...pRoute(() => import("@/routes/eternalwar")) } />
 
-						<Route path="/simulator" component={ () => import("@/routes/simulator") } />
+						<AsyncRoute path="/simulator" { ...pRoute(() => import("@/routes/simulator")) } />
 
-						<Route path="/changelog" component={ () => import("@/routes/changelog") } />
-						<Route path="/calc/exp" component={ () => import("@/routes/calc/exp") } />
-						{/* <Route  path="/roguelike" component={() => Roguelike } /> */ }
-						<Route path="/bgm" component={ () => import("@/routes/bgm") } />
+						<AsyncRoute path="/changelog" { ...pRoute(() => import("@/routes/changelog")) } />
+						<AsyncRoute path="/calc/exp" { ...pRoute(() => import("@/routes/calc/exp")) } />
+						{/* <AsyncRoute {...p}  path="/roguelike" component={() => Roguelike } /> */ }
+						<AsyncRoute path="/bgm" { ...pRoute(() => import("@/routes/bgm")) } />
 
-						{/* <Route  path="/test" component={() => AIList } /> */ }
+						{/* <AsyncRoute {...p}  path="/test" component={() => AIList } /> */ }
 
 						<NotFoundPage default />
 					</Router>
