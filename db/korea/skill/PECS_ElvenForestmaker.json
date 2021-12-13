@@ -4953,7 +4953,8 @@
               "if": {
                 "target": [
                   "Char_PECS_DarkElf_N",
-                  "Char_PECS_HighElven_N"
+                  "Char_PECS_HighElven_N",
+                  "Char_PECS_Sekhmet_N"
                 ]
               },
               "body": [
@@ -5050,7 +5051,9 @@
                   "func": "OR",
                   "select": [
                     "Effect_PECS_DarkElf_N_3",
-                    "Effect_PECS_DarkElf_N_13"
+                    "Effect_PECS_DarkElf_N_13",
+                    "Effect_PECS_DarkElf_N_41",
+                    "Effect_PECS_DarkElf_N_42"
                   ],
                   "attr": 6
                 }
@@ -5277,6 +5280,296 @@
             },
             "base": 0.1,
             "per": 0.005,
+            "chance": 1
+          }
+        ]
+      ]
+    }
+  },
+  "5": {
+    "key": "5",
+    "icon": "TeamDefDeBuff",
+    "target": "enemy",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "F>1,1,1,1,1,1,1,1,1",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_ElvenForestmaker_N_5",
+              "on": {
+                "use_skill": 1
+              },
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "UNFILLED",
+                  "select": [
+                    12,
+                    13
+                  ],
+                  "attr": 0
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 4,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "자연의 포용 : 받는 피해{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_Remove_Buff_Resist",
+                  "desc": {
+                    "desc": "자연의 포용 : 강화 해제 저항{0}%",
+                    "type": 1,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 126,
+                    "resist": {
+                      "type": "off",
+                      "value": {
+                        "base": "100%",
+                        "per": "0%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_ElvenForestmaker_N_51",
+              "on": {
+                "use_skill": 2
+              },
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "UNFILLED",
+                  "select": [
+                    12,
+                    13
+                  ],
+                  "attr": 0
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 4,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "자연의 포용 : 받는 피해{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_ElvenForestmaker_N_52",
+              "on": "round",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Remove_Buff_Resist",
+                  "desc": {
+                    "desc": "자연의 포용 : 강화 해제 저항{0}%",
+                    "type": 1,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 126,
+                    "resist": {
+                      "type": "off",
+                      "value": {
+                        "base": "100%",
+                        "per": "0%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_VULNERABLE",
+            "desc": {
+              "desc": "자연의 포용 : 받는 피해{0}%",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.010000"
+            },
+            "base": 0.1,
+            "per": 0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_Remove_Buff_Resist",
+            "desc": {
+              "desc": "자연의 포용 : 강화 해제 저항{0}%",
+              "type": 1,
+              "value": "1",
+              "level": "0"
+            },
+            "base": 1,
+            "per": 0,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_VULNERABLE",
+            "desc": {
+              "desc": "자연의 포용 : 받는 피해{0}%",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.010000"
+            },
+            "base": 0.1,
+            "per": 0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_Remove_Buff_Resist",
+            "desc": {
+              "desc": "자연의 포용 : 강화 해제 저항{0}%",
+              "type": 1,
+              "value": "1",
+              "level": "0"
+            },
+            "base": 1,
+            "per": 0,
             "chance": 1
           }
         ]

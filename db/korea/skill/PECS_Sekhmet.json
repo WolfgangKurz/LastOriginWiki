@@ -18,6 +18,180 @@
       ],
       "data": [
         {
+          "rate": 1.45,
+          "type": 0,
+          "range": 2,
+          "ap": 5,
+          "grid": "0.1,0.1,0.1,0.1,1,0.1,0.1,0.1,0.1",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Sekhmet_N_1",
+              "on": "enemy_killed",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "내세의 손길 : 공격력{0}% 고정 피해",
+                    "type": 1,
+                    "value": "0.600000",
+                    "level": "0.060000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "60%",
+                      "per": "6%"
+                    }
+                  },
+                  "overlap": 3
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "내세의 손길 : 방어력{0}%",
+                    "type": 1,
+                    "value": "-0.150000",
+                    "level": "-0.015000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 3,
+                    "defense": {
+                      "base": "-15%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sekhmet_N_11",
+              "on": "enemy_killed",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "내세의 손길 : 방어력{0}%",
+                    "type": 1,
+                    "value": "-0.150000",
+                    "level": "-0.015000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-15%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sekhmet_N_12",
+              "on": "enemy_killed",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "내세의 손길 : 공격력{0}% 고정 피해",
+                    "type": 1,
+                    "value": "0.600000",
+                    "level": "0.060000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "60%",
+                      "per": "6%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
           "rate": 1.6,
           "type": 0,
           "range": 2,
@@ -55,8 +229,8 @@
                   "desc": {
                     "desc": "내세의 손길 : 공격력{0}% 고정 피해",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.030000"
+                    "value": "0.600000",
+                    "level": "0.060000"
                   },
                   "attr": 3,
                   "erase": {
@@ -67,8 +241,8 @@
                     "chance": "0%",
                     "type": 70,
                     "fixed_damage": {
-                      "base": "30%",
-                      "per": "3%"
+                      "base": "60%",
+                      "per": "6%"
                     }
                   },
                   "overlap": 3
@@ -169,8 +343,8 @@
                   "desc": {
                     "desc": "내세의 손길 : 공격력{0}% 고정 피해",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.030000"
+                    "value": "0.600000",
+                    "level": "0.060000"
                   },
                   "attr": 3,
                   "erase": {
@@ -180,8 +354,8 @@
                     "isBuff": true,
                     "type": 70,
                     "fixed_damage": {
-                      "base": "30%",
-                      "per": "3%"
+                      "base": "60%",
+                      "per": "6%"
                     }
                   },
                   "overlap": 3
@@ -192,7 +366,7 @@
           ]
         },
         {
-          "rate": 1.7,
+          "rate": 1.75,
           "type": 0,
           "range": 2,
           "ap": 5,
@@ -229,8 +403,8 @@
                   "desc": {
                     "desc": "내세의 손길 : 공격력{0}% 고정 피해",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.030000"
+                    "value": "0.600000",
+                    "level": "0.060000"
                   },
                   "attr": 3,
                   "erase": {
@@ -241,8 +415,8 @@
                     "chance": "0%",
                     "type": 70,
                     "fixed_damage": {
-                      "base": "30%",
-                      "per": "3%"
+                      "base": "60%",
+                      "per": "6%"
                     }
                   },
                   "overlap": 3
@@ -343,8 +517,8 @@
                   "desc": {
                     "desc": "내세의 손길 : 공격력{0}% 고정 피해",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.030000"
+                    "value": "0.600000",
+                    "level": "0.060000"
                   },
                   "attr": 3,
                   "erase": {
@@ -354,182 +528,8 @@
                     "isBuff": true,
                     "type": 70,
                     "fixed_damage": {
-                      "base": "30%",
-                      "per": "3%"
-                    }
-                  },
-                  "overlap": 3
-                }
-              ],
-              "maxStack": 0
-            }
-          ]
-        },
-        {
-          "rate": 1.8,
-          "type": 0,
-          "range": 2,
-          "ap": 5,
-          "grid": "0.1,0.1,0.1,0.1,1,0.1,0.1,0.1,0.1",
-          "target_ground": true,
-          "summon": null,
-          "use": null,
-          "dismiss_guard": false,
-          "acc_bonus": 0,
-          "buff_rate": 100,
-          "buffs": [
-            {
-              "key": "Effect_PECS_Sekhmet_N_1",
-              "on": "enemy_killed",
-              "if": false,
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_PhyATK_UP",
-                  "desc": {
-                    "desc": "내세의 손길 : 공격력{0}% 고정 피해",
-                    "type": 1,
-                    "value": "0.300000",
-                    "level": "0.030000"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 70,
-                    "fixed_damage": {
-                      "base": "30%",
-                      "per": "3%"
-                    }
-                  },
-                  "overlap": 3
-                },
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "내세의 손길 : 방어력{0}%",
-                    "type": 1,
-                    "value": "-0.150000",
-                    "level": "-0.015000"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 3
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 3,
-                    "defense": {
-                      "base": "-15%",
-                      "per": "-1.5%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_PECS_Sekhmet_N_11",
-              "on": "enemy_killed",
-              "if": false,
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "내세의 손길 : 방어력{0}%",
-                    "type": 1,
-                    "value": "-0.150000",
-                    "level": "-0.015000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 3
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 3,
-                    "defense": {
-                      "base": "-15%",
-                      "per": "-1.5%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_PECS_Sekhmet_N_12",
-              "on": "enemy_killed",
-              "if": false,
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_PhyATK_UP",
-                  "desc": {
-                    "desc": "내세의 손길 : 공격력{0}% 고정 피해",
-                    "type": 1,
-                    "value": "0.300000",
-                    "level": "0.030000"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 70,
-                    "fixed_damage": {
-                      "base": "30%",
-                      "per": "3%"
+                      "base": "60%",
+                      "per": "6%"
                     }
                   },
                   "overlap": 3
@@ -577,8 +577,8 @@
                   "desc": {
                     "desc": "내세의 손길 : 공격력{0}% 고정 피해",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.030000"
+                    "value": "0.600000",
+                    "level": "0.060000"
                   },
                   "attr": 3,
                   "erase": {
@@ -589,8 +589,8 @@
                     "chance": "0%",
                     "type": 70,
                     "fixed_damage": {
-                      "base": "30%",
-                      "per": "3%"
+                      "base": "60%",
+                      "per": "6%"
                     }
                   },
                   "overlap": 3
@@ -691,8 +691,8 @@
                   "desc": {
                     "desc": "내세의 손길 : 공격력{0}% 고정 피해",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.030000"
+                    "value": "0.600000",
+                    "level": "0.060000"
                   },
                   "attr": 3,
                   "erase": {
@@ -702,8 +702,8 @@
                     "isBuff": true,
                     "type": 70,
                     "fixed_damage": {
-                      "base": "30%",
-                      "per": "3%"
+                      "base": "60%",
+                      "per": "6%"
                     }
                   },
                   "overlap": 3
@@ -714,7 +714,7 @@
           ]
         },
         {
-          "rate": 2,
+          "rate": 2.05,
           "type": 0,
           "range": 2,
           "ap": 5,
@@ -751,8 +751,8 @@
                   "desc": {
                     "desc": "내세의 손길 : 공격력{0}% 고정 피해",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.030000"
+                    "value": "0.600000",
+                    "level": "0.060000"
                   },
                   "attr": 3,
                   "erase": {
@@ -763,8 +763,8 @@
                     "chance": "0%",
                     "type": 70,
                     "fixed_damage": {
-                      "base": "30%",
-                      "per": "3%"
+                      "base": "60%",
+                      "per": "6%"
                     }
                   },
                   "overlap": 3
@@ -865,8 +865,8 @@
                   "desc": {
                     "desc": "내세의 손길 : 공격력{0}% 고정 피해",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.030000"
+                    "value": "0.600000",
+                    "level": "0.060000"
                   },
                   "attr": 3,
                   "erase": {
@@ -876,182 +876,8 @@
                     "isBuff": true,
                     "type": 70,
                     "fixed_damage": {
-                      "base": "30%",
-                      "per": "3%"
-                    }
-                  },
-                  "overlap": 3
-                }
-              ],
-              "maxStack": 0
-            }
-          ]
-        },
-        {
-          "rate": 2.1,
-          "type": 0,
-          "range": 2,
-          "ap": 5,
-          "grid": "0.1,0.1,0.1,0.1,1,0.1,0.1,0.1,0.1",
-          "target_ground": true,
-          "summon": null,
-          "use": null,
-          "dismiss_guard": false,
-          "acc_bonus": 0,
-          "buff_rate": 100,
-          "buffs": [
-            {
-              "key": "Effect_PECS_Sekhmet_N_1",
-              "on": "enemy_killed",
-              "if": false,
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_PhyATK_UP",
-                  "desc": {
-                    "desc": "내세의 손길 : 공격력{0}% 고정 피해",
-                    "type": 1,
-                    "value": "0.300000",
-                    "level": "0.030000"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 70,
-                    "fixed_damage": {
-                      "base": "30%",
-                      "per": "3%"
-                    }
-                  },
-                  "overlap": 3
-                },
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "내세의 손길 : 방어력{0}%",
-                    "type": 1,
-                    "value": "-0.150000",
-                    "level": "-0.015000"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 3
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 3,
-                    "defense": {
-                      "base": "-15%",
-                      "per": "-1.5%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_PECS_Sekhmet_N_11",
-              "on": "enemy_killed",
-              "if": false,
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "내세의 손길 : 방어력{0}%",
-                    "type": 1,
-                    "value": "-0.150000",
-                    "level": "-0.015000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 3
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 3,
-                    "defense": {
-                      "base": "-15%",
-                      "per": "-1.5%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_PECS_Sekhmet_N_12",
-              "on": "enemy_killed",
-              "if": false,
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_PhyATK_UP",
-                  "desc": {
-                    "desc": "내세의 손길 : 공격력{0}% 고정 피해",
-                    "type": 1,
-                    "value": "0.300000",
-                    "level": "0.030000"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 70,
-                    "fixed_damage": {
-                      "base": "30%",
-                      "per": "3%"
+                      "base": "60%",
+                      "per": "6%"
                     }
                   },
                   "overlap": 3
@@ -1099,8 +925,8 @@
                   "desc": {
                     "desc": "내세의 손길 : 공격력{0}% 고정 피해",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.030000"
+                    "value": "0.600000",
+                    "level": "0.060000"
                   },
                   "attr": 3,
                   "erase": {
@@ -1111,8 +937,8 @@
                     "chance": "0%",
                     "type": 70,
                     "fixed_damage": {
-                      "base": "30%",
-                      "per": "3%"
+                      "base": "60%",
+                      "per": "6%"
                     }
                   },
                   "overlap": 3
@@ -1213,8 +1039,8 @@
                   "desc": {
                     "desc": "내세의 손길 : 공격력{0}% 고정 피해",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.030000"
+                    "value": "0.600000",
+                    "level": "0.060000"
                   },
                   "attr": 3,
                   "erase": {
@@ -1224,8 +1050,8 @@
                     "isBuff": true,
                     "type": 70,
                     "fixed_damage": {
-                      "base": "30%",
-                      "per": "3%"
+                      "base": "60%",
+                      "per": "6%"
                     }
                   },
                   "overlap": 3
@@ -1236,7 +1062,7 @@
           ]
         },
         {
-          "rate": 2.3,
+          "rate": 2.35,
           "type": 0,
           "range": 2,
           "ap": 5,
@@ -1273,8 +1099,8 @@
                   "desc": {
                     "desc": "내세의 손길 : 공격력{0}% 고정 피해",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.030000"
+                    "value": "0.600000",
+                    "level": "0.060000"
                   },
                   "attr": 3,
                   "erase": {
@@ -1285,8 +1111,8 @@
                     "chance": "0%",
                     "type": 70,
                     "fixed_damage": {
-                      "base": "30%",
-                      "per": "3%"
+                      "base": "60%",
+                      "per": "6%"
                     }
                   },
                   "overlap": 3
@@ -1387,8 +1213,8 @@
                   "desc": {
                     "desc": "내세의 손길 : 공격력{0}% 고정 피해",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.030000"
+                    "value": "0.600000",
+                    "level": "0.060000"
                   },
                   "attr": 3,
                   "erase": {
@@ -1398,182 +1224,8 @@
                     "isBuff": true,
                     "type": 70,
                     "fixed_damage": {
-                      "base": "30%",
-                      "per": "3%"
-                    }
-                  },
-                  "overlap": 3
-                }
-              ],
-              "maxStack": 0
-            }
-          ]
-        },
-        {
-          "rate": 2.4,
-          "type": 0,
-          "range": 2,
-          "ap": 5,
-          "grid": "0.1,0.1,0.1,0.1,1,0.1,0.1,0.1,0.1",
-          "target_ground": true,
-          "summon": null,
-          "use": null,
-          "dismiss_guard": false,
-          "acc_bonus": 0,
-          "buff_rate": 100,
-          "buffs": [
-            {
-              "key": "Effect_PECS_Sekhmet_N_1",
-              "on": "enemy_killed",
-              "if": false,
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_PhyATK_UP",
-                  "desc": {
-                    "desc": "내세의 손길 : 공격력{0}% 고정 피해",
-                    "type": 1,
-                    "value": "0.300000",
-                    "level": "0.030000"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 70,
-                    "fixed_damage": {
-                      "base": "30%",
-                      "per": "3%"
-                    }
-                  },
-                  "overlap": 3
-                },
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "내세의 손길 : 방어력{0}%",
-                    "type": 1,
-                    "value": "-0.150000",
-                    "level": "-0.015000"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 3
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 3,
-                    "defense": {
-                      "base": "-15%",
-                      "per": "-1.5%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_PECS_Sekhmet_N_11",
-              "on": "enemy_killed",
-              "if": false,
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "내세의 손길 : 방어력{0}%",
-                    "type": 1,
-                    "value": "-0.150000",
-                    "level": "-0.015000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 3
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 3,
-                    "defense": {
-                      "base": "-15%",
-                      "per": "-1.5%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_PECS_Sekhmet_N_12",
-              "on": "enemy_killed",
-              "if": false,
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_PhyATK_UP",
-                  "desc": {
-                    "desc": "내세의 손길 : 공격력{0}% 고정 피해",
-                    "type": 1,
-                    "value": "0.300000",
-                    "level": "0.030000"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 70,
-                    "fixed_damage": {
-                      "base": "30%",
-                      "per": "3%"
+                      "base": "60%",
+                      "per": "6%"
                     }
                   },
                   "overlap": 3
@@ -1621,8 +1273,8 @@
                   "desc": {
                     "desc": "내세의 손길 : 공격력{0}% 고정 피해",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.030000"
+                    "value": "0.600000",
+                    "level": "0.060000"
                   },
                   "attr": 3,
                   "erase": {
@@ -1633,8 +1285,8 @@
                     "chance": "0%",
                     "type": 70,
                     "fixed_damage": {
-                      "base": "30%",
-                      "per": "3%"
+                      "base": "60%",
+                      "per": "6%"
                     }
                   },
                   "overlap": 3
@@ -1735,8 +1387,8 @@
                   "desc": {
                     "desc": "내세의 손길 : 공격력{0}% 고정 피해",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.030000"
+                    "value": "0.600000",
+                    "level": "0.060000"
                   },
                   "attr": 3,
                   "erase": {
@@ -1746,8 +1398,356 @@
                     "isBuff": true,
                     "type": 70,
                     "fixed_damage": {
-                      "base": "30%",
-                      "per": "3%"
+                      "base": "60%",
+                      "per": "6%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.65,
+          "type": 0,
+          "range": 2,
+          "ap": 5,
+          "grid": "0.1,0.1,0.1,0.1,1,0.1,0.1,0.1,0.1",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Sekhmet_N_1",
+              "on": "enemy_killed",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "내세의 손길 : 공격력{0}% 고정 피해",
+                    "type": 1,
+                    "value": "0.600000",
+                    "level": "0.060000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "60%",
+                      "per": "6%"
+                    }
+                  },
+                  "overlap": 3
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "내세의 손길 : 방어력{0}%",
+                    "type": 1,
+                    "value": "-0.150000",
+                    "level": "-0.015000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 3,
+                    "defense": {
+                      "base": "-15%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sekhmet_N_11",
+              "on": "enemy_killed",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "내세의 손길 : 방어력{0}%",
+                    "type": 1,
+                    "value": "-0.150000",
+                    "level": "-0.015000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-15%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sekhmet_N_12",
+              "on": "enemy_killed",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "내세의 손길 : 공격력{0}% 고정 피해",
+                    "type": 1,
+                    "value": "0.600000",
+                    "level": "0.060000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "60%",
+                      "per": "6%"
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.8,
+          "type": 0,
+          "range": 2,
+          "ap": 5,
+          "grid": "0.1,0.1,0.1,0.1,1,0.1,0.1,0.1,0.1",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Sekhmet_N_1",
+              "on": "enemy_killed",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "내세의 손길 : 공격력{0}% 고정 피해",
+                    "type": 1,
+                    "value": "0.600000",
+                    "level": "0.060000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "60%",
+                      "per": "6%"
+                    }
+                  },
+                  "overlap": 3
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "내세의 손길 : 방어력{0}%",
+                    "type": 1,
+                    "value": "-0.150000",
+                    "level": "-0.015000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 3,
+                    "defense": {
+                      "base": "-15%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sekhmet_N_11",
+              "on": "enemy_killed",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "내세의 손길 : 방어력{0}%",
+                    "type": 1,
+                    "value": "-0.150000",
+                    "level": "-0.015000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-15%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sekhmet_N_12",
+              "on": "enemy_killed",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "내세의 손길 : 공격력{0}% 고정 피해",
+                    "type": 1,
+                    "value": "0.600000",
+                    "level": "0.060000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "60%",
+                      "per": "6%"
                     }
                   },
                   "overlap": 3
@@ -1779,11 +1779,11 @@
             "desc": {
               "desc": "내세의 손길 : 공격력{0}% 고정 피해",
               "type": 1,
-              "value": "0.300000",
-              "level": "0.030000"
+              "value": "0.600000",
+              "level": "0.060000"
             },
-            "base": 0.3,
-            "per": 0.03,
+            "base": 0.6,
+            "per": 0.06,
             "chance": 0
           },
           {
@@ -1815,11 +1815,11 @@
             "desc": {
               "desc": "내세의 손길 : 공격력{0}% 고정 피해",
               "type": 1,
-              "value": "0.300000",
-              "level": "0.030000"
+              "value": "0.600000",
+              "level": "0.060000"
             },
-            "base": 0.3,
-            "per": 0.03,
+            "base": 0.6,
+            "per": 0.06,
             "chance": 1
           }
         ]
@@ -1845,7 +1845,7 @@
       ],
       "data": [
         {
-          "rate": 1.12,
+          "rate": 1.32,
           "type": 0,
           "range": 4,
           "ap": 8,
@@ -1918,6 +1918,29 @@
                     "turnSpeed": {
                       "base": "2%",
                       "per": "0.2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "순환하는 생명의 굴레 : 행동력 증가 효과 해제",
+                    "type": 1,
+                    "value": "13",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 13,
+                      "target": 0
                     }
                   },
                   "overlap": 4
@@ -2413,6 +2436,51 @@
                     "turnSpeed": {
                       "base": "18%",
                       "per": "1.8%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sekhmet_N_211",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "순환하는 생명의 굴레 : 행동력 증가 효과 해제",
+                    "type": 1,
+                    "value": "13",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 13,
+                      "target": 0
                     }
                   },
                   "overlap": 4
@@ -2423,7 +2491,7 @@
           ]
         },
         {
-          "rate": 1.24,
+          "rate": 1.44,
           "type": 0,
           "range": 4,
           "ap": 8,
@@ -2496,6 +2564,29 @@
                     "turnSpeed": {
                       "base": "2%",
                       "per": "0.2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "순환하는 생명의 굴레 : 행동력 증가 효과 해제",
+                    "type": 1,
+                    "value": "13",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 13,
+                      "target": 0
                     }
                   },
                   "overlap": 4
@@ -2991,6 +3082,51 @@
                     "turnSpeed": {
                       "base": "18%",
                       "per": "1.8%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sekhmet_N_211",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "순환하는 생명의 굴레 : 행동력 증가 효과 해제",
+                    "type": 1,
+                    "value": "13",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 13,
+                      "target": 0
                     }
                   },
                   "overlap": 4
@@ -3001,7 +3137,7 @@
           ]
         },
         {
-          "rate": 1.36,
+          "rate": 1.56,
           "type": 0,
           "range": 4,
           "ap": 8,
@@ -3074,6 +3210,29 @@
                     "turnSpeed": {
                       "base": "2%",
                       "per": "0.2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "순환하는 생명의 굴레 : 행동력 증가 효과 해제",
+                    "type": 1,
+                    "value": "13",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 13,
+                      "target": 0
                     }
                   },
                   "overlap": 4
@@ -3569,6 +3728,51 @@
                     "turnSpeed": {
                       "base": "18%",
                       "per": "1.8%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sekhmet_N_211",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "순환하는 생명의 굴레 : 행동력 증가 효과 해제",
+                    "type": 1,
+                    "value": "13",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 13,
+                      "target": 0
                     }
                   },
                   "overlap": 4
@@ -3579,7 +3783,7 @@
           ]
         },
         {
-          "rate": 1.48,
+          "rate": 1.68,
           "type": 0,
           "range": 4,
           "ap": 8,
@@ -3652,6 +3856,29 @@
                     "turnSpeed": {
                       "base": "2%",
                       "per": "0.2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "순환하는 생명의 굴레 : 행동력 증가 효과 해제",
+                    "type": 1,
+                    "value": "13",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 13,
+                      "target": 0
                     }
                   },
                   "overlap": 4
@@ -4147,6 +4374,51 @@
                     "turnSpeed": {
                       "base": "18%",
                       "per": "1.8%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sekhmet_N_211",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "순환하는 생명의 굴레 : 행동력 증가 효과 해제",
+                    "type": 1,
+                    "value": "13",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 13,
+                      "target": 0
                     }
                   },
                   "overlap": 4
@@ -4157,7 +4429,7 @@
           ]
         },
         {
-          "rate": 1.6,
+          "rate": 1.8,
           "type": 0,
           "range": 4,
           "ap": 8,
@@ -4230,6 +4502,29 @@
                     "turnSpeed": {
                       "base": "2%",
                       "per": "0.2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "순환하는 생명의 굴레 : 행동력 증가 효과 해제",
+                    "type": 1,
+                    "value": "13",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 13,
+                      "target": 0
                     }
                   },
                   "overlap": 4
@@ -4725,6 +5020,51 @@
                     "turnSpeed": {
                       "base": "18%",
                       "per": "1.8%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sekhmet_N_211",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "순환하는 생명의 굴레 : 행동력 증가 효과 해제",
+                    "type": 1,
+                    "value": "13",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 13,
+                      "target": 0
                     }
                   },
                   "overlap": 4
@@ -4735,7 +5075,7 @@
           ]
         },
         {
-          "rate": 1.72,
+          "rate": 1.92,
           "type": 0,
           "range": 4,
           "ap": 8,
@@ -4808,6 +5148,29 @@
                     "turnSpeed": {
                       "base": "2%",
                       "per": "0.2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "순환하는 생명의 굴레 : 행동력 증가 효과 해제",
+                    "type": 1,
+                    "value": "13",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 13,
+                      "target": 0
                     }
                   },
                   "overlap": 4
@@ -5303,6 +5666,51 @@
                     "turnSpeed": {
                       "base": "18%",
                       "per": "1.8%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sekhmet_N_211",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "순환하는 생명의 굴레 : 행동력 증가 효과 해제",
+                    "type": 1,
+                    "value": "13",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 13,
+                      "target": 0
                     }
                   },
                   "overlap": 4
@@ -5313,7 +5721,7 @@
           ]
         },
         {
-          "rate": 1.84,
+          "rate": 2.04,
           "type": 0,
           "range": 4,
           "ap": 8,
@@ -5386,6 +5794,29 @@
                     "turnSpeed": {
                       "base": "2%",
                       "per": "0.2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "순환하는 생명의 굴레 : 행동력 증가 효과 해제",
+                    "type": 1,
+                    "value": "13",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 13,
+                      "target": 0
                     }
                   },
                   "overlap": 4
@@ -5881,6 +6312,51 @@
                     "turnSpeed": {
                       "base": "18%",
                       "per": "1.8%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sekhmet_N_211",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "순환하는 생명의 굴레 : 행동력 증가 효과 해제",
+                    "type": 1,
+                    "value": "13",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 13,
+                      "target": 0
                     }
                   },
                   "overlap": 4
@@ -5891,7 +6367,7 @@
           ]
         },
         {
-          "rate": 1.96,
+          "rate": 2.16,
           "type": 0,
           "range": 4,
           "ap": 8,
@@ -5964,6 +6440,29 @@
                     "turnSpeed": {
                       "base": "2%",
                       "per": "0.2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "순환하는 생명의 굴레 : 행동력 증가 효과 해제",
+                    "type": 1,
+                    "value": "13",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 13,
+                      "target": 0
                     }
                   },
                   "overlap": 4
@@ -6459,6 +6958,51 @@
                     "turnSpeed": {
                       "base": "18%",
                       "per": "1.8%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sekhmet_N_211",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "순환하는 생명의 굴레 : 행동력 증가 효과 해제",
+                    "type": 1,
+                    "value": "13",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 13,
+                      "target": 0
                     }
                   },
                   "overlap": 4
@@ -6469,7 +7013,7 @@
           ]
         },
         {
-          "rate": 2.08,
+          "rate": 2.28,
           "type": 0,
           "range": 4,
           "ap": 8,
@@ -6542,6 +7086,29 @@
                     "turnSpeed": {
                       "base": "2%",
                       "per": "0.2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "순환하는 생명의 굴레 : 행동력 증가 효과 해제",
+                    "type": 1,
+                    "value": "13",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 13,
+                      "target": 0
                     }
                   },
                   "overlap": 4
@@ -7037,6 +7604,51 @@
                     "turnSpeed": {
                       "base": "18%",
                       "per": "1.8%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sekhmet_N_211",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "순환하는 생명의 굴레 : 행동력 증가 효과 해제",
+                    "type": 1,
+                    "value": "13",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 13,
+                      "target": 0
                     }
                   },
                   "overlap": 4
@@ -7047,7 +7659,7 @@
           ]
         },
         {
-          "rate": 2.2,
+          "rate": 2.4,
           "type": 0,
           "range": 4,
           "ap": 8,
@@ -7120,6 +7732,29 @@
                     "turnSpeed": {
                       "base": "2%",
                       "per": "0.2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "순환하는 생명의 굴레 : 행동력 증가 효과 해제",
+                    "type": 1,
+                    "value": "13",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 13,
+                      "target": 0
                     }
                   },
                   "overlap": 4
@@ -7615,6 +8250,51 @@
                     "turnSpeed": {
                       "base": "18%",
                       "per": "1.8%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sekhmet_N_211",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "순환하는 생명의 굴레 : 행동력 증가 효과 해제",
+                    "type": 1,
+                    "value": "13",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 13,
+                      "target": 0
                     }
                   },
                   "overlap": 4
@@ -7663,6 +8343,18 @@
             },
             "base": 0.02,
             "per": 0.002,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_REMOVE_BUFF",
+            "desc": {
+              "desc": "순환하는 생명의 굴레 : 행동력 증가 효과 해제",
+              "type": 1,
+              "value": "13",
+              "level": "0"
+            },
+            "base": 13,
+            "per": 0,
             "chance": 0
           },
           {
@@ -7771,6 +8463,18 @@
             },
             "base": 0.18,
             "per": 0.018,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_BUFF",
+            "desc": {
+              "desc": "순환하는 생명의 굴레 : 행동력 증가 효과 해제",
+              "type": 1,
+              "value": "13",
+              "level": "0"
+            },
+            "base": 13,
+            "per": 0,
             "chance": 1
           }
         ]
