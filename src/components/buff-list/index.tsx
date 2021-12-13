@@ -1273,7 +1273,12 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 							<small class="ms-2 text-primary">
 								{ formatDesc(buff.desc.type, buff.desc.desc, buff.desc.value, buff.desc.level, level, 2) }
 							</small>
-							<small class="ms-2 text-secondary">{ stat.key }</small>
+
+							{ IsDev
+								? <small class="ms-2 text-secondary">{ stat.key }</small>
+								: <></>
+							}
+
 							{ getChanceText(buff.value.chance) }
 						</strong>
 						<div class="float-end">
