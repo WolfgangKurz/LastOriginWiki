@@ -12,7 +12,7 @@ import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { Enemy } from "@/types/DB/Enemy";
 
 import { objState } from "@/libs/State";
-import { ImageExtension, AssetsRoot, TroopNameTable } from "@/libs/Const";
+import { ImageExtension, AssetsRoot, TroopNameTable, IsDev } from "@/libs/Const";
 import { CurrentDB } from "@/libs/DB";
 
 import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
@@ -1273,12 +1273,16 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 							<small class="ms-2 text-primary">
 								{ formatDesc(buff.desc.type, buff.desc.desc, buff.desc.value, buff.desc.level, level, 2) }
 							</small>
+							<small class="ms-2 text-secondary">{ stat.key }</small>
 							{ getChanceText(buff.value.chance) }
 						</strong>
 						<div class="float-end">
-							<span class="badge bg-event-exchange-old ms-2 text-wrap">
-								{ StackTable[buff.overlap] }
-							</span>
+							{ IsDev
+								? <span class="badge bg-event-exchange-old ms-2 text-wrap">
+									{ StackTable[buff.overlap] }
+								</span>
+								: <></>
+							}
 
 							<span class="badge bg-substory ms-2 text-wrap">
 								<Locale plain k={ `BUFFEFFECT_ATTR_${buff.attr}` } />
