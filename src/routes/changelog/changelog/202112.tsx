@@ -6,14 +6,19 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
-<ChangelogItem title="Build 11421" date="2021-12-13"
-	bugfix={ <>
-		<li>일부 전투원의 승급 정보가 올바르지 않게 표시되던 문제를 수정했습니다.</li>
-	</> }
-	update={ <>
-		<li>이제 전투원 목록의 승급 정보 표시가 최종 승급 등급만 표시됩니다.</li>
-	</> }
-/>
+	<ChangelogItem title="Build 11423" date="2021-12-14"
+		update={ <>
+			<li>같은 그룹으로 묶인 버프가 보기 쉽게 개선되었습니다.</li>
+		</> }
+	/>
+	<ChangelogItem title="Build 11421" date="2021-12-13"
+		bugfix={ <>
+			<li>일부 전투원의 승급 정보가 올바르지 않게 표시되던 문제를 수정했습니다.</li>
+		</> }
+		update={ <>
+			<li>이제 전투원 목록의 승급 정보 표시가 최종 승급 등급만 표시됩니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11417" date="2021-12-13"
 		bugfix={ <>
 			<li>
