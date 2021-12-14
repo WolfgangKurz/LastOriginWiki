@@ -1151,13 +1151,32 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 	const level = props.level;
 
 	const elems: preact.VNode[] = [];
+	let commonCond = <></>;
+
 	if ("buffs" in stat) { // 버프 형식의 수치
+		const target = getTargetText(stat.body, stat.class, stat.role, stat.target);
+		const on = getTriggerText(stat.on);
+		const apply = getTriggerText(stat.if);
+		commonCond = <li class="list-group-item list-group-item-warning p-1">
+			{ on
+				? <span class="badge bg-success ms-1 text-wrap">{ on }</span>
+				: <></>
+			}
+			{ apply
+				? <span class="badge bg-danger ms-1 text-wrap">{ apply }</span>
+				: <></>
+			}
+			{ target
+				? <span class="badge bg-stat-def ms-1 text-wrap">
+					<Locale plain k="BUFFTARGET_TO" p={ [target] } />
+				</span>
+				: <></>
+			}
+		</li>;
+
 		const ext = ImageExtension();
 		stat.buffs.forEach((buff, buffIdx) => {
 			const erase = getEraseText(buff.erase);
-			const target = getTargetText(stat.body, stat.class, stat.role, stat.target);
-			const on = getTriggerText(stat.on);
-			const apply = getTriggerText(stat.if);
 
 			if (buff.value.chance !== "0%") {
 				const force = [
@@ -1252,20 +1271,6 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 							{ getChanceText(buff.value.chance) }
 						</div>
 						<div class="float-end text-end">
-							{ on
-								? <span class="badge bg-success ms-1 text-wrap">{ on }</span>
-								: <></>
-							}
-							{ apply
-								? <span class="badge bg-danger ms-1 text-wrap">{ apply }</span>
-								: <></>
-							}
-							{ target
-								? <span class="badge bg-stat-def ms-1 text-wrap">
-									<Locale plain k="BUFFTARGET_TO" p={ [target] } />
-								</span>
-								: <></>
-							}
 							{ stat.maxStack > 0
 								? <span class="badge bg-dark ms-1 text-wrap">
 									<Locale plain k="BUFFSTACK" p={ [stat.maxStack] } />
@@ -1283,7 +1288,15 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 		});
 	}
 
-	return <>{ elems.map(x => <li class="list-group-item">{ x }</li>) }</>;
+	return <ul class="list-group text-start">
+		{ commonCond }
+		{ elems.length > 0
+			? elems.map(x => <li class="list-group-item">{ x }</li>)
+			: <li class="list-group-item text-secondary text-center">
+				<Locale k="BUFF_EMPTY" />
+			</li>
+		}
+	</ul>;
 };
 
 interface BuffListProps {
@@ -1334,7 +1347,7 @@ const BuffChecklist: FunctionalComponent<BuffListProps> = (props) =>
 				</ul>
 				: <></>
 			}
-			{ buffs.map(stats => <ul class="list-group text-start">{ stats }</ul>) }
+			{ buffs }
 		</div>;
 	}) }
 	/>;

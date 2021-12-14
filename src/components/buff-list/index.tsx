@@ -21,7 +21,7 @@ import StatIcon from "@/components/stat-icon";
 import ElemIcon from "@/components/elem-icon";
 import UnitLink from "@/components/unit-link";
 
-import style from "./style.scss";
+import style from "./style.module.scss";
 
 type BuffColors = "primary" | "secondary" | "danger" | "warning" | "info" | "dark" | "light";
 
@@ -117,7 +117,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 		return p ? ifTrue : ifFalse;
 	}
 
-	function convertBuff (name: string,): preact.VNode;
+	function convertBuff (name: string): preact.VNode;
 	function convertBuff (name: string, color: BuffColors): preact.VNode;
 	function convertBuff (name: string, color?: BuffColors): preact.VNode {
 		if (![undefined, "primary", "secondary", "danger", "warning", "info", "dark", "light"].includes(color))
@@ -128,16 +128,16 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			const unit = FilterableUnitDB.find(x => x.uid === key);
 			if (!unit) return <>{ key }</>;
 
-			return <span class={ `on-subbadge ${style["on-subbadge"]} ${color ? `text-${color}` : ""}` }>
+			return <span class={ `SubBadge ${style.SubBadge} ${color ? `text-${color}` : ""}` }>
 				<Locale plain k={ `UNIT_${unit.uid}` } />
 			</span>;
 		} else if (name.startsWith("MOB_")) {
 			const key = name.replace(/MOB_MP_(.+)/, "$1");
-			return <span class={ `on-subbadge ${style["on-subbadge"]} ${color ? `text-${color}` : ""}` }>
+			return <span class={ `SubBadge ${style.SubBadge} ${color ? `text-${color}` : ""}` }>
 				<Locale plain k={ `ENEMY_${key}` } />
 			</span>;
 		}
-		return <span class={ `on-subbadge ${style["on-subbadge"]} ${color ? `text-${color}` : ""}` }>
+		return <span class={ `SubBadge ${style.SubBadge} ${color ? `text-${color}` : ""}` }>
 			<Locale plain k={ name } />
 		</span>;
 	}
@@ -541,7 +541,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 							.unique(VNodeUnique)
 						// BuffTrigger_On_BuffEffectType
 						: (trigger.on.select as BUFFEFFECT_TYPE[])
-							.map(x => <span class={ `on-subbadge ${style["on-subbadge"]}` }>
+							.map(x => <span class={ `SubBadge ${style["SubBadge"]}` }>
 								{ getBuffEffectTypeText(x, trigger.on.attr) }
 							</span>)
 							.unique(VNodeUnique);
@@ -709,7 +709,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			else if ("troop" in trigger) {
 				return <Locale plain k="BUFFTRIGGER_TROOP" p={ [<>{
 					trigger.troop
-						.map(x => <span class={ `on-subbadge ${style["on-subbadge"]}` }>
+						.map(x => <span class={ `SubBadge ${style["SubBadge"]}` }>
 							<Locale plain k={ TroopNameTable[x] } />
 						</span>)
 						.gap(<Locale plain k="BUFFTRIGGER_OR" />)
@@ -1244,13 +1244,32 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 	const level = props.level;
 
 	const elems: preact.VNode[] = [];
+	let commonCond = <></>;
+
 	if ("buffs" in stat) { // 버프 형식의 수치
+		const target = getTargetText(stat.body, stat.class, stat.role, stat.target);
+		const on = getTriggerText(stat.on);
+		const apply = getTriggerText(stat.if);
+		commonCond = <li class="list-group-item list-group-item-warning p-1">
+			{ on
+				? <span class="badge bg-success ms-1 text-wrap">{ on }</span>
+				: <></>
+			}
+			{ apply
+				? <span class="badge bg-danger ms-1 text-wrap">{ apply }</span>
+				: <></>
+			}
+			{ target
+				? <span class="badge bg-stat-def ms-1 text-wrap">
+					<Locale plain k="BUFFTARGET_TO" p={ [target] } />
+				</span>
+				: <></>
+			}
+		</li>;
+
 		const ext = ImageExtension();
 		stat.buffs.forEach(buff => {
 			const erase = getEraseText(buff.erase);
-			const target = getTargetText(stat.body, stat.class, stat.role, stat.target);
-			const on = getTriggerText(stat.on);
-			const apply = getTriggerText(stat.if);
 
 			// title={ formatDesc(buff.desc.type, buff.desc.desc, buff.desc.value, buff.desc.level, level) }
 			if (buff.value.chance !== "0%" || props.dummy) {
@@ -1300,20 +1319,6 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 							{ getBuffText(buff.value, level) }
 						</div>
 						<div class="float-end text-end">
-							{ on
-								? <span class="badge bg-success ms-1 text-wrap">{ on }</span>
-								: <></>
-							}
-							{ apply
-								? <span class="badge bg-danger ms-1 text-wrap">{ apply }</span>
-								: <></>
-							}
-							{ target
-								? <span class="badge bg-stat-def ms-1 text-wrap">
-									<Locale plain k="BUFFTARGET_TO" p={ [target] } />
-								</span>
-								: <></>
-							}
 							{ stat.maxStack > 0
 								? <span class="badge bg-dark ms-1 text-wrap">
 									<Locale plain k="BUFFSTACK" p={ [stat.maxStack] } />
@@ -1420,7 +1425,15 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 		</div>);
 	}
 
-	return <>{ elems.map(x => <li class="list-group-item">{ x }</li>) }</>;
+	return <ul class="list-group text-start">
+		{ commonCond }
+		{ elems.length > 0
+			? elems.map(x => <li class="list-group-item">{ x }</li>)
+			: <li class="list-group-item text-secondary text-center">
+				<Locale k="BUFF_EMPTY" />
+			</li>
+		}
+	</ul>;
 };
 
 interface BuffListProps {
@@ -1445,14 +1458,14 @@ const BuffList: FunctionalComponent<BuffListProps> = (props) => {
 			invert={ props.invert }
 			dummy={ dummy }
 		/>);
-		return <div class={ `buff-list text-dark ${props.class || ""}` }>
+		return <div class={ `${style.BuffList} text-dark ${props.class || ""}` }>
 			{ staticList.length > 0
 				? <ul class="list-group text-start">
 					<BuffRenderer stat={ staticList } level={ level } invert={ props.invert } dummy={ dummy } />
 				</ul>
 				: <></>
 			}
-			{ dynamicList.map(stats => <ul class="list-group text-start">{ stats }</ul>) }
+			{ dynamicList }
 		</div>;
 	}) } />;
 };
