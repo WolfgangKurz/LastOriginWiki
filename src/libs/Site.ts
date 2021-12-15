@@ -68,6 +68,9 @@ export function SetMeta (name: MetaKeys | MetaKeys[], value: string | null, appe
 updateMeta();
 
 export function UpdateTitle (...title: string[]): void {
-	document.title = [...title, LocaleGet("COMMON_TITLE")].join(" - ");
+	document.title = [
+		...title.map(t => t.replace(/&#x200B;/g, "")),
+		LocaleGet("COMMON_TITLE"),
+	].join(" - ");
 	SetMeta(["twitter:title", "og:title"], document.title);
 }
