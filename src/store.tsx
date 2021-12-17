@@ -169,7 +169,7 @@ const Store = new StoreClass(
 					return { ...x, selected: false };
 				}) as EffectFilterListType,
 
-			DisplayType: "table" as ("table" | "list" | "group" | "time"),
+			DisplayType: "table" as ("table" | "list" | "group" | "skin" | "time"),
 			SearchText: "",
 		},
 		Equips: {

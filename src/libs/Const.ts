@@ -8,7 +8,7 @@ import { LocaleGet } from "@/components/locale";
 export type ImageExtensionTypes = "webp" | "png";
 export const ImageExtensionList: ImageExtensionTypes[] = ["webp", "png"];
 
-export const IsBeta = false;
+export const IsBeta = true;
 export const IsDev = import.meta.env.DEV;
 
 export const Host = import.meta.env.DEV
@@ -716,9 +716,10 @@ export const SubStoryUnit: Record<string, string> = {
 };
 
 export const PermanentEvents: string[] = ["Ev1", "Ev2", "Ev3", "Ev4"];
-export const CurrentEvent = "Ev8";
-export const EventFrom = new Date(2021, 11 - 1, 22);
-export const EventTo = new Date(2021, 12 - 1, 13);
+export const NewMapList: string[] = ["Ev14"];
+export const CurrentEvent = "Ev14";
+export const EventFrom = new Date(2021, 12 - 1, 20);
+export const EventTo = new Date(2022, 1 - 1, 17);
 
 export const CurrentDate = ((): string => {
 	const d = new Date();

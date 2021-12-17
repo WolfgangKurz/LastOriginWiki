@@ -1,12 +1,15 @@
 :global .worlds-map {
 	.worlds-map-bg {
-		padding: 1em;
 		background-image: url($assetsRoot + "/world/bg.png");
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-color: #171717;
 		overflow-x: auto;
+
+		&:not([data-new="1"]) {
+			padding: 1em;
+		}
 
 		a:focus {
 			border: none !important;

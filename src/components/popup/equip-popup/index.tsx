@@ -14,9 +14,10 @@ import { objState } from "@/libs/State";
 import { AssetsRoot, RarityDisplay } from "@/libs/Const";
 import { CurrentDB } from "@/libs/DB";
 import { FormatNumber, isActive } from "@/libs/Functions";
+import { ParseDescriptionText } from "@/libs/FunctionsX";
 
 import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
-import Locale from "@/components/locale";
+import Locale, { LocaleGet } from "@/components/locale";
 import Icon from "@/components/bootstrap-icon";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import PopupBase from "@/components/popup/base";
@@ -319,8 +320,8 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 							</div>
 						</div>
 						<div class="row">
-							<div class="col break-keep white-pre-line">
-								<Locale k={ `EQUIP_DESC_${target.fullKey}` } plain />
+							<div class="col bg-dark text-light white-pre-line" style={ { wordBreak: "keep-all" } }>
+								{ ParseDescriptionText(LocaleGet(`EQUIP_DESC_${target.fullKey}`)) }
 							</div>
 						</div>
 					</div>

@@ -1,3 +1,4 @@
+import { STAGE_SUB_TYPE } from "@/types/Enums";
 import { RawRewardItem, RawReward } from "@/types/Reward";
 
 export interface MapEnemyData {
@@ -35,7 +36,8 @@ export interface MapNodeEntity {
 	// name: string;
 	// desc: string;
 
-	prev: number | null;
+	type: STAGE_SUB_TYPE;
+	prev: number[];
 	offset: number;
 	text: string;
 
@@ -54,7 +56,8 @@ export namespace MapNodeEntity {
 	export const Empty: MapNodeEntity = {
 		// name: "",
 		// desc: "",
-		prev: null,
+		type: STAGE_SUB_TYPE.NONE,
+		prev: [],
 		offset: 0,
 		text: "",
 		search: null,

@@ -253,7 +253,7 @@ export type IconList = "alarm" | "alarm-fill" | "align-bottom" | "align-center" 
 	"thermometer-sun" | "three-dots" | "three-dots-vertical" | "toggle-off" | "toggle-on" |
 	"toggle2-off" | "toggle2-on" | "toggles" | "toggles2" | "tools" | "tornado" | "trash" |
 	"trash-fill" | "trash2" | "trash2-fill" | "tree" | "tree-fill" | "triangle" | "triangle-fill" |
-	"triangle-half" | "trophy" | "trophy-fill" | "tropical-storm" | "truck" | "truck-flatbed" |
+	"triangle-half" | "trophy" | "trophy-fill" | "tropical-storm" | "truck" | "truck-flatbed" | "tshirt" |
 	"tsunami" | "tv" | "tv-fill" | "twitch" | "twitter" | "type" | "type-bold" | "type-h1" |
 	"type-h2" | "type-h3" | "type-italic" | "type-strikethrough" | "type-underline" | "ui-checks" |
 	"ui-checks-grid" | "ui-radios" | "ui-radios-grid" | "umbrella" | "umbrella-fill" | "union" |

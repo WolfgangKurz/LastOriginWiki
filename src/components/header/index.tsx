@@ -55,7 +55,7 @@ const Header: FunctionalComponent = (): preact.VNode => {
 					<i class={ style["_official"] } data-locale={ CurrentLocale }>
 						{ IsBeta
 							? <>BETA</>
-							: <Locale k="COMMON_AUTHORIZED?" />
+							: <Locale k="COMMON_TITLE_SUB" />
 						}
 					</i>
 					<Locale k="MENU_TITLE" />
@@ -140,56 +140,62 @@ const Header: FunctionalComponent = (): preact.VNode => {
 				</ul>
 				<div class="d-flex">
 					<ul class={ `${style["navbar-nav"]} navbar-nav me-auto mb-2 mb-lg-0` }>
-						<li class="nav-item dropdown">
-							<a
-								class="nav-link dropdown-toggle"
-								href="#"
-								id="topNavbarDropdown2"
-								role="button"
-								data-bs-toggle="dropdown"
-								aria-expanded="false"
-							>
-								<Icon icon="server" class="me-1" />
-								<img class="mx-1" src={ `${AssetsRoot}/flags/${DBDisp[CurrentDB]}.png` } alt={ DBDisp[CurrentDB] } />
-								{ DBDisp[CurrentDB] }
-							</a>
-							<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="topNavbarDropdown2">
-								{ DBList.map(db => <li>
-									<a href="#" class="dropdown-item" onClick={ (e): void => {
-										e.preventDefault();
-										ChangeDB(db);
-									} }>
-										<img class="me-3" src={ `${AssetsRoot}/flags/${DBDisp[db]}.png` } alt={ DBDisp[db] } />
-										{ DBDisp[db] }
-									</a>
-								</li>) }
-							</ul>
-						</li>
-						<li class="nav-item dropdown">
-							<a
-								class="nav-link dropdown-toggle"
-								href="#"
-								id="topNavbarDropdown2"
-								role="button"
-								data-bs-toggle="dropdown"
-								aria-expanded="false"
-							>
-								<Icon icon="globe2" class="me-1" />
-								<img class="mx-1" src={ `${AssetsRoot}/flags/${CurrentLocale}.png` } alt={ CurrentLocale } />
-								{ CurrentLocale }
-							</a>
-							<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="topNavbarDropdown2">
-								{ LocaleList.map(lang => <li>
-									<a href="#" class="dropdown-item" onClick={ (e): void => {
-										e.preventDefault();
-										ChangeLanguage(lang);
-									} }>
-										<img class="me-3" src={ `${AssetsRoot}/flags/${lang}.png` } alt={ lang } />
-										{ lang }
-									</a>
-								</li>) }
-							</ul>
-						</li>
+						{ DBList.length > 1
+							? <li class="nav-item dropdown">
+								<a
+									class="nav-link dropdown-toggle"
+									href="#"
+									id="topNavbarDropdown2"
+									role="button"
+									data-bs-toggle="dropdown"
+									aria-expanded="false"
+								>
+									<Icon icon="server" class="me-1" />
+									<img class="mx-1" src={ `${AssetsRoot}/flags/${DBDisp[CurrentDB]}.png` } alt={ DBDisp[CurrentDB] } />
+									{ DBDisp[CurrentDB] }
+								</a>
+								<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="topNavbarDropdown2">
+									{ DBList.map(db => <li>
+										<a href="#" class="dropdown-item" onClick={ (e): void => {
+											e.preventDefault();
+											ChangeDB(db);
+										} }>
+											<img class="me-3" src={ `${AssetsRoot}/flags/${DBDisp[db]}.png` } alt={ DBDisp[db] } />
+											{ DBDisp[db] }
+										</a>
+									</li>) }
+								</ul>
+							</li>
+							: <></>
+						}
+						{ LocaleList.length > 1
+							? <li class="nav-item dropdown">
+								<a
+									class="nav-link dropdown-toggle"
+									href="#"
+									id="topNavbarDropdown2"
+									role="button"
+									data-bs-toggle="dropdown"
+									aria-expanded="false"
+								>
+									<Icon icon="globe2" class="me-1" />
+									<img class="mx-1" src={ `${AssetsRoot}/flags/${CurrentLocale}.png` } alt={ CurrentLocale } />
+									{ CurrentLocale }
+								</a>
+								<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="topNavbarDropdown2">
+									{ LocaleList.map(lang => <li>
+										<a href="#" class="dropdown-item" onClick={ (e): void => {
+											e.preventDefault();
+											ChangeLanguage(lang);
+										} }>
+											<img class="me-3" src={ `${AssetsRoot}/flags/${lang}.png` } alt={ lang } />
+											{ lang }
+										</a>
+									</li>) }
+								</ul>
+							</li>
+							: <></>
+						}
 					</ul>
 				</div>
 			</div>
