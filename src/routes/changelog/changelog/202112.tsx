@@ -6,6 +6,33 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11427" date="2021-12-18"
+		new={ <>
+			<li>신규 전투원 <span class="badge bg-warning text-dark">페레그리누스</span>의 정보가 추가되었습니다.</li>
+			<li>신규 장비 <span class="badge bg-warning text-dark">핫팩</span>의 정보가 추가되었습니다.</li>
+			<li>이벤트 <span class="badge bg-warning text-dark">영원한 겨울의 방주</span>의 정보가 추가되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">영원한 겨울의 방주</span>의 지도가 새 형식으로 표시됩니다.</li>
+			<li><span class="badge bg-warning text-dark">전투원정보</span>에 <span class="badge bg-primary">스킨 보기</span>가 추가되었습니다.</li>
+			<li>전투원의 스킨 정보 영역에 스킨 카테고리가 추가되었습니다.</li>
+		</> }
+		update={ <>
+			<li>전투원 스킨의 부가 정보가 인게임 스킨의 추가 요소에 맞게 변경되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">T-20S 노움</span>의 대사 음성 파일이 교체되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<span class="badge bg-warning text-dark">T-20S 노움</span>의 스킨
+				<span class="badge bg-danger">오르카 버니 : 완벽한 토끼</span>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<span class="badge bg-warning text-dark">므네모시네</span>의 스킨
+				<span class="badge bg-danger">fleurir en memoire</span>의 정보가 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2021-12-18 00:07:13</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11423" date="2021-12-14"
 		update={ <>
 			<li>같은 그룹으로 묶인 버프가 보기 쉽게 개선되었습니다.</li>
