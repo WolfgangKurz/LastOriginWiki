@@ -72,8 +72,7 @@ export interface UnitSkinEntity {
 	/** Damaged Simplified */
 	X: boolean;
 
-	/** Premium Skin? */
-	Pre: boolean;
+	BG: boolean;
 
 	/** Animated, Video? */
 	AV: boolean;
@@ -85,6 +84,8 @@ export interface UnitSkinEntity {
 
 	// /** Skin Item Description */
 	// desc: string;
+
+	category: string[];
 }
 
 export interface Unit {
@@ -185,9 +186,10 @@ export namespace Unit {
 			D: false,
 			S: false,
 			X: false,
-			Pre: false,
+			BG: false,
 			AV: false,
 			AVG: false,
+			category: [],
 			artist: "",
 			offset: { n: 0, d: 0, s: 0, x: 0 },
 			sid: 0,

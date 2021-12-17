@@ -24,7 +24,7 @@ export function FormatNumber (num: number): string {
 export function ChangeImage (ext: string): void {
 	if (!["png", "webp"].includes(ext)) ext = "webp";
 	document.cookie = `LO_IMGEXT=${ext}; path=/`;
-	window.location.reload(true);
+	window.location.reload();
 }
 
 export function Extend (): void {

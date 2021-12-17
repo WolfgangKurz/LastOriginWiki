@@ -785,3 +785,28 @@ export enum ROGUE_SKILL_TYPE {
 	CREATOR = 9,
 	ROGUE_POINT_RATE_INC = 10,
 }
+
+export enum STAGE_SUB_TYPE {
+	/** lo-tactical */
+	NONE = -1,
+
+	MAIN = 0,
+	SUB = 1,
+	EX = 2,
+	STORY = 3,
+}
+
+
+export enum SKIN_PART_TYPE {
+	NONE = 0,
+	L2D = 1,
+	VOICE = 2,
+	FX = 3,
+	MOTION = 4,
+
+	// PROPS = 4,
+	// SIMPLIFIABLE = 4,
+
+	BG = 5,
+	DAMAGED = 6,
+}

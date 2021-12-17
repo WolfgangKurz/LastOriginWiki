@@ -74,7 +74,7 @@ const Home: FunctionalComponent = () => {
 				<i class={ style["_official"] }>
 					{ IsBeta
 						? <>BETA</>
-						: <Locale k="COMMON_AUTHORIZED?" />
+						: <Locale k="COMMON_TITLE_SUB" />
 					}
 				</i>
 				<Locale k="COMMON_TITLE" />

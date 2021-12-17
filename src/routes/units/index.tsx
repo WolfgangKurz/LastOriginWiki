@@ -2,7 +2,7 @@ import { FunctionalComponent } from "preact";
 
 import Store from "@/store";
 
-import { groupBy, isActive } from "@/libs/Functions";
+import { isActive } from "@/libs/Functions";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE, SKILL_ATTR } from "@/types/Enums";
@@ -10,7 +10,7 @@ import { EffectFilterListItemPM, EffectFilterListItemSingle, EffectFilterListTyp
 import { BuffEffectList, BuffEffectListGroupKeys } from "@/types/BuffEffect";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
-import Loader, { GetJson, StaticDB, SubComponent } from "@/components/loader";
+import Loader, { GetJson, StaticDB } from "@/components/loader";
 import Icon from "@/components/bootstrap-icon";
 import Locale, { LocaleGet } from "@/components/locale";
 import ElemIcon from "@/components/elem-icon";
@@ -19,7 +19,10 @@ import EffectFilterPopup from "@/components/popup/effect-filter-popup";
 import UnitsTable from "./units-table";
 import UnitsList from "./units-list";
 import UnitsGroup from "./units-group";
+import UnitsSkin from "./units-skin";
 import UnitsTimetable from "./units-timetable";
+
+import style from "./style.module.scss";
 
 export interface UnitsListProps {
 	list: FilterableUnit[];
@@ -127,6 +130,11 @@ const Units: FunctionalComponent = () => {
 			}
 
 			function UnitList (): FilterableUnit[] {
+				const FilterableUnitDB = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
+				if (!FilterableUnitDB) return [];
+
+				if (Filters.DisplayType === "skin") return FilterableUnitDB;
+
 				const elem = new Array(2)
 					.fill(0)
 					.map((_, i) => [
@@ -135,10 +143,6 @@ const Units: FunctionalComponent = () => {
 						Filters.Skill[i].Elem[SKILL_ATTR.ICE] ? SKILL_ATTR.ICE : -1,
 						Filters.Skill[i].Elem[SKILL_ATTR.LIGHTNING] ? SKILL_ATTR.LIGHTNING : -1,
 					].filter(y => y > -1));
-
-				const FilterableUnitDB = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
-				if (!FilterableUnitDB) return [];
-
 
 				return FilterableUnitDB
 					.filter(x => new RegExp(Filters.SearchText, "i").test(LocaleGet(`UNIT_${x.uid}`)))
@@ -192,7 +196,7 @@ const Units: FunctionalComponent = () => {
 
 			return <div class="chars">
 				<div class="text-center mb-3">
-					<div class="btn-group">
+					<div class={ `btn-group ${style.TabButtons}` }>
 						<button
 							type="button"
 							class={ `btn btn-outline-primary ${isActive(Filters.DisplayType === "table")}` }
@@ -219,6 +223,14 @@ const Units: FunctionalComponent = () => {
 						</button>
 						<button
 							type="button"
+							class={ `btn btn-outline-primary ${isActive(Filters.DisplayType === "skin")}` }
+							onClick={ (): void => setDisplayType("skin") }
+						>
+							<Icon icon="tshirt" class="me-1" />
+							<Locale k="UNITS_VIEW_SKIN" />
+						</button>
+						<button
+							type="button"
 							class={ `btn btn-outline-primary ${isActive(Filters.DisplayType === "time")}` }
 							onClick={ (): void => setDisplayType("time") }
 						>
@@ -228,220 +240,221 @@ const Units: FunctionalComponent = () => {
 					</div>
 				</div>
 
-				<div class="card text-start mb-4">
-					<div class="card-body">
-						<div class="row mb-2">
-							<div class="col">
-								<div class="btn-group mx-2 mb-2">
-									<button
-										class={ `btn btn-outline-danger ${isActive(Filters.Rarity[ACTOR_GRADE.SS])}` }
-										onClick={ toggleUnitsFilterRaritySS }
-									>SS</button>
-									<button
-										class={ `btn btn-outline-danger ${isActive(Filters.Rarity[ACTOR_GRADE.S])}` }
-										onClick={ toggleUnitsFilterRarityS }
-									>S</button>
-									<button
-										class={ `btn btn-outline-danger ${isActive(Filters.Rarity[ACTOR_GRADE.A])}` }
-										onClick={ toggleUnitsFilterRarityA }
-									>A</button>
-									<button
-										class={ `btn btn-outline-danger ${isActive(Filters.Rarity[ACTOR_GRADE.B])}` }
-										onClick={ toggleUnitsFilterRarityB }
-									>B</button>
-								</div>
-								<div class="btn-group mx-2 mb-2">
-									<button
-										class={ `btn btn-outline-success ${isActive(Filters.Type[ACTOR_CLASS.LIGHT])}` }
-										onClick={ toggleUnitsFilterTypeLight }
-									>
-										<Locale k="COMMON_UNIT_TYPE_LIGHT" />
-									</button>
-									<button
-										class={ `btn btn-outline-success ${isActive(Filters.Type[ACTOR_CLASS.MOBILITY])}` }
-										onClick={ toggleUnitsFilterTypeMobility }
-									>
-										<Locale k="COMMON_UNIT_TYPE_MOBILITY" />
-									</button>
-									<button
-										class={ `btn btn-outline-success ${isActive(Filters.Type[ACTOR_CLASS.HEAVY])}` }
-										onClick={ toggleUnitsFilterTypeHeavy }
-									>
-										<Locale k="COMMON_UNIT_TYPE_HEAVY" />
-									</button>
-								</div>
-								<div class="btn-group mx-2 mb-2">
-									<button
-										class={ `btn btn-outline-warning ${isActive(Filters.Role[ROLE_TYPE.ATTACKER])}` }
-										onClick={ toggleUnitsFilterRoleAttacker }
-									>
-										<Locale k="COMMON_UNIT_ROLE_ATTACKER" />
-									</button>
-									<button
-										class={ `btn btn-outline-warning ${isActive(Filters.Role[ROLE_TYPE.DEFENDER])}` }
-										onClick={ toggleUnitsFilterRoleDefender }
-									>
-										<Locale k="COMMON_UNIT_ROLE_DEFENDER" />
-									</button>
-									<button
-										class={ `btn btn-outline-warning ${isActive(Filters.Role[ROLE_TYPE.SUPPORTER])}` }
-										onClick={ toggleUnitsFilterRoleSupporter }
-									>
-										<Locale k="COMMON_UNIT_ROLE_SUPPORTER" />
-									</button>
-								</div>
-								<div class="btn-group mx-2 mb-2">
-									<button
-										class={ `btn btn-outline-dark ${isActive(Filters.Body[ACTOR_BODY_TYPE.BIOROID])}` }
-										onClick={ toggleUnitsFilterBodyBioroid }
-									>
-										<Locale k="COMMON_UNIT_BODY_BIOROID" />
-									</button>
-									<button
-										class={ `btn btn-outline-dark ${isActive(Filters.Body[ACTOR_BODY_TYPE.AGS])}` }
-										onClick={ toggleUnitsFilterBodyAGS }
-									>
-										<Locale k="COMMON_UNIT_BODY_AGS" />
-									</button>
-								</div>
-							</div>
-						</div>
-
-						<div class="row mb-4">
-							<div class="col">
-								<div class="input-group">
-									<input
-										class="form-control"
-										value={ Filters.SearchText }
-										onInput={ (e): void => setSearchText((e.target as any).value) }
-										placeholder={ LocaleGet("UNITS_SEARCH_PLACEHOLDER") } />
-
-									<button class="btn btn-danger" onClick={ (): void => setSearchText("") }>
-										<Locale k="UNITS_SEARCH_RESET" />
-									</button>
+				{ Filters.DisplayType !== "skin"
+					? <div class="card text-start mb-4">
+						<div class="card-body">
+							<div class="row mb-2">
+								<div class="col">
+									<div class="btn-group mx-2 mb-2">
+										<button
+											class={ `btn btn-outline-danger ${isActive(Filters.Rarity[ACTOR_GRADE.SS])}` }
+											onClick={ toggleUnitsFilterRaritySS }
+										>SS</button>
+										<button
+											class={ `btn btn-outline-danger ${isActive(Filters.Rarity[ACTOR_GRADE.S])}` }
+											onClick={ toggleUnitsFilterRarityS }
+										>S</button>
+										<button
+											class={ `btn btn-outline-danger ${isActive(Filters.Rarity[ACTOR_GRADE.A])}` }
+											onClick={ toggleUnitsFilterRarityA }
+										>A</button>
+										<button
+											class={ `btn btn-outline-danger ${isActive(Filters.Rarity[ACTOR_GRADE.B])}` }
+											onClick={ toggleUnitsFilterRarityB }
+										>B</button>
+									</div>
+									<div class="btn-group mx-2 mb-2">
+										<button
+											class={ `btn btn-outline-success ${isActive(Filters.Type[ACTOR_CLASS.LIGHT])}` }
+											onClick={ toggleUnitsFilterTypeLight }
+										>
+											<Locale k="COMMON_UNIT_TYPE_LIGHT" />
+										</button>
+										<button
+											class={ `btn btn-outline-success ${isActive(Filters.Type[ACTOR_CLASS.MOBILITY])}` }
+											onClick={ toggleUnitsFilterTypeMobility }
+										>
+											<Locale k="COMMON_UNIT_TYPE_MOBILITY" />
+										</button>
+										<button
+											class={ `btn btn-outline-success ${isActive(Filters.Type[ACTOR_CLASS.HEAVY])}` }
+											onClick={ toggleUnitsFilterTypeHeavy }
+										>
+											<Locale k="COMMON_UNIT_TYPE_HEAVY" />
+										</button>
+									</div>
+									<div class="btn-group mx-2 mb-2">
+										<button
+											class={ `btn btn-outline-warning ${isActive(Filters.Role[ROLE_TYPE.ATTACKER])}` }
+											onClick={ toggleUnitsFilterRoleAttacker }
+										>
+											<Locale k="COMMON_UNIT_ROLE_ATTACKER" />
+										</button>
+										<button
+											class={ `btn btn-outline-warning ${isActive(Filters.Role[ROLE_TYPE.DEFENDER])}` }
+											onClick={ toggleUnitsFilterRoleDefender }
+										>
+											<Locale k="COMMON_UNIT_ROLE_DEFENDER" />
+										</button>
+										<button
+											class={ `btn btn-outline-warning ${isActive(Filters.Role[ROLE_TYPE.SUPPORTER])}` }
+											onClick={ toggleUnitsFilterRoleSupporter }
+										>
+											<Locale k="COMMON_UNIT_ROLE_SUPPORTER" />
+										</button>
+									</div>
+									<div class="btn-group mx-2 mb-2">
+										<button
+											class={ `btn btn-outline-dark ${isActive(Filters.Body[ACTOR_BODY_TYPE.BIOROID])}` }
+											onClick={ toggleUnitsFilterBodyBioroid }
+										>
+											<Locale k="COMMON_UNIT_BODY_BIOROID" />
+										</button>
+										<button
+											class={ `btn btn-outline-dark ${isActive(Filters.Body[ACTOR_BODY_TYPE.AGS])}` }
+											onClick={ toggleUnitsFilterBodyAGS }
+										>
+											<Locale k="COMMON_UNIT_BODY_AGS" />
+										</button>
+									</div>
 								</div>
 							</div>
-						</div>
 
-						<hr class="my-2" />
+							<div class="row mb-4">
+								<div class="col">
+									<div class="input-group">
+										<input
+											class="form-control"
+											value={ Filters.SearchText }
+											onInput={ (e): void => setSearchText((e.target as any).value) }
+											placeholder={ LocaleGet("UNITS_SEARCH_PLACEHOLDER") } />
 
-						{ [0, 1].map(i => <>
+										<button class="btn btn-danger" onClick={ (): void => setSearchText("") }>
+											<Locale k="UNITS_SEARCH_RESET" />
+										</button>
+									</div>
+								</div>
+							</div>
+
+							<hr class="my-2" />
+
+							{ [0, 1].map(i => <>
+								<div class="row">
+									<div class=" col-md-auto col-12 filter-label">
+										<Locale k="UNITS_FILTERS_ACTIVE_LABEL" p={ [i + 1] } />
+									</div>
+									<div class=" col-md col-12">
+										<div class="btn-group mx-2 mb-2">
+											<button
+												class={ `btn btn-outline-secondary ${isActive(Filters.Skill[i].Elem[0])}` }
+												onClick={ (): void => toggleUnitsFilterSkillElem(i, 0) }
+											>
+												<ElemIcon class="me-0" elem="physics" />
+											</button>
+											<button
+												class={ `btn btn-outline-secondary ${isActive(Filters.Skill[i].Elem[1])}` }
+												onClick={ (): void => toggleUnitsFilterSkillElem(i, 1) }
+											>
+												<ElemIcon class="me-0" elem="fire" />
+											</button>
+											<button
+												class={ `btn btn-outline-secondary ${isActive(Filters.Skill[i].Elem[2])}` }
+												onClick={ (): void => toggleUnitsFilterSkillElem(i, 2) }
+											>
+												<ElemIcon class="me-0" elem="ice" />
+											</button>
+											<button
+												class={ `btn btn-outline-secondary ${isActive(Filters.Skill[i].Elem[3])}` }
+												onClick={ (): void => toggleUnitsFilterSkillElem(i, 3) }
+											>
+												<ElemIcon class="me-0" elem="lightning" />
+											</button>
+										</div>
+
+										<div class="btn-group mx-2 mb-2">
+											<button
+												class={ `btn btn-outline-danger ${isActive(Filters.Skill[i].GridType === 0)}` }
+												onClick={ (): void => setUnitsFilterSkillGridType(i, 0) }
+											>
+												<Locale k="UNITS_FILTERS_ACTIVE_GRID_ALL" />
+											</button>
+											<button
+												class={ `btn btn-outline-danger ${isActive(Filters.Skill[i].GridType === 1)}` }
+												onClick={ (): void => setUnitsFilterSkillGridType(i, 1) }
+											>
+												<Locale k="UNITS_FILTERS_ACTIVE_GRID_ONLY" />
+											</button>
+											<button
+												class={ `btn btn-outline-danger ${isActive(Filters.Skill[i].GridType === 2)}` }
+												onClick={ (): void => setUnitsFilterSkillGridType(i, 2) }
+											>
+												<Locale k="UNITS_FILTERS_ACTIVE_GRID_TARGET" />
+											</button>
+										</div>
+
+										<div class="btn-group mx-2 mb-2">
+											<button
+												class={ `btn btn-outline-primary ${isActive(Filters.Skill[i].DismissGuardType === 0)}` }
+												onClick={ (): void => setUnitsFilterSkillDismissGuardType(i, 0) }
+											>
+												<Locale k="UNITS_FILTERS_ACTIVE_DISMISS_GUARD_ALL" />
+											</button>
+											<button
+												class={ `btn btn-outline-primary ${isActive(Filters.Skill[i].DismissGuardType === 1)}` }
+												onClick={ (): void => setUnitsFilterSkillDismissGuardType(i, 1) }
+											>
+												<Locale k="UNITS_FILTERS_ACTIVE_DISMISS_GUARD_ONLY" />
+											</button>
+											<button
+												class={ `btn btn-outline-primary ${isActive(Filters.Skill[i].DismissGuardType === 2)}` }
+												onClick={ (): void => setUnitsFilterSkillDismissGuardType(i, 2) }
+											>
+												<Locale k="UNITS_FILTERS_ACTIVE_DISMISS_GUARD_NOT" />
+											</button>
+										</div>
+									</div>
+								</div>
+								<hr class="my-2" />
+							</>) }
+
 							<div class="row">
-								<div class=" col-md-auto col-12 filter-label">
-									<Locale k="UNITS_FILTERS_ACTIVE_LABEL" p={ [i + 1] } />
+								<div class="col-md-auto col-12 filter-label">
+									<Locale k="UNITS_FILTERS_SKILL_EFFECTS_LABEL" />
 								</div>
-								<div class=" col-md col-12">
-									<div class="btn-group mx-2 mb-2">
+								<div class="col-md col-12">
+									<div class="btn-group me-1">
 										<button
-											class={ `btn btn-outline-secondary ${isActive(Filters.Skill[i].Elem[0])}` }
-											onClick={ (): void => toggleUnitsFilterSkillElem(i, 0) }
+											class={ `btn btn-outline-success ${isActive(Filters.EffectTarget.includes("self"))}` }
+											onClick={ (): void => toggleUnitsFilterEffectTarget("self") }
 										>
-											<ElemIcon class="me-0" elem="physics" />
+											<Locale k="UNIT_FILTERS_SKILL_EFFECTS_TARGET_SELF" />
 										</button>
 										<button
-											class={ `btn btn-outline-secondary ${isActive(Filters.Skill[i].Elem[1])}` }
-											onClick={ (): void => toggleUnitsFilterSkillElem(i, 1) }
+											class={ `btn btn-outline-success ${isActive(Filters.EffectTarget.includes("team"))}` }
+											onClick={ (): void => toggleUnitsFilterEffectTarget("team") }
 										>
-											<ElemIcon class="me-0" elem="fire" />
+											<Locale k="UNIT_FILTERS_SKILL_EFFECTS_TARGET_SQUAD" />
 										</button>
 										<button
-											class={ `btn btn-outline-secondary ${isActive(Filters.Skill[i].Elem[2])}` }
-											onClick={ (): void => toggleUnitsFilterSkillElem(i, 2) }
+											class={ `btn btn-outline-success ${isActive(Filters.EffectTarget.includes("enemy"))}` }
+											onClick={ (): void => toggleUnitsFilterEffectTarget("enemy") }
 										>
-											<ElemIcon class="me-0" elem="ice" />
-										</button>
-										<button
-											class={ `btn btn-outline-secondary ${isActive(Filters.Skill[i].Elem[3])}` }
-											onClick={ (): void => toggleUnitsFilterSkillElem(i, 3) }
-										>
-											<ElemIcon class="me-0" elem="lightning" />
+											<Locale k="UNIT_FILTERS_SKILL_EFFECTS_TARGET_ENEMY" />
 										</button>
 									</div>
 
-									<div class="btn-group mx-2 mb-2">
-										<button
-											class={ `btn btn-outline-danger ${isActive(Filters.Skill[i].GridType === 0)}` }
-											onClick={ (): void => setUnitsFilterSkillGridType(i, 0) }
-										>
-											<Locale k="UNITS_FILTERS_ACTIVE_GRID_ALL" />
-										</button>
-										<button
-											class={ `btn btn-outline-danger ${isActive(Filters.Skill[i].GridType === 1)}` }
-											onClick={ (): void => setUnitsFilterSkillGridType(i, 1) }
-										>
-											<Locale k="UNITS_FILTERS_ACTIVE_GRID_ONLY" />
-										</button>
-										<button
-											class={ `btn btn-outline-danger ${isActive(Filters.Skill[i].GridType === 2)}` }
-											onClick={ (): void => setUnitsFilterSkillGridType(i, 2) }
-										>
-											<Locale k="UNITS_FILTERS_ACTIVE_GRID_TARGET" />
-										</button>
-									</div>
-
-									<div class="btn-group mx-2 mb-2">
-										<button
-											class={ `btn btn-outline-primary ${isActive(Filters.Skill[i].DismissGuardType === 0)}` }
-											onClick={ (): void => setUnitsFilterSkillDismissGuardType(i, 0) }
-										>
-											<Locale k="UNITS_FILTERS_ACTIVE_DISMISS_GUARD_ALL" />
-										</button>
-										<button
-											class={ `btn btn-outline-primary ${isActive(Filters.Skill[i].DismissGuardType === 1)}` }
-											onClick={ (): void => setUnitsFilterSkillDismissGuardType(i, 1) }
-										>
-											<Locale k="UNITS_FILTERS_ACTIVE_DISMISS_GUARD_ONLY" />
-										</button>
-										<button
-											class={ `btn btn-outline-primary ${isActive(Filters.Skill[i].DismissGuardType === 2)}` }
-											onClick={ (): void => setUnitsFilterSkillDismissGuardType(i, 2) }
-										>
-											<Locale k="UNITS_FILTERS_ACTIVE_DISMISS_GUARD_NOT" />
-										</button>
-									</div>
+									<EffectFilterPopup
+										class="ms-2"
+										display="UNITS_FILTERS_SKILL_EFFECTS_TOGGLE"
+										effects={ UnitEffects }
+										list={ Filters.EffectFilters }
+										setter={ setUnitEffectFilters }
+									/>
 								</div>
 							</div>
 							<hr class="my-2" />
-						</>) }
 
-						<div class="row">
-							<div class="col-md-auto col-12 filter-label">
-								<Locale k="UNITS_FILTERS_SKILL_EFFECTS_LABEL" />
-							</div>
-							<div class="col-md col-12">
-								<div class="btn-group me-1">
-									<button
-										class={ `btn btn-outline-success ${isActive(Filters.EffectTarget.includes("self"))}` }
-										onClick={ (): void => toggleUnitsFilterEffectTarget("self") }
-									>
-										<Locale k="UNIT_FILTERS_SKILL_EFFECTS_TARGET_SELF" />
-									</button>
-									<button
-										class={ `btn btn-outline-success ${isActive(Filters.EffectTarget.includes("team"))}` }
-										onClick={ (): void => toggleUnitsFilterEffectTarget("team") }
-									>
-										<Locale k="UNIT_FILTERS_SKILL_EFFECTS_TARGET_SQUAD" />
-									</button>
-									<button
-										class={ `btn btn-outline-success ${isActive(Filters.EffectTarget.includes("enemy"))}` }
-										onClick={ (): void => toggleUnitsFilterEffectTarget("enemy") }
-									>
-										<Locale k="UNIT_FILTERS_SKILL_EFFECTS_TARGET_ENEMY" />
-									</button>
-								</div>
-
-								<EffectFilterPopup
-									class="ms-2"
-									display="UNITS_FILTERS_SKILL_EFFECTS_TOGGLE"
-									effects={ UnitEffects }
-									list={ Filters.EffectFilters }
-									setter={ setUnitEffectFilters }
-								/>
-							</div>
-						</div>
-						<hr class="my-2" />
-
-						{/* <div class="row">
+							{/* <div class="row">
 							<div class="col-md-auto col-12 filter-label">
 								<Locale k="UNIT_FILTERS_ROGUELIKE_SKILL" />
 							</div>
@@ -475,12 +488,15 @@ const Units: FunctionalComponent = () => {
 								</ul>
 							</div>
 						</div> */}
+						</div>
 					</div>
-				</div>
+					: <></>
+				}
 
 				{ Filters.DisplayType === "table" ? <UnitsTable list={ UnitList() } /> : <></> }
 				{ Filters.DisplayType === "list" ? <UnitsList list={ UnitList() } /> : <></> }
 				{ Filters.DisplayType === "group" ? <UnitsGroup list={ UnitList() } /> : <></> }
+				{ Filters.DisplayType === "skin" ? <UnitsSkin list={ UnitList() } /> : <></> }
 				{ Filters.DisplayType === "time" ? <UnitsTimetable list={ UnitList() } /> : <></> }
 			</div>;
 		}) } />,

@@ -62,36 +62,38 @@ const MapGrid: FunctionalComponent<MapGridProps> = (props) => {
 		];
 
 		props.nodes.forEach(node => {
-			if (node.prev === null) return;
+			if (node.prev.length === 0) return;
 
-			const fromX = node.offset % 8;
-			const fromY = Math.floor(node.offset / 8);
-			const toX = node.prev % 8;
-			const toY = Math.floor(node.prev / 8);
+			node.prev.forEach(prev => {
+				const fromX = node.offset % 8;
+				const fromY = Math.floor(node.offset / 8);
+				const toX = prev % 8;
+				const toY = Math.floor(prev / 8);
 
-			if (fromX < toX) return;
+				if (fromX < toX) return;
 
-			const x1b = fromY * 0.5 - 0.25 + 0.5;
-			const x2b = toY * 0.5 - 0.25 + 0.5;
+				const x1b = fromY * 0.5 - 0.25 + 0.5;
+				const x2b = toY * 0.5 - 0.25 + 0.5;
 
-			ret.push({
-				x1: `${Decimal.div(1, 9)
-					.mul(Decimal.add(fromX, x1b))
-					.mul(100)
-					.toNumber()}%`,
-				y1: `${Decimal.div(1, 3)
-					.mul(fromY + 0.5)
-					.mul(100)
-					.toNumber()}%`,
-				x2: `${Decimal.div(1, 9)
-					.mul(Decimal.add(toX, x2b))
-					.mul(100)
-					.toNumber()}%`,
-				y2: `${Decimal.div(1, 3)
-					.mul(toY + 0.5)
-					.mul(100)
-					.toNumber()}%`,
-				color: colors[Math.min(fromY, toY)],
+				ret.push({
+					x1: `${Decimal.div(1, 9)
+						.mul(Decimal.add(fromX, x1b))
+						.mul(100)
+						.toNumber()}%`,
+					y1: `${Decimal.div(1, 3)
+						.mul(fromY + 0.5)
+						.mul(100)
+						.toNumber()}%`,
+					x2: `${Decimal.div(1, 9)
+						.mul(Decimal.add(toX, x2b))
+						.mul(100)
+						.toNumber()}%`,
+					y2: `${Decimal.div(1, 3)
+						.mul(toY + 0.5)
+						.mul(100)
+						.toNumber()}%`,
+					color: colors[Math.min(fromY, toY)],
+				});
 			});
 		});
 		return ret;

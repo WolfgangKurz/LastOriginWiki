@@ -104,6 +104,8 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 	else if (!skin.S && IsSimplified.value && !IsDamaged.value)
 		IsSimplified.set(false);
 
+	const categories = skin.category.filter(x => x && x !== "ALL");
+
 	return <div class="unit-skin-view">
 		<div class={ `ratio ${Aspect} unit-full ${props.collapsed ? "unit-full-collapsed" : ""}` }>
 			<div>
@@ -128,98 +130,120 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					: <></>
 				}
 
-				{ unit.marriageVoice
-					? <div class="skin-marry">
-						<BootstrapTooltip
-							placement="top"
-							content={ <span class="word-keep"><Locale k="UNIT_VIEW_SKIN_MARRIAGE" /></span> }
-						>
-							<div class="position-relative text-dark alert alert-danger">
-								<Icon icon="suit-heart-fill" />
-							</div>
-						</BootstrapTooltip>
-					</div>
-					: <></>
-				}
-
-				{ skin.A
-					? skin.Stage
-						? <div class="unit-skin-animated">
-							<BootstrapTooltip
-								placement="top"
-								content={ <span class="word-keep"><Locale k="UNIT_VIEW_SKIN_ANIMATED_ADV" /></span> }
-							>
-								<div class="position-relative text-dark alert alert-warning">
-									<Icon icon="check-all" />
-								</div>
-							</BootstrapTooltip>
+				<div class="unit-skin-marry">
+					{ unit.marriageVoice ? <BootstrapTooltip
+						placement="top"
+						content={ <span class="word-keep"><Locale k="UNIT_VIEW_SKIN_MARRIAGE" /></span> }
+					>
+						<div class="position-relative alert">
+							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/marriage.png` } />
 						</div>
-						: <div class="unit-skin-animated">
-							<BootstrapTooltip
-								placement="top"
-								content={ <span class="word-keep"><Locale k="UNIT_VIEW_SKIN_ANIMATED" /></span> }
-							>
-								<div class="position-relative text-dark alert alert-warning">
-									<Icon icon="check" />
-								</div>
-							</BootstrapTooltip>
+					</BootstrapTooltip>
+						: <div class="position-relative alert invalid">
+							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/marriage.png` } />
 						</div>
-					: <></>
-				}
-				{ skin.V
-					? <div class="unit-skin-voice">
-						<BootstrapTooltip
+					}
+				</div>
+				<div class="unit-skin-animated">
+					{ skin.A
+						? <BootstrapTooltip
 							placement="top"
 							content={ <span class="word-keep">
-								<Locale k={ skin.isDef ? "UNIT_VIEW_SKIN_VOICE_DEF" : "UNIT_VIEW_SKIN_VOICE" } />
+								<Locale k={ skin.Stage ? "UNIT_VIEW_SKIN_L2D_PLUS" : "UNIT_VIEW_SKIN_L2D" } />
 							</span> }
 						>
-							<div class="position-relative text-dark alert alert-success">
-								<Icon icon="mic-fill" />
+							<div class="position-relative alert">
+								<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/l2d${skin.Stage ? "p" : ""}.png` } />
 							</div>
 						</BootstrapTooltip>
-					</div>
-					: <></>
-				}
-				{ skin.E
-					? <div class="unit-skin-effect">
-						<BootstrapTooltip
+						: <div class="position-relative alert invalid">
+							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/l2d.png` } />
+						</div>
+					}
+				</div>
+				<div class="unit-skin-voice">
+					{ skin.V
+						? <BootstrapTooltip
 							placement="top"
-							content={ <span class="word-keep"><Locale k="UNIT_VIEW_SKIN_EFFECT" /></span> }
+							content={ <span class="word-keep">
+								<Locale k={ skin.isDef ? "UNIT_VIEW_SKIN_DEFAULT" : "UNIT_VIEW_SKIN_VOICE" } />
+							</span> }
 						>
-							<div class="position-relative text-dark alert alert-primary">
-								<Icon icon="stars" />
+							<div class="position-relative alert">
+								<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/voice.png` } />
 							</div>
 						</BootstrapTooltip>
-					</div>
-					: <></>
-				}
-				{ skin.M
-					? <div class="unit-skin-motion">
-						<BootstrapTooltip
+						: <div class="position-relative alert invalid">
+							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/voice.png` } />
+						</div>
+					}
+				</div>
+				<div class="unit-skin-effect">
+					{ skin.E
+						? <BootstrapTooltip
 							placement="top"
-							content={ <span class="word-keep"><Locale k="UNIT_VIEW_SKIN_MOTION" /></span> }
+							content={ <span class="word-keep">
+								<Locale k={ skin.isDef ? "UNIT_VIEW_SKIN_DEFAULT" : "UNIT_VIEW_SKIN_EFFECT" } />
+							</span> }
 						>
-							<div class="position-relative text-dark alert alert-primary">
-								<Icon icon="person-bounding-box" />
+							<div class="position-relative alert">
+								<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/fx.png` } />
 							</div>
 						</BootstrapTooltip>
-					</div>
-					: <></>
-				}
-				{ skin.Pre
-					? <div class="unit-skin-premium">
-						<BootstrapTooltip
+						: <div class="position-relative alert invalid">
+							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/fx.png` } />
+						</div>
+					}
+				</div>
+				<div class="unit-skin-motion">
+					{ skin.M
+						? <BootstrapTooltip
 							placement="top"
-							content={ <span class="word-keep"><Locale k="UNIT_VIEW_SKIN_PREMIUM" /></span> }
+							content={ <span class="word-keep">
+								<Locale k={ skin.isDef ? "UNIT_VIEW_SKIN_DEFAULT" : "UNIT_VIEW_SKIN_MOTION" } />
+							</span> }
 						>
-							<div class="position-relative text-dark alert alert-warning">
-								<Icon icon="award-fill" />
+							<div class="position-relative alert">
+								<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/sd.png` } />
 							</div>
 						</BootstrapTooltip>
-					</div>
-					: <></>
-				}
+						: <div class="position-relative alert invalid">
+							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/sd.png` } />
+						</div>
+					}
+				</div>
+				<div class="unit-skin-damaged">
+					{ skin.D
+						? <BootstrapTooltip
+							placement="top"
+							content={ <span class="word-keep"><Locale k="UNIT_VIEW_SKIN_DAMAGED" /></span> }
+						>
+							<div class="position-relative alert">
+								<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/damaged.png` } />
+							</div>
+						</BootstrapTooltip>
+						:
+						<div class="position-relative alert invalid">
+							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/damaged.png` } />
+						</div>
+					}
+				</div>
+				<div class="unit-skin-bg">
+					{ skin.BG
+						? <BootstrapTooltip
+							placement="top"
+							content={ <span class="word-keep"><Locale k="UNIT_VIEW_SKIN_BG" /></span> }
+						>
+							<div class="position-relative alert">
+								<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/object.png` } />
+							</div>
+						</BootstrapTooltip>
+						:
+						<div class="position-relative alert invalid">
+							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/object.png` } />
+						</div>
+					}
+				</div>
 
 				{ (!IsSimplified.value && skin.D) || (IsSimplified.value && skin.X)
 					? <div class="skin-toggle skin-toggle-damaged"
@@ -287,7 +311,16 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		{ props.collapsed
 			? <>
 				{ skin.artist
-					? <div class="alert alert-primary">
+					? <div class="alert alert-primary py-2">
+						{ categories.length > 0
+							? <div class="mb-1">
+								{ categories.map(x => <span class="badge bg-success me-1">
+									<Locale k={ `SKIN_CATEGORY_${x}` } />
+								</span>) }
+							</div>
+							: <></>
+						}
+
 						<Locale k="UNIT_VIEW_ILLUSTRATOR" /> : { skin.artist }
 					</div>
 					: <></>

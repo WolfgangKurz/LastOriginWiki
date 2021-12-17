@@ -15,6 +15,7 @@ targetDBs.forEach(targetDB => {
 	const targetDir = path.resolve(__dirname, "..", "..", "external", "json", targetDB);
 
 	const input = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "..", "db", targetDB, "unit.json"), { encoding: "utf-8" }));
+	const skins = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "..", "db", targetDB, "unit-skin.json"), { encoding: "utf-8" }));
 	const skill = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "..", "db", targetDB, "unit-skill.json"), { encoding: "utf-8" }));
 	const roguelikeSkills = JSON.parse(
 		fs.readFileSync(path.resolve(__dirname, "..", "..", "db", targetDB, "roguelike-skill.json"), { encoding: "utf-8" }),
@@ -135,6 +136,8 @@ targetDBs.forEach(targetDB => {
 				return b.effects;
 			});
 
+		x;
+
 		reta.push({
 			uid: x.uid,
 			id: x.id,
@@ -156,6 +159,7 @@ targetDBs.forEach(targetDB => {
 
 			buffs: s,
 			skills: se,
+			skins: skins[x.uid],
 
 			// roguelike: (() => {
 			// 	const list = roguelikeSkills.filter(y => y.unit === `Char_${x.uid}_N`).map(y => y.type);

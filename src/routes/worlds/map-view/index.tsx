@@ -1,7 +1,7 @@
 import { FunctionalComponent } from "preact";
 import { Link, route } from "preact-router";
 
-import { ACTOR_GRADE } from "@/types/Enums";
+import { ACTOR_GRADE, STAGE_SUB_TYPE } from "@/types/Enums";
 import { MapEnemyData, MapNodeEntity, Worlds } from "@/types/DB/Map";
 import { RawReward, RewardTypeBase } from "@/types/Reward";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
@@ -10,7 +10,7 @@ import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 import { Consumable } from "@/types/DB/Consumable";
 
 import { objState } from "@/libs/State";
-import { AssetsRoot, ImageExtension, SubStoryUnit } from "@/libs/Const";
+import { AssetsRoot, ImageExtension, NewMapList, SubStoryUnit } from "@/libs/Const";
 import { FormatNumber, isActive } from "@/libs/Functions";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
@@ -26,8 +26,9 @@ import UnitFace from "@/components/unit-face";
 import EnemyPopup from "@/components/popup/enemy-popup";
 import EquipPopup from "@/components/popup/equip-popup";
 import UnitReference from "@/components/unit-reference";
-import MapGrid from "../components/map-grid";
 import MapSearchInfo from "../components/map-search-info";
+import MapGrid from "../components/map-grid";
+import NewMapGrid from "../components/map-grid-new";
 
 import "./style.module.scss";
 
@@ -105,8 +106,11 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 				? selectedValue.wave || []
 				: [];
 			const CurrentWave = ((): Array<WaveEnemyInfo | null> => {
-				if (!selectedValue) return new Array(9).fill(null);
-				if (!Waves[selectedWave.value][selectedWaveIndex.value].e) return new Array(9).fill(null);
+				if (
+					!selectedValue ||
+					selectedValue.type === STAGE_SUB_TYPE.STORY ||
+					!Waves[selectedWave.value][selectedWaveIndex.value].e
+				) return new Array(9).fill(null);
 
 				return Waves[selectedWave.value][selectedWaveIndex.value].e.enemy
 					.map(x => {
@@ -235,20 +239,6 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 				].filter(x => x) as RewardDropType[];
 			})();
 
-			const NodeMap = ((): MapNodeEntity[] => {
-				const ret: MapNodeEntity[] = new Array(24)
-					.fill(MapNodeEntity.Empty)
-					.map((x: MapNodeEntity, i) => ({ ...x, offset: i }));
-
-				const world = MapDB[props.wid];
-				if (!world) return ret;
-
-				const area = world[props.mid];
-				if (!area) return ret;
-
-				for (const n of area) ret[n.offset] = n;
-				return ret;
-			})();
 			const NodeList = ((): MapNodeEntity[] => {
 				const ret: MapNodeEntity[] = [];
 
@@ -259,14 +249,18 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 				if (!area) return ret;
 
 				if (props.wid === "Sub")
-					area.filter(n => n.text in SubStoryUnit).forEach(n => ret.push(n));
+					ret.push(...area.filter(n => n.text in SubStoryUnit));
 				else
-					area.forEach(n => ret.push(n));
+					ret.push(...area);
 
 				return ret;
 			})();
 
-			const CurrentWaveExp = selectedValue && Waves[selectedWave.value][selectedWaveIndex.value].e
+			const CurrentWaveExp = (
+				selectedValue &&
+				selectedValue.type !== STAGE_SUB_TYPE.STORY &&
+				Waves[selectedWave.value][selectedWaveIndex.value].e
+			)
 				? FormatNumber(Waves[selectedWave.value][selectedWaveIndex.value].e.exp)
 				: 0;
 
@@ -341,7 +335,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 								</>
 						}
 					</div>
-					<div class="worlds-map-bg">
+					<div class="worlds-map-bg" data-new={ NewMapList.includes(props.wid) ? "1" : "0" }>
 						<div>
 							{ props.wid === "Sub"
 								? NodeList.map(x => <Link
@@ -383,16 +377,27 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 												{/* { x.name.replace(/.+\(([^)]+)\)$/, "$1") } */ }
 											</button>
 										</Link>)
-										: <MapGrid
-											nodes={ NodeMap }
-											wid={ props.wid }
-											mid={ props.mid }
-											onSelect={ (node: MapNodeEntity): void => {
-												selected.set(node);
-												NodeChange(node);
-											} }
-											selected={ selected.value }
-										/>
+										: NewMapList.includes(props.wid)
+											? <NewMapGrid
+												nodes={ NodeList }
+												wid={ props.wid }
+												mid={ props.mid }
+												onSelect={ (node: MapNodeEntity): void => {
+													selected.set(node);
+													NodeChange(node);
+												} }
+												selected={ selected.value }
+											/>
+											: <MapGrid
+												nodes={ NodeList }
+												wid={ props.wid }
+												mid={ props.mid }
+												onSelect={ (node: MapNodeEntity): void => {
+													selected.set(node);
+													NodeChange(node);
+												} }
+												selected={ selected.value }
+											/>
 							}
 						</div>
 					</div>
@@ -412,7 +417,13 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 								<span class="badge bg-warning text-dark me-2 selected-node-badge">
 									{ props.wid === "Sub"
 										? SubstoryName(selectedValue.text)
-										: selectedValue.text
+										: <>
+											{ selectedValue.text }
+											{ selectedValue.type === STAGE_SUB_TYPE.STORY && <>
+												<Icon class="mx-1" icon="caret-right-fill" />
+												Story
+											</> }
+										</>
 									}
 								</span>
 
@@ -454,45 +465,50 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 									<Locale k="WORLD_VIEW_CLEAR_REWARDS" />
 								</a>
 							</li>
-							<li class="nav-item">
-								<a
-									href="#"
-									class={ `nav-link ${isActive(CurrentTab.value === "drop")} text-dark` }
-									onClick={ (e: Event): void => {
-										e.preventDefault();
-										CurrentTab.set("drop");
-									} }
-								>
-									<Icon icon="gift-fill" class="me-1" />
-									<Locale k="WORLD_VIEW_DROPS" />
-								</a>
-							</li>
-							<li class="nav-item">
-								<a
-									href="#"
-									class={ `nav-link ${isActive(CurrentTab.value === "enemy")} text-dark` }
-									onClick={ (e: Event): void => {
-										e.preventDefault();
-										CurrentTab.set("enemy");
-									} }
-								>
-									<Icon icon="bug-fill" class="me-1" />
-									<Locale k="WORLD_VIEW_ENEMY" />
-								</a>
-							</li>
-							<li class="nav-item">
-								<a
-									href="#"
-									class={ `nav-link ${isActive(CurrentTab.value === "search")} text-dark` }
-									onClick={ (e: Event): void => {
-										e.preventDefault();
-										CurrentTab.set("search");
-									} }
-								>
-									<Icon icon="search" class="me-1" />
-									<Locale k="WORLD_VIEW_EXPLORATION" />
-								</a>
-							</li>
+							{ selectedValue && selectedValue.type !== STAGE_SUB_TYPE.STORY
+								? <>
+									<li class="nav-item">
+										<a
+											href="#"
+											class={ `nav-link ${isActive(CurrentTab.value === "drop")} text-dark` }
+											onClick={ (e: Event): void => {
+												e.preventDefault();
+												CurrentTab.set("drop");
+											} }
+										>
+											<Icon icon="gift-fill" class="me-1" />
+											<Locale k="WORLD_VIEW_DROPS" />
+										</a>
+									</li>
+									<li class="nav-item">
+										<a
+											href="#"
+											class={ `nav-link ${isActive(CurrentTab.value === "enemy")} text-dark` }
+											onClick={ (e: Event): void => {
+												e.preventDefault();
+												CurrentTab.set("enemy");
+											} }
+										>
+											<Icon icon="bug-fill" class="me-1" />
+											<Locale k="WORLD_VIEW_ENEMY" />
+										</a>
+									</li>
+									<li class="nav-item">
+										<a
+											href="#"
+											class={ `nav-link ${isActive(CurrentTab.value === "search")} text-dark` }
+											onClick={ (e: Event): void => {
+												e.preventDefault();
+												CurrentTab.set("search");
+											} }
+										>
+											<Icon icon="search" class="me-1" />
+											<Locale k="WORLD_VIEW_EXPLORATION" />
+										</a>
+									</li>
+								</>
+								: <></>
+							}
 						</ul>
 					</div>
 
@@ -503,116 +519,220 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 									<Locale k="WORLD_VIEW_SELECT_NODE" />
 								</div>
 								: <div class="row">
-									<div class="col-12 col-md-6">
-										<div class="card text-dark">
-											<div class="card-header">
-												<Locale k="WORLD_VIEW_CLEAR_REWARDS" />
-											</div>
-											<div class="card-body">
-												<div
-													class={ `row row-cols-1 row-cols-lg-${RewardDrops.filter(x => !x.am).length === 0 ? 1 : 2} px-2` }
-												>
-													{ RewardDrops.filter(x => !x.am).length === 0
-														? <div class="text-center py-4 text-secondary">
-															<Locale k="WORLD_VIEW_CLEAR_REWARDS_NONE" />
+									{ selectedValue && selectedValue.type !== STAGE_SUB_TYPE.STORY
+										? <>
+											<div class="col-12 col-md-6">
+												<div class="card text-dark">
+													<div class="card-header">
+														<Locale k="WORLD_VIEW_CLEAR_REWARDS" />
+													</div>
+													<div class="card-body">
+														<div
+															class={ `row row-cols-1 row-cols-lg-${RewardDrops.filter(x => !x.am).length === 0 ? 1 : 2} px-2` }
+														>
+															{ RewardDrops.filter(x => !x.am).length === 0
+																? <div class="text-center py-4 text-secondary">
+																	<Locale k="WORLD_VIEW_CLEAR_REWARDS_NONE" />
+																</div>
+																: RewardDrops.filter(x => !x.am)
+																	.map((reward, i) => {
+																		if ("cash" in reward)
+																			return <DropRes res="cash" count={ reward.cash } />;
+																		if ("metal" in reward)
+																			return <DropRes res="metal" count={ reward.metal } />;
+																		if ("nutrient" in reward)
+																			return <DropRes res="nutrient" count={ reward.nutrient } />;
+																		if ("power" in reward)
+																			return <DropRes res="power" count={ reward.power } />;
+																		if ("unit" in reward) {
+																			return <Link class="drop-unit" href={ `/units/${reward.unit.uid}` }>
+																				<DropUnit id={ reward.unit.uid } />
+																			</Link>;
+																		}
+																		if ("equip" in reward) {
+																			return <Link class="drop-equip"
+																				href={ `/equips/${reward.equip.fullKey}` }
+																				onClick={ (e: Event): void => {
+																					e.preventDefault();
+																					e.stopPropagation();
+																					selectedEquip.set(reward.equip);
+																					equipModalDisplay.set(true);
+																				} }
+																			>
+																				<DropEquip equip={ reward.equip } count={ reward.count } />
+																			</Link>;
+																		}
+																		return <DropItem item={ reward.consumable } count={ reward.count } />;
+																	})
+																	.map(el => <div class="p-0">{ el }</div>)
+															}
 														</div>
-														: RewardDrops.filter(x => !x.am)
-															.map((reward, i) => {
-																if ("cash" in reward)
-																	return <DropRes res="cash" count={ reward.cash } />;
-																if ("metal" in reward)
-																	return <DropRes res="metal" count={ reward.metal } />;
-																if ("nutrient" in reward)
-																	return <DropRes res="nutrient" count={ reward.nutrient } />;
-																if ("power" in reward)
-																	return <DropRes res="power" count={ reward.power } />;
-																if ("unit" in reward) {
-																	return <Link class="drop-unit" href={ `/units/${reward.unit.uid}` }>
-																		<DropUnit id={ reward.unit.uid } />
-																	</Link>;
-																}
-																if ("equip" in reward) {
-																	return <Link class="drop-equip"
-																		href={ `/equips/${reward.equip.fullKey}` }
-																		onClick={ (e: Event): void => {
-																			e.preventDefault();
-																			e.stopPropagation();
-																			selectedEquip.set(reward.equip);
-																			equipModalDisplay.set(true);
-																		} }
-																	>
-																		<DropEquip equip={ reward.equip } count={ reward.count } />
-																	</Link>;
-																}
-																return <DropItem item={ reward.consumable } count={ reward.count } />;
-															})
-															.map(el => <div class="p-0">{ el }</div>)
-													}
+													</div>
+												</div>
+												<div class="card text-dark mt-2">
+													<div class="card-header">
+														<Locale k="WORLD_VIEW_4STAR_REWARDS" />
+													</div>
+													<div class="card-body">
+														<div
+															class={ `row row-cols-1 row-cols-lg-${RewardDrops.filter(x => x.am).length === 0 ? 1 : 2} px-2` }
+														>
+															{ RewardDrops.filter(x => x.am).length === 0
+																? <div class="text-center py-4 text-secondary">
+																	<Locale k="WORLD_VIEW_4START_REWARDS_NONE" />
+																</div>
+																: RewardDrops.filter(x => x.am)
+																	.map((reward, i) => {
+																		if ("cash" in reward)
+																			return <DropRes res="cash" count={ reward.cash } am />;
+																		if ("metal" in reward)
+																			return <DropRes res="metal" count={ reward.metal } am />;
+																		if ("nutrient" in reward)
+																			return <DropRes res="nutrient" count={ reward.nutrient } am />;
+																		if ("power" in reward)
+																			return <DropRes res="power" count={ reward.power } am />;
+																		if ("unit" in reward) {
+																			return <Link class="drop-unit" href={ `/units/${reward.unit.uid}` }>
+																				<DropUnit id={ reward.unit.uid } />
+																			</Link>;
+																		}
+																		if ("equip" in reward) {
+																			return <Link class="drop-equip"
+																				href={ `/equips/${reward.equip.fullKey}` }
+																				onClick={ (e: Event): void => {
+																					e.preventDefault();
+																					e.stopPropagation();
+																					selectedEquip.set(reward.equip);
+																					equipModalDisplay.set(true);
+																				} }
+																			>
+																				<DropEquip equip={ reward.equip } count={ reward.count } />
+																			</Link>;
+																		}
+																		return <DropItem item={ reward.consumable } count={ reward.count } />;
+																	})
+																	.map(el => <div class="p-0">{ el }</div>)
+															}
+														</div>
+													</div>
 												</div>
 											</div>
-										</div>
-										<div class="card text-dark mt-2">
-											<div class="card-header">
-												<Locale k="WORLD_VIEW_4STAR_REWARDS" />
-											</div>
-											<div class="card-body">
-												<div
-													class={ `row row-cols-1 row-cols-lg-${RewardDrops.filter(x => x.am).length === 0 ? 1 : 2} px-2` }
-												>
-													{ RewardDrops.filter(x => x.am).length === 0
-														? <div class="text-center py-4 text-secondary">
-															<Locale k="WORLD_VIEW_4START_REWARDS_NONE" />
-														</div>
-														: RewardDrops.filter(x => x.am)
-															.map((reward, i) => {
-																if ("cash" in reward)
-																	return <DropRes res="cash" count={ reward.cash } am />;
-																if ("metal" in reward)
-																	return <DropRes res="metal" count={ reward.metal } am />;
-																if ("nutrient" in reward)
-																	return <DropRes res="nutrient" count={ reward.nutrient } am />;
-																if ("power" in reward)
-																	return <DropRes res="power" count={ reward.power } am />;
-																if ("unit" in reward) {
-																	return <Link class="drop-unit" href={ `/units/${reward.unit.uid}` }>
-																		<DropUnit id={ reward.unit.uid } />
-																	</Link>;
-																}
-																if ("equip" in reward) {
-																	return <Link class="drop-equip"
-																		href={ `/equips/${reward.equip.fullKey}` }
-																		onClick={ (e: Event): void => {
-																			e.preventDefault();
-																			e.stopPropagation();
-																			selectedEquip.set(reward.equip);
-																			equipModalDisplay.set(true);
-																		} }
-																	>
-																		<DropEquip equip={ reward.equip } count={ reward.count } />
-																	</Link>;
-																}
-																return <DropItem item={ reward.consumable } count={ reward.count } />;
-															})
-															.map(el => <div class="p-0">{ el }</div>)
-													}
+											<div class="col-12 col-md-6 mt-md-0 mt-4">
+												<div class="card text-dark">
+													<div class="card-header">
+														<Locale k="WORLD_VIEW_CLEAR_CONDITION" />
+													</div>
+													<div class="card-body">
+														<ul class="list-group">
+															{ selectedValue.missions.map(m => <li class="list-group-item">
+																★ <Locale k={ m } components={ { ref: UnitReference } } />
+															</li>) }
+														</ul>
+													</div>
 												</div>
 											</div>
-										</div>
-									</div>
-									<div class="col-12 col-md-6 mt-md-0 mt-4">
-										<div class="card text-dark">
-											<div class="card-header">
-												<Locale k="WORLD_VIEW_CLEAR_CONDITION" />
+										</>
+										: <>
+											<div class="col-12 col-md-6">
+												<div class="card text-dark">
+													<div class="card-header">
+														<Locale k="WORLD_VIEW_CLEAR_REWARDS" />
+													</div>
+													<div class="card-body">
+														<div
+															class={ `row row-cols-1 row-cols-lg-${RewardDrops.filter(x => !x.am).length === 0 ? 1 : 2} px-2` }
+														>
+															{ RewardDrops.filter(x => !x.am).length === 0
+																? <div class="text-center py-4 text-secondary">
+																	<Locale k="WORLD_VIEW_CLEAR_REWARDS_NONE" />
+																</div>
+																: RewardDrops.filter(x => !x.am)
+																	.map((reward, i) => {
+																		if ("cash" in reward)
+																			return <DropRes res="cash" count={ reward.cash } />;
+																		if ("metal" in reward)
+																			return <DropRes res="metal" count={ reward.metal } />;
+																		if ("nutrient" in reward)
+																			return <DropRes res="nutrient" count={ reward.nutrient } />;
+																		if ("power" in reward)
+																			return <DropRes res="power" count={ reward.power } />;
+																		if ("unit" in reward) {
+																			return <Link class="drop-unit" href={ `/units/${reward.unit.uid}` }>
+																				<DropUnit id={ reward.unit.uid } />
+																			</Link>;
+																		}
+																		if ("equip" in reward) {
+																			return <Link class="drop-equip"
+																				href={ `/equips/${reward.equip.fullKey}` }
+																				onClick={ (e: Event): void => {
+																					e.preventDefault();
+																					e.stopPropagation();
+																					selectedEquip.set(reward.equip);
+																					equipModalDisplay.set(true);
+																				} }
+																			>
+																				<DropEquip equip={ reward.equip } count={ reward.count } />
+																			</Link>;
+																		}
+																		return <DropItem item={ reward.consumable } count={ reward.count } />;
+																	})
+																	.map(el => <div class="p-0">{ el }</div>)
+															}
+														</div>
+													</div>
+												</div>
 											</div>
-											<div class="card-body">
-												<ul class="list-group">
-													{ selectedValue.missions.map(m => <li class="list-group-item">
-														★ <Locale k={ m } components={ { ref: UnitReference } } />
-													</li>) }
-												</ul>
+											<div class="col-12 col-md-6">
+												<div class="card text-dark">
+													<div class="card-header">
+														<Locale k="WORLD_VIEW_4STAR_REWARDS" />
+													</div>
+													<div class="card-body">
+														<div
+															class={ `row row-cols-1 row-cols-lg-${RewardDrops.filter(x => x.am).length === 0 ? 1 : 2} px-2` }
+														>
+															{ RewardDrops.filter(x => x.am).length === 0
+																? <div class="text-center py-4 text-secondary">
+																	<Locale k="WORLD_VIEW_4START_REWARDS_NONE" />
+																</div>
+																: RewardDrops.filter(x => x.am)
+																	.map((reward, i) => {
+																		if ("cash" in reward)
+																			return <DropRes res="cash" count={ reward.cash } am />;
+																		if ("metal" in reward)
+																			return <DropRes res="metal" count={ reward.metal } am />;
+																		if ("nutrient" in reward)
+																			return <DropRes res="nutrient" count={ reward.nutrient } am />;
+																		if ("power" in reward)
+																			return <DropRes res="power" count={ reward.power } am />;
+																		if ("unit" in reward) {
+																			return <Link class="drop-unit" href={ `/units/${reward.unit.uid}` }>
+																				<DropUnit id={ reward.unit.uid } />
+																			</Link>;
+																		}
+																		if ("equip" in reward) {
+																			return <Link class="drop-equip"
+																				href={ `/equips/${reward.equip.fullKey}` }
+																				onClick={ (e: Event): void => {
+																					e.preventDefault();
+																					e.stopPropagation();
+																					selectedEquip.set(reward.equip);
+																					equipModalDisplay.set(true);
+																				} }
+																			>
+																				<DropEquip equip={ reward.equip } count={ reward.count } />
+																			</Link>;
+																		}
+																		return <DropItem item={ reward.consumable } count={ reward.count } />;
+																	})
+																	.map(el => <div class="p-0">{ el }</div>)
+															}
+														</div>
+													</div>
+												</div>
 											</div>
-										</div>
-									</div>
+										</>
+									}
 								</div>
 							}
 						</div>
