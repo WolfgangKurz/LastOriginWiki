@@ -145,7 +145,13 @@ const Units: FunctionalComponent = () => {
 					].filter(y => y > -1));
 
 				return FilterableUnitDB
-					.filter(x => new RegExp(Filters.SearchText, "i").test(LocaleGet(`UNIT_${x.uid}`)))
+					.filter(x => {
+						try {
+							return new RegExp(Filters.SearchText, "i").test(LocaleGet(`UNIT_${x.uid}`));
+						} catch {
+							return false;
+						}
+					})
 					// .filter(x => {
 					// 	if (Filters.RoguelikeSkill.length > 0)
 					// 		return Filters.RoguelikeSkill.some(y => x.roguelike.includes(y));
