@@ -310,7 +310,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 
 		{ props.collapsed
 			? <>
-				{ skin.artist
+				{ skin.artist || categories.length > 0
 					? <div class="alert alert-primary py-2">
 						{ categories.length > 0
 							? <div class="mb-1">
@@ -321,7 +321,12 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 							: <></>
 						}
 
-						<Locale k="UNIT_VIEW_ILLUSTRATOR" /> : { skin.artist }
+						{ skin.artist
+							? <>
+								<Locale k="UNIT_VIEW_ILLUSTRATOR" /> : { skin.artist }
+							</>
+							: <></>
+						}
 					</div>
 					: <></>
 				}
