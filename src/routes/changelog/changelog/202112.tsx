@@ -15,6 +15,7 @@ const Changelog: FunctionalComponent = () => <>
 			<li><span class="badge bg-warning text-dark">전투원정보</span>에 <span class="badge bg-primary">스킨 보기</span>가 추가되었습니다.</li>
 			<li>전투원의 스킨 정보 영역에 스킨 카테고리가 추가되었습니다.</li>
 			<li>신규 적의 정보가 추가되었습니다.</li>
+			<li>신규 BGM 정보가 추가되었습니다.</li>
 		</> }
 		update={ <>
 			<li>전투원 스킨의 부가 정보가 인게임 스킨의 추가 요소에 맞게 변경되었습니다.</li>
