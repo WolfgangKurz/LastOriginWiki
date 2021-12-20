@@ -6,6 +6,15 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11440" date="2021-12-20"
+		bugfix={ <>
+			<li>일부 버프 조건이 표시되지 않던 점을 수정했습니다.</li>
+			<li>전투원 검색 시 오류가 발생하여 페이지가 멎을 수 있던 점을 수정했습니다.</li>
+		</> }
+		update={ <>
+			<li>일부 적 정보가 수정되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11433" date="2021-12-20"
 		new={ <>
 			<li>신규 전투원 <span class="badge bg-warning text-dark">페레그리누스</span>의 정보가 추가되었습니다.</li>
