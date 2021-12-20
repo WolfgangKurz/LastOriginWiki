@@ -141,6 +141,19 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 			return <span class={ `on-subbadge ${style["on-subbadge"]} ${color ? `text-${color}` : ""}` }>
 				<Locale plain k={ `ENEMY_${key}` } />
 			</span>;
+		} else if (name.startsWith("Skill_")) {
+			const char = name.replace(/^Skill_(.+)_(N|CH)_[a-zA-Z0-9]+$/, "$1");
+			const fc = name.replace(/^.+_(N|CH)_([a-zA-Z0-9]+)$/, "$1") === "CH";
+			const idx = name.replace(/^.+_(N|CH)_([a-zA-Z0-9]+)$/, "$2");
+
+			return <Locale plain k="BUFF_BADGE_A_OF_B" p={ [
+				<span class={ `SubBadge ${style.SubBadge} ${color ? `text-${color}` : ""}` }>
+					<Locale plain k={ `UNIT_${char}` } />
+				</span>,
+				<span class={ `SubBadge ${style.SubBadge} ${color ? `text-${color}` : ""}` }>
+					<Locale plain k={ `UNIT_SKILL_${char}_${fc ? "F" : ""}${idx}` } />
+				</span>,
+			] } />;
 		}
 		return <span class={ `on-subbadge ${style["on-subbadge"]} ${color ? `text-${color}` : ""}` }>
 			<Locale plain k={ name } />
@@ -443,6 +456,8 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 							<ElemIcon elem={ trigger.damaged } class="me-1 mb-0" />
 							<Locale plain k="BUFFTRIGGER_DAMAGED_THUNDER" />
 						</>;
+					case "skill":
+						return <Locale plain k="BUFFTRIGGER_DAMAGED_SKILL" p={ [convertBuff(trigger.key)] } />;
 				}
 			} else if ("hp>=" in trigger) {
 				if (typeof trigger["hp>="] === "string")
