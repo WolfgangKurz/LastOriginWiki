@@ -6,14 +6,15 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 11427" date="2021-12-18"
+	<ChangelogItem title="Build 11433" date="2021-12-20"
 		new={ <>
 			<li>신규 전투원 <span class="badge bg-warning text-dark">페레그리누스</span>의 정보가 추가되었습니다.</li>
 			<li>신규 장비 <span class="badge bg-warning text-dark">핫팩</span>의 정보가 추가되었습니다.</li>
 			<li>이벤트 <span class="badge bg-warning text-dark">영원한 겨울의 방주</span>의 정보가 추가되었습니다.</li>
-			<li><span class="badge bg-warning text-dark">영원한 겨울의 방주</span>의 지도가 새 형식으로 표시됩니다.</li>
+			<li><span class="badge bg-warning text-dark">영원한 겨울의 방주</span>의 지도가 새 형식으로 표시됩니다. (완전하지 않습니다)</li>
 			<li><span class="badge bg-warning text-dark">전투원정보</span>에 <span class="badge bg-primary">스킨 보기</span>가 추가되었습니다.</li>
 			<li>전투원의 스킨 정보 영역에 스킨 카테고리가 추가되었습니다.</li>
+			<li>신규 적의 정보가 추가되었습니다.</li>
 		</> }
 		update={ <>
 			<li>전투원 스킨의 부가 정보가 인게임 스킨의 추가 요소에 맞게 변경되었습니다.</li>

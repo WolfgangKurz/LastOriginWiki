@@ -797,16 +797,14 @@ export enum STAGE_SUB_TYPE {
 }
 
 
-export enum SKIN_PART_TYPE {
+export enum SKIN_IN_PARTS {
 	NONE = 0,
-	L2D = 1,
+	LOBBY_ANIMATION = 1,
 	VOICE = 2,
-	FX = 3,
-	MOTION = 4,
+	SD_EFFECT = 3,
+	SD_ANIMATION = 4,
 
-	// PROPS = 4,
-	// SIMPLIFIABLE = 4,
-
-	BG = 5,
-	DAMAGED = 6,
+	/** BG or something simplifiable */
+	PROPS = 5,
+	DAMAGE_IMAGE = 6,
 }
