@@ -8,7 +8,7 @@ import { LocaleGet } from "@/components/locale";
 export type ImageExtensionTypes = "webp" | "png";
 export const ImageExtensionList: ImageExtensionTypes[] = ["webp", "png"];
 
-export const IsBeta = true;
+export const IsBeta = false;
 export const IsDev = import.meta.env.DEV;
 
 export const Host = import.meta.env.DEV
