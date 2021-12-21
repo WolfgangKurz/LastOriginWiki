@@ -6,6 +6,12 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11443" date="2021-12-21"
+		bugfix={ <>
+			<li>일부 스킨 카테고리가 비정상적으로 표시되는 문제를 수정했습니다.</li>
+			<li>전투 노드에서 적 목록을 선택 후 스토리 노드를 선택하면 페이지가 멎는 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11440" date="2021-12-20"
 		bugfix={ <>
 			<li>일부 버프 조건이 표시되지 않던 점을 수정했습니다.</li>

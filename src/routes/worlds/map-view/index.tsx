@@ -285,6 +285,8 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 			}
 
 			function NodeChange (node: MapNodeEntity): void {
+				if (node.type === STAGE_SUB_TYPE.STORY)
+					CurrentTab.set("reward");
 				selectedWave.set(0);
 				route(`/worlds/${props.wid}/${props.mid}/${node ? node.text : ""}`);
 			}

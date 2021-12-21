@@ -315,7 +315,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 						{ categories.length > 0
 							? <div class="mb-1">
 								{ categories.map(x => <span class="badge bg-success me-1">
-									<Locale k={ `SKIN_CATEGORY_${x}` } />
+									<Locale plain k={ `SKIN_CATEGORY_${x}` } />
 								</span>) }
 							</div>
 							: <></>
@@ -333,10 +333,10 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 				{ skin.sid && !skin.isPro
 					? <div class={ `card mb-2 skin-name-desc ${!skin.artist ? "mt-2" : ""}` }>
 						<div class="card-header">
-							<Locale k={ `CONSUMABLE_Skin_${unit.uid}_${ssid}` } plain />
+							<Locale plain k={ `CONSUMABLE_Skin_${unit.uid}_${ssid}` } />
 						</div>
 						<div class="card-body">
-							<Locale k={ `CONSUMABLE_DESC_Skin_${unit.uid}_${skin.sid}` } plain />
+							<Locale plain k={ `CONSUMABLE_DESC_Skin_${unit.uid}_${skin.sid}` } />
 						</div>
 					</div>
 					: <></>
