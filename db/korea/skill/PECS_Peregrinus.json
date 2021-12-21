@@ -2864,7 +2864,7 @@
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
-                    "type": 64,
+                    "type": 63,
                     "metamolphosis": true
                   },
                   "overlap": 4
@@ -2952,15 +2952,13 @@
                     "level": "0"
                   },
                   "attr": 3,
-                  "erase": {
-                    "rounds": 999
-                  },
+                  "erase": {},
                   "value": {
                     "isBuff": true,
-                    "type": 64,
+                    "type": 63,
                     "metamolphosis": true
                   },
-                  "overlap": 0
+                  "overlap": 4
                 }
               ],
               "maxStack": 0
@@ -2988,7 +2986,7 @@
                 {
                   "icon": "BuffIcon_ACCURACY_UP",
                   "desc": {
-                    "desc": "팔콘 폼 : 모드 전환 준비",
+                    "desc": "모드 전환 준비",
                     "type": 0,
                     "value": "1",
                     "level": "0"
@@ -3090,7 +3088,7 @@
           {
             "icon": "BuffIcon_ACCURACY_UP",
             "desc": {
-              "desc": "팔콘 폼 : 모드 전환 준비",
+              "desc": "모드 전환 준비",
               "type": 0,
               "value": "1",
               "level": "0"
@@ -7258,7 +7256,7 @@
   },
   "F2": {
     "key": "F2",
-    "icon": "AssaultAttack",
+    "icon": "BeamShot",
     "target": "enemy",
     "buffs": {
       "index": [
@@ -7275,7 +7273,7 @@
       ],
       "data": [
         {
-          "rate": 1.7,
+          "rate": 1.65,
           "type": 0,
           "range": 9,
           "ap": 10,
@@ -7314,7 +7312,7 @@
                   "desc": {
                     "desc": "휴먼 폼 모드 해제",
                     "type": 1,
-                    "value": "64",
+                    "value": "63",
                     "level": "0"
                   },
                   "attr": 3,
@@ -7325,7 +7323,7 @@
                     "isBuff": true,
                     "type": 69,
                     "off": {
-                      "type": 64
+                      "type": 63
                     }
                   },
                   "overlap": 4
@@ -8012,7 +8010,7 @@
                 {
                   "icon": "BuffIcon_REMOVE_DEBUFF",
                   "desc": {
-                    "desc": "팔콘 폼 : 모드 전환 종료",
+                    "desc": "모드 전환 종료",
                     "type": 0,
                     "value": "6",
                     "level": "0"
@@ -8036,7 +8034,7 @@
           ]
         },
         {
-          "rate": 1.9,
+          "rate": 1.8,
           "type": 0,
           "range": 9,
           "ap": 10,
@@ -8075,7 +8073,7 @@
                   "desc": {
                     "desc": "휴먼 폼 모드 해제",
                     "type": 1,
-                    "value": "64",
+                    "value": "63",
                     "level": "0"
                   },
                   "attr": 3,
@@ -8086,7 +8084,7 @@
                     "isBuff": true,
                     "type": 69,
                     "off": {
-                      "type": 64
+                      "type": 63
                     }
                   },
                   "overlap": 4
@@ -8773,7 +8771,768 @@
                 {
                   "icon": "BuffIcon_REMOVE_DEBUFF",
                   "desc": {
-                    "desc": "팔콘 폼 : 모드 전환 종료",
+                    "desc": "모드 전환 종료",
+                    "type": 0,
+                    "value": "6",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 6
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.95,
+          "type": 0,
+          "range": 9,
+          "ap": 10,
+          "grid": "4>0.75,0.75,0.75,1,1,1,0.75,0.75,0.75",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Peregrinus_CH_2",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "휴먼 폼 모드 해제",
+                    "type": 1,
+                    "value": "63",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 63
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "하피 왕의 숨결 : 방어막 해제",
+                    "type": 0,
+                    "value": "38",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 38,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "하피 왕의 숨결 : 방어 관통{0}%",
+                    "type": 1,
+                    "value": "0.450000",
+                    "level": "0.050000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "45%",
+                      "per": "5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}% (적1기)",
+                    "type": 1,
+                    "value": "-0.055000",
+                    "level": "-0.005000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 110,
+                    "disperse": {
+                      "base": "-5.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Peregrinus_CH_21",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "하피 왕의 숨결 : 방어막 해제",
+                    "type": 1,
+                    "value": "38",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 38,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Peregrinus_CH_22",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "하피 왕의 숨결 : 방어 관통{0}%",
+                    "type": 1,
+                    "value": "0.450000",
+                    "level": "0.050000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "45%",
+                      "per": "5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Peregrinus_CH_23",
+              "on": "attack_success",
+              "if": {
+                "unitCount": {
+                  "filter": "enemy",
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
+                    "type": 1,
+                    "value": "-0.055000",
+                    "level": "-0.005000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 110,
+                    "disperse": {
+                      "base": "-5.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Peregrinus_CH_24",
+              "on": "attack_success",
+              "if": {
+                "unitCount": {
+                  "filter": "enemy",
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 2
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
+                    "type": 1,
+                    "value": "-0.110000",
+                    "level": "-0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 110,
+                    "disperse": {
+                      "base": "-11%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Peregrinus_CH_25",
+              "on": "attack_success",
+              "if": {
+                "unitCount": {
+                  "filter": "enemy",
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 3
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
+                    "type": 1,
+                    "value": "-0.165000",
+                    "level": "-0.015000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 110,
+                    "disperse": {
+                      "base": "-16.5%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Peregrinus_CH_26",
+              "on": "attack_success",
+              "if": {
+                "unitCount": {
+                  "filter": "enemy",
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
+                    "type": 1,
+                    "value": "-0.220000",
+                    "level": "-0.020000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 110,
+                    "disperse": {
+                      "base": "-22%",
+                      "per": "-2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Peregrinus_CH_27",
+              "on": "attack_success",
+              "if": {
+                "unitCount": {
+                  "filter": "enemy",
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 5
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
+                    "type": 1,
+                    "value": "-0.275000",
+                    "level": "-0.025000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 110,
+                    "disperse": {
+                      "base": "-27.5%",
+                      "per": "-2.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Peregrinus_CH_28",
+              "on": "attack_success",
+              "if": {
+                "unitCount": {
+                  "filter": "enemy",
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
+                    "type": 1,
+                    "value": "-0.330000",
+                    "level": "-0.030000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 110,
+                    "disperse": {
+                      "base": "-33%",
+                      "per": "-3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Peregrinus_CH_29",
+              "on": "attack_success",
+              "if": {
+                "unitCount": {
+                  "filter": "enemy",
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 7
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
+                    "type": 1,
+                    "value": "-0.385000",
+                    "level": "-0.035000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 110,
+                    "disperse": {
+                      "base": "-38.5%",
+                      "per": "-3.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Peregrinus_CH_210",
+              "on": "attack_success",
+              "if": {
+                "unitCount": {
+                  "filter": "enemy",
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 8
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
+                    "type": 1,
+                    "value": "-0.440000",
+                    "level": "-0.040000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 110,
+                    "disperse": {
+                      "base": "-44%",
+                      "per": "-4%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Peregrinus_CH_211",
+              "on": "attack_success",
+              "if": {
+                "unitCount": {
+                  "filter": "enemy",
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 9
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
+                    "type": 1,
+                    "value": "-0.495000",
+                    "level": "-0.045000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 110,
+                    "disperse": {
+                      "base": "-49.5%",
+                      "per": "-4.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Peregrinus_CH_212",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "모드 전환 종료",
                     "type": 0,
                     "value": "6",
                     "level": "0"
@@ -8836,7 +9595,7 @@
                   "desc": {
                     "desc": "휴먼 폼 모드 해제",
                     "type": 1,
-                    "value": "64",
+                    "value": "63",
                     "level": "0"
                   },
                   "attr": 3,
@@ -8847,7 +9606,7 @@
                     "isBuff": true,
                     "type": 69,
                     "off": {
-                      "type": 64
+                      "type": 63
                     }
                   },
                   "overlap": 4
@@ -9534,7 +10293,7 @@
                 {
                   "icon": "BuffIcon_REMOVE_DEBUFF",
                   "desc": {
-                    "desc": "팔콘 폼 : 모드 전환 종료",
+                    "desc": "모드 전환 종료",
                     "type": 0,
                     "value": "6",
                     "level": "0"
@@ -9558,7 +10317,7 @@
           ]
         },
         {
-          "rate": 2.3,
+          "rate": 2.25,
           "type": 0,
           "range": 9,
           "ap": 10,
@@ -9597,7 +10356,7 @@
                   "desc": {
                     "desc": "휴먼 폼 모드 해제",
                     "type": 1,
-                    "value": "64",
+                    "value": "63",
                     "level": "0"
                   },
                   "attr": 3,
@@ -9608,7 +10367,7 @@
                     "isBuff": true,
                     "type": 69,
                     "off": {
-                      "type": 64
+                      "type": 63
                     }
                   },
                   "overlap": 4
@@ -10295,7 +11054,7 @@
                 {
                   "icon": "BuffIcon_REMOVE_DEBUFF",
                   "desc": {
-                    "desc": "팔콘 폼 : 모드 전환 종료",
+                    "desc": "모드 전환 종료",
                     "type": 0,
                     "value": "6",
                     "level": "0"
@@ -10319,7 +11078,7 @@
           ]
         },
         {
-          "rate": 2.5,
+          "rate": 2.4,
           "type": 0,
           "range": 9,
           "ap": 10,
@@ -10358,7 +11117,7 @@
                   "desc": {
                     "desc": "휴먼 폼 모드 해제",
                     "type": 1,
-                    "value": "64",
+                    "value": "63",
                     "level": "0"
                   },
                   "attr": 3,
@@ -10369,7 +11128,7 @@
                     "isBuff": true,
                     "type": 69,
                     "off": {
-                      "type": 64
+                      "type": 63
                     }
                   },
                   "overlap": 4
@@ -11056,7 +11815,768 @@
                 {
                   "icon": "BuffIcon_REMOVE_DEBUFF",
                   "desc": {
-                    "desc": "팔콘 폼 : 모드 전환 종료",
+                    "desc": "모드 전환 종료",
+                    "type": 0,
+                    "value": "6",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 6
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.55,
+          "type": 0,
+          "range": 9,
+          "ap": 10,
+          "grid": "4>0.75,0.75,0.75,1,1,1,0.75,0.75,0.75",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Peregrinus_CH_2",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "휴먼 폼 모드 해제",
+                    "type": 1,
+                    "value": "63",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 63
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "하피 왕의 숨결 : 방어막 해제",
+                    "type": 0,
+                    "value": "38",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 38,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "하피 왕의 숨결 : 방어 관통{0}%",
+                    "type": 1,
+                    "value": "0.450000",
+                    "level": "0.050000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "45%",
+                      "per": "5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}% (적1기)",
+                    "type": 1,
+                    "value": "-0.055000",
+                    "level": "-0.005000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 110,
+                    "disperse": {
+                      "base": "-5.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Peregrinus_CH_21",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "하피 왕의 숨결 : 방어막 해제",
+                    "type": 1,
+                    "value": "38",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 38,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Peregrinus_CH_22",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "하피 왕의 숨결 : 방어 관통{0}%",
+                    "type": 1,
+                    "value": "0.450000",
+                    "level": "0.050000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "45%",
+                      "per": "5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Peregrinus_CH_23",
+              "on": "attack_success",
+              "if": {
+                "unitCount": {
+                  "filter": "enemy",
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
+                    "type": 1,
+                    "value": "-0.055000",
+                    "level": "-0.005000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 110,
+                    "disperse": {
+                      "base": "-5.5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Peregrinus_CH_24",
+              "on": "attack_success",
+              "if": {
+                "unitCount": {
+                  "filter": "enemy",
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 2
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
+                    "type": 1,
+                    "value": "-0.110000",
+                    "level": "-0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 110,
+                    "disperse": {
+                      "base": "-11%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Peregrinus_CH_25",
+              "on": "attack_success",
+              "if": {
+                "unitCount": {
+                  "filter": "enemy",
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 3
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
+                    "type": 1,
+                    "value": "-0.165000",
+                    "level": "-0.015000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 110,
+                    "disperse": {
+                      "base": "-16.5%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Peregrinus_CH_26",
+              "on": "attack_success",
+              "if": {
+                "unitCount": {
+                  "filter": "enemy",
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
+                    "type": 1,
+                    "value": "-0.220000",
+                    "level": "-0.020000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 110,
+                    "disperse": {
+                      "base": "-22%",
+                      "per": "-2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Peregrinus_CH_27",
+              "on": "attack_success",
+              "if": {
+                "unitCount": {
+                  "filter": "enemy",
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 5
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
+                    "type": 1,
+                    "value": "-0.275000",
+                    "level": "-0.025000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 110,
+                    "disperse": {
+                      "base": "-27.5%",
+                      "per": "-2.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Peregrinus_CH_28",
+              "on": "attack_success",
+              "if": {
+                "unitCount": {
+                  "filter": "enemy",
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
+                    "type": 1,
+                    "value": "-0.330000",
+                    "level": "-0.030000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 110,
+                    "disperse": {
+                      "base": "-33%",
+                      "per": "-3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Peregrinus_CH_29",
+              "on": "attack_success",
+              "if": {
+                "unitCount": {
+                  "filter": "enemy",
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 7
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
+                    "type": 1,
+                    "value": "-0.385000",
+                    "level": "-0.035000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 110,
+                    "disperse": {
+                      "base": "-38.5%",
+                      "per": "-3.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Peregrinus_CH_210",
+              "on": "attack_success",
+              "if": {
+                "unitCount": {
+                  "filter": "enemy",
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 8
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
+                    "type": 1,
+                    "value": "-0.440000",
+                    "level": "-0.040000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 110,
+                    "disperse": {
+                      "base": "-44%",
+                      "per": "-4%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Peregrinus_CH_211",
+              "on": "attack_success",
+              "if": {
+                "unitCount": {
+                  "filter": "enemy",
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 9
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
+                    "type": 1,
+                    "value": "-0.495000",
+                    "level": "-0.045000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 110,
+                    "disperse": {
+                      "base": "-49.5%",
+                      "per": "-4.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Peregrinus_CH_212",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "모드 전환 종료",
                     "type": 0,
                     "value": "6",
                     "level": "0"
@@ -11119,7 +12639,7 @@
                   "desc": {
                     "desc": "휴먼 폼 모드 해제",
                     "type": 1,
-                    "value": "64",
+                    "value": "63",
                     "level": "0"
                   },
                   "attr": 3,
@@ -11130,7 +12650,7 @@
                     "isBuff": true,
                     "type": 69,
                     "off": {
-                      "type": 64
+                      "type": 63
                     }
                   },
                   "overlap": 4
@@ -11817,7 +13337,7 @@
                 {
                   "icon": "BuffIcon_REMOVE_DEBUFF",
                   "desc": {
-                    "desc": "팔콘 폼 : 모드 전환 종료",
+                    "desc": "모드 전환 종료",
                     "type": 0,
                     "value": "6",
                     "level": "0"
@@ -11841,7 +13361,7 @@
           ]
         },
         {
-          "rate": 2.9,
+          "rate": 2.85,
           "type": 0,
           "range": 9,
           "ap": 10,
@@ -11880,7 +13400,7 @@
                   "desc": {
                     "desc": "휴먼 폼 모드 해제",
                     "type": 1,
-                    "value": "64",
+                    "value": "63",
                     "level": "0"
                   },
                   "attr": 3,
@@ -11891,7 +13411,7 @@
                     "isBuff": true,
                     "type": 69,
                     "off": {
-                      "type": 64
+                      "type": 63
                     }
                   },
                   "overlap": 4
@@ -12578,7 +14098,7 @@
                 {
                   "icon": "BuffIcon_REMOVE_DEBUFF",
                   "desc": {
-                    "desc": "팔콘 폼 : 모드 전환 종료",
+                    "desc": "모드 전환 종료",
                     "type": 0,
                     "value": "6",
                     "level": "0"
@@ -12602,7 +14122,7 @@
           ]
         },
         {
-          "rate": 3.1,
+          "rate": 3,
           "type": 0,
           "range": 9,
           "ap": 10,
@@ -12641,7 +14161,7 @@
                   "desc": {
                     "desc": "휴먼 폼 모드 해제",
                     "type": 1,
-                    "value": "64",
+                    "value": "63",
                     "level": "0"
                   },
                   "attr": 3,
@@ -12652,7 +14172,7 @@
                     "isBuff": true,
                     "type": 69,
                     "off": {
-                      "type": 64
+                      "type": 63
                     }
                   },
                   "overlap": 4
@@ -13339,1529 +14859,7 @@
                 {
                   "icon": "BuffIcon_REMOVE_DEBUFF",
                   "desc": {
-                    "desc": "팔콘 폼 : 모드 전환 종료",
-                    "type": 0,
-                    "value": "6",
-                    "level": "0"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 69,
-                    "off": {
-                      "type": 6
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            }
-          ]
-        },
-        {
-          "rate": 3.3,
-          "type": 0,
-          "range": 9,
-          "ap": 10,
-          "grid": "4>0.75,0.75,0.75,1,1,1,0.75,0.75,0.75",
-          "target_ground": true,
-          "summon": null,
-          "use": null,
-          "dismiss_guard": true,
-          "acc_bonus": 0,
-          "buff_rate": 100,
-          "buffs": [
-            {
-              "key": "Effect_PECS_Peregrinus_CH_2",
-              "on": {
-                "after": "use_skill"
-              },
-              "if": false,
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_REMOVE_DEBUFF",
-                  "desc": {
-                    "desc": "휴먼 폼 모드 해제",
-                    "type": 1,
-                    "value": "64",
-                    "level": "0"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 69,
-                    "off": {
-                      "type": 64
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_REMOVE_BUFF",
-                  "desc": {
-                    "desc": "하피 왕의 숨결 : 방어막 해제",
-                    "type": 0,
-                    "value": "38",
-                    "level": "0"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 88,
-                    "off": {
-                      "type": 38,
-                      "target": 0
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
-                  "desc": {
-                    "desc": "하피 왕의 숨결 : 방어 관통{0}%",
-                    "type": 1,
-                    "value": "0.450000",
-                    "level": "0.050000"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 58,
-                    "penetration": {
-                      "base": "45%",
-                      "per": "5%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}% (적1기)",
-                    "type": 1,
-                    "value": "-0.055000",
-                    "level": "-0.005000"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 110,
-                    "disperse": {
-                      "base": "-5.5%",
-                      "per": "-0.5%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_PECS_Peregrinus_CH_21",
-              "on": "attack_success",
-              "if": false,
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_REMOVE_BUFF",
-                  "desc": {
-                    "desc": "하피 왕의 숨결 : 방어막 해제",
-                    "type": 1,
-                    "value": "38",
-                    "level": "0"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 88,
-                    "off": {
-                      "type": 38,
-                      "target": 0
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_PECS_Peregrinus_CH_22",
-              "on": "attack_success",
-              "if": false,
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
-                  "desc": {
-                    "desc": "하피 왕의 숨결 : 방어 관통{0}%",
-                    "type": 1,
-                    "value": "0.450000",
-                    "level": "0.050000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 58,
-                    "penetration": {
-                      "base": "45%",
-                      "per": "5%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_PECS_Peregrinus_CH_23",
-              "on": "attack_success",
-              "if": {
-                "unitCount": {
-                  "filter": "enemy",
-                  "type": [
-                    0,
-                    2,
-                    1
-                  ],
-                  "count": 1
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
-                    "type": 1,
-                    "value": "-0.055000",
-                    "level": "-0.005000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 110,
-                    "disperse": {
-                      "base": "-5.5%",
-                      "per": "-0.5%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_PECS_Peregrinus_CH_24",
-              "on": "attack_success",
-              "if": {
-                "unitCount": {
-                  "filter": "enemy",
-                  "type": [
-                    0,
-                    2,
-                    1
-                  ],
-                  "count": 2
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
-                    "type": 1,
-                    "value": "-0.110000",
-                    "level": "-0.010000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 110,
-                    "disperse": {
-                      "base": "-11%",
-                      "per": "-1%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_PECS_Peregrinus_CH_25",
-              "on": "attack_success",
-              "if": {
-                "unitCount": {
-                  "filter": "enemy",
-                  "type": [
-                    0,
-                    2,
-                    1
-                  ],
-                  "count": 3
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
-                    "type": 1,
-                    "value": "-0.165000",
-                    "level": "-0.015000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 110,
-                    "disperse": {
-                      "base": "-16.5%",
-                      "per": "-1.5%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_PECS_Peregrinus_CH_26",
-              "on": "attack_success",
-              "if": {
-                "unitCount": {
-                  "filter": "enemy",
-                  "type": [
-                    0,
-                    2,
-                    1
-                  ],
-                  "count": 4
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
-                    "type": 1,
-                    "value": "-0.220000",
-                    "level": "-0.020000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 110,
-                    "disperse": {
-                      "base": "-22%",
-                      "per": "-2%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_PECS_Peregrinus_CH_27",
-              "on": "attack_success",
-              "if": {
-                "unitCount": {
-                  "filter": "enemy",
-                  "type": [
-                    0,
-                    2,
-                    1
-                  ],
-                  "count": 5
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
-                    "type": 1,
-                    "value": "-0.275000",
-                    "level": "-0.025000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 110,
-                    "disperse": {
-                      "base": "-27.5%",
-                      "per": "-2.5%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_PECS_Peregrinus_CH_28",
-              "on": "attack_success",
-              "if": {
-                "unitCount": {
-                  "filter": "enemy",
-                  "type": [
-                    0,
-                    2,
-                    1
-                  ],
-                  "count": 6
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
-                    "type": 1,
-                    "value": "-0.330000",
-                    "level": "-0.030000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 110,
-                    "disperse": {
-                      "base": "-33%",
-                      "per": "-3%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_PECS_Peregrinus_CH_29",
-              "on": "attack_success",
-              "if": {
-                "unitCount": {
-                  "filter": "enemy",
-                  "type": [
-                    0,
-                    2,
-                    1
-                  ],
-                  "count": 7
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
-                    "type": 1,
-                    "value": "-0.385000",
-                    "level": "-0.035000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 110,
-                    "disperse": {
-                      "base": "-38.5%",
-                      "per": "-3.5%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_PECS_Peregrinus_CH_210",
-              "on": "attack_success",
-              "if": {
-                "unitCount": {
-                  "filter": "enemy",
-                  "type": [
-                    0,
-                    2,
-                    1
-                  ],
-                  "count": 8
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
-                    "type": 1,
-                    "value": "-0.440000",
-                    "level": "-0.040000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 110,
-                    "disperse": {
-                      "base": "-44%",
-                      "per": "-4%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_PECS_Peregrinus_CH_211",
-              "on": "attack_success",
-              "if": {
-                "unitCount": {
-                  "filter": "enemy",
-                  "type": [
-                    0,
-                    2,
-                    1
-                  ],
-                  "count": 9
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
-                    "type": 1,
-                    "value": "-0.495000",
-                    "level": "-0.045000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 110,
-                    "disperse": {
-                      "base": "-49.5%",
-                      "per": "-4.5%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_PECS_Peregrinus_CH_212",
-              "on": {
-                "after": "use_skill"
-              },
-              "if": false,
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_REMOVE_DEBUFF",
-                  "desc": {
-                    "desc": "팔콘 폼 : 모드 전환 종료",
-                    "type": 0,
-                    "value": "6",
-                    "level": "0"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 69,
-                    "off": {
-                      "type": 6
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            }
-          ]
-        },
-        {
-          "rate": 3.5,
-          "type": 0,
-          "range": 9,
-          "ap": 10,
-          "grid": "4>0.75,0.75,0.75,1,1,1,0.75,0.75,0.75",
-          "target_ground": true,
-          "summon": null,
-          "use": null,
-          "dismiss_guard": true,
-          "acc_bonus": 0,
-          "buff_rate": 100,
-          "buffs": [
-            {
-              "key": "Effect_PECS_Peregrinus_CH_2",
-              "on": {
-                "after": "use_skill"
-              },
-              "if": false,
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_REMOVE_DEBUFF",
-                  "desc": {
-                    "desc": "휴먼 폼 모드 해제",
-                    "type": 1,
-                    "value": "64",
-                    "level": "0"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 69,
-                    "off": {
-                      "type": 64
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_REMOVE_BUFF",
-                  "desc": {
-                    "desc": "하피 왕의 숨결 : 방어막 해제",
-                    "type": 0,
-                    "value": "38",
-                    "level": "0"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 88,
-                    "off": {
-                      "type": 38,
-                      "target": 0
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
-                  "desc": {
-                    "desc": "하피 왕의 숨결 : 방어 관통{0}%",
-                    "type": 1,
-                    "value": "0.450000",
-                    "level": "0.050000"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 58,
-                    "penetration": {
-                      "base": "45%",
-                      "per": "5%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}% (적1기)",
-                    "type": 1,
-                    "value": "-0.055000",
-                    "level": "-0.005000"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 110,
-                    "disperse": {
-                      "base": "-5.5%",
-                      "per": "-0.5%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_PECS_Peregrinus_CH_21",
-              "on": "attack_success",
-              "if": false,
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_REMOVE_BUFF",
-                  "desc": {
-                    "desc": "하피 왕의 숨결 : 방어막 해제",
-                    "type": 1,
-                    "value": "38",
-                    "level": "0"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 88,
-                    "off": {
-                      "type": 38,
-                      "target": 0
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_PECS_Peregrinus_CH_22",
-              "on": "attack_success",
-              "if": false,
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
-                  "desc": {
-                    "desc": "하피 왕의 숨결 : 방어 관통{0}%",
-                    "type": 1,
-                    "value": "0.450000",
-                    "level": "0.050000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 58,
-                    "penetration": {
-                      "base": "45%",
-                      "per": "5%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_PECS_Peregrinus_CH_23",
-              "on": "attack_success",
-              "if": {
-                "unitCount": {
-                  "filter": "enemy",
-                  "type": [
-                    0,
-                    2,
-                    1
-                  ],
-                  "count": 1
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
-                    "type": 1,
-                    "value": "-0.055000",
-                    "level": "-0.005000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 110,
-                    "disperse": {
-                      "base": "-5.5%",
-                      "per": "-0.5%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_PECS_Peregrinus_CH_24",
-              "on": "attack_success",
-              "if": {
-                "unitCount": {
-                  "filter": "enemy",
-                  "type": [
-                    0,
-                    2,
-                    1
-                  ],
-                  "count": 2
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
-                    "type": 1,
-                    "value": "-0.110000",
-                    "level": "-0.010000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 110,
-                    "disperse": {
-                      "base": "-11%",
-                      "per": "-1%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_PECS_Peregrinus_CH_25",
-              "on": "attack_success",
-              "if": {
-                "unitCount": {
-                  "filter": "enemy",
-                  "type": [
-                    0,
-                    2,
-                    1
-                  ],
-                  "count": 3
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
-                    "type": 1,
-                    "value": "-0.165000",
-                    "level": "-0.015000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 110,
-                    "disperse": {
-                      "base": "-16.5%",
-                      "per": "-1.5%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_PECS_Peregrinus_CH_26",
-              "on": "attack_success",
-              "if": {
-                "unitCount": {
-                  "filter": "enemy",
-                  "type": [
-                    0,
-                    2,
-                    1
-                  ],
-                  "count": 4
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
-                    "type": 1,
-                    "value": "-0.220000",
-                    "level": "-0.020000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 110,
-                    "disperse": {
-                      "base": "-22%",
-                      "per": "-2%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_PECS_Peregrinus_CH_27",
-              "on": "attack_success",
-              "if": {
-                "unitCount": {
-                  "filter": "enemy",
-                  "type": [
-                    0,
-                    2,
-                    1
-                  ],
-                  "count": 5
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
-                    "type": 1,
-                    "value": "-0.275000",
-                    "level": "-0.025000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 110,
-                    "disperse": {
-                      "base": "-27.5%",
-                      "per": "-2.5%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_PECS_Peregrinus_CH_28",
-              "on": "attack_success",
-              "if": {
-                "unitCount": {
-                  "filter": "enemy",
-                  "type": [
-                    0,
-                    2,
-                    1
-                  ],
-                  "count": 6
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
-                    "type": 1,
-                    "value": "-0.330000",
-                    "level": "-0.030000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 110,
-                    "disperse": {
-                      "base": "-33%",
-                      "per": "-3%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_PECS_Peregrinus_CH_29",
-              "on": "attack_success",
-              "if": {
-                "unitCount": {
-                  "filter": "enemy",
-                  "type": [
-                    0,
-                    2,
-                    1
-                  ],
-                  "count": 7
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
-                    "type": 1,
-                    "value": "-0.385000",
-                    "level": "-0.035000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 110,
-                    "disperse": {
-                      "base": "-38.5%",
-                      "per": "-3.5%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_PECS_Peregrinus_CH_210",
-              "on": "attack_success",
-              "if": {
-                "unitCount": {
-                  "filter": "enemy",
-                  "type": [
-                    0,
-                    2,
-                    1
-                  ],
-                  "count": 8
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
-                    "type": 1,
-                    "value": "-0.440000",
-                    "level": "-0.040000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 110,
-                    "disperse": {
-                      "base": "-44%",
-                      "per": "-4%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_PECS_Peregrinus_CH_211",
-              "on": "attack_success",
-              "if": {
-                "unitCount": {
-                  "filter": "enemy",
-                  "type": [
-                    0,
-                    2,
-                    1
-                  ],
-                  "count": 9
-                }
-              },
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "하피 왕의 숨결 : 광역 피해 분산{0}%",
-                    "type": 1,
-                    "value": "-0.495000",
-                    "level": "-0.045000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 110,
-                    "disperse": {
-                      "base": "-49.5%",
-                      "per": "-4.5%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_PECS_Peregrinus_CH_212",
-              "on": {
-                "after": "use_skill"
-              },
-              "if": false,
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_REMOVE_DEBUFF",
-                  "desc": {
-                    "desc": "팔콘 폼 : 모드 전환 종료",
+                    "desc": "모드 전환 종료",
                     "type": 0,
                     "value": "6",
                     "level": "0"
@@ -14906,10 +14904,10 @@
             "desc": {
               "desc": "휴먼 폼 모드 해제",
               "type": 1,
-              "value": "64",
+              "value": "63",
               "level": "0"
             },
-            "base": 64,
+            "base": 63,
             "per": 0,
             "chance": 1
           },
@@ -15084,7 +15082,7 @@
           {
             "icon": "BuffIcon_REMOVE_DEBUFF",
             "desc": {
-              "desc": "팔콘 폼 : 모드 전환 종료",
+              "desc": "모드 전환 종료",
               "type": 0,
               "value": "6",
               "level": "0"

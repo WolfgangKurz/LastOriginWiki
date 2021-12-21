@@ -3059,6 +3059,91 @@
                 }
               ],
               "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Cheona_N_52",
+              "on": "round",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_HotPack_N_1",
+                    "Effect_BUFF_HotPack_N_2",
+                    "Effect_BUFF_HotPack_N_3",
+                    "Effect_BUFF_HotPack_N_4",
+                    "Effect_BUFF_HotPack_N_5",
+                    "Effect_BUFF_HotPack_N_6",
+                    "Effect_BUFF_HotPack_N_7",
+                    "Effect_BUFF_HotPack_N_8",
+                    "Effect_BUFF_HotPack_N_9",
+                    "Effect_BUFF_HotPack_N_10",
+                    "Effect_BUFF_HotPack_N_11"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "따뜻해... : 공격력{0}%",
+                    "type": 1,
+                    "value": "0.050000",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "5%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "따뜻해... : 행동력{0}%",
+                    "type": 1,
+                    "value": "0.050000",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "5%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         }
@@ -3149,6 +3234,30 @@
             },
             "base": 0.1,
             "per": 0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "따뜻해... : 공격력{0}%",
+              "type": 1,
+              "value": "0.050000",
+              "level": "0"
+            },
+            "base": 0.05,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "따뜻해... : 행동력{0}%",
+              "type": 1,
+              "value": "0.050000",
+              "level": "0"
+            },
+            "base": 0.05,
+            "per": 0,
             "chance": 1
           }
         ]
