@@ -6,6 +6,21 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11446" date="2021-12-27"
+		update={ <>
+			<li>일부 적 정보가 갱신되었습니다.</li>
+			<li>일부 지역 정보가 갱신되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<span class="badge bg-warning text-dark">P-3M 운디네</span>의 스킨
+				<span class="badge bg-danger">CAFE Horizon : 천재 파티시에</span>의 정보가 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2021-12-27 11:53:07</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11443" date="2021-12-21"
 		bugfix={ <>
 			<li>일부 스킨 카테고리가 비정상적으로 표시되는 문제를 수정했습니다.</li>
