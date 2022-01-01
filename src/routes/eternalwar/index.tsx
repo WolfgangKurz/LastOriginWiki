@@ -1,16 +1,16 @@
 import { Component, RenderableProps } from "preact";
 import { Link } from "preact-router";
-import Decimal from "decimal.js";
 
-import { EWDB, EWMapWaveGroup } from "@/types/DB/EW";
+import { EWDB } from "@/types/DB/EW";
 import { Consumable } from "@/types/DB/Consumable";
 import { MapEnemyData } from "@/types/DB/Map";
 import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { isActive } from "@/libs/Functions";
+import { SetMeta, UpdateTitle } from "@/libs/Site";
 
-import Locale from "@/components/locale";
+import Locale, { LocaleGet } from "@/components/locale";
 import Loader, { GetJson, StaticDB } from "@/components/loader";
 import Icon from "@/components/bootstrap-icon";
 import DropItem from "@/components/drop-item";
@@ -57,6 +57,10 @@ class EternalWar extends Component<EternalWarProps, EternalWarState> {
 			selectedEnemyLevel: 1,
 			enemyModalDisplay: false,
 		};
+
+		SetMeta(["description", "twitter:description"], "변화의 성소 정보를 표시합니다.");
+		SetMeta(["twitter:image", "og:image"], null);
+		UpdateTitle(LocaleGet("MENU_ETERNALWAR"));
 	}
 
 	componentWillReceiveProps (nextProps: RenderableProps<EternalWarProps>): void {
@@ -166,7 +170,7 @@ class EternalWar extends Component<EternalWarProps, EternalWarState> {
 											aria-expanded="false"
 										>
 											#{ state.selectedWaveIndex + 1 }
-											<small class="ms-1">/ {(Waves && Waves[state.selectedWave].length) || "???"}</small>
+											<small class="ms-1">/ { (Waves && Waves[state.selectedWave].length) || "???" }</small>
 											{/* <span class="badge bg-warning text-dark ms-1">
 												{ new Decimal(
 													(Waves &&
@@ -191,7 +195,7 @@ class EternalWar extends Component<EternalWarProps, EternalWarState> {
 													} }
 												>
 													#{ idx + 1 }
-													<small class="ms-1">/ {(Waves && Waves[state.selectedWave].length) || "???"}</small>
+													<small class="ms-1">/ { (Waves && Waves[state.selectedWave].length) || "???" }</small>
 													{/* <span class="badge bg-warning text-dark ms-1">
 														{ new Decimal(_.r || "0")
 															.toFixed(3)

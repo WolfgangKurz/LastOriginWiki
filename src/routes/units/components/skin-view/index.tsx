@@ -106,16 +106,16 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 
 	const categories = skin.category.filter(x => x && x !== "ALL");
 
-	return <div class="unit-skin-view">
-		<div class={ `ratio ${Aspect} unit-full ${props.collapsed ? "unit-full-collapsed" : ""}` }>
+	return <div class={ style.SkinView }>
+		<div class={ `ratio ${Aspect} ${style.SkinFull} ${props.collapsed ? style.Collapsed : ""}` }>
 			<div>
-				<div class="unit-full-bg" />
-				<div class="unit-full-group">
+				<div class={ style.FullBG } />
+				<div class={ style.FullGroup }>
 					<div>
 						<img src={ `${AssetsRoot}/${imageExt}/group/${unit.group.replace(/_[0-9]+$/, "")}.${imageExt}` } />
 					</div>
 				</div>
-				<div class="unit-full-unit">
+				<div class={ style.FullUnit }>
 					{ SkinVideoURL
 						? <video style={ ImageStyle } src={ SkinVideoURL } autoPlay muted loop />
 						: <img style={ ImageStyle } src={ SkinImageURL } />
@@ -123,14 +123,14 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 				</div>
 
 				{ !(skin.isPro || skin.isDef) && skin.price
-					? <div class="skin-price">
+					? <div class={ style.Price }>
 						<img src={ `${AssetsRoot}/tuna.png` } />
 						{ skin.price }
 					</div>
 					: <></>
 				}
 
-				<div class="unit-skin-marry">
+				<div class={ style.SkinPropMarriage }>
 					{ unit.marriageVoice ? <BootstrapTooltip
 						placement="top"
 						content={ <span class="word-keep"><Locale k="UNIT_VIEW_SKIN_MARRIAGE" /></span> }
@@ -139,12 +139,12 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/marriage.png` } />
 						</div>
 					</BootstrapTooltip>
-						: <div class="position-relative alert invalid">
+						: <div class={ `position-relative alert ${style.Invalid}` }>
 							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/marriage.png` } />
 						</div>
 					}
 				</div>
-				<div class="unit-skin-animated">
+				<div class={ style.SkinPropAnimated }>
 					{ skin.A
 						? <BootstrapTooltip
 							placement="top"
@@ -156,12 +156,12 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 								<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/l2d${skin.Stage ? "p" : ""}.png` } />
 							</div>
 						</BootstrapTooltip>
-						: <div class="position-relative alert invalid">
+						: <div class={ `position-relative alert ${style.Invalid}` }>
 							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/l2d.png` } />
 						</div>
 					}
 				</div>
-				<div class="unit-skin-voice">
+				<div class={ style.SkinPropVoice }>
 					{ skin.V
 						? <BootstrapTooltip
 							placement="top"
@@ -173,12 +173,12 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 								<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/voice.png` } />
 							</div>
 						</BootstrapTooltip>
-						: <div class="position-relative alert invalid">
+						: <div class={ `position-relative alert ${style.Invalid}` }>
 							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/voice.png` } />
 						</div>
 					}
 				</div>
-				<div class="unit-skin-effect">
+				<div class={ style.SkinPropEffect }>
 					{ skin.E
 						? <BootstrapTooltip
 							placement="top"
@@ -190,12 +190,12 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 								<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/fx.png` } />
 							</div>
 						</BootstrapTooltip>
-						: <div class="position-relative alert invalid">
+						: <div class={ `position-relative alert ${style.Invalid}` }>
 							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/fx.png` } />
 						</div>
 					}
 				</div>
-				<div class="unit-skin-motion">
+				<div class={ style.SkinPropMotion }>
 					{ skin.M
 						? <BootstrapTooltip
 							placement="top"
@@ -207,12 +207,12 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 								<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/sd.png` } />
 							</div>
 						</BootstrapTooltip>
-						: <div class="position-relative alert invalid">
+						: <div class={ `position-relative alert ${style.Invalid}` }>
 							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/sd.png` } />
 						</div>
 					}
 				</div>
-				<div class="unit-skin-damaged">
+				<div class={ style.SkinPropDamaged }>
 					{ skin.D
 						? <BootstrapTooltip
 							placement="top"
@@ -223,12 +223,12 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 							</div>
 						</BootstrapTooltip>
 						:
-						<div class="position-relative alert invalid">
+						<div class={ `position-relative alert ${style.Invalid}` }>
 							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/damaged.png` } />
 						</div>
 					}
 				</div>
-				<div class="unit-skin-bg">
+				<div class={ style.SkinPropBG }>
 					{ skin.BG
 						? <BootstrapTooltip
 							placement="top"
@@ -239,21 +239,23 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 							</div>
 						</BootstrapTooltip>
 						:
-						<div class="position-relative alert invalid">
+						<div class={ `position-relative alert ${style.Invalid}` }>
 							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/object.png` } />
 						</div>
 					}
 				</div>
 
 				{ (!IsSimplified.value && skin.D) || (IsSimplified.value && skin.X)
-					? <div class="skin-toggle skin-toggle-damaged"
+					? <div
+						class={ `${style.SkinToggle} ${style.Damaged}` }
 						data-damaged={ IsDamaged.value ? 1 : 0 }
 						onClick={ (): void => IsDamaged.set(!IsDamaged.value) }
 					/>
 					: <></>
 				}
 				{ (!IsDamaged.value && skin.S) || (IsDamaged.value && skin.X)
-					? <div class="skin-toggle skin-toggle-simplified"
+					? <div
+						class={ `${style.SkinToggle} ${style.Simplified}` }
 						data-simplified={ IsSimplified.value ? 1 : 0 }
 						onClick={ (): void => IsSimplified.set(!IsSimplified.value) }
 					/>
@@ -261,7 +263,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 				}
 				{ skin.G
 					? <div
-						class="skin-toggle skin-toggle-platform"
+						class={ `${style.SkinToggle} ${style.Platform}` }
 						data-platform={ IsGoogle.value ? 1 : 0 }
 						onClick={ (): void => IsGoogle.set(!IsGoogle.value) }
 					/>
@@ -270,8 +272,8 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 
 				{ props.detailable
 					? <>
-						<div class="skin-detail" data-bs-toggle="modal" data-bs-target="#unit-skin-view-detail" />
-						<div class="modal fade" tabIndex={ -1 } id="unit-skin-view-detail">
+						<div class={ style.Detail } data-bs-toggle="modal" data-bs-target="#UnitSkinViewDetail" />
+						<div class="modal fade" tabIndex={ -1 } id="UnitSkinViewDetail">
 							<div class="modal-dialog modal-xl modal-dialog-centered">
 								<div class="modal-content">
 									<div class="modal-header">
@@ -331,7 +333,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					: <></>
 				}
 				{ skin.sid && !skin.isPro
-					? <div class={ `card mb-2 skin-name-desc ${!skin.artist ? "mt-2" : ""}` }>
+					? <div class={ `card mb-2 ${style.NameDesc} ${!skin.artist ? "mt-2" : ""}` }>
 						<div class="card-header">
 							<Locale plain k={ `CONSUMABLE_Skin_${unit.uid}_${ssid}` } />
 						</div>

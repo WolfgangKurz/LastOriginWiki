@@ -1,0 +1,38 @@
+.ResearchTree > svg {
+	max-height: 280px;
+}
+.ResearchItem {
+	padding: 10px;
+	width: 80px;
+	height: 80px;
+}
+.ResearchIcon {
+	filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
+	transform-box: fill-box;
+	transform-origin: center;
+	transform: rotate(-90deg);
+}
+
+:global(.modal .modal-content).ResearchModal {
+	.ResearchPopupIcon {
+		max-width: 80px;
+		max-height: 80px;
+		background-color: rgba(0, 0, 0, 0.2);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+	}
+	:global(.modal-footer) {
+		justify-content: flex-start;
+	}
+	.ResearchDesc {
+		word-break: break-word;
+		white-space: pre-line;
+	}
+	.ResearchInfo {
+		:global(.res-icon) {
+			margin-right: 0.25em;
+			max-height: 24px;
+			vertical-align: middle;
+		}
+		// Placeholder
+	}
+}

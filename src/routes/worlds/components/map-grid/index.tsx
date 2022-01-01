@@ -1,40 +1,90 @@
-import { FunctionalComponent } from "preact";
+import { createRef, Component, FunctionalComponent, RenderableProps } from "preact";
 import { Link } from "preact-router";
-import Decimal from "decimal.js";
 
 import { MapNodeEntity } from "@/types/DB/Map";
+import { STAGE_SUB_TYPE } from "@/types/Enums";
 
 import { AssetsRoot } from "@/libs/Const";
 
-import "./style.module.scss";
-
-interface LineData {
-	x1: string;
-	y1: string;
-	x2: string;
-	y2: string;
-	color: string;
-}
+import style from "./style.module.scss";
 
 interface MapNodeProps {
 	node: MapNodeEntity;
+	byOffset?: boolean;
+
 	active?: boolean;
+	missing?: boolean;
+}
+
+function GetTypeIdx (node: MapNodeEntity, byOffset: boolean = false): 0 | 1 | 2 {
+	const name = node.text;
+
+	if (byOffset) return Math.floor(node.offset / 8) as (0 | 1 | 2);
+
+	return /[0-9]+$/.test(name)
+		? 1
+		: /(Ex|C)$/.test(name)
+			? 2
+			: 0;
 }
 
 const MapNode: FunctionalComponent<MapNodeProps> = (props) => {
-	const name = props.node.text;
-	const shortName = name.includes("-")
-		? name.substr(name.indexOf("-") + 1)
-		: name;
+	const node = props.node;
+	const typeIdx = GetTypeIdx(node, props.byOffset);
+	// const colors: string[] = [
+	// 	"#61d42a",
+	// 	"#fdc902",
+	// 	"#ff3443",
+	// ];
 
-	return <div class="map-node" data-hidden={ !props.node.text ? 1 : 0 } data-pos={ `${props.node.offset}` }>
-		<img src={ `${AssetsRoot}/world/mapicon_${Math.floor(props.node.offset / 8)}.png` } />
-		<div class="name d-none d-sm-block" data-active={ props.active ? 1 : 0 }>{ props.node.text }</div>
-		<div class="name d-sm-none" data-active={ props.active ? 1 : 0 }>{ shortName }</div>
-	</div>;
+	return <>
+		<image
+			href={ `${AssetsRoot}/world/node.png?v=2` }
+			x="25"
+			y="7"
+			width="96"
+			height="30"
+		/>
+		{ props.active && <image
+			href={ `${AssetsRoot}/world/node-selected-${typeIdx}.png` }
+			x="25"
+			y="-1"
+			width="96"
+			height="38"
+		/> }
+
+		<image
+			class={ style.NodeIcon }
+			href={ `${AssetsRoot}/world/mapicon_${typeIdx}${props.node.type === STAGE_SUB_TYPE.STORY ? "s" : "n"}.png` }
+			x="8" y="1" width="38"
+		/>
+		{/* <rect x="60" y="12" width="4" height="18" fill={ colors[typeIdx] } /> */ }
+		<text x="83" y="23" fill="#fff" textAnchor="middle" dominantBaseline="middle">{ node.text }</text>
+
+		{ props.missing && <text
+			class={ style.missing }
+			x="83"
+			y="36"
+			fill="#999"
+			textAnchor="middle"
+			dominantBaseline="middle"
+		>missing link</text> }
+	</>;
 };
 
-interface MapGridProps {
+
+const padding = 20; // 패딩
+
+const w = 136; // 노드 가로 크기
+const h = 44; // 노드 세로 크기
+
+const v = w + 15; // 노드간 거리 + w
+const t = h + 15; // 노드간 세로 거리 + h
+
+const baseX = padding; // 기본 X
+const baseY = padding; // 기본 Y
+
+interface NewMapGridProps {
 	nodes: MapNodeEntity[];
 	selected: MapNodeEntity | null;
 
@@ -44,84 +94,216 @@ interface MapGridProps {
 	onSelect?: (selected: MapNodeEntity) => void;
 }
 
-const MapGrid: FunctionalComponent<MapGridProps> = (props) => {
-	const wid = props.wid || "";
-	const mid = props.mid || "";
+class MapGrid extends Component<NewMapGridProps>{
+	private svgRef = createRef<SVGSVGElement>();
 
-	function SelectNode (node: MapNodeEntity): void {
-		if (props.onSelect)
-			props.onSelect(node);
+	constructor () {
+		super();
 	}
 
-	const lineData = ((): LineData[] => {
-		const ret: LineData[] = [];
-		const colors: string[] = [
-			"#98fd28",
-			"#ffce22",
-			"#ff2d5b",
-		];
+	componentDidMount () {
+		if (this.svgRef.current) {
+			const ref = this.svgRef.current;
+			const bound = ref.getBBox();
+			const w = bound.x + bound.width + padding;
+			const h = bound.y + bound.height + padding;
+			ref.setAttribute("viewBox", `0 0 ${w} ${h}`);
+			ref.style.minWidth = `${w}px`;
+		}
+	}
 
-		props.nodes.forEach(node => {
-			if (node.prev.length === 0) return;
+	render (props: RenderableProps<NewMapGridProps>) {
+		const wid = props.wid || "";
+		const mid = props.mid || "";
 
-			node.prev.forEach(prev => {
-				const fromX = node.offset % 8;
-				const fromY = Math.floor(node.offset / 8);
-				const toX = prev % 8;
-				const toY = Math.floor(prev / 8);
+		const RECTS = (() => {
+			const ret: preact.VNode[] = [];
+			const lines: preact.VNode[] = [];
 
-				if (fromX < toX) return;
+			const hasStory = props.nodes.some(x => x.type === STAGE_SUB_TYPE.STORY);
+			const byOffset = !(props.wid || "").startsWith("Ev") || parseInt((props.wid || "Ev0").substring(2), 10) < 14;
 
-				const x1b = fromY * 0.5 - 0.25 + 0.5;
-				const x2b = toY * 0.5 - 0.25 + 0.5;
+			const used: number[] = [];
+			let mainX: number = 0;
+			let exX: number = baseX + v / 2;
+			let missingX: number = baseX;
 
-				ret.push({
-					x1: `${Decimal.div(1, 9)
-						.mul(Decimal.add(fromX, x1b))
-						.mul(100)
-						.toNumber()}%`,
-					y1: `${Decimal.div(1, 3)
-						.mul(fromY + 0.5)
-						.mul(100)
-						.toNumber()}%`,
-					x2: `${Decimal.div(1, 9)
-						.mul(Decimal.add(toX, x2b))
-						.mul(100)
-						.toNumber()}%`,
-					y2: `${Decimal.div(1, 3)
-						.mul(toY + 0.5)
-						.mul(100)
-						.toNumber()}%`,
-					color: colors[Math.min(fromY, toY)],
-				});
-			});
-		});
-		return ret;
-	})();
+			const yTable: Record<number, number> = {
+				0: 0,
+				1: t,
+				2: t * (hasStory ? 3 : 2),
+				3: t * (hasStory ? 4 : 3),
+			};
 
-	return <div class="world-map-grid">
-		{ props.nodes.map(node => <div data-pos={ node.offset }>
-			<Link
-				href={ node.text ? `/worlds/${wid}/${mid}/${node.text}` : undefined }
-				onClick={ (e: Event): void => {
-					e.preventDefault();
-					if (node.text) SelectNode(node);
-				} }>
-				<MapNode node={ node } active={ props.selected === node } />
-			</Link>
-		</div>) }
+			const render = (node: MapNodeEntity, x: number, missing: boolean = false) => {
+				if (used.includes(node.offset)) return;
+				used.push(node.offset);
 
-		<svg>
-			{ lineData.map(line => <line
-				x1={ line.x1 }
-				y1={ line.y1 }
-				x2={ line.x2 }
-				y2={ line.y2 }
-				stroke={ line.color }
-				stroke-width="2"
-				stroke-linecap="square"
-			/>) }
-		</svg>
-	</div>;
-};
+				const line = (x1: number, y1: number, x2: number, y2: number, baseX: number, from: MapNodeEntity, to: MapNodeEntity) => <line
+					x1={ baseX + x1 }
+					y1={ baseY + y1 }
+					x2={ baseX + x2 }
+					y2={ baseY + y2 }
+					stroke="rgba(255,255,255,0.75)"
+					strokeWidth="1.5"
+					strokeLinecap="round"
+					data-from={ from.text }
+					data-to={ to.text }
+				/>;
+
+				const nodeType = missing ? 3 : GetTypeIdx(node, byOffset);
+				let y = yTable[nodeType] + (nodeType === 1 && mainX === 1 ? t : 0);
+
+				if (byOffset) {
+					x = baseX + (node.offset % 8) * v + (Math.floor(node.offset / 8 - 1) * v / 2);
+					y = Math.floor(node.offset / 8) * t;
+				}
+
+				// render(nx, t, [node], undefined, true);
+				ret.push(<Link
+					href={ node.text ? `/worlds/${wid}/${mid}/${node.text}` : undefined }
+					onClick={ (e: Event): void => {
+						e.preventDefault();
+						if (node.text && props.onSelect)
+							props.onSelect(node);
+					} }
+				>
+					<g transform={ `translate(${x}, ${baseY + y})` }>
+						<MapNode
+							node={ node }
+							active={ props.selected === node }
+							missing={ missing }
+							byOffset={ byOffset }
+						/>
+					</g>,
+				</Link>);
+
+				if (nodeType === 1 && hasStory)
+					mainX = (mainX + 1) % 2;
+				else if (nodeType === 2)
+					exX += v;
+				else if (nodeType === 3)
+					missingX += v;
+
+				props.nodes
+					.filter(n => n.prev.includes(node.offset))
+					.forEach(n => {
+						const nType = missing ? 3 : GetTypeIdx(n, byOffset);
+						const rx = nType === 0
+							? nType === nodeType ? v : (hasStory ? 0 : v / 2)
+							: nType === 1
+								? nType === nodeType ? (hasStory ? v / 2 : v) : 0
+								: nType === 2
+									? (hasStory ? 0 : v / 2)
+									: v;
+
+						if (!byOffset || Math.abs((n.offset % 8) - (node.offset % 8)) <= 1) {
+							if (nType !== 2) {
+								if (nodeType === 1 && nType === 1) { // Main -> Main
+									if (hasStory) {
+										lines.push(line(
+											w / 2,
+											t + (mainX === 1 ? 0 : t) + h / 2,
+											rx + w / 2,
+											t + (mainX === 1 ? t : 0) + h / 2,
+											x,
+											node, n,
+										));
+									} else {
+										lines.push(line(
+											w / 2,
+											t + h / 2,
+											rx + w / 2,
+											t + h / 2,
+											x,
+											node, n,
+										));
+									}
+								} else if (nodeType === 1) { // Main -> others
+									lines.push(line(
+										w / 2,
+										t + (mainX === 0 ? 0 : t) + h / 2,
+										w / 2 + (hasStory ? 0 : v / 2),
+										yTable[nType] + h / 2,
+										x,
+										node, n,
+									));
+								} else if (nType === 1) { // others -> Main
+									lines.push(line(
+										w / 2,
+										yTable[nodeType] + h / 2,
+										v + w / 2 - (hasStory ? 0 : v / 2),
+										yTable[nType] + h / 2,
+										x,
+										node, n,
+									));
+								} else if (nodeType !== 3 && nType !== 3) { // others -> others (except missing)
+									lines.push(line(
+										w / 2,
+										yTable[nType] + h / 2,
+										v + w / 2,
+										yTable[nType] + h / 2,
+										x,
+										node, n,
+									));
+								}
+							} else if (nodeType === nType) {
+								lines.push(line(
+									w / 2,
+									yTable[nodeType] + h / 2,
+									w / 2 + v,
+									yTable[nType] + h / 2,
+									hasStory ? exX - v : x,
+									node, n,
+								));
+							}
+						}
+
+						render(
+							n,
+							nType === 2
+								? exX
+								: nType === 3
+									? missingX
+									: x + rx,
+							missing,
+						);
+					});
+			};
+			render(props.nodes[0], baseX);
+
+			const missing = props.nodes.filter(x => !used.includes(x.offset));
+			if (missing.length > 0) {
+				missing.forEach(x => render(x, baseX, true));
+				lines.push(<rect
+					x={ 0 }
+					y={ baseY + t * 4 - (t - h) / 2 }
+					width={ "100%" }
+					height={ t }
+					fill="rgba(0,0,0,0.4)"
+				/>);
+			}
+
+			return [...lines, ...ret];
+		})();
+
+		return <div class={ style.WorldsMapGrid }>
+			<div class={ style.Preload }>
+				<img src={ `${AssetsRoot}/world/mapicon_0n.png` } />
+				<img src={ `${AssetsRoot}/world/mapicon_1n.png` } />
+				<img src={ `${AssetsRoot}/world/mapicon_2n.png` } />
+				<img src={ `${AssetsRoot}/world/mapicon_0s.png` } />
+				<img src={ `${AssetsRoot}/world/mapicon_1s.png` } />
+				<img src={ `${AssetsRoot}/world/mapicon_2s.png` } />
+				<img src={ `${AssetsRoot}/world/node-selected-0.png` } />
+				<img src={ `${AssetsRoot}/world/node-selected-1.png` } />
+				<img src={ `${AssetsRoot}/world/node-selected-2.png` } />
+			</div>
+
+			<svg class={ style.MapGrid } xmlns="http://www.w3.org/2000/svg" ref={ this.svgRef }>
+				{ RECTS }
+			</svg>
+		</div>;
+	}
+}
 export default MapGrid;

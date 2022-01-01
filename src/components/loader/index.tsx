@@ -70,6 +70,7 @@ export const StaticDB = {
 	Map: "map",
 	EW: "ew",
 	Story: "story",
+	Research: "research",
 	RoguelikeLimitEffects: "roguelike/limiteffects",
 	RoguelikeBuffEffects: "roguelike/buffeffects",
 	RoguelikeEffects: "roguelike/effects",

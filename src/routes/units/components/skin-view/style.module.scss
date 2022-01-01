@@ -9,13 +9,129 @@
 	height: 36px;
 }
 
-:global .unit-skin-view {
-	.unit-full {
+.SkinPropMarriage,
+.SkinPropAnimated,
+.SkinPropVoice,
+.SkinPropEffect,
+.SkinPropMotion,
+.SkinPropDamaged,
+.SkinPropBG {
+	position: absolute;
+	width: 38px;
+	height: 38px;
+	line-height: 26px;
+	font-size: 22px;
+
+	:global(.alert) {
+		margin: 0;
+		padding: 0;
+		height: 38px;
+		background-color: $dark;
+		color: $light;
+
+		&.Invalid > img {
+			opacity: 0.33;
+		}
+	}
+}
+
+.SkinPropMarriage {
+	bottom: 130px;
+	left: 10px;
+	user-select: none;
+	z-index: 10;
+}
+.SkinPropAnimated {
+	bottom: 10px;
+	left: 50px;
+	user-select: none;
+	z-index: 10;
+}
+.SkinPropVoice {
+	bottom: 50px;
+	left: 10px;
+	user-select: none;
+	z-index: 10;
+}
+.SkinPropEffect {
+	bottom: 50px;
+	left: 50px;
+	user-select: none;
+	z-index: 10;
+}
+.SkinPropMotion {
+	bottom: 90px;
+	left: 10px;
+	user-select: none;
+	z-index: 10;
+}
+.SkinPropDamaged {
+	bottom: 90px;
+	left: 50px;
+	user-select: none;
+	z-index: 10;
+}
+.SkinPropBG {
+	bottom: 10px;
+	left: 10px;
+	user-select: none;
+	z-index: 10;
+}
+
+.SkinToggle {
+	position: absolute;
+	background-repeat: no-repeat;
+	filter: drop-shadow(0 0 4px #000);
+	cursor: pointer;
+	z-index: 4;
+
+	&.Damaged {
+		top: 0px;
+		right: 0px;
+		width: 64px;
+		height: 62px;
+		background-image: url($assetsRoot + "/damaged-icon.png");
+		background-size: 128px 62px;
+
+		&[data-damaged="1"] {
+			background-position-x: -64px;
+		}
+	}
+	&.Simplified {
+		top: 70px;
+		right: 18px;
+		width: 28px;
+		height: 28px;
+		background-image: url($assetsRoot + "/simplify-icon.png");
+		background-position-x: -28px;
+		background-size: 56px 28px;
+
+		&[data-simplified="1"] {
+			background-position-x: 0;
+		}
+	}
+	&.Platform {
+		top: 130px;
+		right: 18px;
+		width: 28px;
+		height: 28px;
+		background-image: url($assetsRoot + "/icon-platform.png");
+		background-position-x: -28px;
+		background-size: 56px 28px;
+
+		&[data-platform="1"] {
+			background-position-x: 0;
+		}
+	}
+}
+
+.SkinView {
+	.SkinFull {
 		position: relative;
 		padding: 0;
 		overflow: hidden;
 
-		.unit-full-bg {
+		.FullBG {
 			position: absolute;
 			left: 0;
 			top: 0;
@@ -47,7 +163,7 @@
 				transform: translateY(20%) scale(1.1);
 			}
 		}
-		.unit-full-group {
+		.FullGroup {
 			position: absolute;
 			display: flex;
 			padding: 0;
@@ -61,7 +177,7 @@
 				flex: 1;
 			}
 		}
-		.unit-full-unit {
+		.FullUnit {
 			position: absolute;
 			display: flex;
 			padding: 4%;
@@ -76,68 +192,21 @@
 			}
 		}
 
-		&:not(.unit-full-collapsed) {
-			.unit-full-unit > img {
+		&:not(.Collapsed) {
+			.FullUnit > img {
 				max-width: 100%;
 				max-height: 100%;
 				width: 100%;
 				object-fit: contain;
 			}
 		}
-		&.unit-full-collapsed {
-			.unit-full-unit > img {
+		&.Collapsed {
+			.FullUnit > img {
 				height: 100%;
 			}
 		}
 
-		.skin-toggle {
-			position: absolute;
-			background-repeat: no-repeat;
-			filter: drop-shadow(0 0 4px #000);
-			cursor: pointer;
-			z-index: 4;
-
-			&.skin-toggle-damaged {
-				top: 0px;
-				right: 0px;
-				width: 64px;
-				height: 62px;
-				background-image: url($assetsRoot + "/damaged-icon.png");
-				background-size: 128px 62px;
-
-				&[data-damaged="1"] {
-					background-position-x: -64px;
-				}
-			}
-			&.skin-toggle-simplified {
-				top: 70px;
-				right: 18px;
-				width: 28px;
-				height: 28px;
-				background-image: url($assetsRoot + "/simplify-icon.png");
-				background-position-x: -28px;
-				background-size: 56px 28px;
-
-				&[data-simplified="1"] {
-					background-position-x: 0;
-				}
-			}
-			&.skin-toggle-platform {
-				top: 130px;
-				right: 18px;
-				width: 28px;
-				height: 28px;
-				background-image: url($assetsRoot + "/icon-platform.png");
-				background-position-x: -28px;
-				background-size: 56px 28px;
-
-				&[data-platform="1"] {
-					background-position-x: 0;
-				}
-			}
-		}
-
-		.skin-detail {
+		.Detail {
 			position: absolute;
 			right: 18px;
 			bottom: 18px;
@@ -152,76 +221,7 @@
 			z-index: 4;
 		}
 
-		.unit-skin-marry,
-		.unit-skin-animated,
-		.unit-skin-voice,
-		.unit-skin-effect,
-		.unit-skin-motion,
-		.unit-skin-damaged,
-		.unit-skin-bg {
-			position: absolute;
-			width: 38px;
-			height: 38px;
-			line-height: 26px;
-			font-size: 22px;
-
-			.alert {
-				margin: 0;
-				padding: 0;
-				height: 38px;
-				background-color: $dark;
-				color: $light;
-
-				&.invalid > img {
-					opacity: 0.33;
-				}
-			}
-		}
-
-		.unit-skin-marry {
-			bottom: 10px;
-			left: 10px;
-			user-select: none;
-			z-index: 10;
-		}
-		.unit-skin-animated {
-			bottom: 10px;
-			left: 50px;
-			user-select: none;
-			z-index: 10;
-		}
-		.unit-skin-voice {
-			bottom: 50px;
-			left: 10px;
-			user-select: none;
-			z-index: 10;
-		}
-		.unit-skin-effect {
-			bottom: 50px;
-			left: 50px;
-			user-select: none;
-			z-index: 10;
-		}
-		.unit-skin-motion {
-			bottom: 90px;
-			left: 10px;
-			user-select: none;
-			z-index: 10;
-		}
-		.unit-skin-damaged {
-			bottom: 90px;
-			left: 50px;
-			user-select: none;
-			z-index: 10;
-		}
-		.unit-skin-bg {
-			bottom: 130px;
-			left: 10px;
-			user-select: none;
-			z-index: 10;
-		}
-
-		.skin-price {
+		.Price {
 			position: absolute;
 			padding: 1px 6px 3px;
 			bottom: 5px;
@@ -235,18 +235,18 @@
 				height: 20px;
 			}
 		}
-		&.unit-full-collapsed .skin-price {
+		&.Collapsed .Price {
 			bottom: 55px;
 		}
 
-		.unit-full-group {
+		.FullGroup {
 			> div > img {
 				height: 100%;
 				opacity: 0.22;
 			}
 		}
 
-		&.unit-full-collapsed .unit-full-group {
+		&.Collapsed .FullGroup {
 			z-index: 3;
 
 			> div > img {
@@ -257,9 +257,9 @@
 			}
 		}
 	}
-	.skin-name-desc {
+	.NameDesc {
 		word-break: keep-all;
-		.card-body {
+		:global(.card-body) {
 			font-size: 90%;
 		}
 	}

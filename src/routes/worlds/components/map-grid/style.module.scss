@@ -1,86 +1,32 @@
-:global {
-	.world-map-grid {
-		$cols: ();
-		@for $i from 1 through 8 {
-			$cols: append($cols, auto);
-		}
-
-		display: grid;
-		grid-template-columns: repeat(9, 1fr);
-		grid-template-rows: repeat(3, 1fr);
-
-		> svg {
-			width: 100%;
-			height: 100%;
-			grid-column: 1 / 10;
-			grid-row: 1 / 4;
-		}
-
-		%row1 {
-			transform: translateX(-25%);
-		}
-		%row2 {
-			transform: translateX(25%);
-		}
-		%row3 {
-			transform: translateX(75%);
-		}
-
-		> [data-pos] {
-			text-align: center;
-		}
-		@for $j from 1 through 3 {
-			@for $i from 1 through 8 {
-				$x: (($i - 1) * 2) + 1;
-				$offset: ($i - 1) + ($j - 1) * 8;
-
-				> [data-pos="#{$offset}"] {
-					grid-column: $i;
-					grid-row: $j;
-
-					@if $j == 1 {
-						@extend %row1;
-					} @else if $j == 2 {
-						@extend %row2;
-					} @else if $j == 3 {
-						@extend %row3;
-					}
-				}
-			}
-		}
+.WorldsMapGrid {
+	.Preload {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 0;
+		height: 0;
+		overflow: hidden;
+		opacity: 0;
+		pointer-events: none !important;
 	}
-
-	.map-node {
-		position: relative;
-		display: inline-block;
-		margin: 0 2px 1em;
-		text-align: center;
-		z-index: 3;
-
-		user-select: none;
-		cursor: pointer;
-
-		&[data-hidden="1"] {
-			visibility: hidden;
+	.MapGrid {
+		a {
+			text-decoration: none;
 		}
 
-		> img {
-			max-width: 100%;
+		.NodeIcon {
+			filter: drop-shadow(0 0 3px #000);
 		}
-		> div.name {
-			position: absolute;
-			margin-left: -1px;
-			margin-bottom: 0px;
-			padding: 1px 2px;
-			left: 0;
-			right: 0;
-			background-color: rgba(0, 0, 0, 0.6);
+
+		:global(text) {
+			text-shadow: 0 0 3px #000;
 			font-weight: bold;
-			font-size: 11px;
-			color: #fff;
+			font-size: 14px;
 
-			&[data-active="1"] {
-				background-color: transparentize($primary, 0.4);
+			&.missing {
+				// font-weight: normal;
+				font-size: 10px;
+				text-shadow: 0 0 3px #000, 0 0 2px #000, 0 0 1px #000;
 			}
 		}
 	}

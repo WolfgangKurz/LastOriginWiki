@@ -36,8 +36,6 @@ const Home: FunctionalComponent = () => {
 
 	const BuildVersion = BuildInfo.build;
 
-	const now = Date.now();
-
 	SetMeta(["description", "twitter:description"], null);
 	SetMeta(["twitter:image", "og:image"], null);
 	UpdateTitle();
@@ -45,24 +43,27 @@ const Home: FunctionalComponent = () => {
 	return <div class={ `${style.home} home` }>
 		{ CurrentEvent && (new Date() < EventTo)
 			? <div class="alert alert-danger" role="alert">
-				<span class="pe-3">
-					<img src={ `${AssetsRoot}/flags/KR.png` } alt="[KR]" />
-				</span>
-
 				<Link href={ `/worlds/${CurrentEvent}` } class="text-dark" style={ { textDecoration: "none" } }>
+					<div>
+						<img
+							src={ `${AssetsRoot}/world/event-${CurrentLocale}.png` }
+							height="24"
+							style={ { verticalAlign: "text-bottom" } }
+						/>
+					</div>
 					<img
-						src={ `${AssetsRoot}/world/event-${CurrentLocale}.png` }
-						class="me-3"
-						height="24"
-						style={ { verticalAlign: "text-bottom" } }
+						src={ `${AssetsRoot}/world/banner/${CurrentEvent}B.png` }
+						class="mb-1"
+						height="120"
+						style={ { verticalAlign: "middle" } }
 					/>
-					<strong>
-						<Locale k={ `WORLD_${CurrentEvent}` } />
-					</strong>
-					<span class="ps-3">
-						<Icon icon="calendar3" class="me-1 mb-1" />
-						{ DateText(EventFrom) } ~ { DateText(EventTo) }
-					</span>
+					<div>
+						<span>
+							<img class="me-2" src={ `${AssetsRoot}/flags/KR.png` } alt="[KR]" />
+							<Icon icon="calendar3" class="me-1 mb-1" />
+							{ DateText(EventFrom) } ~ { DateText(EventTo) }
+						</span>
+					</div>
 				</Link>
 			</div>
 			: <></>
@@ -92,9 +93,6 @@ const Home: FunctionalComponent = () => {
 		<HomeConfigSelector />
 		<p>
 			<Locale k="HOME_DESCRIPTION" />
-		</p>
-		<p>
-			<video class={ style.HomeVideo } src={ `${AssetsRoot}/webm/SD/BR_Undine_2_SD.webm` } muted loop autoPlay />
 		</p>
 		<p>
 			<a href="https://docs.google.com/spreadsheets/d/1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4" target="_blank" rel="noreferrer">
