@@ -198,7 +198,10 @@ const ResearchTree: FunctionalComponent<ResearchTreeProps> = (props) => {
 		})();
 
 		return <div class={ style.ResearchTree }>
-			{ typeof graph.value == "object" && graph.value }
+			{ typeof graph.value == "object"
+				? graph.value
+				: <span class="text-secondary">Graph loading...</span>
+			}
 
 			{ createPortal(<PopupBase
 				display={ display.value }
