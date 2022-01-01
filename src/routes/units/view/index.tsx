@@ -33,8 +33,9 @@ import EquipPopup from "@/components/popup/equip-popup";
 import SkinView from "../components/skin-view";
 import SkillTable from "../components/skill-table";
 import UnitDialogue, { VoiceItem } from "../components/unit-dialogue";
+import ResearchTree from "../components/research-tree";
 
-import "./style.scss";
+import "./style.module.scss";
 
 // type TabTypes = "basic" | "skills" | "roguelike" | "dialogue";
 type TabTypes = "basic" | "skills" | "dialogue";
@@ -74,7 +75,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 		const h = Math.floor(duration / 3600);
 		const m = Math.floor(duration / 60) % 60;
 		const s = duration % 60;
-		return `${(`0${h}`).substr(-2)}:${(`0${m}`).substr(-2)}:${(`0${s}`).substr(-2)}`;
+		return [h, m, s].map(x => x.toString().padStart(2, "0")).join(":");
 	})();
 
 	const Favor = {
@@ -177,7 +178,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 				}
 
 				<div class="container table-unit-modal my-3">
-					<div class="row text-center row-cols-2 row-cols-md-4">
+					<div class="row text-center row-cols-2 row-cols-md-4 gx-0">
 						<div class="col bg-dark text-light"><Locale k="UNIT_VIEW_DICTNO" /></div>
 						<div class="col">
 							<small>No.&nbsp;</small>
@@ -265,56 +266,64 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 					: <></>
 				}
 
-				<table class="table table-bordered table-fixed text-center table-unit-modal">
-					<thead class="thead-dark">
-						<tr>
-							<th><Locale k="UNIT_VIEW_DROPS" /></th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td class="px-0 py-1 drop-list">
-								{ unit.source.length === 0 && !unit.craft
-									? <div class="p-3">
-										<span class="text-secondary">
-											<Locale k="UNIT_VIEW_DROPS_EMPTY" />
-										</span>
-									</div>
-									: <>
-										{ unit.craft
-											? <span class="badge bg-dark my-1">
-												<Icon icon="hammer" class="me-1" />
-												<Locale k="UNIT_VIEW_DROPS_CREATIONTIME" />
-												<span class="ms-1">{ CraftTime }</span>
-											</span>
-											: <></>
-										}
+				{ unit.research && <div class="container my-3">
+					<div class="row bg-dark text-light gx-0 p-3">
+						<ResearchTree unit={ unit } research={ unit.research } />
+					</div>
+				</div> }
 
-										{ unit.source.map((area, aindex) => <div>
-											{ unit.craft || aindex > 0 ? <hr class="my-1" /> : <></> }
-											{ area.length > 0 && area[0].IsEvent
-												? <h6 style="font-weight: bold">
-													<Locale k={ area[0].EventName } />
-												</h6>
-												: area.length > 0 && area[0].IsChallenge
-													? <h6 style="font-weight: bold">
-														<Locale k={ `COMMON_CHALLENGE_${area[0].ChallengeName}` } />
-													</h6>
-													: area.length > 0 && area[0].IsSubStory
-														? <h6 style="font-weight: bold">
-															<Locale k="COMMON_SOURCE_SUBSTORY_SINGLE" />
-														</h6>
-														: <></>
+				<div class="container">
+					<table class="table table-bordered table-fixed text-center table-unit-modal">
+						<thead class="thead-dark">
+							<tr>
+								<th><Locale k="UNIT_VIEW_DROPS" /></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="px-0 py-1 drop-list">
+									{ unit.source.length === 0 && !unit.craft
+										? <div class="p-3">
+											<span class="text-secondary">
+												<Locale k="UNIT_VIEW_DROPS_EMPTY" />
+											</span>
+										</div>
+										: <>
+											{ unit.craft
+												? <span class="badge bg-dark my-1">
+													<Icon icon="hammer" class="me-1" />
+													<Locale k="UNIT_VIEW_DROPS_CREATIONTIME" />
+													<span class="ms-1">{ CraftTime }</span>
+												</span>
+												: <></>
 											}
 
-											{ area.map(source => <SourceBadge class="my-1" source={ source } linked />) }
-										</div>) }
-									</>
-								}
-							</td>
-						</tr>
-					</tbody>
-				</table>
+											{ unit.source.map((area, aindex) => <div>
+												{ unit.craft || aindex > 0 ? <hr class="my-1" /> : <></> }
+												{ area.length > 0 && area[0].IsEvent
+													? <h6 style="font-weight: bold">
+														<Locale k={ area[0].EventName } />
+													</h6>
+													: area.length > 0 && area[0].IsChallenge
+														? <h6 style="font-weight: bold">
+															<Locale k={ `COMMON_CHALLENGE_${area[0].ChallengeName}` } />
+														</h6>
+														: area.length > 0 && area[0].IsSubStory
+															? <h6 style="font-weight: bold">
+																<Locale k="COMMON_SOURCE_SUBSTORY_SINGLE" />
+															</h6>
+															: <></>
+												}
+
+												{ area.map(source => <SourceBadge class="my-1" source={ source } linked />) }
+											</div>) }
+										</>
+									}
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
 	</div>;
@@ -672,7 +681,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 		);
 		SetMeta(
 			["twitter:image", "og:image"],
-			`${AssetsRoot}/${ImageExtension()}/full/${(`00${unit.id}`).substr(-3)}.${ImageExtension()}`,
+			`${AssetsRoot}/${ImageExtension()}/full/${(`00${unit.id}`).substring(-3)}.${ImageExtension()}`,
 		);
 		SetMeta(
 			"keywords",

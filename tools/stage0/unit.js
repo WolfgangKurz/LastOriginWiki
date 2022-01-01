@@ -66,7 +66,7 @@ function process (auth) {
 					spreadsheetId: targetDB === "korea"
 						? "11IxebdUQ_VHbaP79sN8KxZ87n3c5rG42DL8TQOK9h1k"
 						: "1ohSOKdl1IZq8aOsWPJ74yX01Ave7FkSrUFG5MSbfZN8",
-					range: "Unit!A2:AG",
+					range: "Unit!A2:AH",
 				}, (err, res) => {
 					if (err) return console.log(`The API returned an error: ${err}`);
 
@@ -120,6 +120,7 @@ function process (auth) {
 								lb1, lb2, lb3, lb4,
 								fl1, fl2, fl3, fl4, fl5,
 								equip1, equip2, equip3, equip4,
+								research,
 								source, source1,
 							] = row;
 
@@ -172,6 +173,7 @@ function process (auth) {
 										: source1.split("\n").map(d => d.split(","))
 									),
 								],
+								research: research ? JSON.parse(research) : undefined,
 							};
 							if (pro)
 								x.promotions = pro.split(",").map(y => rarityTable[y]);

@@ -54,12 +54,13 @@ targetDBs.forEach(targetDB => {
 					craft: char.craftable,
 					equips: equips.filter(y => y.limit && y.limit.some(z => z === char.uid)).map(y => y.fullKey),
 
-					stat: char.stat.map(x => ({
+					stat: (char.stat || []).map(x => ({
 						...x,
 						id: undefined,
 						rarity: undefined,
 					})),
 					source: char.source,
+					research: char.research,
 					skills,
 					dialogue: {
 						ko: dialogues.ko[char.uid],

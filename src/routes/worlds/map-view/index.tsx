@@ -28,7 +28,6 @@ import EquipPopup from "@/components/popup/equip-popup";
 import UnitReference from "@/components/unit-reference";
 import MapSearchInfo from "../components/map-search-info";
 import MapGrid from "../components/map-grid";
-import NewMapGrid from "../components/map-grid-new";
 
 import "./style.module.scss";
 
@@ -379,27 +378,16 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 												{/* { x.name.replace(/.+\(([^)]+)\)$/, "$1") } */ }
 											</button>
 										</Link>)
-										: NewMapList.includes(props.wid)
-											? <NewMapGrid
-												nodes={ NodeList }
-												wid={ props.wid }
-												mid={ props.mid }
-												onSelect={ (node: MapNodeEntity): void => {
-													selected.set(node);
-													NodeChange(node);
-												} }
-												selected={ selected.value }
-											/>
-											: <MapGrid
-												nodes={ NodeList }
-												wid={ props.wid }
-												mid={ props.mid }
-												onSelect={ (node: MapNodeEntity): void => {
-													selected.set(node);
-													NodeChange(node);
-												} }
-												selected={ selected.value }
-											/>
+										: <MapGrid
+											nodes={ NodeList }
+											wid={ props.wid }
+											mid={ props.mid }
+											onSelect={ (node: MapNodeEntity): void => {
+												selected.set(node);
+												NodeChange(node);
+											} }
+											selected={ selected.value }
+										/>
 							}
 						</div>
 					</div>

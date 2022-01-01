@@ -88,6 +88,11 @@ export interface UnitSkinEntity {
 	category: string[];
 }
 
+export interface ResearchTreeData {
+	key: string;
+	next: ResearchTreeData[] | undefined;
+}
+
 export interface Unit {
 	id: number;
 	uid: string;
@@ -122,6 +127,8 @@ export interface Unit {
 	equips: string[];
 
 	source: EntitySource[][];
+	research: ResearchTreeData[] | undefined;
+
 	stat: UnitStats[];
 	skills: Partial<SkillGroup>;
 	dialogue: UnitDialogueDataType;
@@ -170,6 +177,8 @@ export namespace Unit {
 
 		stat: [],
 		source: [],
+		research: undefined,
+
 		skills: {},
 		dialogue: {
 			ko: null,

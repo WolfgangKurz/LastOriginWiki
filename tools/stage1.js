@@ -25,6 +25,7 @@ const list =
 			"story",
 			"roguelike",
 			"enemygroup",
+			"research",
 		].map(x => `stage1/${x}`),
 	];
 
