@@ -43,78 +43,66 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 
 	const VNodeUnique = (entity: preact.VNode): string => render(entity);
 
-	function signedValue (value: BuffEffectValue, level: number = 0): string {
+	function signedValue (value: BuffEffectValue, level: number = 0, forRatio: boolean = false): string {
 		const p = typeof value.base === "string" && value.base.endsWith("%") ? "%" : "";
 
 		const base_ = value.base.toString();
 		const per_ = value.per.toString();
 
-		const base = p
-			? new Decimal(base_.substr(0, base_.length - 1)).toNumber()
-			: new Decimal(base_).toNumber();
-
-		const per = p
-			? new Decimal(per_.substr(0, per_.length - 1)).toNumber()
-			: new Decimal(per_).toNumber();
-
+		const base = new Decimal(p ? base_.substring(0, base_.length - 1) : base_);
+		const per = new Decimal(p ? per_.substring(0, per_.length - 1) : per_);
 		const val = Decimal.mul(per, level)
 			.add(base)
+			.mul(forRatio ? 100 : 1)
 			.toNumber();
-		if (val > 0) return `+${val}${p}`;
+
+		return (val > 0 ? "+" : "") + val + p;
+	}
+	function nsignedValue (value: BuffEffectValue, level: number = 0, forRatio: boolean = false): string {
+		const p = typeof value.base === "string" && value.base.endsWith("%") ? "%" : "";
+
+		const base_ = value.base.toString();
+		const per_ = value.per.toString();
+
+		const base = new Decimal(p ? base_.substring(0, base_.length - 1) : base_);
+		const per = new Decimal(p ? per_.substring(0, per_.length - 1) : per_);
+		const val = Decimal.mul(per, level)
+			.add(base)
+			.mul(forRatio ? 100 : 1)
+			.toNumber();
+
 		return val + p;
 	}
-	function nsignedValue (value: BuffEffectValue, level: number = 0): string {
+	function signedInteger (value: BuffEffectValue, level: number = 0, forRatio: boolean = false): string {
 		const p = typeof value.base === "string" && value.base.endsWith("%") ? "%" : "";
 
 		const base_ = value.base.toString();
 		const per_ = value.per.toString();
 
-		const base = p
-			? new Decimal(base_.substr(0, base_.length - 1)).toNumber()
-			: new Decimal(base_).toNumber();
-		const per = p
-			? new Decimal(per_.substr(0, per_.length - 1)).toNumber()
-			: new Decimal(per_).toNumber();
+		const base = new Decimal(p ? base_.substring(0, base_.length - 1) : base_);
+		const per = new Decimal(p ? per_.substring(0, per_.length - 1) : per_);
 		const val = Decimal.mul(per, level)
 			.add(base)
-			.toNumber();
-		return val + p;
-	}
-	function signedInteger (value: BuffEffectValue, level: number = 0): string {
-		const p = typeof value.base === "string" && value.base.endsWith("%") ? "%" : "";
-
-		const base_ = value.base.toString();
-		const per_ = value.per.toString();
-
-		const base = p
-			? new Decimal(base_.substr(0, base_.length - 1)).toNumber()
-			: new Decimal(base_).toNumber();
-		const per = p
-			? new Decimal(per_.substr(0, per_.length - 1)).toNumber()
-			: new Decimal(per_).toNumber();
-		const val = Decimal.mul(per, level)
-			.add(base)
+			.mul(forRatio ? 100 : 1)
 			.floor()
 			.toNumber();
-		if (val > 0) return `+${val}${p}`;
-		return val + p;
+
+		return (val > 0 ? "+" : "") + val + p;
 	}
-	function nsignedInteger (value: BuffEffectValue, level: number = 0): string {
+	function nsignedInteger (value: BuffEffectValue, level: number = 0, forRatio: boolean = false): string {
 		const p = typeof value.base === "string" && value.base.endsWith("%") ? "%" : "";
 
 		const base_ = value.base.toString();
 		const per_ = value.per.toString();
 
-		const base = p
-			? new Decimal(base_.substr(0, base_.length - 1)).toNumber()
-			: new Decimal(base_).toNumber();
-		const per = p
-			? new Decimal(per_.substr(0, per_.length - 1)).toNumber()
-			: new Decimal(per_).toNumber();
+		const base = new Decimal(p ? base_.substring(0, base_.length - 1) : base_);
+		const per = new Decimal(p ? per_.substring(0, per_.length - 1) : per_);
 		const val = Decimal.mul(per, level)
 			.add(base)
+			.mul(forRatio ? 100 : 1)
 			.floor()
 			.toNumber();
+
 		return val + p;
 	}
 	function isRatioValue (value: BuffEffectValue, ifTrue: string = "", ifFalse: string = ""): string {
@@ -1047,7 +1035,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 			return <Locale plain k="BUFFEFFECT_BY" p={ [
 				<Locale plain k={ `BUFFTARGET_${stat.by.target.toUpperCase()}` } />,
 				<Locale plain k={ `BUFFEFFECT_BY_${stat.by.by.toUpperCase()}` } />,
-				nsignedValue(stat.by, level),
+				nsignedValue(stat.by, level, stat.value === "skill_ratio"),
 				<Locale plain k={ `BUFFEFFECT_BY_${stat.value.toUpperCase()}` } />,
 				<Locale plain k={ `BUFFTYPE_${stat.by.type.toUpperCase()}` } />,
 			] } />;

@@ -12,6 +12,9 @@ const Changelog: FunctionalComponent = () => <>
 			<li>이벤트 <span class="badge bg-warning text-dark">영원한 겨울의 방주</span>의 2부 정보가 추가되었습니다.</li>
 			<li>전투원 정보에 로봇 전투원의 연구 계통도가 추가되었습니다.</li>
 		</> }
+		bugfix={ <>
+			<li>일부 스킬 위력 관련 버프 표시가 올바르지 않게 표현되는 문제를 수정했습니다.</li>
+		</> }
 		update={ <>
 			<li>전투원 스킨의 부가 정보의 순서가 일부 변경되었습니다.</li>
 		</> }
