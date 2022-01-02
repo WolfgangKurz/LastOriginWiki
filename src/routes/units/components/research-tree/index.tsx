@@ -1,11 +1,7 @@
 import { ComponentChild, FunctionalComponent } from "preact";
 import { createPortal } from "preact/compat";
 
-import * as flate from "@/external/wasm-flate/wasm-flate";
-import flateWasmUrl from "@/external/wasm-flate/wasm-flate.wasm?url";
-
-import { graphvizSync } from "@/external/graphviz/graphviz";
-import graphvizWasmUrl from "@/external/graphviz/graphvizlib.gzip.wasm?url";
+import UseGraphviz from "@/external/graphviz";
 
 import { ResearchTreeData, Unit } from "@/types/DB/Unit";
 import { Research } from "@/types/DB/Research";
@@ -64,17 +60,11 @@ const ResearchTree: FunctionalComponent<ResearchTreeProps> = (props) => {
 			graph.set(true);
 
 			(async () => {
-				const flateWasm = await fetch(flateWasmUrl).then(r => r.arrayBuffer());
-				await flate.default(flateWasm);
-
-				const graphvizWasmComp = await fetch(graphvizWasmUrl).then(r => r.arrayBuffer());
-				const graphvizWasm = flate.gzip_decode_raw(new Uint8Array(graphvizWasmComp));
-				const graphviz = await graphvizSync(undefined, graphvizWasm);
+				const graphviz = await UseGraphviz();
 
 				const raw = graphviz.dot(`digraph G {
 					fixedsize=true;
 					concentrate=true;
-					direction=LR;
 					${content.join("")}
 					0:e [width=0.784 height=0.784 shape=square];
 				}`, "svg");
