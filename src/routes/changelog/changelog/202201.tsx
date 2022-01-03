@@ -7,13 +7,13 @@ import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
 	<ChangelogItem title="Build 11470" date="2022-01-04"
-		update={ <>
+		bugfix={ <>
 			<li>세계 정보에서 일부 지역의 표현이 올바르지 않던 점을 수정했습니다.</li>
+			<li>경험치 계산기에서 스킬 보너스 이름이 올바르지 않게 표시되던 문제를 수정했습니다.</li>
+		</> }
+		update={ <>
 			<li>세계 정보에 스킬 경험치와 사령관 경험치 표기가 추가되었습니다.</li>
 			<li>경험치 계산기에 <span class="badge bg-warning text-dark">이벤트 보너스</span> 입력이 추가되었습니다.</li>
-		</> }
-		bugfix={ <>
-			<li>경험치 계산기에서 스킬 보너스 이름이 올바르지 않게 표시되던 문제를 수정했습니다.</li>
 		</> }
 	/>
 	<ChangelogItem title="Build 11467" date="2022-01-03"
