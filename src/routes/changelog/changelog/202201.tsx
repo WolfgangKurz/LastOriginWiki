@@ -6,7 +6,7 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 11461" date="2022-01-02"
+	<ChangelogItem title="Build 11467" date="2022-01-03"
 		new={ <>
 			<li>신규 전투원 <span class="badge bg-warning text-dark">사이클롭스 프린세스</span>의 정보가 추가되었습니다.</li>
 			<li>이벤트 <span class="badge bg-warning text-dark">영원한 겨울의 방주</span>의 2부 정보가 추가되었습니다.</li>
@@ -30,7 +30,7 @@ const Changelog: FunctionalComponent = () => <>
 			</li>
 		</> }
 		dialogue={ <>
-			<li><span class="badge bg-light text-dark">KST 2022-01-02 00:51:11</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+			<li><span class="badge bg-light text-dark">KST 2022-01-03 11:11:03</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
 		</> }
 	/>
 </>;
