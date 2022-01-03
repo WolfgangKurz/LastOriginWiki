@@ -13,6 +13,7 @@ export interface MapWaveDrop {
 
 export interface MapWave {
 	exp: number;
+	sexp: number;
 	enemy: Array<MapEnemyData | null>;
 	drops: MapWaveDrop[];
 }
@@ -36,6 +37,8 @@ export interface MapNodeEntity {
 	// name: string;
 	// desc: string;
 
+	playerExp: number;
+
 	type: STAGE_SUB_TYPE;
 	prev: number[];
 	offset: number;
@@ -56,6 +59,7 @@ export namespace MapNodeEntity {
 	export const Empty: MapNodeEntity = {
 		// name: "",
 		// desc: "",
+		playerExp: 0,
 		type: STAGE_SUB_TYPE.NONE,
 		prev: [],
 		offset: 0,

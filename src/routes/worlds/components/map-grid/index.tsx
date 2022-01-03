@@ -59,7 +59,7 @@ const MapNode: FunctionalComponent<MapNodeProps> = (props) => {
 			x="8" y="1" width="38"
 		/>
 		{/* <rect x="60" y="12" width="4" height="18" fill={ colors[typeIdx] } /> */ }
-		<text x="83" y="23" fill="#fff" textAnchor="middle" dominantBaseline="middle">{ node.text }</text>
+		<text x="82" y="23" fill="#fff" textAnchor="middle" dominantBaseline="middle">{ node.text }</text>
 
 		{ props.missing && <text
 			class={ style.missing }
@@ -115,17 +115,22 @@ class MapGrid extends Component<NewMapGridProps>{
 	render (props: RenderableProps<NewMapGridProps>) {
 		const wid = props.wid || "";
 		const mid = props.mid || "";
+		const nodes = props.nodes.sort((a, b) => a.offset - b.offset);
+		console.log(nodes);
 
 		const RECTS = (() => {
 			const ret: preact.VNode[] = [];
 			const lines: preact.VNode[] = [];
 
-			const hasStory = props.nodes.some(x => x.type === STAGE_SUB_TYPE.STORY);
+			const hasStory = nodes.some(x => x.type === STAGE_SUB_TYPE.STORY);
 			const byOffset = !(props.wid || "").startsWith("Ev") || parseInt((props.wid || "Ev0").substring(2), 10) < 14;
 
+			const mainXTable: Record<number, number> = {};
 			const used: number[] = [];
+
+			const zigzagV = v * 3 / 5;
 			let mainX: number = 0;
-			let exX: number = baseX + v / 2;
+			let exX: number = baseX + zigzagV;
 			let missingX: number = baseX;
 
 			const yTable: Record<number, number> = {
@@ -181,20 +186,23 @@ class MapGrid extends Component<NewMapGridProps>{
 				if (nodeType === 1 && hasStory)
 					mainX = (mainX + 1) % 2;
 				else if (nodeType === 2)
-					exX += v;
+					exX += hasStory ? zigzagV * 2 : v;
 				else if (nodeType === 3)
 					missingX += v;
 
-				props.nodes
+				if (hasStory)
+					mainXTable[node.offset] = mainX;
+
+				nodes
 					.filter(n => n.prev.includes(node.offset))
 					.forEach(n => {
 						const nType = missing ? 3 : GetTypeIdx(n, byOffset);
 						const rx = nType === 0
-							? nType === nodeType ? v : (hasStory ? 0 : v / 2)
+							? nType === nodeType ? v : (hasStory ? 0 : zigzagV)
 							: nType === 1
-								? nType === nodeType ? (hasStory ? v / 2 : v) : 0
+								? nType === nodeType ? (hasStory ? zigzagV : v) : 0
 								: nType === 2
-									? (hasStory ? 0 : v / 2)
+									? (hasStory ? 0 : zigzagV)
 									: v;
 
 						if (!byOffset || Math.abs((n.offset % 8) - (node.offset % 8)) <= 1) {
@@ -222,8 +230,8 @@ class MapGrid extends Component<NewMapGridProps>{
 								} else if (nodeType === 1) { // Main -> others
 									lines.push(line(
 										w / 2,
-										t + (mainX === 0 ? 0 : t) + h / 2,
-										w / 2 + (hasStory ? 0 : v / 2),
+										t + (!hasStory || (mainXTable[node.offset] === 1) ? 0 : t) + h / 2,
+										w / 2 + (hasStory ? 0 : zigzagV),
 										yTable[nType] + h / 2,
 										x,
 										node, n,
@@ -232,7 +240,7 @@ class MapGrid extends Component<NewMapGridProps>{
 									lines.push(line(
 										w / 2,
 										yTable[nodeType] + h / 2,
-										v + w / 2 - (hasStory ? 0 : v / 2),
+										v + w / 2 - (hasStory ? 0 : zigzagV),
 										yTable[nType] + h / 2,
 										x,
 										node, n,
@@ -270,9 +278,12 @@ class MapGrid extends Component<NewMapGridProps>{
 						);
 					});
 			};
-			render(props.nodes[0], baseX);
 
-			const missing = props.nodes.filter(x => !used.includes(x.offset));
+			nodes
+			.filter(n => n.prev.length === 0)
+			.forEach(n => render(n, baseX));
+
+			const missing = nodes.filter(x => !used.includes(x.offset));
 			if (missing.length > 0) {
 				missing.forEach(x => render(x, baseX, true));
 				lines.push(<rect

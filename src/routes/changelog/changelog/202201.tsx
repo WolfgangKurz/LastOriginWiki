@@ -6,6 +6,13 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11469" date="2022-01-04"
+		update={ <>
+			<li>세계 정보에서 일부 지역의 표현이 올바르지 않던 점을 수정했습니다.</li>
+			<li>세계 정보에 스킬 경험치와 사령관 경험치 표기가 추가되었습니다.</li>
+			<li>경험치 계산기에 <span class="badge bg-warning text-dark">이벤트 보너스</span> 입력이 추가되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11467" date="2022-01-03"
 		new={ <>
 			<li>신규 전투원 <span class="badge bg-warning text-dark">사이클롭스 프린세스</span>의 정보가 추가되었습니다.</li>
