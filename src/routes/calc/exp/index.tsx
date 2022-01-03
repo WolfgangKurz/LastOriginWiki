@@ -279,6 +279,22 @@ const EXPCalc: FunctionalComponent = () => {
 					</div>
 				</div>
 			</div>
+			<div class="col col-12 col-md-6 col-lg-3">
+				<div class="mb-1">
+					<Locale k="EXPCALC_EVENT_BONUS" />
+				</div>
+				<div class="ms-2 mb-2">
+					<div class="input-group mb-1">
+						<input
+							type="text"
+							class="form-control text-end"
+							value={ eventBonus.value }
+							onInput={ (e): void => eventBonus.set(parseInt((e.target as HTMLInputElement).value, 10)) }
+						/>
+						<span class="input-group-text">%</span>
+					</div>
+				</div>
+			</div>
 		</div>
 		<hr />
 
@@ -609,7 +625,7 @@ const EXPCalc: FunctionalComponent = () => {
 											.map(({ data, index }) => <div class={ `clearfix ${style.bonusLine}` } >
 												<UnitFace uid={ data.uid } />
 												<SkillIcon icon={ data.icon } passive />
-												<Locale k={ `UNIT_SKILL_${data.skill}_${data.uid}` } />
+												<Locale k={ `UNIT_SKILL_${data.uid}_${data.skill}` } />
 
 												<div class="float-end">
 													<select

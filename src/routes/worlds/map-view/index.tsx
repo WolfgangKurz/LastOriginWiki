@@ -255,17 +255,25 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 				return ret;
 			})();
 
-			const CurrentWaveExp = (
+			const [CurrentWaveExp, CurrentSkillExp, PlayerExp] = (
 				selectedValue &&
 				selectedValue.type !== STAGE_SUB_TYPE.STORY &&
 				Waves[selectedWave.value][selectedWaveIndex.value].e
 			)
-				? FormatNumber(Waves[selectedWave.value][selectedWaveIndex.value].e.exp)
-				: 0;
+				? (() => {
+					const wave = Waves[selectedWave.value][selectedWaveIndex.value].e;
+					return [FormatNumber(wave.exp), FormatNumber(wave.sexp), selectedValue.playerExp];
+				})()
+				: [0, 0, 0];
 
-			const TotalExp = selectedValue
-				? FormatNumber(Waves.reduce((p, c) => (p + c.reduce((p1, c1) => Math.max(p1, (c1.e && c1.e.exp) || 0), 0) || 0), 0))
-				: 0;
+			const [TotalExp, TotalSkillExp] = selectedValue
+				? (()=>{
+					return [
+						FormatNumber(Waves.reduce((p, c) => (p + c.reduce((p1, c1) => Math.max(p1, (c1.e && c1.e.exp) || 0), 0) || 0), 0)),
+						FormatNumber(Waves.reduce((p, c) => (p + c.reduce((p1, c1) => Math.max(p1, (c1.e && c1.e.sexp) || 0), 0) || 0), 0)),
+					];
+				})()
+				: [0,0];
 
 			const SearchInfo = selectedValue
 				? selectedValue.search || false
@@ -804,8 +812,15 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 								</div>
 								: <>
 									<div class="mb-2">
-										<span class="badge bg-danger">
+										<span class="badge bg-danger mx-1">
 											<Locale k="WORLD_VIEW_ENEMY_TOTAL_EXP" p={ [TotalExp] } />
+										</span>
+										<span class="badge bg-danger mx-1">
+											<Locale k="WORLD_VIEW_ENEMY_TOTAL_SKILL_EXP" p={ [TotalSkillExp] } />
+										</span>
+
+										<span class="badge bg-substory mx-1">
+											<Locale k="WORLD_VIEW_ENEMY_PLAYER_EXP" p={ [PlayerExp] } />
 										</span>
 									</div>
 									{ Waves.map((wave, waveIdx) => <Link
@@ -838,8 +853,11 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 											</div>
 										</div>
 										<div class="mb-2">
-											<span class="badge bg-warning text-dark">
+											<span class="badge bg-warning text-dark mx-1">
 												<Locale k="WORLD_VIEW_ENEMY_WAVE_EXP" p={ [CurrentWaveExp] } />
+											</span>
+											<span class="badge bg-warning text-dark mx-1">
+												<Locale k="WORLD_VIEW_ENEMY_WAVE_SKILL_EXP" p={ [CurrentSkillExp] } />
 											</span>
 										</div>
 
