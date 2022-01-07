@@ -74,12 +74,14 @@ const MapNode: FunctionalComponent<MapNodeProps> = (props) => {
 
 
 const padding = 20; // 패딩
+const gx = 15; // 노드간 가로 거리
+const gy = gx; // 노드간 세로 거리
 
 const w = 136; // 노드 가로 크기
 const h = 44; // 노드 세로 크기
 
-const v = w + 15; // 노드간 거리 + w
-const t = h + 15; // 노드간 세로 거리 + h
+const vw = w + gx;
+const vh = h + gy;
 
 const baseX = padding; // 기본 X
 const baseY = padding; // 기본 Y
@@ -105,10 +107,10 @@ class MapGrid extends Component<NewMapGridProps>{
 		if (this.svgRef.current) {
 			const ref = this.svgRef.current;
 			const bound = ref.getBBox();
-			const w = bound.x + bound.width + padding;
-			const h = bound.y + bound.height + padding;
-			ref.setAttribute("viewBox", `0 0 ${w} ${h}`);
-			ref.style.minWidth = `${w}px`;
+			const _w = Math.max(padding * 2 + w * 8 + gx * 7, bound.x + bound.width + padding);
+			const _h = Math.max(padding * 2 + h * 3 + gy * 2, bound.y + bound.height + padding);
+			ref.setAttribute("viewBox", `0 0 ${_w} ${_h}`);
+			ref.style.minWidth = `${_w}px`;
 		}
 	}
 
@@ -128,16 +130,16 @@ class MapGrid extends Component<NewMapGridProps>{
 			const mainXTable: Record<number, number> = {};
 			const used: number[] = [];
 
-			const zigzagV = v * 3 / 5;
+			const zigzagV = vw * 3 / 5;
 			let mainX: number = 0;
 			let exX: number = baseX + zigzagV;
 			let missingX: number = baseX;
 
 			const yTable: Record<number, number> = {
 				0: 0,
-				1: t,
-				2: t * (hasStory ? 3 : 2),
-				3: t * (hasStory ? 4 : 3),
+				1: vh,
+				2: vh * (hasStory ? 3 : 2),
+				3: vh * (hasStory ? 4 : 3),
 			};
 
 			const render = (node: MapNodeEntity, x: number, missing: boolean = false) => {
@@ -157,11 +159,11 @@ class MapGrid extends Component<NewMapGridProps>{
 				/>;
 
 				const nodeType = missing ? 3 : GetTypeIdx(node, byOffset);
-				let y = yTable[nodeType] + (nodeType === 1 && mainX === 1 ? t : 0);
+				let y = yTable[nodeType] + (nodeType === 1 && mainX === 1 ? vh : 0);
 
 				if (byOffset) {
-					x = baseX + (node.offset % 8) * v + (Math.floor(node.offset / 8 - 1) * v / 2);
-					y = Math.floor(node.offset / 8) * t;
+					x = baseX + (node.offset % 8) * vw + (Math.floor(node.offset / 8 - 1) * vw / 2);
+					y = Math.floor(node.offset / 8) * vh;
 				}
 
 				// render(nx, t, [node], undefined, true);
@@ -186,9 +188,9 @@ class MapGrid extends Component<NewMapGridProps>{
 				if (nodeType === 1 && hasStory)
 					mainX = (mainX + 1) % 2;
 				else if (nodeType === 2)
-					exX += hasStory ? zigzagV * 2 : v;
+					exX += hasStory ? zigzagV * 2 : vw;
 				else if (nodeType === 3)
-					missingX += v;
+					missingX += vw;
 
 				if (hasStory)
 					mainXTable[node.offset] = mainX;
@@ -198,74 +200,79 @@ class MapGrid extends Component<NewMapGridProps>{
 					.forEach(n => {
 						const nType = missing ? 3 : GetTypeIdx(n, byOffset);
 						const rx = nType === 0
-							? nType === nodeType ? v : (hasStory ? 0 : zigzagV)
+							? nType === nodeType ? vw : (hasStory ? 0 : zigzagV)
 							: nType === 1
-								? nType === nodeType ? (hasStory ? zigzagV : v) : 0
+								? nType === nodeType ? (hasStory ? zigzagV : vw) : 0
 								: nType === 2
 									? (hasStory ? 0 : zigzagV)
-									: v;
+									: vw;
 
-						if (!byOffset || Math.abs((n.offset % 8) - (node.offset % 8)) <= 1) {
-							if (nType !== 2) {
-								if (nodeType === 1 && nType === 1) { // Main -> Main
-									if (hasStory) {
+						(() => {
+							if (!byOffset || Math.abs((n.offset % 8) - (node.offset % 8)) <= 1) {
+								if (nType !== 2) {
+									if (nodeType === 1 && nType === 1) { // Main -> Main
+										if (hasStory) {
+											lines.push(line(
+												w / 2,
+												vh + (mainX === 1 ? 0 : vh) + h / 2,
+												rx + w / 2,
+												vh + (mainX === 1 ? vh : 0) + h / 2,
+												x,
+												node, n,
+											));
+										} else {
+											lines.push(line(
+												w / 2,
+												vh + h / 2,
+												rx + w / 2,
+												vh + h / 2,
+												x,
+												node, n,
+											));
+										}
+									} else if (nodeType === 1) { // Main -> others
+										if (byOffset && (n.offset % 8) <= (node.offset % 8))
+											return;
+
 										lines.push(line(
 											w / 2,
-											t + (mainX === 1 ? 0 : t) + h / 2,
-											rx + w / 2,
-											t + (mainX === 1 ? t : 0) + h / 2,
+											vh + (!hasStory || (mainXTable[node.offset] === 1) ? 0 : vh) + h / 2,
+											w / 2 + (hasStory ? 0 : zigzagV),
+											yTable[nType] + h / 2,
 											x,
 											node, n,
 										));
-									} else {
+									} else if (nType === 1) { // others -> Main
 										lines.push(line(
 											w / 2,
-											t + h / 2,
-											rx + w / 2,
-											t + h / 2,
+											yTable[nodeType] + h / 2,
+											w / 2 + (hasStory ? 0 : zigzagV),
+											yTable[nType] + h / 2,
+											x,
+											node, n,
+										));
+									} else if (nodeType !== 3 && nType !== 3) { // others -> others (except missing)
+										lines.push(line(
+											w / 2,
+											yTable[nType] + h / 2,
+											vw + w / 2,
+											yTable[nType] + h / 2,
 											x,
 											node, n,
 										));
 									}
-								} else if (nodeType === 1) { // Main -> others
-									lines.push(line(
-										w / 2,
-										t + (!hasStory || (mainXTable[node.offset] === 1) ? 0 : t) + h / 2,
-										w / 2 + (hasStory ? 0 : zigzagV),
-										yTable[nType] + h / 2,
-										x,
-										node, n,
-									));
-								} else if (nType === 1) { // others -> Main
+								} else if (nodeType === nType) {
 									lines.push(line(
 										w / 2,
 										yTable[nodeType] + h / 2,
-										v + w / 2 - (hasStory ? 0 : zigzagV),
+										w / 2 + vw,
 										yTable[nType] + h / 2,
-										x,
-										node, n,
-									));
-								} else if (nodeType !== 3 && nType !== 3) { // others -> others (except missing)
-									lines.push(line(
-										w / 2,
-										yTable[nType] + h / 2,
-										v + w / 2,
-										yTable[nType] + h / 2,
-										x,
+										hasStory ? exX - vw : x,
 										node, n,
 									));
 								}
-							} else if (nodeType === nType) {
-								lines.push(line(
-									w / 2,
-									yTable[nodeType] + h / 2,
-									w / 2 + v,
-									yTable[nType] + h / 2,
-									hasStory ? exX - v : x,
-									node, n,
-								));
 							}
-						}
+						})();
 
 						render(
 							n,
@@ -280,17 +287,17 @@ class MapGrid extends Component<NewMapGridProps>{
 			};
 
 			nodes
-			.filter(n => n.prev.length === 0)
-			.forEach(n => render(n, baseX));
+				.filter(n => n.prev.length === 0)
+				.forEach(n => render(n, baseX));
 
 			const missing = nodes.filter(x => !used.includes(x.offset));
 			if (missing.length > 0) {
 				missing.forEach(x => render(x, baseX, true));
 				lines.push(<rect
 					x={ 0 }
-					y={ baseY + t * 4 - (t - h) / 2 }
+					y={ baseY + vh * 4 - (vh - h) / 2 }
 					width={ "100%" }
-					height={ t }
+					height={ vh }
 					fill="rgba(0,0,0,0.4)"
 				/>);
 			}
