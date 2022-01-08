@@ -188,9 +188,9 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 					: `/worlds/${Source.EventId}/${((x): string => {
 						if (!x.includes("-")) return x;
 
-						let ls = x.substr(0, x.indexOf("-"));
-						if (!ls.startsWith("Ev")) return ls;
-						ls = ls.substr(2);
+						let ls = x.substring(0, x.indexOf("-"));
+						if (!/^E[Vv]/.test(ls)) return ls;
+						ls = ls.substring(2);
 
 						if (!ls) return "1";
 						return ls;

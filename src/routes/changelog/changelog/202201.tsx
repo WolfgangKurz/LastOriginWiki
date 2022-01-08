@@ -6,6 +6,14 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11488" date="2022-01-08"
+		new={ <>
+			<li>세계 정보에 <span class="badge bg-success">드랍 테이블</span> 페이지가 추가되었습니다.</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2022-01-08 21:57:26</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11473" date="2022-01-07"
 		bugfix={ <>
 			<li>세계 정보에서 일부 지역의 표현이 올바르지 않던 점을 수정했습니다.</li>

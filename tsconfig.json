@@ -9,7 +9,7 @@
 		"jsxFragmentFactory": "Fragment",
 
 		"strict": true,
-		"importHelpers": true,
+		"importHelpers": false,
 		"noImplicitAny": false,
 		"isolatedModules": true,
 
@@ -51,5 +51,10 @@
 	],
 	"exclude": [
 		"node_modules"
-	]
+	],
+	"ts-node": {
+		"compilerOptions": {
+			"module": "commonjs"
+		}
+	}
 }

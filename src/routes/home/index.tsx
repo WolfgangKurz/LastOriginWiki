@@ -42,27 +42,29 @@ const Home: FunctionalComponent = () => {
 
 	return <div class={ `${style.home} home` }>
 		{ CurrentEvent && (new Date() < EventTo)
-			? <div class="alert alert-danger" role="alert">
+			? <div>
 				<Link href={ `/worlds/${CurrentEvent}` } class="text-dark" style={ { textDecoration: "none" } }>
-					<div>
+					<div class="alert alert-danger d-inline-block px-5 text-dark" role="alert">
+						<div>
+							<img
+								src={ `${AssetsRoot}/world/event-${CurrentLocale}.png` }
+								height="24"
+								style={ { verticalAlign: "text-bottom" } }
+							/>
+						</div>
 						<img
-							src={ `${AssetsRoot}/world/event-${CurrentLocale}.png` }
-							height="24"
-							style={ { verticalAlign: "text-bottom" } }
+							src={ `${AssetsRoot}/world/banner/${CurrentEvent}B.png` }
+							class="mb-1"
+							height="120"
+							style={ { verticalAlign: "middle" } }
 						/>
-					</div>
-					<img
-						src={ `${AssetsRoot}/world/banner/${CurrentEvent}B.png` }
-						class="mb-1"
-						height="120"
-						style={ { verticalAlign: "middle" } }
-					/>
-					<div>
-						<span>
-							<img class="me-2" src={ `${AssetsRoot}/flags/KR.png` } alt="[KR]" />
-							<Icon icon="calendar3" class="me-1 mb-1" />
-							{ DateText(EventFrom) } ~ { DateText(EventTo) }
-						</span>
+						<div>
+							<span>
+								<img class="me-2" src={ `${AssetsRoot}/flags/KR.png` } alt="[KR]" />
+								<Icon icon="calendar3" class="me-1 mb-1" />
+								{ DateText(EventFrom) } ~ { DateText(EventTo) }
+							</span>
+						</div>
 					</div>
 				</Link>
 			</div>
