@@ -1,10 +1,11 @@
 /* eslint-disable max-len, @typescript-eslint/explicit-function-return-type, @typescript-eslint/no-var-requires */
 
-// import * as glob from "glob";
-// import * as path from "path";
-const glob = require("glob");
-const path = require("path");
-const fs = require("fs");
+import glob from "glob";
+import path from "path";
+import fs from "fs";
+// const glob = require("glob");
+// const path = require("path");
+// const fs = require("fs");
 
 let xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n`;
@@ -49,6 +50,7 @@ const WorldNames: Record<string, string> = {
 	Ev11: "Project ORCA, 별밤의 무대",
 	Ev12: "빛이 들지 않는 성역",
 	Ev13: "연꽃 위에 피는 장미",
+	Ev14: "영원한 겨울의 방주",
 };
 const skin = glob.sync(
 	path.resolve(__dirname, "..", "external", "assets", "png", "full", "*.png"),
@@ -98,7 +100,8 @@ Object.keys(WorldNames)
 		const map = (MapData as any)[key];
 		Object.keys(map).forEach(y => {
 			xml += `<url><loc>https://lo.swaytwig.com/worlds/${key}/${y}</loc></url>\n`;
-			xml += `<url><loc>https://lo.swaytwig.com/story/${key}/${y}</loc></url>\n`;
+			xml += `<url><loc>https://lo.swaytwig.com/worlds/${key}/${y}/drop</loc></url>\n`;
+			// xml += `<url><loc>https://lo.swaytwig.com/story/${key}/${y}</loc></url>\n`;
 		});
 	});
 
@@ -106,15 +109,15 @@ xml += `<url><loc>https://lo.swaytwig.com/eternalwar</loc></url>
 <url><loc>https://lo.swaytwig.com/simulator</loc></url>
 <url><loc>https://lo.swaytwig.com/changelog</loc></url>
 <url><loc>https://lo.swaytwig.com/bgm</loc></url>
+<url><loc>https://lo.swaytwig.com/calc/exp</loc></url>
+<url><loc>https://lo.swaytwig.com/bgm</loc></url>
 </urlset>`;
 
-// <url><loc>https://lo.swaytwig.com/exp</loc></url>
-// <url><loc>https://lo.swaytwig.com/bgm</loc></url>
 // <url><loc>https://lo.swaytwig.com/eapi</loc></url>
 
 // console.log(xml);
 fs.writeFileSync(
-	path.resolve(__dirname, "..", "src", "assets", "sitemap.xml"),
+	path.resolve(__dirname, "..", "public", "sitemap.xml"),
 	xml,
 	{ encoding: "utf-8" },
 );

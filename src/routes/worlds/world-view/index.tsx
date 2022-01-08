@@ -24,14 +24,15 @@ const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 	UpdateTitle(LocaleGet("MENU_WORLDS"), LocaleGet(`WORLD_${props.wid}`));
 
 	return <Loader json={ StaticDB.Map } content={ ((): preact.VNode => {
-		const nonStory = ["Sub", "Cha", "Daily"].includes(props.wid);
+		// const nonStory = ["Sub", "Cha", "Daily"].includes(props.wid);
+		const nonStory = true;
 
 		const MapDB = GetJson<Worlds>(StaticDB.Map);
 
 		const Worlds = Object.keys(MapDB[props.wid]);
 
 		const rows = nonStory
-			? "row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6"
+			? "row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5"
 			: "row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4";
 
 		return <div class="worlds-world text-start">
@@ -72,6 +73,12 @@ const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 										<Locale k="WORLDS_WORLD_STORY" />
 									</button>
 								}
+							</div>
+							<div class="btn-group mt-1">
+								<button class="btn btn-success" onClick={ (): void => void (route(`/worlds/${props.wid}/${world}/drop`)) }>
+									<Icon icon="table" class="me-2" />
+									<Locale k="WORLDS_DROP_TABLE" />
+								</button>
 							</div>
 						</div>
 					</div>

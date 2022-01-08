@@ -65,6 +65,7 @@ const App: FunctionalComponent = () => {
 
 						<AsyncRoute path="/worlds" { ...pRoute(() => import("@/routes/worlds")) } />
 						<AsyncRoute path="/worlds/:wid" { ...pRoute(() => import("@/routes/worlds/world-view")) } />
+						<AsyncRoute path="/worlds/:wid/:mid/drop" { ...pRoute(() => import("@/routes/worlds/drop-table")) } />
 						<AsyncRoute path="/worlds/:wid/:mid/:node?" { ...pRoute(() => import("@/routes/worlds/map-view")) } />
 
 						<AsyncRoute path="/eternalwar" { ...pRoute(() => import("@/routes/eternalwar")) } />
