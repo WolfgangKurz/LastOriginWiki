@@ -6,6 +6,20 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11491" date="2022-01-10"
+		update={ <>
+			<li><span class="badge bg-warning text-dark">사이클롭스 프린세스</span>의 스킬 정보가 갱신되었습니다.</li>
+			<li>일부 적의 스킬 정보가 갱신되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<span class="badge bg-warning text-dark">티타니아 프로스트</span>의 스킨 <span class="badge bg-danger">오르카 바니 : 도도한 눈토끼</span>의 정보가 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2022-01-10 12:28:09</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11488" date="2022-01-08"
 		new={ <>
 			<li>세계 정보에 <span class="badge bg-success">드랍 테이블</span> 페이지가 추가되었습니다.</li>
