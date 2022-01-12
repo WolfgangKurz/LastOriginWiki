@@ -131,6 +131,15 @@ const Home: FunctionalComponent = () => {
 		<p>
 			<Locale k="HOME_COPYRIGHT" />
 		</p>
+
+		<div class="mt-4">
+			<a href="https://www.buymeacoffee.com/wolfgangkurzdev">
+				<img
+					src="https://img.buymeacoffee.com/button-api/?text=Buy me a beer&amp;emoji=🍺&amp;slug=wolfgangkurzdev&amp;button_colour=FFDD00&amp;font_colour=000000&amp;font_family=Lato&amp;outline_colour=000000&amp;coffee_colour=ffffff"
+					style="height: 35px;"
+				/>
+			</a>
+		</div>
 	</div>;
 };
 
