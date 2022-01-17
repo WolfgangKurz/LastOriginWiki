@@ -6,6 +6,27 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11495" date="2022-01-17"
+		new={ <>
+			<li>이벤트 <span class="badge bg-warning text-dark">영원한 겨울의 방주</span>의 2부 프롤로그 정보가 추가되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">T-3 레프리콘</span>의 승급 정보가 추가되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">M-5 이프리트</span>의 승급 정보가 추가되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">LRL</span>의 승급 정보가 추가되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">A-14B 스프리건</span>의 승급 정보가 추가되었습니다.</li>
+		</> }
+		update={ <>
+			<li><span class="badge bg-warning text-dark">에키드나</span>의 스킬 정보가 갱신되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">CS 페로</span>의 스킬 정보가 갱신되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">T-3 레프리콘</span>의 스킬 정보가 갱신되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">M-5 이프리트</span>의 스킬 정보가 갱신되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">A-14B 스프리건</span>의 스킬 정보가 갱신되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">사이클롭스 프린세스</span>의 스킬 정보가 갱신되었습니다.</li>
+			<li>일부 적의 스킬 정보가 갱신되었습니다.</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2022-01-17 16:57:33</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11491" date="2022-01-10"
 		update={ <>
 			<li><span class="badge bg-warning text-dark">사이클롭스 프린세스</span>의 스킬 정보가 갱신되었습니다.</li>
@@ -49,7 +70,7 @@ const Changelog: FunctionalComponent = () => <>
 	<ChangelogItem title="Build 11467" date="2022-01-03"
 		new={ <>
 			<li>신규 전투원 <span class="badge bg-warning text-dark">사이클롭스 프린세스</span>의 정보가 추가되었습니다.</li>
-			<li>이벤트 <span class="badge bg-warning text-dark">영원한 겨울의 방주</span>의 2부 정보가 추가되었습니다.</li>
+			<li>이벤트 <span class="badge bg-warning text-dark">영원한 겨울의 방주</span>의 1부 추가 정보가 추가되었습니다.</li>
 			<li>전투원 정보에 로봇 전투원의 연구 계통도가 추가되었습니다.</li>
 		</> }
 		bugfix={ <>

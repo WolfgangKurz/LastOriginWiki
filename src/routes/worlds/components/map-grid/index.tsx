@@ -17,13 +17,13 @@ interface MapNodeProps {
 }
 
 function GetTypeIdx (node: MapNodeEntity, byOffset: boolean = false): 0 | 1 | 2 {
-	const name = node.text;
+	const key = node.key;
 
 	if (byOffset) return Math.floor(node.offset / 8) as (0 | 1 | 2);
 
-	return /[0-9]+$/.test(name)
+	return /[0-9]+$/.test(key)
 		? 1
-		: /(Ex|C)$/.test(name)
+		: /(Ex|C)$/.test(key)
 			? 2
 			: 0;
 }

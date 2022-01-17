@@ -18,7 +18,7 @@
       ],
       "data": [
         {
-          "rate": 2.1,
+          "rate": 2,
           "type": 0,
           "range": 5,
           "ap": 8,
@@ -53,7 +53,7 @@
                 {
                   "icon": "BuffIcon_Push",
                   "desc": {
-                    "desc": "고폭탄 폭발 : 뒤로 {0}칸 밀기",
+                    "desc": "고폭탄 폭발 : 뒤로{0}칸 밀기",
                     "type": 0,
                     "value": "1",
                     "level": "0"
@@ -78,7 +78,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "고폭탄 폭발 : AP {0}",
+                    "desc": "고폭탄 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1.500000",
                     "level": "-0.075000"
@@ -147,7 +147,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "고폭탄 폭발 : AP {0}",
+                    "desc": "고폭탄 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1.500000",
                     "level": "-0.075000"
@@ -227,16 +227,7 @@
             {
               "key": "Effect_BR_Efreeti_N_14",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Efreeti_N_4",
-                    "Effect_BR_Efreeti_N_15"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": false,
               "body": [
                 0,
                 1
@@ -293,6 +284,80 @@
                     "off": {
                       "type": 76,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "정밀 포격 지원 : 행 보호 해제",
+                    "type": 0,
+                    "value": "50",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 50,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_55",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_54"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "날 혼자 내버려둬... : 광역 피해 분산 효과 해제",
+                    "type": 0,
+                    "value": "110",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 110
                     }
                   },
                   "overlap": 4
@@ -303,7 +368,7 @@
           ]
         },
         {
-          "rate": 2.285,
+          "rate": 2.2,
           "type": 0,
           "range": 5,
           "ap": 8,
@@ -338,7 +403,7 @@
                 {
                   "icon": "BuffIcon_Push",
                   "desc": {
-                    "desc": "고폭탄 폭발 : 뒤로 {0}칸 밀기",
+                    "desc": "고폭탄 폭발 : 뒤로{0}칸 밀기",
                     "type": 0,
                     "value": "1",
                     "level": "0"
@@ -363,7 +428,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "고폭탄 폭발 : AP {0}",
+                    "desc": "고폭탄 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1.500000",
                     "level": "-0.075000"
@@ -432,7 +497,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "고폭탄 폭발 : AP {0}",
+                    "desc": "고폭탄 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1.500000",
                     "level": "-0.075000"
@@ -512,16 +577,7 @@
             {
               "key": "Effect_BR_Efreeti_N_14",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Efreeti_N_4",
-                    "Effect_BR_Efreeti_N_15"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": false,
               "body": [
                 0,
                 1
@@ -578,6 +634,80 @@
                     "off": {
                       "type": 76,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "정밀 포격 지원 : 행 보호 해제",
+                    "type": 0,
+                    "value": "50",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 50,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_55",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_54"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "날 혼자 내버려둬... : 광역 피해 분산 효과 해제",
+                    "type": 0,
+                    "value": "110",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 110
                     }
                   },
                   "overlap": 4
@@ -588,7 +718,7 @@
           ]
         },
         {
-          "rate": 2.47,
+          "rate": 2.4,
           "type": 0,
           "range": 5,
           "ap": 8,
@@ -623,7 +753,7 @@
                 {
                   "icon": "BuffIcon_Push",
                   "desc": {
-                    "desc": "고폭탄 폭발 : 뒤로 {0}칸 밀기",
+                    "desc": "고폭탄 폭발 : 뒤로{0}칸 밀기",
                     "type": 0,
                     "value": "1",
                     "level": "0"
@@ -648,7 +778,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "고폭탄 폭발 : AP {0}",
+                    "desc": "고폭탄 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1.500000",
                     "level": "-0.075000"
@@ -717,7 +847,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "고폭탄 폭발 : AP {0}",
+                    "desc": "고폭탄 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1.500000",
                     "level": "-0.075000"
@@ -797,16 +927,7 @@
             {
               "key": "Effect_BR_Efreeti_N_14",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Efreeti_N_4",
-                    "Effect_BR_Efreeti_N_15"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": false,
               "body": [
                 0,
                 1
@@ -863,6 +984,80 @@
                     "off": {
                       "type": 76,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "정밀 포격 지원 : 행 보호 해제",
+                    "type": 0,
+                    "value": "50",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 50,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_55",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_54"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "날 혼자 내버려둬... : 광역 피해 분산 효과 해제",
+                    "type": 0,
+                    "value": "110",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 110
                     }
                   },
                   "overlap": 4
@@ -873,7 +1068,7 @@
           ]
         },
         {
-          "rate": 2.655,
+          "rate": 2.6,
           "type": 0,
           "range": 5,
           "ap": 8,
@@ -908,7 +1103,7 @@
                 {
                   "icon": "BuffIcon_Push",
                   "desc": {
-                    "desc": "고폭탄 폭발 : 뒤로 {0}칸 밀기",
+                    "desc": "고폭탄 폭발 : 뒤로{0}칸 밀기",
                     "type": 0,
                     "value": "1",
                     "level": "0"
@@ -933,7 +1128,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "고폭탄 폭발 : AP {0}",
+                    "desc": "고폭탄 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1.500000",
                     "level": "-0.075000"
@@ -1002,7 +1197,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "고폭탄 폭발 : AP {0}",
+                    "desc": "고폭탄 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1.500000",
                     "level": "-0.075000"
@@ -1082,16 +1277,7 @@
             {
               "key": "Effect_BR_Efreeti_N_14",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Efreeti_N_4",
-                    "Effect_BR_Efreeti_N_15"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": false,
               "body": [
                 0,
                 1
@@ -1148,6 +1334,80 @@
                     "off": {
                       "type": 76,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "정밀 포격 지원 : 행 보호 해제",
+                    "type": 0,
+                    "value": "50",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 50,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_55",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_54"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "날 혼자 내버려둬... : 광역 피해 분산 효과 해제",
+                    "type": 0,
+                    "value": "110",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 110
                     }
                   },
                   "overlap": 4
@@ -1158,7 +1418,7 @@
           ]
         },
         {
-          "rate": 2.84,
+          "rate": 2.8,
           "type": 0,
           "range": 5,
           "ap": 8,
@@ -1193,7 +1453,7 @@
                 {
                   "icon": "BuffIcon_Push",
                   "desc": {
-                    "desc": "고폭탄 폭발 : 뒤로 {0}칸 밀기",
+                    "desc": "고폭탄 폭발 : 뒤로{0}칸 밀기",
                     "type": 0,
                     "value": "1",
                     "level": "0"
@@ -1218,7 +1478,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "고폭탄 폭발 : AP {0}",
+                    "desc": "고폭탄 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1.500000",
                     "level": "-0.075000"
@@ -1287,7 +1547,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "고폭탄 폭발 : AP {0}",
+                    "desc": "고폭탄 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1.500000",
                     "level": "-0.075000"
@@ -1367,16 +1627,7 @@
             {
               "key": "Effect_BR_Efreeti_N_14",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Efreeti_N_4",
-                    "Effect_BR_Efreeti_N_15"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": false,
               "body": [
                 0,
                 1
@@ -1433,6 +1684,80 @@
                     "off": {
                       "type": 76,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "정밀 포격 지원 : 행 보호 해제",
+                    "type": 0,
+                    "value": "50",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 50,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_55",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_54"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "날 혼자 내버려둬... : 광역 피해 분산 효과 해제",
+                    "type": 0,
+                    "value": "110",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 110
                     }
                   },
                   "overlap": 4
@@ -1443,7 +1768,7 @@
           ]
         },
         {
-          "rate": 3.025,
+          "rate": 3,
           "type": 0,
           "range": 5,
           "ap": 8,
@@ -1478,7 +1803,7 @@
                 {
                   "icon": "BuffIcon_Push",
                   "desc": {
-                    "desc": "고폭탄 폭발 : 뒤로 {0}칸 밀기",
+                    "desc": "고폭탄 폭발 : 뒤로{0}칸 밀기",
                     "type": 0,
                     "value": "1",
                     "level": "0"
@@ -1503,7 +1828,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "고폭탄 폭발 : AP {0}",
+                    "desc": "고폭탄 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1.500000",
                     "level": "-0.075000"
@@ -1572,7 +1897,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "고폭탄 폭발 : AP {0}",
+                    "desc": "고폭탄 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1.500000",
                     "level": "-0.075000"
@@ -1652,16 +1977,7 @@
             {
               "key": "Effect_BR_Efreeti_N_14",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Efreeti_N_4",
-                    "Effect_BR_Efreeti_N_15"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": false,
               "body": [
                 0,
                 1
@@ -1718,6 +2034,80 @@
                     "off": {
                       "type": 76,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "정밀 포격 지원 : 행 보호 해제",
+                    "type": 0,
+                    "value": "50",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 50,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_55",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_54"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "날 혼자 내버려둬... : 광역 피해 분산 효과 해제",
+                    "type": 0,
+                    "value": "110",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 110
                     }
                   },
                   "overlap": 4
@@ -1728,7 +2118,7 @@
           ]
         },
         {
-          "rate": 3.21,
+          "rate": 3.2,
           "type": 0,
           "range": 5,
           "ap": 8,
@@ -1763,7 +2153,7 @@
                 {
                   "icon": "BuffIcon_Push",
                   "desc": {
-                    "desc": "고폭탄 폭발 : 뒤로 {0}칸 밀기",
+                    "desc": "고폭탄 폭발 : 뒤로{0}칸 밀기",
                     "type": 0,
                     "value": "1",
                     "level": "0"
@@ -1788,7 +2178,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "고폭탄 폭발 : AP {0}",
+                    "desc": "고폭탄 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1.500000",
                     "level": "-0.075000"
@@ -1857,7 +2247,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "고폭탄 폭발 : AP {0}",
+                    "desc": "고폭탄 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1.500000",
                     "level": "-0.075000"
@@ -1937,16 +2327,7 @@
             {
               "key": "Effect_BR_Efreeti_N_14",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Efreeti_N_4",
-                    "Effect_BR_Efreeti_N_15"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": false,
               "body": [
                 0,
                 1
@@ -2003,6 +2384,80 @@
                     "off": {
                       "type": 76,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "정밀 포격 지원 : 행 보호 해제",
+                    "type": 0,
+                    "value": "50",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 50,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_55",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_54"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "날 혼자 내버려둬... : 광역 피해 분산 효과 해제",
+                    "type": 0,
+                    "value": "110",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 110
                     }
                   },
                   "overlap": 4
@@ -2013,7 +2468,7 @@
           ]
         },
         {
-          "rate": 3.395,
+          "rate": 3.4,
           "type": 0,
           "range": 5,
           "ap": 8,
@@ -2048,7 +2503,7 @@
                 {
                   "icon": "BuffIcon_Push",
                   "desc": {
-                    "desc": "고폭탄 폭발 : 뒤로 {0}칸 밀기",
+                    "desc": "고폭탄 폭발 : 뒤로{0}칸 밀기",
                     "type": 0,
                     "value": "1",
                     "level": "0"
@@ -2073,7 +2528,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "고폭탄 폭발 : AP {0}",
+                    "desc": "고폭탄 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1.500000",
                     "level": "-0.075000"
@@ -2142,7 +2597,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "고폭탄 폭발 : AP {0}",
+                    "desc": "고폭탄 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1.500000",
                     "level": "-0.075000"
@@ -2222,16 +2677,7 @@
             {
               "key": "Effect_BR_Efreeti_N_14",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Efreeti_N_4",
-                    "Effect_BR_Efreeti_N_15"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": false,
               "body": [
                 0,
                 1
@@ -2288,6 +2734,80 @@
                     "off": {
                       "type": 76,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "정밀 포격 지원 : 행 보호 해제",
+                    "type": 0,
+                    "value": "50",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 50,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_55",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_54"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "날 혼자 내버려둬... : 광역 피해 분산 효과 해제",
+                    "type": 0,
+                    "value": "110",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 110
                     }
                   },
                   "overlap": 4
@@ -2298,7 +2818,7 @@
           ]
         },
         {
-          "rate": 3.58,
+          "rate": 3.6,
           "type": 0,
           "range": 5,
           "ap": 8,
@@ -2333,7 +2853,7 @@
                 {
                   "icon": "BuffIcon_Push",
                   "desc": {
-                    "desc": "고폭탄 폭발 : 뒤로 {0}칸 밀기",
+                    "desc": "고폭탄 폭발 : 뒤로{0}칸 밀기",
                     "type": 0,
                     "value": "1",
                     "level": "0"
@@ -2358,7 +2878,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "고폭탄 폭발 : AP {0}",
+                    "desc": "고폭탄 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1.500000",
                     "level": "-0.075000"
@@ -2427,7 +2947,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "고폭탄 폭발 : AP {0}",
+                    "desc": "고폭탄 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1.500000",
                     "level": "-0.075000"
@@ -2507,16 +3027,7 @@
             {
               "key": "Effect_BR_Efreeti_N_14",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Efreeti_N_4",
-                    "Effect_BR_Efreeti_N_15"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": false,
               "body": [
                 0,
                 1
@@ -2573,6 +3084,80 @@
                     "off": {
                       "type": 76,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "정밀 포격 지원 : 행 보호 해제",
+                    "type": 0,
+                    "value": "50",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 50,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_55",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_54"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "날 혼자 내버려둬... : 광역 피해 분산 효과 해제",
+                    "type": 0,
+                    "value": "110",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 110
                     }
                   },
                   "overlap": 4
@@ -2583,7 +3168,7 @@
           ]
         },
         {
-          "rate": 3.765,
+          "rate": 3.8,
           "type": 0,
           "range": 5,
           "ap": 8,
@@ -2618,7 +3203,7 @@
                 {
                   "icon": "BuffIcon_Push",
                   "desc": {
-                    "desc": "고폭탄 폭발 : 뒤로 {0}칸 밀기",
+                    "desc": "고폭탄 폭발 : 뒤로{0}칸 밀기",
                     "type": 0,
                     "value": "1",
                     "level": "0"
@@ -2643,7 +3228,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "고폭탄 폭발 : AP {0}",
+                    "desc": "고폭탄 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1.500000",
                     "level": "-0.075000"
@@ -2712,7 +3297,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "고폭탄 폭발 : AP {0}",
+                    "desc": "고폭탄 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1.500000",
                     "level": "-0.075000"
@@ -2792,16 +3377,7 @@
             {
               "key": "Effect_BR_Efreeti_N_14",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Efreeti_N_4",
-                    "Effect_BR_Efreeti_N_15"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": false,
               "body": [
                 0,
                 1
@@ -2858,6 +3434,80 @@
                     "off": {
                       "type": 76,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "정밀 포격 지원 : 행 보호 해제",
+                    "type": 0,
+                    "value": "50",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 50,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_55",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_54"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "날 혼자 내버려둬... : 광역 피해 분산 효과 해제",
+                    "type": 0,
+                    "value": "110",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 110
                     }
                   },
                   "overlap": 4
@@ -2887,7 +3537,7 @@
           {
             "icon": "BuffIcon_Push",
             "desc": {
-              "desc": "고폭탄 폭발 : 뒤로 {0}칸 밀기",
+              "desc": "고폭탄 폭발 : 뒤로{0}칸 밀기",
               "type": 0,
               "value": "1",
               "level": "0"
@@ -2899,7 +3549,7 @@
           {
             "icon": "BuffIcon_AP_DOWN",
             "desc": {
-              "desc": "고폭탄 폭발 : AP {0}",
+              "desc": "고폭탄 폭발 : AP{0}",
               "type": 0,
               "value": "-1.500000",
               "level": "-0.075000"
@@ -2923,7 +3573,7 @@
           {
             "icon": "BuffIcon_AP_DOWN",
             "desc": {
-              "desc": "고폭탄 폭발 : AP {0}",
+              "desc": "고폭탄 폭발 : AP{0}",
               "type": 0,
               "value": "-1.500000",
               "level": "-0.075000"
@@ -2967,6 +3617,30 @@
             "base": 76,
             "per": 0,
             "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_BUFF",
+            "desc": {
+              "desc": "정밀 포격 지원 : 행 보호 해제",
+              "type": 0,
+              "value": "50",
+              "level": "0"
+            },
+            "base": 50,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_DEBUFF",
+            "desc": {
+              "desc": "날 혼자 내버려둬... : 광역 피해 분산 효과 해제",
+              "type": 0,
+              "value": "110",
+              "level": "0"
+            },
+            "base": 110,
+            "per": 0,
+            "chance": 1
           }
         ]
       ]
@@ -2991,9 +3665,9 @@
       ],
       "data": [
         {
-          "rate": 2.1,
+          "rate": 2.25,
           "type": 0,
-          "range": 5,
+          "range": 6,
           "ap": 10,
           "grid": "0,0.75,0,0.75,1,0.75,0,0.75,0",
           "target_ground": true,
@@ -3026,7 +3700,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "충격 폭발 : AP {0}",
+                    "desc": "충격 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1",
                     "level": "-0.050000"
@@ -3097,9 +3771,9 @@
           ]
         },
         {
-          "rate": 2.285,
+          "rate": 2.5,
           "type": 0,
-          "range": 5,
+          "range": 6,
           "ap": 10,
           "grid": "0,0.75,0,0.75,1,0.75,0,0.75,0",
           "target_ground": true,
@@ -3132,7 +3806,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "충격 폭발 : AP {0}",
+                    "desc": "충격 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1",
                     "level": "-0.050000"
@@ -3203,9 +3877,9 @@
           ]
         },
         {
-          "rate": 2.47,
+          "rate": 2.75,
           "type": 0,
-          "range": 5,
+          "range": 6,
           "ap": 10,
           "grid": "0,0.75,0,0.75,1,0.75,0,0.75,0",
           "target_ground": true,
@@ -3238,7 +3912,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "충격 폭발 : AP {0}",
+                    "desc": "충격 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1",
                     "level": "-0.050000"
@@ -3309,9 +3983,9 @@
           ]
         },
         {
-          "rate": 2.655,
+          "rate": 3,
           "type": 0,
-          "range": 5,
+          "range": 6,
           "ap": 10,
           "grid": "0,0.75,0,0.75,1,0.75,0,0.75,0",
           "target_ground": true,
@@ -3344,7 +4018,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "충격 폭발 : AP {0}",
+                    "desc": "충격 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1",
                     "level": "-0.050000"
@@ -3415,9 +4089,9 @@
           ]
         },
         {
-          "rate": 2.84,
+          "rate": 3.25,
           "type": 0,
-          "range": 5,
+          "range": 6,
           "ap": 10,
           "grid": "0,0.75,0,0.75,1,0.75,0,0.75,0",
           "target_ground": true,
@@ -3450,7 +4124,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "충격 폭발 : AP {0}",
+                    "desc": "충격 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1",
                     "level": "-0.050000"
@@ -3521,9 +4195,9 @@
           ]
         },
         {
-          "rate": 3.025,
+          "rate": 3.5,
           "type": 0,
-          "range": 5,
+          "range": 6,
           "ap": 10,
           "grid": "0,0.75,0,0.75,1,0.75,0,0.75,0",
           "target_ground": true,
@@ -3556,7 +4230,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "충격 폭발 : AP {0}",
+                    "desc": "충격 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1",
                     "level": "-0.050000"
@@ -3627,9 +4301,9 @@
           ]
         },
         {
-          "rate": 3.21,
+          "rate": 3.75,
           "type": 0,
-          "range": 5,
+          "range": 6,
           "ap": 10,
           "grid": "0,0.75,0,0.75,1,0.75,0,0.75,0",
           "target_ground": true,
@@ -3662,7 +4336,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "충격 폭발 : AP {0}",
+                    "desc": "충격 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1",
                     "level": "-0.050000"
@@ -3733,9 +4407,9 @@
           ]
         },
         {
-          "rate": 3.395,
+          "rate": 4,
           "type": 0,
-          "range": 5,
+          "range": 6,
           "ap": 10,
           "grid": "0,0.75,0,0.75,1,0.75,0,0.75,0",
           "target_ground": true,
@@ -3768,7 +4442,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "충격 폭발 : AP {0}",
+                    "desc": "충격 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1",
                     "level": "-0.050000"
@@ -3839,9 +4513,9 @@
           ]
         },
         {
-          "rate": 3.58,
+          "rate": 4.25,
           "type": 0,
-          "range": 5,
+          "range": 6,
           "ap": 10,
           "grid": "0,0.75,0,0.75,1,0.75,0,0.75,0",
           "target_ground": true,
@@ -3874,7 +4548,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "충격 폭발 : AP {0}",
+                    "desc": "충격 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1",
                     "level": "-0.050000"
@@ -3945,9 +4619,9 @@
           ]
         },
         {
-          "rate": 3.765,
+          "rate": 4.5,
           "type": 0,
-          "range": 5,
+          "range": 6,
           "ap": 10,
           "grid": "0,0.75,0,0.75,1,0.75,0,0.75,0",
           "target_ground": true,
@@ -3980,7 +4654,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "충격 폭발 : AP {0}",
+                    "desc": "충격 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1",
                     "level": "-0.050000"
@@ -4070,7 +4744,7 @@
           {
             "icon": "BuffIcon_AP_DOWN",
             "desc": {
-              "desc": "충격 폭발 : AP {0}",
+              "desc": "충격 폭발 : AP{0}",
               "type": 0,
               "value": "-1",
               "level": "-0.050000"
@@ -4201,6 +4875,50 @@
                     }
                   },
                   "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "조명탄 지원 : 적중 감소 해제",
+                    "type": 0,
+                    "value": "7",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 89,
+                    "off": {
+                      "type": 7,
+                      "target": 1
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "조명탄 지원 : 치명타 감소 해제",
+                    "type": 0,
+                    "value": "9",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 89,
+                    "off": {
+                      "type": 9,
+                      "target": 1
+                    }
+                  },
+                  "overlap": 4
                 }
               ],
               "maxStack": 0
@@ -4247,6 +4965,30 @@
             "base": 0.1,
             "per": 0.01,
             "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_DEBUFF",
+            "desc": {
+              "desc": "조명탄 지원 : 적중 감소 해제",
+              "type": 0,
+              "value": "7",
+              "level": "0"
+            },
+            "base": 7,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_DEBUFF",
+            "desc": {
+              "desc": "조명탄 지원 : 치명타 감소 해제",
+              "type": 0,
+              "value": "9",
+              "level": "0"
+            },
+            "base": 9,
+            "per": 0,
+            "chance": 1
           }
         ]
       ]
@@ -4286,9 +5028,7 @@
             {
               "key": "Effect_BR_Efreeti_N_4",
               "on": "round",
-              "if": {
-                "pos": 1
-              },
+              "if": false,
               "body": [
                 0,
                 1
@@ -4311,7 +5051,7 @@
                     "desc": "강선형 박격포 : 공격력{0}%",
                     "type": 1,
                     "value": "0.200000",
-                    "level": "0.010000"
+                    "level": "0.020000"
                   },
                   "attr": 0,
                   "erase": {
@@ -4322,7 +5062,7 @@
                     "type": 1,
                     "attack": {
                       "base": "20%",
-                      "per": "1%"
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -4332,8 +5072,8 @@
                   "desc": {
                     "desc": "강선형 박격포 : 적중{0}%",
                     "type": 1,
-                    "value": "0.150000",
-                    "level": "0.007500"
+                    "value": "0.200000",
+                    "level": "0.020000"
                   },
                   "attr": 0,
                   "erase": {
@@ -4343,8 +5083,8 @@
                     "isBuff": true,
                     "type": 7,
                     "accuracy": {
-                      "base": "15%",
-                      "per": "0.75%"
+                      "base": "20%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -4354,7 +5094,7 @@
                   "desc": {
                     "desc": "강선형 박격포 : 방어 관통{0}%",
                     "type": 1,
-                    "value": "0.250000",
+                    "value": "0.300000",
                     "level": "0.030000"
                   },
                   "attr": 0,
@@ -4365,7 +5105,7 @@
                     "isBuff": true,
                     "type": 58,
                     "penetration": {
-                      "base": "25%",
+                      "base": "30%",
                       "per": "3%"
                     }
                   },
@@ -4400,9 +5140,7 @@
             {
               "key": "Effect_BR_Efreeti_N_15",
               "on": "round",
-              "if": {
-                "pos": 2
-              },
+              "if": false,
               "body": [
                 0,
                 1
@@ -4433,6 +5171,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "0%",
                     "type": 1,
                     "attack": {
                       "base": "20%",
@@ -4455,6 +5194,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "0%",
                     "type": 7,
                     "accuracy": {
                       "base": "15%",
@@ -4477,6 +5217,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "0%",
                     "type": 58,
                     "penetration": {
                       "base": "25%",
@@ -4513,10 +5254,10 @@
               "desc": "강선형 박격포 : 공격력{0}%",
               "type": 1,
               "value": "0.200000",
-              "level": "0.010000"
+              "level": "0.020000"
             },
             "base": 0.2,
-            "per": 0.01,
+            "per": 0.02,
             "chance": 1
           },
           {
@@ -4524,11 +5265,11 @@
             "desc": {
               "desc": "강선형 박격포 : 적중{0}%",
               "type": 1,
-              "value": "0.150000",
-              "level": "0.007500"
+              "value": "0.200000",
+              "level": "0.020000"
             },
-            "base": 0.15,
-            "per": 0.0075,
+            "base": 0.2,
+            "per": 0.02,
             "chance": 1
           },
           {
@@ -4536,10 +5277,10 @@
             "desc": {
               "desc": "강선형 박격포 : 방어 관통{0}%",
               "type": 1,
-              "value": "0.250000",
+              "value": "0.300000",
               "level": "0.030000"
             },
-            "base": 0.25,
+            "base": 0.3,
             "per": 0.03,
             "chance": 1
           },
@@ -4565,7 +5306,7 @@
             },
             "base": 0.2,
             "per": 0.01,
-            "chance": 1
+            "chance": 0
           },
           {
             "icon": "BuffIcon_ACCURACY_UP",
@@ -4577,7 +5318,7 @@
             },
             "base": 0.15,
             "per": 0.0075,
-            "chance": 1
+            "chance": 0
           },
           {
             "icon": "BuffIcon_DEF_PIERCE_UP",
@@ -4589,6 +5330,505 @@
             },
             "base": 0.25,
             "per": 0.03,
+            "chance": 0
+          }
+        ]
+      ]
+    }
+  },
+  "5": {
+    "key": "5",
+    "icon": "SelfSpdBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "4>0,1,1,1,0,1,0,1,1",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Efreeti_N_5",
+              "on": "round",
+              "if": {
+                "near": false
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "날 혼자 내버려둬... : 내버려둬…",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 12,
+                    "turnSpeed": {
+                      "base": 0,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "날 혼자 내버려둬... : 행동력{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "날 혼자 내버려둬... : 행동력{0}% (스틸라인 계통X)",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_51",
+              "on": "round",
+              "if": {
+                "near": false
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "날 혼자 내버려둬... : 행동력 증가 효과 해제",
+                    "type": 1,
+                    "value": "13",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 13,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_52",
+              "on": "round",
+              "if": {
+                "notInBattle": [
+                  "Char_BR_Marie_N",
+                  "Char_BR_Brownie_N",
+                  "Char_BR_Leprechaun_N",
+                  "Char_BR_Impet_N",
+                  "Char_BR_PXSilky_N",
+                  "Char_BR_Phoenix_N",
+                  "Char_BR_Gnome_N",
+                  "Char_BR_RedHood_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "날 혼자 내버려둬... : 행동력{0}% (스틸라인 계통X)",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_53",
+              "on": "round",
+              "if": {
+                "notInBattle": [
+                  "Char_BR_Marie_N",
+                  "Char_BR_Brownie_N",
+                  "Char_BR_Leprechaun_N",
+                  "Char_BR_Impet_N",
+                  "Char_BR_PXSilky_N",
+                  "Char_BR_Phoenix_N",
+                  "Char_BR_Gnome_N",
+                  "Char_BR_RedHood_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Action_Number_Change_Up copy",
+                  "desc": {
+                    "desc": "날 혼자 내버려둬... : 최대 행동 횟수{0}",
+                    "type": 0,
+                    "value": "-1",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 127,
+                    "act_count": -1
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_54",
+              "on": "round",
+              "if": {
+                "near": true
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "날 혼자 내버려둬... : 행동력{0}%(해제 불가)",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_56",
+              "on": "round",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "날 혼자 내버려둬... : 행동력{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "날 혼자 내버려둬... : 내버려둬…",
+              "type": 1,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "날 혼자 내버려둬... : 행동력{0}%",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.010000"
+            },
+            "base": 0.1,
+            "per": 0.01,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "날 혼자 내버려둬... : 행동력{0}% (스틸라인 계통X)",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.010000"
+            },
+            "base": 0.1,
+            "per": 0.01,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_REMOVE_BUFF",
+            "desc": {
+              "desc": "날 혼자 내버려둬... : 행동력 증가 효과 해제",
+              "type": 1,
+              "value": "13",
+              "level": "0"
+            },
+            "base": 13,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "날 혼자 내버려둬... : 행동력{0}% (스틸라인 계통X)",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.010000"
+            },
+            "base": 0.1,
+            "per": 0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_Action_Number_Change_Up copy",
+            "desc": {
+              "desc": "날 혼자 내버려둬... : 최대 행동 횟수{0}",
+              "type": 0,
+              "value": "-1",
+              "level": "0"
+            },
+            "base": -1,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "날 혼자 내버려둬... : 행동력{0}%(해제 불가)",
+              "type": 1,
+              "value": "0.200000",
+              "level": "0.020000"
+            },
+            "base": 0.2,
+            "per": 0.02,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "날 혼자 내버려둬... : 행동력{0}%",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.010000"
+            },
+            "base": 0.1,
+            "per": 0.01,
             "chance": 1
           }
         ]
@@ -4614,9 +5854,9 @@
       ],
       "data": [
         {
-          "rate": 2.1,
+          "rate": 2.25,
           "type": 0,
-          "range": 5,
+          "range": 6,
           "ap": 0,
           "grid": "0,0.75,0,0.75,1,0.75,0,0.75,0",
           "target_ground": true,
@@ -4649,7 +5889,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "충격 폭발 : AP {0}",
+                    "desc": "충격 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1",
                     "level": "-0.050000"
@@ -4719,16 +5959,7 @@
             {
               "key": "Effect_BR_Efreeti_N_14",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Efreeti_N_4",
-                    "Effect_BR_Efreeti_N_15"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": false,
               "body": [
                 0,
                 1
@@ -4788,6 +6019,28 @@
                     }
                   },
                   "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "정밀 포격 지원 : 행 보호 해제",
+                    "type": 0,
+                    "value": "50",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 50,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
                 }
               ],
               "maxStack": 0
@@ -4830,6 +6083,58 @@
                     "off": {
                       "type": 29,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_55",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_54"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "날 혼자 내버려둬... : 광역 피해 분산 효과 해제",
+                    "type": 0,
+                    "value": "110",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 110
                     }
                   },
                   "overlap": 4
@@ -4840,9 +6145,9 @@
           ]
         },
         {
-          "rate": 2.285,
+          "rate": 2.5,
           "type": 0,
-          "range": 5,
+          "range": 6,
           "ap": 0,
           "grid": "0,0.75,0,0.75,1,0.75,0,0.75,0",
           "target_ground": true,
@@ -4875,7 +6180,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "충격 폭발 : AP {0}",
+                    "desc": "충격 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1",
                     "level": "-0.050000"
@@ -4945,16 +6250,7 @@
             {
               "key": "Effect_BR_Efreeti_N_14",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Efreeti_N_4",
-                    "Effect_BR_Efreeti_N_15"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": false,
               "body": [
                 0,
                 1
@@ -5014,6 +6310,28 @@
                     }
                   },
                   "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "정밀 포격 지원 : 행 보호 해제",
+                    "type": 0,
+                    "value": "50",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 50,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
                 }
               ],
               "maxStack": 0
@@ -5056,6 +6374,58 @@
                     "off": {
                       "type": 29,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_55",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_54"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "날 혼자 내버려둬... : 광역 피해 분산 효과 해제",
+                    "type": 0,
+                    "value": "110",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 110
                     }
                   },
                   "overlap": 4
@@ -5066,9 +6436,9 @@
           ]
         },
         {
-          "rate": 2.47,
+          "rate": 2.75,
           "type": 0,
-          "range": 5,
+          "range": 6,
           "ap": 0,
           "grid": "0,0.75,0,0.75,1,0.75,0,0.75,0",
           "target_ground": true,
@@ -5101,7 +6471,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "충격 폭발 : AP {0}",
+                    "desc": "충격 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1",
                     "level": "-0.050000"
@@ -5171,16 +6541,7 @@
             {
               "key": "Effect_BR_Efreeti_N_14",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Efreeti_N_4",
-                    "Effect_BR_Efreeti_N_15"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": false,
               "body": [
                 0,
                 1
@@ -5240,6 +6601,28 @@
                     }
                   },
                   "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "정밀 포격 지원 : 행 보호 해제",
+                    "type": 0,
+                    "value": "50",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 50,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
                 }
               ],
               "maxStack": 0
@@ -5282,6 +6665,58 @@
                     "off": {
                       "type": 29,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_55",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_54"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "날 혼자 내버려둬... : 광역 피해 분산 효과 해제",
+                    "type": 0,
+                    "value": "110",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 110
                     }
                   },
                   "overlap": 4
@@ -5292,9 +6727,9 @@
           ]
         },
         {
-          "rate": 2.655,
+          "rate": 3,
           "type": 0,
-          "range": 5,
+          "range": 6,
           "ap": 0,
           "grid": "0,0.75,0,0.75,1,0.75,0,0.75,0",
           "target_ground": true,
@@ -5327,7 +6762,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "충격 폭발 : AP {0}",
+                    "desc": "충격 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1",
                     "level": "-0.050000"
@@ -5397,16 +6832,7 @@
             {
               "key": "Effect_BR_Efreeti_N_14",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Efreeti_N_4",
-                    "Effect_BR_Efreeti_N_15"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": false,
               "body": [
                 0,
                 1
@@ -5466,6 +6892,28 @@
                     }
                   },
                   "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "정밀 포격 지원 : 행 보호 해제",
+                    "type": 0,
+                    "value": "50",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 50,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
                 }
               ],
               "maxStack": 0
@@ -5508,6 +6956,58 @@
                     "off": {
                       "type": 29,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_55",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_54"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "날 혼자 내버려둬... : 광역 피해 분산 효과 해제",
+                    "type": 0,
+                    "value": "110",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 110
                     }
                   },
                   "overlap": 4
@@ -5518,9 +7018,9 @@
           ]
         },
         {
-          "rate": 2.84,
+          "rate": 3.25,
           "type": 0,
-          "range": 5,
+          "range": 6,
           "ap": 0,
           "grid": "0,0.75,0,0.75,1,0.75,0,0.75,0",
           "target_ground": true,
@@ -5553,7 +7053,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "충격 폭발 : AP {0}",
+                    "desc": "충격 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1",
                     "level": "-0.050000"
@@ -5623,16 +7123,7 @@
             {
               "key": "Effect_BR_Efreeti_N_14",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Efreeti_N_4",
-                    "Effect_BR_Efreeti_N_15"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": false,
               "body": [
                 0,
                 1
@@ -5692,6 +7183,28 @@
                     }
                   },
                   "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "정밀 포격 지원 : 행 보호 해제",
+                    "type": 0,
+                    "value": "50",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 50,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
                 }
               ],
               "maxStack": 0
@@ -5734,6 +7247,58 @@
                     "off": {
                       "type": 29,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_55",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_54"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "날 혼자 내버려둬... : 광역 피해 분산 효과 해제",
+                    "type": 0,
+                    "value": "110",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 110
                     }
                   },
                   "overlap": 4
@@ -5744,9 +7309,9 @@
           ]
         },
         {
-          "rate": 3.025,
+          "rate": 3.5,
           "type": 0,
-          "range": 5,
+          "range": 6,
           "ap": 0,
           "grid": "0,0.75,0,0.75,1,0.75,0,0.75,0",
           "target_ground": true,
@@ -5779,7 +7344,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "충격 폭발 : AP {0}",
+                    "desc": "충격 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1",
                     "level": "-0.050000"
@@ -5849,16 +7414,7 @@
             {
               "key": "Effect_BR_Efreeti_N_14",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Efreeti_N_4",
-                    "Effect_BR_Efreeti_N_15"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": false,
               "body": [
                 0,
                 1
@@ -5918,6 +7474,28 @@
                     }
                   },
                   "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "정밀 포격 지원 : 행 보호 해제",
+                    "type": 0,
+                    "value": "50",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 50,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
                 }
               ],
               "maxStack": 0
@@ -5960,6 +7538,58 @@
                     "off": {
                       "type": 29,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_55",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_54"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "날 혼자 내버려둬... : 광역 피해 분산 효과 해제",
+                    "type": 0,
+                    "value": "110",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 110
                     }
                   },
                   "overlap": 4
@@ -5970,9 +7600,9 @@
           ]
         },
         {
-          "rate": 3.21,
+          "rate": 3.75,
           "type": 0,
-          "range": 5,
+          "range": 6,
           "ap": 0,
           "grid": "0,0.75,0,0.75,1,0.75,0,0.75,0",
           "target_ground": true,
@@ -6005,7 +7635,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "충격 폭발 : AP {0}",
+                    "desc": "충격 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1",
                     "level": "-0.050000"
@@ -6075,16 +7705,7 @@
             {
               "key": "Effect_BR_Efreeti_N_14",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Efreeti_N_4",
-                    "Effect_BR_Efreeti_N_15"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": false,
               "body": [
                 0,
                 1
@@ -6144,6 +7765,28 @@
                     }
                   },
                   "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "정밀 포격 지원 : 행 보호 해제",
+                    "type": 0,
+                    "value": "50",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 50,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
                 }
               ],
               "maxStack": 0
@@ -6186,6 +7829,58 @@
                     "off": {
                       "type": 29,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_55",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_54"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "날 혼자 내버려둬... : 광역 피해 분산 효과 해제",
+                    "type": 0,
+                    "value": "110",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 110
                     }
                   },
                   "overlap": 4
@@ -6196,9 +7891,9 @@
           ]
         },
         {
-          "rate": 3.395,
+          "rate": 4,
           "type": 0,
-          "range": 5,
+          "range": 6,
           "ap": 0,
           "grid": "0,0.75,0,0.75,1,0.75,0,0.75,0",
           "target_ground": true,
@@ -6231,7 +7926,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "충격 폭발 : AP {0}",
+                    "desc": "충격 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1",
                     "level": "-0.050000"
@@ -6301,16 +7996,7 @@
             {
               "key": "Effect_BR_Efreeti_N_14",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Efreeti_N_4",
-                    "Effect_BR_Efreeti_N_15"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": false,
               "body": [
                 0,
                 1
@@ -6370,6 +8056,28 @@
                     }
                   },
                   "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "정밀 포격 지원 : 행 보호 해제",
+                    "type": 0,
+                    "value": "50",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 50,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
                 }
               ],
               "maxStack": 0
@@ -6412,6 +8120,58 @@
                     "off": {
                       "type": 29,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_55",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_54"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "날 혼자 내버려둬... : 광역 피해 분산 효과 해제",
+                    "type": 0,
+                    "value": "110",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 110
                     }
                   },
                   "overlap": 4
@@ -6422,9 +8182,9 @@
           ]
         },
         {
-          "rate": 3.58,
+          "rate": 4.25,
           "type": 0,
-          "range": 5,
+          "range": 6,
           "ap": 0,
           "grid": "0,0.75,0,0.75,1,0.75,0,0.75,0",
           "target_ground": true,
@@ -6457,7 +8217,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "충격 폭발 : AP {0}",
+                    "desc": "충격 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1",
                     "level": "-0.050000"
@@ -6527,16 +8287,7 @@
             {
               "key": "Effect_BR_Efreeti_N_14",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Efreeti_N_4",
-                    "Effect_BR_Efreeti_N_15"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": false,
               "body": [
                 0,
                 1
@@ -6596,6 +8347,28 @@
                     }
                   },
                   "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "정밀 포격 지원 : 행 보호 해제",
+                    "type": 0,
+                    "value": "50",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 50,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
                 }
               ],
               "maxStack": 0
@@ -6638,6 +8411,58 @@
                     "off": {
                       "type": 29,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_55",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_54"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "날 혼자 내버려둬... : 광역 피해 분산 효과 해제",
+                    "type": 0,
+                    "value": "110",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 110
                     }
                   },
                   "overlap": 4
@@ -6648,9 +8473,9 @@
           ]
         },
         {
-          "rate": 3.765,
+          "rate": 4.5,
           "type": 0,
-          "range": 5,
+          "range": 6,
           "ap": 0,
           "grid": "0,0.75,0,0.75,1,0.75,0,0.75,0",
           "target_ground": true,
@@ -6683,7 +8508,7 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "충격 폭발 : AP {0}",
+                    "desc": "충격 폭발 : AP{0}",
                     "type": 0,
                     "value": "-1",
                     "level": "-0.050000"
@@ -6753,16 +8578,7 @@
             {
               "key": "Effect_BR_Efreeti_N_14",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Efreeti_N_4",
-                    "Effect_BR_Efreeti_N_15"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": false,
               "body": [
                 0,
                 1
@@ -6822,6 +8638,28 @@
                     }
                   },
                   "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "정밀 포격 지원 : 행 보호 해제",
+                    "type": 0,
+                    "value": "50",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 50,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
                 }
               ],
               "maxStack": 0
@@ -6864,6 +8702,58 @@
                     "off": {
                       "type": 29,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Efreeti_N_55",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Efreeti_N_54"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "날 혼자 내버려둬... : 광역 피해 분산 효과 해제",
+                    "type": 0,
+                    "value": "110",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 110
                     }
                   },
                   "overlap": 4
@@ -6893,7 +8783,7 @@
           {
             "icon": "BuffIcon_AP_DOWN",
             "desc": {
-              "desc": "충격 폭발 : AP {0}",
+              "desc": "충격 폭발 : AP{0}",
               "type": 0,
               "value": "-1",
               "level": "-0.050000"
@@ -6941,12 +8831,36 @@
           {
             "icon": "BuffIcon_REMOVE_BUFF",
             "desc": {
+              "desc": "정밀 포격 지원 : 행 보호 해제",
+              "type": 0,
+              "value": "50",
+              "level": "0"
+            },
+            "base": 50,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_BUFF",
+            "desc": {
               "desc": "시간차 공격 : 반격 효과 해제",
               "type": 0,
               "value": "29",
               "level": "0"
             },
             "base": 29,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_DEBUFF",
+            "desc": {
+              "desc": "날 혼자 내버려둬... : 광역 피해 분산 효과 해제",
+              "type": 0,
+              "value": "110",
+              "level": "0"
+            },
+            "base": 110,
             "per": 0,
             "chance": 1
           }
