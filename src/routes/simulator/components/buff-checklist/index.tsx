@@ -669,9 +669,13 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 					return <Locale plain k={ `BUFFTRIGGER_ROUND_${trigger.round.operator.toUpperCase()}` } />;
 				else if (trigger.round.operator === "=" || trigger.round.operator === "<=" || trigger.round.operator === ">=")
 					return <Locale plain k={ `BUFFTRIGGER_ROUND_${trigger.round.operator}` } p={ [trigger.round.round] } />;
-			} else if ("notInBattle" in trigger)
-				return <Locale plain k="BUFFTRIGGER_NOT_IN_BATTLE" p={ [trigger.notInBattle.join(",")] } />;
-			else if ("troop" in trigger) {
+			} else if ("notInBattle" in trigger) {
+				return <Locale
+					plain
+					k="BUFFTRIGGER_NOT_IN_BATTLE"
+					p={ [<>{ trigger.notInBattle.map(convertBuff).gap(",") }</>] }
+				/>;
+			} else if ("troop" in trigger) {
 				return <Locale plain k="BUFFTRIGGER_TROOP" p={ [<>{
 					trigger.troop
 						.map(x => <span class={ `on-subbadge ${style["on-subbadge"]}` }>

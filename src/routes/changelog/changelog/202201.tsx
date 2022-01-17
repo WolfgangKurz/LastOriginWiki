@@ -6,6 +6,11 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11497" date="2022-01-18"
+		bugfix={ <>
+			<li>일부 버프 정보가 올바르게 표시되지 않던 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11495" date="2022-01-17"
 		new={ <>
 			<li>이벤트 <span class="badge bg-warning text-dark">영원한 겨울의 방주</span>의 2부 프롤로그 정보가 추가되었습니다.</li>

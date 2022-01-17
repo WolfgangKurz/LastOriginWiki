@@ -458,11 +458,11 @@ interface BuffEffect_Disperse {
 }
 
 interface BuffEffect_ValueBy {
-	value: "skill_ratio" | "atk" | "crit";
+	value: "skill_ratio" | "atk" | "crit" | "penetration" | "penetration_res";
 	by: BuffEffectValue & {
 		type: "up" | "down";
 		target: "self" | "target" | "attacker" | "buffer";
-		by: "evade" | "defense" | "atk";
+		by: "evade" | "defense" | "atk" | "hp";
 	};
 }
 
