@@ -28,7 +28,7 @@
           "use": null,
           "dismiss_guard": false,
           "acc_bonus": 0,
-          "buff_rate": 10,
+          "buff_rate": 100,
           "buffs": [
             {
               "key": "Effect_PECS_LRL_N_1",
@@ -64,6 +64,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "19%",
                     "type": 83,
                     "damage_add": {
                       "base": "100%",
@@ -117,6 +118,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "19%",
                     "type": 58,
                     "penetration": {
                       "base": "150%",
@@ -139,8 +141,174 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "19%",
                     "type": 94,
                     "penetration_force": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_101",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 받는 피해{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "25%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_102",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Disallow",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 강화 불가 상태",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 125,
+                    "buff_disallow": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_PECS_LRL_N_103",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_AncientRecord_N_1",
+                    "Effect_BUFF_AncientRecord_N_2",
+                    "Effect_BUFF_AncientRecord_N_3",
+                    "Effect_BUFF_AncientRecord_N_4",
+                    "Effect_BUFF_AncientRecord_N_5",
+                    "Effect_BUFF_AncientRecord_N_6",
+                    "Effect_BUFF_AncientRecord_N_7",
+                    "Effect_BUFF_AncientRecord_N_8",
+                    "Effect_BUFF_AncientRecord_N_9",
+                    "Effect_BUFF_AncientRecord_N_10"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 협동 공격",
+                    "type": 1,
+                    "value": "Char_PECS_CyclopsePrincess_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 102,
+                    "collaborate": {
+                      "skill": 1,
+                      "with": "Char_PECS_CyclopsePrincess_N"
+                    }
                   },
                   "overlap": 4
                 }
@@ -160,7 +328,7 @@
           "use": null,
           "dismiss_guard": false,
           "acc_bonus": 0,
-          "buff_rate": 11,
+          "buff_rate": 100,
           "buffs": [
             {
               "key": "Effect_PECS_LRL_N_1",
@@ -196,6 +364,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "19%",
                     "type": 83,
                     "damage_add": {
                       "base": "100%",
@@ -249,6 +418,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "19%",
                     "type": 58,
                     "penetration": {
                       "base": "150%",
@@ -271,8 +441,174 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "19%",
                     "type": 94,
                     "penetration_force": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_101",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 받는 피해{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "25%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_102",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Disallow",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 강화 불가 상태",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 125,
+                    "buff_disallow": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_PECS_LRL_N_103",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_AncientRecord_N_1",
+                    "Effect_BUFF_AncientRecord_N_2",
+                    "Effect_BUFF_AncientRecord_N_3",
+                    "Effect_BUFF_AncientRecord_N_4",
+                    "Effect_BUFF_AncientRecord_N_5",
+                    "Effect_BUFF_AncientRecord_N_6",
+                    "Effect_BUFF_AncientRecord_N_7",
+                    "Effect_BUFF_AncientRecord_N_8",
+                    "Effect_BUFF_AncientRecord_N_9",
+                    "Effect_BUFF_AncientRecord_N_10"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 협동 공격",
+                    "type": 1,
+                    "value": "Char_PECS_CyclopsePrincess_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 102,
+                    "collaborate": {
+                      "skill": 1,
+                      "with": "Char_PECS_CyclopsePrincess_N"
+                    }
                   },
                   "overlap": 4
                 }
@@ -292,7 +628,7 @@
           "use": null,
           "dismiss_guard": false,
           "acc_bonus": 0,
-          "buff_rate": 12,
+          "buff_rate": 100,
           "buffs": [
             {
               "key": "Effect_PECS_LRL_N_1",
@@ -328,6 +664,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "19%",
                     "type": 83,
                     "damage_add": {
                       "base": "100%",
@@ -381,6 +718,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "19%",
                     "type": 58,
                     "penetration": {
                       "base": "150%",
@@ -403,8 +741,174 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "19%",
                     "type": 94,
                     "penetration_force": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_101",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 받는 피해{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "25%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_102",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Disallow",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 강화 불가 상태",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 125,
+                    "buff_disallow": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_PECS_LRL_N_103",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_AncientRecord_N_1",
+                    "Effect_BUFF_AncientRecord_N_2",
+                    "Effect_BUFF_AncientRecord_N_3",
+                    "Effect_BUFF_AncientRecord_N_4",
+                    "Effect_BUFF_AncientRecord_N_5",
+                    "Effect_BUFF_AncientRecord_N_6",
+                    "Effect_BUFF_AncientRecord_N_7",
+                    "Effect_BUFF_AncientRecord_N_8",
+                    "Effect_BUFF_AncientRecord_N_9",
+                    "Effect_BUFF_AncientRecord_N_10"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 협동 공격",
+                    "type": 1,
+                    "value": "Char_PECS_CyclopsePrincess_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 102,
+                    "collaborate": {
+                      "skill": 1,
+                      "with": "Char_PECS_CyclopsePrincess_N"
+                    }
                   },
                   "overlap": 4
                 }
@@ -424,7 +928,7 @@
           "use": null,
           "dismiss_guard": false,
           "acc_bonus": 0,
-          "buff_rate": 13,
+          "buff_rate": 100,
           "buffs": [
             {
               "key": "Effect_PECS_LRL_N_1",
@@ -460,6 +964,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "19%",
                     "type": 83,
                     "damage_add": {
                       "base": "100%",
@@ -513,6 +1018,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "19%",
                     "type": 58,
                     "penetration": {
                       "base": "150%",
@@ -535,8 +1041,174 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "19%",
                     "type": 94,
                     "penetration_force": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_101",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 받는 피해{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "25%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_102",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Disallow",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 강화 불가 상태",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 125,
+                    "buff_disallow": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_PECS_LRL_N_103",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_AncientRecord_N_1",
+                    "Effect_BUFF_AncientRecord_N_2",
+                    "Effect_BUFF_AncientRecord_N_3",
+                    "Effect_BUFF_AncientRecord_N_4",
+                    "Effect_BUFF_AncientRecord_N_5",
+                    "Effect_BUFF_AncientRecord_N_6",
+                    "Effect_BUFF_AncientRecord_N_7",
+                    "Effect_BUFF_AncientRecord_N_8",
+                    "Effect_BUFF_AncientRecord_N_9",
+                    "Effect_BUFF_AncientRecord_N_10"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 협동 공격",
+                    "type": 1,
+                    "value": "Char_PECS_CyclopsePrincess_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 102,
+                    "collaborate": {
+                      "skill": 1,
+                      "with": "Char_PECS_CyclopsePrincess_N"
+                    }
                   },
                   "overlap": 4
                 }
@@ -556,7 +1228,7 @@
           "use": null,
           "dismiss_guard": false,
           "acc_bonus": 0,
-          "buff_rate": 14,
+          "buff_rate": 100,
           "buffs": [
             {
               "key": "Effect_PECS_LRL_N_1",
@@ -592,6 +1264,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "19%",
                     "type": 83,
                     "damage_add": {
                       "base": "100%",
@@ -645,6 +1318,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "19%",
                     "type": 58,
                     "penetration": {
                       "base": "150%",
@@ -667,8 +1341,174 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "19%",
                     "type": 94,
                     "penetration_force": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_101",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 받는 피해{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "25%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_102",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Disallow",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 강화 불가 상태",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 125,
+                    "buff_disallow": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_PECS_LRL_N_103",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_AncientRecord_N_1",
+                    "Effect_BUFF_AncientRecord_N_2",
+                    "Effect_BUFF_AncientRecord_N_3",
+                    "Effect_BUFF_AncientRecord_N_4",
+                    "Effect_BUFF_AncientRecord_N_5",
+                    "Effect_BUFF_AncientRecord_N_6",
+                    "Effect_BUFF_AncientRecord_N_7",
+                    "Effect_BUFF_AncientRecord_N_8",
+                    "Effect_BUFF_AncientRecord_N_9",
+                    "Effect_BUFF_AncientRecord_N_10"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 협동 공격",
+                    "type": 1,
+                    "value": "Char_PECS_CyclopsePrincess_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 102,
+                    "collaborate": {
+                      "skill": 1,
+                      "with": "Char_PECS_CyclopsePrincess_N"
+                    }
                   },
                   "overlap": 4
                 }
@@ -688,7 +1528,7 @@
           "use": null,
           "dismiss_guard": false,
           "acc_bonus": 0,
-          "buff_rate": 15,
+          "buff_rate": 100,
           "buffs": [
             {
               "key": "Effect_PECS_LRL_N_1",
@@ -724,6 +1564,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "19%",
                     "type": 83,
                     "damage_add": {
                       "base": "100%",
@@ -777,6 +1618,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "19%",
                     "type": 58,
                     "penetration": {
                       "base": "150%",
@@ -799,8 +1641,174 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "19%",
                     "type": 94,
                     "penetration_force": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_101",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 받는 피해{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "25%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_102",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Disallow",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 강화 불가 상태",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 125,
+                    "buff_disallow": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_PECS_LRL_N_103",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_AncientRecord_N_1",
+                    "Effect_BUFF_AncientRecord_N_2",
+                    "Effect_BUFF_AncientRecord_N_3",
+                    "Effect_BUFF_AncientRecord_N_4",
+                    "Effect_BUFF_AncientRecord_N_5",
+                    "Effect_BUFF_AncientRecord_N_6",
+                    "Effect_BUFF_AncientRecord_N_7",
+                    "Effect_BUFF_AncientRecord_N_8",
+                    "Effect_BUFF_AncientRecord_N_9",
+                    "Effect_BUFF_AncientRecord_N_10"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 협동 공격",
+                    "type": 1,
+                    "value": "Char_PECS_CyclopsePrincess_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 102,
+                    "collaborate": {
+                      "skill": 1,
+                      "with": "Char_PECS_CyclopsePrincess_N"
+                    }
                   },
                   "overlap": 4
                 }
@@ -820,7 +1828,7 @@
           "use": null,
           "dismiss_guard": false,
           "acc_bonus": 0,
-          "buff_rate": 16,
+          "buff_rate": 100,
           "buffs": [
             {
               "key": "Effect_PECS_LRL_N_1",
@@ -856,6 +1864,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "19%",
                     "type": 83,
                     "damage_add": {
                       "base": "100%",
@@ -909,6 +1918,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "19%",
                     "type": 58,
                     "penetration": {
                       "base": "150%",
@@ -931,8 +1941,174 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "19%",
                     "type": 94,
                     "penetration_force": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_101",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 받는 피해{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "25%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_102",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Disallow",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 강화 불가 상태",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 125,
+                    "buff_disallow": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_PECS_LRL_N_103",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_AncientRecord_N_1",
+                    "Effect_BUFF_AncientRecord_N_2",
+                    "Effect_BUFF_AncientRecord_N_3",
+                    "Effect_BUFF_AncientRecord_N_4",
+                    "Effect_BUFF_AncientRecord_N_5",
+                    "Effect_BUFF_AncientRecord_N_6",
+                    "Effect_BUFF_AncientRecord_N_7",
+                    "Effect_BUFF_AncientRecord_N_8",
+                    "Effect_BUFF_AncientRecord_N_9",
+                    "Effect_BUFF_AncientRecord_N_10"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 협동 공격",
+                    "type": 1,
+                    "value": "Char_PECS_CyclopsePrincess_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 102,
+                    "collaborate": {
+                      "skill": 1,
+                      "with": "Char_PECS_CyclopsePrincess_N"
+                    }
                   },
                   "overlap": 4
                 }
@@ -952,7 +2128,7 @@
           "use": null,
           "dismiss_guard": false,
           "acc_bonus": 0,
-          "buff_rate": 17,
+          "buff_rate": 100,
           "buffs": [
             {
               "key": "Effect_PECS_LRL_N_1",
@@ -988,6 +2164,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "19%",
                     "type": 83,
                     "damage_add": {
                       "base": "100%",
@@ -1041,6 +2218,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "19%",
                     "type": 58,
                     "penetration": {
                       "base": "150%",
@@ -1063,8 +2241,174 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "19%",
                     "type": 94,
                     "penetration_force": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_101",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 받는 피해{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "25%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_102",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Disallow",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 강화 불가 상태",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 125,
+                    "buff_disallow": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_PECS_LRL_N_103",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_AncientRecord_N_1",
+                    "Effect_BUFF_AncientRecord_N_2",
+                    "Effect_BUFF_AncientRecord_N_3",
+                    "Effect_BUFF_AncientRecord_N_4",
+                    "Effect_BUFF_AncientRecord_N_5",
+                    "Effect_BUFF_AncientRecord_N_6",
+                    "Effect_BUFF_AncientRecord_N_7",
+                    "Effect_BUFF_AncientRecord_N_8",
+                    "Effect_BUFF_AncientRecord_N_9",
+                    "Effect_BUFF_AncientRecord_N_10"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 협동 공격",
+                    "type": 1,
+                    "value": "Char_PECS_CyclopsePrincess_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 102,
+                    "collaborate": {
+                      "skill": 1,
+                      "with": "Char_PECS_CyclopsePrincess_N"
+                    }
                   },
                   "overlap": 4
                 }
@@ -1084,7 +2428,7 @@
           "use": null,
           "dismiss_guard": false,
           "acc_bonus": 0,
-          "buff_rate": 18,
+          "buff_rate": 100,
           "buffs": [
             {
               "key": "Effect_PECS_LRL_N_1",
@@ -1120,6 +2464,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "19%",
                     "type": 83,
                     "damage_add": {
                       "base": "100%",
@@ -1173,6 +2518,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "19%",
                     "type": 58,
                     "penetration": {
                       "base": "150%",
@@ -1195,8 +2541,174 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "19%",
                     "type": 94,
                     "penetration_force": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_101",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 받는 피해{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "25%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_102",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Disallow",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 강화 불가 상태",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 125,
+                    "buff_disallow": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_PECS_LRL_N_103",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_AncientRecord_N_1",
+                    "Effect_BUFF_AncientRecord_N_2",
+                    "Effect_BUFF_AncientRecord_N_3",
+                    "Effect_BUFF_AncientRecord_N_4",
+                    "Effect_BUFF_AncientRecord_N_5",
+                    "Effect_BUFF_AncientRecord_N_6",
+                    "Effect_BUFF_AncientRecord_N_7",
+                    "Effect_BUFF_AncientRecord_N_8",
+                    "Effect_BUFF_AncientRecord_N_9",
+                    "Effect_BUFF_AncientRecord_N_10"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 협동 공격",
+                    "type": 1,
+                    "value": "Char_PECS_CyclopsePrincess_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 102,
+                    "collaborate": {
+                      "skill": 1,
+                      "with": "Char_PECS_CyclopsePrincess_N"
+                    }
                   },
                   "overlap": 4
                 }
@@ -1216,7 +2728,7 @@
           "use": null,
           "dismiss_guard": false,
           "acc_bonus": 0,
-          "buff_rate": 19,
+          "buff_rate": 100,
           "buffs": [
             {
               "key": "Effect_PECS_LRL_N_1",
@@ -1252,6 +2764,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "19%",
                     "type": 83,
                     "damage_add": {
                       "base": "100%",
@@ -1305,6 +2818,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "19%",
                     "type": 58,
                     "penetration": {
                       "base": "150%",
@@ -1327,8 +2841,174 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "19%",
                     "type": 94,
                     "penetration_force": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_101",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 받는 피해{0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "25%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_102",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Disallow",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 강화 불가 상태",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 125,
+                    "buff_disallow": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_PECS_LRL_N_103",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_AncientRecord_N_1",
+                    "Effect_BUFF_AncientRecord_N_2",
+                    "Effect_BUFF_AncientRecord_N_3",
+                    "Effect_BUFF_AncientRecord_N_4",
+                    "Effect_BUFF_AncientRecord_N_5",
+                    "Effect_BUFF_AncientRecord_N_6",
+                    "Effect_BUFF_AncientRecord_N_7",
+                    "Effect_BUFF_AncientRecord_N_8",
+                    "Effect_BUFF_AncientRecord_N_9",
+                    "Effect_BUFF_AncientRecord_N_10"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 협동 공격",
+                    "type": 1,
+                    "value": "Char_PECS_CyclopsePrincess_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 102,
+                    "collaborate": {
+                      "skill": 1,
+                      "with": "Char_PECS_CyclopsePrincess_N"
+                    }
                   },
                   "overlap": 4
                 }
@@ -1364,7 +3044,7 @@
             },
             "base": 1,
             "per": 0.05,
-            "chance": 1
+            "chance": 0.19
           },
           {
             "icon": "BuffIcon_DEF_PIERCE_UP",
@@ -1376,7 +3056,7 @@
             },
             "base": 1.5,
             "per": 0,
-            "chance": 1
+            "chance": 0.19
           },
           {
             "icon": "BuffIcon_BARRIER_PIERCE",
@@ -1388,6 +3068,41 @@
             },
             "base": 0,
             "per": 0,
+            "chance": 0.19
+          },
+          {
+            "icon": "BuffIcon_VULNERABLE",
+            "desc": {
+              "desc": "진조를 계승하는 자 : 받는 피해{0}%",
+              "type": 1,
+              "value": "0.250000",
+              "level": "0"
+            },
+            "base": 0.25,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_Disallow",
+            "desc": {
+              "desc": "진조를 계승하는 자 : 강화 불가 상태",
+              "type": 1,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_TOGETHER_ATTACK",
+            "desc": {
+              "desc": "진조를 계승하는 자 : 협동 공격",
+              "type": 1,
+              "value": "Char_PECS_CyclopsePrincess_N",
+              "level": "0"
+            },
+            "value": "Char_PECS_CyclopsePrincess_N",
             "chance": 1
           }
         ]
@@ -1686,6 +3401,174 @@
                 }
               ],
               "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_201",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 방어막 / 받는 피해 감소 효과 해제",
+                    "type": 0,
+                    "value": "94",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 94
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_202",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 방어막 해제",
+                    "type": 0,
+                    "value": "38",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 38,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_203",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_AncientRecord_N_1",
+                    "Effect_BUFF_AncientRecord_N_2",
+                    "Effect_BUFF_AncientRecord_N_3",
+                    "Effect_BUFF_AncientRecord_N_4",
+                    "Effect_BUFF_AncientRecord_N_5",
+                    "Effect_BUFF_AncientRecord_N_6",
+                    "Effect_BUFF_AncientRecord_N_7",
+                    "Effect_BUFF_AncientRecord_N_8",
+                    "Effect_BUFF_AncientRecord_N_9",
+                    "Effect_BUFF_AncientRecord_N_10"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 협동 공격",
+                    "type": 0,
+                    "value": "Char_PECS_CyclopsePrincess_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_PECS_CyclopsePrincess_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -1957,6 +3840,174 @@
                     "off": {
                       "type": 7,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_201",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 방어막 / 받는 피해 감소 효과 해제",
+                    "type": 0,
+                    "value": "94",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 94
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_202",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 방어막 해제",
+                    "type": 0,
+                    "value": "38",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 38,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_203",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_AncientRecord_N_1",
+                    "Effect_BUFF_AncientRecord_N_2",
+                    "Effect_BUFF_AncientRecord_N_3",
+                    "Effect_BUFF_AncientRecord_N_4",
+                    "Effect_BUFF_AncientRecord_N_5",
+                    "Effect_BUFF_AncientRecord_N_6",
+                    "Effect_BUFF_AncientRecord_N_7",
+                    "Effect_BUFF_AncientRecord_N_8",
+                    "Effect_BUFF_AncientRecord_N_9",
+                    "Effect_BUFF_AncientRecord_N_10"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 협동 공격",
+                    "type": 0,
+                    "value": "Char_PECS_CyclopsePrincess_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_PECS_CyclopsePrincess_N"
                     }
                   },
                   "overlap": 4
@@ -2240,6 +4291,174 @@
                 }
               ],
               "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_201",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 방어막 / 받는 피해 감소 효과 해제",
+                    "type": 0,
+                    "value": "94",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 94
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_202",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 방어막 해제",
+                    "type": 0,
+                    "value": "38",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 38,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_203",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_AncientRecord_N_1",
+                    "Effect_BUFF_AncientRecord_N_2",
+                    "Effect_BUFF_AncientRecord_N_3",
+                    "Effect_BUFF_AncientRecord_N_4",
+                    "Effect_BUFF_AncientRecord_N_5",
+                    "Effect_BUFF_AncientRecord_N_6",
+                    "Effect_BUFF_AncientRecord_N_7",
+                    "Effect_BUFF_AncientRecord_N_8",
+                    "Effect_BUFF_AncientRecord_N_9",
+                    "Effect_BUFF_AncientRecord_N_10"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 협동 공격",
+                    "type": 0,
+                    "value": "Char_PECS_CyclopsePrincess_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_PECS_CyclopsePrincess_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -2511,6 +4730,174 @@
                     "off": {
                       "type": 7,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_201",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 방어막 / 받는 피해 감소 효과 해제",
+                    "type": 0,
+                    "value": "94",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 94
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_202",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 방어막 해제",
+                    "type": 0,
+                    "value": "38",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 38,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_203",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_AncientRecord_N_1",
+                    "Effect_BUFF_AncientRecord_N_2",
+                    "Effect_BUFF_AncientRecord_N_3",
+                    "Effect_BUFF_AncientRecord_N_4",
+                    "Effect_BUFF_AncientRecord_N_5",
+                    "Effect_BUFF_AncientRecord_N_6",
+                    "Effect_BUFF_AncientRecord_N_7",
+                    "Effect_BUFF_AncientRecord_N_8",
+                    "Effect_BUFF_AncientRecord_N_9",
+                    "Effect_BUFF_AncientRecord_N_10"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 협동 공격",
+                    "type": 0,
+                    "value": "Char_PECS_CyclopsePrincess_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_PECS_CyclopsePrincess_N"
                     }
                   },
                   "overlap": 4
@@ -2794,6 +5181,174 @@
                 }
               ],
               "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_201",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 방어막 / 받는 피해 감소 효과 해제",
+                    "type": 0,
+                    "value": "94",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 94
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_202",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 방어막 해제",
+                    "type": 0,
+                    "value": "38",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 38,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_203",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_AncientRecord_N_1",
+                    "Effect_BUFF_AncientRecord_N_2",
+                    "Effect_BUFF_AncientRecord_N_3",
+                    "Effect_BUFF_AncientRecord_N_4",
+                    "Effect_BUFF_AncientRecord_N_5",
+                    "Effect_BUFF_AncientRecord_N_6",
+                    "Effect_BUFF_AncientRecord_N_7",
+                    "Effect_BUFF_AncientRecord_N_8",
+                    "Effect_BUFF_AncientRecord_N_9",
+                    "Effect_BUFF_AncientRecord_N_10"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 협동 공격",
+                    "type": 0,
+                    "value": "Char_PECS_CyclopsePrincess_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_PECS_CyclopsePrincess_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -3065,6 +5620,174 @@
                     "off": {
                       "type": 7,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_201",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 방어막 / 받는 피해 감소 효과 해제",
+                    "type": 0,
+                    "value": "94",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 94
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_202",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 방어막 해제",
+                    "type": 0,
+                    "value": "38",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 38,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_203",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_AncientRecord_N_1",
+                    "Effect_BUFF_AncientRecord_N_2",
+                    "Effect_BUFF_AncientRecord_N_3",
+                    "Effect_BUFF_AncientRecord_N_4",
+                    "Effect_BUFF_AncientRecord_N_5",
+                    "Effect_BUFF_AncientRecord_N_6",
+                    "Effect_BUFF_AncientRecord_N_7",
+                    "Effect_BUFF_AncientRecord_N_8",
+                    "Effect_BUFF_AncientRecord_N_9",
+                    "Effect_BUFF_AncientRecord_N_10"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 협동 공격",
+                    "type": 0,
+                    "value": "Char_PECS_CyclopsePrincess_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_PECS_CyclopsePrincess_N"
                     }
                   },
                   "overlap": 4
@@ -3348,6 +6071,174 @@
                 }
               ],
               "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_201",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 방어막 / 받는 피해 감소 효과 해제",
+                    "type": 0,
+                    "value": "94",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 94
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_202",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 방어막 해제",
+                    "type": 0,
+                    "value": "38",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 38,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_203",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_AncientRecord_N_1",
+                    "Effect_BUFF_AncientRecord_N_2",
+                    "Effect_BUFF_AncientRecord_N_3",
+                    "Effect_BUFF_AncientRecord_N_4",
+                    "Effect_BUFF_AncientRecord_N_5",
+                    "Effect_BUFF_AncientRecord_N_6",
+                    "Effect_BUFF_AncientRecord_N_7",
+                    "Effect_BUFF_AncientRecord_N_8",
+                    "Effect_BUFF_AncientRecord_N_9",
+                    "Effect_BUFF_AncientRecord_N_10"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 협동 공격",
+                    "type": 0,
+                    "value": "Char_PECS_CyclopsePrincess_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_PECS_CyclopsePrincess_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -3619,6 +6510,174 @@
                     "off": {
                       "type": 7,
                       "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_201",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 방어막 / 받는 피해 감소 효과 해제",
+                    "type": 0,
+                    "value": "94",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 94
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_202",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 방어막 해제",
+                    "type": 0,
+                    "value": "38",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 38,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_203",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_AncientRecord_N_1",
+                    "Effect_BUFF_AncientRecord_N_2",
+                    "Effect_BUFF_AncientRecord_N_3",
+                    "Effect_BUFF_AncientRecord_N_4",
+                    "Effect_BUFF_AncientRecord_N_5",
+                    "Effect_BUFF_AncientRecord_N_6",
+                    "Effect_BUFF_AncientRecord_N_7",
+                    "Effect_BUFF_AncientRecord_N_8",
+                    "Effect_BUFF_AncientRecord_N_9",
+                    "Effect_BUFF_AncientRecord_N_10"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 협동 공격",
+                    "type": 0,
+                    "value": "Char_PECS_CyclopsePrincess_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_PECS_CyclopsePrincess_N"
                     }
                   },
                   "overlap": 4
@@ -3902,6 +6961,174 @@
                 }
               ],
               "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_201",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 방어막 / 받는 피해 감소 효과 해제",
+                    "type": 0,
+                    "value": "94",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 94
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_202",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 방어막 해제",
+                    "type": 0,
+                    "value": "38",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 38,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_203",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_AncientRecord_N_1",
+                    "Effect_BUFF_AncientRecord_N_2",
+                    "Effect_BUFF_AncientRecord_N_3",
+                    "Effect_BUFF_AncientRecord_N_4",
+                    "Effect_BUFF_AncientRecord_N_5",
+                    "Effect_BUFF_AncientRecord_N_6",
+                    "Effect_BUFF_AncientRecord_N_7",
+                    "Effect_BUFF_AncientRecord_N_8",
+                    "Effect_BUFF_AncientRecord_N_9",
+                    "Effect_BUFF_AncientRecord_N_10"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 협동 공격",
+                    "type": 0,
+                    "value": "Char_PECS_CyclopsePrincess_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_PECS_CyclopsePrincess_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -4179,6 +7406,174 @@
                 }
               ],
               "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_201",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 방어막 / 받는 피해 감소 효과 해제",
+                    "type": 0,
+                    "value": "94",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 94
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_202",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_LRL_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 방어막 해제",
+                    "type": 0,
+                    "value": "38",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 38,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_203",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BUFF_AncientRecord_N_1",
+                    "Effect_BUFF_AncientRecord_N_2",
+                    "Effect_BUFF_AncientRecord_N_3",
+                    "Effect_BUFF_AncientRecord_N_4",
+                    "Effect_BUFF_AncientRecord_N_5",
+                    "Effect_BUFF_AncientRecord_N_6",
+                    "Effect_BUFF_AncientRecord_N_7",
+                    "Effect_BUFF_AncientRecord_N_8",
+                    "Effect_BUFF_AncientRecord_N_9",
+                    "Effect_BUFF_AncientRecord_N_10"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 협동 공격",
+                    "type": 0,
+                    "value": "Char_PECS_CyclopsePrincess_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_PECS_CyclopsePrincess_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         }
@@ -4281,6 +7676,41 @@
             },
             "base": 7,
             "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_DEBUFF",
+            "desc": {
+              "desc": "진조를 계승하는 자 : 방어막 / 받는 피해 감소 효과 해제",
+              "type": 0,
+              "value": "94",
+              "level": "0"
+            },
+            "base": 94,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_BUFF",
+            "desc": {
+              "desc": "진조를 계승하는 자 : 방어막 해제",
+              "type": 0,
+              "value": "38",
+              "level": "0"
+            },
+            "base": 38,
+            "per": 0,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_TOGETHER_ATTACK",
+            "desc": {
+              "desc": "진조를 계승하는 자 : 협동 공격",
+              "type": 0,
+              "value": "Char_PECS_CyclopsePrincess_N",
+              "level": "0"
+            },
+            "value": "Char_PECS_CyclopsePrincess_N",
             "chance": 1
           }
         ]
@@ -4887,7 +8317,7 @@
   },
   "5": {
     "key": "5",
-    "icon": "None",
+    "icon": "TeamAtkBuff",
     "target": "team",
     "buffs": {
       "index": [
@@ -4908,17 +8338,17 @@
           "type": 0,
           "range": 0,
           "ap": 0,
-          "grid": "0,0,0,0,1,0,0,0,0",
+          "grid": "1,1,1,1,1,1,1,1,1",
           "target_ground": false,
           "summon": null,
           "use": null,
           "dismiss_guard": false,
           "acc_bonus": 0,
-          "buff_rate": 50,
+          "buff_rate": 100,
           "buffs": [
             {
               "key": "Effect_PECS_LRL_N_5",
-              "on": "attack_success",
+              "on": "wave",
               "if": false,
               "body": [
                 0,
@@ -4934,8 +8364,146 @@
                 1,
                 2
               ],
-              "target": 0,
-              "buffs": [],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SKILL_UP",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 스킬 위력{0}%",
+                    "type": 1,
+                    "value": "0.050000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "type": 106,
+                    "skill_ratio": {
+                      "base": "5%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SKILL_UP",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 스킬 위력{0}% (사이클롭스)",
+                    "type": 1,
+                    "value": "0.050000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 106,
+                    "skill_ratio": {
+                      "base": "5%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 방어막 / 받는 피해 감소 효과 해제",
+                    "type": 0,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 36,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 협동 공격",
+                    "type": 0,
+                    "value": "Char_PECS_CyclopsePrincess_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 102,
+                    "collaborate": {
+                      "skill": 1,
+                      "with": "Char_PECS_CyclopsePrincess_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_LRL_N_51",
+              "on": "round",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_CyclopsePrincess_N_41"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SKILL_UP",
+                  "desc": {
+                    "desc": "진조를 계승하는 자 : 스킬 위력{0}%",
+                    "type": 1,
+                    "value": "0.050000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 106,
+                    "skill_ratio": {
+                      "base": "5%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
               "maxStack": 0
             }
           ]
@@ -4956,7 +8524,67 @@
         0
       ],
       "data": [
-        []
+        [
+          {
+            "icon": "BuffIcon_SKILL_UP",
+            "desc": {
+              "desc": "진조를 계승하는 자 : 스킬 위력{0}%",
+              "type": 1,
+              "value": "0.050000",
+              "level": "0.010000"
+            },
+            "base": 0.05,
+            "per": 0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_SKILL_UP",
+            "desc": {
+              "desc": "진조를 계승하는 자 : 스킬 위력{0}% (사이클롭스)",
+              "type": 1,
+              "value": "0.050000",
+              "level": "0.010000"
+            },
+            "base": 0.05,
+            "per": 0.01,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_REMOVE_BUFF",
+            "desc": {
+              "desc": "진조를 계승하는 자 : 방어막 / 받는 피해 감소 효과 해제",
+              "type": 0,
+              "value": "36",
+              "level": "0"
+            },
+            "base": 36,
+            "per": 0,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_TOGETHER_ATTACK",
+            "desc": {
+              "desc": "진조를 계승하는 자 : 협동 공격",
+              "type": 0,
+              "value": "Char_PECS_CyclopsePrincess_N",
+              "level": "0"
+            },
+            "value": "Char_PECS_CyclopsePrincess_N",
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_SKILL_UP",
+            "desc": {
+              "desc": "진조를 계승하는 자 : 스킬 위력{0}%",
+              "type": 1,
+              "value": "0.050000",
+              "level": "0.010000"
+            },
+            "base": 0.05,
+            "per": 0.01,
+            "chance": 1
+          }
+        ]
       ]
     }
   }

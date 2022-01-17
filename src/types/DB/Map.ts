@@ -34,6 +34,7 @@ export interface MapSearch {
 }
 
 export interface MapNodeEntity {
+	key: string;
 	// name: string;
 	// desc: string;
 

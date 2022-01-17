@@ -20,9 +20,9 @@
         {
           "rate": 1.065,
           "type": 0,
-          "range": 2,
+          "range": 3,
           "ap": 8,
-          "grid": "0,0,1,0,1,0,0,0,1",
+          "grid": "0,1,0,1,1,0,0,1,0",
           "target_ground": true,
           "summon": null,
           "use": null,
@@ -52,10 +52,10 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "포식 : 행동력 {0}%",
+                    "desc": "포식 : 행동력{0}%",
                     "type": 1,
-                    "value": "-0.080000",
-                    "level": "-0.004000"
+                    "value": "-0.050000",
+                    "level": "-0.005000"
                   },
                   "attr": 1,
                   "erase": {
@@ -65,8 +65,8 @@
                     "isBuff": true,
                     "type": 13,
                     "turnSpeed": {
-                      "base": "-8%",
-                      "per": "-0.4%"
+                      "base": "-5%",
+                      "per": "-0.5%"
                     }
                   },
                   "overlap": 4
@@ -92,12 +92,12 @@
                   "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_VULNERABLE",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
                     "desc": "포식 : 받는 피해{0}%",
                     "type": 1,
-                    "value": "0.120000",
-                    "level": "0.006000"
+                    "value": "-0.100000",
+                    "level": "-0.010000"
                   },
                   "attr": 1,
                   "erase": {
@@ -106,10 +106,10 @@
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
-                    "type": 48,
-                    "damage_increase": {
-                      "base": "12%",
-                      "per": "0.6%"
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "-10%",
+                      "per": "-1%"
                     }
                   },
                   "overlap": 4
@@ -117,10 +117,10 @@
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "포식 : 방어력 {0}%",
+                    "desc": "포식 : 방어력{0}%",
                     "type": 1,
                     "value": "-0.200000",
-                    "level": "-0.010000"
+                    "level": "-0.030000"
                   },
                   "attr": 1,
                   "erase": {
@@ -132,30 +132,7 @@
                     "type": 3,
                     "defense": {
                       "base": "-20%",
-                      "per": "-1%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_DEF_UP",
-                  "desc": {
-                    "desc": "포식 : 방어력{0}% (자신)",
-                    "type": 1,
-                    "value": "0.100000",
-                    "level": "0.005000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 3,
-                    "defense": {
-                      "base": "10%",
-                      "per": "0.5%"
+                      "per": "-3%"
                     }
                   },
                   "overlap": 4
@@ -184,10 +161,10 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "포식 : 행동력 {0}",
+                    "desc": "포식 : 행동력{0}%",
                     "type": 1,
                     "value": "-0.040000",
-                    "level": "-0.002000"
+                    "level": "-0.001000"
                   },
                   "attr": 1,
                   "erase": {
@@ -198,7 +175,7 @@
                     "type": 13,
                     "turnSpeed": {
                       "base": "-4%",
-                      "per": "-0.2%"
+                      "per": "-0.1%"
                     }
                   },
                   "overlap": 4
@@ -245,12 +222,12 @@
                   "overlap": 1
                 },
                 {
-                  "icon": "BuffIcon_VULNERABLE",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "포식 : 받는 피해{0}%",
+                    "desc": "포식 : 받는 피해 감소{0}%",
                     "type": 1,
-                    "value": "0.120000",
-                    "level": "0.006000"
+                    "value": "-0.100000",
+                    "level": "-0.010000"
                   },
                   "attr": 1,
                   "erase": {
@@ -258,21 +235,21 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 48,
-                    "damage_increase": {
-                      "base": "12%",
-                      "per": "0.6%"
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "-10%",
+                      "per": "-1%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 },
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "포식 : 방어력 {0}%",
+                    "desc": "포식 : 방어력{0}%",
                     "type": 1,
                     "value": "-0.200000",
-                    "level": "-0.010000"
+                    "level": "-0.030000"
                   },
                   "attr": 1,
                   "erase": {
@@ -283,13 +260,13 @@
                     "type": 3,
                     "defense": {
                       "base": "-20%",
-                      "per": "-1%"
+                      "per": "-3%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 }
               ],
-              "maxStack": 0
+              "maxStack": 3
             },
             {
               "key": "Effect_BR_Echidna_N_13",
@@ -329,12 +306,12 @@
                   "overlap": 1
                 },
                 {
-                  "icon": "BuffIcon_VULNERABLE",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "포식 : 받는 피해{0}%",
+                    "desc": "포식 : 받는 피해 감소{0}%",
                     "type": 1,
-                    "value": "0.060000",
-                    "level": "0.003000"
+                    "value": "-0.050000",
+                    "level": "-0.005000"
                   },
                   "attr": 1,
                   "erase": {
@@ -342,21 +319,21 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 48,
-                    "damage_increase": {
-                      "base": "6%",
-                      "per": "0.3%"
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "-5%",
+                      "per": "-0.5%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 },
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "포식 : 방어력 {0}%",
+                    "desc": "포식 : 방어력{0}%",
                     "type": 1,
                     "value": "-0.100000",
-                    "level": "-0.005000"
+                    "level": "-0.015000"
                   },
                   "attr": 1,
                   "erase": {
@@ -367,22 +344,22 @@
                     "type": 3,
                     "defense": {
                       "base": "-10%",
-                      "per": "-0.5%"
+                      "per": "-1.5%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 }
               ],
-              "maxStack": 0
+              "maxStack": 3
             }
           ]
         },
         {
-          "rate": 1.16,
+          "rate": 1.18,
           "type": 0,
-          "range": 2,
+          "range": 3,
           "ap": 8,
-          "grid": "0,0,1,0,1,0,0,0,1",
+          "grid": "0,1,0,1,1,0,0,1,0",
           "target_ground": true,
           "summon": null,
           "use": null,
@@ -412,10 +389,10 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "포식 : 행동력 {0}%",
+                    "desc": "포식 : 행동력{0}%",
                     "type": 1,
-                    "value": "-0.080000",
-                    "level": "-0.004000"
+                    "value": "-0.050000",
+                    "level": "-0.005000"
                   },
                   "attr": 1,
                   "erase": {
@@ -425,8 +402,8 @@
                     "isBuff": true,
                     "type": 13,
                     "turnSpeed": {
-                      "base": "-8%",
-                      "per": "-0.4%"
+                      "base": "-5%",
+                      "per": "-0.5%"
                     }
                   },
                   "overlap": 4
@@ -452,12 +429,12 @@
                   "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_VULNERABLE",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
                     "desc": "포식 : 받는 피해{0}%",
                     "type": 1,
-                    "value": "0.120000",
-                    "level": "0.006000"
+                    "value": "-0.100000",
+                    "level": "-0.010000"
                   },
                   "attr": 1,
                   "erase": {
@@ -466,10 +443,10 @@
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
-                    "type": 48,
-                    "damage_increase": {
-                      "base": "12%",
-                      "per": "0.6%"
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "-10%",
+                      "per": "-1%"
                     }
                   },
                   "overlap": 4
@@ -477,10 +454,10 @@
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "포식 : 방어력 {0}%",
+                    "desc": "포식 : 방어력{0}%",
                     "type": 1,
                     "value": "-0.200000",
-                    "level": "-0.010000"
+                    "level": "-0.030000"
                   },
                   "attr": 1,
                   "erase": {
@@ -492,30 +469,7 @@
                     "type": 3,
                     "defense": {
                       "base": "-20%",
-                      "per": "-1%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_DEF_UP",
-                  "desc": {
-                    "desc": "포식 : 방어력{0}% (자신)",
-                    "type": 1,
-                    "value": "0.100000",
-                    "level": "0.005000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 3,
-                    "defense": {
-                      "base": "10%",
-                      "per": "0.5%"
+                      "per": "-3%"
                     }
                   },
                   "overlap": 4
@@ -544,10 +498,10 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "포식 : 행동력 {0}",
+                    "desc": "포식 : 행동력{0}%",
                     "type": 1,
                     "value": "-0.040000",
-                    "level": "-0.002000"
+                    "level": "-0.001000"
                   },
                   "attr": 1,
                   "erase": {
@@ -558,7 +512,7 @@
                     "type": 13,
                     "turnSpeed": {
                       "base": "-4%",
-                      "per": "-0.2%"
+                      "per": "-0.1%"
                     }
                   },
                   "overlap": 4
@@ -605,12 +559,12 @@
                   "overlap": 1
                 },
                 {
-                  "icon": "BuffIcon_VULNERABLE",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "포식 : 받는 피해{0}%",
+                    "desc": "포식 : 받는 피해 감소{0}%",
                     "type": 1,
-                    "value": "0.120000",
-                    "level": "0.006000"
+                    "value": "-0.100000",
+                    "level": "-0.010000"
                   },
                   "attr": 1,
                   "erase": {
@@ -618,21 +572,21 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 48,
-                    "damage_increase": {
-                      "base": "12%",
-                      "per": "0.6%"
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "-10%",
+                      "per": "-1%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 },
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "포식 : 방어력 {0}%",
+                    "desc": "포식 : 방어력{0}%",
                     "type": 1,
                     "value": "-0.200000",
-                    "level": "-0.010000"
+                    "level": "-0.030000"
                   },
                   "attr": 1,
                   "erase": {
@@ -643,13 +597,13 @@
                     "type": 3,
                     "defense": {
                       "base": "-20%",
-                      "per": "-1%"
+                      "per": "-3%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 }
               ],
-              "maxStack": 0
+              "maxStack": 3
             },
             {
               "key": "Effect_BR_Echidna_N_13",
@@ -689,12 +643,12 @@
                   "overlap": 1
                 },
                 {
-                  "icon": "BuffIcon_VULNERABLE",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "포식 : 받는 피해{0}%",
+                    "desc": "포식 : 받는 피해 감소{0}%",
                     "type": 1,
-                    "value": "0.060000",
-                    "level": "0.003000"
+                    "value": "-0.050000",
+                    "level": "-0.005000"
                   },
                   "attr": 1,
                   "erase": {
@@ -702,21 +656,21 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 48,
-                    "damage_increase": {
-                      "base": "6%",
-                      "per": "0.3%"
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "-5%",
+                      "per": "-0.5%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 },
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "포식 : 방어력 {0}%",
+                    "desc": "포식 : 방어력{0}%",
                     "type": 1,
                     "value": "-0.100000",
-                    "level": "-0.005000"
+                    "level": "-0.015000"
                   },
                   "attr": 1,
                   "erase": {
@@ -727,22 +681,22 @@
                     "type": 3,
                     "defense": {
                       "base": "-10%",
-                      "per": "-0.5%"
+                      "per": "-1.5%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 }
               ],
-              "maxStack": 0
+              "maxStack": 3
             }
           ]
         },
         {
-          "rate": 1.255,
+          "rate": 1.295,
           "type": 0,
-          "range": 2,
+          "range": 3,
           "ap": 8,
-          "grid": "0,0,1,0,1,0,0,0,1",
+          "grid": "0,1,0,1,1,0,0,1,0",
           "target_ground": true,
           "summon": null,
           "use": null,
@@ -772,10 +726,10 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "포식 : 행동력 {0}%",
+                    "desc": "포식 : 행동력{0}%",
                     "type": 1,
-                    "value": "-0.080000",
-                    "level": "-0.004000"
+                    "value": "-0.050000",
+                    "level": "-0.005000"
                   },
                   "attr": 1,
                   "erase": {
@@ -785,8 +739,8 @@
                     "isBuff": true,
                     "type": 13,
                     "turnSpeed": {
-                      "base": "-8%",
-                      "per": "-0.4%"
+                      "base": "-5%",
+                      "per": "-0.5%"
                     }
                   },
                   "overlap": 4
@@ -812,12 +766,12 @@
                   "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_VULNERABLE",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
                     "desc": "포식 : 받는 피해{0}%",
                     "type": 1,
-                    "value": "0.120000",
-                    "level": "0.006000"
+                    "value": "-0.100000",
+                    "level": "-0.010000"
                   },
                   "attr": 1,
                   "erase": {
@@ -826,10 +780,10 @@
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
-                    "type": 48,
-                    "damage_increase": {
-                      "base": "12%",
-                      "per": "0.6%"
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "-10%",
+                      "per": "-1%"
                     }
                   },
                   "overlap": 4
@@ -837,10 +791,10 @@
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "포식 : 방어력 {0}%",
+                    "desc": "포식 : 방어력{0}%",
                     "type": 1,
                     "value": "-0.200000",
-                    "level": "-0.010000"
+                    "level": "-0.030000"
                   },
                   "attr": 1,
                   "erase": {
@@ -852,30 +806,7 @@
                     "type": 3,
                     "defense": {
                       "base": "-20%",
-                      "per": "-1%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_DEF_UP",
-                  "desc": {
-                    "desc": "포식 : 방어력{0}% (자신)",
-                    "type": 1,
-                    "value": "0.100000",
-                    "level": "0.005000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 3,
-                    "defense": {
-                      "base": "10%",
-                      "per": "0.5%"
+                      "per": "-3%"
                     }
                   },
                   "overlap": 4
@@ -904,10 +835,10 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "포식 : 행동력 {0}",
+                    "desc": "포식 : 행동력{0}%",
                     "type": 1,
                     "value": "-0.040000",
-                    "level": "-0.002000"
+                    "level": "-0.001000"
                   },
                   "attr": 1,
                   "erase": {
@@ -918,7 +849,7 @@
                     "type": 13,
                     "turnSpeed": {
                       "base": "-4%",
-                      "per": "-0.2%"
+                      "per": "-0.1%"
                     }
                   },
                   "overlap": 4
@@ -965,12 +896,12 @@
                   "overlap": 1
                 },
                 {
-                  "icon": "BuffIcon_VULNERABLE",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "포식 : 받는 피해{0}%",
+                    "desc": "포식 : 받는 피해 감소{0}%",
                     "type": 1,
-                    "value": "0.120000",
-                    "level": "0.006000"
+                    "value": "-0.100000",
+                    "level": "-0.010000"
                   },
                   "attr": 1,
                   "erase": {
@@ -978,21 +909,21 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 48,
-                    "damage_increase": {
-                      "base": "12%",
-                      "per": "0.6%"
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "-10%",
+                      "per": "-1%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 },
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "포식 : 방어력 {0}%",
+                    "desc": "포식 : 방어력{0}%",
                     "type": 1,
                     "value": "-0.200000",
-                    "level": "-0.010000"
+                    "level": "-0.030000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1003,13 +934,13 @@
                     "type": 3,
                     "defense": {
                       "base": "-20%",
-                      "per": "-1%"
+                      "per": "-3%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 }
               ],
-              "maxStack": 0
+              "maxStack": 3
             },
             {
               "key": "Effect_BR_Echidna_N_13",
@@ -1049,12 +980,12 @@
                   "overlap": 1
                 },
                 {
-                  "icon": "BuffIcon_VULNERABLE",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "포식 : 받는 피해{0}%",
+                    "desc": "포식 : 받는 피해 감소{0}%",
                     "type": 1,
-                    "value": "0.060000",
-                    "level": "0.003000"
+                    "value": "-0.050000",
+                    "level": "-0.005000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1062,21 +993,21 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 48,
-                    "damage_increase": {
-                      "base": "6%",
-                      "per": "0.3%"
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "-5%",
+                      "per": "-0.5%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 },
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "포식 : 방어력 {0}%",
+                    "desc": "포식 : 방어력{0}%",
                     "type": 1,
                     "value": "-0.100000",
-                    "level": "-0.005000"
+                    "level": "-0.015000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1087,22 +1018,22 @@
                     "type": 3,
                     "defense": {
                       "base": "-10%",
-                      "per": "-0.5%"
+                      "per": "-1.5%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 }
               ],
-              "maxStack": 0
+              "maxStack": 3
             }
           ]
         },
         {
-          "rate": 1.35,
+          "rate": 1.41,
           "type": 0,
-          "range": 2,
+          "range": 3,
           "ap": 8,
-          "grid": "0,0,1,0,1,0,0,0,1",
+          "grid": "0,1,0,1,1,0,0,1,0",
           "target_ground": true,
           "summon": null,
           "use": null,
@@ -1132,10 +1063,10 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "포식 : 행동력 {0}%",
+                    "desc": "포식 : 행동력{0}%",
                     "type": 1,
-                    "value": "-0.080000",
-                    "level": "-0.004000"
+                    "value": "-0.050000",
+                    "level": "-0.005000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1145,8 +1076,8 @@
                     "isBuff": true,
                     "type": 13,
                     "turnSpeed": {
-                      "base": "-8%",
-                      "per": "-0.4%"
+                      "base": "-5%",
+                      "per": "-0.5%"
                     }
                   },
                   "overlap": 4
@@ -1172,12 +1103,12 @@
                   "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_VULNERABLE",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
                     "desc": "포식 : 받는 피해{0}%",
                     "type": 1,
-                    "value": "0.120000",
-                    "level": "0.006000"
+                    "value": "-0.100000",
+                    "level": "-0.010000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1186,10 +1117,10 @@
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
-                    "type": 48,
-                    "damage_increase": {
-                      "base": "12%",
-                      "per": "0.6%"
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "-10%",
+                      "per": "-1%"
                     }
                   },
                   "overlap": 4
@@ -1197,10 +1128,10 @@
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "포식 : 방어력 {0}%",
+                    "desc": "포식 : 방어력{0}%",
                     "type": 1,
                     "value": "-0.200000",
-                    "level": "-0.010000"
+                    "level": "-0.030000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1212,30 +1143,7 @@
                     "type": 3,
                     "defense": {
                       "base": "-20%",
-                      "per": "-1%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_DEF_UP",
-                  "desc": {
-                    "desc": "포식 : 방어력{0}% (자신)",
-                    "type": 1,
-                    "value": "0.100000",
-                    "level": "0.005000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 3,
-                    "defense": {
-                      "base": "10%",
-                      "per": "0.5%"
+                      "per": "-3%"
                     }
                   },
                   "overlap": 4
@@ -1264,10 +1172,10 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "포식 : 행동력 {0}",
+                    "desc": "포식 : 행동력{0}%",
                     "type": 1,
                     "value": "-0.040000",
-                    "level": "-0.002000"
+                    "level": "-0.001000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1278,7 +1186,7 @@
                     "type": 13,
                     "turnSpeed": {
                       "base": "-4%",
-                      "per": "-0.2%"
+                      "per": "-0.1%"
                     }
                   },
                   "overlap": 4
@@ -1325,12 +1233,12 @@
                   "overlap": 1
                 },
                 {
-                  "icon": "BuffIcon_VULNERABLE",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "포식 : 받는 피해{0}%",
+                    "desc": "포식 : 받는 피해 감소{0}%",
                     "type": 1,
-                    "value": "0.120000",
-                    "level": "0.006000"
+                    "value": "-0.100000",
+                    "level": "-0.010000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1338,21 +1246,21 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 48,
-                    "damage_increase": {
-                      "base": "12%",
-                      "per": "0.6%"
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "-10%",
+                      "per": "-1%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 },
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "포식 : 방어력 {0}%",
+                    "desc": "포식 : 방어력{0}%",
                     "type": 1,
                     "value": "-0.200000",
-                    "level": "-0.010000"
+                    "level": "-0.030000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1363,13 +1271,13 @@
                     "type": 3,
                     "defense": {
                       "base": "-20%",
-                      "per": "-1%"
+                      "per": "-3%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 }
               ],
-              "maxStack": 0
+              "maxStack": 3
             },
             {
               "key": "Effect_BR_Echidna_N_13",
@@ -1409,12 +1317,12 @@
                   "overlap": 1
                 },
                 {
-                  "icon": "BuffIcon_VULNERABLE",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "포식 : 받는 피해{0}%",
+                    "desc": "포식 : 받는 피해 감소{0}%",
                     "type": 1,
-                    "value": "0.060000",
-                    "level": "0.003000"
+                    "value": "-0.050000",
+                    "level": "-0.005000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1422,21 +1330,21 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 48,
-                    "damage_increase": {
-                      "base": "6%",
-                      "per": "0.3%"
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "-5%",
+                      "per": "-0.5%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 },
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "포식 : 방어력 {0}%",
+                    "desc": "포식 : 방어력{0}%",
                     "type": 1,
                     "value": "-0.100000",
-                    "level": "-0.005000"
+                    "level": "-0.015000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1447,22 +1355,22 @@
                     "type": 3,
                     "defense": {
                       "base": "-10%",
-                      "per": "-0.5%"
+                      "per": "-1.5%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 }
               ],
-              "maxStack": 0
+              "maxStack": 3
             }
           ]
         },
         {
-          "rate": 1.445,
+          "rate": 1.525,
           "type": 0,
-          "range": 2,
+          "range": 3,
           "ap": 8,
-          "grid": "0,0,1,0,1,0,0,0,1",
+          "grid": "0,1,0,1,1,0,0,1,0",
           "target_ground": true,
           "summon": null,
           "use": null,
@@ -1492,10 +1400,10 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "포식 : 행동력 {0}%",
+                    "desc": "포식 : 행동력{0}%",
                     "type": 1,
-                    "value": "-0.080000",
-                    "level": "-0.004000"
+                    "value": "-0.050000",
+                    "level": "-0.005000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1505,8 +1413,8 @@
                     "isBuff": true,
                     "type": 13,
                     "turnSpeed": {
-                      "base": "-8%",
-                      "per": "-0.4%"
+                      "base": "-5%",
+                      "per": "-0.5%"
                     }
                   },
                   "overlap": 4
@@ -1532,12 +1440,12 @@
                   "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_VULNERABLE",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
                     "desc": "포식 : 받는 피해{0}%",
                     "type": 1,
-                    "value": "0.120000",
-                    "level": "0.006000"
+                    "value": "-0.100000",
+                    "level": "-0.010000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1546,10 +1454,10 @@
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
-                    "type": 48,
-                    "damage_increase": {
-                      "base": "12%",
-                      "per": "0.6%"
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "-10%",
+                      "per": "-1%"
                     }
                   },
                   "overlap": 4
@@ -1557,10 +1465,10 @@
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "포식 : 방어력 {0}%",
+                    "desc": "포식 : 방어력{0}%",
                     "type": 1,
                     "value": "-0.200000",
-                    "level": "-0.010000"
+                    "level": "-0.030000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1572,30 +1480,7 @@
                     "type": 3,
                     "defense": {
                       "base": "-20%",
-                      "per": "-1%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_DEF_UP",
-                  "desc": {
-                    "desc": "포식 : 방어력{0}% (자신)",
-                    "type": 1,
-                    "value": "0.100000",
-                    "level": "0.005000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 3,
-                    "defense": {
-                      "base": "10%",
-                      "per": "0.5%"
+                      "per": "-3%"
                     }
                   },
                   "overlap": 4
@@ -1624,10 +1509,10 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "포식 : 행동력 {0}",
+                    "desc": "포식 : 행동력{0}%",
                     "type": 1,
                     "value": "-0.040000",
-                    "level": "-0.002000"
+                    "level": "-0.001000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1638,7 +1523,7 @@
                     "type": 13,
                     "turnSpeed": {
                       "base": "-4%",
-                      "per": "-0.2%"
+                      "per": "-0.1%"
                     }
                   },
                   "overlap": 4
@@ -1685,12 +1570,12 @@
                   "overlap": 1
                 },
                 {
-                  "icon": "BuffIcon_VULNERABLE",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "포식 : 받는 피해{0}%",
+                    "desc": "포식 : 받는 피해 감소{0}%",
                     "type": 1,
-                    "value": "0.120000",
-                    "level": "0.006000"
+                    "value": "-0.100000",
+                    "level": "-0.010000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1698,21 +1583,21 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 48,
-                    "damage_increase": {
-                      "base": "12%",
-                      "per": "0.6%"
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "-10%",
+                      "per": "-1%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 },
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "포식 : 방어력 {0}%",
+                    "desc": "포식 : 방어력{0}%",
                     "type": 1,
                     "value": "-0.200000",
-                    "level": "-0.010000"
+                    "level": "-0.030000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1723,13 +1608,13 @@
                     "type": 3,
                     "defense": {
                       "base": "-20%",
-                      "per": "-1%"
+                      "per": "-3%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 }
               ],
-              "maxStack": 0
+              "maxStack": 3
             },
             {
               "key": "Effect_BR_Echidna_N_13",
@@ -1769,12 +1654,12 @@
                   "overlap": 1
                 },
                 {
-                  "icon": "BuffIcon_VULNERABLE",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "포식 : 받는 피해{0}%",
+                    "desc": "포식 : 받는 피해 감소{0}%",
                     "type": 1,
-                    "value": "0.060000",
-                    "level": "0.003000"
+                    "value": "-0.050000",
+                    "level": "-0.005000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1782,21 +1667,21 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 48,
-                    "damage_increase": {
-                      "base": "6%",
-                      "per": "0.3%"
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "-5%",
+                      "per": "-0.5%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 },
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "포식 : 방어력 {0}%",
+                    "desc": "포식 : 방어력{0}%",
                     "type": 1,
                     "value": "-0.100000",
-                    "level": "-0.005000"
+                    "level": "-0.015000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1807,22 +1692,22 @@
                     "type": 3,
                     "defense": {
                       "base": "-10%",
-                      "per": "-0.5%"
+                      "per": "-1.5%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 }
               ],
-              "maxStack": 0
+              "maxStack": 3
             }
           ]
         },
         {
-          "rate": 1.54,
+          "rate": 1.64,
           "type": 0,
-          "range": 2,
+          "range": 3,
           "ap": 8,
-          "grid": "0,0,1,0,1,0,0,0,1",
+          "grid": "0,1,0,1,1,0,0,1,0",
           "target_ground": true,
           "summon": null,
           "use": null,
@@ -1852,10 +1737,10 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "포식 : 행동력 {0}%",
+                    "desc": "포식 : 행동력{0}%",
                     "type": 1,
-                    "value": "-0.080000",
-                    "level": "-0.004000"
+                    "value": "-0.050000",
+                    "level": "-0.005000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1865,8 +1750,8 @@
                     "isBuff": true,
                     "type": 13,
                     "turnSpeed": {
-                      "base": "-8%",
-                      "per": "-0.4%"
+                      "base": "-5%",
+                      "per": "-0.5%"
                     }
                   },
                   "overlap": 4
@@ -1892,12 +1777,12 @@
                   "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_VULNERABLE",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
                     "desc": "포식 : 받는 피해{0}%",
                     "type": 1,
-                    "value": "0.120000",
-                    "level": "0.006000"
+                    "value": "-0.100000",
+                    "level": "-0.010000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1906,10 +1791,10 @@
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
-                    "type": 48,
-                    "damage_increase": {
-                      "base": "12%",
-                      "per": "0.6%"
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "-10%",
+                      "per": "-1%"
                     }
                   },
                   "overlap": 4
@@ -1917,10 +1802,10 @@
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "포식 : 방어력 {0}%",
+                    "desc": "포식 : 방어력{0}%",
                     "type": 1,
                     "value": "-0.200000",
-                    "level": "-0.010000"
+                    "level": "-0.030000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1932,30 +1817,7 @@
                     "type": 3,
                     "defense": {
                       "base": "-20%",
-                      "per": "-1%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_DEF_UP",
-                  "desc": {
-                    "desc": "포식 : 방어력{0}% (자신)",
-                    "type": 1,
-                    "value": "0.100000",
-                    "level": "0.005000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 3,
-                    "defense": {
-                      "base": "10%",
-                      "per": "0.5%"
+                      "per": "-3%"
                     }
                   },
                   "overlap": 4
@@ -1984,10 +1846,10 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "포식 : 행동력 {0}",
+                    "desc": "포식 : 행동력{0}%",
                     "type": 1,
                     "value": "-0.040000",
-                    "level": "-0.002000"
+                    "level": "-0.001000"
                   },
                   "attr": 1,
                   "erase": {
@@ -1998,7 +1860,7 @@
                     "type": 13,
                     "turnSpeed": {
                       "base": "-4%",
-                      "per": "-0.2%"
+                      "per": "-0.1%"
                     }
                   },
                   "overlap": 4
@@ -2045,12 +1907,12 @@
                   "overlap": 1
                 },
                 {
-                  "icon": "BuffIcon_VULNERABLE",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "포식 : 받는 피해{0}%",
+                    "desc": "포식 : 받는 피해 감소{0}%",
                     "type": 1,
-                    "value": "0.120000",
-                    "level": "0.006000"
+                    "value": "-0.100000",
+                    "level": "-0.010000"
                   },
                   "attr": 1,
                   "erase": {
@@ -2058,21 +1920,21 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 48,
-                    "damage_increase": {
-                      "base": "12%",
-                      "per": "0.6%"
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "-10%",
+                      "per": "-1%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 },
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "포식 : 방어력 {0}%",
+                    "desc": "포식 : 방어력{0}%",
                     "type": 1,
                     "value": "-0.200000",
-                    "level": "-0.010000"
+                    "level": "-0.030000"
                   },
                   "attr": 1,
                   "erase": {
@@ -2083,13 +1945,13 @@
                     "type": 3,
                     "defense": {
                       "base": "-20%",
-                      "per": "-1%"
+                      "per": "-3%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 }
               ],
-              "maxStack": 0
+              "maxStack": 3
             },
             {
               "key": "Effect_BR_Echidna_N_13",
@@ -2129,12 +1991,12 @@
                   "overlap": 1
                 },
                 {
-                  "icon": "BuffIcon_VULNERABLE",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "포식 : 받는 피해{0}%",
+                    "desc": "포식 : 받는 피해 감소{0}%",
                     "type": 1,
-                    "value": "0.060000",
-                    "level": "0.003000"
+                    "value": "-0.050000",
+                    "level": "-0.005000"
                   },
                   "attr": 1,
                   "erase": {
@@ -2142,21 +2004,21 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 48,
-                    "damage_increase": {
-                      "base": "6%",
-                      "per": "0.3%"
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "-5%",
+                      "per": "-0.5%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 },
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "포식 : 방어력 {0}%",
+                    "desc": "포식 : 방어력{0}%",
                     "type": 1,
                     "value": "-0.100000",
-                    "level": "-0.005000"
+                    "level": "-0.015000"
                   },
                   "attr": 1,
                   "erase": {
@@ -2167,22 +2029,22 @@
                     "type": 3,
                     "defense": {
                       "base": "-10%",
-                      "per": "-0.5%"
+                      "per": "-1.5%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 }
               ],
-              "maxStack": 0
+              "maxStack": 3
             }
           ]
         },
         {
-          "rate": 1.635,
+          "rate": 1.755,
           "type": 0,
-          "range": 2,
+          "range": 3,
           "ap": 8,
-          "grid": "0,0,1,0,1,0,0,0,1",
+          "grid": "0,1,0,1,1,0,0,1,0",
           "target_ground": true,
           "summon": null,
           "use": null,
@@ -2212,10 +2074,10 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "포식 : 행동력 {0}%",
+                    "desc": "포식 : 행동력{0}%",
                     "type": 1,
-                    "value": "-0.080000",
-                    "level": "-0.004000"
+                    "value": "-0.050000",
+                    "level": "-0.005000"
                   },
                   "attr": 1,
                   "erase": {
@@ -2225,8 +2087,8 @@
                     "isBuff": true,
                     "type": 13,
                     "turnSpeed": {
-                      "base": "-8%",
-                      "per": "-0.4%"
+                      "base": "-5%",
+                      "per": "-0.5%"
                     }
                   },
                   "overlap": 4
@@ -2252,12 +2114,12 @@
                   "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_VULNERABLE",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
                     "desc": "포식 : 받는 피해{0}%",
                     "type": 1,
-                    "value": "0.120000",
-                    "level": "0.006000"
+                    "value": "-0.100000",
+                    "level": "-0.010000"
                   },
                   "attr": 1,
                   "erase": {
@@ -2266,10 +2128,10 @@
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
-                    "type": 48,
-                    "damage_increase": {
-                      "base": "12%",
-                      "per": "0.6%"
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "-10%",
+                      "per": "-1%"
                     }
                   },
                   "overlap": 4
@@ -2277,10 +2139,10 @@
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "포식 : 방어력 {0}%",
+                    "desc": "포식 : 방어력{0}%",
                     "type": 1,
                     "value": "-0.200000",
-                    "level": "-0.010000"
+                    "level": "-0.030000"
                   },
                   "attr": 1,
                   "erase": {
@@ -2292,30 +2154,7 @@
                     "type": 3,
                     "defense": {
                       "base": "-20%",
-                      "per": "-1%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_DEF_UP",
-                  "desc": {
-                    "desc": "포식 : 방어력{0}% (자신)",
-                    "type": 1,
-                    "value": "0.100000",
-                    "level": "0.005000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 3,
-                    "defense": {
-                      "base": "10%",
-                      "per": "0.5%"
+                      "per": "-3%"
                     }
                   },
                   "overlap": 4
@@ -2344,10 +2183,10 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "포식 : 행동력 {0}",
+                    "desc": "포식 : 행동력{0}%",
                     "type": 1,
                     "value": "-0.040000",
-                    "level": "-0.002000"
+                    "level": "-0.001000"
                   },
                   "attr": 1,
                   "erase": {
@@ -2358,7 +2197,7 @@
                     "type": 13,
                     "turnSpeed": {
                       "base": "-4%",
-                      "per": "-0.2%"
+                      "per": "-0.1%"
                     }
                   },
                   "overlap": 4
@@ -2405,12 +2244,12 @@
                   "overlap": 1
                 },
                 {
-                  "icon": "BuffIcon_VULNERABLE",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "포식 : 받는 피해{0}%",
+                    "desc": "포식 : 받는 피해 감소{0}%",
                     "type": 1,
-                    "value": "0.120000",
-                    "level": "0.006000"
+                    "value": "-0.100000",
+                    "level": "-0.010000"
                   },
                   "attr": 1,
                   "erase": {
@@ -2418,21 +2257,21 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 48,
-                    "damage_increase": {
-                      "base": "12%",
-                      "per": "0.6%"
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "-10%",
+                      "per": "-1%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 },
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "포식 : 방어력 {0}%",
+                    "desc": "포식 : 방어력{0}%",
                     "type": 1,
                     "value": "-0.200000",
-                    "level": "-0.010000"
+                    "level": "-0.030000"
                   },
                   "attr": 1,
                   "erase": {
@@ -2443,13 +2282,13 @@
                     "type": 3,
                     "defense": {
                       "base": "-20%",
-                      "per": "-1%"
+                      "per": "-3%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 }
               ],
-              "maxStack": 0
+              "maxStack": 3
             },
             {
               "key": "Effect_BR_Echidna_N_13",
@@ -2489,12 +2328,12 @@
                   "overlap": 1
                 },
                 {
-                  "icon": "BuffIcon_VULNERABLE",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "포식 : 받는 피해{0}%",
+                    "desc": "포식 : 받는 피해 감소{0}%",
                     "type": 1,
-                    "value": "0.060000",
-                    "level": "0.003000"
+                    "value": "-0.050000",
+                    "level": "-0.005000"
                   },
                   "attr": 1,
                   "erase": {
@@ -2502,21 +2341,21 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 48,
-                    "damage_increase": {
-                      "base": "6%",
-                      "per": "0.3%"
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "-5%",
+                      "per": "-0.5%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 },
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "포식 : 방어력 {0}%",
+                    "desc": "포식 : 방어력{0}%",
                     "type": 1,
                     "value": "-0.100000",
-                    "level": "-0.005000"
+                    "level": "-0.015000"
                   },
                   "attr": 1,
                   "erase": {
@@ -2527,22 +2366,22 @@
                     "type": 3,
                     "defense": {
                       "base": "-10%",
-                      "per": "-0.5%"
+                      "per": "-1.5%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 }
               ],
-              "maxStack": 0
+              "maxStack": 3
             }
           ]
         },
         {
-          "rate": 1.73,
+          "rate": 1.87,
           "type": 0,
-          "range": 2,
+          "range": 3,
           "ap": 8,
-          "grid": "0,0,1,0,1,0,0,0,1",
+          "grid": "0,1,0,1,1,0,0,1,0",
           "target_ground": true,
           "summon": null,
           "use": null,
@@ -2572,10 +2411,10 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "포식 : 행동력 {0}%",
+                    "desc": "포식 : 행동력{0}%",
                     "type": 1,
-                    "value": "-0.080000",
-                    "level": "-0.004000"
+                    "value": "-0.050000",
+                    "level": "-0.005000"
                   },
                   "attr": 1,
                   "erase": {
@@ -2585,8 +2424,8 @@
                     "isBuff": true,
                     "type": 13,
                     "turnSpeed": {
-                      "base": "-8%",
-                      "per": "-0.4%"
+                      "base": "-5%",
+                      "per": "-0.5%"
                     }
                   },
                   "overlap": 4
@@ -2612,12 +2451,12 @@
                   "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_VULNERABLE",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
                     "desc": "포식 : 받는 피해{0}%",
                     "type": 1,
-                    "value": "0.120000",
-                    "level": "0.006000"
+                    "value": "-0.100000",
+                    "level": "-0.010000"
                   },
                   "attr": 1,
                   "erase": {
@@ -2626,10 +2465,10 @@
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
-                    "type": 48,
-                    "damage_increase": {
-                      "base": "12%",
-                      "per": "0.6%"
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "-10%",
+                      "per": "-1%"
                     }
                   },
                   "overlap": 4
@@ -2637,10 +2476,10 @@
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "포식 : 방어력 {0}%",
+                    "desc": "포식 : 방어력{0}%",
                     "type": 1,
                     "value": "-0.200000",
-                    "level": "-0.010000"
+                    "level": "-0.030000"
                   },
                   "attr": 1,
                   "erase": {
@@ -2652,30 +2491,7 @@
                     "type": 3,
                     "defense": {
                       "base": "-20%",
-                      "per": "-1%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_DEF_UP",
-                  "desc": {
-                    "desc": "포식 : 방어력{0}% (자신)",
-                    "type": 1,
-                    "value": "0.100000",
-                    "level": "0.005000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 3,
-                    "defense": {
-                      "base": "10%",
-                      "per": "0.5%"
+                      "per": "-3%"
                     }
                   },
                   "overlap": 4
@@ -2704,10 +2520,10 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "포식 : 행동력 {0}",
+                    "desc": "포식 : 행동력{0}%",
                     "type": 1,
                     "value": "-0.040000",
-                    "level": "-0.002000"
+                    "level": "-0.001000"
                   },
                   "attr": 1,
                   "erase": {
@@ -2718,7 +2534,7 @@
                     "type": 13,
                     "turnSpeed": {
                       "base": "-4%",
-                      "per": "-0.2%"
+                      "per": "-0.1%"
                     }
                   },
                   "overlap": 4
@@ -2765,12 +2581,12 @@
                   "overlap": 1
                 },
                 {
-                  "icon": "BuffIcon_VULNERABLE",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "포식 : 받는 피해{0}%",
+                    "desc": "포식 : 받는 피해 감소{0}%",
                     "type": 1,
-                    "value": "0.120000",
-                    "level": "0.006000"
+                    "value": "-0.100000",
+                    "level": "-0.010000"
                   },
                   "attr": 1,
                   "erase": {
@@ -2778,21 +2594,21 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 48,
-                    "damage_increase": {
-                      "base": "12%",
-                      "per": "0.6%"
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "-10%",
+                      "per": "-1%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 },
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "포식 : 방어력 {0}%",
+                    "desc": "포식 : 방어력{0}%",
                     "type": 1,
                     "value": "-0.200000",
-                    "level": "-0.010000"
+                    "level": "-0.030000"
                   },
                   "attr": 1,
                   "erase": {
@@ -2803,13 +2619,13 @@
                     "type": 3,
                     "defense": {
                       "base": "-20%",
-                      "per": "-1%"
+                      "per": "-3%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 }
               ],
-              "maxStack": 0
+              "maxStack": 3
             },
             {
               "key": "Effect_BR_Echidna_N_13",
@@ -2849,12 +2665,12 @@
                   "overlap": 1
                 },
                 {
-                  "icon": "BuffIcon_VULNERABLE",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "포식 : 받는 피해{0}%",
+                    "desc": "포식 : 받는 피해 감소{0}%",
                     "type": 1,
-                    "value": "0.060000",
-                    "level": "0.003000"
+                    "value": "-0.050000",
+                    "level": "-0.005000"
                   },
                   "attr": 1,
                   "erase": {
@@ -2862,21 +2678,21 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 48,
-                    "damage_increase": {
-                      "base": "6%",
-                      "per": "0.3%"
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "-5%",
+                      "per": "-0.5%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 },
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "포식 : 방어력 {0}%",
+                    "desc": "포식 : 방어력{0}%",
                     "type": 1,
                     "value": "-0.100000",
-                    "level": "-0.005000"
+                    "level": "-0.015000"
                   },
                   "attr": 1,
                   "erase": {
@@ -2887,22 +2703,22 @@
                     "type": 3,
                     "defense": {
                       "base": "-10%",
-                      "per": "-0.5%"
+                      "per": "-1.5%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 }
               ],
-              "maxStack": 0
+              "maxStack": 3
             }
           ]
         },
         {
-          "rate": 1.825,
+          "rate": 1.985,
           "type": 0,
-          "range": 2,
+          "range": 3,
           "ap": 8,
-          "grid": "0,0,1,0,1,0,0,0,1",
+          "grid": "0,1,0,1,1,0,0,1,0",
           "target_ground": true,
           "summon": null,
           "use": null,
@@ -2932,10 +2748,10 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "포식 : 행동력 {0}%",
+                    "desc": "포식 : 행동력{0}%",
                     "type": 1,
-                    "value": "-0.080000",
-                    "level": "-0.004000"
+                    "value": "-0.050000",
+                    "level": "-0.005000"
                   },
                   "attr": 1,
                   "erase": {
@@ -2945,8 +2761,8 @@
                     "isBuff": true,
                     "type": 13,
                     "turnSpeed": {
-                      "base": "-8%",
-                      "per": "-0.4%"
+                      "base": "-5%",
+                      "per": "-0.5%"
                     }
                   },
                   "overlap": 4
@@ -2972,12 +2788,12 @@
                   "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_VULNERABLE",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
                     "desc": "포식 : 받는 피해{0}%",
                     "type": 1,
-                    "value": "0.120000",
-                    "level": "0.006000"
+                    "value": "-0.100000",
+                    "level": "-0.010000"
                   },
                   "attr": 1,
                   "erase": {
@@ -2986,10 +2802,10 @@
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
-                    "type": 48,
-                    "damage_increase": {
-                      "base": "12%",
-                      "per": "0.6%"
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "-10%",
+                      "per": "-1%"
                     }
                   },
                   "overlap": 4
@@ -2997,10 +2813,10 @@
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "포식 : 방어력 {0}%",
+                    "desc": "포식 : 방어력{0}%",
                     "type": 1,
                     "value": "-0.200000",
-                    "level": "-0.010000"
+                    "level": "-0.030000"
                   },
                   "attr": 1,
                   "erase": {
@@ -3012,30 +2828,7 @@
                     "type": 3,
                     "defense": {
                       "base": "-20%",
-                      "per": "-1%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_DEF_UP",
-                  "desc": {
-                    "desc": "포식 : 방어력{0}% (자신)",
-                    "type": 1,
-                    "value": "0.100000",
-                    "level": "0.005000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 3,
-                    "defense": {
-                      "base": "10%",
-                      "per": "0.5%"
+                      "per": "-3%"
                     }
                   },
                   "overlap": 4
@@ -3064,10 +2857,10 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "포식 : 행동력 {0}",
+                    "desc": "포식 : 행동력{0}%",
                     "type": 1,
                     "value": "-0.040000",
-                    "level": "-0.002000"
+                    "level": "-0.001000"
                   },
                   "attr": 1,
                   "erase": {
@@ -3078,7 +2871,7 @@
                     "type": 13,
                     "turnSpeed": {
                       "base": "-4%",
-                      "per": "-0.2%"
+                      "per": "-0.1%"
                     }
                   },
                   "overlap": 4
@@ -3125,12 +2918,12 @@
                   "overlap": 1
                 },
                 {
-                  "icon": "BuffIcon_VULNERABLE",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "포식 : 받는 피해{0}%",
+                    "desc": "포식 : 받는 피해 감소{0}%",
                     "type": 1,
-                    "value": "0.120000",
-                    "level": "0.006000"
+                    "value": "-0.100000",
+                    "level": "-0.010000"
                   },
                   "attr": 1,
                   "erase": {
@@ -3138,21 +2931,21 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 48,
-                    "damage_increase": {
-                      "base": "12%",
-                      "per": "0.6%"
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "-10%",
+                      "per": "-1%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 },
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "포식 : 방어력 {0}%",
+                    "desc": "포식 : 방어력{0}%",
                     "type": 1,
                     "value": "-0.200000",
-                    "level": "-0.010000"
+                    "level": "-0.030000"
                   },
                   "attr": 1,
                   "erase": {
@@ -3163,13 +2956,13 @@
                     "type": 3,
                     "defense": {
                       "base": "-20%",
-                      "per": "-1%"
+                      "per": "-3%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 }
               ],
-              "maxStack": 0
+              "maxStack": 3
             },
             {
               "key": "Effect_BR_Echidna_N_13",
@@ -3209,12 +3002,12 @@
                   "overlap": 1
                 },
                 {
-                  "icon": "BuffIcon_VULNERABLE",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "포식 : 받는 피해{0}%",
+                    "desc": "포식 : 받는 피해 감소{0}%",
                     "type": 1,
-                    "value": "0.060000",
-                    "level": "0.003000"
+                    "value": "-0.050000",
+                    "level": "-0.005000"
                   },
                   "attr": 1,
                   "erase": {
@@ -3222,21 +3015,21 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 48,
-                    "damage_increase": {
-                      "base": "6%",
-                      "per": "0.3%"
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "-5%",
+                      "per": "-0.5%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 },
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "포식 : 방어력 {0}%",
+                    "desc": "포식 : 방어력{0}%",
                     "type": 1,
                     "value": "-0.100000",
-                    "level": "-0.005000"
+                    "level": "-0.015000"
                   },
                   "attr": 1,
                   "erase": {
@@ -3247,22 +3040,22 @@
                     "type": 3,
                     "defense": {
                       "base": "-10%",
-                      "per": "-0.5%"
+                      "per": "-1.5%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 }
               ],
-              "maxStack": 0
+              "maxStack": 3
             }
           ]
         },
         {
-          "rate": 1.92,
+          "rate": 2.1,
           "type": 0,
-          "range": 2,
+          "range": 3,
           "ap": 8,
-          "grid": "0,0,1,0,1,0,0,0,1",
+          "grid": "0,1,0,1,1,0,0,1,0",
           "target_ground": true,
           "summon": null,
           "use": null,
@@ -3292,10 +3085,10 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "포식 : 행동력 {0}%",
+                    "desc": "포식 : 행동력{0}%",
                     "type": 1,
-                    "value": "-0.080000",
-                    "level": "-0.004000"
+                    "value": "-0.050000",
+                    "level": "-0.005000"
                   },
                   "attr": 1,
                   "erase": {
@@ -3305,8 +3098,8 @@
                     "isBuff": true,
                     "type": 13,
                     "turnSpeed": {
-                      "base": "-8%",
-                      "per": "-0.4%"
+                      "base": "-5%",
+                      "per": "-0.5%"
                     }
                   },
                   "overlap": 4
@@ -3332,12 +3125,12 @@
                   "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_VULNERABLE",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
                     "desc": "포식 : 받는 피해{0}%",
                     "type": 1,
-                    "value": "0.120000",
-                    "level": "0.006000"
+                    "value": "-0.100000",
+                    "level": "-0.010000"
                   },
                   "attr": 1,
                   "erase": {
@@ -3346,10 +3139,10 @@
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
-                    "type": 48,
-                    "damage_increase": {
-                      "base": "12%",
-                      "per": "0.6%"
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "-10%",
+                      "per": "-1%"
                     }
                   },
                   "overlap": 4
@@ -3357,10 +3150,10 @@
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "포식 : 방어력 {0}%",
+                    "desc": "포식 : 방어력{0}%",
                     "type": 1,
                     "value": "-0.200000",
-                    "level": "-0.010000"
+                    "level": "-0.030000"
                   },
                   "attr": 1,
                   "erase": {
@@ -3372,30 +3165,7 @@
                     "type": 3,
                     "defense": {
                       "base": "-20%",
-                      "per": "-1%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_DEF_UP",
-                  "desc": {
-                    "desc": "포식 : 방어력{0}% (자신)",
-                    "type": 1,
-                    "value": "0.100000",
-                    "level": "0.005000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 3,
-                    "defense": {
-                      "base": "10%",
-                      "per": "0.5%"
+                      "per": "-3%"
                     }
                   },
                   "overlap": 4
@@ -3424,10 +3194,10 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "포식 : 행동력 {0}",
+                    "desc": "포식 : 행동력{0}%",
                     "type": 1,
                     "value": "-0.040000",
-                    "level": "-0.002000"
+                    "level": "-0.001000"
                   },
                   "attr": 1,
                   "erase": {
@@ -3438,7 +3208,7 @@
                     "type": 13,
                     "turnSpeed": {
                       "base": "-4%",
-                      "per": "-0.2%"
+                      "per": "-0.1%"
                     }
                   },
                   "overlap": 4
@@ -3485,12 +3255,12 @@
                   "overlap": 1
                 },
                 {
-                  "icon": "BuffIcon_VULNERABLE",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "포식 : 받는 피해{0}%",
+                    "desc": "포식 : 받는 피해 감소{0}%",
                     "type": 1,
-                    "value": "0.120000",
-                    "level": "0.006000"
+                    "value": "-0.100000",
+                    "level": "-0.010000"
                   },
                   "attr": 1,
                   "erase": {
@@ -3498,21 +3268,21 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 48,
-                    "damage_increase": {
-                      "base": "12%",
-                      "per": "0.6%"
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "-10%",
+                      "per": "-1%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 },
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "포식 : 방어력 {0}%",
+                    "desc": "포식 : 방어력{0}%",
                     "type": 1,
                     "value": "-0.200000",
-                    "level": "-0.010000"
+                    "level": "-0.030000"
                   },
                   "attr": 1,
                   "erase": {
@@ -3523,13 +3293,13 @@
                     "type": 3,
                     "defense": {
                       "base": "-20%",
-                      "per": "-1%"
+                      "per": "-3%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 }
               ],
-              "maxStack": 0
+              "maxStack": 3
             },
             {
               "key": "Effect_BR_Echidna_N_13",
@@ -3569,12 +3339,12 @@
                   "overlap": 1
                 },
                 {
-                  "icon": "BuffIcon_VULNERABLE",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "포식 : 받는 피해{0}%",
+                    "desc": "포식 : 받는 피해 감소{0}%",
                     "type": 1,
-                    "value": "0.060000",
-                    "level": "0.003000"
+                    "value": "-0.050000",
+                    "level": "-0.005000"
                   },
                   "attr": 1,
                   "erase": {
@@ -3582,21 +3352,21 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 48,
-                    "damage_increase": {
-                      "base": "6%",
-                      "per": "0.3%"
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "-5%",
+                      "per": "-0.5%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 },
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "포식 : 방어력 {0}%",
+                    "desc": "포식 : 방어력{0}%",
                     "type": 1,
                     "value": "-0.100000",
-                    "level": "-0.005000"
+                    "level": "-0.015000"
                   },
                   "attr": 1,
                   "erase": {
@@ -3607,13 +3377,13 @@
                     "type": 3,
                     "defense": {
                       "base": "-10%",
-                      "per": "-0.5%"
+                      "per": "-1.5%"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 }
               ],
-              "maxStack": 0
+              "maxStack": 3
             }
           ]
         }
@@ -3637,13 +3407,13 @@
           {
             "icon": "BuffIcon_AP_DOWN",
             "desc": {
-              "desc": "포식 : 행동력 {0}%",
+              "desc": "포식 : 행동력{0}%",
               "type": 1,
-              "value": "-0.080000",
-              "level": "-0.004000"
+              "value": "-0.050000",
+              "level": "-0.005000"
             },
-            "base": -0.08,
-            "per": -0.004,
+            "base": -0.05,
+            "per": -0.005,
             "chance": 1
           },
           {
@@ -3659,51 +3429,39 @@
             "chance": 0
           },
           {
-            "icon": "BuffIcon_VULNERABLE",
+            "icon": "BuffIcon_DAMAGE_REDUCE",
             "desc": {
               "desc": "포식 : 받는 피해{0}%",
               "type": 1,
-              "value": "0.120000",
-              "level": "0.006000"
+              "value": "-0.100000",
+              "level": "-0.010000"
             },
-            "base": 0.12,
-            "per": 0.006,
+            "base": -0.1,
+            "per": -0.01,
             "chance": 0
           },
           {
             "icon": "BuffIcon_DEF_DOWN",
             "desc": {
-              "desc": "포식 : 방어력 {0}%",
+              "desc": "포식 : 방어력{0}%",
               "type": 1,
               "value": "-0.200000",
-              "level": "-0.010000"
+              "level": "-0.030000"
             },
             "base": -0.2,
-            "per": -0.01,
-            "chance": 0
-          },
-          {
-            "icon": "BuffIcon_DEF_UP",
-            "desc": {
-              "desc": "포식 : 방어력{0}% (자신)",
-              "type": 1,
-              "value": "0.100000",
-              "level": "0.005000"
-            },
-            "base": 0.1,
-            "per": 0.005,
+            "per": -0.03,
             "chance": 0
           },
           {
             "icon": "BuffIcon_AP_DOWN",
             "desc": {
-              "desc": "포식 : 행동력 {0}",
+              "desc": "포식 : 행동력{0}%",
               "type": 1,
               "value": "-0.040000",
-              "level": "-0.002000"
+              "level": "-0.001000"
             },
             "base": -0.04,
-            "per": -0.002,
+            "per": -0.001,
             "chance": 1
           },
           {
@@ -3719,30 +3477,30 @@
             "chance": 1
           },
           {
-            "icon": "BuffIcon_VULNERABLE",
+            "icon": "BuffIcon_DAMAGE_REDUCE",
             "desc": {
-              "desc": "포식 : 받는 피해{0}%",
+              "desc": "포식 : 받는 피해 감소{0}%",
               "type": 1,
-              "value": "0.120000",
-              "level": "0.006000"
-            },
-            "base": 0.12,
-            "per": 0.006,
-            "chance": 1
-          },
-          {
-            "icon": "BuffIcon_DEF_DOWN",
-            "desc": {
-              "desc": "포식 : 방어력 {0}%",
-              "type": 1,
-              "value": "-0.200000",
+              "value": "-0.100000",
               "level": "-0.010000"
             },
-            "base": -0.2,
+            "base": -0.1,
             "per": -0.01,
             "chance": 1
           },
           {
+            "icon": "BuffIcon_DEF_DOWN",
+            "desc": {
+              "desc": "포식 : 방어력{0}%",
+              "type": 1,
+              "value": "-0.200000",
+              "level": "-0.030000"
+            },
+            "base": -0.2,
+            "per": -0.03,
+            "chance": 1
+          },
+          {
             "icon": "BuffIcon_SNARE",
             "desc": {
               "desc": "포식 : 이동 불가",
@@ -3755,27 +3513,27 @@
             "chance": 1
           },
           {
-            "icon": "BuffIcon_VULNERABLE",
+            "icon": "BuffIcon_DAMAGE_REDUCE",
             "desc": {
-              "desc": "포식 : 받는 피해{0}%",
+              "desc": "포식 : 받는 피해 감소{0}%",
               "type": 1,
-              "value": "0.060000",
-              "level": "0.003000"
+              "value": "-0.050000",
+              "level": "-0.005000"
             },
-            "base": 0.06,
-            "per": 0.003,
+            "base": -0.05,
+            "per": -0.005,
             "chance": 1
           },
           {
             "icon": "BuffIcon_DEF_DOWN",
             "desc": {
-              "desc": "포식 : 방어력 {0}%",
+              "desc": "포식 : 방어력{0}%",
               "type": 1,
               "value": "-0.100000",
-              "level": "-0.005000"
+              "level": "-0.015000"
             },
             "base": -0.1,
-            "per": -0.005,
+            "per": -0.015,
             "chance": 1
           }
         ]
@@ -3797,7 +3555,7 @@
         0,
         0,
         0,
-        0
+        1
       ],
       "data": [
         {
@@ -3808,10 +3566,7 @@
           "grid": "0,1,0,1,1,1,0,1,0",
           "target_ground": false,
           "summon": null,
-          "use": {
-            "key": "Effect_BR_Echidna_N_14",
-            "count": 1
-          },
+          "use": null,
           "dismiss_guard": false,
           "acc_bonus": 999,
           "buff_rate": 100,
@@ -3843,7 +3598,7 @@
                   "desc": {
                     "desc": "뱀의 포옹 : 방어막{0}",
                     "type": 0,
-                    "value": "50",
+                    "value": "100",
                     "level": "50"
                   },
                   "attr": 0,
@@ -3854,18 +3609,18 @@
                     "isBuff": true,
                     "type": 38,
                     "barrier": {
-                      "base": 50,
+                      "base": 100,
                       "per": 50
                     }
                   },
-                  "overlap": 1
+                  "overlap": 4
                 },
                 {
                   "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "뱀의 포옹 : 받는 피해 감소 {0}%",
+                    "desc": "뱀의 포옹 : 받는 피해{0}% 감소",
                     "type": 1,
-                    "value": "0.120000",
+                    "value": "0.100000",
                     "level": "0.020000"
                   },
                   "attr": 0,
@@ -3877,7 +3632,7 @@
                     "chance": "0%",
                     "type": 36,
                     "damage_reduce": {
-                      "base": "12%",
+                      "base": "10%",
                       "per": "2%"
                     }
                   },
@@ -3888,7 +3643,7 @@
                   "desc": {
                     "desc": "뱀의 포옹 : 효과 저항{0}%",
                     "type": 1,
-                    "value": "0.120000",
+                    "value": "0.100000",
                     "level": "0.020000"
                   },
                   "attr": 0,
@@ -3902,7 +3657,7 @@
                     "resist": {
                       "type": "debuff",
                       "value": {
-                        "base": "12%",
+                        "base": "10%",
                         "per": "2%"
                       }
                     }
@@ -3912,9 +3667,9 @@
                 {
                   "icon": "BuffIcon_LIGHTNINGRES_UP",
                   "desc": {
-                    "desc": "뱀의 포옹 : 전기 저항{0}%",
+                    "desc": "뱀의 포옹 : 모든 속성 저항{0}%",
                     "type": 1,
-                    "value": "0.120000",
+                    "value": "0.100000",
                     "level": "0.020000"
                   },
                   "attr": 0,
@@ -3928,7 +3683,33 @@
                     "resist": {
                       "elem": "lightning",
                       "value": {
-                        "base": "12%",
+                        "base": "10%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_Remove_Buff_Resist",
+                  "desc": {
+                    "desc": "뱀의 포옹 : 강화 해제 저항{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 126,
+                    "resist": {
+                      "type": "off",
+                      "value": {
+                        "base": "10%",
                         "per": "2%"
                       }
                     }
@@ -3939,7 +3720,7 @@
               "maxStack": 1
             },
             {
-              "key": "Effect_BR_Echidna_N_15",
+              "key": "Effect_BR_Echidna_N_21",
               "on": {
                 "after": "use_skill"
               },
@@ -3963,9 +3744,9 @@
                 {
                   "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "뱀의 포옹 : 받는 피해 감소 {0}%",
+                    "desc": "뱀의 포옹 : 받는 피해{0}% 감소",
                     "type": 1,
-                    "value": "0.120000",
+                    "value": "0.100000",
                     "level": "0.020000"
                   },
                   "attr": 0,
@@ -3976,7 +3757,7 @@
                     "isBuff": true,
                     "type": 36,
                     "damage_reduce": {
-                      "base": "12%",
+                      "base": "10%",
                       "per": "2%"
                     }
                   },
@@ -3986,7 +3767,7 @@
               "maxStack": 1
             },
             {
-              "key": "Effect_BR_Echidna_N_16",
+              "key": "Effect_BR_Echidna_N_22",
               "on": {
                 "after": "use_skill"
               },
@@ -4012,7 +3793,7 @@
                   "desc": {
                     "desc": "뱀의 포옹 : 효과 저항{0}%",
                     "type": 1,
-                    "value": "0.120000",
+                    "value": "0.100000",
                     "level": "0.020000"
                   },
                   "attr": 0,
@@ -4025,7 +3806,7 @@
                     "resist": {
                       "type": "debuff",
                       "value": {
-                        "base": "12%",
+                        "base": "10%",
                         "per": "2%"
                       }
                     }
@@ -4036,7 +3817,7 @@
               "maxStack": 1
             },
             {
-              "key": "Effect_BR_Echidna_N_17",
+              "key": "Effect_BR_Echidna_N_23",
               "on": {
                 "after": "use_skill"
               },
@@ -4062,7 +3843,7 @@
                   "desc": {
                     "desc": "뱀의 포옹 : 전기 저항{0}%",
                     "type": 1,
-                    "value": "0.120000",
+                    "value": "0.100000",
                     "level": "0.020000"
                   },
                   "attr": 0,
@@ -4075,7 +3856,617 @@
                     "resist": {
                       "elem": "lightning",
                       "value": {
-                        "base": "12%",
+                        "base": "10%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Echidna_N_24",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ICERES_UP",
+                  "desc": {
+                    "desc": "뱀의 포옹 : 냉기 저항{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 17,
+                    "resist": {
+                      "elem": "ice",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Echidna_N_25",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FIRERES_UP",
+                  "desc": {
+                    "desc": "뱀의 포옹 : 화염 저항{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 15,
+                    "resist": {
+                      "elem": "fire",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Echidna_N_26",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Remove_Buff_Resist",
+                  "desc": {
+                    "desc": "뱀의 포옹 : 강화 해제 저항{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 126,
+                    "resist": {
+                      "type": "off",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        },
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 9,
+          "grid": "1,1,1,1,1,1,1,1,1",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 999,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Echidna_N_2",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DAMAGE_ABSORB",
+                  "desc": {
+                    "desc": "뱀의 포옹 : 방어막{0}",
+                    "type": 0,
+                    "value": "100",
+                    "level": "50"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 38,
+                    "barrier": {
+                      "base": 100,
+                      "per": 50
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "뱀의 포옹 : 받는 피해{0}% 감소",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "10%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEBUFF_PERDOWN",
+                  "desc": {
+                    "desc": "뱀의 포옹 : 효과 저항{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 91,
+                    "resist": {
+                      "type": "debuff",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_LIGHTNINGRES_UP",
+                  "desc": {
+                    "desc": "뱀의 포옹 : 모든 속성 저항{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 19,
+                    "resist": {
+                      "elem": "lightning",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_Remove_Buff_Resist",
+                  "desc": {
+                    "desc": "뱀의 포옹 : 강화 해제 저항{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 126,
+                    "resist": {
+                      "type": "off",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Echidna_N_21",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "뱀의 포옹 : 받는 피해{0}% 감소",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "10%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Echidna_N_22",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEBUFF_PERDOWN",
+                  "desc": {
+                    "desc": "뱀의 포옹 : 효과 저항{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 91,
+                    "resist": {
+                      "type": "debuff",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Echidna_N_23",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_LIGHTNINGRES_UP",
+                  "desc": {
+                    "desc": "뱀의 포옹 : 전기 저항{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 19,
+                    "resist": {
+                      "elem": "lightning",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Echidna_N_24",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ICERES_UP",
+                  "desc": {
+                    "desc": "뱀의 포옹 : 냉기 저항{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 17,
+                    "resist": {
+                      "elem": "ice",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Echidna_N_25",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FIRERES_UP",
+                  "desc": {
+                    "desc": "뱀의 포옹 : 화염 저항{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 15,
+                    "resist": {
+                      "elem": "fire",
+                      "value": {
+                        "base": "10%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Echidna_N_26",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Remove_Buff_Resist",
+                  "desc": {
+                    "desc": "뱀의 포옹 : 강화 해제 저항{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 126,
+                    "resist": {
+                      "type": "off",
+                      "value": {
+                        "base": "10%",
                         "per": "2%"
                       }
                     }
@@ -4109,22 +4500,22 @@
             "desc": {
               "desc": "뱀의 포옹 : 방어막{0}",
               "type": 0,
-              "value": "50",
+              "value": "100",
               "level": "50"
             },
-            "base": 50,
+            "base": 100,
             "per": 50,
             "chance": 1
           },
           {
             "icon": "BuffIcon_DAMAGE_REDUCE",
             "desc": {
-              "desc": "뱀의 포옹 : 받는 피해 감소 {0}%",
+              "desc": "뱀의 포옹 : 받는 피해{0}% 감소",
               "type": 1,
-              "value": "0.120000",
+              "value": "0.100000",
               "level": "0.020000"
             },
-            "base": 0.12,
+            "base": 0.1,
             "per": 0.02,
             "chance": 0
           },
@@ -4133,34 +4524,46 @@
             "desc": {
               "desc": "뱀의 포옹 : 효과 저항{0}%",
               "type": 1,
-              "value": "0.120000",
+              "value": "0.100000",
               "level": "0.020000"
             },
-            "base": 0.12,
+            "base": 0.1,
             "per": 0.02,
             "chance": 0
           },
           {
             "icon": "BuffIcon_LIGHTNINGRES_UP",
             "desc": {
-              "desc": "뱀의 포옹 : 전기 저항{0}%",
+              "desc": "뱀의 포옹 : 모든 속성 저항{0}%",
               "type": 1,
-              "value": "0.120000",
+              "value": "0.100000",
               "level": "0.020000"
             },
-            "base": 0.12,
+            "base": 0.1,
+            "per": 0.02,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_Remove_Buff_Resist",
+            "desc": {
+              "desc": "뱀의 포옹 : 강화 해제 저항{0}%",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.020000"
+            },
+            "base": 0.1,
             "per": 0.02,
             "chance": 0
           },
           {
             "icon": "BuffIcon_DAMAGE_REDUCE",
             "desc": {
-              "desc": "뱀의 포옹 : 받는 피해 감소 {0}%",
+              "desc": "뱀의 포옹 : 받는 피해{0}% 감소",
               "type": 1,
-              "value": "0.120000",
+              "value": "0.100000",
               "level": "0.020000"
             },
-            "base": 0.12,
+            "base": 0.1,
             "per": 0.02,
             "chance": 1
           },
@@ -4169,10 +4572,10 @@
             "desc": {
               "desc": "뱀의 포옹 : 효과 저항{0}%",
               "type": 1,
-              "value": "0.120000",
+              "value": "0.100000",
               "level": "0.020000"
             },
-            "base": 0.12,
+            "base": 0.1,
             "per": 0.02,
             "chance": 1
           },
@@ -4181,10 +4584,46 @@
             "desc": {
               "desc": "뱀의 포옹 : 전기 저항{0}%",
               "type": 1,
-              "value": "0.120000",
+              "value": "0.100000",
               "level": "0.020000"
             },
-            "base": 0.12,
+            "base": 0.1,
+            "per": 0.02,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ICERES_UP",
+            "desc": {
+              "desc": "뱀의 포옹 : 냉기 저항{0}%",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.020000"
+            },
+            "base": 0.1,
+            "per": 0.02,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_FIRERES_UP",
+            "desc": {
+              "desc": "뱀의 포옹 : 화염 저항{0}%",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.020000"
+            },
+            "base": 0.1,
+            "per": 0.02,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_Remove_Buff_Resist",
+            "desc": {
+              "desc": "뱀의 포옹 : 강화 해제 저항{0}%",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.020000"
+            },
+            "base": 0.1,
             "per": 0.02,
             "chance": 1
           }
@@ -4244,12 +4683,12 @@
               "target": 0,
               "buffs": [
                 {
-                  "icon": "BuffIcon_DEF_Side",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "부정형 합금 비늘 : 열 보호",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
+                    "desc": "부정형 합금 비늘 : 받는 피해{0}% 감소",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.015000"
                   },
                   "attr": 0,
                   "erase": {
@@ -4257,17 +4696,20 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 75,
-                    "guard": "row"
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "15%",
+                      "per": "1.5%"
+                    }
                   },
-                  "overlap": 1
+                  "overlap": 4
                 },
                 {
                   "icon": "BuffIcon_DEF_UP",
                   "desc": {
                     "desc": "부정형 합금 비늘 : 방어력{0}%",
                     "type": 1,
-                    "value": "0.330000",
+                    "value": "0.350000",
                     "level": "0.030000"
                   },
                   "attr": 0,
@@ -4278,7 +4720,7 @@
                     "isBuff": true,
                     "type": 3,
                     "defense": {
-                      "base": "33%",
+                      "base": "35%",
                       "per": "3%"
                     }
                   },
@@ -4289,7 +4731,7 @@
                   "desc": {
                     "desc": "부정형 합금 비늘 : 전기 저항{0}%",
                     "type": 1,
-                    "value": "0.330000",
+                    "value": "0.350000",
                     "level": "0.030000"
                   },
                   "attr": 0,
@@ -4302,7 +4744,7 @@
                     "resist": {
                       "elem": "lightning",
                       "value": {
-                        "base": "33%",
+                        "base": "35%",
                         "per": "3%"
                       }
                     }
@@ -4314,8 +4756,8 @@
                   "desc": {
                     "desc": "부정형 합금 비늘 : 효과 저항{0}%",
                     "type": 1,
-                    "value": "0.300000",
-                    "level": "0.015000"
+                    "value": "0.250000",
+                    "level": "0.020000"
                   },
                   "attr": 0,
                   "erase": {
@@ -4327,8 +4769,8 @@
                     "resist": {
                       "type": "debuff",
                       "value": {
-                        "base": "30%",
-                        "per": "1.5%"
+                        "base": "25%",
+                        "per": "2%"
                       }
                     }
                   },
@@ -4369,6 +4811,7 @@
                   "erase": {},
                   "value": {
                     "isBuff": true,
+                    "chance": "0%",
                     "type": 3,
                     "defense": {
                       "base": "10%",
@@ -4379,6 +4822,53 @@
                 }
               ],
               "maxStack": 3
+            },
+            {
+              "key": "Effect_BR_Echidna_N_31",
+              "on": {
+                "damaged": "lightning"
+              },
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "부정형 합금 비늘 : AP{0}",
+                    "type": 0,
+                    "value": "0.500000",
+                    "level": "0.100000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 0.5,
+                      "per": 0.1
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         }
@@ -4400,15 +4890,15 @@
       "data": [
         [
           {
-            "icon": "BuffIcon_DEF_Side",
+            "icon": "BuffIcon_DAMAGE_REDUCE",
             "desc": {
-              "desc": "부정형 합금 비늘 : 열 보호",
-              "type": 0,
-              "value": "0",
-              "level": "0"
+              "desc": "부정형 합금 비늘 : 받는 피해{0}% 감소",
+              "type": 1,
+              "value": "0.150000",
+              "level": "0.015000"
             },
-            "base": 0,
-            "per": 0,
+            "base": 0.15,
+            "per": 0.015,
             "chance": 1
           },
           {
@@ -4416,10 +4906,10 @@
             "desc": {
               "desc": "부정형 합금 비늘 : 방어력{0}%",
               "type": 1,
-              "value": "0.330000",
+              "value": "0.350000",
               "level": "0.030000"
             },
-            "base": 0.33,
+            "base": 0.35,
             "per": 0.03,
             "chance": 1
           },
@@ -4428,10 +4918,10 @@
             "desc": {
               "desc": "부정형 합금 비늘 : 전기 저항{0}%",
               "type": 1,
-              "value": "0.330000",
+              "value": "0.350000",
               "level": "0.030000"
             },
-            "base": 0.33,
+            "base": 0.35,
             "per": 0.03,
             "chance": 1
           },
@@ -4440,11 +4930,11 @@
             "desc": {
               "desc": "부정형 합금 비늘 : 효과 저항{0}%",
               "type": 1,
-              "value": "0.300000",
-              "level": "0.015000"
+              "value": "0.250000",
+              "level": "0.020000"
             },
-            "base": 0.3,
-            "per": 0.015,
+            "base": 0.25,
+            "per": 0.02,
             "chance": 1
           },
           {
@@ -4457,6 +4947,18 @@
             },
             "base": 0.1,
             "per": 0.005,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "부정형 합금 비늘 : AP{0}",
+              "type": 0,
+              "value": "0.500000",
+              "level": "0.100000"
+            },
+            "base": 0.5,
+            "per": 0.1,
             "chance": 1
           }
         ]
@@ -4486,7 +4988,7 @@
           "type": 0,
           "range": 0,
           "ap": 0,
-          "grid": "6>1,0,0,1,1,0,1,0,0",
+          "grid": "F>1,1,1,1,1,1,1,1,1",
           "target_ground": false,
           "summon": null,
           "use": null,
@@ -4497,7 +4999,21 @@
             {
               "key": "Effect_BR_Echidna_N_4",
               "on": "round",
-              "if": false,
+              "if": {
+                "unitCount": {
+                  "filter": [
+                    "squad",
+                    "heavy"
+                  ],
+                  "type": [
+                    1
+                  ],
+                  "count": [
+                    1,
+                    2
+                  ]
+                }
+              },
               "body": [
                 0,
                 1
@@ -4519,7 +5035,7 @@
                     "desc": "여왕의 존재감 : 공격력{0}% (경장/기동)",
                     "type": 1,
                     "value": "0.100000",
-                    "level": "0.005000"
+                    "level": "0.010000"
                   },
                   "attr": 0,
                   "erase": {
@@ -4530,7 +5046,7 @@
                     "type": 1,
                     "attack": {
                       "base": "10%",
-                      "per": "0.5%"
+                      "per": "1%"
                     }
                   },
                   "overlap": 4
@@ -4540,8 +5056,8 @@
                   "desc": {
                     "desc": "여왕의 존재감 : 적중{0}% (경장/기동)",
                     "type": 1,
-                    "value": "0.250000",
-                    "level": "0.012500"
+                    "value": "0.200000",
+                    "level": "0.020000"
                   },
                   "attr": 0,
                   "erase": {
@@ -4551,8 +5067,8 @@
                     "isBuff": true,
                     "type": 7,
                     "accuracy": {
-                      "base": "25%",
-                      "per": "1.25%"
+                      "base": "20%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -4563,7 +5079,7 @@
                     "desc": "여왕의 존재감 : 행동력{0}% (경장/기동)",
                     "type": 1,
                     "value": "0.050000",
-                    "level": "0.002500"
+                    "level": "0.005000"
                   },
                   "attr": 0,
                   "erase": {
@@ -4574,7 +5090,7 @@
                     "type": 13,
                     "turnSpeed": {
                       "base": "5%",
-                      "per": "0.25%"
+                      "per": "0.5%"
                     }
                   },
                   "overlap": 4
@@ -4593,8 +5109,181 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "0%",
                     "type": 76,
                     "guard": "target"
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Echidna_N_41",
+              "on": "round",
+              "if": {
+                "unitCount": {
+                  "filter": [
+                    "squad",
+                    "heavy"
+                  ],
+                  "type": [
+                    1
+                  ],
+                  "count": [
+                    1,
+                    2
+                  ]
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                2
+              ],
+              "role": [
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_Char",
+                  "desc": {
+                    "desc": "여왕의 존재감 : 지정 대상 보호 (경장/기동)",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 76,
+                    "guard": "target"
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Echidna_N_42",
+              "on": "round",
+              "if": {
+                "unitCount": {
+                  "filter": [
+                    "squad",
+                    "light"
+                  ],
+                  "type": [
+                    0
+                  ],
+                  "count": [
+                    2,
+                    3,
+                    4,
+                    5,
+                    6
+                  ]
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_Line",
+                  "desc": {
+                    "desc": "여왕의 존재감 : 행 보호",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 50,
+                    "guard": "col"
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Echidna_N_43",
+              "on": "round",
+              "if": {
+                "unitCount": {
+                  "filter": [
+                    "squad",
+                    "air"
+                  ],
+                  "type": [
+                    2
+                  ],
+                  "count": [
+                    2,
+                    3,
+                    4,
+                    5,
+                    6
+                  ]
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_Side",
+                  "desc": {
+                    "desc": "여왕의 존재감 : 열 보호",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 75,
+                    "guard": "row"
                   },
                   "overlap": 4
                 }
@@ -4626,10 +5315,10 @@
               "desc": "여왕의 존재감 : 공격력{0}% (경장/기동)",
               "type": 1,
               "value": "0.100000",
-              "level": "0.005000"
+              "level": "0.010000"
             },
             "base": 0.1,
-            "per": 0.005,
+            "per": 0.01,
             "chance": 1
           },
           {
@@ -4637,11 +5326,11 @@
             "desc": {
               "desc": "여왕의 존재감 : 적중{0}% (경장/기동)",
               "type": 1,
-              "value": "0.250000",
-              "level": "0.012500"
+              "value": "0.200000",
+              "level": "0.020000"
             },
-            "base": 0.25,
-            "per": 0.0125,
+            "base": 0.2,
+            "per": 0.02,
             "chance": 1
           },
           {
@@ -4650,10 +5339,10 @@
               "desc": "여왕의 존재감 : 행동력{0}% (경장/기동)",
               "type": 1,
               "value": "0.050000",
-              "level": "0.002500"
+              "level": "0.005000"
             },
             "base": 0.05,
-            "per": 0.0025,
+            "per": 0.005,
             "chance": 1
           },
           {
@@ -4661,6 +5350,42 @@
             "desc": {
               "desc": "여왕의 존재감 : 지정 대상 보호 (경장/기동)",
               "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_DEF_Char",
+            "desc": {
+              "desc": "여왕의 존재감 : 지정 대상 보호 (경장/기동)",
+              "type": 1,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DEF_Line",
+            "desc": {
+              "desc": "여왕의 존재감 : 행 보호",
+              "type": 1,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DEF_Side",
+            "desc": {
+              "desc": "여왕의 존재감 : 열 보호",
+              "type": 1,
               "value": "0",
               "level": "0"
             },
@@ -4724,12 +5449,12 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "욕망의 늪 : 행동력 {0}%",
+                    "desc": "욕망의 늪 : 행동력{0}% (해제 불가)",
                     "type": 1,
-                    "value": "-0.030000",
-                    "level": "-0.002000"
+                    "value": "-0.010000",
+                    "level": "-0.004000"
                   },
-                  "attr": 1,
+                  "attr": 3,
                   "erase": {
                     "rounds": 2
                   },
@@ -4737,8 +5462,8 @@
                     "isBuff": true,
                     "type": 13,
                     "turnSpeed": {
-                      "base": "-3%",
-                      "per": "-0.2%"
+                      "base": "-1%",
+                      "per": "-0.4%"
                     }
                   },
                   "overlap": 4
@@ -4751,12 +5476,13 @@
                     "value": "0",
                     "level": "0"
                   },
-                  "attr": 1,
+                  "attr": 3,
                   "erase": {
                     "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "0%",
                     "type": 78,
                     "immovable": true
                   },
@@ -4765,12 +5491,12 @@
                 {
                   "icon": "BuffIcon_VULNERABLE",
                   "desc": {
-                    "desc": "욕망의 늪 : 받는 피해{0}%",
+                    "desc": "욕망의 늪 : 받는 피해{0}% (해제 불가)",
                     "type": 1,
-                    "value": "0.040000",
-                    "level": "0.003000"
+                    "value": "0.050000",
+                    "level": "0.005000"
                   },
-                  "attr": 1,
+                  "attr": 3,
                   "erase": {
                     "rounds": 2
                   },
@@ -4778,8 +5504,49 @@
                     "isBuff": true,
                     "type": 48,
                     "damage_increase": {
-                      "base": "4%",
-                      "per": "0.3%"
+                      "base": "5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PROVOKE",
+                  "desc": {
+                    "desc": "욕망의 늪 : 대상 도발 (에키드나) (해제 불가)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 74,
+                    "provoke": "self"
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SKILL_DOWN",
+                  "desc": {
+                    "desc": "욕망의 늪 : 스킬 위력{0}% (해제 불가)",
+                    "type": 1,
+                    "value": "-0.050000",
+                    "level": "-0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 106,
+                    "skill_ratio": {
+                      "base": "-5%",
+                      "per": "-1%"
                     }
                   },
                   "overlap": 4
@@ -4788,7 +5555,7 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_Echidna_N_18",
+              "key": "Effect_BR_Echidna_N_51",
               "on": "wave",
               "if": false,
               "body": [
@@ -4808,12 +5575,12 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "욕망의 늪 : 행동력 {0}% (중장)",
+                    "desc": "욕망의 늪 : 행동력{0}% (중장) (해제 불가)",
                     "type": 1,
-                    "value": "-0.045000",
-                    "level": "-0.003000"
+                    "value": "-0.040000",
+                    "level": "-0.006000"
                   },
-                  "attr": 1,
+                  "attr": 3,
                   "erase": {
                     "rounds": 2
                   },
@@ -4821,12 +5588,370 @@
                     "isBuff": true,
                     "type": 13,
                     "turnSpeed": {
-                      "base": "-4.5%",
-                      "per": "-0.3%"
+                      "base": "-4%",
+                      "per": "-0.6%"
                     }
                   },
                   "overlap": 4
                 },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "욕망의 늪 : 이동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "욕망의 늪 : 받는 피해{0}% (중장) (해제 불가)",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PROVOKE",
+                  "desc": {
+                    "desc": "욕망의 늪 : 대상 도발 (에키드나) (해제 불가)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 74,
+                    "provoke": "self"
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SKILL_DOWN",
+                  "desc": {
+                    "desc": "욕망의 늪 : 스킬 위력{0}% (해제 불가)",
+                    "type": 1,
+                    "value": "-0.100000",
+                    "level": "-0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 106,
+                    "skill_ratio": {
+                      "base": "-10%",
+                      "per": "-2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Echidna_N_52",
+              "on": "enemy_killed",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 4,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "욕망의 늪 : 행동력{0}% (해제 불가)",
+                    "type": 1,
+                    "value": "-0.010000",
+                    "level": "-0.004000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-1%",
+                      "per": "-0.4%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "욕망의 늪 : 이동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "욕망의 늪 : 받는 피해{0}% (해제 불가)",
+                    "type": 1,
+                    "value": "0.050000",
+                    "level": "0.005000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PROVOKE",
+                  "desc": {
+                    "desc": "욕망의 늪 : 대상 도발 (에키드나) (해제 불가)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 74,
+                    "provoke": "self"
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SKILL_DOWN",
+                  "desc": {
+                    "desc": "욕망의 늪 : 스킬 위력{0}% (해제 불가)",
+                    "type": 1,
+                    "value": "-0.050000",
+                    "level": "-0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 106,
+                    "skill_ratio": {
+                      "base": "-5%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Echidna_N_53",
+              "on": "enemy_killed",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                1
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 4,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "욕망의 늪 : 행동력{0}% (중장) (해제 불가)",
+                    "type": 1,
+                    "value": "-0.040000",
+                    "level": "-0.006000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-4%",
+                      "per": "-0.6%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "욕망의 늪 : 이동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "욕망의 늪 : 받는 피해{0}% (중장) (해제 불가)",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PROVOKE",
+                  "desc": {
+                    "desc": "욕망의 늪 : 대상 도발 (에키드나) (해제 불가)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 74,
+                    "provoke": "self"
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SKILL_DOWN",
+                  "desc": {
+                    "desc": "욕망의 늪 : 스킬 위력{0}% (해제 불가)",
+                    "type": 1,
+                    "value": "-0.100000",
+                    "level": "-0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 106,
+                    "skill_ratio": {
+                      "base": "-10%",
+                      "per": "-2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Echidna_N_54",
+              "on": "wave",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 4,
+              "buffs": [
                 {
                   "icon": "BuffIcon_SNARE",
                   "desc": {
@@ -4841,18 +5966,42 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "9999%",
                     "type": 78,
                     "immovable": true
                   },
                   "overlap": 1
-                },
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Echidna_N_55",
+              "on": "wave",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 4,
+              "buffs": [
                 {
-                  "icon": "BuffIcon_VULNERABLE",
+                  "icon": "BuffIcon_SNARE",
                   "desc": {
-                    "desc": "욕망의 늪 : 받는 피해{0}% (중장)",
-                    "type": 1,
-                    "value": "0.060000",
-                    "level": "0.004000"
+                    "desc": "욕망의 늪 : 이동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
                   },
                   "attr": 1,
                   "erase": {
@@ -4860,13 +6009,97 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 48,
-                    "damage_increase": {
-                      "base": "6%",
-                      "per": "0.4%"
-                    }
+                    "chance": "9999%",
+                    "type": 78,
+                    "immovable": true
                   },
-                  "overlap": 4
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Echidna_N_56",
+              "on": "enemy_killed",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 4,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "욕망의 늪 : 이동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "9999%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Echidna_N_57",
+              "on": "enemy_killed",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 4,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "욕망의 늪 : 이동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "9999%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
                 }
               ],
               "maxStack": 0
@@ -4907,12 +6140,12 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "욕망의 늪 : 행동력 {0}%",
+                    "desc": "욕망의 늪 : 행동력{0}% (해제 불가)",
                     "type": 1,
-                    "value": "-0.030000",
-                    "level": "-0.002000"
+                    "value": "-0.010000",
+                    "level": "-0.004000"
                   },
-                  "attr": 1,
+                  "attr": 3,
                   "erase": {
                     "rounds": 2
                   },
@@ -4920,8 +6153,8 @@
                     "isBuff": true,
                     "type": 13,
                     "turnSpeed": {
-                      "base": "-3%",
-                      "per": "-0.2%"
+                      "base": "-1%",
+                      "per": "-0.4%"
                     }
                   },
                   "overlap": 4
@@ -4934,12 +6167,13 @@
                     "value": "0",
                     "level": "0"
                   },
-                  "attr": 1,
+                  "attr": 3,
                   "erase": {
                     "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "0%",
                     "type": 78,
                     "immovable": true
                   },
@@ -4948,12 +6182,12 @@
                 {
                   "icon": "BuffIcon_VULNERABLE",
                   "desc": {
-                    "desc": "욕망의 늪 : 받는 피해{0}%",
+                    "desc": "욕망의 늪 : 받는 피해{0}% (해제 불가)",
                     "type": 1,
-                    "value": "0.040000",
-                    "level": "0.003000"
+                    "value": "0.050000",
+                    "level": "0.005000"
                   },
-                  "attr": 1,
+                  "attr": 3,
                   "erase": {
                     "rounds": 2
                   },
@@ -4961,8 +6195,49 @@
                     "isBuff": true,
                     "type": 48,
                     "damage_increase": {
-                      "base": "4%",
-                      "per": "0.3%"
+                      "base": "5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PROVOKE",
+                  "desc": {
+                    "desc": "욕망의 늪 : 대상 도발 (에키드나) (해제 불가)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 74,
+                    "provoke": "self"
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SKILL_DOWN",
+                  "desc": {
+                    "desc": "욕망의 늪 : 스킬 위력{0}% (해제 불가)",
+                    "type": 1,
+                    "value": "-0.050000",
+                    "level": "-0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 106,
+                    "skill_ratio": {
+                      "base": "-5%",
+                      "per": "-1%"
                     }
                   },
                   "overlap": 4
@@ -4971,7 +6246,7 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_Echidna_N_18",
+              "key": "Effect_BR_Echidna_N_51",
               "on": "wave",
               "if": false,
               "body": [
@@ -4991,12 +6266,12 @@
                 {
                   "icon": "BuffIcon_AP_DOWN",
                   "desc": {
-                    "desc": "욕망의 늪 : 행동력 {0}% (중장)",
+                    "desc": "욕망의 늪 : 행동력{0}% (중장) (해제 불가)",
                     "type": 1,
-                    "value": "-0.045000",
-                    "level": "-0.003000"
+                    "value": "-0.040000",
+                    "level": "-0.006000"
                   },
-                  "attr": 1,
+                  "attr": 3,
                   "erase": {
                     "rounds": 2
                   },
@@ -5004,12 +6279,370 @@
                     "isBuff": true,
                     "type": 13,
                     "turnSpeed": {
-                      "base": "-4.5%",
-                      "per": "-0.3%"
+                      "base": "-4%",
+                      "per": "-0.6%"
                     }
                   },
                   "overlap": 4
                 },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "욕망의 늪 : 이동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "욕망의 늪 : 받는 피해{0}% (중장) (해제 불가)",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PROVOKE",
+                  "desc": {
+                    "desc": "욕망의 늪 : 대상 도발 (에키드나) (해제 불가)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 74,
+                    "provoke": "self"
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SKILL_DOWN",
+                  "desc": {
+                    "desc": "욕망의 늪 : 스킬 위력{0}% (해제 불가)",
+                    "type": 1,
+                    "value": "-0.100000",
+                    "level": "-0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 106,
+                    "skill_ratio": {
+                      "base": "-10%",
+                      "per": "-2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Echidna_N_52",
+              "on": "enemy_killed",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 4,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "욕망의 늪 : 행동력{0}% (해제 불가)",
+                    "type": 1,
+                    "value": "-0.010000",
+                    "level": "-0.004000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-1%",
+                      "per": "-0.4%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "욕망의 늪 : 이동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "욕망의 늪 : 받는 피해{0}% (해제 불가)",
+                    "type": 1,
+                    "value": "0.050000",
+                    "level": "0.005000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PROVOKE",
+                  "desc": {
+                    "desc": "욕망의 늪 : 대상 도발 (에키드나) (해제 불가)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 74,
+                    "provoke": "self"
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SKILL_DOWN",
+                  "desc": {
+                    "desc": "욕망의 늪 : 스킬 위력{0}% (해제 불가)",
+                    "type": 1,
+                    "value": "-0.050000",
+                    "level": "-0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 106,
+                    "skill_ratio": {
+                      "base": "-5%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Echidna_N_53",
+              "on": "enemy_killed",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                1
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 4,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "욕망의 늪 : 행동력{0}% (중장) (해제 불가)",
+                    "type": 1,
+                    "value": "-0.040000",
+                    "level": "-0.006000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-4%",
+                      "per": "-0.6%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "욕망의 늪 : 이동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "욕망의 늪 : 받는 피해{0}% (중장) (해제 불가)",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_PROVOKE",
+                  "desc": {
+                    "desc": "욕망의 늪 : 대상 도발 (에키드나) (해제 불가)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 74,
+                    "provoke": "self"
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SKILL_DOWN",
+                  "desc": {
+                    "desc": "욕망의 늪 : 스킬 위력{0}% (해제 불가)",
+                    "type": 1,
+                    "value": "-0.100000",
+                    "level": "-0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 106,
+                    "skill_ratio": {
+                      "base": "-10%",
+                      "per": "-2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Echidna_N_54",
+              "on": "wave",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 4,
+              "buffs": [
                 {
                   "icon": "BuffIcon_SNARE",
                   "desc": {
@@ -5024,18 +6657,42 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "9999%",
                     "type": 78,
                     "immovable": true
                   },
                   "overlap": 1
-                },
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Echidna_N_55",
+              "on": "wave",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 4,
+              "buffs": [
                 {
-                  "icon": "BuffIcon_VULNERABLE",
+                  "icon": "BuffIcon_SNARE",
                   "desc": {
-                    "desc": "욕망의 늪 : 받는 피해{0}% (중장)",
-                    "type": 1,
-                    "value": "0.060000",
-                    "level": "0.004000"
+                    "desc": "욕망의 늪 : 이동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
                   },
                   "attr": 1,
                   "erase": {
@@ -5043,13 +6700,97 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 48,
-                    "damage_increase": {
-                      "base": "6%",
-                      "per": "0.4%"
-                    }
+                    "chance": "9999%",
+                    "type": 78,
+                    "immovable": true
                   },
-                  "overlap": 4
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Echidna_N_56",
+              "on": "enemy_killed",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 4,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "욕망의 늪 : 이동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "9999%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Echidna_N_57",
+              "on": "enemy_killed",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 4,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "욕망의 늪 : 이동 불가",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "9999%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
                 }
               ],
               "maxStack": 0
@@ -5076,13 +6817,13 @@
           {
             "icon": "BuffIcon_AP_DOWN",
             "desc": {
-              "desc": "욕망의 늪 : 행동력 {0}%",
+              "desc": "욕망의 늪 : 행동력{0}% (해제 불가)",
               "type": 1,
-              "value": "-0.030000",
-              "level": "-0.002000"
+              "value": "-0.010000",
+              "level": "-0.004000"
             },
-            "base": -0.03,
-            "per": -0.002,
+            "base": -0.01,
+            "per": -0.004,
             "chance": 1
           },
           {
@@ -5095,30 +6836,54 @@
             },
             "base": 0,
             "per": 0,
-            "chance": 1
+            "chance": 0
           },
           {
             "icon": "BuffIcon_VULNERABLE",
             "desc": {
-              "desc": "욕망의 늪 : 받는 피해{0}%",
+              "desc": "욕망의 늪 : 받는 피해{0}% (해제 불가)",
               "type": 1,
-              "value": "0.040000",
-              "level": "0.003000"
+              "value": "0.050000",
+              "level": "0.005000"
             },
-            "base": 0.04,
-            "per": 0.003,
+            "base": 0.05,
+            "per": 0.005,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_PROVOKE",
+            "desc": {
+              "desc": "욕망의 늪 : 대상 도발 (에키드나) (해제 불가)",
+              "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_SKILL_DOWN",
+            "desc": {
+              "desc": "욕망의 늪 : 스킬 위력{0}% (해제 불가)",
+              "type": 1,
+              "value": "-0.050000",
+              "level": "-0.010000"
+            },
+            "base": -0.05,
+            "per": -0.01,
             "chance": 1
           },
           {
             "icon": "BuffIcon_AP_DOWN",
             "desc": {
-              "desc": "욕망의 늪 : 행동력 {0}% (중장)",
+              "desc": "욕망의 늪 : 행동력{0}% (중장) (해제 불가)",
               "type": 1,
-              "value": "-0.045000",
-              "level": "-0.003000"
+              "value": "-0.040000",
+              "level": "-0.006000"
             },
-            "base": -0.045,
-            "per": -0.003,
+            "base": -0.04,
+            "per": -0.006,
             "chance": 1
           },
           {
@@ -5131,19 +6896,211 @@
             },
             "base": 0,
             "per": 0,
-            "chance": 1
+            "chance": 0
           },
           {
             "icon": "BuffIcon_VULNERABLE",
             "desc": {
-              "desc": "욕망의 늪 : 받는 피해{0}% (중장)",
+              "desc": "욕망의 늪 : 받는 피해{0}% (중장) (해제 불가)",
               "type": 1,
-              "value": "0.060000",
-              "level": "0.004000"
+              "value": "0.100000",
+              "level": "0.010000"
             },
-            "base": 0.06,
-            "per": 0.004,
+            "base": 0.1,
+            "per": 0.01,
             "chance": 1
+          },
+          {
+            "icon": "BuffIcon_PROVOKE",
+            "desc": {
+              "desc": "욕망의 늪 : 대상 도발 (에키드나) (해제 불가)",
+              "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_SKILL_DOWN",
+            "desc": {
+              "desc": "욕망의 늪 : 스킬 위력{0}% (해제 불가)",
+              "type": 1,
+              "value": "-0.100000",
+              "level": "-0.020000"
+            },
+            "base": -0.1,
+            "per": -0.02,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_DOWN",
+            "desc": {
+              "desc": "욕망의 늪 : 행동력{0}% (해제 불가)",
+              "type": 1,
+              "value": "-0.010000",
+              "level": "-0.004000"
+            },
+            "base": -0.01,
+            "per": -0.004,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_SNARE",
+            "desc": {
+              "desc": "욕망의 늪 : 이동 불가",
+              "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_VULNERABLE",
+            "desc": {
+              "desc": "욕망의 늪 : 받는 피해{0}% (해제 불가)",
+              "type": 1,
+              "value": "0.050000",
+              "level": "0.005000"
+            },
+            "base": 0.05,
+            "per": 0.005,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_PROVOKE",
+            "desc": {
+              "desc": "욕망의 늪 : 대상 도발 (에키드나) (해제 불가)",
+              "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_SKILL_DOWN",
+            "desc": {
+              "desc": "욕망의 늪 : 스킬 위력{0}% (해제 불가)",
+              "type": 1,
+              "value": "-0.050000",
+              "level": "-0.010000"
+            },
+            "base": -0.05,
+            "per": -0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_DOWN",
+            "desc": {
+              "desc": "욕망의 늪 : 행동력{0}% (중장) (해제 불가)",
+              "type": 1,
+              "value": "-0.040000",
+              "level": "-0.006000"
+            },
+            "base": -0.04,
+            "per": -0.006,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_SNARE",
+            "desc": {
+              "desc": "욕망의 늪 : 이동 불가",
+              "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_VULNERABLE",
+            "desc": {
+              "desc": "욕망의 늪 : 받는 피해{0}% (중장) (해제 불가)",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.010000"
+            },
+            "base": 0.1,
+            "per": 0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_PROVOKE",
+            "desc": {
+              "desc": "욕망의 늪 : 대상 도발 (에키드나) (해제 불가)",
+              "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_SKILL_DOWN",
+            "desc": {
+              "desc": "욕망의 늪 : 스킬 위력{0}% (해제 불가)",
+              "type": 1,
+              "value": "-0.100000",
+              "level": "-0.020000"
+            },
+            "base": -0.1,
+            "per": -0.02,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_SNARE",
+            "desc": {
+              "desc": "욕망의 늪 : 이동 불가",
+              "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 99.99
+          },
+          {
+            "icon": "BuffIcon_SNARE",
+            "desc": {
+              "desc": "욕망의 늪 : 이동 불가",
+              "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 99.99
+          },
+          {
+            "icon": "BuffIcon_SNARE",
+            "desc": {
+              "desc": "욕망의 늪 : 이동 불가",
+              "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 99.99
+          },
+          {
+            "icon": "BuffIcon_SNARE",
+            "desc": {
+              "desc": "욕망의 늪 : 이동 불가",
+              "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 99.99
           }
         ]
       ]

@@ -18,7 +18,7 @@
       ],
       "data": [
         {
-          "rate": 1.665,
+          "rate": 2,
           "type": 0,
           "range": 3,
           "ap": 5,
@@ -56,9 +56,9 @@
                     "desc": "회심의 일격 : 피해량{0}%",
                     "type": 1,
                     "value": "0.200000",
-                    "level": "0.010000"
+                    "level": "0.020000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -67,7 +67,7 @@
                     "type": 83,
                     "damage_add": {
                       "base": "20%",
-                      "per": "1%"
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -80,7 +80,7 @@
                     "value": "0.300000",
                     "level": "0.040000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -101,9 +101,9 @@
                     "desc": "대 장갑 미사일 : 대 중장 피해량{0}%",
                     "type": 1,
                     "value": "0.200000",
-                    "level": "0.010000"
+                    "level": "0.030000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -115,7 +115,7 @@
                       "target": "heavy",
                       "value": {
                         "base": "20%",
-                        "per": "1%"
+                        "per": "3%"
                       }
                     }
                   },
@@ -172,7 +172,7 @@
                     "desc": "대 장갑 미사일 : 대 중장 피해량{0}%",
                     "type": 1,
                     "value": "0.200000",
-                    "level": "0.010000"
+                    "level": "0.030000"
                   },
                   "attr": 0,
                   "erase": {
@@ -185,8 +185,60 @@
                       "target": "heavy",
                       "value": {
                         "base": "20%",
-                        "per": "1%"
+                        "per": "3%"
                       }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Spriggan_N_51",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Spriggan_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "특종 발견? : 받는 피해 감소 해제 (해제 불가)",
+                    "type": 1,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 36
                     }
                   },
                   "overlap": 4
@@ -197,7 +249,7 @@
           ]
         },
         {
-          "rate": 1.815,
+          "rate": 2.15,
           "type": 0,
           "range": 3,
           "ap": 5,
@@ -235,9 +287,9 @@
                     "desc": "회심의 일격 : 피해량{0}%",
                     "type": 1,
                     "value": "0.200000",
-                    "level": "0.010000"
+                    "level": "0.020000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -246,7 +298,7 @@
                     "type": 83,
                     "damage_add": {
                       "base": "20%",
-                      "per": "1%"
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -259,7 +311,7 @@
                     "value": "0.300000",
                     "level": "0.040000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -280,9 +332,9 @@
                     "desc": "대 장갑 미사일 : 대 중장 피해량{0}%",
                     "type": 1,
                     "value": "0.200000",
-                    "level": "0.010000"
+                    "level": "0.030000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -294,7 +346,7 @@
                       "target": "heavy",
                       "value": {
                         "base": "20%",
-                        "per": "1%"
+                        "per": "3%"
                       }
                     }
                   },
@@ -351,7 +403,7 @@
                     "desc": "대 장갑 미사일 : 대 중장 피해량{0}%",
                     "type": 1,
                     "value": "0.200000",
-                    "level": "0.010000"
+                    "level": "0.030000"
                   },
                   "attr": 0,
                   "erase": {
@@ -364,8 +416,60 @@
                       "target": "heavy",
                       "value": {
                         "base": "20%",
-                        "per": "1%"
+                        "per": "3%"
                       }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Spriggan_N_51",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Spriggan_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "특종 발견? : 받는 피해 감소 해제 (해제 불가)",
+                    "type": 1,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 36
                     }
                   },
                   "overlap": 4
@@ -376,7 +480,7 @@
           ]
         },
         {
-          "rate": 1.965,
+          "rate": 2.3,
           "type": 0,
           "range": 3,
           "ap": 5,
@@ -414,9 +518,9 @@
                     "desc": "회심의 일격 : 피해량{0}%",
                     "type": 1,
                     "value": "0.200000",
-                    "level": "0.010000"
+                    "level": "0.020000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -425,7 +529,7 @@
                     "type": 83,
                     "damage_add": {
                       "base": "20%",
-                      "per": "1%"
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -438,7 +542,7 @@
                     "value": "0.300000",
                     "level": "0.040000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -459,9 +563,9 @@
                     "desc": "대 장갑 미사일 : 대 중장 피해량{0}%",
                     "type": 1,
                     "value": "0.200000",
-                    "level": "0.010000"
+                    "level": "0.030000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -473,7 +577,7 @@
                       "target": "heavy",
                       "value": {
                         "base": "20%",
-                        "per": "1%"
+                        "per": "3%"
                       }
                     }
                   },
@@ -530,7 +634,7 @@
                     "desc": "대 장갑 미사일 : 대 중장 피해량{0}%",
                     "type": 1,
                     "value": "0.200000",
-                    "level": "0.010000"
+                    "level": "0.030000"
                   },
                   "attr": 0,
                   "erase": {
@@ -543,8 +647,60 @@
                       "target": "heavy",
                       "value": {
                         "base": "20%",
-                        "per": "1%"
+                        "per": "3%"
                       }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Spriggan_N_51",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Spriggan_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "특종 발견? : 받는 피해 감소 해제 (해제 불가)",
+                    "type": 1,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 36
                     }
                   },
                   "overlap": 4
@@ -555,7 +711,7 @@
           ]
         },
         {
-          "rate": 2.115,
+          "rate": 2.45,
           "type": 0,
           "range": 3,
           "ap": 5,
@@ -593,9 +749,9 @@
                     "desc": "회심의 일격 : 피해량{0}%",
                     "type": 1,
                     "value": "0.200000",
-                    "level": "0.010000"
+                    "level": "0.020000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -604,7 +760,7 @@
                     "type": 83,
                     "damage_add": {
                       "base": "20%",
-                      "per": "1%"
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -617,7 +773,7 @@
                     "value": "0.300000",
                     "level": "0.040000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -638,9 +794,9 @@
                     "desc": "대 장갑 미사일 : 대 중장 피해량{0}%",
                     "type": 1,
                     "value": "0.200000",
-                    "level": "0.010000"
+                    "level": "0.030000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -652,7 +808,7 @@
                       "target": "heavy",
                       "value": {
                         "base": "20%",
-                        "per": "1%"
+                        "per": "3%"
                       }
                     }
                   },
@@ -709,7 +865,7 @@
                     "desc": "대 장갑 미사일 : 대 중장 피해량{0}%",
                     "type": 1,
                     "value": "0.200000",
-                    "level": "0.010000"
+                    "level": "0.030000"
                   },
                   "attr": 0,
                   "erase": {
@@ -722,8 +878,60 @@
                       "target": "heavy",
                       "value": {
                         "base": "20%",
-                        "per": "1%"
+                        "per": "3%"
                       }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Spriggan_N_51",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Spriggan_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "특종 발견? : 받는 피해 감소 해제 (해제 불가)",
+                    "type": 1,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 36
                     }
                   },
                   "overlap": 4
@@ -734,7 +942,7 @@
           ]
         },
         {
-          "rate": 2.265,
+          "rate": 2.6,
           "type": 0,
           "range": 3,
           "ap": 5,
@@ -772,9 +980,9 @@
                     "desc": "회심의 일격 : 피해량{0}%",
                     "type": 1,
                     "value": "0.200000",
-                    "level": "0.010000"
+                    "level": "0.020000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -783,7 +991,7 @@
                     "type": 83,
                     "damage_add": {
                       "base": "20%",
-                      "per": "1%"
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -796,7 +1004,7 @@
                     "value": "0.300000",
                     "level": "0.040000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -817,9 +1025,9 @@
                     "desc": "대 장갑 미사일 : 대 중장 피해량{0}%",
                     "type": 1,
                     "value": "0.200000",
-                    "level": "0.010000"
+                    "level": "0.030000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -831,7 +1039,7 @@
                       "target": "heavy",
                       "value": {
                         "base": "20%",
-                        "per": "1%"
+                        "per": "3%"
                       }
                     }
                   },
@@ -888,7 +1096,7 @@
                     "desc": "대 장갑 미사일 : 대 중장 피해량{0}%",
                     "type": 1,
                     "value": "0.200000",
-                    "level": "0.010000"
+                    "level": "0.030000"
                   },
                   "attr": 0,
                   "erase": {
@@ -901,8 +1109,60 @@
                       "target": "heavy",
                       "value": {
                         "base": "20%",
-                        "per": "1%"
+                        "per": "3%"
                       }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Spriggan_N_51",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Spriggan_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "특종 발견? : 받는 피해 감소 해제 (해제 불가)",
+                    "type": 1,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 36
                     }
                   },
                   "overlap": 4
@@ -913,7 +1173,7 @@
           ]
         },
         {
-          "rate": 2.415,
+          "rate": 2.75,
           "type": 0,
           "range": 3,
           "ap": 5,
@@ -951,9 +1211,9 @@
                     "desc": "회심의 일격 : 피해량{0}%",
                     "type": 1,
                     "value": "0.200000",
-                    "level": "0.010000"
+                    "level": "0.020000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -962,7 +1222,7 @@
                     "type": 83,
                     "damage_add": {
                       "base": "20%",
-                      "per": "1%"
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -975,7 +1235,7 @@
                     "value": "0.300000",
                     "level": "0.040000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -996,9 +1256,9 @@
                     "desc": "대 장갑 미사일 : 대 중장 피해량{0}%",
                     "type": 1,
                     "value": "0.200000",
-                    "level": "0.010000"
+                    "level": "0.030000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -1010,7 +1270,7 @@
                       "target": "heavy",
                       "value": {
                         "base": "20%",
-                        "per": "1%"
+                        "per": "3%"
                       }
                     }
                   },
@@ -1067,7 +1327,7 @@
                     "desc": "대 장갑 미사일 : 대 중장 피해량{0}%",
                     "type": 1,
                     "value": "0.200000",
-                    "level": "0.010000"
+                    "level": "0.030000"
                   },
                   "attr": 0,
                   "erase": {
@@ -1080,8 +1340,60 @@
                       "target": "heavy",
                       "value": {
                         "base": "20%",
-                        "per": "1%"
+                        "per": "3%"
                       }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Spriggan_N_51",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Spriggan_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "특종 발견? : 받는 피해 감소 해제 (해제 불가)",
+                    "type": 1,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 36
                     }
                   },
                   "overlap": 4
@@ -1092,7 +1404,7 @@
           ]
         },
         {
-          "rate": 2.565,
+          "rate": 2.9,
           "type": 0,
           "range": 3,
           "ap": 5,
@@ -1130,9 +1442,9 @@
                     "desc": "회심의 일격 : 피해량{0}%",
                     "type": 1,
                     "value": "0.200000",
-                    "level": "0.010000"
+                    "level": "0.020000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -1141,7 +1453,7 @@
                     "type": 83,
                     "damage_add": {
                       "base": "20%",
-                      "per": "1%"
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -1154,7 +1466,7 @@
                     "value": "0.300000",
                     "level": "0.040000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -1175,9 +1487,9 @@
                     "desc": "대 장갑 미사일 : 대 중장 피해량{0}%",
                     "type": 1,
                     "value": "0.200000",
-                    "level": "0.010000"
+                    "level": "0.030000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -1189,7 +1501,7 @@
                       "target": "heavy",
                       "value": {
                         "base": "20%",
-                        "per": "1%"
+                        "per": "3%"
                       }
                     }
                   },
@@ -1246,7 +1558,7 @@
                     "desc": "대 장갑 미사일 : 대 중장 피해량{0}%",
                     "type": 1,
                     "value": "0.200000",
-                    "level": "0.010000"
+                    "level": "0.030000"
                   },
                   "attr": 0,
                   "erase": {
@@ -1259,8 +1571,60 @@
                       "target": "heavy",
                       "value": {
                         "base": "20%",
-                        "per": "1%"
+                        "per": "3%"
                       }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Spriggan_N_51",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Spriggan_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "특종 발견? : 받는 피해 감소 해제 (해제 불가)",
+                    "type": 1,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 36
                     }
                   },
                   "overlap": 4
@@ -1271,7 +1635,7 @@
           ]
         },
         {
-          "rate": 2.715,
+          "rate": 3.05,
           "type": 0,
           "range": 3,
           "ap": 5,
@@ -1309,9 +1673,9 @@
                     "desc": "회심의 일격 : 피해량{0}%",
                     "type": 1,
                     "value": "0.200000",
-                    "level": "0.010000"
+                    "level": "0.020000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -1320,7 +1684,7 @@
                     "type": 83,
                     "damage_add": {
                       "base": "20%",
-                      "per": "1%"
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -1333,7 +1697,7 @@
                     "value": "0.300000",
                     "level": "0.040000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -1354,9 +1718,9 @@
                     "desc": "대 장갑 미사일 : 대 중장 피해량{0}%",
                     "type": 1,
                     "value": "0.200000",
-                    "level": "0.010000"
+                    "level": "0.030000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -1368,7 +1732,7 @@
                       "target": "heavy",
                       "value": {
                         "base": "20%",
-                        "per": "1%"
+                        "per": "3%"
                       }
                     }
                   },
@@ -1425,7 +1789,7 @@
                     "desc": "대 장갑 미사일 : 대 중장 피해량{0}%",
                     "type": 1,
                     "value": "0.200000",
-                    "level": "0.010000"
+                    "level": "0.030000"
                   },
                   "attr": 0,
                   "erase": {
@@ -1438,8 +1802,60 @@
                       "target": "heavy",
                       "value": {
                         "base": "20%",
-                        "per": "1%"
+                        "per": "3%"
                       }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Spriggan_N_51",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Spriggan_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "특종 발견? : 받는 피해 감소 해제 (해제 불가)",
+                    "type": 1,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 36
                     }
                   },
                   "overlap": 4
@@ -1450,7 +1866,7 @@
           ]
         },
         {
-          "rate": 2.865,
+          "rate": 3.2,
           "type": 0,
           "range": 3,
           "ap": 5,
@@ -1488,9 +1904,9 @@
                     "desc": "회심의 일격 : 피해량{0}%",
                     "type": 1,
                     "value": "0.200000",
-                    "level": "0.010000"
+                    "level": "0.020000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -1499,7 +1915,7 @@
                     "type": 83,
                     "damage_add": {
                       "base": "20%",
-                      "per": "1%"
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -1512,7 +1928,7 @@
                     "value": "0.300000",
                     "level": "0.040000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -1533,9 +1949,9 @@
                     "desc": "대 장갑 미사일 : 대 중장 피해량{0}%",
                     "type": 1,
                     "value": "0.200000",
-                    "level": "0.010000"
+                    "level": "0.030000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -1547,7 +1963,7 @@
                       "target": "heavy",
                       "value": {
                         "base": "20%",
-                        "per": "1%"
+                        "per": "3%"
                       }
                     }
                   },
@@ -1604,7 +2020,7 @@
                     "desc": "대 장갑 미사일 : 대 중장 피해량{0}%",
                     "type": 1,
                     "value": "0.200000",
-                    "level": "0.010000"
+                    "level": "0.030000"
                   },
                   "attr": 0,
                   "erase": {
@@ -1617,8 +2033,60 @@
                       "target": "heavy",
                       "value": {
                         "base": "20%",
-                        "per": "1%"
+                        "per": "3%"
                       }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Spriggan_N_51",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Spriggan_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "특종 발견? : 받는 피해 감소 해제 (해제 불가)",
+                    "type": 1,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 36
                     }
                   },
                   "overlap": 4
@@ -1629,7 +2097,7 @@
           ]
         },
         {
-          "rate": 3.015,
+          "rate": 3.35,
           "type": 0,
           "range": 3,
           "ap": 5,
@@ -1667,9 +2135,9 @@
                     "desc": "회심의 일격 : 피해량{0}%",
                     "type": 1,
                     "value": "0.200000",
-                    "level": "0.010000"
+                    "level": "0.020000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -1678,7 +2146,7 @@
                     "type": 83,
                     "damage_add": {
                       "base": "20%",
-                      "per": "1%"
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -1691,7 +2159,7 @@
                     "value": "0.300000",
                     "level": "0.040000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -1712,9 +2180,9 @@
                     "desc": "대 장갑 미사일 : 대 중장 피해량{0}%",
                     "type": 1,
                     "value": "0.200000",
-                    "level": "0.010000"
+                    "level": "0.030000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -1726,7 +2194,7 @@
                       "target": "heavy",
                       "value": {
                         "base": "20%",
-                        "per": "1%"
+                        "per": "3%"
                       }
                     }
                   },
@@ -1783,7 +2251,7 @@
                     "desc": "대 장갑 미사일 : 대 중장 피해량{0}%",
                     "type": 1,
                     "value": "0.200000",
-                    "level": "0.010000"
+                    "level": "0.030000"
                   },
                   "attr": 0,
                   "erase": {
@@ -1796,8 +2264,60 @@
                       "target": "heavy",
                       "value": {
                         "base": "20%",
-                        "per": "1%"
+                        "per": "3%"
                       }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Spriggan_N_51",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Spriggan_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "특종 발견? : 받는 피해 감소 해제 (해제 불가)",
+                    "type": 1,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 36
                     }
                   },
                   "overlap": 4
@@ -1830,10 +2350,10 @@
               "desc": "회심의 일격 : 피해량{0}%",
               "type": 1,
               "value": "0.200000",
-              "level": "0.010000"
+              "level": "0.020000"
             },
             "base": 0.2,
-            "per": 0.01,
+            "per": 0.02,
             "chance": 1
           },
           {
@@ -1854,10 +2374,10 @@
               "desc": "대 장갑 미사일 : 대 중장 피해량{0}%",
               "type": 1,
               "value": "0.200000",
-              "level": "0.010000"
+              "level": "0.030000"
             },
             "base": 0.2,
-            "per": 0.01,
+            "per": 0.03,
             "chance": 0
           },
           {
@@ -1878,10 +2398,22 @@
               "desc": "대 장갑 미사일 : 대 중장 피해량{0}%",
               "type": 1,
               "value": "0.200000",
-              "level": "0.010000"
+              "level": "0.030000"
             },
             "base": 0.2,
-            "per": 0.01,
+            "per": 0.03,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_DEBUFF",
+            "desc": {
+              "desc": "특종 발견? : 받는 피해 감소 해제 (해제 불가)",
+              "type": 1,
+              "value": "36",
+              "level": "0"
+            },
+            "base": 36,
+            "per": 0,
             "chance": 1
           }
         ]
@@ -1907,7 +2439,7 @@
       ],
       "data": [
         {
-          "rate": 2.195,
+          "rate": 2.55,
           "type": 0,
           "range": 5,
           "ap": 7,
@@ -1927,7 +2459,83 @@
                   "target": "target",
                   "func": "OR",
                   "select": [
-                    78,
+                    78
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 저격 : 피해량{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 적중 보정{0}%",
+                    "type": 1,
+                    "value": "0.060000",
+                    "level": "0.060000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "6%",
+                      "per": "6%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Spriggan_N_21",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
                     87
                   ],
                   "attr": 1
@@ -1954,10 +2562,10 @@
                   "desc": {
                     "desc": "정밀 저격 : 피해량{0}%",
                     "type": 1,
-                    "value": "0.400000",
+                    "value": "0.200000",
                     "level": "0.020000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -1965,31 +2573,60 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "40%",
+                      "base": "20%",
                       "per": "2%"
                     }
                   },
                   "overlap": 4
-                },
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Spriggan_N_51",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Spriggan_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
                 {
-                  "icon": "BuffIcon_ACCURACY_UP",
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
                   "desc": {
-                    "desc": "정밀 사격 : 적중 보정{0}%",
+                    "desc": "특종 발견? : 받는 피해 감소 해제 (해제 불가)",
                     "type": 1,
-                    "value": "0.060000",
-                    "level": "0.060000"
+                    "value": "36",
+                    "level": "0"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
                   "value": {
                     "isBuff": true,
-                    "chance": "0%",
-                    "type": 7,
-                    "accuracy": {
-                      "base": "6%",
-                      "per": "6%"
+                    "type": 69,
+                    "off": {
+                      "type": 36
                     }
                   },
                   "overlap": 4
@@ -2000,7 +2637,7 @@
           ]
         },
         {
-          "rate": 2.39,
+          "rate": 2.75,
           "type": 0,
           "range": 5,
           "ap": 7,
@@ -2020,7 +2657,83 @@
                   "target": "target",
                   "func": "OR",
                   "select": [
-                    78,
+                    78
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 저격 : 피해량{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 적중 보정{0}%",
+                    "type": 1,
+                    "value": "0.060000",
+                    "level": "0.060000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "6%",
+                      "per": "6%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Spriggan_N_21",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
                     87
                   ],
                   "attr": 1
@@ -2047,10 +2760,10 @@
                   "desc": {
                     "desc": "정밀 저격 : 피해량{0}%",
                     "type": 1,
-                    "value": "0.400000",
+                    "value": "0.200000",
                     "level": "0.020000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -2058,31 +2771,60 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "40%",
+                      "base": "20%",
                       "per": "2%"
                     }
                   },
                   "overlap": 4
-                },
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Spriggan_N_51",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Spriggan_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
                 {
-                  "icon": "BuffIcon_ACCURACY_UP",
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
                   "desc": {
-                    "desc": "정밀 사격 : 적중 보정{0}%",
+                    "desc": "특종 발견? : 받는 피해 감소 해제 (해제 불가)",
                     "type": 1,
-                    "value": "0.060000",
-                    "level": "0.060000"
+                    "value": "36",
+                    "level": "0"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
                   "value": {
                     "isBuff": true,
-                    "chance": "0%",
-                    "type": 7,
-                    "accuracy": {
-                      "base": "6%",
-                      "per": "6%"
+                    "type": 69,
+                    "off": {
+                      "type": 36
                     }
                   },
                   "overlap": 4
@@ -2093,7 +2835,7 @@
           ]
         },
         {
-          "rate": 2.585,
+          "rate": 2.95,
           "type": 0,
           "range": 5,
           "ap": 7,
@@ -2113,7 +2855,83 @@
                   "target": "target",
                   "func": "OR",
                   "select": [
-                    78,
+                    78
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 저격 : 피해량{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 적중 보정{0}%",
+                    "type": 1,
+                    "value": "0.060000",
+                    "level": "0.060000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "6%",
+                      "per": "6%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Spriggan_N_21",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
                     87
                   ],
                   "attr": 1
@@ -2140,10 +2958,10 @@
                   "desc": {
                     "desc": "정밀 저격 : 피해량{0}%",
                     "type": 1,
-                    "value": "0.400000",
+                    "value": "0.200000",
                     "level": "0.020000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -2151,31 +2969,60 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "40%",
+                      "base": "20%",
                       "per": "2%"
                     }
                   },
                   "overlap": 4
-                },
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Spriggan_N_51",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Spriggan_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
                 {
-                  "icon": "BuffIcon_ACCURACY_UP",
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
                   "desc": {
-                    "desc": "정밀 사격 : 적중 보정{0}%",
+                    "desc": "특종 발견? : 받는 피해 감소 해제 (해제 불가)",
                     "type": 1,
-                    "value": "0.060000",
-                    "level": "0.060000"
+                    "value": "36",
+                    "level": "0"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
                   "value": {
                     "isBuff": true,
-                    "chance": "0%",
-                    "type": 7,
-                    "accuracy": {
-                      "base": "6%",
-                      "per": "6%"
+                    "type": 69,
+                    "off": {
+                      "type": 36
                     }
                   },
                   "overlap": 4
@@ -2186,7 +3033,7 @@
           ]
         },
         {
-          "rate": 2.78,
+          "rate": 3.15,
           "type": 0,
           "range": 5,
           "ap": 7,
@@ -2206,7 +3053,83 @@
                   "target": "target",
                   "func": "OR",
                   "select": [
-                    78,
+                    78
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 저격 : 피해량{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 적중 보정{0}%",
+                    "type": 1,
+                    "value": "0.060000",
+                    "level": "0.060000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "6%",
+                      "per": "6%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Spriggan_N_21",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
                     87
                   ],
                   "attr": 1
@@ -2233,10 +3156,10 @@
                   "desc": {
                     "desc": "정밀 저격 : 피해량{0}%",
                     "type": 1,
-                    "value": "0.400000",
+                    "value": "0.200000",
                     "level": "0.020000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -2244,31 +3167,60 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "40%",
+                      "base": "20%",
                       "per": "2%"
                     }
                   },
                   "overlap": 4
-                },
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Spriggan_N_51",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Spriggan_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
                 {
-                  "icon": "BuffIcon_ACCURACY_UP",
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
                   "desc": {
-                    "desc": "정밀 사격 : 적중 보정{0}%",
+                    "desc": "특종 발견? : 받는 피해 감소 해제 (해제 불가)",
                     "type": 1,
-                    "value": "0.060000",
-                    "level": "0.060000"
+                    "value": "36",
+                    "level": "0"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
                   "value": {
                     "isBuff": true,
-                    "chance": "0%",
-                    "type": 7,
-                    "accuracy": {
-                      "base": "6%",
-                      "per": "6%"
+                    "type": 69,
+                    "off": {
+                      "type": 36
                     }
                   },
                   "overlap": 4
@@ -2279,7 +3231,7 @@
           ]
         },
         {
-          "rate": 2.975,
+          "rate": 3.35,
           "type": 0,
           "range": 5,
           "ap": 7,
@@ -2299,7 +3251,83 @@
                   "target": "target",
                   "func": "OR",
                   "select": [
-                    78,
+                    78
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 저격 : 피해량{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 적중 보정{0}%",
+                    "type": 1,
+                    "value": "0.060000",
+                    "level": "0.060000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "6%",
+                      "per": "6%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Spriggan_N_21",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
                     87
                   ],
                   "attr": 1
@@ -2326,10 +3354,10 @@
                   "desc": {
                     "desc": "정밀 저격 : 피해량{0}%",
                     "type": 1,
-                    "value": "0.400000",
+                    "value": "0.200000",
                     "level": "0.020000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -2337,31 +3365,60 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "40%",
+                      "base": "20%",
                       "per": "2%"
                     }
                   },
                   "overlap": 4
-                },
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Spriggan_N_51",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Spriggan_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
                 {
-                  "icon": "BuffIcon_ACCURACY_UP",
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
                   "desc": {
-                    "desc": "정밀 사격 : 적중 보정{0}%",
+                    "desc": "특종 발견? : 받는 피해 감소 해제 (해제 불가)",
                     "type": 1,
-                    "value": "0.060000",
-                    "level": "0.060000"
+                    "value": "36",
+                    "level": "0"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
                   "value": {
                     "isBuff": true,
-                    "chance": "0%",
-                    "type": 7,
-                    "accuracy": {
-                      "base": "6%",
-                      "per": "6%"
+                    "type": 69,
+                    "off": {
+                      "type": 36
                     }
                   },
                   "overlap": 4
@@ -2372,7 +3429,7 @@
           ]
         },
         {
-          "rate": 3.17,
+          "rate": 3.55,
           "type": 0,
           "range": 5,
           "ap": 7,
@@ -2392,7 +3449,83 @@
                   "target": "target",
                   "func": "OR",
                   "select": [
-                    78,
+                    78
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 저격 : 피해량{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 적중 보정{0}%",
+                    "type": 1,
+                    "value": "0.060000",
+                    "level": "0.060000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "6%",
+                      "per": "6%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Spriggan_N_21",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
                     87
                   ],
                   "attr": 1
@@ -2419,10 +3552,10 @@
                   "desc": {
                     "desc": "정밀 저격 : 피해량{0}%",
                     "type": 1,
-                    "value": "0.400000",
+                    "value": "0.200000",
                     "level": "0.020000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -2430,31 +3563,60 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "40%",
+                      "base": "20%",
                       "per": "2%"
                     }
                   },
                   "overlap": 4
-                },
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Spriggan_N_51",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Spriggan_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
                 {
-                  "icon": "BuffIcon_ACCURACY_UP",
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
                   "desc": {
-                    "desc": "정밀 사격 : 적중 보정{0}%",
+                    "desc": "특종 발견? : 받는 피해 감소 해제 (해제 불가)",
                     "type": 1,
-                    "value": "0.060000",
-                    "level": "0.060000"
+                    "value": "36",
+                    "level": "0"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
                   "value": {
                     "isBuff": true,
-                    "chance": "0%",
-                    "type": 7,
-                    "accuracy": {
-                      "base": "6%",
-                      "per": "6%"
+                    "type": 69,
+                    "off": {
+                      "type": 36
                     }
                   },
                   "overlap": 4
@@ -2465,7 +3627,7 @@
           ]
         },
         {
-          "rate": 3.365,
+          "rate": 3.75,
           "type": 0,
           "range": 5,
           "ap": 7,
@@ -2485,8 +3647,7 @@
                   "target": "target",
                   "func": "OR",
                   "select": [
-                    78,
-                    87
+                    78
                   ],
                   "attr": 1
                 }
@@ -2512,10 +3673,10 @@
                   "desc": {
                     "desc": "정밀 저격 : 피해량{0}%",
                     "type": 1,
-                    "value": "0.400000",
+                    "value": "0.200000",
                     "level": "0.020000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -2523,7 +3684,7 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "40%",
+                      "base": "20%",
                       "per": "2%"
                     }
                   },
@@ -2537,7 +3698,7 @@
                     "value": "0.060000",
                     "level": "0.060000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -2554,31 +3715,15 @@
                 }
               ],
               "maxStack": 0
-            }
-          ]
-        },
-        {
-          "rate": 3.56,
-          "type": 0,
-          "range": 5,
-          "ap": 7,
-          "grid": "0,0,0,0,1,0,0,0,0",
-          "target_ground": false,
-          "summon": null,
-          "use": null,
-          "dismiss_guard": true,
-          "acc_bonus": 48,
-          "buff_rate": 100,
-          "buffs": [
+            },
             {
-              "key": "Effect_BR_Spriggan_N_2",
+              "key": "Effect_BR_Spriggan_N_21",
               "on": "attack_success",
               "if": {
                 "on": {
                   "target": "target",
                   "func": "OR",
                   "select": [
-                    78,
                     87
                   ],
                   "attr": 1
@@ -2605,10 +3750,10 @@
                   "desc": {
                     "desc": "정밀 저격 : 피해량{0}%",
                     "type": 1,
-                    "value": "0.400000",
+                    "value": "0.200000",
                     "level": "0.020000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -2616,65 +3761,25 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "40%",
+                      "base": "20%",
                       "per": "2%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_ACCURACY_UP",
-                  "desc": {
-                    "desc": "정밀 사격 : 적중 보정{0}%",
-                    "type": 1,
-                    "value": "0.060000",
-                    "level": "0.060000"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 7,
-                    "accuracy": {
-                      "base": "6%",
-                      "per": "6%"
                     }
                   },
                   "overlap": 4
                 }
               ],
               "maxStack": 0
-            }
-          ]
-        },
-        {
-          "rate": 3.755,
-          "type": 0,
-          "range": 5,
-          "ap": 7,
-          "grid": "0,0,0,0,1,0,0,0,0",
-          "target_ground": false,
-          "summon": null,
-          "use": null,
-          "dismiss_guard": true,
-          "acc_bonus": 54,
-          "buff_rate": 100,
-          "buffs": [
+            },
             {
-              "key": "Effect_BR_Spriggan_N_2",
-              "on": "attack_success",
+              "key": "Effect_BR_Spriggan_N_51",
+              "on": "criticaled",
               "if": {
                 "on": {
-                  "target": "target",
                   "func": "OR",
                   "select": [
-                    78,
-                    87
+                    "Effect_BR_Spriggan_N_5"
                   ],
-                  "attr": 1
+                  "attr": 6
                 }
               },
               "body": [
@@ -2694,46 +3799,22 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
                   "desc": {
-                    "desc": "정밀 저격 : 피해량{0}%",
+                    "desc": "특종 발견? : 받는 피해 감소 해제 (해제 불가)",
                     "type": 1,
-                    "value": "0.400000",
-                    "level": "0.020000"
+                    "value": "36",
+                    "level": "0"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 83,
-                    "damage_add": {
-                      "base": "40%",
-                      "per": "2%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_ACCURACY_UP",
-                  "desc": {
-                    "desc": "정밀 사격 : 적중 보정{0}%",
-                    "type": 1,
-                    "value": "0.060000",
-                    "level": "0.060000"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 7,
-                    "accuracy": {
-                      "base": "6%",
-                      "per": "6%"
+                    "type": 69,
+                    "off": {
+                      "type": 36
                     }
                   },
                   "overlap": 4
@@ -2753,7 +3834,7 @@
           "summon": null,
           "use": null,
           "dismiss_guard": true,
-          "acc_bonus": 60,
+          "acc_bonus": 48,
           "buff_rate": 100,
           "buffs": [
             {
@@ -2764,7 +3845,83 @@
                   "target": "target",
                   "func": "OR",
                   "select": [
-                    78,
+                    78
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 저격 : 피해량{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 적중 보정{0}%",
+                    "type": 1,
+                    "value": "0.060000",
+                    "level": "0.060000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "6%",
+                      "per": "6%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Spriggan_N_21",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
                     87
                   ],
                   "attr": 1
@@ -2791,10 +3948,10 @@
                   "desc": {
                     "desc": "정밀 저격 : 피해량{0}%",
                     "type": 1,
-                    "value": "0.400000",
+                    "value": "0.200000",
                     "level": "0.020000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -2802,7 +3959,128 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "40%",
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Spriggan_N_51",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Spriggan_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "특종 발견? : 받는 피해 감소 해제 (해제 불가)",
+                    "type": 1,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 36
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 4.15,
+          "type": 0,
+          "range": 5,
+          "ap": 7,
+          "grid": "0,0,0,0,1,0,0,0,0",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 54,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Spriggan_N_2",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 저격 : 피해량{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
                       "per": "2%"
                     }
                   },
@@ -2816,7 +4094,7 @@
                     "value": "0.060000",
                     "level": "0.060000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -2827,6 +4105,310 @@
                     "accuracy": {
                       "base": "6%",
                       "per": "6%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Spriggan_N_21",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 저격 : 피해량{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Spriggan_N_51",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Spriggan_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "특종 발견? : 받는 피해 감소 해제 (해제 불가)",
+                    "type": 1,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 36
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 4.35,
+          "type": 0,
+          "range": 5,
+          "ap": 7,
+          "grid": "0,0,0,0,1,0,0,0,0",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": true,
+          "acc_bonus": 60,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Spriggan_N_2",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    78
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 저격 : 피해량{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "정밀 사격 : 적중 보정{0}%",
+                    "type": 1,
+                    "value": "0.060000",
+                    "level": "0.060000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "6%",
+                      "per": "6%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Spriggan_N_21",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    87
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "정밀 저격 : 피해량{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Spriggan_N_51",
+              "on": "criticaled",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Spriggan_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "특종 발견? : 받는 피해 감소 해제 (해제 불가)",
+                    "type": 1,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 36
                     }
                   },
                   "overlap": 4
@@ -2858,10 +4440,10 @@
             "desc": {
               "desc": "정밀 저격 : 피해량{0}%",
               "type": 1,
-              "value": "0.400000",
+              "value": "0.200000",
               "level": "0.020000"
             },
-            "base": 0.4,
+            "base": 0.2,
             "per": 0.02,
             "chance": 1
           },
@@ -2876,6 +4458,30 @@
             "base": 0.06,
             "per": 0.06,
             "chance": 0
+          },
+          {
+            "icon": "BuffIcon_PhyATK_UP",
+            "desc": {
+              "desc": "정밀 저격 : 피해량{0}%",
+              "type": 1,
+              "value": "0.200000",
+              "level": "0.020000"
+            },
+            "base": 0.2,
+            "per": 0.02,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_DEBUFF",
+            "desc": {
+              "desc": "특종 발견? : 받는 피해 감소 해제 (해제 불가)",
+              "type": 1,
+              "value": "36",
+              "level": "0"
+            },
+            "base": 36,
+            "per": 0,
+            "chance": 1
           }
         ]
       ]
@@ -2938,7 +4544,7 @@
                     "desc": "루머 콜렉터 : 공격력{0}%",
                     "type": 1,
                     "value": "0.100000",
-                    "level": "0.015000"
+                    "level": "0.020000"
                   },
                   "attr": 0,
                   "erase": {
@@ -2949,7 +4555,7 @@
                     "type": 1,
                     "attack": {
                       "base": "10%",
-                      "per": "1.5%"
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -2981,7 +4587,7 @@
                   "desc": {
                     "desc": "루머 배포 준비 : 행동력{0}% (2웨이브 이후)",
                     "type": 1,
-                    "value": "0.050000",
+                    "value": "0.100000",
                     "level": "0.010000"
                   },
                   "attr": 0,
@@ -2993,7 +4599,7 @@
                     "chance": "0%",
                     "type": 13,
                     "turnSpeed": {
-                      "base": "5%",
+                      "base": "10%",
                       "per": "1%"
                     }
                   },
@@ -3003,9 +4609,18 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_Spriggan_N_12",
+              "key": "Effect_BR_Spriggan_N_31",
               "on": "wave_end",
-              "if": false,
+              "if": {
+                "on": {
+                  "target": "self",
+                  "func": "UNFILLED",
+                  "select": [
+                    "Effect_BR_Spriggan_N_32"
+                  ],
+                  "attr": 6
+                }
+              },
               "body": [
                 0,
                 1
@@ -3027,7 +4642,7 @@
                   "desc": {
                     "desc": "루머 배포 준비 : 행동력{0}%",
                     "type": 1,
-                    "value": "0.050000",
+                    "value": "0.100000",
                     "level": "0.010000"
                   },
                   "attr": 0,
@@ -3036,8 +4651,865 @@
                     "isBuff": true,
                     "type": 13,
                     "turnSpeed": {
-                      "base": "5%",
+                      "base": "10%",
                       "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Spriggan_N_32",
+              "on": "round",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Spriggan_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "루머 배포 준비 : 행동력{0}%",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        }
+      ]
+    },
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "루머 콜렉터 : 공격력{0}%",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.020000"
+            },
+            "base": 0.1,
+            "per": 0.02,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_CRITICAL_UP",
+            "desc": {
+              "desc": "루머 콜렉터 : 치명타{0}%",
+              "type": 1,
+              "value": "0.050000",
+              "level": "0.010000"
+            },
+            "base": 0.05,
+            "per": 0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "루머 배포 준비 : 행동력{0}% (2웨이브 이후)",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.010000"
+            },
+            "base": 0.1,
+            "per": 0.01,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "루머 배포 준비 : 행동력{0}%",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.010000"
+            },
+            "base": 0.1,
+            "per": 0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "루머 배포 준비 : 행동력{0}%",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.010000"
+            },
+            "base": 0.1,
+            "per": 0.01,
+            "chance": 1
+          }
+        ]
+      ]
+    }
+  },
+  "4": {
+    "key": "4",
+    "icon": "SelfAtkBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "0,0,0,0,1,0,0,0,0",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Spriggan_N_4",
+              "on": "round",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "전투용 촬영 장비 : 방어 관통{0}%",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.040000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "30%",
+                      "per": "4%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "전투용 촬영 장비 : 적중{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.040000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "20%",
+                      "per": "4%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_RANGE_UP",
+                  "desc": {
+                    "desc": "전투용 촬영 장비 : 사거리{0}",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 55,
+                    "range": {
+                      "base": 1,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "전투용 촬영 장비 : 적중{0}% (1회) (Lv.1~9)",
+                    "type": 1,
+                    "value": "1",
+                    "level": "0.500000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "100%",
+                      "per": "50%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "전투용 촬영 장비 : 적중{0}% (2회) (Lv.10)",
+                    "type": 1,
+                    "value": "1",
+                    "level": "0.500000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "100%",
+                      "per": "50%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Spriggan_N_41",
+              "on": "wave",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "전투용 촬영 장비 : 적중{0}% (1회)",
+                    "type": 1,
+                    "value": "1",
+                    "level": "0.500000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "count": 1,
+                    "trigger": "attack_success"
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "100%",
+                      "per": "50%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "0,0,0,0,1,0,0,0,0",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Spriggan_N_4",
+              "on": "round",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "전투용 촬영 장비 : 방어 관통{0}%",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.040000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "30%",
+                      "per": "4%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "전투용 촬영 장비 : 적중{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.040000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "20%",
+                      "per": "4%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_RANGE_UP",
+                  "desc": {
+                    "desc": "전투용 촬영 장비 : 사거리{0}",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 55,
+                    "range": {
+                      "base": 1,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "전투용 촬영 장비 : 적중{0}% (1회) (Lv.1~9)",
+                    "type": 1,
+                    "value": "1",
+                    "level": "0.500000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "100%",
+                      "per": "50%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "전투용 촬영 장비 : 적중{0}% (2회) (Lv.10)",
+                    "type": 1,
+                    "value": "1",
+                    "level": "0.500000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "100%",
+                      "per": "50%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Spriggan_N_42",
+              "on": "wave",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "전투용 촬영 장비 : 적중{0}% (2회)",
+                    "type": 1,
+                    "value": "1",
+                    "level": "0.500000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "count": 2,
+                    "trigger": "attack_success"
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "100%",
+                      "per": "50%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_DEF_PIERCE_UP",
+            "desc": {
+              "desc": "전투용 촬영 장비 : 방어 관통{0}%",
+              "type": 1,
+              "value": "0.300000",
+              "level": "0.040000"
+            },
+            "base": 0.3,
+            "per": 0.04,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ACCURACY_UP",
+            "desc": {
+              "desc": "전투용 촬영 장비 : 적중{0}%",
+              "type": 1,
+              "value": "0.200000",
+              "level": "0.040000"
+            },
+            "base": 0.2,
+            "per": 0.04,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_RANGE_UP",
+            "desc": {
+              "desc": "전투용 촬영 장비 : 사거리{0}",
+              "type": 0,
+              "value": "1",
+              "level": "0"
+            },
+            "base": 1,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ACCURACY_UP",
+            "desc": {
+              "desc": "전투용 촬영 장비 : 적중{0}% (1회) (Lv.1~9)",
+              "type": 1,
+              "value": "1",
+              "level": "0.500000"
+            },
+            "base": 1,
+            "per": 0.5,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_ACCURACY_UP",
+            "desc": {
+              "desc": "전투용 촬영 장비 : 적중{0}% (2회) (Lv.10)",
+              "type": 1,
+              "value": "1",
+              "level": "0.500000"
+            },
+            "base": 1,
+            "per": 0.5,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_ACCURACY_UP",
+            "desc": {
+              "desc": "전투용 촬영 장비 : 적중{0}% (1회)",
+              "type": 1,
+              "value": "1",
+              "level": "0.500000"
+            },
+            "base": 1,
+            "per": 0.5,
+            "chance": 1
+          }
+        ],
+        [
+          {
+            "icon": "BuffIcon_DEF_PIERCE_UP",
+            "desc": {
+              "desc": "전투용 촬영 장비 : 방어 관통{0}%",
+              "type": 1,
+              "value": "0.300000",
+              "level": "0.040000"
+            },
+            "base": 0.3,
+            "per": 0.04,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ACCURACY_UP",
+            "desc": {
+              "desc": "전투용 촬영 장비 : 적중{0}%",
+              "type": 1,
+              "value": "0.200000",
+              "level": "0.040000"
+            },
+            "base": 0.2,
+            "per": 0.04,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_RANGE_UP",
+            "desc": {
+              "desc": "전투용 촬영 장비 : 사거리{0}",
+              "type": 0,
+              "value": "1",
+              "level": "0"
+            },
+            "base": 1,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ACCURACY_UP",
+            "desc": {
+              "desc": "전투용 촬영 장비 : 적중{0}% (1회) (Lv.1~9)",
+              "type": 1,
+              "value": "1",
+              "level": "0.500000"
+            },
+            "base": 1,
+            "per": 0.5,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_ACCURACY_UP",
+            "desc": {
+              "desc": "전투용 촬영 장비 : 적중{0}% (2회) (Lv.10)",
+              "type": 1,
+              "value": "1",
+              "level": "0.500000"
+            },
+            "base": 1,
+            "per": 0.5,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_ACCURACY_UP",
+            "desc": {
+              "desc": "전투용 촬영 장비 : 적중{0}% (2회)",
+              "type": 1,
+              "value": "1",
+              "level": "0.500000"
+            },
+            "base": 1,
+            "per": 0.5,
+            "chance": 1
+          }
+        ]
+      ]
+    }
+  },
+  "5": {
+    "key": "5",
+    "icon": "SelfAtkBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "0,0,0,0,1,0,0,0,0",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Spriggan_N_5",
+              "on": "round",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "특종 발견? : 공격력{0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SUPPORT_ATTACK",
+                  "desc": {
+                    "desc": "특종 발견? : 재공격",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 77,
+                    "attack_support": {
+                      "base": "100%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Spriggan_N_52",
+              "on": "round",
+              "if": {
+                "near": true
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SUPPORT_ATTACK",
+                  "desc": {
+                    "desc": "특종 발견? : 재공격",
+                    "type": 1,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 77,
+                    "attack_support": {
+                      "base": "100%",
+                      "per": "0%"
                     }
                   },
                   "overlap": 4
@@ -3067,49 +5539,37 @@
           {
             "icon": "BuffIcon_ATK_UP",
             "desc": {
-              "desc": "루머 콜렉터 : 공격력{0}%",
+              "desc": "특종 발견? : 공격력{0}%",
               "type": 1,
-              "value": "0.100000",
-              "level": "0.015000"
+              "value": "0.200000",
+              "level": "0.020000"
             },
-            "base": 0.1,
-            "per": 0.015,
+            "base": 0.2,
+            "per": 0.02,
             "chance": 1
           },
           {
-            "icon": "BuffIcon_CRITICAL_UP",
+            "icon": "BuffIcon_SUPPORT_ATTACK",
             "desc": {
-              "desc": "루머 콜렉터 : 치명타{0}%",
-              "type": 1,
-              "value": "0.050000",
-              "level": "0.010000"
+              "desc": "특종 발견? : 재공격",
+              "type": 0,
+              "value": "1",
+              "level": "0"
             },
-            "base": 0.05,
-            "per": 0.01,
-            "chance": 1
-          },
-          {
-            "icon": "BuffIcon_AP_UP",
-            "desc": {
-              "desc": "루머 배포 준비 : 행동력{0}% (2웨이브 이후)",
-              "type": 1,
-              "value": "0.050000",
-              "level": "0.010000"
-            },
-            "base": 0.05,
-            "per": 0.01,
+            "base": 1,
+            "per": 0,
             "chance": 0
           },
           {
-            "icon": "BuffIcon_AP_UP",
+            "icon": "BuffIcon_SUPPORT_ATTACK",
             "desc": {
-              "desc": "루머 배포 준비 : 행동력{0}%",
+              "desc": "특종 발견? : 재공격",
               "type": 1,
-              "value": "0.050000",
-              "level": "0.010000"
+              "value": "1",
+              "level": "0"
             },
-            "base": 0.05,
-            "per": 0.01,
+            "base": 1,
+            "per": 0,
             "chance": 1
           }
         ]
