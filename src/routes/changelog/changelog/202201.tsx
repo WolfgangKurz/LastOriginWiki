@@ -6,6 +6,35 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11502" date="2022-01-22"
+		new={ <>
+			<li>이벤트 <span class="badge bg-warning text-dark">영원한 겨울의 방주</span>의 2부 정보가 추가되었습니다.</li>
+			<li>신규 전투원 <span class="badge bg-warning text-dark">니바</span>의 정보가 추가되었습니다.</li>
+			<li>신규 장비 <span class="badge bg-warning text-dark">핏빛안대 -혈화요란-</span>의 정보가 추가되었습니다.</li>
+			<li>전투원 정보에 <span class="badge bg-warning text-dark">상환 확장</span> 탭이 추가되었습니다.</li>
+		</> }
+		update={ <>
+			<li>일부 전투원의 스킬 정보가 갱신되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<span class="badge bg-warning text-dark">CS 페로</span>의 스킨 <span class="badge bg-danger">???</span>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<span class="badge bg-warning text-dark">로열 아스널</span>의 스킨 <span class="badge bg-danger">???</span>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<span class="badge bg-warning text-dark">해체자 아자즈</span>의 스킨 <span class="badge bg-danger">???</span>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<span class="badge bg-warning text-dark">LRL</span>의 스킨 <span class="badge bg-danger">???</span>의 정보가 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-warning text-dark">CS 페로</span>의 서약 대사 세트가 추가되었습니다.</li>
+			<li><span class="badge bg-light text-dark">KST 2022-01-22 03:52:10</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11497" date="2022-01-18"
 		bugfix={ <>
 			<li>일부 버프 정보가 올바르게 표시되지 않던 문제를 수정했습니다.</li>

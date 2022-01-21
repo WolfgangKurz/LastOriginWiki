@@ -1,7 +1,7 @@
 import { FunctionalComponent } from "preact";
 import { Link } from "preact-router";
 
-import { AssetsRoot, CurrentEvent, EventFrom, EventTo, ImageExtension, IsBeta } from "@/libs/Const";
+import { AssetsRoot, CurrentEvent, EventFrom, EventTo, ImageExtension, IsStaging } from "@/libs/Const";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 import { CurrentLocale } from "@/libs/Locale";
 
@@ -75,8 +75,8 @@ const Home: FunctionalComponent = () => {
 			<img class={ `${style["heading-icon"]} heading-icon` } src={ `${AssetsRoot}/icon.png` } />
 			<span class={ style["home-title"] }>
 				<i class={ style["_official"] }>
-					{ IsBeta
-						? <>BETA</>
+					{ IsStaging
+						? <>Staging</>
 						: <Locale k="COMMON_TITLE_SUB" />
 					}
 				</i>
@@ -133,10 +133,10 @@ const Home: FunctionalComponent = () => {
 		</p>
 
 		<div class="mt-4">
-			<a href="https://www.buymeacoffee.com/wolfgangkurzdev">
+			<a href="https://www.buymeacoffee.com/wolfgangkurzdev" target="_blank">
 				<img
-					src="https://img.buymeacoffee.com/button-api/?text=Buy me a beer&amp;emoji=🍺&amp;slug=wolfgangkurzdev&amp;button_colour=FFDD00&amp;font_colour=000000&amp;font_family=Lato&amp;outline_colour=000000&amp;coffee_colour=ffffff"
-					style="height: 35px;"
+					src="https://img.buymeacoffee.com/button-api/?text=Buy me a beer &amp;emoji=🍺&amp;slug=wolfgangkurzdev&amp;button_colour=5F7FFF&amp;font_colour=ffffff&amp;font_family=Inter&amp;outline_colour=000000&amp;coffee_colour=FFDD00"
+					style={ { height: "40px" } }
 				/>
 			</a>
 		</div>

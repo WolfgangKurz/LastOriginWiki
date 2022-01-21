@@ -7,10 +7,11 @@ import { ACTOR_BODY_TYPE, ACTOR_GRADE, ITEM_TYPE } from "@/types/Enums";
 import { LinkBonusType, Unit, UnitSkin } from "@/types/DB/Unit";
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 import { UnitDialogueDataType } from "@/types/DB/Dialogue";
+import { Consumable } from "@/types/DB/Consumable";
 
 import { ObjectState, objState } from "@/libs/State";
 import { AssetsRoot, ImageExtension, RarityDisplay, UnitClassDisplay, UnitRoleDisplay } from "@/libs/Const";
-import { isActive } from "@/libs/Functions";
+import { FormatNumber, isActive } from "@/libs/Functions";
 import { GetRequireResource } from "@/libs/Cost";
 import EntitySource from "@/libs/EntitySource";
 import { GetLinkBonus } from "@/libs/LinkBonus";
@@ -38,7 +39,7 @@ import ResearchTree from "../components/research-tree";
 import "./style.module.scss";
 
 // type TabTypes = "basic" | "skills" | "roguelike" | "dialogue";
-type TabTypes = "basic" | "skills" | "dialogue";
+type TabTypes = "basic" | "lvlimit" | "skills" | "dialogue";
 
 interface SkinItem extends UnitSkin {
 	isDef: boolean;
@@ -327,6 +328,47 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 			</div>
 		</div>
 	</div>;
+};
+
+const LvLimitTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
+	return <Loader json={ StaticDB.Consumable } content={ () => {
+		if (!display) return <></>;
+
+		const ConsumableDB = GetJson<Consumable[]>(StaticDB.Consumable);
+
+		return <table class="table table-bordered text-center">
+			<thead>
+				<tr>
+					<th class="bg-dark text-light">
+						<Locale k="UNIT_VIEW_LVLIMIT_LEVEL" />
+					</th>
+					<th class="bg-dark text-light">
+						<Locale k="UNIT_VIEW_LVLIMIT_ITEMS" />
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				{ unit.lvLimits.map(e => <tr>
+					<td class="p-3 table-medidark">
+						<small>Lv.</small>
+						{ e.level }
+					</td>
+					<td class="text-start">
+						{ e.items.map(v => {
+							const item = ConsumableDB.find(c => c.key === v.id);
+							if (!item) return <>-</>;
+
+							return <span class="badge bg-secondary me-2 mb-2">
+								<EquipIcon class="me-2 vertical-align-middle" image={ item.icon } size="24" />
+								<Locale k={ `CONSUMABLE_${item.key}` } />
+								&nbsp;x{ FormatNumber(v.count!) }
+							</span>;
+						}) }
+					</td>
+				</tr>) }
+			</tbody>
+		</table>;
+	} } />;
 };
 
 const SkillTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
@@ -715,6 +757,19 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 						<li class="nav-item">
 							<a
 								href="#"
+								class={ `nav-link text-dark ${isActive(DisplayTab.value === "lvlimit")}` }
+								onClick={ (e): void => {
+									e.preventDefault();
+									DisplayTab.set("lvlimit");
+								} }
+							>
+								<Icon icon="capslock-fill" class="me-1" />
+								<Locale k="UNIT_VIEW_TAB_LVLIMIT" />
+							</a>
+						</li>
+						<li class="nav-item">
+							<a
+								href="#"
 								class={ `nav-link text-dark ${isActive(DisplayTab.value === "skills")}` }
 								onClick={ (e): void => {
 									e.preventDefault();
@@ -756,6 +811,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 			</div>
 
 			<BasicTab display={ DisplayTab.value === "basic" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } />
+			<LvLimitTab display={ DisplayTab.value === "lvlimit" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } />
 			<SkillTab display={ DisplayTab.value === "skills" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } />
 			{/* <RoguelikeTab display={ DisplayTab.value === "roguelike" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } /> */ }
 			<DialogueTab display={ DisplayTab.value === "dialogue" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } />

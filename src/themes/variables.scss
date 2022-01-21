@@ -24,11 +24,20 @@ $rarity-C: map-get($rarities, C);
 $rarity-B: map-get($rarities, B);
 $rarity-A: map-get($rarities, A);
 $rarity-S: map-get($rarities, S);
-$rarity-SS:map-get($rarities, SS);
-$rarity-SSS:map-get($rarities, SSS);
+$rarity-SS: map-get($rarities, SS);
+$rarity-SSS: map-get($rarities, SSS);
+
+$semidark: transparentize($dark, 0.875);
+$semilight: transparentize($light, 0.875);
+$medidark: transparentize($dark, 0.75);
+$medilight: transparentize($light, 0.75);
 
 $colors: (
-	"semilight": rgba(255, 255, 255, 0.125),
+	"semidark": $semidark,
+	"semilight": $semilight,
+	"medidark": $medidark,
+	"medilight": $medilight,
+
 	"black": #000,
 	"stat-atk": $stat-atk,
 	"stat-def": $stat-def,
@@ -47,9 +56,11 @@ $colors: (
 	"rarity-S": $rarity-S,
 	"rarity-SS": $rarity-SS,
 	"rarity-SSS": $rarity-SSS,
-
 	"orange": $orange-600,
 	"success-dark": $success-dark,
 );
-
 $theme-colors: map-merge($theme-colors, $colors);
+
+@each $key, $color in $colors {
+	$table-variants: map.set($table-variants, $key, shift-color($color, $table-bg-scale));
+}
