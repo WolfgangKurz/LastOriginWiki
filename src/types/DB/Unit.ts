@@ -1,5 +1,6 @@
 import EntitySource from "@/libs/EntitySource";
 import { UnitDialogueDataType } from "@/types/DB/Dialogue";
+import { MapWaveDrop } from "@/types/DB/Map";
 import { SkillGroup } from "@/types/DB/Skill";
 import { UnitStats } from "@/types/DB/UnitStats";
 import { ACTOR_GRADE, ACTOR_CLASS, ROLE_TYPE, ACTOR_BODY_TYPE, ITEM_TYPE } from "@/types/Enums";
@@ -93,6 +94,11 @@ export interface ResearchTreeData {
 	next: ResearchTreeData[] | undefined;
 }
 
+export interface LvLimitData {
+	level: number;
+	items: Required<MapWaveDrop>[];
+}
+
 export interface Unit {
 	id: number;
 	uid: string;
@@ -103,6 +109,8 @@ export interface Unit {
 	body: ACTOR_BODY_TYPE;
 	promotions?: ACTOR_GRADE[];
 	slots: [ITEM_TYPE, ITEM_TYPE, ITEM_TYPE, ITEM_TYPE];
+
+	lvLimits: LvLimitData[];
 
 	group: string;
 	shortgroup: string;
@@ -155,6 +163,8 @@ export namespace Unit {
 			ITEM_TYPE.SPCHIP,
 			ITEM_TYPE.SUBEQ,
 		],
+
+		lvLimits: [],
 
 		height: "",
 		weight: "",

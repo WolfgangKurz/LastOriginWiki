@@ -8,7 +8,9 @@ function process (auth) {
 		const sheets = google.sheets({ version: "v4", auth });
 		sheets.spreadsheets.values.get({
 			spreadsheetId: targetDB === "korea"
-				? "11IxebdUQ_VHbaP79sN8KxZ87n3c5rG42DL8TQOK9h1k"
+				? require("../STAGING") === true
+					? "1EbGKc68ysZkoV_rurGKQ-tezAm3WW3AAH3KAM-XcSkA"
+					: "11IxebdUQ_VHbaP79sN8KxZ87n3c5rG42DL8TQOK9h1k"
 				: "1ohSOKdl1IZq8aOsWPJ74yX01Ave7FkSrUFG5MSbfZN8",
 			range: "Enemy!A3:W",
 		}, (err, res) => {

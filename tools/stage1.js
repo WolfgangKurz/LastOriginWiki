@@ -18,10 +18,8 @@ const list =
 	[
 		...[
 			"consumable", "exc",
-			"exp",
 			"ew",
 			"map",
-			// "locale",
 			"story",
 			"roguelike",
 			"enemygroup",

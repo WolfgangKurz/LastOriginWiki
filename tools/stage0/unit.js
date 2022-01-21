@@ -10,7 +10,9 @@ function process (auth) {
 		const sheets = google.sheets({ version: "v4", auth });
 		sheets.spreadsheets.values.get({
 			spreadsheetId: targetDB === "korea"
-				? "11IxebdUQ_VHbaP79sN8KxZ87n3c5rG42DL8TQOK9h1k"
+				? require("../STAGING") === true
+					? "1EbGKc68ysZkoV_rurGKQ-tezAm3WW3AAH3KAM-XcSkA"
+					: "11IxebdUQ_VHbaP79sN8KxZ87n3c5rG42DL8TQOK9h1k"
 				: "1ohSOKdl1IZq8aOsWPJ74yX01Ave7FkSrUFG5MSbfZN8",
 			range: "UnitStats!A3:O",
 		}, (err, res) => {
@@ -64,7 +66,9 @@ function process (auth) {
 
 				sheets.spreadsheets.values.get({
 					spreadsheetId: targetDB === "korea"
-						? "11IxebdUQ_VHbaP79sN8KxZ87n3c5rG42DL8TQOK9h1k"
+						? require("../STAGING") === true
+							? "1EbGKc68ysZkoV_rurGKQ-tezAm3WW3AAH3KAM-XcSkA"
+							: "11IxebdUQ_VHbaP79sN8KxZ87n3c5rG42DL8TQOK9h1k"
 						: "1ohSOKdl1IZq8aOsWPJ74yX01Ave7FkSrUFG5MSbfZN8",
 					range: "Unit!A2:AH",
 				}, (err, res) => {
@@ -120,7 +124,7 @@ function process (auth) {
 								lb1, lb2, lb3, lb4,
 								fl1, fl2, fl3, fl4, fl5,
 								equip1, equip2, equip3, equip4,
-								research,
+								research, lvlimit,
 								source, source1,
 							] = row;
 
@@ -141,6 +145,8 @@ function process (auth) {
 								type: typeTable[type],
 								role: roleTable[role],
 								body: bodyTable[body],
+
+								lvlimit,
 
 								group,
 

@@ -20,7 +20,7 @@ import SimulatorSummary from "./components/simulator-summary";
 import SimulatorUpgrade from "./components/simulator-upgrade";
 import SimulatorEquips from "./components/simulator-equips";
 
-import "./style.module.scss";
+import style from "./style.module.scss";
 
 const Simulator: FunctionalComponent = () => {
 	SetMeta(["description", "twitter:description"], "전투원의 스테이터스를 계산해볼 수 있는 시뮬레이터입니다.");
@@ -187,7 +187,7 @@ const Simulator: FunctionalComponent = () => {
 
 
 						<div class="col-auto">
-							<table class="table">
+							<table class={ `table ${style.GridTable}` }>
 								{ Grid.map((_, j) => <tr>
 									{ _.map((slot, i) => <td>
 										<SimulatorSlot

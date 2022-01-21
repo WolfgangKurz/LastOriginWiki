@@ -58,6 +58,7 @@ export interface MapNodeEntity {
 /* eslint-disable-next-line @typescript-eslint/no-namespace */
 export namespace MapNodeEntity {
 	export const Empty: MapNodeEntity = {
+		key: "",
 		// name: "",
 		// desc: "",
 		playerExp: 0,

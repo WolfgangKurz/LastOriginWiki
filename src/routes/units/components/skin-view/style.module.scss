@@ -35,47 +35,44 @@
 	}
 }
 
+.SkinPropMarriage,
+.SkinPropAnimated,
+.SkinPropVoice,
+.SkinPropEffect,
+.SkinPropMotion,
+.SkinPropDamaged,
+.SkinPropBG {
+	user-select: none;
+	z-index: 10;
+}
+
 .SkinPropMarriage {
 	bottom: 130px;
 	left: 10px;
-	user-select: none;
-	z-index: 10;
 }
 .SkinPropAnimated {
 	bottom: 10px;
 	left: 50px;
-	user-select: none;
-	z-index: 10;
 }
 .SkinPropVoice {
 	bottom: 50px;
 	left: 10px;
-	user-select: none;
-	z-index: 10;
 }
 .SkinPropEffect {
 	bottom: 50px;
 	left: 50px;
-	user-select: none;
-	z-index: 10;
 }
 .SkinPropMotion {
 	bottom: 90px;
 	left: 10px;
-	user-select: none;
-	z-index: 10;
 }
 .SkinPropDamaged {
 	bottom: 90px;
 	left: 50px;
-	user-select: none;
-	z-index: 10;
 }
 .SkinPropBG {
 	bottom: 10px;
 	left: 10px;
-	user-select: none;
-	z-index: 10;
 }
 
 .SkinToggle {
@@ -248,12 +245,14 @@
 
 		&.Collapsed .FullGroup {
 			z-index: 3;
+			pointer-events: none;
 
 			> div > img {
 				width: auto;
 				height: 25%;
 				opacity: 0.9;
 				filter: drop-shadow(0 0 4px #000);
+				pointer-events: all;
 			}
 		}
 	}

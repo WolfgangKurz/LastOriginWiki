@@ -16,7 +16,8 @@ targetDBs.forEach(targetDB => {
 			jpdmm: JSON.parse(fs.readFileSync(path.resolve(sourceDir, "..", "dialogue", "jpdmm.json"), { encoding: "utf-8" })),
 		};
 		const skins = JSON.parse(fs.readFileSync(path.resolve(sourceDir, "unit-skin.json"), { encoding: "utf-8" }));
-		const roguelikeSkills = JSON.parse(fs.readFileSync(path.resolve(sourceDir, "roguelike-skill.json"), { encoding: "utf-8" }));
+		const lvlimits = JSON.parse(fs.readFileSync(path.resolve(sourceDir, "unit-lvlimit.json"), { encoding: "utf-8" }));
+		// const roguelikeSkills = JSON.parse(fs.readFileSync(path.resolve(sourceDir, "roguelike-skill.json"), { encoding: "utf-8" }));
 
 		await rmfr(targetDir);
 		fs.mkdirSync(targetDir, { recursive: true });
@@ -39,6 +40,11 @@ targetDBs.forEach(targetDB => {
 					body: char.body,
 					slots: char.equip,
 					promotions: char.promotions,
+
+					lvLimits: lvlimits
+						.filter(x => x.group === char.lvlimit)
+						.sort((a, b) => a.level - b.level)
+						.map(x => ({ level: x.level, items: x.items })),
 
 					height: char.height,
 					weight: char.weight,

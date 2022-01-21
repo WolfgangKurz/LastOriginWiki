@@ -8,12 +8,12 @@ import { LocaleGet } from "@/components/locale";
 export type ImageExtensionTypes = "webp" | "png";
 export const ImageExtensionList: ImageExtensionTypes[] = ["webp", "png"];
 
-export const IsBeta = false;
 export const IsDev = import.meta.env.DEV;
+export const IsStaging = IsDev || false;
 
 export const Host = IsDev
 	? "http://121.157.45.209:5500"
-	: IsBeta
+	: IsStaging
 		? "https://loearlyaccess.swaytwig.com"
 		: "https://lo.swaytwig.com";
 

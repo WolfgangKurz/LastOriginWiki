@@ -34,6 +34,7 @@ export default ({ mode }) => {
 		"@charset \"UTF-8\";",
 		"@use \"sass:math\";",
 		"@use \"sass:list\";",
+		"@use \"sass:map\";",
 		`$NODE_ENV: "${mode}";`,
 		`@import "${path.resolve(__dirname, "src", "themes", "base").replace(/\\/g, "/")}";`,
 	].join("\n")}\n`;

@@ -2,7 +2,7 @@ import { FunctionalComponent } from "preact";
 import { Link } from "preact-router/match";
 // import { Dropdown } from "bootstrap";
 
-import { AssetsRoot, IsBeta } from "@/libs/Const";
+import { AssetsRoot, IsStaging } from "@/libs/Const";
 import { ChangeLanguage, CurrentLocale, LocaleList } from "@/libs/Locale";
 import { ChangeDB, CurrentDB, DBList, DBTypes } from "@/libs/DB";
 
@@ -53,8 +53,8 @@ const Header: FunctionalComponent = (): preact.VNode => {
 				<img src={ `${AssetsRoot}/icon.png` } />
 				<span>
 					<i class={ style["_official"] } data-locale={ CurrentLocale }>
-						{ IsBeta
-							? <>BETA</>
+						{ IsStaging
+							? <>Staging</>
 							: <Locale k="COMMON_TITLE_SUB" />
 						}
 					</i>
