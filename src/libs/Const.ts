@@ -14,7 +14,7 @@ export const IsStaging = IsDev || false;
 export const Host = IsDev
 	? "http://121.157.45.209:5500"
 	: IsStaging
-		? "https://loearlyaccess.swaytwig.com"
+		? "https://staging-lo.swaytwig.com"
 		: "https://lo.swaytwig.com";
 
 export const AssetsRoot = `${Host}/assets`;
