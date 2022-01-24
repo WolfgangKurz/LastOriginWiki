@@ -6,6 +6,11 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11515" date="2022-01-24"
+		bugfix={ <>
+			<li><span class="badge bg-warning text-dark">잠재력 돌파</span> 일일 훈련이 정상적으로 표시되지 않던 점을 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11508" date="2022-01-24"
 		bugfix={ <>
 			<li>드랍 테이블에서 장비를 선택 시 페이지가 이동되는 문제를 수정했습니다.</li>
