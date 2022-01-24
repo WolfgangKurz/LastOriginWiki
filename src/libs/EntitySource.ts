@@ -190,7 +190,7 @@ export default class EntitySource {
 	/** 맵 보상 여부 */
 	public get IsMap (): boolean {
 		return ![
-			this.IsEndlessWar, this.IsSubStory, this.IsExchange,
+			this.IsEternalWar, this.IsSubStory, this.IsExchange,
 			this.IsLimited, this.IsPrivateItem, this.IsChallenge,
 			this.IsUninstalled, this.IsRoguelike,
 		].some(x => x);
@@ -244,18 +244,18 @@ export default class EntitySource {
 
 	// -------------- 영전
 	/** 영전 획득 여부 */
-	public get IsEndlessWar (): boolean {
-		return this.Parts[0] === "EndlessWar";
+	public get IsEternalWar (): boolean {
+		return this.Parts[0] === "EternalWar";
 	}
 
 	/** 변화의성소 획득 여부 */
-	public get IsNewEndlessWar (): boolean {
-		return this.Parts[0] === "NewEndlessWar";
+	public get IsNewEternalWar (): boolean {
+		return this.Parts[0] === "NewEternalWar";
 	}
 
 	/** 광물 가격 */
-	public get EndlessWarPrice (): number {
-		if (!this.IsEndlessWar && !this.IsNewEndlessWar) return 0;
+	public get EternalWarPrice (): number {
+		if (!this.IsEternalWar && !this.IsNewEternalWar) return 0;
 		return parseInt(this.Parts[1], 10);
 	}
 	// -------------- 영전
@@ -298,7 +298,7 @@ export default class EntitySource {
 
 		if (this.IsChallenge)
 			output.push("Challenge");
-		else if (this.IsEndlessWar)
+		else if (this.IsEternalWar)
 			output.push("EW");
 		else if (this.IsSubStory)
 			output.push("SubStory");
@@ -334,9 +334,9 @@ export default class EntitySource {
 				output.push(`*Challenge:${this.ChallengeId}:${this.ChallengeDifficulty}`);
 			else
 				output.push(`Challenge:${this.ChallengeId}:${this.ChallengeDifficulty}`);
-		} else if (this.IsEndlessWar)
+		} else if (this.IsEternalWar)
 			output.push("EW");
-		else if (this.IsNewEndlessWar)
+		else if (this.IsNewEternalWar)
 			output.push("NEW");
 		else if (this.IsSubStory)
 			output.push(`SubStory:${this.SubStoryUnit}`);

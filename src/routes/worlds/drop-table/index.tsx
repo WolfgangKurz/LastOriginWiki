@@ -1,6 +1,10 @@
 import { FunctionalComponent } from "preact";
+import { useRef } from "preact/hooks";
 import { Link, route } from "preact-router";
 import html2canvas from "html2canvas";
+
+import { AssetsRoot } from "@/libs/Const";
+import { SetMeta, UpdateTitle } from "@/libs/Site";
 
 import { ACTOR_GRADE, ITEM_GRADE, STAGE_SUB_TYPE } from "@/types/Enums";
 import { MapNodeEntity, Worlds } from "@/types/DB/Map";
@@ -11,15 +15,14 @@ import { groupBy, isActive } from "@/libs/Functions";
 import { objState } from "@/libs/State";
 
 import Loader, { GetJson, StaticDB } from "@/components/loader";
-import Locale from "@/components/locale";
+import Locale, { LocaleGet } from "@/components/locale";
 import Icon from "@/components/bootstrap-icon";
 import UnitFace from "@/components/unit-face";
 import EquipIcon from "@/components/equip-icon";
 import EquipPopup from "@/components/popup/equip-popup";
+import PopupBase from "@/components/popup/base";
 
 import style from "./style.module.scss";
-import { useRef } from "preact/hooks";
-import PopupBase from "@/components/popup/base";
 
 function GetTypeIdx (node: MapNodeEntity, byOffset: boolean = false): 0 | 1 | 2 {
 	const name = node.text;
@@ -47,6 +50,18 @@ const DropTable: FunctionalComponent<DropTableProps> = (props) => {
 
 	const HTMLDisplay = objState(false);
 	const HTMLContent = objState("");
+
+	SetMeta(
+		["description", "twitter:description"],
+		`${LocaleGet(`WORLD_${props.wid}`)}의 제 ${props.mid}구역의 드랍 테이블을 표시합니다.`,
+	);
+	SetMeta("keywords", `,${LocaleGet(`WORLD_${props.wid}`)}`, true);
+	SetMeta(["twitter:image", "og:image"], `${AssetsRoot}/world/icons/${props.wid}_${props.mid}.png`);
+
+	if (props.wid === "Sub")
+		UpdateTitle(LocaleGet("MENU_WORLDS"), LocaleGet(`WORLD_${props.wid}`));
+	else
+		UpdateTitle(LocaleGet("MENU_WORLDS"), LocaleGet(`WORLD_${props.wid}`), LocaleGet("WORLDS_WORLD_TITLE", props.mid));
 
 	function toggleArray<T> (list: T[], value: T): T[] {
 		if (list.includes(value)) {
@@ -334,6 +349,7 @@ const DropTable: FunctionalComponent<DropTableProps> = (props) => {
 													? <></>
 													: equips.map(e => <Link href={ `/equips/${e.fullKey}` } onClick={ (ev) => {
 														ev.preventDefault();
+														ev.stopPropagation();
 														selectedEquip.set(e);
 													} }>
 														<EquipIcon class="m-1" image={ e.icon } size={ 60 } />
@@ -350,7 +366,12 @@ const DropTable: FunctionalComponent<DropTableProps> = (props) => {
 			</tbody>
 		</table>
 
-		<EquipPopup equip={ selectedEquip.value } display asSub />
+		<EquipPopup
+			equip={ selectedEquip.value }
+			display
+			asSub
+			onHidden={ () => selectedEquip.set(null) }
+		/>
 		<PopupBase
 			size="lg"
 			display={ HTMLDisplay.value }

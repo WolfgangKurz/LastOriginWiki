@@ -182,7 +182,8 @@ const Store = new StoreClass(
 			Source: {
 				General: true,
 				Limited: true,
-				EndlessWar: true,
+				EternalWar: true,
+				NewEternalWar: true,
 				SubStory: true,
 
 				Exchange: true,
@@ -320,7 +321,8 @@ const Store = new StoreClass(
 
 		toggleEquipSourceGeneral: (state) => merge(state, { Equips: { Source: { General: !state.Equips.Source.General } } }),
 		toggleEquipSourceLimited: (state) => merge(state, { Equips: { Source: { Limited: !state.Equips.Source.Limited } } }),
-		toggleEquipSourceEndlessWar: (state) => merge(state, { Equips: { Source: { EndlessWar: !state.Equips.Source.EndlessWar } } }),
+		toggleEquipSourceEternalWar: (state) => merge(state, { Equips: { Source: { EternalWar: !state.Equips.Source.EternalWar } } }),
+		toggleEquipSourceNewEternalWar: (state) => merge(state, { Equips: { Source: { NewEternalWar: !state.Equips.Source.NewEternalWar } } }),
 		toggleEquipSourceSubStory: (state) => merge(state, { Equips: { Source: { SubStory: !state.Equips.Source.SubStory } } }),
 		toggleEquipSourceExchange: (state) => merge(state, { Equips: { Source: { Exchange: !state.Equips.Source.Exchange } } }),
 		toggleEquipSourceOldExchange: (state) => merge(state, { Equips: { Source: { OldExchange: !state.Equips.Source.OldExchange } } }),
