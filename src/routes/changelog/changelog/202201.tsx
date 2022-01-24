@@ -26,16 +26,16 @@ const Changelog: FunctionalComponent = () => <>
 		</> }
 		skin={ <>
 			<li>
-				<span class="badge bg-warning text-dark">CS 페로</span>의 스킨 <span class="badge bg-danger">???</span>의 정보가 추가되었습니다.
+				<span class="badge bg-warning text-dark">CS 페로</span>의 스킨 <span class="badge bg-danger">Wish Granted Girl</span>의 정보가 추가되었습니다.
 			</li>
 			<li>
-				<span class="badge bg-warning text-dark">로열 아스널</span>의 스킨 <span class="badge bg-danger">???</span>의 정보가 추가되었습니다.
+				<span class="badge bg-warning text-dark">로열 아스널</span>의 스킨 <span class="badge bg-danger">CAFE amor : a ballata</span>의 정보가 추가되었습니다.
 			</li>
 			<li>
-				<span class="badge bg-warning text-dark">해체자 아자즈</span>의 스킨 <span class="badge bg-danger">???</span>의 정보가 추가되었습니다.
+				<span class="badge bg-warning text-dark">해체자 아자즈</span>의 스킨 <span class="badge bg-danger">CAFE amor : amabile</span>의 정보가 추가되었습니다.
 			</li>
 			<li>
-				<span class="badge bg-warning text-dark">LRL</span>의 스킨 <span class="badge bg-danger">???</span>의 정보가 추가되었습니다.
+				<span class="badge bg-warning text-dark">LRL</span>의 스킨 <span class="badge bg-danger">꿈을 이룬 소녀</span>의 정보가 추가되었습니다.
 			</li>
 		</> }
 		dialogue={ <>
