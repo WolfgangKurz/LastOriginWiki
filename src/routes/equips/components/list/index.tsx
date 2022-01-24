@@ -44,7 +44,8 @@ const EquipList: FunctionalComponent<EquipsProps> = (props) => {
 
 				toggleEquipSourceGeneral,
 				toggleEquipSourceLimited,
-				toggleEquipSourceEndlessWar,
+				toggleEquipSourceEternalWar,
+				toggleEquipSourceNewEternalWar,
 				toggleEquipSourceSubStory,
 				toggleEquipSourceExchange,
 				toggleEquipSourceOldExchange,
@@ -65,7 +66,8 @@ const EquipList: FunctionalComponent<EquipsProps> = (props) => {
 				function FillSourceFilters (value: boolean): void {
 					if (value !== Filters.Source.General) toggleEquipSourceGeneral();
 					if (value !== Filters.Source.Limited) toggleEquipSourceLimited();
-					if (value !== Filters.Source.EndlessWar) toggleEquipSourceEndlessWar();
+					if (value !== Filters.Source.EternalWar) toggleEquipSourceEternalWar();
+					if (value !== Filters.Source.NewEternalWar) toggleEquipSourceNewEternalWar();
 					if (value !== Filters.Source.SubStory) toggleEquipSourceSubStory();
 					if (value !== Filters.Source.Exchange) toggleEquipSourceExchange();
 					if (value !== Filters.Source.OldExchange) toggleEquipSourceOldExchange();
@@ -269,7 +271,8 @@ const EquipList: FunctionalComponent<EquipsProps> = (props) => {
 							const sources = x.source.unique(y => y.toShort());
 							// console.log(x.last.fullKey, sources);
 
-							if (Filters.Source.EndlessWar && sources.some(y => y.IsEndlessWar)) return true;
+							if (Filters.Source.EternalWar && sources.some(y => y.IsEternalWar)) return true;
+							if (Filters.Source.NewEternalWar && sources.some(y => y.IsNewEternalWar)) return true;
 
 							if (Filters.Source.Exchange && sources.some(y => y.IsExchange && !y.IsEvent && y.ExchangeDate === CurrentDate))
 								return true;
@@ -390,10 +393,16 @@ const EquipList: FunctionalComponent<EquipsProps> = (props) => {
 											<Locale k="EQUIP_FILTER_SOURCE_LIMITED" />
 										</button>
 										<button
-											class={ `btn btn-outline-secondary ${isActive(Filters.Source.EndlessWar)}` }
-											onClick={ toggleEquipSourceEndlessWar }
+											class={ `btn btn-outline-secondary ${isActive(Filters.Source.EternalWar)}` }
+											onClick={ toggleEquipSourceEternalWar }
 										>
-											<Locale k="EQUIP_FILTER_SOURCE_ENDLESSWAR" />
+											<Locale k="EQUIP_FILTER_SOURCE_ETERNALWAR" />
+										</button>
+										<button
+											class={ `btn btn-outline-secondary ${isActive(Filters.Source.NewEternalWar)}` }
+											onClick={ toggleEquipSourceNewEternalWar }
+										>
+											<Locale k="EQUIP_FILTER_SOURCE_NEWETERNALWAR" />
 										</button>
 										<button
 											class={ `btn btn-outline-secondary ${isActive(Filters.Source.SubStory)}` }

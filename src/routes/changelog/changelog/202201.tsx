@@ -6,7 +6,11 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 11502" date="2022-01-22"
+	<ChangelogItem title="Build 11508" date="2022-01-24"
+		bugfix={ <>
+			<li>드랍 테이블에서 장비를 선택 시 페이지가 이동되는 문제를 수정했습니다.</li>
+			<li><span class="badge bg-warning text-dark">엠피트리테</span>의 일러스트 일부가 잘못 표시되던 점을 수정했습니다.</li>
+		</> }
 		new={ <>
 			<li>이벤트 <span class="badge bg-warning text-dark">영원한 겨울의 방주</span>의 2부 정보가 추가되었습니다.</li>
 			<li>신규 전투원 <span class="badge bg-warning text-dark">니바</span>의 정보가 추가되었습니다.</li>
@@ -15,6 +19,9 @@ const Changelog: FunctionalComponent = () => <>
 		</> }
 		update={ <>
 			<li>일부 전투원의 스킬 정보가 갱신되었습니다.</li>
+			<li>
+				<span class="badge bg-warning text-dark">장비 목록</span>에 <span class="badge bg-secondary">변화의 성소</span> 필터가 추가되었습니다.
+			</li>
 		</> }
 		skin={ <>
 			<li>
