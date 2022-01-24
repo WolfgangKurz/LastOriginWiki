@@ -15,10 +15,11 @@ const Changelog: FunctionalComponent = () => <>
 			<li>이벤트 <span class="badge bg-warning text-dark">영원한 겨울의 방주</span>의 2부 정보가 추가되었습니다.</li>
 			<li>신규 전투원 <span class="badge bg-warning text-dark">니바</span>의 정보가 추가되었습니다.</li>
 			<li>신규 장비 <span class="badge bg-warning text-dark">핏빛안대 -혈화요란-</span>의 정보가 추가되었습니다.</li>
-			<li>전투원 정보에 <span class="badge bg-warning text-dark">상환 확장</span> 탭이 추가되었습니다.</li>
+			<li>전투원 정보에 <span class="badge bg-warning text-dark">상한 확장</span> 탭이 추가되었습니다.</li>
 		</> }
 		update={ <>
 			<li>일부 전투원의 스킬 정보가 갱신되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">Simulatorβ</span>의 레벨 입력이 120까지 확장되었습니다.</li>
 			<li>
 				<span class="badge bg-warning text-dark">장비 목록</span>에 <span class="badge bg-secondary">변화의 성소</span> 필터가 추가되었습니다.
 			</li>

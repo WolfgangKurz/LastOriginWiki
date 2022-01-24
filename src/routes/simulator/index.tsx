@@ -56,7 +56,7 @@ const Simulator: FunctionalComponent = () => {
 					target.set({
 						uid,
 						leader: FlattenGrid.every(x => x.value === null),
-						level: 100,
+						level: 120,
 						rarity: u.rarity,
 
 						links: [0, 0, 0, 0, 0],
@@ -268,7 +268,7 @@ const Simulator: FunctionalComponent = () => {
 										if (target.value) {
 											target.set({
 												...target.value,
-												level: isNaN(level) ? 1 : Math.max(1, Math.min(100, level)),
+												level: isNaN(level) ? 1 : Math.max(1, Math.min(120, level)),
 											});
 										}
 									} }
