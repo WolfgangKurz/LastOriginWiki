@@ -108,7 +108,7 @@ const Home: FunctionalComponent = () => {
 			<Locale k="HOME_WEBP_UNAVAILABLE" />
 		</div> : <></> }
 
-		<div class="alert alert-warning">
+		{/* <div class="alert alert-warning">
 			<p class="mb-1">Translation support needed!</p>
 			<p class="mb-1">翻訳サポートがひつようです！</p>
 			<p class="mb-0">
@@ -123,7 +123,7 @@ const Home: FunctionalComponent = () => {
 				</a>
 			</p>
 		</div>
-		<hr />
+		<hr /> */}
 
 		<Locale k="HOME_DEVELOPER" />
 		<hr />
