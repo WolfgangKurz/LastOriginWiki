@@ -17,7 +17,7 @@ const HomeConfigSelector: FunctionalComponent = () => {
 	};
 
 	return <div class={`${style.HomeConfigSelector} my-4`}>
-		<div class="input-group justify-content-center my-1">
+		{/* <div class="input-group justify-content-center my-1">
 			<div class="input-group-text">
 				<Icon icon="server" class="me-1" />
 			</div>
@@ -27,7 +27,7 @@ const HomeConfigSelector: FunctionalComponent = () => {
 			>
 				<img src={ `${AssetsRoot}/flags/${DBDisp[db]}.png` } alt={ DBDisp[db] || db } />
 			</button>) }
-		</div>
+		</div> */}
 		<div class="input-group justify-content-center my-1">
 			<div class="input-group-text">
 				<Icon icon="globe2" class="me-1" />
