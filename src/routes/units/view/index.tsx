@@ -757,19 +757,6 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 						<li class="nav-item">
 							<a
 								href="#"
-								class={ `nav-link text-dark ${isActive(DisplayTab.value === "lvlimit")}` }
-								onClick={ (e): void => {
-									e.preventDefault();
-									DisplayTab.set("lvlimit");
-								} }
-							>
-								<Icon icon="capslock-fill" class="me-1" />
-								<Locale k="UNIT_VIEW_TAB_LVLIMIT" />
-							</a>
-						</li>
-						<li class="nav-item">
-							<a
-								href="#"
 								class={ `nav-link text-dark ${isActive(DisplayTab.value === "skills")}` }
 								onClick={ (e): void => {
 									e.preventDefault();
@@ -778,6 +765,19 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 							>
 								<Icon icon="lightning-fill" class="me-1" />
 								<Locale k="UNIT_VIEW_TAB_SKILLS" />
+							</a>
+						</li>
+						<li class="nav-item">
+							<a
+								href="#"
+								class={ `nav-link text-dark ${isActive(DisplayTab.value === "lvlimit")}` }
+								onClick={ (e): void => {
+									e.preventDefault();
+									DisplayTab.set("lvlimit");
+								} }
+							>
+								<Icon icon="capslock-fill" class="me-1" />
+								<Locale k="UNIT_VIEW_TAB_LVLIMIT" />
 							</a>
 						</li>
 						{/* <li class="nav-item">

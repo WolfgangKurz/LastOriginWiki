@@ -18,9 +18,9 @@
       ],
       "data": [
         {
-          "rate": 1.1,
+          "rate": 1.275,
           "type": 0,
-          "range": 3,
+          "range": 4,
           "ap": 4,
           "grid": "0,0,0,0,1,0,0,0,0",
           "target_ground": false,
@@ -65,8 +65,8 @@
                   "desc": {
                     "desc": "약점 공격 : 피해량{0}%",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.010000"
+                    "value": "0.220000",
+                    "level": "0.020000"
                   },
                   "attr": 3,
                   "erase": {
@@ -76,11 +76,119 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
+                      "base": "22%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    10,
+                    11
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "약점 공격 : 피해량{0}%",
+                    "type": 1,
+                    "value": "0.220000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "22%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Fallen_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 받는 피해{0}% (액티브 스킬 강화)",
+                    "type": 1,
+                    "value": "0.110000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "11%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
                 }
               ],
               "maxStack": 0
@@ -88,9 +196,9 @@
           ]
         },
         {
-          "rate": 1.155,
+          "rate": 1.4,
           "type": 0,
-          "range": 3,
+          "range": 4,
           "ap": 4,
           "grid": "0,0,0,0,1,0,0,0,0",
           "target_ground": false,
@@ -135,8 +243,8 @@
                   "desc": {
                     "desc": "약점 공격 : 피해량{0}%",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.010000"
+                    "value": "0.220000",
+                    "level": "0.020000"
                   },
                   "attr": 3,
                   "erase": {
@@ -146,11 +254,119 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
+                      "base": "22%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    10,
+                    11
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "약점 공격 : 피해량{0}%",
+                    "type": 1,
+                    "value": "0.220000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "22%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Fallen_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 받는 피해{0}% (액티브 스킬 강화)",
+                    "type": 1,
+                    "value": "0.110000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "11%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
                 }
               ],
               "maxStack": 0
@@ -158,9 +374,9 @@
           ]
         },
         {
-          "rate": 1.21,
+          "rate": 1.525,
           "type": 0,
-          "range": 3,
+          "range": 4,
           "ap": 4,
           "grid": "0,0,0,0,1,0,0,0,0",
           "target_ground": false,
@@ -205,8 +421,8 @@
                   "desc": {
                     "desc": "약점 공격 : 피해량{0}%",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.010000"
+                    "value": "0.220000",
+                    "level": "0.020000"
                   },
                   "attr": 3,
                   "erase": {
@@ -216,11 +432,119 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
+                      "base": "22%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    10,
+                    11
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "약점 공격 : 피해량{0}%",
+                    "type": 1,
+                    "value": "0.220000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "22%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Fallen_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 받는 피해{0}% (액티브 스킬 강화)",
+                    "type": 1,
+                    "value": "0.110000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "11%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
                 }
               ],
               "maxStack": 0
@@ -228,9 +552,9 @@
           ]
         },
         {
-          "rate": 1.265,
+          "rate": 1.65,
           "type": 0,
-          "range": 3,
+          "range": 4,
           "ap": 4,
           "grid": "0,0,0,0,1,0,0,0,0",
           "target_ground": false,
@@ -275,8 +599,8 @@
                   "desc": {
                     "desc": "약점 공격 : 피해량{0}%",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.010000"
+                    "value": "0.220000",
+                    "level": "0.020000"
                   },
                   "attr": 3,
                   "erase": {
@@ -286,11 +610,119 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
+                      "base": "22%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    10,
+                    11
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "약점 공격 : 피해량{0}%",
+                    "type": 1,
+                    "value": "0.220000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "22%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Fallen_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 받는 피해{0}% (액티브 스킬 강화)",
+                    "type": 1,
+                    "value": "0.110000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "11%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
                 }
               ],
               "maxStack": 0
@@ -298,9 +730,9 @@
           ]
         },
         {
-          "rate": 1.32,
+          "rate": 1.775,
           "type": 0,
-          "range": 3,
+          "range": 4,
           "ap": 4,
           "grid": "0,0,0,0,1,0,0,0,0",
           "target_ground": false,
@@ -345,8 +777,8 @@
                   "desc": {
                     "desc": "약점 공격 : 피해량{0}%",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.010000"
+                    "value": "0.220000",
+                    "level": "0.020000"
                   },
                   "attr": 3,
                   "erase": {
@@ -356,11 +788,119 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
+                      "base": "22%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    10,
+                    11
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "약점 공격 : 피해량{0}%",
+                    "type": 1,
+                    "value": "0.220000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "22%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Fallen_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 받는 피해{0}% (액티브 스킬 강화)",
+                    "type": 1,
+                    "value": "0.110000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "11%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
                 }
               ],
               "maxStack": 0
@@ -368,9 +908,9 @@
           ]
         },
         {
-          "rate": 1.375,
+          "rate": 1.9,
           "type": 0,
-          "range": 3,
+          "range": 4,
           "ap": 4,
           "grid": "0,0,0,0,1,0,0,0,0",
           "target_ground": false,
@@ -415,8 +955,8 @@
                   "desc": {
                     "desc": "약점 공격 : 피해량{0}%",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.010000"
+                    "value": "0.220000",
+                    "level": "0.020000"
                   },
                   "attr": 3,
                   "erase": {
@@ -426,11 +966,119 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
+                      "base": "22%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    10,
+                    11
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "약점 공격 : 피해량{0}%",
+                    "type": 1,
+                    "value": "0.220000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "22%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Fallen_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 받는 피해{0}% (액티브 스킬 강화)",
+                    "type": 1,
+                    "value": "0.110000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "11%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
                 }
               ],
               "maxStack": 0
@@ -438,9 +1086,9 @@
           ]
         },
         {
-          "rate": 1.43,
+          "rate": 2.025,
           "type": 0,
-          "range": 3,
+          "range": 4,
           "ap": 4,
           "grid": "0,0,0,0,1,0,0,0,0",
           "target_ground": false,
@@ -485,8 +1133,8 @@
                   "desc": {
                     "desc": "약점 공격 : 피해량{0}%",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.010000"
+                    "value": "0.220000",
+                    "level": "0.020000"
                   },
                   "attr": 3,
                   "erase": {
@@ -496,11 +1144,119 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
+                      "base": "22%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    10,
+                    11
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "약점 공격 : 피해량{0}%",
+                    "type": 1,
+                    "value": "0.220000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "22%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Fallen_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 받는 피해{0}% (액티브 스킬 강화)",
+                    "type": 1,
+                    "value": "0.110000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "11%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
                 }
               ],
               "maxStack": 0
@@ -508,9 +1264,9 @@
           ]
         },
         {
-          "rate": 1.485,
+          "rate": 2.15,
           "type": 0,
-          "range": 3,
+          "range": 4,
           "ap": 4,
           "grid": "0,0,0,0,1,0,0,0,0",
           "target_ground": false,
@@ -555,8 +1311,8 @@
                   "desc": {
                     "desc": "약점 공격 : 피해량{0}%",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.010000"
+                    "value": "0.220000",
+                    "level": "0.020000"
                   },
                   "attr": 3,
                   "erase": {
@@ -566,11 +1322,119 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
+                      "base": "22%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    10,
+                    11
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "약점 공격 : 피해량{0}%",
+                    "type": 1,
+                    "value": "0.220000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "22%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Fallen_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 받는 피해{0}% (액티브 스킬 강화)",
+                    "type": 1,
+                    "value": "0.110000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "11%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
                 }
               ],
               "maxStack": 0
@@ -578,9 +1442,9 @@
           ]
         },
         {
-          "rate": 1.54,
+          "rate": 2.275,
           "type": 0,
-          "range": 3,
+          "range": 4,
           "ap": 4,
           "grid": "0,0,0,0,1,0,0,0,0",
           "target_ground": false,
@@ -625,8 +1489,8 @@
                   "desc": {
                     "desc": "약점 공격 : 피해량{0}%",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.010000"
+                    "value": "0.220000",
+                    "level": "0.020000"
                   },
                   "attr": 3,
                   "erase": {
@@ -636,11 +1500,119 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
+                      "base": "22%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    10,
+                    11
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "약점 공격 : 피해량{0}%",
+                    "type": 1,
+                    "value": "0.220000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "22%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Fallen_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 받는 피해{0}% (액티브 스킬 강화)",
+                    "type": 1,
+                    "value": "0.110000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "11%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
                 }
               ],
               "maxStack": 0
@@ -648,9 +1620,9 @@
           ]
         },
         {
-          "rate": 1.595,
+          "rate": 2.4,
           "type": 0,
-          "range": 3,
+          "range": 4,
           "ap": 4,
           "grid": "0,0,0,0,1,0,0,0,0",
           "target_ground": false,
@@ -695,8 +1667,8 @@
                   "desc": {
                     "desc": "약점 공격 : 피해량{0}%",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.010000"
+                    "value": "0.220000",
+                    "level": "0.020000"
                   },
                   "attr": 3,
                   "erase": {
@@ -706,11 +1678,119 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
+                      "base": "22%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    10,
+                    11
+                  ],
+                  "attr": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "약점 공격 : 피해량{0}%",
+                    "type": 1,
+                    "value": "0.220000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "22%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Fallen_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 받는 피해{0}% (액티브 스킬 강화)",
+                    "type": 1,
+                    "value": "0.110000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "11%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
                 }
               ],
               "maxStack": 0
@@ -739,10 +1819,34 @@
             "desc": {
               "desc": "약점 공격 : 피해량{0}%",
               "type": 1,
-              "value": "0.200000",
+              "value": "0.220000",
+              "level": "0.020000"
+            },
+            "base": 0.22,
+            "per": 0.02,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_PhyATK_UP",
+            "desc": {
+              "desc": "약점 공격 : 피해량{0}%",
+              "type": 1,
+              "value": "0.220000",
+              "level": "0.020000"
+            },
+            "base": 0.22,
+            "per": 0.02,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_VULNERABLE",
+            "desc": {
+              "desc": "어썰트 포메이션 : 받는 피해{0}% (액티브 스킬 강화)",
+              "type": 1,
+              "value": "0.110000",
               "level": "0.010000"
             },
-            "base": 0.2,
+            "base": 0.11,
             "per": 0.01,
             "chance": 1
           }
@@ -757,22 +1861,22 @@
     "buffs": {
       "index": [
         0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
       ],
       "data": [
         {
-          "rate": 0.01,
+          "rate": 0.11,
           "type": 0,
-          "range": 3,
-          "ap": 6,
+          "range": 4,
+          "ap": 7,
           "grid": "0,0,0,0,1,0,0,0,0",
           "target_ground": false,
           "summon": null,
@@ -804,21 +1908,44 @@
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "방어력 {0}%",
+                    "desc": "대 장갑 진동탄 : 방어력{0}%",
                     "type": 1,
-                    "value": "-0.500000",
-                    "level": "-0.025000"
+                    "value": "-0.450000",
+                    "level": "-0.050000"
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 1
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
                     "type": 3,
                     "defense": {
-                      "base": "-50%",
-                      "per": "-2.5%"
+                      "base": "-45%",
+                      "per": "-5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 피해 감소 / 방어력 증감 효과 해제",
+                    "type": 0,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 36,
+                      "target": 0
                     }
                   },
                   "overlap": 4
@@ -827,7 +1954,7 @@
               "maxStack": 1
             },
             {
-              "key": "Effect_AGS_Fallen_N_11",
+              "key": "Effect_AGS_Fallen_N_21",
               "on": "attack_success",
               "if": false,
               "body": [
@@ -849,12 +1976,12 @@
                 {
                   "icon": "BuffIcon_REMOVE_BUFF",
                   "desc": {
-                    "desc": "피해 감소 효과 무효",
+                    "desc": "대 장갑 진동탄 : 피해 감소 효과 해제",
                     "type": 1,
                     "value": "36",
                     "level": "0"
                   },
-                  "attr": 1,
+                  "attr": 3,
                   "erase": {
                     "rounds": 0
                   },
@@ -867,17 +1994,114 @@
                     }
                   },
                   "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 방어력 증감 해제",
+                    "type": 0,
+                    "value": "2",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 2,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 방어력 증감 해제",
+                    "type": 0,
+                    "value": "3",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 3,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
                 }
               ],
               "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_23",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Fallen_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 받는 피해{0}% (액티브 스킬 강화)",
+                    "type": 1,
+                    "value": "0.110000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "11%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
             }
           ]
         },
         {
-          "rate": 0.01,
+          "rate": 0.12,
           "type": 0,
-          "range": 3,
-          "ap": 6,
+          "range": 4,
+          "ap": 7,
           "grid": "0,0,0,0,1,0,0,0,0",
           "target_ground": false,
           "summon": null,
@@ -887,7 +2111,7 @@
           "buff_rate": 100,
           "buffs": [
             {
-              "key": "Effect_AGS_Fallen_N_12",
+              "key": "Effect_AGS_Fallen_N_2",
               "on": "attack_success",
               "if": false,
               "body": [
@@ -909,10 +2133,10 @@
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "방어력 {0}%",
+                    "desc": "대 장갑 진동탄 : 방어력{0}%",
                     "type": 1,
-                    "value": "-0.500000",
-                    "level": "-0.025000"
+                    "value": "-0.450000",
+                    "level": "-0.050000"
                   },
                   "attr": 1,
                   "erase": {
@@ -922,8 +2146,31 @@
                     "isBuff": true,
                     "type": 3,
                     "defense": {
-                      "base": "-50%",
-                      "per": "-2.5%"
+                      "base": "-45%",
+                      "per": "-5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 피해 감소 / 방어력 증감 효과 해제",
+                    "type": 0,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 36,
+                      "target": 0
                     }
                   },
                   "overlap": 4
@@ -932,7 +2179,7 @@
               "maxStack": 1
             },
             {
-              "key": "Effect_AGS_Fallen_N_11",
+              "key": "Effect_AGS_Fallen_N_21",
               "on": "attack_success",
               "if": false,
               "body": [
@@ -954,12 +2201,12 @@
                 {
                   "icon": "BuffIcon_REMOVE_BUFF",
                   "desc": {
-                    "desc": "피해 감소 효과 무효",
+                    "desc": "대 장갑 진동탄 : 피해 감소 효과 해제",
                     "type": 1,
                     "value": "36",
                     "level": "0"
                   },
-                  "attr": 1,
+                  "attr": 3,
                   "erase": {
                     "rounds": 0
                   },
@@ -972,6 +2219,2345 @@
                     }
                   },
                   "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 방어력 증감 해제",
+                    "type": 0,
+                    "value": "2",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 2,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 방어력 증감 해제",
+                    "type": 0,
+                    "value": "3",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 3,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_23",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Fallen_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 받는 피해{0}% (액티브 스킬 강화)",
+                    "type": 1,
+                    "value": "0.110000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "11%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        },
+        {
+          "rate": 0.13,
+          "type": 0,
+          "range": 4,
+          "ap": 7,
+          "grid": "0,0,0,0,1,0,0,0,0",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Fallen_N_2",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 방어력{0}%",
+                    "type": 1,
+                    "value": "-0.450000",
+                    "level": "-0.050000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-45%",
+                      "per": "-5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 피해 감소 / 방어력 증감 효과 해제",
+                    "type": 0,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 36,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_21",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 피해 감소 효과 해제",
+                    "type": 1,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 36,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 방어력 증감 해제",
+                    "type": 0,
+                    "value": "2",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 2,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 방어력 증감 해제",
+                    "type": 0,
+                    "value": "3",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 3,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_23",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Fallen_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 받는 피해{0}% (액티브 스킬 강화)",
+                    "type": 1,
+                    "value": "0.110000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "11%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        },
+        {
+          "rate": 0.14,
+          "type": 0,
+          "range": 4,
+          "ap": 7,
+          "grid": "0,0,0,0,1,0,0,0,0",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Fallen_N_2",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 방어력{0}%",
+                    "type": 1,
+                    "value": "-0.450000",
+                    "level": "-0.050000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-45%",
+                      "per": "-5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 피해 감소 / 방어력 증감 효과 해제",
+                    "type": 0,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 36,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_21",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 피해 감소 효과 해제",
+                    "type": 1,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 36,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 방어력 증감 해제",
+                    "type": 0,
+                    "value": "2",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 2,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 방어력 증감 해제",
+                    "type": 0,
+                    "value": "3",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 3,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_23",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Fallen_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 받는 피해{0}% (액티브 스킬 강화)",
+                    "type": 1,
+                    "value": "0.110000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "11%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        },
+        {
+          "rate": 0.15,
+          "type": 0,
+          "range": 4,
+          "ap": 7,
+          "grid": "0,0,0,0,1,0,0,0,0",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Fallen_N_2",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 방어력{0}%",
+                    "type": 1,
+                    "value": "-0.450000",
+                    "level": "-0.050000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-45%",
+                      "per": "-5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 피해 감소 / 방어력 증감 효과 해제",
+                    "type": 0,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 36,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_21",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 피해 감소 효과 해제",
+                    "type": 1,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 36,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 방어력 증감 해제",
+                    "type": 0,
+                    "value": "2",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 2,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 방어력 증감 해제",
+                    "type": 0,
+                    "value": "3",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 3,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_23",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Fallen_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 받는 피해{0}% (액티브 스킬 강화)",
+                    "type": 1,
+                    "value": "0.110000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "11%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        },
+        {
+          "rate": 0.16,
+          "type": 0,
+          "range": 4,
+          "ap": 7,
+          "grid": "0,0,0,0,1,0,0,0,0",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Fallen_N_2",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 방어력{0}%",
+                    "type": 1,
+                    "value": "-0.450000",
+                    "level": "-0.050000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-45%",
+                      "per": "-5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 피해 감소 / 방어력 증감 효과 해제",
+                    "type": 0,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 36,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_21",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 피해 감소 효과 해제",
+                    "type": 1,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 36,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 방어력 증감 해제",
+                    "type": 0,
+                    "value": "2",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 2,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 방어력 증감 해제",
+                    "type": 0,
+                    "value": "3",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 3,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_23",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Fallen_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 받는 피해{0}% (액티브 스킬 강화)",
+                    "type": 1,
+                    "value": "0.110000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "11%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        },
+        {
+          "rate": 0.17,
+          "type": 0,
+          "range": 4,
+          "ap": 7,
+          "grid": "0,0,0,0,1,0,0,0,0",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Fallen_N_2",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 방어력{0}%",
+                    "type": 1,
+                    "value": "-0.450000",
+                    "level": "-0.050000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-45%",
+                      "per": "-5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 피해 감소 / 방어력 증감 효과 해제",
+                    "type": 0,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 36,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_21",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 피해 감소 효과 해제",
+                    "type": 1,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 36,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 방어력 증감 해제",
+                    "type": 0,
+                    "value": "2",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 2,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 방어력 증감 해제",
+                    "type": 0,
+                    "value": "3",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 3,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_23",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Fallen_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 받는 피해{0}% (액티브 스킬 강화)",
+                    "type": 1,
+                    "value": "0.110000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "11%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        },
+        {
+          "rate": 0.18,
+          "type": 0,
+          "range": 4,
+          "ap": 7,
+          "grid": "0,0,0,0,1,0,0,0,0",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Fallen_N_2",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 방어력{0}%",
+                    "type": 1,
+                    "value": "-0.450000",
+                    "level": "-0.050000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-45%",
+                      "per": "-5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 피해 감소 / 방어력 증감 효과 해제",
+                    "type": 0,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 36,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_21",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 피해 감소 효과 해제",
+                    "type": 1,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 36,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 방어력 증감 해제",
+                    "type": 0,
+                    "value": "2",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 2,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 방어력 증감 해제",
+                    "type": 0,
+                    "value": "3",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 3,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_23",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Fallen_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 받는 피해{0}% (액티브 스킬 강화)",
+                    "type": 1,
+                    "value": "0.110000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "11%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        },
+        {
+          "rate": 0.19,
+          "type": 0,
+          "range": 4,
+          "ap": 7,
+          "grid": "0,0,0,0,1,0,0,0,0",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Fallen_N_2",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 방어력{0}%",
+                    "type": 1,
+                    "value": "-0.450000",
+                    "level": "-0.050000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-45%",
+                      "per": "-5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 피해 감소 / 방어력 증감 효과 해제",
+                    "type": 0,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 36,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_21",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 피해 감소 효과 해제",
+                    "type": 1,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 36,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 방어력 증감 해제",
+                    "type": 0,
+                    "value": "2",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 2,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 방어력 증감 해제",
+                    "type": 0,
+                    "value": "3",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 3,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_23",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Fallen_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 받는 피해{0}% (액티브 스킬 강화)",
+                    "type": 1,
+                    "value": "0.110000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "11%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        },
+        {
+          "rate": 0.2,
+          "type": 0,
+          "range": 4,
+          "ap": 7,
+          "grid": "0,0,0,0,1,0,0,0,0",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Fallen_N_22",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 방어력{0}%",
+                    "type": 1,
+                    "value": "-0.450000",
+                    "level": "-0.050000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-45%",
+                      "per": "-5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_21",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 피해 감소 효과 해제",
+                    "type": 1,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 36,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 방어력 증감 해제",
+                    "type": 0,
+                    "value": "2",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 2,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "대 장갑 진동탄 : 방어력 증감 해제",
+                    "type": 0,
+                    "value": "3",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 3,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_23",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Fallen_N_5"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 받는 피해{0}% (액티브 스킬 강화)",
+                    "type": 1,
+                    "value": "0.110000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "11%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        }
+      ]
+    },
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_DEF_DOWN",
+            "desc": {
+              "desc": "대 장갑 진동탄 : 방어력{0}%",
+              "type": 1,
+              "value": "-0.450000",
+              "level": "-0.050000"
+            },
+            "base": -0.45,
+            "per": -0.05,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_BUFF",
+            "desc": {
+              "desc": "대 장갑 진동탄 : 피해 감소 / 방어력 증감 효과 해제",
+              "type": 0,
+              "value": "36",
+              "level": "0"
+            },
+            "base": 36,
+            "per": 0,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_REMOVE_BUFF",
+            "desc": {
+              "desc": "대 장갑 진동탄 : 피해 감소 효과 해제",
+              "type": 1,
+              "value": "36",
+              "level": "0"
+            },
+            "base": 36,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_BUFF",
+            "desc": {
+              "desc": "대 장갑 진동탄 : 방어력 증감 해제",
+              "type": 0,
+              "value": "2",
+              "level": "0"
+            },
+            "base": 2,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_BUFF",
+            "desc": {
+              "desc": "대 장갑 진동탄 : 방어력 증감 해제",
+              "type": 0,
+              "value": "3",
+              "level": "0"
+            },
+            "base": 3,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_VULNERABLE",
+            "desc": {
+              "desc": "어썰트 포메이션 : 받는 피해{0}% (액티브 스킬 강화)",
+              "type": 1,
+              "value": "0.110000",
+              "level": "0.010000"
+            },
+            "base": 0.11,
+            "per": 0.01,
+            "chance": 1
+          }
+        ],
+        [
+          {
+            "icon": "BuffIcon_DEF_DOWN",
+            "desc": {
+              "desc": "대 장갑 진동탄 : 방어력{0}%",
+              "type": 1,
+              "value": "-0.450000",
+              "level": "-0.050000"
+            },
+            "base": -0.45,
+            "per": -0.05,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_BUFF",
+            "desc": {
+              "desc": "대 장갑 진동탄 : 피해 감소 효과 해제",
+              "type": 1,
+              "value": "36",
+              "level": "0"
+            },
+            "base": 36,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_BUFF",
+            "desc": {
+              "desc": "대 장갑 진동탄 : 방어력 증감 해제",
+              "type": 0,
+              "value": "2",
+              "level": "0"
+            },
+            "base": 2,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_BUFF",
+            "desc": {
+              "desc": "대 장갑 진동탄 : 방어력 증감 해제",
+              "type": 0,
+              "value": "3",
+              "level": "0"
+            },
+            "base": 3,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_VULNERABLE",
+            "desc": {
+              "desc": "어썰트 포메이션 : 받는 피해{0}% (액티브 스킬 강화)",
+              "type": 1,
+              "value": "0.110000",
+              "level": "0.010000"
+            },
+            "base": 0.11,
+            "per": 0.01,
+            "chance": 1
+          }
+        ]
+      ]
+    }
+  },
+  "3": {
+    "key": "3",
+    "icon": "TeamSpdBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 4,
+          "ap": 0,
+          "grid": "0,1,0,0,1,0,0,1,0",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Fallen_N_3",
+              "on": "round",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "전술 보조 기능 : 적중{0}%",
+                    "type": 1,
+                    "value": "0.225000",
+                    "level": "0.025000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "22.5%",
+                      "per": "2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "전술 보조 기능 : 행동력{0}%",
+                    "type": 1,
+                    "value": "0.060000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "6%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "전술 보조 기능 : 받는 피해 감소{0}% (전열)",
+                    "type": 1,
+                    "value": "0.160000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "16%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "전술 보조 기능 : 방어 관통{0}% (중열)",
+                    "type": 1,
+                    "value": "0.165000",
+                    "level": "0.015000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "16.5%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "전술 보조 기능 : 치명타{0}% (후열)",
+                    "type": 1,
+                    "value": "0.110000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 9,
+                    "critical": {
+                      "base": "11%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_31",
+              "on": "round",
+              "if": {
+                "pos": 0
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "전술 보조 기능 : 받는 피해 감소{0}% (전열)",
+                    "type": 1,
+                    "value": "0.160000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "16%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_32",
+              "on": "round",
+              "if": {
+                "pos": 1
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "전술 보조 기능 : 방어 관통{0}% (중열)",
+                    "type": 1,
+                    "value": "0.165000",
+                    "level": "0.015000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "16.5%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_33",
+              "on": "round",
+              "if": {
+                "pos": 2
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "전술 보조 기능 : 치명타{0}% (후열)",
+                    "type": 1,
+                    "value": "0.110000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "11%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
                 }
               ],
               "maxStack": 0
@@ -996,26 +4582,2141 @@
       "data": [
         [
           {
-            "icon": "BuffIcon_DEF_DOWN",
+            "icon": "BuffIcon_ACCURACY_UP",
             "desc": {
-              "desc": "방어력 {0}%",
+              "desc": "전술 보조 기능 : 적중{0}%",
               "type": 1,
-              "value": "-0.500000",
-              "level": "-0.025000"
+              "value": "0.225000",
+              "level": "0.025000"
             },
-            "base": -0.5,
-            "per": -0.025,
+            "base": 0.225,
+            "per": 0.025,
             "chance": 1
           },
           {
-            "icon": "BuffIcon_REMOVE_BUFF",
+            "icon": "BuffIcon_AP_UP",
             "desc": {
-              "desc": "피해 감소 효과 무효",
+              "desc": "전술 보조 기능 : 행동력{0}%",
               "type": 1,
-              "value": "36",
+              "value": "0.060000",
+              "level": "0.010000"
+            },
+            "base": 0.06,
+            "per": 0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DAMAGE_REDUCE",
+            "desc": {
+              "desc": "전술 보조 기능 : 받는 피해 감소{0}% (전열)",
+              "type": 1,
+              "value": "0.160000",
+              "level": "0.010000"
+            },
+            "base": 0.16,
+            "per": 0.01,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_DEF_PIERCE_UP",
+            "desc": {
+              "desc": "전술 보조 기능 : 방어 관통{0}% (중열)",
+              "type": 1,
+              "value": "0.165000",
+              "level": "0.015000"
+            },
+            "base": 0.165,
+            "per": 0.015,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_CRITICAL_UP",
+            "desc": {
+              "desc": "전술 보조 기능 : 치명타{0}% (후열)",
+              "type": 1,
+              "value": "0.110000",
+              "level": "0.010000"
+            },
+            "base": 0.11,
+            "per": 0.01,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_DAMAGE_REDUCE",
+            "desc": {
+              "desc": "전술 보조 기능 : 받는 피해 감소{0}% (전열)",
+              "type": 1,
+              "value": "0.160000",
+              "level": "0.010000"
+            },
+            "base": 0.16,
+            "per": 0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DEF_PIERCE_UP",
+            "desc": {
+              "desc": "전술 보조 기능 : 방어 관통{0}% (중열)",
+              "type": 1,
+              "value": "0.165000",
+              "level": "0.015000"
+            },
+            "base": 0.165,
+            "per": 0.015,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_CRITICAL_UP",
+            "desc": {
+              "desc": "전술 보조 기능 : 치명타{0}% (후열)",
+              "type": 1,
+              "value": "0.110000",
+              "level": "0.010000"
+            },
+            "base": 0.11,
+            "per": 0.01,
+            "chance": 1
+          }
+        ]
+      ]
+    }
+  },
+  "4": {
+    "key": "4",
+    "icon": "TeamDefBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 4,
+          "ap": 0,
+          "grid": "0,1,0,1,1,1,0,1,0",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Fallen_N_4",
+              "on": "round",
+              "if": {
+                "unitCount": {
+                  "filter": [
+                    "squad",
+                    "bioroid"
+                  ],
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_UP",
+                  "desc": {
+                    "desc": "엄폐 최적화 : 광역 피해 분산 {0}% (바이오 1기당)",
+                    "type": 1,
+                    "value": "0.055000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 110,
+                    "disperse": {
+                      "base": "5.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_Remove_Buff_Resist",
+                  "desc": {
+                    "desc": "엄폐 최적화 : 강화 해제 저항{0}% (바이오 3기 이상)",
+                    "type": 1,
+                    "value": "0.165000",
+                    "level": "0.015000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 126,
+                    "resist": {
+                      "type": "off",
+                      "value": {
+                        "base": "16.5%",
+                        "per": "1.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEBUFF_PERDOWN",
+                  "desc": {
+                    "desc": "엄폐 최적화 : 효과 저항{0}% (AGS 1기당)",
+                    "type": 1,
+                    "value": "0.055000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 91,
+                    "resist": {
+                      "type": "debuff",
+                      "value": {
+                        "base": "5.5%",
+                        "per": "0.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FIRERES_UP",
+                  "desc": {
+                    "desc": "엄폐 최적화 : 모든 속성 저항{0}% (AGS 3기 이상)",
+                    "type": 1,
+                    "value": "0.165000",
+                    "level": "0.015000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 15,
+                    "resist": {
+                      "elem": "fire",
+                      "value": {
+                        "base": "16.5%",
+                        "per": "1.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_401",
+              "on": "round",
+              "if": {
+                "unitCount": {
+                  "filter": [
+                    "squad",
+                    "bioroid"
+                  ],
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 2
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_UP",
+                  "desc": {
+                    "desc": "엄폐 최적화 : 광역 피해 분산 {0}% (바이오 2기)",
+                    "type": 1,
+                    "value": "0.110000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 110,
+                    "disperse": {
+                      "base": "11%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_402",
+              "on": "round",
+              "if": {
+                "unitCount": {
+                  "filter": [
+                    "squad",
+                    "bioroid"
+                  ],
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 3
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_UP",
+                  "desc": {
+                    "desc": "엄폐 최적화 : 광역 피해 분산 {0}% (바이오 3기)",
+                    "type": 1,
+                    "value": "0.165000",
+                    "level": "0.015000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 110,
+                    "disperse": {
+                      "base": "16.5%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_403",
+              "on": "round",
+              "if": {
+                "unitCount": {
+                  "filter": [
+                    "squad",
+                    "bioroid"
+                  ],
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_UP",
+                  "desc": {
+                    "desc": "엄폐 최적화 : 광역 피해 분산 {0}% (바이오 4기)",
+                    "type": 1,
+                    "value": "0.220000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 110,
+                    "disperse": {
+                      "base": "22%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_404",
+              "on": "round",
+              "if": {
+                "unitCount": {
+                  "filter": [
+                    "squad",
+                    "bioroid"
+                  ],
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 5
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_UP",
+                  "desc": {
+                    "desc": "엄폐 최적화 : 광역 피해 분산 {0}% (바이오 5기)",
+                    "type": 1,
+                    "value": "0.275000",
+                    "level": "0.025000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 110,
+                    "disperse": {
+                      "base": "27.5%",
+                      "per": "2.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_405",
+              "on": "round",
+              "if": {
+                "unitCount": {
+                  "filter": [
+                    "squad",
+                    "bioroid"
+                  ],
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 3
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Remove_Buff_Resist",
+                  "desc": {
+                    "desc": "엄폐 최적화 : 강화 해제 저항{0}% (바이오 3기 이상)",
+                    "type": 1,
+                    "value": "0.165000",
+                    "level": "0.015000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 126,
+                    "resist": {
+                      "type": "off",
+                      "value": {
+                        "base": "16.5%",
+                        "per": "1.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_406",
+              "on": "round",
+              "if": {
+                "unitCount": {
+                  "filter": [
+                    "squad",
+                    "ags"
+                  ],
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 1
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEBUFF_PERDOWN",
+                  "desc": {
+                    "desc": "엄폐 최적화 : 효과 저항{0}% (AGS 1기당)",
+                    "type": 1,
+                    "value": "0.055000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 91,
+                    "resist": {
+                      "type": "debuff",
+                      "value": {
+                        "base": "5.5%",
+                        "per": "0.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_407",
+              "on": "round",
+              "if": {
+                "unitCount": {
+                  "filter": [
+                    "squad",
+                    "ags"
+                  ],
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 2
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEBUFF_PERDOWN",
+                  "desc": {
+                    "desc": "엄폐 최적화 : 효과 저항{0}% (AGS 2기)",
+                    "type": 1,
+                    "value": "0.110000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 91,
+                    "resist": {
+                      "type": "debuff",
+                      "value": {
+                        "base": "11%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_408",
+              "on": "round",
+              "if": {
+                "unitCount": {
+                  "filter": [
+                    "squad",
+                    "ags"
+                  ],
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 3
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEBUFF_PERDOWN",
+                  "desc": {
+                    "desc": "엄폐 최적화 : 효과 저항{0}% (AGS 3기)",
+                    "type": 1,
+                    "value": "0.165000",
+                    "level": "0.015000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 91,
+                    "resist": {
+                      "type": "debuff",
+                      "value": {
+                        "base": "16.5%",
+                        "per": "1.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_409",
+              "on": "round",
+              "if": {
+                "unitCount": {
+                  "filter": [
+                    "squad",
+                    "ags"
+                  ],
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEBUFF_PERDOWN",
+                  "desc": {
+                    "desc": "엄폐 최적화 : 효과 저항{0}% (AGS 4기)",
+                    "type": 1,
+                    "value": "0.220000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 91,
+                    "resist": {
+                      "type": "debuff",
+                      "value": {
+                        "base": "22%",
+                        "per": "2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_410",
+              "on": "round",
+              "if": {
+                "unitCount": {
+                  "filter": [
+                    "squad",
+                    "ags"
+                  ],
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 5
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEBUFF_PERDOWN",
+                  "desc": {
+                    "desc": "엄폐 최적화 : 효과 저항{0}% (AGS 5기)",
+                    "type": 1,
+                    "value": "0.275000",
+                    "level": "0.025000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 91,
+                    "resist": {
+                      "type": "debuff",
+                      "value": {
+                        "base": "27.5%",
+                        "per": "2.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_411",
+              "on": "round",
+              "if": {
+                "unitCount": {
+                  "filter": [
+                    "squad",
+                    "ags"
+                  ],
+                  "type": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "count": 3
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_FIRERES_UP",
+                  "desc": {
+                    "desc": "엄폐 최적화 : 화염 속성 저항{0}% (바이오 3기 이상)",
+                    "type": 1,
+                    "value": "0.165000",
+                    "level": "0.015000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 15,
+                    "resist": {
+                      "elem": "fire",
+                      "value": {
+                        "base": "16.5%",
+                        "per": "1.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ICERES_UP",
+                  "desc": {
+                    "desc": "엄폐 최적화 : 냉기 속성 저항{0}% (바이오 3기 이상)",
+                    "type": 1,
+                    "value": "0.165000",
+                    "level": "0.015000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 17,
+                    "resist": {
+                      "elem": "ice",
+                      "value": {
+                        "base": "16.5%",
+                        "per": "1.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_LIGHTNINGRES_UP",
+                  "desc": {
+                    "desc": "엄폐 최적화 : 전기 속성 저항{0}% (바이오 3기 이상)",
+                    "type": 1,
+                    "value": "0.165000",
+                    "level": "0.015000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 19,
+                    "resist": {
+                      "elem": "lightning",
+                      "value": {
+                        "base": "16.5%",
+                        "per": "1.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_DEF_UP",
+            "desc": {
+              "desc": "엄폐 최적화 : 광역 피해 분산 {0}% (바이오 1기당)",
+              "type": 1,
+              "value": "0.055000",
+              "level": "0.005000"
+            },
+            "base": 0.055,
+            "per": 0.005,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_Remove_Buff_Resist",
+            "desc": {
+              "desc": "엄폐 최적화 : 강화 해제 저항{0}% (바이오 3기 이상)",
+              "type": 1,
+              "value": "0.165000",
+              "level": "0.015000"
+            },
+            "base": 0.165,
+            "per": 0.015,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_DEBUFF_PERDOWN",
+            "desc": {
+              "desc": "엄폐 최적화 : 효과 저항{0}% (AGS 1기당)",
+              "type": 1,
+              "value": "0.055000",
+              "level": "0.005000"
+            },
+            "base": 0.055,
+            "per": 0.005,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_FIRERES_UP",
+            "desc": {
+              "desc": "엄폐 최적화 : 모든 속성 저항{0}% (AGS 3기 이상)",
+              "type": 1,
+              "value": "0.165000",
+              "level": "0.015000"
+            },
+            "base": 0.165,
+            "per": 0.015,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_DEF_UP",
+            "desc": {
+              "desc": "엄폐 최적화 : 광역 피해 분산 {0}% (바이오 2기)",
+              "type": 1,
+              "value": "0.110000",
+              "level": "0.010000"
+            },
+            "base": 0.11,
+            "per": 0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DEF_UP",
+            "desc": {
+              "desc": "엄폐 최적화 : 광역 피해 분산 {0}% (바이오 3기)",
+              "type": 1,
+              "value": "0.165000",
+              "level": "0.015000"
+            },
+            "base": 0.165,
+            "per": 0.015,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DEF_UP",
+            "desc": {
+              "desc": "엄폐 최적화 : 광역 피해 분산 {0}% (바이오 4기)",
+              "type": 1,
+              "value": "0.220000",
+              "level": "0.020000"
+            },
+            "base": 0.22,
+            "per": 0.02,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DEF_UP",
+            "desc": {
+              "desc": "엄폐 최적화 : 광역 피해 분산 {0}% (바이오 5기)",
+              "type": 1,
+              "value": "0.275000",
+              "level": "0.025000"
+            },
+            "base": 0.275,
+            "per": 0.025,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_Remove_Buff_Resist",
+            "desc": {
+              "desc": "엄폐 최적화 : 강화 해제 저항{0}% (바이오 3기 이상)",
+              "type": 1,
+              "value": "0.165000",
+              "level": "0.015000"
+            },
+            "base": 0.165,
+            "per": 0.015,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DEBUFF_PERDOWN",
+            "desc": {
+              "desc": "엄폐 최적화 : 효과 저항{0}% (AGS 1기당)",
+              "type": 1,
+              "value": "0.055000",
+              "level": "0.005000"
+            },
+            "base": 0.055,
+            "per": 0.005,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DEBUFF_PERDOWN",
+            "desc": {
+              "desc": "엄폐 최적화 : 효과 저항{0}% (AGS 2기)",
+              "type": 1,
+              "value": "0.110000",
+              "level": "0.010000"
+            },
+            "base": 0.11,
+            "per": 0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DEBUFF_PERDOWN",
+            "desc": {
+              "desc": "엄폐 최적화 : 효과 저항{0}% (AGS 3기)",
+              "type": 1,
+              "value": "0.165000",
+              "level": "0.015000"
+            },
+            "base": 0.165,
+            "per": 0.015,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DEBUFF_PERDOWN",
+            "desc": {
+              "desc": "엄폐 최적화 : 효과 저항{0}% (AGS 4기)",
+              "type": 1,
+              "value": "0.220000",
+              "level": "0.020000"
+            },
+            "base": 0.22,
+            "per": 0.02,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DEBUFF_PERDOWN",
+            "desc": {
+              "desc": "엄폐 최적화 : 효과 저항{0}% (AGS 5기)",
+              "type": 1,
+              "value": "0.275000",
+              "level": "0.025000"
+            },
+            "base": 0.275,
+            "per": 0.025,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_FIRERES_UP",
+            "desc": {
+              "desc": "엄폐 최적화 : 화염 속성 저항{0}% (바이오 3기 이상)",
+              "type": 1,
+              "value": "0.165000",
+              "level": "0.015000"
+            },
+            "base": 0.165,
+            "per": 0.015,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ICERES_UP",
+            "desc": {
+              "desc": "엄폐 최적화 : 냉기 속성 저항{0}% (바이오 3기 이상)",
+              "type": 1,
+              "value": "0.165000",
+              "level": "0.015000"
+            },
+            "base": 0.165,
+            "per": 0.015,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_LIGHTNINGRES_UP",
+            "desc": {
+              "desc": "엄폐 최적화 : 전기 속성 저항{0}% (바이오 3기 이상)",
+              "type": 1,
+              "value": "0.165000",
+              "level": "0.015000"
+            },
+            "base": 0.165,
+            "per": 0.015,
+            "chance": 1
+          }
+        ]
+      ]
+    }
+  },
+  "5": {
+    "key": "5",
+    "icon": "TeamAtkBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 4,
+          "ap": 0,
+          "grid": "1,1,1,1,1,1,1,1,1",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_AGS_Fallen_N_5",
+              "on": "round",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Guardpierce_Apply",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 보호 무시 활성화",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 130,
+                    "guardpierce_apply": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 공격력{0}% (인접 1기당)",
+                    "type": 1,
+                    "value": "0.027500",
+                    "level": "0.002500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 1,
+                    "attack": {
+                      "base": "2.75%",
+                      "per": "0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SKILL_UP",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 스킬 위력{0}% (인접 1기당)",
+                    "type": 1,
+                    "value": "0.027500",
+                    "level": "0.002500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 106,
+                    "skill_ratio": {
+                      "base": "2.75%",
+                      "per": "0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_Action_Number_Change_Up",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 최대 행동 횟수{0}",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 127,
+                    "act_count": 1
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 받는 피해{0}% (액티브 스킬 강화)",
+                    "type": 1,
+                    "value": "0.110000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "11%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_501",
+              "on": "round",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Fallen_N_506"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 공격력{0}% (인접 1기당)",
+                    "type": 1,
+                    "value": "0.027500",
+                    "level": "0.002500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "2.75%",
+                      "per": "0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SKILL_UP",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 스킬 위력{0}% (인접 1기당)",
+                    "type": 1,
+                    "value": "0.027500",
+                    "level": "0.002500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 106,
+                    "skill_ratio": {
+                      "base": "2.75%",
+                      "per": "0.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_502",
+              "on": "round",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Fallen_N_507"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 공격력{0}% (인접 1기당)",
+                    "type": 1,
+                    "value": "0.027500",
+                    "level": "0.002500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "2.75%",
+                      "per": "0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SKILL_UP",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 스킬 위력{0}% (인접 1기당)",
+                    "type": 1,
+                    "value": "0.027500",
+                    "level": "0.002500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 106,
+                    "skill_ratio": {
+                      "base": "2.75%",
+                      "per": "0.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_503",
+              "on": "round",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Fallen_N_508"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 공격력{0}% (인접 1기당)",
+                    "type": 1,
+                    "value": "0.027500",
+                    "level": "0.002500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "2.75%",
+                      "per": "0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SKILL_UP",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 스킬 위력{0}% (인접 1기당)",
+                    "type": 1,
+                    "value": "0.027500",
+                    "level": "0.002500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 106,
+                    "skill_ratio": {
+                      "base": "2.75%",
+                      "per": "0.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_504",
+              "on": "round",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Fallen_N_509"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 공격력{0}% (인접 1기당)",
+                    "type": 1,
+                    "value": "0.027500",
+                    "level": "0.002500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "2.75%",
+                      "per": "0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SKILL_UP",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 스킬 위력{0}% (인접 1기당)",
+                    "type": 1,
+                    "value": "0.027500",
+                    "level": "0.002500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 106,
+                    "skill_ratio": {
+                      "base": "2.75%",
+                      "per": "0.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_505",
+              "on": "round",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_AGS_Fallen_N_508",
+                    "Effect_AGS_Fallen_N_509"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Action_Number_Change_Up",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 최대 행동 횟수{0} (인접 3기 이상)",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 127,
+                    "act_count": 1
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_506",
+              "on": "round",
+              "if": {
+                "near": true
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 인접 1기 이상",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 0,
+                    "attack": {
+                      "base": 0,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_507",
+              "on": "round",
+              "if": {
+                "near": true
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 인접 2기 이상",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 0,
+                    "attack": {
+                      "base": 0,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_508",
+              "on": "round",
+              "if": {
+                "near": true
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 인접 3기 이상",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 0,
+                    "attack": {
+                      "base": 0,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Fallen_N_509",
+              "on": "round",
+              "if": {
+                "near": true
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "어썰트 포메이션 : 인접 4기",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 0,
+                    "attack": {
+                      "base": 0,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_Guardpierce_Apply",
+            "desc": {
+              "desc": "어썰트 포메이션 : 보호 무시 활성화",
+              "type": 1,
+              "value": "0",
               "level": "0"
             },
-            "base": 36,
+            "base": 0,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "어썰트 포메이션 : 공격력{0}% (인접 1기당)",
+              "type": 1,
+              "value": "0.027500",
+              "level": "0.002500"
+            },
+            "base": 0.0275,
+            "per": 0.0025,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_SKILL_UP",
+            "desc": {
+              "desc": "어썰트 포메이션 : 스킬 위력{0}% (인접 1기당)",
+              "type": 1,
+              "value": "0.027500",
+              "level": "0.002500"
+            },
+            "base": 0.0275,
+            "per": 0.0025,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_Action_Number_Change_Up",
+            "desc": {
+              "desc": "어썰트 포메이션 : 최대 행동 횟수{0}",
+              "type": 0,
+              "value": "1",
+              "level": "0"
+            },
+            "base": 1,
+            "per": 0,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_VULNERABLE",
+            "desc": {
+              "desc": "어썰트 포메이션 : 받는 피해{0}% (액티브 스킬 강화)",
+              "type": 1,
+              "value": "0.110000",
+              "level": "0.010000"
+            },
+            "base": 0.11,
+            "per": 0.01,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "어썰트 포메이션 : 공격력{0}% (인접 1기당)",
+              "type": 1,
+              "value": "0.027500",
+              "level": "0.002500"
+            },
+            "base": 0.0275,
+            "per": 0.0025,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_SKILL_UP",
+            "desc": {
+              "desc": "어썰트 포메이션 : 스킬 위력{0}% (인접 1기당)",
+              "type": 1,
+              "value": "0.027500",
+              "level": "0.002500"
+            },
+            "base": 0.0275,
+            "per": 0.0025,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "어썰트 포메이션 : 공격력{0}% (인접 1기당)",
+              "type": 1,
+              "value": "0.027500",
+              "level": "0.002500"
+            },
+            "base": 0.0275,
+            "per": 0.0025,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_SKILL_UP",
+            "desc": {
+              "desc": "어썰트 포메이션 : 스킬 위력{0}% (인접 1기당)",
+              "type": 1,
+              "value": "0.027500",
+              "level": "0.002500"
+            },
+            "base": 0.0275,
+            "per": 0.0025,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "어썰트 포메이션 : 공격력{0}% (인접 1기당)",
+              "type": 1,
+              "value": "0.027500",
+              "level": "0.002500"
+            },
+            "base": 0.0275,
+            "per": 0.0025,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_SKILL_UP",
+            "desc": {
+              "desc": "어썰트 포메이션 : 스킬 위력{0}% (인접 1기당)",
+              "type": 1,
+              "value": "0.027500",
+              "level": "0.002500"
+            },
+            "base": 0.0275,
+            "per": 0.0025,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "어썰트 포메이션 : 공격력{0}% (인접 1기당)",
+              "type": 1,
+              "value": "0.027500",
+              "level": "0.002500"
+            },
+            "base": 0.0275,
+            "per": 0.0025,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_SKILL_UP",
+            "desc": {
+              "desc": "어썰트 포메이션 : 스킬 위력{0}% (인접 1기당)",
+              "type": 1,
+              "value": "0.027500",
+              "level": "0.002500"
+            },
+            "base": 0.0275,
+            "per": 0.0025,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_Action_Number_Change_Up",
+            "desc": {
+              "desc": "어썰트 포메이션 : 최대 행동 횟수{0} (인접 3기 이상)",
+              "type": 0,
+              "value": "1",
+              "level": "0"
+            },
+            "base": 1,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "어썰트 포메이션 : 인접 1기 이상",
+              "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "어썰트 포메이션 : 인접 2기 이상",
+              "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "어썰트 포메이션 : 인접 3기 이상",
+              "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "어썰트 포메이션 : 인접 4기",
+              "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
             "per": 0,
             "chance": 1
           }
