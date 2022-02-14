@@ -17,6 +17,9 @@ const Changelog: FunctionalComponent = () => <>
 			<li>전투원 <span class="badge bg-warning text-dark">C-79G 하베트롯</span>의 승급 정보가 갱신되었습니다.</li>
 			<li>이벤트 <span class="badge bg-warning text-dark">영원한 겨울의 방주</span>의 드랍 정보 일부가 갱신되었습니다.</li>
 		</> }
+		bugfix={<>
+		<li>전투원 <span class="badge bg-warning text-dark">에키드나</span>의 스킬 수치가 잘못 표기되어있던 문제를 수정했습니다.</li>
+		</>}
 		skin={ <>
 			<li>
 				<span class="badge bg-warning text-dark">레모네이드 알파</span>의 스킨 <span class="badge bg-danger">칠죄종 : 해방된 각인</span>의 로비 애니메이션 정보가 추가되었습니다.
