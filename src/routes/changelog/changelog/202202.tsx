@@ -35,7 +35,7 @@ const Changelog: FunctionalComponent = () => <>
 			</li>
 			<li>
 				<span class="badge bg-warning text-dark">레모네이드 알파</span>의 스킨
-				<span class="badge bg-danger">칠죄종 : 해방된 각인</span>의 가격 정보가 추가되었습니다.
+				<span class="badge bg-danger">칠죄종 : 해방된 각인</span>의 가격 정보가 수정되었습니다.
 			</li>
 		</> }
 		dialogue={ <>
