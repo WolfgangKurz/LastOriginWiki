@@ -839,7 +839,10 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			return <Locale plain k="BUFFEFFECT_OFF" p={ [getBuffEffectTypeText(stat.off.type, BUFF_ATTR_TYPE.NO_MATTER)] } />;
 		} else if ("attack" in stat) {
 			if (stat.attack.base === 0 && stat.attack.per === 0)
-				return <small class="text-secondary">Placeholder</small>; // Placeholder 버프
+				if (IsDev)
+					return <small class="text-secondary">Placeholder</small>; // Placeholder 버프
+				else
+					return <></>;
 
 			return <Locale plain k="BUFFEFFECT_ATK" p={ [signedValue(stat.attack, level)] } />;
 		} else if ("defense" in stat)

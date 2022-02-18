@@ -4,11 +4,18 @@ import Locale from "@/components/locale";
 import RarityBadge from "@/components/rarity-badge";
 
 import ChangelogItem from "../components/changelog-item";
+import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 11528" date="2022-02-19"
+	<ChangelogItem title="Build 11532" date="2022-02-19"
 		new={ <>
 			<li>신규 전투원 <span class="badge bg-warning text-dark">프랭스터 머큐리</span>의 정보가 추가되었습니다.</li>
+		</> }
+		bugfix={ <>
+			<li>다음과 같은 일부 버프 조건이 올바르지 않게 표기되는 문제를 수정했습니다.</li>
+			<li>* 인접 그리드에 아군이 존재하는 경우 <Icon icon="arrow-right" class="mx-1" /> 인접 그리드에 아군이 n체 이상 존재하는 경우</li>
+			<li>* 버프 조건에서 이로운/해로운 효과 구분이 증가/감소로 표시되는 문제 <Icon icon="arrow-right" class="mx-1" /> 표기 삭제 후 증감으로 통일</li>
+			<li>* ??? 로 표시되는 문제 <Icon icon="arrow-right" class="mx-1" /> 표시되도록 수정</li>
 		</> }
 		update={ <>
 			<li>전투원 정보의 <span class="badge bg-dark">제조 시간</span> 표시를 크게 변경했습니다.</li>
