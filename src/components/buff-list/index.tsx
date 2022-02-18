@@ -173,14 +173,6 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 		</span>;
 	}
 	function getBuffEffectTypeText (type: BUFFEFFECT_TYPE, target: BUFF_ATTR_TYPE): preact.VNode {
-		const tUP = <Locale plain k="BUFFTYPE_UP" />;
-		const tDOWN = <Locale plain k="BUFFTYPE_DOWN" />;
-		const p = target === BUFF_ATTR_TYPE.BUFF
-			? tUP
-			: target === BUFF_ATTR_TYPE.DEBUFF
-				? tDOWN
-				: "";
-
 		return <>
 			<u>
 				<Locale plain k={ `BUFFEFFECT_ATTR_PREFIX_${target}` } />
@@ -191,78 +183,78 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				switch (type) {
 					case BUFFEFFECT_TYPE.STAT_ATK_VALUE: // 0
 					case BUFFEFFECT_TYPE.STAT_ATK_RATIO: // 1
-						return <Locale plain k="BUFFTYPE_ATK" p={ [p] } />;
+						return <Locale plain k="BUFFTYPE_ATK" />;
 					case BUFFEFFECT_TYPE.STAT_DEF_VALUE: // 2
 					case BUFFEFFECT_TYPE.STAT_DEF_RATIO: // 3
-						return <Locale plain k="BUFFTYPE_DEF" p={ [p] } />;
+						return <Locale plain k="BUFFTYPE_DEF" />;
 					case BUFFEFFECT_TYPE.STAT_HP_VALUE: // 4
 					case BUFFEFFECT_TYPE.STAT_HP_RATIO: // 5
-						return <Locale plain k="BUFFTYPE_HP" p={ [p] } />;
+						return <Locale plain k="BUFFTYPE_HP" />;
 					case BUFFEFFECT_TYPE.STAT_RATING_VALUE: // 6
 					case BUFFEFFECT_TYPE.STAT_RATING_RATIO: // 7
-						return <Locale plain k="BUFFTYPE_ACC" p={ [p] } />;
+						return <Locale plain k="BUFFTYPE_ACC" />;
 					case BUFFEFFECT_TYPE.STAT_CRITICAL_VALUE: // 8
 					case BUFFEFFECT_TYPE.STAT_CRITICAL_RATIO: // 9
-						return <Locale plain k="BUFFTYPE_CRIT" p={ [p] } />;
+						return <Locale plain k="BUFFTYPE_CRIT" />;
 					case BUFFEFFECT_TYPE.STAT_AVOID_VALUE: // 10
 					case BUFFEFFECT_TYPE.STAT_AVOID_RATIO: // 11
-						return <Locale plain k="BUFFTYPE_EVA" p={ [p] } />;
+						return <Locale plain k="BUFFTYPE_EVA" />;
 					case BUFFEFFECT_TYPE.STAT_SPEED_VALUE: // 12
 					case BUFFEFFECT_TYPE.STAT_SPEED_RATIO: // 13
-						return <Locale plain k="BUFFTYPE_SPD" p={ [p] } />;
+						return <Locale plain k="BUFFTYPE_SPD" />;
 					case BUFFEFFECT_TYPE.STAT_RESFIRE_VALUE: // 14
 					case BUFFEFFECT_TYPE.STAT_RESFIRE_RATIO: // 15
 						return <>
 							<ElemIcon elem="fire" class="me-1 mb-0" />
-							<Locale plain k="BUFFTYPE_FIRE_RES" p={ [p] } />
+							<Locale plain k="BUFFTYPE_FIRE_RES" />
 						</>;
 					case BUFFEFFECT_TYPE.STAT_RESICE_VALUE: // 16
 					case BUFFEFFECT_TYPE.STAT_RESICE_RATIO: // 17
 						return <>
 							<ElemIcon elem="ice" class="me-1 mb-0" />
-							<Locale plain k="BUFFTYPE_ICE_RES" p={ [p] } />
+							<Locale plain k="BUFFTYPE_ICE_RES" />
 						</>;
 					case BUFFEFFECT_TYPE.STAT_RESLIGHTNING_VALUE: // 18
 					case BUFFEFFECT_TYPE.STAT_RESLIGHTNING_RATIO: // 19
 						return <>
 							<ElemIcon elem="lightning" class="me-1 mb-0" />
-							<Locale plain k="BUFFTYPE_THUNDER_RES" p={ [p] } />
+							<Locale plain k="BUFFTYPE_THUNDER_RES" />
 						</>;
 					case BUFFEFFECT_TYPE.STAGE_AP_VALUE: // 20
 					case BUFFEFFECT_TYPE.STAGE_AP_SHIFT: // 21
-						return <Locale plain k="BUFFTYPE_AP" p={ [p] } />;
+						return <Locale plain k="BUFFTYPE_AP" />;
 					case BUFFEFFECT_TYPE.STAGE_AP_STOP: // 22
 						return <Locale plain k="BUFFTYPE_STUN" />;
 					case BUFFEFFECT_TYPE.UI_INFO_NEXTENEMY: // 23
 						return <Locale plain k="BUFFTYPE_SCOUT" />;
 					case BUFFEFFECT_TYPE.STAGE_THORNS_RATIO: // 24
-						return <>STAGE_THORNS_RATIO{ p }</>; // 사용처 없음, 알 수 없음 (이름으로 보아, 공격 시 공격 일부가 반사되는 것으로 보임)
+						return <>STAGE_THORNS_RATIO</>; // 사용처 없음, 알 수 없음 (이름으로 보아, 공격 시 공격 일부가 반사되는 것으로 보임)
 					case BUFFEFFECT_TYPE.STAGE_REFLECTPHYSICS_VALUE: // 25
-						return <>STAGE_REFLECTPHYSICS_VALUE{ p }</>; // 사용처 없음, 알 수 없음 (위와 동일하게 반사되는 것으로 보임, 물리 속성으로)
+						return <>STAGE_REFLECTPHYSICS_VALUE</>; // 사용처 없음, 알 수 없음 (위와 동일하게 반사되는 것으로 보임, 물리 속성으로)
 					case BUFFEFFECT_TYPE.STAGE_REFLECTFIRE_VALUE: // 26
-						return <>STAGE_REFLECTFIRE_VALUE{ p }</>; // 사용처 없음, 알 수 없음 (위와 동일하게 반사되는 것으로 보임, 화염 속성으로)
+						return <>STAGE_REFLECTFIRE_VALUE</>; // 사용처 없음, 알 수 없음 (위와 동일하게 반사되는 것으로 보임, 화염 속성으로)
 					case BUFFEFFECT_TYPE.STAGE_REFLECTICE_VALUE: // 27
-						return <>STAGE_REFLECTICE_VALUE{ p }</>; // 사용처 없음, 알 수 없음 (위와 동일하게 반사되는 것으로 보임, 냉기 속성으로)
+						return <>STAGE_REFLECTICE_VALUE</>; // 사용처 없음, 알 수 없음 (위와 동일하게 반사되는 것으로 보임, 냉기 속성으로)
 					case BUFFEFFECT_TYPE.STAGE_REFLECTLIGHTNIG_VALUE: // 28
-						return <>STAGE_REFLECTLIGHTNIG_VALUE{ p }</>; // 사용처 없음, 알 수 없음 (위와 동일하게 반사되는 것으로 보임, 전기 속성으로)
+						return <>STAGE_REFLECTLIGHTNIG_VALUE</>; // 사용처 없음, 알 수 없음 (위와 동일하게 반사되는 것으로 보임, 전기 속성으로)
 					case BUFFEFFECT_TYPE.STAGE_REFLECTPHYSICS_RATIO_DEFENDER: // 29
 						return <Locale plain k="BUFFTYPE_COUNT" />; // 피격자가 물리 반격
 					case BUFFEFFECT_TYPE.STAGE_REFLECTFIRE_RATIO_DEFENDER: // 30
-						return <>STAGE_REFLECTFIRE_RATIO_DEFENDER{ p }</>; // 사용처 없음, 알 수 없음
+						return <>STAGE_REFLECTFIRE_RATIO_DEFENDER</>; // 사용처 없음, 알 수 없음
 					case BUFFEFFECT_TYPE.STAGE_REFLECTICE_RATIO_DEFENDER: // 31
-						return <>STAGE_REFLECTICE_RATIO_DEFENDER{ p }</>; // 사용처 없음, 알 수 없음
+						return <>STAGE_REFLECTICE_RATIO_DEFENDER</>; // 사용처 없음, 알 수 없음
 					case BUFFEFFECT_TYPE.STAGE_REFLECTLIGHTNIG_RATIO_DEFENDER: // 32
-						return <>STAGE_REFLECTLIGHTNIG_RATIO_DEFENDER{ p }</>; // 사용처 없음, 알 수 없음
+						return <>STAGE_REFLECTLIGHTNIG_RATIO_DEFENDER</>; // 사용처 없음, 알 수 없음
 					case BUFFEFFECT_TYPE.STAGE_IMMUNESHIELD_TIME: // 33
 						return <Locale plain k="BUFFTYPE_DMG_IMMUNE" />; // 피해 무효화
 					case BUFFEFFECT_TYPE.STAGE_SHIELD_VALUE: // 34
 						return <Locale plain k="BUFFTYPE_DMG_MINIMIZE" />; // value 이하 피해 1로 적용
 					case BUFFEFFECT_TYPE.STAGE_SHIELD_VALUE_LIMITED: // 35
-						return <>STAGE_SHIELD_VALUE_LIMITED{ p }</>; // 사용처 없음, 알 수 없음
+						return <>STAGE_SHIELD_VALUE_LIMITED</>; // 사용처 없음, 알 수 없음
 					case BUFFEFFECT_TYPE.STAGE_SHIELD_RATIO: // 36
 						return <Locale plain k="BUFFTYPE_GET_DMG_DOWN" />; // 받는 피해 감소
 					case BUFFEFFECT_TYPE.STAGE_SHIELD_RATIO_LIMITED: // 37
-						return <>STAGE_SHIELD_RATIO_LIMITED{ p }</>; // 사용처 없음, 알 수 없음
+						return <>STAGE_SHIELD_RATIO_LIMITED</>; // 사용처 없음, 알 수 없음
 					case BUFFEFFECT_TYPE.STAGE_IMMUNESHIELD_VALUE: // 38
 						return <Locale plain k="BUFFTYPE_BARRIER" />; // 방어막
 					case BUFFEFFECT_TYPE.STAGE_DAMAGEPHYSICS_RATIO: // 39
@@ -278,37 +270,37 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					case BUFFEFFECT_TYPE.STAGE_DAMAGELIGHTNING_VALUE: // 46
 						return <Locale plain k="BUFFTYPE_ADDDMG_THUNDER" />;
 					case BUFFEFFECT_TYPE.STAGE_LOCKON01_TIME: // 47
-						return <>STAGE_LOCKON01_TIME{ p }</>; // 사용처 없음, 알 수 없음
+						return <>STAGE_LOCKON01_TIME</>; // 사용처 없음, 알 수 없음
 					case BUFFEFFECT_TYPE.STAGE_ADDDAMAGE_RATIO: // 48
 						return <Locale plain k="BUFFTYPE_GET_DMG_UP" />; // 받는 피해 증가 %
 					case BUFFEFFECT_TYPE.STAGE_ADDDAMAGE_VALUE: // 49
-						return <>STAGE_ADDDAMAGE_VALUE{ p }</>; // 사용처 없음, 받는 피해 증가 고정값
+						return <>STAGE_ADDDAMAGE_VALUE</>; // 사용처 없음, 받는 피해 증가 고정값
 					case BUFFEFFECT_TYPE.STAGE_BLOCK_COLUMN: // 50
 						return <Locale plain k="BUFFTYPE_BLOCK_COLUMN" />; // 행 보호
 					case BUFFEFFECT_TYPE.STAGE_BLOCK_GRID: // 51
-						return <>STAGE_BLOCK_GRID{ p }</>; // 사용처 없음, 격자 보호?
+						return <>STAGE_BLOCK_GRID</>; // 사용처 없음, 격자 보호?
 					case BUFFEFFECT_TYPE.STAGE_MOVE_BACK: // 52
 						return <Locale plain k="BUFFTYPE_PUSH" />;
 					case BUFFEFFECT_TYPE.STAGE_MOVE_FRONT: // 53
 						return <Locale plain k="BUFFTYPE_PULL" />;
 					case BUFFEFFECT_TYPE.STAGE_CRITICAL_NEXTATTACK: // 54
-						return <Locale plain k="BUFFTYPE_CRIT_NEXT" p={ [p] } />;
+						return <Locale plain k="BUFFTYPE_CRIT_NEXT" />;
 					case BUFFEFFECT_TYPE.STAT_RANGE_VALUE: // 55
-						return <Locale plain k="BUFFTYPE_RANGE" p={ [p] } />;
+						return <Locale plain k="BUFFTYPE_RANGE" />;
 					case BUFFEFFECT_TYPE.STAGE_AGRO_VALUE: // 56
-						return <>STAGE_AGRO_VALUE{ p }</>; // 사용처 없음, 알 수 없음
+						return <>STAGE_AGRO_VALUE</>; // 사용처 없음, 알 수 없음
 					case BUFFEFFECT_TYPE.STAGE_DEFPIERCE_VALUE: // 57
-						return <>STAGE_DEFPIERCE_VALUE{ p }</>; // 방어 관통 고정값?
+						return <>STAGE_DEFPIERCE_VALUE</>; // 방어 관통 고정값?
 					case BUFFEFFECT_TYPE.STAGE_DEFPIERCE_RATIO: // 58
-						return <Locale plain k="DEF_PIERCE" p={ [p] } />;
+						return <Locale plain k="DEF_PIERCE" />;
 					case BUFFEFFECT_TYPE.STAGE_GRID_CHANGE: // 59
-						return <>STAGE_GRID_CHANGE{ p }</>; // 사용처 없음, 알 수 없음
+						return <>STAGE_GRID_CHANGE</>; // 사용처 없음, 알 수 없음
 					case BUFFEFFECT_TYPE.STAGE_TROOPERTYPEDMGBONUS_RATIO: // 60
-						return <Locale plain k="BUFFTYPE_ANTI_LIGHT_DMG" p={ [p] } />;
+						return <Locale plain k="BUFFTYPE_ANTI_LIGHT_DMG" />;
 					case BUFFEFFECT_TYPE.STAGE_ARMOREDTYPEDMGBONUS_RATIO: // 61
-						return <Locale plain k="BUFFTYPE_ANTI_HEAVY_DMG" p={ [p] } />;
+						return <Locale plain k="BUFFTYPE_ANTI_HEAVY_DMG" />;
 					case BUFFEFFECT_TYPE.STAGE_MOBILITYTYPEDMGBONUS_RATIO: // 62
-						return <Locale plain k="BUFFTYPE_ANTI_MOBILITY_DMG" p={ [p] } />;
+						return <Locale plain k="BUFFTYPE_ANTI_MOBILITY_DMG" />;
 					case BUFFEFFECT_TYPE.STAGE_CHARCHANGE_PERMANENT: // 63
 					case BUFFEFFECT_TYPE.STAGE_CHARCHANGE_LIMITED: // 64
 						return <Locale plain k="BUFFTYPE_TRANSFORM" />;
@@ -348,45 +340,135 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					case BUFFEFFECT_TYPE.STAGE_SEAL_SKILL: // 79
 						return <Locale plain k="BUFFTYPE_SEAL" />;
 					case BUFFEFFECT_TYPE.STAGE_DAMAGEAMP_BYHP_ME: // 80
-						return <Locale plain k="BUFFTYPE_DMG_UP_BY_HP" p={ [p] } />;
+						return <Locale plain k="BUFFTYPE_DMG_UP_BY_HP" />;
 					case BUFFEFFECT_TYPE.STAGE_DAMAGEAMP_BYHP_OPP: // 81
-						return <Locale plain k="BUFFTYPE_DMG_UP_BY_TARGET_HP" p={ [p] } />;
+						return <Locale plain k="BUFFTYPE_DMG_UP_BY_TARGET_HP" />;
 					case BUFFEFFECT_TYPE.STAGE_RESURRECT: // 82
 					case BUFFEFFECT_TYPE.STAGE_RESURRECT_RATIO: // 98
 						return <Locale plain k="BUFFTYPE_RESURRECT" />;
 					case BUFFEFFECT_TYPE.STAGE_DAMAGEPHYSICS_RATIO_INS: // 83
-						return <Locale plain k="BUFFTYPE_DMG" p={ [p] } />;
+						return <Locale plain k="BUFFTYPE_DMG" />;
 					case BUFFEFFECT_TYPE.STAGE_DAMAGEFIRE_RATIO_INS: // 84
-						return <Locale plain k="BUFFTYPE_DMG_FIRE" p={ [p] } />;
+						return <Locale plain k="BUFFTYPE_DMG_FIRE" />;
 					case BUFFEFFECT_TYPE.STAGE_DAMAGEICE_RATIO_INS: // 85
-						return <Locale plain k="BUFFTYPE_DMG_ICE" p={ [p] } />;
+						return <Locale plain k="BUFFTYPE_DMG_ICE" />;
 					case BUFFEFFECT_TYPE.STAGE_DAMAGELIGHTNING_RATIO_INS: // 86
-						return <Locale plain k="BUFFTYPE_DMG_THUNDER" p={ [p] } />;
+						return <Locale plain k="BUFFTYPE_DMG_THUNDER" />;
 					case BUFFEFFECT_TYPE.STAGE_MARKING: // 87
 						return <Locale plain k="BUFFTYPE_MARKING" />;
 					case BUFFEFFECT_TYPE.STAGE_DEBUFF_RATEUP: // 90
 					case BUFFEFFECT_TYPE.STAGE_DEBUFF_PERDOWN: // 91
-						return <Locale plain k="BUFFTYPE_RES_DEBUFF" p={ [p] } />;
+						return <Locale plain k="BUFFTYPE_RES_DEBUFF" />;
 					case BUFFEFFECT_TYPE.STAGE_BUFFEFFECTRATE_CHANGE: // 92
-						return <Locale plain k="BUFFTYPE_EFFECT_RATE" p={ [p] } />;
+						return <Locale plain k="BUFFTYPE_EFFECT_RATE" />;
 					case BUFFEFFECT_TYPE.REMOVE_SUMMON_INSTENV: // 93
 						return <Locale plain k="BUFFTYPE_SUMMON_INSTENV" />;
 					case BUFFEFFECT_TYPE.BARRIER_PIERCE: // 94
 						return <Locale plain k="BUFFTYPE_BARRIER_PIERCE" />;
 					case BUFFEFFECT_TYPE.STAGE_EXP_UP: // 95
-						return <Locale plain k="BUFFTYPE_EXP" p={ [p] } />;
+						return <Locale plain k="BUFFTYPE_EXP" />;
 					case BUFFEFFECT_TYPE.STAGE_ANALYZE: // 96
-						return <>STAGE_ANALYZE{ p }</>; // 사용처 없음, 알 수 없음
+						return <>STAGE_ANALYZE</>; // 사용처 없음, 알 수 없음
 					case BUFFEFFECT_TYPE.STAGE_IMMUNITY_DEBUFF: // 101
-						return <Locale plain k="BUFFTYPE_DEBUFF_IMMUNE" p={ [p] } />; // 효과 면역
+						return <Locale plain k="BUFFTYPE_DEBUFF_IMMUNE" />; // 효과 면역
 					case BUFFEFFECT_TYPE.STAGE_TOGETHER_ATTACK_ACTIVE_SKILL_1: // 102
 					case BUFFEFFECT_TYPE.STAGE_TOGETHER_ATTACK_ACTIVE_SKILL_2: // 103
 						return <Locale plain k="BUFFTYPE_TOGETHER" />;
 					case BUFFEFFECT_TYPE.STAT_MAXHP_VALUE: // 104
 					case BUFFEFFECT_TYPE.STAT_MAXHP_RATIO: // 105
-						return <Locale plain k="BUFFTYPE_MAXHP" p={ [p] } />;
+						return <Locale plain k="BUFFTYPE_MAXHP" />;
+					case BUFFEFFECT_TYPE.STAT_SKILL_RATIO: // 106
+						return <Locale plain k="BUFFTYPE_SKILL_RATIO" />;
+					case BUFFEFFECT_TYPE.STAT_RANGE_VALUE_ACTIVE_SKILL_1: // 107
+					case BUFFEFFECT_TYPE.STAT_RANGE_VALUE_ACTIVE_SKILL_2: // 108
+						return <Locale
+							plain
+							k="BUFFTYPE_SKILL_RANGE"
+							p={ [type - BUFFEFFECT_TYPE.STAT_RANGE_VALUE_ACTIVE_SKILL_1 + 1] }
+						/>;
+					case BUFFEFFECT_TYPE.FOCUSED_ATTACK: // 109
+						return <Locale plain k="BUFFTYPE_FOCUSED_ATTACK" />;
+					case BUFFEFFECT_TYPE.DAMAGE_DISPERSE: // 110
+						return <Locale plain k="BUFFTYPE_DAMAGE_DISPERSE" />;
+					case BUFFEFFECT_TYPE.EVADE_SKILLDMGUP_ME: // 111
+						return <Locale plain k="BUFFTYPE_BY" p={ [
+							<Locale plain k="BUFFTARGET_BY_SELF" />,
+							<Locale plain k="BUFFEFFECT_BY_EVADE" />,
+							<Locale plain k="BUFFEFFECT_BY_SKILL_RATIO" />,
+						] } />;
+					case BUFFEFFECT_TYPE.EVADE_SKILLDMGDOWN: // 112
+						return <Locale plain k="BUFFTYPE_BY" p={ [
+							<Locale plain k="BUFFTARGET_BY_ATTACKER" />,
+							<Locale plain k="BUFFEFFECT_BY_EVADE" />,
+							<Locale plain k="BUFFEFFECT_BY_SKILL_RATIO" />,
+						] } />;
+					case BUFFEFFECT_TYPE.DEF_SKILLDMGUP_ME: // 113
+						return <Locale plain k="BUFFTYPE_BY" p={ [
+							<Locale plain k="BUFFTARGET_BY_SELF" />,
+							<Locale plain k="BUFFEFFECT_BY_DEF" />,
+							<Locale plain k="BUFFEFFECT_BY_SKILL_RATIO" />,
+						] } />;
+					case BUFFEFFECT_TYPE.DEF_CRTDOWN: // 114
+						return <Locale plain k="BUFFTYPE_BY" p={ [
+							<Locale plain k="BUFFTARGET_BY_ATTACKER" />,
+							<Locale plain k="BUFFEFFECT_BY_DEF" />,
+							<Locale plain k="BUFFEFFECT_BY_CRIT" />,
+						] } />;
+					case BUFFEFFECT_TYPE.BUFFER_ATK_ATKUP: // 115
+						return <Locale plain k="BUFFTYPE_BY" p={ [
+							<Locale plain k="BUFFTARGET_BY_BUFFER" />,
+							<Locale plain k="BUFFEFFECT_BY_EVADE" />,
+							<Locale plain k="BUFFEFFECT_BY_SKILL_RATIO" />,
+						] } />;
+					case BUFFEFFECT_TYPE.RESFIRE_VALUE_MIN: // 116
+						return <Locale plain k="BUFFTYPE_FIRE_RES_MIN" />;
+					case BUFFEFFECT_TYPE.RESICE_VALUE_MIN: // 117
+						return <Locale plain k="BUFFTYPE_ICE_RES_MIN" />;
+					case BUFFEFFECT_TYPE.RESLIGHTNING_VALUE_MIN: // 118
+						return <Locale plain k="BUFFTYPE_THUNDER_RES_MIN" />;
+					case BUFFEFFECT_TYPE.RESFIRE_VALUE_FIX: // 119
+						return <Locale plain k="BUFFTYPE_FIRE_RES_MIN" />;
+					case BUFFEFFECT_TYPE.RESICE_VALUE_FIX: // 120
+						return <Locale plain k="BUFFTYPE_ICE_RES_FIX" />;
+					case BUFFEFFECT_TYPE.RESLIGHTNING_VALUE_FIX: // 121
+						return <Locale plain k="BUFFTYPE_THUNDER_RES_FIX" />;
+					case BUFFEFFECT_TYPE.RESFIRE_DEBUFF_REVERSE: // 122
+						return <Locale plain k="BUFFTYPE_FIRE_RES_REVERSE" />;
+					case BUFFEFFECT_TYPE.RESICE_DEBUFF_REVERSE: // 123
+						return <Locale plain k="BUFFTYPE_ICE_RES_REVERSE" />;
+					case BUFFEFFECT_TYPE.RESLIGHTNING_DEBUFF_REVERSE: // 124
+						return <Locale plain k="BUFFTYPE_THUNDER_RES_REVERSE" />;
+					case BUFFEFFECT_TYPE.BUFF_DISALLOW: // 125
+						return <Locale plain k="BUFFTYPE_BUFF_DISALLOW" />;
+					case BUFFEFFECT_TYPE.REMOVE_BUFF_RESIST: // 126
+						return <Locale plain k="BUFFTYPE_RES_OFF" />;
+					case BUFFEFFECT_TYPE.ACTION_NUMBER_CHANGE: // 127
+						return <Locale plain k="BUFFTYPE_ACT_COUNT" />;
+					case BUFFEFFECT_TYPE.PROVOKE_ATTACKER: // 128
+						return <Locale plain k="BUFFTYPE_PROVOKE_TARGET" />;
+					case BUFFEFFECT_TYPE.CURRENT_HP_PIERCEDOWN: // 129
+						return <Locale plain k="BUFFTYPE_PENETRATION_RES" />;
+					case BUFFEFFECT_TYPE.GUARDPIERCE_APPLY: // 130
+						return <Locale plain k="BUFFTYPE_GUARDPIERCE_APPLY" />;
+					case BUFFEFFECT_TYPE.GUARDPIERCE_NO_APPLY: // 131
+						return <Locale plain k="BUFFTYPE_GUARDPIERCE_NO_APPLY" />;
+					case BUFFEFFECT_TYPE.DAMAGE_RECOVER_THISROUND: // 132
+						return <>DAMAGE_RECOVER_THISROUND</>; // 사용처 없음, 이번 라운드 받은 피해 복구?
+					case BUFFEFFECT_TYPE.SAME_SKILL_HIT_DAMAGE_REDUCE: // 133
+						return <>SAME_SKILL_HIT_DAMAGE_REDUCE</>; // 사용처 없음, 받는 스킬 위력 감소?
+					case BUFFEFFECT_TYPE.STAGE_SEAL_SKILL_ACTIVE_1: // 134
+					case BUFFEFFECT_TYPE.STAGE_SEAL_SKILL_ACTIVE_2: // 135
+						return <Locale
+							plain
+							k="BUFFTYPE_SEAL_ACTIVE"
+							p={ [type - BUFFEFFECT_TYPE.STAGE_SEAL_SKILL_ACTIVE_1 + 1] }
+						/>;
+					case BUFFEFFECT_TYPE.STAGE_SEAL_SKILL_PASSIVE: // 136
+						return <Locale plain k="BUFFTYPE_SEAL_PASSIVE" />;
+					case BUFFEFFECT_TYPE.ADD_ROLE_TYPE: // 137
+						return <Locale plain k="ADD_ROLE_TYPE" />; // 사용처 없음, 알 수 없음... ~ 타입으로 간주하도록 추가?
 				}
-				return <>???</>;
+				return <>{ type }</>;
 			})() }
 		</>;
 	}
@@ -732,8 +814,8 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				}
 			}
 			else if ("near" in trigger) {
-				if (trigger.near)
-					return <Locale plain k="BUFFTRIGGER_NEAR_EXISTS" />;
+				if (trigger.near !== false)
+					return <Locale plain k="BUFFTRIGGER_NEAR_EXISTS" p={ [trigger.near] } />;
 				return <Locale plain k="BUFFTRIGGER_NEAR_NOTEXISTS" />;
 			}
 
@@ -757,7 +839,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			return <Locale plain k="BUFFEFFECT_OFF" p={ [getBuffEffectTypeText(stat.off.type, BUFF_ATTR_TYPE.NO_MATTER)] } />;
 		} else if ("attack" in stat) {
 			if (stat.attack.base === 0 && stat.attack.per === 0)
-				return <></>; // Placeholder 버프
+				return <small class="text-secondary">Placeholder</small>; // Placeholder 버프
 
 			return <Locale plain k="BUFFEFFECT_ATK" p={ [signedValue(stat.attack, level)] } />;
 		} else if ("defense" in stat)

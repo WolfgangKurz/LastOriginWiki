@@ -291,5 +291,5 @@ interface BuffTrigger_Fail {
 }
 
 interface BuffTrigger_Near {
-	near: boolean;
+	near: false | number;
 }
