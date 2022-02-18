@@ -88,6 +88,8 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 		assistant: Decimal.mul(unit.favor.assistant, 1).toNumber(),
 	};
 
+	const promotion = unit.promotions && unit.promotions[unit.promotions.length - 1];
+
 	return <div style={ { display: display ? "" : "none" } }>
 		{/* 스킨, 번호, 소속, 등급, 승급, 유형, 역할 */ }
 		<ul class="nav nav-tabs unit-display-tabs justify-content-start">
@@ -199,10 +201,10 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 						</div>
 						<div class="col bg-dark text-light"><Locale k="UNIT_VIEW_PROMOTION" /></div>
 						<div class="col">
-							{ unit.promotions
-								? unit.promotions.map(pro => <RarityBadge rarity={ pro } size="medium">
-									<Locale k="UNIT_VIEW_PROMOTION_BADGE" p={ [RarityDisplay[pro]] } />
-								</RarityBadge>)
+							{ promotion
+								? <RarityBadge rarity={ promotion } size="medium">
+									<Locale k="UNIT_VIEW_PROMOTION_BADGE" p={ [RarityDisplay[promotion]] } />
+								</RarityBadge>
 								: <span class="text-secondary"><Locale k="UNIT_VIEW_PROMOTION_BADGE_EMPTY" /></span>
 							}
 						</div>
@@ -292,9 +294,15 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 										: <>
 											{ unit.craft
 												? <span class="badge bg-dark my-1">
-													<Icon icon="hammer" class="me-1" />
-													<Locale k="UNIT_VIEW_DROPS_CREATIONTIME" />
-													<span class="ms-1">{ CraftTime }</span>
+													<h5 class="m-0 p-0">
+														<Icon icon="hammer" />
+														<strong>
+															<span class="ps-1 pe-3">
+																<Locale k="UNIT_VIEW_DROPS_CREATIONTIME" />
+															</span>
+															<span>{ CraftTime }</span>
+														</strong>
+													</h5>
 												</span>
 												: <></>
 											}
