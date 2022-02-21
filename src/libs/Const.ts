@@ -9,7 +9,7 @@ export type ImageExtensionTypes = "webp" | "png";
 export const ImageExtensionList: ImageExtensionTypes[] = ["webp", "png"];
 
 export const IsDev = import.meta.env.DEV;
-export const IsStaging = IsDev || true;
+export const IsStaging = IsDev || false;
 
 export const Host = IsDev
 	? "http://121.157.45.209:5500"
@@ -719,7 +719,7 @@ export const PermanentEvents: string[] = ["Ev1", "Ev2", "Ev3", "Ev4"];
 export const NewMapList: string[] = ["Ev14"];
 export const CurrentEvent = "Ev14";
 export const EventFrom = new Date(2021, 12 - 1, 20);
-export const EventTo = new Date(2022, 1 - 1, 17);
+export const EventTo = new Date(2022, 2 - 1, 28);
 
 export const CurrentDate = ((): string => {
 	const d = new Date();
