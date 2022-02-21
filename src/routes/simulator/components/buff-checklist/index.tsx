@@ -718,14 +718,20 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 				const count = trigger.unitCount.count;
 				const type = trigger.unitCount.type;
 
-				const _classes = [
-					<Locale plain k="COMMON_UNIT_TYPE_LIGHT" />,
-					<Locale plain k="COMMON_UNIT_TYPE_HEAVY" />,
-					<Locale plain k="COMMON_UNIT_TYPE_MOBILITY" />,
-				];
+				const typeList = filters.includes("attacker") || filters.includes("defender") || filters.includes("supporter")
+					? [
+						<Locale plain k="COMMON_UNIT_ROLE_DEFENDER" />,
+						<Locale plain k="COMMON_UNIT_ROLE_ATTACKER" />,
+						<Locale plain k="COMMON_UNIT_ROLE_SUPPORTER" />,
+					]
+					: [
+						<Locale plain k="COMMON_UNIT_TYPE_LIGHT" />,
+						<Locale plain k="COMMON_UNIT_TYPE_HEAVY" />,
+						<Locale plain k="COMMON_UNIT_TYPE_MOBILITY" />,
+					];
 				const typeText = type.length === 3
 					? [<></>]
-					: type.map(x => _classes[x]).gap("/");
+					: type.map(x => typeList[x]).gap("/");
 
 				const typeCountParams = [
 					<>{ typeText }</>,
