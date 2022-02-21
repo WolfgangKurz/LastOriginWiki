@@ -7,6 +7,16 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11537" date="2022-02-21"
+		bugfix={ <>
+			<li>
+				다음과 같은 일부 버프 조건이 올바르지 않게 표기되는 문제를 수정했습니다.
+				<ul>
+					<li>전투원 역할이 전투원 유형으로 표시되던 문제를 수정</li>
+				</ul>
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11536" date="2022-02-21"
 		new={ <>
 			<li>신규 전투원 <span class="badge bg-warning text-dark">프랭스터 머큐리</span>의 정보가 추가되었습니다.</li>
