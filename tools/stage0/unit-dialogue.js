@@ -12,6 +12,7 @@ function process (auth) {
 	};
 	function procLang (lang, rows) {
 		const typeTable = {
+			소개: "Intro",
 			획득: "Join",
 
 			편성: "SquadJoin",
@@ -56,19 +57,37 @@ function process (auth) {
 			"전투 MVP": "MVP",
 		};
 
-		rows.map((row) => {
-			if (!row[0] || row[0].length === 0 || row[0][0] === "#") return;
+		rows
+			.filter(row => {
+				if (!row[0] || row[0].length === 0 || row[0][0] === "#") return false;
 
-			const unit = row[0];
-			const skin = row[2] || "0";
-			const type = typeTable[row[4]];
-			const dialogue = row[5];
+				const unit = row[0];
+				const skin = row[2] || "0";
+				const type = typeTable[row[4]] || row[4];
 
-			if (!(unit in ret[lang])) ret[lang][unit] = {};
-			if (!(skin in ret[lang][unit])) ret[lang][unit][skin] = {};
+				const name = skin === "0"
+					? `${unit}_${type}`
+					: skin === "M"
+						? `${unit}_Marriage_${type}`
+						: `${unit}_NS${skin}_${type}`;
 
-			ret[lang][unit][skin][type] = (dialogue || "").trim();
-		});
+				return fs.existsSync(path.resolve(
+					__dirname, "..", "..", "external", "assets",
+					"audio", `voice-${lang}`,
+					`${name}.mp3`,
+				));
+			})
+			.map((row) => {
+				const unit = row[0];
+				const skin = row[2] || "0";
+				const type = typeTable[row[4]] || row[4];
+				const dialogue = row[5];
+
+				if (!(unit in ret[lang])) ret[lang][unit] = {};
+				if (!(skin in ret[lang][unit])) ret[lang][unit][skin] = {};
+
+				ret[lang][unit][skin][type] = (dialogue || "").trim();
+			});
 	}
 
 	Promise.all([
@@ -103,35 +122,36 @@ function process (auth) {
 				}
 
 				const rows = res.data.values;
-				if (rows.length)
+				if (rows.length) {
 					procLang("jp", rows);
-				else {
-					console.log("No data found.");
-					return reject();
-				}
-				resolve();
-			});
-		}),
-		new Promise((resolve, reject) => {
-			sheets.spreadsheets.values.get({
-				spreadsheetId: "1TrLn5czFe2Ww1xg4HiFsDzZDcnphxV3AqP_DgNqaU00",
-				range: "UnitDialogue (JPDMM)!A3:F",
-			}, (err, res) => {
-				if (err) {
-					console.log(`The API returned an error: ${err}`);
-					return reject();
-				}
-
-				const rows = res.data.values;
-				if (rows.length)
 					procLang("jpdmm", rows);
-				else {
+				} else {
 					console.log("No data found.");
 					return reject();
 				}
 				resolve();
 			});
 		}),
+		// new Promise((resolve, reject) => {
+		// 	sheets.spreadsheets.values.get({
+		// 		spreadsheetId: "1TrLn5czFe2Ww1xg4HiFsDzZDcnphxV3AqP_DgNqaU00",
+		// 		range: "UnitDialogue (JPDMM)!A3:F",
+		// 	}, (err, res) => {
+		// 		if (err) {
+		// 			console.log(`The API returned an error: ${err}`);
+		// 			return reject();
+		// 		}
+
+		// 		const rows = res.data.values;
+		// 		if (rows.length)
+		// 			procLang("jpdmm", rows);
+		// 		else {
+		// 			console.log("No data found.");
+		// 			return reject();
+		// 		}
+		// 		resolve();
+		// 	});
+		// }),
 	]).then(() => {
 		fs.mkdirSync(path.resolve(__dirname, "..", "..", "db", "dialogue"), { recursive: true });
 		["ko", "jp", "jpdmm"].forEach(lang => {

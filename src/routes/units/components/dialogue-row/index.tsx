@@ -24,6 +24,7 @@ const DialogueRow: FunctionComponent<DialogueRowProps> = (props) => {
 
 	/* eslint-disable camelcase */
 	const TypeColor = ({
+		Intro: "warning text-dark",
 		Join: "dark",
 
 		SquadJoin: "dark",

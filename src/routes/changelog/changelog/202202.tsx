@@ -7,6 +7,16 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11539" date="2022-02-22"
+		update={ <>
+			<li>전투원 대사의 "日本語", "日本語 DMM" 표기를 "日本語 N", "日本語 R"로 변경했습니다.</li>
+			<li>전투원 대사에 "소개" 유형이 추가되었습니다.</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2022-02-22 02:11:10</span> 기준의 일본어 음성 및 대사를 추가했습니다.</li>
+			<li><span class="badge bg-light text-dark">KST 2022-02-22 02:11:10</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11537" date="2022-02-21"
 		bugfix={ <>
 			<li>

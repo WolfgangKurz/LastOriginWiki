@@ -1,4 +1,5 @@
 export interface RawUnitDialogueEntity {
+	Intro: string;
 	Join: string;
 	SquadJoin: string;
 	Leader: string;
