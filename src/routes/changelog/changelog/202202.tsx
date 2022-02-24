@@ -8,6 +8,9 @@ import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
 	<ChangelogItem title="Build 11546" date="2022-02-25"
+		new={ <>
+			<li>장비정보에 이름 검색이 추가되었습니다.</li>
+		</> }
 		update={ <>
 			<li>적 정보의 "적 목록"과 "적 그룹 목록"을 페이지에서 탭으로 변경했습니다.</li>
 			<li>적 목록의 필터를 갱신했습니다.</li>
