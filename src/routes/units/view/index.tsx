@@ -316,21 +316,24 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 
 															<hr class="my-1" />
 
-															{ unit.cost.items.length === 0
-																? <span class="text-secondary">
-																	<Locale k="UNIT_VIEW_RESEARCH_ITEM_EMPTY" />
+															{ unit.cost.aicore > 0
+																? <span class="badge bg-semilight me-1 mb-1">
+																	<EquipIcon class="me-2 vertical-align-middle" image="UI_Icon_Consumable_AICore" size="24" />
+																	<Locale k="CONSUMABLE_TestItem_4" />
+																	&nbsp;x{ FormatNumber(unit.cost.aicore) }
 																</span>
-																: unit.cost.items.map(e => {
-																	const item = ConsumableDB.find(c => c.key === e.item);
-																	if (!item) return <>-</>;
-
-																	return <span class="badge bg-semilight me-1 mb-1">
-																		<EquipIcon class="me-2 vertical-align-middle" image={ item.icon } size="24" />
-																		<Locale k={ `CONSUMABLE_${item.key}` } />
-																		&nbsp;x{ FormatNumber(e.count) }
-																	</span>;
-																})
+																: <></>
 															}
+															{ unit.cost.items.map(e => {
+																const item = ConsumableDB.find(c => c.key === e.item);
+																if (!item) return <>-</>;
+
+																return <span class="badge bg-semilight me-1 mb-1">
+																	<EquipIcon class="me-2 vertical-align-middle" image={ item.icon } size="24" />
+																	<Locale k={ `CONSUMABLE_${item.key}` } />
+																	&nbsp;x{ FormatNumber(e.count) }
+																</span>;
+															}) }
 														</div>
 														: <h5 class="m-0 p-0">
 															<Icon icon="hammer" />
