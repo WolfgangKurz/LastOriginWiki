@@ -1,6 +1,7 @@
-import { Component, FunctionalComponent, RenderableProps } from "preact";
+import { FunctionalComponent } from "preact";
 import { Router } from "preact-router";
 import AsyncRoute from "preact-async-route";
+import Store from "@/store";
 
 import { CurrentLocale } from "@/libs/Locale";
 import { Host } from "@/libs/Const";
@@ -8,11 +9,10 @@ import { Host } from "@/libs/Const";
 // import DynamicRoute from "@/components/dynamic-route";
 import Loader from "@/components/loader";
 import { LocaleGet } from "@/components/locale";
+import Redirect from "@/components/redirect";
 import Header from "@/components/header";
 
 import NotFoundPage from "@/routes/notfound";
-
-import Store from "@/store";
 
 // import AIList from "@/components/ai-list/new.index";
 
@@ -59,9 +59,16 @@ const App: FunctionalComponent = () => {
 						<AsyncRoute path="/facilities" { ...pRoute(() => import("@/routes/facilities")) } />
 						<AsyncRoute path="/facilities/:uid" { ...pRoute(() => import("@/routes/facilities/view")) } />
 
-						<AsyncRoute path="/enemies" { ...pRoute(() => import("@/routes/enemies")) } />
-						<AsyncRoute path="/enemies/list/:uid?/:level?" { ...pRoute(() => import("@/routes/enemies/list")) } />
-						<AsyncRoute path="/enemies/group" { ...pRoute(() => import("@/routes/enemies/group")) } />
+						<AsyncRoute path="/enemies/:uid?/:level?" { ...pRoute(() => import("@/routes/enemies")) } />
+						<Redirect path="/enemies/list/:uid?/:level?" to={ ({ uid, level }) => {
+							if (uid && level)
+								return `/enemies/${uid}/${level}`;
+							else if (uid)
+								return `/enemies/${uid}`;
+							else
+								return `/enemies`;
+						} } />
+						<Redirect path="/enemies/group" to="/enemies" />
 
 						<AsyncRoute path="/worlds" { ...pRoute(() => import("@/routes/worlds")) } />
 						<AsyncRoute path="/worlds/:wid" { ...pRoute(() => import("@/routes/worlds/world-view")) } />

@@ -61,8 +61,8 @@ const Units: FunctionalComponent = () => {
 			// toggleUnitsFilterRoguelikeSkill,
 			setUnitEffectFilters,
 
-			setDisplayType,
-			setSearchText,
+			setUnitDisplayType: setDisplayType,
+			setUnitSearchText: setSearchText,
 		}) => <Loader json={ StaticDB.FilterableUnit } content={ ((): preact.VNode => {
 			const UnitEffects = ((): Record<string, EffectFilterListType> => {
 				const ret: EffectFilterListType = [];
@@ -458,9 +458,9 @@ const Units: FunctionalComponent = () => {
 									/>
 								</div>
 							</div>
-							<hr class="my-2" />
+							{/* <hr class="my-2" />
 
-							{/* <div class="row">
+							<div class="row">
 							<div class="col-md-auto col-12 filter-label">
 								<Locale k="UNIT_FILTERS_ROGUELIKE_SKILL" />
 							</div>

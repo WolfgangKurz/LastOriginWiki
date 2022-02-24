@@ -70,7 +70,7 @@ function process (auth) {
 							? "1EbGKc68ysZkoV_rurGKQ-tezAm3WW3AAH3KAM-XcSkA"
 							: "11IxebdUQ_VHbaP79sN8KxZ87n3c5rG42DL8TQOK9h1k"
 						: "1ohSOKdl1IZq8aOsWPJ74yX01Ave7FkSrUFG5MSbfZN8",
-					range: "Unit!A2:AH",
+					range: "Unit!A2:AI",
 				}, (err, res) => {
 					if (err) return console.log(`The API returned an error: ${err}`);
 
@@ -124,7 +124,7 @@ function process (auth) {
 								lb1, lb2, lb3, lb4,
 								fl1, fl2, fl3, fl4, fl5,
 								equip1, equip2, equip3, equip4,
-								research, lvlimit,
+								cost, research, lvlimit,
 								source, source1,
 							] = row;
 
@@ -179,6 +179,8 @@ function process (auth) {
 										: source1.split("\n").map(d => d.split(","))
 									),
 								],
+
+								cost: cost ? JSON.parse(cost) : undefined,
 								research: research ? JSON.parse(research) : undefined,
 							};
 							if (pro)

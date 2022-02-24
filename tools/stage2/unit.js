@@ -66,7 +66,10 @@ targetDBs.forEach(targetDB => {
 						rarity: undefined,
 					})),
 					source: char.source,
+
+					cost: char.cost,
 					research: char.research,
+
 					skills,
 					dialogue: {
 						ko: dialogues.ko[char.uid],

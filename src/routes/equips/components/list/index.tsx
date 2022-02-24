@@ -61,6 +61,7 @@ const EquipList: FunctionalComponent<EquipsProps> = (props) => {
 				toggleEquipSourceRoguelike,
 
 				setEquipEffectFilters,
+				setEquipSearchText: setSearchText,
 			}) => {
 
 				function FillSourceFilters (value: boolean): void {
@@ -248,6 +249,17 @@ const EquipList: FunctionalComponent<EquipsProps> = (props) => {
 							};
 						})
 						.filter(x => {
+							try {
+								const equip = x.equips[0];
+								const Name = LocaleGet(`EQUIP_${equip.fullKey}`)
+									.replace(/ (RE|MP|SP|EX)$/, "");
+
+								return new RegExp(Filters.SearchText, "i").test(Name);
+							} catch {
+								return false;
+							}
+						})
+						.filter(x => {
 							if (x.equips.length === 0) return false;
 
 							// 전용장비
@@ -271,8 +283,8 @@ const EquipList: FunctionalComponent<EquipsProps> = (props) => {
 							const sources = x.source.unique(y => y.toShort());
 							// console.log(x.last.fullKey, sources);
 
-							if (Filters.Source.EternalWar && sources.some(y => y.IsEternalWar)) return true;
-							if (Filters.Source.NewEternalWar && sources.some(y => y.IsNewEternalWar)) return true;
+							if (Filters.Source.EternalWar && sources.some(y => y.IsEternalWarExchange)) return true;
+							if (Filters.Source.NewEternalWar && sources.some(y => y.IsNewEternalWarExchange)) return true;
 
 							if (Filters.Source.Exchange && sources.some(y => y.IsExchange && !y.IsEvent && y.ExchangeDate === CurrentDate))
 								return true;
@@ -326,7 +338,7 @@ const EquipList: FunctionalComponent<EquipsProps> = (props) => {
 				return <div class="equips">
 					<div class="card text-start">
 						<div class="card-body">
-							<div class="row">
+							<div class="row mb-2">
 								<div class="col-12 col-md-auto filter-label">
 									<Locale k="EQUIP_FILTER_TYPE" />
 								</div>
@@ -359,7 +371,25 @@ const EquipList: FunctionalComponent<EquipsProps> = (props) => {
 									</div>
 								</div>
 							</div>
+
+							<div class="row mb-4">
+								<div class="col">
+									<div class="input-group">
+										<input
+											class="form-control"
+											value={ Filters.SearchText }
+											onInput={ (e): void => setSearchText((e.target as any).value) }
+											placeholder={ LocaleGet("EQUIP_SEARCH_PLACEHOLDER") } />
+
+										<button class="btn btn-danger" onClick={ (): void => setSearchText("") }>
+											<Locale k="EQUIP_SEARCH_RESET" />
+										</button>
+									</div>
+								</div>
+							</div>
+
 							<hr class="my-2" />
+
 							<div class="row">
 								<div class="col-12 col-md-auto filter-label">
 									<Locale k="EQUIP_FILTER_SOURCE" />

@@ -2,6 +2,7 @@
 // import * as path from "path";
 const fs = require("fs");
 const path = require("path");
+const { emitWarning } = require("process");
 
 // import input from "../../src/json/unit";
 // import skill from "../../src/json/unit-skill";
@@ -21,6 +22,11 @@ targetDBs.forEach(targetDB => {
 	);
 	const map = JSON.parse(
 		fs.readFileSync(path.resolve(__dirname, "..", "..", "external", "json", targetDB, "map.json"), { encoding: "utf-8" })
+			.replace(/export default /, "")
+			.replace(/;$/, ""),
+	);
+	const ew = JSON.parse(
+		fs.readFileSync(path.resolve(__dirname, "..", "..", "external", "json", targetDB, "ew.json"), { encoding: "utf-8" })
 			.replace(/export default /, "")
 			.replace(/;$/, ""),
 	);
@@ -65,6 +71,22 @@ targetDBs.forEach(targetDB => {
 					if (ret[x].length === 0)
 						delete ret[x];
 				});
+
+				ret.NEW = [];
+				Object.keys(ew).forEach(x => {
+					Object.keys(ew[x]).forEach(y => {
+						const z = ew[x][y];
+						if (z.waves) {
+							z.waves.forEach(w => w.forEach(i => {
+								if (i.e.some(e => e && e.id === _.id))
+									ret.NEW.push(`NewEternalWar:${x}`);
+							}));
+						}
+					});
+				});
+				ret.NEW = ret.NEW.reduce((p, c) => p.includes(c) ? p : [...p, c], []);
+				if (ret.NEW.length === 0)
+					delete ret.NEW;
 				return ret;
 			})(),
 		});

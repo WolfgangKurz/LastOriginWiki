@@ -36,6 +36,9 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 	function compile (text: string): Array<preact.VNode[] | preact.VNode | string> {
 		if (!text) return [];
 
+		const placeholder: FunctionalComponent<unknown> =
+			(p) => createElement("span", { class: "text-secondary" }, p.children);
+
 		const dmg: FunctionalComponent<unknown> =
 			(p) => createElement(Components.Damage, { ...p, multiplier: rates[props.level], bonus: props.skillBonus });
 
@@ -119,6 +122,8 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 
 		try {
 			return parseVNode(text, [], {
+				placeholder,
+
 				section: Components.Section,
 				sec: Components.Section,
 

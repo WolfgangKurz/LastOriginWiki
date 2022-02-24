@@ -36,7 +36,7 @@ import SkillTable from "../components/skill-table";
 import UnitDialogue, { VoiceItem } from "../components/unit-dialogue";
 import ResearchTree from "../components/research-tree";
 
-import "./style.module.scss";
+import style from "./style.module.scss";
 
 // type TabTypes = "basic" | "skills" | "roguelike" | "dialogue";
 type TabTypes = "basic" | "lvlimit" | "skills" | "dialogue";
@@ -55,6 +55,7 @@ interface SubpageProps {
 
 const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex, SkinList }) => {
 	const FilterableEquipDB = GetJson<FilterableEquip[]>(StaticDB.FilterableEquip, DBSourceConverter);
+	const ConsumableDB = GetJson<Consumable[]>(StaticDB.Consumable);
 
 	const selectedEquip = objState<FilterableEquip | null>(null);
 	const equipPopupDisplay = objState<boolean>(false);
@@ -293,16 +294,54 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 										</div>
 										: <>
 											{ unit.craft
-												? <span class="badge bg-dark my-1">
-													<h5 class="m-0 p-0">
-														<Icon icon="hammer" />
-														<strong>
-															<span class="ps-1 pe-3">
-																<Locale k="UNIT_VIEW_DROPS_CREATIONTIME" />
+												? <span class={ `badge bg-dark my-1 ${style.CreationBadge}` }>
+													{ unit.cost
+														? <div class={ style.CostInfo }>
+															<span class="pe-3">
+																<img class="res-icon" src={ `${AssetsRoot}/res-component.png` } />
+																{ FormatNumber(unit.cost.res[0]) }
 															</span>
-															<span>{ CraftTime }</span>
-														</strong>
-													</h5>
+															<span class="pe-3">
+																<img class="res-icon" src={ `${AssetsRoot}/res-nutrition.png` } />
+																{ FormatNumber(unit.cost.res[1]) }
+															</span>
+															<span class="pe-3">
+																<img class="res-icon" src={ `${AssetsRoot}/res-power.png` } />
+																{ FormatNumber(unit.cost.res[2]) }
+															</span>
+															<span>
+																<Icon class="me-1" icon="hourglass-split" />
+																{ CraftTime }
+															</span>
+
+															<hr class="my-1" />
+
+															{ unit.cost.items.length === 0
+																? <span class="text-secondary">
+																	<Locale k="UNIT_VIEW_RESEARCH_ITEM_EMPTY" />
+																</span>
+																: unit.cost.items.map(e => {
+																	const item = ConsumableDB.find(c => c.key === e.item);
+																	if (!item) return <>-</>;
+
+																	return <span class="badge bg-semilight me-1 mb-1">
+																		<EquipIcon class="me-2 vertical-align-middle" image={ item.icon } size="24" />
+																		<Locale k={ `CONSUMABLE_${item.key}` } />
+																		&nbsp;x{ FormatNumber(e.count) }
+																	</span>;
+																})
+															}
+														</div>
+														: <h5 class="m-0 p-0">
+															<Icon icon="hammer" />
+															<strong>
+																<span class="ps-1 pe-3">
+																	<Locale k="UNIT_VIEW_DROPS_CREATIONTIME" />
+																</span>
+																<span>{ CraftTime }</span>
+															</strong>
+														</h5>
+													}
 												</span>
 												: <></>
 											}
@@ -676,7 +715,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 
 	const skinIndex = objState<number>(0);
 
-	return <Loader json={ [StaticDB.FilterableEquip, `unit/${props.uid}`] } content={ ((): preact.VNode => {
+	return <Loader json={ [StaticDB.FilterableEquip, StaticDB.Consumable, `unit/${props.uid}`] } content={ ((): preact.VNode => {
 		const unit = ((): Unit => {
 			const raw = GetJson<Unit>(`unit/${props.uid}`);
 			return {

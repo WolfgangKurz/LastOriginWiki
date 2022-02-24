@@ -2,12 +2,24 @@
 	cursor: pointer;
 
 	&.card {
-		border-radius: 0.75em 0.75em 0.5em 0.5em;
+		border-radius: 0.5em;
 		overflow: hidden;
+
+		.additional-info {
+			position: absolute;
+			left: 4px;
+			top: 4px;
+			line-height: 0;
+	
+			> .info-badge {
+				margin-right: 0.25em;
+				box-shadow: 0 0 4px #000;
+			}
+		}
 
 		.card-body {
 			padding: 1em;
-
+			
 			.card-title {
 				margin: 0;
 				font-size: 14px;

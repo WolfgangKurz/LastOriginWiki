@@ -190,7 +190,9 @@ export default class EntitySource {
 	/** 맵 보상 여부 */
 	public get IsMap (): boolean {
 		return ![
-			this.IsEternalWar, this.IsSubStory, this.IsExchange,
+			this.IsEternalWarExchange, this.IsNewEternalWarExchange,
+			this.IsNewEternalWar,
+			this.IsSubStory, this.IsExchange,
 			this.IsLimited, this.IsPrivateItem, this.IsChallenge,
 			this.IsUninstalled, this.IsRoguelike,
 		].some(x => x);
@@ -242,10 +244,15 @@ export default class EntitySource {
 	}
 	// -------------- 외전
 
-	// -------------- 영전
-	/** 영전 획득 여부 */
-	public get IsEternalWar (): boolean {
-		return this.Parts[0] === "EternalWar";
+	// -------------- 영전 / 변화의성소
+	/** 영전 교환 여부 */
+	public get IsEternalWarExchange (): boolean {
+		return this.Parts[0] === "Alterium";
+	}
+
+	/** 변화의성소 교환 여부 */
+	public get IsNewEternalWarExchange (): boolean {
+		return this.Parts[0] === "RefinedAlterium";
 	}
 
 	/** 변화의성소 획득 여부 */
@@ -255,8 +262,17 @@ export default class EntitySource {
 
 	/** 광물 가격 */
 	public get EternalWarPrice (): number {
-		if (!this.IsEternalWar && !this.IsNewEternalWar) return 0;
+		if (!this.IsEternalWarExchange && !this.IsNewEternalWarExchange) return 0;
 		return parseInt(this.Parts[1], 10);
+	}
+	public get NewEternalWarPrice (): number {
+		return this.EternalWarPrice;
+	}
+
+	/** 변화의성소 맵 */
+	public get NewEternalWar (): string {
+		if (!this.IsNewEternalWar) return "";
+		return this.Parts[1];
 	}
 	// -------------- 영전
 
@@ -298,8 +314,14 @@ export default class EntitySource {
 
 		if (this.IsChallenge)
 			output.push("Challenge");
-		else if (this.IsEternalWar)
-			output.push("EW");
+
+		else if (this.IsEternalWarExchange)
+			output.push("EWR");
+		else if (this.IsNewEternalWarExchange)
+			output.push("NEWR");
+		else if (this.IsNewEternalWar)
+			output.push("NEW");
+
 		else if (this.IsSubStory)
 			output.push("SubStory");
 		else if (this.IsExchange) {
@@ -334,10 +356,14 @@ export default class EntitySource {
 				output.push(`*Challenge:${this.ChallengeId}:${this.ChallengeDifficulty}`);
 			else
 				output.push(`Challenge:${this.ChallengeId}:${this.ChallengeDifficulty}`);
-		} else if (this.IsEternalWar)
-			output.push("EW");
+
+		} else if (this.IsEternalWarExchange)
+			output.push("EWR");
+		else if (this.IsNewEternalWarExchange)
+			output.push("NEWR");
 		else if (this.IsNewEternalWar)
-			output.push("NEW");
+			output.push(`NEW:${this.NewEternalWar}`);
+
 		else if (this.IsSubStory)
 			output.push(`SubStory:${this.SubStoryUnit}`);
 		else if (this.IsExchange) {
