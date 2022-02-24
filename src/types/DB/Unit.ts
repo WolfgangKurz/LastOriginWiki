@@ -99,6 +99,15 @@ export interface LvLimitData {
 	items: Required<MapWaveDrop>[];
 }
 
+export interface UnitCost {
+	res: [number, number, number];
+	aicore: number;
+	items: Array<{
+		item: string;
+		count: number;
+	}>;
+}
+
 export interface Unit {
 	id: number;
 	uid: string;
@@ -135,6 +144,7 @@ export interface Unit {
 	equips: string[];
 
 	source: EntitySource[][];
+	cost: UnitCost | undefined;
 	research: ResearchTreeData[] | undefined;
 
 	stat: UnitStats[];
@@ -187,6 +197,7 @@ export namespace Unit {
 
 		stat: [],
 		source: [],
+		cost: undefined,
 		research: undefined,
 
 		skills: {},

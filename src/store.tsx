@@ -1,6 +1,6 @@
 import { FunctionalComponent, RenderableProps } from "preact";
 
-import createStore, { Store as _Store, Unsubscribe } from "unistore";
+import createStore, { Store as _Store, Unsubscribe as _Unsubscribe } from "unistore";
 import { connect, Provider as _Provider } from "unistore/preact";
 import devtools from "unistore/devtools";
 
@@ -31,6 +31,7 @@ type ConnectDirectArgs<S, P, A> = RenderableProps<S & P & A>;
 // Connect 인자 map 타입
 type ConnectMapType<T> = keyof T | Array<keyof T>;
 
+export type Unsubscribe = _Unsubscribe;
 
 export class StoreClass<
 	StoreType extends Record<string, unknown>,
@@ -218,6 +219,28 @@ const Store = new StoreClass(
 					}
 					return { ...x, selected: false };
 				}) as EffectFilterListType,
+
+			SearchText: "",
+		},
+		Enemies: {
+			Type: {
+				[ACTOR_CLASS.LIGHT]: true,
+				[ACTOR_CLASS.MOBILITY]: true,
+				[ACTOR_CLASS.HEAVY]: true,
+			},
+			Role: {
+				[ROLE_TYPE.ATTACKER]: true,
+				[ROLE_TYPE.DEFENDER]: true,
+				[ROLE_TYPE.SUPPORTER]: true,
+			},
+
+			Boss: true,
+			Normal: true,
+			Unused: true,
+			NEW: true,
+		
+			DisplayType: "list" as ("list" | "group"),
+			SearchText: "",
 		},
 	},
 	{
@@ -309,8 +332,8 @@ const Store = new StoreClass(
 			return merge(state, { Units: { EffectFilters: list } });
 		},
 
-		setDisplayType: (state, type: "table" | "list" | "group" | "time") => merge(state, { Units: { DisplayType: type } }),
-		setSearchText: (state, value: string) => merge(state, { Units: { SearchText: value } }),
+		setUnitDisplayType: (state, type: "table" | "list" | "group" | "time") => merge(state, { Units: { DisplayType: type } }),
+		setUnitSearchText: (state, value: string) => merge(state, { Units: { SearchText: value } }),
 
 		////////////////////////////////////////////////////////////////////////////////
 
@@ -341,6 +364,26 @@ const Store = new StoreClass(
 			state.Equips.EffectFilters = [];
 			return merge(merge(state, { Equips: { EffectFilters: "" } }), { Equips: { EffectFilters: list } });
 		},
+
+		setEquipSearchText: (state, value: string) => merge(state, { Equips: { SearchText: value } }),
+
+		////////////////////////////////////////////////////////////////////////////////
+
+		toggleEnemiesFilterTypeLight: (state) => merge(state, { Enemies: { Type: { [ACTOR_CLASS.LIGHT]: !state.Enemies.Type[ACTOR_CLASS.LIGHT] } } }),
+		toggleEnemiesFilterTypeMobility: (state) => merge(state, { Enemies: { Type: { [ACTOR_CLASS.MOBILITY]: !state.Enemies.Type[ACTOR_CLASS.MOBILITY] } } }),
+		toggleEnemiesFilterTypeHeavy: (state) => merge(state, { Enemies: { Type: { [ACTOR_CLASS.HEAVY]: !state.Enemies.Type[ACTOR_CLASS.HEAVY] } } }),
+
+		toggleEnemiesFilterRoleAttacker: (state) => merge(state, { Enemies: { Role: { [ROLE_TYPE.ATTACKER]: !state.Enemies.Role[ROLE_TYPE.ATTACKER] } } }),
+		toggleEnemiesFilterRoleDefender: (state) => merge(state, { Enemies: { Role: { [ROLE_TYPE.DEFENDER]: !state.Enemies.Role[ROLE_TYPE.DEFENDER] } } }),
+		toggleEnemiesFilterRoleSupporter: (state) => merge(state, { Enemies: { Role: { [ROLE_TYPE.SUPPORTER]: !state.Enemies.Role[ROLE_TYPE.SUPPORTER] } } }),
+
+		toggleEnemiesFilterBoss: (state) => merge(state, { Enemies: { Boss: !state.Enemies.Boss } }),
+		toggleEnemiesFilterNormal: (state) => merge(state, { Enemies: { Normal: !state.Enemies.Normal } }),
+		toggleEnemiesFilterUnused: (state) => merge(state, { Enemies: { Unused: !state.Enemies.Unused } }),
+		toggleEnemiesFilterNEW: (state) => merge(state, { Enemies: { NEW: !state.Enemies.NEW } }),
+
+		setEnemiesDisplayType: (state, type: "list" | "group") => merge(state, { Enemies: { DisplayType: type } }),
+		setEnemiesSearchText: (state, value: string) => merge(state, { Enemies: { SearchText: value } }),
 	},
 );
 export default Store;

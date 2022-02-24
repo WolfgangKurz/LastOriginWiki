@@ -69,7 +69,8 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 		const FilterableEnemyDB = GetJson<FilterableEnemy[]>(StaticDB.FilterableEnemy);
 
 		const target = props.enemy && FilterableEnemyDB.find(x => x.id === targetId.value) || null;
-		const isEWEnemy = target && /_EW[0-9]*$/.test(target.id);
+		// const isEWEnemy = target && /_EW[0-9]*$/.test(target.id);
+		const isNEWEnemy = target && "NEW" in target.used;
 
 		const FamilyList = ((): SelectOption<string>[] => {
 			if (!props.enemy) return [];
@@ -86,7 +87,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 			if (!target) return "";
 
 			const loc = window.location;
-			return `${loc.origin}/enemies/list/${target.id}/${level.value}`;
+			return `${loc.origin}/enemies/${target.id}/${level.value}`;
 		})();
 
 		if (props.enemy && !FamilyList.some(x => x.value === targetId.value)) {
@@ -155,7 +156,9 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 			};
 			const elem = table[skill.buff.type];
 
-			return LocaleGet(`${skill.key}_DESC`, `<edmg rate="${skill.buff.rate}" type="${elem}" />`)
+			const k = `${skill.key}_DESC`;
+			const r = LocaleGet(k, `<edmg rate="${skill.buff.rate}" type="${elem}" />`);
+			return (r === k ? `<placeholder>${LocaleGet("ENEMY_SKILL_NO_DESCRIPTION")}</placeholder>` : r)
 				.replace(/\. /g, ".\n");
 		}
 
@@ -202,9 +205,15 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 			header={ target
 				? <div class="text-start">
 					<Locale k={ `ENEMY_${target.id}` } />
-					{ isEWEnemy
+					{/* { isEWEnemy
 						? <span class="badge bg-warning text-dark ms-2">
 							<Locale k="ENEMY_VIEW_EW" />
+						</span>
+						: <></>
+					} */}
+					{ isNEWEnemy
+						? <span class="badge bg-dark ms-2">
+							<Locale k="ENEMY_NEW_ETERNALWAR" />
 						</span>
 						: <></>
 					}
@@ -214,8 +223,8 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 				: <></>
 			}
 			onHidden={ (): void => {
-				if (!props.asSub && window.location.pathname !== "/enemies/list")
-					route("/enemies/list");
+				if (!props.asSub && window.location.pathname !== "/enemies")
+					route("/enemies");
 
 				if (props.onHidden)
 					props.onHidden();
@@ -234,7 +243,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 									const value = (e.target as HTMLSelectElement).value;
 									targetId.set(value);
 									if (!props.asSub)
-										route(`/enemies/list/${value}`);
+										route(`/enemies/${value}`);
 								} }
 							>
 								{ FamilyList.map(x => <option value={ x.value }>{ x.text }</option>) }
@@ -557,24 +566,30 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 								<div class="card-body p-2">
 									{ Sources.map((area, aindex) => <div>
 										{ aindex > 0 ? <hr class="my-2" /> : <></> }
-										{ area.length > 0 && area[0].IsEvent
-											? <h6 style="font-weight: bold">
-												<Locale k={ area[0].EventName } />
-											</h6>
-											: area.length > 0 && area[0].IsChallenge
+										{ area.length > 0
+											? area[0].IsEvent
 												? <h6 style="font-weight: bold">
-													<Locale k={ `COMMON_CHALLENGE_${area[0].ChallengeName}` } />
+													<Locale k={ area[0].EventName } />
 												</h6>
-												: area.length > 0 && area[0].IsSubStory
+												: area[0].IsChallenge
 													? <h6 style="font-weight: bold">
-														<Locale k="COMMON_SOURCE_SUBSTORY_SINGLE" />
+														<Locale k={ `COMMON_CHALLENGE_${area[0].ChallengeName}` } />
 													</h6>
-													: <></>
+													: area[0].IsSubStory
+														? <h6 style="font-weight: bold">
+															<Locale k="COMMON_SOURCE_SUBSTORY_SINGLE" />
+														</h6>
+														: area[0].IsNewEternalWar
+															? <h6 style="font-weight: bold">
+																<Locale k="COMMON_SOURCE_NEW" />
+															</h6>
+															: <></>
+											: <></>
 										}
 
 										{ area.map(source => <SourceBadge class="my-1" source={ source } linked />) }
 									</div>) }
-									{ isEWEnemy
+									{/* { isEWEnemy
 										? <>
 											{ Sources.length > 0 ? <hr class="my-2" /> : <></> }
 											<span class="badge bg-dark text-light">
@@ -586,6 +601,12 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 												<Locale k="ENEMY_VIEW_STAGE_NONE" />
 											</div>
 											: <></>
+									} */}
+									{ Object.keys(Sources).length === 0
+										? <div class="secondary">
+											<Locale k="ENEMY_VIEW_STAGE_NONE" />
+										</div>
+										: <></>
 									}
 								</div>
 							</div>

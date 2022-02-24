@@ -29,7 +29,10 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 		if (Source.IsChallenge) return "primary";
 		if (Source.IsPrivateItem) return "stat-acc text-dark";
 		if (Source.IsLimited) return "secondary";
-		if (Source.IsEternalWar || Source.IsNewEternalWar) return props.minimum ? "light text-dark" : "dark";
+
+		if (Source.IsEternalWarExchange || Source.IsNewEternalWarExchange || Source.IsNewEternalWar)
+			return props.minimum ? "light text-dark" : "dark";
+
 		if (Source.IsSideMap) return "success";
 		if (Source.IsExMap) return "danger";
 		if (Source.IsMap) return "warning text-dark";
@@ -93,14 +96,16 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 						.filter(x => x)
 						.gap(<>&nbsp;</>)
 				}</>;
-			} else if (Source.IsEternalWar) {
+			} else if (Source.IsEternalWarExchange) {
 				if (props.detail)
 					return <Locale k="COMMON_SOURCE_EW_RESOURCES" p={ [Source.EternalWarPrice] } />;
 				return <Locale k="COMMON_SOURCE_EW" />;
-			} else if (Source.IsNewEternalWar) {
+			} else if (Source.IsNewEternalWarExchange) {
 				if (props.detail)
 					return <Locale k="COMMON_SOURCE_NEW_RESOURCES" p={ [Source.EternalWarPrice] } />;
 				return <Locale k="COMMON_SOURCE_NEW" />;
+			} else if (Source.IsNewEternalWar) {
+				return <Locale k={ `EW_${Source.NewEternalWar}` } />;
 			} else if (Source.IsSubStory) {
 				const text = Source.IsReward
 					? <Locale k="COMMON_SOURCE_CLEAR_REWARD" />
@@ -196,6 +201,18 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 						return ls;
 					})(Source.Map)}/${Source.Map}`;
 
+			return <Link href={ link }>
+				<span
+					class={ `badge bg-${variant} source-badge mx-1 ${props.class || ""}` }
+					data-source={ Source.toString() }
+				>
+					{ content }
+					<Icon icon="link-45deg" class="ms-1" />
+				</span>
+			</Link>;
+		}
+		if (props.linked && Source.IsNewEternalWar) {
+			const link = `/eternalwar/${Source.NewEternalWar}`;
 			return <Link href={ link }>
 				<span
 					class={ `badge bg-${variant} source-badge mx-1 ${props.class || ""}` }

@@ -14,13 +14,35 @@ interface EnemyCardProps {
 	enemy: FilterableEnemy;
 }
 
+const imageExt = ImageExtension();
 const EnemyCard: FunctionalComponent<EnemyCardProps> = (props) => {
 	const enemy = props.enemy;
+	const name = <Locale k={ `ENEMY_${enemy.id}` } />;
 
-	const imageExt = ImageExtension();
-
-	return <div class={ `card enemy-card position-relative my-1 bg-${enemy.isBoss ? "danger" : "dark"} text-light` }>
+	// ${enemy.isBoss ? "danger" : "dark"}
+	return <div class="card enemy-card position-relative my-1 bg-dark text-light">
 		<img class="card-img-top" src={ `${AssetsRoot}/${imageExt}/tbar/${enemy.icon}.${imageExt}` } />
+		<div class="additional-info text-start">
+			{ enemy.isBoss
+				? <span class="badge bg-danger info-badge">
+					<Locale k="ENEMY_BOSS" />
+				</span>
+				: <></>
+			}
+			{ "NEW" in enemy.used
+				? <span class="badge bg-light text-dark info-badge">
+					<Locale k="ENEMY_NEW_ETERNALWAR" />
+				</span>
+				: <></>
+			}
+			{ Object.keys(enemy.used).length === 0
+				? <span class="badge bg-secondary info-badge">
+					<Locale k="ENEMY_VIEW_STAGE_NONE" />
+				</span>
+				: <></>
+			}
+		</div>
+
 		<div class="card-body">
 			<div class="card-title">
 				<div class="enemy-info">
@@ -32,16 +54,13 @@ const EnemyCard: FunctionalComponent<EnemyCardProps> = (props) => {
 						</span>
 					</span>
 				</div>
-				{ enemy.isBoss
-					? <strong><Locale k={ `ENEMY_${enemy.id}` } /></strong>
-					: <Locale k={ `ENEMY_${enemy.id}` } />
-				}
+				{ enemy.isBoss ? <strong>{ name }</strong> : name }
 			</div>
 		</div>
 
 		<Link
 			class="stretched-link enemy-strected"
-			href={ `/enemies/list/${enemy.id}` }
+			href={ `/enemies/${enemy.id}` }
 		/>
 	</div>;
 };

@@ -119,3 +119,33 @@ export function groupBy<K extends keyof any, T> (
 	}
 	return ret;
 }
+
+export function diff2<T, K> (A: T, B: K): boolean {
+	if (typeof A !== typeof B) return true;
+	const aA = Array.isArray(A);
+	const aB = Array.isArray(B);
+	if (aA !== aB) return true;
+
+	if (aA && aB) {
+		// B also array
+		if (A.length !== B.length) return true;
+
+		for (let i = 0; i < A.length; i++)
+			if (!diff2(A[i], B[i]))
+				return true;
+
+		return false;
+	}
+
+	const kA = Object.keys(A);
+	const kB = Object.keys(B);
+	if (kA.length !== kB.length) return true;
+
+	for (let i = 0; i < kA.length; i++) {
+		const kAi = A[kA[i]];
+		const kBi = B[kB[i]];
+
+		if (!diff2(kAi, kBi)) return true;
+	}
+	return false;
+}

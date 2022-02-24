@@ -16,13 +16,6 @@ interface EnemiesGroupProps {
 }
 
 const EnemiesGroup: FunctionalComponent<EnemiesGroupProps> = (props) => {
-	const ImageExt = ImageExtension();
-
-	SetMeta(["description", "twitter:description"], "적 그룹의 목록을 표시합니다.");
-	SetMeta(["twitter:image", "og:image"], null);
-
-	UpdateTitle(LocaleGet("ENEMIES_GROUP_LIST"));
-
 	const Categories = ((): string[][] => {
 		const ret: string[][] = [];
 
@@ -32,7 +25,7 @@ const EnemiesGroup: FunctionalComponent<EnemiesGroupProps> = (props) => {
 				.map((_, i) => `World${i + 1}`),
 		);
 		ret.push(
-			new Array(13)
+			new Array(14)
 				.fill(0)
 				.map((_, i) => `Ev${i + 1}`),
 		);
@@ -51,10 +44,6 @@ const EnemiesGroup: FunctionalComponent<EnemiesGroupProps> = (props) => {
 	const Category = objState<string>(Categories[0][0]);
 
 	return <>
-		<h2>
-			<Locale k="ENEMIES_GROUP_LIST" />
-		</h2>
-
 		<Loader json={ StaticDB.EnemyGroup } content={ (): preact.VNode => {
 			const EnemyGroupDB = GetJson<EnemyGroup>(StaticDB.EnemyGroup);
 
