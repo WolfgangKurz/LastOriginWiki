@@ -111,7 +111,7 @@ class EnemiesList extends Component<EnemiesListProps, EnemiesListState> {
 			toggleEnemiesFilterNormal,
 			toggleEnemiesFilterUnused,
 			toggleEnemiesFilterNEW,
-			setSearchText,
+			setEnemiesSearchText,
 		} = Store.Actions();
 		this.toggleEnemiesFilterTypeLight = toggleEnemiesFilterTypeLight;
 		this.toggleEnemiesFilterTypeMobility = toggleEnemiesFilterTypeMobility;
@@ -123,7 +123,7 @@ class EnemiesList extends Component<EnemiesListProps, EnemiesListState> {
 		this.toggleEnemiesFilterNormal = toggleEnemiesFilterNormal;
 		this.toggleEnemiesFilterUnused = toggleEnemiesFilterUnused;
 		this.toggleEnemiesFilterNEW = toggleEnemiesFilterNEW;
-		this.setSearchText = setSearchText;
+		this.setSearchText = setEnemiesSearchText;
 	}
 
 	componentWillUnmount () {
