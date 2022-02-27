@@ -7,6 +7,11 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11551" date="2022-02-27"
+		bugfix={ <>
+			<li>장비정보에서 변화의 성소 장비가 표시되지 않던 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11550" date="2022-02-25"
 		bugfix={ <>
 			<li>적 정보에서 검색이 작동하지 않던 점을 수정했습니다.</li>

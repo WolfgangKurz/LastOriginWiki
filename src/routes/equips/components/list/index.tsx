@@ -284,7 +284,10 @@ const EquipList: FunctionalComponent<EquipsProps> = (props) => {
 							// console.log(x.last.fullKey, sources);
 
 							if (Filters.Source.EternalWar && sources.some(y => y.IsEternalWarExchange)) return true;
-							if (Filters.Source.NewEternalWar && sources.some(y => y.IsNewEternalWarExchange)) return true;
+							if (
+								Filters.Source.NewEternalWar &&
+								sources.some(y => y.IsNewEternalWarExchange || y.IsNewEternalWar)
+							) return true;
 
 							if (Filters.Source.Exchange && sources.some(y => y.IsExchange && !y.IsEvent && y.ExchangeDate === CurrentDate))
 								return true;
