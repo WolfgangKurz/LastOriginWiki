@@ -16,7 +16,7 @@ const Changelog: FunctionalComponent = () => <>
 		skin={ <>
 			<li>
 				<span class="badge bg-warning text-dark">쿠노이치 제로</span>의 스킨
-				<span class="badge bg-warning text-dark">흐트러진 꽃</span>의 로비 애니메이션 정보가 추가되었습니다.
+				<span class="badge bg-danger">흐트러진 꽃</span>의 로비 애니메이션 정보가 추가되었습니다.
 			</li>
 		</> }
 		dialogue={ <>
