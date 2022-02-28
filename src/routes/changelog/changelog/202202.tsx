@@ -7,6 +7,22 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11553" date="2022-02-28"
+		update={ <>
+			<li><span class="badge bg-warning text-dark">세인트 오르카의 비밀작전</span> 이벤트가 상시 이벤트 목록에 추가되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">영원한 겨울의 방주(바니? 니바! 우당탕탕 역바니 대소동)</span> 이벤트가 종료되었습니다.</li>
+			<li>일부 전투원의 스킬 정보가 갱신되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<span class="badge bg-warning text-dark">쿠노이치 제로</span>의 스킨
+				<span class="badge bg-warning text-dark">흐트러진 꽃</span>의 로비 애니메이션 정보가 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2022-02-28 13:44:07</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11551" date="2022-02-27"
 		bugfix={ <>
 			<li>장비정보에서 변화의 성소 장비가 표시되지 않던 문제를 수정했습니다.</li>
