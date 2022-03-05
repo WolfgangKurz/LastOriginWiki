@@ -5079,6 +5079,55 @@
                 }
               ],
               "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_QuickCamel_N_110",
+              "on": "round",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Scarabya_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "연계 기동 : 행동력 {0}%(스카라비아)",
+                    "type": 1,
+                    "value": "0.040000",
+                    "level": "0.002000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "4%",
+                      "per": "0.2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
             }
           ]
         }
@@ -5235,6 +5284,18 @@
             "icon": "BuffIcon_AP_UP",
             "desc": {
               "desc": "연계 기동 : 행동력{0}%(자신)",
+              "type": 1,
+              "value": "0.040000",
+              "level": "0.002000"
+            },
+            "base": 0.04,
+            "per": 0.002,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "연계 기동 : 행동력 {0}%(스카라비아)",
               "type": 1,
               "value": "0.040000",
               "level": "0.002000"
@@ -5422,7 +5483,8 @@
               "if": {
                 "target": [
                   "Char_BR_TalonFeather_N",
-                  "Char_BR_Salamander_N"
+                  "Char_BR_Salamander_N",
+                  "Char_BR_Scarabya_N"
                 ]
               },
               "body": [
