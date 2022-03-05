@@ -140,7 +140,7 @@ const Home: FunctionalComponent = () => {
 		<div class="mt-4">
 			<a href="https://www.buymeacoffee.com/wolfgangkurzdev" target="_blank">
 				<img
-					src={ `https://img.buymeacoffee.com/button-api/?text=Buy me a beer &amp;emoji=🍺&amp;slug=wolfgangkurzdev&amp;button_colour=5F7FFF&amp;font_colour=ffffff&amp;font_family=Inter&amp;outline_colour=000000&amp;coffee_colour=FFDD00&amp;_=${dayCache}` }
+					src={ `https://img.buymeacoffee.com/button-api/?text=Buy me a beer &emoji=🍺&slug=wolfgangkurzdev&button_colour=5F7FFF&font_colour=ffffff&font_family=Inter&outline_colour=000000&coffee_colour=FFDD00&_=${dayCache}` }
 					style={ { height: "40px" } }
 				/>
 			</a>
