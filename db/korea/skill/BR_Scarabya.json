@@ -1,0 +1,5851 @@
+{
+  "1": {
+    "key": "1",
+    "icon": "AssaultAttack",
+    "target": "enemy",
+    "buffs": {
+      "index": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "data": [
+        {
+          "rate": 0.55,
+          "type": 0,
+          "range": 3,
+          "ap": 6,
+          "grid": "0,0,0,0,1,1,0,1,1",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 20,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Scarabya_N_1",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "텐더라이즈 : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.200000",
+                    "level": "-0.020000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-20%",
+                      "per": "-2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "텐더라이즈 : 받는 피해 {0}% 증가",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "텐더라이즈 : 표식 (카페인 충전)",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "텐더라이즈 : 이동 불가 (카페인 충전)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "텐더라이즈 : 협동 공격",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "0"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Scarabya_N_42",
+                    "Effect_BR_Scarabya_N_44"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "텐더라이즈 : 표식 (카페인 충전)",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "텐더라이즈 : 이동 불가 (카페인 충전)",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_12",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Salamander_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "텐더라이즈 : 협동 공격 (A-15 샐러맨더)",
+                    "type": 1,
+                    "value": "Char_BR_Salamander_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Salamander_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_13",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Hyena_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "텐더라이즈 : 협동 공격 (T-40 하이에나)",
+                    "type": 1,
+                    "value": "Char_BR_Hyena_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 102,
+                    "collaborate": {
+                      "skill": 1,
+                      "with": "Char_BR_Hyena_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 0.6,
+          "type": 0,
+          "range": 3,
+          "ap": 6,
+          "grid": "0,0,0,0,1,1,0,1,1",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 40,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Scarabya_N_1",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "텐더라이즈 : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.200000",
+                    "level": "-0.020000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-20%",
+                      "per": "-2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "텐더라이즈 : 받는 피해 {0}% 증가",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "텐더라이즈 : 표식 (카페인 충전)",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "텐더라이즈 : 이동 불가 (카페인 충전)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "텐더라이즈 : 협동 공격",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "0"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Scarabya_N_42",
+                    "Effect_BR_Scarabya_N_44"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "텐더라이즈 : 표식 (카페인 충전)",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "텐더라이즈 : 이동 불가 (카페인 충전)",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_12",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Salamander_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "텐더라이즈 : 협동 공격 (A-15 샐러맨더)",
+                    "type": 1,
+                    "value": "Char_BR_Salamander_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Salamander_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_13",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Hyena_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "텐더라이즈 : 협동 공격 (T-40 하이에나)",
+                    "type": 1,
+                    "value": "Char_BR_Hyena_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 102,
+                    "collaborate": {
+                      "skill": 1,
+                      "with": "Char_BR_Hyena_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 0.65,
+          "type": 0,
+          "range": 3,
+          "ap": 6,
+          "grid": "0,0,0,0,1,1,0,1,1",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 60,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Scarabya_N_1",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "텐더라이즈 : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.200000",
+                    "level": "-0.020000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-20%",
+                      "per": "-2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "텐더라이즈 : 받는 피해 {0}% 증가",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "텐더라이즈 : 표식 (카페인 충전)",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "텐더라이즈 : 이동 불가 (카페인 충전)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "텐더라이즈 : 협동 공격",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "0"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Scarabya_N_42",
+                    "Effect_BR_Scarabya_N_44"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "텐더라이즈 : 표식 (카페인 충전)",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "텐더라이즈 : 이동 불가 (카페인 충전)",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_12",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Salamander_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "텐더라이즈 : 협동 공격 (A-15 샐러맨더)",
+                    "type": 1,
+                    "value": "Char_BR_Salamander_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Salamander_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_13",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Hyena_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "텐더라이즈 : 협동 공격 (T-40 하이에나)",
+                    "type": 1,
+                    "value": "Char_BR_Hyena_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 102,
+                    "collaborate": {
+                      "skill": 1,
+                      "with": "Char_BR_Hyena_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 0.7,
+          "type": 0,
+          "range": 3,
+          "ap": 6,
+          "grid": "0,0,0,0,1,1,0,1,1",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 80,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Scarabya_N_1",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "텐더라이즈 : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.200000",
+                    "level": "-0.020000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-20%",
+                      "per": "-2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "텐더라이즈 : 받는 피해 {0}% 증가",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "텐더라이즈 : 표식 (카페인 충전)",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "텐더라이즈 : 이동 불가 (카페인 충전)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "텐더라이즈 : 협동 공격",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "0"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Scarabya_N_42",
+                    "Effect_BR_Scarabya_N_44"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "텐더라이즈 : 표식 (카페인 충전)",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "텐더라이즈 : 이동 불가 (카페인 충전)",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_12",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Salamander_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "텐더라이즈 : 협동 공격 (A-15 샐러맨더)",
+                    "type": 1,
+                    "value": "Char_BR_Salamander_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Salamander_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_13",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Hyena_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "텐더라이즈 : 협동 공격 (T-40 하이에나)",
+                    "type": 1,
+                    "value": "Char_BR_Hyena_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 102,
+                    "collaborate": {
+                      "skill": 1,
+                      "with": "Char_BR_Hyena_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 0.75,
+          "type": 0,
+          "range": 3,
+          "ap": 6,
+          "grid": "0,0,0,0,1,1,0,1,1",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 100,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Scarabya_N_1",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "텐더라이즈 : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.200000",
+                    "level": "-0.020000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-20%",
+                      "per": "-2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "텐더라이즈 : 받는 피해 {0}% 증가",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "텐더라이즈 : 표식 (카페인 충전)",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "텐더라이즈 : 이동 불가 (카페인 충전)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "텐더라이즈 : 협동 공격",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "0"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Scarabya_N_42",
+                    "Effect_BR_Scarabya_N_44"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "텐더라이즈 : 표식 (카페인 충전)",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "텐더라이즈 : 이동 불가 (카페인 충전)",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_12",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Salamander_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "텐더라이즈 : 협동 공격 (A-15 샐러맨더)",
+                    "type": 1,
+                    "value": "Char_BR_Salamander_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Salamander_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_13",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Hyena_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "텐더라이즈 : 협동 공격 (T-40 하이에나)",
+                    "type": 1,
+                    "value": "Char_BR_Hyena_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 102,
+                    "collaborate": {
+                      "skill": 1,
+                      "with": "Char_BR_Hyena_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 0.8,
+          "type": 0,
+          "range": 3,
+          "ap": 6,
+          "grid": "0,0,0,0,1,1,0,1,1",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 120,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Scarabya_N_1",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "텐더라이즈 : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.200000",
+                    "level": "-0.020000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-20%",
+                      "per": "-2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "텐더라이즈 : 받는 피해 {0}% 증가",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "텐더라이즈 : 표식 (카페인 충전)",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "텐더라이즈 : 이동 불가 (카페인 충전)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "텐더라이즈 : 협동 공격",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "0"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Scarabya_N_42",
+                    "Effect_BR_Scarabya_N_44"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "텐더라이즈 : 표식 (카페인 충전)",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "텐더라이즈 : 이동 불가 (카페인 충전)",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_12",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Salamander_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "텐더라이즈 : 협동 공격 (A-15 샐러맨더)",
+                    "type": 1,
+                    "value": "Char_BR_Salamander_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Salamander_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_13",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Hyena_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "텐더라이즈 : 협동 공격 (T-40 하이에나)",
+                    "type": 1,
+                    "value": "Char_BR_Hyena_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 102,
+                    "collaborate": {
+                      "skill": 1,
+                      "with": "Char_BR_Hyena_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 0.85,
+          "type": 0,
+          "range": 3,
+          "ap": 6,
+          "grid": "0,0,0,0,1,1,0,1,1",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 140,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Scarabya_N_1",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "텐더라이즈 : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.200000",
+                    "level": "-0.020000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-20%",
+                      "per": "-2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "텐더라이즈 : 받는 피해 {0}% 증가",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "텐더라이즈 : 표식 (카페인 충전)",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "텐더라이즈 : 이동 불가 (카페인 충전)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "텐더라이즈 : 협동 공격",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "0"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Scarabya_N_42",
+                    "Effect_BR_Scarabya_N_44"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "텐더라이즈 : 표식 (카페인 충전)",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "텐더라이즈 : 이동 불가 (카페인 충전)",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_12",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Salamander_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "텐더라이즈 : 협동 공격 (A-15 샐러맨더)",
+                    "type": 1,
+                    "value": "Char_BR_Salamander_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Salamander_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_13",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Hyena_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "텐더라이즈 : 협동 공격 (T-40 하이에나)",
+                    "type": 1,
+                    "value": "Char_BR_Hyena_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 102,
+                    "collaborate": {
+                      "skill": 1,
+                      "with": "Char_BR_Hyena_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 0.9,
+          "type": 0,
+          "range": 3,
+          "ap": 6,
+          "grid": "0,0,0,0,1,1,0,1,1",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 160,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Scarabya_N_1",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "텐더라이즈 : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.200000",
+                    "level": "-0.020000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-20%",
+                      "per": "-2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "텐더라이즈 : 받는 피해 {0}% 증가",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "텐더라이즈 : 표식 (카페인 충전)",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "텐더라이즈 : 이동 불가 (카페인 충전)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "텐더라이즈 : 협동 공격",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "0"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Scarabya_N_42",
+                    "Effect_BR_Scarabya_N_44"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "텐더라이즈 : 표식 (카페인 충전)",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "텐더라이즈 : 이동 불가 (카페인 충전)",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_12",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Salamander_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "텐더라이즈 : 협동 공격 (A-15 샐러맨더)",
+                    "type": 1,
+                    "value": "Char_BR_Salamander_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Salamander_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_13",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Hyena_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "텐더라이즈 : 협동 공격 (T-40 하이에나)",
+                    "type": 1,
+                    "value": "Char_BR_Hyena_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 102,
+                    "collaborate": {
+                      "skill": 1,
+                      "with": "Char_BR_Hyena_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 0.95,
+          "type": 0,
+          "range": 3,
+          "ap": 6,
+          "grid": "0,0,0,0,1,1,0,1,1",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 180,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Scarabya_N_1",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "텐더라이즈 : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.200000",
+                    "level": "-0.020000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-20%",
+                      "per": "-2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "텐더라이즈 : 받는 피해 {0}% 증가",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "텐더라이즈 : 표식 (카페인 충전)",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "텐더라이즈 : 이동 불가 (카페인 충전)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "텐더라이즈 : 협동 공격",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "0"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Scarabya_N_42",
+                    "Effect_BR_Scarabya_N_44"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "텐더라이즈 : 표식 (카페인 충전)",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "텐더라이즈 : 이동 불가 (카페인 충전)",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_12",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Salamander_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "텐더라이즈 : 협동 공격 (A-15 샐러맨더)",
+                    "type": 1,
+                    "value": "Char_BR_Salamander_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Salamander_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_13",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Hyena_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "텐더라이즈 : 협동 공격 (T-40 하이에나)",
+                    "type": 1,
+                    "value": "Char_BR_Hyena_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 102,
+                    "collaborate": {
+                      "skill": 1,
+                      "with": "Char_BR_Hyena_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1,
+          "type": 0,
+          "range": 3,
+          "ap": 6,
+          "grid": "0,0,0,0,1,1,0,1,1",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 200,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Scarabya_N_1",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "텐더라이즈 : 방어력 {0}%",
+                    "type": 1,
+                    "value": "-0.200000",
+                    "level": "-0.020000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-20%",
+                      "per": "-2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "텐더라이즈 : 받는 피해 {0}% 증가",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "텐더라이즈 : 표식 (카페인 충전)",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "텐더라이즈 : 이동 불가 (카페인 충전)",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "텐더라이즈 : 협동 공격",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "0"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Scarabya_N_42",
+                    "Effect_BR_Scarabya_N_44"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "텐더라이즈 : 표식 (카페인 충전)",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "텐더라이즈 : 이동 불가 (카페인 충전)",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_12",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Salamander_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "텐더라이즈 : 협동 공격 (A-15 샐러맨더)",
+                    "type": 1,
+                    "value": "Char_BR_Salamander_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Salamander_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_13",
+              "on": "attack_success",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Hyena_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "텐더라이즈 : 협동 공격 (T-40 하이에나)",
+                    "type": 1,
+                    "value": "Char_BR_Hyena_N",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 102,
+                    "collaborate": {
+                      "skill": 1,
+                      "with": "Char_BR_Hyena_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_DEF_DOWN",
+            "desc": {
+              "desc": "텐더라이즈 : 방어력 {0}%",
+              "type": 1,
+              "value": "-0.200000",
+              "level": "-0.020000"
+            },
+            "base": -0.2,
+            "per": -0.02,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_VULNERABLE",
+            "desc": {
+              "desc": "텐더라이즈 : 받는 피해 {0}% 증가",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.010000"
+            },
+            "base": 0.1,
+            "per": 0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_MARKING",
+            "desc": {
+              "desc": "텐더라이즈 : 표식 (카페인 충전)",
+              "type": 1,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_SNARE",
+            "desc": {
+              "desc": "텐더라이즈 : 이동 불가 (카페인 충전)",
+              "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_TOGETHER_ATTACK",
+            "desc": {
+              "desc": "텐더라이즈 : 협동 공격",
+              "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_MARKING",
+            "desc": {
+              "desc": "텐더라이즈 : 표식 (카페인 충전)",
+              "type": 1,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_SNARE",
+            "desc": {
+              "desc": "텐더라이즈 : 이동 불가 (카페인 충전)",
+              "type": 1,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_TOGETHER_ATTACK",
+            "desc": {
+              "desc": "텐더라이즈 : 협동 공격 (A-15 샐러맨더)",
+              "type": 1,
+              "value": "Char_BR_Salamander_N",
+              "level": "0"
+            },
+            "value": "Char_BR_Salamander_N",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_TOGETHER_ATTACK",
+            "desc": {
+              "desc": "텐더라이즈 : 협동 공격 (T-40 하이에나)",
+              "type": 1,
+              "value": "Char_BR_Hyena_N",
+              "level": "0"
+            },
+            "value": "Char_BR_Hyena_N",
+            "chance": 1
+          }
+        ]
+      ]
+    }
+  },
+  "2": {
+    "key": "2",
+    "icon": "SelfAtkBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 6,
+          "ap": 9,
+          "grid": "0,0,0,0,1,0,0,0,0",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Scarabya_N_2",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "target": [
+                  "Char_BR_Khan_N",
+                  "Char_BR_QuickCamel_N",
+                  "Char_BR_WarWolf_N",
+                  "Char_BR_TalonFeather_N",
+                  "Char_BR_Salamander_N",
+                  "Char_BR_Hyena_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "브레이크스루 튜닝 : 공격력 {0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "브레이크스루 튜닝 : 적중 {0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "브레이크스루 튜닝 : 치명타 {0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 9,
+                    "critical": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "브레이크스루 튜닝 : AP {0}으로 변경 (니코틴 충전)",
+                    "type": 0,
+                    "value": "10",
+                    "level": "0.200000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 21,
+                    "ap_set": {
+                      "base": 10,
+                      "per": 0.2
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_RANGE_UP",
+                  "desc": {
+                    "desc": "브레이크스루 튜닝 : 사거리 {0} (니코틴 충전)",
+                    "type": 0,
+                    "value": "2",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 55,
+                    "range": {
+                      "base": 2,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_21",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "target": [
+                  "Char_BR_Khan_N",
+                  "Char_BR_QuickCamel_N",
+                  "Char_BR_WarWolf_N",
+                  "Char_BR_TalonFeather_N",
+                  "Char_BR_Salamander_N",
+                  "Char_BR_Hyena_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "브레이크스루 튜닝 : 적중 {0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_22",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "target": [
+                  "Char_BR_Khan_N",
+                  "Char_BR_QuickCamel_N",
+                  "Char_BR_WarWolf_N",
+                  "Char_BR_TalonFeather_N",
+                  "Char_BR_Salamander_N",
+                  "Char_BR_Hyena_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "브레이크스루 튜닝 : 치명타 {0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_23",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "on": {
+                  "target": "target",
+                  "select": [
+                    "Effect_BR_Scarabya_N_2"
+                  ],
+                  "stack": 0,
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "브레이크스루 튜닝 : 공격력 {0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "count": 2,
+                    "trigger": "attack"
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_24",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "on": {
+                  "target": "target",
+                  "select": [
+                    "Effect_BR_Scarabya_N_21"
+                  ],
+                  "stack": 0,
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "브레이크스루 튜닝 : 적중 {0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "count": 2,
+                    "trigger": "attack"
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_25",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "on": {
+                  "target": "target",
+                  "select": [
+                    "Effect_BR_Scarabya_N_22"
+                  ],
+                  "stack": 0,
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "브레이크스루 튜닝 : 치명타 {0}%",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "count": 2,
+                    "trigger": "attack"
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_26",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "브레이크스루 튜닝 : 공격력 강화 효과 해제",
+                    "type": 1,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 1,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "브레이크스루 튜닝 : 적중 강화 효과 해제",
+                    "type": 1,
+                    "value": "7",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 7,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "브레이크스루 튜닝 : 치명타 강화 효과 해제",
+                    "type": 1,
+                    "value": "9",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 9,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "브레이크스루 튜닝 : 공격력 강화 효과 해제",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 0,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_27",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Scarabya_N_43",
+                    "Effect_BR_Scarabya_N_45"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "브레이크스루 튜닝 : AP {0}으로 변경 (니코틴 충전)",
+                    "type": 0,
+                    "value": "10",
+                    "level": "0.200000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 21,
+                    "ap_set": {
+                      "base": 10,
+                      "per": 0.2
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_28",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "target": [
+                  "Char_BR_Khan_N",
+                  "Char_BR_QuickCamel_N",
+                  "Char_BR_WarWolf_N",
+                  "Char_BR_TalonFeather_N",
+                  "Char_BR_Salamander_N",
+                  "Char_BR_Hyena_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_RANGE_UP",
+                  "desc": {
+                    "desc": "브레이크스루 튜닝 : 사거리 {0} (니코틴 충전)",
+                    "type": 0,
+                    "value": "2",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 55,
+                    "range": {
+                      "base": 2,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_29",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "on": {
+                  "target": "target",
+                  "select": [
+                    "Effect_BR_Scarabya_N_28"
+                  ],
+                  "stack": 0,
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_RANGE_UP",
+                  "desc": {
+                    "desc": "브레이크스루 튜닝 : 사거리 {0} (니코틴 충전)",
+                    "type": 0,
+                    "value": "2",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "count": 2,
+                    "trigger": "attack"
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 55,
+                    "range": {
+                      "base": 2,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "브레이크스루 튜닝 : 공격력 {0}%",
+              "type": 1,
+              "value": "0.200000",
+              "level": "0.020000"
+            },
+            "base": 0.2,
+            "per": 0.02,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ACCURACY_UP",
+            "desc": {
+              "desc": "브레이크스루 튜닝 : 적중 {0}%",
+              "type": 1,
+              "value": "0.200000",
+              "level": "0.020000"
+            },
+            "base": 0.2,
+            "per": 0.02,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_CRITICAL_UP",
+            "desc": {
+              "desc": "브레이크스루 튜닝 : 치명타 {0}%",
+              "type": 1,
+              "value": "0.200000",
+              "level": "0.020000"
+            },
+            "base": 0.2,
+            "per": 0.02,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "브레이크스루 튜닝 : AP {0}으로 변경 (니코틴 충전)",
+              "type": 0,
+              "value": "10",
+              "level": "0.200000"
+            },
+            "base": 10,
+            "per": 0.2,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_RANGE_UP",
+            "desc": {
+              "desc": "브레이크스루 튜닝 : 사거리 {0} (니코틴 충전)",
+              "type": 0,
+              "value": "2",
+              "level": "0"
+            },
+            "base": 2,
+            "per": 0,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_ACCURACY_UP",
+            "desc": {
+              "desc": "브레이크스루 튜닝 : 적중 {0}%",
+              "type": 1,
+              "value": "0.200000",
+              "level": "0.020000"
+            },
+            "base": 0.2,
+            "per": 0.02,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_CRITICAL_UP",
+            "desc": {
+              "desc": "브레이크스루 튜닝 : 치명타 {0}%",
+              "type": 1,
+              "value": "0.200000",
+              "level": "0.020000"
+            },
+            "base": 0.2,
+            "per": 0.02,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "브레이크스루 튜닝 : 공격력 {0}%",
+              "type": 1,
+              "value": "0.200000",
+              "level": "0.020000"
+            },
+            "base": 0.2,
+            "per": 0.02,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ACCURACY_UP",
+            "desc": {
+              "desc": "브레이크스루 튜닝 : 적중 {0}%",
+              "type": 1,
+              "value": "0.200000",
+              "level": "0.020000"
+            },
+            "base": 0.2,
+            "per": 0.02,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_CRITICAL_UP",
+            "desc": {
+              "desc": "브레이크스루 튜닝 : 치명타 {0}%",
+              "type": 1,
+              "value": "0.200000",
+              "level": "0.020000"
+            },
+            "base": 0.2,
+            "per": 0.02,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_BUFF",
+            "desc": {
+              "desc": "브레이크스루 튜닝 : 공격력 강화 효과 해제",
+              "type": 1,
+              "value": "1",
+              "level": "0"
+            },
+            "base": 1,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_BUFF",
+            "desc": {
+              "desc": "브레이크스루 튜닝 : 적중 강화 효과 해제",
+              "type": 1,
+              "value": "7",
+              "level": "0"
+            },
+            "base": 7,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_BUFF",
+            "desc": {
+              "desc": "브레이크스루 튜닝 : 치명타 강화 효과 해제",
+              "type": 1,
+              "value": "9",
+              "level": "0"
+            },
+            "base": 9,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_BUFF",
+            "desc": {
+              "desc": "브레이크스루 튜닝 : 공격력 강화 효과 해제",
+              "type": 1,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "브레이크스루 튜닝 : AP {0}으로 변경 (니코틴 충전)",
+              "type": 0,
+              "value": "10",
+              "level": "0.200000"
+            },
+            "base": 10,
+            "per": 0.2,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_RANGE_UP",
+            "desc": {
+              "desc": "브레이크스루 튜닝 : 사거리 {0} (니코틴 충전)",
+              "type": 0,
+              "value": "2",
+              "level": "0"
+            },
+            "base": 2,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_RANGE_UP",
+            "desc": {
+              "desc": "브레이크스루 튜닝 : 사거리 {0} (니코틴 충전)",
+              "type": 0,
+              "value": "2",
+              "level": "0"
+            },
+            "base": 2,
+            "per": 0,
+            "chance": 1
+          }
+        ]
+      ]
+    }
+  },
+  "3": {
+    "key": "3",
+    "icon": "Barrier",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "0,0,0,0,1,0,0,0,0",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Scarabya_N_3",
+              "on": "wave",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEBUFF_PERDOWN",
+                  "desc": {
+                    "desc": "무사태평 : 효과 저항 {0}%",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.025000"
+                  },
+                  "attr": 3,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "type": 91,
+                    "resist": {
+                      "type": "debuff",
+                      "value": {
+                        "base": "25%",
+                        "per": "2.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DAMAGE_ABSORB",
+                  "desc": {
+                    "desc": "무사태평 : 방어막 {0}",
+                    "type": 0,
+                    "value": "500",
+                    "level": "100"
+                  },
+                  "attr": 3,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "type": 38,
+                    "barrier": {
+                      "base": 500,
+                      "per": 100
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "무사태평 : AP {0} (조건별)",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0.100000"
+                  },
+                  "attr": 3,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0.1
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "무사태평 : 공격 지원 해제",
+                    "type": 0,
+                    "value": "77",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 69,
+                    "off": {
+                      "type": 77
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "무사태평 : 행동 횟수 증감 해제",
+                    "type": 0,
+                    "value": "127",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 69,
+                    "off": {
+                      "type": 127
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_31",
+              "on": "round",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    77
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "무사태평 : AP {0}",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0.100000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0.1
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "무사태평 : 공격 지원 해제",
+                    "type": 1,
+                    "value": "77",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 77
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_32",
+              "on": "round",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    127
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "무사태평 : AP {0}",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0.100000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0.1
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "무사태평 : 행동 횟수 증감 해제",
+                    "type": 1,
+                    "value": "127",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 127
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_DEBUFF_PERDOWN",
+            "desc": {
+              "desc": "무사태평 : 효과 저항 {0}%",
+              "type": 1,
+              "value": "0.250000",
+              "level": "0.025000"
+            },
+            "base": 0.25,
+            "per": 0.025,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DAMAGE_ABSORB",
+            "desc": {
+              "desc": "무사태평 : 방어막 {0}",
+              "type": 0,
+              "value": "500",
+              "level": "100"
+            },
+            "base": 500,
+            "per": 100,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "무사태평 : AP {0} (조건별)",
+              "type": 0,
+              "value": "1",
+              "level": "0.100000"
+            },
+            "base": 1,
+            "per": 0.1,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_REMOVE_DEBUFF",
+            "desc": {
+              "desc": "무사태평 : 공격 지원 해제",
+              "type": 0,
+              "value": "77",
+              "level": "0"
+            },
+            "base": 77,
+            "per": 0,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_REMOVE_DEBUFF",
+            "desc": {
+              "desc": "무사태평 : 행동 횟수 증감 해제",
+              "type": 0,
+              "value": "127",
+              "level": "0"
+            },
+            "base": 127,
+            "per": 0,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "무사태평 : AP {0}",
+              "type": 0,
+              "value": "1",
+              "level": "0.100000"
+            },
+            "base": 1,
+            "per": 0.1,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_DEBUFF",
+            "desc": {
+              "desc": "무사태평 : 공격 지원 해제",
+              "type": 1,
+              "value": "77",
+              "level": "0"
+            },
+            "base": 77,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "무사태평 : AP {0}",
+              "type": 0,
+              "value": "1",
+              "level": "0.100000"
+            },
+            "base": 1,
+            "per": 0.1,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_DEBUFF",
+            "desc": {
+              "desc": "무사태평 : 행동 횟수 증감 해제",
+              "type": 1,
+              "value": "127",
+              "level": "0"
+            },
+            "base": 127,
+            "per": 0,
+            "chance": 1
+          }
+        ]
+      ]
+    }
+  },
+  "4": {
+    "key": "4",
+    "icon": "TeamSpdBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "1,1,1,1,0,1,1,1,1",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Scarabya_N_4",
+              "on": "wait",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_BR_Scarabya_N_42",
+                    "Effect_BR_Scarabya_N_44"
+                  ],
+                  "stack": 0,
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "스낵타임 : 행동력 {0}%",
+                    "type": 1,
+                    "value": "0.050000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "5%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "카페인 충전 : 행동력 {0}%",
+                    "type": 1,
+                    "value": "0.040000",
+                    "level": "0.004000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "4%",
+                      "per": "0.4%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "니코틴 충전 : 행동력 {0}%",
+                    "type": 1,
+                    "value": "0.040000",
+                    "level": "0.004000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "4%",
+                      "per": "0.4%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_41",
+              "on": "wait",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_BR_Scarabya_N_43",
+                    "Effect_BR_Scarabya_N_45"
+                  ],
+                  "stack": 0,
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "스낵타임 : 행동력 {0}%",
+                    "type": 1,
+                    "value": "0.050000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "5%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "스낵타임 : 행동력 {0}%",
+              "type": 1,
+              "value": "0.050000",
+              "level": "0.010000"
+            },
+            "base": 0.05,
+            "per": 0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "카페인 충전 : 행동력 {0}%",
+              "type": 1,
+              "value": "0.040000",
+              "level": "0.004000"
+            },
+            "base": 0.04,
+            "per": 0.004,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "니코틴 충전 : 행동력 {0}%",
+              "type": 1,
+              "value": "0.040000",
+              "level": "0.004000"
+            },
+            "base": 0.04,
+            "per": 0.004,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "스낵타임 : 행동력 {0}%",
+              "type": 1,
+              "value": "0.050000",
+              "level": "0.010000"
+            },
+            "base": 0.05,
+            "per": 0.01,
+            "chance": 1
+          }
+        ]
+      ]
+    }
+  },
+  "5": {
+    "key": "5",
+    "icon": "TeamAtkDeBuff",
+    "target": "enemy",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "F>1,1,1,1,1,1,1,1,1",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_Scarabya_N_5",
+              "on": "enemy_dead",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "헌팅 트로피 : 공격력/적중/치명타 {0}%",
+                    "type": 1,
+                    "value": "0.050000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 1,
+                    "attack": {
+                      "base": "5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TROOPER_DMG_UP",
+                  "desc": {
+                    "desc": "헌팅 트로피 : 대 경장형 피해량 {0}%",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 60,
+                    "damage_multiply": {
+                      "target": "light",
+                      "value": {
+                        "base": "15%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "헌팅 트로피 : 적중 {0}%",
+                    "type": 1,
+                    "value": "-0.150000",
+                    "level": "-0.015000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-15%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_SKILL_DOWN",
+                  "desc": {
+                    "desc": "헌팅 트로피 : 스킬 위력 {0}%",
+                    "type": 1,
+                    "value": "-0.050000",
+                    "level": "-0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 106,
+                    "skill_ratio": {
+                      "base": "-5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_51",
+              "on": "enemy_dead",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "헌팅 트로피 : 대 중장형 피해량 {0}%",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "15%",
+                        "per": "1%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_52",
+              "on": "enemy_dead",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "헌팅 트로피 : 공격력 {0}%",
+                    "type": 1,
+                    "value": "0.050000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "헌팅 트로피 : 적중 {0}%",
+                    "type": 1,
+                    "value": "0.050000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "헌팅 트로피 : 치명타 {0}%",
+                    "type": 1,
+                    "value": "0.050000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_53",
+              "on": "enemy_dead",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 4,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "헌팅 트로피 : 적중 {0}%",
+                    "type": 1,
+                    "value": "-0.150000",
+                    "level": "-0.015000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-15%",
+                      "per": "-1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_54",
+              "on": "enemy_dead",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Scarabya_N_1"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 4,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "헌팅 트로피 : 적중 {0}% (텐더라이즈)",
+                    "type": 1,
+                    "value": "-0.075000",
+                    "level": "-0.007500"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-7.5%",
+                      "per": "-0.75%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_55",
+              "on": "enemy_dead",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 4,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SKILL_DOWN",
+                  "desc": {
+                    "desc": "헌팅 트로피 : 스킬 위력 {0}%",
+                    "type": 1,
+                    "value": "-0.050000",
+                    "level": "-0.005000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 106,
+                    "skill_ratio": {
+                      "base": "-5%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_56",
+              "on": "enemy_dead",
+              "if": {
+                "on": {
+                  "target": "target",
+                  "func": "OR",
+                  "select": [
+                    "Effect_BR_Scarabya_N_1"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 4,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SKILL_DOWN",
+                  "desc": {
+                    "desc": "헌팅 트로피 : 스킬 위력 {0}% (텐더라이즈)",
+                    "type": 1,
+                    "value": "-0.025000",
+                    "level": "-0.002500"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 106,
+                    "skill_ratio": {
+                      "base": "-2.5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_42",
+              "on": "wave",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "카페인 충전 : 행동력 {0}%",
+                    "type": 1,
+                    "value": "0.040000",
+                    "level": "0.004000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "count": 2,
+                    "trigger": {
+                      "use_skill": 1
+                    }
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "4%",
+                      "per": "0.4%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_43",
+              "on": "wave",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "니코틴 충전 : 행동력 {0}%",
+                    "type": 1,
+                    "value": "0.040000",
+                    "level": "0.004000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "count": 2,
+                    "trigger": {
+                      "use_skill": 2
+                    }
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "4%",
+                      "per": "0.4%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_44",
+              "on": "wait",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "func": "UNFILLED",
+                  "select": [
+                    "Effect_BR_Scarabya_N_42"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "카페인 충전 : 행동력 {0}%",
+                    "type": 1,
+                    "value": "0.040000",
+                    "level": "0.004000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "count": 2,
+                    "trigger": {
+                      "use_skill": 1
+                    }
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "4%",
+                      "per": "0.4%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Scarabya_N_45",
+              "on": "wait",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "func": "UNFILLED",
+                  "select": [
+                    "Effect_BR_Scarabya_N_43"
+                  ],
+                  "attr": 6
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "니코틴 충전 : 행동력 {0}%",
+                    "type": 1,
+                    "value": "0.040000",
+                    "level": "0.004000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "count": 2,
+                    "trigger": {
+                      "use_skill": 2
+                    }
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "4%",
+                      "per": "0.4%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        }
+      ]
+    },
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "헌팅 트로피 : 공격력/적중/치명타 {0}%",
+              "type": 1,
+              "value": "0.050000",
+              "level": "0.005000"
+            },
+            "base": 0.05,
+            "per": 0.005,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_TROOPER_DMG_UP",
+            "desc": {
+              "desc": "헌팅 트로피 : 대 경장형 피해량 {0}%",
+              "type": 1,
+              "value": "0.150000",
+              "level": "0.010000"
+            },
+            "base": 0.15,
+            "per": 0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ACCURACY_DOWN",
+            "desc": {
+              "desc": "헌팅 트로피 : 적중 {0}%",
+              "type": 1,
+              "value": "-0.150000",
+              "level": "-0.015000"
+            },
+            "base": -0.15,
+            "per": -0.015,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_SKILL_DOWN",
+            "desc": {
+              "desc": "헌팅 트로피 : 스킬 위력 {0}%",
+              "type": 1,
+              "value": "-0.050000",
+              "level": "-0.005000"
+            },
+            "base": -0.05,
+            "per": -0.005,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_ARMORED_DMG_UP",
+            "desc": {
+              "desc": "헌팅 트로피 : 대 중장형 피해량 {0}%",
+              "type": 1,
+              "value": "0.150000",
+              "level": "0.010000"
+            },
+            "base": 0.15,
+            "per": 0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "헌팅 트로피 : 공격력 {0}%",
+              "type": 1,
+              "value": "0.050000",
+              "level": "0.005000"
+            },
+            "base": 0.05,
+            "per": 0.005,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ACCURACY_UP",
+            "desc": {
+              "desc": "헌팅 트로피 : 적중 {0}%",
+              "type": 1,
+              "value": "0.050000",
+              "level": "0.005000"
+            },
+            "base": 0.05,
+            "per": 0.005,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_CRITICAL_UP",
+            "desc": {
+              "desc": "헌팅 트로피 : 치명타 {0}%",
+              "type": 1,
+              "value": "0.050000",
+              "level": "0.005000"
+            },
+            "base": 0.05,
+            "per": 0.005,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ACCURACY_DOWN",
+            "desc": {
+              "desc": "헌팅 트로피 : 적중 {0}%",
+              "type": 1,
+              "value": "-0.150000",
+              "level": "-0.015000"
+            },
+            "base": -0.15,
+            "per": -0.015,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ACCURACY_DOWN",
+            "desc": {
+              "desc": "헌팅 트로피 : 적중 {0}% (텐더라이즈)",
+              "type": 1,
+              "value": "-0.075000",
+              "level": "-0.007500"
+            },
+            "base": -0.075,
+            "per": -0.0075,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_SKILL_DOWN",
+            "desc": {
+              "desc": "헌팅 트로피 : 스킬 위력 {0}%",
+              "type": 1,
+              "value": "-0.050000",
+              "level": "-0.005000"
+            },
+            "base": -0.05,
+            "per": -0.005,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_SKILL_DOWN",
+            "desc": {
+              "desc": "헌팅 트로피 : 스킬 위력 {0}% (텐더라이즈)",
+              "type": 1,
+              "value": "-0.025000",
+              "level": "-0.002500"
+            },
+            "base": -0.025,
+            "per": -0.0025,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "카페인 충전 : 행동력 {0}%",
+              "type": 1,
+              "value": "0.040000",
+              "level": "0.004000"
+            },
+            "base": 0.04,
+            "per": 0.004,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "니코틴 충전 : 행동력 {0}%",
+              "type": 1,
+              "value": "0.040000",
+              "level": "0.004000"
+            },
+            "base": 0.04,
+            "per": 0.004,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "카페인 충전 : 행동력 {0}%",
+              "type": 1,
+              "value": "0.040000",
+              "level": "0.004000"
+            },
+            "base": 0.04,
+            "per": 0.004,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "니코틴 충전 : 행동력 {0}%",
+              "type": 1,
+              "value": "0.040000",
+              "level": "0.004000"
+            },
+            "base": 0.04,
+            "per": 0.004,
+            "chance": 1
+          }
+        ]
+      ]
+    }
+  }
+}
