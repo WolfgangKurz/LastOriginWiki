@@ -833,3 +833,28 @@ export enum RESEARCH_RESULT {
 	EXPERT_DAILY = 15,
 	AUTO_BATTLE = 16,
 }
+
+export enum UNLOCK_COND {
+	NONE = 0,
+
+	/** 전투원을 가지고 있을 때 */
+	HAVEPC = 1,
+
+	/** 해당 역할의 전투원을 가지고 있을 때 (공격기/보호기/지원기) */
+	HAVEPCROLE = 2,
+
+	/** 해당 유형의 전투원을 가지고 있을 때 (경장/기동/중장) */
+	HAVEPCCLASS = 3,
+
+	/** 전투원 레벨 */
+	PCLEVEL = 4,
+
+	/** ??? */
+	PCLCLASS = 5,
+
+	/** 스테이지 클리어 */
+	CLEARSTAGE = 6,
+
+	/** 챕터 클리어 */
+	CLEARCHAPTER = 7,
+}

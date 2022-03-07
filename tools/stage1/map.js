@@ -20,10 +20,12 @@ function process (auth) {
 			const ret = {};
 			const rows = res.data.values;
 			if (rows && rows.length) {
+				fs.mkdirSync(path.resolve(__dirname, "..", "..", "external", "json", targetDB, "map"), { recursive: true });
+
 				rows.map((row) => {
 					if (!row[0]) return;
 
-					const [id, map, rawdata, ...nodes] = row;
+					const [id, map, rawdata, substory, ...nodes] = row;
 
 					if (!(id in ret)) ret[id] = {};
 
@@ -33,14 +35,19 @@ function process (auth) {
 						x.wave = n.find(y => y.key === x.text).data;
 					});
 
-					ret[id][map] = data;
+					ret[id][map] = {
+						substory: substory && JSON.parse(substory) || [],
+						list: data,
+					};
 				});
 
-				fs.mkdirSync(path.resolve(__dirname, "..", "..", "external", "json", targetDB), { recursive: true });
-				fs.writeFileSync(
-					path.resolve(__dirname, "..", "..", "external", "json", targetDB, "map.json"),
-					JSON.stringify(ret),
-				);
+				Object.keys(ret)
+					.forEach(id => {
+						fs.writeFileSync(
+							path.resolve(__dirname, "..", "..", "external", "json", targetDB, "map", `${id}.json`),
+							JSON.stringify(ret[id]),
+						);
+					});
 			} else
 				console.log("No data found.");
 		});

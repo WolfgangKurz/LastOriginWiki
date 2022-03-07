@@ -1,4 +1,4 @@
-import { STAGE_SUB_TYPE } from "@/types/Enums";
+import { STAGE_SUB_TYPE, UNLOCK_COND } from "@/types/Enums";
 import { RawRewardItem, RawReward } from "@/types/Reward";
 
 export interface MapEnemyData {
@@ -75,8 +75,25 @@ export namespace MapNodeEntity {
 	};
 }
 
-export interface Worlds {
+export interface MapSubStory {
+	key: string;
+	icon: string;
+	unlock: {
+		cond: UNLOCK_COND;
+		type: 0 | 1;
+		params: Array<string | string[]>;
+	};
+}
+
+export interface MapSubStoryGroup {
+	char: string;
+	icon: string;
+	list: MapSubStory[];
+}
+
+export interface World {
 	[key: string]: {
-		[key: string]: MapNodeEntity[];
+		substory: MapSubStoryGroup[];
+		list: MapNodeEntity[];
 	};
 }

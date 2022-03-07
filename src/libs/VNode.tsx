@@ -1,4 +1,4 @@
-import parse, { ParseElement, ParseNode } from "@/libs/DOMParser";
+import parse, { ParseNode } from "@/libs/DOMParser";
 import { createElement } from "preact";
 
 const paramRegex = /({[0-9]+})/g;

@@ -1,7 +1,7 @@
 import { FunctionalComponent } from "preact";
 import { Link, route } from "preact-router";
 
-import { Worlds } from "@/types/DB/Map";
+import { World } from "@/types/DB/Map";
 
 import { AssetsRoot } from "@/libs/Const";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
@@ -23,13 +23,12 @@ const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 	SetMeta("keywords", `,${LocaleGet(`WORLD_${props.wid}`)}`, true);
 	UpdateTitle(LocaleGet("MENU_WORLDS"), LocaleGet(`WORLD_${props.wid}`));
 
-	return <Loader json={ StaticDB.Map } content={ ((): preact.VNode => {
+	return <Loader json={ `map/${props.wid}` } content={ ((): preact.VNode => {
 		// const nonStory = ["Sub", "Cha", "Daily"].includes(props.wid);
 		const nonStory = true;
 
-		const MapDB = GetJson<Worlds>(StaticDB.Map);
-
-		const Worlds = Object.keys(MapDB[props.wid]);
+		const MapDB = GetJson<World>(`map/${props.wid}`);
+		const Worlds = Object.keys(MapDB);
 
 		const rows = nonStory
 			? "row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5"

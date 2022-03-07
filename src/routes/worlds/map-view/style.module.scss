@@ -1,3 +1,37 @@
+.SubStoryGroup {
+	> span {
+		font-size: 120%;
+	}
+
+	> .SubStoryList {
+		margin: 0.25em;
+		margin-left: 0.5em;
+		padding: 0 0.5em;
+		border-radius: 0.25em;
+		background-color: transparentize($black, 0.65);
+
+		> .SubStory {
+			padding: 0.5em 0;
+			border-bottom: 1px solid transparentize($light, 0.85);
+
+			&:last-child {
+				border-bottom: none;
+			}
+
+			.SubStoryUnlock {
+				margin: 0.25em 0;
+				padding: 0.5em;
+				border-radius: 0.25em;
+				background-color: transparentize($light, 0.9);
+				line-height: 0;
+			}
+		}
+	}
+}
+.SubStoryUnlockCond {
+	word-break: keep-all;
+}
+
 :global .worlds-map {
 	.worlds-map-bg {
 		background-image: url($assetsRoot + "/world/bg.png");
