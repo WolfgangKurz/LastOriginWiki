@@ -7,6 +7,17 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11567" date="2022-03-08"
+		new={ <>
+			<li>세계정보의 지도에 <span class="badge bg-dark">서브스토리</span> 정보가 추가되었습니다.</li>
+		</> }
+		update={ <>
+			<li>진행중인 이벤트 정보가 추가되었습니다.</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2022-03-08 01:14:11</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11565" date="2022-03-07"
 		new={ <>
 			<li>신규 전투원 <span class="badge bg-warning text-dark">C-11 스카라비아</span>의 정보가 추가되었습니다.</li>

@@ -66,7 +66,6 @@ export const StaticDB = {
 	EnemyGroup: "enemygroup",
 	Consumable: "consumable",
 	Exchange: "exchange",
-	Map: "map",
 	EW: "ew",
 	Story: "story",
 	Research: "research",

@@ -7,7 +7,7 @@ import { AssetsRoot } from "@/libs/Const";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
 import { ACTOR_GRADE, ITEM_GRADE, STAGE_SUB_TYPE } from "@/types/Enums";
-import { MapNodeEntity, Worlds } from "@/types/DB/Map";
+import { MapNodeEntity, World } from "@/types/DB/Map";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 
@@ -267,21 +267,19 @@ const DropTable: FunctionalComponent<DropTableProps> = (props) => {
 			</thead>
 			<tbody>
 				<Loader
-					json={ [StaticDB.FilterableUnit, StaticDB.FilterableEquip, StaticDB.Map] }
+					json={ [StaticDB.FilterableUnit, StaticDB.FilterableEquip, `map/${props.wid}`] }
 					content={ ((): preact.VNode => {
 						const FilterableUnitDB = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
 						const FilterableEquipDB = GetJson<FilterableEquip[]>(StaticDB.FilterableEquip);
-						const MapDB = GetJson<Worlds>(StaticDB.Map);
-
-						const Worlds = MapDB[props.wid];
-						const Maps = Worlds[props.mid];
+						const MapDB = GetJson<World>(`map/${props.wid}`);
+						const Maps = MapDB[props.mid];
 
 						const typeTable = {
 							0: "SIDE",
 							1: "MAIN",
 							2: "EX",
 						};
-						const groups = groupBy(Maps, m => {
+						const groups = groupBy(Maps.list, m => {
 							const byOffset = !(props.wid || "").startsWith("Ev") || parseInt((props.wid || "Ev0").substring(2), 10) < 14;
 							return GetTypeIdx(m, byOffset);
 						});

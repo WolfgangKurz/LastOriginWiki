@@ -53,7 +53,7 @@ const Home: FunctionalComponent = () => {
 							/>
 						</div>
 						<img
-							src={ `${AssetsRoot}/world/banner/${CurrentEvent}B.png` }
+							src={ `${AssetsRoot}/world/banner/${CurrentEvent}.png` }
 							class="mb-1"
 							height="120"
 							style={ { verticalAlign: "middle" } }
