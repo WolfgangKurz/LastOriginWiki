@@ -7,7 +7,7 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 11561" date="2022-03-05"
+	<ChangelogItem title="Build 11565" date="2022-03-07"
 		new={ <>
 			<li>신규 전투원 <span class="badge bg-warning text-dark">C-11 스카라비아</span>의 정보가 추가되었습니다.</li>
 		</> }
@@ -20,9 +20,13 @@ const Changelog: FunctionalComponent = () => <>
 				<span class="badge bg-warning text-dark">마키나</span>의 스킨
 				<span class="badge bg-danger">드림위버 웨딩 스페셜 : Dreaming in Paradise</span>가 추가되었습니다.
 			</li>
+			<li>
+				<span class="badge bg-warning text-dark">마법소녀 매지컬 모모</span>의 스킨
+				<span class="badge bg-danger">드림위버 웨딩 스페셜: 배반의 흑장미</span>의 중파 이미지가 추가되었습니다.
+			</li>
 		</> }
 		dialogue={ <>
-			<li><span class="badge bg-light text-dark">KST 2022-03-05 18:55:37</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+			<li><span class="badge bg-light text-dark">KST 2022-03-07 12:36:13</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
 		</> }
 	/>
 	<ChangelogItem title="Build 11558" date="2022-03-04"
