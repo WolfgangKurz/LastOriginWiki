@@ -20,13 +20,15 @@ targetDBs.forEach(targetDB => {
 			.replace(/export default /, "")
 			.replace(/;$/, ""),
 	);
-	const map = JSON.parse(
-		fs.readFileSync(path.resolve(__dirname, "..", "..", "external", "json", targetDB, "map.json"), { encoding: "utf-8" })
-			.replace(/export default /, "")
-			.replace(/;$/, ""),
-	);
+
+	const maps = fs.readdirSync(path.join(targetDir, "map"))
+		.map(x => JSON.parse(
+			fs.readFileSync(path.join(targetDir, "map", x), { encoding: "utf-8" })
+				.replace(/export default /, "")
+				.replace(/;$/, ""),
+		));
 	const ew = JSON.parse(
-		fs.readFileSync(path.resolve(__dirname, "..", "..", "external", "json", targetDB, "ew.json"), { encoding: "utf-8" })
+		fs.readFileSync(path.resolve(targetDir, "ew.json"), { encoding: "utf-8" })
 			.replace(/export default /, "")
 			.replace(/;$/, ""),
 	);
@@ -49,27 +51,29 @@ targetDBs.forEach(targetDB => {
 
 			used: (() => {
 				const ret = {};
-				Object.keys(map).forEach(x => {
-					ret[x] = [];
-					Object.keys(map[x]).forEach(y =>
-						map[x][y].forEach(z =>
-							z.wave && z.wave.forEach(w => w.forEach(i => {
-								if (i.e && i.e.enemy.some(e => e && e.id === _.id)) {
-									if (x === "Story")
-										ret[x].push(z.text);
-									else if (x === "Cha")
-										ret[x].push(`Cha${y}-${z.text.replace(/Cha[0-9]*-(.+)/, "$1")}`);
-									else if (x === "Sub")
-										ret[x].push(`${x}:${z.text}`);
-									else
-										ret[x].push(`Ev:${x}:${z.text}`);
-								}
-							})),
-						),
-					);
-					ret[x] = ret[x].reduce((p, c) => p.includes(c) ? p : [...p, c], []);
-					if (ret[x].length === 0)
-						delete ret[x];
+				maps.forEach(map => {
+					Object.keys(map).forEach(x => {
+						ret[x] = [];
+						Object.keys(map[x]).forEach(y =>
+							map[x][y].forEach(z =>
+								z.wave && z.wave.forEach(w => w.forEach(i => {
+									if (i.e && i.e.enemy.some(e => e && e.id === _.id)) {
+										if (x === "Story")
+											ret[x].push(z.text);
+										else if (x === "Cha")
+											ret[x].push(`Cha${y}-${z.text.replace(/Cha[0-9]*-(.+)/, "$1")}`);
+										else if (x === "Sub")
+											ret[x].push(`${x}:${z.text}`);
+										else
+											ret[x].push(`Ev:${x}:${z.text}`);
+									}
+								})),
+							),
+						);
+						ret[x] = ret[x].reduce((p, c) => p.includes(c) ? p : [...p, c], []);
+						if (ret[x].length === 0)
+							delete ret[x];
+					});
 				});
 
 				ret.NEW = [];

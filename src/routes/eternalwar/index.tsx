@@ -16,6 +16,9 @@ import Icon from "@/components/bootstrap-icon";
 import DropItem from "@/components/drop-item";
 import TbarIcon from "@/components/tbar-icon";
 import EnemyPopup from "@/components/popup/enemy-popup";
+import BuffList from "@/components/buff-list";
+
+import { Char } from "@/components/skill-description/components";
 
 import style from "./style.module.scss";
 
@@ -26,7 +29,7 @@ interface EternalWarState {
 	mid: string;
 	sid: string;
 
-	curTab: "reward" | "enemy";
+	curTab: "reward" | "enemy" | "suitproh";
 
 	selectedWave: number;
 	selectedWaveIndex: number;
@@ -136,6 +139,77 @@ class EternalWar extends Component<EternalWarProps, EternalWarState> {
 							});
 					})()
 					: [];
+
+				const SuitabilityProhibitionArea = (): preact.VNode => {
+					const d = EWDB[mid][state.sid];
+
+					return <>
+						{ d.prohibition.map(x => <div class="mt-2 card bg-dark text-light text-start">
+							<div class="card-header text-center">
+								<strong>
+									<Locale plain k="EW_PROHIBITION" />
+								</strong>
+							</div>
+							<div class="card-body p-1">
+								{ x.squad
+									? <div>
+										<strong>
+											<Icon icon="dot" />
+											<Locale plain k="EW_PROHIBITION_SQUAD" />
+										</strong>
+										<span class="badge bg-warning text-dark">
+											<Locale plain k={ `UNIT_GROUP_${x.squad}` } />
+										</span>
+									</div>
+									: <></>
+								}
+
+								<div class="mx-2">
+									<strong>
+										<Locale plain k="EW_PROHIBITION_UNIT" />
+									</strong>
+									<span class="mx-2 badge bg-warning text-dark">
+										<Locale plain k={ x.desc } />
+									</span>
+								</div>
+							</div>
+						</div>) }
+
+						{ d.suitability.map(x => <div class="mt-2 card bg-dark text-light text-start">
+							<div class="card-header text-center">
+								<strong>
+									<Locale plain k="EW_SUITABILITY" />
+								</strong>
+							</div>
+							<div class="card-body p-1">
+								<div class="mx-2">
+									<strong>
+										<Locale k="EW_SUITABILITY_TARGET" />
+									</strong>
+									<div class="ps-2">
+										{ [
+											...x.squads.map(q => <span class="badge bg-warning text-dark m-1">
+												<Locale plain k={ `UNIT_GROUP_${q}` } />
+											</span>),
+											...x.chars.map(q => <Char class="m-1" uid={ q } />)
+										] }
+									</div>
+								</div>
+								<hr class="mx-1 mt-2 mb-1" />
+								<div class="mx-2">
+									<strong class="text-warning">
+										<Locale plain k={ x.descGroup } />
+									</strong>
+									<div class="ps-2">
+										<Locale plain k={ x.descStage } />
+									</div>
+								</div>
+								<hr class="mx-1 mt-2 mb-1" />
+								<BuffList list={ [x.effect] } level={ x.lv } />
+							</div>
+						</div>) }
+					</>;
+				};
 
 				const EnemyArea = (): preact.VNode => {
 					const Waves = EWDB[mid][state.sid].waves;
@@ -344,7 +418,20 @@ class EternalWar extends Component<EternalWarProps, EternalWarState> {
 											} }
 										>
 											<Icon icon="award-fill" class="me-1" />
-											<Locale k="EW_STAGE_TAB_REWARD" />
+											<Locale plain k="EW_STAGE_TAB_REWARD" />
+										</a>
+									</li>
+									<li class="nav-item">
+										<a
+											href="#"
+											class={ `nav-link ${isActive(state.curTab === "suitproh")} text-dark` }
+											onClick={ (e: Event): void => {
+												e.preventDefault();
+												this.setState({ curTab: "suitproh" });
+											} }
+										>
+											<Icon icon="clipboard-data" class="me-1" />
+											<Locale plain k="EW_STAGE_TAB_SUIT_PROH" />
 										</a>
 									</li>
 									<li class="nav-item">
@@ -357,7 +444,7 @@ class EternalWar extends Component<EternalWarProps, EternalWarState> {
 											} }
 										>
 											<Icon icon="bug-fill" class="me-1" />
-											<Locale k="EW_STAGE_TAB_ENEMY" />
+											<Locale plain k="EW_STAGE_TAB_ENEMY" />
 										</a>
 									</li>
 								</ul>
@@ -440,7 +527,9 @@ class EternalWar extends Component<EternalWarProps, EternalWarState> {
 												</div>;
 											})() }
 										</>
-										: EnemyArea()
+										: state.curTab === "suitproh"
+											? SuitabilityProhibitionArea()
+											: EnemyArea()
 									}
 								</div>
 							</div>

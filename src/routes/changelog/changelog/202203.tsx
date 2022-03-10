@@ -7,6 +7,22 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11569" date="2022-03-10"
+		new={ <>
+			<li>
+				<span class="badge bg-warning text-dark">변화의 성소</span>에
+				<span class="badge bg-dark">제4작전구역</span> 정보가 추가되었습니다.
+			</li>
+			<li>신규 장비 <span class="badge bg-warning text-dark">초중량 복합장갑</span> 정보가 추가되었습니다.</li>
+			<li>장비 <span class="badge bg-warning text-dark">출력 강화 회로 베타</span>의 SSS 등급 정보가 추가되었습니다.</li>
+			<li>장비 <span class="badge bg-warning text-dark">연산 강화 회로 베타</span>의 SSS 등급 정보가 추가되었습니다.</li>
+			<li>장비 <span class="badge bg-warning text-dark">내 충격 회로 베타</span>의 SSS 등급 정보가 추가되었습니다.</li>
+			<li>장비 <span class="badge bg-warning text-dark">반응 강화 회로 베타</span>의 SSS 등급 정보가 추가되었습니다.</li>
+			<li>장비 <span class="badge bg-warning text-dark">분석 회로 베타</span>의 SSS 등급 정보가 추가되었습니다.</li>
+			<li>장비 <span class="badge bg-warning text-dark">회로 내구 강화 베타</span>의 SSS 등급 정보가 추가되었습니다.</li>
+			<li>장비 <span class="badge bg-warning text-dark">회로 최적화 베타</span>의 SSS 등급 정보가 추가되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11567" date="2022-03-08"
 		new={ <>
 			<li>세계정보의 지도에 <span class="badge bg-dark">서브스토리</span> 정보가 추가되었습니다.</li>

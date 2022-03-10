@@ -23,11 +23,14 @@ function process (auth) {
 				rows.map((row) => {
 					if (!row[0]) return;
 
-					const [cid, sid, mr, mm, rmr, rmm, rewards, ...waves] = row;
+					const [cid, sid, suitability, prohibition, mr, mm, rmr, rmm, rewards, ...waves] = row;
 
 					if (!(cid in ret)) ret[cid] = {};
 
 					ret[cid][sid] = {
+						suitability: JSON.parse(suitability),
+						prohibition: JSON.parse(prohibition),
+
 						reward: {
 							mineral: {
 								regen: parseInt(mr, 10),
