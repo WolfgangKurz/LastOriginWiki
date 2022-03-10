@@ -14,6 +14,7 @@ import UnitFace from "@/components/unit-face";
 import style from "./style.module.scss";
 
 interface CharProps {
+	class?: string;
 	uid: string;
 }
 
@@ -28,6 +29,7 @@ export const Char: FunctionalComponent<CharProps> = (props) =>
 
 		return <>
 			<a
+				class={ props.class }
 				href={ href }
 				onClick={ (e: Event): void => {
 					e.preventDefault();

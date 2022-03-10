@@ -1,5 +1,6 @@
 import { MapEnemyData } from "@/types/DB/Map";
 import { RawRewardItem } from "@/types/Reward";
+import { Suitability, Prohibition } from "@/types/Suitability";
 
 export interface EWMapWaveGroup {
 	e: Array<MapEnemyData | null>;
@@ -12,6 +13,9 @@ export interface EWReward {
 }
 
 export interface EWStage {
+	suitability: Suitability[];
+	prohibition: Prohibition[];
+
 	reward: {
 		mineral: EWReward;
 		refined: EWReward;
