@@ -9,7 +9,7 @@ export type ImageExtensionTypes = "webp" | "png";
 export const ImageExtensionList: ImageExtensionTypes[] = ["webp", "png"];
 
 export const IsDev = import.meta.env.DEV;
-export const IsStaging = IsDev || true;
+export const IsStaging = IsDev || false;
 
 export const Host = IsDev
 	? "http://121.157.45.209:5500"
