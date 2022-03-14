@@ -8,6 +8,7 @@ import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { isActive } from "@/libs/Functions";
+import { ParseDescriptionText } from "@/libs/FunctionsX";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
 import Locale, { LocaleGet } from "@/components/locale";
@@ -197,11 +198,20 @@ class EternalWar extends Component<EternalWarProps, EternalWarState> {
 								</div>
 								<hr class="mx-1 mt-2 mb-1" />
 								<div class="mx-2">
-									<strong class="text-warning">
-										<Locale plain k={ x.descGroup } />
+									<strong class="text-light">
+										{ ParseDescriptionText(
+											(LocaleGet(x.descGroup) || "")
+												.toString()
+												.replace(/&([lg]t);/g, (p0, p1) => p1 === "lt" ? "<" : ">"),
+										) }
 									</strong>
 									<div class="ps-2">
-										<Locale plain k={ x.descStage } />
+
+										{ ParseDescriptionText(
+											(LocaleGet(x.descStage) || "")
+												.toString()
+												.replace(/&([lg]t);/g, (p0, p1) => p1 === "lt" ? "<" : ">"),
+										) }
 									</div>
 								</div>
 								<hr class="mx-1 mt-2 mb-1" />
