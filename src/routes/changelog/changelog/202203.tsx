@@ -7,7 +7,7 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 11569" date="2022-03-10"
+	<ChangelogItem title="Build 11571" date="2022-03-14"
 		new={ <>
 			<li>
 				<span class="badge bg-warning text-dark">변화의 성소</span>에
@@ -21,6 +21,15 @@ const Changelog: FunctionalComponent = () => <>
 			<li>장비 <span class="badge bg-warning text-dark">분석 회로 베타</span>의 SSS 등급 정보가 추가되었습니다.</li>
 			<li>장비 <span class="badge bg-warning text-dark">회로 내구 강화 베타</span>의 SSS 등급 정보가 추가되었습니다.</li>
 			<li>장비 <span class="badge bg-warning text-dark">회로 최적화 베타</span>의 SSS 등급 정보가 추가되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<span class="badge bg-warning text-dark">쿠노이치 카엔</span>의 스킨
+				<span class="badge bg-danger">두송이 꽃</span>의 로비 애니메이션 정보가 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2022-03-14 11:01:27</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
 		</> }
 	/>
 	<ChangelogItem title="Build 11567" date="2022-03-08"
