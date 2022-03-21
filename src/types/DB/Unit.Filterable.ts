@@ -82,20 +82,30 @@ export namespace FilterableUnit {
 		},
 		skins: {
 			G: false,
-			V: false,
-			E: false,
-			M: false,
-			A: false,
-			Stage: false,
-			D: false,
-			S: false,
-			X: false,
-			BG: false,
-			AV: false,
-			AVG: false,
+			parts: 0,
+			stage: false,
+
+			subset: {
+				0: false,
+				1: false,
+				2: false,
+				3: false,
+				4: false,
+				5: false,
+				6: false,
+				7: false,
+			},
+			offsets: {},
+
+			anim: {
+				0: false,
+				1: false,
+				2: false,
+				3: false,
+			},
+
 			category: [],
 			artist: "",
-			offset: { n: 0, d: 0, s: 0, x: 0 },
 			sid: 0,
 		},
 

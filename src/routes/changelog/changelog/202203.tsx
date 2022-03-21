@@ -7,6 +7,25 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11577" date="2022-03-21"
+		new={ <>
+			<li>신규 전투원 <span class="badge bg-warning text-dark">멜리테</span>의 정보가 추가되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>일부 잘못된 정보가 기입되어있거나 위치가 맞지 않거나 이미지/영상이 누락된 스킨을 수정했습니다.</li>
+			<li>
+				<span class="badge bg-warning text-dark">엔젤</span>의 스킨
+				<span class="badge bg-danger">작은 천사의 휴식</span>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<span class="badge bg-warning text-dark">MH-4 테티스</span>의 스킨
+				<span class="badge bg-danger">CAFE Horizon : CAFE Thetis♡</span>의 중파 이미지 정보가 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2022-03-21 11:01:27</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11571" date="2022-03-14"
 		new={ <>
 			<li>

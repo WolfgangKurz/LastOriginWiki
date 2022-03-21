@@ -12,7 +12,7 @@ function process (auth) {
 					? "1EbGKc68ysZkoV_rurGKQ-tezAm3WW3AAH3KAM-XcSkA"
 					: "11IxebdUQ_VHbaP79sN8KxZ87n3c5rG42DL8TQOK9h1k"
 				: "1ohSOKdl1IZq8aOsWPJ74yX01Ave7FkSrUFG5MSbfZN8",
-			range: "UnitSkin!A2:W",
+			range: "UnitSkin!A3:AD",
 		}, (err, res) => {
 			if (err) return console.log(`The API returned an error: ${err}`);
 
@@ -27,29 +27,34 @@ function process (auth) {
 					const skinId = parseInt(row[2], 10);
 					const price = /^[0-9]+$/.test(row[3]) ? parseInt(row[3], 10) : undefined;
 					const category = row[4].split(",");
-					const Pro = parseInt(row[5], 10) === 1;
-					const V = parseInt(row[6], 10) === 1;
-					const G = parseInt(row[7], 10) === 1;
-					const E = parseInt(row[8], 10) === 1;
-					const M = parseInt(row[9], 10) === 1;
-					const A = parseInt(row[10], 10) === 1;
-					const Stage = parseInt(row[11], 10) === 1;
-					const D = parseInt(row[12], 10) === 1;
-					const S = parseInt(row[13], 10) === 1;
-					const X = parseInt(row[14], 10) === 1;
-					const BG = parseInt(row[15], 10) === 1;
-					const artist = row[16];
-					const offset = {
-						n: parseInt(row[17] || "0", 10),
-						d: parseInt(row[18] || "0", 10),
-						s: parseInt(row[19] || "0", 10),
-						x: parseInt(row[20] || "0", 10),
-					};
-					const AV = parseInt(row[21], 10) === 1;
-					const AVG = parseInt(row[22], 10) === 1;
 
-					const info = { G, V, E, M, A, Stage, D, S, X, BG, AV, AVG, category };
-					const base = { sid: skinId, artist, offset, price, ...info };
+					const Pro = parseInt(row[5], 10) === 1;
+					const G = parseInt(row[6], 10) === 1;
+
+					const parts = parseInt(row[7], 10);
+					const stage = parseInt(row[8], 10) === 1;
+
+					// const A = Parts & (1 << 1) > 0;
+					// const V = Parts & (1 << 2) > 0;
+					// const E = Parts & (1 << 3) > 0;
+					// const M = Parts & (1 << 4) > 0;
+					// const B = Parts & (1 << 5) > 0;
+					// const D = Parts & (1 << 6) > 0;
+
+					const list = new Array(8).fill(0).map((_, i) => i);
+
+					const subset = list.map(i => parseInt(row[9 + i], 10) === 1);
+
+					const artist = row[17];
+
+					const offsets = list.map(i => parseInt(row[18 + i], 10));
+
+					const anim = new Array(4)
+						.fill(0)
+						.map((_, i) => parseInt(row[26 + i], 10) === 1);
+
+					const info = { G, parts, stage, subset, anim, category };
+					const base = { sid: skinId, artist, offsets, price, ...info };
 
 					if (!(uid in ret))
 						ret[uid] = { ...base };

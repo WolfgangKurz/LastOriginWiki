@@ -1,5 +1,6 @@
 import { FunctionalComponent } from "preact";
 
+import { SKIN_IN_PARTS } from "@/types/Enums";
 import { RawUnitDialogueEntity, UnitDialogueDataType } from "@/types/DB/Dialogue";
 import { Unit, UnitSkin } from "@/types/DB/Unit";
 
@@ -133,7 +134,7 @@ const UnitDialogue: FunctionalComponent<UnitDialogueProps> = (props) => {
 		/* eslint-enable camelcase */
 	})();
 
-	const IsVoiceAvailable = voice.V;
+	const IsVoiceAvailable = (voice.parts & SKIN_IN_PARTS.VOICE) > 0 || voice.isDef;
 
 	const IsMissing = ((): boolean => {
 		const db = unit.dialogue[props.lang];
