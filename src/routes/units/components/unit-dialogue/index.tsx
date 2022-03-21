@@ -134,7 +134,7 @@ const UnitDialogue: FunctionalComponent<UnitDialogueProps> = (props) => {
 		/* eslint-enable camelcase */
 	})();
 
-	const IsVoiceAvailable = (voice.parts & SKIN_IN_PARTS.VOICE) > 0 || voice.isDef;
+	const IsVoiceAvailable = (voice.parts & (1 << SKIN_IN_PARTS.VOICE)) > 0 || voice.isDef;
 
 	const IsMissing = ((): boolean => {
 		const db = unit.dialogue[props.lang];
