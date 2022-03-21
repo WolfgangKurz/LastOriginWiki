@@ -21,11 +21,44 @@ export type LinkBonusType =
 	"Skill_2" | "Skill_5" | "Skill_10" | "Skill_15" | "Skill_20" | "Skill_25" | "Skill_30" | "Skill_35" |
 	"Cost_20" | "Cost_25" | "Cost_30" | "Cost_35";
 
-export interface SkinOffset {
-	n: number;
-	d: number;
-	s: number;
-	x: number;
+export enum SKIN_SUBSET_ENUM {
+	___ = 0,
+	Normal = 0,
+
+	D__ = 1,
+	Damaged = 1,
+
+	_B_ = 2,
+	Background = 2,
+
+	__S = 3,
+	Simplified = 3,
+
+	DB_ = 4,
+	DamagedBackground = 4,
+
+	D_S = 5,
+	DamagedSimplified = 5,
+
+	_BS = 6,
+	BackgroundSimplified = 6,
+
+	DBS = 7,
+	DamagedBackgroundSimplified = 7,
+}
+
+export enum SKIN_ANIM_SUBSET_ENUM {
+	__ = 0,
+	Normal = 0,
+
+	B_ = 1,
+	Background = 1,
+
+	_S = 2,
+	Simplified = 2,
+
+	BS = 3,
+	BackgroundSimplified = 3,
 }
 
 export interface UnitSkin extends UnitSkinEntity {
@@ -38,25 +71,16 @@ export interface UnitSkinEntity {
 	sid: null | number;
 
 	/** Offset */
-	offset: SkinOffset;
+	offsets: Partial<Record<SKIN_SUBSET_ENUM, number>>;
 
 	/** has Google CG */
 	G: boolean;
 
-	/** Has Voice */
-	V: boolean;
-
-	/** Effect */
-	E: boolean;
-
-	/** Motion */
-	M: boolean;
-
-	/** Animated */
-	A: boolean;
+	/** Parts, see SKIN_IN_PARTS */
+	parts: number;
 
 	/** Staged Animation */
-	Stage: boolean;
+	stage: boolean;
 
 	/** Price */
 	price?: number;
@@ -64,21 +88,11 @@ export interface UnitSkinEntity {
 	/** Skin Artist */
 	artist: string;
 
-	/** Damaaged */
-	D: boolean;
+	/** Subset info */
+	subset: Record<SKIN_SUBSET_ENUM, boolean>;
 
-	/** Simplified */
-	S: boolean;
-
-	/** Damaged Simplified */
-	X: boolean;
-
-	BG: boolean;
-
-	/** Animated, Video? */
-	AV: boolean;
-	/** Animated, Video? - Google ver */
-	AVG: boolean;
+	/** Animated */
+	anim: Record<SKIN_ANIM_SUBSET_ENUM, boolean>;
 
 	// /** Skin Item Name */
 	// name: string;
@@ -208,20 +222,30 @@ export namespace Unit {
 		},
 		skins: {
 			G: false,
-			V: false,
-			E: false,
-			M: false,
-			A: false,
-			Stage: false,
-			D: false,
-			S: false,
-			X: false,
-			BG: false,
-			AV: false,
-			AVG: false,
+			parts: 0,
+			stage: false,
+
+			subset: {
+				0: false,
+				1: false,
+				2: false,
+				3: false,
+				4: false,
+				5: false,
+				6: false,
+				7: false,
+			},
+			offsets: {},
+
+			anim: {
+				0: false,
+				1: false,
+				2: false,
+				3: false,
+			},
+
 			category: [],
 			artist: "",
-			offset: { n: 0, d: 0, s: 0, x: 0 },
 			sid: 0,
 		},
 

@@ -107,9 +107,24 @@
 			background-position-x: 0;
 		}
 	}
-	&.Platform {
+	&.BG {
 		top: 130px;
 		right: 18px;
+		width: 28px;
+		height: 28px;
+		background-image: url($assetsRoot + "/bg-icon.png");
+		background-position-x: -28px;
+		background-size: 56px 28px;
+
+		&[data-bg="1"] {
+			background-position-x: 0;
+		}
+	}
+	&.Platform {
+		// top: 180px;
+		// right: 18px;
+		top: 18px;
+		right: 68px;
 		width: 28px;
 		height: 28px;
 		background-image: url($assetsRoot + "/icon-platform.png");
@@ -213,7 +228,7 @@
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: 22px 22px;
-			filter: drop-shadow(0 0 4px #000);
+			filter: drop-shadow(0 0 5px #000) drop-shadow(0 0 3px rgba(0, 0, 0, 0.5));
 			cursor: pointer;
 			z-index: 4;
 		}
@@ -251,12 +266,13 @@
 				width: auto;
 				height: 25%;
 				opacity: 0.9;
-				filter: drop-shadow(0 0 4px #000);
+				filter: drop-shadow(0 0 5px #000) drop-shadow(0 0 3px rgba(0, 0, 0, 0.5));
 				pointer-events: all;
 			}
 		}
 	}
 	.NameDesc {
+		white-space: pre-wrap;
 		word-break: keep-all;
 		:global(.card-body) {
 			font-size: 90%;

@@ -132,9 +132,9 @@ const Header: FunctionalComponent = (): preact.VNode => {
 							<DropdownExternal href="https://arca.live/b/lastorigin/4474753">
 								<Locale k="MENU_ETC_EX01" />
 							</DropdownExternal>
-							<DropdownExternal href="https://lastoriginmap.github.io/">
+							{/* <DropdownExternal href="https://lastoriginmap.github.io/">
 								<Locale k="MENU_ETC_EX02" />
-							</DropdownExternal>
+							</DropdownExternal> */}
 						</ul>
 					</li>
 				</ul>
