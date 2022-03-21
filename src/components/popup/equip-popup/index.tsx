@@ -23,6 +23,7 @@ import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import PopupBase from "@/components/popup/base";
 import EquipIcon from "@/components/equip-icon";
 import EquipLevel from "@/components/equip-level";
+import EquipCard from "@/components/equip-card";
 import ItemIcon from "@/components/item-icon";
 import UnitBadge from "@/components/unit-badge";
 import SourceBadge from "@/components/source-badge";
@@ -55,7 +56,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 	const level = objState<EquipLevelType>(10);
 	const rarity = objState<ITEM_GRADE>(ACTOR_GRADE.SS);
 
-	const displayTab = objState<"info" | "drop" | "upgrade">("info");
+	const displayTab = objState<"info" | "drop" | "enchant" | "upgrade">("info");
 
 	const costChecks = objState<boolean[]>(new Array(10).fill(true));
 
@@ -168,14 +169,14 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 		const UpgradeCostTable = ((): preact.VNode[][] => {
 			if (!target) return [];
 
-			const maxCols = Math.max(...target.upgrade.map(y => y.item.length));
+			const maxCols = Math.max(...target.upgrade.enchant.map(y => y.item.length));
 			const ret: preact.VNode[][] = [];
 
 			const sums = new Array(maxCols + 1)
 				.fill(0)
 				.map(_ => new Decimal(0));
 
-			target.upgrade.forEach((v, i) => {
+			target.upgrade.enchant.forEach((v, i) => {
 				if (costChecks.value[i])
 					sums[0] = sums[0].add(v.res);
 
@@ -202,7 +203,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 			});
 			ret[10] = [
 				<>{ FormatNumber(sums[0].toNumber()) }</>,
-				...target.upgrade[target.upgrade.length - 1].item.map((y, j) => {
+				...target.upgrade.enchant[target.upgrade.enchant.length - 1].item.map((y, j) => {
 					const item = ConsumableDB.find(z => z.key === y.item);
 					const icon = item ? <ItemIcon item={ item.icon } /> : <>???</>;
 
@@ -355,6 +356,19 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 						</li>
 						<li class="nav-item">
 							<a
+								class={ `nav-link ${isActive(displayTab.value === "enchant")} text-dark` }
+								href="#"
+								onClick={ (e): void => {
+									e.preventDefault();
+									displayTab.set("enchant");
+								} }
+							>
+								<Icon icon="cpu-fill" class="me-1" />
+								<Locale k="EQUIP_VIEW_COST" />
+							</a>
+						</li>
+						<li class="nav-item">
+							<a
 								class={ `nav-link ${isActive(displayTab.value === "upgrade")} text-dark` }
 								href="#"
 								onClick={ (e): void => {
@@ -362,8 +376,8 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 									displayTab.set("upgrade");
 								} }
 							>
-								<Icon icon="cpu-fill" class="me-1" />
-								<Locale k="EQUIP_VIEW_COST" />
+								<Icon icon="capslock-fill" class="me-1" />
+								<Locale k="EQUIP_VIEW_PROMOTION" />
 							</a>
 						</li>
 					</ul>
@@ -442,7 +456,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 							</div>
 							: <></>
 						}
-						{ displayTab.value === "upgrade"
+						{ displayTab.value === "enchant"
 							? <table class="table table-bordered text-center">
 								<tbody>
 									<tr>
@@ -481,6 +495,41 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 									</tr>) }
 								</tbody>
 							</table>
+							: <></>
+						}
+						{ displayTab.value === "upgrade"
+							? <div class="p-4">
+								{ target.upgrade.upgrade === null
+									? <span class="text-secondary">
+										<Locale k="EQUIP_VIEW_PROMOTION_EMPTY" />
+									</span>
+									: <>
+										<div class="p-2">
+											{ target.upgrade.upgrade.cost.map(e => {
+												const item = ConsumableDB.find(c => c.key === e.item);
+												if (!item) return <>-</>;
+
+												return <span class="badge bg-dark me-1 mb-1">
+													<EquipIcon class="me-2 vertical-align-middle" image={ item.icon } size="24" />
+													<Locale k={ `CONSUMABLE_${item.key}` } />
+													&nbsp;x{ FormatNumber(e.count) }
+												</span>;
+											}) }
+										</div>
+										<div>
+											<Icon icon="arrow-down-circle-fill" />
+										</div>
+										<div class="p-2">
+											{ (() => {
+												const found = FilterableEquipDB.find(x => x.fullKey === target.upgrade.upgrade!.to);
+												return found
+													? <EquipCard class="d-inline-block" equip={ found }  />
+													: <>???</>;
+											})() }
+										</div>
+									</>
+								}
+							</div>
 							: <></>
 						}
 					</div>

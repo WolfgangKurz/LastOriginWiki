@@ -7,6 +7,14 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11580" date="2022-03-21"
+		new={ <>
+			<li>
+				<span class="badge bg-warning text-dark">장비정보</span>에
+				<span class="badge bg-warning text-dark"><Icon icon="capslock-fill" class="me-1" /> 승급</span> 비용 정보가 추가되었습니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11577" date="2022-03-21"
 		new={ <>
 			<li>신규 전투원 <span class="badge bg-warning text-dark">멜리테</span>의 정보가 추가되었습니다.</li>
