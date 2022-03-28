@@ -10,7 +10,7 @@ import { UnitDialogueDataType } from "@/types/DB/Dialogue";
 import { Consumable } from "@/types/DB/Consumable";
 
 import { ObjectState, objState } from "@/libs/State";
-import { AssetsRoot, ImageExtension, RarityDisplay, UnitClassDisplay, UnitRoleDisplay } from "@/libs/Const";
+import { AssetsRoot, ImageExtension, IsDev, RarityDisplay, UnitClassDisplay, UnitRoleDisplay } from "@/libs/Const";
 import { FormatNumber, isActive } from "@/libs/Functions";
 import { GetRequireResource } from "@/libs/Cost";
 import EntitySource from "@/libs/EntitySource";
@@ -35,6 +35,7 @@ import SkinView from "../components/skin-view";
 import SkillTable from "../components/skill-table";
 import UnitDialogue, { VoiceItem } from "../components/unit-dialogue";
 import ResearchTree from "../components/research-tree";
+import ExtPassiveCard from "../components/ext-passive-card";
 
 import style from "./style.module.scss";
 
@@ -423,6 +424,7 @@ const LvLimitTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 
 const SkillTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 	const CurrentResists = unit.stat[0].Resist;
+	const ExLevel = objState<number>(9);
 
 	const linkCount = objState<number>(5);
 	const LinkBonus = unit.linkBonus
@@ -652,6 +654,39 @@ const SkillTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 			skillBonus={ SkillPowerBonus }
 			rangeBonus={ linkCount.value === 5 && fullLinkBonus.value.startsWith("Range_") }
 		/>
+
+		{ IsDev
+			? unit.exskill && <div class="mt-3 card">
+				<div class="card-header bg-dark text-light">
+					<div class="mb-2">
+						<Locale k="UNIT_SKILL_EXTPASSIVE" />
+						<span class={ style.ExtPassiveLevel }>
+							Lv.<strong>{ ExLevel.value + 1 }</strong>
+						</span>
+					</div>
+
+					<input
+						class="form-range"
+						type="range"
+						min="0"
+						max="9"
+						value={ ExLevel.value }
+						onInput={ (e): void => ExLevel.set(
+							parseInt((e.target as HTMLInputElement).value, 10) as number,
+						) }
+					/>
+				</div>
+
+				<div class="card-body">
+					<div class="mt-4 row row-cols-1 row-cols-md-2">
+						{ unit.exskill.map(ex => <div class="col my-2">
+							<ExtPassiveCard passive={ ex } level={ ExLevel.value } />
+						</div>) }
+					</div>
+				</div>
+			</div>
+			: <></>
+		}
 	</div>;
 };
 

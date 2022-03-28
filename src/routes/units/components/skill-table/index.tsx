@@ -25,7 +25,7 @@ interface SkillItem extends SkillEntity {
 	index: number;
 	isPassive: boolean;
 }
-type SkillTable = Record<string, SkillItem>;
+type SkillTableType = Record<string, SkillItem>;
 
 type LevelType = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 
@@ -41,7 +41,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 
 	const unit = props.unit;
 	const skills = ((): Record<string, SkillItem> => {
-		const table: SkillTable = {};
+		const table: SkillTableType = {};
 
 		const db = unit.skills;
 		Object.keys(db)

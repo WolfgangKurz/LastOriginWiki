@@ -1,0 +1,102 @@
+[
+  {
+    "key": "Pv_C1_ExSkill_101",
+    "desc": {
+      "desc": "BuffDesc1_Effect_ExtPassiveSkill_N_1101",
+      "type": 1,
+      "value": "0.100000",
+      "level": "0.005000"
+    },
+    "lvCost": [
+      {
+        "metal": 0,
+        "nutrient": 0,
+        "power": 0,
+        "items": [
+          {
+            "id": "Normal_Module",
+            "count": 1
+          }
+        ]
+      }
+    ],
+    "activate": 1,
+    "slot": 1,
+    "unlock": {
+      "metal": 1,
+      "nutrient": 1,
+      "power": 1,
+      "items": [
+        {
+          "id": "Normal_Module",
+          "count": 1
+        }
+      ]
+    },
+    "skill": {
+      "key": "Skill_ExtPassiveSkill_N_1101",
+      "icon": "ExSkillIcon_Passive_ATK",
+      "type": 0,
+      "target": "team",
+      "buff": {
+        "rate": 0,
+        "range": 0,
+        "ap": 0,
+        "grid": "0,0,0,0,1,0,0,0,0",
+        "target_ground": false,
+        "summon": null,
+        "use": null,
+        "dismiss_guard": false,
+        "acc_bonus": 0,
+        "buff_rate": 100,
+        "buffs": [
+          {
+            "key": "Effect_ExtPassiveSkill_N_1101",
+            "on": "round",
+            "if": false,
+            "body": [
+              0,
+              1
+            ],
+            "class": [
+              0,
+              1,
+              2
+            ],
+            "role": [
+              0,
+              1,
+              2
+            ],
+            "target": 0,
+            "buffs": [
+              {
+                "icon": "BuffIcon_ATK_UP",
+                "desc": {
+                  "desc": "BuffDesc1_Effect_ExtPassiveSkill_N_1101",
+                  "type": 1,
+                  "value": "0.100000",
+                  "level": "0.005000"
+                },
+                "attr": 3,
+                "erase": {
+                  "rounds": 1
+                },
+                "value": {
+                  "isBuff": true,
+                  "type": 1,
+                  "attack": {
+                    "base": "10%",
+                    "per": "0.5%"
+                  }
+                },
+                "overlap": 4
+              }
+            ],
+            "maxStack": 0
+          }
+        ]
+      }
+    }
+  }
+]

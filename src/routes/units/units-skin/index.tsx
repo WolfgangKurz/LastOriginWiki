@@ -2,6 +2,7 @@ import { FunctionalComponent } from "preact";
 import { Link } from "preact-router";
 
 import { UnitSkinEntity } from "@/types/DB/Unit";
+import { SKIN_IN_PARTS } from "@/types/Enums";
 import { UnitsListProps } from "../";
 
 import { AssetsRoot } from "@/libs/Const";
@@ -63,46 +64,53 @@ const UnitsSkin: FunctionalComponent<UnitsListProps> = (props) => {
 		.filter(x => {
 			if (!x.category.includes(currentCategory.value) && currentCategory.value !== "ALL") return false;
 
+			const A = (x.parts & (1 << SKIN_IN_PARTS.LOBBY_ANIMATION)) > 0;
+			const V = (x.parts & (1 << SKIN_IN_PARTS.VOICE)) > 0;
+			const M = (x.parts & (1 << SKIN_IN_PARTS.SD_ANIMATION)) > 0;
+			const E = (x.parts & (1 << SKIN_IN_PARTS.SD_EFFECT)) > 0;
+			const D = (x.parts & (1 << SKIN_IN_PARTS.DAMAGE_IMAGE)) > 0;
+			const BG = (x.parts & (1 << SKIN_IN_PARTS.PROPS)) > 0;
+
 			if (l2d.value !== undefined) {
-				if (l2d.value && !x.A)
+				if (l2d.value && !A)
 					return false;
-				else if (!l2d.value && x.A)
+				else if (!l2d.value && A)
 					return false;
 			}
 			if (voice.value !== undefined) {
 				if (x.sid === null) return false;
 
-				if (voice.value && !x.V)
+				if (voice.value && !V)
 					return false;
-				else if (!voice.value && x.V)
+				else if (!voice.value && V)
 					return false;
 			}
 			if (motion.value !== undefined) {
 				if (x.sid === null) return false;
 
-				if (motion.value && !x.M)
+				if (motion.value && !M)
 					return false;
-				else if (!motion.value && x.M)
+				else if (!motion.value && M)
 					return false;
 			}
 			if (fx.value !== undefined) {
 				if (x.sid === null) return false;
 
-				if (fx.value && !x.E)
+				if (fx.value && !E)
 					return false;
-				else if (!fx.value && x.E)
+				else if (!fx.value && E)
 					return false;
 			}
 			if (damaged.value !== undefined) {
-				if (damaged.value && !x.D)
+				if (damaged.value && !D)
 					return false;
-				else if (!damaged.value && x.D)
+				else if (!damaged.value && D)
 					return false;
 			}
 			if (bg.value !== undefined) {
-				if (bg.value && !x.BG)
+				if (bg.value && !BG)
 					return false;
-				else if (!bg.value && x.BG)
+				else if (!bg.value && BG)
 					return false;
 			}
 
