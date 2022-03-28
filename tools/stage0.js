@@ -17,6 +17,7 @@ function run (cmd) {
 const list =
 	[
 		...[
+			"ext-passive",
 			"ai", "enemy",
 			"equip",
 			"facility",

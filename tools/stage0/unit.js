@@ -70,7 +70,7 @@ function process (auth) {
 							? "1EbGKc68ysZkoV_rurGKQ-tezAm3WW3AAH3KAM-XcSkA"
 							: "11IxebdUQ_VHbaP79sN8KxZ87n3c5rG42DL8TQOK9h1k"
 						: "1ohSOKdl1IZq8aOsWPJ74yX01Ave7FkSrUFG5MSbfZN8",
-					range: "Unit!A2:AI",
+					range: "Unit!A2:AK",
 				}, (err, res) => {
 					if (err) return console.log(`The API returned an error: ${err}`);
 
@@ -124,7 +124,7 @@ function process (auth) {
 								lb1, lb2, lb3, lb4,
 								fl1, fl2, fl3, fl4, fl5,
 								equip1, equip2, equip3, equip4,
-								cost, research, lvlimit,
+								cost, research, lvlimit, exskill,
 								source, source1,
 							] = row;
 
@@ -182,6 +182,7 @@ function process (auth) {
 
 								cost: cost ? JSON.parse(cost) : undefined,
 								research: research ? JSON.parse(research) : undefined,
+								exskill: exskill ? JSON.parse(exskill) : undefined,
 							};
 							if (pro)
 								x.promotions = pro.split(",").map(y => rarityTable[y]);

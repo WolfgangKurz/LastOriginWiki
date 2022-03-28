@@ -1372,11 +1372,16 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			// title={ formatDesc(buff.desc.type, buff.desc.desc, buff.desc.value, buff.desc.level, level) }
 			if (buff.value.chance !== "0%" || props.dummy) {
 				const StackTable: Record<BUFF_OVERLAP_TYPE, preact.VNode> = {
-					[BUFF_OVERLAP_TYPE.NONE]: <Locale plain k="BUFFSTACK_INSTANCE" />,
-					[BUFF_OVERLAP_TYPE.RENEW]: <Locale plain k="BUFFSTACK_RENEW" />,
-					[BUFF_OVERLAP_TYPE.ADDTURN]: <Locale plain k="BUFFSTACK_ADDTURN" />,
-					[BUFF_OVERLAP_TYPE.OVERLAP]: <Locale plain k="BUFFSTACK_OVERLAP" />,
-					[BUFF_OVERLAP_TYPE.CREATE]: <Locale plain k="BUFFSTACK_CREATE" />,
+					// [BUFF_OVERLAP_TYPE.NONE]: <Locale plain k="BUFFSTACK_INSTANCE" />,
+					// [BUFF_OVERLAP_TYPE.RENEW]: <Locale plain k="BUFFSTACK_RENEW" />,
+					// [BUFF_OVERLAP_TYPE.ADDTURN]: <Locale plain k="BUFFSTACK_ADDTURN" />,
+					// [BUFF_OVERLAP_TYPE.OVERLAP]: <Locale plain k="BUFFSTACK_OVERLAP" />,
+					// [BUFF_OVERLAP_TYPE.CREATE]: <Locale plain k="BUFFSTACK_CREATE" />,
+					[BUFF_OVERLAP_TYPE.NONE]: <>INST</>,
+					[BUFF_OVERLAP_TYPE.RENEW]: <>RENEW</>,
+					[BUFF_OVERLAP_TYPE.ADDTURN]: <>ADDTURN</>,
+					[BUFF_OVERLAP_TYPE.OVERLAP]: <>OVERLAP</>,
+					[BUFF_OVERLAP_TYPE.CREATE]: <>CREATE</>,
 				};
 
 				elems.push(<div class="clearfix">

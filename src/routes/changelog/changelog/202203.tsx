@@ -7,6 +7,26 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11582" date="2022-03-28"
+		update={ <>
+			<li>
+				<span class="badge bg-substory">이로운 효과</span> 표기가 <span class="badge bg-substory">강화 효과</span>로,
+				<span class="badge bg-substory">기타 효과</span> 표기가 <span class="badge bg-substory">일반 효과</span>로
+				변경되었습니다.
+			</li>
+			<li>일부 전투원의 스킬 정보가 갱신되었습니다.</li>
+			<li>일부 장비들의 수치가 갱신되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<span class="badge bg-warning text-dark">T-20S 노움</span>의 스킨
+				<span class="badge bg-danger">오르카 바니 : 완벽한 토끼</span>의 로비 애니메이션 정보가 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2022-03-28 14:00:00</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11580" date="2022-03-21"
 		new={ <>
 			<li>
