@@ -2,7 +2,7 @@ import { FunctionalComponent } from "preact";
 import { Link } from "preact-router/match";
 // import { Dropdown } from "bootstrap";
 
-import { AssetsRoot, IsStaging } from "@/libs/Const";
+import { AssetsRoot, IsAprilFool, IsStaging } from "@/libs/Const";
 import { ChangeLanguage, CurrentLocale, LocaleList } from "@/libs/Locale";
 import { ChangeDB, CurrentDB, DBList, DBTypes } from "@/libs/DB";
 
@@ -47,10 +47,19 @@ const DBDisp: Record<DBTypes, string> = {
 };
 
 const Header: FunctionalComponent = (): preact.VNode => {
+	const AprilFoolTitle = {
+		KR: <>멸망 전의<br />전쟁 기록</>,
+		EN: <>War<br />Record</>,
+		JP: <>滅亡前の<br />戦争記録</>,
+		zhTW: <>滅亡前的<br />戰爭記錄</>,
+	};
+
 	return <nav class={ `${style.navbar} navbar navbar-expand-lg navbar-dark bg-dark px-3` }>
 		<div class="container-fluid">
 			<div class={ `${style["navbar-brand"]} navbar-brand` }>
-				<img src={ `${AssetsRoot}/icon.png` } />
+				<img
+					src={ `${AssetsRoot}/${IsAprilFool ? "icon2" : "icon"}.png` }
+				/>
 				<span>
 					<i class={ style["_official"] } data-locale={ CurrentLocale }>
 						{ IsStaging
@@ -58,7 +67,10 @@ const Header: FunctionalComponent = (): preact.VNode => {
 							: <Locale k="COMMON_TITLE_SUB" />
 						}
 					</i>
-					<Locale k="MENU_TITLE" />
+					{ IsAprilFool
+						? AprilFoolTitle[CurrentLocale]
+						: <Locale k="MENU_TITLE" />
+					}
 				</span>
 			</div>
 

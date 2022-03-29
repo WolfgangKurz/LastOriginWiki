@@ -1,7 +1,7 @@
 import { FunctionalComponent } from "preact";
 import { Link } from "preact-router";
 
-import { AssetsRoot, CurrentEvent, EventFrom, EventTo, ImageExtension, IsStaging } from "@/libs/Const";
+import { AssetsRoot, CurrentEvent, EventFrom, EventTo, ImageExtension, IsAprilFool, IsStaging } from "@/libs/Const";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 import { CurrentLocale } from "@/libs/Locale";
 
@@ -72,7 +72,10 @@ const Home: FunctionalComponent = () => {
 		}
 
 		<h2>
-			<img class={ `${style["heading-icon"]} heading-icon` } src={ `${AssetsRoot}/icon.png` } />
+			<img
+				class={ `${style["heading-icon"]} heading-icon` }
+				src={ `${AssetsRoot}/${IsAprilFool ? "icon2" : "icon"}.png` }
+			/>
 			<span class={ style["home-title"] }>
 				<i class={ style["_official"] }>
 					{ IsStaging
@@ -80,7 +83,7 @@ const Home: FunctionalComponent = () => {
 						: <Locale k="COMMON_TITLE_SUB" />
 					}
 				</i>
-				<Locale k="COMMON_TITLE" />
+				<Locale k={ IsAprilFool ? "CONSUMABLE_Consumable_TacticRecord_T3" : "COMMON_TITLE" } />
 			</span>
 		</h2>
 		<div class="mb-4 text-secondary">

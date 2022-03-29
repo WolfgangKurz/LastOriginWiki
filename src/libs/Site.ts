@@ -1,4 +1,4 @@
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot, IsAprilFool } from "@/libs/Const";
 import { LocaleGet } from "@/components/locale";
 
 type MetaKeys = "title" | "description" | "keywords" |
@@ -70,7 +70,14 @@ updateMeta();
 export function UpdateTitle (...title: string[]): void {
 	document.title = [
 		...title.map(t => t.replace(/&#x200B;/g, "")),
-		LocaleGet("COMMON_TITLE"),
+		LocaleGet(IsAprilFool ? "CONSUMABLE_Consumable_TacticRecord_T3" : "COMMON_TITLE"),
 	].join(" - ");
-	SetMeta(["twitter:title", "og:title"], document.title);
+
+	SetMeta(
+		["twitter:title", "og:title"],
+		[
+			...title.map(t => t.replace(/&#x200B;/g, "")),
+			LocaleGet("COMMON_TITLE"), // Meta always title
+		].join(" - "),
+	);
 }
