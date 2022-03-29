@@ -4,7 +4,7 @@ import AsyncRoute from "preact-async-route";
 import Store from "@/store";
 
 import { CurrentLocale } from "@/libs/Locale";
-import { Host } from "@/libs/Const";
+import { Host, IsAprilFool } from "@/libs/Const";
 
 // import DynamicRoute from "@/components/dynamic-route";
 import Loader from "@/components/loader";
@@ -28,7 +28,7 @@ const App: FunctionalComponent = () => {
 
 	const TitleChanger = (): void => {
 		if (LocaleGet("COMMON_TITLE") !== "COMMON_TITLE")
-			document.title = LocaleGet("COMMON_TITLE");
+			document.title = LocaleGet(IsAprilFool ? "CONSUMABLE_Consumable_TacticRecord_T3" : "COMMON_TITLE");
 		else
 			setTimeout(TitleChanger, 10);
 	};
