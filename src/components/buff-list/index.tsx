@@ -1245,7 +1245,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 		shortize: number = 0,
 	): string {
 		if (shortize === 1 || shortize === 2) {
-			const regex = /^(.+)(:.+)$/;
+			const regex = /^(.+)([：:].+)$/;
 			if (regex.test(template))
 				template = template.replace(regex, `$${shortize}`).trim();
 			else if (shortize === 2)
@@ -1391,13 +1391,13 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 							: <span class="me-1 empty-icon" />
 						}
 						<strong class="align-middle">
-							<Locale plain k={ stat.key } />
+							{ formatDesc(buff.desc.type, LocaleGet(buff.desc.desc), buff.desc.value, buff.desc.level, level, 1) }
 							<small class="ms-2 text-primary">
-								{ formatDesc(buff.desc.type, buff.desc.desc, buff.desc.value, buff.desc.level, level, 2) }
+								{ formatDesc(buff.desc.type, LocaleGet(buff.desc.desc), buff.desc.value, buff.desc.level, level, 2) }
 							</small>
 
 							{ IsDev
-								? <small class="ms-2 text-secondary">{ stat.key }</small>
+								? <small class="ms-2 text-secondary">{ buff.desc.desc }</small>
 								: <></>
 							}
 
