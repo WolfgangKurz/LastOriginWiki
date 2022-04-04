@@ -1,0 +1,18 @@
+digraph {
+	fixedsize=true;
+	concentrate=true;
+	node [shape=rect margin="0.25,0.125"];
+	start [shape=invhouse];
+
+	node [style=filled fillcolor="#FFEEBB"]; # cond
+	cond1 [tooltip="alive?who=team,check?type=buff&kind=self&buff=Effect_MP_DoomEater_N_EW2_21"]; # is team alive and has Effect_MP_DoomEater_N_EW2_21 buff in self
+
+	node [fillcolor="#BBCCFF"];
+	skill1 [tooltip="skill?slot=1&target=near"]; # use active 1 to near
+	skill2 [tooltip="skill?slot=2&target=random"]; # use active 2 to random
+
+	start -> cond1;
+
+	cond1 -> skill1 [label="y"];
+	cond1 -> skill2 [label="n"];
+}

@@ -1,0 +1,25 @@
+digraph {
+	fixedsize=true;
+	concentrate=true;
+	node [shape=rect margin="0.25,0.125"];
+	start [shape=invhouse];
+
+	node [style=filled fillcolor="#FFEEBB"]; # cond
+	cond1 [tooltip="check?type=buff&kind=self&buff=Effect_MP_Executioner_EW2_31&count=10"]; # has 10 Effect_MP_Executioner_EW2_31 buffs in self
+	cond2 [tooltip="check?type=attacked"]; # has attacked?
+
+	node [fillcolor="#BBCCFF"];
+	skill1 [tooltip="skill?slot=1&target=lastenemy"]; # use active 1 to last attacked enemy
+	skill1_1 [tooltip="skill?slot=1&target=atkhighest"]; # use active 1 to atk highest
+	skill2 [tooltip="skill?slot=2&target=defhighest"]; # use active 2 to def highest
+
+	node [fillcolor="#7788aa"];
+
+	start -> cond1;
+
+	cond1 -> skill2 [label="y"];
+	cond1 -> cond2 [label="n"];
+
+	cond2 -> skill1 [label="y"];
+	cond2 -> skill1_1 [label="n"];
+}

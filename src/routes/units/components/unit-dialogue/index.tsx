@@ -1,7 +1,7 @@
 import { FunctionalComponent } from "preact";
 
 import { SKIN_IN_PARTS } from "@/types/Enums";
-import { RawUnitDialogueEntity, UnitDialogueDataType } from "@/types/DB/Dialogue";
+import { RawUnitDialogueEntity, UnitDialogueAudioType, UnitDialogueDataType } from "@/types/DB/Dialogue";
 import { Unit, UnitSkin } from "@/types/DB/Unit";
 
 import { UniqueID } from "@/libs/Functions";
@@ -21,7 +21,7 @@ interface UnitDialogueProps {
 	voice: VoiceItem;
 	id: number;
 	lang: keyof UnitDialogueDataType;
-
+	audio: UnitDialogueAudioType;
 }
 
 const UnitDialogue: FunctionalComponent<UnitDialogueProps> = (props) => {
@@ -194,7 +194,7 @@ const UnitDialogue: FunctionalComponent<UnitDialogueProps> = (props) => {
 						isSkin={ !voice.isDef }
 						type={ type }
 						dialogue={ Dialogue[type] }
-						lang={ props.lang }
+						audio={ props.audio }
 					/>) }
 				</div>
 			</div>

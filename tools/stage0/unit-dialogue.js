@@ -6,11 +6,14 @@ function process (auth) {
 	const sheets = google.sheets({ version: "v4", auth });
 
 	const ret = {
-		ko: {},
-		jp: {},
-		jpdmm: {},
+		KR: {},
+		JP: {},
+		// EN: {},
+		// TC: {},
+		// SC: {},
 	};
-	function procLang (lang, rows) {
+	const dialogueList = ["KR", "JP", "EN", "TC", "SC"];
+	function procLang (rows) {
 		const typeTable = {
 			소개: "Intro",
 			획득: "Join",
@@ -57,6 +60,8 @@ function process (auth) {
 			"전투 MVP": "MVP",
 		};
 
+		let log = "";
+
 		rows
 			.filter(row => {
 				if (!row[0] || row[0].length === 0 || row[0][0] === "#") return false;
@@ -73,7 +78,7 @@ function process (auth) {
 
 				return fs.existsSync(path.resolve(
 					__dirname, "..", "..", "external", "assets",
-					"audio", `voice-${lang}`,
+					"audio", `voice-ko`,
 					`${name}.mp3`,
 				));
 			})
@@ -81,80 +86,56 @@ function process (auth) {
 				const unit = row[0];
 				const skin = row[2] || "0";
 				const type = typeTable[row[4]] || row[4];
-				const dialogue = row[5];
 
-				if (!(unit in ret[lang])) ret[lang][unit] = {};
-				if (!(skin in ret[lang][unit])) ret[lang][unit][skin] = {};
+				for (let idx = 5; idx < 5 + dialogueList.length; idx++) {
+					const lang = dialogueList[idx - 5];
+					const dialogue = row[idx];
 
-				ret[lang][unit][skin][type] = (dialogue || "").trim();
+					if (!(lang in ret)) continue;
+					if (!(unit in ret[lang])) ret[lang][unit] = {};
+					if (!(skin in ret[lang][unit])) ret[lang][unit][skin] = {};
+
+					ret[lang][unit][skin][type] = (dialogue || "").trim();
+				}
 			});
+
+		// Object.keys(ret).forEach(klang => {
+		// 	Object.keys(ret[klang]).forEach(kunit => {
+		// 		Object.keys(ret[klang][kunit]).forEach(kskin => {
+		// 			if (Object.values(ret[klang][kunit][kskin]).every(t => t === ""))
+		// 				delete ret[klang][kunit][kskin];
+		// 		});
+
+		// 		if (Object.keys(ret[klang]).length === 0)
+		// 			delete ret[klang][kunit];
+		// 	});
+		// });
 	}
 
-	Promise.all([
-		new Promise((resolve, reject) => {
-			sheets.spreadsheets.values.get({
-				spreadsheetId: "1TrLn5czFe2Ww1xg4HiFsDzZDcnphxV3AqP_DgNqaU00",
-				range: "UnitDialogue (KR)!A3:F",
-			}, (err, res) => {
-				if (err) {
-					console.log(`The API returned an error: ${err}`);
-					return reject();
-				}
+	new Promise((resolve, reject) => {
+		sheets.spreadsheets.values.get({
+			spreadsheetId: "1TrLn5czFe2Ww1xg4HiFsDzZDcnphxV3AqP_DgNqaU00",
+			range: "대사(Quotes)!A3:J",
+		}, (err, res) => {
+			if (err) {
+				console.log(`The API returned an error: ${err}`);
+				return reject();
+			}
 
-				const rows = res.data.values;
-				if (rows.length)
-					procLang("ko", rows);
-				else {
-					console.log("No data found.");
-					return reject();
-				}
-				resolve();
-			});
-		}),
-		new Promise((resolve, reject) => {
-			sheets.spreadsheets.values.get({
-				spreadsheetId: "1TrLn5czFe2Ww1xg4HiFsDzZDcnphxV3AqP_DgNqaU00",
-				range: "UnitDialogue (JP)!A3:F",
-			}, (err, res) => {
-				if (err) {
-					console.log(`The API returned an error: ${err}`);
-					return reject();
-				}
-
-				const rows = res.data.values;
-				if (rows.length) {
-					procLang("jp", rows);
-					procLang("jpdmm", rows);
-				} else {
-					console.log("No data found.");
-					return reject();
-				}
-				resolve();
-			});
-		}),
-		// new Promise((resolve, reject) => {
-		// 	sheets.spreadsheets.values.get({
-		// 		spreadsheetId: "1TrLn5czFe2Ww1xg4HiFsDzZDcnphxV3AqP_DgNqaU00",
-		// 		range: "UnitDialogue (JPDMM)!A3:F",
-		// 	}, (err, res) => {
-		// 		if (err) {
-		// 			console.log(`The API returned an error: ${err}`);
-		// 			return reject();
-		// 		}
-
-		// 		const rows = res.data.values;
-		// 		if (rows.length)
-		// 			procLang("jpdmm", rows);
-		// 		else {
-		// 			console.log("No data found.");
-		// 			return reject();
-		// 		}
-		// 		resolve();
-		// 	});
-		// }),
-	]).then(() => {
+			const rows = res.data.values;
+			if (rows.length)
+				procLang(rows);
+			else {
+				console.log("No data found.");
+				return reject();
+			}
+			resolve();
+		});
+	}).then(() => {
 		fs.mkdirSync(path.resolve(__dirname, "..", "..", "db", "dialogue"), { recursive: true });
-		["ko", "jp", "jpdmm"].forEach(lang => {
+		dialogueList.forEach(lang => {
+			if (!ret[lang]) return;
+
 			fs.writeFileSync(
 				path.resolve(__dirname, "..", "..", "db", "dialogue", `${lang}.json`),
 				JSON.stringify(ret[lang], null, 2),

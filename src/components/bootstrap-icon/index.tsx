@@ -251,7 +251,7 @@ export type IconList = "alarm" | "alarm-fill" | "align-bottom" | "align-center" 
 	"text-paragraph" | "text-right" | "textarea" | "textarea-resize" | "textarea-t" | "thermometer" |
 	"thermometer-half" | "thermometer-high" | "thermometer-low" | "thermometer-snow" |
 	"thermometer-sun" | "three-dots" | "three-dots-vertical" | "toggle-off" | "toggle-on" |
-	"toggle2-off" | "toggle2-on" | "toggles" | "toggles2" | "tools" | "tornado" | "trash" |
+	"toggle2-off" | "toggle2-on" | "toggles" | "toggles2" | "tools" | "tornado" | "translate" | "trash" |
 	"trash-fill" | "trash2" | "trash2-fill" | "tree" | "tree-fill" | "triangle" | "triangle-fill" |
 	"triangle-half" | "trophy" | "trophy-fill" | "tropical-storm" | "truck" | "truck-flatbed" | "tshirt" |
 	"tsunami" | "tv" | "tv-fill" | "twitch" | "twitter" | "type" | "type-bold" | "type-h1" |

@@ -5,8 +5,9 @@ export function ChangeLanguage (lang: LocaleTypes): void {
 	window.location.reload();
 }
 
-export type LocaleTypes = "KR" | "EN" | "JP" | "zhTW";
-export const LocaleList: LocaleTypes[] = ["KR", "EN", "JP", "zhTW"];
+export type LocaleTypes = "KR" | "JP" | "EN" | "TC" | "SC";
+// export const LocaleList: LocaleTypes[] = ["KR", "JP", "EN", "TC", "SC"];
+export const LocaleList: LocaleTypes[] = ["KR", "JP", "EN", "TC"];
 
 function LangValidation (name: string | undefined): LocaleTypes {
 	const list = LocaleList as string[];
@@ -26,8 +27,10 @@ const defaultLang = ((): LocaleTypes => {
 			return "KR";
 
 		default:
-			if (lang === "zh-TW")
-				return "zhTW";
+			if (lang.startsWith("zh-Hant"))
+				return "TC";
+			else if (lang.startsWith("zh-Hans"))
+				return "SC";
 			return "KR";
 	}
 })();

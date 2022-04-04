@@ -1,0 +1,24 @@
+digraph {
+	fixedsize=true;
+	concentrate=true;
+	node [shape=rect margin="0.25,0.125"];
+	start [shape=invhouse];
+
+	node [style=filled fillcolor="#FFEEBB"]; # cond
+	cond1 [tooltip="check?type=buff&kind=self&buff=Effect_MP_EmperorChickSpCH_N_33,check?type=skill&slot=2&kind=usable"]; # is Effect_MP_EmperorChickSpCH_N_33 buff in self and active 2 usable
+	skill_usable1 [tooltip="check?type=skill&slot=1&kind=usable"]; # active 1 usable
+
+	node [fillcolor="#BBCCFF"];
+	skill1 [tooltip="skill?slot=1&target=heavy"]; # use active 1 to heavy first
+	skill2 [tooltip="skill?slot=2&target=light"]; # use active 2 to light first
+
+	node [fillcolor="#7788aa"];
+	wait [tooltip="wait" fillcolor="#999999"]; # wait
+
+	start -> cond1;
+	cond1 -> skill2 [label="y"];
+	cond1 -> skill_usable1 [label="n"];
+
+	skill_usable1 -> skill1 [label="y"];
+	skill_usable1 -> wait [label="n"];
+}

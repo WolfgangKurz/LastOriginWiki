@@ -11,9 +11,8 @@ targetDBs.forEach(targetDB => {
 		const units = JSON.parse(fs.readFileSync(path.resolve(sourceDir, "unit.json"), { encoding: "utf-8" }));
 		const equips = JSON.parse(fs.readFileSync(path.resolve(sourceDir, "equip.json"), { encoding: "utf-8" }));
 		const dialogues = {
-			ko: JSON.parse(fs.readFileSync(path.resolve(sourceDir, "..", "dialogue", "ko.json"), { encoding: "utf-8" })),
-			jp: JSON.parse(fs.readFileSync(path.resolve(sourceDir, "..", "dialogue", "jp.json"), { encoding: "utf-8" })),
-			jpdmm: JSON.parse(fs.readFileSync(path.resolve(sourceDir, "..", "dialogue", "jpdmm.json"), { encoding: "utf-8" })),
+			KR: JSON.parse(fs.readFileSync(path.resolve(sourceDir, "..", "dialogue", "KR.json"), { encoding: "utf-8" })),
+			JP: JSON.parse(fs.readFileSync(path.resolve(sourceDir, "..", "dialogue", "JP.json"), { encoding: "utf-8" })),
 		};
 		const skins = JSON.parse(fs.readFileSync(path.resolve(sourceDir, "unit-skin.json"), { encoding: "utf-8" }));
 		const lvlimits = JSON.parse(fs.readFileSync(path.resolve(sourceDir, "unit-lvlimit.json"), { encoding: "utf-8" }));
@@ -76,9 +75,8 @@ targetDBs.forEach(targetDB => {
 
 					skills,
 					dialogue: {
-						ko: dialogues.ko[char.uid],
-						jp: dialogues.jp[char.uid],
-						jpdmm: dialogues.jpdmm[char.uid],
+						KR: dialogues.KR[char.uid],
+						JP: dialogues.JP[char.uid],
 					},
 					skins: skins[char.uid],
 

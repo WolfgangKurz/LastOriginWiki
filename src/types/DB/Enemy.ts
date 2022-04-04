@@ -1,4 +1,3 @@
-import { AI } from "@/types/DB/AI";
 import { SkillEntity, SkillEntryData } from "@/types/DB/Skill";
 import { SKILL_ATTR, ACTOR_GRADE, ACTOR_CLASS, ROLE_TYPE } from "@/types/Enums";
 
@@ -12,10 +11,8 @@ export interface EnemySkill extends SkillEntity {
 
 export interface Enemy {
 	id: string;
-	// name: string;
-	// desc: string;
 	icon: string;
-	ai: AI[];
+	ai?: string;
 
 	rarity: ACTOR_GRADE;
 	type: ACTOR_CLASS;
