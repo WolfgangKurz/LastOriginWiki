@@ -542,7 +542,10 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 								{ displayTab.value === "ai"
 									? <div class="row">
 										<div class="col border border-top-0 text-start p-3">
-											<AIList ai={ targetEnemy.value.ai } skills={ Skills } enemy />
+											{ targetEnemy.value.ai
+												? <AIList aiKey={ targetEnemy.value.ai } skills={ Skills } enemy />
+												: <>Not ready yet</>
+											}
 										</div>
 									</div>
 									: <></>

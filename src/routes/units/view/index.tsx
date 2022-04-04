@@ -6,7 +6,7 @@ import { SelectOption } from "@/types/Helper";
 import { ACTOR_BODY_TYPE, ACTOR_GRADE, ITEM_TYPE } from "@/types/Enums";
 import { LinkBonusType, Unit, UnitSkin } from "@/types/DB/Unit";
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
-import { UnitDialogueDataType } from "@/types/DB/Dialogue";
+import { UnitDialogueAudioType, UnitDialogueDataType } from "@/types/DB/Dialogue";
 import { Consumable } from "@/types/DB/Consumable";
 
 import { ObjectState, objState } from "@/libs/State";
@@ -655,43 +655,43 @@ const SkillTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 			rangeBonus={ linkCount.value === 5 && fullLinkBonus.value.startsWith("Range_") }
 		/>
 
-		{ IsDev
-			? unit.exskill && <div class="mt-3 card">
-				<div class="card-header bg-dark text-light">
-					<div class="mb-2">
-						<Locale k="UNIT_SKILL_EXTPASSIVE" />
-						<span class={ style.ExtPassiveLevel }>
-							Lv.<strong>{ ExLevel.value + 1 }</strong>
-						</span>
-					</div>
-
-					<input
-						class="form-range"
-						type="range"
-						min="0"
-						max="9"
-						value={ ExLevel.value }
-						onInput={ (e): void => ExLevel.set(
-							parseInt((e.target as HTMLInputElement).value, 10) as number,
-						) }
-					/>
+		<div class="mt-3 card">
+			<div class="card-header bg-dark text-light">
+				<div class="mb-2">
+					<Locale k="UNIT_SKILL_EXTPASSIVE" />
+					<span class={ style.ExtPassiveLevel }>
+						Lv.<strong>{ ExLevel.value + 1 }</strong>
+					</span>
 				</div>
 
-				<div class="card-body">
-					<div class="mt-4 row row-cols-1 row-cols-md-2">
-						{ unit.exskill.map(ex => <div class="col my-2">
-							<ExtPassiveCard passive={ ex } level={ ExLevel.value } />
-						</div>) }
-					</div>
+				<input
+					class="form-range"
+					type="range"
+					min="0"
+					max="9"
+					value={ ExLevel.value }
+					onInput={ (e): void => ExLevel.set(
+						parseInt((e.target as HTMLInputElement).value, 10) as number,
+					) }
+				/>
+			</div>
+
+			<div class="card-body">
+				<div class="mt-4 row row-cols-1 row-cols-md-2">
+					{ unit.exskill.map(ex => <div class="col my-2">
+						<ExtPassiveCard passive={ ex } level={ ExLevel.value } />
+					</div>) }
 				</div>
 			</div>
-			: <></>
-		}
+		</div>
 	</div>;
 };
 
 const DialogueTab: FunctionalComponent<SubpageProps> = ({ display, unit, SkinList }) => {
-	const dialogueLang = objState<keyof UnitDialogueDataType>("ko");
+	const dialogueLang = objState<keyof UnitDialogueDataType>("KR");
+	const dialogueAudio = objState<UnitDialogueAudioType>("ko");
+
+	const LangList: Array<keyof UnitDialogueDataType> = ["KR", "JP"];
 
 	const VoiceList: VoiceItem[] = [
 		{
@@ -716,18 +716,34 @@ const DialogueTab: FunctionalComponent<SubpageProps> = ({ display, unit, SkinLis
 	];
 
 	return <div style={ { display: display ? "" : "none" } }>
-		<div class="btn-group">
+		<div class="input-group justify-content-center my-1">
+			<div class="input-group-text">
+				<Icon icon="translate" class="me-1" />
+			</div>
+
+			{ LangList.map(lang => <button
+				class={ `btn btn-outline-primary ${isActive(dialogueLang.value === lang)}` }
+				onClick={ (): void => dialogueLang.set(lang) }
+			>
+				<img src={ `${AssetsRoot}/flags/${lang}.png` } alt={ lang } />
+			</button>) }
+		</div>
+		<div class="input-group justify-content-center my-1">
+			<div class="input-group-text">
+				<Icon icon="mic-fill" class="me-1" />
+			</div>
+
 			<button
-				class={ `btn btn-outline-primary ${isActive(dialogueLang.value === "ko")}` }
-				onClick={ (): void => dialogueLang.set("ko") }
+				class={ `btn btn-outline-primary ${isActive(dialogueAudio.value === "ko")}` }
+				onClick={ (): void => dialogueAudio.set("ko") }
 			>한국어</button>
 			<button
-				class={ `btn btn-outline-primary ${isActive(dialogueLang.value === "jp")}` }
-				onClick={ (): void => dialogueLang.set("jp") }
+				class={ `btn btn-outline-primary ${isActive(dialogueAudio.value === "jp")}` }
+				onClick={ (): void => dialogueAudio.set("jp") }
 			>日本語 N</button>
 			<button
-				class={ `btn btn-outline-primary ${isActive(dialogueLang.value === "jpdmm")}` }
-				onClick={ (): void => dialogueLang.set("jpdmm") }
+				class={ `btn btn-outline-primary ${isActive(dialogueAudio.value === "jpdmm")}` }
+				onClick={ (): void => dialogueAudio.set("jpdmm") }
 			>日本語 R</button>
 		</div>
 
@@ -736,6 +752,7 @@ const DialogueTab: FunctionalComponent<SubpageProps> = ({ display, unit, SkinLis
 			voice={ voice }
 			id={ voice.id }
 			lang={ dialogueLang.value }
+			audio={ dialogueAudio.value }
 		/>) }
 	</div>;
 };

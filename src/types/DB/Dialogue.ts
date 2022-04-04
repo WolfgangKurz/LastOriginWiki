@@ -50,8 +50,9 @@ export interface RawUnitDialogue {
 	[key: string]: Partial<RawUnitDialogueEntity>; // Skin
 }
 
+export type UnitDialogueAudioType = "ko" | "jp" | "jpdmm";
+
 export interface UnitDialogueDataType {
-	ko: RawUnitDialogue | false | null;
-	jp: RawUnitDialogue | false | null;
-	jpdmm: RawUnitDialogue | false | null;
+	KR: RawUnitDialogue | false | null;
+	JP: RawUnitDialogue | false | null;
 }

@@ -1,0 +1,24 @@
+digraph {
+	fixedsize=true;
+	concentrate=true;
+	node [shape=rect margin="0.25,0.125"];
+	start [shape=invhouse];
+
+	node [style=filled fillcolor="#FFEEBB"]; # cond
+	cond [tooltip="!pos?pos=front"]; # not at front
+	skill_usable2 [tooltip="check?type=skill&slot=2&kind=usable"]; # active 2 usable
+
+	node [fillcolor="#BBCCFF"];
+	skill2 [tooltip="skill?slot=2&target=team"]; # use active 2 to team
+
+	node [fillcolor="#7788aa"];
+	movef [tooltip="move?pos=front"]; # move to front
+	wait [tooltip="wait" fillcolor="#999999"]; # wait
+
+	start -> skill_usable2;
+	skill_usable2 -> skill2 [label="y"];
+	skill_usable2 -> cond [label="n"];
+
+	cond -> movef [label="y"];
+	cond -> wait [label="n"];
+}

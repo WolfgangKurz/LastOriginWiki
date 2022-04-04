@@ -124,7 +124,8 @@ class MapGrid extends Component<NewMapGridProps>{
 			const lines: preact.VNode[] = [];
 
 			const hasStory = nodes.some(x => x.type === STAGE_SUB_TYPE.STORY);
-			const byOffset = !(props.wid || "").startsWith("Ev") || parseInt((props.wid || "Ev0").substring(2), 10) < 14;
+			const byOffset = !(props.wid || "").startsWith("Ev") || parseInt((props.wid || "Ev0").substring(2), 10) < 14
+			|| props.wid === "Ev15";
 
 			const mainXTable: Record<number, number> = {};
 			const used: number[] = [];

@@ -1,6 +1,6 @@
 import { FunctionComponent } from "preact";
 
-import { UnitDialogueDataType } from "@/types/DB/Dialogue";
+import { UnitDialogueAudioType } from "@/types/DB/Dialogue";
 
 import { AssetsRoot } from "@/libs/Const";
 
@@ -13,14 +13,14 @@ interface DialogueRowProps {
 	unitId?: string;
 	isSkin?: boolean;
 	dialogue?: string;
-	lang?: keyof UnitDialogueDataType;
+	audio?: UnitDialogueAudioType;
 }
 
 const DialogueRow: FunctionComponent<DialogueRowProps> = (props) => {
 	const type = props.type || "";
 	const unitId = props.unitId || "";
 	const dialogue = props.dialogue || "";
-	const lang = props.lang || "ko";
+	const audio = props.audio || "ko";
 
 	/* eslint-disable camelcase */
 	const TypeColor = ({
@@ -72,7 +72,7 @@ const DialogueRow: FunctionComponent<DialogueRowProps> = (props) => {
 
 	const rowClass = `border-top bg-${TypeColor} text-light`;
 
-	const voiceUrl = `${AssetsRoot}/audio/voice-${lang}/${unitId}_${type}.mp3`;
+	const voiceUrl = `${AssetsRoot}/audio/voice-${audio}/${unitId}_${type}.mp3`;
 
 	return <div class="row dialogue-row my-2 my-sm-0">
 		<div class={ `col col-12 col-sm-2 ${rowClass}` }>

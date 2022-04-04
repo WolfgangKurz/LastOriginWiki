@@ -1160,7 +1160,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			return <Locale plain k="BUFFEFFECT_BY" p={ [
 				<Locale plain k={ `BUFFTARGET_BY_${stat.by.target.toUpperCase()}` } />,
 				<Locale plain k={ `BUFFEFFECT_BY_${stat.by.by.toUpperCase()}` } />,
-				nsignedValue(stat.by, level, stat.value === "skill_ratio" && stat.by.by === "defense"),
+				nsignedValue(stat.by, level, typeof stat.by.base === "string"),
 				<Locale plain k={ `BUFFEFFECT_BY_${stat.value.toUpperCase()}` } />,
 				<Locale plain k={ `BUFFTYPE_${stat.by.type.toUpperCase()}` } />,
 			] } />;

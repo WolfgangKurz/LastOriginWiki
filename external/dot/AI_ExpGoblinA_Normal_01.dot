@@ -1,0 +1,39 @@
+digraph {
+	fixedsize=true;
+	concentrate=true;
+	node [shape=rect margin="0.25,0.125"];
+	start [shape=invhouse];
+
+	node [style=filled fillcolor="#FFEEBB"]; # cond
+	skill_usable1 [tooltip="check?type=skill&slot=1&kind=usable&count=1&op=bigger"]; # active 1 usable, target count > 1
+	skill_usable2 [tooltip="check?type=skill&slot=2&kind=usable"]; # active 2 usable
+	usable_cell1 [tooltip="check?type=skill&slot=1&kind=movable"]; # is cell exists that can use active 1
+	usable_cell2 [tooltip="check?type=skill&slot=2&kind=movable"]; # is cell exists that can use active 2
+
+	node [fillcolor="#BBCCFF"];
+	skill1 [tooltip="skill?slot=1&target=near.light&row=2"]; # use active 1 to near light first, target num > 2 in row
+	skill1_1 [tooltip="skill?slot=1&target=near.heavy&row=2"]; # use active 1 to near heavy second, target num > 2 in row
+	skill1_2 [tooltip="skill?slot=1&target=near.flying&row=2"]; # use active 1 to near flying third, target num > 2 in row
+	skill1_3 [tooltip="skill?slot=1&target=light"]; # use active 1 to light then
+	skill2 [tooltip="skill?slot=2&target=flying"]; # use active 2 to flying first
+
+	node [fillcolor="#7788aa"];
+	move1 [tooltip="move?slot=1"]; # move to cell that can use active 1
+	move2 [tooltip="move?slot=2"]; # move to cell that can use active 2
+	wait [tooltip="wait" fillcolor="#999999"]; # wait
+
+	start -> skill_usable1;
+	skill_usable1 -> skill1 [label="y"];
+	skill_usable1 -> skill_usable2 [label="n"];
+
+	skill1 -> skill1_1 -> skill1_2 -> skill1_3 [label="f"];
+
+	skill_usable2 -> skill2 [label="y"];
+	skill_usable2 -> usable_cell2 [label="n"];
+
+	usable_cell2 -> move2 [label="y"];
+	usable_cell2 -> usable_cell1 [label="n"];
+
+	usable_cell1 -> move1 [label="y"];
+	usable_cell1 -> wait [label="n"];
+}

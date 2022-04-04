@@ -5171,6 +5171,77 @@
                 }
               ],
               "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sadius_N_58",
+              "on": "round",
+              "if": {
+                "in_squad": [
+                  "Char_PECS_Sonia_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "가드 오브 시티즌: 공격력 {0}%(유린의 소니아)",
+                    "type": 1,
+                    "value": "0.060000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "6%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "가드 오브 시티즌 : 치명타 {0}%(유린의 소니아)",
+                    "type": 1,
+                    "value": "0.060000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "6%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         }
@@ -5387,6 +5458,30 @@
             "icon": "BuffIcon_CRITICAL_UP",
             "desc": {
               "desc": "가드 오브 시티즌 : 치명타{0}%(자비로운 리앤)",
+              "type": 1,
+              "value": "0.060000",
+              "level": "0.010000"
+            },
+            "base": 0.06,
+            "per": 0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "가드 오브 시티즌: 공격력 {0}%(유린의 소니아)",
+              "type": 1,
+              "value": "0.060000",
+              "level": "0.010000"
+            },
+            "base": 0.06,
+            "per": 0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_CRITICAL_UP",
+            "desc": {
+              "desc": "가드 오브 시티즌 : 치명타 {0}%(유린의 소니아)",
               "type": 1,
               "value": "0.060000",
               "level": "0.010000"

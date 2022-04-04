@@ -1,0 +1,51 @@
+digraph {
+	fixedsize=true;
+	concentrate=true;
+	node [shape=rect margin="0.25,0.125"];
+	start [shape=invhouse];
+
+	node [style=filled fillcolor="#FFEEBB"]; # cond
+	cond1 [tooltip="pos?pos=0"]; # front lower
+	cond1_1 [tooltip="pos?pos=1"]; # middle lower
+	cond2 [tooltip="pos?pos=2"]; # backend lower
+	cond2_1 [tooltip="pos?pos=5"]; # backend middle
+	cond3 [tooltip="pos?pos=7"]; # middle upper
+	cond3_1 [tooltip="pos?pos=8"]; # backend upper
+	cond4 [tooltip="pos?pos=3"]; # front middle
+	cond4_1 [tooltip="pos?pos=6"]; # front upper
+
+	node [fillcolor="#7788aa"];
+	move_1 [tooltip="move?pos=1"];
+	move_1_1 [tooltip="move?pos=2"];
+	move_2 [tooltip="move?pos=5"];
+	move_2_1 [tooltip="move?pos=8"];
+	move_3 [tooltip="move?pos=6"];
+	move_3_1 [tooltip="move?pos=7"];
+	move_4 [tooltip="move?pos=0"];
+	move_4_1 [tooltip="move?pos=3"];
+
+	start -> cond1;
+
+	cond1 -> move_1 [label="y"];
+	cond1 -> cond1_1 [label="n"];
+
+	cond1_1 -> move_1_1 [label="y"];
+	cond1_1 -> cond2 [label="n"];
+
+	cond2 -> move_2 [label="y"];
+	cond2 -> cond2_1 [label="n"];
+
+	cond2_1 -> move_2_1 [label="y"];
+	cond2_1 -> cond3 [label="n"];
+
+	cond3 -> move_3 [label="y"];
+	cond3 -> cond3_1 [label="n"];
+
+	cond3_1 -> move_3_1 [label="y"];
+	cond3_1 -> cond4 [label="n"];
+
+	cond4 -> move_4 [label="y"];
+	cond4 -> cond4_1 [label="n"];
+
+	cond4_1 -> move_4_1 [label="y"];
+}
