@@ -1219,8 +1219,13 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 		level: number | undefined,
 		shortize: number = 0,
 	): string {
-		if (shortize === 1 || shortize === 2)
-			template = template.replace(/^(.+)(:.+)$/, `$${shortize}`).trim();
+		if (shortize === 1 || shortize === 2) {
+			const regex = /^(.+)([：:].+)$/;
+			if (regex.test(template))
+				template = template.replace(regex, `$${shortize}`).trim();
+			else if (shortize === 2)
+				return "";
+		}
 
 		if (value.startsWith("Char_")) {
 			const key = value.replace(/Char_(.+)_N/, "$1");
@@ -1307,9 +1312,9 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 					<div class="clearfix">
 						<img class="me-1" width="25" src={ `${AssetsRoot}/${ext}/buff/${buff.icon}.${ext}` } />
 						<strong class="align-middle">
-							<Locale plain k={ stat.key } />
+							{ formatDesc(buff.desc.type, LocaleGet(buff.desc.desc), buff.desc.value, buff.desc.level, level, 1) }
 							<small class="ms-2 text-primary">
-								{ formatDesc(buff.desc.type, buff.desc.desc, buff.desc.value, buff.desc.level, level, 2) }
+								{ formatDesc(buff.desc.type, LocaleGet(buff.desc.desc), buff.desc.value, buff.desc.level, level, 2) }
 							</small>
 						</strong>
 
