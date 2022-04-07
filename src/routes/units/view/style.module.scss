@@ -11,6 +11,7 @@
 		max-height: 24px;
 		vertical-align: middle;
 	}
+
 	// Placeholder
 }
 
@@ -28,6 +29,28 @@
 	}
 }
 
+.IntroduceText {
+	word-break: keep-all;
+	white-space: pre-line;
+}
+
+.SkinTabs {
+	overflow-x: auto;
+	overflow-y: hidden;
+
+	> ul {
+		flex-wrap: nowrap;
+		white-space: nowrap;
+	}
+}
+.SkinPrice {
+	> img {
+		float: left;
+		margin-right: 0.25em;
+		height: 1em;
+	}
+}
+
 :global .unit-view {
 	.tab-box {
 		padding: 10px;
@@ -37,28 +60,26 @@
 	// .fulllink-table {
 	//	padding-top: 0.55em;
 	// }
-	.introduce-text {
-		word-break: keep-all;
-		white-space: pre-line;
-	}
-
 	.table-unit-modal.container {
 		.col {
 			margin-bottom: -1px;
 			padding: 0.75rem;
 			border: 1px solid #dee2e6;
+
 			&.bg-dark {
 				border-color: #454d55;
 				font-weight: bold;
 			}
 		}
 	}
+
 	.table-unit-modal.table-bordered {
 		td,
 		th {
 			vertical-align: middle;
 			word-break: keep-all;
 		}
+
 		th.table-dark {
 			border-color: #454d55;
 		}
@@ -75,6 +96,7 @@
 		width: 8em;
 		vertical-align: baseline;
 	}
+
 	.table-unit-level-select,
 	.table-unit-rarity-select {
 		display: inline-block;
@@ -86,6 +108,7 @@
 	.skill-icon {
 		height: 64px;
 	}
+
 	.unit-modal-skill {
 		padding: 3px 0;
 		border-bottom: 1px solid #dee2e6;
@@ -93,6 +116,7 @@
 		&:last-child {
 			border-bottom: 0;
 		}
+
 		&:empty {
 			display: none;
 		}
@@ -100,6 +124,7 @@
 
 	.drop-list {
 		line-height: 1;
+
 		a {
 			display: inline-block;
 			line-height: 1;
@@ -145,6 +170,7 @@
 			}
 
 			$types: 0, 1, 2;
+
 			@each $type in $types {
 				&[data-type="#{$type}"] > .equip-slot-icon {
 					background-image: url($assetsRoot + "/simulation/Item#{$type}.png");

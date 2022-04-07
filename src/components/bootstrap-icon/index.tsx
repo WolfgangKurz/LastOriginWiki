@@ -203,7 +203,7 @@ export type IconList = "alarm" | "alarm-fill" | "align-bottom" | "align-center" 
 	"peace-fill" | "pen" | "pen-fill" | "pencil" | "pencil-fill" | "pencil-square" | "pentagon" |
 	"pentagon-fill" | "pentagon-half" | "people" | "person-circle" | "people-fill" | "percent" |
 	"person" | "person-badge" | "person-badge-fill" | "person-bounding-box" | "person-check" |
-	"person-check-fill" | "person-dash" | "person-dash-fill" | "person-fill" | "person-lines-fill" |
+	"person-check-fill" | "person-dash" | "person-dash-fill" | "person-fill" | "person-hearts" | "person-lines-fill" |
 	"person-plus" | "person-plus-fill" | "person-square" | "person-x" | "person-x-fill" | "phone" |
 	"phone-fill" | "phone-landscape" | "phone-landscape-fill" | "phone-vibrate" |
 	"phone-vibrate-fill" | "pie-chart" | "pie-chart-fill" | "pin" | "pin-angle" | "pin-angle-fill" |

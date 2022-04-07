@@ -7,6 +7,11 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11636" date="2022-04-08"
+		update={ <>
+			<li>전투원 정보의 UI 일부가 수정되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11596" date="2022-04-04"
 		bugfix={ <>
 			<li>버프 표시에서 버프 이름이 잘못 표시되던 문제를 수정했습니다.</li>
