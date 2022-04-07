@@ -1,4 +1,4 @@
-import { FunctionalComponent } from "preact";
+import { FunctionalComponent, FunctionComponent } from "preact";
 import { Link } from "preact-router";
 import Decimal from "decimal.js";
 
@@ -40,7 +40,7 @@ import ExtPassiveCard from "../components/ext-passive-card";
 import style from "./style.module.scss";
 
 // type TabTypes = "basic" | "skills" | "roguelike" | "dialogue";
-type TabTypes = "basic" | "lvlimit" | "skills" | "dialogue";
+type TabTypes = "basic" | "skin" | "lvlimit" | "skills" | "dialogue";
 
 interface SkinItem extends UnitSkin {
 	isDef: boolean;
@@ -93,289 +93,343 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 	const promotion = unit.promotions && unit.promotions[unit.promotions.length - 1];
 
 	return <div style={ { display: display ? "" : "none" } }>
-		{/* 스킨, 번호, 소속, 등급, 승급, 유형, 역할 */ }
-		<ul class="nav nav-tabs unit-display-tabs justify-content-start">
-			{ SkinList.map((skin, index) => <li class="nav-item">
-				<a
-					href="#"
-					class={ [
-						"nav-link",
-						isActive(skinIndex.value === index),
-						skinIndex.value === index ? `rarity-${skin.isPro ? "SS" : unit.rarity}-force text-dark` : "text-dark",
-					].join(" ") }
-					onClick={ (e): void => {
-						e.preventDefault();
-						skinIndex.set(index);
-					} }
-				>
-					{ skin.isPro
-						? index === skinIndex.value
-							? <span class="badge bg-light text-dark me-1">
-								<Locale k="UNIT_CARD_PROMOTION_BADGE" p={ ["SS"] } />
-							</span>
-							: <RarityBadge rarity="SS" class="me-1">
-								<Locale k="UNIT_CARD_PROMOTION_BADGE" p={ ["SS"] } />
-							</RarityBadge>
-						: <></> }
+		{/* 번호, 소속, 등급, 승급, 유형, 역할 */ }
 
-					<span>
-						{ skin.sid === null
-							? <Locale plain k={ `UNIT_${unit.uid}` } />
-							: <Locale plain k={ `UNIT_SKIN_${unit.uid}_${skin.sid}` } /> }
-					</span>
-				</a>
-			</li>) }
-		</ul>
+		<div class="row mb-3">
+			<h2>
+				<Locale k={ `UNIT_${unit.uid}` } />
+			</h2>
+			<h5 class="text-secondary">
+				No. { unit.id }
+			</h5>
+		</div>
 
-		<div class="row">
-			<div class="col-12 col-md-3">
-				{ SkinList[skinIndex.value]
-					? <SkinView unit={ unit } skin={ SkinList[skinIndex.value] } collapsed detailable />
-					: <></> }
-			</div>
-			<div class="mt-3 col-md-9 col-12">
-				<div class="row">
-					<div class="col" />
-					<div class="col-auto">
-						<UnitFace uid={ unit.uid } skin={ SkinList[skinIndex.value].sid || 0 } size="88" />
-					</div>
-					<div class="col-auto">
-						<UnitFace
-							uid={ unit.uid }
-							skin={ SkinList[skinIndex.value].sid || 0 }
-							sd
-							size="88"
-						/>
-					</div>
-					<div class="col" />
-				</div>
-
-				<div class="card bg-dark text-light introduce-text mx-3 mt-3 p-3">
+		<div class="row pt-2">
+			<div class="col-12 col-lg-7">
+				<div class={ `card bg-dark text-light mx-3 mt-3 p-3 ${style.IntroduceText}` }>
 					<Locale k={ `UNIT_INTRO_${unit.uid}` } plain />
 				</div>
+			</div>
 
-				{ ExclusiveEquip.length > 0
-					? <div class="alert alert-primary mt-3">
-						<div>
-							<Locale k="UNIT_VIEW_PRIVATE_EQUIP" />
-						</div>
-						<EquipPopup
-							asSub
-							equip={ selectedEquip.value }
-							display={ equipPopupDisplay.value }
-							onHidden={ (): void => {
-								equipPopupDisplay.set(false);
-								selectedEquip.set(null);
-							} }
-						/>
-						{ ExclusiveEquip.map(limited => <Link
-							href="#"
-							onClick={ (e): void => {
-								e.preventDefault();
-								selectedEquip.set(limited);
-								equipPopupDisplay.set(true);
-							} }
-						>
-							<DropEquip class="limited-item-card" equip={ limited } />
-						</Link>) }
-					</div>
-					: <></>
-				}
-
+			<div class="col-12 col-lg-5">
 				<div class="container table-unit-modal my-3">
-					<div class="row text-center row-cols-2 row-cols-md-4 gx-0">
-						<div class="col bg-dark text-light"><Locale k="UNIT_VIEW_DICTNO" /></div>
-						<div class="col">
-							<small>No.&nbsp;</small>
-							<strong>{ unit.id }</strong>
-						</div>
-						<div class="col bg-dark text-light"><Locale k="UNIT_VIEW_FACTION" /></div>
-						<div class="col">
-							<span class="break-keep">
-								<Locale k={ `UNIT_GROUP_${unit.group}` } />
-							</span>
-						</div>
-						<div class="col bg-dark text-light"><Locale k="UNIT_VIEW_GRADE" /></div>
-						<div class="col">
-							<RarityBadge rarity={ unit.rarity } size="medium">
-								<Locale k="COMMON_UNIT_GRADE_FORMAT" p={ [RarityDisplay[unit.rarity]] } />
-							</RarityBadge>
-						</div>
-						<div class="col bg-dark text-light"><Locale k="UNIT_VIEW_PROMOTION" /></div>
-						<div class="col">
-							{ promotion
-								? <RarityBadge rarity={ promotion } size="medium">
-									<Locale k="UNIT_VIEW_PROMOTION_BADGE" p={ [RarityDisplay[promotion]] } />
-								</RarityBadge>
-								: <span class="text-secondary"><Locale k="UNIT_VIEW_PROMOTION_BADGE_EMPTY" /></span>
-							}
-						</div>
-						<div class="col bg-dark text-light"><Locale k="UNIT_VIEW_TYPE" /></div>
-						<div class="col">
-							<UnitBadge type={ unit.type } size="large" transparent black />
-						</div>
-						<div class="col bg-dark text-light"><Locale k="UNIT_VIEW_ROLE" /></div>
-						<div class="col">
-							<UnitBadge role={ unit.role } size="large" transparent black />
-						</div>
-						<div class="col bg-dark text-light"><Locale k="UNIT_VIEW_HEIGHT" /></div>
-						<div class="col">{ unit.height }</div>
-						<div class="col bg-dark text-white"><Locale k="UNIT_VIEW_WEIGHT" /></div>
-						<div class="col">{ unit.weight }</div>
-						<div class="col bg-dark text-white"><Locale k="UNIT_VIEW_BATTLESTYLE" /></div>
-						<div class="col text-break">{ unit.weapon1 }</div>
-						<div class="col bg-dark text-white"><Locale k="UNIT_VIEW_WEAPON" /></div>
-						<div class="col text-break">{ unit.weapon2 }</div>
-					</div>
-				</div>
-
-				{ unit.body !== ACTOR_BODY_TYPE.AGS
-					? <table class="table table-bordered table-fixed text-center table-unit-modal">
-						<thead class="thead-dark">
-							<tr>
-								<th><Locale k="UNIT_VIEW_FAVOR_PRESENT" /></th>
-								<th><Locale k="UNIT_VIEW_FAVOR_VICTORY" /></th>
-								<th class="d-none d-md-table-cell"><Locale k="UNIT_VIEW_FAVOR_RETIRE" /></th>
-								<th class="d-none d-md-table-cell"><Locale k="UNIT_VIEW_FAVOR_ASSISTANT" /></th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr class="text-center">
-								<td>
-									<Locale k="UNIT_VIEW_FAVOR_MULTIPLY" p={ [unit.favor.present.toFixed(2)] } />
-								</td>
-								<td>
-									<span class="badge bg-danger"><Locale k="UNIT_VIEW_FAVOR_P" p={ [Favor.clear] } /></span>
-								</td>
-								<td class="d-none d-md-table-cell">
-									<span class="badge bg-danger"><Locale k="UNIT_VIEW_FAVOR_M" p={ [Favor.death] } /></span>
-								</td>
-								<td class="d-none d-md-table-cell">
-									<span class="badge bg-danger"><Locale k="UNIT_VIEW_FAVOR_P" p={ [Favor.assistant] } /></span>
-								</td>
-							</tr>
-							<tr class="d-md-none">
-								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_FAVOR_RETIRE" /></th>
-								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_FAVOR_ASSISTANT" /></th>
-							</tr>
-							<tr class="d-md-none text-center">
-								<td>
-									<span class="badge bg-danger"><Locale k="UNIT_VIEW_FAVOR_M" p={ [Favor.death] } /></span>
-								</td>
-								<td>
-									<span class="badge bg-danger"><Locale k="UNIT_VIEW_FAVOR_P" p={ [Favor.assistant] } /></span>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					: <></>
-				}
-
-				{ unit.research && <div class="container my-3">
-					<div class="row bg-dark text-light gx-0 p-3">
-						<ResearchTree unit={ unit } research={ unit.research } />
-					</div>
-				</div> }
-
-				<div class="container">
-					<table class="table table-bordered table-fixed text-center table-unit-modal">
-						<thead class="thead-dark">
-							<tr>
-								<th><Locale k="UNIT_VIEW_DROPS" /></th>
-							</tr>
-						</thead>
+					<table class="table">
 						<tbody>
 							<tr>
-								<td class="px-0 py-1 drop-list">
-									{ unit.source.length === 0 && !unit.craft
-										? <div class="p-3">
-											<span class="text-secondary">
-												<Locale k="UNIT_VIEW_DROPS_EMPTY" />
-											</span>
-										</div>
-										: <>
-											{ unit.craft
-												? <span class={ `badge bg-dark my-1 ${style.CreationBadge}` }>
-													{ unit.cost
-														? <div class={ style.CostInfo }>
-															<span class="pe-3">
-																<img class="res-icon" src={ `${AssetsRoot}/res-component.png` } />
-																{ FormatNumber(unit.cost.res[0]) }
-															</span>
-															<span class="pe-3">
-																<img class="res-icon" src={ `${AssetsRoot}/res-nutrition.png` } />
-																{ FormatNumber(unit.cost.res[1]) }
-															</span>
-															<span class="pe-3">
-																<img class="res-icon" src={ `${AssetsRoot}/res-power.png` } />
-																{ FormatNumber(unit.cost.res[2]) }
-															</span>
-															<span>
-																<Icon class="me-1" icon="hourglass-split" />
-																{ CraftTime }
-															</span>
+								<th class="bg-dark text-light"><Locale k="UNIT_VIEW_FACTION" /></th>
+								<td class="">
+									<span class="break-keep">
+										<Locale k={ `UNIT_GROUP_${unit.group}` } />
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th class="bg-dark text-light"><Locale k="UNIT_VIEW_HEIGHT" /></th>
+								<td class="">{ unit.height }</td>
+							</tr>
+							<tr>
+								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_WEIGHT" /></th>
+								<td class="">{ unit.weight }</td>
+							</tr>
+							<tr>
+								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_BATTLESTYLE" /></th>
+								<td class="text-break">{ unit.weapon1 }</td>
+							</tr>
+							<tr>
+								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_WEAPON" /></th>
+								<td class="text-break">{ unit.weapon2 }</td>
+							</tr>
 
-															<hr class="my-1" />
-
-															{ unit.cost.aicore > 0
-																? <span class="badge bg-semilight me-1 mb-1">
-																	<EquipIcon class="me-2 vertical-align-middle" image="UI_Icon_Consumable_AICore" size="24" />
-																	<Locale k="CONSUMABLE_TestItem_4" />
-																	&nbsp;x{ FormatNumber(unit.cost.aicore) }
-																</span>
-																: <></>
-															}
-															{ unit.cost.items.map(e => {
-																const item = ConsumableDB.find(c => c.key === e.item);
-																if (!item) return <>-</>;
-
-																return <span class="badge bg-semilight me-1 mb-1">
-																	<EquipIcon class="me-2 vertical-align-middle" image={ item.icon } size="24" />
-																	<Locale k={ `CONSUMABLE_${item.key}` } />
-																	&nbsp;x{ FormatNumber(e.count) }
-																</span>;
-															}) }
-														</div>
-														: <h5 class="m-0 p-0">
-															<Icon icon="hammer" />
-															<strong>
-																<span class="ps-1 pe-3">
-																	<Locale k="UNIT_VIEW_DROPS_CREATIONTIME" />
-																</span>
-																<span>{ CraftTime }</span>
-															</strong>
-														</h5>
-													}
-												</span>
-												: <></>
-											}
-
-											{ unit.source.map((area, aindex) => <div>
-												{ unit.craft || aindex > 0 ? <hr class="my-1" /> : <></> }
-												{ area.length > 0 && area[0].IsEvent
-													? <h6 style="font-weight: bold">
-														<Locale k={ area[0].EventName } />
-													</h6>
-													: area.length > 0 && area[0].IsChallenge
-														? <h6 style="font-weight: bold">
-															<Locale k={ `COMMON_CHALLENGE_${area[0].ChallengeName}` } />
-														</h6>
-														: area.length > 0 && area[0].IsSubStory
-															? <h6 style="font-weight: bold">
-																<Locale k="COMMON_SOURCE_SUBSTORY_SINGLE" />
-															</h6>
-															: <></>
-												}
-
-												{ area.map(source => <SourceBadge class="my-1" source={ source } linked />) }
-											</div>) }
-										</>
+							<tr>
+								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_FACTION" /></th>
+								<td class="text-break">
+									<Locale k={ `UNIT_GROUP_${unit.group}` } />
+								</td>
+							</tr>
+							<tr>
+								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_GRADE" /></th>
+								<td class="text-break">
+									<RarityBadge rarity={ unit.rarity } size="medium">
+										<Locale k="COMMON_UNIT_GRADE_FORMAT" p={ [RarityDisplay[unit.rarity]] } />
+									</RarityBadge>
+								</td>
+							</tr>
+							<tr>
+								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_PROMOTION" /></th>
+								<td class="text-break">
+									{ promotion
+										? <RarityBadge rarity={ promotion } size="medium">
+											<Locale k="UNIT_VIEW_PROMOTION_BADGE" p={ [RarityDisplay[promotion]] } />
+										</RarityBadge>
+										: <span class="text-secondary"><Locale k="UNIT_VIEW_PROMOTION_BADGE_EMPTY" /></span>
 									}
 								</td>
 							</tr>
+							<tr>
+								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_TYPE" /></th>
+								<td class="text-break">
+									<UnitBadge type={ unit.type } size="large" transparent black />
+								</td>
+							</tr>
+							<tr>
+								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_ROLE" /></th>
+								<td class="text-break">
+									<UnitBadge role={ unit.role } size="large" transparent black />
+								</td>
+							</tr>
 						</tbody>
 					</table>
 				</div>
+			</div>
+
+			{ ExclusiveEquip.length > 0
+				? <div class="alert alert-primary mt-3">
+					<div>
+						<Locale k="UNIT_VIEW_PRIVATE_EQUIP" />
+					</div>
+					<EquipPopup
+						asSub
+						equip={ selectedEquip.value }
+						display={ equipPopupDisplay.value }
+						onHidden={ (): void => {
+							equipPopupDisplay.set(false);
+							selectedEquip.set(null);
+						} }
+					/>
+					{ ExclusiveEquip.map(limited => <Link
+						href="#"
+						onClick={ (e): void => {
+							e.preventDefault();
+							selectedEquip.set(limited);
+							equipPopupDisplay.set(true);
+						} }
+					>
+						<DropEquip class="limited-item-card" equip={ limited } />
+					</Link>) }
+				</div>
+				: <></>
+			}
+
+			{ unit.body !== ACTOR_BODY_TYPE.AGS
+				? <table class="table table-bordered table-fixed text-center table-unit-modal">
+					<thead class="thead-dark">
+						<tr>
+							<th><Locale k="UNIT_VIEW_FAVOR_PRESENT" /></th>
+							<th><Locale k="UNIT_VIEW_FAVOR_VICTORY" /></th>
+							<th class="d-none d-md-table-cell"><Locale k="UNIT_VIEW_FAVOR_RETIRE" /></th>
+							<th class="d-none d-md-table-cell"><Locale k="UNIT_VIEW_FAVOR_ASSISTANT" /></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="text-center">
+							<td>
+								<Locale k="UNIT_VIEW_FAVOR_MULTIPLY" p={ [unit.favor.present.toFixed(2)] } />
+							</td>
+							<td>
+								<span class="badge bg-danger"><Locale k="UNIT_VIEW_FAVOR_P" p={ [Favor.clear] } /></span>
+							</td>
+							<td class="d-none d-md-table-cell">
+								<span class="badge bg-danger"><Locale k="UNIT_VIEW_FAVOR_M" p={ [Favor.death] } /></span>
+							</td>
+							<td class="d-none d-md-table-cell">
+								<span class="badge bg-danger"><Locale k="UNIT_VIEW_FAVOR_P" p={ [Favor.assistant] } /></span>
+							</td>
+						</tr>
+						<tr class="d-md-none">
+							<th class="bg-dark text-white"><Locale k="UNIT_VIEW_FAVOR_RETIRE" /></th>
+							<th class="bg-dark text-white"><Locale k="UNIT_VIEW_FAVOR_ASSISTANT" /></th>
+						</tr>
+						<tr class="d-md-none text-center">
+							<td>
+								<span class="badge bg-danger"><Locale k="UNIT_VIEW_FAVOR_M" p={ [Favor.death] } /></span>
+							</td>
+							<td>
+								<span class="badge bg-danger"><Locale k="UNIT_VIEW_FAVOR_P" p={ [Favor.assistant] } /></span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				: <></>
+			}
+
+			{ unit.research && <div class="container my-3">
+				<div class="row bg-dark text-light gx-0 p-3">
+					<ResearchTree unit={ unit } research={ unit.research } />
+				</div>
+			</div> }
+
+			<div class="container">
+				<table class="table table-bordered table-fixed text-center table-unit-modal">
+					<thead class="thead-dark">
+						<tr>
+							<th><Locale k="UNIT_VIEW_DROPS" /></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="px-0 py-1 drop-list">
+								{ unit.source.length === 0 && !unit.craft
+									? <div class="p-3">
+										<span class="text-secondary">
+											<Locale k="UNIT_VIEW_DROPS_EMPTY" />
+										</span>
+									</div>
+									: <>
+										{ unit.craft
+											? <span class={ `badge bg-dark my-1 ${style.CreationBadge}` }>
+												{ unit.cost
+													? <div class={ style.CostInfo }>
+														<span class="pe-3">
+															<img class="res-icon" src={ `${AssetsRoot}/res-component.png` } />
+															{ FormatNumber(unit.cost.res[0]) }
+														</span>
+														<span class="pe-3">
+															<img class="res-icon" src={ `${AssetsRoot}/res-nutrition.png` } />
+															{ FormatNumber(unit.cost.res[1]) }
+														</span>
+														<span class="pe-3">
+															<img class="res-icon" src={ `${AssetsRoot}/res-power.png` } />
+															{ FormatNumber(unit.cost.res[2]) }
+														</span>
+														<span>
+															<Icon class="me-1" icon="hourglass-split" />
+															{ CraftTime }
+														</span>
+
+														<hr class="my-1" />
+
+														{ unit.cost.aicore > 0
+															? <span class="badge bg-semilight me-1 mb-1">
+																<EquipIcon class="me-2 vertical-align-middle" image="UI_Icon_Consumable_AICore" size="24" />
+																<Locale k="CONSUMABLE_TestItem_4" />
+																&nbsp;x{ FormatNumber(unit.cost.aicore) }
+															</span>
+															: <></>
+														}
+														{ unit.cost.items.map(e => {
+															const item = ConsumableDB.find(c => c.key === e.item);
+															if (!item) return <>-</>;
+
+															return <span class="badge bg-semilight me-1 mb-1">
+																<EquipIcon class="me-2 vertical-align-middle" image={ item.icon } size="24" />
+																<Locale k={ `CONSUMABLE_${item.key}` } />
+																&nbsp;x{ FormatNumber(e.count) }
+															</span>;
+														}) }
+													</div>
+													: <h5 class="m-0 p-0">
+														<Icon icon="hammer" />
+														<strong>
+															<span class="ps-1 pe-3">
+																<Locale k="UNIT_VIEW_DROPS_CREATIONTIME" />
+															</span>
+															<span>{ CraftTime }</span>
+														</strong>
+													</h5>
+												}
+											</span>
+											: <></>
+										}
+
+										{ unit.source.map((area, aindex) => <div>
+											{ unit.craft || aindex > 0 ? <hr class="my-1" /> : <></> }
+											{ area.length > 0 && area[0].IsEvent
+												? <h6 style="font-weight: bold">
+													<Locale k={ area[0].EventName } />
+												</h6>
+												: area.length > 0 && area[0].IsChallenge
+													? <h6 style="font-weight: bold">
+														<Locale k={ `COMMON_CHALLENGE_${area[0].ChallengeName}` } />
+													</h6>
+													: area.length > 0 && area[0].IsSubStory
+														? <h6 style="font-weight: bold">
+															<Locale k="COMMON_SOURCE_SUBSTORY_SINGLE" />
+														</h6>
+														: <></>
+											}
+
+											{ area.map(source => <SourceBadge class="my-1" source={ source } linked />) }
+										</div>) }
+									</>
+								}
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div >;
+};
+
+const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, SkinList }) => {
+	return <div style={ { display: display ? "" : "none" } }>
+		<div class={ `flex-nowrap ${style.SkinTabs}` }>
+			<ul class="nav nav-tabs justify-content-start">
+				{ SkinList.map((skin, index) => <li class="nav-item">
+					<a
+						href="#"
+						class={ [
+							"nav-link",
+							isActive(skinIndex.value === index),
+							skinIndex.value === index ? `rarity-${skin.isPro ? "SS" : unit.rarity}-force text-dark` : "text-dark",
+						].join(" ") }
+						onClick={ (e): void => {
+							e.preventDefault();
+							skinIndex.set(index);
+						} }
+					>
+						<UnitFace uid={ unit.uid } skin={ skin.sid || 0 } size="64" />
+						<br />
+
+						<span>
+							{ skin.sid === null
+								? <Locale plain k={ `UNIT_${unit.uid}` } />
+								: <Locale plain k={ `UNIT_SKIN_${unit.uid}_${skin.sid}` } /> }
+						</span>
+
+						<br />
+
+						{ skin.isPro
+							? index === skinIndex.value
+								? <span class="badge bg-light text-dark me-1">
+									<Locale k="UNIT_CARD_PROMOTION_BADGE" p={ ["SS"] } />
+								</span>
+								: <RarityBadge rarity="SS" class="me-1">
+									<Locale k="UNIT_CARD_PROMOTION_BADGE" p={ ["SS"] } />
+								</RarityBadge>
+							: skin.sid === null
+								? <span class="badge bg-success">
+									<Locale k="UNIT_VIEW_SKIN_BADGE_DEFAULT" />
+								</span>
+								: <span class={ `badge bg-warning text-dark ${style.SkinPrice}` }>
+									<img src={ `${AssetsRoot}/tuna.png` } />
+									{ skin.price }
+								</span>
+						}
+					</a>
+				</li>) }
+			</ul>
+		</div>
+
+		<div class="row pt-3">
+			<div class="col-12 col-md-auto">
+				<div class="p-2 d-inline-block d-md-block">
+					<UnitFace uid={ unit.uid } skin={ SkinList[skinIndex.value].sid || 0 } size="88" />
+				</div>
+
+				<div class="p-2 d-inline-block d-md-block">
+					<UnitFace
+						uid={ unit.uid }
+						skin={ SkinList[skinIndex.value].sid || 0 }
+						sd
+						size="88"
+					/>
+				</div>
+			</div>
+			<div class="col">
+				{ SkinList[skinIndex.value]
+					? <SkinView unit={ unit } skin={ SkinList[skinIndex.value] } animate detailable />
+					: <></> }
 			</div>
 		</div>
 	</div>;
@@ -859,6 +913,19 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 						<li class="nav-item">
 							<a
 								href="#"
+								class={ `nav-link text-dark ${isActive(DisplayTab.value === "skin")}` }
+								onClick={ (e): void => {
+									e.preventDefault();
+									DisplayTab.set("skin");
+								} }
+							>
+								<Icon icon="person-hearts" class="me-1" />
+								<Locale k="UNIT_VIEW_TAB_SKININFO" />
+							</a>
+						</li>
+						{/* <li class="nav-item">
+							<a
+								href="#"
 								class={ `nav-link text-dark ${isActive(DisplayTab.value === "skills")}` }
 								onClick={ (e): void => {
 									e.preventDefault();
@@ -881,7 +948,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 								<Icon icon="capslock-fill" class="me-1" />
 								<Locale k="UNIT_VIEW_TAB_LVLIMIT" />
 							</a>
-						</li>
+						</li> */}
 						{/* <li class="nav-item">
 							<a
 								href="#"
@@ -913,8 +980,9 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 			</div>
 
 			<BasicTab display={ DisplayTab.value === "basic" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } />
-			<LvLimitTab display={ DisplayTab.value === "lvlimit" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } />
-			<SkillTab display={ DisplayTab.value === "skills" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } />
+			<SkinTab display={ DisplayTab.value === "skin" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } />
+			{/* <LvLimitTab display={ DisplayTab.value === "lvlimit" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } />
+			<SkillTab display={ DisplayTab.value === "skills" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } /> */}
 			{/* <RoguelikeTab display={ DisplayTab.value === "roguelike" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } /> */ }
 			<DialogueTab display={ DisplayTab.value === "dialogue" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } />
 		</div>;

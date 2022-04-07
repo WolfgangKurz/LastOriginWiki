@@ -41,7 +41,7 @@ const Home: FunctionalComponent = () => {
 	UpdateTitle();
 
 	return <div class={ `${style.home} home` }>
-		{ CurrentEvent && (new Date() < EventTo)
+		{ false && CurrentEvent && (new Date() < EventTo)
 			? <div>
 				<Link href={ `/worlds/${CurrentEvent}` } class="text-dark" style={ { textDecoration: "none" } }>
 					<div class="alert alert-danger d-inline-block px-5 text-dark" role="alert">
@@ -111,7 +111,7 @@ const Home: FunctionalComponent = () => {
 			<Locale k="HOME_WEBP_UNAVAILABLE" />
 		</div> : <></> }
 
-		{/* <div class="alert alert-warning">
+		<div class="alert alert-warning">
 			<p class="mb-1">Translation support needed!</p>
 			<p class="mb-1">翻訳サポートがひつようです！</p>
 			<p class="mb-0">
@@ -126,7 +126,7 @@ const Home: FunctionalComponent = () => {
 				</a>
 			</p>
 		</div>
-		<hr /> */}
+		<hr />
 
 		<Locale k="HOME_DEVELOPER" />
 		<hr />
@@ -135,14 +135,14 @@ const Home: FunctionalComponent = () => {
 			<Locale k="HOME_COPYRIGHT" />
 		</p>
 
-		{/* <div class="mt-4">
+		<div class="mt-4">
 			<a href="https://www.buymeacoffee.com/wolfgangkurzdev" target="_blank">
 				<img
 					src="https://img.buymeacoffee.com/button-api/?text=Buy me a beer &amp;emoji=🍺&amp;slug=wolfgangkurzdev&amp;button_colour=5F7FFF&amp;font_colour=ffffff&amp;font_family=Inter&amp;outline_colour=000000&amp;coffee_colour=FFDD00"
 					style={ { height: "40px" } }
 				/>
 			</a>
-		</div> */}
+		</div>
 	</div>;
 };
 

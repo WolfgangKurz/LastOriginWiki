@@ -51,7 +51,7 @@ const Header: FunctionalComponent = (): preact.VNode => {
 		KR: <>멸망 전의<br />전쟁 기록</>,
 		EN: <>War<br />Record</>,
 		JP: <>滅亡前の<br />戦争記録</>,
-		zhTW: <>滅亡前的<br />戰爭記錄</>,
+		TC: <>滅亡前的<br />戰爭記錄</>,
 	};
 
 	return <nav class={ `${style.navbar} navbar navbar-expand-lg navbar-dark bg-dark px-3` }>

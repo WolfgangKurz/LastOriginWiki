@@ -7,7 +7,8 @@ import { Unit, UnitSkin } from "@/types/DB/Unit";
 import { UniqueID } from "@/libs/Functions";
 
 import Locale from "@/components/locale";
-import DialogueRow from "@/routes/units/components/dialogue-row";
+import UnitFace from "@/components/unit-face";
+import DialogueRow from "../dialogue-row";
 
 export interface VoiceItem extends UnitSkin {
 	id: number;
@@ -171,21 +172,30 @@ const UnitDialogue: FunctionalComponent<UnitDialogueProps> = (props) => {
 				aria-controls={ collapseId }
 				role="button"
 			>
-				{ props.voice.sid === null
-					? <Locale plain k={ `UNIT_${unit.uid}` } />
-					: <Locale plain k={ `UNIT_SKIN_${unit.uid}_${voice.sid}` } />
-				}
+				<UnitFace class="float-start me-3" uid={ unit.uid } skin={ voice.sid || 0 } size="56" />
 
-				{ voice.isMarriage
-					? <strong class="text-danger ps-4"><Locale k="UNIT_DIALOGUE_MARRIAGE" /></strong>
-					: <></>
-				}
-				{ IsMissing
-					? <span class="badge bg-danger ms-3"><Locale k="UNIT_DIALOGUE_EMPTY" /></span>
-					: IsPartial
-						? <span class="badge bg-warning text-dark ms-3"><Locale k="UNIT_DIALOGUE_MISSING" /></span>
+				<div>
+					<strong>
+						{ props.voice.sid === null
+							? <Locale plain k={ `UNIT_${unit.uid}` } />
+							: <Locale plain k={ `UNIT_SKIN_${unit.uid}_${voice.sid}` } />
+						}
+					</strong>
+				</div>
+				<div class="mt-1">
+					{ voice.isMarriage
+						? <span class="badge bg-danger me-2">
+							<Locale k="UNIT_DIALOGUE_MARRIAGE" />
+						</span>
 						: <></>
-				}
+					}
+					{ IsMissing
+						? <span class="badge bg-secondary"><Locale k="UNIT_DIALOGUE_EMPTY" /></span>
+						: IsPartial
+							? <span class="badge bg-warning text-dark"><Locale k="UNIT_DIALOGUE_MISSING" /></span>
+							: <></>
+					}
+				</div>
 			</div>
 			<div id={ collapseId } class="collapse">
 				<div class="card-body">

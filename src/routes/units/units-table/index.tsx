@@ -54,7 +54,7 @@ const UnitsTable: FunctionalComponent<UnitsListProps> = (props) => {
 
 	return Store.ConnectDirect("Units", ({ Units: Filters }) => {
 		return <div class="unit-table">
-			<div class="mb-2">
+			{/* <div class="mb-2">
 				<div class="btn-group mx-2 mb-2">
 					<button
 						class={ `btn btn-outline-secondary ${isActive(PromotionFilter.value === 0)}` }
@@ -75,7 +75,7 @@ const UnitsTable: FunctionalComponent<UnitsListProps> = (props) => {
 						<Locale k="UNIT_TABLE_FILTERS_PROMOTION_ONLY" />
 					</button>
 				</div>
-			</div>
+			</div> */}
 
 			{ TypeList.map(type => Filters.Type[type]
 				? <table class="table table-sm unit-table mb-3">
