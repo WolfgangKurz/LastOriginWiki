@@ -70,7 +70,7 @@ function process (auth) {
 							? "1EbGKc68ysZkoV_rurGKQ-tezAm3WW3AAH3KAM-XcSkA"
 							: "11IxebdUQ_VHbaP79sN8KxZ87n3c5rG42DL8TQOK9h1k"
 						: "1ohSOKdl1IZq8aOsWPJ74yX01Ave7FkSrUFG5MSbfZN8",
-					range: "Unit!A2:AK",
+					range: "Unit!A2:AJ",
 				}, (err, res) => {
 					if (err) return console.log(`The API returned an error: ${err}`);
 
