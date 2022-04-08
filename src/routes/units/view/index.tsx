@@ -362,6 +362,16 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 };
 
 const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, SkinList }) => {
+	const skin = SkinList[skinIndex.value];
+
+	const ssid = skin && skin.sid
+		? skin.sid >= 20
+			? `S${skin.sid - 20}`
+			: skin.sid?.toString()
+		: "";
+
+	const categories = skin.category.filter(x => x && x !== "ALL");
+
 	return <div style={ { display: display ? "" : "none" } }>
 		<div class={ `flex-nowrap ${style.SkinTabs}` }>
 			<ul class="nav nav-tabs justify-content-start">
@@ -411,6 +421,17 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 			</ul>
 		</div>
 
+		{ skin.sid && !skin.isPro
+			? <div class={ `card mb-2 mt-3 ${style.SkinNameDesc}` }>
+				<div class="card-header">
+					<Locale plain k={ `CONSUMABLE_Skin_${unit.uid}_${ssid}` } />
+				</div>
+				<div class="card-body">
+					<Locale plain k={ `CONSUMABLE_DESC_Skin_${unit.uid}_${skin.sid}` } />
+				</div>
+			</div>
+			: <></>
+		}
 		<div class="row pt-3">
 			<div class="col-12 col-md-auto">
 				<div class="p-2 d-inline-block d-md-block">
@@ -424,6 +445,29 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 						sd
 						size="88"
 					/>
+				</div>
+
+				<div class="p-2">
+					{ skin.artist || categories.length > 0
+						? <div class="alert alert-primary py-2">
+							{ categories.length > 0
+								? <div class="mb-1">
+									{ categories.map(x => <span class="badge bg-success me-1">
+										<Locale plain k={ `SKIN_CATEGORY_${x}` } />
+									</span>) }
+								</div>
+								: <></>
+							}
+
+							{ skin.artist
+								? <>
+									<Locale k="UNIT_VIEW_ILLUSTRATOR" /> : { skin.artist }
+								</>
+								: <></>
+							}
+						</div>
+						: <></>
+					}
 				</div>
 			</div>
 			<div class="col">
@@ -708,36 +752,6 @@ const SkillTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 			skillBonus={ SkillPowerBonus }
 			rangeBonus={ linkCount.value === 5 && fullLinkBonus.value.startsWith("Range_") }
 		/>
-
-		<div class="mt-3 card">
-			<div class="card-header bg-dark text-light">
-				<div class="mb-2">
-					<Locale k="UNIT_SKILL_EXTPASSIVE" />
-					<span class={ style.ExtPassiveLevel }>
-						Lv.<strong>{ ExLevel.value + 1 }</strong>
-					</span>
-				</div>
-
-				<input
-					class="form-range"
-					type="range"
-					min="0"
-					max="9"
-					value={ ExLevel.value }
-					onInput={ (e): void => ExLevel.set(
-						parseInt((e.target as HTMLInputElement).value, 10) as number,
-					) }
-				/>
-			</div>
-
-			<div class="card-body">
-				<div class="mt-4 row row-cols-1 row-cols-md-2">
-					{ unit.exskill.map(ex => <div class="col my-2">
-						<ExtPassiveCard passive={ ex } level={ ExLevel.value } />
-					</div>) }
-				</div>
-			</div>
-		</div>
 	</div>;
 };
 
@@ -923,7 +937,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 								<Locale k="UNIT_VIEW_TAB_SKININFO" />
 							</a>
 						</li>
-						{/* <li class="nav-item">
+						<li class="nav-item">
 							<a
 								href="#"
 								class={ `nav-link text-dark ${isActive(DisplayTab.value === "skills")}` }
@@ -948,7 +962,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 								<Icon icon="capslock-fill" class="me-1" />
 								<Locale k="UNIT_VIEW_TAB_LVLIMIT" />
 							</a>
-						</li> */}
+						</li>
 						{/* <li class="nav-item">
 							<a
 								href="#"
@@ -981,8 +995,8 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 
 			<BasicTab display={ DisplayTab.value === "basic" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } />
 			<SkinTab display={ DisplayTab.value === "skin" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } />
-			{/* <LvLimitTab display={ DisplayTab.value === "lvlimit" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } />
-			<SkillTab display={ DisplayTab.value === "skills" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } /> */}
+			<LvLimitTab display={ DisplayTab.value === "lvlimit" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } />
+			<SkillTab display={ DisplayTab.value === "skills" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } />
 			{/* <RoguelikeTab display={ DisplayTab.value === "roguelike" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } /> */ }
 			<DialogueTab display={ DisplayTab.value === "dialogue" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } />
 		</div>;

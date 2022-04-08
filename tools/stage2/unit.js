@@ -16,7 +16,7 @@ targetDBs.forEach(targetDB => {
 		};
 		const skins = JSON.parse(fs.readFileSync(path.resolve(sourceDir, "unit-skin.json"), { encoding: "utf-8" }));
 		const lvlimits = JSON.parse(fs.readFileSync(path.resolve(sourceDir, "unit-lvlimit.json"), { encoding: "utf-8" }));
-		const extpassive = JSON.parse(fs.readFileSync(path.resolve(sourceDir, "ext-passive.json"), { encoding: "utf-8" }));
+		// const extpassive = JSON.parse(fs.readFileSync(path.resolve(sourceDir, "ext-passive.json"), { encoding: "utf-8" }));
 		// const roguelikeSkills = JSON.parse(fs.readFileSync(path.resolve(sourceDir, "roguelike-skill.json"), { encoding: "utf-8" }));
 
 		await rmfr(targetDir);
@@ -69,9 +69,9 @@ targetDBs.forEach(targetDB => {
 
 					cost: char.cost,
 					research: char.research,
-					exskill: char.exskill
-						?.map(ex => extpassive.find(p => p.key === ex))
-						.filter(ex => ex),
+					// exskill: char.exskill
+					// 	?.map(ex => extpassive.find(p => p.key === ex))
+					// 	.filter(ex => ex),
 
 					skills,
 					dialogue: {

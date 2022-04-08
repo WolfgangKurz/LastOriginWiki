@@ -101,12 +101,6 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		return `${AssetsRoot}/webm/HD/${unit.uid}_${skinId}_${skin.G && IsGoogle.value ? "G" : "O"}${postfix}.webm`;
 	})();
 
-	const ssid = skin && skin.sid
-		? skin.sid >= 20
-			? `S${skin.sid - 20}`
-			: skin.sid?.toString()
-		: "";
-
 	if (!skin.G && IsGoogle.value)
 		IsGoogle.set(false);
 
@@ -144,8 +138,6 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		else if (IsBG.value && !IsSimplified.value && !skin.subset[SKIN_SUBSET_ENUM._B_])
 			IsBG.set(false);
 	}
-
-	const categories = skin.category.filter(x => x && x !== "ALL");
 
 	const AvailableS = !IsDamaged.value
 		? skin.subset[SKIN_SUBSET_ENUM.__S] || (skin.subset[SKIN_SUBSET_ENUM._BS] && IsBG.value)
@@ -377,43 +369,6 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 				}
 			</div>
 		</div>
-
-		{ props.collapsed
-			? <>
-				{ skin.artist || categories.length > 0
-					? <div class="alert alert-primary py-2">
-						{ categories.length > 0
-							? <div class="mb-1">
-								{ categories.map(x => <span class="badge bg-success me-1">
-									<Locale plain k={ `SKIN_CATEGORY_${x}` } />
-								</span>) }
-							</div>
-							: <></>
-						}
-
-						{ skin.artist
-							? <>
-								<Locale k="UNIT_VIEW_ILLUSTRATOR" /> : { skin.artist }
-							</>
-							: <></>
-						}
-					</div>
-					: <></>
-				}
-				{ skin.sid && !skin.isPro
-					? <div class={ `card mb-2 ${style.NameDesc} ${!skin.artist ? "mt-2" : ""}` }>
-						<div class="card-header">
-							<Locale plain k={ `CONSUMABLE_Skin_${unit.uid}_${ssid}` } />
-						</div>
-						<div class="card-body">
-							<Locale plain k={ `CONSUMABLE_DESC_Skin_${unit.uid}_${skin.sid}` } />
-						</div>
-					</div>
-					: <></>
-				}
-			</>
-			: <></>
-		}
 	</div>;
 };
 export default SkinView;

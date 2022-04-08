@@ -1,6 +1,5 @@
 import EntitySource from "@/libs/EntitySource";
 import { UnitDialogueDataType } from "@/types/DB/Dialogue";
-import { ExtPassive } from "@/types/DB/ExtPasive";
 import { MapWaveDrop } from "@/types/DB/Map";
 import { SkillGroup } from "@/types/DB/Skill";
 import { UnitStats } from "@/types/DB/UnitStats";
@@ -161,7 +160,6 @@ export interface Unit {
 	source: EntitySource[][];
 	cost: UnitCost | undefined;
 	research: ResearchTreeData[] | undefined;
-	exskill: ExtPassive[];
 
 	stat: UnitStats[];
 	skills: Partial<SkillGroup>;
@@ -215,13 +213,11 @@ export namespace Unit {
 		source: [],
 		cost: undefined,
 		research: undefined,
-		exskill: [],
 
 		skills: {},
 		dialogue: {
-			ko: null,
-			jp: null,
-			jpdmm: null,
+			KR: null,
+			JP: null,
 		},
 		skins: {
 			G: false,
