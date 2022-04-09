@@ -7,6 +7,11 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11642" date="2022-04-10"
+		new={ <>
+			<li>일부 전투원의 전투원 스킨 정보에 표정 정보 테스트 추가.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11640" date="2022-04-08"
 		delete={ <>
 			<li>확장 패시브 정보가 삭제되었습니다.</li>

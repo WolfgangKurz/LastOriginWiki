@@ -12,7 +12,7 @@ function process (auth) {
 					? "1EbGKc68ysZkoV_rurGKQ-tezAm3WW3AAH3KAM-XcSkA"
 					: "11IxebdUQ_VHbaP79sN8KxZ87n3c5rG42DL8TQOK9h1k"
 				: "1ohSOKdl1IZq8aOsWPJ74yX01Ave7FkSrUFG5MSbfZN8",
-			range: "UnitSkin!A3:AD",
+			range: "UnitSkin!A3:AE",
 		}, (err, res) => {
 			if (err) return console.log(`The API returned an error: ${err}`);
 
@@ -53,7 +53,9 @@ function process (auth) {
 						.fill(0)
 						.map((_, i) => parseInt(row[26 + i], 10) === 1);
 
-					const info = { G, parts, stage, subset, anim, category };
+					const facelist = (row[30] || "0").split(",").map(x => parseInt(x, 10));
+
+					const info = { G, parts, stage, subset, anim, category, facelist };
 					const base = { sid: skinId, artist, offsets, price, ...info };
 
 					if (!(uid in ret))
