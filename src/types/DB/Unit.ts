@@ -3,7 +3,7 @@ import { UnitDialogueDataType } from "@/types/DB/Dialogue";
 import { MapWaveDrop } from "@/types/DB/Map";
 import { SkillGroup } from "@/types/DB/Skill";
 import { UnitStats } from "@/types/DB/UnitStats";
-import { ACTOR_GRADE, ACTOR_CLASS, ROLE_TYPE, ACTOR_BODY_TYPE, ITEM_TYPE } from "@/types/Enums";
+import { ACTOR_GRADE, ACTOR_CLASS, ROLE_TYPE, ACTOR_BODY_TYPE, ITEM_TYPE, FACETYPE } from "@/types/Enums";
 import RoguelikeSkill from "./Roguelike.Skill";
 
 export type LinkBonusType =
@@ -93,6 +93,8 @@ export interface UnitSkinEntity {
 
 	/** Animated */
 	anim: Record<SKIN_ANIM_SUBSET_ENUM, boolean>;
+
+	facelist: FACETYPE[];
 
 	// /** Skin Item Name */
 	// name: string;
@@ -242,6 +244,10 @@ export namespace Unit {
 				2: false,
 				3: false,
 			},
+
+			facelist: [
+				FACETYPE.NONE,
+			],
 
 			category: [],
 			artist: "",
