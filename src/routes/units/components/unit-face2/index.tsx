@@ -3,7 +3,7 @@ import { FunctionalComponent } from "preact";
 import { FACETYPE } from "@/types/Enums";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
-import FaceTable from "@/libs/Face";
+import { FaceTable } from "@/libs/Face";
 
 import style from "./style.module.scss";
 import Locale from "@/components/locale";
