@@ -53,7 +53,10 @@ function process (auth) {
 						.fill(0)
 						.map((_, i) => parseInt(row[26 + i], 10) === 1);
 
-					const facelist = (row[30] || "0").split(",").map(x => parseInt(x, 10));
+					const facelist = (row[30] || "")
+						.split(",")
+						.filter(x => x !== "")
+						.map(x => parseInt(x, 10));
 
 					const info = { G, parts, stage, subset, anim, category, facelist };
 					const base = { sid: skinId, artist, offsets, price, ...info };

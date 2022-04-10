@@ -1,6 +1,6 @@
 import { FACETYPE } from "@/types/Enums";
 
-const FaceTable: Record<FACETYPE, string> = {
+export const FaceTable: Record<FACETYPE, string> = {
 	[FACETYPE.NONE]: "Idle",
 	[FACETYPE.EXPRESSIONLESS]: "Expressionless",
 	[FACETYPE.RESOLVE]: "Resolve",
@@ -73,4 +73,3 @@ const FaceTable: Record<FACETYPE, string> = {
 	[FACETYPE.EMBARRASSGL]: "EmbarrassGL",
 	[FACETYPE.EXITINGGL]: "ExitingGL",
 };
-export default FaceTable;

@@ -372,17 +372,6 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 
 	const categories = skin.category.filter(x => x && x !== "ALL");
 
-	const FaceAvailable: Record<string, number[]> = {
-		"3P_Frigga": [0],
-		"3P_Amphitrite": [0],
-		"3P_Alice": [0],
-		"3P_Aqua": [0],
-		"3P_Aurora": [0, 1, 2],
-		"3P_CSPerrault": [3],
-		"3P_Dryad": [0, 1],
-		"3P_Hirume": [0],
-	};
-
 	return <div style={ { display: display ? "" : "none" } }>
 		<div class={ `flex-nowrap ${style.SkinTabs}` }>
 			<ul class="nav nav-tabs justify-content-start">
@@ -487,15 +476,12 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 					: <></> }
 
 				<div class="p-2">
-					{ unit.uid in FaceAvailable && FaceAvailable[unit.uid].includes(skinIndex.value)
-						? SkinList[skinIndex.value].facelist.map(fid => <UnitFace2
-							uid={ unit.uid }
-							type={ fid }
-							skin={ SkinList[skinIndex.value].sid || 0 }
-							size="120"
-						/>)
-						: <></>
-					}
+					{ SkinList[skinIndex.value].facelist.map(fid => <UnitFace2
+						uid={ unit.uid }
+						type={ fid }
+						skin={ SkinList[skinIndex.value].sid || 0 }
+						size="120"
+					/>) }
 				</div>
 			</div>
 		</div>
