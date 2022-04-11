@@ -360,8 +360,8 @@ const EXPCalc: FunctionalComponent = () => {
 								.filter(x => x) as MapWaveGroup[];
 						})();
 
-						const SumBonusValues = (wave: MapWaveGroup): Decimal => {
-							let sumValue = new Decimal(0);
+						const SumBonusValues = (base: Decimal, wave: MapWaveGroup): Decimal => {
+							let sumValue = base;
 
 							equipBonuses.forEach(y => {
 								if (y.data.level < 0) return;
@@ -379,16 +379,18 @@ const EXPCalc: FunctionalComponent = () => {
 								const exp = expbuff.value.exp;
 
 								sumValue = sumValue.add(
-									Decimal.mul(
-										Decimal.add(
-											Decimal.div(exp.base.replace(/%$/, ""), 100),
-											Decimal.mul(
-												Decimal.div(exp.per.replace(/%$/, ""), 100),
-												y.data.level,
+									base.mul(
+										Decimal.mul(
+											Decimal.add(
+												Decimal.div(exp.base.replace(/%$/, ""), 100),
+												Decimal.mul(
+													Decimal.div(exp.per.replace(/%$/, ""), 100),
+													y.data.level,
+												),
 											),
+											Math.max(y.data.stack, 1),
 										),
-										Math.max(y.data.stack, 1),
-									),
+									).floor(),
 								);
 							});
 
@@ -412,31 +414,35 @@ const EXPCalc: FunctionalComponent = () => {
 
 								if (buff.on === "enemy_dead") {
 									sumValue = sumValue.add(
-										Decimal.mul(
+										base.mul(
+											Decimal.mul(
+												Decimal.add(
+													Decimal.div(exp.base.replace(/%$/, ""), 100),
+													Decimal.mul(
+														Decimal.div(exp.per.replace(/%$/, ""), 100),
+														y.data.level - 1,
+													),
+												),
+												wave.e.enemy.filter(x => x).length,
+											),
+										).floor(),
+									);
+								} else {
+									sumValue = sumValue.add(
+										base.mul(
 											Decimal.add(
 												Decimal.div(exp.base.replace(/%$/, ""), 100),
 												Decimal.mul(
 													Decimal.div(exp.per.replace(/%$/, ""), 100),
-													y.data.level,
+													y.data.level - 1,
 												),
 											),
-											wave.e.enemy.filter(x => x).length,
-										),
-									);
-								} else {
-									sumValue = sumValue.add(
-										Decimal.add(
-											Decimal.div(exp.base.replace(/%$/, ""), 100),
-											Decimal.mul(
-												Decimal.div(exp.per.replace(/%$/, ""), 100),
-												y.data.level,
-											),
-										),
+										).floor(),
 									);
 								}
 							});
 
-							return sumValue.add(1);
+							return sumValue;
 						};
 						const ResultExp = (wave: number): number => {
 							if (selectedWaves.length <= wave) return 0;
@@ -447,7 +453,8 @@ const EXPCalc: FunctionalComponent = () => {
 							// {[(웨이브 경험치 X 리더 보너스) X 장비 및 스킬에 의한 상승량 총합] X 이벤트 경험치} X 링크 보너스 + 시설 경험치 + 부스트 경험치
 							if (x.isLeader) exp = exp.mul(1.2).floor();
 
-							exp = exp.mul(SumBonusValues(selectedWaves[wave])).floor();
+							// exp = exp.mul(SumBonusValues(selectedWaves[wave])).floor();
+							exp = SumBonusValues(exp, selectedWaves[wave]);
 
 							exp = exp.mul(
 								Decimal.div(eventBonus.value, 100).add(1),
@@ -460,14 +467,14 @@ const EXPCalc: FunctionalComponent = () => {
 							if (boostBonus.value)
 								exp = exp.add(Decimal.div(base, 2)).floor();
 
-							facilityLevel.value.forEach(x => {
-								exp = exp.add(
-									Decimal.mul(
-										base,
-										Decimal.div(facilityBonuses[x], 100),
-									),
-								);
-							});
+							exp = exp.add(
+								Decimal.mul(
+									base,
+									facilityLevel.value.reduce((p, c) => p.add(
+										Decimal.div(facilityBonuses[c], 100),
+									), new Decimal(0)),
+								).floor(),
+							);
 
 							return exp
 								.floor()
