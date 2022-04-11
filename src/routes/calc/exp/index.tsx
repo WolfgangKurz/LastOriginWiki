@@ -2,16 +2,16 @@ import { FunctionalComponent } from "preact";
 import Decimal from "decimal.js";
 
 import { ACTOR_GRADE, ITEM_GRADE } from "@/types/Enums";
-import { MapWaveGroup, Worlds } from "@/types/DB/Map";
+import { MapWaveGroup, World } from "@/types/DB/Map";
 import { Equip } from "@/types/DB/Equip";
 import { Unit } from "@/types/DB/Unit";
 
 import { objState } from "@/libs/State";
-import { RarityDisplay } from "@/libs/Const";
+import { RarityDisplay, WorldIds } from "@/libs/Const";
 import { FormatNumber, isActive } from "@/libs/Functions";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
-import Loader, { GetJson, StaticDB } from "@/components/loader";
+import Loader, { GetJson } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
 import Icon from "@/components/bootstrap-icon";
 import UnitFace from "@/components/unit-face";
@@ -42,6 +42,8 @@ interface BonusEquipStateInfo extends BonusEquipInfo {
 
 type BonusInfo = BonusCharInfo | BonusEquipInfo;
 type BonusState = BonusCharStateInfo | BonusEquipStateInfo;
+
+const WorldIdList = WorldIds.filter(x => !x.startsWith("EvA"));
 
 interface EXPSet {
 	world: string;
@@ -304,7 +306,7 @@ const EXPCalc: FunctionalComponent = () => {
 
 		<Loader
 			json={ [
-				StaticDB.Map,
+				...WorldIdList.map(wid => `map/${wid}`),
 				...bonuses
 					.map(x => {
 						if ("skill" in x)
@@ -314,7 +316,7 @@ const EXPCalc: FunctionalComponent = () => {
 					.flat(),
 			] }
 			content={ (): preact.VNode => {
-				const MapDB = GetJson<Worlds>(StaticDB.Map);
+				const MapDB = WorldIdList.map(wid => GetJson<World>(`map/${wid}`));
 
 				const worlds = Object.keys(MapDB).filter(x => !excludeWorlds.includes(x));
 
