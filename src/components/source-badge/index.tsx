@@ -194,7 +194,10 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 						if (!x.includes("-")) return x;
 
 						let ls = x.substring(0, x.indexOf("-"));
-						if (!/^[A-Za-z]+[0-9]+/.test(ls)) return ls;
+						if (!/^[A-Za-z]+[0-9]+/.test(ls)) {
+							if (/^[A-Za-z]+\-/.test(x)) return "1";
+							return ls;
+						}
 						ls = ls.replace(/^[A-Za-z]+([0-9]+)/, "$1");
 
 						if (!ls) return "1";
