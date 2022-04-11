@@ -7,6 +7,11 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11661" date="2022-04-12"
+		bugfix={ <>
+			<li>경험치 계산기의 경험치 계산식이 올바르지 않던 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11658" date="2022-04-11"
 		bugfix={ <>
 			<li>경험치 계산기가 작동하지 않던 문제를 수정했습니다.</li>
