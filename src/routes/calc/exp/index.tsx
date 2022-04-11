@@ -1,7 +1,7 @@
 import { FunctionalComponent } from "preact";
 import Decimal from "decimal.js";
 
-import { ACTOR_GRADE, ITEM_GRADE } from "@/types/Enums";
+import { ACTOR_GRADE, ITEM_GRADE, STAGE_SUB_TYPE } from "@/types/Enums";
 import { MapWaveGroup, World } from "@/types/DB/Map";
 import { Equip } from "@/types/DB/Equip";
 import { Unit } from "@/types/DB/Unit";
@@ -316,7 +316,15 @@ const EXPCalc: FunctionalComponent = () => {
 					.flat(),
 			] }
 			content={ (): preact.VNode => {
-				const MapDB = WorldIdList.map(wid => GetJson<World>(`map/${wid}`));
+				const MapDB = (() => {
+					interface Worlds {
+						[key: string]: World;
+					}
+
+					const ret: Worlds = {};
+					WorldIdList.forEach(wid => ret[wid] = GetJson<World>(`map/${wid}`));
+					return ret;
+				})();
 
 				const worlds = Object.keys(MapDB).filter(x => !excludeWorlds.includes(x));
 
@@ -327,14 +335,14 @@ const EXPCalc: FunctionalComponent = () => {
 							index: number;
 						}
 						const maps = (x.world && Object.keys(MapDB[x.world])) || [];
-						const nodes = (x.world && x.map && MapDB[x.world][x.map]) || [];
+						const nodes = (x.world && x.map && MapDB[x.world][x.map].list.filter(x => x.type !== STAGE_SUB_TYPE.STORY)) || [];
 
 						const indexedBonuses = x.bonus.map<IndexedBonus>((x, i) => ({ data: x, index: i }));
 						const skillBonuses = indexedBonuses.filter(x => "skill" in x.data) as IndexedBonus<BonusCharStateInfo>[];
 						const equipBonuses = indexedBonuses.filter(x => !("skill" in x.data)) as IndexedBonus<BonusEquipStateInfo>[];
 
 						const selectedNode = x.world && x.map && x.node &&
-							MapDB[x.world][x.map].find(y => y.text === x.node);
+							MapDB[x.world][x.map].list.find(y => y.text === x.node);
 
 						const selectedWaves = ((): MapWaveGroup[] => {
 							if (!selectedNode) return [];
@@ -523,7 +531,7 @@ const EXPCalc: FunctionalComponent = () => {
 												...x,
 												world,
 												map,
-												node: MapDB[world][map][0].text,
+												node: MapDB[world][map].list.filter(x => x.type !== STAGE_SUB_TYPE.STORY)[0].text,
 											},
 											...v.slice(i + 1),
 										]);
@@ -550,7 +558,7 @@ const EXPCalc: FunctionalComponent = () => {
 													{
 														...x,
 														map,
-														node: MapDB[x.world][map][0].text,
+														node: MapDB[x.world][map].list.filter(x => x.type !== STAGE_SUB_TYPE.STORY)[0].text,
 													},
 													...v.slice(i + 1),
 												]);
