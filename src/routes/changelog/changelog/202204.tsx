@@ -7,6 +7,22 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11646" date="2022-04-11"
+		update={ <>
+			<li>일부 전투원의 스킬 정보가 갱신되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<span class="badge bg-warning text-dark">천아</span>의 스킨
+				<span class="badge bg-danger">CAFE Horizon...? : 널 위한 part time</span>의 로비 애니메이션 정보가 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-warning text-dark">A-1 블러디 팬서</span>의 서약 대사 세트가 추가되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">P-18 실피드</span>의 서약 대사 세트가 추가되었습니다.</li>
+			<li><span class="badge bg-light text-dark">KST 2022-04-04 17:08:13</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11642" date="2022-04-10"
 		new={ <>
 			<li>일부 전투원의 전투원 스킨 정보에 표정 정보 테스트 추가.</li>
