@@ -7,6 +7,12 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11650" date="2022-04-11"
+		bugfix={ <>
+			<li>획득처가 잘못 표기되던 문제를 수정했습니다.</li>
+			<li>획득처의 링크가 잘못 연결된 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11646" date="2022-04-11"
 		update={ <>
 			<li>일부 전투원의 스킬 정보가 갱신되었습니다.</li>
