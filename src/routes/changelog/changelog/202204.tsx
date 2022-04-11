@@ -20,7 +20,7 @@ const Changelog: FunctionalComponent = () => <>
 		dialogue={ <>
 			<li><span class="badge bg-warning text-dark">A-1 블러디 팬서</span>의 서약 대사 세트가 추가되었습니다.</li>
 			<li><span class="badge bg-warning text-dark">P-18 실피드</span>의 서약 대사 세트가 추가되었습니다.</li>
-			<li><span class="badge bg-light text-dark">KST 2022-04-04 17:08:13</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+			<li><span class="badge bg-light text-dark">KST 2022-04-11 13:16:11</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
 		</> }
 	/>
 	<ChangelogItem title="Build 11642" date="2022-04-10"
