@@ -141,12 +141,6 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 							</tr>
 
 							<tr>
-								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_FACTION" /></th>
-								<td class="text-break">
-									<Locale k={ `UNIT_GROUP_${unit.group}` } />
-								</td>
-							</tr>
-							<tr>
 								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_GRADE" /></th>
 								<td class="text-break">
 									<RarityBadge rarity={ unit.rarity } size="medium">
