@@ -57,3 +57,17 @@ table.table-fixed {
 .form-check-label {
 	user-select: none;
 }
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($breakpoint) {
+		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+		@if $infix != "" {
+			@each $key, $ratio in $aspect-ratios {
+				.ratio#{$infix}-#{$key} {
+					--#{$variable-prefix}aspect-ratio: #{$ratio};
+				}
+			}
+		}
+	}
+}

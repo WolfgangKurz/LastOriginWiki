@@ -61,6 +61,8 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 	const selectedEquip = objState<FilterableEquip | null>(null);
 	const equipPopupDisplay = objState<boolean>(false);
 
+	const imageExt = ImageExtension();
+
 	// const CurrentSkinPostfix = ((): string => {
 	// 	const skin = SkinList[skinIndex.value];
 	// 	if (!skin || skin.isDef) return "N";
@@ -113,11 +115,16 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 
 			<div class="col-12 col-lg-5">
 				<div class="container table-unit-modal my-3">
-					<table class="table">
+					<table class={ `table ${style.InfoTable}` }>
 						<tbody>
 							<tr>
 								<th class="bg-dark text-light"><Locale k="UNIT_VIEW_FACTION" /></th>
-								<td class="">
+								<td>
+									<img
+										class={ style.GroupIcon }
+										src={ `${AssetsRoot}/${imageExt}/group/${unit.group.replace(/_[0-9]+$/, "")}.${imageExt}` }
+									/>
+
 									<span class="break-keep">
 										<Locale k={ `UNIT_GROUP_${unit.group}` } />
 									</span>
@@ -125,11 +132,11 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 							</tr>
 							<tr>
 								<th class="bg-dark text-light"><Locale k="UNIT_VIEW_HEIGHT" /></th>
-								<td class="">{ unit.height }</td>
+								<td>{ unit.height }</td>
 							</tr>
 							<tr>
 								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_WEIGHT" /></th>
-								<td class="">{ unit.weight }</td>
+								<td>{ unit.weight }</td>
 							</tr>
 							<tr>
 								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_BATTLESTYLE" /></th>
@@ -427,12 +434,12 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 			: <></>
 		}
 		<div class="row pt-3">
-			<div class="col-12 col-md-auto">
-				<div class="p-2 d-inline-block d-md-block">
+			<div class="col-12 col-lg-auto">
+				<div class="p-2 d-inline-block d-lg-block">
 					<UnitFace uid={ unit.uid } skin={ SkinList[skinIndex.value].sid || 0 } size="88" />
 				</div>
 
-				<div class="p-2 d-inline-block d-md-block">
+				<div class="p-2 d-inline-block d-lg-block">
 					<UnitFace
 						uid={ unit.uid }
 						skin={ SkinList[skinIndex.value].sid || 0 }

@@ -197,6 +197,16 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 			return ret.map(x => x.map(y => new EntitySource(y)));
 		})();
 
+		const BuffRates = ((): Record<string, number> => {
+			const output: Record<string, number> = {};
+			Skills.forEach(skill => {
+				if (!skill) return null;
+				const key = skill.key;
+				output[key] = skill.buff.buff_rate;
+			});
+			return output;
+		})();
+
 		return <PopupBase
 			class="enemy-modal text-center"
 			bodyClass="pb-0"
@@ -442,7 +452,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 										>
 											<img
 												class="skill-icon my-2"
-												src={ `${skillIconBase}/${skill.icon}_${skill.passive ? "passive" : "active"}.${imageExt}` }
+												src={ `${skillIconBase}/${skill.icon.startsWith("P.") ? skill.icon.substring(2) : skill.icon}_${skill.passive ? "passive" : "active"}.${imageExt}` }
 											/>
 										</div>
 										: <div class="col mt-1 border-bottom" />) }
@@ -512,6 +522,18 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 															</span>
 															: <></>
 														}
+														{ skill.delayed
+															? <span class="badge bg-substory me-1">
+																<Locale k="UNIT_SKILL_DELAYED" />
+															</span>
+															: <></>
+														}
+														{ !skill.buff.enabled
+															? <span class="badge bg-secondary me-1">
+																<Locale k="UNIT_SKILL_DISABLED" />
+															</span>
+															: <></>
+														}
 													</div>
 													<hr class="my-1" />
 
@@ -528,11 +550,23 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 													</div>
 												</div>
 
+												{ BuffRates[skill.key] !== 100
+													? <div class="mt-3">
+														<span class="badge bg-danger">
+															<Locale k="UNIT_SKILL_BUFF_RATE" p={ [BuffRates[skill.key]] } />
+														</span>
+														<small class="text-secondary ms-1">
+															<Locale k="UNIT_SKILL_BUFF_RATE_DESC" />
+														</small>
+													</div>
+													: <></>
+												}
+
 												<div class="clearfix" />
 												<hr />
 
 												{ buffList[skill.key].length > 0
-													? <BuffList list={ buffList[skill.key] } />
+													? <BuffList list={ buffList[skill.key] } dummy />
 													: <></>
 												}
 											</div>

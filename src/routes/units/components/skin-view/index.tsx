@@ -39,7 +39,8 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 
 	const IsAnimating = objState<boolean>(false);
 
-	const Aspect = props.collapsed ? style["ratio-2x5"] : "ratio-4x3";
+	// const Aspect = props.collapsed ? style["ratio-2x5"] : "ratio-4x3";
+	const Aspect = "ratio-2x5 ratio-md-2x4 ratio-lg-4x3";
 
 	const ImageStyle = ((): Record<string, string> => {
 		if (!props.collapsed) return {};

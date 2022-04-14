@@ -499,7 +499,7 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 										));
 									} else {
 										label.push(LocaleGet(
-											"AI_POS",
+											`AI_POS${ai.inv ? "!" : ""}`,
 											LocaleGet(typeof ai.pos === "string"
 												? `AI_POS_${ai.pos.toUpperCase()}`
 												: `AI_POS_${ai.pos}`
