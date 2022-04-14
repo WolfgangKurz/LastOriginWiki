@@ -7,6 +7,27 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11664" date="2022-04-15"
+		bugfix={ <>
+			<li>
+				적 행동 패턴의 부정형 위치 조건이 긍정형 위치 조건으로 표시되던 문제가 수정되었습니다.<br />
+				예) <code>전열이(가) 아닌가?</code> 조건이 <code>전열인가?</code>로 표시되던 문제
+			</li>
+			<li>적 스킬 정보에 버프 발동 확률이 표시되지 않던 점을 수정했습니다.</li>
+			<li>일부 더미 스킬의 아이콘이 항상 패시브 스킬 색상으로 표시되던 점을 수정했습니다.</li>
+			<li>전투원정보의 스킨 보기가 모바일에서 너무 작게 표시되던 점을 수정했습니다.</li>
+		</> }
+		new={ <>
+			<li>전투원정보의 소속에 소속 부대 이미지를 추가했습니다.</li>
+			<li>
+				스킬 정보에 <span class="badge bg-secondary">버프 작동 안함</span>과
+				<span class="badge bg-substory">착탄형</span> 여부가 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2022-04-15 03:08:01</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11661" date="2022-04-12"
 		bugfix={ <>
 			<li>경험치 계산기의 경험치 계산식이 올바르지 않던 문제를 수정했습니다.</li>

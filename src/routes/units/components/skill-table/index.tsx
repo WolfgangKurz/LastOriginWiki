@@ -55,7 +55,8 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 				table[x] = {
 					...t,
 					index: idx,
-					isPassive: idx >= 3,
+					isPassive: t.icon.startsWith("P."),
+					icon: t.icon.startsWith("P.") ? t.icon.substring(2) : t.icon,
 					slot: t.key.replace(/^F/, "CH_"),
 				};
 			});
@@ -228,6 +229,19 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 				: <></>
 			}
 
+			{ skill.delayed
+				? <span class="badge bg-substory me-1">
+					<Locale k="UNIT_SKILL_DELAYED" />
+				</span>
+				: <></>
+			}
+			{ !skill.buffs.data[skill.buffs.index[skillLevel.value]].enabled
+				? <span class="badge bg-secondary me-1">
+					<Locale k="UNIT_SKILL_DISABLED" />
+				</span>
+				: <></>
+			}
+
 			<SummonBadge summon={ skill.buffs.data[skill.buffs.index[skillLevel.value]].summon } class="me-1" />
 		</div>
 
@@ -304,7 +318,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 		</thead>
 		<tbody>
 			{ Skills.map(skill => <>
-				<tr class={skill.key.startsWith("F") ? style.SkillTableFChange : ""}>
+				<tr class={ skill.key.startsWith("F") ? style.SkillTableFChange : "" }>
 					<td>
 						<SkillIcon icon={ skill.icon } passive={ skill.isPassive } />
 						<div class="text-bold">

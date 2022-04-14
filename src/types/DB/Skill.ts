@@ -33,6 +33,8 @@ export interface SkillEntryData {
 	target_ground: boolean;
 	summon: SkillSummonInfo | null;
 	use: SkillUseInfo | null;
+	enabled: boolean;
+	delayed: boolean;
 	/** 보호무시 */
 	dismiss_guard: boolean;
 	acc_bonus: number;
@@ -57,6 +59,8 @@ export interface SkillEntity {
 	icon: string;
 
 	target: "enemy" | "team";
+
+	delayed: boolean;
 
 	// levels: SkillEntryData[];
 	buffs: {

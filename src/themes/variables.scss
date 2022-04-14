@@ -64,3 +64,9 @@ $theme-colors: map-merge($theme-colors, $colors);
 @each $key, $color in $colors {
 	$table-variants: map.set($table-variants, $key, shift-color($color, $table-bg-scale));
 }
+
+$aspect-ratios: map-merge($aspect-ratios, (
+	"2x3": calc(3 / 2 * 100%),
+	"2x4": calc(4 / 2 * 100%),
+	"2x5": calc(5 / 2 * 100%),
+));
