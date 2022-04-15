@@ -18,7 +18,8 @@ const list =
 	[
 		...[
 			// "ext-passive",
-			"ai", "enemy",
+			// "ai",
+			"enemy",
 			"equip",
 			"facility",
 			"summon",

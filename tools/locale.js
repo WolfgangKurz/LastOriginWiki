@@ -7,7 +7,7 @@ async function process (auth) {
 	const sheets = google.sheets({ version: "v4", auth });
 
 	const spreadsheetId = require("./STAGING") === true
-		? "1360bOmyjz2ENiG9-P9dmVDuAG8ysPponvjmdsOoZwbw"
+		? "1TB5PplQKeYAMeTp22aItvSmq-LcaHgH7m_g6AgAkoAY"
 		: "1Q2tpfQntZxmI0Xbx9HZo0vjBY7kQGZGmH1MBGTzrnvo";
 
 	const types = (await sheets.spreadsheets.get({ spreadsheetId }))
