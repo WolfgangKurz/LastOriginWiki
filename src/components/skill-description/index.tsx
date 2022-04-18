@@ -50,6 +50,7 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 				idx?: number;
 				slot?: string;
 				r?: boolean;
+				rr?: boolean;
 				inv?: boolean;
 			}
 		> = (_props) => {
@@ -91,6 +92,7 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 					(props.buffBonus ? 2 : 0)
 				}
 				ratio={ _props.ratio || _props.r }
+				ratio2={ _props.rr }
 				invert={ _props.invert || _props.inv }
 				signless={ _props.signless }
 				floor={ _props.floor }
