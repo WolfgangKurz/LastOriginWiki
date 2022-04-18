@@ -7,6 +7,11 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11673" date="2022-04-18"
+		bugfix={ <>
+			<li>스킬 정보에서 "~ 비례 ~ 수치 증가" 버프의 수치가 제대로 표시되지 않는 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11671" date="2022-04-18"
 		new={ <>
 			<li>신규 전투원 <span class="badge bg-warning text-dark">아이아스</span>가 추가되었습니다.</li>
