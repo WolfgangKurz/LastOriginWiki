@@ -462,7 +462,7 @@ interface BuffEffect_ValueBy {
 	by: BuffEffectValue & {
 		type: "up" | "down";
 		target: "self" | "target" | "attacker" | "buffer";
-		by: "evade" | "defense" | "atk" | "hp";
+		by: "evade" | "def" | "atk" | "hp";
 	};
 }
 

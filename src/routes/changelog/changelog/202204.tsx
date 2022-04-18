@@ -7,6 +7,11 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11679" date="2022-04-18"
+		bugfix={ <>
+			<li>스킬 정보에서 "~ 비례 ~ 수치 증가" 버프의 수치가 제대로 표시되지 않는 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11675" date="2022-04-18"
 		bugfix={ <>
 			<li>스킬 정보에서 "~ 비례 ~ 수치 증가" 버프의 수치가 제대로 표시되지 않는 문제를 수정했습니다.</li>
