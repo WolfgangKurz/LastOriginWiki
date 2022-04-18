@@ -31,6 +31,6 @@ export const Value: FunctionalComponent<ValueProps> = (props) => {
 	return <span class={ style.Value } data-sign={ signFlag }>
 		{ !props.signless ? signFlag : <></> }
 		{ v.toFixed(10).replace(/\.?0+$/, "") }
-		{ props.ratio && "%" }
+		{ (props.ratio || props.ratio2) && "%" }
 	</span>;
 };
