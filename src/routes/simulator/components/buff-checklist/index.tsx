@@ -1136,10 +1136,12 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 		else if ("disperse" in stat)
 			return <Locale plain k="BUFFEFFECT_DISPERSE" p={ [nsignedValue(stat.disperse, level)] } />;
 		else if ("by" in stat) {
+			const nonPercent: Array<typeof stat["by"]["by"]> = ["def"];
+
 			return <Locale plain k="BUFFEFFECT_BY" p={ [
 				<Locale plain k={ `BUFFTARGET_BY_${stat.by.target.toUpperCase()}` } />,
 				<Locale plain k={ `BUFFEFFECT_BY_${stat.by.by.toUpperCase()}` } />,
-				nsignedValue(stat.by, level, typeof stat.by.base === "string"),
+				nsignedValue(stat.by, level, nonPercent.includes(stat.by.by)),
 				<Locale plain k={ `BUFFEFFECT_BY_${stat.value.toUpperCase()}` } />,
 				<Locale plain k={ `BUFFTYPE_${stat.by.type.toUpperCase()}` } />,
 			] } />;
