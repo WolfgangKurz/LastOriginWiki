@@ -7,6 +7,40 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11671" date="2022-04-18"
+		new={ <>
+			<li>신규 전투원 <span class="badge bg-warning text-dark">아이아스</span>가 추가되었습니다.</li>
+			<li>신규 이벤트 <span class="badge bg-warning text-dark">오르카 데이트 공모전</span>이 추가되었습니다.</li>
+		</> }
+		update={ <>
+			<li>일부 장비의 정보가 수정되었습니다.</li>
+			<li>일부 전투원/스킨의 표정이 추가/갱신되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<span class="badge bg-warning text-dark">C-11 스카라비아</span>의 기본 스킨의 중파 이미지가 수정되었습니다.
+			</li>
+			<li>
+				<span class="badge bg-warning text-dark">므네모시네</span>의 스킨
+				<span class="badge bg-danger">fleurir en memoire</span>의 중파 정보가 추가되었습니다.
+			</li>
+			<li>
+				<span class="badge bg-warning text-dark">오렌지에이드</span>의 스킨
+				<span class="badge bg-danger">완벽한 데이트!</span>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<span class="badge bg-warning text-dark">스파토이아</span>의 스킨
+				<span class="badge bg-danger">별 하나, 당신 하나</span>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<span class="badge bg-warning text-dark">천아</span>의 스킨
+				<span class="badge bg-danger">CAFE Horizon...? : 널 위한 part time</span>의 로비 애니메이션 영상이 수정되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2022-04-15 23:03:11</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11664" date="2022-04-15"
 		bugfix={ <>
 			<li>

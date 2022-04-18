@@ -79,9 +79,9 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 
 		return `${AssetsRoot}/${ext}/full/${unit.uid}_${skinId}_${skin.G && IsGoogle.value ? "G" : "O"}${postfix}.${ext}`;
 	})();
-	const SkinVideoURL = ((): string => {
-		if (!props.collapsed && !props.animate) return "";
-		if (IsDamaged.value) return "";
+	const SkinVideoURL = ((): Array<string[]> => {
+		if (!props.collapsed && !props.animate) return [];
+		if (IsDamaged.value) return [];
 
 		let flag: SKIN_ANIM_SUBSET_ENUM = 0;
 		const postfix = ((): string => {
@@ -96,10 +96,13 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 			}
 			return (ret.length > 0 ? "_" : "") + ret.join("");
 		})();
-		if (!skin.anim[flag]) return "";
+		if (!skin.anim[flag]) return [];
 
 		const skinId = skin.isDef ? 0 : skin.sid;
-		return `${AssetsRoot}/webm/HD/${unit.uid}_${skinId}_${skin.G && IsGoogle.value ? "G" : "O"}${postfix}.webm`;
+		return [
+			[`${AssetsRoot}/webm/HD/${unit.uid}_${skinId}_${skin.G && IsGoogle.value ? "G" : "O"}${postfix}.webm`, "video/webm; codec=vp9"],
+			// [`${AssetsRoot}/webm/HD.265/${unit.uid}_${skinId}_${skin.G && IsGoogle.value ? "G" : "O"}${postfix}.mp4`, "video/mp4; codec=hevc"],
+		];
 	})();
 
 	if (!skin.G && IsGoogle.value)
@@ -169,8 +172,10 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					</div>
 				</div>
 				<div class={ style.FullUnit }>
-					{ SkinVideoURL
-						? <video style={ ImageStyle } src={ SkinVideoURL } autoPlay muted loop />
+					{ SkinVideoURL.length > 0
+						? <video style={ ImageStyle } autoPlay muted loop>
+							{ SkinVideoURL.map(pair => <source src={ pair[0] } type={ pair[1] } />) }
+						</video>
 						: <img style={ ImageStyle } src={ SkinImageURL } />
 					}
 				</div>

@@ -41,7 +41,7 @@ const Home: FunctionalComponent = () => {
 	UpdateTitle();
 
 	return <div class={ `${style.home} home` }>
-		{ false && CurrentEvent && (new Date() < EventTo)
+		{ CurrentEvent && (new Date() < EventTo)
 			? <div>
 				<Link href={ `/worlds/${CurrentEvent}` } class="text-dark" style={ { textDecoration: "none" } }>
 					<div class="alert alert-danger d-inline-block px-5 text-dark" role="alert">
