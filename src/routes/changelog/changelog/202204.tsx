@@ -7,6 +7,14 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11682" date="2022-04-20"
+		bugfix={ <>
+			<li>일부 iOS 환경에서 로비 애니메이션이 재생되지 않는 현상을 개선했습니다.</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2022-04-20 00:09:37</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11679" date="2022-04-18"
 		bugfix={ <>
 			<li>스킬 정보에서 "~ 비례 ~ 수치 증가" 버프의 수치가 제대로 표시되지 않는 문제를 수정했습니다.</li>

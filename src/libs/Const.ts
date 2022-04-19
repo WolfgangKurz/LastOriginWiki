@@ -696,6 +696,14 @@ export function ImageExtension (): ImageExtensionTypes {
 	return "webp";
 }
 
+let playableWebM: boolean | null = null;
+export function CanPlayWebM (): boolean {
+	if(typeof playableWebM === "boolean") return playableWebM;
+
+	const video = document.createElement("video");
+	return playableWebM = (video.canPlayType("video/webm") !== "");
+}
+
 
 export const WorldIds: string[] = [
 	"Story", "Sub", "Cha",
