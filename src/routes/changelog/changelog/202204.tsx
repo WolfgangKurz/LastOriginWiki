@@ -7,6 +7,23 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11690" date="2022-04-25"
+		update={ <>
+			<li>일부 적의 텍스트 정보가 수정되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<span class="badge bg-warning text-dark">포이</span>의 스킨
+				<span class="badge bg-danger">우유 도둑 포이</span>의 로비 애니메이션 영상이 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-warning text-dark">커넥터 유미</span>의 서약 대사 세트가 추가되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">AS-12 스틸 드라코</span>의 서약 대사 세트가 추가되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">AS-12 스틸 드라코</span>의 오디오가 변경되었습니다.</li>
+			<li><span class="badge bg-light text-dark">KST 2022-04-25 12:57:19</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11686" date="2022-04-25"
 		new={ <>
 			<li>검색 기능이 있는 페이지에 한글의 자음만 작성해도 검색되는 기능을 추가했습니다.</li>
