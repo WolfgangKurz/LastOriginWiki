@@ -2,7 +2,7 @@ import { FunctionalComponent } from "preact";
 
 import Store from "@/store";
 
-import { isActive } from "@/libs/Functions";
+import { DecomposeHangulSyllable, isActive } from "@/libs/Functions";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE, SKILL_ATTR } from "@/types/Enums";
@@ -147,7 +147,15 @@ const Units: FunctionalComponent = () => {
 				return FilterableUnitDB
 					.filter(x => {
 						try {
-							return new RegExp(Filters.SearchText, "i").test(LocaleGet(`UNIT_${x.uid}`));
+							const name = LocaleGet(`UNIT_${x.uid}`);
+							const firstName = name
+								.split("")
+								.map(DecomposeHangulSyllable)
+								.map(x => x.initial)
+								.join("");
+
+							return new RegExp(Filters.SearchText, "i").test(name) ||
+								new RegExp(Filters.SearchText, "i").test(firstName);
 						} catch {
 							return false;
 						}

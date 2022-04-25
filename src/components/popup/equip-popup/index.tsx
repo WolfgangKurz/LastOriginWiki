@@ -93,6 +93,12 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 			return eq;
 		})();
 
+		if (!props.asSub && target) {
+			const to = `/equips/${target.fullKey}`;
+			if (to !== window.location.pathname)
+				route(to);
+		}
+
 		const isUninstalled: boolean = target !== null && !target.available;
 		const isRoguelike: boolean = target !== null && target.roguelike;
 		const isExclusive: boolean = target !== null && target.limit !== null && target.limit.every(y => typeof y === "number");
@@ -523,7 +529,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 											{ (() => {
 												const found = FilterableEquipDB.find(x => x.fullKey === target.upgrade.upgrade!.to);
 												return found
-													? <EquipCard class="d-inline-block" equip={ found }  />
+													? <EquipCard class="d-inline-block" equip={ found } />
 													: <>???</>;
 											})() }
 										</div>

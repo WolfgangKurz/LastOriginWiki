@@ -7,6 +7,18 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11686" date="2022-04-25"
+		new={ <>
+			<li>검색 기능이 있는 페이지에 한글의 자음만 작성해도 검색되는 기능을 추가했습니다.</li>
+		</> }
+		bugfix={ <>
+			<li>장비 팝업에서 등급을 바꿔도 주소가 바뀌지 않던 점을 수정했습니다.</li>
+			<li>세계 정보의 일부 지역에 올바르지 않은 적 웨이브가 표시되던 점을 수정했습니다.</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2022-04-25 04:01:17</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11682" date="2022-04-20"
 		bugfix={ <>
 			<li>일부 iOS 환경에서 로비 애니메이션이 재생되지 않는 현상을 개선했습니다.</li>

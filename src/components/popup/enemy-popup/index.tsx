@@ -12,6 +12,7 @@ import { objState } from "@/libs/State";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { CurrentDB } from "@/libs/DB";
 import EntitySource from "@/libs/EntitySource";
+import { isActive } from "@/libs/Functions";
 
 import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
@@ -22,7 +23,7 @@ import RarityBadge from "@/components/rarity-badge";
 import ElemIcon from "@/components/elem-icon";
 import StatIcon from "@/components/stat-icon";
 import SkillBound from "@/components/skill-bound";
-import SkillDescription, { SkillDescriptionValueData } from "@/components/skill-description";
+import SkillDescription from "@/components/skill-description";
 import BuffList from "@/components/buff-list";
 import AIList from "@/components/ai-list";
 import SourceBadge from "@/components/source-badge";
@@ -246,18 +247,17 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 				? <>
 					{ FamilyList.length > 1
 						? <div class="mb-1">
-							<select
-								class="form-select form-select-sm"
-								value={ targetId.value }
-								onChange={ (e): void => {
-									const value = (e.target as HTMLSelectElement).value;
-									targetId.set(value);
-									if (!props.asSub)
-										route(`/enemies/${value}`);
-								} }
-							>
-								{ FamilyList.map(x => <option value={ x.value }>{ x.text }</option>) }
-							</select>
+							<div class="btn-group">
+								{ FamilyList.map(x => <button
+									class={`btn btn-outline-danger ${isActive(targetId.value === x.value)}`}
+									onClick={ (e): void => {
+										targetId.set(x.value);
+										if (!props.asSub)
+											route(`/enemies/${x.value}`);
+									} }
+								>{ x.text }
+								</button>) }
+							</div>
 						</div>
 						: <></>
 					}

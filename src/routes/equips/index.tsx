@@ -46,7 +46,9 @@ const Equips: FunctionalComponent<EquipsProps> = (props) => {
 			</div>
 		</div>
 
-		{ DisplayType.value === "list" && <EquipList uid={ props.uid } /> }
+		<div style={ { display: DisplayType.value === "list" ? "" : "none" } }>
+			<EquipList uid={ props.uid } />
+		</div>
 		{ DisplayType.value === "time" && <EquipTimetable /> }
 	</>;
 };
