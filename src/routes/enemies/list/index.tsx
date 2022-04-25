@@ -6,7 +6,7 @@ import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 
 import { objState } from "@/libs/State";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
-import { diff2, isActive } from "@/libs/Functions";
+import { DecomposeHangulSyllable, diff2, isActive } from "@/libs/Functions";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
 import Loader, { GetJson, StaticDB } from "@/components/loader";
@@ -162,8 +162,15 @@ class EnemiesList extends Component<EnemiesListProps, EnemiesListState> {
 					if (Object.values(filters).every(x => !x)) return false;
 
 					if (state.Filters.SearchText) {
-						if (!new RegExp(state.Filters.SearchText, "i").test(x.localeName))
-							return false;
+						const name = x.localeName;
+						const firstName = name
+							.split("")
+							.map(DecomposeHangulSyllable)
+							.map(x => x.initial)
+							.join("");
+
+						if (!(new RegExp(state.Filters.SearchText, "i").test(name) ||
+							new RegExp(state.Filters.SearchText, "i").test(firstName))) return false;
 					}
 					return true;
 				})

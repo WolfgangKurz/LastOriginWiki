@@ -149,3 +149,50 @@ export function diff2<T, K> (A: T, B: K): boolean {
 	}
 	return false;
 }
+
+export interface Hangul {
+	initial: string;
+	medial: string;
+	final: string;
+}
+export function DecomposeHangulSyllable (char: string): Hangul {
+	const initials = [
+		"ㄱ", "ㄲ", "ㄴ", "ㄷ", "ㄸ", "ㄹ", "ㅁ", "ㅂ", "ㅃ", "ㅅ",
+		"ㅆ", "ㅇ", "ㅈ", "ㅉ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ",
+	];
+	const medials = [
+		"ㅏ", "ㅐ", "ㅑ", "ㅒ", "ㅓ", "ㅔ", "ㅕ", "ㅖ", "ㅗ", "ㅘ",
+		"ㅙ", "ㅚ", "ㅛ", "ㅜ", "ㅝ", "ㅞ", "ㅟ", "ㅠ", "ㅡ", "ㅢ", "ㅣ",
+	];
+	const finals = [
+		"", "ㄱ", "ㄲ", "ㄳ", "ㄴ", "ㄵ", "ㄶ", "ㄷ", "ㄹ", "ㄺ",
+		"ㄻ", "ㄼ", "ㄽ", "ㄾ", "ㄿ", "ㅀ", "ㅁ", "ㅂ", "ㅄ", "ㅅ",
+		"ㅆ", "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ",
+	];
+
+	const begin = 0xAC00;
+	const end = begin + initials.length * medials.length * finals.length;
+	let code = char.charCodeAt(0);
+
+	let initial: string = "";
+	let medial: string = "";
+	let final: string = "";
+
+	if (begin <= code && code < end) {
+		code -= begin;
+
+		final = finals[code % finals.length];
+		code = Math.floor(code / finals.length);
+
+		medial = medials[code % medials.length];
+		code = Math.floor(code / medials.length);
+
+		initial = initials[code];
+	}
+
+	return {
+		initial,
+		medial,
+		final,
+	};
+}
