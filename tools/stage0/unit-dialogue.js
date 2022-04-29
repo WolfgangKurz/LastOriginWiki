@@ -115,7 +115,7 @@ function process (auth) {
 	new Promise((resolve, reject) => {
 		sheets.spreadsheets.values.get({
 			spreadsheetId: "1TrLn5czFe2Ww1xg4HiFsDzZDcnphxV3AqP_DgNqaU00",
-			range: "대사(Quotes)!A3:J",
+			range: "대사(Quotes)!A2:J",
 		}, (err, res) => {
 			if (err) {
 				console.log(`The API returned an error: ${err}`);
