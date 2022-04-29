@@ -932,3 +932,12 @@ export enum FACETYPE {
 	EMBARRASSGL = 69,
 	EXITINGGL = 70,
 }
+
+/** 가챠(유산) 타입 */
+export enum GACHA_CATEGORY {
+	/** 1회 */
+	NORMAL = 0,
+
+	/** 11회 */
+	GACHA_11ST = 1,
+}

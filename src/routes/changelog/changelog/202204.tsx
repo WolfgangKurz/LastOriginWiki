@@ -7,6 +7,11 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11692" date="2022-04-30"
+		new={ <>
+			<li>기타 메뉴에 "가챠 시뮬레이터"가 추가되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11690" date="2022-04-25"
 		update={ <>
 			<li>일부 적의 텍스트 정보가 수정되었습니다.</li>
