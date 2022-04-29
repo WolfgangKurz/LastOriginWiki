@@ -21,6 +21,17 @@ export function FormatNumber (num: number): string {
 	return n;
 }
 
+export function ToOrdinal (num: number): string {
+	// 11, 12, 13 ...
+	if (Math.floor(num / 10) === 1) return `${num}th`;
+
+	const v = num % 10;
+	if (v === 1) return `${num}st`;
+	if (v === 2) return `${num}nd`;
+	if (v === 3) return `${num}rd`;
+	return `${num}th`;
+}
+
 export function ChangeImage (ext: string): void {
 	if (!["png", "webp"].includes(ext)) ext = "webp";
 	document.cookie = `LO_IMGEXT=${ext}; path=/`;

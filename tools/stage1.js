@@ -18,6 +18,7 @@ const list =
 	[
 		...[
 			"consumable", "exc",
+			"gacha",
 			"ew",
 			"map",
 			"story",

@@ -64,6 +64,7 @@ export default ({ mode }) => {
 						) return undefined;
 
 						// vendor
+						if (id.includes("/node_modules/preact-transition")) return "vendor.transition";
 						if (id.includes("/node_modules/html2canvas/")) return "vendor.html2canvas";
 						if (id.includes("/node_modules/bootstrap")) return "vendor.bootstrap";
 						if (id.includes("/node_modules/acorn/") || id.includes("/node_modules/react")) return "vendor.ext";
