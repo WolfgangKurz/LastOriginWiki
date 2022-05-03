@@ -478,7 +478,7 @@
                       "by": "atk"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 },
                 {
                   "icon": "BuffIcon_ATK_DOWN",
@@ -562,7 +562,7 @@
                       "by": "atk"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 }
               ],
               "maxStack": 1
@@ -623,7 +623,7 @@
                       "by": "atk"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 }
               ],
               "maxStack": 1
@@ -684,7 +684,7 @@
                       "by": "atk"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 }
               ],
               "maxStack": 1
@@ -745,7 +745,7 @@
                       "by": "atk"
                     }
                   },
-                  "overlap": 4
+                  "overlap": 1
                 }
               ],
               "maxStack": 1
@@ -1592,6 +1592,94 @@
                 }
               ],
               "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Erato_N_45",
+              "on": "round",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "Effect_PECS_Erato_N_45_1",
+                    "type": 1,
+                    "value": "115",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 115
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Erato_N_46",
+              "on": "attack_success",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "Effect_PECS_Erato_N_46_1",
+                    "type": 1,
+                    "value": "115",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 69,
+                    "off": {
+                      "type": 115
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         }
@@ -1716,6 +1804,30 @@
               "level": "0"
             },
             "base": 20,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_DEBUFF",
+            "desc": {
+              "desc": "Effect_PECS_Erato_N_45_1",
+              "type": 1,
+              "value": "115",
+              "level": "0"
+            },
+            "base": 115,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_DEBUFF",
+            "desc": {
+              "desc": "Effect_PECS_Erato_N_46_1",
+              "type": 1,
+              "value": "115",
+              "level": "0"
+            },
+            "base": 115,
             "per": 0,
             "chance": 1
           }

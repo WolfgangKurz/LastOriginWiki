@@ -5,32 +5,34 @@ import { MapNodeEntity } from "@/types/DB/Map";
 import { STAGE_SUB_TYPE } from "@/types/Enums";
 
 import { AssetsRoot } from "@/libs/Const";
+import MapPosition from "@/libs/MapPosition";
 
 import style from "./style.module.scss";
 
 interface MapNodeProps {
 	node: MapNodeEntity;
-	byOffset?: boolean;
+
+	type: STAGE_SUB_TYPE;
+	// byOffset?: boolean;
 
 	active?: boolean;
 	missing?: boolean;
 }
 
-function GetTypeIdx (node: MapNodeEntity, byOffset: boolean = false): 0 | 1 | 2 {
-	const key = node.key;
+// function GetTypeIdx (node: MapNodeEntity): STAGE_SUB_TYPE {
+// 	const key = node.key;
 
-	if (byOffset) return Math.floor(node.offset / 8) as (0 | 1 | 2);
-
-	return /[0-9]+$/.test(key)
-		? 1
-		: /(Ex|C)$/.test(key)
-			? 2
-			: 0;
-}
+// 	return /[0-9]+$/.test(key)
+// 		? STAGE_SUB_TYPE.MAIN
+// 		: /(Ex|C)$/.test(key)
+// 			? STAGE_SUB_TYPE.EX
+// 			: STAGE_SUB_TYPE.SUB;
+// }
 
 const MapNode: FunctionalComponent<MapNodeProps> = (props) => {
 	const node = props.node;
-	const typeIdx = GetTypeIdx(node, props.byOffset);
+	// const typeIdx = props.type || GetTypeIdx(node);
+	const typeIdx = props.type;
 	// const colors: string[] = [
 	// 	"#61d42a",
 	// 	"#fdc902",
@@ -79,6 +81,8 @@ const gy = gx; // 노드간 세로 거리
 
 const w = 136; // 노드 가로 크기
 const h = 44; // 노드 세로 크기
+const ww = w / 2; // 가로 절반 크기
+const hh = h / 2; // 세로 절반 크기
 
 const vw = w + gx;
 const vh = h + gy;
@@ -86,9 +90,10 @@ const vh = h + gy;
 const baseX = padding; // 기본 X
 const baseY = padding; // 기본 Y
 
-interface NewMapGridProps {
+interface MapGridProps {
 	nodes: MapNodeEntity[];
 	selected: MapNodeEntity | null;
+	hardcoded?: boolean;
 
 	wid?: string;
 	mid?: string;
@@ -96,7 +101,7 @@ interface NewMapGridProps {
 	onSelect?: (selected: MapNodeEntity) => void;
 }
 
-class MapGrid extends Component<NewMapGridProps>{
+class MapGrid extends Component<MapGridProps>{
 	private svgRef = createRef<SVGSVGElement>();
 
 	constructor () {
@@ -114,57 +119,53 @@ class MapGrid extends Component<NewMapGridProps>{
 		}
 	}
 
-	render (props: RenderableProps<NewMapGridProps>) {
+	render (props: RenderableProps<MapGridProps>) {
 		const wid = props.wid || "";
 		const mid = props.mid || "";
 		const nodes = props.nodes.sort((a, b) => a.offset - b.offset);
+		console.log(nodes);
 
 		const RECTS = (() => {
 			const ret: preact.VNode[] = [];
 			const lines: preact.VNode[] = [];
 
-			const hasStory = nodes.some(x => x.type === STAGE_SUB_TYPE.STORY);
-			const EvId = parseInt((props.wid || "Ev0").substring(2), 10);
-			const byOffset = !(props.wid || "").startsWith("Ev") || (EvId < 14 || EvId === 16)
-			|| props.wid === "Ev15";
-
-			const mainXTable: Record<number, number> = {};
+			const byOffset = !props.hardcoded;
 			const used: number[] = [];
 
-			const zigzagV = vw * 3 / 5;
-			let mainX: number = 0;
-			let exX: number = baseX + zigzagV;
-			let missingX: number = baseX;
-
-			const yTable: Record<number, number> = {
-				0: 0,
-				1: vh,
-				2: vh * (hasStory ? 3 : 2),
-				3: vh * (hasStory ? 4 : 3),
-			};
-
-			const render = (node: MapNodeEntity, x: number, missing: boolean = false) => {
+			const line = (x1: number, y1: number, x2: number, y2: number, from: MapNodeEntity, to: MapNodeEntity) => <line
+				x1={ x1 }
+				y1={ y1 }
+				x2={ x2 }
+				y2={ y2 }
+				stroke="rgba(255,255,255,0.75)"
+				strokeWidth="2"
+				strokeLinecap="round"
+				data-from={ from.text }
+				data-to={ to.text }
+			/>;
+			const render = (node: MapNodeEntity, missing: boolean = false) => {
 				if (used.includes(node.offset)) return;
 				used.push(node.offset);
 
-				const line = (x1: number, y1: number, x2: number, y2: number, baseX: number, from: MapNodeEntity, to: MapNodeEntity) => <line
-					x1={ baseX + x1 }
-					y1={ baseY + y1 }
-					x2={ baseX + x2 }
-					y2={ baseY + y2 }
-					stroke="rgba(255,255,255,0.75)"
-					strokeWidth="1.5"
-					strokeLinecap="round"
-					data-from={ from.text }
-					data-to={ to.text }
-				/>;
+				let x = node.offset % 8;
+				let y = Math.floor(node.offset / 8);
+				let type = node.type;
 
-				const nodeType = missing ? 3 : GetTypeIdx(node, byOffset);
-				let y = yTable[nodeType] + (nodeType === 1 && mainX === 1 ? vh : 0);
+				const posX = x;
+				const hasPos = (wid in MapPosition) && (mid in MapPosition[wid]);
+				const vw2 = vw * 1.2;
 
-				if (byOffset) {
-					x = baseX + (node.offset % 8) * vw + (Math.floor(node.offset / 8 - 1) * vw / 2);
-					y = Math.floor(node.offset / 8) * vh;
+				if (hasPos && !byOffset) {
+					x = baseX + MapPosition[wid][mid][node.text][0] * vw2;
+					y = baseY + MapPosition[wid][mid][node.text][1] * vh;
+
+					if (type === STAGE_SUB_TYPE.STORY)
+						type = MapPosition[wid][mid][node.text][3] || STAGE_SUB_TYPE.MAIN;
+				} else {
+					const offsetX = ((y - 1) % 2) * vw / 2;
+
+					x = baseX + x * vw + offsetX;
+					y = baseY + y * vh;
 				}
 
 				// render(nx, t, [node], undefined, true);
@@ -176,124 +177,67 @@ class MapGrid extends Component<NewMapGridProps>{
 							props.onSelect(node);
 					} }
 				>
-					<g transform={ `translate(${x}, ${baseY + y})` }>
+					<g transform={ `translate(${x}, ${y})` }>
 						<MapNode
 							node={ node }
+							type={ type }
 							active={ props.selected === node }
 							missing={ missing }
-							byOffset={ byOffset }
+						// byOffset={ byOffset }
 						/>
 					</g>,
 				</Link>);
 
-				if (nodeType === 1 && hasStory)
-					mainX = (mainX + 1) % 2;
-				else if (nodeType === 2)
-					exX += hasStory ? zigzagV * 2 : vw;
-				else if (nodeType === 3)
-					missingX += vw;
-
-				if (hasStory)
-					mainXTable[node.offset] = mainX;
-
 				nodes
 					.filter(n => n.prev.includes(node.offset))
 					.forEach(n => {
-						const nType = missing ? 3 : GetTypeIdx(n, byOffset);
-						const rx = nType === 0
-							? nType === nodeType ? vw : (hasStory ? 0 : zigzagV)
-							: nType === 1
-								? nType === nodeType ? (hasStory ? zigzagV : vw) : 0
-								: nType === 2
-									? (hasStory ? 0 : zigzagV)
-									: vw;
+						if (MapPosition[wid][mid][n.text][2] !== false) {
+							const posX2 = n.offset % 8;
 
-						(() => {
-							if (!byOffset || Math.abs((n.offset % 8) - (node.offset % 8)) <= 1) {
-								if (nType !== 2) {
-									if (nodeType === 1 && nType === 1) { // Main -> Main
-										if (hasStory) {
-											lines.push(line(
-												w / 2,
-												vh + (mainX === 1 ? 0 : vh) + h / 2,
-												rx + w / 2,
-												vh + (mainX === 1 ? vh : 0) + h / 2,
-												x,
-												node, n,
-											));
-										} else {
-											lines.push(line(
-												w / 2,
-												vh + h / 2,
-												rx + w / 2,
-												vh + h / 2,
-												x,
-												node, n,
-											));
-										}
-									} else if (nodeType === 1) { // Main -> others
-										if (byOffset && (n.offset % 8) <= (node.offset % 8))
-											return;
+							if (hasPos && !byOffset) {
+								const toX = baseX + MapPosition[wid][mid][n.text][0] * vw2;
+								const toY = baseY + MapPosition[wid][mid][n.text][1] * vh;
 
-										lines.push(line(
-											w / 2,
-											vh + (!hasStory || (mainXTable[node.offset] === 1) ? 0 : vh) + h / 2,
-											w / 2 + (hasStory ? 0 : zigzagV),
-											yTable[nType] + h / 2,
-											x,
-											node, n,
-										));
-									} else if (nType === 1) { // others -> Main
-										lines.push(line(
-											w / 2,
-											yTable[nodeType] + h / 2,
-											w / 2 + (hasStory ? 0 : zigzagV),
-											yTable[nType] + h / 2,
-											x,
-											node, n,
-										));
-									} else if (nodeType !== 3 && nType !== 3) { // others -> others (except missing)
-										lines.push(line(
-											w / 2,
-											yTable[nType] + h / 2,
-											vw + w / 2,
-											yTable[nType] + h / 2,
-											x,
-											node, n,
-										));
-									}
-								} else if (nodeType === nType) {
+								if (x <= toX) {
 									lines.push(line(
-										w / 2,
-										yTable[nodeType] + h / 2,
-										w / 2 + vw,
-										yTable[nType] + h / 2,
-										hasStory ? exX - vw : x,
+										x + ww,
+										y + hh,
+										toX + ww,
+										toY + hh,
 										node, n,
 									));
 								}
-							}
-						})();
+							} else if (posX2 === posX || (posX2 - posX === 1)) {
+								const posY2 = Math.floor(n.offset / 8);
+								const offsetX2 = ((posY2 - 1) % 2) * vw / 2;
 
-						render(
-							n,
-							nType === 2
-								? exX
-								: nType === 3
-									? missingX
-									: x + rx,
-							missing,
-						);
+								const fromX = x;
+								const toX = baseX + posX2 * vw + offsetX2;
+
+								const fromY = y;
+								const toY = baseY + posY2 * vh;
+
+								lines.push(line(
+									fromX + h,
+									fromY + hh,
+									toX + h,
+									toY + hh,
+									node, n,
+								));
+							}
+						}
+
+						render(n, missing);
 					});
 			};
 
 			nodes
 				.filter(n => n.prev.length === 0)
-				.forEach(n => render(n, baseX));
+				.forEach(n => render(n));
 
 			const missing = nodes.filter(x => !used.includes(x.offset));
 			if (missing.length > 0) {
-				missing.forEach(x => render(x, baseX, true));
+				missing.forEach(x => render(x, true));
 				lines.push(<rect
 					x={ 0 }
 					y={ baseY + vh * 4 - (vh - h) / 2 }
@@ -303,6 +247,7 @@ class MapGrid extends Component<NewMapGridProps>{
 				/>);
 			}
 
+			// return [...ret, ...lines];
 			return [...lines, ...ret];
 		})();
 

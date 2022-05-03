@@ -2,7 +2,7 @@ import { FunctionalComponent } from "preact";
 import { Link, route } from "preact-router";
 
 import { ACTOR_GRADE, STAGE_SUB_TYPE, UNLOCK_COND } from "@/types/Enums";
-import { MapEnemyData, MapNodeEntity, World } from "@/types/DB/Map";
+import { MapEnemyData, MapNodeEntity, Maps, World } from "@/types/DB/Map";
 import { RawReward, RewardTypeBase } from "@/types/Reward";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
@@ -86,6 +86,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 	return <Loader
 		json={ [
 			`map/${props.wid}`,
+			StaticDB.Maps,
 			StaticDB.FilterableUnit,
 			StaticDB.FilterableEquip,
 			StaticDB.FilterableEnemy,
@@ -93,6 +94,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 		] }
 		content={ ((): preact.VNode => {
 			const MapDB = GetJson<World>(`map/${props.wid}`);
+			const MapsDB = GetJson<Maps>(StaticDB.Maps);
 			const FilterableUnitDB = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
 			const FilterableEquipDB = GetJson<FilterableEquip[]>(StaticDB.FilterableEquip);
 			const FilterableEnemyDB = GetJson<FilterableEnemy[]>(StaticDB.FilterableEnemy);
@@ -242,6 +244,11 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 				].filter(x => x) as RewardDropType[];
 			})();
 
+			const MapHardcoded = ((): boolean => {
+				if (!(props.wid in MapsDB)) return false;
+				if (!(props.mid in MapsDB[props.wid])) return false;
+				return MapsDB[props.wid][props.mid];
+			})();
 			const NodeList = ((): MapNodeEntity[] => {
 				const ret: MapNodeEntity[] = [];
 
@@ -407,6 +414,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 													nodes={ NodeList }
 													wid={ props.wid }
 													mid={ props.mid }
+													hardcoded={ MapHardcoded }
 													onSelect={ (node: MapNodeEntity): void => {
 														selected.set(node);
 														NodeChange(node);

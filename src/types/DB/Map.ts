@@ -97,3 +97,9 @@ export interface World {
 		list: MapNodeEntity[];
 	};
 }
+
+export interface Maps {
+	[key: string]: {
+		[key: string]: boolean;
+	};
+}

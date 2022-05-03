@@ -7,6 +7,17 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11696" date="2022-05-04"
+		bugfix={ <>
+			<li>세계 정보의 이벤트 지도가 올바르지 않게 표시되던 문제를 수정했습니다.</li>
+		</> }
+		update={ <>
+			<li>일부 전투원의 스킬 정보가 수정되었습니다.</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2022-05-04 04:42:27</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11695" date="2022-05-02"
 		new={ <>
 			<li>신규 전투원 <span class="badge bg-warning text-dark">에라토</span>가 추가되었습니다.</li>

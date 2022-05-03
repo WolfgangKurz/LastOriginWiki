@@ -18,16 +18,18 @@ function process (auth) {
 			if (err) return console.log(`The API returned an error: ${err}`);
 
 			const ret = {};
+			const ret2 = {};
 			const rows = res.data.values;
 			if (rows && rows.length) {
 				fs.mkdirSync(path.resolve(__dirname, "..", "..", "external", "json", targetDB, "map"), { recursive: true });
 
-				rows.map((row) => {
+				rows.forEach((row) => {
 					if (!row[0]) return;
 
-					const [id, map, rawdata, substory, ...nodes] = row;
+					const [id, map, hardcoded, rawdata, substory, ...nodes] = row;
 
 					if (!(id in ret)) ret[id] = {};
+					if (!(id in ret2)) ret2[id] = {};
 
 					const n = nodes.map(x => JSON.parse(x));
 					const data = JSON.parse(rawdata);
@@ -39,6 +41,7 @@ function process (auth) {
 						substory: substory && JSON.parse(substory) || [],
 						list: data,
 					};
+					ret2[id][map] = hardcoded === "1";
 				});
 
 				Object.keys(ret)
@@ -48,6 +51,11 @@ function process (auth) {
 							JSON.stringify(ret[id]),
 						);
 					});
+
+				fs.writeFileSync(
+					path.resolve(__dirname, "..", "..", "external", "json", targetDB, "maps.json"),
+					JSON.stringify(ret2),
+				);
 			} else
 				console.log("No data found.");
 		});
