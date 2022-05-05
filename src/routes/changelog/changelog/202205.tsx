@@ -7,6 +7,15 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11701" date="2022-05-06"
+		bugfix={ <>
+			<li>세계 정보의 지도가 표시되지 않던 문제를 수정했습니다.</li>
+			<li>세계 정보의 지역 선택 색상이 잘못 표시되던 문제를 수정했습니다.</li>
+		</> }
+		new={ <>
+			<li>세계 정보의 지역 정보에 개방 조건이 추가되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11696" date="2022-05-04"
 		bugfix={ <>
 			<li>세계 정보의 이벤트 지도가 올바르지 않게 표시되던 문제를 수정했습니다.</li>

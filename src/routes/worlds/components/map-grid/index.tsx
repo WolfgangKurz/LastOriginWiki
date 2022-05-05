@@ -191,7 +191,7 @@ class MapGrid extends Component<MapGridProps>{
 				nodes
 					.filter(n => n.prev.includes(node.offset))
 					.forEach(n => {
-						if (MapPosition[wid][mid][n.text][2] !== false) {
+						if (!(hasPos && !byOffset) || MapPosition[wid][mid][n.text][2] !== false) {
 							const posX2 = n.offset % 8;
 
 							if (hasPos && !byOffset) {

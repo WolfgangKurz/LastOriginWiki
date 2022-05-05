@@ -643,6 +643,27 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 													<div class="col-12 col-md-6 mt-md-0 mt-4">
 														<div class="card text-dark">
 															<div class="card-header">
+																<Locale k="WORLD_VIEW_UNLOCK_CONDITION" />
+															</div>
+															<div class="card-body">
+																<ul class="list-group">
+																	{ selectedValue.prevIds.map(r => <li class="list-group-item">
+																		<Locale
+																			k="WORLD_VIEW_UNLOCK_CONDITION_ITEM"
+																			p={ [<>
+																				{ r.wid === "Story"
+																					? <Locale k={ `WORLD_${r.wid}` } fallback={ r.wid } />
+																					: <Locale k={ `WORLD_${r.wid}_${r.cid}` } fallback={ r.wid } />
+																				}
+																				<span class="badge bg-warning text-dark ms-1">{ r.text }</span>
+																			</>] }
+																		/>
+																	</li>) }
+																</ul>
+															</div>
+														</div>
+														<div class="card text-dark mt-2">
+															<div class="card-header">
 																<Locale k="WORLD_VIEW_CLEAR_CONDITION" />
 															</div>
 															<div class="card-body">

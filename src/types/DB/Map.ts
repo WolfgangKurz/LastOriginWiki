@@ -42,6 +42,12 @@ export interface MapNodeEntity {
 
 	type: STAGE_SUB_TYPE;
 	prev: number[];
+	prevIds: Array<{
+		key: string;
+		wid: string;
+		cid: number;
+		text: string;
+	}>;
 	offset: number;
 	text: string;
 
@@ -64,6 +70,7 @@ export namespace MapNodeEntity {
 		playerExp: 0,
 		type: STAGE_SUB_TYPE.NONE,
 		prev: [],
+		prevIds: [],
 		offset: 0,
 		text: "",
 		search: null,
