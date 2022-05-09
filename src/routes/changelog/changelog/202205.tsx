@@ -7,6 +7,27 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11703" date="2022-05-09"
+		new={ <>
+			<li>전투원 <span class="badge bg-warning text-dark">스파토이아</span>의 승급 정보가 추가되었습니다.</li>
+			<li>전투원 <span class="badge bg-warning text-dark">A-87 밴시</span>의 승급 정보가 추가되었습니다.</li>
+		</> }
+		update={ <>
+			<li>전투원 <span class="badge bg-warning text-dark">스파토이아</span>의 스킬 정보가 갱신되었습니다.</li>
+			<li>전투원 <span class="badge bg-warning text-dark">장화</span>의 스킬 정보가 갱신되었습니다.</li>
+			<li>전투원 <span class="badge bg-warning text-dark">아이아스</span>의 스킬 정보가 갱신되었습니다.</li>
+			<li>일부 전투원의 정보가 갱신되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<span class="badge bg-warning text-dark">장화</span>의 스킨
+				<span class="badge bg-danger">CAFE Horizon...? : 설레는 break time</span>의 중파 정보가 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2022-05-09 13:06:26</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11701" date="2022-05-06"
 		bugfix={ <>
 			<li>세계 정보의 지도가 표시되지 않던 문제를 수정했습니다.</li>
