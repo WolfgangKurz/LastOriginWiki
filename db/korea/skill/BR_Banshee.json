@@ -5110,7 +5110,7 @@
                     "desc": "Effect_BR_Banshee_N_5_1",
                     "type": 1,
                     "value": "-0.700000",
-                    "level": "0"
+                    "level": "0.030000"
                   },
                   "attr": 3,
                   "erase": {
@@ -5121,7 +5121,30 @@
                     "type": 13,
                     "turnSpeed": {
                       "base": "-70%",
-                      "per": "0%"
+                      "per": "3%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_BR_Banshee_N_5_2",
+                    "type": 0,
+                    "value": "12",
+                    "level": "0.400000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "until": "attack_success"
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 21,
+                    "ap_set": {
+                      "base": 12,
+                      "per": 0.4
                     }
                   },
                   "overlap": 4
@@ -5129,7 +5152,7 @@
                 {
                   "icon": "BuffIcon_DEF_PIERCE_UP",
                   "desc": {
-                    "desc": "Effect_BR_Banshee_N_5_2",
+                    "desc": "Effect_BR_Banshee_N_5_3",
                     "type": 1,
                     "value": "9.990000",
                     "level": "0"
@@ -5153,7 +5176,7 @@
                 {
                   "icon": "BuffIcon_REMOVE_BUFF",
                   "desc": {
-                    "desc": "Effect_BR_Banshee_N_5_3",
+                    "desc": "Effect_BR_Banshee_N_5_4",
                     "type": 1,
                     "value": "0",
                     "level": "0"
@@ -5211,7 +5234,7 @@
                     "desc": "Effect_BR_Banshee_N_51_1",
                     "type": 0,
                     "value": "12",
-                    "level": "0"
+                    "level": "0.400000"
                   },
                   "attr": 3,
                   "erase": {
@@ -5222,7 +5245,7 @@
                     "type": 21,
                     "ap_set": {
                       "base": 12,
-                      "per": 0
+                      "per": 0.4
                     }
                   },
                   "overlap": 4
@@ -5309,16 +5332,28 @@
               "desc": "Effect_BR_Banshee_N_5_1",
               "type": 1,
               "value": "-0.700000",
-              "level": "0"
+              "level": "0.030000"
             },
             "base": -0.7,
-            "per": 0,
+            "per": 0.03,
             "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "Effect_BR_Banshee_N_5_2",
+              "type": 0,
+              "value": "12",
+              "level": "0.400000"
+            },
+            "base": 12,
+            "per": 0.4,
+            "chance": 0
           },
           {
             "icon": "BuffIcon_DEF_PIERCE_UP",
             "desc": {
-              "desc": "Effect_BR_Banshee_N_5_2",
+              "desc": "Effect_BR_Banshee_N_5_3",
               "type": 1,
               "value": "9.990000",
               "level": "0"
@@ -5330,7 +5365,7 @@
           {
             "icon": "BuffIcon_REMOVE_BUFF",
             "desc": {
-              "desc": "Effect_BR_Banshee_N_5_3",
+              "desc": "Effect_BR_Banshee_N_5_4",
               "type": 1,
               "value": "0",
               "level": "0"
@@ -5345,10 +5380,10 @@
               "desc": "Effect_BR_Banshee_N_51_1",
               "type": 0,
               "value": "12",
-              "level": "0"
+              "level": "0.400000"
             },
             "base": 12,
-            "per": 0,
+            "per": 0.4,
             "chance": 1
           },
           {
