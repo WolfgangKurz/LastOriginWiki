@@ -867,7 +867,7 @@
         {
           "rate": 0,
           "type": 0,
-          "range": 6,
+          "range": 0,
           "ap": 0,
           "grid": "1,1,1,1,0,1,1,1,1",
           "target_ground": false,
@@ -1238,7 +1238,7 @@
         {
           "rate": 0,
           "type": 0,
-          "range": 6,
+          "range": 0,
           "ap": 0,
           "grid": "0,0,0,0,1,0,0,0,0",
           "target_ground": false,
@@ -1596,7 +1596,15 @@
             {
               "key": "Effect_PECS_Erato_N_45",
               "on": "round",
-              "if": false,
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    115
+                  ],
+                  "attr": 6
+                }
+              },
               "body": [
                 0,
                 1
@@ -1640,7 +1648,15 @@
             {
               "key": "Effect_PECS_Erato_N_46",
               "on": "attack_success",
-              "if": false,
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    115
+                  ],
+                  "attr": 6
+                }
+              },
               "body": [
                 0,
                 1
@@ -1857,7 +1873,7 @@
         {
           "rate": 0,
           "type": 0,
-          "range": 6,
+          "range": 0,
           "ap": 0,
           "grid": "F>1,1,1,1,1,1,1,1,1",
           "target_ground": true,
