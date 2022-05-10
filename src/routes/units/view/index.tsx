@@ -94,6 +94,11 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 
 	const promotion = unit.promotions && unit.promotions[unit.promotions.length - 1];
 
+	function convWeapon (inp: string): preact.ComponentChildren {
+		return inp.split(" / ")
+			.gap(<hr class="my-1" />);
+	}
+
 	return <div style={ { display: display ? "" : "none" } }>
 		{/* 번호, 소속, 등급, 승급, 유형, 역할 */ }
 
@@ -140,11 +145,76 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 							</tr>
 							<tr>
 								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_BATTLESTYLE" /></th>
-								<td class="text-break">{ unit.weapon1 }</td>
+								<td class="text-break">{ convWeapon(unit.weapon1) }</td>
 							</tr>
 							<tr>
 								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_WEAPON" /></th>
-								<td class="text-break">{ unit.weapon2 }</td>
+								<td class="text-break">{ convWeapon(unit.weapon2) }</td>
+							</tr>
+
+							<tr>
+								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_COMPANY" /></th>
+								<td class="text-break">
+									{ unit.company
+										? <Locale
+											plain
+											k={ `UNIT_COMPANY_${unit.company}` }
+											fallback={ unit.company }
+										/>
+										: <span class="text-secondary">
+											<Locale plain k="UNIT_COMPANY_Undefined" />
+										</span>
+									}
+								</td>
+							</tr>
+							<tr>
+								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_MAKER" /></th>
+								<td class="text-break">
+									{ unit.maker
+										? <Locale
+											plain
+											k={ `UNIT_MAKER_${unit.maker}` }
+											fallback={ unit.maker }
+										/>
+										: <span class="text-secondary">
+											<Locale plain k="UNIT_MAKER_Undefined" />
+										</span>
+									}
+								</td>
+							</tr>
+							<tr>
+								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_COUNTRY" /></th>
+								<td class="text-break">
+									{ unit.country
+										? <>
+											<img
+												class={ `me-2 ${style.UnitCountry}` }
+												src={ `${AssetsRoot}/flags/unit_country/${unit.country}.png` }
+											/>
+											<Locale
+												plain
+												k={ `UNIT_COUNTRY_${unit.country}` }
+												fallback={ unit.country }
+											/>
+										</>
+										: <span class="text-secondary">
+											<Locale plain k="UNIT_COUNTRY_Undefined" />
+										</span>
+									}
+								</td>
+							</tr>
+							<tr>
+								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_AGE" /></th>
+								<td class="text-break">
+									{ unit.body === ACTOR_BODY_TYPE.BIOROID
+										? unit.age
+											? <Locale plain k="UNIT_AGE" p={ [unit.age] } />
+											: <span class="text-secondary">
+												<Locale plain k="UNIT_AGE_Undefined" />
+											</span>
+										: <span class="text-secondary">-</span>
+									}
+								</td>
 							</tr>
 
 							<tr>

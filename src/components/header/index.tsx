@@ -134,6 +134,9 @@ const Header: FunctionalComponent = (): preact.VNode => {
 							<DropdownItem href="/bgm">
 								<Locale k="MENU_ETC_BGM" />
 							</DropdownItem>
+							<DropdownItem href="/sticker">
+								<Locale k="MENU_ETC_STICKER" />
+							</DropdownItem>
 							{/* <DropdownItem href="/eapi">
 								<Locale k="MENU_ETC_API" />
 								<span class="badge bg-secondary ms-2">TBA</span>

@@ -83,7 +83,10 @@ const App: FunctionalComponent = () => {
 						<AsyncRoute path="/changelog" { ...pRoute(() => import("@/routes/changelog")) } />
 						<AsyncRoute path="/calc/exp" { ...pRoute(() => import("@/routes/calc/exp")) } />
 						{/* <AsyncRoute {...p}  path="/roguelike" component={() => Roguelike } /> */ }
+
 						<AsyncRoute path="/bgm" { ...pRoute(() => import("@/routes/bgm")) } />
+						<AsyncRoute path="/sticker" { ...pRoute(() => import("@/routes/sticker")) } />
+
 						<AsyncRoute path="/gacha" { ...pRoute(() => import("@/routes/gacha")) } />
 
 						{/* <AsyncRoute {...p}  path="/test" component={() => AIList } /> */ }
