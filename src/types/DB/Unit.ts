@@ -145,6 +145,11 @@ export interface Unit {
 	weapon1: string;
 	weapon2: string;
 
+	company: string;
+	maker: string;
+	country: string;
+	age: string;
+
 	marriageVoice: boolean;
 	favor: {
 		present: number;
@@ -196,6 +201,11 @@ export namespace Unit {
 		weight: "",
 		weapon1: "",
 		weapon2: "",
+
+		company: "",
+		maker: "",
+		country: "",
+		age: "",
 
 		marriageVoice: false,
 		favor: {

@@ -70,7 +70,7 @@ function process (auth) {
 							? "1R2gKu8s3Cxb9rqo5mqwin15PZvRbf8tjDdsKcmDOj18"
 							: "11IxebdUQ_VHbaP79sN8KxZ87n3c5rG42DL8TQOK9h1k"
 						: "1ohSOKdl1IZq8aOsWPJ74yX01Ave7FkSrUFG5MSbfZN8",
-					range: "Unit!A2:AJ",
+					range: "Unit!A2:AN",
 				}, (err, res) => {
 					if (err) return console.log(`The API returned an error: ${err}`);
 
@@ -118,6 +118,7 @@ function process (auth) {
 								rarity, type, role, body,
 								group,
 								height, weight, weapon1, weapon2,
+								company, maker, country, age,
 								pro, craftable,
 								favor1, favor2, favor3, favor4,
 								marry,
@@ -154,6 +155,11 @@ function process (auth) {
 								weight,
 								weapon1,
 								weapon2,
+
+								company,
+								maker,
+								country,
+								age,
 
 								stat: stats[id],
 

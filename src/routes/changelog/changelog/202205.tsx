@@ -7,6 +7,25 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11705" date="2022-05-11"
+		new={ <>
+			<li>기타 메뉴의 하위에 <span class="badge bg-warning text-dark">장식품</span> 메뉴가 추가되었습니다.</li>
+			<li>
+				전투원 정보에
+				<span class="badge bg-warning text-dark">기업</span>,
+				<span class="badge bg-warning text-dark">제조사</span>,
+				<span class="badge bg-warning text-dark">최초 제조지</span>,
+				<span class="badge bg-warning text-dark">신체 연령</span>
+				정보가 추가되었습니다.
+			</li>
+		</> }
+		bugfix={ <>
+			<li>전투원 정보에서 무기 정보가 너무 길 경우 UI가 변형되는 문제를 수정했습니다.</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2022-05-11 03:43:24</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11703" date="2022-05-09"
 		new={ <>
 			<li>전투원 <span class="badge bg-warning text-dark">스파토이아</span>의 승급 정보가 추가되었습니다.</li>
@@ -25,6 +44,8 @@ const Changelog: FunctionalComponent = () => <>
 			</li>
 		</> }
 		dialogue={ <>
+			<li><span class="badge bg-warning text-dark">P-24 핀토</span>의 서약 대사 세트가 추가되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">프로스트 서펀트</span>의 서약 대사 세트가 추가되었습니다.</li>
 			<li><span class="badge bg-light text-dark">KST 2022-05-09 13:06:26</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
 		</> }
 	/>

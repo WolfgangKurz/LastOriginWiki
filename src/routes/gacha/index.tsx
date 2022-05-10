@@ -7,9 +7,10 @@ import { GACHA_CATEGORY, ITEM_GRADE } from "@/types/Enums";
 import { objState } from "@/libs/State";
 import { FormatNumber, isActive, ToOrdinal } from "@/libs/Functions";
 import { AssetsRoot } from "@/libs/Const";
+import { SetMeta, UpdateTitle } from "@/libs/Site";
 
 import Loader, { GetJson, StaticDB } from "@/components/loader";
-import Locale from "@/components/locale";
+import Locale, { LocaleGet } from "@/components/locale";
 import Icon from "@/components/bootstrap-icon";
 import EquipIcon from "@/components/equip-icon";
 
@@ -27,6 +28,10 @@ interface GachaResult {
 }
 
 const GachaPage: FunctionalComponent = () => {
+	SetMeta(["description", "twitter:description"], "게임의 가챠를 해볼 수 있는 가챠 시뮬레이터입니다.");
+	SetMeta(["twitter:image", "og:image"], null);
+	UpdateTitle(LocaleGet("MENU_ETC_GACHA"));
+
 	const BoxType = objState<string>("");
 
 	const AccumCash = objState(0);

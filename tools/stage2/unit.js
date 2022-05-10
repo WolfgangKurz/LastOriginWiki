@@ -51,6 +51,11 @@ targetDBs.forEach(targetDB => {
 					weapon1: char.weapon1,
 					weapon2: char.weapon2,
 
+					company: char.company,
+					maker: char.maker,
+					country: char.country,
+					age: char.age,
+
 					marriageVoice: char.marry,
 					favor: char.favor,
 
