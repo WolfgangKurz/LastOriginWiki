@@ -382,7 +382,8 @@ export enum SKILL_TYPE {
 /** 스킬의 부차 유형 */
 export enum SKILL_SUB_TYPE {
 	NORMAL = 0,
-	// __MAX__ = 1,
+	EXT_PASSIVE = 1,
+	// __MAX__ = 2,
 }
 
 /** 스킬의 슬롯 위치 */
