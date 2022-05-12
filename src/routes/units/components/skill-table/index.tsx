@@ -70,6 +70,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 	const favorBonus = objState<boolean>(false);
 	const displayBuffList = objState<boolean>(false);
 	const displayBuffDummy = objState<boolean>(false);
+	const displayFlavor = objState<boolean>(true);
 
 	const HasFormChange = ((): boolean => {
 		const raw = skills;
@@ -174,6 +175,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 					<Locale k="UNIT_SKILL_FAVOR_200" />
 				</label>
 			</div>
+			<span class="text-secondary pe-2">|</span>
 			<div class="form-check d-inline-block me-2">
 				<label>
 					<input
@@ -185,6 +187,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 					<Locale k="UNIT_SKILL_DISPLAY_BUFF" />
 				</label>
 			</div>
+			<span class="text-secondary pe-2">|</span>
 			<div class="form-check d-inline-block me-2">
 				<label>
 					<input
@@ -197,91 +200,118 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 					<Locale k="UNIT_SKILL_DISPLAY_DUMMY" />
 				</label>
 			</div>
-		</div>
-	</>;
-
-	const tableContent = (skill: SkillItem): preact.VNode => <>
-		<div class="unit-modal-skill">
-			{ skill.buffs.data[skill.buffs.index[skillLevel.value]].dismiss_guard
-				? <span class="badge bg-warning text-dark me-1">
-					<Locale k="UNIT_SKILL_DISMISS_GUARD" />
-				</span>
-				: <></>
-			}
-
-			{ skill.buffs.data[skill.buffs.index[skillLevel.value]].target_ground && !skill.isPassive
-				? <span class="badge bg-danger me-1"
-					title={ LocaleGet("UNIT_SKILL_GRID_TARGET_TIP") }
-				>
-					<Locale k="UNIT_SKILL_GRID_TARGET" />
-				</span>
-				: <></>
-			}
-
-			{ skill.buffs.data[skill.buffs.index[skillLevel.value]].acc_bonus
-				? <span class="badge bg-success me-1">
-					<Locale k="UNIT_SKILL_ACC_BONUS" />
-					{
-						(skill.buffs.data[skill.buffs.index[skillLevel.value]].acc_bonus > 0 ? "+" : "") +
-						skill.buffs.data[skill.buffs.index[skillLevel.value]].acc_bonus
-					}%
-				</span>
-				: <></>
-			}
-
-			{ skill.delayed
-				? <span class="badge bg-substory me-1">
-					<Locale k="UNIT_SKILL_DELAYED" />
-				</span>
-				: <></>
-			}
-			{ !skill.buffs.data[skill.buffs.index[skillLevel.value]].enabled
-				? <span class="badge bg-secondary me-1">
-					<Locale k="UNIT_SKILL_DISABLED" />
-				</span>
-				: <></>
-			}
-
-			<SummonBadge summon={ skill.buffs.data[skill.buffs.index[skillLevel.value]].summon } class="me-1" />
-		</div>
-
-		<div>
-			{ GetDesc(skill).map((line) => <div class="unit-modal-skill">
-				{ !line
-					? <span class="text-secondary">
-						<Locale k="UNIT_SKILL_NO_DESCRIPTION" />
-					</span>
-					: <SkillDescription
-						text={ line }
-						rates={ GetRates(skill) }
-						level={ skillLevel.value }
-						values={ Values }
-						slot={ skill.slot }
-						buffBonus={ props.buffBonus }
-						skillBonus={ props.skillBonus }
-						favorBonus={ favorBonus.value }
+			<span class="text-secondary pe-2">|</span>
+			<div class="form-check d-inline-block me-2">
+				<label>
+					<input
+						class="form-check-input"
+						type="checkbox"
+						checked={ displayFlavor.value }
+						onChange={ (): void => displayFlavor.set(!displayFlavor.value) }
 					/>
-				}
-			</div>) }
-		</div>
-
-		{ BuffRates[skill.key].some((x) => x !== 100)
-			? <div>
-				<span class="badge bg-danger">
-					<Locale k="UNIT_SKILL_BUFF_RATE" p={ [BuffRates[skill.key][skillLevel.value]] } />
-				</span>
-				<small class="text-secondary ms-1">
-					<Locale k="UNIT_SKILL_BUFF_RATE_DESC" />
-				</small>
+					<Locale k="UNIT_SKILL_DISPLAY_FLAVOR" />
+				</label>
 			</div>
-			: <></>
-		}
-
-		{ displayBuffList.value && buffList[skill.key].length > 0
-			? <BuffList list={ buffList[skill.key] } level={ finalSkillLevel } dummy={ displayBuffDummy.value } />
-			: <></>
-		}
+		</div>
 	</>;
+
+	const tableContent = (skill: SkillItem): preact.VNode => {
+		const flavorKey = `UNIT_SKILL_FLAVOR_${props.unit.uid}_${skill.key}`;
+		const flavorStr = LocaleGet(flavorKey);
+		const flavor = !displayFlavor.value || (flavorStr === flavorKey)
+			? <></>
+			: <div class={ style.SkillFlavor }>
+				{ flavorStr.startsWith("<div>")
+					? <Locale k={ flavorKey } />
+					: <Locale k={ flavorKey } plain />
+				}
+			</div>;
+
+		return <>
+			<div class="unit-modal-skill">
+				{ skill.buffs.data[skill.buffs.index[skillLevel.value]].dismiss_guard
+					? <span class="badge bg-warning text-dark me-1">
+						<Locale k="UNIT_SKILL_DISMISS_GUARD" />
+					</span>
+					: <></>
+				}
+
+				{ skill.buffs.data[skill.buffs.index[skillLevel.value]].target_ground && !skill.isPassive
+					? <span class="badge bg-danger me-1"
+						title={ LocaleGet("UNIT_SKILL_GRID_TARGET_TIP") }
+					>
+						<Locale k="UNIT_SKILL_GRID_TARGET" />
+					</span>
+					: <></>
+				}
+
+				{ skill.buffs.data[skill.buffs.index[skillLevel.value]].acc_bonus
+					? <span class="badge bg-success me-1">
+						<Locale k="UNIT_SKILL_ACC_BONUS" />
+						{
+							(skill.buffs.data[skill.buffs.index[skillLevel.value]].acc_bonus > 0 ? "+" : "") +
+							skill.buffs.data[skill.buffs.index[skillLevel.value]].acc_bonus
+						}%
+					</span>
+					: <></>
+				}
+
+				{ skill.delayed
+					? <span class="badge bg-substory me-1">
+						<Locale k="UNIT_SKILL_DELAYED" />
+					</span>
+					: <></>
+				}
+				{ !skill.buffs.data[skill.buffs.index[skillLevel.value]].enabled
+					? <span class="badge bg-secondary me-1">
+						<Locale k="UNIT_SKILL_DISABLED" />
+					</span>
+					: <></>
+				}
+
+				<SummonBadge summon={ skill.buffs.data[skill.buffs.index[skillLevel.value]].summon } class="me-1" />
+			</div>
+
+			<div>
+				{ GetDesc(skill).map((line) => <div class="unit-modal-skill">
+					{ !line
+						? <span class="text-secondary">
+							<Locale k="UNIT_SKILL_NO_DESCRIPTION" />
+						</span>
+						: <SkillDescription
+							text={ line }
+							rates={ GetRates(skill) }
+							level={ skillLevel.value }
+							values={ Values }
+							slot={ skill.slot }
+							buffBonus={ props.buffBonus }
+							skillBonus={ props.skillBonus }
+							favorBonus={ favorBonus.value }
+						/>
+					}
+				</div>) }
+
+				{ flavor }
+			</div>
+
+			{ BuffRates[skill.key].some((x) => x !== 100)
+				? <div>
+					<span class="badge bg-danger">
+						<Locale k="UNIT_SKILL_BUFF_RATE" p={ [BuffRates[skill.key][skillLevel.value]] } />
+					</span>
+					<small class="text-secondary ms-1">
+						<Locale k="UNIT_SKILL_BUFF_RATE_DESC" />
+					</small>
+				</div>
+				: <></>
+			}
+
+			{ displayBuffList.value && buffList[skill.key].length > 0
+				? <BuffList list={ buffList[skill.key] } level={ finalSkillLevel } dummy={ displayBuffDummy.value } />
+				: <></>
+			}
+		</>;
+	};
 
 	const endRarity = unit.promotions
 		? Math.max(unit.rarity, ...unit.promotions)
