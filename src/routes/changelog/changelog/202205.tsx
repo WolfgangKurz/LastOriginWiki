@@ -7,6 +7,17 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
+<ChangelogItem title="Build 11707" date="2022-05-13"
+	new={ <>
+		<li>전투원 스킬 정보에 플레이버 텍스트 정보가 추가되었습니다.</li>
+	</> }
+	bugfix={ <>
+		<li>일부 언어에서 전투원의 기업/제조사 명칭이 오기되어있던 문제를 수정했습니다.</li>
+	</> }
+	dialogue={ <>
+		<li><span class="badge bg-light text-dark">KST 2022-05-13 04:27:13</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+	</> }
+/>
 	<ChangelogItem title="Build 11705" date="2022-05-11"
 		new={ <>
 			<li>기타 메뉴의 하위에 <span class="badge bg-warning text-dark">장식품</span> 메뉴가 추가되었습니다.</li>
