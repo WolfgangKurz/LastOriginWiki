@@ -65,8 +65,24 @@ $theme-colors: map-merge($theme-colors, $colors);
 	$table-variants: map.set($table-variants, $key, shift-color($color, $table-bg-scale));
 }
 
-$aspect-ratios: map-merge($aspect-ratios, (
-	"2x3": calc(3 / 2 * 100%),
-	"2x4": calc(4 / 2 * 100%),
-	"2x5": calc(5 / 2 * 100%),
-));
+// $aspect-ratios: map-merge(
+// 	$aspect-ratios,
+// 	(
+// 		"2x3": calc(3 / 2 * 100%),
+// 		"2x4": calc(4 / 2 * 100%),
+// 		"2x5": calc(5 / 2 * 100%),
+// 		"2x5": calc(5 / 2 * 100%),
+// 	)
+// );
+@for $x from 1 through 10 {
+	@for $y from 1 through 10 {
+		$aspect-ratios: map.set($aspect-ratios, "#{$x}x#{$y}", (math.div($y, $x) * 100%));
+	}
+}
+
+@mixin font-ibm {
+	font-family: "IBM Plex Sans KR", "IBM Plex Sans", "Spoqa Han Sans", "Spoqa Han Sans JP", sans-serif;
+}
+@mixin font-exo2 {
+	font-family: "Exo 2", "Spoqa Han Sans", "Spoqa Han Sans JP", sans-serif;
+}

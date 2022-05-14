@@ -67,10 +67,12 @@ const Header: FunctionalComponent = (): preact.VNode => {
 							: <Locale k="COMMON_TITLE_SUB" />
 						}
 					</i>
-					{ IsAprilFool
-						? AprilFoolTitle[CurrentLocale]
-						: <Locale k="MENU_TITLE" />
-					}
+					<span class="font-ibm">
+						{ IsAprilFool
+							? AprilFoolTitle[CurrentLocale]
+							: <Locale k="MENU_TITLE" />
+						}
+					</span>
 				</span>
 			</div>
 

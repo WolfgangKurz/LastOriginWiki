@@ -30,6 +30,10 @@
 }
 
 .IntroduceText {
+	line-height: 1.6;
+	font-weight: 400;
+	// text-shadow: 0 0 2px transparentize($light, 0.75);
+	text-align: left;
 	word-break: keep-all;
 	white-space: pre-line;
 }
@@ -55,6 +59,10 @@
 	word-break: keep-all;
 	:global(.card-body) {
 		font-size: 90%;
+
+		&:empty {
+			display: none !important;
+		}
 	}
 }
 

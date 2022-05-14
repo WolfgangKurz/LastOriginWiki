@@ -21,6 +21,7 @@ interface MergedVideoProps {
 	src: string;
 	type?: string;
 	style?: string | preact.JSX.CSSProperties;
+	onLoadedData?: JSX.DOMAttributes<HTMLVideoElement>["onLoadedData"];
 }
 
 class MergedVideo extends Component<MergedVideoProps> {
@@ -119,16 +120,19 @@ class MergedVideo extends Component<MergedVideoProps> {
 			<video
 				src={ props.src }
 				type={ props.type }
-				muted={ true }
-				autoPlay={ true }
+				muted
+				autoPlay
 				playsInline
-				loop={ true }
+				loop
 				crossOrigin="anonymous"
 				style={ { display: "none" } }
 				onLoadedData={ (e) => {
 					e.preventDefault();
 					const video = e.target as HTMLVideoElement;
 					if (video) this.StartAnimationFrame(video);
+
+					if (props.onLoadedData)
+						props.onLoadedData.call(undefined as never, e);
 				} }
 			/>
 			<canvas ref={ this.disp } />

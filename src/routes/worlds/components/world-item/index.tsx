@@ -23,7 +23,7 @@ const WorldItem: FunctionalComponent<WorldItemProps> = (props) => {
 					<img src={ `${AssetsRoot}/world/icons/${WorldIcon}.png` } />
 				</div>
 				<div class="col">
-					<div class="world-item-name">
+					<div class="world-item-name font-exo2">
 						<Locale k={ `WORLD_${props.wid}` } />
 					</div>
 					<hr class="my-1" />

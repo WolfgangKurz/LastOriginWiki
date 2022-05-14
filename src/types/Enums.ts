@@ -932,6 +932,9 @@ export enum FACETYPE {
 	HAPPYGL = 68,
 	EMBARRASSGL = 69,
 	EXITINGGL = 70,
+	SADGL = 71,
+	SADGL2 = 72,
+	EXPRESSIONLESSGL = 73,
 }
 
 /** 가챠(유산) 타입 */

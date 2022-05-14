@@ -100,9 +100,14 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 			const FilterableEnemyDB = GetJson<FilterableEnemy[]>(StaticDB.FilterableEnemy);
 			const ConsumableDB = GetJson<Consumable[]>(StaticDB.Consumable);
 
-			const WorldName = <Locale k={ `WORLD_${props.wid}` } fallback={ props.wid } />;
+			const WorldName = <span class={ `font-ibm ${style.WorldName}` }>
+				<Locale k={ `WORLD_${props.wid}` } fallback={ props.wid } />
+			</span>;
 			const AreaName = (props.mid in MapDB)
-				? <Locale k={ `WORLD_WORLD_${props.wid}_${props.mid}` } fallback={ <Locale k={ "WORLDS_WORLD_TITLE" } p={ [props.mid] } /> } />
+				? <Locale
+					k={ `WORLD_WORLD_${props.wid}_${props.mid}` }
+					fallback={ <Locale k={ "WORLDS_WORLD_TITLE" } p={ [props.mid] } /> }
+				/>
 				: <>???</>;
 
 			const selectedValue = selected.value;
@@ -350,17 +355,17 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 						<div class="card bg-dark text-light">
 							<div class="card-header">
 								{ props.wid === "Sub"
-									? <h5 class="m-0 d-inline-block">{ WorldName }</h5>
+									? <h5 class="m-0 d-inline-block font-ibm">{ WorldName }</h5>
 									: props.wid === "Daily"
 										? <>
 											{ WorldName }
-											<h5 class="m-0 d-inline-block">
+											<h5 class="m-0 d-inline-block font-ibm">
 												<span class="badge bg-warning text-dark ms-2">{ AreaName }</span>
 											</h5>
 										</>
 										: <>
 											{ WorldName }
-											<h5 class="m-0 d-inline-block">
+											<h5 class="m-0 d-inline-block font-ibm">
 												<span class="badge bg-warning text-dark ms-2">
 													<Locale k="WORLDS_WORLD_TITLE" p={ [props.mid] } /> :: { AreaName }
 												</span>
@@ -440,17 +445,19 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 										<span class="badge bg-warning text-dark me-2 selected-node-badge">
 											{ props.wid === "Sub"
 												? SubstoryName(selectedValue.text)
-												: <>
+												: <span class="font-exo2">
 													{ selectedValue.text }
 													{ selectedValue.type === STAGE_SUB_TYPE.STORY && <>
 														<Icon class="mx-1" icon="caret-right-fill" />
 														Story
 													</> }
-												</>
+												</span>
 											}
 										</span>
 
-										<Locale plain k={ `WORLD_MAP_${props.wid}_${selectedValue.text}` } />
+										<span class="font-ibm">
+											<Locale plain k={ `WORLD_MAP_${props.wid}_${selectedValue.text}` } />
+										</span>
 									</h5>
 									<div><Locale plain k={ `WORLD_MAP_DESC_${props.wid}_${selectedValue.text}` } /></div>
 								</div>
@@ -655,7 +662,9 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 																					? <Locale k={ `WORLD_${r.wid}` } fallback={ r.wid } />
 																					: <Locale k={ `WORLD_WORLD_${r.wid}_${r.cid}` } fallback={ r.cid } />
 																				}
-																				<span class="badge bg-warning text-dark ms-1">{ r.text }</span>
+																				<span class="badge bg-warning text-dark ms-1 font-exo2">
+																					{ r.text }
+																				</span>
 																			</>] }
 																		/>
 																	</li>) }
@@ -859,14 +868,23 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 										: <>
 											<div class="mb-2">
 												<span class="badge bg-danger mx-1">
-													<Locale k="WORLD_VIEW_ENEMY_TOTAL_EXP" p={ [TotalExp] } />
+													<Locale
+														k="WORLD_VIEW_ENEMY_TOTAL_EXP"
+														p={ [<span class="font-exo2">{ TotalExp }</span>] }
+													/>
 												</span>
 												<span class="badge bg-danger mx-1">
-													<Locale k="WORLD_VIEW_ENEMY_TOTAL_SKILL_EXP" p={ [TotalSkillExp] } />
+													<Locale
+														k="WORLD_VIEW_ENEMY_TOTAL_SKILL_EXP"
+														p={ [<span class="font-exo2">{ TotalSkillExp }</span>] }
+													/>
 												</span>
 
 												<span class="badge bg-substory mx-1">
-													<Locale k="WORLD_VIEW_ENEMY_PLAYER_EXP" p={ [PlayerExp] } />
+													<Locale
+														k="WORLD_VIEW_ENEMY_PLAYER_EXP"
+														p={ [<span class="font-exo2">{ PlayerExp }</span>] }
+													/>
 												</span>
 											</div>
 											{ Waves.map((wave, waveIdx) => <Link
@@ -890,20 +908,26 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 												<div class="mb-3">
 													<div class="btn btn-group">
 														{ Waves[selectedWave.value].map((_, idx) => <button
-															class={ `btn btn-outline-dark ${isActive(selectedWaveIndex.value === idx)}` }
+															class={ `btn btn-outline-dark font-exo2 ${isActive(selectedWaveIndex.value === idx)}` }
 															onClick={ (): void => selectedWaveIndex.set(idx) }
 														>
 															#{ idx + 1 }
-															<span class="badge bg-warning text-dark ms-1">{ _.r }%</span>
+															<span class="badge bg-warning text-dark ms-2">{ _.r }%</span>
 														</button>) }
 													</div>
 												</div>
 												<div class="mb-2">
 													<span class="badge bg-warning text-dark mx-1">
-														<Locale k="WORLD_VIEW_ENEMY_WAVE_EXP" p={ [CurrentWaveExp] } />
+														<Locale
+															k="WORLD_VIEW_ENEMY_WAVE_EXP"
+															p={ [<span class="font-exo2">{ CurrentWaveExp }</span>] }
+														/>
 													</span>
 													<span class="badge bg-warning text-dark mx-1">
-														<Locale k="WORLD_VIEW_ENEMY_WAVE_SKILL_EXP" p={ [CurrentSkillExp] } />
+														<Locale
+															k="WORLD_VIEW_ENEMY_WAVE_SKILL_EXP"
+															p={ [<span class="font-exo2">{ CurrentSkillExp }</span>] }
+														/>
 													</span>
 												</div>
 

@@ -22,6 +22,8 @@ interface SkinItem extends UnitSkin {
 interface SkinViewProps {
 	skin: SkinItem;
 	unit: Unit;
+	black?: boolean;
+	hideGroup?: boolean;
 	collapsed?: boolean;
 	detailable?: boolean;
 	animate?: boolean;
@@ -33,15 +35,20 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 	const unit = props.unit;
 	const skin = props.skin;
 
+	const skinDirection = objState<"" | "horz" | "vert">("");
+
 	const IsDamaged = objState<boolean>(false);
 	const IsSimplified = objState<boolean>(false);
 	const IsBG = objState<boolean>(false);
 	const IsGoogle = objState<boolean>(false);
 
 	const IsAnimating = objState<boolean>(false);
+	const IsBlackBG = objState<boolean>(false);
+	const HideGroup = objState<boolean>(false);
 
 	// const Aspect = props.collapsed ? style["ratio-2x5"] : "ratio-4x3";
-	const Aspect = "ratio-2x5 ratio-md-2x4 ratio-lg-4x3";
+	const Aspect = "ratio-2x4 ratio-lg-5x3";
+	// const Aspect = "ratio-2x4";
 
 	const ImageStyle = ((): Record<string, string> => {
 		if (!props.collapsed) return {};
@@ -64,7 +71,12 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 			return 0;
 		})();
 
-		return { "margin-left": `${base[target] || 0}%` };
+		if (base[target] === null) return {};
+
+		return {
+			"margin-left": `${base[target]}%`,
+			"margin-right": "0",
+		};
 	})();
 	const SkinImageURL = ((): string => {
 		const skinId = skin.isDef ? 0 : skin.sid;
@@ -103,9 +115,10 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		return `${unit.uid}_${skinId}_${skin.G && IsGoogle.value ? "G" : "O"}${postfix}`;
 	})();
 
-	if (!skin.G && IsGoogle.value)
+	if (!skin.G && IsGoogle.value) // not have google
 		IsGoogle.set(false);
 
+	// skin mod adjust
 	if (IsDamaged.value) {
 		if (IsSimplified.value && IsBG.value && !skin.subset[SKIN_SUBSET_ENUM.DBS]) {
 			if (skin.subset[SKIN_SUBSET_ENUM.DB_])
@@ -163,8 +176,8 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 	return <div class={ style.SkinView }>
 		<div class={ `ratio ${Aspect} ${style.SkinFull} ${props.collapsed ? style.Collapsed : ""}` }>
 			<div>
-				<div class={ style.FullBG } />
-				<div class={ style.FullGroup }>
+				<div class={ `${style.FullBG} ${props.black ? style.Black : ""}` } />
+				<div class={ `${style.FullGroup} ${props.hideGroup ? style.HideGroup : ""}` }>
 					<div>
 						<img src={ `${AssetsRoot}/${imageExt}/group/${unit.group.replace(/_[0-9]+$/, "")}.${imageExt}` } />
 					</div>
@@ -176,13 +189,45 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 								style={ ImageStyle }
 								autoPlay muted loop
 								src={ `${AssetsRoot}/webm/HD/${SkinVideoURL}.webm` }
+								// onLoadedData={ (e): void => {
+								// 	const el = e.target as HTMLVideoElement;
+								// 	if (el.readyState > 0) {
+								// 		if (el.videoWidth > el.videoHeight)
+								// 			skinDirection.set("horz");
+								// 		else
+								// 			skinDirection.set("vert");
+								// 	}
+								// } }
+								data-dir={ skinDirection.value }
 							/>
 							: <MergedVideo
 								style={ ImageStyle }
 								src={ `${AssetsRoot}/webm/HD.Legacy/${SkinVideoURL}.mp4` }
 								type="video/mp4"
+								// onLoadedData={ (e): void => {
+								// 	const el = e.target as HTMLVideoElement;
+								// 	if (el.readyState > 0) {
+								// 		const w = el.videoWidth / 2;
+								// 		if (w > el.videoHeight)
+								// 			skinDirection.set("horz");
+								// 		else
+								// 			skinDirection.set("vert");
+								// 	}
+								// } }
+								data-dir={ skinDirection.value }
 							/>
-						: <img style={ ImageStyle } src={ SkinImageURL } />
+						: <img
+							style={ ImageStyle }
+							src={ SkinImageURL }
+							// onLoad={ (e): void => {
+							// 	const el = e.target as HTMLImageElement;
+							// 	if (el.naturalWidth > el.naturalHeight)
+							// 		skinDirection.set("horz");
+							// 	else
+							// 		skinDirection.set("vert");
+							// } }
+							data-dir={ skinDirection.value }
+						/>
 					}
 				</div>
 
@@ -352,26 +397,59 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 										<h5 class="modal-title">
 											<Locale plain k={ skin.sid ? `UNIT_SKIN_${unit.uid}_${skin.sid}` : `UNIT_${unit.uid}` } />
 										</h5>
-										{ AvailableAnim // (!IsGoogle.value && skin.AV) || (IsGoogle.value && skin.AVG) // TODO
-											? <div class="text-end flex-1 me-3">
-												<div class="form-check form-switch">
-													<label class="form-check-label">
-														<input
-															class="form-check-input"
-															type="checkbox"
-															checked={ IsAnimating.value }
-															onClick={ (): void => IsAnimating.set(!IsAnimating.value) }
-														/>
-														<Locale k="UNIT_VIEW_SKIN_ANIMATION_SWITCH" />
-													</label>
-												</div>
-											</div>
-											: <></>
-										}
 										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" />
 									</div>
 									<div class="modal-body">
-										<SkinView unit={ unit } skin={ skin } animate={ IsAnimating.value } />
+										<div class="text-start mb-2">
+											<div class="form-check d-inline-block form-switch">
+												<label class="form-check-label">
+													<input
+														class="form-check-input"
+														type="checkbox"
+														disabled={ !AvailableAnim }
+														checked={ IsAnimating.value }
+														onClick={ (): void => IsAnimating.set(!IsAnimating.value) }
+													/>
+													<Locale k="UNIT_VIEW_SKIN_ANIMATION_SWITCH" />
+												</label>
+											</div>
+
+											<span class="text-secondary px-2">|</span>
+
+											<div class="form-check d-inline-block form-switch">
+												<label class="form-check-label">
+													<input
+														class="form-check-input"
+														type="checkbox"
+														checked={ IsBlackBG.value }
+														onClick={ (): void => IsBlackBG.set(!IsBlackBG.value) }
+													/>
+													<Locale k="UNIT_VIEW_SKIN_BLACKBG_SWITCH" />
+												</label>
+											</div>
+
+											<span class="text-secondary px-2">|</span>
+
+											<div class="form-check d-inline-block form-switch">
+												<label class="form-check-label">
+													<input
+														class="form-check-input"
+														type="checkbox"
+														checked={ HideGroup.value }
+														onClick={ (): void => HideGroup.set(!HideGroup.value) }
+													/>
+													<Locale k="UNIT_VIEW_SKIN_HIDEGROUP_SWITCH" />
+												</label>
+											</div>
+										</div>
+
+										<SkinView
+											unit={ unit }
+											skin={ skin }
+											animate={ IsAnimating.value }
+											black={ IsBlackBG.value }
+											hideGroup={ HideGroup.value }
+										/>
 									</div>
 								</div>
 							</div>

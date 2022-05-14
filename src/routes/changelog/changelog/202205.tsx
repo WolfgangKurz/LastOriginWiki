@@ -7,17 +7,35 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
-<ChangelogItem title="Build 11707" date="2022-05-13"
-	new={ <>
-		<li>전투원 스킬 정보에 플레이버 텍스트 정보가 추가되었습니다.</li>
-	</> }
-	bugfix={ <>
-		<li>일부 언어에서 전투원의 기업/제조사 명칭이 오기되어있던 문제를 수정했습니다.</li>
-	</> }
-	dialogue={ <>
-		<li><span class="badge bg-light text-dark">KST 2022-05-13 04:27:13</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
-	</> }
-/>
+	<ChangelogItem title="Build 11715" date="2022-05-15"
+		new={ <>
+			<li>전투원 스킨 정보에 검은색 배경 옵션이 추가되었습니다.</li>
+			<li>전투원 스킨 정보에 소속 로고 숨기기 옵션이 추가되었습니다.</li>
+		</> }
+		site={ <>
+			<li>사이트 내 영역 일부에 쓰인 폰트를 변경했습니다.</li>
+		</> }
+		update={ <>
+			<li>적 정보 팝업의 바리에이션 버튼의 텍스트를 <span class="badge bg-danger">#n</span> 형태로 변경했습니다.</li>
+			<li>일부 전투원의 스킨이 배경/소품을 가리는 경우 어색한 크기로 표시되던 점을 수정했습니다.</li>
+		</> }
+		bugfix={ <>
+			<li>모바일 환경에서 스킨이 올바르지 않은 크기로 표시되던 문제를 수정했습니다.</li>
+			<li>적 그룹 목록의 이벤트 목록이 갱신되지 않은 점을 수정했습니다.</li>
+			<li>그 외 일부 UI 문제를 수정했습니다.</li>
+		</> }
+	/>
+	<ChangelogItem title="Build 11707" date="2022-05-13"
+		new={ <>
+			<li>전투원 스킬 정보에 플레이버 텍스트 정보가 추가되었습니다.</li>
+		</> }
+		bugfix={ <>
+			<li>일부 언어에서 전투원의 기업/제조사 명칭이 오기되어있던 문제를 수정했습니다.</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2022-05-13 04:27:13</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11705" date="2022-05-11"
 		new={ <>
 			<li>기타 메뉴의 하위에 <span class="badge bg-warning text-dark">장식품</span> 메뉴가 추가되었습니다.</li>

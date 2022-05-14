@@ -61,7 +61,13 @@ const MapNode: FunctionalComponent<MapNodeProps> = (props) => {
 			x="8" y="1" width="38"
 		/>
 		{/* <rect x="60" y="12" width="4" height="18" fill={ colors[typeIdx] } /> */ }
-		<text x="82" y="23" fill="#fff" textAnchor="middle" dominantBaseline="middle">{ node.text }</text>
+		<text
+			class="font-exo2"
+			x="82" y="24"
+			fill="#fff"
+			textAnchor="middle"
+			dominantBaseline="middle"
+		>{ node.text }</text>
 
 		{ props.missing && <text
 			class={ style.missing }

@@ -83,7 +83,9 @@ const Home: FunctionalComponent = () => {
 						: <Locale k="COMMON_TITLE_SUB" />
 					}
 				</i>
-				<Locale k={ IsAprilFool ? "CONSUMABLE_Consumable_TacticRecord_T3" : "COMMON_TITLE" } />
+				<span class="font-ibm">
+					<Locale k={ IsAprilFool ? "CONSUMABLE_Consumable_TacticRecord_T3" : "COMMON_TITLE" } />
+				</span>
 			</span>
 		</h2>
 		<div class="mb-4 text-secondary">

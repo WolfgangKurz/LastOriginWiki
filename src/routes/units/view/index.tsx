@@ -103,10 +103,10 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 		{/* 번호, 소속, 등급, 승급, 유형, 역할 */ }
 
 		<div class="row mb-3">
-			<h2>
+			<h2 class="font-ibm">
 				<Locale k={ `UNIT_${unit.uid}` } />
 			</h2>
-			<h5 class="text-secondary">
+			<h5 class="text-secondary font-exo2">
 				No. { unit.id }
 			</h5>
 		</div>
@@ -137,19 +137,19 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 							</tr>
 							<tr>
 								<th class="bg-dark text-light"><Locale k="UNIT_VIEW_HEIGHT" /></th>
-								<td>{ unit.height }</td>
+								<td class="font-exo2">{ unit.height }</td>
 							</tr>
 							<tr>
 								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_WEIGHT" /></th>
-								<td>{ unit.weight }</td>
+								<td class="font-exo2">{ unit.weight }</td>
 							</tr>
 							<tr>
 								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_BATTLESTYLE" /></th>
-								<td class="text-break">{ convWeapon(unit.weapon1) }</td>
+								<td class="text-break font-exo2">{ convWeapon(unit.weapon1) }</td>
 							</tr>
 							<tr>
 								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_WEAPON" /></th>
-								<td class="text-break">{ convWeapon(unit.weapon2) }</td>
+								<td class="text-break font-exo2">{ convWeapon(unit.weapon2) }</td>
 							</tr>
 
 							<tr>
@@ -221,7 +221,12 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_GRADE" /></th>
 								<td class="text-break">
 									<RarityBadge rarity={ unit.rarity } size="medium">
-										<Locale k="COMMON_UNIT_GRADE_FORMAT" p={ [RarityDisplay[unit.rarity]] } />
+										<Locale
+											k="COMMON_UNIT_GRADE_FORMAT"
+											p={ [<span class="font-exo2">
+												{ RarityDisplay[unit.rarity] }
+											</span>] }
+										/>
 									</RarityBadge>
 								</td>
 							</tr>
@@ -230,9 +235,16 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 								<td class="text-break">
 									{ promotion
 										? <RarityBadge rarity={ promotion } size="medium">
-											<Locale k="UNIT_VIEW_PROMOTION_BADGE" p={ [RarityDisplay[promotion]] } />
+											<Locale
+												k="UNIT_VIEW_PROMOTION_BADGE"
+												p={ [<span class="font-exo2">
+													{ RarityDisplay[promotion] }
+												</span>] }
+											/>
 										</RarityBadge>
-										: <span class="text-secondary"><Locale k="UNIT_VIEW_PROMOTION_BADGE_EMPTY" /></span>
+										: <span class="text-secondary">
+											<Locale k="UNIT_VIEW_PROMOTION_BADGE_EMPTY" />
+										</span>
 									}
 								</td>
 							</tr>
@@ -350,27 +362,27 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 											? <span class={ `badge bg-dark my-1 ${style.CreationBadge}` }>
 												{ unit.cost
 													? <div class={ style.CostInfo }>
-														<span class="pe-3">
+														<span class="pe-3 font-exo2">
 															<img class="res-icon" src={ `${AssetsRoot}/res-component.png` } />
 															{ FormatNumber(unit.cost.res[0]) }
 														</span>
-														<span class="pe-3">
+														<span class="pe-3 font-exo2">
 															<img class="res-icon" src={ `${AssetsRoot}/res-nutrition.png` } />
 															{ FormatNumber(unit.cost.res[1]) }
 														</span>
-														<span class="pe-3">
+														<span class="pe-3 font-exo2">
 															<img class="res-icon" src={ `${AssetsRoot}/res-power.png` } />
 															{ FormatNumber(unit.cost.res[2]) }
 														</span>
 														<span>
 															<Icon class="me-1" icon="hourglass-split" />
-															{ CraftTime }
+															<span class="font-exo2">{ CraftTime }</span>
 														</span>
 
 														<hr class="my-1" />
 
 														{ unit.cost.aicore > 0
-															? <span class="badge bg-semilight me-1 mb-1">
+															? <span class="badge bg-semilight text-dark me-1 mb-1">
 																<EquipIcon class="me-2 vertical-align-middle" image="UI_Icon_Consumable_AICore" size="24" />
 																<Locale k="CONSUMABLE_TestItem_4" />
 																&nbsp;x{ FormatNumber(unit.cost.aicore) }
@@ -381,22 +393,22 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 															const item = ConsumableDB.find(c => c.key === e.item);
 															if (!item) return <>-</>;
 
-															return <span class="badge bg-semilight me-1 mb-1">
+															return <span class="badge bg-semilight text-dark me-1 mb-1">
 																<EquipIcon class="me-2 vertical-align-middle" image={ item.icon } size="24" />
 																<Locale k={ `CONSUMABLE_${item.key}` } />
 																&nbsp;x{ FormatNumber(e.count) }
 															</span>;
 														}) }
 													</div>
-													: <h5 class="m-0 p-0">
+													: <h6 class="m-0 p-0">
 														<Icon icon="hammer" />
 														<strong>
 															<span class="ps-1 pe-3">
 																<Locale k="UNIT_VIEW_DROPS_CREATIONTIME" />
 															</span>
-															<span>{ CraftTime }</span>
+															<span class="font-exo2">{ CraftTime }</span>
 														</strong>
-													</h5>
+													</h6>
 												}
 											</span>
 											: <></>
@@ -443,6 +455,9 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 
 	const categories = skin.category.filter(x => x && x !== "ALL");
 
+	const IsBlackBG = objState<boolean>(false);
+	const HideGroup = objState<boolean>(false);
+
 	return <div style={ { display: display ? "" : "none" } }>
 		<div class={ `flex-nowrap ${style.SkinTabs}` }>
 			<ul class="nav nav-tabs justify-content-start">
@@ -482,10 +497,14 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 								? <span class="badge bg-success">
 									<Locale k="UNIT_VIEW_SKIN_BADGE_DEFAULT" />
 								</span>
-								: <span class={ `badge bg-warning text-dark ${style.SkinPrice}` }>
-									<img src={ `${AssetsRoot}/tuna.png` } />
-									{ skin.price }
-								</span>
+								: !skin.price
+									? <span class="badge bg-danger">
+										<Locale k="UNIT_VIEW_SKIN_BADGE_NOTFORSALE" />
+									</span>
+									: <span class={ `badge bg-warning text-dark ${style.SkinPrice}` }>
+										<img src={ `${AssetsRoot}/tuna.png` } />
+										{ skin.price }
+									</span>
 						}
 					</a>
 				</li>) }
@@ -498,7 +517,7 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 					<Locale plain k={ `CONSUMABLE_Skin_${unit.uid}_${ssid}` } />
 				</div>
 				<div class="card-body">
-					<Locale plain k={ `CONSUMABLE_DESC_Skin_${unit.uid}_${skin.sid}` } />
+					<Locale plain k={ `CONSUMABLE_DESC_Skin_${unit.uid}_${skin.sid}` } fallback="" />
 				</div>
 			</div>
 			: <></>
@@ -540,10 +559,47 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 						: <></>
 					}
 				</div>
+
+				<ul class="list-group text-start">
+					<li class="list-group-item">
+						<div class="form-check form-switch">
+							<label class="form-check-label">
+								<input
+									class="form-check-input"
+									type="checkbox"
+									checked={ IsBlackBG.value }
+									onClick={ (): void => IsBlackBG.set(!IsBlackBG.value) }
+								/>
+								<Locale k="UNIT_VIEW_SKIN_BLACKBG_SWITCH" />
+							</label>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="form-check form-switch">
+							<label class="form-check-label">
+								<input
+									class="form-check-input"
+									type="checkbox"
+									checked={ HideGroup.value }
+									onClick={ (): void => HideGroup.set(!HideGroup.value) }
+								/>
+								<Locale k="UNIT_VIEW_SKIN_HIDEGROUP_SWITCH" />
+							</label>
+						</div>
+					</li>
+				</ul>
 			</div>
 			<div class="col">
 				{ SkinList[skinIndex.value]
-					? <SkinView unit={ unit } skin={ SkinList[skinIndex.value] } animate detailable />
+					? <SkinView
+						unit={ unit }
+						skin={ SkinList[skinIndex.value] }
+						black={ IsBlackBG.value }
+						hideGroup={ HideGroup.value }
+						animate
+						collapsed
+						detailable
+					/>
 					: <></> }
 
 				<div class="p-2">
@@ -578,7 +634,7 @@ const LvLimitTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 			</thead>
 			<tbody>
 				{ unit.lvLimits.map(e => <tr>
-					<td class="p-3 table-medidark">
+					<td class="p-3 table-medidark font-exo2">
 						<small>Lv.</small>
 						{ e.level }
 					</td>
@@ -681,7 +737,7 @@ const SkillTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 					}[equip] || "";
 
 					return <div class="equip-slot" data-type={ equip }>
-						<div>Lv. { (i + 1) * 20 }</div>
+						<div class="font-exo2">Lv. { (i + 1) * 20 }</div>
 						<div class="equip-slot-icon" />
 						<div><Locale k={ `COMMON_EQUIP_TYPE_${type}` } /></div>
 					</div>;
@@ -694,15 +750,15 @@ const SkillTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 				<table class="table table-bordered table-fixed text-center table-unit-modal">
 					<thead class="thead-dark">
 						<tr>
-							<th class="text-center">
+							<th class="text-center font-exo2">
 								<ElemIcon elem="fire" />
 								{ CurrentResists.fire } %
 							</th>
-							<th class="text-center">
+							<th class="text-center font-exo2">
 								<ElemIcon elem="ice" />
 								{ CurrentResists.ice } %
 							</th>
-							<th class="text-center">
+							<th class="text-center font-exo2">
 								<ElemIcon elem="lightning" />
 								{ CurrentResists.lightning } %
 							</th>
@@ -710,13 +766,15 @@ const SkillTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 						<tr>
 							<th colSpan={ 3 }>
 								<Locale k="UNIT_VIEW_LINKBONUS" />
-								<div class="btn-group btn-group-sm ms-3">
+								<div class="btn-group btn-group-sm ms-3 font-exo2">
 									{ new Array(6)
 										.fill(0)
 										.map((_, i) => <button
 											class={ `btn btn-${linkCount.value === i ? "primary" : "light"}` }
 											onClick={ (): void => linkCount.set(i) }
-										>{ i }</button>) }
+										>
+											<strong class="px-1">{ i }</strong>
+										</button>) }
 								</div>
 							</th>
 						</tr>
@@ -814,7 +872,7 @@ const SkillTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 					<tbody>
 						{ new Array(6)
 							.fill(0)
-							.map((_, i) => <tr class="text-center">
+							.map((_, i) => <tr class="text-center font-exo2">
 								<th class="bg-dark text-light">{ i }</th>
 								<td class={ CostClass(i, CostTable.metal[i]) }>{ CostTable.metal[i] }</td>
 								<td class={ CostClass(i, CostTable.nutrient[i]) }>{ CostTable.nutrient[i] }</td>

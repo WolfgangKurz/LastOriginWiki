@@ -54,7 +54,8 @@ const EnemyCard: FunctionalComponent<EnemyCardProps> = (props) => {
 						</span>
 					</span>
 				</div>
-				{ enemy.isBoss ? <strong>{ name }</strong> : name }
+
+				<span class={ enemy.isBoss ? "fw-bold" : "" }>{ name }</span>
 			</div>
 		</div>
 

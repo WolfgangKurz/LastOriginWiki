@@ -137,7 +137,14 @@
 	.SkinFull {
 		position: relative;
 		padding: 0;
+		background-color: #000;
 		overflow: hidden;
+
+		@mixin FullSizeUnit {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
 
 		.FullBG {
 			position: absolute;
@@ -145,44 +152,90 @@
 			top: 0;
 			right: 0;
 			bottom: 0;
-			background-image: url($assetsRoot + "/bg/unit-bg.png");
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: cover;
+			transition: opacity 0.21s ease-in-out;
+			opacity: 1;
 
-			&::before,
-			&::after {
-				content: "";
-				position: absolute;
-				left: 0;
-				top: 0;
-				width: 100%;
-				height: 100%;
-				transform-origin: 50% 50%;
-				background-image: url($assetsRoot + "/bg/unit-bg-net.png");
-				background-position: center bottom;
-				background-repeat: no-repeat;
-				background-size: 100%;
+			@if true {
+				background-image: url($assetsRoot + "/bg/unit-bg.png");
+
+				&::before,
+				&::after {
+					content: "";
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 100%;
+					height: 100%;
+					transform-origin: 50% 50%;
+					background-image: url($assetsRoot + "/bg/unit-bg-net.png");
+					background-position: center bottom;
+					background-repeat: no-repeat;
+					background-size: 100%;
+				}
+				&::before {
+					transform: translateY(-20%) rotate(180deg) scale(1.1);
+				}
+				&::after {
+					transform: translateY(20%) scale(1.1);
+				}
+			} @else {
+				background-image: url($assetsRoot + "/bg/unit-bg-v2.jpg");
+
+				&::after {
+					content: "";
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 100%;
+					height: 100%;
+					background-image: url($assetsRoot + "/bg/unit-bg-pattern-v2.png");
+					background-position: center;
+					background-repeat: repeat;
+					opacity: 0.05;
+				}
 			}
-			&::before {
-				transform: translateY(-20%) rotate(180deg) scale(1.1);
-			}
-			&::after {
-				transform: translateY(20%) scale(1.1);
+
+			&.Black {
+				opacity: 0;
 			}
 		}
 		.FullGroup {
 			position: absolute;
 			display: flex;
 			padding: 0;
-			left: 4px;
-			top: 4px;
-			max-height: 40%;
+			left: 1em;
+			top: 1em;
+			max-height: 25%;
 			text-align: left;
 			overflow: hidden;
+			opacity: 1;
+			transition: opacity 0.22s ease-in-out;
+
+			&.HideGroup {
+				opacity: 0;
+
+				> div > img {
+					pointer-events: all;
+				}
+			}
 
 			> div {
 				flex: 1;
+
+				> img {
+					height: 100%;
+					opacity: 0.22;
+					filter: drop-shadow(0 0 5px #000) drop-shadow(0 0 3px rgba(0, 0, 0, 0.5));
+					pointer-events: all;
+					transition: opacity 0.22s ease-in-out;
+
+					&:hover {
+						opacity: 0.92;
+					}
+				}
 			}
 		}
 		.FullUnit {
@@ -199,22 +252,32 @@
 			> video,
 			> canvas {
 				margin: auto;
-				max-width: 100%;
-				max-height: 100%;
-			}
-		}
-
-		&:not(.Collapsed) {
-			.FullUnit > img {
-				max-width: 100%;
-				max-height: 100%;
-				width: 100%;
-				object-fit: contain;
-			}
-		}
-		&.Collapsed {
-			.FullUnit > img {
 				height: 100%;
+				object-fit: cover;
+
+				// &[data-dir="horz"] {
+				// 	height: 100%;
+				// }
+				// &[data-dir="vert"] {
+				// 	width: 100%;
+				// }
+
+				@include media-breakpoint-up("lg") {
+					margin-left: 0 !important;
+
+					@include FullSizeUnit;
+				}
+
+				&:focus {
+					outline: none !important;
+				}
+			}
+		}
+		&:not(.Collapsed) .FullUnit {
+			> img,
+			> video,
+			> canvas {
+				@include FullSizeUnit;
 			}
 		}
 
@@ -251,24 +314,9 @@
 			bottom: 55px;
 		}
 
-		.FullGroup {
-			> div > img {
-				height: 100%;
-				opacity: 0.22;
-			}
-		}
-
 		&.Collapsed .FullGroup {
 			z-index: 3;
 			pointer-events: none;
-
-			> div > img {
-				width: auto;
-				height: 25%;
-				opacity: 0.9;
-				filter: drop-shadow(0 0 5px #000) drop-shadow(0 0 3px rgba(0, 0, 0, 0.5));
-				pointer-events: all;
-			}
 		}
 	}
 }

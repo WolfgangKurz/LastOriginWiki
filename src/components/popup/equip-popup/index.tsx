@@ -187,7 +187,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 					sums[0] = sums[0].add(v.res);
 
 				ret[i] = [
-					<>{ FormatNumber(v.res) }</>,
+					<span class="font-exo2">{ FormatNumber(v.res) }</span>,
 					...v.item.map((y, j) => {
 						if (costChecks.value[i])
 							sums[j + 1] = sums[j + 1].add(y.count);
@@ -208,7 +208,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 				];
 			});
 			ret[10] = [
-				<>{ FormatNumber(sums[0].toNumber()) }</>,
+				<span class="font-exo2">{ FormatNumber(sums[0].toNumber()) }</span>,
 				...target.upgrade.enchant[target.upgrade.enchant.length - 1].item.map((y, j) => {
 					const item = ConsumableDB.find(z => z.key === y.item);
 					const icon = item ? <ItemIcon item={ item.icon } /> : <>???</>;
@@ -301,7 +301,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 											? <RarityBadge rarity={ rarity.value } />
 											:
 											<select
-												class="form-select form-select-sm"
+												class="form-select form-select-sm font-exo2"
 												value={ rarity.value }
 												onChange={ (e): void => rarity.set(
 													parseInt((e.target as HTMLSelectElement).value, 10) as ITEM_GRADE,
@@ -394,7 +394,10 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 									<tbody>
 										<tr>
 											<th class="bg-dark text-light">
-												<Locale k="EQUIP_VIEW_EFFECT_LEVEL" p={ [level.value] } />
+												<Locale
+													k="EQUIP_VIEW_EFFECT_LEVEL"
+													p={ [<span class="font-exo2">{ level.value }</span>] }
+												/>
 											</th>
 										</tr>
 										<tr>
@@ -429,9 +432,16 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 											: <>
 												{ target.craft
 													? <span class="badge bg-dark my-1">
-														<Icon icon="hammer" class="me-1" />
-														<Locale k="UNIT_VIEW_DROPS_CREATIONTIME" />
-														<span class="ms-1">{ CraftTime }</span>
+														<h6 class="m-0 p-0">
+															<Icon icon="hammer" class="me-1" />
+
+															<strong>
+																<span class="ps-1 pe-3">
+																	<Locale k="UNIT_VIEW_DROPS_CREATIONTIME" />
+																</span>
+																<span class="font-exo2">{ CraftTime }</span>
+															</strong>
+														</h6>
 													</span>
 													: <></>
 												}
@@ -481,7 +491,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 									{ UpgradeCostTable.map((row, lv) => <tr>
 										<th class="bg-dark text-light">
 											{ lv < 10
-												? <>
+												? <span class="font-exo2">
 													<input
 														class="me-2"
 														type="checkbox"
@@ -493,7 +503,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 														} }
 													/>
 													Lv.{ lv + 1 }
-												</>
+												</span>
 												: <Locale k="EQUIP_VIEW_COST_TOTALCOST" />
 											}
 										</th>
