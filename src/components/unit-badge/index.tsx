@@ -71,7 +71,7 @@ const UnitBadge: FunctionalComponent<UnitBadgeProps> = (props) => {
 	const TypeName = typeName[type] || "???";
 	const RoleName = roleName[role] || "???";
 
-	return <span class={ `badge unit-badge bg-${props.transparent ? "transparent" : "primary"} ${style["unit-badge"]} ${props.class || ""}` }
+	return <span class={ `badge font-ibm unit-badge bg-${props.transparent ? "transparent" : "primary"} ${style["unit-badge"]} ${props.class || ""}` }
 		data-size={ props.size || "normal" }
 		data-type={ type }
 		data-role={ role }

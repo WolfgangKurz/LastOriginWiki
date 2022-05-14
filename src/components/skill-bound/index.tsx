@@ -141,12 +141,12 @@ const SkillBound: FunctionalComponent<SkillBoundProps> = ({ target, buffs, level
 			{ rangeCells }
 			{
 				rangeBonus && Range > 0
-					? <div class="skill-range-circle bonused">{ Range + 1 }</div>
-					: <div class="skill-range-circle">{ Range }</div>
+					? <div class="skill-range-circle font-exo2 bonused">{ Range + 1 }</div>
+					: <div class="skill-range-circle font-exo2">{ Range }</div>
 			}
 		</div>
 
-		<div class="skill-ap">
+		<div class="skill-ap font-exo2">
 			<div class="me-1">AP</div>
 			{ AP }
 		</div>

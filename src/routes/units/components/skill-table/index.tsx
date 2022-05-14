@@ -149,7 +149,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 	const skillHeader = <>
 		<Locale k="UNIT_SKILL_DESCRIPTION" />
 		<select
-			class="form-select form-select-sm table-unit-level-select"
+			class="form-select form-select-sm table-unit-level-select font-exo2"
 			value={ skillLevel.value }
 			onChange={ (e): void => {
 				skillLevel.set(

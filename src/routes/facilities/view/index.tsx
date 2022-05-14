@@ -9,6 +9,7 @@ import { Consumable } from "@/types/DB/Consumable";
 import { objState } from "@/libs/State";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
+import { FormatNumber } from "@/libs/Functions";
 
 import Loader, { GetJson, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
@@ -204,25 +205,25 @@ const FacilityView: FunctionalComponent<FacilityViewProps> = (props) => {
 				.map(x => {
 					const Material = getUpgradeRequired(x.upgradeRequired.Material);
 					return <tr>
-						<td class="bg-dark text-light">
+						<td class="bg-dark text-light font-exo2">
 							{ x.level - 1 }
 							<span class="text-secondary"> → </span>
 							{ x.level }
 						</td>
-						<td>
+						<td class="font-exo2">
 							<ItemIcon item="UI_Icon_Consumable_Wood_Material" />
 							{ x.upgradeRequired.Wood }
 						</td>
-						<td>
+						<td class="font-exo2">
 							<ItemIcon item="UI_Icon_Consumable_Stone_Material" />
 							{ x.upgradeRequired.Stone }
 						</td>
-						<td>
+						<td class="font-exo2">
 							<ItemIcon item="UI_Icon_Consumable_Iron_Material" />
 							{ x.upgradeRequired.Iron }
 						</td>
 						<td>{ Material }</td>
-						<td>{ TimeFormat(x.upgradeTime) }</td>
+						<td class="font-exo2">{ TimeFormat(x.upgradeTime) }</td>
 					</tr>;
 				});
 
@@ -250,15 +251,15 @@ const FacilityView: FunctionalComponent<FacilityViewProps> = (props) => {
 							</td>
 						</tr>
 						<tr>
-							<td class="border-left" colSpan={ 2 }>
+							<td class="font-exo2 border-left" colSpan={ 2 }>
 								<ItemIcon item="UI_Icon_Consumable_Wood_Material" />
 								{ x.upgradeRequired.Wood }
 							</td>
-							<td colSpan={ 2 }>
+							<td class="font-exo2" colSpan={ 2 }>
 								<ItemIcon item="UI_Icon_Consumable_Stone_Material" />
 								{ x.upgradeRequired.Stone }
 							</td>
-							<td class="border-right" colSpan={ 2 }>
+							<td class="font-exo2 border-right" colSpan={ 2 }>
 								<ItemIcon item="UI_Icon_Consumable_Iron_Material" />
 								{ x.upgradeRequired.Iron }
 							</td>
@@ -273,7 +274,7 @@ const FacilityView: FunctionalComponent<FacilityViewProps> = (props) => {
 						</tr>
 						<tr>
 							<td class="border-left" colSpan={ 3 }>{ Material }</td>
-							<td class="border-right" colSpan={ 3 }>{ TimeFormat(x.upgradeTime) }</td>
+							<td class="font-exo2 border-right" colSpan={ 3 }>{ TimeFormat(x.upgradeTime) }</td>
 						</tr>
 						<tr>
 							<td colSpan={ 6 } />
@@ -300,7 +301,9 @@ const FacilityView: FunctionalComponent<FacilityViewProps> = (props) => {
 					</div>
 					<div class="card-body">
 						<FacilityIcon facility={ facility } level={ level.value } />
-						<h4 class="mt-2 mb-4">Lv.{ level.value }</h4>
+						<h3 class="mt-2 mb-4 font-exo2">
+							Lv. { level.value }
+						</h3>
 
 						<div class="container facility-info-table mt-2">
 							<div class="row text-center">
@@ -324,12 +327,15 @@ const FacilityView: FunctionalComponent<FacilityViewProps> = (props) => {
 									<Locale k="FACILITY_SIZE" />
 								</div>
 								<div class="col">
-									<Locale k="FACILITY_SIZE_CELLS" p={ [facility.size] } />
+									<Locale
+										k="FACILITY_SIZE_CELLS"
+										p={ [<span class=" font-exo2">{ facility.size }</span>] }
+									/>
 								</div>
 								<div class="col bg-dark text-light">
 									<Locale k="FACILITY_WORKTIME" />
 								</div>
-								<div class="col">
+								<div class="col font-exo2">
 									{ facility.duration === 0
 										? <span class="text-secondary">
 											<Locale k="FACILITY_WORKTIME_ALWAYS" />
@@ -342,8 +348,14 @@ const FacilityView: FunctionalComponent<FacilityViewProps> = (props) => {
 									<Locale k="FACILITY_UNIT_REQ" />
 								</div>
 								<div class="col">
-									<Locale k="FACILITY_UNIT_REQ_COUNT" p={ [entry.requiredCombatant.count] } /><br />
-									<span>
+									<Locale
+										k="FACILITY_UNIT_REQ_COUNT"
+										p={ [<span class="font-exo2">
+											{ entry.requiredCombatant.count }
+										</span>] }
+									/>
+									<br />
+									<span class="font-exo2">
 										<small>Lv.</small>
 										{ entry.requiredCombatant.level }
 									</span>
@@ -358,13 +370,16 @@ const FacilityView: FunctionalComponent<FacilityViewProps> = (props) => {
 										</span>
 										: <>
 											<span class="badge bg-warning text-dark mx-1">
-												<Locale k="COMMON_RES_PARTS" /> { entry.cost[0] }
+												<Locale k="COMMON_RES_PARTS" />
+												<span class="ps-1 font-exo2">{ FormatNumber(entry.cost[0]) }</span>
 											</span>
 											<span class="badge bg-success mx-1">
-												<Locale k="COMMON_RES_NUTRIENTS" /> { entry.cost[1] }
+												<Locale k="COMMON_RES_NUTRIENTS" />
+												<span class="ps-1 font-exo2">{ FormatNumber(entry.cost[1]) }</span>
 											</span>
 											<span class="badge bg-primary mx-1">
-												<Locale k="COMMON_RES_POWER" /> { entry.cost[2] }
+												<Locale k="COMMON_RES_POWER" />
+												<span class="ps-1 font-exo2">{ FormatNumber(entry.cost[2]) }</span>
 											</span>
 										</>
 									}

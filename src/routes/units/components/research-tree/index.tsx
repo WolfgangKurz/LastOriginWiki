@@ -63,6 +63,7 @@ const ResearchTree: FunctionalComponent<ResearchTreeProps> = (props) => {
 				const graphviz = await UseGraphviz();
 
 				const raw = graphviz.dot(`digraph G {
+					rankdir=RL;
 					fixedsize=true;
 					concentrate=true;
 					${content.join("")}
@@ -86,22 +87,22 @@ const ResearchTree: FunctionalComponent<ResearchTreeProps> = (props) => {
 				};
 
 				TravelVDOM(node, (el, parent, depth) => {
-					if (el.type === "g" && depth === 1) { // container
-						const p = el.props as Record<string, string>;
-						const tf = p.transform.split(/([^ (]+\([^)]+\))/g)
-							.filter(tf => !/^ +$/.test(tf))
-							.map(tf => {
-								if (tf.startsWith("rotate"))
-									return "rotate(90)";
-								else if (tf.startsWith("translate")) {
-									const value = tf.substring(10, tf.length - 1);
-									const vp = value.split(" ");
-									return `translate(${-vp[0]} ${-vp[0]})`;
-								}
-								return tf;
-							});
-						p.transform = tf.join(" ");
-					}
+					// if (el.type === "g" && depth === 1) { // container
+					// 	const p = el.props as Record<string, string>;
+					// 	const tf = p.transform.split(/([^ (]+\([^)]+\))/g)
+					// 		.filter(tf => !/^ +$/.test(tf))
+					// 		.map(tf => {
+					// 			if (tf.startsWith("rotate"))
+					// 				return "rotate(90)";
+					// 			else if (tf.startsWith("translate")) {
+					// 				const value = tf.substring(10, tf.length - 1);
+					// 				const vp = value.split(" ");
+					// 				return `translate(${-vp[0]} ${-vp[0]})`;
+					// 			}
+					// 			return tf;
+					// 		});
+					// 	p.transform = tf.join(" ");
+					// }
 
 					if ((el.type === "polygon" && depth === 2) || el.type === "title") {
 						const childs = parent!.props.children as ComponentChild[];
@@ -165,11 +166,11 @@ const ResearchTree: FunctionalComponent<ResearchTreeProps> = (props) => {
 					}
 				});
 
-				const p = (node.props as any);
-				const vb = (p.viewBox as string).split(" ").map(x => parseFloat(x));
-				p.viewBox = `${vb[0]} ${vb[1]} ${vb[3]} ${vb[2]}`;
-				delete p.width;
-				delete p.height;
+				// const p = (node.props as any);
+				// const vb = (p.viewBox as string).split(" ").map(x => parseFloat(x));
+				// p.viewBox = `${vb[0]} ${vb[1]} ${vb[3]} ${vb[2]}`;
+				// delete p.width;
+				// delete p.height;
 
 				graph.set(node);
 			})();
@@ -205,21 +206,21 @@ const ResearchTree: FunctionalComponent<ResearchTreeProps> = (props) => {
 				</div> }
 				footer={ <div class="text-start p-2 flex-1">
 					{ research && <div class={ style.ResearchInfo }>
-						<span class="pe-3">
+						<span class="pe-3 font-exo2">
 							<img class="res-icon" src={ `${AssetsRoot}/res-component.png` } />
 							{ FormatNumber(research.resources[0]) }
 						</span>
-						<span class="pe-3">
+						<span class="pe-3 font-exo2">
 							<img class="res-icon" src={ `${AssetsRoot}/res-nutrition.png` } />
 							{ FormatNumber(research.resources[1]) }
 						</span>
-						<span class="pe-3">
+						<span class="pe-3 font-exo2">
 							<img class="res-icon" src={ `${AssetsRoot}/res-power.png` } />
 							{ FormatNumber(research.resources[2]) }
 						</span>
 						<span>
 							<Icon class="me-1" icon="hourglass-split" />
-							{ ResearchTime }
+							<span class="font-exo2">{ ResearchTime }</span>
 						</span>
 
 						<hr class="my-1" />
@@ -232,7 +233,7 @@ const ResearchTree: FunctionalComponent<ResearchTreeProps> = (props) => {
 								const item = ConsumableDB.find(c => c.key === e.item);
 								if (!item) return <>-</>;
 
-								return <span class="badge bg-semilight me-1 mb-1">
+								return <span class="badge bg-semilight text-dark me-1 mb-1">
 									<EquipIcon class="me-2 vertical-align-middle" image={ item.icon } size="24" />
 									<Locale k={ `CONSUMABLE_${item.key}` } />
 									&nbsp;x{ FormatNumber(e.count) }

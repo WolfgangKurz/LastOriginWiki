@@ -55,7 +55,7 @@ const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 							<div class="worlds-world-number text-warning">
 								<Locale k="WORLDS_WORLD_TITLE" p={ [i + 1] } />
 							</div>
-							<div class="worlds-world-name">
+							<div class="worlds-world-name font-ibm">
 								<Locale k={ `WORLD_WORLD_${props.wid}_${world}` } />
 							</div>
 

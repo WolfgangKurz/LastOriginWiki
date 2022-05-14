@@ -140,8 +140,6 @@ const Simulator: FunctionalComponent = () => {
 		)();
 
 		return <div class="simulator">
-			<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;700&amp;display=swap" rel="stylesheet" />
-
 			<h2 class="title mb-0">
 				<span>Simulator</span>
 				<sup>β</sup>

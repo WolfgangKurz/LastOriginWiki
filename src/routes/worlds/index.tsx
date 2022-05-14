@@ -39,7 +39,7 @@ const Worlds: FunctionalComponent = () => {
 			<Locale k="WORLDS_PERMANENT_EVENT" components={ { Icon } } />
 		</h4>
 		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 text-center">
-			{ PermanentEvents.map(item => <div class={ `col mb-2 ${style.PermanentBanner}` }>
+			{ PermanentEvents.map(item => <div class={ `col mb-2 font-ibm ${style.PermanentBanner}` }>
 				<Link href={ `/worlds/${item}` }>
 					<img src={ `${AssetsRoot}/world/banner/${item}.png` } />
 					<span class={ `${style.Title} ${style.TitleStroked}` }>

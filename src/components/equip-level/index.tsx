@@ -17,7 +17,10 @@ const EquipLevel: FunctionalComponent<EquipLevelProps> = (props) => {
 		return props.level;
 	})();
 	return lv > 0
-		? <div class={ style["equip-level"] } style={ { fontSize: `${props.size || 20}px` } }>+{ lv }</div>
+		? <div
+			class={ `${style["equip-level"]} font-exo2` }
+			style={ { fontSize: `${props.size || 20}px` } }
+		>+{ lv }</div>
 		: <></>;
 };
 export default EquipLevel;

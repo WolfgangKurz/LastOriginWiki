@@ -25,7 +25,7 @@ const EnemiesGroup: FunctionalComponent<EnemiesGroupProps> = (props) => {
 				.map((_, i) => `World${i + 1}`),
 		);
 		ret.push(
-			new Array(14)
+			new Array(16)
 				.fill(0)
 				.map((_, i) => `Ev${i + 1}`),
 		);
@@ -80,23 +80,26 @@ const EnemiesGroup: FunctionalComponent<EnemiesGroupProps> = (props) => {
 
 			return <div class="mt-4">
 				<div class="mb-3">
-					{ Categories.map(cats => <div class="mb-3">
-						{ Object.values(groupBy(cats, (_, i) => Math.floor(i / 4)))
-							.map(line => <div class="d-block btn-group mb-1">
-								{ line.map(cat => <button
-									class={ `btn btn-outline-primary ${isActive(Category.value === cat)}` }
-									onClick={ (e): void => {
-										e.preventDefault();
-										Category.set(cat);
-									} }
-								>
-									<Locale
-										k={ `ENEMY_GROUP_G_${cat.replace(/[0-9]+$/, "")}` }
-										p={ [cat.replace(/^.+?([0-9]+)$/, "$1")] }
-									/>
-								</button>) }
-							</div>) }
-					</div>) }
+					{ Categories
+						.map(cats => <>
+							{ Object.values(groupBy(cats, (_, i) => Math.floor(i / 4)))
+								.map(line => <div class="d-block btn-group mb-1">
+									{ line.map(cat => <button
+										class={ `btn btn-outline-primary ${isActive(Category.value === cat)}` }
+										onClick={ (e): void => {
+											e.preventDefault();
+											Category.set(cat);
+										} }
+									>
+										<Locale
+											k={ `ENEMY_GROUP_G_${cat.replace(/[0-9]+$/, "")}` }
+											p={ [cat.replace(/^.+?([0-9]+)$/, "$1")] }
+										/>
+									</button>) }
+								</div>) }
+						</>)
+						.gap(<hr class="my-2" />)
+					}
 				</div>
 
 				<div class="mb-4">

@@ -57,7 +57,10 @@ const MapSearchInfo: FunctionalComponent<MapSearchInfoProps> = (props) => {
 													</td>
 													<td class="border-bottom">
 														<span class="badge bg-warning text-dark">
-															<Locale k="WORLD_VIEW_EXPLORATION_LV_FORMAT" p={ [SearchInfo.unitsLv] } />
+															<Locale
+																k="WORLD_VIEW_EXPLORATION_LV_FORMAT"
+																p={ [<span class="font-exo2">{ SearchInfo.unitsLv }</span>] }
+															/>
 														</span>
 													</td>
 												</tr>
@@ -67,7 +70,10 @@ const MapSearchInfo: FunctionalComponent<MapSearchInfoProps> = (props) => {
 													</td>
 													<td class="border-bottom">
 														<span class="badge bg-warning text-dark">
-															<Locale k="WORLD_VIEW_EXPLORATION_MEMBERS_FORMAT" p={ [SearchInfo.units] } />
+															<Locale
+																k="WORLD_VIEW_EXPLORATION_MEMBERS_FORMAT"
+																p={ [<span class="font-exo2">{ SearchInfo.units }</span>] }
+															/>
 														</span>
 													</td>
 												</tr>
@@ -76,7 +82,7 @@ const MapSearchInfo: FunctionalComponent<MapSearchInfoProps> = (props) => {
 										<span class="badge bg-warning text-dark">
 											<Locale k="WORLD_VIEW_EXPLORATION_TIME" />
 										</span>
-										<h3>{ SearchTime }</h3>
+										<h3 class="font-exo2">{ SearchTime }</h3>
 									</div>
 								</div>
 							</div>
@@ -92,33 +98,34 @@ const MapSearchInfo: FunctionalComponent<MapSearchInfoProps> = (props) => {
 											<DropRes res="power" count={ SearchInfo.power } />
 										</div>
 									</div>
-									<div class="card mt-2 text-dark">
-										<div class="card-header">
-											<Locale k="WORLD_VIEW_EXPLORATION_REWARDS_ITEM" />
-										</div>
-										<div class="card-body">
-											{ SearchInfo.items.length === 0
-												? <div class="py-4 text-secondary">
-													<Locale k="WORLD_VIEW_EXPLORATION_REWARDS_ITEM_NO" />
-												</div>
-												: <></>
-											}
+								</div>
 
-											<div class="row row-cols-2">
-												{ SearchInfo.items.map(item => ({
-													consumable: GetConsumable(item.item),
-													item,
-												}))
-													.map(entry => entry.consumable
-														? <DropItem
-															item={ entry.consumable }
-															count={ entry.item.count }
-															chance={ entry.item.chance }
-														/>
-														: <></>,
-													)
-												}
+								<div class="card mt-2 text-dark">
+									<div class="card-header">
+										<Locale k="WORLD_VIEW_EXPLORATION_REWARDS_ITEM" />
+									</div>
+									<div class="card-body">
+										{ SearchInfo.items.length === 0
+											? <div class="py-4 text-secondary">
+												<Locale k="WORLD_VIEW_EXPLORATION_REWARDS_ITEM_NO" />
 											</div>
+											: <></>
+										}
+
+										<div class="row row-cols-2">
+											{ SearchInfo.items.map(item => ({
+												consumable: GetConsumable(item.item),
+												item,
+											}))
+												.map(entry => entry.consumable
+													? <DropItem
+														item={ entry.consumable }
+														count={ entry.item.count }
+														chance={ entry.item.chance }
+													/>
+													: <></>,
+												)
+											}
 										</div>
 									</div>
 								</div>
