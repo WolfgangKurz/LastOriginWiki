@@ -124,6 +124,14 @@ export interface UnitCost {
 	}>;
 }
 
+/**
+ * ```ts
+ * [number, number, number, number, number, number]
+ * [Atk, AtkRate, Speed, HP, Def, Assist]
+ * ```
+ */
+export type UnitSpecChart = [number, number, number, number, number, number];
+
 export interface Unit {
 	id: number;
 	uid: string;
@@ -169,6 +177,8 @@ export interface Unit {
 	research: ResearchTreeData[] | undefined;
 
 	stat: UnitStats[];
+	chart: UnitSpecChart;
+
 	skills: Partial<SkillGroup>;
 	dialogue: UnitDialogueDataType;
 	skins: UnitSkin;
@@ -222,6 +232,8 @@ export namespace Unit {
 		equips: [],
 
 		stat: [],
+		chart: [0, 0, 0, 0, 0, 0],
+
 		source: [],
 		cost: undefined,
 		research: undefined,
