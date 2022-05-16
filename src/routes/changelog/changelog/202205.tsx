@@ -7,6 +7,32 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11717" date="2022-05-16"
+		new={ <>
+			<li>신규 전투원 <span class="badge bg-warning text-dark">브륀힐데</span>의 정보가 추가되었습니다.</li>
+		</> }
+		update={ <>
+			<li>전투원 스킨 정보의 배경이 변경되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">오르카 데이트 공모전</span> 이벤트가 1주 연장되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<span class="badge bg-warning text-dark">C-79G 하베트롯</span>의 스킨
+				<span class="badge bg-danger">하계 전투복 하베트롯</span>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<span class="badge bg-warning text-dark">니바</span>의 스킨
+				<span class="badge bg-danger">오르카 바니...? : 진심 모드</span>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<span class="badge bg-warning text-dark">프랭스터 머큐리</span>의 스킨
+				<span class="badge bg-danger">P-Strikers! 머큐리</span>의 정보가 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2022-05-16 13:57:29</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11715" date="2022-05-15"
 		new={ <>
 			<li>전투원 스킨 정보에 검은색 배경 옵션이 추가되었습니다.</li>

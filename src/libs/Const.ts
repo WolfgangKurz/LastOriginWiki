@@ -729,7 +729,7 @@ export const PermanentEvents: string[] = ["Ev1", "Ev2", "Ev3", "Ev4", "Ev5"];
 export const NewMapList: string[] = [];
 export const CurrentEvent = "Ev16";
 export const EventFrom = new Date(2022, 4 - 1, 18);
-export const EventTo = new Date(2022, 5 - 1, 16);
+export const EventTo = new Date(2022, 5 - 1, 23);
 
 export const CurrentDate = ((): string => {
 	const d = new Date();
