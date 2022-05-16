@@ -21,12 +21,12 @@ const Changelog: FunctionalComponent = () => <>
 				<span class="badge bg-danger">하계 전투복 하베트롯</span>의 정보가 추가되었습니다.
 			</li>
 			<li>
-				<span class="badge bg-warning text-dark">니바</span>의 스킨
-				<span class="badge bg-danger">오르카 바니...? : 진심 모드</span>의 정보가 추가되었습니다.
-			</li>
-			<li>
 				<span class="badge bg-warning text-dark">프랭스터 머큐리</span>의 스킨
 				<span class="badge bg-danger">P-Strikers! 머큐리</span>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<span class="badge bg-warning text-dark">니바</span>의 스킨
+				<span class="badge bg-danger">오르카 바니...? : 진심 모드</span>의 중파 이미지가 추가되었습니다.
 			</li>
 		</> }
 		dialogue={ <>
