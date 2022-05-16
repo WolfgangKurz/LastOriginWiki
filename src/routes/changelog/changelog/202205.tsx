@@ -9,7 +9,7 @@ import Icon from "@/components/bootstrap-icon";
 const Changelog: FunctionalComponent = () => <>
 	<ChangelogItem title="Build 11717" date="2022-05-16"
 		new={ <>
-			<li>신규 전투원 <span class="badge bg-warning text-dark">브륀힐데</span>의 정보가 추가되었습니다.</li>
+			<li>신규 전투원 <span class="badge bg-warning text-dark">브륀힐드</span>의 정보가 추가되었습니다.</li>
 		</> }
 		update={ <>
 			<li>전투원 스킨 정보의 배경이 변경되었습니다.</li>
