@@ -70,6 +70,7 @@ targetDBs.forEach(targetDB => {
 						id: undefined,
 						rarity: undefined,
 					})),
+					chart: char.chart,
 					source: char.source,
 
 					cost: char.cost,

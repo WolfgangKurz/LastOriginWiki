@@ -14,7 +14,7 @@ function process (auth) {
 					? "1R2gKu8s3Cxb9rqo5mqwin15PZvRbf8tjDdsKcmDOj18"
 					: "11IxebdUQ_VHbaP79sN8KxZ87n3c5rG42DL8TQOK9h1k"
 				: "1ohSOKdl1IZq8aOsWPJ74yX01Ave7FkSrUFG5MSbfZN8",
-			range: "UnitStats!A3:O",
+			range: "UnitStats!A3:U",
 		}, (err, res) => {
 			if (err) return console.log(`The API returned an error: ${err}`);
 
@@ -25,7 +25,8 @@ function process (auth) {
 				SS: 5,
 			};
 
-			const stats = [];
+			const stats = {};
+			const charts = {};
 			const rows = res.data.values;
 			if (rows && rows.length) {
 				rows.map((row) => {
@@ -46,6 +47,9 @@ function process (auth) {
 						ice: parseFloat(row[13]),
 						lightning: parseFloat(row[14]),
 					};
+
+					const Chart = row.slice(15, 21).map(x => parseInt(x, 10));
+					if (!(id in charts)) charts[id] = Chart;
 
 					if (!(id in stats)) stats[id] = [];
 
@@ -162,6 +166,7 @@ function process (auth) {
 								age,
 
 								stat: stats[id],
+								chart: charts[id],
 
 								craftable: !craftable ? false : parseInt(craftable, 10),
 								favor,
