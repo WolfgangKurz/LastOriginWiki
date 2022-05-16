@@ -86,10 +86,10 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 	function convData (data: number[]): number[] {
 		return [
 			data[0], // Atk
-			data[4], // Speed
+			data[2], // Speed
 			data[5], // Assist
-			data[3], // Def
-			data[2], // HP
+			data[4], // Def
+			data[3], // HP
 			data[1], // AtkRate
 		];
 	}
