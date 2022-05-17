@@ -4,7 +4,7 @@ import Decimal from "decimal.js";
 
 import { BuffEffectValue, BUFFEFFECT_TYPE, BuffEffect } from "@/types/BuffEffect";
 import { BuffStatStatic, BuffStat } from "@/types/Buffs";
-import { BuffErase } from "@/types/BuffErase";
+import { BUFFEFFECT_ERASE_TYPE, BuffErase } from "@/types/BuffErase";
 import { BuffTrigger } from "@/types/BuffTrigger";
 import { UNIT_POSITION, BUFF_ATTR_TYPE, SKILL_ATTR, ACTOR_BODY_TYPE, ACTOR_CLASS, ROLE_TYPE, TARGET_TYPE, NUM_OUTPUTTYPE, BUFF_OVERLAP_TYPE } from "@/types/Enums";
 import { StatPointValue } from "@/types/Stat";
@@ -17,6 +17,8 @@ import { CurrentDB } from "@/libs/DB";
 
 import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
+import BootstrapTooltip from "@/components/bootstrap-tooltip";
+import Icon from "@/components/bootstrap-icon";
 import StatIcon from "@/components/stat-icon";
 import ElemIcon from "@/components/elem-icon";
 import UnitLink from "@/components/unit-link";
@@ -649,11 +651,11 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 						<>{ select.gap(", ") }</>,
 						trigger.on.stack,
 					];
-					console.log([
-						"BUFFTRIGGER_ON_STACK_TARGET",
-						select.length === 1 ? "SINGLE" : "MULTIPLE",
-						trigger.on.func === "UNFILLED" ? "UNFILLED" : "",
-					].filter(x => x).join("_"));
+					// console.log([
+					// 	"BUFFTRIGGER_ON_STACK_TARGET",
+					// 	select.length === 1 ? "SINGLE" : "MULTIPLE",
+					// 	trigger.on.func === "UNFILLED" ? "UNFILLED" : "",
+					// ].filter(x => x).join("_"));
 					return <Locale
 						plain
 						k={ [
@@ -1340,6 +1342,28 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 		return <></>;
 	}
 
+	function BuffOverlapAvailable (maxStack: number, overlap: BUFF_OVERLAP_TYPE, erase: BuffErase): BUFF_OVERLAP_TYPE | false {
+		// console.log([BUFF_OVERLAP_TYPE.INSTANCE, BUFF_OVERLAP_TYPE.RENEW, BUFF_OVERLAP_TYPE.SINGLE], overlap);
+		if ([BUFF_OVERLAP_TYPE.INSTANCE, BUFF_OVERLAP_TYPE.RENEW, BUFF_OVERLAP_TYPE.SINGLE].includes(overlap))
+			return overlap;
+
+		if ("rounds" in erase && erase.rounds === 0)
+			return BUFF_OVERLAP_TYPE.INSTANCE;
+
+		if (maxStack === 0)
+			return false;
+
+		return overlap;
+	}
+	function BuffMaxStackAvailable (maxStack: number, overlap: BUFF_OVERLAP_TYPE, erase: BuffErase): number {
+		if ("rounds" in erase && erase.rounds === 0) return 3;
+		if (overlap === BUFF_OVERLAP_TYPE.RENEW) return 3;
+
+		if (maxStack <= 0) return 2;
+		if (overlap === BUFF_OVERLAP_TYPE.SINGLE) return 1;
+		return 0;
+	}
+
 	const stat = props.stat;
 	const level = props.level;
 
@@ -1370,21 +1394,33 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 		const ext = ImageExtension();
 		stat.buffs.forEach(buff => {
 			const erase = getEraseText(buff.erase);
+			const overlap = BuffOverlapAvailable(stat.maxStack, buff.overlap, buff.erase);
 
 			// title={ formatDesc(buff.desc.type, buff.desc.desc, buff.desc.value, buff.desc.level, level) }
 			if (buff.value.chance !== "0%" || props.dummy) {
-				const StackTable: Record<BUFF_OVERLAP_TYPE, preact.VNode> = {
-					// [BUFF_OVERLAP_TYPE.NONE]: <Locale plain k="BUFFSTACK_INSTANCE" />,
-					// [BUFF_OVERLAP_TYPE.RENEW]: <Locale plain k="BUFFSTACK_RENEW" />,
-					// [BUFF_OVERLAP_TYPE.ADDTURN]: <Locale plain k="BUFFSTACK_ADDTURN" />,
-					// [BUFF_OVERLAP_TYPE.OVERLAP]: <Locale plain k="BUFFSTACK_OVERLAP" />,
-					// [BUFF_OVERLAP_TYPE.CREATE]: <Locale plain k="BUFFSTACK_CREATE" />,
-					[BUFF_OVERLAP_TYPE.NONE]: <>INST</>,
-					[BUFF_OVERLAP_TYPE.RENEW]: <>RENEW</>,
-					[BUFF_OVERLAP_TYPE.ADDTURN]: <>ADDTURN</>,
-					[BUFF_OVERLAP_TYPE.OVERLAP]: <>OVERLAP</>,
-					[BUFF_OVERLAP_TYPE.CREATE]: <>CREATE</>,
+				const StackTable: Record<BUFF_OVERLAP_TYPE, string> = {
+					[BUFF_OVERLAP_TYPE.INSTANCE]: "INSTANCE",
+					[BUFF_OVERLAP_TYPE.RENEW]: "RENEW",
+					[BUFF_OVERLAP_TYPE.EXTEND]: "EXTEND",
+					[BUFF_OVERLAP_TYPE.SINGLE]: "SINGLE",
+					[BUFF_OVERLAP_TYPE.UPDATE]: "UPDATE",
 				};
+
+				const buffName = (() => {
+					const _template = LocaleGet(buff.desc.desc, "{0}");
+					const separated = /[：:]/.test(_template);
+
+					const template = separated
+						? _template
+						: _template.replace(/\{0\}/g, ": {0}");
+
+					return <>
+						{ formatDesc(buff.desc.type, template, buff.desc.value, buff.desc.level, level, 1) }
+						<small class="ms-2 text-primary">
+							{ formatDesc(buff.desc.type, template, buff.desc.value, buff.desc.level, level, 2) }
+						</small>
+					</>;
+				})();
 
 				elems.push(<div class="clearfix">
 					<div>
@@ -1393,10 +1429,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 							: <span class="me-1 empty-icon" />
 						}
 						<strong class="align-middle">
-							{ formatDesc(buff.desc.type, LocaleGet(buff.desc.desc), buff.desc.value, buff.desc.level, level, 1) }
-							<small class="ms-2 text-primary">
-								{ formatDesc(buff.desc.type, LocaleGet(buff.desc.desc), buff.desc.value, buff.desc.level, level, 2) }
-							</small>
+							{ buffName }
 
 							{ IsDev
 								? <small class="ms-2 text-secondary">{ buff.desc.desc }</small>
@@ -1406,10 +1439,15 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 							{ getChanceText(buff.value.chance) }
 						</strong>
 						<div class="float-end">
-							{ IsDev
-								? <span class="badge bg-event-exchange-old ms-2 text-wrap">
-									{ StackTable[buff.overlap] }
-								</span>
+							{ overlap !== false
+								? <BootstrapTooltip content={ <span class={ style.OverlapTooltip }>
+									<Locale plain k={ `BUFFOVERLAP_DESC_${StackTable[overlap]}` } />
+								</span> }>
+									<span class={ `badge bg-orange ms-2 ${style.OverlapBadge}` }>
+										<Locale plain k={ `BUFFOVERLAP_${StackTable[overlap]}` } />
+										<Icon class={ `ms-1 ${style.QuestionIcon}` } icon="question-circle-fill" />
+									</span>
+								</BootstrapTooltip>
 								: <></>
 							}
 
@@ -1424,16 +1462,16 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 							{ getBuffText(buff.value, level) }
 						</div>
 						<div class="float-end text-end">
-							{ stat.maxStack > 0
-								? <span class="badge bg-dark ms-1 text-wrap">
-									<Locale plain k="BUFFSTACK" p={ [stat.maxStack] } />
-								</span>
-								: <></>
-							}
-							{ erase
-								? <span class="badge bg-warning text-dark ms-1 text-wrap">{ erase }</span>
-								: <></>
-							}
+							<span class="badge bg-dark ms-1 text-wrap">
+								{ [
+									<Locale plain k="BUFFSTACK" p={ [stat.maxStack] } />,
+									<Locale plain k="BUFFSTACK" p={ [1] } />,
+									<Locale plain k="BUFFSTACK_UNLIMITED" />,
+									<></>,
+								][BuffMaxStackAvailable(stat.maxStack, buff.overlap, buff.erase)] }
+							</span>
+
+							<span class="badge bg-warning text-dark ms-1 text-wrap">{ erase }</span>
 						</div>
 					</div>
 				</div>);

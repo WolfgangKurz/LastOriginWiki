@@ -44,7 +44,7 @@ const Home: FunctionalComponent = () => {
 		{ CurrentEvent && (new Date() < EventTo)
 			? <div>
 				<Link href={ `/worlds/${CurrentEvent}` } class="text-dark" style={ { textDecoration: "none" } }>
-					<div class="alert alert-danger d-inline-block px-5 text-dark" role="alert">
+					<div class="alert alert-danger d-inline-block px-4 text-dark mx-1 align-top" role="alert">
 						<div>
 							<img
 								src={ `${AssetsRoot}/world/event-${CurrentLocale}.png` }
@@ -67,6 +67,28 @@ const Home: FunctionalComponent = () => {
 						</div>
 					</div>
 				</Link>
+
+				<div class="alert alert-primary d-inline-block px-4 text-dark mx-1 align-top" role="alert">
+					<div>
+						<img
+							src={ `${AssetsRoot}/world/event-${CurrentLocale}.png` }
+							height="24"
+							style={ { verticalAlign: "text-bottom" } }
+						/>
+					</div>
+					<img
+						src={ `${AssetsRoot}/etc/miss_orca_3.png` }
+						class="mb-1"
+						height="120"
+						style={ { verticalAlign: "middle" } }
+					/>
+					<div>
+						<span class="badge bg-danger me-2">A조 투표</span>
+						<span>
+							{ DateText(new Date(2022, 5 - 1, 16)) } ~ { DateText(new Date(2022, 5 - 1, 23)) }
+						</span>
+					</div>
+				</div>
 			</div>
 			: <></>
 		}
@@ -138,9 +160,9 @@ const Home: FunctionalComponent = () => {
 		</p>
 
 		<div class="mt-4">
-			<a href="https://www.buymeacoffee.com/wolfgangkurzdev" target="_blank">
+			<a href="https://toon.at/donate/wolfgangkurzdev" target="_blank">
 				<img
-					src="https://img.buymeacoffee.com/button-api/?text=Buy me a beer &amp;emoji=🍺&amp;slug=wolfgangkurzdev&amp;button_colour=5F7FFF&amp;font_colour=ffffff&amp;font_family=Inter&amp;outline_colour=000000&amp;coffee_colour=FFDD00"
+					src={ `${AssetsRoot}/btn-toonation.png` }
 					style={ { height: "40px" } }
 				/>
 			</a>
