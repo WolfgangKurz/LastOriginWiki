@@ -16,6 +16,7 @@ import { CurrentDB } from "@/libs/DB";
 
 import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
+import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import Icon from "@/components/bootstrap-icon";
 import ElemIcon from "@/components/elem-icon";
 import UnitLink from "@/components/unit-link";
@@ -1261,6 +1262,28 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 		}
 	}
 
+	function BuffOverlapAvailable (maxStack: number, overlap: BUFF_OVERLAP_TYPE, erase: BuffErase): BUFF_OVERLAP_TYPE | false {
+		// console.log([BUFF_OVERLAP_TYPE.INSTANCE, BUFF_OVERLAP_TYPE.RENEW, BUFF_OVERLAP_TYPE.SINGLE], overlap);
+		if ([BUFF_OVERLAP_TYPE.INSTANCE, BUFF_OVERLAP_TYPE.RENEW, BUFF_OVERLAP_TYPE.SINGLE].includes(overlap))
+			return overlap;
+
+		if ("rounds" in erase && erase.rounds === 0)
+			return BUFF_OVERLAP_TYPE.INSTANCE;
+
+		if (maxStack === 0)
+			return false;
+
+		return overlap;
+	}
+	function BuffMaxStackAvailable (maxStack: number, overlap: BUFF_OVERLAP_TYPE, erase: BuffErase): number {
+		if ("rounds" in erase && erase.rounds === 0) return 3;
+		if (overlap === BUFF_OVERLAP_TYPE.RENEW) return 3;
+
+		if (maxStack <= 0) return 2;
+		if (overlap === BUFF_OVERLAP_TYPE.SINGLE) return 1;
+		return 0;
+	}
+
 	const stat = props.stat;
 	const level = props.level;
 
@@ -1291,6 +1314,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 		const ext = ImageExtension();
 		stat.buffs.forEach((buff, buffIdx) => {
 			const erase = getEraseText(buff.erase);
+			const overlap = BuffOverlapAvailable(stat.maxStack, buff.overlap, buff.erase);
 
 			if (buff.value.chance !== "0%") {
 				const force = [
@@ -1300,12 +1324,12 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 				].every(x => x);
 				const key = `${props.idx}_${buffIdx}`;
 
-				const StackTable: Record<BUFF_OVERLAP_TYPE, preact.VNode> = {
-					[BUFF_OVERLAP_TYPE.NONE]: <Locale plain k="BUFFSTACK_INSTANCE" />,
-					[BUFF_OVERLAP_TYPE.RENEW]: <Locale plain k="BUFFSTACK_RENEW" />,
-					[BUFF_OVERLAP_TYPE.ADDTURN]: <Locale plain k="BUFFSTACK_ADDTURN" />,
-					[BUFF_OVERLAP_TYPE.OVERLAP]: <Locale plain k="BUFFSTACK_OVERLAP" />,
-					[BUFF_OVERLAP_TYPE.CREATE]: <Locale plain k="BUFFSTACK_CREATE" />,
+				const StackTable: Record<BUFF_OVERLAP_TYPE, string> = {
+					[BUFF_OVERLAP_TYPE.INSTANCE]: "INSTANCE",
+					[BUFF_OVERLAP_TYPE.RENEW]: "RENEW",
+					[BUFF_OVERLAP_TYPE.EXTEND]: "EXTEND",
+					[BUFF_OVERLAP_TYPE.SINGLE]: "SINGLE",
+					[BUFF_OVERLAP_TYPE.UPDATE]: "UPDATE",
 				};
 
 				// console.log(buff);
@@ -1316,13 +1340,20 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 						<strong class="align-middle">
 							{ formatDesc(buff.desc.type, LocaleGet(buff.desc.desc), buff.desc.value, buff.desc.level, level, 1) }
 							<small class="ms-2 text-primary">
-								{ formatDesc(buff.desc.type, LocaleGet(buff.desc.desc), buff.desc.value, buff.desc.level, level, 2) }
+								<Locale
+									plain
+									k={ buff.desc.desc }
+									p={ [
+										formatDesc(buff.desc.type, "_:{0}", buff.desc.value, buff.desc.level, level, 2)
+											.slice(1)
+									] }
+								/>
 							</small>
 						</strong>
 
 						<div class="float-end buff-checkbox">
-							{ stat.maxStack > 0
-								? <div class="input-group d-inline-flex w-auto me-2">
+							{ [
+								<div class="input-group d-inline-flex w-auto me-2">
 									<button class="btn btn-sm btn-secondary" onClick={ (): void => {
 										let v = (props.stacks[key] || 1) - 1;
 										if (v < 1) v = 1;
@@ -1352,9 +1383,24 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 									} }>
 										<Icon icon="plus" />
 									</button>
-								</div>
-								: <></>
-							}
+								</div>,
+								<div class="input-group d-inline-flex w-auto me-2">
+									<input
+										class="form-control buff-stack-input"
+										type="text"
+										value={ props.stacks[key] || 1 }
+										readonly
+									/>
+									<div class="position-relative">
+										<span>
+											<Locale plain k="SIMULATOR_BUFF_STACK" />
+										</span>
+									</div>
+								</div>,
+								<></>,
+								<></>,
+							][BuffMaxStackAvailable(stat.maxStack, buff.overlap, buff.erase)] }
+
 							<input
 								class="form-check-input"
 								type="checkbox"
@@ -1366,10 +1412,15 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 								disabled={ force }
 							/>
 
-							{ IsDev
-								? <span class="badge bg-event-exchange-old ms-2 text-wrap">
-									{ StackTable[buff.overlap] }
-								</span>
+							{ overlap !== false
+								? <BootstrapTooltip content={ <span class={ style.OverlapTooltip }>
+									<Locale plain k={ `BUFFOVERLAP_DESC_${StackTable[overlap]}` } />
+								</span> }>
+									<span class={ `badge bg-orange ms-2 ${style.OverlapBadge}` }>
+										<Locale plain k={ `BUFFOVERLAP_${StackTable[overlap]}` } />
+										<Icon class={ `ms-1 ${style.QuestionIcon}` } icon="question-circle-fill" />
+									</span>
+								</BootstrapTooltip>
 								: <></>
 							}
 
@@ -1391,10 +1442,8 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 								</span>
 								: <></>
 							}
-							{ erase
-								? <span class="badge bg-warning text-dark ms-1 text-wrap">{ erase }</span>
-								: <></>
-							}
+
+							<span class="badge bg-warning text-dark ms-1 text-wrap">{ erase }</span>
 						</div>
 					</div>
 				</div >);
