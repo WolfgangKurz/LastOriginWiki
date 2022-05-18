@@ -7,13 +7,14 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 11735" date="2022-05-18"
+	<ChangelogItem title="Build 11737" date="2022-05-18"
 		new={ <>
 			<li>스킬 버프 목록에 중첩 적용 방식 표기가 추가되었습니다.</li>
 			<li>스킬 버프 목록에 <span class="badge bg-dark">중첩 무제한</span> 표기가 추가되었습니다.</li>
 		</> }
 		bugfix={ <>
 			<li>스킬 버프 목록의 버프 이름에 수치가 표시되지 않던 점을 수정했습니다.</li>
+			<li>모바일 환경에서 전투원 기본 정보 페이지가 스크롤이 넘치던 문제를 수정했습니다.</li>
 		</> }
 	/>
 	<ChangelogItem title="Build 11728" date="2022-05-17"
