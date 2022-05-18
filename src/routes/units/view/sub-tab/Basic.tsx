@@ -174,7 +174,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 								}],
 							} }
 							options={ {
-								maintainAspectRatio: false,
+								aspectRatio: 1,
 								elements: {
 									point: {
 										radius: 0,
@@ -423,7 +423,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 			}
 
 			{ unit.research && <div class="container my-3">
-				<div class="row bg-dark text-light gx-0 p-3">
+				<div class="row bg-dark text-light gx-0">
 					<ResearchTree unit={ unit } research={ unit.research } />
 				</div>
 			</div> }
@@ -446,46 +446,52 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 									</div>
 									: <>
 										{ unit.craft
-											? <span class={ `badge bg-dark my-1 ${style.CreationBadge}` }>
+											? <span class={ `badge bg-dark mx-2 my-1 ${style.CreationBadge}` }>
 												{ unit.cost
 													? <div class={ style.CostInfo }>
-														<span class="pe-3 font-exo2">
-															<img class="res-icon" src={ `${AssetsRoot}/res-component.png` } />
-															{ FormatNumber(unit.cost.res[0]) }
-														</span>
-														<span class="pe-3 font-exo2">
-															<img class="res-icon" src={ `${AssetsRoot}/res-nutrition.png` } />
-															{ FormatNumber(unit.cost.res[1]) }
-														</span>
-														<span class="pe-3 font-exo2">
-															<img class="res-icon" src={ `${AssetsRoot}/res-power.png` } />
-															{ FormatNumber(unit.cost.res[2]) }
-														</span>
+														<div class="d-block d-sm-inline-block">
+															<span class="pe-3 font-exo2">
+																<img class="res-icon" src={ `${AssetsRoot}/res-component.png` } />
+																{ FormatNumber(unit.cost.res[0]) }
+															</span>
+															<span class="pe-3 font-exo2">
+																<img class="res-icon" src={ `${AssetsRoot}/res-nutrition.png` } />
+																{ FormatNumber(unit.cost.res[1]) }
+															</span>
+															<span class="pe-sm-3 font-exo2">
+																<img class="res-icon" src={ `${AssetsRoot}/res-power.png` } />
+																{ FormatNumber(unit.cost.res[2]) }
+															</span>
+														</div>
 														<span>
 															<Icon class="me-1" icon="hourglass-split" />
 															<span class="font-exo2">{ CraftTime }</span>
 														</span>
 
-														<hr class="my-1" />
+														<hr class="my-2" />
 
-														{ unit.cost.aicore > 0
-															? <span class="badge bg-semilight text-dark me-1 mb-1">
-																<EquipIcon class="me-2 vertical-align-middle" image="UI_Icon_Consumable_AICore" size="24" />
-																<Locale k="CONSUMABLE_TestItem_4" />
-																&nbsp;x{ FormatNumber(unit.cost.aicore) }
-															</span>
-															: <></>
-														}
-														{ unit.cost.items.map(e => {
-															const item = ConsumableDB.find(c => c.key === e.item);
-															if (!item) return <>-</>;
+														<div class="container">
+															<div class="row row-cols-auto">
+																{ unit.cost.aicore > 0
+																	? <span class="badge bg-semilight text-dark me-1 mb-1">
+																		<EquipIcon class="me-2 vertical-align-middle" image="UI_Icon_Consumable_AICore" size="24" />
+																		<Locale k="CONSUMABLE_TestItem_4" />
+																		&nbsp;x{ FormatNumber(unit.cost.aicore) }
+																	</span>
+																	: <></>
+																}
+																{ unit.cost.items.map(e => {
+																	const item = ConsumableDB.find(c => c.key === e.item);
+																	if (!item) return <>-</>;
 
-															return <span class="badge bg-semilight text-dark me-1 mb-1">
-																<EquipIcon class="me-2 vertical-align-middle" image={ item.icon } size="24" />
-																<Locale k={ `CONSUMABLE_${item.key}` } />
-																&nbsp;x{ FormatNumber(e.count) }
-															</span>;
-														}) }
+																	return <span class="badge bg-semilight text-dark me-1 mb-1">
+																		<EquipIcon class="me-2 vertical-align-middle" image={ item.icon } size="24" />
+																		<Locale k={ `CONSUMABLE_${item.key}` } />
+																		&nbsp;x{ FormatNumber(e.count) }
+																	</span>;
+																}) }
+															</div>
+														</div>
 													</div>
 													: <h6 class="m-0 p-0">
 														<Icon icon="hammer" />

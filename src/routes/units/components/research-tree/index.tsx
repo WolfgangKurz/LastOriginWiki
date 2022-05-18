@@ -188,7 +188,7 @@ const ResearchTree: FunctionalComponent<ResearchTreeProps> = (props) => {
 			return [h, m, s].map(x => x.toString().padStart(2, "0")).join(":");
 		})();
 
-		return <div class={ style.ResearchTree }>
+		return <div class={ `p-3 ${style.ResearchTree}` }>
 			{ typeof graph.value == "object"
 				? graph.value
 				: <span class="text-secondary">Graph loading...</span>
