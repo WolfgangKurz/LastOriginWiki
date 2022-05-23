@@ -5,9 +5,10 @@ import { SkillEntity, SkillGroup, SkillValueData } from "@/types/DB/Skill";
 import { ACTOR_GRADE } from "@/types/Enums";
 import { BuffStat } from "@/types/Buffs";
 
+import Session from "@/libs/Session";
 import { isActive } from "@/libs/Functions";
 import { objState } from "@/libs/State";
-import { AssetsRoot, ImageExtension, RarityDisplay } from "@/libs/Const";
+import { ImageExtension, RarityDisplay } from "@/libs/Const";
 
 import Locale, { LocaleExists, LocaleGet } from "@/components/locale";
 import ElemIcon from "@/components/elem-icon";
@@ -67,10 +68,10 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 	const formState = objState<"normal" | "change">("normal");
 	const skillLevel = objState<LevelType>(9);
 
-	const favorBonus = objState<boolean>(false);
-	const displayBuffList = objState<boolean>(false);
-	const displayBuffDummy = objState<boolean>(false);
-	const displayFlavor = objState<boolean>(true);
+	const favorBonus = objState<boolean>(Session.get("unit.skill-table.favorBonus", "0") === "1");
+	const displayBuffList = objState<boolean>(Session.get("unit.skill-table.displayBuffList", "0") === "1");
+	const displayBuffDummy = objState<boolean>(Session.get("unit.skill-table.displayBuffDummy", "0") === "1");
+	const displayFlavor = objState<boolean>(Session.get("unit.skill-table.displayFlavor", "1") === "1");
 
 	const HasFormChange = ((): boolean => {
 		const raw = skills;
@@ -170,7 +171,11 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 						class="form-check-input"
 						type="checkbox"
 						checked={ favorBonus.value }
-						onChange={ (): void => favorBonus.set(!favorBonus.value) }
+						onChange={ (): void => {
+							const v = !favorBonus.value;
+							favorBonus.set(v);
+							Session.set("unit.skill-table.favorBonus", v ? "1" : "0");
+						} }
 					/>
 					<Locale k="UNIT_SKILL_FAVOR_200" />
 				</label>
@@ -182,7 +187,11 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 						class="form-check-input"
 						type="checkbox"
 						checked={ displayBuffList.value }
-						onChange={ (): void => displayBuffList.set(!displayBuffList.value) }
+						onChange={ (): void => {
+							const v = !displayBuffList.value;
+							displayBuffList.set(v);
+							Session.set("unit.skill-table.displayBuffList", v ? "1" : "0");
+						} }
 					/>
 					<Locale k="UNIT_SKILL_DISPLAY_BUFF" />
 				</label>
@@ -195,7 +204,11 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 						type="checkbox"
 						disabled={ !displayBuffList.value }
 						checked={ displayBuffDummy.value }
-						onChange={ (): void => displayBuffDummy.set(!displayBuffDummy.value) }
+						onChange={ (): void => {
+							const v = !displayBuffDummy.value;
+							displayBuffDummy.set(v);
+							Session.set("unit.skill-table.displayBuffDummy", v ? "1" : "0");
+						} }
 					/>
 					<Locale k="UNIT_SKILL_DISPLAY_DUMMY" />
 				</label>
@@ -207,7 +220,11 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 						class="form-check-input"
 						type="checkbox"
 						checked={ displayFlavor.value }
-						onChange={ (): void => displayFlavor.set(!displayFlavor.value) }
+						onChange={ (): void => {
+							const v = !displayFlavor.value;
+							displayFlavor.set(v);
+							Session.set("unit.skill-table.displayFlavor", v ? "1" : "0");
+						} }
 					/>
 					<Locale k="UNIT_SKILL_DISPLAY_FLAVOR" />
 				</label>
