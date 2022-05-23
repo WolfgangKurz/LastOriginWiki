@@ -7,6 +7,14 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11745" date="2022-05-23"
+		update={ <>
+			<li>세계정보의 구역 목록의 레이아웃이 변경되었습니다.</li>
+			<li>메인스토리 구역 목록의 디자인이 변경되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">이상한 나라의 초코 여왕</span> 이벤트가 상시 이벤트로 전환되었습니다.</li>
+			<li>이벤트 세계 표시 화면에 이벤트 배너 이미지가 추가되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11739" date="2022-05-23"
 		new={ <>
 			<li>신규 장식품 정보가 추가되었습니다.</li>

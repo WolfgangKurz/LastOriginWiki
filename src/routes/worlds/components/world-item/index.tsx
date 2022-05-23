@@ -9,6 +9,8 @@ import "./style.module.scss";
 interface WorldItemProps {
 	wid: string;
 	linked?: boolean;
+	imageless?: boolean;
+	center?: boolean;
 }
 
 const WorldItem: FunctionalComponent<WorldItemProps> = (props) => {
@@ -19,10 +21,14 @@ const WorldItem: FunctionalComponent<WorldItemProps> = (props) => {
 	return <div class="card world-item mb-4 bg-dark text-light">
 		<div class="card-body">
 			<div class="row text-start">
-				<div class="col-auto">
-					<img src={ `${AssetsRoot}/world/icons/${WorldIcon}.png` } />
-				</div>
-				<div class="col">
+				{ !props.imageless
+					? <div class="col-auto">
+						<img src={ `${AssetsRoot}/world/icons/${WorldIcon}.png` } />
+					</div>
+					: <></>
+				}
+
+				<div class={ `col ${props.center ? "text-center" : ""}` }>
 					<div class="world-item-name font-exo2">
 						<Locale k={ `WORLD_${props.wid}` } />
 					</div>
@@ -31,6 +37,10 @@ const WorldItem: FunctionalComponent<WorldItemProps> = (props) => {
 						<Locale k={ `WORLD_DESC_${props.wid}` } fallback="" />
 					</div>
 				</div>
+				{ props.children
+					? <div class="col-12 mt-3">{ props.children }</div>
+					: <></>
+				}
 			</div>
 		</div>
 		{ props.linked
