@@ -43,7 +43,7 @@ const EquipCard: FunctionalComponent<EquipCardProps> = (props) => {
 				: <></> }
 		</div>
 		<div class="card-body">
-			<div class="equip-name">{ Name }</div>
+			<div class="equip-name font-ibm fw-bold">{ Name }</div>
 		</div>
 	</div>;
 };

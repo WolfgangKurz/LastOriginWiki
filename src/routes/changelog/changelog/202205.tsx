@@ -7,6 +7,20 @@ import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11739" date="2022-05-23"
+		new={ <>
+			<li>신규 장식품 정보가 추가되었습니다.</li>
+		</> }
+		update={ <>
+			<li>전투원 스킬 탭의 "호감도 200", "버프 보기", "더미 보기", "플레이버 텍스트" 사용자 설정이 저장되도록 개선했습니다.</li>
+			<li>일부 전투원의 스킬 정보가 갱신되었습니다.</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-warning text-dark">익스프레스 76</span>의 서약 대사 세트가 추가되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">티에치엔</span>의 서약 대사 세트가 추가되었습니다.</li>
+			<li><span class="badge bg-light text-dark">KST 2022-05-23 12:56:10</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11737" date="2022-05-18"
 		new={ <>
 			<li>스킬 버프 목록에 중첩 적용 방식 표기가 추가되었습니다.</li>

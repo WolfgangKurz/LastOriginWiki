@@ -34,7 +34,7 @@ const Horizontal: FunctionalComponent<UnitCardProps> = (props) => {
 	return <div class={ `unit-card text-start clearfix ${props.class || ""}` } onClick={ props.onClick }>
 		<UnitFace uid={ props.unit.uid } class="float-start" />
 
-		<div class="unit-name">
+		<div class="unit-name font-ibm">
 			<Locale k={ `UNIT_${props.unit.uid}` } />
 		</div>
 
