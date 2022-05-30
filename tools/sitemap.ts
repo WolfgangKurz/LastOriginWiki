@@ -11,7 +11,7 @@ let xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n`;
 
 const load = (name: string) => {
-	const target = ["facility", "map"].includes(name)
+	const target = ["facility"].includes(name) || ["map/"].some(x => name.startsWith(x))
 		? "external/json/korea"
 		: "db/korea";
 
@@ -26,7 +26,7 @@ const Enemy = JSON.parse(load("enemy"));
 const Facility = glob.sync(
 	path.resolve(__dirname, "..", "external", "json", "korea", "facility", "*.json"),
 ).map((x: any) => path.basename(x));
-const MapData = JSON.parse(load("map"));
+// const MapData = JSON.parse(load("map"));
 // import Unit from "../src/json/unit";
 // import Equip from "../src/json/equip";
 // import Enemy from "../src/json/enemy";
@@ -51,6 +51,9 @@ const WorldNames: Record<string, string> = {
 	Ev12: "빛이 들지 않는 성역",
 	Ev13: "연꽃 위에 피는 장미",
 	Ev14: "영원한 겨울의 방주",
+	Ev15: "~폭풍을 부르는~ 미니 컴패니언의 습격",
+	Ev16: "오르카 데이트 공모전",
+	Ev17: "분노의 늑대 송곳니",
 };
 const skin = glob.sync(
 	path.resolve(__dirname, "..", "external", "assets", "png", "full", "*.png"),
@@ -97,7 +100,7 @@ Object.keys(WorldNames)
 	.forEach(key => {
 		xml += `<url><loc>https://lo.swaytwig.com/worlds/${key}</loc></url>\n`;
 
-		const map = (MapData as any)[key];
+		const map = JSON.parse(load(`map/${key}`));
 		Object.keys(map).forEach(y => {
 			xml += `<url><loc>https://lo.swaytwig.com/worlds/${key}/${y}</loc></url>\n`;
 			xml += `<url><loc>https://lo.swaytwig.com/worlds/${key}/${y}/drop</loc></url>\n`;

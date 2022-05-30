@@ -13,6 +13,7 @@ import { objState } from "@/libs/State";
 import { AssetsRoot, ImageExtension, NewMapList, SubStoryUnit } from "@/libs/Const";
 import { FormatNumber, isActive } from "@/libs/Functions";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
+import MapPosition from "@/libs/MapPosition";
 
 import Loader, { GetJson, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
@@ -434,6 +435,19 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 						{ selectedValue
 							? <div class="card mt-3 bg-dark text-light">
 								<div class="card-body">
+									{ props.wid in MapPosition &&
+										props.mid in MapPosition[props.wid] &&
+										selectedValue.text in MapPosition[props.wid][props.mid] &&
+										MapPosition[props.wid][props.mid][selectedValue.text][4]
+										? <div class="float-end">
+											<img
+												class={ style.BadgeImage }
+												src={ `${AssetsRoot}/world/badge/${MapPosition[props.wid][props.mid][selectedValue.text][4]}.png` }
+											/>
+										</div>
+										: <></>
+									}
+
 									<h5>
 										{ props.wid === "Sub"
 											? <div class="float-start me-3">

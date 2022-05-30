@@ -17,6 +17,7 @@ interface MapNodeProps {
 
 	active?: boolean;
 	missing?: boolean;
+	icon?: string;
 }
 
 // function GetTypeIdx (node: MapNodeEntity): STAGE_SUB_TYPE {
@@ -57,8 +58,13 @@ const MapNode: FunctionalComponent<MapNodeProps> = (props) => {
 
 		<image
 			class={ style.NodeIcon }
-			href={ `${AssetsRoot}/world/mapicon_${typeIdx}${props.node.type === STAGE_SUB_TYPE.STORY ? "s" : "n"}.png` }
-			x="8" y="1" width="38"
+			href={ props.icon
+				? `${AssetsRoot}/world/badge/${props.icon}.png`
+				: `${AssetsRoot}/world/mapicon_${typeIdx}${props.node.type === STAGE_SUB_TYPE.STORY ? "s" : "n"}.png`
+			}
+			x={ props.icon ? "4" : "8" }
+			y={ props.icon ? "-4" : "1" }
+			width={ props.icon ? "50" : "38" }
 		/>
 		{/* <rect x="60" y="12" width="4" height="18" fill={ colors[typeIdx] } /> */ }
 		<text
@@ -189,6 +195,7 @@ class MapGrid extends Component<MapGridProps>{
 							type={ type }
 							active={ props.selected === node }
 							missing={ missing }
+							icon={ hasPos && MapPosition[wid][mid][node.text][4] || undefined }
 						// byOffset={ byOffset }
 						/>
 					</g>,
