@@ -41,9 +41,9 @@ const Home: FunctionalComponent = () => {
 	UpdateTitle();
 
 	return <div class={ `${style.home} home` }>
-		{ CurrentEvent && (new Date() < EventTo)
-			? <div>
-				<Link href={ `/worlds/${CurrentEvent}` } class="text-dark" style={ { textDecoration: "none" } }>
+		<div>
+			{ CurrentEvent && (new Date() < EventTo)
+				? <Link href={ `/worlds/${CurrentEvent}` } class="text-dark" style={ { textDecoration: "none" } }>
 					<div class="alert alert-danger d-inline-block px-4 text-dark mx-1 align-top" role="alert">
 						<div>
 							<img
@@ -67,31 +67,30 @@ const Home: FunctionalComponent = () => {
 						</div>
 					</div>
 				</Link>
+				: <></> }
 
-				<div class="alert alert-primary d-inline-block px-4 text-dark mx-1 align-top" role="alert">
-					<div>
-						<img
-							src={ `${AssetsRoot}/world/event-${CurrentLocale}.png` }
-							height="24"
-							style={ { verticalAlign: "text-bottom" } }
-						/>
-					</div>
+			<div class="alert alert-primary d-inline-block px-4 text-dark mx-1 align-top" role="alert">
+				<div>
 					<img
-						src={ `${AssetsRoot}/etc/miss_orca_3.png` }
-						class="mb-1"
-						height="120"
-						style={ { verticalAlign: "middle" } }
+						src={ `${AssetsRoot}/world/event-${CurrentLocale}.png` }
+						height="24"
+						style={ { verticalAlign: "text-bottom" } }
 					/>
-					<div>
-						<span class="badge bg-danger me-2">B조 투표</span>
-						<span>
-							{ DateText(new Date(2022, 5 - 1, 23)) } ~ { DateText(new Date(2022, 5 - 1, 30)) }
-						</span>
-					</div>
+				</div>
+				<img
+					src={ `${AssetsRoot}/etc/miss_orca_3.png` }
+					class="mb-1"
+					height="120"
+					style={ { verticalAlign: "middle" } }
+				/>
+				<div>
+					<span class="badge bg-danger me-2">C조 투표</span>
+					<span>
+						{ DateText(new Date(2022, 5 - 1, 30)) } ~ { DateText(new Date(2022, 6 - 1, 6)) }
+					</span>
 				</div>
 			</div>
-			: <></>
-		}
+		</div>
 
 		<h2>
 			<img

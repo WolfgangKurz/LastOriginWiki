@@ -1,7 +1,10 @@
 interface MapPositionType {
 	[wid: string]: {
 		[mid: string]: {
-			[node: string]: [number, number] | [number, number, boolean] | [number, number, boolean, number];
+			[node: string]: [number, number] | // [x, y]
+			[number, number, boolean] | // [x, y, prev-line]
+			[number, number, boolean, number] | // [x, y, prev-line, node-type]
+			[number, number, boolean, number, string]; // [x, y, prev-line, node-type, icon]
 		};
 	};
 }
@@ -89,7 +92,7 @@ const MapPosition: MapPositionType = {
 			"EV1-5": [3.2, 1],
 			"EV1-6": [4, 1],
 			"EV1-7": [4.8, 1],
-		}
+		},
 	},
 	Ev16: {
 		1: {
@@ -108,7 +111,20 @@ const MapPosition: MapPositionType = {
 			"EV1-4Ex": [3, 2, false],
 			"EV1-5Ex": [3.8, 2, false],
 			"EV1-6Ex": [4.6, 2, false],
-		}
+		},
+	},
+	Ev17: {
+		1: {
+			"EV1-1": [0, 0],
+			"EV1-2": [1, 0],
+			"EV1-3": [1.8, 0, true, 0, "Ev17Ev1-3"],
+			"EV1-4": [2.8, 0],
+			"EV1-5": [3.8, 0],
+
+			"EV1-1Ex": [1, 2],
+			"EV1-2Ex": [1.8, 2],
+			"EV1-3Ex": [2.6, 2],
+		},
 	},
 };
 export default MapPosition;

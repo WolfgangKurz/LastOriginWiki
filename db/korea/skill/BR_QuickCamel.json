@@ -4915,7 +4915,9 @@
                   "Char_BR_TalonFeather_N",
                   "Char_BR_Salamander_N",
                   "Char_BR_Hyena_N",
-                  "Char_BR_QuickCamel_N"
+                  "Char_BR_QuickCamel_N",
+                  "Char_BR_Scarabya_N",
+                  "Char_BR_Kheshig_N"
                 ]
               },
               "body": [
@@ -5154,6 +5156,55 @@
                 }
               ],
               "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_QuickCamel_N_111",
+              "on": "round",
+              "if": {
+                "in_squad": [
+                  "Char_BR_Kheshig_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_BR_QuickCamel_N_111_1",
+                    "type": 1,
+                    "value": "0.040000",
+                    "level": "0.002000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "4%",
+                      "per": "0.2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
             }
           ]
         }
@@ -5329,6 +5380,18 @@
             "base": 0.04,
             "per": 0.002,
             "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "Effect_BR_QuickCamel_N_111_1",
+              "type": 1,
+              "value": "0.040000",
+              "level": "0.002000"
+            },
+            "base": 0.04,
+            "per": 0.002,
+            "chance": 1
           }
         ]
       ]
@@ -5461,7 +5524,8 @@
                   "Char_BR_Khan_N",
                   "Char_BR_WarWolf_N",
                   "Char_BR_Hyena_N",
-                  "Char_BR_QuickCamel_N"
+                  "Char_BR_QuickCamel_N",
+                  "Char_BR_Kheshig_N"
                 ]
               },
               "body": [
