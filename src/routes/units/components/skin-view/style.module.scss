@@ -18,6 +18,9 @@
 	line-height: 26px;
 	font-size: 22px;
 
+	user-select: none;
+	z-index: 10;
+
 	:global(.alert) {
 		margin: 0;
 		padding: 0;
@@ -29,17 +32,6 @@
 			opacity: 0.33;
 		}
 	}
-}
-
-.SkinPropMarriage,
-.SkinPropAnimated,
-.SkinPropVoice,
-.SkinPropEffect,
-.SkinPropMotion,
-.SkinPropDamaged,
-.SkinPropBG {
-	user-select: none;
-	z-index: 10;
 }
 
 .SkinPropMarriage {
@@ -83,7 +75,7 @@
 		right: 0px;
 		width: 64px;
 		height: 62px;
-		background-image: url($assetsRoot + "/damaged-icon.png");
+		background-image: url($assetsRoot + "/ui/icon-skin-damaged.png");
 		background-size: 128px 62px;
 
 		&[data-damaged="1"] {
@@ -95,7 +87,7 @@
 		right: 18px;
 		width: 28px;
 		height: 28px;
-		background-image: url($assetsRoot + "/simplify-icon.png");
+		background-image: url($assetsRoot + "/ui/icon-skin-simplify.png");
 		background-position-x: -28px;
 		background-size: 56px 28px;
 
@@ -108,7 +100,7 @@
 		right: 18px;
 		width: 28px;
 		height: 28px;
-		background-image: url($assetsRoot + "/bg-icon.png");
+		background-image: url($assetsRoot + "/ui/icon-skin-bg.png");
 		background-position-x: -28px;
 		background-size: 56px 28px;
 
@@ -123,13 +115,39 @@
 		right: 68px;
 		width: 28px;
 		height: 28px;
-		background-image: url($assetsRoot + "/icon-platform.png");
+		background-image: url($assetsRoot + "/ui/icon-skin-platform.png");
 		background-position-x: -28px;
 		background-size: 56px 28px;
 
 		&[data-platform="1"] {
 			background-position-x: 0;
 		}
+	}
+	&.SD {
+		top: 18px;
+		right: 130px;
+		width: 28px;
+		height: 28px;
+		background-image: url($assetsRoot + "/ui/icon-skin-sd.png");
+		background-position-x: 0px;
+		background-size: 56px 28px;
+
+		&[data-sd="1"] {
+			background-position-x: -28px;
+		}
+	}
+}
+.SDList {
+	position: absolute;
+	top: 58px;
+	right: 18px;
+	width: 150px;
+	height: auto;
+	z-index: 4;
+
+	> li {
+		user-select: none !important;
+		cursor: pointer;
 	}
 }
 
@@ -251,6 +269,10 @@
 				&:focus {
 					outline: none !important;
 				}
+			}
+
+			> .SDVideo {
+				object-fit: scale-down !important;
 			}
 		}
 		&:not(.Collapsed) .FullUnit {

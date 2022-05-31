@@ -12,7 +12,7 @@ function process (auth) {
 					? "1R2gKu8s3Cxb9rqo5mqwin15PZvRbf8tjDdsKcmDOj18"
 					: "11IxebdUQ_VHbaP79sN8KxZ87n3c5rG42DL8TQOK9h1k"
 				: "1ohSOKdl1IZq8aOsWPJ74yX01Ave7FkSrUFG5MSbfZN8",
-			range: "UnitSkin!A3:AE",
+			range: "UnitSkin!A3:AF",
 		}, (err, res) => {
 			if (err) return console.log(`The API returned an error: ${err}`);
 
@@ -30,9 +30,10 @@ function process (auth) {
 
 					const Pro = parseInt(row[5], 10) === 1;
 					const G = parseInt(row[6], 10) === 1;
+					const SD = parseInt(row[7], 10) === 1;
 
-					const parts = parseInt(row[7], 10);
-					const stage = parseInt(row[8], 10) === 1;
+					const parts = parseInt(row[8], 10);
+					const stage = parseInt(row[9], 10) === 1;
 
 					// const A = Parts & (1 << 1) > 0;
 					// const V = Parts & (1 << 2) > 0;
@@ -43,22 +44,22 @@ function process (auth) {
 
 					const list = new Array(8).fill(0).map((_, i) => i);
 
-					const subset = list.map(i => parseInt(row[9 + i], 10) === 1);
+					const subset = list.map(i => parseInt(row[10 + i], 10) === 1);
 
-					const artist = row[17];
+					const artist = row[18];
 
-					const offsets = list.map(i => parseInt(row[18 + i], 10));
+					const offsets = list.map(i => parseInt(row[19 + i], 10));
 
 					const anim = new Array(4)
 						.fill(0)
-						.map((_, i) => parseInt(row[26 + i], 10) === 1);
+						.map((_, i) => parseInt(row[27 + i], 10) === 1);
 
-					const facelist = (row[30] || "")
+					const facelist = (row[31] || "")
 						.split(",")
 						.filter(x => x !== "")
 						.map(x => parseInt(x, 10));
 
-					const info = { G, parts, stage, subset, anim, category, facelist };
+					const info = { G, SD, parts, stage, subset, anim, category, facelist };
 					const base = { sid: skinId, artist, offsets, price, ...info };
 
 					if (!(uid in ret))

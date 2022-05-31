@@ -76,6 +76,9 @@ export interface UnitSkinEntity {
 	/** has Google CG */
 	G: boolean;
 
+	/** has SD video */
+	SD: boolean;
+
 	/** Parts, see SKIN_IN_PARTS */
 	parts: number;
 
@@ -245,6 +248,7 @@ export namespace Unit {
 		},
 		skins: {
 			G: false,
+			SD: false,
 			parts: 0,
 			stage: false,
 
