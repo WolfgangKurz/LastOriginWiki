@@ -13,6 +13,7 @@ import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import MergedVideo from "@/components/merged-video";
 
 import style from "./style.module.scss";
+import { isActive } from "@/libs/Functions";
 
 interface SkinItem extends UnitSkin {
 	isDef: boolean;
@@ -35,7 +36,20 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 	const unit = props.unit;
 	const skin = props.skin;
 
-	const skinDirection = objState<"" | "horz" | "vert">("");
+	// const skinDirection = objState<"" | "horz" | "vert">("");
+
+	const SDAnimList: string[] = [
+		"Idle1",
+		"Idle2",
+		"Move",
+		"Skill1",
+		"Skill2",
+		"Victory",
+		"Die",
+	];
+
+	const IsSD = objState<boolean>(false);
+	const SDAnim = objState<string>("Idle1");
 
 	const IsDamaged = objState<boolean>(false);
 	const IsSimplified = objState<boolean>(false);
@@ -114,6 +128,15 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		const skinId = skin.isDef ? 0 : skin.sid;
 		return `${unit.uid}_${skinId}_${skin.G && IsGoogle.value ? "G" : "O"}${postfix}`;
 	})();
+	const SDVideoURL = ((): string => {
+		if (!props.collapsed && !props.animate) return "";
+		if (!skin.SD) return "";
+
+		const postfix = SDAnim.value;
+
+		const skinId = skin.isDef ? 0 : skin.sid;
+		return `${unit.uid}_${skinId}_${skin.G && IsGoogle.value ? "G" : "O"}_${postfix}`;
+	})();
 
 	if (!skin.G && IsGoogle.value) // not have google
 		IsGoogle.set(false);
@@ -183,51 +206,34 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					</div>
 				</div>
 				<div class={ style.FullUnit }>
-					{ SkinVideoURL.length > 0
+					{ skin.SD && IsSD.value
 						? CanPlayWebM()
 							? <video
-								style={ ImageStyle }
+								class={ style.SDVideo }
 								autoPlay muted loop
-								src={ `${AssetsRoot}/webm/HD/${SkinVideoURL}.webm` }
-								// onLoadedData={ (e): void => {
-								// 	const el = e.target as HTMLVideoElement;
-								// 	if (el.readyState > 0) {
-								// 		if (el.videoWidth > el.videoHeight)
-								// 			skinDirection.set("horz");
-								// 		else
-								// 			skinDirection.set("vert");
-								// 	}
-								// } }
-								data-dir={ skinDirection.value }
+								src={ `${AssetsRoot}/webm/SD/${SDVideoURL}.webm` }
 							/>
 							: <MergedVideo
-								style={ ImageStyle }
-								src={ `${AssetsRoot}/webm/HD.Legacy/${SkinVideoURL}.mp4` }
+								class={ style.SDVideo }
+								src={ `${AssetsRoot}/webm/SD.Legacy/${SDVideoURL}.mp4` }
 								type="video/mp4"
-								// onLoadedData={ (e): void => {
-								// 	const el = e.target as HTMLVideoElement;
-								// 	if (el.readyState > 0) {
-								// 		const w = el.videoWidth / 2;
-								// 		if (w > el.videoHeight)
-								// 			skinDirection.set("horz");
-								// 		else
-								// 			skinDirection.set("vert");
-								// 	}
-								// } }
-								data-dir={ skinDirection.value }
 							/>
-						: <img
-							style={ ImageStyle }
-							src={ SkinImageURL }
-							// onLoad={ (e): void => {
-							// 	const el = e.target as HTMLImageElement;
-							// 	if (el.naturalWidth > el.naturalHeight)
-							// 		skinDirection.set("horz");
-							// 	else
-							// 		skinDirection.set("vert");
-							// } }
-							data-dir={ skinDirection.value }
-						/>
+						: SkinVideoURL.length > 0
+							? CanPlayWebM()
+								? <video
+									style={ ImageStyle }
+									autoPlay muted loop
+									src={ `${AssetsRoot}/webm/HD/${SkinVideoURL}.webm` }
+								/>
+								: <MergedVideo
+									style={ ImageStyle }
+									src={ `${AssetsRoot}/webm/HD.Legacy/${SkinVideoURL}.mp4` }
+									type="video/mp4"
+								/>
+							: <img
+								style={ ImageStyle }
+								src={ SkinImageURL }
+							/>
 					}
 				</div>
 
@@ -239,150 +245,172 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					: <></>
 				}
 
-				<div class={ style.SkinPropMarriage }>
-					{ unit.marriageVoice ? <BootstrapTooltip
-						placement="top"
-						content={ <span class="word-keep"><Locale k="UNIT_VIEW_SKIN_MARRIAGE" /></span> }
-					>
-						<div class="position-relative alert">
-							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/marriage.png` } />
-						</div>
-					</BootstrapTooltip>
-						: <div class={ `position-relative alert ${style.Invalid}` }>
-							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/marriage.png` } />
-						</div>
-					}
-				</div>
-				<div class={ style.SkinPropAnimated }>
-					{ (skin.parts & (1 << SKIN_IN_PARTS.LOBBY_ANIMATION)) > 0
-						? <BootstrapTooltip
+				<>
+					<div class={ style.SkinPropMarriage }>
+						{ unit.marriageVoice ? <BootstrapTooltip
 							placement="top"
-							content={ <span class="word-keep">
-								<Locale k={ skin.stage ? "UNIT_VIEW_SKIN_L2D_PLUS" : "UNIT_VIEW_SKIN_L2D" } />
-							</span> }
+							content={ <span class="word-keep"><Locale k="UNIT_VIEW_SKIN_MARRIAGE" /></span> }
 						>
 							<div class="position-relative alert">
-								<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/l2d${skin.stage ? "p" : ""}.png` } />
+								<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/marriage.png` } />
 							</div>
 						</BootstrapTooltip>
-						: <div class={ `position-relative alert ${style.Invalid}` }>
-							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/l2d.png` } />
-						</div>
-					}
-				</div>
-				<div class={ style.SkinPropVoice }>
-					{ (skin.parts & (1 << SKIN_IN_PARTS.VOICE)) > 0
-						? <BootstrapTooltip
-							placement="top"
-							content={ <span class="word-keep">
-								<Locale k={ skin.isDef ? "UNIT_VIEW_SKIN_DEFAULT" : "UNIT_VIEW_SKIN_VOICE" } />
-							</span> }
-						>
-							<div class="position-relative alert">
+							: <div class={ `position-relative alert ${style.Invalid}` }>
+								<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/marriage.png` } />
+							</div>
+						}
+					</div>
+					<div class={ style.SkinPropAnimated }>
+						{ (skin.parts & (1 << SKIN_IN_PARTS.LOBBY_ANIMATION)) > 0
+							? <BootstrapTooltip
+								placement="top"
+								content={ <span class="word-keep">
+									<Locale k={ skin.stage ? "UNIT_VIEW_SKIN_L2D_PLUS" : "UNIT_VIEW_SKIN_L2D" } />
+								</span> }
+							>
+								<div class="position-relative alert">
+									<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/l2d${skin.stage ? "p" : ""}.png` } />
+								</div>
+							</BootstrapTooltip>
+							: <div class={ `position-relative alert ${style.Invalid}` }>
+								<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/l2d.png` } />
+							</div>
+						}
+					</div>
+					<div class={ style.SkinPropVoice }>
+						{ (skin.parts & (1 << SKIN_IN_PARTS.VOICE)) > 0
+							? <BootstrapTooltip
+								placement="top"
+								content={ <span class="word-keep">
+									<Locale k={ skin.isDef ? "UNIT_VIEW_SKIN_DEFAULT" : "UNIT_VIEW_SKIN_VOICE" } />
+								</span> }
+							>
+								<div class="position-relative alert">
+									<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/voice.png` } />
+								</div>
+							</BootstrapTooltip>
+							: <div class={ `position-relative alert ${style.Invalid}` }>
 								<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/voice.png` } />
 							</div>
-						</BootstrapTooltip>
-						: <div class={ `position-relative alert ${style.Invalid}` }>
-							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/voice.png` } />
-						</div>
-					}
-				</div>
-				<div class={ style.SkinPropEffect }>
-					{ (skin.parts & (1 << SKIN_IN_PARTS.SD_EFFECT)) > 0
-						? <BootstrapTooltip
-							placement="top"
-							content={ <span class="word-keep">
-								<Locale k={ skin.isDef ? "UNIT_VIEW_SKIN_DEFAULT" : "UNIT_VIEW_SKIN_EFFECT" } />
-							</span> }
-						>
-							<div class="position-relative alert">
+						}
+					</div>
+					<div class={ style.SkinPropEffect }>
+						{ (skin.parts & (1 << SKIN_IN_PARTS.SD_EFFECT)) > 0
+							? <BootstrapTooltip
+								placement="top"
+								content={ <span class="word-keep">
+									<Locale k={ skin.isDef ? "UNIT_VIEW_SKIN_DEFAULT" : "UNIT_VIEW_SKIN_EFFECT" } />
+								</span> }
+							>
+								<div class="position-relative alert">
+									<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/fx.png` } />
+								</div>
+							</BootstrapTooltip>
+							: <div class={ `position-relative alert ${style.Invalid}` }>
 								<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/fx.png` } />
 							</div>
-						</BootstrapTooltip>
-						: <div class={ `position-relative alert ${style.Invalid}` }>
-							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/fx.png` } />
-						</div>
-					}
-				</div>
-				<div class={ style.SkinPropMotion }>
-					{ (skin.parts & (1 << SKIN_IN_PARTS.SD_ANIMATION)) > 0
-						? <BootstrapTooltip
-							placement="top"
-							content={ <span class="word-keep">
-								<Locale k={ skin.isDef ? "UNIT_VIEW_SKIN_DEFAULT" : "UNIT_VIEW_SKIN_MOTION" } />
-							</span> }
-						>
-							<div class="position-relative alert">
+						}
+					</div>
+					<div class={ style.SkinPropMotion }>
+						{ (skin.parts & (1 << SKIN_IN_PARTS.SD_ANIMATION)) > 0
+							? <BootstrapTooltip
+								placement="top"
+								content={ <span class="word-keep">
+									<Locale k={ skin.isDef ? "UNIT_VIEW_SKIN_DEFAULT" : "UNIT_VIEW_SKIN_MOTION" } />
+								</span> }
+							>
+								<div class="position-relative alert">
+									<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/sd.png` } />
+								</div>
+							</BootstrapTooltip>
+							: <div class={ `position-relative alert ${style.Invalid}` }>
 								<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/sd.png` } />
 							</div>
-						</BootstrapTooltip>
-						: <div class={ `position-relative alert ${style.Invalid}` }>
-							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/sd.png` } />
-						</div>
-					}
-				</div>
-				<div class={ style.SkinPropDamaged }>
-					{ (skin.parts & (1 << SKIN_IN_PARTS.DAMAGE_IMAGE)) > 0
-						? <BootstrapTooltip
-							placement="top"
-							content={ <span class="word-keep"><Locale k="UNIT_VIEW_SKIN_DAMAGED" /></span> }
-						>
-							<div class="position-relative alert">
+						}
+					</div>
+					<div class={ style.SkinPropDamaged }>
+						{ (skin.parts & (1 << SKIN_IN_PARTS.DAMAGE_IMAGE)) > 0
+							? <BootstrapTooltip
+								placement="top"
+								content={ <span class="word-keep"><Locale k="UNIT_VIEW_SKIN_DAMAGED" /></span> }
+							>
+								<div class="position-relative alert">
+									<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/damaged.png` } />
+								</div>
+							</BootstrapTooltip>
+							:
+							<div class={ `position-relative alert ${style.Invalid}` }>
 								<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/damaged.png` } />
 							</div>
-						</BootstrapTooltip>
-						:
-						<div class={ `position-relative alert ${style.Invalid}` }>
-							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/damaged.png` } />
-						</div>
-					}
-				</div>
-				<div class={ style.SkinPropBG }>
-					{ (skin.parts & (1 << SKIN_IN_PARTS.PROPS)) > 0
-						? <BootstrapTooltip
-							placement="top"
-							content={ <span class="word-keep"><Locale k="UNIT_VIEW_SKIN_BG" /></span> }
-						>
-							<div class="position-relative alert">
+						}
+					</div>
+					<div class={ style.SkinPropBG }>
+						{ (skin.parts & (1 << SKIN_IN_PARTS.PROPS)) > 0
+							? <BootstrapTooltip
+								placement="top"
+								content={ <span class="word-keep"><Locale k="UNIT_VIEW_SKIN_BG" /></span> }
+							>
+								<div class="position-relative alert">
+									<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/object.png` } />
+								</div>
+							</BootstrapTooltip>
+							:
+							<div class={ `position-relative alert ${style.Invalid}` }>
 								<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/object.png` } />
 							</div>
-						</BootstrapTooltip>
-						:
-						<div class={ `position-relative alert ${style.Invalid}` }>
-							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/object.png` } />
-						</div>
-					}
-				</div>
+						}
+					</div>
+				</>
 
-				{ skin.subset[SKIN_SUBSET_ENUM.D__]
-					? <div
-						class={ `${style.SkinToggle} ${style.Damaged}` }
-						data-damaged={ IsDamaged.value ? 1 : 0 }
-						onClick={ (): void => IsDamaged.set(!IsDamaged.value) }
-					/>
-					: <></>
+				{ !IsSD.value
+					? [
+						skin.subset[SKIN_SUBSET_ENUM.D__]
+							? <div
+								class={ `${style.SkinToggle} ${style.Damaged}` }
+								data-damaged={ IsDamaged.value ? 1 : 0 }
+								onClick={ (): void => IsDamaged.set(!IsDamaged.value) }
+							/>
+							: <></>,
+						AvailableS
+							? <div
+								class={ `${style.SkinToggle} ${style.Simplified}` }
+								data-simplified={ IsSimplified.value ? 1 : 0 }
+								onClick={ (): void => IsSimplified.set(!IsSimplified.value) }
+							/>
+							: <></>,
+						AvailableBG
+							? <div
+								class={ `${style.SkinToggle} ${style.BG}` }
+								data-bg={ IsBG.value ? 1 : 0 }
+								onClick={ (): void => IsBG.set(!IsBG.value) }
+							/>
+							: <></>,
+						skin.G
+							? <div
+								class={ `${style.SkinToggle} ${style.Platform}` }
+								data-platform={ IsGoogle.value ? 1 : 0 }
+								onClick={ (): void => IsGoogle.set(!IsGoogle.value) }
+							/>
+							: <></>,
+					]
+					: <ul class={ `list-group ${style.SDList}` }>
+						{ SDAnimList.map(anim => <li
+							class={ `list-group-item ${isActive(SDAnim.value === anim)}` }
+							onClick={ (e): void => {
+								e.preventDefault();
+								SDAnim.set(anim);
+							} }
+						>
+							<Locale k={ `UNIT_VIEW_SKIN_ANIM_${anim}` } />
+						</li>) }
+					</ul>
 				}
-				{ AvailableS
+
+				{ skin.SD
 					? <div
-						class={ `${style.SkinToggle} ${style.Simplified}` }
-						data-simplified={ IsSimplified.value ? 1 : 0 }
-						onClick={ (): void => IsSimplified.set(!IsSimplified.value) }
-					/>
-					: <></>
-				}
-				{ AvailableBG
-					? <div
-						class={ `${style.SkinToggle} ${style.BG}` }
-						data-bg={ IsBG.value ? 1 : 0 }
-						onClick={ (): void => IsBG.set(!IsBG.value) }
-					/>
-					: <></>
-				}
-				{ skin.G
-					? <div
-						class={ `${style.SkinToggle} ${style.Platform}` }
-						data-platform={ IsGoogle.value ? 1 : 0 }
-						onClick={ (): void => IsGoogle.set(!IsGoogle.value) }
+						class={ `${style.SkinToggle} ${style.SD}` }
+						data-sd={ IsSD.value ? 1 : 0 }
+						onClick={ (): void => IsSD.set(!IsSD.value) }
 					/>
 					: <></>
 				}

@@ -8,6 +8,17 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11754" date="2022-05-31"
+		new={ <>
+			<li>
+				전투원 스킨 정보에 SD 애니메이션 미리보기가 추가되었습니다.<br />
+				현재 시험적으로 추가되었으며, <BY>라비아타 프로토타입</BY> 전투원의 SD만 확인할 수 있습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2022-05-31 18:06:11</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11751" date="2022-05-30"
 		new={ <>
 			<li>신규 전투원 <BY>T-4 케시크</BY>가 추가되었습니다.</li>

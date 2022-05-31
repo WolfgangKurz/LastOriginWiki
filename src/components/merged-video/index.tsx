@@ -18,6 +18,7 @@ interface WASMData {
 type WASMMergeAlpha = (width: number, height: number) => void;
 
 interface MergedVideoProps {
+	class?: string;
 	src: string;
 	type?: string;
 	style?: string | preact.JSX.CSSProperties;
@@ -135,7 +136,10 @@ class MergedVideo extends Component<MergedVideoProps> {
 						props.onLoadedData.call(undefined as never, e);
 				} }
 			/>
-			<canvas ref={ this.disp } />
+			<canvas
+				class={ props.class }
+				ref={ this.disp }
+			/>
 		</>;
 	}
 }
