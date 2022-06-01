@@ -7,12 +7,14 @@ import { CurrentLocale } from "@/libs/Locale";
 import { Host, IsAprilFool } from "@/libs/Const";
 
 // import DynamicRoute from "@/components/dynamic-route";
-import Loader from "@/components/loader";
-import { LocaleGet } from "@/components/locale";
+import Loader, { StaticDB } from "@/components/loader";
+import Locale, { LocaleGet } from "@/components/locale";
 import Redirect from "@/components/redirect";
 import Header from "@/components/header";
 
 import NotFoundPage from "@/routes/notfound";
+import PopupBase from "@/components/popup/base";
+import Icon from "@/components/bootstrap-icon";
 
 // import AIList from "@/components/ai-list/new.index";
 
@@ -44,7 +46,7 @@ const App: FunctionalComponent = () => {
 			<link href={ `${Host}/assets/font/SpoqaHanSans-kr.css` } rel="stylesheet" />
 			<link href={ `${Host}/assets/font/SpoqaHanSans-jp.css` } rel="stylesheet" />
 
-			<Loader db="!" json={ `locale/${CurrentLocale}` }>
+			<Loader json={ StaticDB.Locale[CurrentLocale] }>
 				<Header />
 
 				<div class="container p-4">
@@ -94,6 +96,19 @@ const App: FunctionalComponent = () => {
 						<NotFoundPage default />
 					</Router>
 				</div>
+
+				{ Store.ConnectDirect("requireReload", ({ requireReload }) =>
+					requireReload
+						? <PopupBase display>
+							<div class="text-center m-0" style={ { lineHeight: "1.3", fontSize: "5rem" } }>
+								<Icon class="align-top" icon="chat-dots" />
+							</div>
+							<div style={ { whiteSpace: "pre-wrap" } }>
+								<Locale plain k="COMMON_REQUIRE_RELOAD" />
+							</div>
+						</PopupBase>
+						: <></>
+				) }
 			</Loader>
 		</div>
 	</Store.Provider>;

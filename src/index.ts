@@ -11,7 +11,22 @@ import "@/themes/patch.scss";
 import { Extend } from "@/libs/Functions";
 import { IsAprilFool } from "@/libs/Const";
 
+import { GetJson, JsonLoaderCore } from "@/components/loader";
+import buildtime from "@/buildtime";
+import Store from "@/store";
+
 Extend();
+
+const buildtimeJson = `!/buildtime.json?_=${Date.now()}`;
+JsonLoaderCore("!", buildtimeJson)
+	.then(() => {
+		const latestBuildNo = GetJson<number>(buildtimeJson);
+		const currentBuildNo = buildtime.build;
+
+		if (latestBuildNo !== currentBuildNo)
+			Store.Actions().markAsRequireReload();
+	});
+
 render(h(App, {}), document.getElementById("page")!);
 
 if (IsAprilFool) {

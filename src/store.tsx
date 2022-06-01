@@ -122,6 +122,8 @@ export class StoreClass<
 /* eslint-disable @typescript-eslint/explicit-function-return-type, max-len */
 const Store = new StoreClass(
 	{
+		requireReload: false,
+
 		Units: {
 			Rarity: {
 				[ACTOR_GRADE.B]: true,
@@ -238,12 +240,14 @@ const Store = new StoreClass(
 			Normal: true,
 			Unused: true,
 			NEW: true,
-		
+
 			DisplayType: "list" as ("list" | "group"),
 			SearchText: "",
 		},
 	},
 	{
+		markAsRequireReload: (state) => merge(state, { requireReload: true }),
+
 		toggleUnitsFilterRarityB: (state) => merge(state, { Units: { Rarity: { [ACTOR_GRADE.B]: !state.Units.Rarity[ACTOR_GRADE.B] } } }),
 		toggleUnitsFilterRarityA: (state) => merge(state, { Units: { Rarity: { [ACTOR_GRADE.A]: !state.Units.Rarity[ACTOR_GRADE.A] } } }),
 		toggleUnitsFilterRarityS: (state) => merge(state, { Units: { Rarity: { [ACTOR_GRADE.S]: !state.Units.Rarity[ACTOR_GRADE.S] } } }),
