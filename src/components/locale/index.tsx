@@ -1,8 +1,8 @@
 import { ComponentType, FunctionalComponent, h } from "preact";
 
-import { CurrentLocale } from "@/libs/Locale";
+import { CurrentLocale, LocaleTypes } from "@/libs/Locale";
 
-import { GetJson } from "@/components/loader";
+import { GetJson, StaticDB } from "@/components/loader";
 
 type LocaleComponentProp<T> = Record<string, ComponentType<T>>;
 
@@ -88,6 +88,9 @@ function parseVNode<T> (template: string, p: LocaleProps<T>["p"], components: Lo
 	return ret;
 }
 
+const GetLocaleTable = (locale: LocaleTypes) =>
+	GetJson<Record<string, string>>(StaticDB.Locale[locale]);
+
 interface LocaleProps<T> {
 	k: string;
 	p?: Array<string | number | boolean | preact.VNode>;
@@ -97,7 +100,7 @@ interface LocaleProps<T> {
 }
 
 const Locale: FunctionalComponent<LocaleProps<any>> = (props) => {
-	const locale = GetJson<Record<string, string>>(`locale/${CurrentLocale}`);
+	const locale = GetLocaleTable(CurrentLocale);
 
 	if (locale) {
 		const t = locale[props.k];
@@ -135,7 +138,7 @@ const Locale: FunctionalComponent<LocaleProps<any>> = (props) => {
 export default Locale;
 
 export function LocaleGet (k: string, ...p: any[]): string {
-	const locale = GetJson<Record<string, string>>(`locale/${CurrentLocale}`);
+	const locale = GetLocaleTable(CurrentLocale);
 	const t = (locale && locale[k]) || k;
 	return t.replace(/\{([0-9]+)\}/g, (p0, p1) => {
 		const idx = parseInt(p1, 10);
@@ -145,6 +148,6 @@ export function LocaleGet (k: string, ...p: any[]): string {
 }
 
 export function LocaleExists (k: string): boolean {
-	const locale = GetJson<Record<string, string>>(`locale/${CurrentLocale}`);
+	const locale = GetLocaleTable(CurrentLocale);
 	return locale && k in locale;
 }

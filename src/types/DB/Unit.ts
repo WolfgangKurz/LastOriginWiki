@@ -77,7 +77,7 @@ export interface UnitSkinEntity {
 	G: boolean;
 
 	/** has SD video */
-	SD: boolean;
+	SD: false | string[];
 
 	/** Parts, see SKIN_IN_PARTS */
 	parts: number;

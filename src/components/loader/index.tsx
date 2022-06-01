@@ -5,6 +5,10 @@ import { DataRoot } from "@/libs/Const";
 import { CurrentDB } from "@/libs/DB";
 import EntitySource from "@/libs/EntitySource";
 
+import DBHash, { DBHashType } from "@/components/loader/hash";
+
+export * from "./static";
+
 interface SubComponentBase {
 	store: any;
 }
@@ -42,8 +46,28 @@ function Load<T = any> (db: string, json: string): Promise<void> {
 		LoadQueue[json].push((): void => resolve());
 		if (!first) return;
 
+		const _rootDB = json.startsWith("!/");
+		const _rootJson = _rootDB ? json : `!/${db}/${json}`;
+		const _hash = (() => {
+			const parts = _rootJson.substring(2).split("/");
+			let target = DBHash;
+
+			for (let i = 0; i < parts.length; i++) {
+				const p = parts[i];
+				if (p in target) {
+					target = target[p] as DBHashType;
+				} else
+					return "";
+			}
+
+			if (typeof target === "string") return `?_=${target}`;
+			return "";
+		})();
+
+		const _postfix = _rootJson.includes(".json") ? _hash : `.json${_hash}`;
+
 		const xhr = new XMLHttpRequest();
-		xhr.open("GET", `${DataRoot}/${db}/${json}.json`);
+		xhr.open("GET", `${DataRoot}/${_rootJson.substring(2)}${_postfix}`);
 		xhr.addEventListener("load", (e) => {
 			if (Math.floor(xhr.status / 100) === 2) {
 				const data = JSON.parse(xhr.responseText) as T;
@@ -58,27 +82,11 @@ function Load<T = any> (db: string, json: string): Promise<void> {
 	});
 }
 
-export const StaticDB = {
-	FilterableUnit: "filterable.unit",
-	FilterableEquip: "filterable.equip",
-	FilterableEnemy: "filterable.enemy",
-	FilterableFacility: "filterable.facility",
-	EnemyGroup: "enemygroup",
-	Consumable: "consumable",
-	Gacha: "gacha",
-	Sticker: "sticker",
-	Exchange: "exchange",
-	EW: "ew",
-	Story: "story",
-	Research: "research",
-	Maps: "maps",
-	RoguelikeLimitEffects: "roguelike/limiteffects",
-	RoguelikeBuffEffects: "roguelike/buffeffects",
-	RoguelikeEffects: "roguelike/effects",
-	RoguelikeNode: "roguelike/node",
-	RoguelikeQuest: "roguelike/quest",
-	RoguelikeItem: "roguelike/item",
-};
+function flatten (list: string | string[] | undefined): string[] {
+	if (!list) return [];
+	if (typeof list === "string") return [list];
+	return list;
+}
 
 export type JsonDataConverter<T> = (data: T) => T;
 export function DBSourceConverter<T> (data: T): T {
@@ -109,11 +117,7 @@ export function GetJson<T> (json: string, converter?: JsonDataConverter<T>): T {
 	return CachedJson[json] as T;
 }
 export function JsonLoaderCore (db: string, json: string | string[] | undefined): Promise<void[]> {
-	const list = typeof json === "undefined"
-		? []
-		: typeof json === "string"
-			? [json]
-			: json;
+	const list = flatten(json);
 
 	if (list.length === 0)
 		return new Promise<void[]>((resolve) => resolve([]));
@@ -125,11 +129,6 @@ export function JsonLoaderCore (db: string, json: string | string[] | undefined)
 }
 
 const Loader: FunctionalComponent<LoaderProps> = (props) => {
-	function flatten (list: string | string[] | undefined): string[] {
-		if (!list) return [];
-		if (typeof list === "string") return [list];
-		return list;
-	}
 	function comp (a: string[], b: string[]): boolean {
 		if (a.length !== b.length) return false;
 		return a.every((v, i) => v === b[i]);
@@ -145,9 +144,7 @@ const Loader: FunctionalComponent<LoaderProps> = (props) => {
 		return <span class="text-secondary">Data loading</span>;
 	}
 
-	const db = props.db === "!"
-		? ""
-		: props.db || CurrentDB;
+	const db = props.db || CurrentDB;
 	const target = flatten(props.json);
 
 	const list = objState<string[]>([]);

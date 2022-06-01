@@ -30,7 +30,7 @@ function process (auth) {
 
 					const Pro = parseInt(row[5], 10) === 1;
 					const G = parseInt(row[6], 10) === 1;
-					const SD = parseInt(row[7], 10) === 1;
+					const SD = (row[7] || "").split(",");
 
 					const parts = parseInt(row[8], 10);
 					const stage = parseInt(row[9], 10) === 1;

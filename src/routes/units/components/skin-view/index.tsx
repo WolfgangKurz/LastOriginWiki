@@ -38,18 +38,10 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 
 	// const skinDirection = objState<"" | "horz" | "vert">("");
 
-	const SDAnimList: string[] = [
-		"Idle1",
-		"Idle2",
-		"Move",
-		"Skill1",
-		"Skill2",
-		"Victory",
-		"Die",
-	];
+	const SDAnimList = skin.SD || [""];
 
 	const IsSD = objState<boolean>(false);
-	const SDAnim = objState<string>("Idle1");
+	const SDAnim = objState<string>(SDAnimList[0]);
 
 	const IsDamaged = objState<boolean>(false);
 	const IsSimplified = objState<boolean>(false);
@@ -393,17 +385,19 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 							/>
 							: <></>,
 					]
-					: <ul class={ `list-group ${style.SDList}` }>
-						{ SDAnimList.map(anim => <li
-							class={ `list-group-item ${isActive(SDAnim.value === anim)}` }
-							onClick={ (e): void => {
-								e.preventDefault();
-								SDAnim.set(anim);
-							} }
-						>
+					:
+					<select
+						class={ `form-select ${style.SDList}` }
+						value={ SDAnim.value }
+						onChange={ (e): void => {
+							const value = (e.target as HTMLSelectElement).value;
+							SDAnim.set(value);
+						} }
+					>
+						{ SDAnimList.map(anim => <option value={ anim }>
 							<Locale k={ `UNIT_VIEW_SKIN_ANIM_${anim}` } />
-						</li>) }
-					</ul>
+						</option>) }
+					</select>
 				}
 
 				{ skin.SD

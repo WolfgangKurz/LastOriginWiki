@@ -1,17 +1,24 @@
 import fs from "fs";
 import path from "path";
 import util from "util";
+
+import glob from "glob";
+import hash from "hash.js";
+import deepmerge from "deepmerge";
+
 import { defineConfig } from "vite";
 import preact from "@preact/preset-vite";
 
 // buildtime
 (() => {
 	const dest = path.resolve(__dirname, "src", "buildtime.ts");
+	const destJson = path.resolve(__dirname, "external", "json", "buildtime.json");
 
 	const code = fs.readFileSync(dest, { encoding: "utf-8" })
 		.toString()
 		.replace("export default ", "return ");
 	const prev = new Function(code)();
+	const buildNo = prev.build + 1;
 
 	fs.writeFileSync(
 		dest,
@@ -19,9 +26,80 @@ import preact from "@preact/preset-vite";
 			const dt = new Date();
 			return `// eslint-disable-next-line\nexport default ${JSON.stringify({
 				time: dt.getTime(),
-				build: prev.build + 1,
+				build: buildNo,
 			})}`;
 		})(),
+		"utf-8",
+	);
+	fs.writeFileSync(
+		destJson,
+		JSON.stringify(buildNo),
+		"utf-8",
+	);
+})();
+
+// json hash
+(() => {
+	interface DBHashType {
+		[K: string]: string | DBHashType;
+	}
+
+	const jsonDir = path.resolve(__dirname, "external", "json");
+	const locales = fs.readdirSync(jsonDir)
+		.filter(x => x !== "locale");
+
+	const list = (() => {
+		const baseDir = path.resolve(__dirname, "external", "json");
+		const globPath = path.join(baseDir, "**", "*.json");
+
+		return glob.sync(globPath)
+			.filter(f => !f.endsWith("/buildtime.json"))
+			.map(f => {
+				const rel = path.relative(baseDir, f).replace(/\\/g, "/");
+				return `!/${rel.substring(0, rel.length - 5)}`;
+			});
+	})();
+
+	let outs: DBHashType = {};
+	list.forEach(item => {
+		const _item = item.substring(2);
+		const file = path.resolve(jsonDir, `${_item}.json`);
+		if (!fs.existsSync(file)) return;
+
+		const tree = ((value: string) => {
+			const parts = _item.split("/");
+			const root: DBHashType = {};
+			let target = root;
+
+			for (let i = 0; i < parts.length; i++) {
+				const p = parts[i];
+
+				if (i === parts.length - 1) // end of parts
+					target[p] = value;
+				else
+					target = target[p] = {};
+			}
+
+			return root;
+		})(
+			hash.sha1()
+				.update(fs.readFileSync(file, "utf-8"))
+				.digest("hex")
+				.substring(0, 8),
+		);
+
+		outs = deepmerge(outs, tree);
+	});
+
+	const output = [
+		"// Content automatically generated",
+		"export interface DBHashType { [K: string]: string | DBHashType; }",
+		`export default ${JSON.stringify(outs, undefined, "\t")} as DBHashType;`,
+	].join("\n");
+
+	fs.writeFileSync(
+		path.resolve(__dirname, "src", "components", "loader", "hash.ts"),
+		output,
 		"utf-8",
 	);
 })();
@@ -78,9 +156,10 @@ export default ({ mode }) => {
 							return `components.bootstrap.icon.${name}`;
 						}
 
-						// types & libs -> base
+						// types & libs & loader hash -> base
 						if (id.includes("/src/types/")) return "base";
 						if (id.includes("/src/libs/")) return "base";
+						if (id.includes("/src/components/loader/hash")) return "base";
 
 						// external -> each file
 						if (id.includes("/src/external/")) {
