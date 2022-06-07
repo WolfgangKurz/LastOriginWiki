@@ -5,9 +5,14 @@ import RarityBadge from "@/components/rarity-badge";
 
 import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
-import { BY, BR } from "../components/badges";
+import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11786" date="2022-06-07"
+		bugfix={ <>
+			<li>버프 보기에서 <BO>갱신</BO> 버프 중첩 방식 유형이 <BB>중첩 무제한</BB>으로 표기되던 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11781" date="2022-06-07"
 		bugfix={ <>
 			<li><BY>스트롱홀드</BY> 전투원의 스킬 정보가 올바르게 표시되지 않던 문제를 수정했습니다.</li>

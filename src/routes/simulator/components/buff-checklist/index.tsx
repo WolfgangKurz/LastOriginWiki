@@ -1263,9 +1263,15 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 	}
 
 	function BuffOverlapAvailable (maxStack: number, overlap: BUFF_OVERLAP_TYPE, erase: BuffErase): BUFF_OVERLAP_TYPE | false {
-		// console.log([BUFF_OVERLAP_TYPE.INSTANCE, BUFF_OVERLAP_TYPE.RENEW, BUFF_OVERLAP_TYPE.SINGLE], overlap);
-		if ([BUFF_OVERLAP_TYPE.INSTANCE, BUFF_OVERLAP_TYPE.RENEW, BUFF_OVERLAP_TYPE.SINGLE].includes(overlap))
+		if ([
+			BUFF_OVERLAP_TYPE.INSTANCE,
+			BUFF_OVERLAP_TYPE.RENEW,
+			BUFF_OVERLAP_TYPE.SINGLE,
+		].includes(overlap))
 			return overlap;
+
+		if (overlap === BUFF_OVERLAP_TYPE.UPDATE && maxStack === 0)
+			return false;
 
 		if ("rounds" in erase && erase.rounds === 0)
 			return BUFF_OVERLAP_TYPE.INSTANCE;
@@ -1278,6 +1284,8 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 	function BuffMaxStackAvailable (maxStack: number, overlap: BUFF_OVERLAP_TYPE, erase: BuffErase): number {
 		if ("rounds" in erase && erase.rounds === 0) return 3;
 		if (overlap === BUFF_OVERLAP_TYPE.RENEW) return 3;
+		if (overlap === BUFF_OVERLAP_TYPE.UPDATE)
+			return (maxStack === 0 ? 2 : 0);
 
 		if (maxStack <= 0) return 2;
 		if (overlap === BUFF_OVERLAP_TYPE.SINGLE) return 1;
