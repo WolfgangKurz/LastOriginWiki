@@ -8,6 +8,20 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11781" date="2022-06-07"
+		bugfix={ <>
+			<li><BY>스트롱홀드</BY> 전투원의 스킬 정보가 올바르게 표시되지 않던 문제를 수정했습니다.</li>
+		</> }
+		update={ <>
+			<li>전투원 SD 표시 기능이 일시적으로 비활성화되었습니다.</li>
+			<li><BY>분노의 늑대 송곳니</BY> 이벤트의 배너 이미지가 수정되었습니다.</li>
+		</> }
+		dialogue={ <>
+			<li><BY>T-12 칼리아흐 베라</BY>의 서약 대사 세트가 추가되었습니다.</li>
+			<li><BY>T-75 워울프</BY>의 서약 대사 세트가 추가되었습니다.</li>
+			<li><span class="badge bg-light text-dark">KST 2022-06-07 14:46:11</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11779" date="2022-06-01"
 		site={ <>
 			<li>일부 데이터 처리를 개선했습니다.</li>
