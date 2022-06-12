@@ -90,8 +90,15 @@ export function map<T, K extends string, U> (object: object, callbackfn: (value:
 export function isActive<T> (value: boolean | ObjectState<T>): "active" | "";
 export function isActive<T> (value: boolean | ObjectState<T>, active: string, inactive: string): "active" | "" | string;
 export function isActive<T> (value: boolean | ObjectState<T>, active?: string, inactive?: string): "active" | "" | string {
-	if (typeof value === "boolean") return value ? active || "active" : inactive || "";
-	return value.value ? active || "active" : inactive || "";
+	if (typeof value === "boolean") {
+		return value
+			? (typeof active === "undefined" ? "active" : active)
+			: (typeof inactive === "undefined" ? "" : inactive);
+	}
+
+	return value.value
+		? (typeof active === "undefined" ? "active" : active)
+		: (typeof inactive === "undefined" ? "" : inactive);
 }
 
 export function ArrayElse<T> (list: T[], t: (x: T[]) => preact.VNode, f: preact.VNode): preact.VNode {

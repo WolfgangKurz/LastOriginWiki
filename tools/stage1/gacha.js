@@ -12,7 +12,7 @@ function process (auth) {
 					? "1R2gKu8s3Cxb9rqo5mqwin15PZvRbf8tjDdsKcmDOj18"
 					: "11IxebdUQ_VHbaP79sN8KxZ87n3c5rG42DL8TQOK9h1k"
 				: "1ohSOKdl1IZq8aOsWPJ74yX01Ave7FkSrUFG5MSbfZN8",
-			range: "Gacha!A2:E",
+			range: "Gacha!A2:F",
 		}, (err, res) => {
 			if (err) return console.log(`The API returned an error: ${err}`);
 
@@ -22,9 +22,10 @@ function process (auth) {
 				rows.map((row) => {
 					if (!row[0]) return;
 
-					const [key, price, type, icon, data] = row;
+					const [key, category, price, type, icon, data] = row;
 					ret.push({
 						key,
+						category: parseInt(category, 10),
 						price: parseInt(price, 10),
 						type: parseInt(type, 10),
 						icon,

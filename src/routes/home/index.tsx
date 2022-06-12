@@ -84,9 +84,9 @@ const Home: FunctionalComponent = () => {
 					style={ { verticalAlign: "middle" } }
 				/>
 				<div>
-					<span class="badge bg-danger me-2">D조 투표</span>
+					<span class="badge bg-danger me-2">결선 투표</span>
 					<span>
-						{ DateText(new Date(2022, 6 - 1, 6)) } ~ { DateText(new Date(2022, 6 - 1, 13)) }
+						{ DateText(new Date(2022, 6 - 1, 13)) } ~ { DateText(new Date(2022, 6 - 1, 20)) }
 					</span>
 				</div>
 			</div>
