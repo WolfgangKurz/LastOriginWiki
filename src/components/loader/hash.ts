@@ -2851,7 +2851,7 @@ export default {
 		"filterable.equip": "df3d71fc",
 		"filterable.facility": "16568438",
 		"filterable.unit": "a8401374",
-		"gacha": "a53e2368",
+		"gacha": "257d175c",
 		"map": {
 			"Cha": "4bc9f11c",
 			"Daily": "fa719b85",
@@ -2914,7 +2914,7 @@ export default {
 			"3P_Aurora": "3b523349",
 			"3P_BlackLilith": "2276f3c5",
 			"3P_BlackWyrm": "435a1a0c",
-			"3P_ConstantiaS2": "5629da3a",
+			"3P_ConstantiaS2": "bd331676",
 			"3P_CSPerrault": "26fa901e",
 			"3P_Daphne": "aa92a1c4",
 			"3P_Dryad": "92e20b75",
@@ -2990,8 +2990,8 @@ export default {
 			"BR_JangHwa": "babd35d4",
 			"BR_Khan": "4dd63bce",
 			"BR_Kheshig": "d8f40a75",
-			"BR_Leona": "ff4a687d",
-			"BR_Leprechaun": "3fea7e1a",
+			"BR_Leona": "575c4e24",
+			"BR_Leprechaun": "ee90add5",
 			"BR_Lindwurm": "67f95246",
 			"BR_Marie": "9a271abe",
 			"BR_May": "77443684",
@@ -3103,9 +3103,9 @@ export default {
 		}
 	},
 	"locale": {
-		"EN": "397fde49",
-		"JP": "115b79d4",
-		"KR": "6822f6cd",
-		"TC": "c801fad6"
+		"EN": "d5650b0d",
+		"JP": "8fce1f03",
+		"KR": "687d757e",
+		"TC": "e5899022"
 	}
 } as DBHashType;

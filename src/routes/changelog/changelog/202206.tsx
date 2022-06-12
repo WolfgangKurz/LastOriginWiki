@@ -8,6 +8,17 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11788" date="2022-06-12"
+		new={ <>
+			<BB>프리미엄 출석</BB> 시뮬레이션 기능이 <BY>가챠 시뮬레이터</BY> 페이지에 추가되었습니다.
+		</> }
+		bugfix={ <>
+			<li>일부 스킨의 가격이 <BR>비매품</BR>으로 표시되던 문제를 수정했습니다.</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2022-06-12 23:31:00</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11786" date="2022-06-07"
 		bugfix={ <>
 			<li>버프 보기에서 <BO>갱신</BO> 버프 중첩 방식 유형이 <BB>중첩 무제한</BB>으로 표기되던 문제를 수정했습니다.</li>
