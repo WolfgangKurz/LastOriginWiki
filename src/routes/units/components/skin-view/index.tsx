@@ -385,8 +385,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 							/>
 							: <></>,
 					]
-					:
-					<select
+					: <select
 						class={ `form-select ${style.SDList}` }
 						value={ SDAnim.value }
 						onChange={ (e): void => {
@@ -400,14 +399,14 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					</select>
 				}
 
-				{ skin.SD
+				{/* { skin.SD
 					? <div
 						class={ `${style.SkinToggle} ${style.SD}` }
 						data-sd={ IsSD.value ? 1 : 0 }
 						onClick={ (): void => IsSD.set(!IsSD.value) }
 					/>
 					: <></>
-				}
+				} */}
 
 				{ props.detailable
 					? <>
