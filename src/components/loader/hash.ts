@@ -3103,7 +3103,7 @@ export default {
 		}
 	},
 	"locale": {
-		"EN": "ae30dd3d",
+		"EN": "80c5f006",
 		"JP": "164be8cc",
 		"KR": "6cfd9505",
 		"TC": "d35fc854"

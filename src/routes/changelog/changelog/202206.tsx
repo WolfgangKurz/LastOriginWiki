@@ -8,6 +8,11 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11795" date="2022-06-13"
+		bugfix={ <>
+			<li><BB>분노의 늑대 송곳니</BB> 이벤트 2부에서 이미지 아이콘이 올바르지 않은 위치에 표시되던 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11791" date="2022-06-13"
 		update={ <>
 			<li><BY>분노의 늑대 송곳니</BY> 이벤트 2부 정보가 추가되었습니다.</li>
