@@ -8,6 +8,12 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11791" date="2022-06-13"
+		update={ <>
+			<li><BY>분노의 늑대 송곳니</BY> 이벤트 2부 정보가 추가되었습니다.</li>
+			<li>일부 전투원의 스킬 정보가 수정되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11789" date="2022-06-13"
 		bugfix={ <>
 			<li><BB>프리미엄 출석</BB>에서 리셋해도 쌍반지, 쌍대코 카운트가 초기화되지 않는 문제를 수정했습니다.</li>
