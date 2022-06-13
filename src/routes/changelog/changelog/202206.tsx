@@ -8,6 +8,11 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11789" date="2022-06-13"
+		bugfix={ <>
+			<li><BB>프리미엄 출석</BB>에서 리셋해도 쌍반지, 쌍대코 카운트가 초기화되지 않는 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11788" date="2022-06-12"
 		new={ <>
 			<BB>프리미엄 출석</BB> 시뮬레이션 기능이 <BY>가챠 시뮬레이터</BY> 페이지에 추가되었습니다.
