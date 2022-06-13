@@ -147,6 +147,8 @@ const PremiumAttendGacha: FunctionalComponent<GachaSubpageProps> = (props) => {
 									class="btn btn-rarity-A"
 									onClick={ () => {
 										ResetCount.set(0);
+										Ring2Count.set(0);
+										Core2Count.set(0);
 										Result.set([]);
 									} }
 								>
