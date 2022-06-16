@@ -2989,7 +2989,7 @@ export default {
 			"BR_Io": "1659aec1",
 			"BR_JangHwa": "babd35d4",
 			"BR_Khan": "b0b4d326",
-			"BR_Kheshig": "4b8b0ede",
+			"BR_Kheshig": "d3d91ed2",
 			"BR_Leona": "575c4e24",
 			"BR_Leprechaun": "6df92aa8",
 			"BR_Lindwurm": "67f95246",
@@ -3103,7 +3103,7 @@ export default {
 		}
 	},
 	"locale": {
-		"EN": "80c5f006",
+		"EN": "9777a1be",
 		"JP": "164be8cc",
 		"KR": "6cfd9505",
 		"TC": "d35fc854"
