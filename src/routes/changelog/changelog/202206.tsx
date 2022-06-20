@@ -8,6 +8,18 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11800" date="2022-06-20"
+		skin={ <>
+			<li>
+				<BY>오렌지에이드</BY>의 스킨 <BR>완벽한 데이트!</BR>의 로비 애니메이션 정보가 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><BY>토모</BY>의 서약 대사 세트가 추가되었습니다.</li>
+			<li><BY>A-6 이오</BY>의 서약 대사 세트가 추가되었습니다.</li>
+			<li><span class="badge bg-light text-dark">KST 2022-06-20 22:38:17</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11795" date="2022-06-13"
 		bugfix={ <>
 			<li><BB>분노의 늑대 송곳니</BB> 이벤트 2부에서 이미지 아이콘이 올바르지 않은 위치에 표시되던 문제를 수정했습니다.</li>

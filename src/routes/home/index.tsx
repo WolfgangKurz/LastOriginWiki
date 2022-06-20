@@ -68,28 +68,6 @@ const Home: FunctionalComponent = () => {
 					</div>
 				</Link>
 				: <></> }
-
-			<div class="alert alert-primary d-inline-block px-4 text-dark mx-1 align-top" role="alert">
-				<div>
-					<img
-						src={ `${AssetsRoot}/world/event-${CurrentLocale}.png` }
-						height="24"
-						style={ { verticalAlign: "text-bottom" } }
-					/>
-				</div>
-				<img
-					src={ `${AssetsRoot}/etc/miss_orca_3.png` }
-					class="mb-1"
-					height="120"
-					style={ { verticalAlign: "middle" } }
-				/>
-				<div>
-					<span class="badge bg-danger me-2">결선 투표</span>
-					<span>
-						{ DateText(new Date(2022, 6 - 1, 13)) } ~ { DateText(new Date(2022, 6 - 1, 20)) }
-					</span>
-				</div>
-			</div>
 		</div>
 
 		<h2>
