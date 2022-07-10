@@ -8,12 +8,11 @@ import { AssetsRoot, CanPlayWebM, ImageExtension } from "@/libs/Const";
 import Locale from "@/components/locale";
 import { objState } from "@/libs/State";
 
-import Icon from "@/components/bootstrap-icon";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import MergedVideo from "@/components/merged-video";
+import Pinch from "@/components/pinch";
 
 import style from "./style.module.scss";
-import { isActive } from "@/libs/Functions";
 
 interface SkinItem extends UnitSkin {
 	isDef: boolean;
@@ -197,7 +196,10 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 						<img src={ `${AssetsRoot}/${imageExt}/group/${unit.group.replace(/_[0-9]+$/, "")}.${imageExt}` } />
 					</div>
 				</div>
-				<div class={ style.FullUnit }>
+				<div class={ [
+					style.FullUnit,
+					!(skin.SD && IsSD.value) && !props.collapsed && style.FullUnitMarginless,
+				].filter(x => x).join(" ") }>
 					{ skin.SD && IsSD.value
 						? CanPlayWebM()
 							? <video
@@ -222,10 +224,20 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 									src={ `${AssetsRoot}/webm/HD.Legacy/${SkinVideoURL}.mp4` }
 									type="video/mp4"
 								/>
-							: <img
-								style={ ImageStyle }
-								src={ SkinImageURL }
-							/>
+							: !props.collapsed
+								? <Pinch
+									minScale={ 0.5 }
+									maxScale={ 3 }
+								>
+									<img
+										style={ ImageStyle }
+										src={ SkinImageURL }
+									/>
+								</Pinch>
+								: <img
+									style={ ImageStyle }
+									src={ SkinImageURL }
+								/>
 					}
 				</div>
 
