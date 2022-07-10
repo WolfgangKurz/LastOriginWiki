@@ -94,6 +94,7 @@ const GetLocaleTable = (locale: LocaleTypes) =>
 interface LocaleProps<T> {
 	k: string;
 	p?: Array<string | number | boolean | preact.VNode>;
+	preprocessor?: (source: string) => string;
 	fallback?: string | number | boolean | preact.VNode;
 	components?: LocaleComponentProp<T>;
 	plain?: boolean;
@@ -103,10 +104,13 @@ const Locale: FunctionalComponent<LocaleProps<any>> = (props) => {
 	const locale = GetLocaleTable(CurrentLocale);
 
 	if (locale) {
-		const t = locale[props.k];
+		let t = locale[props.k];
 		if (t) {
+			if (props.preprocessor)
+				t = props.preprocessor(t);
+
 			if (props.plain) {
-				return <>{ (locale[props.k] || props.k).split(paramRegex).map(x => {
+				return <>{ (t).split(paramRegex).map(x => {
 					const r = paramRegex.exec(x);
 					return r
 						? ((): preact.VNode => {
@@ -122,7 +126,7 @@ const Locale: FunctionalComponent<LocaleProps<any>> = (props) => {
 						: <>{ x }</>;
 				}) }</>;
 			}
-			return <>{ parseVNode(locale[props.k] || props.k, props.p, props.components || {}) }</>;
+			return <>{ parseVNode(t, props.p, props.components || {}) }</>;
 		}
 
 		return typeof props.fallback === "string" ||

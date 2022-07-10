@@ -9,7 +9,7 @@ export type ImageExtensionTypes = "webp" | "png";
 export const ImageExtensionList: ImageExtensionTypes[] = ["webp", "png"];
 
 export const IsDev = import.meta.env.DEV;
-export const IsStaging = IsDev || false;
+export const IsStaging = false; // IsDev || false;
 export const IsAprilFool = false; // (d => d.getMonth() === 3 && d.getDate() === 1)(new Date()); // 04-01
 
 export const Host = IsDev

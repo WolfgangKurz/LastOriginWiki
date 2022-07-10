@@ -33,7 +33,9 @@ interface MapNodeProps {
 const MapNode: FunctionalComponent<MapNodeProps> = (props) => {
 	const node = props.node;
 	// const typeIdx = props.type || GetTypeIdx(node);
-	const typeIdx = props.type;
+	const typeIdx = props.type === STAGE_SUB_TYPE.STORY
+		? 0 // temp
+		: props.type;
 	// const colors: string[] = [
 	// 	"#61d42a",
 	// 	"#fdc902",

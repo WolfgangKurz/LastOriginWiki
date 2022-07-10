@@ -1,7 +1,7 @@
 import { FunctionalComponent } from "preact";
 import { Link } from "preact-router";
 
-import { AssetsRoot, CurrentEvent, EventFrom, EventTo, ImageExtension, IsAprilFool, IsStaging } from "@/libs/Const";
+import { AssetsRoot, CurrentEvent, EventFrom, EventTo, Host, ImageExtension, IsAprilFool, IsStaging } from "@/libs/Const";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 import { CurrentLocale } from "@/libs/Locale";
 
@@ -79,7 +79,14 @@ const Home: FunctionalComponent = () => {
 				<i class={ style["_official"] }>
 					{ IsStaging
 						? <>Staging</>
-						: <Locale k="COMMON_TITLE_SUB" />
+						: <Locale
+							k="COMMON_TITLE_SUB"
+							preprocessor={ (x) => x
+								.replace(/\$\~\//g, `${Host}/`)
+								.replace(/!!icon!!/g, "50")
+								.replace(/!!iconm!!/g, "1em")
+							}
+						/>
 					}
 				</i>
 				<span class="font-ibm">
@@ -112,7 +119,7 @@ const Home: FunctionalComponent = () => {
 			<Locale k="HOME_WEBP_UNAVAILABLE" />
 		</div> : <></> }
 
-		<div class="alert alert-warning">
+		{/* <div class="alert alert-warning">
 			<p class="mb-1">Translation support needed!</p>
 			<p class="mb-1">翻訳サポートがひつようです！</p>
 			<p class="mb-0">
@@ -127,7 +134,7 @@ const Home: FunctionalComponent = () => {
 				</a>
 			</p>
 		</div>
-		<hr />
+		<hr /> */}
 
 		<Locale k="HOME_DEVELOPER" />
 		<hr />

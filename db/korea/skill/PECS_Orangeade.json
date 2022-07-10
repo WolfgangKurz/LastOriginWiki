@@ -886,7 +886,7 @@
           "rate": 0,
           "type": 0,
           "range": 6,
-          "ap": 10,
+          "ap": 9,
           "grid": "F>1,1,1,1,1,1,1,1,1",
           "target_ground": false,
           "summon": null,
@@ -928,7 +928,7 @@
                   },
                   "attr": 0,
                   "erase": {
-                    "rounds": 2
+                    "rounds": 3
                   },
                   "value": {
                     "isBuff": true,
@@ -953,7 +953,16 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": {
+                "on": {
+                  "target": "target",
+                  "select": [
+                    "Effect_PECS_Orangeade_N_31"
+                  ],
+                  "stack": 0,
+                  "attr": 6
+                }
+              },
               "body": [
                 0,
                 1
@@ -980,7 +989,7 @@
                   },
                   "attr": 0,
                   "erase": {
-                    "rounds": 2
+                    "rounds": 3
                   },
                   "value": {
                     "isBuff": true,
@@ -997,7 +1006,7 @@
                   "overlap": 4
                 }
               ],
-              "maxStack": 0
+              "maxStack": 2
             }
           ]
         }
@@ -1119,7 +1128,7 @@
                   "desc": {
                     "desc": "Effect_PECS_Orangeade_N_3_1",
                     "type": 1,
-                    "value": "0.100000",
+                    "value": "0.150000",
                     "level": "0.010000"
                   },
                   "attr": 3,
@@ -1130,7 +1139,7 @@
                     "isBuff": true,
                     "type": 106,
                     "skill_ratio": {
-                      "base": "10%",
+                      "base": "15%",
                       "per": "1%"
                     }
                   },
@@ -1141,7 +1150,7 @@
                   "desc": {
                     "desc": "Effect_PECS_Orangeade_N_3_2",
                     "type": 1,
-                    "value": "0.100000",
+                    "value": "0.150000",
                     "level": "0.010000"
                   },
                   "attr": 3,
@@ -1152,8 +1161,51 @@
                     "isBuff": true,
                     "type": 9,
                     "critical": {
-                      "base": "10%",
+                      "base": "15%",
                       "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Orangeade_N_31",
+              "on": "wave",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Orangeade_N_31_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "type": 2,
+                    "defense": {
+                      "base": 0,
+                      "per": 0
                     }
                   },
                   "overlap": 4
@@ -1185,10 +1237,10 @@
             "desc": {
               "desc": "Effect_PECS_Orangeade_N_3_1",
               "type": 1,
-              "value": "0.100000",
+              "value": "0.150000",
               "level": "0.010000"
             },
-            "base": 0.1,
+            "base": 0.15,
             "per": 0.01,
             "chance": 1
           },
@@ -1197,11 +1249,23 @@
             "desc": {
               "desc": "Effect_PECS_Orangeade_N_3_2",
               "type": 1,
-              "value": "0.100000",
+              "value": "0.150000",
               "level": "0.010000"
             },
-            "base": 0.1,
+            "base": 0.15,
             "per": 0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DEF_UP",
+            "desc": {
+              "desc": "Effect_PECS_Orangeade_N_31_1",
+              "type": 1,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
             "chance": 1
           }
         ]
@@ -1281,7 +1345,7 @@
                   "desc": {
                     "desc": "Effect_PECS_Orangeade_N_4_1",
                     "type": 0,
-                    "value": "100",
+                    "value": "150",
                     "level": "10"
                   },
                   "attr": 3,
@@ -1292,7 +1356,7 @@
                     "isBuff": true,
                     "type": 0,
                     "attack": {
-                      "base": 100,
+                      "base": 150,
                       "per": 10
                     }
                   },
@@ -1303,7 +1367,7 @@
                   "desc": {
                     "desc": "Effect_PECS_Orangeade_N_4_2",
                     "type": 0,
-                    "value": "100",
+                    "value": "150",
                     "level": "10"
                   },
                   "attr": 3,
@@ -1314,7 +1378,7 @@
                     "isBuff": true,
                     "type": 2,
                     "defense": {
-                      "base": 100,
+                      "base": 150,
                       "per": 10
                     }
                   },
@@ -1347,10 +1411,10 @@
             "desc": {
               "desc": "Effect_PECS_Orangeade_N_4_1",
               "type": 0,
-              "value": "100",
+              "value": "150",
               "level": "10"
             },
-            "base": 100,
+            "base": 150,
             "per": 10,
             "chance": 1
           },
@@ -1359,11 +1423,297 @@
             "desc": {
               "desc": "Effect_PECS_Orangeade_N_4_2",
               "type": 0,
-              "value": "100",
+              "value": "150",
               "level": "10"
             },
-            "base": 100,
+            "base": 150,
             "per": 10,
+            "chance": 1
+          }
+        ]
+      ]
+    }
+  },
+  "5": {
+    "key": "5",
+    "icon": "P.Snipe",
+    "target": "team",
+    "delayed": false,
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "F>1,1,1,1,1,1,1,1,1",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "enabled": true,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Orangeade_N_5",
+              "on": "wave",
+              "if": {
+                "unitCount": {
+                  "filter": [
+                    "squad",
+                    "light"
+                  ],
+                  "type": [
+                    0
+                  ],
+                  "count": [
+                    0,
+                    1,
+                    2
+                  ]
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Orangeade_N_5_1",
+                    "type": 1,
+                    "value": "0.400000",
+                    "level": "0.050000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 99
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "40%",
+                      "per": "5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_RANGE_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Orangeade_N_5_2",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 99
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 55,
+                    "range": {
+                      "base": 1,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "F>1,1,1,1,1,1,1,1,1",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "enabled": true,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Orangeade_N_51",
+              "on": "wave",
+              "if": {
+                "unitCount": {
+                  "filter": [
+                    "squad",
+                    "light"
+                  ],
+                  "type": [
+                    0
+                  ],
+                  "count": [
+                    0,
+                    1,
+                    2
+                  ]
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Orangeade_N_51_1",
+                    "type": 1,
+                    "value": "0.400000",
+                    "level": "0.050000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 99
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "40%",
+                      "per": "5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_RANGE_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Orangeade_N_51_2",
+                    "type": 0,
+                    "value": "2",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 99
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 55,
+                    "range": {
+                      "base": 2,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_ACCURACY_UP",
+            "desc": {
+              "desc": "Effect_PECS_Orangeade_N_5_1",
+              "type": 1,
+              "value": "0.400000",
+              "level": "0.050000"
+            },
+            "base": 0.4,
+            "per": 0.05,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_RANGE_UP",
+            "desc": {
+              "desc": "Effect_PECS_Orangeade_N_5_2",
+              "type": 0,
+              "value": "1",
+              "level": "0"
+            },
+            "base": 1,
+            "per": 0,
+            "chance": 1
+          }
+        ],
+        [
+          {
+            "icon": "BuffIcon_ACCURACY_UP",
+            "desc": {
+              "desc": "Effect_PECS_Orangeade_N_51_1",
+              "type": 1,
+              "value": "0.400000",
+              "level": "0.050000"
+            },
+            "base": 0.4,
+            "per": 0.05,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_RANGE_UP",
+            "desc": {
+              "desc": "Effect_PECS_Orangeade_N_51_2",
+              "type": 0,
+              "value": "2",
+              "level": "0"
+            },
+            "base": 2,
+            "per": 0,
             "chance": 1
           }
         ]

@@ -2,7 +2,7 @@ import { FunctionalComponent } from "preact";
 import { Link } from "preact-router/match";
 // import { Dropdown } from "bootstrap";
 
-import { AssetsRoot, IsAprilFool, IsStaging } from "@/libs/Const";
+import { AssetsRoot, Host, IsAprilFool, IsStaging } from "@/libs/Const";
 import { ChangeLanguage, CurrentLocale, LocaleList } from "@/libs/Locale";
 import { ChangeDB, CurrentDB, DBList, DBTypes } from "@/libs/DB";
 
@@ -64,7 +64,14 @@ const Header: FunctionalComponent = (): preact.VNode => {
 					<i class={ style["_official"] } data-locale={ CurrentLocale }>
 						{ IsStaging
 							? <>Staging</>
-							: <Locale k="COMMON_TITLE_SUB" />
+							: <Locale
+								k="COMMON_TITLE_SUB"
+								preprocessor={ (x) => x
+									.replace(/\$\~\//g, `${Host}/`)
+									.replace(/!!icon!!/g, "30")
+									.replace(/!!iconm!!/g, "2.5em")
+								}
+							/>
 						}
 					</i>
 					<span class="font-ibm">
