@@ -296,7 +296,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 			function SubstoryName (text: string): preact.VNode {
 				const unit = FilterableUnitDB.find(x => x.uid === SubStoryUnit[text]);
 				if (!unit) return <>???</>;
-				return <Locale k={ `UNIT_${unit.uid}` } />;
+				return <Locale plain k={ `UNIT_${unit.uid}` } />;
 			}
 
 			if (props.node) {

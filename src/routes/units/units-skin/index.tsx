@@ -208,12 +208,12 @@ const UnitsSkin: FunctionalComponent<UnitsListProps> = (props) => {
 							<div class={ style.SkinCol }>
 								<UnitFace uid={ x.uid } skin={ x.sid || undefined } size={ 56 } />
 								<span>
-									<Locale k={ `UNIT_${x.uid}` } plain />
+									<Locale plain k={ `UNIT_${x.uid}` } />
 								</span>
 								<span>
 									<Locale
 										k={ `UNIT_SKIN_${x.uid}_${x.sid}` }
-										fallback={ <Locale k={ `UNIT_${x.uid}` } plain /> }
+										fallback={ <Locale plain k={ `UNIT_${x.uid}` } /> }
 										plain
 									/>
 								</span>

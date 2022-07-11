@@ -25,7 +25,7 @@ const UnitReference: FunctionalComponent<UnitReferenceProps> = (props) => {
 			if (!found) {
 				return <Link href={ `/units/${unit}` }>
 					<span class="badge bg-substory">
-						<Locale k={ `UNIT_${unit}` } />
+						<Locale plain k={ `UNIT_${unit}` } />
 						<Icon icon="link-45deg" class="ms-1" />
 					</span>
 				</Link>;
@@ -41,7 +41,7 @@ const UnitReference: FunctionalComponent<UnitReferenceProps> = (props) => {
 					/> }
 				>
 					<span class="badge bg-substory mx-1">
-						<Locale k={ `UNIT_${unit}` } />
+						<Locale plain k={ `UNIT_${unit}` } />
 						<Icon icon="link-45deg" class="ms-1" />
 					</span>
 				</BootstrapTooltip>
@@ -52,7 +52,7 @@ const UnitReference: FunctionalComponent<UnitReferenceProps> = (props) => {
 		}) }
 		loading={ <Link href={ `/units/${unit}` }>
 			<span class="badge bg-substory">
-				<Locale k={ `UNIT_${unit}` } />
+				<Locale plain k={ `UNIT_${unit}` } />
 				<Icon icon="link-45deg" class="ms-1" />
 			</span>
 		</Link> }

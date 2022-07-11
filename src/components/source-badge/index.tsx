@@ -59,7 +59,7 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 				return <Locale k="COMMON_SOURCE_ROGUELIKE" />;
 			else if (Source.IsPrivateItem) {
 				const unit = FilterableUnitDB.find(x => x.uid === Source.PrivateId);
-				if (unit) return <Locale k={ `UNIT_${unit.uid}` } />;
+				if (unit) return <Locale plain k={ `UNIT_${unit.uid}` } />;
 				return <>{ Source.PrivateId }</>;
 			} else if (Source.IsLimited)
 				return <Locale k="COMMON_SOURCE_LIMITED" />;
@@ -114,7 +114,7 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 					return <>
 						<Locale
 							k="COMMON_SOURCE_SUBSTORY"
-							p={ [<Locale k={ `UNIT_${Source.SubStoryUnit}` } fallback={ Source.Map } />] }
+							p={ [<Locale plain k={ `UNIT_${Source.SubStoryUnit}` } fallback={ Source.Map } />] }
 						/>
 						&nbsp;{ text }
 					</>;
