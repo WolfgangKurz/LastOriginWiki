@@ -39,7 +39,7 @@ export const Char: FunctionalComponent<CharProps> = (props) =>
 			>
 				<BootstrapTooltip placement="top" content={ <UnitCard unit={ unit } rarity={ unit.rarity } no-link /> }>
 					<RarityBadge rarity="A">
-						<Locale k={ `UNIT_${unit.uid}` } fallback={ unit.uid } /> <Icon icon="link-45deg" />
+						<Locale plain k={ `UNIT_${unit.uid}` } fallback={ unit.uid } /> <Icon icon="link-45deg" />
 					</RarityBadge>
 				</BootstrapTooltip>
 			</a>

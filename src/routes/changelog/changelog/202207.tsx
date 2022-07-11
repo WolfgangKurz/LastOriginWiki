@@ -8,6 +8,11 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11821" date="2022-07-11"
+		bugfix={ <>
+			<li>일부 언어에서 전투원 이름이 올바르게 표시되지 않는 문제 수정</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11817" date="2022-07-11"
 		bugfix={ <>
 			<li><BY>C-77 레드후드</BY>의 스킬 설명이 제대로 갱신되지 않은 문제를 수정했습니다.</li>

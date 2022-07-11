@@ -120,7 +120,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 
 		<div class="row mb-3">
 			<h2 class="font-ibm">
-				<Locale k={ `UNIT_${unit.uid}` } />
+				<Locale plain k={ `UNIT_${unit.uid}` } />
 			</h2>
 			<h5 class="text-secondary font-exo2">
 				No. { unit.id }
@@ -130,7 +130,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 		<div class="row pt-2">
 			<div class="col-12 col-lg-7">
 				<div class={ `card bg-dark text-light mx-3 mt-3 p-3 ${style.IntroduceText}` }>
-					<Locale k={ `UNIT_INTRO_${unit.uid}` } plain />
+					<Locale plain k={ `UNIT_INTRO_${unit.uid}` } />
 				</div>
 
 				<div class="my-4 mx-3">
@@ -210,7 +210,9 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 					<table class={ `table ${style.InfoTable}` }>
 						<tbody>
 							<tr>
-								<th class="bg-dark text-light"><Locale k="UNIT_VIEW_FACTION" /></th>
+								<th class="bg-dark text-light">
+									<Locale k="UNIT_VIEW_FACTION" />
+								</th>
 								<td>
 									<img
 										class={ style.GroupIcon }
