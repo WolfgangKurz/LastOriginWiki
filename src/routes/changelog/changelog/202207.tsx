@@ -8,6 +8,40 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11817" date="2022-07-11"
+		bugfix={ <>
+			<li><BY>C-77 레드후드</BY>의 스킬 설명이 제대로 갱신되지 않은 문제를 수정했습니다.</li>
+			<li><BY>바르그</BY>의 링크 보너스 및 풀링크 보너스가 제대로 표시되지 않던 문제를 수정했습니다.</li>
+			<li>일부 스킨의 일러스트레이터 정보가 입력되어있지 않은 문제를 수정했습니다.</li>
+			<li>진행중인 이벤트 정보가 갱신되지 않은 점을 수정했습니다.</li>
+		</> }
+		update={ <>
+			<li><BY>P/A-8 블랙하운드</BY>의 스킬 정보가 수정되었습니다.</li>
+			<li><BY>네오딤</BY>의 스킬 정보가 수정되었습니다.</li>
+			<li><BY>AL 팬텀</BY>의 스킬 정보가 수정되었습니다.</li>
+			<li><BY>MH-4 테티스</BY>의 스킬 정보가 수정되었습니다.</li>
+			<li><BY>P-3M 운디네</BY>의 스킬 정보가 수정되었습니다.</li>
+			<li><BY>퀸오브메인</BY>의 스킬 정보가 수정되었습니다.</li>
+			<li>일부 적 정보가 갱신되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<BY>바바리아나</BY>의 스킨 <BR>드림위버 모던 컬렉션 : 세련된 유혹</BR>의 중파 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>므네모시네</BY>의 스킨 <BR>아쿠아랜드 : 넓어진 세계</BR>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>AL 레이스</BY>의 스킨 <BR>아쿠아랜드 : 특급 음료 판매요원</BR>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>사이클롭스 프린세스</BY>의 스킨 <BR>아쿠아랜드 : 파이러츠 프린세스</BR>의 정보가 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2022-07-11 16:44:37</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11813" date="2022-07-11"
 		site={ <>
 			<li>EN, TC 언어의 번역 텍스트가 대거 갱신되었습니다.</li>

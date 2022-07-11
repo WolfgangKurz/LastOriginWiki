@@ -43,6 +43,14 @@ export function GetLinkBonus (type: LinkBonusType, links: number): LinkBonusData
 				Postfix: "%",
 				Value: Decimal.mul(links, 3).toNumber(),
 			};
+		case "DEF_5":
+			return {
+				Key: type,
+				Name: "LINKBONUS_DEF",
+				Prefix: "+",
+				Postfix: "%",
+				Value: Decimal.mul(links, 5).toNumber(),
+			};
 		case "DEF_10":
 			return {
 				Key: type,
@@ -67,7 +75,7 @@ export function GetLinkBonus (type: LinkBonusType, links: number): LinkBonusData
 				Postfix: "%",
 				Value: Decimal.mul(links, 20).toNumber(),
 			};
-		case "DEF_25":
+		case "DEF_30":
 			return {
 				Key: type,
 				Name: "LINKBONUS_DEF",
@@ -160,6 +168,14 @@ export function GetLinkBonus (type: LinkBonusType, links: number): LinkBonusData
 				Prefix: "+",
 				Postfix: "",
 				Value: 1,
+			};
+		case "Range_2":
+			return {
+				Key: type,
+				Name: "LINKBONUS_RANGE",
+				Prefix: "+",
+				Postfix: "",
+				Value: 2,
 			};
 
 		case "Buff_1":
