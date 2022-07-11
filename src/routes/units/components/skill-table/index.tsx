@@ -244,6 +244,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 				}
 			</div>;
 
+		const descList = GetDesc(skill);
 		return <>
 			<div class="unit-modal-skill">
 				{ skill.buffs.data[skill.buffs.index[skillLevel.value]].dismiss_guard
@@ -290,11 +291,13 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 			</div>
 
 			<div>
-				{ GetDesc(skill).map((line) => <div class="unit-modal-skill">
+				{ descList.map((line) => <div class="unit-modal-skill">
 					{ !line
-						? <span class="text-secondary">
-							<Locale k="UNIT_SKILL_NO_DESCRIPTION" />
-						</span>
+						? descList.length === 1
+							? <span class="text-secondary">
+								<Locale k="UNIT_SKILL_NO_DESCRIPTION" />
+							</span>
+							: <div style="padding:0.75em" />
 						: <SkillDescription
 							text={ line }
 							rates={ GetRates(skill) }
