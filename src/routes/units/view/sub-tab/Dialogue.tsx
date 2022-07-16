@@ -16,7 +16,7 @@ const DialogueTab: FunctionalComponent<SubpageProps> = ({ display, unit, SkinLis
 	const dialogueLang = objState<keyof UnitDialogueDataType>("KR");
 	const dialogueAudio = objState<UnitDialogueAudioType>("ko");
 
-	const LangList: Array<keyof UnitDialogueDataType> = ["KR", "JP"];
+	const LangList: Array<keyof UnitDialogueDataType> = ["KR", "JP", "EN", "TC"];
 
 	const VoiceList: VoiceItem[] = [
 		{
