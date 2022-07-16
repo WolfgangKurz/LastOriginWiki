@@ -6,3 +6,4 @@ export * from "./Value";
 export * from "./Char";
 export * from "./Equip";
 export * from "./Elem";
+export * from "./Comment";

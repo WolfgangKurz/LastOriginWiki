@@ -1,11 +1,14 @@
 import { createElement, FunctionalComponent, FunctionComponent } from "preact";
 
+import { FilterableEquip } from "@/types/DB/Equip.Filterable";
+
+import { objState } from "@/libs/State";
 import { ComponentTable, parseVNode } from "@/libs/VNode";
 
 import EquipPopup from "@/components/popup/equip-popup";
 import * as Components from "./components";
-import { objState } from "@/libs/State";
-import { FilterableEquip } from "@/types/DB/Equip.Filterable";
+
+import style from "./components/style.module.scss";
 
 export interface SkillDescriptionValueData {
 	base: number;
@@ -17,6 +20,7 @@ interface SkillDescriptionProps {
 	class?: string;
 
 	text: string;
+	sections?: Record<string, preact.VNode[]>;
 	rates?: number[];
 
 	slot?: string;
@@ -36,6 +40,18 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 	function compile (text: string): Array<preact.VNode[] | preact.VNode | string> {
 		if (!text) return [];
 
+		const tags: Record<string, preact.FunctionalComponent<unknown>> = {};
+
+		if (props.sections) {
+			text = text.replace(/\$\$([A-Za-z0-9\-_]+)\$?/g, (p0, p1) => {
+				tags[`SECTION_${p1}`] = () => <>{
+					props.sections![p1]
+						.map(r => <div class={ style.CommentLine }>{ r }</div>)
+				}</>;
+				return `<SECTION_${p1} />`;
+			});
+		}
+
 		const placeholder: FunctionalComponent<unknown> =
 			(p) => createElement("span", { class: "text-secondary" }, p.children);
 
@@ -44,6 +60,9 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 
 		const edmg: FunctionalComponent<unknown> =
 			(p) => createElement(Components.EnemyDamage, { ...p, multiplier: rates[props.level] });
+
+		// const cmt: FunctionalComponent<unknown> =
+		// 	(p) => createElement(Components.Comment, { ...p, body: props.sections });
 
 		const val: FunctionComponent<
 			NonNullable<typeof Components["Value"]["defaultProps"]> & {
@@ -124,6 +143,8 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 
 		try {
 			return parseVNode(text, [], {
+				...tags,
+
 				placeholder,
 
 				section: Components.Section,
@@ -154,6 +175,9 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 					}),
 
 				elem: Components.Elem,
+
+				comment: Components.Comment,
+				cmt: Components.Comment,
 			} as unknown as ComponentTable<any>);
 		} catch (e) {
 			// eslint-disable-next-line react/jsx-key

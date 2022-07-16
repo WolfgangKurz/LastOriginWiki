@@ -30,6 +30,11 @@ type SkillTableType = Record<string, SkillItem>;
 
 type LevelType = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 
+interface SkillDescData {
+	lines: string[];
+	sections: Record<string, preact.VNode[]>;
+}
+
 interface SkillTableProps {
 	unit: Unit;
 	buffBonus: boolean;
@@ -120,11 +125,42 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 		return output;
 	})();
 
-	function GetDesc (skill: SkillItem): string[] {
+	function GetDesc (skill: SkillItem): SkillDescData {
+		const rates = GetRates(skill);
+
 		const key = `UNIT_SKILL_DESC_${unit.uid}_${skill.key}`;
-		return LocaleExists(key)
-			? LocaleGet(key).split("\n")
-			: [""];
+		const orig = LocaleExists(key) ? LocaleGet(key) : "";
+		const sections: SkillDescData["sections"] = {};
+
+		const lines = orig
+			.replace(/\$\$([A-Za-z0-9\-_]+)\$?\~(.+)\~\$\$(\1)\$?/gs, (p0, p1: string, p2: string) => {
+				const _p2 = p2
+					.replace(/^\n+/gs, "")
+					.replace(/\n+$/gs, "")
+					.split("\n");
+				sections[p1] = _p2.map(p => !p
+					? _p2.length === 1
+						? <span class="text-secondary">
+							<Locale k="UNIT_SKILL_NO_DESCRIPTION" />
+						</span>
+						: <div style="padding:0.75em" />
+					: <SkillDescription
+						text={ p }
+						rates={ rates }
+						level={ skillLevel.value }
+						values={ Values }
+						slot={ skill.slot }
+						buffBonus={ props.buffBonus }
+						skillBonus={ props.skillBonus }
+						favorBonus={ favorBonus.value }
+					/>);
+				return "";
+			})
+			.replace(/^\n+/gs, "")
+			.replace(/\n+$/gs, "")
+			.split("\n");
+
+		return { lines, sections };
 	}
 	function GetRates (skill: SkillItem): number[] {
 		return skill.buffs.index
@@ -291,15 +327,16 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 			</div>
 
 			<div>
-				{ descList.map((line) => <div class="unit-modal-skill">
+				{ descList.lines.map((line) => <div class="unit-modal-skill">
 					{ !line
-						? descList.length === 1
+						? descList.lines.length === 1
 							? <span class="text-secondary">
 								<Locale k="UNIT_SKILL_NO_DESCRIPTION" />
 							</span>
 							: <div style="padding:0.75em" />
 						: <SkillDescription
 							text={ line }
+							sections={ descList.sections }
 							rates={ GetRates(skill) }
 							level={ skillLevel.value }
 							values={ Values }

@@ -3,8 +3,6 @@ import render from "preact-render-to-string";
 
 import { Tooltip } from "bootstrap";
 
-import { UniqueID } from "@/libs/Functions";
-
 import "./style.scss";
 
 interface BootstrapTooltipProps {
