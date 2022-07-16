@@ -8,9 +8,14 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11824" date="2022-07-12"
+		new={ <>
+			<li>전투원 대사에 EN(English) 및 TC(Traditional Chinese, zhTW) 지원이 추가되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11821" date="2022-07-11"
 		bugfix={ <>
-			<li>일부 언어에서 전투원 이름이 올바르게 표시되지 않는 문제 수정</li>
+			<li>일부 언어에서 전투원 이름이 올바르게 표시되지 않는 문제가 수정되었습니다.</li>
 		</> }
 	/>
 	<ChangelogItem title="Build 11817" date="2022-07-11"

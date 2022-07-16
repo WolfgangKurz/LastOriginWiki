@@ -55,4 +55,6 @@ export type UnitDialogueAudioType = "ko" | "jp" | "jpdmm";
 export interface UnitDialogueDataType {
 	KR: RawUnitDialogue | false | null;
 	JP: RawUnitDialogue | false | null;
+	EN: RawUnitDialogue | false | null;
+	TC: RawUnitDialogue | false | null;
 }

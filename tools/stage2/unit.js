@@ -7,13 +7,18 @@ targetDBs.forEach(targetDB => {
 	const sourceDir = path.resolve(__dirname, "..", "..", "db", targetDB);
 	const targetDir = path.resolve(__dirname, "..", "..", "external", "json", targetDB, "unit");
 
+	const dialogueLangs = ["KR", "JP", "EN", "TC"];
+
 	(async () => {
 		const units = JSON.parse(fs.readFileSync(path.resolve(sourceDir, "unit.json"), { encoding: "utf-8" }));
 		const equips = JSON.parse(fs.readFileSync(path.resolve(sourceDir, "equip.json"), { encoding: "utf-8" }));
-		const dialogues = {
-			KR: JSON.parse(fs.readFileSync(path.resolve(sourceDir, "..", "dialogue", "KR.json"), { encoding: "utf-8" })),
-			JP: JSON.parse(fs.readFileSync(path.resolve(sourceDir, "..", "dialogue", "JP.json"), { encoding: "utf-8" })),
-		};
+		const dialogues = (() => {
+			const ret = {};
+			dialogueLangs.forEach(l =>
+				ret[l] = JSON.parse(fs.readFileSync(path.resolve(sourceDir, "..", "dialogue", `${l}.json`), { encoding: "utf-8" }))
+			);
+			return ret;
+		})();
 		const skins = JSON.parse(fs.readFileSync(path.resolve(sourceDir, "unit-skin.json"), { encoding: "utf-8" }));
 		const lvlimits = JSON.parse(fs.readFileSync(path.resolve(sourceDir, "unit-lvlimit.json"), { encoding: "utf-8" }));
 		// const extpassive = JSON.parse(fs.readFileSync(path.resolve(sourceDir, "ext-passive.json"), { encoding: "utf-8" }));
@@ -83,6 +88,8 @@ targetDBs.forEach(targetDB => {
 					dialogue: {
 						KR: dialogues.KR[char.uid],
 						JP: dialogues.JP[char.uid],
+						EN: dialogues.EN[char.uid],
+						TC: dialogues.TC[char.uid],
 					},
 					skins: skins[char.uid],
 

@@ -8,11 +8,11 @@ function process (auth) {
 	const ret = {
 		KR: {},
 		JP: {},
-		// EN: {},
-		// TC: {},
+		EN: {},
+		TC: {},
 		// SC: {},
 	};
-	const dialogueList = ["KR", "JP", "EN", "TC", "SC"];
+	const dialogueList = ["KR", "JP", "EN", "TC"]; // , "SC"];
 	function procLang (rows) {
 		const typeTable = {
 			소개: "Intro",
