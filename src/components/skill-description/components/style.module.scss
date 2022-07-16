@@ -59,3 +59,73 @@ strike {
 	text-decoration: line-through;
 	opacity: 0.5;
 }
+
+.Comment {
+	position: relative;
+	display: inline-block;
+	font-weight: bold;
+	text-decoration: underline;
+	// user-select: none !important;
+	cursor: pointer;
+
+	> button {
+		position: absolute;
+		margin :0;
+		padding: 0;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+
+		&:focus + .CommentPopup {
+			opacity: 1;
+		}
+	}
+
+	> .CommentPopup {
+		position: absolute;
+		margin-top: 0.25em;
+		padding: 0.75em;
+		min-width: 20em;
+		min-height: 8em;
+		background-color: $light;
+		background-image: linear-gradient(to bottom, mix($white, $dark, 95%), mix($white, $dark, 80%));
+		box-shadow: 0 0.125em 0.5em $dark;
+		font-weight: normal;
+		text-decoration: none;
+		pointer-events: none !important;
+		cursor: default;
+		opacity: 0;
+		transition: opacity 0.25s ease;
+
+		&::before {
+			position: absolute;
+			content: "?";
+			display: block;
+			right: 1.5rem;
+			bottom: -2.5rem;
+			font-size: 9em;
+			z-index: -1;
+			transform: rotate(15deg);
+			opacity: 0.08;
+		}
+
+		> h2 {
+			margin-bottom: 0.75em;
+			font-weight: bold;
+			font-size: 100%;
+			color: $dark;
+			opacity: 0.88;
+		}
+
+		> .CommentLine {
+			padding: 2px 0 4px;
+			border-bottom: 1px solid #bec2c6;
+
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+	}
+}
