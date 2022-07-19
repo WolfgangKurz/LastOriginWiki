@@ -8,6 +8,30 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11828" date="2022-07-20"
+		new={ <>
+			<li><BY>프레스터 요안나</BY>의 승급 정보가 추가되었습니다.</li>
+			<li><BY>티에치엔</BY>의 승급 정보가 추가되었습니다.</li>
+			<li><BY>스카디</BY>의 승급 정보가 추가되었습니다.</li>
+			<li>로비 장식품이 추가되었습니다.</li>
+			<li>
+				전투원 스킬 설명에 효과 상세 설명 기능이 추가되었습니다.<br />
+				현재 <BY>레아</BY>의 <u>침수</u>, <BY>마이티R</BY>, <BY>스카디</BY>에만 적용되어있습니다.
+			</li>
+		</> }
+		update={ <>
+			<li><BY>마이티R</BY>의 스킬 정보가 수정되었습니다.</li>
+			<li><BY>티에치엔</BY>의 스킬 정보가 수정되었습니다.</li>
+			<li><BY>프레스터 요안나</BY>의 스킬 정보가 수정되었습니다.</li>
+			<li><BY>스카디</BY>의 스킬 정보가 수정되었습니다.</li>
+			<li><BY>스카디</BY>의 전용장비 <BY>수상한 보조제</BY> 장비 정보가 수정되었습니다.</li>
+		</> }
+		dialogue={ <>
+			<li><BY>아이언 애니</BY>의 서약 대사 세트가 추가되었습니다.</li>
+			<li><BY>레이시</BY>의 서약 대사 세트가 추가되었습니다.</li>
+			<li><span class="badge bg-light text-dark">KST 2022-07-20 02:44:29</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11824" date="2022-07-12"
 		new={ <>
 			<li>전투원 대사에 EN(English) 및 TC(Traditional Chinese, zhTW) 지원이 추가되었습니다.</li>

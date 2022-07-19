@@ -88,7 +88,7 @@ function parseVNode<T> (template: string, p: LocaleProps<T>["p"], components: Lo
 	return ret;
 }
 
-const GetLocaleTable = (locale: LocaleTypes) =>
+export const GetLocaleTable = (locale: LocaleTypes) =>
 	GetJson<Record<string, string>>(StaticDB.Locale[locale]);
 
 interface LocaleProps<T> {
