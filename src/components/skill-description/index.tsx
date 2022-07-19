@@ -4,11 +4,16 @@ import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 
 import { objState } from "@/libs/State";
 import { ComponentTable, parseVNode } from "@/libs/VNode";
+import { ParamWithSlot, parseParams } from "@/libs/SkillDescription";
 
 import EquipPopup from "@/components/popup/equip-popup";
 import * as Components from "./components";
 
 import style from "./components/style.module.scss";
+
+export interface SectionProps {
+	params: Array<number | ParamWithSlot>;
+}
 
 export interface SkillDescriptionValueData {
 	base: number;
@@ -20,7 +25,7 @@ interface SkillDescriptionProps {
 	class?: string;
 
 	text: string;
-	sections?: Record<string, preact.VNode[]>;
+	sections?: Record<string, FunctionalComponent<SectionProps>[]>;
 	rates?: number[];
 
 	slot?: string;
@@ -41,12 +46,15 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 		if (!text) return [];
 
 		const tags: Record<string, preact.FunctionalComponent<unknown>> = {};
-
 		if (props.sections) {
-			text = text.replace(/\$\$([A-Za-z0-9\-_]+)\$?/g, (p0, p1) => {
-				tags[`SECTION_${p1}`] = () => <>{
-					props.sections![p1]
-						.map(r => <div class={ style.CommentLine }>{ r }</div>)
+			text = text.replace(/\$\$([A-Za-z0-9\-_]+)((:?([F0-9,@]+))\$|\$?)/g, (p0, p1, p2, p3, p4) => {
+				// eslint-disable-next-line react/display-name
+				tags[`SECTION_${p1}`] = (): preact.VNode => <>{
+					(props.sections![p1] || [])
+						.map((r, i) => <div
+							key={ `SKILL_DESCRIPTION_COMMENT_SECTION_${p1}_LINE_${i}` }
+							class={ style.CommentLine }
+						>{ createElement(r, { params: parseParams(p4) }) }</div>)
 				}</>;
 				return `<SECTION_${p1} />`;
 			});
@@ -73,7 +81,7 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 				inv?: boolean;
 			}
 		> = (_props) => {
-			const base: number = ((): number => {
+			const base: number | undefined = ((): number | undefined => {
 				if (_props.base !== undefined)
 					return _props.base;
 
@@ -84,10 +92,10 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 						return props.values[props.slot][_props.idx].base;
 				}
 
-				return 0;
+				return undefined;
 			})();
 
-			const per: number = ((): number => {
+			const per: number | undefined = ((): number | undefined => {
 				if (_props.per !== undefined)
 					return _props.per;
 
@@ -96,11 +104,9 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 						return props.values[_props.slot][_props.idx].per;
 					else if (props.slot && (props.slot in props.values) && props.values[props.slot][_props.idx])
 						return props.values[props.slot][_props.idx].per;
-
-					return 0;
 				}
 
-				return 0;
+				return undefined;
 			})();
 
 			return <Components.Value
@@ -115,6 +121,7 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 				invert={ _props.invert || _props.inv }
 				signless={ _props.signless }
 				floor={ _props.floor }
+				forcePN={ _props.forcePN }
 			/>;
 		};
 

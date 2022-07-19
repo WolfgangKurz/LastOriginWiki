@@ -92,11 +92,17 @@ strike {
 		background-color: $light;
 		background-image: linear-gradient(to bottom, mix($white, $dark, 95%), mix($white, $dark, 80%));
 		box-shadow: 0 0.125em 0.5em $dark;
+		line-height: 1.8;
+		text-align: left;
 		font-weight: normal;
+		font-size: 1rem;
 		text-decoration: none;
 		pointer-events: none !important;
+		word-break: keep-all;
 		cursor: default;
+		color: $dark;
 		opacity: 0;
+		z-index: 100;
 		transition: opacity 0.25s ease;
 
 		&::before {
