@@ -30,7 +30,7 @@ export class Comment extends Component<CommentProps, CommentState> {
 		};
 	}
 
-	componentDidMount () {
+	componentDidMount (): void {
 		const root = this.rootReference.current;
 		const el = this.popupReference.current;
 
@@ -53,25 +53,26 @@ export class Comment extends Component<CommentProps, CommentState> {
 			});
 			instance.update();
 
+			// eslint-disable-next-line react/no-did-mount-set-state
 			this.setState({ popperInstance: instance });
 		}
 	}
-	componentWillUnmount () {
+	componentWillUnmount (): void {
 		this.state.popperInstance?.destroy();
 	}
 
-	componentDidUpdate () {
+	componentDidUpdate (): void {
 		if (this.state.popperInstance)
 			this.state.popperInstance.update();
 	}
 
-	render (props: RenderableProps<CommentProps>, state: Readonly<CommentState>) {
+	render (props: RenderableProps<CommentProps>, state: Readonly<CommentState>): preact.VNode {
 		const display = props.display || props.t;
 		const locale = props.locale || props.loc;
 
 		const _display = display
-			? `skill_description_comment_locale_${display}`
-			: "skill_description_comment_default";
+			? `UNIT_SKILL_SECTION_NAME_${display}`
+			: "UNIT_SKILL_SECTION_NAME";
 
 		const disp = locale
 			? <Locale k={ _display } />
@@ -80,7 +81,7 @@ export class Comment extends Component<CommentProps, CommentState> {
 		return <div class={ style.Comment } ref={ this.rootReference }>
 			{ disp }
 
-			<button />
+			<button type="button" onClick={ (e): void => e.preventDefault() } />
 			<div class={ style.CommentPopup } ref={ this.popupReference }>
 				<h2>{ disp }</h2>
 				{ props.children }

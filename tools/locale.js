@@ -39,6 +39,7 @@ async function process (auth) {
 
 					rows.forEach((row) => {
 						if (!row[0]) return;
+						if (row[0][0] === "#") return;
 
 						locales.forEach((x, i) => {
 							data[x][row[0]] = row[i + 1] || row[1];
