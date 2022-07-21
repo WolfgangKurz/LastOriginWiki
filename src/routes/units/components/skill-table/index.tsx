@@ -21,6 +21,7 @@ import BuffList from "@/components/buff-list";
 import SkillIcon from "@/components/skill-icon";
 
 import style from "./style.module.scss";
+import { GetSkillDescription } from "@/libs/SkillDescription";
 
 interface SkillItem extends SkillEntity {
 	slot: string;
