@@ -1,6 +1,6 @@
 import { createRef, Component, RenderableProps } from "preact";
 
-import MergeAlpha from "./alpha-mpeg.wasm";
+import MergeAlpha from "./alpha-mpeg.wasm?init";
 
 interface WASMMemory {
 	data: Uint8Array;
@@ -90,7 +90,7 @@ class MergedVideo extends Component<MergedVideoProps> {
 
 	componentDidMount () {
 		MergeAlpha({})
-			.then(exports => {
+			.then(({ exports }) => {
 				this.wasm = {
 					asm: exports,
 					mem: {

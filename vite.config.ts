@@ -169,7 +169,7 @@ export default ({ mode }) => {
 							return `external.${name}`;
 						}
 
-						// // components
+						// components
 						if (
 							id.includes("/src/components/locale/") ||
 							id.includes("/src/components/loader/") ||
