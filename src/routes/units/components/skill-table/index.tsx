@@ -9,6 +9,7 @@ import Session from "@/libs/Session";
 import { isActive } from "@/libs/Functions";
 import { objState } from "@/libs/State";
 import { ImageExtension, RarityDisplay } from "@/libs/Const";
+import { GetSkillDescription } from "@/libs/SkillDescription";
 
 import Locale, { LocaleExists, LocaleGet } from "@/components/locale";
 import ElemIcon from "@/components/elem-icon";
@@ -20,7 +21,6 @@ import BuffList from "@/components/buff-list";
 import SkillIcon from "@/components/skill-icon";
 
 import style from "./style.module.scss";
-import { GetSkillDescription } from "@/libs/SkillDescription";
 
 interface SkillItem extends SkillEntity {
 	slot: string;

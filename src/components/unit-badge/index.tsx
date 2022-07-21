@@ -6,22 +6,6 @@ import Locale from "@/components/locale";
 
 import style from "./style.module.scss";
 
-const typeName: Record<ACTOR_CLASS, string> = {
-	[ACTOR_CLASS.LIGHT]: "LIGHT",
-	[ACTOR_CLASS.AIR]: "MOBILITY",
-	[ACTOR_CLASS.HEAVY]: "HEAVY",
-};
-const roleName: Record<ROLE_TYPE, string> = {
-	[ROLE_TYPE.ATTACKER]: "ATTACKER",
-	[ROLE_TYPE.DEFENDER]: "DEFENDER",
-	[ROLE_TYPE.SUPPORTER]: "SUPPORTER",
-};
-const typeList = [
-	"light",
-	"flying",
-	"heavy",
-];
-
 interface UnitBadgeProps {
 	class?: string;
 
@@ -34,6 +18,22 @@ interface UnitBadgeProps {
 }
 
 const UnitBadge: FunctionalComponent<UnitBadgeProps> = (props) => {
+	const typeName: Record<ACTOR_CLASS, string> = {
+		[ACTOR_CLASS.LIGHT]: "LIGHT",
+		[ACTOR_CLASS.AIR]: "MOBILITY",
+		[ACTOR_CLASS.HEAVY]: "HEAVY",
+	};
+	const roleName: Record<ROLE_TYPE, string> = {
+		[ROLE_TYPE.ATTACKER]: "ATTACKER",
+		[ROLE_TYPE.DEFENDER]: "DEFENDER",
+		[ROLE_TYPE.SUPPORTER]: "SUPPORTER",
+	};
+	const typeList = [
+		"light",
+		"flying",
+		"heavy",
+	];
+
 	const limit = (props.limit || "").toLowerCase();
 	const type = ((): ACTOR_CLASS | -1 => {
 		const table: Record<string, ACTOR_CLASS> = {
