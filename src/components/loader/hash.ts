@@ -3112,7 +3112,7 @@ export default {
 	},
 	"locale": {
 		"EN": "d3a7cee5",
-		"JP": "2b02fbeb",
+		"JP": "3933d55d",
 		"KR": "a9a355d1",
 		"TC": "21f71d05"
 	}
