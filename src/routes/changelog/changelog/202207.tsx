@@ -8,6 +8,35 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11842" date="2022-07-25"
+		new={ <>
+			<li>신규 전투원 <BY>갈라테아</BY>가 추가되었습니다.</li>
+			<li>신규 이벤트 <BY>해가 지지 않는 워터파크</BY>가 추가되었습니다.</li>
+		</> }
+		bugfix={ <>
+			<li><BY>불굴의 마리</BY>의 일부 스킬 수치가 잘못 표시되던 점을 수정했습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<BY>EB-48G 흐레스벨그</BY>의 스킨
+				<BR>아쿠아랜드 : #매지컬 모모 #아쿠아랜드 #사령관</BR>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>멜리테</BY>의 스킨
+				<BR>아쿠아랜드 : 여왕님의 여름 축제</BR>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>세띠</BY>의 스킨
+				<BR>아쿠아랜드 : 승부보다는 어필</BR>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>바르그</BY>의 기본 스킨의 중파 이미지가 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2022-07-25 16:49:25</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11828" date="2022-07-20"
 		new={ <>
 			<li><BY>프레스터 요안나</BY>의 승급 정보가 추가되었습니다.</li>

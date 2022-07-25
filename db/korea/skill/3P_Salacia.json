@@ -3645,6 +3645,77 @@
                 }
               ],
               "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Salacia_N_55",
+              "on": "round",
+              "if": {
+                "in_squad": [
+                  "Char_3P_Galatea_N"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "Effect_3P_Salacia_N_55_1",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "Effect_3P_Salacia_N_55_2",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         }
@@ -3783,6 +3854,30 @@
             },
             "base": 0.6,
             "per": 0.06,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "Effect_3P_Salacia_N_55_1",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.010000"
+            },
+            "base": 0.1,
+            "per": 0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ACCURACY_UP",
+            "desc": {
+              "desc": "Effect_3P_Salacia_N_55_2",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.010000"
+            },
+            "base": 0.1,
+            "per": 0.01,
             "chance": 1
           }
         ]
