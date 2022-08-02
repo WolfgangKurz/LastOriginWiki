@@ -16,7 +16,7 @@ import { ImageExtension, AssetsRoot, TroopNameTable, IsDev } from "@/libs/Const"
 import { CurrentDB } from "@/libs/DB";
 
 import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
-import Locale, { LocaleGet } from "@/components/locale";
+import Locale, { LocaleExists, LocaleGet } from "@/components/locale";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import Icon from "@/components/bootstrap-icon";
 import StatIcon from "@/components/stat-icon";
@@ -853,9 +853,15 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					return <></>;
 
 			return <Locale plain k="BUFFEFFECT_ATK" p={ [signedValue(stat.attack, level)] } />;
-		} else if ("defense" in stat)
+		} else if ("defense" in stat) {
+			if (stat.defense.base === 0 && stat.defense.per === 0)
+				if (IsDev)
+					return <small class="text-secondary">Placeholder</small>; // Placeholder 버프
+				else
+					return <></>;
+
 			return <Locale plain k="BUFFEFFECT_DEF" p={ [signedValue(stat.defense, level)] } />;
-		else if ("hp" in stat)
+		} else if ("hp" in stat)
 			return <Locale plain k="BUFFEFFECT_HP" p={ [signedValue(stat.hp, level)] } />;
 		else if ("accuracy" in stat)
 			return <Locale plain k="BUFFEFFECT_ACC" p={ [signedValue(stat.accuracy, level)] } />;
@@ -1415,7 +1421,9 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				};
 
 				const buffName = (() => {
-					const _template = LocaleGet(buff.desc.desc, "{0}");
+					const _template = LocaleExists(buff.desc.desc)
+						? LocaleGet(buff.desc.desc, "{0}")
+						: "";
 					const separated = /[：:]/.test(_template);
 
 					const template = separated
