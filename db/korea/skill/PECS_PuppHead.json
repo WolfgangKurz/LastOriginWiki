@@ -2324,7 +2324,28 @@
                 2
               ],
               "target": 0,
-              "buffs": [],
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_PuppHead_N_4_1",
+                    "type": 0,
+                    "value": "0.300000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "30%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
               "maxStack": 0
             }
           ]
@@ -2345,7 +2366,20 @@
         0
       ],
       "data": [
-        []
+        [
+          {
+            "icon": "BuffIcon_ACCURACY_UP",
+            "desc": {
+              "desc": "Effect_PECS_PuppHead_N_4_1",
+              "type": 0,
+              "value": "0.300000",
+              "level": "0.010000"
+            },
+            "base": 0.3,
+            "per": 0.01,
+            "chance": 1
+          }
+        ]
       ]
     }
   },
@@ -2403,6 +2437,29 @@
               "target": 3,
               "buffs": [
                 {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "Effect_PECS_PuppHead_N_5_1",
+                    "type": 0,
+                    "value": "-0.100000",
+                    "level": "-0.100000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "90%",
+                    "type": 3,
+                    "defense": {
+                      "base": "-10%",
+                      "per": "-10%"
+                    }
+                  },
+                  "overlap": 1
+                },
+                {
                   "icon": "BuffIcon_ATK_DOWN",
                   "desc": {
                     "desc": "Effect_PECS_PuppHead_N_5_2",
@@ -2446,6 +2503,18 @@
       ],
       "data": [
         [
+          {
+            "icon": "BuffIcon_DEF_DOWN",
+            "desc": {
+              "desc": "Effect_PECS_PuppHead_N_5_1",
+              "type": 0,
+              "value": "-0.100000",
+              "level": "-0.100000"
+            },
+            "base": -0.1,
+            "per": -0.1,
+            "chance": 0.9
+          },
           {
             "icon": "BuffIcon_ATK_DOWN",
             "desc": {

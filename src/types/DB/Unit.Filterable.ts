@@ -82,6 +82,7 @@ export namespace FilterableUnit {
 		},
 		skins: {
 			G: false,
+			SD: false,
 			parts: 0,
 			stage: false,
 
@@ -103,6 +104,7 @@ export namespace FilterableUnit {
 				2: false,
 				3: false,
 			},
+			facelist: [],
 
 			category: [],
 			artist: "",

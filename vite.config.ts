@@ -6,7 +6,7 @@ import glob from "glob";
 import hash from "hash.js";
 import deepmerge from "deepmerge";
 
-import { defineConfig } from "vite";
+import { defineConfig, loadEnv } from "vite";
 import preact from "@preact/preset-vite";
 
 // buildtime
@@ -105,6 +105,8 @@ import preact from "@preact/preset-vite";
 })();
 
 export default ({ mode }) => {
+	const viteEnv = loadEnv(mode, process.cwd());
+
 	const isProd = mode === "production";
 	const isDev = !isProd;
 
@@ -114,6 +116,7 @@ export default ({ mode }) => {
 		"@use \"sass:list\";",
 		"@use \"sass:map\";",
 		`$NODE_ENV: "${mode}";`,
+		`$LOCALHOST: "${viteEnv.VITE_LOCALHOST || ""}:${viteEnv.VITE_ASSET_PORT}";`,
 		`@import "${path.resolve(__dirname, "src", "themes", "base").replace(/\\/g, "/")}";`,
 	].join("\n")}\n`;
 
@@ -122,6 +125,9 @@ export default ({ mode }) => {
 			jsxFactory: "h",
 			jsxFragment: "Fragment",
 			// jsxInject: `import { h, Fragment } from "preact";`,
+			logOverride: {
+				"this-is-undefined-in-esm": "silent",
+			},
 		},
 		build: {
 			assetsDir: "build",

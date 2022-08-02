@@ -13,7 +13,7 @@ export const IsStaging = false; // IsDev || false;
 export const IsAprilFool = false; // (d => d.getMonth() === 3 && d.getDate() === 1)(new Date()); // 04-01
 
 export const Host = IsDev
-	? "http://121.157.45.209:5500"
+	? `http://${import.meta.env.VITE_LOCALHOST}:${import.meta.env.VITE_ASSET_PORT}`
 	: IsStaging
 		? "https://staging-lo.swaytwig.com"
 		: "https://lo.swaytwig.com";
@@ -698,7 +698,7 @@ export function ImageExtension (): ImageExtensionTypes {
 
 let playableWebM: boolean | null = null;
 export function CanPlayWebM (): boolean {
-	if(typeof playableWebM === "boolean") return playableWebM;
+	if (typeof playableWebM === "boolean") return playableWebM;
 
 	const video = document.createElement("video");
 	return playableWebM = (video.canPlayType("video/webm") !== "");

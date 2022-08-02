@@ -14,7 +14,7 @@ const UnitsList: FunctionalComponent<UnitsListProps> = (props) => {
 	const ShortName = objState<boolean>(false);
 
 	const UnitList = ((): FilterableUnit[] => {
-		const list = props.list;
+		const list = [...props.list];
 
 		if (Order.value === "name") {
 			if (ShortName.value)

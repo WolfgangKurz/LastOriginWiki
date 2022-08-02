@@ -15,7 +15,7 @@ import { ImageExtension, AssetsRoot, TroopNameTable, IsDev } from "@/libs/Const"
 import { CurrentDB } from "@/libs/DB";
 
 import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
-import Locale, { LocaleGet } from "@/components/locale";
+import Locale, { LocaleExists, LocaleGet } from "@/components/locale";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import Icon from "@/components/bootstrap-icon";
 import ElemIcon from "@/components/elem-icon";
@@ -832,9 +832,12 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 				return <></>; // Placeholder 버프
 
 			return <Locale plain k="BUFFEFFECT_ATK" p={ [signedValue(stat.attack, level)] } />;
-		} else if ("defense" in stat)
+		} else if ("defense" in stat) {
+			if (stat.defense.base === 0 && stat.defense.per === 0)
+				return <></>; // Placeholder 버프
+
 			return <Locale plain k="BUFFEFFECT_DEF" p={ [signedValue(stat.defense, level)] } />;
-		else if ("hp" in stat)
+		} else if ("hp" in stat)
 			return <Locale plain k="BUFFEFFECT_HP" p={ [signedValue(stat.hp, level)] } />;
 		else if ("accuracy" in stat)
 			return <Locale plain k="BUFFEFFECT_ACC" p={ [signedValue(stat.accuracy, level)] } />;
@@ -1345,19 +1348,24 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 				elems.push(<div class="clearfix">
 					<div class="clearfix">
 						<img class="me-1" width="25" src={ `${AssetsRoot}/${ext}/buff/${buff.icon}.${ext}` } />
-						<strong class="align-middle">
-							{ formatDesc(buff.desc.type, LocaleGet(buff.desc.desc), buff.desc.value, buff.desc.level, level, 1) }
-							<small class="ms-2 text-primary">
-								<Locale
-									plain
-									k={ buff.desc.desc }
-									p={ [
-										formatDesc(buff.desc.type, "_:{0}", buff.desc.value, buff.desc.level, level, 2)
-											.slice(1)
-									] }
-								/>
-							</small>
-						</strong>
+						{ (() => {
+							const _template = LocaleExists(buff.desc.desc)
+								? LocaleGet(buff.desc.desc, "{0}")
+								: "";
+							return <strong class="align-middle">
+								{ formatDesc(buff.desc.type, _template, buff.desc.value, buff.desc.level, level, 1) }
+								<small class="ms-2 text-primary">
+									<Locale
+										plain
+										k={ buff.desc.desc }
+										p={ [
+											formatDesc(buff.desc.type, _template, buff.desc.value, buff.desc.level, level, 2)
+												.slice(1)
+										] }
+									/>
+								</small>
+							</strong>;
+						})() }
 
 						<div class="float-end buff-checkbox">
 							{ [
