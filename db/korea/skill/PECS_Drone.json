@@ -998,7 +998,7 @@
                       "per": "0.5%"
                     }
                   },
-                  "overlap": 1
+                  "overlap": 4
                 },
                 {
                   "icon": "BuffIcon_DEBUFF_RATEUP",
@@ -1014,6 +1014,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "0%",
                     "type": 90,
                     "resist": {
                       "type": "debuff",
@@ -1043,6 +1044,56 @@
                     "evade": {
                       "base": "-15%",
                       "per": "-0.75%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Drone_N_21",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEBUFF_RATEUP",
+                  "desc": {
+                    "desc": "Effect_PECS_Drone_N_21_1",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 90,
+                    "resist": {
+                      "type": "debuff",
+                      "value": {
+                        "base": "-25%",
+                        "per": "-1.25%"
+                      }
                     }
                   },
                   "overlap": 4
@@ -1108,7 +1159,7 @@
                       "per": "0.5%"
                     }
                   },
-                  "overlap": 1
+                  "overlap": 4
                 },
                 {
                   "icon": "BuffIcon_DEBUFF_RATEUP",
@@ -1124,6 +1175,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "0%",
                     "type": 90,
                     "resist": {
                       "type": "debuff",
@@ -1153,6 +1205,56 @@
                     "evade": {
                       "base": "-15%",
                       "per": "-0.75%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Drone_N_21",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEBUFF_RATEUP",
+                  "desc": {
+                    "desc": "Effect_PECS_Drone_N_21_1",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.012500"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 90,
+                    "resist": {
+                      "type": "debuff",
+                      "value": {
+                        "base": "-25%",
+                        "per": "-1.25%"
+                      }
                     }
                   },
                   "overlap": 4
@@ -1201,7 +1303,7 @@
             },
             "base": 0.25,
             "per": 0.0125,
-            "chance": 1
+            "chance": 0
           },
           {
             "icon": "BuffIcon_EVADE_DOWN",
@@ -1213,6 +1315,18 @@
             },
             "base": -0.15,
             "per": -0.0075,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DEBUFF_RATEUP",
+            "desc": {
+              "desc": "Effect_PECS_Drone_N_21_1",
+              "type": 1,
+              "value": "0.250000",
+              "level": "0.012500"
+            },
+            "base": 0.25,
+            "per": 0.0125,
             "chance": 1
           }
         ]

@@ -2640,6 +2640,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "0%",
                     "type": 90,
                     "resist": {
                       "type": "debuff",
@@ -2812,6 +2813,54 @@
                 }
               ],
               "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Hirume_N_53",
+              "on": "wave",
+              "if": false,
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 4,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEBUFF_RATEUP",
+                  "desc": {
+                    "desc": "Effect_3P_Hirume_N_53_1",
+                    "type": 1,
+                    "value": "0.320000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 90,
+                    "resist": {
+                      "type": "debuff",
+                      "value": {
+                        "base": "-32%",
+                        "per": "-2%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         }
@@ -2842,7 +2891,7 @@
             },
             "base": 0.32,
             "per": 0.02,
-            "chance": 1
+            "chance": 0
           },
           {
             "icon": "BuffIcon_FIRERES_DOWN",
@@ -2902,6 +2951,18 @@
             },
             "base": 2,
             "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DEBUFF_RATEUP",
+            "desc": {
+              "desc": "Effect_3P_Hirume_N_53_1",
+              "type": 1,
+              "value": "0.320000",
+              "level": "0.020000"
+            },
+            "base": 0.32,
+            "per": 0.02,
             "chance": 1
           }
         ]

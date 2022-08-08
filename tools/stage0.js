@@ -23,8 +23,8 @@ const list =
 			"equip",
 			"facility",
 			"summon",
-			"unit", "unit-dialogue", "unit-skill", "unit-skin",
-			"roguelike-skill",
+			"unit", "unit-dialogue", "unit-skill", "unit-skin", "unit-lvlimit",
+			// "roguelike-skill",
 		].map(x => `stage0/${x}`),
 	];
 
