@@ -8,6 +8,34 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11861" date="2022-08-09"
+		new={ <>
+			<li>이벤트 <BY>해가 지지 않는 워터파크</BY>의 2부 정보가 추가되었습니다.</li>
+		</> }
+		update={ <>
+			<li><BY>드론 08</BY> 및 <BY>천향의 히루메</BY>의 스킬 정보가 갱신되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<BY>T-40 하이에나</BY>의 스킨
+				<BR>아쿠아랜드 : 축제에는 폭탄이지!</BR>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>유린의 소니아</BY>의 스킨
+				<BR>아쿠아랜드 : 유혹하는 눈빛</BR>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>갈라테아</BY>의 스킨
+				<BR>아쿠아랜드 : 무의식적인 유혹</BR>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>갈라테아</BY>의 기본 스킨의 중파 이미지가 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2022-08-09 04:15:13</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11857" date="2022-08-02"
 		update={ <>
 			<li>일부 전투원의 스킬 플레이버 텍스트를 갱신했습니다.</li>
