@@ -8,6 +8,14 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11863" date="2022-08-12"
+		bugfix={ <>
+			<li>일부 구역의 클리어 조건이 표시되지 않던 점을 수정했습니다.</li>
+		</> }
+		update={ <>
+			<li>세계정보의 클리어 조건이 실제 조건과 표시 조건을 동시에 표시하도록 변경되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11861" date="2022-08-09"
 		new={ <>
 			<li>이벤트 <BY>해가 지지 않는 워터파크</BY>의 2부 정보가 추가되었습니다.</li>

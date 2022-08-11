@@ -137,7 +137,6 @@ class MapGrid extends Component<MapGridProps>{
 		const wid = props.wid || "";
 		const mid = props.mid || "";
 		const nodes = props.nodes.sort((a, b) => a.offset - b.offset);
-		console.log(nodes);
 
 		const RECTS = (() => {
 			const ret: preact.VNode[] = [];

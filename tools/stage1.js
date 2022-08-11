@@ -26,6 +26,7 @@ const list =
 			// "roguelike.map",
 			"enemygroup",
 			"research",
+			"mission",
 		].map(x => `stage1/${x}`),
 	];
 

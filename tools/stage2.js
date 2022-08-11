@@ -26,6 +26,7 @@ const list =
 			"equip",
 			"enemy",
 			"facility",
+			"skill-from",
 		].map(x => `stage2/${x}`),
 	];
 
