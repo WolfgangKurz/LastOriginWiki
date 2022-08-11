@@ -33,6 +33,7 @@ import MapGrid from "../components/map-grid";
 import PCIcon from "../components/pc-icon";
 
 import style from "./style.module.scss";
+import MissionText from "@/components/mission-text";
 
 interface ModuleUnit {
 	type: "module";
@@ -692,7 +693,14 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 															<div class="card-body">
 																<ul class="list-group">
 																	{ selectedValue.missions.map(m => <li class="list-group-item">
-																		★ <Locale k={ m } components={ { ref: UnitReference } } />
+																		{/* ★ <Locale k={ m } components={ { ref: UnitReference } } /> */ }
+																		<div>
+																			<Icon class="me-2" icon="star-fill" />
+																			<MissionText mission={ m } />
+																		</div>
+																		<small class="text-secondary ps-4">
+																			<Locale plain k={ m } />
+																		</small>
 																	</li>) }
 																</ul>
 															</div>

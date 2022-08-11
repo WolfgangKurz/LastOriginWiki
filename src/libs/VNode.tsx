@@ -36,8 +36,8 @@ function traverseVNode<T> (nodes: ParseNode[], p: preact.ComponentChild[], compo
 
 			const attributes = x.attrs;
 			for (const item of attributes) {
-				if (item.name.toLowerCase() === "class")
-					continue; // className은 staticClass로 지정하기 때문에 제외
+				// if (item.name.toLowerCase() === "class")
+				// 	continue; // className은 staticClass로 지정하기 때문에 제외
 				attrs[item.name] = item.value || true;
 			}
 

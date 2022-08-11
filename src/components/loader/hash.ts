@@ -2884,6 +2884,7 @@ export default {
 			"Sub": "3873bd35"
 		},
 		"maps": "7d2d7830",
+		"mission": "7f11ebc7",
 		"research": "b8b3ca45",
 		"roguelike": {
 			"buffeffects": "686fab83",
@@ -2893,6 +2894,7 @@ export default {
 			"node": "831bd741",
 			"quest": "372e37a9"
 		},
+		"skill-from": "13712847",
 		"sticker": "a2f2cd8b",
 		"story": "a6628263",
 		"summon": {
@@ -3113,9 +3115,9 @@ export default {
 		}
 	},
 	"locale": {
-		"EN": "87d3ceca",
-		"JP": "2ff8bc79",
-		"KR": "256fb9c4",
-		"TC": "e6a7ea29"
+		"EN": "a2d4b120",
+		"JP": "cddd0e23",
+		"KR": "4aa237df",
+		"TC": "77a81a8f"
 	}
 } as DBHashType;
