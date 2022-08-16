@@ -8,6 +8,20 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11864" date="2022-08-16"
+		bugfix={ <>
+			<li><BY>샬럿</BY> 전투원의 2번 패시브 스킬의 설명이 잘못 기입되어있던 점을 수정했습니다.</li>
+		</> }
+		update={ <>
+			<li><BY>에키드나</BY> 전투원의 1번 액티브 스킬의 설명 및 효과가 갱신되었습니다.</li>
+			<li><BY>A-14B 스프리건</BY> 전투원의 3번 패시브 스킬의 설명이 갱신되었습니다.</li>
+		</> }
+		dialogue={ <>
+			<li><BY>엘븐 포레스트메이커</BY>의 서약 대사 세트가 추가되었습니다.</li>
+			<li><BY>세띠</BY>의 서약 대사 세트가 추가되었습니다.</li>
+			<li><span class="badge bg-light text-dark">KST 2022-08-16 14:49:30</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11863" date="2022-08-12"
 		bugfix={ <>
 			<li>일부 구역의 클리어 조건이 표시되지 않던 점을 수정했습니다.</li>
