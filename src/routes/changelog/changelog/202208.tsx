@@ -8,6 +8,38 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11867" date="2022-08-23"
+		update={ <>
+			<li><BY>AT-100 비스트헌터</BY> 전투원의 승급 및 스킬 정보가 갱신되었습니다.</li>
+			<li><BY>AT-4 파니</BY> 전투원의 승급 및 스킬 정보가 갱신되었습니다.</li>
+			<li><BY>AO-2 레이븐</BY> 전투원의 승급 및 스킬 정보가 갱신되었습니다.</li>
+			<li><BY>A-1 블러디 팬서</BY> 전투원의 스킬 정보가 갱신되었습니다.</li>
+			<li><BY>신속의 칸</BY> 전투원의 스킬 정보가 갱신되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<BY>엠프리스</BY>의 스킨
+				<BR>아쿠아 랜드 : 한 여름의 펭귄</BR>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>아이아스</BY>의 스킨
+				<BR>아쿠아 랜드 : 이론과 실전</BR>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>B-7 스트라토 엔젤</BY>의 스킨
+				<BR>아쿠아 랜드 : 성공? 실패?</BR>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>C-11 스카라비아</BY>의 스킨
+				<BR>아쿠아랜드 : 게으른 공주</BR>의 중파 이미지가 추가되었습니다.
+			</li>
+			<li>일부 스킨의 일러스트레이터 정보가 잘못 표기되어있던 점을 수정했습니다.</li>
+		</> }
+		dialogue={ <>
+			<li><BY>갈라테아</BY>의 스킨 <BR>아쿠아랜드 : 무의식적인 유혹</BR>의 대사가 추가되었습니다.</li>
+			<li><span class="badge bg-light text-dark">KST 2022-08-23 02:58:17</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11864" date="2022-08-16"
 		bugfix={ <>
 			<li><BY>샬럿</BY> 전투원의 2번 패시브 스킬의 설명이 잘못 기입되어있던 점을 수정했습니다.</li>
