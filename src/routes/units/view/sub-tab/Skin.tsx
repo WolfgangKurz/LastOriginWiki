@@ -5,6 +5,8 @@ import { AssetsRoot } from "@/libs/Const";
 import { isActive } from "@/libs/Functions";
 
 import Locale from "@/components/locale";
+import Icon from "@/components/bootstrap-icon";
+import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import RarityBadge from "@/components/rarity-badge";
 import UnitFace from "@/components/unit-face";
 
@@ -122,7 +124,15 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 
 							{ skin.artist
 								? <>
-									<Locale k="UNIT_VIEW_ILLUSTRATOR" /> : { skin.artist }
+									<Locale k="UNIT_VIEW_ILLUSTRATOR" /> : { skin.artist === "???"
+										? <BootstrapTooltip content={ <Locale k="UNIT_VIEW_ILLUSTRATOR_HIDDEN_TOOLTIP" /> }>
+											<span class={ `badge ${style.IllustratorHidden}` }>
+												<Locale k="UNIT_VIEW_ILLUSTRATOR_HIDDEN" />
+
+												<Icon class="ms-1" icon="question-circle-fill" />
+											</span>
+										</BootstrapTooltip>
+										: skin.artist }
 								</>
 								: <></>
 							}
