@@ -35,7 +35,10 @@
             {
               "key": "Effect_3P_Hirume_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -128,7 +131,10 @@
             {
               "key": "Effect_3P_Hirume_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -192,7 +198,10 @@
             {
               "key": "Effect_3P_Hirume_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -285,7 +294,10 @@
             {
               "key": "Effect_3P_Hirume_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -349,7 +361,10 @@
             {
               "key": "Effect_3P_Hirume_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -442,7 +457,10 @@
             {
               "key": "Effect_3P_Hirume_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -506,7 +524,10 @@
             {
               "key": "Effect_3P_Hirume_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -599,7 +620,10 @@
             {
               "key": "Effect_3P_Hirume_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -663,7 +687,10 @@
             {
               "key": "Effect_3P_Hirume_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -756,7 +783,10 @@
             {
               "key": "Effect_3P_Hirume_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -820,7 +850,10 @@
             {
               "key": "Effect_3P_Hirume_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -913,7 +946,10 @@
             {
               "key": "Effect_3P_Hirume_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -977,7 +1013,10 @@
             {
               "key": "Effect_3P_Hirume_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1070,7 +1109,10 @@
             {
               "key": "Effect_3P_Hirume_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1134,7 +1176,10 @@
             {
               "key": "Effect_3P_Hirume_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1227,7 +1272,10 @@
             {
               "key": "Effect_3P_Hirume_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1291,7 +1339,10 @@
             {
               "key": "Effect_3P_Hirume_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1384,7 +1435,10 @@
             {
               "key": "Effect_3P_Hirume_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1448,7 +1502,10 @@
             {
               "key": "Effect_3P_Hirume_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1541,7 +1598,10 @@
             {
               "key": "Effect_3P_Hirume_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1695,7 +1755,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1814,15 +1877,18 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_3P_Hirume_N_2"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_3P_Hirume_N_2"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1867,7 +1933,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2040,7 +2109,10 @@
             {
               "key": "Effect_3P_Hirume_N_3",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2133,7 +2205,10 @@
             {
               "key": "Effect_3P_Hirume_N_31",
               "on": "wave",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2282,7 +2357,10 @@
             {
               "key": "Effect_3P_Hirume_N_4",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2395,7 +2473,10 @@
             {
               "key": "Effect_3P_Hirume_N_41",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2438,7 +2519,10 @@
             {
               "key": "Effect_3P_Hirume_N_42",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2609,7 +2693,10 @@
             {
               "key": "Effect_3P_Hirume_N_5",
               "on": "wave",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2726,7 +2813,10 @@
             {
               "key": "Effect_3P_Hirume_N_51",
               "on": "wave_end",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2766,15 +2856,18 @@
             {
               "key": "Effect_3P_Hirume_N_52",
               "on": "wave",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    23
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      23
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2817,7 +2910,10 @@
             {
               "key": "Effect_3P_Hirume_N_53",
               "on": "wave",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1

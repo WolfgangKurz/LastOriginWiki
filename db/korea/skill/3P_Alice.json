@@ -35,7 +35,10 @@
             {
               "key": "Effect_3P_Alice_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -121,7 +124,10 @@
             {
               "key": "Effect_3P_Alice_N_11",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -183,7 +189,10 @@
             {
               "key": "Effect_3P_Alice_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -269,7 +278,10 @@
             {
               "key": "Effect_3P_Alice_N_11",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -331,7 +343,10 @@
             {
               "key": "Effect_3P_Alice_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -417,7 +432,10 @@
             {
               "key": "Effect_3P_Alice_N_11",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -479,7 +497,10 @@
             {
               "key": "Effect_3P_Alice_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -565,7 +586,10 @@
             {
               "key": "Effect_3P_Alice_N_11",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -627,7 +651,10 @@
             {
               "key": "Effect_3P_Alice_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -713,7 +740,10 @@
             {
               "key": "Effect_3P_Alice_N_11",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -775,7 +805,10 @@
             {
               "key": "Effect_3P_Alice_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -861,7 +894,10 @@
             {
               "key": "Effect_3P_Alice_N_11",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -923,7 +959,10 @@
             {
               "key": "Effect_3P_Alice_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1009,7 +1048,10 @@
             {
               "key": "Effect_3P_Alice_N_11",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1071,7 +1113,10 @@
             {
               "key": "Effect_3P_Alice_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1157,7 +1202,10 @@
             {
               "key": "Effect_3P_Alice_N_11",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1219,7 +1267,10 @@
             {
               "key": "Effect_3P_Alice_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1305,7 +1356,10 @@
             {
               "key": "Effect_3P_Alice_N_11",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1367,7 +1421,10 @@
             {
               "key": "Effect_3P_Alice_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1453,7 +1510,10 @@
             {
               "key": "Effect_3P_Alice_N_11",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1603,17 +1663,20 @@
             {
               "key": "Effect_3P_Alice_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    78,
-                    87
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      78,
+                      87
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1658,7 +1721,10 @@
             {
               "key": "Effect_3P_Alice_N_12",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1720,17 +1786,20 @@
             {
               "key": "Effect_3P_Alice_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    78,
-                    87
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      78,
+                      87
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1775,7 +1844,10 @@
             {
               "key": "Effect_3P_Alice_N_12",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1837,17 +1909,20 @@
             {
               "key": "Effect_3P_Alice_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    78,
-                    87
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      78,
+                      87
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1892,7 +1967,10 @@
             {
               "key": "Effect_3P_Alice_N_12",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1954,17 +2032,20 @@
             {
               "key": "Effect_3P_Alice_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    78,
-                    87
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      78,
+                      87
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2009,7 +2090,10 @@
             {
               "key": "Effect_3P_Alice_N_12",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2071,17 +2155,20 @@
             {
               "key": "Effect_3P_Alice_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    78,
-                    87
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      78,
+                      87
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2126,7 +2213,10 @@
             {
               "key": "Effect_3P_Alice_N_12",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2188,17 +2278,20 @@
             {
               "key": "Effect_3P_Alice_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    78,
-                    87
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      78,
+                      87
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2243,7 +2336,10 @@
             {
               "key": "Effect_3P_Alice_N_12",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2305,17 +2401,20 @@
             {
               "key": "Effect_3P_Alice_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    78,
-                    87
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      78,
+                      87
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2360,7 +2459,10 @@
             {
               "key": "Effect_3P_Alice_N_12",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2422,17 +2524,20 @@
             {
               "key": "Effect_3P_Alice_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    78,
-                    87
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      78,
+                      87
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2477,7 +2582,10 @@
             {
               "key": "Effect_3P_Alice_N_12",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2539,17 +2647,20 @@
             {
               "key": "Effect_3P_Alice_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    78,
-                    87
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      78,
+                      87
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2594,7 +2705,10 @@
             {
               "key": "Effect_3P_Alice_N_12",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2656,17 +2770,20 @@
             {
               "key": "Effect_3P_Alice_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    78,
-                    87
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      78,
+                      87
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2711,7 +2828,10 @@
             {
               "key": "Effect_3P_Alice_N_12",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2837,9 +2957,14 @@
             {
               "key": "Effect_3P_Alice_N_3",
               "on": "round",
-              "if": {
-                "hp>=": "50%"
-              },
+              "if": [
+                {
+                  "hp>=": [
+                    "50%"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3023,7 +3148,10 @@
             {
               "key": "Effect_3P_Alice_N_4",
               "on": "attack",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3134,7 +3262,10 @@
             {
               "key": "Effect_3P_Alice_N_5",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3202,7 +3333,10 @@
             {
               "key": "Effect_3P_Alice_N_13",
               "on": "wave",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3247,7 +3381,10 @@
             {
               "key": "Effect_3P_Alice_N_15",
               "on": "wait",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3308,7 +3445,10 @@
             {
               "key": "Effect_3P_Alice_N_5",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3376,7 +3516,10 @@
             {
               "key": "Effect_3P_Alice_N_14",
               "on": "wave",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3421,7 +3564,10 @@
             {
               "key": "Effect_3P_Alice_N_16",
               "on": "wait",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1

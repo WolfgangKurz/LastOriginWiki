@@ -35,16 +35,19 @@
             {
               "key": "Effect_BR_Scathy_N_1",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "UNFILLED",
-                  "select": [
-                    "Effect_BR_Scathy_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Scathy_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -155,16 +158,27 @@
             {
               "key": "Effect_BR_Scathy_N_42",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "UNFILLED",
-                  "select": [
-                    91
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "UNFILLED",
+                    "select": [
+                      91
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -206,16 +220,27 @@
             {
               "key": "Effect_BR_Scathy_N_43",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    90
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      90
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -257,15 +282,18 @@
             {
               "key": "Effect_BR_Scathy_N_51",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -380,15 +408,18 @@
             {
               "key": "Effect_BR_Scathy_N_54",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -624,16 +655,19 @@
             {
               "key": "Effect_BR_Scathy_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "UNFILLED",
-                  "select": [
-                    "Effect_BR_Scathy_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Scathy_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -676,16 +710,28 @@
             {
               "key": "Effect_BR_Scathy_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_1"
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_1"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Scathy_N_5"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -727,15 +773,18 @@
             {
               "key": "Effect_BR_Scathy_N_41",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_4"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -777,16 +826,27 @@
             {
               "key": "Effect_BR_Scathy_N_42",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "UNFILLED",
-                  "select": [
-                    91
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "UNFILLED",
+                    "select": [
+                      91
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -828,16 +888,27 @@
             {
               "key": "Effect_BR_Scathy_N_43",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    90
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      90
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -879,7 +950,18 @@
             {
               "key": "Effect_BR_Scathy_N_47",
               "on": "criticaled",
-              "if": false,
+              "if": [
+                false,
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -925,15 +1007,18 @@
             {
               "key": "Effect_BR_Scathy_N_52",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -975,16 +1060,19 @@
             {
               "key": "Effect_BR_Scathy_N_53",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_51"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_51"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1045,16 +1133,19 @@
             {
               "key": "Effect_BR_Scathy_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "UNFILLED",
-                  "select": [
-                    "Effect_BR_Scathy_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Scathy_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1097,16 +1188,28 @@
             {
               "key": "Effect_BR_Scathy_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_1"
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_1"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Scathy_N_5"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -1148,15 +1251,18 @@
             {
               "key": "Effect_BR_Scathy_N_41",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_4"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1198,16 +1304,27 @@
             {
               "key": "Effect_BR_Scathy_N_42",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "UNFILLED",
-                  "select": [
-                    91
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "UNFILLED",
+                    "select": [
+                      91
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -1249,16 +1366,27 @@
             {
               "key": "Effect_BR_Scathy_N_43",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    90
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      90
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -1300,7 +1428,18 @@
             {
               "key": "Effect_BR_Scathy_N_47",
               "on": "criticaled",
-              "if": false,
+              "if": [
+                false,
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -1346,15 +1485,18 @@
             {
               "key": "Effect_BR_Scathy_N_52",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1396,16 +1538,19 @@
             {
               "key": "Effect_BR_Scathy_N_53",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_51"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_51"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1466,16 +1611,19 @@
             {
               "key": "Effect_BR_Scathy_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "UNFILLED",
-                  "select": [
-                    "Effect_BR_Scathy_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Scathy_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1518,16 +1666,28 @@
             {
               "key": "Effect_BR_Scathy_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_1"
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_1"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Scathy_N_5"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -1569,15 +1729,18 @@
             {
               "key": "Effect_BR_Scathy_N_41",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_4"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1619,16 +1782,27 @@
             {
               "key": "Effect_BR_Scathy_N_42",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "UNFILLED",
-                  "select": [
-                    91
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "UNFILLED",
+                    "select": [
+                      91
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -1670,16 +1844,27 @@
             {
               "key": "Effect_BR_Scathy_N_43",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    90
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      90
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -1721,7 +1906,18 @@
             {
               "key": "Effect_BR_Scathy_N_47",
               "on": "criticaled",
-              "if": false,
+              "if": [
+                false,
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -1767,15 +1963,18 @@
             {
               "key": "Effect_BR_Scathy_N_52",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1817,16 +2016,19 @@
             {
               "key": "Effect_BR_Scathy_N_53",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_51"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_51"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1887,16 +2089,19 @@
             {
               "key": "Effect_BR_Scathy_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "UNFILLED",
-                  "select": [
-                    "Effect_BR_Scathy_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Scathy_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1939,16 +2144,28 @@
             {
               "key": "Effect_BR_Scathy_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_1"
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_1"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Scathy_N_5"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -1990,15 +2207,18 @@
             {
               "key": "Effect_BR_Scathy_N_41",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_4"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2040,16 +2260,27 @@
             {
               "key": "Effect_BR_Scathy_N_42",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "UNFILLED",
-                  "select": [
-                    91
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "UNFILLED",
+                    "select": [
+                      91
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -2091,16 +2322,27 @@
             {
               "key": "Effect_BR_Scathy_N_43",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    90
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      90
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -2142,7 +2384,18 @@
             {
               "key": "Effect_BR_Scathy_N_47",
               "on": "criticaled",
-              "if": false,
+              "if": [
+                false,
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -2188,15 +2441,18 @@
             {
               "key": "Effect_BR_Scathy_N_52",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2238,16 +2494,19 @@
             {
               "key": "Effect_BR_Scathy_N_53",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_51"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_51"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2308,16 +2567,19 @@
             {
               "key": "Effect_BR_Scathy_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "UNFILLED",
-                  "select": [
-                    "Effect_BR_Scathy_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Scathy_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2360,16 +2622,28 @@
             {
               "key": "Effect_BR_Scathy_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_1"
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_1"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Scathy_N_5"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -2411,15 +2685,18 @@
             {
               "key": "Effect_BR_Scathy_N_41",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_4"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2461,16 +2738,27 @@
             {
               "key": "Effect_BR_Scathy_N_42",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "UNFILLED",
-                  "select": [
-                    91
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "UNFILLED",
+                    "select": [
+                      91
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -2512,16 +2800,27 @@
             {
               "key": "Effect_BR_Scathy_N_43",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    90
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      90
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -2563,7 +2862,18 @@
             {
               "key": "Effect_BR_Scathy_N_47",
               "on": "criticaled",
-              "if": false,
+              "if": [
+                false,
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -2609,15 +2919,18 @@
             {
               "key": "Effect_BR_Scathy_N_52",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2659,16 +2972,19 @@
             {
               "key": "Effect_BR_Scathy_N_53",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_51"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_51"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2729,16 +3045,19 @@
             {
               "key": "Effect_BR_Scathy_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "UNFILLED",
-                  "select": [
-                    "Effect_BR_Scathy_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Scathy_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2781,16 +3100,28 @@
             {
               "key": "Effect_BR_Scathy_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_1"
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_1"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Scathy_N_5"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -2832,15 +3163,18 @@
             {
               "key": "Effect_BR_Scathy_N_41",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_4"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2882,16 +3216,27 @@
             {
               "key": "Effect_BR_Scathy_N_42",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "UNFILLED",
-                  "select": [
-                    91
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "UNFILLED",
+                    "select": [
+                      91
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -2933,16 +3278,27 @@
             {
               "key": "Effect_BR_Scathy_N_43",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    90
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      90
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -2984,7 +3340,18 @@
             {
               "key": "Effect_BR_Scathy_N_47",
               "on": "criticaled",
-              "if": false,
+              "if": [
+                false,
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -3030,15 +3397,18 @@
             {
               "key": "Effect_BR_Scathy_N_52",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3080,16 +3450,19 @@
             {
               "key": "Effect_BR_Scathy_N_53",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_51"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_51"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3150,16 +3523,19 @@
             {
               "key": "Effect_BR_Scathy_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "UNFILLED",
-                  "select": [
-                    "Effect_BR_Scathy_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Scathy_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3202,16 +3578,28 @@
             {
               "key": "Effect_BR_Scathy_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_1"
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_1"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Scathy_N_5"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -3253,15 +3641,18 @@
             {
               "key": "Effect_BR_Scathy_N_41",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_4"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3303,16 +3694,27 @@
             {
               "key": "Effect_BR_Scathy_N_42",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "UNFILLED",
-                  "select": [
-                    91
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "UNFILLED",
+                    "select": [
+                      91
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -3354,16 +3756,27 @@
             {
               "key": "Effect_BR_Scathy_N_43",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    90
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      90
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -3405,7 +3818,18 @@
             {
               "key": "Effect_BR_Scathy_N_47",
               "on": "criticaled",
-              "if": false,
+              "if": [
+                false,
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -3451,15 +3875,18 @@
             {
               "key": "Effect_BR_Scathy_N_52",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3501,16 +3928,19 @@
             {
               "key": "Effect_BR_Scathy_N_53",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_51"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_51"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3571,16 +4001,19 @@
             {
               "key": "Effect_BR_Scathy_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "UNFILLED",
-                  "select": [
-                    "Effect_BR_Scathy_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Scathy_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3623,16 +4056,28 @@
             {
               "key": "Effect_BR_Scathy_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_1"
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_1"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Scathy_N_5"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -3674,15 +4119,18 @@
             {
               "key": "Effect_BR_Scathy_N_41",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_4"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3724,16 +4172,27 @@
             {
               "key": "Effect_BR_Scathy_N_42",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "UNFILLED",
-                  "select": [
-                    91
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "UNFILLED",
+                    "select": [
+                      91
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -3775,16 +4234,27 @@
             {
               "key": "Effect_BR_Scathy_N_43",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    90
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      90
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -3826,7 +4296,18 @@
             {
               "key": "Effect_BR_Scathy_N_47",
               "on": "criticaled",
-              "if": false,
+              "if": [
+                false,
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -3872,15 +4353,18 @@
             {
               "key": "Effect_BR_Scathy_N_52",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3922,16 +4406,19 @@
             {
               "key": "Effect_BR_Scathy_N_53",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_51"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_51"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3992,16 +4479,19 @@
             {
               "key": "Effect_BR_Scathy_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "UNFILLED",
-                  "select": [
-                    "Effect_BR_Scathy_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Scathy_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4044,16 +4534,28 @@
             {
               "key": "Effect_BR_Scathy_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_1"
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_1"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Scathy_N_5"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -4095,15 +4597,18 @@
             {
               "key": "Effect_BR_Scathy_N_41",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_4"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4145,16 +4650,27 @@
             {
               "key": "Effect_BR_Scathy_N_42",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "UNFILLED",
-                  "select": [
-                    91
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "UNFILLED",
+                    "select": [
+                      91
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -4196,16 +4712,27 @@
             {
               "key": "Effect_BR_Scathy_N_43",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    90
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      90
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -4247,7 +4774,18 @@
             {
               "key": "Effect_BR_Scathy_N_47",
               "on": "criticaled",
-              "if": false,
+              "if": [
+                false,
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -4293,15 +4831,18 @@
             {
               "key": "Effect_BR_Scathy_N_52",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4343,16 +4884,19 @@
             {
               "key": "Effect_BR_Scathy_N_53",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_51"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_51"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4413,16 +4957,19 @@
             {
               "key": "Effect_BR_Scathy_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "UNFILLED",
-                  "select": [
-                    "Effect_BR_Scathy_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Scathy_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4465,16 +5012,28 @@
             {
               "key": "Effect_BR_Scathy_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_1"
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_1"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Scathy_N_5"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -4516,15 +5075,18 @@
             {
               "key": "Effect_BR_Scathy_N_41",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_4"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4566,16 +5128,27 @@
             {
               "key": "Effect_BR_Scathy_N_42",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "UNFILLED",
-                  "select": [
-                    91
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "UNFILLED",
+                    "select": [
+                      91
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -4617,16 +5190,27 @@
             {
               "key": "Effect_BR_Scathy_N_43",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    90
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      90
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -4668,7 +5252,18 @@
             {
               "key": "Effect_BR_Scathy_N_47",
               "on": "criticaled",
-              "if": false,
+              "if": [
+                false,
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -4714,15 +5309,18 @@
             {
               "key": "Effect_BR_Scathy_N_52",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4764,16 +5362,19 @@
             {
               "key": "Effect_BR_Scathy_N_53",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Scathy_N_51"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_51"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4970,7 +5571,10 @@
             {
               "key": "Effect_BR_Scathy_N_3",
               "on": "wave_end",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5052,15 +5656,18 @@
             {
               "key": "Effect_BR_Scathy_N_31",
               "on": "round",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    23
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      23
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5243,7 +5850,10 @@
             {
               "key": "Effect_BR_Scathy_N_4",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5374,7 +5984,18 @@
             {
               "key": "Effect_BR_Scathy_N_44",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -5419,7 +6040,18 @@
             {
               "key": "Effect_BR_Scathy_N_45",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -5464,7 +6096,18 @@
             {
               "key": "Effect_BR_Scathy_N_46",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Scathy_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -5661,7 +6304,10 @@
             {
               "key": "Effect_BR_Scathy_N_5",
               "on": "wave",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1

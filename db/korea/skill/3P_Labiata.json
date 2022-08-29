@@ -35,7 +35,10 @@
             {
               "key": "Effect_3P_Labiata_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -103,7 +106,10 @@
             {
               "key": "Effect_3P_Labiata_N_12",
               "on": "criticaled",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -164,7 +170,10 @@
             {
               "key": "Effect_3P_Labiata_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -232,7 +241,10 @@
             {
               "key": "Effect_3P_Labiata_N_12",
               "on": "criticaled",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -293,7 +305,10 @@
             {
               "key": "Effect_3P_Labiata_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -361,7 +376,10 @@
             {
               "key": "Effect_3P_Labiata_N_12",
               "on": "criticaled",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -422,7 +440,10 @@
             {
               "key": "Effect_3P_Labiata_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -490,7 +511,10 @@
             {
               "key": "Effect_3P_Labiata_N_12",
               "on": "criticaled",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -551,7 +575,10 @@
             {
               "key": "Effect_3P_Labiata_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -619,7 +646,10 @@
             {
               "key": "Effect_3P_Labiata_N_12",
               "on": "criticaled",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -680,7 +710,10 @@
             {
               "key": "Effect_3P_Labiata_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -748,7 +781,10 @@
             {
               "key": "Effect_3P_Labiata_N_12",
               "on": "criticaled",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -809,7 +845,10 @@
             {
               "key": "Effect_3P_Labiata_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -877,7 +916,10 @@
             {
               "key": "Effect_3P_Labiata_N_12",
               "on": "criticaled",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -938,7 +980,10 @@
             {
               "key": "Effect_3P_Labiata_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1006,7 +1051,10 @@
             {
               "key": "Effect_3P_Labiata_N_12",
               "on": "criticaled",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1067,7 +1115,10 @@
             {
               "key": "Effect_3P_Labiata_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1135,7 +1186,10 @@
             {
               "key": "Effect_3P_Labiata_N_12",
               "on": "criticaled",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1196,7 +1250,10 @@
             {
               "key": "Effect_3P_Labiata_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1264,7 +1321,10 @@
             {
               "key": "Effect_3P_Labiata_N_12",
               "on": "criticaled",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1404,16 +1464,19 @@
             {
               "key": "Effect_3P_Labiata_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_3P_Labiata_N_1"
-                  ],
-                  "stack": 3,
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_3P_Labiata_N_1"
+                    ],
+                    "stack": 3,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1477,16 +1540,19 @@
             {
               "key": "Effect_3P_Labiata_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_3P_Labiata_N_1"
-                  ],
-                  "stack": 3,
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_3P_Labiata_N_1"
+                    ],
+                    "stack": 3,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1550,16 +1616,19 @@
             {
               "key": "Effect_3P_Labiata_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_3P_Labiata_N_1"
-                  ],
-                  "stack": 3,
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_3P_Labiata_N_1"
+                    ],
+                    "stack": 3,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1623,16 +1692,19 @@
             {
               "key": "Effect_3P_Labiata_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_3P_Labiata_N_1"
-                  ],
-                  "stack": 3,
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_3P_Labiata_N_1"
+                    ],
+                    "stack": 3,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1696,16 +1768,19 @@
             {
               "key": "Effect_3P_Labiata_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_3P_Labiata_N_1"
-                  ],
-                  "stack": 3,
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_3P_Labiata_N_1"
+                    ],
+                    "stack": 3,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1769,16 +1844,19 @@
             {
               "key": "Effect_3P_Labiata_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_3P_Labiata_N_1"
-                  ],
-                  "stack": 3,
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_3P_Labiata_N_1"
+                    ],
+                    "stack": 3,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1842,16 +1920,19 @@
             {
               "key": "Effect_3P_Labiata_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_3P_Labiata_N_1"
-                  ],
-                  "stack": 3,
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_3P_Labiata_N_1"
+                    ],
+                    "stack": 3,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1915,16 +1996,19 @@
             {
               "key": "Effect_3P_Labiata_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_3P_Labiata_N_1"
-                  ],
-                  "stack": 3,
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_3P_Labiata_N_1"
+                    ],
+                    "stack": 3,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1988,16 +2072,19 @@
             {
               "key": "Effect_3P_Labiata_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_3P_Labiata_N_1"
-                  ],
-                  "stack": 3,
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_3P_Labiata_N_1"
+                    ],
+                    "stack": 3,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2061,16 +2148,19 @@
             {
               "key": "Effect_3P_Labiata_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_3P_Labiata_N_1"
-                  ],
-                  "stack": 3,
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_3P_Labiata_N_1"
+                    ],
+                    "stack": 3,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2183,7 +2273,10 @@
             {
               "key": "Effect_3P_Labiata_N_3",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2250,16 +2343,19 @@
             {
               "key": "Effect_3P_Labiata_N_11",
               "on": "round",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_3P_Labiata_N_1"
-                  ],
-                  "stack": 3,
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_3P_Labiata_N_1"
+                    ],
+                    "stack": 3,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2430,7 +2526,10 @@
             {
               "key": "Effect_3P_Labiata_N_4",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2495,16 +2594,19 @@
             {
               "key": "Effect_3P_Labiata_N_13",
               "on": "round",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_3P_Labiata_N_1"
-                  ],
-                  "stack": 2,
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_3P_Labiata_N_1"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2672,7 +2774,10 @@
             {
               "key": "Effect_3P_Labiata_N_5",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0
               ],

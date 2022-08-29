@@ -8,6 +8,29 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11882" date="2022-08-29"
+		new={ <>
+			<li>신규 전투원 <BY>클로버 에이스</BY>의 정보가 추가되었습니다.</li>
+		</> }
+		update={ <>
+			<li>일부 버프의 조건이 버프 보기에서 표기되지 않는 문제를 수정했습니다.</li>
+			<li>
+				일부 전투원이 일부 오디오가 누락되어있던 점을 수정했습니다.
+				<ul>
+					<li><BY>아자젤</BY>의 스킨 <BR>수영복 콘테스트 : 한결같은 마음</BR>의 코어링크 대사</li>
+					<li><BY>보련</BY>의 스킨 <BR>수영복 콘테스트 : 해변의 이발사</BR>의 수복 대사</li>
+					<li><BY>키르케</BY>의 서약 대사 세트의 스쿼드 추가 대사</li>
+					<li><BY>P-2000 지니야</BY>의 서약 대사 세트의 장비 장착 대사</li>
+					<li><BY>C-77 홍련</BY>의 스킨 <BR>애프터 웨딩 : 퇴근 뒤의 저녁식사</BR>의 선물 대사</li>
+				</ul>
+			</li>
+		</> }
+		dialogue={ <>
+			<li><BY>AT-4 파니</BY>의 서약 대사 세트가 추가되었습니다.</li>
+			<li>누락된 DMM Games, FANZA Games 서비스 전투원 오디오가 추가되었습니다.</li>
+			<li><span class="badge bg-light text-dark">KST 2022-08-29 18:14:22</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11867" date="2022-08-23"
 		update={ <>
 			<li><BY>AT-100 비스트헌터</BY> 전투원의 승급 및 스킬 정보가 갱신되었습니다.</li>

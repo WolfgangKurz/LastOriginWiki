@@ -147,11 +147,23 @@ export default ({ mode }) => {
 							id.includes("/src/components/dynamic-route/")
 						) return undefined;
 
+						// three.js vendor
+						if (id.includes("/node_modules/three/src/core/")) return "vendor.three.core";
+						if (id.includes("/node_modules/three/src/math/")) return "vendor.three.math";
+						if (id.includes("/node_modules/three/src/materials/")) return "vendor.three.mat";
+						if (id.includes("/node_modules/three/src/geometries/")) return "vendor.three.geo";
+						if (id.includes("/node_modules/three/src/objects/")) return "vendor.three.obj";
+						if (id.includes("/node_modules/three/src/textures/")) return "vendor.three.tex";
+						if (id.includes("/node_modules/three/src/renderers/")) return "vendor.three.ren";
+						if (id.includes("/node_modules/three/examples/")) return "vendor.three.ext";
+						if (id.includes("/node_modules/three/")) return "vendor.three";
+
 						// vendor
 						if (id.includes("/node_modules/preact-transition")) return "vendor.transition";
 						if (id.includes("/node_modules/html2canvas/")) return "vendor.html2canvas";
 						if (id.includes("/node_modules/bootstrap")) return "vendor.bootstrap";
 						if (id.includes("/node_modules/acorn/") || id.includes("/node_modules/react")) return "vendor.ext";
+						if (id.includes("/node_modules/pako/")) return "vendor.pako";
 						if (id.includes("/node_modules/")) return "vendor";
 
 						// components/bootstrap-icon/es/*
@@ -192,7 +204,10 @@ export default ({ mode }) => {
 						if (id.includes("/src/components/")) return "components";
 
 						// // routes
-						if (id.includes("/src/routes/changelog/changelog/")) return "routes.changelog.changelog";
+						if (id.includes("/src/routes/changelog/changelog/")) {
+							const y = id.replace(/.*\/src\/routes\/changelog\/changelog\/([0-9]+).*/g, "$1");
+							return `routes.changelog.changelog.${y}`;
+						}
 						if (id.includes("/src/routes/changelog/")) return "routes.changelog";
 
 						if (id.includes("/src/routes/bgm/")) return "routes.bgm";

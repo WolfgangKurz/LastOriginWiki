@@ -35,7 +35,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -103,7 +106,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -164,7 +170,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -232,7 +241,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -293,7 +305,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -361,7 +376,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -422,7 +440,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -490,7 +511,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -551,7 +575,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -619,7 +646,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -680,7 +710,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -748,7 +781,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -809,7 +845,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -877,7 +916,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -938,7 +980,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1006,7 +1051,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1067,7 +1115,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1135,7 +1186,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1196,7 +1250,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1264,7 +1321,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1401,19 +1461,22 @@
             {
               "key": "Effect_AGS_Goltarion_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    2,
-                    3,
-                    10,
-                    11
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      2,
+                      3,
+                      10,
+                      11
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1474,19 +1537,22 @@
             {
               "key": "Effect_AGS_Goltarion_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    2,
-                    3,
-                    10,
-                    11
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      2,
+                      3,
+                      10,
+                      11
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1547,19 +1613,22 @@
             {
               "key": "Effect_AGS_Goltarion_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    2,
-                    3,
-                    10,
-                    11
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      2,
+                      3,
+                      10,
+                      11
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1620,19 +1689,22 @@
             {
               "key": "Effect_AGS_Goltarion_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    2,
-                    3,
-                    10,
-                    11
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      2,
+                      3,
+                      10,
+                      11
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1693,19 +1765,22 @@
             {
               "key": "Effect_AGS_Goltarion_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    2,
-                    3,
-                    10,
-                    11
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      2,
+                      3,
+                      10,
+                      11
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1766,19 +1841,22 @@
             {
               "key": "Effect_AGS_Goltarion_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    2,
-                    3,
-                    10,
-                    11
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      2,
+                      3,
+                      10,
+                      11
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1839,19 +1917,22 @@
             {
               "key": "Effect_AGS_Goltarion_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    2,
-                    3,
-                    10,
-                    11
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      2,
+                      3,
+                      10,
+                      11
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1912,19 +1993,22 @@
             {
               "key": "Effect_AGS_Goltarion_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    2,
-                    3,
-                    10,
-                    11
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      2,
+                      3,
+                      10,
+                      11
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1985,19 +2069,22 @@
             {
               "key": "Effect_AGS_Goltarion_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    2,
-                    3,
-                    10,
-                    11
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      2,
+                      3,
+                      10,
+                      11
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2058,19 +2145,22 @@
             {
               "key": "Effect_AGS_Goltarion_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    2,
-                    3,
-                    10,
-                    11
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      2,
+                      3,
+                      10,
+                      11
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2183,22 +2273,29 @@
             {
               "key": "Effect_AGS_Goltarion_N_3",
               "on": {
-                "hp>=": "90%"
+                "hp>=": [
+                  "90%"
+                ]
               },
-              "if": {
-                "unitCount": {
-                  "filter": [
-                    "squad",
-                    "ags"
-                  ],
-                  "type": [
-                    0,
-                    2,
-                    1
-                  ],
-                  "count": 4
-                }
-              },
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": [
+                      "squad",
+                      "ags"
+                    ],
+                    "type": [
+                      0,
+                      2,
+                      1
+                    ],
+                    "count": [
+                      4
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2244,22 +2341,29 @@
             {
               "key": "Effect_AGS_Goltarion_N_31",
               "on": {
-                "hp>=": "90%"
+                "hp>=": [
+                  "90%"
+                ]
               },
-              "if": {
-                "unitCount": {
-                  "filter": [
-                    "squad",
-                    "ags"
-                  ],
-                  "type": [
-                    0,
-                    2,
-                    1
-                  ],
-                  "count": 5
-                }
-              },
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": [
+                      "squad",
+                      "ags"
+                    ],
+                    "type": [
+                      0,
+                      2,
+                      1
+                    ],
+                    "count": [
+                      5
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2305,17 +2409,22 @@
             {
               "key": "Effect_AGS_Goltarion_N_32",
               "on": {
-                "hp<=": "90%"
+                "hp<=": [
+                  "90%"
+                ]
               },
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_AGS_Goltarion_N_3"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_AGS_Goltarion_N_3"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2358,17 +2467,22 @@
             {
               "key": "Effect_AGS_Goltarion_N_33",
               "on": {
-                "hp<=": "90%"
+                "hp<=": [
+                  "90%"
+                ]
               },
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_AGS_Goltarion_N_31"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_AGS_Goltarion_N_31"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2411,11 +2525,14 @@
             {
               "key": "Effect_AGS_Goltarion_N_34",
               "on": "round",
-              "if": {
-                "in_squad": [
-                  "Char_DS_Faucre_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_DS_Faucre_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2460,11 +2577,14 @@
             {
               "key": "Effect_AGS_Goltarion_N_35",
               "on": "round",
-              "if": {
-                "in_squad": [
-                  "Char_DS_Faucre_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_DS_Faucre_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2509,11 +2629,14 @@
             {
               "key": "Effect_AGS_Goltarion_N_36",
               "on": "round",
-              "if": {
-                "in_squad": [
-                  "Char_DS_Faucre_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_DS_Faucre_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2558,11 +2681,14 @@
             {
               "key": "Effect_AGS_Goltarion_N_37",
               "on": "round",
-              "if": {
-                "in_squad": [
-                  "Char_DS_Faucre_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_DS_Faucre_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2757,7 +2883,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_4",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2901,7 +3030,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_41",
               "on": "attack",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2947,7 +3079,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_42",
               "on": "attack",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2993,7 +3128,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_43",
               "on": "attack",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3039,7 +3177,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_44",
               "on": "attack",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3085,11 +3226,14 @@
             {
               "key": "Effect_AGS_Goltarion_N_45",
               "on": "round",
-              "if": {
-                "target": [
-                  "Char_DS_Baekto_N"
-                ]
-              },
+              "if": [
+                {
+                  "target": [
+                    "Char_DS_Baekto_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3129,11 +3273,14 @@
             {
               "key": "Effect_AGS_Goltarion_N_46",
               "on": "round",
-              "if": {
-                "target": [
-                  "Char_DS_Baekto_N"
-                ]
-              },
+              "if": [
+                {
+                  "target": [
+                    "Char_DS_Baekto_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3173,11 +3320,14 @@
             {
               "key": "Effect_AGS_Goltarion_N_47",
               "on": "round",
-              "if": {
-                "target": [
-                  "Char_DS_Baekto_N"
-                ]
-              },
+              "if": [
+                {
+                  "target": [
+                    "Char_DS_Baekto_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3217,11 +3367,14 @@
             {
               "key": "Effect_AGS_Goltarion_N_48",
               "on": "round",
-              "if": {
-                "target": [
-                  "Char_DS_Baekto_N"
-                ]
-              },
+              "if": [
+                {
+                  "target": [
+                    "Char_DS_Baekto_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3261,11 +3414,14 @@
             {
               "key": "Effect_AGS_Goltarion_N_49",
               "on": "round",
-              "if": {
-                "target": [
-                  "Char_DS_Baekto_N"
-                ]
-              },
+              "if": [
+                {
+                  "target": [
+                    "Char_DS_Baekto_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3321,7 +3477,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_4",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3465,7 +3624,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_41",
               "on": "attack",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3511,7 +3673,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_42",
               "on": "attack",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3557,7 +3722,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_43",
               "on": "attack",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3603,7 +3771,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_44",
               "on": "attack",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3649,11 +3820,14 @@
             {
               "key": "Effect_AGS_Goltarion_N_45",
               "on": "round",
-              "if": {
-                "target": [
-                  "Char_DS_Baekto_N"
-                ]
-              },
+              "if": [
+                {
+                  "target": [
+                    "Char_DS_Baekto_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3693,11 +3867,14 @@
             {
               "key": "Effect_AGS_Goltarion_N_46",
               "on": "round",
-              "if": {
-                "target": [
-                  "Char_DS_Baekto_N"
-                ]
-              },
+              "if": [
+                {
+                  "target": [
+                    "Char_DS_Baekto_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3737,11 +3914,14 @@
             {
               "key": "Effect_AGS_Goltarion_N_47",
               "on": "round",
-              "if": {
-                "target": [
-                  "Char_DS_Baekto_N"
-                ]
-              },
+              "if": [
+                {
+                  "target": [
+                    "Char_DS_Baekto_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3781,11 +3961,14 @@
             {
               "key": "Effect_AGS_Goltarion_N_48",
               "on": "round",
-              "if": {
-                "target": [
-                  "Char_DS_Baekto_N"
-                ]
-              },
+              "if": [
+                {
+                  "target": [
+                    "Char_DS_Baekto_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3825,11 +4008,14 @@
             {
               "key": "Effect_AGS_Goltarion_N_49",
               "on": "round",
-              "if": {
-                "target": [
-                  "Char_DS_Baekto_N"
-                ]
-              },
+              "if": [
+                {
+                  "target": [
+                    "Char_DS_Baekto_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3885,7 +4071,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_4",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4029,7 +4218,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_41",
               "on": "attack",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4075,7 +4267,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_42",
               "on": "attack",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4121,7 +4316,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_43",
               "on": "attack",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4167,7 +4365,10 @@
             {
               "key": "Effect_AGS_Goltarion_N_44",
               "on": "attack",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4213,11 +4414,14 @@
             {
               "key": "Effect_AGS_Goltarion_N_45",
               "on": "round",
-              "if": {
-                "target": [
-                  "Char_DS_Baekto_N"
-                ]
-              },
+              "if": [
+                {
+                  "target": [
+                    "Char_DS_Baekto_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4257,11 +4461,14 @@
             {
               "key": "Effect_AGS_Goltarion_N_46",
               "on": "round",
-              "if": {
-                "target": [
-                  "Char_DS_Baekto_N"
-                ]
-              },
+              "if": [
+                {
+                  "target": [
+                    "Char_DS_Baekto_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4301,11 +4508,14 @@
             {
               "key": "Effect_AGS_Goltarion_N_47",
               "on": "round",
-              "if": {
-                "target": [
-                  "Char_DS_Baekto_N"
-                ]
-              },
+              "if": [
+                {
+                  "target": [
+                    "Char_DS_Baekto_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4345,11 +4555,14 @@
             {
               "key": "Effect_AGS_Goltarion_N_48",
               "on": "round",
-              "if": {
-                "target": [
-                  "Char_DS_Baekto_N"
-                ]
-              },
+              "if": [
+                {
+                  "target": [
+                    "Char_DS_Baekto_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4389,11 +4602,14 @@
             {
               "key": "Effect_AGS_Goltarion_N_49",
               "on": "round",
-              "if": {
-                "target": [
-                  "Char_DS_Baekto_N"
-                ]
-              },
+              "if": [
+                {
+                  "target": [
+                    "Char_DS_Baekto_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4652,12 +4868,15 @@
             {
               "key": "Effect_AGS_Goltarion_N_5",
               "on": "round",
-              "if": {
-                "target": [
-                  "Char_DS_MoMo_N",
-                  "Char_DS_Baekto_N"
-                ]
-              },
+              "if": [
+                {
+                  "target": [
+                    "Char_DS_MoMo_N",
+                    "Char_DS_Baekto_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4788,11 +5007,14 @@
             {
               "key": "Effect_AGS_Goltarion_N_51",
               "on": "round",
-              "if": {
-                "in_squad": [
-                  "Char_DS_Faucre_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_DS_Faucre_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4859,11 +5081,14 @@
             {
               "key": "Effect_AGS_Goltarion_N_52",
               "on": "round",
-              "if": {
-                "in_squad": [
-                  "Char_DS_MoMo_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_DS_MoMo_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4908,11 +5133,14 @@
             {
               "key": "Effect_AGS_Goltarion_N_53",
               "on": "round",
-              "if": {
-                "in_squad": [
-                  "Char_DS_Baekto_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_DS_Baekto_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4954,20 +5182,25 @@
             {
               "key": "Effect_AGS_Goltarion_N_54",
               "on": {
-                "hp>=": "90%"
+                "hp>=": [
+                  "90%"
+                ]
               },
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "AND",
-                  "select": [
-                    "Effect_AGS_Goltarion_N_51",
-                    "Effect_AGS_Goltarion_N_52",
-                    "Effect_AGS_Goltarion_N_53"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "AND",
+                    "select": [
+                      "Effect_AGS_Goltarion_N_51",
+                      "Effect_AGS_Goltarion_N_52",
+                      "Effect_AGS_Goltarion_N_53"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5013,17 +5246,22 @@
             {
               "key": "Effect_AGS_Goltarion_N_55",
               "on": {
-                "hp<=": "90%"
+                "hp<=": [
+                  "90%"
+                ]
               },
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_AGS_Goltarion_N_54"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_AGS_Goltarion_N_54"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1

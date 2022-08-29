@@ -37,7 +37,10 @@
               "on": {
                 "after": "support"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -101,7 +104,10 @@
               "on": {
                 "after": "support"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -165,7 +171,10 @@
               "on": {
                 "after": "support"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -229,7 +238,10 @@
               "on": {
                 "after": "support"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -293,7 +305,10 @@
               "on": {
                 "after": "support"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -357,7 +372,10 @@
               "on": {
                 "after": "support"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -421,7 +439,10 @@
               "on": {
                 "after": "support"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -485,7 +506,10 @@
               "on": {
                 "after": "support"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -549,7 +573,10 @@
               "on": {
                 "after": "support"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -613,7 +640,10 @@
               "on": {
                 "after": "support"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -729,7 +759,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -812,7 +845,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -895,7 +931,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -978,7 +1017,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1061,7 +1103,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1144,7 +1189,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1227,7 +1275,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1310,7 +1361,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1393,7 +1447,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1476,7 +1533,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1621,7 +1681,10 @@
             {
               "key": "Effect_BR_JangHwa_N_3",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1686,20 +1749,23 @@
             {
               "key": "Effect_BR_JangHwa_N_31",
               "on": "round",
-              "if": {
-                "unitCount": {
-                  "filter": [
-                    "squad",
-                    "attacker"
-                  ],
-                  "type": [
-                    1
-                  ],
-                  "count": [
-                    1
-                  ]
-                }
-              },
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": [
+                      "squad",
+                      "attacker"
+                    ],
+                    "type": [
+                      1
+                    ],
+                    "count": [
+                      1
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1741,12 +1807,24 @@
             {
               "key": "Effect_BR_JangHwa_N_32",
               "on": "round",
-              "if": {
-                "in_squad": [
-                  "Char_BR_Cheona_N",
-                  "Char_BR_Vargr_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_Cheona_N",
+                    "Char_BR_Vargr_N"
+                  ]
+                },
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_JangHwa_N_31"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -1892,7 +1970,10 @@
             {
               "key": "Effect_BR_JangHwa_N_4",
               "on": "enemy_dead",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1956,15 +2037,18 @@
             {
               "key": "Effect_BR_JangHwa_N_41",
               "on": "round",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    76
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      76
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2011,7 +2095,10 @@
               "on": {
                 "after": "support"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2058,7 +2145,10 @@
               "on": {
                 "use_skill": 2
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2214,7 +2304,10 @@
             {
               "key": "Effect_BR_JangHwa_N_5",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2304,9 +2397,12 @@
             {
               "key": "Effect_BR_JangHwa_N_51",
               "on": "round",
-              "if": {
-                "near": 2
-              },
+              "if": [
+                {
+                  "near": 2
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2351,9 +2447,12 @@
             {
               "key": "Effect_BR_JangHwa_N_52",
               "on": "round",
-              "if": {
-                "near": 4
-              },
+              "if": [
+                {
+                  "near": 4
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2516,7 +2615,10 @@
               "on": {
                 "after": "support"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2564,7 +2666,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2626,7 +2731,10 @@
               "on": {
                 "after": "support"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2674,7 +2782,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2736,7 +2847,10 @@
               "on": {
                 "after": "support"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2784,7 +2898,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2846,7 +2963,10 @@
               "on": {
                 "after": "support"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2894,7 +3014,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2956,7 +3079,10 @@
               "on": {
                 "after": "support"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3004,7 +3130,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3066,7 +3195,10 @@
               "on": {
                 "after": "support"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3114,7 +3246,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3176,7 +3311,10 @@
               "on": {
                 "after": "support"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3224,7 +3362,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3286,7 +3427,10 @@
               "on": {
                 "after": "support"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3334,7 +3478,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3396,7 +3543,10 @@
               "on": {
                 "after": "support"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3444,7 +3594,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3506,7 +3659,10 @@
               "on": {
                 "after": "support"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3554,7 +3710,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3680,7 +3839,10 @@
               "on": {
                 "after": "support"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3728,7 +3890,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3790,7 +3955,10 @@
               "on": {
                 "after": "support"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3838,7 +4006,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3900,7 +4071,10 @@
               "on": {
                 "after": "support"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3948,7 +4122,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4010,7 +4187,10 @@
               "on": {
                 "after": "support"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4058,7 +4238,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4120,7 +4303,10 @@
               "on": {
                 "after": "support"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4168,7 +4354,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4230,7 +4419,10 @@
               "on": {
                 "after": "support"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4278,7 +4470,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4340,7 +4535,10 @@
               "on": {
                 "after": "support"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4388,7 +4586,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4450,7 +4651,10 @@
               "on": {
                 "after": "support"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4498,7 +4702,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4560,7 +4767,10 @@
               "on": {
                 "after": "support"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4608,7 +4818,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4670,7 +4883,10 @@
               "on": {
                 "after": "support"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4718,7 +4934,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4842,7 +5061,10 @@
             {
               "key": "Effect_BR_JangHwa_CH_4",
               "on": "enemy_dead",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4906,15 +5128,18 @@
             {
               "key": "Effect_BR_JangHwa_N_41",
               "on": "round",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    76
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      76
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4961,7 +5186,10 @@
               "on": {
                 "after": "support"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1

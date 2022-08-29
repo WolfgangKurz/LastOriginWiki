@@ -35,7 +35,10 @@
             {
               "key": "Effect_PECS_Glacias_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -145,12 +148,17 @@
             {
               "key": "Effect_PECS_Glacias_N_11",
               "on": "attack_success",
-              "if": {
-                "hp<=": {
-                  "target": "target",
-                  "value": "50%"
-                }
-              },
+              "if": [
+                {
+                  "hp<=": {
+                    "target": "target",
+                    "value": [
+                      "50%"
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -260,30 +268,33 @@
             {
               "key": "Effect_PECS_Glacias_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -393,30 +404,33 @@
             {
               "key": "Effect_PECS_Glacias_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -526,7 +540,10 @@
             {
               "key": "Effect_PECS_Glacias_N_32",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -656,7 +673,10 @@
             {
               "key": "Effect_PECS_Glacias_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -766,12 +786,17 @@
             {
               "key": "Effect_PECS_Glacias_N_11",
               "on": "attack_success",
-              "if": {
-                "hp<=": {
-                  "target": "target",
-                  "value": "50%"
-                }
-              },
+              "if": [
+                {
+                  "hp<=": {
+                    "target": "target",
+                    "value": [
+                      "50%"
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -881,30 +906,33 @@
             {
               "key": "Effect_PECS_Glacias_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1014,30 +1042,33 @@
             {
               "key": "Effect_PECS_Glacias_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1147,7 +1178,10 @@
             {
               "key": "Effect_PECS_Glacias_N_32",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1277,7 +1311,10 @@
             {
               "key": "Effect_PECS_Glacias_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1387,12 +1424,17 @@
             {
               "key": "Effect_PECS_Glacias_N_11",
               "on": "attack_success",
-              "if": {
-                "hp<=": {
-                  "target": "target",
-                  "value": "50%"
-                }
-              },
+              "if": [
+                {
+                  "hp<=": {
+                    "target": "target",
+                    "value": [
+                      "50%"
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1502,30 +1544,33 @@
             {
               "key": "Effect_PECS_Glacias_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1635,30 +1680,33 @@
             {
               "key": "Effect_PECS_Glacias_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1768,7 +1816,10 @@
             {
               "key": "Effect_PECS_Glacias_N_32",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1898,7 +1949,10 @@
             {
               "key": "Effect_PECS_Glacias_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2008,12 +2062,17 @@
             {
               "key": "Effect_PECS_Glacias_N_11",
               "on": "attack_success",
-              "if": {
-                "hp<=": {
-                  "target": "target",
-                  "value": "50%"
-                }
-              },
+              "if": [
+                {
+                  "hp<=": {
+                    "target": "target",
+                    "value": [
+                      "50%"
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2123,30 +2182,33 @@
             {
               "key": "Effect_PECS_Glacias_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2256,30 +2318,33 @@
             {
               "key": "Effect_PECS_Glacias_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2389,7 +2454,10 @@
             {
               "key": "Effect_PECS_Glacias_N_32",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2519,7 +2587,10 @@
             {
               "key": "Effect_PECS_Glacias_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2629,12 +2700,17 @@
             {
               "key": "Effect_PECS_Glacias_N_11",
               "on": "attack_success",
-              "if": {
-                "hp<=": {
-                  "target": "target",
-                  "value": "50%"
-                }
-              },
+              "if": [
+                {
+                  "hp<=": {
+                    "target": "target",
+                    "value": [
+                      "50%"
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2744,30 +2820,33 @@
             {
               "key": "Effect_PECS_Glacias_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2877,30 +2956,33 @@
             {
               "key": "Effect_PECS_Glacias_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3010,7 +3092,10 @@
             {
               "key": "Effect_PECS_Glacias_N_32",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3140,7 +3225,10 @@
             {
               "key": "Effect_PECS_Glacias_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3250,12 +3338,17 @@
             {
               "key": "Effect_PECS_Glacias_N_11",
               "on": "attack_success",
-              "if": {
-                "hp<=": {
-                  "target": "target",
-                  "value": "50%"
-                }
-              },
+              "if": [
+                {
+                  "hp<=": {
+                    "target": "target",
+                    "value": [
+                      "50%"
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3365,30 +3458,33 @@
             {
               "key": "Effect_PECS_Glacias_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3498,30 +3594,33 @@
             {
               "key": "Effect_PECS_Glacias_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3631,7 +3730,10 @@
             {
               "key": "Effect_PECS_Glacias_N_32",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3761,7 +3863,10 @@
             {
               "key": "Effect_PECS_Glacias_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3871,12 +3976,17 @@
             {
               "key": "Effect_PECS_Glacias_N_11",
               "on": "attack_success",
-              "if": {
-                "hp<=": {
-                  "target": "target",
-                  "value": "50%"
-                }
-              },
+              "if": [
+                {
+                  "hp<=": {
+                    "target": "target",
+                    "value": [
+                      "50%"
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3986,30 +4096,33 @@
             {
               "key": "Effect_PECS_Glacias_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4119,30 +4232,33 @@
             {
               "key": "Effect_PECS_Glacias_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4252,7 +4368,10 @@
             {
               "key": "Effect_PECS_Glacias_N_32",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4382,7 +4501,10 @@
             {
               "key": "Effect_PECS_Glacias_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4492,12 +4614,17 @@
             {
               "key": "Effect_PECS_Glacias_N_11",
               "on": "attack_success",
-              "if": {
-                "hp<=": {
-                  "target": "target",
-                  "value": "50%"
-                }
-              },
+              "if": [
+                {
+                  "hp<=": {
+                    "target": "target",
+                    "value": [
+                      "50%"
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4607,30 +4734,33 @@
             {
               "key": "Effect_PECS_Glacias_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4740,30 +4870,33 @@
             {
               "key": "Effect_PECS_Glacias_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4873,7 +5006,10 @@
             {
               "key": "Effect_PECS_Glacias_N_32",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5003,7 +5139,10 @@
             {
               "key": "Effect_PECS_Glacias_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5113,12 +5252,17 @@
             {
               "key": "Effect_PECS_Glacias_N_11",
               "on": "attack_success",
-              "if": {
-                "hp<=": {
-                  "target": "target",
-                  "value": "50%"
-                }
-              },
+              "if": [
+                {
+                  "hp<=": {
+                    "target": "target",
+                    "value": [
+                      "50%"
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5228,30 +5372,33 @@
             {
               "key": "Effect_PECS_Glacias_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5361,30 +5508,33 @@
             {
               "key": "Effect_PECS_Glacias_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5494,7 +5644,10 @@
             {
               "key": "Effect_PECS_Glacias_N_32",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5624,7 +5777,10 @@
             {
               "key": "Effect_PECS_Glacias_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5734,12 +5890,17 @@
             {
               "key": "Effect_PECS_Glacias_N_11",
               "on": "attack_success",
-              "if": {
-                "hp<=": {
-                  "target": "target",
-                  "value": "50%"
-                }
-              },
+              "if": [
+                {
+                  "hp<=": {
+                    "target": "target",
+                    "value": [
+                      "50%"
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5849,30 +6010,33 @@
             {
               "key": "Effect_PECS_Glacias_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5982,30 +6146,33 @@
             {
               "key": "Effect_PECS_Glacias_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6115,7 +6282,10 @@
             {
               "key": "Effect_PECS_Glacias_N_32",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6525,16 +6695,19 @@
             {
               "key": "Effect_PECS_Glacias_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    17
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      17
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6645,30 +6818,33 @@
             {
               "key": "Effect_PECS_Glacias_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6778,30 +6954,33 @@
             {
               "key": "Effect_PECS_Glacias_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6912,7 +7091,10 @@
             {
               "key": "Effect_PECS_Glacias_N_32",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7042,16 +7224,19 @@
             {
               "key": "Effect_PECS_Glacias_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    17
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      17
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7162,30 +7347,33 @@
             {
               "key": "Effect_PECS_Glacias_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7295,30 +7483,33 @@
             {
               "key": "Effect_PECS_Glacias_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7429,7 +7620,10 @@
             {
               "key": "Effect_PECS_Glacias_N_32",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7559,16 +7753,19 @@
             {
               "key": "Effect_PECS_Glacias_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    17
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      17
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7679,30 +7876,33 @@
             {
               "key": "Effect_PECS_Glacias_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7812,30 +8012,33 @@
             {
               "key": "Effect_PECS_Glacias_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7946,7 +8149,10 @@
             {
               "key": "Effect_PECS_Glacias_N_32",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8076,16 +8282,19 @@
             {
               "key": "Effect_PECS_Glacias_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    17
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      17
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8196,30 +8405,33 @@
             {
               "key": "Effect_PECS_Glacias_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8329,30 +8541,33 @@
             {
               "key": "Effect_PECS_Glacias_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8463,7 +8678,10 @@
             {
               "key": "Effect_PECS_Glacias_N_32",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8593,16 +8811,19 @@
             {
               "key": "Effect_PECS_Glacias_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    17
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      17
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8713,30 +8934,33 @@
             {
               "key": "Effect_PECS_Glacias_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8846,30 +9070,33 @@
             {
               "key": "Effect_PECS_Glacias_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8980,7 +9207,10 @@
             {
               "key": "Effect_PECS_Glacias_N_32",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -9110,16 +9340,19 @@
             {
               "key": "Effect_PECS_Glacias_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    17
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      17
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -9230,30 +9463,33 @@
             {
               "key": "Effect_PECS_Glacias_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -9363,30 +9599,33 @@
             {
               "key": "Effect_PECS_Glacias_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -9497,7 +9736,10 @@
             {
               "key": "Effect_PECS_Glacias_N_32",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -9627,16 +9869,19 @@
             {
               "key": "Effect_PECS_Glacias_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    17
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      17
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -9747,30 +9992,33 @@
             {
               "key": "Effect_PECS_Glacias_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -9880,30 +10128,33 @@
             {
               "key": "Effect_PECS_Glacias_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -10014,7 +10265,10 @@
             {
               "key": "Effect_PECS_Glacias_N_32",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -10144,16 +10398,19 @@
             {
               "key": "Effect_PECS_Glacias_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    17
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      17
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -10264,30 +10521,33 @@
             {
               "key": "Effect_PECS_Glacias_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -10397,30 +10657,33 @@
             {
               "key": "Effect_PECS_Glacias_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -10531,7 +10794,10 @@
             {
               "key": "Effect_PECS_Glacias_N_32",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -10661,16 +10927,19 @@
             {
               "key": "Effect_PECS_Glacias_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    17
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      17
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -10781,30 +11050,33 @@
             {
               "key": "Effect_PECS_Glacias_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -10914,30 +11186,33 @@
             {
               "key": "Effect_PECS_Glacias_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -11048,7 +11323,10 @@
             {
               "key": "Effect_PECS_Glacias_N_32",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -11178,16 +11456,19 @@
             {
               "key": "Effect_PECS_Glacias_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    17
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      17
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -11298,30 +11579,33 @@
             {
               "key": "Effect_PECS_Glacias_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -11431,30 +11715,33 @@
             {
               "key": "Effect_PECS_Glacias_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_Flood_N_1",
-                    "Effect_BUFF_Flood_N_2",
-                    "Effect_BUFF_Flood_N_3",
-                    "Effect_BUFF_Flood_N_4",
-                    "Effect_BUFF_Flood_N_5",
-                    "Effect_BUFF_Flood_N_6",
-                    "Effect_BUFF_Flood_N_7",
-                    "Effect_BUFF_Flood_N_8",
-                    "Effect_BUFF_Flood_N_9",
-                    "Effect_BUFF_Flood_N_11",
-                    "Effect_BUFF_Flood_N_12",
-                    "Effect_BUFF_Flood_N_13",
-                    "Effect_BUFF_Flood_N_14",
-                    "Effect_BUFF_Flood_N_15",
-                    "Effect_BUFF_Flood_N_16"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
+                      "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
+                      "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
+                      "Effect_BUFF_Flood_N_11",
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -11565,7 +11852,10 @@
             {
               "key": "Effect_PECS_Glacias_N_32",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -11927,7 +12217,10 @@
             {
               "key": "Effect_PECS_Glacias_N_3",
               "on": "wave",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -12040,12 +12333,17 @@
             {
               "key": "Effect_PECS_Glacias_N_31",
               "on": "round",
-              "if": {
-                "round": {
-                  "operator": ">=",
-                  "round": 2
-                }
-              },
+              "if": [
+                {
+                  "round": {
+                    "operator": ">=",
+                    "round": [
+                      2
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -12311,7 +12609,10 @@
             {
               "key": "Effect_PECS_Glacias_N_4",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -12529,7 +12830,10 @@
             {
               "key": "Effect_PECS_Glacias_N_5",
               "on": "wave",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1

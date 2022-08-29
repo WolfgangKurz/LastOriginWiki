@@ -35,7 +35,10 @@
             {
               "key": "Effect_BR_Djinnia_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -115,7 +118,10 @@
             {
               "key": "Effect_BR_Djinnia_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -195,7 +201,10 @@
             {
               "key": "Effect_BR_Djinnia_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -275,7 +284,10 @@
             {
               "key": "Effect_BR_Djinnia_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -355,7 +367,10 @@
             {
               "key": "Effect_BR_Djinnia_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -435,7 +450,10 @@
             {
               "key": "Effect_BR_Djinnia_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -515,7 +533,10 @@
             {
               "key": "Effect_BR_Djinnia_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -595,7 +616,10 @@
             {
               "key": "Effect_BR_Djinnia_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -675,7 +699,10 @@
             {
               "key": "Effect_BR_Djinnia_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -755,7 +782,10 @@
             {
               "key": "Effect_BR_Djinnia_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -901,7 +931,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -971,7 +1004,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1108,7 +1144,10 @@
             {
               "key": "Effect_BR_Djinnia_N_3",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1173,16 +1212,19 @@
             {
               "key": "Effect_BR_Djinnia_N_12",
               "on": "round",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_May_N_3"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_May_N_3"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1

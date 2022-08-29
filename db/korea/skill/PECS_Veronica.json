@@ -35,7 +35,10 @@
             {
               "key": "Effect_PECS_Veronica_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -122,7 +125,10 @@
             {
               "key": "Effect_PECS_Veronica_N_16",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -183,7 +189,10 @@
             {
               "key": "Effect_PECS_Veronica_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -270,7 +279,10 @@
             {
               "key": "Effect_PECS_Veronica_N_16",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -331,7 +343,10 @@
             {
               "key": "Effect_PECS_Veronica_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -418,7 +433,10 @@
             {
               "key": "Effect_PECS_Veronica_N_16",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -479,7 +497,10 @@
             {
               "key": "Effect_PECS_Veronica_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -566,7 +587,10 @@
             {
               "key": "Effect_PECS_Veronica_N_16",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -627,7 +651,10 @@
             {
               "key": "Effect_PECS_Veronica_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -714,7 +741,10 @@
             {
               "key": "Effect_PECS_Veronica_N_16",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -775,7 +805,10 @@
             {
               "key": "Effect_PECS_Veronica_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -862,7 +895,10 @@
             {
               "key": "Effect_PECS_Veronica_N_16",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -923,7 +959,10 @@
             {
               "key": "Effect_PECS_Veronica_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1010,7 +1049,10 @@
             {
               "key": "Effect_PECS_Veronica_N_16",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1071,7 +1113,10 @@
             {
               "key": "Effect_PECS_Veronica_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1158,7 +1203,10 @@
             {
               "key": "Effect_PECS_Veronica_N_16",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1219,7 +1267,10 @@
             {
               "key": "Effect_PECS_Veronica_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1306,7 +1357,10 @@
             {
               "key": "Effect_PECS_Veronica_N_16",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1367,7 +1421,10 @@
             {
               "key": "Effect_PECS_Veronica_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1454,7 +1511,10 @@
             {
               "key": "Effect_PECS_Veronica_N_16",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1603,17 +1663,20 @@
             {
               "key": "Effect_PECS_Veronica_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    48,
-                    87
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      48,
+                      87
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1696,17 +1759,20 @@
             {
               "key": "Effect_PECS_Veronica_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    48,
-                    87
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      48,
+                      87
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1789,17 +1855,20 @@
             {
               "key": "Effect_PECS_Veronica_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    48,
-                    87
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      48,
+                      87
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1882,17 +1951,20 @@
             {
               "key": "Effect_PECS_Veronica_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    48,
-                    87
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      48,
+                      87
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1975,17 +2047,20 @@
             {
               "key": "Effect_PECS_Veronica_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    48,
-                    87
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      48,
+                      87
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2068,17 +2143,20 @@
             {
               "key": "Effect_PECS_Veronica_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    48,
-                    87
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      48,
+                      87
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2161,17 +2239,20 @@
             {
               "key": "Effect_PECS_Veronica_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    48,
-                    87
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      48,
+                      87
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2254,17 +2335,20 @@
             {
               "key": "Effect_PECS_Veronica_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    48,
-                    87
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      48,
+                      87
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2347,17 +2431,20 @@
             {
               "key": "Effect_PECS_Veronica_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    48,
-                    87
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      48,
+                      87
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2440,17 +2527,20 @@
             {
               "key": "Effect_PECS_Veronica_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    48,
-                    87
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      48,
+                      87
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2597,16 +2687,19 @@
             {
               "key": "Effect_PECS_Veronica_N_3",
               "on": "round",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    50
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      50
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2720,16 +2813,19 @@
             {
               "key": "Effect_PECS_Veronica_N_11",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    50
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      50
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2774,13 +2870,16 @@
             {
               "key": "Effect_PECS_Veronica_N_12",
               "on": "round",
-              "if": {
-                "target": [
-                  "Char_DS_Azazel_N",
-                  "Char_DS_Ramiel_N",
-                  "Char_DS_Saraqael_N"
-                ]
-              },
+              "if": [
+                {
+                  "target": [
+                    "Char_DS_Azazel_N",
+                    "Char_DS_Ramiel_N",
+                    "Char_DS_Saraqael_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2825,13 +2924,16 @@
             {
               "key": "Effect_PECS_Veronica_N_13",
               "on": "round",
-              "if": {
-                "target": [
-                  "Char_DS_Azazel_N",
-                  "Char_DS_Ramiel_N",
-                  "Char_DS_Saraqael_N"
-                ]
-              },
+              "if": [
+                {
+                  "target": [
+                    "Char_DS_Azazel_N",
+                    "Char_DS_Ramiel_N",
+                    "Char_DS_Saraqael_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2876,14 +2978,17 @@
             {
               "key": "Effect_PECS_Veronica_N_20",
               "on": "attack_success",
-              "if": {
-                "target": [
-                  "Char_DS_Azazel_N",
-                  "Char_DS_Ramiel_N",
-                  "Char_DS_Saraqael_N",
-                  "Char_DS_Angel_N"
-                ]
-              },
+              "if": [
+                {
+                  "target": [
+                    "Char_DS_Azazel_N",
+                    "Char_DS_Ramiel_N",
+                    "Char_DS_Saraqael_N",
+                    "Char_DS_Angel_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2928,14 +3033,17 @@
             {
               "key": "Effect_PECS_Veronica_N_21",
               "on": "round",
-              "if": {
-                "target": [
-                  "Char_DS_Azazel_N",
-                  "Char_DS_Ramiel_N",
-                  "Char_DS_Saraqael_N",
-                  "Char_DS_Angel_N"
-                ]
-              },
+              "if": [
+                {
+                  "target": [
+                    "Char_DS_Azazel_N",
+                    "Char_DS_Ramiel_N",
+                    "Char_DS_Saraqael_N",
+                    "Char_DS_Angel_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2980,11 +3088,14 @@
             {
               "key": "Effect_PECS_Veronica_N_22",
               "on": "round",
-              "if": {
-                "in_squad": [
-                  "Char_DS_Azazel_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_DS_Azazel_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3029,11 +3140,14 @@
             {
               "key": "Effect_PECS_Veronica_N_23",
               "on": "round",
-              "if": {
-                "in_squad": [
-                  "Char_DS_Saraqael_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_DS_Saraqael_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3078,11 +3192,14 @@
             {
               "key": "Effect_PECS_Veronica_N_24",
               "on": "round",
-              "if": {
-                "in_squad": [
-                  "Char_DS_Ramiel_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_DS_Ramiel_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3127,11 +3244,14 @@
             {
               "key": "Effect_PECS_Veronica_N_25",
               "on": "round",
-              "if": {
-                "in_squad": [
-                  "Char_DS_Angel_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_DS_Angel_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3388,16 +3508,19 @@
             {
               "key": "Effect_PECS_Veronica_N_4",
               "on": "self_dead",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    87
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      87
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3537,7 +3660,10 @@
             {
               "key": "Effect_PECS_Veronica_N_14",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3585,17 +3711,22 @@
             {
               "key": "Effect_PECS_Veronica_N_15",
               "on": "wave",
-              "if": {
-                "unitCount": {
-                  "filter": "enemy",
-                  "type": [
-                    0,
-                    2,
-                    1
-                  ],
-                  "count": 1
-                }
-              },
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": "enemy",
+                    "type": [
+                      0,
+                      2,
+                      1
+                    ],
+                    "count": [
+                      1
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3678,17 +3809,22 @@
             {
               "key": "Effect_PECS_Veronica_N_17",
               "on": "wave",
-              "if": {
-                "unitCount": {
-                  "filter": "enemy",
-                  "type": [
-                    0,
-                    2,
-                    1
-                  ],
-                  "count": 3
-                }
-              },
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": "enemy",
+                    "type": [
+                      0,
+                      2,
+                      1
+                    ],
+                    "count": [
+                      3
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3771,17 +3907,22 @@
             {
               "key": "Effect_PECS_Veronica_N_18",
               "on": "wave",
-              "if": {
-                "unitCount": {
-                  "filter": "enemy",
-                  "type": [
-                    0,
-                    2,
-                    1
-                  ],
-                  "count": 5
-                }
-              },
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": "enemy",
+                    "type": [
+                      0,
+                      2,
+                      1
+                    ],
+                    "count": [
+                      5
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3864,17 +4005,22 @@
             {
               "key": "Effect_PECS_Veronica_N_19",
               "on": "wave",
-              "if": {
-                "unitCount": {
-                  "filter": "enemy",
-                  "type": [
-                    0,
-                    2,
-                    1
-                  ],
-                  "count": 7
-                }
-              },
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": "enemy",
+                    "type": [
+                      0,
+                      2,
+                      1
+                    ],
+                    "count": [
+                      7
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3957,17 +4103,22 @@
             {
               "key": "Effect_PECS_Veronica_N_26",
               "on": "wave",
-              "if": {
-                "unitCount": {
-                  "filter": "enemy",
-                  "type": [
-                    0,
-                    2,
-                    1
-                  ],
-                  "count": 2
-                }
-              },
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": "enemy",
+                    "type": [
+                      0,
+                      2,
+                      1
+                    ],
+                    "count": [
+                      2
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4050,17 +4201,22 @@
             {
               "key": "Effect_PECS_Veronica_N_27",
               "on": "wave",
-              "if": {
-                "unitCount": {
-                  "filter": "enemy",
-                  "type": [
-                    0,
-                    2,
-                    1
-                  ],
-                  "count": 4
-                }
-              },
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": "enemy",
+                    "type": [
+                      0,
+                      2,
+                      1
+                    ],
+                    "count": [
+                      4
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4143,17 +4299,22 @@
             {
               "key": "Effect_PECS_Veronica_N_28",
               "on": "wave",
-              "if": {
-                "unitCount": {
-                  "filter": "enemy",
-                  "type": [
-                    0,
-                    2,
-                    1
-                  ],
-                  "count": 6
-                }
-              },
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": "enemy",
+                    "type": [
+                      0,
+                      2,
+                      1
+                    ],
+                    "count": [
+                      6
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4236,17 +4397,22 @@
             {
               "key": "Effect_PECS_Veronica_N_29",
               "on": "wave",
-              "if": {
-                "unitCount": {
-                  "filter": "enemy",
-                  "type": [
-                    0,
-                    2,
-                    1
-                  ],
-                  "count": 8
-                }
-              },
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": "enemy",
+                    "type": [
+                      0,
+                      2,
+                      1
+                    ],
+                    "count": [
+                      8
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4329,17 +4495,22 @@
             {
               "key": "Effect_PECS_Veronica_N_30",
               "on": "wave",
-              "if": {
-                "unitCount": {
-                  "filter": "enemy",
-                  "type": [
-                    0,
-                    2,
-                    1
-                  ],
-                  "count": 9
-                }
-              },
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": "enemy",
+                    "type": [
+                      0,
+                      2,
+                      1
+                    ],
+                    "count": [
+                      9
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4874,7 +5045,10 @@
             {
               "key": "Effect_PECS_Veronica_N_5",
               "on": "wave",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5001,7 +5175,10 @@
             {
               "key": "Effect_PECS_Veronica_N_51",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5046,7 +5223,10 @@
             {
               "key": "Effect_PECS_Veronica_N_52",
               "on": "revive",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5109,14 +5289,17 @@
             {
               "key": "Effect_PECS_Veronica_N_53",
               "on": "wave",
-              "if": {
-                "in_squad": [
-                  "Char_DS_Ramiel_N",
-                  "Char_DS_Angel_N",
-                  "Char_DS_Saraqael_N",
-                  "Char_DS_Azazel_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_DS_Ramiel_N",
+                    "Char_DS_Angel_N",
+                    "Char_DS_Saraqael_N",
+                    "Char_DS_Azazel_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5159,7 +5342,10 @@
             {
               "key": "Effect_PECS_Veronica_N_54",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1

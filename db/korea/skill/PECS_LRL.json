@@ -35,7 +35,10 @@
             {
               "key": "Effect_PECS_LRL_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -81,15 +84,18 @@
             {
               "key": "Effect_PECS_LRL_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_4"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_4"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -155,15 +161,18 @@
             {
               "key": "Effect_PECS_LRL_N_101",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -208,15 +217,18 @@
             {
               "key": "Effect_PECS_LRL_N_102",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -258,24 +270,31 @@
             {
               "key": "Effect_PECS_LRL_N_103",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_AncientRecord_N_1",
-                    "Effect_BUFF_AncientRecord_N_2",
-                    "Effect_BUFF_AncientRecord_N_3",
-                    "Effect_BUFF_AncientRecord_N_4",
-                    "Effect_BUFF_AncientRecord_N_5",
-                    "Effect_BUFF_AncientRecord_N_6",
-                    "Effect_BUFF_AncientRecord_N_7",
-                    "Effect_BUFF_AncientRecord_N_8",
-                    "Effect_BUFF_AncientRecord_N_9",
-                    "Effect_BUFF_AncientRecord_N_10"
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_AncientRecord_N_1",
+                      "Effect_BUFF_AncientRecord_N_2",
+                      "Effect_BUFF_AncientRecord_N_3",
+                      "Effect_BUFF_AncientRecord_N_4",
+                      "Effect_BUFF_AncientRecord_N_5",
+                      "Effect_BUFF_AncientRecord_N_6",
+                      "Effect_BUFF_AncientRecord_N_7",
+                      "Effect_BUFF_AncientRecord_N_8",
+                      "Effect_BUFF_AncientRecord_N_9",
+                      "Effect_BUFF_AncientRecord_N_10"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "in_squad": [
+                    "Char_PECS_CyclopsePrincess_N"
+                  ]
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -336,7 +355,10 @@
             {
               "key": "Effect_PECS_LRL_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -382,15 +404,18 @@
             {
               "key": "Effect_PECS_LRL_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_4"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_4"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -456,15 +481,18 @@
             {
               "key": "Effect_PECS_LRL_N_101",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -509,15 +537,18 @@
             {
               "key": "Effect_PECS_LRL_N_102",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -559,24 +590,31 @@
             {
               "key": "Effect_PECS_LRL_N_103",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_AncientRecord_N_1",
-                    "Effect_BUFF_AncientRecord_N_2",
-                    "Effect_BUFF_AncientRecord_N_3",
-                    "Effect_BUFF_AncientRecord_N_4",
-                    "Effect_BUFF_AncientRecord_N_5",
-                    "Effect_BUFF_AncientRecord_N_6",
-                    "Effect_BUFF_AncientRecord_N_7",
-                    "Effect_BUFF_AncientRecord_N_8",
-                    "Effect_BUFF_AncientRecord_N_9",
-                    "Effect_BUFF_AncientRecord_N_10"
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_AncientRecord_N_1",
+                      "Effect_BUFF_AncientRecord_N_2",
+                      "Effect_BUFF_AncientRecord_N_3",
+                      "Effect_BUFF_AncientRecord_N_4",
+                      "Effect_BUFF_AncientRecord_N_5",
+                      "Effect_BUFF_AncientRecord_N_6",
+                      "Effect_BUFF_AncientRecord_N_7",
+                      "Effect_BUFF_AncientRecord_N_8",
+                      "Effect_BUFF_AncientRecord_N_9",
+                      "Effect_BUFF_AncientRecord_N_10"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "in_squad": [
+                    "Char_PECS_CyclopsePrincess_N"
+                  ]
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -637,7 +675,10 @@
             {
               "key": "Effect_PECS_LRL_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -683,15 +724,18 @@
             {
               "key": "Effect_PECS_LRL_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_4"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_4"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -757,15 +801,18 @@
             {
               "key": "Effect_PECS_LRL_N_101",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -810,15 +857,18 @@
             {
               "key": "Effect_PECS_LRL_N_102",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -860,24 +910,31 @@
             {
               "key": "Effect_PECS_LRL_N_103",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_AncientRecord_N_1",
-                    "Effect_BUFF_AncientRecord_N_2",
-                    "Effect_BUFF_AncientRecord_N_3",
-                    "Effect_BUFF_AncientRecord_N_4",
-                    "Effect_BUFF_AncientRecord_N_5",
-                    "Effect_BUFF_AncientRecord_N_6",
-                    "Effect_BUFF_AncientRecord_N_7",
-                    "Effect_BUFF_AncientRecord_N_8",
-                    "Effect_BUFF_AncientRecord_N_9",
-                    "Effect_BUFF_AncientRecord_N_10"
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_AncientRecord_N_1",
+                      "Effect_BUFF_AncientRecord_N_2",
+                      "Effect_BUFF_AncientRecord_N_3",
+                      "Effect_BUFF_AncientRecord_N_4",
+                      "Effect_BUFF_AncientRecord_N_5",
+                      "Effect_BUFF_AncientRecord_N_6",
+                      "Effect_BUFF_AncientRecord_N_7",
+                      "Effect_BUFF_AncientRecord_N_8",
+                      "Effect_BUFF_AncientRecord_N_9",
+                      "Effect_BUFF_AncientRecord_N_10"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "in_squad": [
+                    "Char_PECS_CyclopsePrincess_N"
+                  ]
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -938,7 +995,10 @@
             {
               "key": "Effect_PECS_LRL_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -984,15 +1044,18 @@
             {
               "key": "Effect_PECS_LRL_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_4"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_4"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1058,15 +1121,18 @@
             {
               "key": "Effect_PECS_LRL_N_101",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1111,15 +1177,18 @@
             {
               "key": "Effect_PECS_LRL_N_102",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1161,24 +1230,31 @@
             {
               "key": "Effect_PECS_LRL_N_103",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_AncientRecord_N_1",
-                    "Effect_BUFF_AncientRecord_N_2",
-                    "Effect_BUFF_AncientRecord_N_3",
-                    "Effect_BUFF_AncientRecord_N_4",
-                    "Effect_BUFF_AncientRecord_N_5",
-                    "Effect_BUFF_AncientRecord_N_6",
-                    "Effect_BUFF_AncientRecord_N_7",
-                    "Effect_BUFF_AncientRecord_N_8",
-                    "Effect_BUFF_AncientRecord_N_9",
-                    "Effect_BUFF_AncientRecord_N_10"
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_AncientRecord_N_1",
+                      "Effect_BUFF_AncientRecord_N_2",
+                      "Effect_BUFF_AncientRecord_N_3",
+                      "Effect_BUFF_AncientRecord_N_4",
+                      "Effect_BUFF_AncientRecord_N_5",
+                      "Effect_BUFF_AncientRecord_N_6",
+                      "Effect_BUFF_AncientRecord_N_7",
+                      "Effect_BUFF_AncientRecord_N_8",
+                      "Effect_BUFF_AncientRecord_N_9",
+                      "Effect_BUFF_AncientRecord_N_10"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "in_squad": [
+                    "Char_PECS_CyclopsePrincess_N"
+                  ]
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -1239,7 +1315,10 @@
             {
               "key": "Effect_PECS_LRL_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1285,15 +1364,18 @@
             {
               "key": "Effect_PECS_LRL_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_4"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_4"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1359,15 +1441,18 @@
             {
               "key": "Effect_PECS_LRL_N_101",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1412,15 +1497,18 @@
             {
               "key": "Effect_PECS_LRL_N_102",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1462,24 +1550,31 @@
             {
               "key": "Effect_PECS_LRL_N_103",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_AncientRecord_N_1",
-                    "Effect_BUFF_AncientRecord_N_2",
-                    "Effect_BUFF_AncientRecord_N_3",
-                    "Effect_BUFF_AncientRecord_N_4",
-                    "Effect_BUFF_AncientRecord_N_5",
-                    "Effect_BUFF_AncientRecord_N_6",
-                    "Effect_BUFF_AncientRecord_N_7",
-                    "Effect_BUFF_AncientRecord_N_8",
-                    "Effect_BUFF_AncientRecord_N_9",
-                    "Effect_BUFF_AncientRecord_N_10"
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_AncientRecord_N_1",
+                      "Effect_BUFF_AncientRecord_N_2",
+                      "Effect_BUFF_AncientRecord_N_3",
+                      "Effect_BUFF_AncientRecord_N_4",
+                      "Effect_BUFF_AncientRecord_N_5",
+                      "Effect_BUFF_AncientRecord_N_6",
+                      "Effect_BUFF_AncientRecord_N_7",
+                      "Effect_BUFF_AncientRecord_N_8",
+                      "Effect_BUFF_AncientRecord_N_9",
+                      "Effect_BUFF_AncientRecord_N_10"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "in_squad": [
+                    "Char_PECS_CyclopsePrincess_N"
+                  ]
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -1540,7 +1635,10 @@
             {
               "key": "Effect_PECS_LRL_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1586,15 +1684,18 @@
             {
               "key": "Effect_PECS_LRL_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_4"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_4"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1660,15 +1761,18 @@
             {
               "key": "Effect_PECS_LRL_N_101",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1713,15 +1817,18 @@
             {
               "key": "Effect_PECS_LRL_N_102",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1763,24 +1870,31 @@
             {
               "key": "Effect_PECS_LRL_N_103",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_AncientRecord_N_1",
-                    "Effect_BUFF_AncientRecord_N_2",
-                    "Effect_BUFF_AncientRecord_N_3",
-                    "Effect_BUFF_AncientRecord_N_4",
-                    "Effect_BUFF_AncientRecord_N_5",
-                    "Effect_BUFF_AncientRecord_N_6",
-                    "Effect_BUFF_AncientRecord_N_7",
-                    "Effect_BUFF_AncientRecord_N_8",
-                    "Effect_BUFF_AncientRecord_N_9",
-                    "Effect_BUFF_AncientRecord_N_10"
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_AncientRecord_N_1",
+                      "Effect_BUFF_AncientRecord_N_2",
+                      "Effect_BUFF_AncientRecord_N_3",
+                      "Effect_BUFF_AncientRecord_N_4",
+                      "Effect_BUFF_AncientRecord_N_5",
+                      "Effect_BUFF_AncientRecord_N_6",
+                      "Effect_BUFF_AncientRecord_N_7",
+                      "Effect_BUFF_AncientRecord_N_8",
+                      "Effect_BUFF_AncientRecord_N_9",
+                      "Effect_BUFF_AncientRecord_N_10"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "in_squad": [
+                    "Char_PECS_CyclopsePrincess_N"
+                  ]
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -1841,7 +1955,10 @@
             {
               "key": "Effect_PECS_LRL_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1887,15 +2004,18 @@
             {
               "key": "Effect_PECS_LRL_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_4"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_4"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1961,15 +2081,18 @@
             {
               "key": "Effect_PECS_LRL_N_101",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2014,15 +2137,18 @@
             {
               "key": "Effect_PECS_LRL_N_102",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2064,24 +2190,31 @@
             {
               "key": "Effect_PECS_LRL_N_103",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_AncientRecord_N_1",
-                    "Effect_BUFF_AncientRecord_N_2",
-                    "Effect_BUFF_AncientRecord_N_3",
-                    "Effect_BUFF_AncientRecord_N_4",
-                    "Effect_BUFF_AncientRecord_N_5",
-                    "Effect_BUFF_AncientRecord_N_6",
-                    "Effect_BUFF_AncientRecord_N_7",
-                    "Effect_BUFF_AncientRecord_N_8",
-                    "Effect_BUFF_AncientRecord_N_9",
-                    "Effect_BUFF_AncientRecord_N_10"
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_AncientRecord_N_1",
+                      "Effect_BUFF_AncientRecord_N_2",
+                      "Effect_BUFF_AncientRecord_N_3",
+                      "Effect_BUFF_AncientRecord_N_4",
+                      "Effect_BUFF_AncientRecord_N_5",
+                      "Effect_BUFF_AncientRecord_N_6",
+                      "Effect_BUFF_AncientRecord_N_7",
+                      "Effect_BUFF_AncientRecord_N_8",
+                      "Effect_BUFF_AncientRecord_N_9",
+                      "Effect_BUFF_AncientRecord_N_10"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "in_squad": [
+                    "Char_PECS_CyclopsePrincess_N"
+                  ]
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -2142,7 +2275,10 @@
             {
               "key": "Effect_PECS_LRL_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2188,15 +2324,18 @@
             {
               "key": "Effect_PECS_LRL_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_4"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_4"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2262,15 +2401,18 @@
             {
               "key": "Effect_PECS_LRL_N_101",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2315,15 +2457,18 @@
             {
               "key": "Effect_PECS_LRL_N_102",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2365,24 +2510,31 @@
             {
               "key": "Effect_PECS_LRL_N_103",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_AncientRecord_N_1",
-                    "Effect_BUFF_AncientRecord_N_2",
-                    "Effect_BUFF_AncientRecord_N_3",
-                    "Effect_BUFF_AncientRecord_N_4",
-                    "Effect_BUFF_AncientRecord_N_5",
-                    "Effect_BUFF_AncientRecord_N_6",
-                    "Effect_BUFF_AncientRecord_N_7",
-                    "Effect_BUFF_AncientRecord_N_8",
-                    "Effect_BUFF_AncientRecord_N_9",
-                    "Effect_BUFF_AncientRecord_N_10"
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_AncientRecord_N_1",
+                      "Effect_BUFF_AncientRecord_N_2",
+                      "Effect_BUFF_AncientRecord_N_3",
+                      "Effect_BUFF_AncientRecord_N_4",
+                      "Effect_BUFF_AncientRecord_N_5",
+                      "Effect_BUFF_AncientRecord_N_6",
+                      "Effect_BUFF_AncientRecord_N_7",
+                      "Effect_BUFF_AncientRecord_N_8",
+                      "Effect_BUFF_AncientRecord_N_9",
+                      "Effect_BUFF_AncientRecord_N_10"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "in_squad": [
+                    "Char_PECS_CyclopsePrincess_N"
+                  ]
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -2443,7 +2595,10 @@
             {
               "key": "Effect_PECS_LRL_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2489,15 +2644,18 @@
             {
               "key": "Effect_PECS_LRL_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_4"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_4"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2563,15 +2721,18 @@
             {
               "key": "Effect_PECS_LRL_N_101",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2616,15 +2777,18 @@
             {
               "key": "Effect_PECS_LRL_N_102",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2666,24 +2830,31 @@
             {
               "key": "Effect_PECS_LRL_N_103",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_AncientRecord_N_1",
-                    "Effect_BUFF_AncientRecord_N_2",
-                    "Effect_BUFF_AncientRecord_N_3",
-                    "Effect_BUFF_AncientRecord_N_4",
-                    "Effect_BUFF_AncientRecord_N_5",
-                    "Effect_BUFF_AncientRecord_N_6",
-                    "Effect_BUFF_AncientRecord_N_7",
-                    "Effect_BUFF_AncientRecord_N_8",
-                    "Effect_BUFF_AncientRecord_N_9",
-                    "Effect_BUFF_AncientRecord_N_10"
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_AncientRecord_N_1",
+                      "Effect_BUFF_AncientRecord_N_2",
+                      "Effect_BUFF_AncientRecord_N_3",
+                      "Effect_BUFF_AncientRecord_N_4",
+                      "Effect_BUFF_AncientRecord_N_5",
+                      "Effect_BUFF_AncientRecord_N_6",
+                      "Effect_BUFF_AncientRecord_N_7",
+                      "Effect_BUFF_AncientRecord_N_8",
+                      "Effect_BUFF_AncientRecord_N_9",
+                      "Effect_BUFF_AncientRecord_N_10"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "in_squad": [
+                    "Char_PECS_CyclopsePrincess_N"
+                  ]
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -2744,7 +2915,10 @@
             {
               "key": "Effect_PECS_LRL_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2790,15 +2964,18 @@
             {
               "key": "Effect_PECS_LRL_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_4"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_4"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2864,15 +3041,18 @@
             {
               "key": "Effect_PECS_LRL_N_101",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2917,15 +3097,18 @@
             {
               "key": "Effect_PECS_LRL_N_102",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2967,24 +3150,31 @@
             {
               "key": "Effect_PECS_LRL_N_103",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_AncientRecord_N_1",
-                    "Effect_BUFF_AncientRecord_N_2",
-                    "Effect_BUFF_AncientRecord_N_3",
-                    "Effect_BUFF_AncientRecord_N_4",
-                    "Effect_BUFF_AncientRecord_N_5",
-                    "Effect_BUFF_AncientRecord_N_6",
-                    "Effect_BUFF_AncientRecord_N_7",
-                    "Effect_BUFF_AncientRecord_N_8",
-                    "Effect_BUFF_AncientRecord_N_9",
-                    "Effect_BUFF_AncientRecord_N_10"
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_AncientRecord_N_1",
+                      "Effect_BUFF_AncientRecord_N_2",
+                      "Effect_BUFF_AncientRecord_N_3",
+                      "Effect_BUFF_AncientRecord_N_4",
+                      "Effect_BUFF_AncientRecord_N_5",
+                      "Effect_BUFF_AncientRecord_N_6",
+                      "Effect_BUFF_AncientRecord_N_7",
+                      "Effect_BUFF_AncientRecord_N_8",
+                      "Effect_BUFF_AncientRecord_N_9",
+                      "Effect_BUFF_AncientRecord_N_10"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "in_squad": [
+                    "Char_PECS_CyclopsePrincess_N"
+                  ]
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -3158,7 +3348,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3251,7 +3444,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3296,15 +3492,18 @@
             {
               "key": "Effect_PECS_LRL_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_4"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_4"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3373,7 +3572,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3418,15 +3620,18 @@
             {
               "key": "Effect_PECS_LRL_N_201",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3470,15 +3675,18 @@
             {
               "key": "Effect_PECS_LRL_N_202",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3524,24 +3732,31 @@
             {
               "key": "Effect_PECS_LRL_N_203",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_AncientRecord_N_1",
-                    "Effect_BUFF_AncientRecord_N_2",
-                    "Effect_BUFF_AncientRecord_N_3",
-                    "Effect_BUFF_AncientRecord_N_4",
-                    "Effect_BUFF_AncientRecord_N_5",
-                    "Effect_BUFF_AncientRecord_N_6",
-                    "Effect_BUFF_AncientRecord_N_7",
-                    "Effect_BUFF_AncientRecord_N_8",
-                    "Effect_BUFF_AncientRecord_N_9",
-                    "Effect_BUFF_AncientRecord_N_10"
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_AncientRecord_N_1",
+                      "Effect_BUFF_AncientRecord_N_2",
+                      "Effect_BUFF_AncientRecord_N_3",
+                      "Effect_BUFF_AncientRecord_N_4",
+                      "Effect_BUFF_AncientRecord_N_5",
+                      "Effect_BUFF_AncientRecord_N_6",
+                      "Effect_BUFF_AncientRecord_N_7",
+                      "Effect_BUFF_AncientRecord_N_8",
+                      "Effect_BUFF_AncientRecord_N_9",
+                      "Effect_BUFF_AncientRecord_N_10"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "in_squad": [
+                    "Char_PECS_CyclopsePrincess_N"
+                  ]
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -3604,7 +3819,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3697,7 +3915,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3742,15 +3963,18 @@
             {
               "key": "Effect_PECS_LRL_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_4"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_4"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3819,7 +4043,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3864,15 +4091,18 @@
             {
               "key": "Effect_PECS_LRL_N_201",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3916,15 +4146,18 @@
             {
               "key": "Effect_PECS_LRL_N_202",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3970,24 +4203,31 @@
             {
               "key": "Effect_PECS_LRL_N_203",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_AncientRecord_N_1",
-                    "Effect_BUFF_AncientRecord_N_2",
-                    "Effect_BUFF_AncientRecord_N_3",
-                    "Effect_BUFF_AncientRecord_N_4",
-                    "Effect_BUFF_AncientRecord_N_5",
-                    "Effect_BUFF_AncientRecord_N_6",
-                    "Effect_BUFF_AncientRecord_N_7",
-                    "Effect_BUFF_AncientRecord_N_8",
-                    "Effect_BUFF_AncientRecord_N_9",
-                    "Effect_BUFF_AncientRecord_N_10"
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_AncientRecord_N_1",
+                      "Effect_BUFF_AncientRecord_N_2",
+                      "Effect_BUFF_AncientRecord_N_3",
+                      "Effect_BUFF_AncientRecord_N_4",
+                      "Effect_BUFF_AncientRecord_N_5",
+                      "Effect_BUFF_AncientRecord_N_6",
+                      "Effect_BUFF_AncientRecord_N_7",
+                      "Effect_BUFF_AncientRecord_N_8",
+                      "Effect_BUFF_AncientRecord_N_9",
+                      "Effect_BUFF_AncientRecord_N_10"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "in_squad": [
+                    "Char_PECS_CyclopsePrincess_N"
+                  ]
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -4050,7 +4290,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4143,7 +4386,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4188,15 +4434,18 @@
             {
               "key": "Effect_PECS_LRL_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_4"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_4"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4265,7 +4514,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4310,15 +4562,18 @@
             {
               "key": "Effect_PECS_LRL_N_201",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4362,15 +4617,18 @@
             {
               "key": "Effect_PECS_LRL_N_202",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4416,24 +4674,31 @@
             {
               "key": "Effect_PECS_LRL_N_203",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_AncientRecord_N_1",
-                    "Effect_BUFF_AncientRecord_N_2",
-                    "Effect_BUFF_AncientRecord_N_3",
-                    "Effect_BUFF_AncientRecord_N_4",
-                    "Effect_BUFF_AncientRecord_N_5",
-                    "Effect_BUFF_AncientRecord_N_6",
-                    "Effect_BUFF_AncientRecord_N_7",
-                    "Effect_BUFF_AncientRecord_N_8",
-                    "Effect_BUFF_AncientRecord_N_9",
-                    "Effect_BUFF_AncientRecord_N_10"
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_AncientRecord_N_1",
+                      "Effect_BUFF_AncientRecord_N_2",
+                      "Effect_BUFF_AncientRecord_N_3",
+                      "Effect_BUFF_AncientRecord_N_4",
+                      "Effect_BUFF_AncientRecord_N_5",
+                      "Effect_BUFF_AncientRecord_N_6",
+                      "Effect_BUFF_AncientRecord_N_7",
+                      "Effect_BUFF_AncientRecord_N_8",
+                      "Effect_BUFF_AncientRecord_N_9",
+                      "Effect_BUFF_AncientRecord_N_10"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "in_squad": [
+                    "Char_PECS_CyclopsePrincess_N"
+                  ]
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -4496,7 +4761,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4589,7 +4857,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4634,15 +4905,18 @@
             {
               "key": "Effect_PECS_LRL_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_4"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_4"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4711,7 +4985,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4756,15 +5033,18 @@
             {
               "key": "Effect_PECS_LRL_N_201",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4808,15 +5088,18 @@
             {
               "key": "Effect_PECS_LRL_N_202",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4862,24 +5145,31 @@
             {
               "key": "Effect_PECS_LRL_N_203",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_AncientRecord_N_1",
-                    "Effect_BUFF_AncientRecord_N_2",
-                    "Effect_BUFF_AncientRecord_N_3",
-                    "Effect_BUFF_AncientRecord_N_4",
-                    "Effect_BUFF_AncientRecord_N_5",
-                    "Effect_BUFF_AncientRecord_N_6",
-                    "Effect_BUFF_AncientRecord_N_7",
-                    "Effect_BUFF_AncientRecord_N_8",
-                    "Effect_BUFF_AncientRecord_N_9",
-                    "Effect_BUFF_AncientRecord_N_10"
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_AncientRecord_N_1",
+                      "Effect_BUFF_AncientRecord_N_2",
+                      "Effect_BUFF_AncientRecord_N_3",
+                      "Effect_BUFF_AncientRecord_N_4",
+                      "Effect_BUFF_AncientRecord_N_5",
+                      "Effect_BUFF_AncientRecord_N_6",
+                      "Effect_BUFF_AncientRecord_N_7",
+                      "Effect_BUFF_AncientRecord_N_8",
+                      "Effect_BUFF_AncientRecord_N_9",
+                      "Effect_BUFF_AncientRecord_N_10"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "in_squad": [
+                    "Char_PECS_CyclopsePrincess_N"
+                  ]
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -4942,7 +5232,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5035,7 +5328,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5080,15 +5376,18 @@
             {
               "key": "Effect_PECS_LRL_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_4"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_4"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5157,7 +5456,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5202,15 +5504,18 @@
             {
               "key": "Effect_PECS_LRL_N_201",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5254,15 +5559,18 @@
             {
               "key": "Effect_PECS_LRL_N_202",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5308,24 +5616,31 @@
             {
               "key": "Effect_PECS_LRL_N_203",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_AncientRecord_N_1",
-                    "Effect_BUFF_AncientRecord_N_2",
-                    "Effect_BUFF_AncientRecord_N_3",
-                    "Effect_BUFF_AncientRecord_N_4",
-                    "Effect_BUFF_AncientRecord_N_5",
-                    "Effect_BUFF_AncientRecord_N_6",
-                    "Effect_BUFF_AncientRecord_N_7",
-                    "Effect_BUFF_AncientRecord_N_8",
-                    "Effect_BUFF_AncientRecord_N_9",
-                    "Effect_BUFF_AncientRecord_N_10"
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_AncientRecord_N_1",
+                      "Effect_BUFF_AncientRecord_N_2",
+                      "Effect_BUFF_AncientRecord_N_3",
+                      "Effect_BUFF_AncientRecord_N_4",
+                      "Effect_BUFF_AncientRecord_N_5",
+                      "Effect_BUFF_AncientRecord_N_6",
+                      "Effect_BUFF_AncientRecord_N_7",
+                      "Effect_BUFF_AncientRecord_N_8",
+                      "Effect_BUFF_AncientRecord_N_9",
+                      "Effect_BUFF_AncientRecord_N_10"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "in_squad": [
+                    "Char_PECS_CyclopsePrincess_N"
+                  ]
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -5388,7 +5703,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5481,7 +5799,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5526,15 +5847,18 @@
             {
               "key": "Effect_PECS_LRL_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_4"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_4"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5603,7 +5927,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5648,15 +5975,18 @@
             {
               "key": "Effect_PECS_LRL_N_201",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5700,15 +6030,18 @@
             {
               "key": "Effect_PECS_LRL_N_202",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5754,24 +6087,31 @@
             {
               "key": "Effect_PECS_LRL_N_203",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_AncientRecord_N_1",
-                    "Effect_BUFF_AncientRecord_N_2",
-                    "Effect_BUFF_AncientRecord_N_3",
-                    "Effect_BUFF_AncientRecord_N_4",
-                    "Effect_BUFF_AncientRecord_N_5",
-                    "Effect_BUFF_AncientRecord_N_6",
-                    "Effect_BUFF_AncientRecord_N_7",
-                    "Effect_BUFF_AncientRecord_N_8",
-                    "Effect_BUFF_AncientRecord_N_9",
-                    "Effect_BUFF_AncientRecord_N_10"
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_AncientRecord_N_1",
+                      "Effect_BUFF_AncientRecord_N_2",
+                      "Effect_BUFF_AncientRecord_N_3",
+                      "Effect_BUFF_AncientRecord_N_4",
+                      "Effect_BUFF_AncientRecord_N_5",
+                      "Effect_BUFF_AncientRecord_N_6",
+                      "Effect_BUFF_AncientRecord_N_7",
+                      "Effect_BUFF_AncientRecord_N_8",
+                      "Effect_BUFF_AncientRecord_N_9",
+                      "Effect_BUFF_AncientRecord_N_10"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "in_squad": [
+                    "Char_PECS_CyclopsePrincess_N"
+                  ]
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -5834,7 +6174,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5927,7 +6270,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5972,15 +6318,18 @@
             {
               "key": "Effect_PECS_LRL_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_4"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_4"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6049,7 +6398,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6094,15 +6446,18 @@
             {
               "key": "Effect_PECS_LRL_N_201",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6146,15 +6501,18 @@
             {
               "key": "Effect_PECS_LRL_N_202",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6200,24 +6558,31 @@
             {
               "key": "Effect_PECS_LRL_N_203",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_AncientRecord_N_1",
-                    "Effect_BUFF_AncientRecord_N_2",
-                    "Effect_BUFF_AncientRecord_N_3",
-                    "Effect_BUFF_AncientRecord_N_4",
-                    "Effect_BUFF_AncientRecord_N_5",
-                    "Effect_BUFF_AncientRecord_N_6",
-                    "Effect_BUFF_AncientRecord_N_7",
-                    "Effect_BUFF_AncientRecord_N_8",
-                    "Effect_BUFF_AncientRecord_N_9",
-                    "Effect_BUFF_AncientRecord_N_10"
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_AncientRecord_N_1",
+                      "Effect_BUFF_AncientRecord_N_2",
+                      "Effect_BUFF_AncientRecord_N_3",
+                      "Effect_BUFF_AncientRecord_N_4",
+                      "Effect_BUFF_AncientRecord_N_5",
+                      "Effect_BUFF_AncientRecord_N_6",
+                      "Effect_BUFF_AncientRecord_N_7",
+                      "Effect_BUFF_AncientRecord_N_8",
+                      "Effect_BUFF_AncientRecord_N_9",
+                      "Effect_BUFF_AncientRecord_N_10"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "in_squad": [
+                    "Char_PECS_CyclopsePrincess_N"
+                  ]
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -6280,7 +6645,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6373,7 +6741,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6418,15 +6789,18 @@
             {
               "key": "Effect_PECS_LRL_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_4"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_4"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6495,7 +6869,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6540,15 +6917,18 @@
             {
               "key": "Effect_PECS_LRL_N_201",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6592,15 +6972,18 @@
             {
               "key": "Effect_PECS_LRL_N_202",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6646,24 +7029,31 @@
             {
               "key": "Effect_PECS_LRL_N_203",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_AncientRecord_N_1",
-                    "Effect_BUFF_AncientRecord_N_2",
-                    "Effect_BUFF_AncientRecord_N_3",
-                    "Effect_BUFF_AncientRecord_N_4",
-                    "Effect_BUFF_AncientRecord_N_5",
-                    "Effect_BUFF_AncientRecord_N_6",
-                    "Effect_BUFF_AncientRecord_N_7",
-                    "Effect_BUFF_AncientRecord_N_8",
-                    "Effect_BUFF_AncientRecord_N_9",
-                    "Effect_BUFF_AncientRecord_N_10"
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_AncientRecord_N_1",
+                      "Effect_BUFF_AncientRecord_N_2",
+                      "Effect_BUFF_AncientRecord_N_3",
+                      "Effect_BUFF_AncientRecord_N_4",
+                      "Effect_BUFF_AncientRecord_N_5",
+                      "Effect_BUFF_AncientRecord_N_6",
+                      "Effect_BUFF_AncientRecord_N_7",
+                      "Effect_BUFF_AncientRecord_N_8",
+                      "Effect_BUFF_AncientRecord_N_9",
+                      "Effect_BUFF_AncientRecord_N_10"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "in_squad": [
+                    "Char_PECS_CyclopsePrincess_N"
+                  ]
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -6726,7 +7116,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6819,7 +7212,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6864,15 +7260,18 @@
             {
               "key": "Effect_PECS_LRL_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_4"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_4"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6941,7 +7340,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6986,15 +7388,18 @@
             {
               "key": "Effect_PECS_LRL_N_201",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7038,15 +7443,18 @@
             {
               "key": "Effect_PECS_LRL_N_202",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7092,24 +7500,31 @@
             {
               "key": "Effect_PECS_LRL_N_203",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_AncientRecord_N_1",
-                    "Effect_BUFF_AncientRecord_N_2",
-                    "Effect_BUFF_AncientRecord_N_3",
-                    "Effect_BUFF_AncientRecord_N_4",
-                    "Effect_BUFF_AncientRecord_N_5",
-                    "Effect_BUFF_AncientRecord_N_6",
-                    "Effect_BUFF_AncientRecord_N_7",
-                    "Effect_BUFF_AncientRecord_N_8",
-                    "Effect_BUFF_AncientRecord_N_9",
-                    "Effect_BUFF_AncientRecord_N_10"
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_AncientRecord_N_1",
+                      "Effect_BUFF_AncientRecord_N_2",
+                      "Effect_BUFF_AncientRecord_N_3",
+                      "Effect_BUFF_AncientRecord_N_4",
+                      "Effect_BUFF_AncientRecord_N_5",
+                      "Effect_BUFF_AncientRecord_N_6",
+                      "Effect_BUFF_AncientRecord_N_7",
+                      "Effect_BUFF_AncientRecord_N_8",
+                      "Effect_BUFF_AncientRecord_N_9",
+                      "Effect_BUFF_AncientRecord_N_10"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "in_squad": [
+                    "Char_PECS_CyclopsePrincess_N"
+                  ]
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -7172,7 +7587,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7265,7 +7683,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7310,15 +7731,18 @@
             {
               "key": "Effect_PECS_LRL_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_4"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_4"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7387,7 +7811,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7432,15 +7859,18 @@
             {
               "key": "Effect_PECS_LRL_N_201",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7484,15 +7914,18 @@
             {
               "key": "Effect_PECS_LRL_N_202",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7538,24 +7971,31 @@
             {
               "key": "Effect_PECS_LRL_N_203",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_AncientRecord_N_1",
-                    "Effect_BUFF_AncientRecord_N_2",
-                    "Effect_BUFF_AncientRecord_N_3",
-                    "Effect_BUFF_AncientRecord_N_4",
-                    "Effect_BUFF_AncientRecord_N_5",
-                    "Effect_BUFF_AncientRecord_N_6",
-                    "Effect_BUFF_AncientRecord_N_7",
-                    "Effect_BUFF_AncientRecord_N_8",
-                    "Effect_BUFF_AncientRecord_N_9",
-                    "Effect_BUFF_AncientRecord_N_10"
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_AncientRecord_N_1",
+                      "Effect_BUFF_AncientRecord_N_2",
+                      "Effect_BUFF_AncientRecord_N_3",
+                      "Effect_BUFF_AncientRecord_N_4",
+                      "Effect_BUFF_AncientRecord_N_5",
+                      "Effect_BUFF_AncientRecord_N_6",
+                      "Effect_BUFF_AncientRecord_N_7",
+                      "Effect_BUFF_AncientRecord_N_8",
+                      "Effect_BUFF_AncientRecord_N_9",
+                      "Effect_BUFF_AncientRecord_N_10"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "in_squad": [
+                    "Char_PECS_CyclopsePrincess_N"
+                  ]
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -7775,7 +8215,10 @@
             {
               "key": "Effect_PECS_LRL_N_3",
               "on": "attack",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0
               ],
@@ -7879,7 +8322,10 @@
             {
               "key": "Effect_PECS_LRL_N_3",
               "on": "attack",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0
               ],
@@ -7983,7 +8429,10 @@
             {
               "key": "Effect_PECS_LRL_N_3",
               "on": "attack",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0
               ],
@@ -8163,7 +8612,10 @@
             {
               "key": "Effect_PECS_LRL_N_4",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8379,7 +8831,10 @@
             {
               "key": "Effect_PECS_LRL_N_5",
               "on": "wave",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8485,16 +8940,19 @@
             {
               "key": "Effect_PECS_LRL_N_51",
               "on": "round",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_41"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_41"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
