@@ -35,7 +35,10 @@
             {
               "key": "Effect_BR_Raven_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -126,7 +129,10 @@
             {
               "key": "Effect_BR_Raven_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -192,16 +198,19 @@
             {
               "key": "Effect_BR_Raven_N_12",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "UNFILLED",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -290,15 +299,18 @@
             {
               "key": "Effect_BR_Raven_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -387,11 +399,22 @@
             {
               "key": "Effect_BR_Raven_N_41",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_BR_BeastHunter_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_BeastHunter_N"
+                  ]
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -452,7 +475,10 @@
             {
               "key": "Effect_BR_Raven_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -543,7 +569,10 @@
             {
               "key": "Effect_BR_Raven_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -609,16 +638,19 @@
             {
               "key": "Effect_BR_Raven_N_12",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "UNFILLED",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -707,15 +739,18 @@
             {
               "key": "Effect_BR_Raven_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -804,11 +839,22 @@
             {
               "key": "Effect_BR_Raven_N_41",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_BR_BeastHunter_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_BeastHunter_N"
+                  ]
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -869,7 +915,10 @@
             {
               "key": "Effect_BR_Raven_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -960,7 +1009,10 @@
             {
               "key": "Effect_BR_Raven_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1026,16 +1078,19 @@
             {
               "key": "Effect_BR_Raven_N_12",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "UNFILLED",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1124,15 +1179,18 @@
             {
               "key": "Effect_BR_Raven_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1221,11 +1279,22 @@
             {
               "key": "Effect_BR_Raven_N_41",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_BR_BeastHunter_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_BeastHunter_N"
+                  ]
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -1286,7 +1355,10 @@
             {
               "key": "Effect_BR_Raven_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1377,7 +1449,10 @@
             {
               "key": "Effect_BR_Raven_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1443,16 +1518,19 @@
             {
               "key": "Effect_BR_Raven_N_12",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "UNFILLED",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1541,15 +1619,18 @@
             {
               "key": "Effect_BR_Raven_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1638,11 +1719,22 @@
             {
               "key": "Effect_BR_Raven_N_41",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_BR_BeastHunter_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_BeastHunter_N"
+                  ]
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -1703,7 +1795,10 @@
             {
               "key": "Effect_BR_Raven_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1794,7 +1889,10 @@
             {
               "key": "Effect_BR_Raven_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1860,16 +1958,19 @@
             {
               "key": "Effect_BR_Raven_N_12",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "UNFILLED",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1958,15 +2059,18 @@
             {
               "key": "Effect_BR_Raven_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2055,11 +2159,22 @@
             {
               "key": "Effect_BR_Raven_N_41",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_BR_BeastHunter_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_BeastHunter_N"
+                  ]
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -2120,7 +2235,10 @@
             {
               "key": "Effect_BR_Raven_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2211,7 +2329,10 @@
             {
               "key": "Effect_BR_Raven_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2277,16 +2398,19 @@
             {
               "key": "Effect_BR_Raven_N_12",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "UNFILLED",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2375,15 +2499,18 @@
             {
               "key": "Effect_BR_Raven_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2472,11 +2599,22 @@
             {
               "key": "Effect_BR_Raven_N_41",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_BR_BeastHunter_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_BeastHunter_N"
+                  ]
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -2537,7 +2675,10 @@
             {
               "key": "Effect_BR_Raven_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2628,7 +2769,10 @@
             {
               "key": "Effect_BR_Raven_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2694,16 +2838,19 @@
             {
               "key": "Effect_BR_Raven_N_12",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "UNFILLED",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2792,15 +2939,18 @@
             {
               "key": "Effect_BR_Raven_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2889,11 +3039,22 @@
             {
               "key": "Effect_BR_Raven_N_41",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_BR_BeastHunter_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_BeastHunter_N"
+                  ]
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -2954,7 +3115,10 @@
             {
               "key": "Effect_BR_Raven_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3045,7 +3209,10 @@
             {
               "key": "Effect_BR_Raven_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3111,16 +3278,19 @@
             {
               "key": "Effect_BR_Raven_N_12",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "UNFILLED",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3209,15 +3379,18 @@
             {
               "key": "Effect_BR_Raven_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3306,11 +3479,22 @@
             {
               "key": "Effect_BR_Raven_N_41",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_BR_BeastHunter_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_BeastHunter_N"
+                  ]
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -3371,7 +3555,10 @@
             {
               "key": "Effect_BR_Raven_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3462,7 +3649,10 @@
             {
               "key": "Effect_BR_Raven_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3528,16 +3718,19 @@
             {
               "key": "Effect_BR_Raven_N_12",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "UNFILLED",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3626,15 +3819,18 @@
             {
               "key": "Effect_BR_Raven_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3723,11 +3919,22 @@
             {
               "key": "Effect_BR_Raven_N_41",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_BR_BeastHunter_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_BeastHunter_N"
+                  ]
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -3788,7 +3995,10 @@
             {
               "key": "Effect_BR_Raven_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3879,7 +4089,10 @@
             {
               "key": "Effect_BR_Raven_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3945,16 +4158,19 @@
             {
               "key": "Effect_BR_Raven_N_12",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "UNFILLED",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4043,15 +4259,18 @@
             {
               "key": "Effect_BR_Raven_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4140,11 +4359,22 @@
             {
               "key": "Effect_BR_Raven_N_41",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_BR_BeastHunter_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_BeastHunter_N"
+                  ]
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -4388,7 +4618,10 @@
             {
               "key": "Effect_BR_Raven_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4499,7 +4732,10 @@
             {
               "key": "Effect_BR_Raven_N_21",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4544,16 +4780,19 @@
             {
               "key": "Effect_BR_Raven_N_22",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "UNFILLED",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4620,15 +4859,18 @@
             {
               "key": "Effect_BR_Raven_N_23",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4695,11 +4937,22 @@
             {
               "key": "Effect_BR_Raven_N_42",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_BR_Pani_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_Pani_N"
+                  ]
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -4760,7 +5013,10 @@
             {
               "key": "Effect_BR_Raven_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4871,7 +5127,10 @@
             {
               "key": "Effect_BR_Raven_N_21",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4916,16 +5175,19 @@
             {
               "key": "Effect_BR_Raven_N_22",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "UNFILLED",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4992,15 +5254,18 @@
             {
               "key": "Effect_BR_Raven_N_23",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5067,11 +5332,22 @@
             {
               "key": "Effect_BR_Raven_N_42",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_BR_Pani_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_Pani_N"
+                  ]
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -5132,7 +5408,10 @@
             {
               "key": "Effect_BR_Raven_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5243,7 +5522,10 @@
             {
               "key": "Effect_BR_Raven_N_21",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5288,16 +5570,19 @@
             {
               "key": "Effect_BR_Raven_N_22",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "UNFILLED",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5364,15 +5649,18 @@
             {
               "key": "Effect_BR_Raven_N_23",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5439,11 +5727,22 @@
             {
               "key": "Effect_BR_Raven_N_42",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_BR_Pani_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_Pani_N"
+                  ]
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -5504,7 +5803,10 @@
             {
               "key": "Effect_BR_Raven_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5615,7 +5917,10 @@
             {
               "key": "Effect_BR_Raven_N_21",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5660,16 +5965,19 @@
             {
               "key": "Effect_BR_Raven_N_22",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "UNFILLED",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5736,15 +6044,18 @@
             {
               "key": "Effect_BR_Raven_N_23",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5811,11 +6122,22 @@
             {
               "key": "Effect_BR_Raven_N_42",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_BR_Pani_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_Pani_N"
+                  ]
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -5876,7 +6198,10 @@
             {
               "key": "Effect_BR_Raven_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5987,7 +6312,10 @@
             {
               "key": "Effect_BR_Raven_N_21",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6032,16 +6360,19 @@
             {
               "key": "Effect_BR_Raven_N_22",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "UNFILLED",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6108,15 +6439,18 @@
             {
               "key": "Effect_BR_Raven_N_23",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6183,11 +6517,22 @@
             {
               "key": "Effect_BR_Raven_N_42",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_BR_Pani_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_Pani_N"
+                  ]
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -6248,7 +6593,10 @@
             {
               "key": "Effect_BR_Raven_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6359,7 +6707,10 @@
             {
               "key": "Effect_BR_Raven_N_21",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6404,16 +6755,19 @@
             {
               "key": "Effect_BR_Raven_N_22",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "UNFILLED",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6480,15 +6834,18 @@
             {
               "key": "Effect_BR_Raven_N_23",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6555,11 +6912,22 @@
             {
               "key": "Effect_BR_Raven_N_42",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_BR_Pani_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_Pani_N"
+                  ]
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -6620,7 +6988,10 @@
             {
               "key": "Effect_BR_Raven_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6731,7 +7102,10 @@
             {
               "key": "Effect_BR_Raven_N_21",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6776,16 +7150,19 @@
             {
               "key": "Effect_BR_Raven_N_22",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "UNFILLED",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6852,15 +7229,18 @@
             {
               "key": "Effect_BR_Raven_N_23",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6927,11 +7307,22 @@
             {
               "key": "Effect_BR_Raven_N_42",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_BR_Pani_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_Pani_N"
+                  ]
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -6992,7 +7383,10 @@
             {
               "key": "Effect_BR_Raven_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7103,7 +7497,10 @@
             {
               "key": "Effect_BR_Raven_N_21",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7148,16 +7545,19 @@
             {
               "key": "Effect_BR_Raven_N_22",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "UNFILLED",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7224,15 +7624,18 @@
             {
               "key": "Effect_BR_Raven_N_23",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7299,11 +7702,22 @@
             {
               "key": "Effect_BR_Raven_N_42",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_BR_Pani_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_Pani_N"
+                  ]
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -7364,7 +7778,10 @@
             {
               "key": "Effect_BR_Raven_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7475,7 +7892,10 @@
             {
               "key": "Effect_BR_Raven_N_21",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7520,16 +7940,19 @@
             {
               "key": "Effect_BR_Raven_N_22",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "UNFILLED",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7596,15 +8019,18 @@
             {
               "key": "Effect_BR_Raven_N_23",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7671,11 +8097,22 @@
             {
               "key": "Effect_BR_Raven_N_42",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_BR_Pani_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_Pani_N"
+                  ]
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -7736,7 +8173,10 @@
             {
               "key": "Effect_BR_Raven_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7847,7 +8287,10 @@
             {
               "key": "Effect_BR_Raven_N_21",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7892,16 +8335,19 @@
             {
               "key": "Effect_BR_Raven_N_22",
               "on": "criticaled",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "UNFILLED",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7968,15 +8414,18 @@
             {
               "key": "Effect_BR_Raven_N_23",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Raven_N_5"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8043,11 +8492,22 @@
             {
               "key": "Effect_BR_Raven_N_42",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_BR_Pani_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_Pani_N"
+                  ]
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -8267,7 +8727,10 @@
             {
               "key": "Effect_BR_Raven_N_3",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8377,7 +8840,10 @@
             {
               "key": "Effect_BR_Raven_N_31",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8418,7 +8884,10 @@
             {
               "key": "Effect_BR_Raven_N_32",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8459,7 +8928,10 @@
             {
               "key": "Effect_BR_Raven_N_33",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8504,7 +8976,10 @@
             {
               "key": "Effect_BR_Raven_N_34",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8549,12 +9024,23 @@
             {
               "key": "Effect_BR_Raven_N_43",
               "on": "attack_success",
-              "if": {
-                "notInBattle": [
-                  "Char_BR_BeastHunter_N",
-                  "Char_BR_Pani_N"
-                ]
-              },
+              "if": [
+                {
+                  "notInBattle": [
+                    "Char_BR_BeastHunter_N",
+                    "Char_BR_Pani_N"
+                  ]
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -8615,7 +9101,10 @@
             {
               "key": "Effect_BR_Raven_N_3",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8725,7 +9214,10 @@
             {
               "key": "Effect_BR_Raven_N_31",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8766,7 +9258,10 @@
             {
               "key": "Effect_BR_Raven_N_32",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8807,7 +9302,10 @@
             {
               "key": "Effect_BR_Raven_N_33",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8852,7 +9350,10 @@
             {
               "key": "Effect_BR_Raven_N_34",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8897,12 +9398,23 @@
             {
               "key": "Effect_BR_Raven_N_43",
               "on": "attack_success",
-              "if": {
-                "notInBattle": [
-                  "Char_BR_BeastHunter_N",
-                  "Char_BR_Pani_N"
-                ]
-              },
+              "if": [
+                {
+                  "notInBattle": [
+                    "Char_BR_BeastHunter_N",
+                    "Char_BR_Pani_N"
+                  ]
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Raven_N_4"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
               "body": [
                 0,
                 1
@@ -9111,7 +9623,10 @@
             {
               "key": "Effect_BR_Raven_N_4",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -9325,7 +9840,10 @@
             {
               "key": "Effect_BR_Raven_N_5",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -9392,20 +9910,29 @@
             {
               "key": "Effect_BR_Raven_N_51",
               "on": "wave",
-              "if": {
-                "unitCount": {
-                  "filter": [
-                    "enemy",
-                    "defender"
-                  ],
-                  "type": [
-                    0
-                  ],
-                  "count": [
-                    0
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": [
+                      "enemy",
+                      "defender"
+                    ],
+                    "type": [
+                      0
+                    ],
+                    "count": [
+                      0
+                    ]
+                  }
+                },
+                {
+                  "target": [
+                    "Char_BR_BeastHunter_N",
+                    "Char_BR_Pani_N",
+                    "Char_BR_Emily_N"
                   ]
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -9447,20 +9974,29 @@
             {
               "key": "Effect_BR_Raven_N_52",
               "on": "wave",
-              "if": {
-                "unitCount": {
-                  "filter": [
-                    "enemy",
-                    "defender"
-                  ],
-                  "type": [
-                    0
-                  ],
-                  "count": [
-                    1
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": [
+                      "enemy",
+                      "defender"
+                    ],
+                    "type": [
+                      0
+                    ],
+                    "count": [
+                      1
+                    ]
+                  }
+                },
+                {
+                  "target": [
+                    "Char_BR_BeastHunter_N",
+                    "Char_BR_Pani_N",
+                    "Char_BR_Emily_N"
                   ]
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -9502,20 +10038,29 @@
             {
               "key": "Effect_BR_Raven_N_53",
               "on": "wave",
-              "if": {
-                "unitCount": {
-                  "filter": [
-                    "enemy",
-                    "defender"
-                  ],
-                  "type": [
-                    0
-                  ],
-                  "count": [
-                    2
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": [
+                      "enemy",
+                      "defender"
+                    ],
+                    "type": [
+                      0
+                    ],
+                    "count": [
+                      2
+                    ]
+                  }
+                },
+                {
+                  "target": [
+                    "Char_BR_BeastHunter_N",
+                    "Char_BR_Pani_N",
+                    "Char_BR_Emily_N"
                   ]
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -9557,20 +10102,29 @@
             {
               "key": "Effect_BR_Raven_N_54",
               "on": "wave",
-              "if": {
-                "unitCount": {
-                  "filter": [
-                    "enemy",
-                    "defender"
-                  ],
-                  "type": [
-                    0
-                  ],
-                  "count": [
-                    3
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": [
+                      "enemy",
+                      "defender"
+                    ],
+                    "type": [
+                      0
+                    ],
+                    "count": [
+                      3
+                    ]
+                  }
+                },
+                {
+                  "target": [
+                    "Char_BR_BeastHunter_N",
+                    "Char_BR_Pani_N",
+                    "Char_BR_Emily_N"
                   ]
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -9612,20 +10166,29 @@
             {
               "key": "Effect_BR_Raven_N_55",
               "on": "wave",
-              "if": {
-                "unitCount": {
-                  "filter": [
-                    "enemy",
-                    "defender"
-                  ],
-                  "type": [
-                    0
-                  ],
-                  "count": [
-                    4
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": [
+                      "enemy",
+                      "defender"
+                    ],
+                    "type": [
+                      0
+                    ],
+                    "count": [
+                      4
+                    ]
+                  }
+                },
+                {
+                  "target": [
+                    "Char_BR_BeastHunter_N",
+                    "Char_BR_Pani_N",
+                    "Char_BR_Emily_N"
                   ]
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -9667,20 +10230,29 @@
             {
               "key": "Effect_BR_Raven_N_56",
               "on": "wave",
-              "if": {
-                "unitCount": {
-                  "filter": [
-                    "enemy",
-                    "defender"
-                  ],
-                  "type": [
-                    0
-                  ],
-                  "count": [
-                    5
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": [
+                      "enemy",
+                      "defender"
+                    ],
+                    "type": [
+                      0
+                    ],
+                    "count": [
+                      5
+                    ]
+                  }
+                },
+                {
+                  "target": [
+                    "Char_BR_BeastHunter_N",
+                    "Char_BR_Pani_N",
+                    "Char_BR_Emily_N"
                   ]
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -9722,20 +10294,29 @@
             {
               "key": "Effect_BR_Raven_N_57",
               "on": "wave",
-              "if": {
-                "unitCount": {
-                  "filter": [
-                    "enemy",
-                    "defender"
-                  ],
-                  "type": [
-                    0
-                  ],
-                  "count": [
-                    6
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": [
+                      "enemy",
+                      "defender"
+                    ],
+                    "type": [
+                      0
+                    ],
+                    "count": [
+                      6
+                    ]
+                  }
+                },
+                {
+                  "target": [
+                    "Char_BR_BeastHunter_N",
+                    "Char_BR_Pani_N",
+                    "Char_BR_Emily_N"
                   ]
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -9777,20 +10358,29 @@
             {
               "key": "Effect_BR_Raven_N_58",
               "on": "wave",
-              "if": {
-                "unitCount": {
-                  "filter": [
-                    "enemy",
-                    "defender"
-                  ],
-                  "type": [
-                    0
-                  ],
-                  "count": [
-                    7
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": [
+                      "enemy",
+                      "defender"
+                    ],
+                    "type": [
+                      0
+                    ],
+                    "count": [
+                      7
+                    ]
+                  }
+                },
+                {
+                  "target": [
+                    "Char_BR_BeastHunter_N",
+                    "Char_BR_Pani_N",
+                    "Char_BR_Emily_N"
                   ]
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -9832,20 +10422,29 @@
             {
               "key": "Effect_BR_Raven_N_59",
               "on": "wave",
-              "if": {
-                "unitCount": {
-                  "filter": [
-                    "enemy",
-                    "defender"
-                  ],
-                  "type": [
-                    0
-                  ],
-                  "count": [
-                    8
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": [
+                      "enemy",
+                      "defender"
+                    ],
+                    "type": [
+                      0
+                    ],
+                    "count": [
+                      8
+                    ]
+                  }
+                },
+                {
+                  "target": [
+                    "Char_BR_BeastHunter_N",
+                    "Char_BR_Pani_N",
+                    "Char_BR_Emily_N"
                   ]
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -9887,20 +10486,29 @@
             {
               "key": "Effect_BR_Raven_N_510",
               "on": "wave",
-              "if": {
-                "unitCount": {
-                  "filter": [
-                    "enemy",
-                    "defender"
-                  ],
-                  "type": [
-                    0
-                  ],
-                  "count": [
-                    9
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": [
+                      "enemy",
+                      "defender"
+                    ],
+                    "type": [
+                      0
+                    ],
+                    "count": [
+                      9
+                    ]
+                  }
+                },
+                {
+                  "target": [
+                    "Char_BR_BeastHunter_N",
+                    "Char_BR_Pani_N",
+                    "Char_BR_Emily_N"
                   ]
                 }
-              },
+              ],
               "body": [
                 0,
                 1

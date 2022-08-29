@@ -91,7 +91,7 @@ const App: FunctionalComponent = () => {
 
 						<AsyncRoute path="/gacha" { ...pRoute(() => import("@/routes/gacha")) } />
 
-						{/* <AsyncRoute {...p}  path="/test" component={() => AIList } /> */ }
+						<AsyncRoute path="/test/:uid?" { ...pRoute(() => import("@/routes/test")) } />
 
 						<NotFoundPage default />
 					</Router>

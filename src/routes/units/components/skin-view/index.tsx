@@ -11,6 +11,7 @@ import { objState } from "@/libs/State";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import MergedVideo from "@/components/merged-video";
 import Pinch from "@/components/pinch";
+// import Renderer from "@/components/model-renderer";
 
 import style from "./style.module.scss";
 
@@ -38,6 +39,8 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 	// const skinDirection = objState<"" | "horz" | "vert">("");
 
 	const SDAnimList = skin.SD || [""];
+	const face = objState<string>("");
+	const faceList = objState<string[]>([]);
 
 	const IsSD = objState<boolean>(false);
 	const SDAnim = objState<string>(SDAnimList[0]);
@@ -187,6 +190,8 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 			return skin.anim[SKIN_ANIM_SUBSET_ENUM.__];
 	})();
 
+	const modelId = `2DModel_${unit.uid}_N${skin.isDef ? "" : `S${skin.sid}`}`;
+
 	return <div class={ style.SkinView }>
 		<div class={ `ratio ${Aspect} ${style.SkinFull} ${props.collapsed ? style.Collapsed : ""}` }>
 			<div>
@@ -224,7 +229,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 									src={ `${AssetsRoot}/webm/HD.Legacy/${SkinVideoURL}.mp4` }
 									type="video/mp4"
 								/>
-							: !props.collapsed
+							: !props.collapsed // && !AvailableAnim
 								? <Pinch
 									minScale={ 0.5 }
 									maxScale={ 3 }
@@ -234,6 +239,18 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 										src={ SkinImageURL }
 									/>
 								</Pinch>
+								// 	<Renderer
+								// 		uid={ modelId }
+								// 		root={ `${AssetsRoot}/models` }
+
+								// 		collider={ true }
+								// 		hidePart={ IsSimplified.value }
+								// 		hideBg={ IsBG.value }
+								// 		hideDialog={ false }
+
+								// 		face={ face.value }
+								// 		onFaceList={ (list) => faceList.set(list) }
+								// 	/>
 								: <img
 									style={ ImageStyle }
 									src={ SkinImageURL }
@@ -409,6 +426,23 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 							<Locale k={ `UNIT_VIEW_SKIN_ANIM_${anim}` } />
 						</option>) }
 					</select>
+				}
+
+				{ false && !props.collapsed
+					? <select
+						class={ `form-select ${style.SDList}` }
+						value={ face.value }
+						onChange={ (e): void => {
+							const value = (e.target as HTMLSelectElement).value;
+							face.set(value);
+						} }
+					>
+						{ faceList.value.map(f => <option value={ f }>
+							{/* <Locale k={ `FACE_TYPE_${f}` } /> */ }
+							{ f }
+						</option>) }
+					</select>
+					: <></>
 				}
 
 				{/* { skin.SD

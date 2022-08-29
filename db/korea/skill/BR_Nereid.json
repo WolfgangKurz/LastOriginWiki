@@ -35,17 +35,20 @@
             {
               "key": "Effect_BR_Nereid_N_1",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    74,
-                    87
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      74,
+                      87
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -139,28 +142,31 @@
             {
               "key": "Effect_BR_Nereid_N_17",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Nereid_N_15",
-                    "Effect_BR_Nereid_N_16",
-                    "Effect_BR_Nereid_N_5",
-                    "Effect_BR_Nereid_N_51",
-                    "Effect_BR_Nereid_N_52",
-                    "Effect_BR_Nereid_N_53",
-                    "Effect_BR_Nereid_N_54",
-                    "Effect_BR_Nereid_N_55",
-                    "Effect_BR_Nereid_N_56",
-                    "Effect_BR_Nereid_N_57",
-                    "Effect_BR_Nereid_N_58",
-                    "Effect_BR_Nereid_N_59",
-                    "Effect_BR_Nereid_N_60",
-                    "Effect_BR_Nereid_N_61"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Nereid_N_15",
+                      "Effect_BR_Nereid_N_16",
+                      "Effect_BR_Nereid_N_5",
+                      "Effect_BR_Nereid_N_51",
+                      "Effect_BR_Nereid_N_52",
+                      "Effect_BR_Nereid_N_53",
+                      "Effect_BR_Nereid_N_54",
+                      "Effect_BR_Nereid_N_55",
+                      "Effect_BR_Nereid_N_56",
+                      "Effect_BR_Nereid_N_57",
+                      "Effect_BR_Nereid_N_58",
+                      "Effect_BR_Nereid_N_59",
+                      "Effect_BR_Nereid_N_60",
+                      "Effect_BR_Nereid_N_61"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -202,7 +208,10 @@
             {
               "key": "Effect_BR_Nereid_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -250,17 +259,20 @@
             {
               "key": "Effect_BR_Nereid_N_18",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Sirene_N_2",
-                    "Effect_BR_Sirene_N_16",
-                    "Effect_BR_Sirene_N_18"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Sirene_N_2",
+                      "Effect_BR_Sirene_N_16",
+                      "Effect_BR_Sirene_N_18"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -321,17 +333,20 @@
             {
               "key": "Effect_BR_Nereid_N_1",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    74,
-                    87
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      74,
+                      87
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -425,28 +440,31 @@
             {
               "key": "Effect_BR_Nereid_N_17",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Nereid_N_15",
-                    "Effect_BR_Nereid_N_16",
-                    "Effect_BR_Nereid_N_5",
-                    "Effect_BR_Nereid_N_51",
-                    "Effect_BR_Nereid_N_52",
-                    "Effect_BR_Nereid_N_53",
-                    "Effect_BR_Nereid_N_54",
-                    "Effect_BR_Nereid_N_55",
-                    "Effect_BR_Nereid_N_56",
-                    "Effect_BR_Nereid_N_57",
-                    "Effect_BR_Nereid_N_58",
-                    "Effect_BR_Nereid_N_59",
-                    "Effect_BR_Nereid_N_60",
-                    "Effect_BR_Nereid_N_61"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Nereid_N_15",
+                      "Effect_BR_Nereid_N_16",
+                      "Effect_BR_Nereid_N_5",
+                      "Effect_BR_Nereid_N_51",
+                      "Effect_BR_Nereid_N_52",
+                      "Effect_BR_Nereid_N_53",
+                      "Effect_BR_Nereid_N_54",
+                      "Effect_BR_Nereid_N_55",
+                      "Effect_BR_Nereid_N_56",
+                      "Effect_BR_Nereid_N_57",
+                      "Effect_BR_Nereid_N_58",
+                      "Effect_BR_Nereid_N_59",
+                      "Effect_BR_Nereid_N_60",
+                      "Effect_BR_Nereid_N_61"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -488,7 +506,10 @@
             {
               "key": "Effect_BR_Nereid_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -536,17 +557,20 @@
             {
               "key": "Effect_BR_Nereid_N_18",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Sirene_N_2",
-                    "Effect_BR_Sirene_N_16",
-                    "Effect_BR_Sirene_N_18"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Sirene_N_2",
+                      "Effect_BR_Sirene_N_16",
+                      "Effect_BR_Sirene_N_18"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -607,17 +631,20 @@
             {
               "key": "Effect_BR_Nereid_N_1",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    74,
-                    87
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      74,
+                      87
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -711,28 +738,31 @@
             {
               "key": "Effect_BR_Nereid_N_17",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Nereid_N_15",
-                    "Effect_BR_Nereid_N_16",
-                    "Effect_BR_Nereid_N_5",
-                    "Effect_BR_Nereid_N_51",
-                    "Effect_BR_Nereid_N_52",
-                    "Effect_BR_Nereid_N_53",
-                    "Effect_BR_Nereid_N_54",
-                    "Effect_BR_Nereid_N_55",
-                    "Effect_BR_Nereid_N_56",
-                    "Effect_BR_Nereid_N_57",
-                    "Effect_BR_Nereid_N_58",
-                    "Effect_BR_Nereid_N_59",
-                    "Effect_BR_Nereid_N_60",
-                    "Effect_BR_Nereid_N_61"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Nereid_N_15",
+                      "Effect_BR_Nereid_N_16",
+                      "Effect_BR_Nereid_N_5",
+                      "Effect_BR_Nereid_N_51",
+                      "Effect_BR_Nereid_N_52",
+                      "Effect_BR_Nereid_N_53",
+                      "Effect_BR_Nereid_N_54",
+                      "Effect_BR_Nereid_N_55",
+                      "Effect_BR_Nereid_N_56",
+                      "Effect_BR_Nereid_N_57",
+                      "Effect_BR_Nereid_N_58",
+                      "Effect_BR_Nereid_N_59",
+                      "Effect_BR_Nereid_N_60",
+                      "Effect_BR_Nereid_N_61"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -774,7 +804,10 @@
             {
               "key": "Effect_BR_Nereid_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -822,17 +855,20 @@
             {
               "key": "Effect_BR_Nereid_N_18",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Sirene_N_2",
-                    "Effect_BR_Sirene_N_16",
-                    "Effect_BR_Sirene_N_18"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Sirene_N_2",
+                      "Effect_BR_Sirene_N_16",
+                      "Effect_BR_Sirene_N_18"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -893,17 +929,20 @@
             {
               "key": "Effect_BR_Nereid_N_1",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    74,
-                    87
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      74,
+                      87
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -997,28 +1036,31 @@
             {
               "key": "Effect_BR_Nereid_N_17",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Nereid_N_15",
-                    "Effect_BR_Nereid_N_16",
-                    "Effect_BR_Nereid_N_5",
-                    "Effect_BR_Nereid_N_51",
-                    "Effect_BR_Nereid_N_52",
-                    "Effect_BR_Nereid_N_53",
-                    "Effect_BR_Nereid_N_54",
-                    "Effect_BR_Nereid_N_55",
-                    "Effect_BR_Nereid_N_56",
-                    "Effect_BR_Nereid_N_57",
-                    "Effect_BR_Nereid_N_58",
-                    "Effect_BR_Nereid_N_59",
-                    "Effect_BR_Nereid_N_60",
-                    "Effect_BR_Nereid_N_61"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Nereid_N_15",
+                      "Effect_BR_Nereid_N_16",
+                      "Effect_BR_Nereid_N_5",
+                      "Effect_BR_Nereid_N_51",
+                      "Effect_BR_Nereid_N_52",
+                      "Effect_BR_Nereid_N_53",
+                      "Effect_BR_Nereid_N_54",
+                      "Effect_BR_Nereid_N_55",
+                      "Effect_BR_Nereid_N_56",
+                      "Effect_BR_Nereid_N_57",
+                      "Effect_BR_Nereid_N_58",
+                      "Effect_BR_Nereid_N_59",
+                      "Effect_BR_Nereid_N_60",
+                      "Effect_BR_Nereid_N_61"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1060,7 +1102,10 @@
             {
               "key": "Effect_BR_Nereid_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1108,17 +1153,20 @@
             {
               "key": "Effect_BR_Nereid_N_18",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Sirene_N_2",
-                    "Effect_BR_Sirene_N_16",
-                    "Effect_BR_Sirene_N_18"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Sirene_N_2",
+                      "Effect_BR_Sirene_N_16",
+                      "Effect_BR_Sirene_N_18"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1179,17 +1227,20 @@
             {
               "key": "Effect_BR_Nereid_N_1",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    74,
-                    87
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      74,
+                      87
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1283,28 +1334,31 @@
             {
               "key": "Effect_BR_Nereid_N_17",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Nereid_N_15",
-                    "Effect_BR_Nereid_N_16",
-                    "Effect_BR_Nereid_N_5",
-                    "Effect_BR_Nereid_N_51",
-                    "Effect_BR_Nereid_N_52",
-                    "Effect_BR_Nereid_N_53",
-                    "Effect_BR_Nereid_N_54",
-                    "Effect_BR_Nereid_N_55",
-                    "Effect_BR_Nereid_N_56",
-                    "Effect_BR_Nereid_N_57",
-                    "Effect_BR_Nereid_N_58",
-                    "Effect_BR_Nereid_N_59",
-                    "Effect_BR_Nereid_N_60",
-                    "Effect_BR_Nereid_N_61"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Nereid_N_15",
+                      "Effect_BR_Nereid_N_16",
+                      "Effect_BR_Nereid_N_5",
+                      "Effect_BR_Nereid_N_51",
+                      "Effect_BR_Nereid_N_52",
+                      "Effect_BR_Nereid_N_53",
+                      "Effect_BR_Nereid_N_54",
+                      "Effect_BR_Nereid_N_55",
+                      "Effect_BR_Nereid_N_56",
+                      "Effect_BR_Nereid_N_57",
+                      "Effect_BR_Nereid_N_58",
+                      "Effect_BR_Nereid_N_59",
+                      "Effect_BR_Nereid_N_60",
+                      "Effect_BR_Nereid_N_61"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1346,7 +1400,10 @@
             {
               "key": "Effect_BR_Nereid_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1394,17 +1451,20 @@
             {
               "key": "Effect_BR_Nereid_N_18",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Sirene_N_2",
-                    "Effect_BR_Sirene_N_16",
-                    "Effect_BR_Sirene_N_18"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Sirene_N_2",
+                      "Effect_BR_Sirene_N_16",
+                      "Effect_BR_Sirene_N_18"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1465,17 +1525,20 @@
             {
               "key": "Effect_BR_Nereid_N_1",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    74,
-                    87
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      74,
+                      87
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1569,28 +1632,31 @@
             {
               "key": "Effect_BR_Nereid_N_17",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Nereid_N_15",
-                    "Effect_BR_Nereid_N_16",
-                    "Effect_BR_Nereid_N_5",
-                    "Effect_BR_Nereid_N_51",
-                    "Effect_BR_Nereid_N_52",
-                    "Effect_BR_Nereid_N_53",
-                    "Effect_BR_Nereid_N_54",
-                    "Effect_BR_Nereid_N_55",
-                    "Effect_BR_Nereid_N_56",
-                    "Effect_BR_Nereid_N_57",
-                    "Effect_BR_Nereid_N_58",
-                    "Effect_BR_Nereid_N_59",
-                    "Effect_BR_Nereid_N_60",
-                    "Effect_BR_Nereid_N_61"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Nereid_N_15",
+                      "Effect_BR_Nereid_N_16",
+                      "Effect_BR_Nereid_N_5",
+                      "Effect_BR_Nereid_N_51",
+                      "Effect_BR_Nereid_N_52",
+                      "Effect_BR_Nereid_N_53",
+                      "Effect_BR_Nereid_N_54",
+                      "Effect_BR_Nereid_N_55",
+                      "Effect_BR_Nereid_N_56",
+                      "Effect_BR_Nereid_N_57",
+                      "Effect_BR_Nereid_N_58",
+                      "Effect_BR_Nereid_N_59",
+                      "Effect_BR_Nereid_N_60",
+                      "Effect_BR_Nereid_N_61"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1632,7 +1698,10 @@
             {
               "key": "Effect_BR_Nereid_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1680,17 +1749,20 @@
             {
               "key": "Effect_BR_Nereid_N_18",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Sirene_N_2",
-                    "Effect_BR_Sirene_N_16",
-                    "Effect_BR_Sirene_N_18"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Sirene_N_2",
+                      "Effect_BR_Sirene_N_16",
+                      "Effect_BR_Sirene_N_18"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1751,17 +1823,20 @@
             {
               "key": "Effect_BR_Nereid_N_1",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    74,
-                    87
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      74,
+                      87
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1855,28 +1930,31 @@
             {
               "key": "Effect_BR_Nereid_N_17",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Nereid_N_15",
-                    "Effect_BR_Nereid_N_16",
-                    "Effect_BR_Nereid_N_5",
-                    "Effect_BR_Nereid_N_51",
-                    "Effect_BR_Nereid_N_52",
-                    "Effect_BR_Nereid_N_53",
-                    "Effect_BR_Nereid_N_54",
-                    "Effect_BR_Nereid_N_55",
-                    "Effect_BR_Nereid_N_56",
-                    "Effect_BR_Nereid_N_57",
-                    "Effect_BR_Nereid_N_58",
-                    "Effect_BR_Nereid_N_59",
-                    "Effect_BR_Nereid_N_60",
-                    "Effect_BR_Nereid_N_61"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Nereid_N_15",
+                      "Effect_BR_Nereid_N_16",
+                      "Effect_BR_Nereid_N_5",
+                      "Effect_BR_Nereid_N_51",
+                      "Effect_BR_Nereid_N_52",
+                      "Effect_BR_Nereid_N_53",
+                      "Effect_BR_Nereid_N_54",
+                      "Effect_BR_Nereid_N_55",
+                      "Effect_BR_Nereid_N_56",
+                      "Effect_BR_Nereid_N_57",
+                      "Effect_BR_Nereid_N_58",
+                      "Effect_BR_Nereid_N_59",
+                      "Effect_BR_Nereid_N_60",
+                      "Effect_BR_Nereid_N_61"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1918,7 +1996,10 @@
             {
               "key": "Effect_BR_Nereid_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1966,17 +2047,20 @@
             {
               "key": "Effect_BR_Nereid_N_18",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Sirene_N_2",
-                    "Effect_BR_Sirene_N_16",
-                    "Effect_BR_Sirene_N_18"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Sirene_N_2",
+                      "Effect_BR_Sirene_N_16",
+                      "Effect_BR_Sirene_N_18"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2037,17 +2121,20 @@
             {
               "key": "Effect_BR_Nereid_N_1",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    74,
-                    87
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      74,
+                      87
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2141,28 +2228,31 @@
             {
               "key": "Effect_BR_Nereid_N_17",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Nereid_N_15",
-                    "Effect_BR_Nereid_N_16",
-                    "Effect_BR_Nereid_N_5",
-                    "Effect_BR_Nereid_N_51",
-                    "Effect_BR_Nereid_N_52",
-                    "Effect_BR_Nereid_N_53",
-                    "Effect_BR_Nereid_N_54",
-                    "Effect_BR_Nereid_N_55",
-                    "Effect_BR_Nereid_N_56",
-                    "Effect_BR_Nereid_N_57",
-                    "Effect_BR_Nereid_N_58",
-                    "Effect_BR_Nereid_N_59",
-                    "Effect_BR_Nereid_N_60",
-                    "Effect_BR_Nereid_N_61"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Nereid_N_15",
+                      "Effect_BR_Nereid_N_16",
+                      "Effect_BR_Nereid_N_5",
+                      "Effect_BR_Nereid_N_51",
+                      "Effect_BR_Nereid_N_52",
+                      "Effect_BR_Nereid_N_53",
+                      "Effect_BR_Nereid_N_54",
+                      "Effect_BR_Nereid_N_55",
+                      "Effect_BR_Nereid_N_56",
+                      "Effect_BR_Nereid_N_57",
+                      "Effect_BR_Nereid_N_58",
+                      "Effect_BR_Nereid_N_59",
+                      "Effect_BR_Nereid_N_60",
+                      "Effect_BR_Nereid_N_61"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2204,7 +2294,10 @@
             {
               "key": "Effect_BR_Nereid_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2252,17 +2345,20 @@
             {
               "key": "Effect_BR_Nereid_N_18",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Sirene_N_2",
-                    "Effect_BR_Sirene_N_16",
-                    "Effect_BR_Sirene_N_18"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Sirene_N_2",
+                      "Effect_BR_Sirene_N_16",
+                      "Effect_BR_Sirene_N_18"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2323,17 +2419,20 @@
             {
               "key": "Effect_BR_Nereid_N_1",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    74,
-                    87
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      74,
+                      87
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2427,28 +2526,31 @@
             {
               "key": "Effect_BR_Nereid_N_17",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Nereid_N_15",
-                    "Effect_BR_Nereid_N_16",
-                    "Effect_BR_Nereid_N_5",
-                    "Effect_BR_Nereid_N_51",
-                    "Effect_BR_Nereid_N_52",
-                    "Effect_BR_Nereid_N_53",
-                    "Effect_BR_Nereid_N_54",
-                    "Effect_BR_Nereid_N_55",
-                    "Effect_BR_Nereid_N_56",
-                    "Effect_BR_Nereid_N_57",
-                    "Effect_BR_Nereid_N_58",
-                    "Effect_BR_Nereid_N_59",
-                    "Effect_BR_Nereid_N_60",
-                    "Effect_BR_Nereid_N_61"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Nereid_N_15",
+                      "Effect_BR_Nereid_N_16",
+                      "Effect_BR_Nereid_N_5",
+                      "Effect_BR_Nereid_N_51",
+                      "Effect_BR_Nereid_N_52",
+                      "Effect_BR_Nereid_N_53",
+                      "Effect_BR_Nereid_N_54",
+                      "Effect_BR_Nereid_N_55",
+                      "Effect_BR_Nereid_N_56",
+                      "Effect_BR_Nereid_N_57",
+                      "Effect_BR_Nereid_N_58",
+                      "Effect_BR_Nereid_N_59",
+                      "Effect_BR_Nereid_N_60",
+                      "Effect_BR_Nereid_N_61"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2490,7 +2592,10 @@
             {
               "key": "Effect_BR_Nereid_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2538,17 +2643,20 @@
             {
               "key": "Effect_BR_Nereid_N_18",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Sirene_N_2",
-                    "Effect_BR_Sirene_N_16",
-                    "Effect_BR_Sirene_N_18"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Sirene_N_2",
+                      "Effect_BR_Sirene_N_16",
+                      "Effect_BR_Sirene_N_18"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2609,17 +2717,20 @@
             {
               "key": "Effect_BR_Nereid_N_1",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    74,
-                    87
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      74,
+                      87
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2713,28 +2824,31 @@
             {
               "key": "Effect_BR_Nereid_N_17",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Nereid_N_15",
-                    "Effect_BR_Nereid_N_16",
-                    "Effect_BR_Nereid_N_5",
-                    "Effect_BR_Nereid_N_51",
-                    "Effect_BR_Nereid_N_52",
-                    "Effect_BR_Nereid_N_53",
-                    "Effect_BR_Nereid_N_54",
-                    "Effect_BR_Nereid_N_55",
-                    "Effect_BR_Nereid_N_56",
-                    "Effect_BR_Nereid_N_57",
-                    "Effect_BR_Nereid_N_58",
-                    "Effect_BR_Nereid_N_59",
-                    "Effect_BR_Nereid_N_60",
-                    "Effect_BR_Nereid_N_61"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Nereid_N_15",
+                      "Effect_BR_Nereid_N_16",
+                      "Effect_BR_Nereid_N_5",
+                      "Effect_BR_Nereid_N_51",
+                      "Effect_BR_Nereid_N_52",
+                      "Effect_BR_Nereid_N_53",
+                      "Effect_BR_Nereid_N_54",
+                      "Effect_BR_Nereid_N_55",
+                      "Effect_BR_Nereid_N_56",
+                      "Effect_BR_Nereid_N_57",
+                      "Effect_BR_Nereid_N_58",
+                      "Effect_BR_Nereid_N_59",
+                      "Effect_BR_Nereid_N_60",
+                      "Effect_BR_Nereid_N_61"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2776,7 +2890,10 @@
             {
               "key": "Effect_BR_Nereid_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2824,17 +2941,20 @@
             {
               "key": "Effect_BR_Nereid_N_18",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Sirene_N_2",
-                    "Effect_BR_Sirene_N_16",
-                    "Effect_BR_Sirene_N_18"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Sirene_N_2",
+                      "Effect_BR_Sirene_N_16",
+                      "Effect_BR_Sirene_N_18"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3007,7 +3127,10 @@
             {
               "key": "Effect_BR_Nereid_N_2",
               "on": "criticaled",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3075,28 +3198,31 @@
             {
               "key": "Effect_BR_Nereid_N_17",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Nereid_N_15",
-                    "Effect_BR_Nereid_N_16",
-                    "Effect_BR_Nereid_N_5",
-                    "Effect_BR_Nereid_N_51",
-                    "Effect_BR_Nereid_N_52",
-                    "Effect_BR_Nereid_N_53",
-                    "Effect_BR_Nereid_N_54",
-                    "Effect_BR_Nereid_N_55",
-                    "Effect_BR_Nereid_N_56",
-                    "Effect_BR_Nereid_N_57",
-                    "Effect_BR_Nereid_N_58",
-                    "Effect_BR_Nereid_N_59",
-                    "Effect_BR_Nereid_N_60",
-                    "Effect_BR_Nereid_N_61"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Nereid_N_15",
+                      "Effect_BR_Nereid_N_16",
+                      "Effect_BR_Nereid_N_5",
+                      "Effect_BR_Nereid_N_51",
+                      "Effect_BR_Nereid_N_52",
+                      "Effect_BR_Nereid_N_53",
+                      "Effect_BR_Nereid_N_54",
+                      "Effect_BR_Nereid_N_55",
+                      "Effect_BR_Nereid_N_56",
+                      "Effect_BR_Nereid_N_57",
+                      "Effect_BR_Nereid_N_58",
+                      "Effect_BR_Nereid_N_59",
+                      "Effect_BR_Nereid_N_60",
+                      "Effect_BR_Nereid_N_61"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3138,17 +3264,20 @@
             {
               "key": "Effect_BR_Nereid_N_19",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Sirene_N_2",
-                    "Effect_BR_Sirene_N_16",
-                    "Effect_BR_Sirene_N_18"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Sirene_N_2",
+                      "Effect_BR_Sirene_N_16",
+                      "Effect_BR_Sirene_N_18"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3253,7 +3382,10 @@
             {
               "key": "Effect_BR_Nereid_N_2",
               "on": "criticaled",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3321,28 +3453,31 @@
             {
               "key": "Effect_BR_Nereid_N_17",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Nereid_N_15",
-                    "Effect_BR_Nereid_N_16",
-                    "Effect_BR_Nereid_N_5",
-                    "Effect_BR_Nereid_N_51",
-                    "Effect_BR_Nereid_N_52",
-                    "Effect_BR_Nereid_N_53",
-                    "Effect_BR_Nereid_N_54",
-                    "Effect_BR_Nereid_N_55",
-                    "Effect_BR_Nereid_N_56",
-                    "Effect_BR_Nereid_N_57",
-                    "Effect_BR_Nereid_N_58",
-                    "Effect_BR_Nereid_N_59",
-                    "Effect_BR_Nereid_N_60",
-                    "Effect_BR_Nereid_N_61"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Nereid_N_15",
+                      "Effect_BR_Nereid_N_16",
+                      "Effect_BR_Nereid_N_5",
+                      "Effect_BR_Nereid_N_51",
+                      "Effect_BR_Nereid_N_52",
+                      "Effect_BR_Nereid_N_53",
+                      "Effect_BR_Nereid_N_54",
+                      "Effect_BR_Nereid_N_55",
+                      "Effect_BR_Nereid_N_56",
+                      "Effect_BR_Nereid_N_57",
+                      "Effect_BR_Nereid_N_58",
+                      "Effect_BR_Nereid_N_59",
+                      "Effect_BR_Nereid_N_60",
+                      "Effect_BR_Nereid_N_61"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3384,17 +3519,20 @@
             {
               "key": "Effect_BR_Nereid_N_19",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Sirene_N_2",
-                    "Effect_BR_Sirene_N_16",
-                    "Effect_BR_Sirene_N_18"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Sirene_N_2",
+                      "Effect_BR_Sirene_N_16",
+                      "Effect_BR_Sirene_N_18"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3499,7 +3637,10 @@
             {
               "key": "Effect_BR_Nereid_N_2",
               "on": "criticaled",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3567,28 +3708,31 @@
             {
               "key": "Effect_BR_Nereid_N_17",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Nereid_N_15",
-                    "Effect_BR_Nereid_N_16",
-                    "Effect_BR_Nereid_N_5",
-                    "Effect_BR_Nereid_N_51",
-                    "Effect_BR_Nereid_N_52",
-                    "Effect_BR_Nereid_N_53",
-                    "Effect_BR_Nereid_N_54",
-                    "Effect_BR_Nereid_N_55",
-                    "Effect_BR_Nereid_N_56",
-                    "Effect_BR_Nereid_N_57",
-                    "Effect_BR_Nereid_N_58",
-                    "Effect_BR_Nereid_N_59",
-                    "Effect_BR_Nereid_N_60",
-                    "Effect_BR_Nereid_N_61"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Nereid_N_15",
+                      "Effect_BR_Nereid_N_16",
+                      "Effect_BR_Nereid_N_5",
+                      "Effect_BR_Nereid_N_51",
+                      "Effect_BR_Nereid_N_52",
+                      "Effect_BR_Nereid_N_53",
+                      "Effect_BR_Nereid_N_54",
+                      "Effect_BR_Nereid_N_55",
+                      "Effect_BR_Nereid_N_56",
+                      "Effect_BR_Nereid_N_57",
+                      "Effect_BR_Nereid_N_58",
+                      "Effect_BR_Nereid_N_59",
+                      "Effect_BR_Nereid_N_60",
+                      "Effect_BR_Nereid_N_61"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3630,17 +3774,20 @@
             {
               "key": "Effect_BR_Nereid_N_19",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Sirene_N_2",
-                    "Effect_BR_Sirene_N_16",
-                    "Effect_BR_Sirene_N_18"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Sirene_N_2",
+                      "Effect_BR_Sirene_N_16",
+                      "Effect_BR_Sirene_N_18"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3745,7 +3892,10 @@
             {
               "key": "Effect_BR_Nereid_N_2",
               "on": "criticaled",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3813,28 +3963,31 @@
             {
               "key": "Effect_BR_Nereid_N_17",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Nereid_N_15",
-                    "Effect_BR_Nereid_N_16",
-                    "Effect_BR_Nereid_N_5",
-                    "Effect_BR_Nereid_N_51",
-                    "Effect_BR_Nereid_N_52",
-                    "Effect_BR_Nereid_N_53",
-                    "Effect_BR_Nereid_N_54",
-                    "Effect_BR_Nereid_N_55",
-                    "Effect_BR_Nereid_N_56",
-                    "Effect_BR_Nereid_N_57",
-                    "Effect_BR_Nereid_N_58",
-                    "Effect_BR_Nereid_N_59",
-                    "Effect_BR_Nereid_N_60",
-                    "Effect_BR_Nereid_N_61"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Nereid_N_15",
+                      "Effect_BR_Nereid_N_16",
+                      "Effect_BR_Nereid_N_5",
+                      "Effect_BR_Nereid_N_51",
+                      "Effect_BR_Nereid_N_52",
+                      "Effect_BR_Nereid_N_53",
+                      "Effect_BR_Nereid_N_54",
+                      "Effect_BR_Nereid_N_55",
+                      "Effect_BR_Nereid_N_56",
+                      "Effect_BR_Nereid_N_57",
+                      "Effect_BR_Nereid_N_58",
+                      "Effect_BR_Nereid_N_59",
+                      "Effect_BR_Nereid_N_60",
+                      "Effect_BR_Nereid_N_61"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3876,17 +4029,20 @@
             {
               "key": "Effect_BR_Nereid_N_19",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Sirene_N_2",
-                    "Effect_BR_Sirene_N_16",
-                    "Effect_BR_Sirene_N_18"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Sirene_N_2",
+                      "Effect_BR_Sirene_N_16",
+                      "Effect_BR_Sirene_N_18"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3991,7 +4147,10 @@
             {
               "key": "Effect_BR_Nereid_N_2",
               "on": "criticaled",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4059,28 +4218,31 @@
             {
               "key": "Effect_BR_Nereid_N_17",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Nereid_N_15",
-                    "Effect_BR_Nereid_N_16",
-                    "Effect_BR_Nereid_N_5",
-                    "Effect_BR_Nereid_N_51",
-                    "Effect_BR_Nereid_N_52",
-                    "Effect_BR_Nereid_N_53",
-                    "Effect_BR_Nereid_N_54",
-                    "Effect_BR_Nereid_N_55",
-                    "Effect_BR_Nereid_N_56",
-                    "Effect_BR_Nereid_N_57",
-                    "Effect_BR_Nereid_N_58",
-                    "Effect_BR_Nereid_N_59",
-                    "Effect_BR_Nereid_N_60",
-                    "Effect_BR_Nereid_N_61"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Nereid_N_15",
+                      "Effect_BR_Nereid_N_16",
+                      "Effect_BR_Nereid_N_5",
+                      "Effect_BR_Nereid_N_51",
+                      "Effect_BR_Nereid_N_52",
+                      "Effect_BR_Nereid_N_53",
+                      "Effect_BR_Nereid_N_54",
+                      "Effect_BR_Nereid_N_55",
+                      "Effect_BR_Nereid_N_56",
+                      "Effect_BR_Nereid_N_57",
+                      "Effect_BR_Nereid_N_58",
+                      "Effect_BR_Nereid_N_59",
+                      "Effect_BR_Nereid_N_60",
+                      "Effect_BR_Nereid_N_61"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4122,17 +4284,20 @@
             {
               "key": "Effect_BR_Nereid_N_19",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Sirene_N_2",
-                    "Effect_BR_Sirene_N_16",
-                    "Effect_BR_Sirene_N_18"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Sirene_N_2",
+                      "Effect_BR_Sirene_N_16",
+                      "Effect_BR_Sirene_N_18"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4237,7 +4402,10 @@
             {
               "key": "Effect_BR_Nereid_N_2",
               "on": "criticaled",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4305,28 +4473,31 @@
             {
               "key": "Effect_BR_Nereid_N_17",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Nereid_N_15",
-                    "Effect_BR_Nereid_N_16",
-                    "Effect_BR_Nereid_N_5",
-                    "Effect_BR_Nereid_N_51",
-                    "Effect_BR_Nereid_N_52",
-                    "Effect_BR_Nereid_N_53",
-                    "Effect_BR_Nereid_N_54",
-                    "Effect_BR_Nereid_N_55",
-                    "Effect_BR_Nereid_N_56",
-                    "Effect_BR_Nereid_N_57",
-                    "Effect_BR_Nereid_N_58",
-                    "Effect_BR_Nereid_N_59",
-                    "Effect_BR_Nereid_N_60",
-                    "Effect_BR_Nereid_N_61"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Nereid_N_15",
+                      "Effect_BR_Nereid_N_16",
+                      "Effect_BR_Nereid_N_5",
+                      "Effect_BR_Nereid_N_51",
+                      "Effect_BR_Nereid_N_52",
+                      "Effect_BR_Nereid_N_53",
+                      "Effect_BR_Nereid_N_54",
+                      "Effect_BR_Nereid_N_55",
+                      "Effect_BR_Nereid_N_56",
+                      "Effect_BR_Nereid_N_57",
+                      "Effect_BR_Nereid_N_58",
+                      "Effect_BR_Nereid_N_59",
+                      "Effect_BR_Nereid_N_60",
+                      "Effect_BR_Nereid_N_61"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4368,17 +4539,20 @@
             {
               "key": "Effect_BR_Nereid_N_19",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Sirene_N_2",
-                    "Effect_BR_Sirene_N_16",
-                    "Effect_BR_Sirene_N_18"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Sirene_N_2",
+                      "Effect_BR_Sirene_N_16",
+                      "Effect_BR_Sirene_N_18"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4483,7 +4657,10 @@
             {
               "key": "Effect_BR_Nereid_N_2",
               "on": "criticaled",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4551,28 +4728,31 @@
             {
               "key": "Effect_BR_Nereid_N_17",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Nereid_N_15",
-                    "Effect_BR_Nereid_N_16",
-                    "Effect_BR_Nereid_N_5",
-                    "Effect_BR_Nereid_N_51",
-                    "Effect_BR_Nereid_N_52",
-                    "Effect_BR_Nereid_N_53",
-                    "Effect_BR_Nereid_N_54",
-                    "Effect_BR_Nereid_N_55",
-                    "Effect_BR_Nereid_N_56",
-                    "Effect_BR_Nereid_N_57",
-                    "Effect_BR_Nereid_N_58",
-                    "Effect_BR_Nereid_N_59",
-                    "Effect_BR_Nereid_N_60",
-                    "Effect_BR_Nereid_N_61"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Nereid_N_15",
+                      "Effect_BR_Nereid_N_16",
+                      "Effect_BR_Nereid_N_5",
+                      "Effect_BR_Nereid_N_51",
+                      "Effect_BR_Nereid_N_52",
+                      "Effect_BR_Nereid_N_53",
+                      "Effect_BR_Nereid_N_54",
+                      "Effect_BR_Nereid_N_55",
+                      "Effect_BR_Nereid_N_56",
+                      "Effect_BR_Nereid_N_57",
+                      "Effect_BR_Nereid_N_58",
+                      "Effect_BR_Nereid_N_59",
+                      "Effect_BR_Nereid_N_60",
+                      "Effect_BR_Nereid_N_61"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4614,17 +4794,20 @@
             {
               "key": "Effect_BR_Nereid_N_19",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Sirene_N_2",
-                    "Effect_BR_Sirene_N_16",
-                    "Effect_BR_Sirene_N_18"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Sirene_N_2",
+                      "Effect_BR_Sirene_N_16",
+                      "Effect_BR_Sirene_N_18"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4729,7 +4912,10 @@
             {
               "key": "Effect_BR_Nereid_N_2",
               "on": "criticaled",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4797,28 +4983,31 @@
             {
               "key": "Effect_BR_Nereid_N_17",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Nereid_N_15",
-                    "Effect_BR_Nereid_N_16",
-                    "Effect_BR_Nereid_N_5",
-                    "Effect_BR_Nereid_N_51",
-                    "Effect_BR_Nereid_N_52",
-                    "Effect_BR_Nereid_N_53",
-                    "Effect_BR_Nereid_N_54",
-                    "Effect_BR_Nereid_N_55",
-                    "Effect_BR_Nereid_N_56",
-                    "Effect_BR_Nereid_N_57",
-                    "Effect_BR_Nereid_N_58",
-                    "Effect_BR_Nereid_N_59",
-                    "Effect_BR_Nereid_N_60",
-                    "Effect_BR_Nereid_N_61"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Nereid_N_15",
+                      "Effect_BR_Nereid_N_16",
+                      "Effect_BR_Nereid_N_5",
+                      "Effect_BR_Nereid_N_51",
+                      "Effect_BR_Nereid_N_52",
+                      "Effect_BR_Nereid_N_53",
+                      "Effect_BR_Nereid_N_54",
+                      "Effect_BR_Nereid_N_55",
+                      "Effect_BR_Nereid_N_56",
+                      "Effect_BR_Nereid_N_57",
+                      "Effect_BR_Nereid_N_58",
+                      "Effect_BR_Nereid_N_59",
+                      "Effect_BR_Nereid_N_60",
+                      "Effect_BR_Nereid_N_61"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4860,17 +5049,20 @@
             {
               "key": "Effect_BR_Nereid_N_19",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Sirene_N_2",
-                    "Effect_BR_Sirene_N_16",
-                    "Effect_BR_Sirene_N_18"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Sirene_N_2",
+                      "Effect_BR_Sirene_N_16",
+                      "Effect_BR_Sirene_N_18"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4975,7 +5167,10 @@
             {
               "key": "Effect_BR_Nereid_N_2",
               "on": "criticaled",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5043,28 +5238,31 @@
             {
               "key": "Effect_BR_Nereid_N_17",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Nereid_N_15",
-                    "Effect_BR_Nereid_N_16",
-                    "Effect_BR_Nereid_N_5",
-                    "Effect_BR_Nereid_N_51",
-                    "Effect_BR_Nereid_N_52",
-                    "Effect_BR_Nereid_N_53",
-                    "Effect_BR_Nereid_N_54",
-                    "Effect_BR_Nereid_N_55",
-                    "Effect_BR_Nereid_N_56",
-                    "Effect_BR_Nereid_N_57",
-                    "Effect_BR_Nereid_N_58",
-                    "Effect_BR_Nereid_N_59",
-                    "Effect_BR_Nereid_N_60",
-                    "Effect_BR_Nereid_N_61"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Nereid_N_15",
+                      "Effect_BR_Nereid_N_16",
+                      "Effect_BR_Nereid_N_5",
+                      "Effect_BR_Nereid_N_51",
+                      "Effect_BR_Nereid_N_52",
+                      "Effect_BR_Nereid_N_53",
+                      "Effect_BR_Nereid_N_54",
+                      "Effect_BR_Nereid_N_55",
+                      "Effect_BR_Nereid_N_56",
+                      "Effect_BR_Nereid_N_57",
+                      "Effect_BR_Nereid_N_58",
+                      "Effect_BR_Nereid_N_59",
+                      "Effect_BR_Nereid_N_60",
+                      "Effect_BR_Nereid_N_61"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5106,17 +5304,20 @@
             {
               "key": "Effect_BR_Nereid_N_19",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Sirene_N_2",
-                    "Effect_BR_Sirene_N_16",
-                    "Effect_BR_Sirene_N_18"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Sirene_N_2",
+                      "Effect_BR_Sirene_N_16",
+                      "Effect_BR_Sirene_N_18"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5221,7 +5422,10 @@
             {
               "key": "Effect_BR_Nereid_N_2",
               "on": "criticaled",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5289,28 +5493,31 @@
             {
               "key": "Effect_BR_Nereid_N_17",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Nereid_N_15",
-                    "Effect_BR_Nereid_N_16",
-                    "Effect_BR_Nereid_N_5",
-                    "Effect_BR_Nereid_N_51",
-                    "Effect_BR_Nereid_N_52",
-                    "Effect_BR_Nereid_N_53",
-                    "Effect_BR_Nereid_N_54",
-                    "Effect_BR_Nereid_N_55",
-                    "Effect_BR_Nereid_N_56",
-                    "Effect_BR_Nereid_N_57",
-                    "Effect_BR_Nereid_N_58",
-                    "Effect_BR_Nereid_N_59",
-                    "Effect_BR_Nereid_N_60",
-                    "Effect_BR_Nereid_N_61"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Nereid_N_15",
+                      "Effect_BR_Nereid_N_16",
+                      "Effect_BR_Nereid_N_5",
+                      "Effect_BR_Nereid_N_51",
+                      "Effect_BR_Nereid_N_52",
+                      "Effect_BR_Nereid_N_53",
+                      "Effect_BR_Nereid_N_54",
+                      "Effect_BR_Nereid_N_55",
+                      "Effect_BR_Nereid_N_56",
+                      "Effect_BR_Nereid_N_57",
+                      "Effect_BR_Nereid_N_58",
+                      "Effect_BR_Nereid_N_59",
+                      "Effect_BR_Nereid_N_60",
+                      "Effect_BR_Nereid_N_61"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5352,17 +5559,20 @@
             {
               "key": "Effect_BR_Nereid_N_19",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Sirene_N_2",
-                    "Effect_BR_Sirene_N_16",
-                    "Effect_BR_Sirene_N_18"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Sirene_N_2",
+                      "Effect_BR_Sirene_N_16",
+                      "Effect_BR_Sirene_N_18"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5579,7 +5789,10 @@
             {
               "key": "Effect_BR_Nereid_N_3",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5713,7 +5926,10 @@
             {
               "key": "Effect_BR_Nereid_N_12",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5758,7 +5974,10 @@
             {
               "key": "Effect_BR_Nereid_N_13",
               "on": "damaged",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5803,9 +6022,14 @@
             {
               "key": "Effect_BR_Nereid_N_14",
               "on": "round",
-              "if": {
-                "hp<=": "50%"
-              },
+              "if": [
+                {
+                  "hp<=": [
+                    "50%"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5850,7 +6074,10 @@
             {
               "key": "Effect_BR_Nereid_N_15",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5893,7 +6120,10 @@
             {
               "key": "Effect_BR_Nereid_N_16",
               "on": "damaged",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6112,7 +6342,10 @@
             {
               "key": "Effect_BR_Nereid_N_4",
               "on": "wave",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6222,7 +6455,10 @@
             {
               "key": "Effect_BR_Nereid_N_20",
               "on": "revive",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6384,20 +6620,23 @@
             {
               "key": "Effect_BR_Nereid_N_5",
               "on": "wave",
-              "if": {
-                "unitCount": {
-                  "filter": [
-                    "enemy",
-                    "air"
-                  ],
-                  "type": [
-                    2
-                  ],
-                  "count": [
-                    1
-                  ]
-                }
-              },
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": [
+                      "enemy",
+                      "air"
+                    ],
+                    "type": [
+                      2
+                    ],
+                    "count": [
+                      1
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6486,20 +6725,23 @@
             {
               "key": "Effect_BR_Nereid_N_51",
               "on": "wave",
-              "if": {
-                "unitCount": {
-                  "filter": [
-                    "enemy",
-                    "air"
-                  ],
-                  "type": [
-                    2
-                  ],
-                  "count": [
-                    2
-                  ]
-                }
-              },
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": [
+                      "enemy",
+                      "air"
+                    ],
+                    "type": [
+                      2
+                    ],
+                    "count": [
+                      2
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6588,20 +6830,23 @@
             {
               "key": "Effect_BR_Nereid_N_52",
               "on": "wave",
-              "if": {
-                "unitCount": {
-                  "filter": [
-                    "enemy",
-                    "air"
-                  ],
-                  "type": [
-                    2
-                  ],
-                  "count": [
-                    3
-                  ]
-                }
-              },
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": [
+                      "enemy",
+                      "air"
+                    ],
+                    "type": [
+                      2
+                    ],
+                    "count": [
+                      3
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6690,20 +6935,23 @@
             {
               "key": "Effect_BR_Nereid_N_53",
               "on": "wave",
-              "if": {
-                "unitCount": {
-                  "filter": [
-                    "enemy",
-                    "air"
-                  ],
-                  "type": [
-                    2
-                  ],
-                  "count": [
-                    4
-                  ]
-                }
-              },
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": [
+                      "enemy",
+                      "air"
+                    ],
+                    "type": [
+                      2
+                    ],
+                    "count": [
+                      4
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6792,20 +7040,23 @@
             {
               "key": "Effect_BR_Nereid_N_54",
               "on": "wave",
-              "if": {
-                "unitCount": {
-                  "filter": [
-                    "enemy",
-                    "air"
-                  ],
-                  "type": [
-                    2
-                  ],
-                  "count": [
-                    5
-                  ]
-                }
-              },
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": [
+                      "enemy",
+                      "air"
+                    ],
+                    "type": [
+                      2
+                    ],
+                    "count": [
+                      5
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6894,20 +7145,23 @@
             {
               "key": "Effect_BR_Nereid_N_55",
               "on": "wave",
-              "if": {
-                "unitCount": {
-                  "filter": [
-                    "enemy",
-                    "air"
-                  ],
-                  "type": [
-                    2
-                  ],
-                  "count": [
-                    6
-                  ]
-                }
-              },
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": [
+                      "enemy",
+                      "air"
+                    ],
+                    "type": [
+                      2
+                    ],
+                    "count": [
+                      6
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6996,20 +7250,23 @@
             {
               "key": "Effect_BR_Nereid_N_56",
               "on": "wave",
-              "if": {
-                "unitCount": {
-                  "filter": [
-                    "enemy",
-                    "air"
-                  ],
-                  "type": [
-                    2
-                  ],
-                  "count": [
-                    7
-                  ]
-                }
-              },
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": [
+                      "enemy",
+                      "air"
+                    ],
+                    "type": [
+                      2
+                    ],
+                    "count": [
+                      7
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7098,20 +7355,23 @@
             {
               "key": "Effect_BR_Nereid_N_57",
               "on": "wave",
-              "if": {
-                "unitCount": {
-                  "filter": [
-                    "enemy",
-                    "air"
-                  ],
-                  "type": [
-                    2
-                  ],
-                  "count": [
-                    8
-                  ]
-                }
-              },
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": [
+                      "enemy",
+                      "air"
+                    ],
+                    "type": [
+                      2
+                    ],
+                    "count": [
+                      8
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7200,20 +7460,23 @@
             {
               "key": "Effect_BR_Nereid_N_58",
               "on": "wave",
-              "if": {
-                "unitCount": {
-                  "filter": [
-                    "enemy",
-                    "air"
-                  ],
-                  "type": [
-                    2
-                  ],
-                  "count": [
-                    9
-                  ]
-                }
-              },
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": [
+                      "enemy",
+                      "air"
+                    ],
+                    "type": [
+                      2
+                    ],
+                    "count": [
+                      9
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7302,18 +7565,21 @@
             {
               "key": "Effect_BR_Nereid_N_59",
               "on": "round",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Sirene_N_2",
-                    "Effect_BR_Sirene_N_16",
-                    "Effect_BR_Sirene_N_18"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Sirene_N_2",
+                      "Effect_BR_Sirene_N_16",
+                      "Effect_BR_Sirene_N_18"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7402,18 +7668,21 @@
             {
               "key": "Effect_BR_Nereid_N_60",
               "on": "round",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Undine_N_4",
-                    "Effect_BR_Undine_N_14",
-                    "Effect_BR_Undine_N_15"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Undine_N_4",
+                      "Effect_BR_Undine_N_14",
+                      "Effect_BR_Undine_N_15"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7502,20 +7771,23 @@
             {
               "key": "Effect_BR_Nereid_N_61",
               "on": "round",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Thetis_N_51",
-                    "Effect_BR_Thetis_N_52",
-                    "Effect_BR_Thetis_N_53",
-                    "Effect_BR_Thetis_N_54",
-                    "Effect_BR_Thetis_N_55"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Thetis_N_51",
+                      "Effect_BR_Thetis_N_52",
+                      "Effect_BR_Thetis_N_53",
+                      "Effect_BR_Thetis_N_54",
+                      "Effect_BR_Thetis_N_55"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7604,7 +7876,10 @@
             {
               "key": "Effect_BR_Nereid_N_62",
               "on": "wave",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1

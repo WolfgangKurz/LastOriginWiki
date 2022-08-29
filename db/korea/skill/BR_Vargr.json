@@ -35,16 +35,19 @@
             {
               "key": "Effect_BR_Vargr_N_1",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -112,16 +115,19 @@
             {
               "key": "Effect_BR_Vargr_N_11",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_41",
-                    "Effect_BR_Vargr_N_43"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -166,16 +172,28 @@
             {
               "key": "Effect_BR_Vargr_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -220,7 +238,10 @@
             {
               "key": "Effect_BR_Vargr_N_51",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -265,13 +286,16 @@
             {
               "key": "Effect_BR_Vargr_N_52",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "DEF",
-                "ratio": 0,
-                "than": "DEF"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "DEF",
+                  "ratio": 0,
+                  "than": "DEF"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -316,7 +340,10 @@
             {
               "key": "Effect_BR_Vargr_N_54",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -361,13 +388,16 @@
             {
               "key": "Effect_BR_Vargr_N_55",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "SPD",
-                "ratio": 0,
-                "than": "SPD"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "SPD",
+                  "ratio": 0,
+                  "than": "SPD"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -428,16 +458,19 @@
             {
               "key": "Effect_BR_Vargr_N_1",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -505,16 +538,19 @@
             {
               "key": "Effect_BR_Vargr_N_11",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_41",
-                    "Effect_BR_Vargr_N_43"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -559,16 +595,28 @@
             {
               "key": "Effect_BR_Vargr_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -613,7 +661,10 @@
             {
               "key": "Effect_BR_Vargr_N_51",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -658,13 +709,16 @@
             {
               "key": "Effect_BR_Vargr_N_52",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "DEF",
-                "ratio": 0,
-                "than": "DEF"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "DEF",
+                  "ratio": 0,
+                  "than": "DEF"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -709,7 +763,10 @@
             {
               "key": "Effect_BR_Vargr_N_54",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -754,13 +811,16 @@
             {
               "key": "Effect_BR_Vargr_N_55",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "SPD",
-                "ratio": 0,
-                "than": "SPD"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "SPD",
+                  "ratio": 0,
+                  "than": "SPD"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -821,16 +881,19 @@
             {
               "key": "Effect_BR_Vargr_N_1",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -898,16 +961,19 @@
             {
               "key": "Effect_BR_Vargr_N_11",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_41",
-                    "Effect_BR_Vargr_N_43"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -952,16 +1018,28 @@
             {
               "key": "Effect_BR_Vargr_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -1006,7 +1084,10 @@
             {
               "key": "Effect_BR_Vargr_N_51",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1051,13 +1132,16 @@
             {
               "key": "Effect_BR_Vargr_N_52",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "DEF",
-                "ratio": 0,
-                "than": "DEF"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "DEF",
+                  "ratio": 0,
+                  "than": "DEF"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1102,7 +1186,10 @@
             {
               "key": "Effect_BR_Vargr_N_54",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1147,13 +1234,16 @@
             {
               "key": "Effect_BR_Vargr_N_55",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "SPD",
-                "ratio": 0,
-                "than": "SPD"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "SPD",
+                  "ratio": 0,
+                  "than": "SPD"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1214,16 +1304,19 @@
             {
               "key": "Effect_BR_Vargr_N_1",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1291,16 +1384,19 @@
             {
               "key": "Effect_BR_Vargr_N_11",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_41",
-                    "Effect_BR_Vargr_N_43"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1345,16 +1441,28 @@
             {
               "key": "Effect_BR_Vargr_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -1399,7 +1507,10 @@
             {
               "key": "Effect_BR_Vargr_N_51",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1444,13 +1555,16 @@
             {
               "key": "Effect_BR_Vargr_N_52",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "DEF",
-                "ratio": 0,
-                "than": "DEF"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "DEF",
+                  "ratio": 0,
+                  "than": "DEF"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1495,7 +1609,10 @@
             {
               "key": "Effect_BR_Vargr_N_54",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1540,13 +1657,16 @@
             {
               "key": "Effect_BR_Vargr_N_55",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "SPD",
-                "ratio": 0,
-                "than": "SPD"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "SPD",
+                  "ratio": 0,
+                  "than": "SPD"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1607,16 +1727,19 @@
             {
               "key": "Effect_BR_Vargr_N_1",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1684,16 +1807,19 @@
             {
               "key": "Effect_BR_Vargr_N_11",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_41",
-                    "Effect_BR_Vargr_N_43"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1738,16 +1864,28 @@
             {
               "key": "Effect_BR_Vargr_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -1792,7 +1930,10 @@
             {
               "key": "Effect_BR_Vargr_N_51",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1837,13 +1978,16 @@
             {
               "key": "Effect_BR_Vargr_N_52",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "DEF",
-                "ratio": 0,
-                "than": "DEF"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "DEF",
+                  "ratio": 0,
+                  "than": "DEF"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1888,7 +2032,10 @@
             {
               "key": "Effect_BR_Vargr_N_54",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1933,13 +2080,16 @@
             {
               "key": "Effect_BR_Vargr_N_55",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "SPD",
-                "ratio": 0,
-                "than": "SPD"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "SPD",
+                  "ratio": 0,
+                  "than": "SPD"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2000,16 +2150,19 @@
             {
               "key": "Effect_BR_Vargr_N_1",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2077,16 +2230,19 @@
             {
               "key": "Effect_BR_Vargr_N_11",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_41",
-                    "Effect_BR_Vargr_N_43"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2131,16 +2287,28 @@
             {
               "key": "Effect_BR_Vargr_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -2185,7 +2353,10 @@
             {
               "key": "Effect_BR_Vargr_N_51",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2230,13 +2401,16 @@
             {
               "key": "Effect_BR_Vargr_N_52",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "DEF",
-                "ratio": 0,
-                "than": "DEF"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "DEF",
+                  "ratio": 0,
+                  "than": "DEF"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2281,7 +2455,10 @@
             {
               "key": "Effect_BR_Vargr_N_54",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2326,13 +2503,16 @@
             {
               "key": "Effect_BR_Vargr_N_55",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "SPD",
-                "ratio": 0,
-                "than": "SPD"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "SPD",
+                  "ratio": 0,
+                  "than": "SPD"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2393,16 +2573,19 @@
             {
               "key": "Effect_BR_Vargr_N_1",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2470,16 +2653,19 @@
             {
               "key": "Effect_BR_Vargr_N_11",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_41",
-                    "Effect_BR_Vargr_N_43"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2524,16 +2710,28 @@
             {
               "key": "Effect_BR_Vargr_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -2578,7 +2776,10 @@
             {
               "key": "Effect_BR_Vargr_N_51",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2623,13 +2824,16 @@
             {
               "key": "Effect_BR_Vargr_N_52",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "DEF",
-                "ratio": 0,
-                "than": "DEF"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "DEF",
+                  "ratio": 0,
+                  "than": "DEF"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2674,7 +2878,10 @@
             {
               "key": "Effect_BR_Vargr_N_54",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2719,13 +2926,16 @@
             {
               "key": "Effect_BR_Vargr_N_55",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "SPD",
-                "ratio": 0,
-                "than": "SPD"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "SPD",
+                  "ratio": 0,
+                  "than": "SPD"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2786,16 +2996,19 @@
             {
               "key": "Effect_BR_Vargr_N_1",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2863,16 +3076,19 @@
             {
               "key": "Effect_BR_Vargr_N_11",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_41",
-                    "Effect_BR_Vargr_N_43"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2917,16 +3133,28 @@
             {
               "key": "Effect_BR_Vargr_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -2971,7 +3199,10 @@
             {
               "key": "Effect_BR_Vargr_N_51",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3016,13 +3247,16 @@
             {
               "key": "Effect_BR_Vargr_N_52",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "DEF",
-                "ratio": 0,
-                "than": "DEF"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "DEF",
+                  "ratio": 0,
+                  "than": "DEF"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3067,7 +3301,10 @@
             {
               "key": "Effect_BR_Vargr_N_54",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3112,13 +3349,16 @@
             {
               "key": "Effect_BR_Vargr_N_55",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "SPD",
-                "ratio": 0,
-                "than": "SPD"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "SPD",
+                  "ratio": 0,
+                  "than": "SPD"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3179,16 +3419,19 @@
             {
               "key": "Effect_BR_Vargr_N_1",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3256,16 +3499,19 @@
             {
               "key": "Effect_BR_Vargr_N_11",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_41",
-                    "Effect_BR_Vargr_N_43"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3310,16 +3556,28 @@
             {
               "key": "Effect_BR_Vargr_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -3364,7 +3622,10 @@
             {
               "key": "Effect_BR_Vargr_N_51",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3409,13 +3670,16 @@
             {
               "key": "Effect_BR_Vargr_N_52",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "DEF",
-                "ratio": 0,
-                "than": "DEF"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "DEF",
+                  "ratio": 0,
+                  "than": "DEF"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3460,7 +3724,10 @@
             {
               "key": "Effect_BR_Vargr_N_54",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3505,13 +3772,16 @@
             {
               "key": "Effect_BR_Vargr_N_55",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "SPD",
-                "ratio": 0,
-                "than": "SPD"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "SPD",
+                  "ratio": 0,
+                  "than": "SPD"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3572,16 +3842,19 @@
             {
               "key": "Effect_BR_Vargr_N_1",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3649,16 +3922,19 @@
             {
               "key": "Effect_BR_Vargr_N_11",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_41",
-                    "Effect_BR_Vargr_N_43"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3703,16 +3979,28 @@
             {
               "key": "Effect_BR_Vargr_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -3757,7 +4045,10 @@
             {
               "key": "Effect_BR_Vargr_N_51",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3802,13 +4093,16 @@
             {
               "key": "Effect_BR_Vargr_N_52",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "DEF",
-                "ratio": 0,
-                "than": "DEF"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "DEF",
+                  "ratio": 0,
+                  "than": "DEF"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3853,7 +4147,10 @@
             {
               "key": "Effect_BR_Vargr_N_54",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3898,13 +4195,16 @@
             {
               "key": "Effect_BR_Vargr_N_55",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "SPD",
-                "ratio": 0,
-                "than": "SPD"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "SPD",
+                  "ratio": 0,
+                  "than": "SPD"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4101,16 +4401,19 @@
             {
               "key": "Effect_BR_Vargr_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4178,16 +4481,19 @@
             {
               "key": "Effect_BR_Vargr_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_41",
-                    "Effect_BR_Vargr_N_43"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4232,16 +4538,28 @@
             {
               "key": "Effect_BR_Vargr_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -4286,7 +4604,10 @@
             {
               "key": "Effect_BR_Vargr_N_51",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4331,13 +4652,16 @@
             {
               "key": "Effect_BR_Vargr_N_52",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "DEF",
-                "ratio": 0,
-                "than": "DEF"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "DEF",
+                  "ratio": 0,
+                  "than": "DEF"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4382,7 +4706,10 @@
             {
               "key": "Effect_BR_Vargr_N_54",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4427,13 +4754,16 @@
             {
               "key": "Effect_BR_Vargr_N_55",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "SPD",
-                "ratio": 0,
-                "than": "SPD"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "SPD",
+                  "ratio": 0,
+                  "than": "SPD"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4494,16 +4824,19 @@
             {
               "key": "Effect_BR_Vargr_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4571,16 +4904,19 @@
             {
               "key": "Effect_BR_Vargr_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_41",
-                    "Effect_BR_Vargr_N_43"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4625,16 +4961,28 @@
             {
               "key": "Effect_BR_Vargr_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -4679,7 +5027,10 @@
             {
               "key": "Effect_BR_Vargr_N_51",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4724,13 +5075,16 @@
             {
               "key": "Effect_BR_Vargr_N_52",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "DEF",
-                "ratio": 0,
-                "than": "DEF"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "DEF",
+                  "ratio": 0,
+                  "than": "DEF"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4775,7 +5129,10 @@
             {
               "key": "Effect_BR_Vargr_N_54",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4820,13 +5177,16 @@
             {
               "key": "Effect_BR_Vargr_N_55",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "SPD",
-                "ratio": 0,
-                "than": "SPD"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "SPD",
+                  "ratio": 0,
+                  "than": "SPD"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4887,16 +5247,19 @@
             {
               "key": "Effect_BR_Vargr_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4964,16 +5327,19 @@
             {
               "key": "Effect_BR_Vargr_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_41",
-                    "Effect_BR_Vargr_N_43"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5018,16 +5384,28 @@
             {
               "key": "Effect_BR_Vargr_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -5072,7 +5450,10 @@
             {
               "key": "Effect_BR_Vargr_N_51",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5117,13 +5498,16 @@
             {
               "key": "Effect_BR_Vargr_N_52",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "DEF",
-                "ratio": 0,
-                "than": "DEF"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "DEF",
+                  "ratio": 0,
+                  "than": "DEF"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5168,7 +5552,10 @@
             {
               "key": "Effect_BR_Vargr_N_54",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5213,13 +5600,16 @@
             {
               "key": "Effect_BR_Vargr_N_55",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "SPD",
-                "ratio": 0,
-                "than": "SPD"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "SPD",
+                  "ratio": 0,
+                  "than": "SPD"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5280,16 +5670,19 @@
             {
               "key": "Effect_BR_Vargr_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5357,16 +5750,19 @@
             {
               "key": "Effect_BR_Vargr_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_41",
-                    "Effect_BR_Vargr_N_43"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5411,16 +5807,28 @@
             {
               "key": "Effect_BR_Vargr_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -5465,7 +5873,10 @@
             {
               "key": "Effect_BR_Vargr_N_51",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5510,13 +5921,16 @@
             {
               "key": "Effect_BR_Vargr_N_52",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "DEF",
-                "ratio": 0,
-                "than": "DEF"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "DEF",
+                  "ratio": 0,
+                  "than": "DEF"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5561,7 +5975,10 @@
             {
               "key": "Effect_BR_Vargr_N_54",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5606,13 +6023,16 @@
             {
               "key": "Effect_BR_Vargr_N_55",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "SPD",
-                "ratio": 0,
-                "than": "SPD"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "SPD",
+                  "ratio": 0,
+                  "than": "SPD"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5673,16 +6093,19 @@
             {
               "key": "Effect_BR_Vargr_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5750,16 +6173,19 @@
             {
               "key": "Effect_BR_Vargr_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_41",
-                    "Effect_BR_Vargr_N_43"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5804,16 +6230,28 @@
             {
               "key": "Effect_BR_Vargr_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -5858,7 +6296,10 @@
             {
               "key": "Effect_BR_Vargr_N_51",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5903,13 +6344,16 @@
             {
               "key": "Effect_BR_Vargr_N_52",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "DEF",
-                "ratio": 0,
-                "than": "DEF"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "DEF",
+                  "ratio": 0,
+                  "than": "DEF"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5954,7 +6398,10 @@
             {
               "key": "Effect_BR_Vargr_N_54",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5999,13 +6446,16 @@
             {
               "key": "Effect_BR_Vargr_N_55",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "SPD",
-                "ratio": 0,
-                "than": "SPD"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "SPD",
+                  "ratio": 0,
+                  "than": "SPD"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6066,16 +6516,19 @@
             {
               "key": "Effect_BR_Vargr_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6143,16 +6596,19 @@
             {
               "key": "Effect_BR_Vargr_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_41",
-                    "Effect_BR_Vargr_N_43"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6197,16 +6653,28 @@
             {
               "key": "Effect_BR_Vargr_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -6251,7 +6719,10 @@
             {
               "key": "Effect_BR_Vargr_N_51",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6296,13 +6767,16 @@
             {
               "key": "Effect_BR_Vargr_N_52",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "DEF",
-                "ratio": 0,
-                "than": "DEF"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "DEF",
+                  "ratio": 0,
+                  "than": "DEF"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6347,7 +6821,10 @@
             {
               "key": "Effect_BR_Vargr_N_54",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6392,13 +6869,16 @@
             {
               "key": "Effect_BR_Vargr_N_55",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "SPD",
-                "ratio": 0,
-                "than": "SPD"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "SPD",
+                  "ratio": 0,
+                  "than": "SPD"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6459,16 +6939,19 @@
             {
               "key": "Effect_BR_Vargr_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6536,16 +7019,19 @@
             {
               "key": "Effect_BR_Vargr_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_41",
-                    "Effect_BR_Vargr_N_43"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6590,16 +7076,28 @@
             {
               "key": "Effect_BR_Vargr_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -6644,7 +7142,10 @@
             {
               "key": "Effect_BR_Vargr_N_51",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6689,13 +7190,16 @@
             {
               "key": "Effect_BR_Vargr_N_52",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "DEF",
-                "ratio": 0,
-                "than": "DEF"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "DEF",
+                  "ratio": 0,
+                  "than": "DEF"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6740,7 +7244,10 @@
             {
               "key": "Effect_BR_Vargr_N_54",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6785,13 +7292,16 @@
             {
               "key": "Effect_BR_Vargr_N_55",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "SPD",
-                "ratio": 0,
-                "than": "SPD"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "SPD",
+                  "ratio": 0,
+                  "than": "SPD"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6852,16 +7362,19 @@
             {
               "key": "Effect_BR_Vargr_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6929,16 +7442,19 @@
             {
               "key": "Effect_BR_Vargr_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_41",
-                    "Effect_BR_Vargr_N_43"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6983,16 +7499,28 @@
             {
               "key": "Effect_BR_Vargr_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -7037,7 +7565,10 @@
             {
               "key": "Effect_BR_Vargr_N_51",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7082,13 +7613,16 @@
             {
               "key": "Effect_BR_Vargr_N_52",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "DEF",
-                "ratio": 0,
-                "than": "DEF"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "DEF",
+                  "ratio": 0,
+                  "than": "DEF"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7133,7 +7667,10 @@
             {
               "key": "Effect_BR_Vargr_N_54",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7178,13 +7715,16 @@
             {
               "key": "Effect_BR_Vargr_N_55",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "SPD",
-                "ratio": 0,
-                "than": "SPD"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "SPD",
+                  "ratio": 0,
+                  "than": "SPD"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7245,16 +7785,19 @@
             {
               "key": "Effect_BR_Vargr_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7322,16 +7865,19 @@
             {
               "key": "Effect_BR_Vargr_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_41",
-                    "Effect_BR_Vargr_N_43"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7376,16 +7922,28 @@
             {
               "key": "Effect_BR_Vargr_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -7430,7 +7988,10 @@
             {
               "key": "Effect_BR_Vargr_N_51",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7475,13 +8036,16 @@
             {
               "key": "Effect_BR_Vargr_N_52",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "DEF",
-                "ratio": 0,
-                "than": "DEF"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "DEF",
+                  "ratio": 0,
+                  "than": "DEF"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7526,7 +8090,10 @@
             {
               "key": "Effect_BR_Vargr_N_54",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7571,13 +8138,16 @@
             {
               "key": "Effect_BR_Vargr_N_55",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "SPD",
-                "ratio": 0,
-                "than": "SPD"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "SPD",
+                  "ratio": 0,
+                  "than": "SPD"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7638,16 +8208,19 @@
             {
               "key": "Effect_BR_Vargr_N_2",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7715,16 +8288,19 @@
             {
               "key": "Effect_BR_Vargr_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_41",
-                    "Effect_BR_Vargr_N_43"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7769,16 +8345,28 @@
             {
               "key": "Effect_BR_Vargr_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Vargr_N_4",
-                    "Effect_BR_Vargr_N_42"
-                  ],
-                  "attr": 0
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_4",
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Vargr_N_41",
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -7823,7 +8411,10 @@
             {
               "key": "Effect_BR_Vargr_N_51",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7868,13 +8459,16 @@
             {
               "key": "Effect_BR_Vargr_N_52",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "DEF",
-                "ratio": 0,
-                "than": "DEF"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "DEF",
+                  "ratio": 0,
+                  "than": "DEF"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7919,7 +8513,10 @@
             {
               "key": "Effect_BR_Vargr_N_54",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7964,13 +8561,16 @@
             {
               "key": "Effect_BR_Vargr_N_55",
               "on": "attack_success",
-              "if": {
-                "test": "lower",
-                "target": "target",
-                "operand": "SPD",
-                "ratio": 0,
-                "than": "SPD"
-              },
+              "if": [
+                {
+                  "test": "lower",
+                  "target": "target",
+                  "operand": "SPD",
+                  "ratio": 0,
+                  "than": "SPD"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8167,7 +8767,10 @@
             {
               "key": "Effect_BR_Vargr_N_3",
               "on": "wave",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8256,7 +8859,10 @@
               "on": {
                 "use_skill": 2
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8323,15 +8929,18 @@
             {
               "key": "Effect_BR_Vargr_N_32",
               "on": "round",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    38
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      38
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8373,16 +8982,27 @@
             {
               "key": "Effect_BR_Vargr_N_33",
               "on": "damaged",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "UNFILLED",
-                  "select": [
-                    38
-                  ],
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      38
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      87
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -8426,25 +9046,28 @@
             {
               "key": "Effect_BR_Vargr_N_34",
               "on": "round",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_LunchboxT4_N_1",
-                    "Effect_BUFF_LunchboxT4_N_2",
-                    "Effect_BUFF_LunchboxT4_N_3",
-                    "Effect_BUFF_LunchboxT4_N_4",
-                    "Effect_BUFF_LunchboxT4_N_5",
-                    "Effect_BUFF_LunchboxT4_N_6",
-                    "Effect_BUFF_LunchboxT4_N_7",
-                    "Effect_BUFF_LunchboxT4_N_8",
-                    "Effect_BUFF_LunchboxT4_N_9",
-                    "Effect_BUFF_LunchboxT4_N_10",
-                    "Effect_BUFF_LunchboxT4_N_11"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_LunchboxT4_N_1",
+                      "Effect_BUFF_LunchboxT4_N_2",
+                      "Effect_BUFF_LunchboxT4_N_3",
+                      "Effect_BUFF_LunchboxT4_N_4",
+                      "Effect_BUFF_LunchboxT4_N_5",
+                      "Effect_BUFF_LunchboxT4_N_6",
+                      "Effect_BUFF_LunchboxT4_N_7",
+                      "Effect_BUFF_LunchboxT4_N_8",
+                      "Effect_BUFF_LunchboxT4_N_9",
+                      "Effect_BUFF_LunchboxT4_N_10",
+                      "Effect_BUFF_LunchboxT4_N_11"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8675,11 +9298,23 @@
             {
               "key": "Effect_BR_Vargr_N_4",
               "on": "round",
-              "if": {
-                "round": {
-                  "operator": "odd"
+              "if": [
+                {
+                  "round": {
+                    "operator": "odd"
+                  }
+                },
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Vargr_N_42"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -8767,11 +9402,23 @@
             {
               "key": "Effect_BR_Vargr_N_41",
               "on": "round",
-              "if": {
-                "round": {
-                  "operator": "even"
+              "if": [
+                {
+                  "round": {
+                    "operator": "even"
+                  }
+                },
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_BR_Vargr_N_43"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -8813,7 +9460,10 @@
             {
               "key": "Effect_BR_Vargr_N_42",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8858,7 +9508,10 @@
             {
               "key": "Effect_BR_Vargr_N_43",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -9028,7 +9681,10 @@
             {
               "key": "Effect_BR_Vargr_N_5",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1

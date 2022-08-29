@@ -35,7 +35,10 @@
             {
               "key": "Effect_BR_Bheur_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -137,7 +140,10 @@
             {
               "key": "Effect_BR_Bheur_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -239,7 +245,10 @@
             {
               "key": "Effect_BR_Bheur_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -341,7 +350,10 @@
             {
               "key": "Effect_BR_Bheur_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -443,7 +455,10 @@
             {
               "key": "Effect_BR_Bheur_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -545,7 +560,10 @@
             {
               "key": "Effect_BR_Bheur_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -647,7 +665,10 @@
             {
               "key": "Effect_BR_Bheur_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -749,7 +770,10 @@
             {
               "key": "Effect_BR_Bheur_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -851,7 +875,10 @@
             {
               "key": "Effect_BR_Bheur_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -953,7 +980,10 @@
             {
               "key": "Effect_BR_Bheur_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1133,7 +1163,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1272,7 +1305,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1384,7 +1420,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1705,12 +1744,17 @@
             {
               "key": "Effect_BR_Bheur_N_3",
               "on": "round",
-              "if": {
-                "hp<=": {
-                  "target": "target",
-                  "value": "90%"
-                }
-              },
+              "if": [
+                {
+                  "hp<=": {
+                    "target": "target",
+                    "value": [
+                      "90%"
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1837,12 +1881,17 @@
             {
               "key": "Effect_BR_Bheur_N_3",
               "on": "round",
-              "if": {
-                "hp<=": {
-                  "target": "target",
-                  "value": "90%"
-                }
-              },
+              "if": [
+                {
+                  "hp<=": {
+                    "target": "target",
+                    "value": [
+                      "90%"
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1

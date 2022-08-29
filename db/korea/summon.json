@@ -61,9 +61,14 @@
             {
               "key": "Effect_SU_TestSInstall_N_1",
               "on": {
-                "hp<=": "100%"
+                "hp<=": [
+                  "100%"
+                ]
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -133,9 +138,14 @@
             {
               "key": "Effect_SU_TestSInstall_N_2",
               "on": {
-                "hp<=": "100%"
+                "hp<=": [
+                  "100%"
+                ]
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -244,9 +254,14 @@
             {
               "key": "Effect_SU_TestSEnv_N_1",
               "on": {
-                "hp<=": "100%"
+                "hp<=": [
+                  "100%"
+                ]
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -320,9 +335,14 @@
             {
               "key": "Effect_SU_TestSEnv_N_2",
               "on": {
-                "hp<=": "100%"
+                "hp<=": [
+                  "100%"
+                ]
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -431,7 +451,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1,
@@ -523,7 +546,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1,
@@ -613,7 +639,10 @@
             {
               "key": "Effect_SU_RabbitBarrier_N_3",
               "on": false,
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1,
@@ -718,7 +747,10 @@
             {
               "key": "Effect_SU_AMG11_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -785,7 +817,10 @@
             {
               "key": "Effect_SU_AMG11_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -891,7 +926,10 @@
             {
               "key": "Effect_SU_AMG11_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -958,7 +996,10 @@
             {
               "key": "Effect_SU_AMG11_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1066,7 +1107,10 @@
               "on": {
                 "_comment": "IF_CHAR_INGRID"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1155,15 +1199,18 @@
             {
               "key": "Effect_SU_C4Bomb_N_2",
               "on": "self_dead",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Phantom_N_2"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Phantom_N_2"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1274,7 +1321,10 @@
               "on": {
                 "_comment": "IF_CHAR_INGRID"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1364,7 +1414,10 @@
               "on": {
                 "_comment": "IF_CHAR_INGRID"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1491,7 +1544,10 @@
             {
               "key": "Effect_SU_RaiderBomb_N_1",
               "on": "self_dead",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1561,7 +1617,10 @@
             {
               "key": "Effect_SU_RaiderBomb_N_2",
               "on": "self_dead",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1672,7 +1731,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1,
@@ -1745,7 +1807,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1,
@@ -1816,7 +1881,10 @@
             {
               "key": "Effect_SU_TrenchBomb_N_3",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1,
@@ -1923,7 +1991,10 @@
             {
               "key": "Effect_SU_HoloTiger_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1993,7 +2064,10 @@
             {
               "key": "Effect_SU_HoloTiger_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2063,7 +2137,10 @@
             {
               "key": "Effect_SU_HoloTiger_N_3",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1,
@@ -2170,7 +2247,10 @@
             {
               "key": "Effect_SU_HoloTiger_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2240,7 +2320,10 @@
             {
               "key": "Effect_SU_HoloTiger_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2310,7 +2393,10 @@
             {
               "key": "Effect_SU_HoloTiger_N_3",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1,
@@ -2419,7 +2505,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2511,7 +2600,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2603,7 +2695,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2772,7 +2867,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2821,7 +2919,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2868,7 +2969,10 @@
             {
               "key": "Effect_SU_TestSAutoP_N_3",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2960,7 +3064,10 @@
             {
               "key": "Effect_SU_TestSAutoP_N_4",
               "on": "wave",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1

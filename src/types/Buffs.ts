@@ -13,7 +13,7 @@ export type BuffStatStatic = BuffEffect & {
 export interface BuffStatBuff {
 	key: string;
 	on: BuffTrigger;
-	if: BuffTrigger;
+	if: BuffTrigger[];
 
 	body: ACTOR_BODY_TYPE[];
 	class: ACTOR_CLASS[];

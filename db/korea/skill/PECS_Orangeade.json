@@ -35,7 +35,10 @@
             {
               "key": "Effect_PECS_Orangeade_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -115,7 +118,10 @@
             {
               "key": "Effect_PECS_Orangeade_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -195,7 +201,10 @@
             {
               "key": "Effect_PECS_Orangeade_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -275,7 +284,10 @@
             {
               "key": "Effect_PECS_Orangeade_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -355,7 +367,10 @@
             {
               "key": "Effect_PECS_Orangeade_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -435,7 +450,10 @@
             {
               "key": "Effect_PECS_Orangeade_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -515,7 +533,10 @@
             {
               "key": "Effect_PECS_Orangeade_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -595,7 +616,10 @@
             {
               "key": "Effect_PECS_Orangeade_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -675,7 +699,10 @@
             {
               "key": "Effect_PECS_Orangeade_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -755,7 +782,10 @@
             {
               "key": "Effect_PECS_Orangeade_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -901,7 +931,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -953,17 +986,20 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": {
-                "on": {
-                  "target": "target",
-                  "select": [
-                    "Effect_PECS_Orangeade_N_31"
-                  ],
-                  "stack": 0,
-                  "func": "UNFILLED",
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_PECS_Orangeade_N_31"
+                    ],
+                    "stack": 0,
+                    "func": "UNFILLED",
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1092,22 +1128,25 @@
             {
               "key": "Effect_PECS_Orangeade_N_3",
               "on": "wave",
-              "if": {
-                "unitCount": {
-                  "filter": [
-                    "squad",
-                    "air"
-                  ],
-                  "type": [
-                    2
-                  ],
-                  "count": [
-                    0,
-                    1,
-                    2
-                  ]
-                }
-              },
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": [
+                      "squad",
+                      "air"
+                    ],
+                    "type": [
+                      2
+                    ],
+                    "count": [
+                      0,
+                      1,
+                      2
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1174,7 +1213,10 @@
             {
               "key": "Effect_PECS_Orangeade_N_31",
               "on": "wave",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1309,22 +1351,25 @@
             {
               "key": "Effect_PECS_Orangeade_N_4",
               "on": "wave",
-              "if": {
-                "unitCount": {
-                  "filter": [
-                    "squad",
-                    "heavy"
-                  ],
-                  "type": [
-                    1
-                  ],
-                  "count": [
-                    0,
-                    1,
-                    2
-                  ]
-                }
-              },
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": [
+                      "squad",
+                      "heavy"
+                    ],
+                    "type": [
+                      1
+                    ],
+                    "count": [
+                      0,
+                      1,
+                      2
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1471,22 +1516,25 @@
             {
               "key": "Effect_PECS_Orangeade_N_5",
               "on": "wave",
-              "if": {
-                "unitCount": {
-                  "filter": [
-                    "squad",
-                    "light"
-                  ],
-                  "type": [
-                    0
-                  ],
-                  "count": [
-                    0,
-                    1,
-                    2
-                  ]
-                }
-              },
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": [
+                      "squad",
+                      "light"
+                    ],
+                    "type": [
+                      0
+                    ],
+                    "count": [
+                      0,
+                      1,
+                      2
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1569,22 +1617,25 @@
             {
               "key": "Effect_PECS_Orangeade_N_51",
               "on": "wave",
-              "if": {
-                "unitCount": {
-                  "filter": [
-                    "squad",
-                    "light"
-                  ],
-                  "type": [
-                    0
-                  ],
-                  "count": [
-                    0,
-                    1,
-                    2
-                  ]
-                }
-              },
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": [
+                      "squad",
+                      "light"
+                    ],
+                    "type": [
+                      0
+                    ],
+                    "count": [
+                      0,
+                      1,
+                      2
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1

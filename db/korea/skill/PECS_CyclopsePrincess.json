@@ -35,9 +35,14 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_1",
               "on": "attack_success",
-              "if": {
-                "hp>=": "40%"
-              },
+              "if": [
+                {
+                  "hp>=": [
+                    "40%"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -175,7 +180,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -220,15 +228,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -273,15 +284,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_31"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_31"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -326,15 +340,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_14",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -379,7 +396,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_15",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -427,15 +447,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_16",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -483,15 +506,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_17",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_31"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_31"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -539,15 +565,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_18",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -595,18 +624,21 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_19",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3",
-                    "Effect_PECS_CyclopsePrincess_N_31",
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "stack": 2,
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3",
+                      "Effect_PECS_CyclopsePrincess_N_31",
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -709,9 +741,14 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_1",
               "on": "attack_success",
-              "if": {
-                "hp>=": "40%"
-              },
+              "if": [
+                {
+                  "hp>=": [
+                    "40%"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -849,7 +886,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -894,15 +934,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -947,15 +990,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_31"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_31"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1000,15 +1046,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_14",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1053,7 +1102,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_15",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1101,15 +1153,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_16",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1157,15 +1212,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_17",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_31"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_31"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1213,15 +1271,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_18",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1269,18 +1330,21 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_19",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3",
-                    "Effect_PECS_CyclopsePrincess_N_31",
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "stack": 2,
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3",
+                      "Effect_PECS_CyclopsePrincess_N_31",
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1383,9 +1447,14 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_1",
               "on": "attack_success",
-              "if": {
-                "hp>=": "40%"
-              },
+              "if": [
+                {
+                  "hp>=": [
+                    "40%"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1523,7 +1592,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1568,15 +1640,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1621,15 +1696,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_31"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_31"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1674,15 +1752,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_14",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1727,7 +1808,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_15",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1775,15 +1859,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_16",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1831,15 +1918,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_17",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_31"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_31"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1887,15 +1977,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_18",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1943,18 +2036,21 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_19",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3",
-                    "Effect_PECS_CyclopsePrincess_N_31",
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "stack": 2,
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3",
+                      "Effect_PECS_CyclopsePrincess_N_31",
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2057,9 +2153,14 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_1",
               "on": "attack_success",
-              "if": {
-                "hp>=": "40%"
-              },
+              "if": [
+                {
+                  "hp>=": [
+                    "40%"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2197,7 +2298,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2242,15 +2346,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2295,15 +2402,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_31"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_31"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2348,15 +2458,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_14",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2401,7 +2514,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_15",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2449,15 +2565,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_16",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2505,15 +2624,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_17",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_31"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_31"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2561,15 +2683,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_18",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2617,18 +2742,21 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_19",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3",
-                    "Effect_PECS_CyclopsePrincess_N_31",
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "stack": 2,
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3",
+                      "Effect_PECS_CyclopsePrincess_N_31",
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2731,9 +2859,14 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_1",
               "on": "attack_success",
-              "if": {
-                "hp>=": "40%"
-              },
+              "if": [
+                {
+                  "hp>=": [
+                    "40%"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2871,7 +3004,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2916,15 +3052,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2969,15 +3108,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_31"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_31"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3022,15 +3164,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_14",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3075,7 +3220,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_15",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3123,15 +3271,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_16",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3179,15 +3330,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_17",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_31"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_31"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3235,15 +3389,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_18",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3291,18 +3448,21 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_19",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3",
-                    "Effect_PECS_CyclopsePrincess_N_31",
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "stack": 2,
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3",
+                      "Effect_PECS_CyclopsePrincess_N_31",
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3405,9 +3565,14 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_1",
               "on": "attack_success",
-              "if": {
-                "hp>=": "40%"
-              },
+              "if": [
+                {
+                  "hp>=": [
+                    "40%"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3545,7 +3710,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3590,15 +3758,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3643,15 +3814,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_31"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_31"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3696,15 +3870,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_14",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3749,7 +3926,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_15",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3797,15 +3977,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_16",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3853,15 +4036,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_17",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_31"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_31"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3909,15 +4095,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_18",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3965,18 +4154,21 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_19",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3",
-                    "Effect_PECS_CyclopsePrincess_N_31",
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "stack": 2,
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3",
+                      "Effect_PECS_CyclopsePrincess_N_31",
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4079,9 +4271,14 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_1",
               "on": "attack_success",
-              "if": {
-                "hp>=": "40%"
-              },
+              "if": [
+                {
+                  "hp>=": [
+                    "40%"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4219,7 +4416,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4264,15 +4464,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4317,15 +4520,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_31"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_31"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4370,15 +4576,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_14",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4423,7 +4632,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_15",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4471,15 +4683,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_16",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4527,15 +4742,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_17",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_31"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_31"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4583,15 +4801,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_18",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4639,18 +4860,21 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_19",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3",
-                    "Effect_PECS_CyclopsePrincess_N_31",
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "stack": 2,
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3",
+                      "Effect_PECS_CyclopsePrincess_N_31",
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4753,9 +4977,14 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_1",
               "on": "attack_success",
-              "if": {
-                "hp>=": "40%"
-              },
+              "if": [
+                {
+                  "hp>=": [
+                    "40%"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4893,7 +5122,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4938,15 +5170,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4991,15 +5226,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_31"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_31"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5044,15 +5282,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_14",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5097,7 +5338,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_15",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5145,15 +5389,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_16",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5201,15 +5448,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_17",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_31"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_31"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5257,15 +5507,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_18",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5313,18 +5566,21 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_19",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3",
-                    "Effect_PECS_CyclopsePrincess_N_31",
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "stack": 2,
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3",
+                      "Effect_PECS_CyclopsePrincess_N_31",
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5427,9 +5683,14 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_1",
               "on": "attack_success",
-              "if": {
-                "hp>=": "40%"
-              },
+              "if": [
+                {
+                  "hp>=": [
+                    "40%"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5567,7 +5828,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5612,15 +5876,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5665,15 +5932,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_31"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_31"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5718,15 +5988,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_14",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5771,7 +6044,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_15",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5819,15 +6095,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_16",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5875,15 +6154,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_17",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_31"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_31"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5931,15 +6213,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_18",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5987,18 +6272,21 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_19",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3",
-                    "Effect_PECS_CyclopsePrincess_N_31",
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "stack": 2,
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3",
+                      "Effect_PECS_CyclopsePrincess_N_31",
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6101,9 +6389,14 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_1",
               "on": "attack_success",
-              "if": {
-                "hp>=": "40%"
-              },
+              "if": [
+                {
+                  "hp>=": [
+                    "40%"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6241,7 +6534,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6286,15 +6582,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6339,15 +6638,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_13",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_31"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_31"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6392,15 +6694,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_14",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6445,7 +6750,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_15",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6493,15 +6801,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_16",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6549,15 +6860,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_17",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_31"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_31"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6605,15 +6919,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_18",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6661,18 +6978,21 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_19",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3",
-                    "Effect_PECS_CyclopsePrincess_N_31",
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "stack": 2,
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3",
+                      "Effect_PECS_CyclopsePrincess_N_31",
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7007,7 +7327,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7075,15 +7398,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7128,15 +7454,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_31"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_31"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7181,15 +7510,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_23",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7234,18 +7566,21 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_19",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3",
-                    "Effect_PECS_CyclopsePrincess_N_31",
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "stack": 2,
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3",
+                      "Effect_PECS_CyclopsePrincess_N_31",
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7348,7 +7683,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7416,15 +7754,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7469,15 +7810,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_31"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_31"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7522,15 +7866,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_23",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7575,18 +7922,21 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_19",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3",
-                    "Effect_PECS_CyclopsePrincess_N_31",
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "stack": 2,
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3",
+                      "Effect_PECS_CyclopsePrincess_N_31",
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7689,7 +8039,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7757,15 +8110,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7810,15 +8166,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_31"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_31"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7863,15 +8222,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_23",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7916,18 +8278,21 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_19",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3",
-                    "Effect_PECS_CyclopsePrincess_N_31",
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "stack": 2,
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3",
+                      "Effect_PECS_CyclopsePrincess_N_31",
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8030,7 +8395,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8098,15 +8466,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8151,15 +8522,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_31"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_31"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8204,15 +8578,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_23",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8257,18 +8634,21 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_19",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3",
-                    "Effect_PECS_CyclopsePrincess_N_31",
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "stack": 2,
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3",
+                      "Effect_PECS_CyclopsePrincess_N_31",
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8371,7 +8751,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8439,15 +8822,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8492,15 +8878,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_31"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_31"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8545,15 +8934,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_23",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8598,18 +8990,21 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_19",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3",
-                    "Effect_PECS_CyclopsePrincess_N_31",
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "stack": 2,
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3",
+                      "Effect_PECS_CyclopsePrincess_N_31",
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8712,7 +9107,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8780,15 +9178,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8833,15 +9234,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_31"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_31"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8886,15 +9290,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_23",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -8939,18 +9346,21 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_19",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3",
-                    "Effect_PECS_CyclopsePrincess_N_31",
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "stack": 2,
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3",
+                      "Effect_PECS_CyclopsePrincess_N_31",
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -9053,7 +9463,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -9121,15 +9534,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -9174,15 +9590,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_31"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_31"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -9227,15 +9646,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_23",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -9280,18 +9702,21 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_19",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3",
-                    "Effect_PECS_CyclopsePrincess_N_31",
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "stack": 2,
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3",
+                      "Effect_PECS_CyclopsePrincess_N_31",
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -9394,7 +9819,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -9462,15 +9890,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -9515,15 +9946,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_31"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_31"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -9568,15 +10002,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_23",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -9621,18 +10058,21 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_19",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3",
-                    "Effect_PECS_CyclopsePrincess_N_31",
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "stack": 2,
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3",
+                      "Effect_PECS_CyclopsePrincess_N_31",
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -9735,7 +10175,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -9803,15 +10246,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -9856,15 +10302,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_31"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_31"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -9909,15 +10358,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_23",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -9962,18 +10414,21 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_19",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3",
-                    "Effect_PECS_CyclopsePrincess_N_31",
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "stack": 2,
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3",
+                      "Effect_PECS_CyclopsePrincess_N_31",
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -10076,7 +10531,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -10144,15 +10602,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -10197,15 +10658,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_31"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_31"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -10250,15 +10714,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_23",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -10303,18 +10770,21 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_19",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3",
-                    "Effect_PECS_CyclopsePrincess_N_31",
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "stack": 2,
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3",
+                      "Effect_PECS_CyclopsePrincess_N_31",
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -10553,7 +11023,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_3",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -10641,7 +11114,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_31",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -10683,7 +11159,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_32",
               "on": "enemy_killed",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -10726,15 +11205,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_33",
               "on": "round",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    77
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      77
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -10776,16 +11258,19 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_34",
               "on": "round",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    77,
-                    76
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      77,
+                      76
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -10965,7 +11450,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_4",
               "on": "revive",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -11079,7 +11567,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_41",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -11146,7 +11637,10 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_42",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -11213,15 +11707,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_43",
               "on": "round",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -11288,16 +11785,19 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_44",
               "on": "round",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_LRL_N_4"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_4"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -11386,15 +11886,18 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_45",
               "on": "round",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    77
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      77
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -11436,16 +11939,19 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_46",
               "on": "round",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    77,
-                    76
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      77,
+                      76
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -11721,18 +12227,21 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_5",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_3",
-                    "Effect_PECS_CyclopsePrincess_N_31",
-                    "Effect_PECS_CyclopsePrincess_N_32"
-                  ],
-                  "stack": 2,
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_3",
+                      "Effect_PECS_CyclopsePrincess_N_31",
+                      "Effect_PECS_CyclopsePrincess_N_32"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -11842,16 +12351,19 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_51",
               "on": "round",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_21"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_21"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -11896,18 +12408,30 @@
             {
               "key": "Effect_PECS_CyclopsePrincess_N_52",
               "on": "round",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "select": [
-                    "Effect_PECS_CyclopsePrincess_N_21",
-                    "Effect_PECS_CyclopsePrincess_N_22",
-                    "Effect_PECS_CyclopsePrincess_N_23"
-                  ],
-                  "stack": 1,
-                  "attr": 6
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_PECS_CyclopsePrincess_N_21",
+                      "Effect_PECS_CyclopsePrincess_N_22",
+                      "Effect_PECS_CyclopsePrincess_N_23"
+                    ],
+                    "stack": 1,
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_LRL_N_2"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1

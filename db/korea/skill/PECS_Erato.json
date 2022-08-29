@@ -37,7 +37,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -156,7 +159,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -201,7 +207,10 @@
             {
               "key": "Effect_PECS_Erato_N_12",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -246,7 +255,10 @@
             {
               "key": "Effect_PECS_Erato_N_13",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -436,7 +448,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -511,17 +526,22 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": {
-                "unitCount": {
-                  "filter": "squad",
-                  "type": [
-                    0,
-                    2,
-                    1
-                  ],
-                  "count": 2
-                }
-              },
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": "squad",
+                    "type": [
+                      0,
+                      2,
+                      1
+                    ],
+                    "count": [
+                      2
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -572,17 +592,22 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": {
-                "unitCount": {
-                  "filter": "squad",
-                  "type": [
-                    0,
-                    2,
-                    1
-                  ],
-                  "count": 3
-                }
-              },
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": "squad",
+                    "type": [
+                      0,
+                      2,
+                      1
+                    ],
+                    "count": [
+                      3
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -633,17 +658,22 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": {
-                "unitCount": {
-                  "filter": "squad",
-                  "type": [
-                    0,
-                    2,
-                    1
-                  ],
-                  "count": 4
-                }
-              },
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": "squad",
+                    "type": [
+                      0,
+                      2,
+                      1
+                    ],
+                    "count": [
+                      4
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -694,17 +724,22 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": {
-                "unitCount": {
-                  "filter": "squad",
-                  "type": [
-                    0,
-                    2,
-                    1
-                  ],
-                  "count": 5
-                }
-              },
+              "if": [
+                {
+                  "unitCount": {
+                    "filter": "squad",
+                    "type": [
+                      0,
+                      2,
+                      1
+                    ],
+                    "count": [
+                      5
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -881,13 +916,16 @@
             {
               "key": "Effect_PECS_Erato_N_3",
               "on": "wave",
-              "if": {
-                "test": "higher",
-                "target": "target",
-                "operand": "SPD",
-                "ratio": 0,
-                "than": "SPD"
-              },
+              "if": [
+                {
+                  "test": "higher",
+                  "target": "target",
+                  "operand": "SPD",
+                  "ratio": 0,
+                  "than": "SPD"
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -992,7 +1030,10 @@
             {
               "key": "Effect_PECS_Erato_N_31",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1032,7 +1073,10 @@
             {
               "key": "Effect_PECS_Erato_N_32",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1072,7 +1116,10 @@
             {
               "key": "Effect_PECS_Erato_N_33",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1252,7 +1299,10 @@
             {
               "key": "Effect_PECS_Erato_N_4",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1320,15 +1370,18 @@
             {
               "key": "Effect_PECS_Erato_N_41",
               "on": "enemy_dead",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_Erato_N_44"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_Erato_N_44"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1370,16 +1423,19 @@
             {
               "key": "Effect_PECS_Erato_N_42",
               "on": "round",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "func": "UNFILLED",
-                  "select": [
-                    "Effect_PECS_Erato_N_44"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_PECS_Erato_N_44"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1424,11 +1480,14 @@
             {
               "key": "Effect_PECS_Erato_N_43",
               "on": "wave",
-              "if": {
-                "in_squad": [
-                  "Char_PECS_Muse_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_PECS_Muse_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1473,7 +1532,10 @@
               "on": {
                 "use_skill": 2
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1516,7 +1578,10 @@
             {
               "key": "Effect_PECS_Erato_N_34",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1596,15 +1661,18 @@
             {
               "key": "Effect_PECS_Erato_N_45",
               "on": "round",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    115
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      115
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1648,15 +1716,18 @@
             {
               "key": "Effect_PECS_Erato_N_46",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    115
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      115
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1887,16 +1958,24 @@
             {
               "key": "Effect_PECS_Erato_N_5",
               "on": "round",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "select": [
-                    "Effect_PECS_Erato_N_11"
-                  ],
-                  "stack": 1,
-                  "attr": 0
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_PECS_Erato_N_11"
+                    ],
+                    "stack": 1,
+                    "attr": 0
+                  }
+                },
+                {
+                  "pos": {
+                    "target": "target",
+                    "position": 0
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -2004,16 +2083,24 @@
             {
               "key": "Effect_PECS_Erato_N_51",
               "on": "round",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "select": [
-                    "Effect_PECS_Erato_N_11"
-                  ],
-                  "stack": 1,
-                  "attr": 0
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_PECS_Erato_N_11"
+                    ],
+                    "stack": 1,
+                    "attr": 0
+                  }
+                },
+                {
+                  "pos": {
+                    "target": "target",
+                    "position": 1
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -2058,16 +2145,24 @@
             {
               "key": "Effect_PECS_Erato_N_52",
               "on": "round",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "select": [
-                    "Effect_PECS_Erato_N_11"
-                  ],
-                  "stack": 1,
-                  "attr": 0
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_PECS_Erato_N_11"
+                    ],
+                    "stack": 1,
+                    "attr": 0
+                  }
+                },
+                {
+                  "pos": {
+                    "target": "target",
+                    "position": 2
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -2112,16 +2207,24 @@
             {
               "key": "Effect_PECS_Erato_N_53",
               "on": "round",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "select": [
-                    "Effect_PECS_Erato_N_11"
-                  ],
-                  "stack": 2,
-                  "attr": 0
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_PECS_Erato_N_11"
+                    ],
+                    "stack": 2,
+                    "attr": 0
+                  }
+                },
+                {
+                  "pos": {
+                    "target": "target",
+                    "position": 0
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -2166,16 +2269,24 @@
             {
               "key": "Effect_PECS_Erato_N_54",
               "on": "round",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "select": [
-                    "Effect_PECS_Erato_N_11"
-                  ],
-                  "stack": 2,
-                  "attr": 0
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_PECS_Erato_N_11"
+                    ],
+                    "stack": 2,
+                    "attr": 0
+                  }
+                },
+                {
+                  "pos": {
+                    "target": "target",
+                    "position": 1
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -2220,16 +2331,24 @@
             {
               "key": "Effect_PECS_Erato_N_55",
               "on": "round",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "select": [
-                    "Effect_PECS_Erato_N_11"
-                  ],
-                  "stack": 2,
-                  "attr": 0
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_PECS_Erato_N_11"
+                    ],
+                    "stack": 2,
+                    "attr": 0
+                  }
+                },
+                {
+                  "pos": {
+                    "target": "target",
+                    "position": 2
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -2274,16 +2393,24 @@
             {
               "key": "Effect_PECS_Erato_N_56",
               "on": "round",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "select": [
-                    "Effect_PECS_Erato_N_11"
-                  ],
-                  "stack": 3,
-                  "attr": 0
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_PECS_Erato_N_11"
+                    ],
+                    "stack": 3,
+                    "attr": 0
+                  }
+                },
+                {
+                  "pos": {
+                    "target": "target",
+                    "position": 2
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -2325,16 +2452,24 @@
             {
               "key": "Effect_PECS_Erato_N_57",
               "on": "round",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "select": [
-                    "Effect_PECS_Erato_N_11"
-                  ],
-                  "stack": 3,
-                  "attr": 0
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_PECS_Erato_N_11"
+                    ],
+                    "stack": 3,
+                    "attr": 0
+                  }
+                },
+                {
+                  "pos": {
+                    "target": "target",
+                    "position": 1
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -2376,16 +2511,24 @@
             {
               "key": "Effect_PECS_Erato_N_58",
               "on": "round",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "select": [
-                    "Effect_PECS_Erato_N_11"
-                  ],
-                  "stack": 3,
-                  "attr": 0
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_PECS_Erato_N_11"
+                    ],
+                    "stack": 3,
+                    "attr": 0
+                  }
+                },
+                {
+                  "pos": {
+                    "target": "target",
+                    "position": 0
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1

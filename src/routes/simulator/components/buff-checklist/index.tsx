@@ -543,41 +543,43 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 						return <Locale plain k="BUFFTRIGGER_DAMAGED_SKILL" p={ [convertBuff(trigger.key)] } />;
 				}
 			} else if ("hp>=" in trigger) {
-				if (typeof trigger["hp>="] === "string")
-					return <Locale plain k="BUFFTRIGGER_HP_>=" p={ ["", trigger["hp>="]] } />;
+				if (Array.isArray(trigger["hp>="]))
+					return <Locale plain k="BUFFTRIGGER_HP_>=" p={ [trigger["hp>="].join("/")] } />;
 
 				const target = {
 					self: <Locale plain k="BUFFTARGET_SELF" />,
 					target: <Locale plain k="BUFFTARGET_TARGET" />,
 				}[trigger["hp>="].target];
-				return <Locale plain k="BUFFTRIGGER_HP_>=" p={ [target, trigger["hp>="].value] } />;
+				return <Locale plain k="BUFFTRIGGER_HP_>=_TARGET" p={ [target, trigger["hp>="].value.join("/")] } />;
 			} else if ("hp<=" in trigger) {
-				if (typeof trigger["hp<="] === "string")
-					return <Locale plain k="BUFFTRIGGER_HP_<=" p={ ["", trigger["hp<="]] } />;
+				if (Array.isArray(trigger["hp<="]))
+					return <Locale plain k="BUFFTRIGGER_HP_<=" p={ [trigger["hp<="].join("/")] } />;
 
 				const target = {
 					self: <Locale plain k="BUFFTARGET_SELF" />,
 					target: <Locale plain k="BUFFTARGET_TARGET" />,
 				}[trigger["hp<="].target];
-				return <Locale plain k="BUFFTRIGGER_HP_<=" p={ [target, trigger["hp<="].value] } />;
+				return <Locale plain k="BUFFTRIGGER_HP_<=_TARGET" p={ [target, trigger["hp<="].value.join("/")] } />;
 			} else if ("hp>" in trigger) {
-				if (typeof trigger["hp>"] === "string")
-					return <Locale plain k="BUFFTRIGGER_HP_>" p={ ["", trigger["hp>"]] } />;
+				if (Array.isArray(trigger["hp>"]))
+					return <Locale plain k="BUFFTRIGGER_HP_>" p={ [trigger["hp>"].join("/")] } />;
 
 				const target = {
 					self: <Locale plain k="BUFFTARGET_SELF" />,
 					target: <Locale plain k="BUFFTARGET_TARGET" />,
 				}[trigger["hp>"].target];
-				return <Locale plain k="BUFFTRIGGER_HP_>" p={ [target, trigger["hp>"].value] } />;
+				return <Locale plain k="BUFFTRIGGER_HP_>_TARGET" p={ [target, trigger["hp>"].value.join("/")] } />;
 			} else if ("hp<" in trigger) {
-				if (typeof trigger["hp<"] === "string")
-					return <Locale plain k="BUFFTRIGGER_HP_<" p={ ["", trigger["hp<"]] } />;
+				if (Array.isArray(trigger["hp<"]))
+					return <Locale plain k="BUFFTRIGGER_HP_<" p={ [trigger["hp<"].join("/")] } />;
 
 				const target = {
 					self: <Locale plain k="BUFFTARGET_SELF" />,
 					target: <Locale plain k="BUFFTARGET_TARGET" />,
 				}[trigger["hp<"].target];
-				return <Locale plain k="BUFFTRIGGER_HP_<" p={ [target, trigger["hp<"].value] } />;
+				return <Locale plain k="BUFFTRIGGER_HP_<_TARGET" p={ [target, trigger["hp<"].value.join("/")] } />;
+			} else if ("hpRange" in trigger) {
+				return <Locale plain k="BUFFTRIGGER_HP_RANGE" p={ [...trigger.hpRange] } />;
 			} else if ("in_squad" in trigger) {
 				if (typeof trigger.in_squad === "string")
 					return <Locale plain k="BUFFTRIGGER_IN_SQUAD" p={ [convertBuff(trigger.in_squad)] } />;
@@ -736,9 +738,9 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 
 				const typeCountParams = [
 					<>{ typeText }</>,
-					<>{ typeof count === "number" ? count : count.gap("/") }</>,
+					<>{ count.gap("/") }</>,
 				];
-				const countParams = [<>{ count }</>];
+				const countParams = [<>{ count.gap("/") }</>];
 
 				if (filters.includes("all")) {
 					if (filters.includes("bioroid"))
@@ -769,7 +771,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 				if (trigger.round.operator === "even" || trigger.round.operator === "odd")
 					return <Locale plain k={ `BUFFTRIGGER_ROUND_${trigger.round.operator.toUpperCase()}` } />;
 				else if (trigger.round.operator === "=" || trigger.round.operator === "<=" || trigger.round.operator === ">=")
-					return <Locale plain k={ `BUFFTRIGGER_ROUND_${trigger.round.operator}` } p={ [trigger.round.round] } />;
+					return <Locale plain k={ `BUFFTRIGGER_ROUND_${trigger.round.operator}` } p={ [trigger.round.round.join(", ")] } />;
 			} else if ("notInBattle" in trigger) {
 				return <Locale
 					plain
@@ -1304,7 +1306,12 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 	if ("buffs" in stat) { // 버프 형식의 수치
 		const target = getTargetText(stat.body, stat.class, stat.role, stat.target);
 		const on = getTriggerText(stat.on);
-		const apply = getTriggerText(stat.if);
+		const apply = stat.if
+			.map(e => getTriggerText(e))
+			.filter(e => e)
+			.gap(<span class="mx-1 opacity-75">
+				<Locale k="BUFFTRIGGER_AND" />
+			</span>);
 		commonCond = <li class="list-group-item list-group-item-warning p-1">
 			{ on
 				? <span class="badge bg-success ms-1 text-wrap">{ on }</span>
@@ -1331,7 +1338,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 				const force = [
 					stat.on === "round" || stat.on === "wave",
 					!buff.value.chance || buff.value.chance === "100%",
-					stat.if === false,
+					stat.if.every(e => e === false),
 				].every(x => x);
 				const key = `${props.idx}_${buffIdx}`;
 

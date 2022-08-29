@@ -66,7 +66,7 @@ export enum BUFFEFFECT_TRIGGER_TYPE {
 
 /** 계산된 발동 조건 */
 export type BuffTrigger = BuffTrigger_Unknown | BuffTrigger_Always | BuffTrigger_After | BuffTrigger_Damaged | BuffTrigger_AttackSuccess |
-	BuffTrigger_HPDown | BuffTrigger_HPUp | BuffTrigger_HPLess | BuffTrigger_HPMore | BuffTrigger_UnitIn | BuffTrigger_UnitDead |
+	BuffTrigger_HPDown | BuffTrigger_HPUp | BuffTrigger_HPLess | BuffTrigger_HPMore | BuffTrigger_HPRange | BuffTrigger_UnitIn | BuffTrigger_UnitDead |
 	BuffTrigger_Always | BuffTrigger_EveryWave | BuffTrigger_EveryRound | BuffTrigger_Attack | BuffTrigger_Attacked | BuffTrigger_Wait |
 	BuffTrigger_Move | BuffTrigger_Evade | BuffTrigger_WaveEnd | BuffTrigger_EnemyKilled | BuffTrigger_Position | BuffTrigger_Criticaled |
 	BuffTrigger_Revive | BuffTrigger_On | BuffTrigger_Target | BuffTrigger_UnitCount | BuffTrigger_Round | BuffTrigger_NotInBattle |
@@ -96,53 +96,57 @@ type BuffTrigger_AttackSuccess = "attack_success";
 type BuffTrigger_HPDown = BuffTrigger_HPDown_Self | BuffTrigger_HPDown_Target;
 interface BuffTrigger_HPDown_Self {
 	/** % 값 */
-	"hp<=": string;
+	"hp<=": string[];
 }
 interface BuffTrigger_HPDown_Target {
 	"hp<=": {
 		target: "target";
 		/** % 값 */
-		value: string;
+		value: string[];
 	};
 }
 
 type BuffTrigger_HPUp = BuffTrigger_HPUp_Self | BuffTrigger_HPUp_Target;
 interface BuffTrigger_HPUp_Self {
 	/** % 값 */
-	"hp>=": string;
+	"hp>=": string[];
 }
 interface BuffTrigger_HPUp_Target {
 	"hp>=": {
 		target: "target";
 		/** % 값 */
-		value: string;
+		value: string[];
 	};
 }
 
 type BuffTrigger_HPLess = BuffTrigger_HPLess_Self | BuffTrigger_HPLess_Target;
 interface BuffTrigger_HPLess_Self {
 	/** % 값 */
-	"hp<": string;
+	"hp<": string[];
 }
 interface BuffTrigger_HPLess_Target {
 	"hp<": {
 		target: "target";
 		/** % 값 */
-		value: string;
+		value: string[];
 	};
 }
 
 type BuffTrigger_HPMore = BuffTrigger_HPMore_Self | BuffTrigger_HPMore_Target;
 interface BuffTrigger_HPMore_Self {
 	/** % 값 */
-	"hp>": string;
+	"hp>": string[];
 }
 interface BuffTrigger_HPMore_Target {
 	"hp>": {
 		target: "target";
 		/** % 값 */
-		value: string;
+		value: string[];
 	};
+}
+
+interface BuffTrigger_HPRange {
+	hpRange: [string, string];
 }
 
 type BuffTrigger_UnitIn = BuffTrigger_UnitInSquad | BuffTrigger_UnitInEnemy;
@@ -241,7 +245,7 @@ interface BuffTrigger_UnitCount {
 	unitCount: {
 		filter: BuffTrigger_UnitCount_Types | Array<BuffTrigger_UnitCount_Types>;
 		type: ACTOR_CLASS[];
-		count: number | number[];
+		count: number[];
 	};
 }
 
@@ -249,7 +253,7 @@ type BuffTrigger_Round = BuffTrigger_Round_Value | BuffTrigger_Round_EvenOdd;
 interface BuffTrigger_Round_Value {
 	round: {
 		operator: "=" | "<=" | ">=";
-		round: number;
+		round: number[];
 	};
 }
 interface BuffTrigger_Round_EvenOdd {

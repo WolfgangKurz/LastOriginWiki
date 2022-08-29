@@ -35,7 +35,10 @@
             {
               "key": "Effect_PECS_Ella_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -96,7 +99,10 @@
             {
               "key": "Effect_PECS_Ella_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -157,7 +163,10 @@
             {
               "key": "Effect_PECS_Ella_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -218,7 +227,10 @@
             {
               "key": "Effect_PECS_Ella_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -279,7 +291,10 @@
             {
               "key": "Effect_PECS_Ella_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -340,7 +355,10 @@
             {
               "key": "Effect_PECS_Ella_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -401,7 +419,10 @@
             {
               "key": "Effect_PECS_Ella_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -462,7 +483,10 @@
             {
               "key": "Effect_PECS_Ella_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -523,7 +547,10 @@
             {
               "key": "Effect_PECS_Ella_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -584,7 +611,10 @@
             {
               "key": "Effect_PECS_Ella_N_1",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -699,7 +729,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -920,7 +953,10 @@
             {
               "key": "Effect_PECS_Ella_N_3",
               "on": "wave",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1011,7 +1047,10 @@
             {
               "key": "Effect_PECS_Ella_N_31",
               "on": "damaged",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1056,7 +1095,10 @@
             {
               "key": "Effect_PECS_Ella_N_32",
               "on": "wave",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1101,12 +1143,17 @@
             {
               "key": "Effect_PECS_Ella_N_33",
               "on": "round",
-              "if": {
-                "round": {
-                  "operator": "=",
-                  "round": 2
-                }
-              },
+              "if": [
+                {
+                  "round": {
+                    "operator": "=",
+                    "round": [
+                      2
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1151,12 +1198,17 @@
             {
               "key": "Effect_PECS_Ella_N_34",
               "on": "round",
-              "if": {
-                "round": {
-                  "operator": "=",
-                  "round": 3
-                }
-              },
+              "if": [
+                {
+                  "round": {
+                    "operator": "=",
+                    "round": [
+                      3
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1341,19 +1393,22 @@
             {
               "key": "Effect_PECS_Ella_N_4",
               "on": "round",
-              "if": {
-                "on": {
-                  "target": "self",
-                  "select": [
-                    "Effect_BUFF_AntiFire_N_1",
-                    "Effect_BUFF_AntiCold_N_1",
-                    "Effect_BUFF_AntiLightning_N_1"
-                  ],
-                  "stack": 0,
-                  "func": "UNFILLED",
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_BUFF_AntiFire_N_1",
+                      "Effect_BUFF_AntiCold_N_1",
+                      "Effect_BUFF_AntiLightning_N_1"
+                    ],
+                    "stack": 0,
+                    "func": "UNFILLED",
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1451,15 +1506,18 @@
             {
               "key": "Effect_PECS_Ella_N_41",
               "on": "round",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_AntiFire_N_1"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_AntiFire_N_1"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1507,15 +1565,18 @@
             {
               "key": "Effect_PECS_Ella_N_42",
               "on": "round",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_AntiCold_N_1"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_AntiCold_N_1"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1563,15 +1624,18 @@
             {
               "key": "Effect_PECS_Ella_N_43",
               "on": "round",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BUFF_AntiLightning_N_1"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_AntiLightning_N_1"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1747,7 +1811,10 @@
             {
               "key": "Effect_PECS_Ella_N_5",
               "on": "wave",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1887,16 +1954,19 @@
             {
               "key": "Effect_PECS_Ella_N_51",
               "on": "round",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_PECS_Ella_N_2"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_Ella_N_2"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1

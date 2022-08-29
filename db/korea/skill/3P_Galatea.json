@@ -37,7 +37,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -105,7 +108,10 @@
             {
               "key": "Effect_3P_Galatea_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -168,7 +174,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -236,7 +245,10 @@
             {
               "key": "Effect_3P_Galatea_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -299,7 +311,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -367,7 +382,10 @@
             {
               "key": "Effect_3P_Galatea_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -430,7 +448,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -498,7 +519,10 @@
             {
               "key": "Effect_3P_Galatea_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -561,7 +585,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -629,7 +656,10 @@
             {
               "key": "Effect_3P_Galatea_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -692,7 +722,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -760,7 +793,10 @@
             {
               "key": "Effect_3P_Galatea_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -823,7 +859,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -891,7 +930,10 @@
             {
               "key": "Effect_3P_Galatea_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -954,7 +996,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1022,7 +1067,10 @@
             {
               "key": "Effect_3P_Galatea_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1085,7 +1133,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1153,7 +1204,10 @@
             {
               "key": "Effect_3P_Galatea_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1216,7 +1270,10 @@
               "on": {
                 "after": "use_skill"
               },
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1284,7 +1341,10 @@
             {
               "key": "Effect_3P_Galatea_N_11",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1421,7 +1481,10 @@
             {
               "key": "Effect_3P_Galatea_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1552,16 +1615,19 @@
             {
               "key": "Effect_3P_Galatea_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    2,
-                    3
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      2,
+                      3
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1650,15 +1716,18 @@
             {
               "key": "Effect_3P_Galatea_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    13
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      13
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1725,13 +1794,16 @@
             {
               "key": "Effect_3P_Galatea_N_23",
               "on": "attack_success",
-              "if": {
-                "notInBattle": [
-                  "Char_3P_Amphitrite_N",
-                  "Char_3P_Salacia_N",
-                  "Char_3P_Melite_N"
-                ]
-              },
+              "if": [
+                {
+                  "notInBattle": [
+                    "Char_3P_Amphitrite_N",
+                    "Char_3P_Salacia_N",
+                    "Char_3P_Melite_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1795,13 +1867,16 @@
             {
               "key": "Effect_3P_Galatea_N_24",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_3P_Amphitrite_N",
-                  "Char_3P_Salacia_N",
-                  "Char_3P_Melite_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_3P_Amphitrite_N",
+                    "Char_3P_Salacia_N",
+                    "Char_3P_Melite_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1903,7 +1978,10 @@
             {
               "key": "Effect_3P_Galatea_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2034,16 +2112,19 @@
             {
               "key": "Effect_3P_Galatea_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    2,
-                    3
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      2,
+                      3
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2132,15 +2213,18 @@
             {
               "key": "Effect_3P_Galatea_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    13
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      13
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2207,13 +2291,16 @@
             {
               "key": "Effect_3P_Galatea_N_23",
               "on": "attack_success",
-              "if": {
-                "notInBattle": [
-                  "Char_3P_Amphitrite_N",
-                  "Char_3P_Salacia_N",
-                  "Char_3P_Melite_N"
-                ]
-              },
+              "if": [
+                {
+                  "notInBattle": [
+                    "Char_3P_Amphitrite_N",
+                    "Char_3P_Salacia_N",
+                    "Char_3P_Melite_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2277,13 +2364,16 @@
             {
               "key": "Effect_3P_Galatea_N_24",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_3P_Amphitrite_N",
-                  "Char_3P_Salacia_N",
-                  "Char_3P_Melite_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_3P_Amphitrite_N",
+                    "Char_3P_Salacia_N",
+                    "Char_3P_Melite_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2385,7 +2475,10 @@
             {
               "key": "Effect_3P_Galatea_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2516,16 +2609,19 @@
             {
               "key": "Effect_3P_Galatea_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    2,
-                    3
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      2,
+                      3
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2614,15 +2710,18 @@
             {
               "key": "Effect_3P_Galatea_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    13
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      13
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2689,13 +2788,16 @@
             {
               "key": "Effect_3P_Galatea_N_23",
               "on": "attack_success",
-              "if": {
-                "notInBattle": [
-                  "Char_3P_Amphitrite_N",
-                  "Char_3P_Salacia_N",
-                  "Char_3P_Melite_N"
-                ]
-              },
+              "if": [
+                {
+                  "notInBattle": [
+                    "Char_3P_Amphitrite_N",
+                    "Char_3P_Salacia_N",
+                    "Char_3P_Melite_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2759,13 +2861,16 @@
             {
               "key": "Effect_3P_Galatea_N_24",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_3P_Amphitrite_N",
-                  "Char_3P_Salacia_N",
-                  "Char_3P_Melite_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_3P_Amphitrite_N",
+                    "Char_3P_Salacia_N",
+                    "Char_3P_Melite_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2867,7 +2972,10 @@
             {
               "key": "Effect_3P_Galatea_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2998,16 +3106,19 @@
             {
               "key": "Effect_3P_Galatea_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    2,
-                    3
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      2,
+                      3
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3096,15 +3207,18 @@
             {
               "key": "Effect_3P_Galatea_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    13
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      13
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3171,13 +3285,16 @@
             {
               "key": "Effect_3P_Galatea_N_23",
               "on": "attack_success",
-              "if": {
-                "notInBattle": [
-                  "Char_3P_Amphitrite_N",
-                  "Char_3P_Salacia_N",
-                  "Char_3P_Melite_N"
-                ]
-              },
+              "if": [
+                {
+                  "notInBattle": [
+                    "Char_3P_Amphitrite_N",
+                    "Char_3P_Salacia_N",
+                    "Char_3P_Melite_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3241,13 +3358,16 @@
             {
               "key": "Effect_3P_Galatea_N_24",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_3P_Amphitrite_N",
-                  "Char_3P_Salacia_N",
-                  "Char_3P_Melite_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_3P_Amphitrite_N",
+                    "Char_3P_Salacia_N",
+                    "Char_3P_Melite_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3349,7 +3469,10 @@
             {
               "key": "Effect_3P_Galatea_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3480,16 +3603,19 @@
             {
               "key": "Effect_3P_Galatea_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    2,
-                    3
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      2,
+                      3
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3578,15 +3704,18 @@
             {
               "key": "Effect_3P_Galatea_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    13
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      13
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3653,13 +3782,16 @@
             {
               "key": "Effect_3P_Galatea_N_23",
               "on": "attack_success",
-              "if": {
-                "notInBattle": [
-                  "Char_3P_Amphitrite_N",
-                  "Char_3P_Salacia_N",
-                  "Char_3P_Melite_N"
-                ]
-              },
+              "if": [
+                {
+                  "notInBattle": [
+                    "Char_3P_Amphitrite_N",
+                    "Char_3P_Salacia_N",
+                    "Char_3P_Melite_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3723,13 +3855,16 @@
             {
               "key": "Effect_3P_Galatea_N_24",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_3P_Amphitrite_N",
-                  "Char_3P_Salacia_N",
-                  "Char_3P_Melite_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_3P_Amphitrite_N",
+                    "Char_3P_Salacia_N",
+                    "Char_3P_Melite_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3831,7 +3966,10 @@
             {
               "key": "Effect_3P_Galatea_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3962,16 +4100,19 @@
             {
               "key": "Effect_3P_Galatea_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    2,
-                    3
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      2,
+                      3
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4060,15 +4201,18 @@
             {
               "key": "Effect_3P_Galatea_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    13
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      13
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4135,13 +4279,16 @@
             {
               "key": "Effect_3P_Galatea_N_23",
               "on": "attack_success",
-              "if": {
-                "notInBattle": [
-                  "Char_3P_Amphitrite_N",
-                  "Char_3P_Salacia_N",
-                  "Char_3P_Melite_N"
-                ]
-              },
+              "if": [
+                {
+                  "notInBattle": [
+                    "Char_3P_Amphitrite_N",
+                    "Char_3P_Salacia_N",
+                    "Char_3P_Melite_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4205,13 +4352,16 @@
             {
               "key": "Effect_3P_Galatea_N_24",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_3P_Amphitrite_N",
-                  "Char_3P_Salacia_N",
-                  "Char_3P_Melite_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_3P_Amphitrite_N",
+                    "Char_3P_Salacia_N",
+                    "Char_3P_Melite_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4313,7 +4463,10 @@
             {
               "key": "Effect_3P_Galatea_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4444,16 +4597,19 @@
             {
               "key": "Effect_3P_Galatea_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    2,
-                    3
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      2,
+                      3
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4542,15 +4698,18 @@
             {
               "key": "Effect_3P_Galatea_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    13
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      13
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4617,13 +4776,16 @@
             {
               "key": "Effect_3P_Galatea_N_23",
               "on": "attack_success",
-              "if": {
-                "notInBattle": [
-                  "Char_3P_Amphitrite_N",
-                  "Char_3P_Salacia_N",
-                  "Char_3P_Melite_N"
-                ]
-              },
+              "if": [
+                {
+                  "notInBattle": [
+                    "Char_3P_Amphitrite_N",
+                    "Char_3P_Salacia_N",
+                    "Char_3P_Melite_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4687,13 +4849,16 @@
             {
               "key": "Effect_3P_Galatea_N_24",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_3P_Amphitrite_N",
-                  "Char_3P_Salacia_N",
-                  "Char_3P_Melite_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_3P_Amphitrite_N",
+                    "Char_3P_Salacia_N",
+                    "Char_3P_Melite_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4795,7 +4960,10 @@
             {
               "key": "Effect_3P_Galatea_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4926,16 +5094,19 @@
             {
               "key": "Effect_3P_Galatea_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    2,
-                    3
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      2,
+                      3
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5024,15 +5195,18 @@
             {
               "key": "Effect_3P_Galatea_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    13
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      13
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5099,13 +5273,16 @@
             {
               "key": "Effect_3P_Galatea_N_23",
               "on": "attack_success",
-              "if": {
-                "notInBattle": [
-                  "Char_3P_Amphitrite_N",
-                  "Char_3P_Salacia_N",
-                  "Char_3P_Melite_N"
-                ]
-              },
+              "if": [
+                {
+                  "notInBattle": [
+                    "Char_3P_Amphitrite_N",
+                    "Char_3P_Salacia_N",
+                    "Char_3P_Melite_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5169,13 +5346,16 @@
             {
               "key": "Effect_3P_Galatea_N_24",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_3P_Amphitrite_N",
-                  "Char_3P_Salacia_N",
-                  "Char_3P_Melite_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_3P_Amphitrite_N",
+                    "Char_3P_Salacia_N",
+                    "Char_3P_Melite_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5277,7 +5457,10 @@
             {
               "key": "Effect_3P_Galatea_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5408,16 +5591,19 @@
             {
               "key": "Effect_3P_Galatea_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    2,
-                    3
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      2,
+                      3
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5506,15 +5692,18 @@
             {
               "key": "Effect_3P_Galatea_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    13
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      13
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5581,13 +5770,16 @@
             {
               "key": "Effect_3P_Galatea_N_23",
               "on": "attack_success",
-              "if": {
-                "notInBattle": [
-                  "Char_3P_Amphitrite_N",
-                  "Char_3P_Salacia_N",
-                  "Char_3P_Melite_N"
-                ]
-              },
+              "if": [
+                {
+                  "notInBattle": [
+                    "Char_3P_Amphitrite_N",
+                    "Char_3P_Salacia_N",
+                    "Char_3P_Melite_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5651,13 +5843,16 @@
             {
               "key": "Effect_3P_Galatea_N_24",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_3P_Amphitrite_N",
-                  "Char_3P_Salacia_N",
-                  "Char_3P_Melite_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_3P_Amphitrite_N",
+                    "Char_3P_Salacia_N",
+                    "Char_3P_Melite_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5759,7 +5954,10 @@
             {
               "key": "Effect_3P_Galatea_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5890,16 +6088,19 @@
             {
               "key": "Effect_3P_Galatea_N_21",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    2,
-                    3
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      2,
+                      3
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5988,15 +6189,18 @@
             {
               "key": "Effect_3P_Galatea_N_22",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    13
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      13
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6063,13 +6267,16 @@
             {
               "key": "Effect_3P_Galatea_N_23",
               "on": "attack_success",
-              "if": {
-                "notInBattle": [
-                  "Char_3P_Amphitrite_N",
-                  "Char_3P_Salacia_N",
-                  "Char_3P_Melite_N"
-                ]
-              },
+              "if": [
+                {
+                  "notInBattle": [
+                    "Char_3P_Amphitrite_N",
+                    "Char_3P_Salacia_N",
+                    "Char_3P_Melite_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6133,13 +6340,16 @@
             {
               "key": "Effect_3P_Galatea_N_24",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_3P_Amphitrite_N",
-                  "Char_3P_Salacia_N",
-                  "Char_3P_Melite_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_3P_Amphitrite_N",
+                    "Char_3P_Salacia_N",
+                    "Char_3P_Melite_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6461,7 +6671,10 @@
             {
               "key": "Effect_3P_Galatea_N_3",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6570,7 +6783,10 @@
             {
               "key": "Effect_3P_Galatea_N_31",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6615,16 +6831,19 @@
             {
               "key": "Effect_3P_Galatea_N_32",
               "on": "round",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_3P_Amphitrite_N_41"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_3P_Amphitrite_N_41"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6666,12 +6885,25 @@
             {
               "key": "Effect_3P_Galatea_N_33",
               "on": "round",
-              "if": {
-                "pos": {
-                  "target": "target",
-                  "position": 1
+              "if": [
+                {
+                  "pos": {
+                    "target": "target",
+                    "position": 1
+                  }
+                },
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_3P_Galatea_N_3",
+                      "Effect_3P_Galatea_N_32"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -6716,12 +6948,25 @@
             {
               "key": "Effect_3P_Galatea_N_34",
               "on": "round",
-              "if": {
-                "pos": {
-                  "target": "target",
-                  "position": 2
+              "if": [
+                {
+                  "pos": {
+                    "target": "target",
+                    "position": 2
+                  }
+                },
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_3P_Galatea_N_3",
+                      "Effect_3P_Galatea_N_32"
+                    ],
+                    "attr": 6
+                  }
                 }
-              },
+              ],
               "body": [
                 0,
                 1
@@ -6766,7 +7011,10 @@
             {
               "key": "Effect_3P_Galatea_N_35",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6809,16 +7057,19 @@
             {
               "key": "Effect_3P_Galatea_N_36",
               "on": "round",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_3P_Amphitrite_N_41"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_3P_Amphitrite_N_41"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7039,7 +7290,10 @@
             {
               "key": "Effect_3P_Galatea_N_4",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7131,7 +7385,10 @@
             {
               "key": "Effect_3P_Galatea_N_41",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7176,15 +7433,18 @@
             {
               "key": "Effect_3P_Galatea_N_42",
               "on": "round",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    36
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      36
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7229,7 +7489,10 @@
             {
               "key": "Effect_3P_Galatea_N_43",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7278,15 +7541,18 @@
             {
               "key": "Effect_3P_Galatea_N_44",
               "on": "round",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    77
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      77
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7475,16 +7741,19 @@
             {
               "key": "Effect_3P_Galatea_N_5",
               "on": "round",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    48
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      48
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7578,16 +7847,19 @@
             {
               "key": "Effect_3P_Galatea_N_51",
               "on": "damaged",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_3P_Galatea_N_5"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_3P_Galatea_N_5"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -7635,18 +7907,21 @@
             {
               "key": "Effect_3P_Galatea_N_52",
               "on": "damaged",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    "Effect_3P_Galatea_N_31",
-                    "Effect_3P_Galatea_N_35",
-                    "Effect_3P_Galatea_N_36"
-                  ],
-                  "attr": 0
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_3P_Galatea_N_31",
+                      "Effect_3P_Galatea_N_35",
+                      "Effect_3P_Galatea_N_36"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1

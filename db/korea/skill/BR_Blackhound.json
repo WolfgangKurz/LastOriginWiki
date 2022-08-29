@@ -35,16 +35,19 @@
             {
               "key": "Effect_BR_Blackhound_N_1",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    74
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      74
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -135,7 +138,10 @@
             {
               "key": "Effect_BR_Blackhound_N_14",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -180,15 +186,18 @@
             {
               "key": "Effect_BR_Blackhound_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Blackhound_N_11"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Blackhound_N_11"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -233,11 +242,14 @@
             {
               "key": "Effect_BR_Blackhound_N_101",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_BR_Harpy_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_Harpy_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -298,16 +310,19 @@
             {
               "key": "Effect_BR_Blackhound_N_1",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    74
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      74
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -398,7 +413,10 @@
             {
               "key": "Effect_BR_Blackhound_N_14",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -443,15 +461,18 @@
             {
               "key": "Effect_BR_Blackhound_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Blackhound_N_11"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Blackhound_N_11"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -496,11 +517,14 @@
             {
               "key": "Effect_BR_Blackhound_N_101",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_BR_Harpy_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_Harpy_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -561,16 +585,19 @@
             {
               "key": "Effect_BR_Blackhound_N_1",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    74
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      74
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -661,7 +688,10 @@
             {
               "key": "Effect_BR_Blackhound_N_14",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -706,15 +736,18 @@
             {
               "key": "Effect_BR_Blackhound_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Blackhound_N_11"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Blackhound_N_11"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -759,11 +792,14 @@
             {
               "key": "Effect_BR_Blackhound_N_101",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_BR_Harpy_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_Harpy_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -824,16 +860,19 @@
             {
               "key": "Effect_BR_Blackhound_N_1",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    74
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      74
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -924,7 +963,10 @@
             {
               "key": "Effect_BR_Blackhound_N_14",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -969,15 +1011,18 @@
             {
               "key": "Effect_BR_Blackhound_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Blackhound_N_11"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Blackhound_N_11"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1022,11 +1067,14 @@
             {
               "key": "Effect_BR_Blackhound_N_101",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_BR_Harpy_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_Harpy_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1087,16 +1135,19 @@
             {
               "key": "Effect_BR_Blackhound_N_1",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    74
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      74
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1187,7 +1238,10 @@
             {
               "key": "Effect_BR_Blackhound_N_14",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1232,15 +1286,18 @@
             {
               "key": "Effect_BR_Blackhound_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Blackhound_N_11"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Blackhound_N_11"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1285,11 +1342,14 @@
             {
               "key": "Effect_BR_Blackhound_N_101",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_BR_Harpy_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_Harpy_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1350,16 +1410,19 @@
             {
               "key": "Effect_BR_Blackhound_N_1",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    74
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      74
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1450,7 +1513,10 @@
             {
               "key": "Effect_BR_Blackhound_N_14",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1495,15 +1561,18 @@
             {
               "key": "Effect_BR_Blackhound_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Blackhound_N_11"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Blackhound_N_11"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1548,11 +1617,14 @@
             {
               "key": "Effect_BR_Blackhound_N_101",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_BR_Harpy_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_Harpy_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1613,16 +1685,19 @@
             {
               "key": "Effect_BR_Blackhound_N_1",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    74
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      74
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1713,7 +1788,10 @@
             {
               "key": "Effect_BR_Blackhound_N_14",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1758,15 +1836,18 @@
             {
               "key": "Effect_BR_Blackhound_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Blackhound_N_11"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Blackhound_N_11"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1811,11 +1892,14 @@
             {
               "key": "Effect_BR_Blackhound_N_101",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_BR_Harpy_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_Harpy_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1876,16 +1960,19 @@
             {
               "key": "Effect_BR_Blackhound_N_1",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    74
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      74
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -1976,7 +2063,10 @@
             {
               "key": "Effect_BR_Blackhound_N_14",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2021,15 +2111,18 @@
             {
               "key": "Effect_BR_Blackhound_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Blackhound_N_11"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Blackhound_N_11"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2074,11 +2167,14 @@
             {
               "key": "Effect_BR_Blackhound_N_101",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_BR_Harpy_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_Harpy_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2139,16 +2235,19 @@
             {
               "key": "Effect_BR_Blackhound_N_1",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    74
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      74
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2239,7 +2338,10 @@
             {
               "key": "Effect_BR_Blackhound_N_14",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2284,15 +2386,18 @@
             {
               "key": "Effect_BR_Blackhound_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Blackhound_N_11"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Blackhound_N_11"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2337,11 +2442,14 @@
             {
               "key": "Effect_BR_Blackhound_N_101",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_BR_Harpy_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_Harpy_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2402,16 +2510,19 @@
             {
               "key": "Effect_BR_Blackhound_N_1",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "target": "target",
-                  "func": "OR",
-                  "select": [
-                    74
-                  ],
-                  "attr": 1
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      74
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2502,7 +2613,10 @@
             {
               "key": "Effect_BR_Blackhound_N_14",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2547,15 +2661,18 @@
             {
               "key": "Effect_BR_Blackhound_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Blackhound_N_11"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Blackhound_N_11"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2600,11 +2717,14 @@
             {
               "key": "Effect_BR_Blackhound_N_101",
               "on": "attack_success",
-              "if": {
-                "in_squad": [
-                  "Char_BR_Harpy_N"
-                ]
-              },
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_Harpy_N"
+                  ]
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2776,7 +2896,10 @@
             {
               "key": "Effect_BR_Blackhound_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2904,15 +3027,18 @@
             {
               "key": "Effect_BR_Blackhound_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Blackhound_N_11"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Blackhound_N_11"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -2957,7 +3083,10 @@
             {
               "key": "Effect_BR_Blackhound_N_201",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3075,7 +3204,10 @@
             {
               "key": "Effect_BR_Blackhound_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3203,15 +3335,18 @@
             {
               "key": "Effect_BR_Blackhound_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Blackhound_N_11"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Blackhound_N_11"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3256,7 +3391,10 @@
             {
               "key": "Effect_BR_Blackhound_N_201",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3374,7 +3512,10 @@
             {
               "key": "Effect_BR_Blackhound_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3502,15 +3643,18 @@
             {
               "key": "Effect_BR_Blackhound_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Blackhound_N_11"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Blackhound_N_11"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3555,7 +3699,10 @@
             {
               "key": "Effect_BR_Blackhound_N_201",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3673,7 +3820,10 @@
             {
               "key": "Effect_BR_Blackhound_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3801,15 +3951,18 @@
             {
               "key": "Effect_BR_Blackhound_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Blackhound_N_11"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Blackhound_N_11"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3854,7 +4007,10 @@
             {
               "key": "Effect_BR_Blackhound_N_201",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -3972,7 +4128,10 @@
             {
               "key": "Effect_BR_Blackhound_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4100,15 +4259,18 @@
             {
               "key": "Effect_BR_Blackhound_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Blackhound_N_11"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Blackhound_N_11"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4153,7 +4315,10 @@
             {
               "key": "Effect_BR_Blackhound_N_201",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4271,7 +4436,10 @@
             {
               "key": "Effect_BR_Blackhound_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4399,15 +4567,18 @@
             {
               "key": "Effect_BR_Blackhound_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Blackhound_N_11"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Blackhound_N_11"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4452,7 +4623,10 @@
             {
               "key": "Effect_BR_Blackhound_N_201",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4570,7 +4744,10 @@
             {
               "key": "Effect_BR_Blackhound_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4698,15 +4875,18 @@
             {
               "key": "Effect_BR_Blackhound_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Blackhound_N_11"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Blackhound_N_11"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4751,7 +4931,10 @@
             {
               "key": "Effect_BR_Blackhound_N_201",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4869,7 +5052,10 @@
             {
               "key": "Effect_BR_Blackhound_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -4997,15 +5183,18 @@
             {
               "key": "Effect_BR_Blackhound_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Blackhound_N_11"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Blackhound_N_11"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5050,7 +5239,10 @@
             {
               "key": "Effect_BR_Blackhound_N_201",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5168,7 +5360,10 @@
             {
               "key": "Effect_BR_Blackhound_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5296,15 +5491,18 @@
             {
               "key": "Effect_BR_Blackhound_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Blackhound_N_11"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Blackhound_N_11"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5349,7 +5547,10 @@
             {
               "key": "Effect_BR_Blackhound_N_201",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5467,7 +5668,10 @@
             {
               "key": "Effect_BR_Blackhound_N_2",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5595,15 +5799,18 @@
             {
               "key": "Effect_BR_Blackhound_N_12",
               "on": "attack_success",
-              "if": {
-                "on": {
-                  "func": "OR",
-                  "select": [
-                    "Effect_BR_Blackhound_N_11"
-                  ],
-                  "attr": 6
-                }
-              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_Blackhound_N_11"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5648,7 +5855,10 @@
             {
               "key": "Effect_BR_Blackhound_N_201",
               "on": "attack_success",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5926,7 +6136,10 @@
             {
               "key": "Effect_BR_Blackhound_N_3",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -5990,12 +6203,17 @@
             {
               "key": "Effect_BR_Blackhound_N_13",
               "on": "round",
-              "if": {
-                "hp<=": {
-                  "target": "target",
-                  "value": "50%"
-                }
-              },
+              "if": [
+                {
+                  "hp<=": {
+                    "target": "target",
+                    "value": [
+                      "50%"
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6055,7 +6273,10 @@
             {
               "key": "Effect_BR_Blackhound_N_3",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6119,12 +6340,17 @@
             {
               "key": "Effect_BR_Blackhound_N_13",
               "on": "round",
-              "if": {
-                "hp<=": {
-                  "target": "target",
-                  "value": "50%"
-                }
-              },
+              "if": [
+                {
+                  "hp<=": {
+                    "target": "target",
+                    "value": [
+                      "50%"
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6184,7 +6410,10 @@
             {
               "key": "Effect_BR_Blackhound_N_3",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6248,12 +6477,17 @@
             {
               "key": "Effect_BR_Blackhound_N_13",
               "on": "round",
-              "if": {
-                "hp<=": {
-                  "target": "target",
-                  "value": "50%"
-                }
-              },
+              "if": [
+                {
+                  "hp<=": {
+                    "target": "target",
+                    "value": [
+                      "50%"
+                    ]
+                  }
+                },
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6389,7 +6623,10 @@
             {
               "key": "Effect_BR_Blackhound_N_4",
               "on": "evade",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
@@ -6480,7 +6717,10 @@
             {
               "key": "Effect_BR_Blackhound_N_11",
               "on": "round",
-              "if": false,
+              "if": [
+                false,
+                false
+              ],
               "body": [
                 0,
                 1
