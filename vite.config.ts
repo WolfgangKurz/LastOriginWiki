@@ -148,14 +148,14 @@ export default ({ mode }) => {
 						) return undefined;
 
 						// three.js vendor
-						if (id.includes("/node_modules/three/src/core/")) return "vendor.three.core";
-						if (id.includes("/node_modules/three/src/math/")) return "vendor.three.math";
-						if (id.includes("/node_modules/three/src/materials/")) return "vendor.three.mat";
-						if (id.includes("/node_modules/three/src/geometries/")) return "vendor.three.geo";
-						if (id.includes("/node_modules/three/src/objects/")) return "vendor.three.obj";
-						if (id.includes("/node_modules/three/src/textures/")) return "vendor.three.tex";
-						if (id.includes("/node_modules/three/src/renderers/")) return "vendor.three.ren";
-						if (id.includes("/node_modules/three/examples/")) return "vendor.three.ext";
+						// if (id.includes("/node_modules/three/src/core/")) return "vendor.three.core";
+						// if (id.includes("/node_modules/three/src/math/")) return "vendor.three.math";
+						// if (id.includes("/node_modules/three/src/materials/")) return "vendor.three.mat";
+						// if (id.includes("/node_modules/three/src/geometries/")) return "vendor.three.geo";
+						// if (id.includes("/node_modules/three/src/objects/")) return "vendor.three.obj";
+						// if (id.includes("/node_modules/three/src/textures/")) return "vendor.three.tex";
+						// if (id.includes("/node_modules/three/src/renderers/")) return "vendor.three.ren";
+						// if (id.includes("/node_modules/three/examples/")) return "vendor.three.ext";
 						if (id.includes("/node_modules/three/")) return "vendor.three";
 
 						// vendor
