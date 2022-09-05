@@ -8,7 +8,7 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 11888" date="2022-09-06"
+	<ChangelogItem title="Build 11889" date="2022-09-06"
 		update={ <>
 			<li><BY>해가 지지 않는 워터파크</BY> 이벤트가 종료되었습니다.</li>
 			<li><BY>누군가 바랐던 소원</BY> 이벤트가 복각되었습니다.</li>
