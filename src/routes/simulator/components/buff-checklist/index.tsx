@@ -1306,7 +1306,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 	if ("buffs" in stat) { // 버프 형식의 수치
 		const target = getTargetText(stat.body, stat.class, stat.role, stat.target);
 		const on = getTriggerText(stat.on);
-		const apply = stat.if
+		const apply = (stat.if || [])
 			.map(e => getTriggerText(e))
 			.filter(e => e)
 			.gap(<span class="mx-1 opacity-75">

@@ -20,7 +20,7 @@ interface WORLDViewProps {
 const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 	const imgExt = ImageExtension();
 
-	const ImagelessEv: string[] = ["Ev10", "Ev11"];
+	const ImagelessEv: string[] = ["Ev11"];
 
 	SetMeta(["description", "twitter:description"], `${LocaleGet(`WORLD_${props.wid}`)}의 구역 목록을 표시합니다. 구역의 지도 정보와 이야기를 선택하여 확인할 수 있습니다.`);
 	SetMeta(["twitter:image", "og:image"], `${AssetsRoot}/world/icons/${props.wid}_1.png`);
