@@ -1,0 +1,38 @@
+digraph {
+	fixedsize=true;
+	concentrate=true;
+	node [shape=rect margin="0.25,0.125"];
+	start [shape=invhouse];
+
+	node [style=filled fillcolor="#FFEEBB"]; # cond
+	cond1 [tooltip="check?type=buff&kind=self&buff=Effect_MP_LemonadeOmega_N_42,check?type=skill&slot=1&kind=usable&count=2&op=bigger"]; # has Effect_MP_LemonadeOmega_N_42 buff in self, active 1 usable count > 2
+	cond2 [tooltip="!alive?who=team"]; # is team not alive
+	cond3 [tooltip="alive?who=team"]; # is team alive
+	cond4 [tooltip="!pos?pos=front"]; # not at front
+	skill_usable1 [tooltip="check?type=skill&slot=1&kind=usable"]; # active 1 usable
+
+	node [fillcolor="#BBCCFF"];
+	skill1 [tooltip="skill?slot=1&target=near"]; # use active 1 to near
+	skill2 [tooltip="skill?slot=2&target=self"]; # use active 2 to self
+
+	node [fillcolor="#7788aa"];
+	movef [tooltip="move?pos=front"]; # move to front
+	wait [tooltip="wait" fillcolor="#999999"]; # wait
+
+	start -> cond1;
+
+	cond1 -> skill_usable1 [label="y"];
+	cond1 -> cond2 [label="n"];
+
+	skill_usable1 -> skill1 [label="y"];
+	skill_usable1 -> cond3 [label="n"];
+
+	cond2 -> skill_usable1 [label="y"];
+	cond2 -> cond3 [label="n"];
+
+	cond3 -> skill2 [label="y"];
+	cond3 -> cond4 [label="n"];
+
+	cond4 -> movef [label="y"];
+	cond4 -> wait [label="n"];
+}

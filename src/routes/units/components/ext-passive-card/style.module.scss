@@ -1,0 +1,49 @@
+.ExtPassiveCard {
+	font-size: 90%;
+
+	.SlotBadge {
+		margin-top: 0.25em;
+		font-size: 70%;
+		user-select: none !important;
+
+		> div {
+			margin-top: 0.5em;
+		}
+	}
+
+	.Title {
+		margin-top: 0.25em;
+		font-size: 105%;
+		word-break: keep-all;
+	}
+	.Desc {
+		margin-bottom: 0.5em;
+	}
+
+	.CostBadge {
+		margin-right: 0.25em;
+		margin-bottom: 0.25em;
+
+		color: $dark;
+
+		> :global(.equip-icon) {
+			margin-right: 0 !important;
+		}
+
+		img {
+			margin-right: 0.25em;
+			width: auto;
+			height: 16px;
+		}
+	}
+
+	&[data-cost="1"] .CostBadge {
+		background-color: transparentize($success, 0.75);
+	}
+	&[data-cost="2"] .CostBadge {
+		background-color: transparentize($primary, 0.75);
+	}
+	&[data-cost="3"] .CostBadge {
+		background-color: transparentize($event-exchange-old, 0.75);
+	}
+}

@@ -1,0 +1,56 @@
+.node-icon,
+.node-tabicon {
+	&[data-icon=""] {
+		visibility: hidden;
+	}
+}
+
+.node-icon {
+	max-width: 7em;
+}
+.node-tabicon {
+	margin-right: 0.5em;
+	max-height: 1.5em;
+}
+
+.essence-icon {
+	max-height: 1.5em;
+}
+
+:global {
+	.table-node.container {
+		margin-bottom: 0 !important;
+
+		> .row > .col,
+		> .row > .col-auto {
+			&,
+			&.nested > .row > .col {
+				margin-bottom: -1px;
+				padding: 0.75rem;
+				border: 1px solid #dee2e6;
+
+				&.bg-dark {
+					border-color: #454d55;
+					font-weight: bold;
+				}
+			}
+
+			&.icon-container {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			&.nested {
+				padding: 0;
+				border-left: 0;
+				border-top: 0;
+				border-right: 0;
+
+				> .row {
+					margin: 0;
+				}
+			}
+		}
+	}
+}

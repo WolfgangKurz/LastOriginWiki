@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap");
+
+html,
+body {
+	text-align: center;
+}
+
+html,
+body,
+body .popover,
+body .tooltip {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: "Spoqa Han Sans", "Spoqa Han Sans JP", sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+}
+.btn-group > .btn.active + .btn.active,
+.btn-group > .btn.active + .btn:focus,
+.btn-group > .btn.active + .btn:hover,
+.btn-group > .btn:focus + .btn.active,
+.btn-group > .btn:hover + .btn.active {
+	border-left: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+@each $rarity, $value in $rarities {
+	.rarity-#{$rarity} {
+		background-color: $value;
+		border-color: darken($value, 15%);
+	}
+	.rarity-#{$rarity}-force {
+		background-color: $value !important;
+		border-color: darken($value, 15%) !important;
+	}
+
+	.rarity-#{$rarity}-border {
+		border-color: darken($value, 15%);
+	}
+	.rarity-#{$rarity}-border-force {
+		border-color: darken($value, 15%) !important;
+	}
+
+	.rarity-#{$rarity}-text {
+		color: darken($value, 15%);
+	}
+	.rarity-#{$rarity}-text-force {
+		color: darken($value, 15%) !important;
+	}
+}
+
+@each $key, $value in $colors {
+	.bg-#{$key} {
+		background-color: $value;
+	}
+	.text-#{$key} {
+		color: $value;
+	}
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($breakpoint) {
+		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+		.clearfix#{$infix}::after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+	}
+}
+
+.word-keep {
+	word-break: keep-all;
+}
+.white-space-pre {
+	white-space: pre-wrap;
+}
+
+.flex-1 {
+	flex: 1;
+}
+
+.preload-area {
+	position: absolute;
+	display: inline-block;
+	left: 0;
+	top: 0;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	pointer-events: none;
+	opacity: 0.000001;
+}
+
+@each $color, $value in $colors {
+	.btn-#{$color} {
+		@include button-variant($value, $value);
+	}
+}
+
+@each $color, $value in $colors {
+	.btn-outline-#{$color} {
+		@include button-outline-variant($value);
+	}
+}
+
+@import "./component/btn-grid";
+
+.font-ibm {
+	@include font-ibm;
+}
+.font-exo2 {
+	@include font-exo2;
+}

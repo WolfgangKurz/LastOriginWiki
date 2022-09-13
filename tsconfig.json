@@ -5,8 +5,13 @@
 		"moduleResolution": "node",
 
 		"jsx": "preserve",
+		"jsxFactory": "h",
+		"jsxFragmentFactory": "Fragment",
+
 		"strict": true,
-		"importHelpers": true,
+		"importHelpers": false,
+		"noImplicitAny": false,
+		"isolatedModules": true,
 
 		"esModuleInterop": true,
 		"resolveJsonModule": true,
@@ -15,32 +20,41 @@
 		"removeComments": false,
 		"preserveConstEnums": true,
 		"allowSyntheticDefaultImports": true,
+		"useDefineForClassFields": true,
+		"downlevelIteration": true,
 		"sourceMap": true,
 
 		"declaration": true,
+		"skipLibCheck": true,
 
 		"baseUrl": "./src",
 		"types": [
-			"webpack-env",
-			"jquery",
-			"node"
+			"node",
+			"vite/client"
 		],
-		"paths": {
-			"@/*": ["./*"]
-		},
 		"lib": [
 			"esnext",
 			"dom",
-			"dom.iterable",
-			"scripthost"
-		]
+			"dom.iterable"
+		],
+		"paths": {
+			"@/*": ["./*"],
+			"react": ["../node_modules/preact/compat/"],
+			"react-dom": ["../node_modules/preact/compat/"]
+		}
 	},
 	"include": [
+		"src/**/*.js",
+		"src/**/*.jsx",
 		"src/**/*.ts",
-		"src/**/*.tsx",
-		"src/**/*.vue"
+		"src/**/*.tsx"
 	],
 	"exclude": [
 		"node_modules"
-	]
+	],
+	"ts-node": {
+		"compilerOptions": {
+			"module": "commonjs"
+		}
+	}
 }

@@ -1,4 +1,19 @@
+import { getCookie } from "@/libs/Functions";
 
-import StoryDB from "@/json/story";
-import { StoryRaw } from "@/libs/Types";
-export const StoryData: StoryRaw[] = StoryDB;
+export function ChangeDB (db: DBTypes): void {
+	document.cookie = `LO_DB=${db}; path=/`;
+	window.location.reload();
+}
+
+// export type DBTypes = "korea" | "japan";
+// export const DBList: DBTypes[] = ["korea", "japan"];
+export type DBTypes = "korea";
+export const DBList: DBTypes[] = ["korea"];
+
+function DBValidation (name: string | undefined): DBTypes {
+	const list = DBList as string[];
+	if (!name || !list.includes(name)) return "korea";
+	return name as DBTypes;
+}
+
+export const CurrentDB = DBValidation(getCookie("LO_DB", "korea"));

@@ -1,36 +1,38 @@
-import json from "@/locale";
-const LocaleData = json as Record<keyof typeof json, Record<string, string>>;
-export default LocaleData;
+import { getCookie } from "@/libs/Functions";
 
-export function LocaleGet (keys: string | string[], ...params: any[]) {
-	const lang: "KR" | "EN" | "JP" = window.GLOBAL_LANG || "KR";
-	const get = (key: string) => LocaleData[lang][key] || LocaleData.KR[key] || null;
-
-	if (typeof keys === "string") keys = [keys];
-	for (const key of keys) {
-		const value = get(key);
-		if (value !== null) {
-			return value.replace(/\{([0-9]+)\}/g, (_, p1) => {
-				const index = parseInt(p1, 10);
-				return typeof params[index] !== "undefined" ? params[index] : `{${p1}}`;
-			});
-		}
-	}
-	return keys[keys.length - 1];
+export function ChangeLanguage (lang: LocaleTypes): void {
+	document.cookie = `LO_LANG=${lang}; path=/`;
+	window.location.reload();
 }
 
-export function LocaleGetL (lang: "KR" | "EN" | "JP", keys: string | string[], ...params: any[]) {
-	const get = (key: string) => LocaleData[lang][key] || LocaleData.KR[key] || null;
+export type LocaleTypes = "KR" | "JP" | "EN" | "TC" | "SC";
+// export const LocaleList: LocaleTypes[] = ["KR", "JP", "EN", "TC", "SC"];
+export const LocaleList: LocaleTypes[] = ["KR", "JP", "EN", "TC"];
 
-	if (typeof keys === "string") keys = [keys];
-	for (const key of keys) {
-		const value = get(key);
-		if (value !== null) {
-			return value.replace(/\{([0-9]+)\}/g, (_, p1) => {
-				const index = parseInt(p1, 10);
-				return typeof params[index] !== "undefined" ? params[index] : `{${p1}}`;
-			});
-		}
-	}
-	return keys[keys.length - 1];
+function LangValidation (name: string | undefined): LocaleTypes {
+	const list = LocaleList as string[];
+	if (!name || !list.includes(name)) return "KR";
+	return name as LocaleTypes;
 }
+
+const defaultLang = ((): LocaleTypes => {
+	const lang = ((window.navigator as any).userLanguage || window.navigator.language) as string;
+	const langp = lang.split("-")[0].toLowerCase();
+	switch (langp) {
+		case "ja":
+			return "JP";
+		case "en":
+			return "EN";
+		case "ko":
+			return "KR";
+
+		default:
+			if (lang.startsWith("zh-Hant"))
+				return "TC";
+			else if (lang.startsWith("zh-Hans"))
+				return "SC";
+			return "KR";
+	}
+})();
+
+export const CurrentLocale = LangValidation(getCookie("LO_LANG", defaultLang));

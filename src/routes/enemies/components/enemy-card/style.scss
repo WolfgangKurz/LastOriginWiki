@@ -1,0 +1,78 @@
+.enemy-card {
+	cursor: pointer;
+
+	&.card {
+		border-radius: 0.5em;
+		overflow: hidden;
+
+		.additional-info {
+			position: absolute;
+			left: 4px;
+			top: 4px;
+			line-height: 0;
+	
+			> .info-badge {
+				margin-right: 0.25em;
+				box-shadow: 0 0 4px #000;
+			}
+		}
+
+		.card-body {
+			padding: 1em;
+			
+			.card-title {
+				margin: 0;
+				font-size: 14px;
+				word-break: keep-all;
+			}
+
+			.enemy-info {
+				font-size: 85%;
+
+				> .rarity-badge {
+					font-size: 100%;
+				}
+				> span:not(.badge) {
+					opacity: 0.72;
+
+					i {
+						$basis: 18px;
+						display: inline-block;
+						width: $basis;
+						height: $basis;
+						margin-left: 4px;
+						background-size: ($basis * 3) ($basis * 2);
+						background-position: 0 0;
+						background-repeat: no-repeat;
+						vertical-align: bottom;
+
+						&[data-type] {
+							background-image: url($assetsRoot + "/unit-type.png");
+							&[data-type="0"] { // light
+								background-position-x: 0px;
+							}
+							&[data-type="2"] { // flying
+								background-position-x: -$basis;
+							}
+							&[data-type="1"] { // heavy
+								background-position-x: -($basis * 2);
+							}
+						}
+						&[data-role] {
+							background-image: url($assetsRoot + "/unit-role.png");
+							&[data-role="1"] { // attacker
+								background-position-x: 0px;
+							}
+							&[data-role="0"] { // defender
+								background-position-x: -$basis;
+							}
+							&[data-role="2"] { // supporter
+								background-position-x: -($basis * 2);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

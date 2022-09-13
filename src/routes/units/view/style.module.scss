@@ -1,0 +1,235 @@
+.CreationBadge {
+	font-size: inherit !important;
+}
+
+.CostInfo {
+	padding: 0.5em;
+	font-weight: normal;
+
+	:global(.res-icon) {
+		margin-right: 0.25em;
+		max-height: 24px;
+		vertical-align: middle;
+	}
+
+	// Placeholder
+}
+
+.ExtPassiveLevel {
+	display: inline-block;
+
+	&::before {
+		content: "";
+		display: inline-block;
+		margin: 0 0.5em 0.3em;
+		width: 1.25em;
+		height: 1px;
+		background-color: #777;
+		line-height: 0;
+	}
+}
+
+.IntroduceText {
+	line-height: 1.6;
+	font-weight: 400;
+	// text-shadow: 0 0 2px transparentize($light, 0.75);
+	text-align: left;
+	word-break: keep-all;
+	white-space: pre-line;
+}
+
+.SpecChartWrapper {
+	// display: inline-block;
+	padding: 1em;
+
+	> canvas {
+		margin: auto;
+		max-width: 300px;
+		max-height: 300px;
+	}
+}
+
+.SkinTabs {
+	overflow-x: auto;
+	overflow-y: hidden;
+
+	> ul {
+		flex-wrap: nowrap;
+		white-space: nowrap;
+	}
+}
+.SkinPrice {
+	> img {
+		float: left;
+		margin-right: 0.25em;
+		height: 1em;
+	}
+}
+.SkinNameDesc {
+	white-space: pre-wrap;
+	word-break: keep-all;
+	:global(.card-body) {
+		font-size: 90%;
+
+		&:empty {
+			display: none !important;
+		}
+	}
+}
+
+.IllustratorHidden {
+	background-color: rgba(darken($primary, 8%), 0.3);
+	color: inherit;
+	cursor: help;
+	user-select: none;
+}
+
+table.InfoTable {
+	th {
+		vertical-align: middle;
+	}
+}
+
+.GroupIcon {
+	display: block;
+	margin: 0 auto;
+	width: 5em;
+	filter: invert(1);
+}
+
+.UnitCountry {
+	vertical-align: baseline;
+}
+
+:global .unit-view {
+	.tab-box {
+		padding: 10px;
+		border: 1px solid #dee2e6;
+	}
+
+	// .fulllink-table {
+	//	padding-top: 0.55em;
+	// }
+	.table-unit-modal.container {
+		.col {
+			margin-bottom: -1px;
+			padding: 0.75rem;
+			border: 1px solid #dee2e6;
+
+			&.bg-dark {
+				border-color: #454d55;
+				font-weight: bold;
+			}
+		}
+	}
+
+	.table-unit-modal.table-bordered {
+		td,
+		th {
+			vertical-align: middle;
+			word-break: keep-all;
+		}
+
+		th.table-dark {
+			border-color: #454d55;
+		}
+
+		.rarity-badge {
+			border: 1px solid rgba(0, 0, 0, 0.33);
+			box-shadow: 0 0 1px #000;
+		}
+	}
+
+	.table-unit-link-select {
+		display: inline-block;
+		margin-left: 1em;
+		width: 8em;
+		vertical-align: baseline;
+	}
+
+	.table-unit-level-select,
+	.table-unit-rarity-select {
+		display: inline-block;
+		margin-left: 1em;
+		width: 8em;
+		vertical-align: baseline;
+	}
+
+	.skill-icon {
+		height: 64px;
+	}
+
+	.unit-modal-skill {
+		padding: 3px 0;
+		border-bottom: 1px solid #dee2e6;
+
+		&:last-child {
+			border-bottom: 0;
+		}
+
+		&:empty {
+			display: none;
+		}
+	}
+
+	.drop-list {
+		line-height: 1;
+
+		a {
+			display: inline-block;
+			line-height: 1;
+		}
+	}
+
+	.limited-item-card {
+		display: inline-block;
+		width: 100%;
+		max-width: 20rem;
+	}
+
+	.equip-grid {
+		display: grid;
+		margin-bottom: 1em;
+		grid-template-columns: repeat(4, 1fr);
+		grid-gap: 0.125em;
+
+		> .equip-slot {
+			margin: 0.125em;
+			padding: 0.5em;
+			border-radius: 0.25em;
+			background-color: $dark;
+			text-align: center;
+			font-weight: bold;
+			font-size: 80%;
+			color: transparentize($light, 0.15);
+
+			:first-child {
+				color: $light;
+			}
+
+			> :nth-child(2) {
+				margin-top: 0.25em;
+				margin-bottom: 0.25em;
+			}
+
+			> .equip-slot-icon {
+				min-height: calc(40px);
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: 40px 40px;
+			}
+
+			$types: 0, 1, 2;
+
+			@each $type in $types {
+				&[data-type="#{$type}"] > .equip-slot-icon {
+					background-image: url($assetsRoot + "/simulation/Item#{$type}.png");
+				}
+			}
+		}
+	}
+}
+
+.break-keep {
+	word-break: keep-all;
+}

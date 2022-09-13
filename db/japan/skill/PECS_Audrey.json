@@ -1,0 +1,5742 @@
+{
+  "1": {
+    "key": "1",
+    "icon": "SelfSpdDeBuff",
+    "target": "enemy",
+    "buffs": {
+      "index": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "data": [
+        {
+          "rate": 0.945,
+          "type": 0,
+          "range": 4,
+          "ap": 5,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Audrey_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "鉄虫裁縫：移動不可",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "鉄虫裁縫：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.5",
+                    "level": "-2.5000000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-50%",
+                      "per": "-2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "技術先導：ダメージ増幅/耐性減少",
+                    "type": 0,
+                    "value": "0.01",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "大衆性の追求：攻撃力/クリティカル率減少",
+                    "type": 0,
+                    "value": "0.01",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "極秘新作研究：命中率/行動力減少",
+                    "type": 0,
+                    "value": "0.01",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Audrey_N_3"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "技術先導：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FIRERES_DOWN",
+                  "desc": {
+                    "desc": "技術先導：火炎耐性{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 15,
+                    "resist": {
+                      "elem": "fire",
+                      "value": {
+                        "base": "-25%",
+                        "per": "-1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ICERES_DOWN",
+                  "desc": {
+                    "desc": "技術先導：冷気耐性{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 17,
+                    "resist": {
+                      "elem": "ice",
+                      "value": {
+                        "base": "-25%",
+                        "per": "-1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_LIGHTNINGRES_DOWN",
+                  "desc": {
+                    "desc": "技術先導：電気耐性{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 19,
+                    "resist": {
+                      "elem": "lightning",
+                      "value": {
+                        "base": "-25%",
+                        "per": "-1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Audrey_N_17"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "大衆性の追求：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-25%",
+                      "per": "-1.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "大衆性の追求：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.15",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-15%",
+                      "per": "-1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_13",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Audrey_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "極秘新作研究：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.5",
+                    "level": "-2.5000000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-50%",
+                      "per": "-2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "極秘新作研究：行動力{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.025,
+          "type": 0,
+          "range": 4,
+          "ap": 5,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Audrey_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "鉄虫裁縫：移動不可",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "鉄虫裁縫：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.5",
+                    "level": "-2.5000000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-50%",
+                      "per": "-2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "技術先導：ダメージ増幅/耐性減少",
+                    "type": 0,
+                    "value": "0.01",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "大衆性の追求：攻撃力/クリティカル率減少",
+                    "type": 0,
+                    "value": "0.01",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "極秘新作研究：命中率/行動力減少",
+                    "type": 0,
+                    "value": "0.01",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Audrey_N_3"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "技術先導：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FIRERES_DOWN",
+                  "desc": {
+                    "desc": "技術先導：火炎耐性{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 15,
+                    "resist": {
+                      "elem": "fire",
+                      "value": {
+                        "base": "-25%",
+                        "per": "-1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ICERES_DOWN",
+                  "desc": {
+                    "desc": "技術先導：冷気耐性{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 17,
+                    "resist": {
+                      "elem": "ice",
+                      "value": {
+                        "base": "-25%",
+                        "per": "-1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_LIGHTNINGRES_DOWN",
+                  "desc": {
+                    "desc": "技術先導：電気耐性{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 19,
+                    "resist": {
+                      "elem": "lightning",
+                      "value": {
+                        "base": "-25%",
+                        "per": "-1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Audrey_N_17"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "大衆性の追求：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-25%",
+                      "per": "-1.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "大衆性の追求：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.15",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-15%",
+                      "per": "-1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_13",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Audrey_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "極秘新作研究：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.5",
+                    "level": "-2.5000000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-50%",
+                      "per": "-2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "極秘新作研究：行動力{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.105,
+          "type": 0,
+          "range": 4,
+          "ap": 5,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Audrey_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "鉄虫裁縫：移動不可",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "鉄虫裁縫：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.5",
+                    "level": "-2.5000000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-50%",
+                      "per": "-2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "技術先導：ダメージ増幅/耐性減少",
+                    "type": 0,
+                    "value": "0.01",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "大衆性の追求：攻撃力/クリティカル率減少",
+                    "type": 0,
+                    "value": "0.01",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "極秘新作研究：命中率/行動力減少",
+                    "type": 0,
+                    "value": "0.01",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Audrey_N_3"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "技術先導：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FIRERES_DOWN",
+                  "desc": {
+                    "desc": "技術先導：火炎耐性{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 15,
+                    "resist": {
+                      "elem": "fire",
+                      "value": {
+                        "base": "-25%",
+                        "per": "-1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ICERES_DOWN",
+                  "desc": {
+                    "desc": "技術先導：冷気耐性{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 17,
+                    "resist": {
+                      "elem": "ice",
+                      "value": {
+                        "base": "-25%",
+                        "per": "-1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_LIGHTNINGRES_DOWN",
+                  "desc": {
+                    "desc": "技術先導：電気耐性{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 19,
+                    "resist": {
+                      "elem": "lightning",
+                      "value": {
+                        "base": "-25%",
+                        "per": "-1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Audrey_N_17"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "大衆性の追求：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-25%",
+                      "per": "-1.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "大衆性の追求：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.15",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-15%",
+                      "per": "-1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_13",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Audrey_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "極秘新作研究：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.5",
+                    "level": "-2.5000000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-50%",
+                      "per": "-2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "極秘新作研究：行動力{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.185,
+          "type": 0,
+          "range": 4,
+          "ap": 5,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Audrey_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "鉄虫裁縫：移動不可",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "鉄虫裁縫：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.5",
+                    "level": "-2.5000000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-50%",
+                      "per": "-2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "技術先導：ダメージ増幅/耐性減少",
+                    "type": 0,
+                    "value": "0.01",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "大衆性の追求：攻撃力/クリティカル率減少",
+                    "type": 0,
+                    "value": "0.01",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "極秘新作研究：命中率/行動力減少",
+                    "type": 0,
+                    "value": "0.01",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Audrey_N_3"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "技術先導：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FIRERES_DOWN",
+                  "desc": {
+                    "desc": "技術先導：火炎耐性{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 15,
+                    "resist": {
+                      "elem": "fire",
+                      "value": {
+                        "base": "-25%",
+                        "per": "-1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ICERES_DOWN",
+                  "desc": {
+                    "desc": "技術先導：冷気耐性{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 17,
+                    "resist": {
+                      "elem": "ice",
+                      "value": {
+                        "base": "-25%",
+                        "per": "-1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_LIGHTNINGRES_DOWN",
+                  "desc": {
+                    "desc": "技術先導：電気耐性{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 19,
+                    "resist": {
+                      "elem": "lightning",
+                      "value": {
+                        "base": "-25%",
+                        "per": "-1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Audrey_N_17"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "大衆性の追求：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-25%",
+                      "per": "-1.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "大衆性の追求：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.15",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-15%",
+                      "per": "-1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_13",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Audrey_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "極秘新作研究：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.5",
+                    "level": "-2.5000000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-50%",
+                      "per": "-2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "極秘新作研究：行動力{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.265,
+          "type": 0,
+          "range": 4,
+          "ap": 5,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Audrey_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "鉄虫裁縫：移動不可",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "鉄虫裁縫：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.5",
+                    "level": "-2.5000000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-50%",
+                      "per": "-2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "技術先導：ダメージ増幅/耐性減少",
+                    "type": 0,
+                    "value": "0.01",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "大衆性の追求：攻撃力/クリティカル率減少",
+                    "type": 0,
+                    "value": "0.01",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "極秘新作研究：命中率/行動力減少",
+                    "type": 0,
+                    "value": "0.01",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Audrey_N_3"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "技術先導：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FIRERES_DOWN",
+                  "desc": {
+                    "desc": "技術先導：火炎耐性{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 15,
+                    "resist": {
+                      "elem": "fire",
+                      "value": {
+                        "base": "-25%",
+                        "per": "-1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ICERES_DOWN",
+                  "desc": {
+                    "desc": "技術先導：冷気耐性{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 17,
+                    "resist": {
+                      "elem": "ice",
+                      "value": {
+                        "base": "-25%",
+                        "per": "-1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_LIGHTNINGRES_DOWN",
+                  "desc": {
+                    "desc": "技術先導：電気耐性{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 19,
+                    "resist": {
+                      "elem": "lightning",
+                      "value": {
+                        "base": "-25%",
+                        "per": "-1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Audrey_N_17"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "大衆性の追求：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-25%",
+                      "per": "-1.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "大衆性の追求：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.15",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-15%",
+                      "per": "-1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_13",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Audrey_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "極秘新作研究：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.5",
+                    "level": "-2.5000000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-50%",
+                      "per": "-2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "極秘新作研究：行動力{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.345,
+          "type": 0,
+          "range": 4,
+          "ap": 5,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Audrey_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "鉄虫裁縫：移動不可",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "鉄虫裁縫：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.5",
+                    "level": "-2.5000000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-50%",
+                      "per": "-2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "技術先導：ダメージ増幅/耐性減少",
+                    "type": 0,
+                    "value": "0.01",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "大衆性の追求：攻撃力/クリティカル率減少",
+                    "type": 0,
+                    "value": "0.01",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "極秘新作研究：命中率/行動力減少",
+                    "type": 0,
+                    "value": "0.01",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Audrey_N_3"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "技術先導：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FIRERES_DOWN",
+                  "desc": {
+                    "desc": "技術先導：火炎耐性{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 15,
+                    "resist": {
+                      "elem": "fire",
+                      "value": {
+                        "base": "-25%",
+                        "per": "-1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ICERES_DOWN",
+                  "desc": {
+                    "desc": "技術先導：冷気耐性{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 17,
+                    "resist": {
+                      "elem": "ice",
+                      "value": {
+                        "base": "-25%",
+                        "per": "-1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_LIGHTNINGRES_DOWN",
+                  "desc": {
+                    "desc": "技術先導：電気耐性{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 19,
+                    "resist": {
+                      "elem": "lightning",
+                      "value": {
+                        "base": "-25%",
+                        "per": "-1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Audrey_N_17"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "大衆性の追求：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-25%",
+                      "per": "-1.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "大衆性の追求：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.15",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-15%",
+                      "per": "-1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_13",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Audrey_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "極秘新作研究：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.5",
+                    "level": "-2.5000000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-50%",
+                      "per": "-2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "極秘新作研究：行動力{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.425,
+          "type": 0,
+          "range": 4,
+          "ap": 5,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Audrey_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "鉄虫裁縫：移動不可",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "鉄虫裁縫：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.5",
+                    "level": "-2.5000000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-50%",
+                      "per": "-2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "技術先導：ダメージ増幅/耐性減少",
+                    "type": 0,
+                    "value": "0.01",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "大衆性の追求：攻撃力/クリティカル率減少",
+                    "type": 0,
+                    "value": "0.01",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "極秘新作研究：命中率/行動力減少",
+                    "type": 0,
+                    "value": "0.01",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Audrey_N_3"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "技術先導：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FIRERES_DOWN",
+                  "desc": {
+                    "desc": "技術先導：火炎耐性{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 15,
+                    "resist": {
+                      "elem": "fire",
+                      "value": {
+                        "base": "-25%",
+                        "per": "-1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ICERES_DOWN",
+                  "desc": {
+                    "desc": "技術先導：冷気耐性{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 17,
+                    "resist": {
+                      "elem": "ice",
+                      "value": {
+                        "base": "-25%",
+                        "per": "-1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_LIGHTNINGRES_DOWN",
+                  "desc": {
+                    "desc": "技術先導：電気耐性{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 19,
+                    "resist": {
+                      "elem": "lightning",
+                      "value": {
+                        "base": "-25%",
+                        "per": "-1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Audrey_N_17"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "大衆性の追求：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-25%",
+                      "per": "-1.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "大衆性の追求：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.15",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-15%",
+                      "per": "-1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_13",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Audrey_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "極秘新作研究：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.5",
+                    "level": "-2.5000000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-50%",
+                      "per": "-2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "極秘新作研究：行動力{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.505,
+          "type": 0,
+          "range": 4,
+          "ap": 5,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Audrey_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "鉄虫裁縫：移動不可",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "鉄虫裁縫：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.5",
+                    "level": "-2.5000000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-50%",
+                      "per": "-2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "技術先導：ダメージ増幅/耐性減少",
+                    "type": 0,
+                    "value": "0.01",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "大衆性の追求：攻撃力/クリティカル率減少",
+                    "type": 0,
+                    "value": "0.01",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "極秘新作研究：命中率/行動力減少",
+                    "type": 0,
+                    "value": "0.01",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Audrey_N_3"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "技術先導：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FIRERES_DOWN",
+                  "desc": {
+                    "desc": "技術先導：火炎耐性{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 15,
+                    "resist": {
+                      "elem": "fire",
+                      "value": {
+                        "base": "-25%",
+                        "per": "-1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ICERES_DOWN",
+                  "desc": {
+                    "desc": "技術先導：冷気耐性{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 17,
+                    "resist": {
+                      "elem": "ice",
+                      "value": {
+                        "base": "-25%",
+                        "per": "-1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_LIGHTNINGRES_DOWN",
+                  "desc": {
+                    "desc": "技術先導：電気耐性{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 19,
+                    "resist": {
+                      "elem": "lightning",
+                      "value": {
+                        "base": "-25%",
+                        "per": "-1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Audrey_N_17"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "大衆性の追求：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-25%",
+                      "per": "-1.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "大衆性の追求：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.15",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-15%",
+                      "per": "-1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_13",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Audrey_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "極秘新作研究：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.5",
+                    "level": "-2.5000000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-50%",
+                      "per": "-2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "極秘新作研究：行動力{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.585,
+          "type": 0,
+          "range": 4,
+          "ap": 5,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Audrey_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "鉄虫裁縫：移動不可",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "鉄虫裁縫：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.5",
+                    "level": "-2.5000000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-50%",
+                      "per": "-2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "技術先導：ダメージ増幅/耐性減少",
+                    "type": 0,
+                    "value": "0.01",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "大衆性の追求：攻撃力/クリティカル率減少",
+                    "type": 0,
+                    "value": "0.01",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "極秘新作研究：命中率/行動力減少",
+                    "type": 0,
+                    "value": "0.01",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Audrey_N_3"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "技術先導：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FIRERES_DOWN",
+                  "desc": {
+                    "desc": "技術先導：火炎耐性{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 15,
+                    "resist": {
+                      "elem": "fire",
+                      "value": {
+                        "base": "-25%",
+                        "per": "-1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ICERES_DOWN",
+                  "desc": {
+                    "desc": "技術先導：冷気耐性{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 17,
+                    "resist": {
+                      "elem": "ice",
+                      "value": {
+                        "base": "-25%",
+                        "per": "-1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_LIGHTNINGRES_DOWN",
+                  "desc": {
+                    "desc": "技術先導：電気耐性{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 19,
+                    "resist": {
+                      "elem": "lightning",
+                      "value": {
+                        "base": "-25%",
+                        "per": "-1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Audrey_N_17"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "大衆性の追求：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-25%",
+                      "per": "-1.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "大衆性の追求：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.15",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-15%",
+                      "per": "-1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_13",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Audrey_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "極秘新作研究：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.5",
+                    "level": "-2.5000000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-50%",
+                      "per": "-2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "極秘新作研究：行動力{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.665,
+          "type": 0,
+          "range": 4,
+          "ap": 5,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Audrey_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "鉄虫裁縫：移動不可",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "鉄虫裁縫：回避率{0}%",
+                    "type": 1,
+                    "value": "-0.5",
+                    "level": "-2.5000000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-50%",
+                      "per": "-2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "技術先導：ダメージ増幅/耐性減少",
+                    "type": 0,
+                    "value": "0.01",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "大衆性の追求：攻撃力/クリティカル率減少",
+                    "type": 0,
+                    "value": "0.01",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "極秘新作研究：命中率/行動力減少",
+                    "type": 0,
+                    "value": "0.01",
+                    "level": "0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Audrey_N_3"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "技術先導：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_FIRERES_DOWN",
+                  "desc": {
+                    "desc": "技術先導：火炎耐性{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 15,
+                    "resist": {
+                      "elem": "fire",
+                      "value": {
+                        "base": "-25%",
+                        "per": "-1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ICERES_DOWN",
+                  "desc": {
+                    "desc": "技術先導：冷気耐性{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 17,
+                    "resist": {
+                      "elem": "ice",
+                      "value": {
+                        "base": "-25%",
+                        "per": "-1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_LIGHTNINGRES_DOWN",
+                  "desc": {
+                    "desc": "技術先導：電気耐性{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 19,
+                    "resist": {
+                      "elem": "lightning",
+                      "value": {
+                        "base": "-25%",
+                        "per": "-1.25%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Audrey_N_17"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "大衆性の追求：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.25",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-25%",
+                      "per": "-1.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "大衆性の追求：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.15",
+                    "level": "-1.2500000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-15%",
+                      "per": "-1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_13",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Audrey_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "極秘新作研究：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.5",
+                    "level": "-2.5000000000000001E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-50%",
+                      "per": "-2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "極秘新作研究：行動力{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_SNARE",
+            "desc": {
+              "desc": "鉄虫裁縫：移動不可",
+              "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_EVADE_DOWN",
+            "desc": {
+              "desc": "鉄虫裁縫：回避率{0}%",
+              "type": 1,
+              "value": "-0.5",
+              "level": "-2.5000000000000001E-2"
+            },
+            "value": "-0.5",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_EVADE_UP",
+            "desc": {
+              "desc": "技術先導：ダメージ増幅/耐性減少",
+              "type": 0,
+              "value": "0.01",
+              "level": "0.01"
+            },
+            "base": 0.01,
+            "per": 0.01,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_EVADE_UP",
+            "desc": {
+              "desc": "大衆性の追求：攻撃力/クリティカル率減少",
+              "type": 0,
+              "value": "0.01",
+              "level": "0.01"
+            },
+            "base": 0.01,
+            "per": 0.01,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_EVADE_UP",
+            "desc": {
+              "desc": "極秘新作研究：命中率/行動力減少",
+              "type": 0,
+              "value": "0.01",
+              "level": "0.01"
+            },
+            "base": 0.01,
+            "per": 0.01,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_VULNERABLE",
+            "desc": {
+              "desc": "技術先導：受けるダメージ+{0}%",
+              "type": 1,
+              "value": "0.3",
+              "level": "1.4999999999999999E-2"
+            },
+            "value": "0.3",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_FIRERES_DOWN",
+            "desc": {
+              "desc": "技術先導：火炎耐性{0}%",
+              "type": 1,
+              "value": "-0.25",
+              "level": "-1.2500000000000001E-2"
+            },
+            "value": "-0.25",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ICERES_DOWN",
+            "desc": {
+              "desc": "技術先導：冷気耐性{0}%",
+              "type": 1,
+              "value": "-0.25",
+              "level": "-1.2500000000000001E-2"
+            },
+            "value": "-0.25",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_LIGHTNINGRES_DOWN",
+            "desc": {
+              "desc": "技術先導：電気耐性{0}%",
+              "type": 1,
+              "value": "-0.25",
+              "level": "-1.2500000000000001E-2"
+            },
+            "value": "-0.25",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ATK_DOWN",
+            "desc": {
+              "desc": "大衆性の追求：攻撃力{0}%",
+              "type": 1,
+              "value": "-0.25",
+              "level": "-1.2500000000000001E-2"
+            },
+            "value": "-0.25",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_CRITICAL_DOWN",
+            "desc": {
+              "desc": "大衆性の追求：クリティカル率{0}%",
+              "type": 1,
+              "value": "-0.15",
+              "level": "-1.2500000000000001E-2"
+            },
+            "value": "-0.15",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ACCURACY_DOWN",
+            "desc": {
+              "desc": "極秘新作研究：命中率{0}%",
+              "type": 1,
+              "value": "-0.5",
+              "level": "-2.5000000000000001E-2"
+            },
+            "value": "-0.5",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_DOWN",
+            "desc": {
+              "desc": "極秘新作研究：行動力{0}%",
+              "type": 1,
+              "value": "-0.2",
+              "level": "-0.01"
+            },
+            "base": -0.2,
+            "per": -0.01,
+            "chance": 1
+          }
+        ]
+      ]
+    }
+  },
+  "2": {
+    "key": "2",
+    "icon": "SelfSpdBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 6,
+          "ap": 6,
+          "grid": "single",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Audrey_N_2",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "衣装製作：AP+{0}",
+                    "type": 0,
+                    "value": "2",
+                    "level": "0.1"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 2,
+                      "per": 0.1
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "技術先導：回避率/行動力増加",
+                    "type": 0,
+                    "value": "0.01",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "大衆性の追求：防御力増加/ダメージ減少",
+                    "type": 0,
+                    "value": "0.01",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "極秘新作研究：攻撃力/クリティカル率増加",
+                    "type": 0,
+                    "value": "0.01",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_14",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Audrey_N_3"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "軽い新素材：回避率+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "軽い新素材：行動力+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_15",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Audrey_N_17"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_UP",
+                  "desc": {
+                    "desc": "ステディセラー：防御力+{0}%",
+                    "type": 1,
+                    "value": "0.5",
+                    "level": "2.5000000000000001E-2"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "50%",
+                      "per": "2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "ステディセラー：受けるダメージ{0}%減少",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_16",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Audrey_N_18"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "致命的な魅力：攻撃力+{0}%",
+                    "type": 1,
+                    "value": "0.25",
+                    "level": "1.2500000000000001E-2"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "25%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "致命的な魅力：クリティカル率+{0}%",
+                    "type": 1,
+                    "value": "0.1",
+                    "level": "5.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "衣装製作：AP+{0}",
+              "type": 0,
+              "value": "2",
+              "level": "0.1"
+            },
+            "base": 2,
+            "per": 0.1,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_EVADE_UP",
+            "desc": {
+              "desc": "技術先導：回避率/行動力増加",
+              "type": 0,
+              "value": "0.01",
+              "level": "0.01"
+            },
+            "base": 0.01,
+            "per": 0.01,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_EVADE_UP",
+            "desc": {
+              "desc": "大衆性の追求：防御力増加/ダメージ減少",
+              "type": 0,
+              "value": "0.01",
+              "level": "0.01"
+            },
+            "base": 0.01,
+            "per": 0.01,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_EVADE_UP",
+            "desc": {
+              "desc": "極秘新作研究：攻撃力/クリティカル率増加",
+              "type": 0,
+              "value": "0.01",
+              "level": "0.01"
+            },
+            "base": 0.01,
+            "per": 0.01,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_EVADE_UP",
+            "desc": {
+              "desc": "軽い新素材：回避率+{0}%",
+              "type": 1,
+              "value": "0.3",
+              "level": "1.4999999999999999E-2"
+            },
+            "value": "0.3",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "軽い新素材：行動力+{0}%",
+              "type": 1,
+              "value": "0.2",
+              "level": "0.01"
+            },
+            "base": 0.2,
+            "per": 0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DEF_UP",
+            "desc": {
+              "desc": "ステディセラー：防御力+{0}%",
+              "type": 1,
+              "value": "0.5",
+              "level": "2.5000000000000001E-2"
+            },
+            "value": "0.5",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DAMAGE_REDUCE",
+            "desc": {
+              "desc": "ステディセラー：受けるダメージ{0}%減少",
+              "type": 1,
+              "value": "0.15",
+              "level": "7.4999999999999997E-3"
+            },
+            "value": "0.15",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "致命的な魅力：攻撃力+{0}%",
+              "type": 1,
+              "value": "0.25",
+              "level": "1.2500000000000001E-2"
+            },
+            "value": "0.25",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_CRITICAL_UP",
+            "desc": {
+              "desc": "致命的な魅力：クリティカル率+{0}%",
+              "type": 1,
+              "value": "0.1",
+              "level": "5.0000000000000001E-3"
+            },
+            "value": "0.1",
+            "chance": 1
+          }
+        ]
+      ]
+    }
+  },
+  "3": {
+    "key": "3",
+    "icon": "SelfSpdBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "self",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Audrey_N_3",
+              "on": "round",
+              "if": {
+                "pos": 0
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "技術先導：行動力+{0}%(前列)",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "大衆性の追求：受けるダメージ{0}%減少(中列)",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "0.03"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "30%",
+                      "per": "3%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "極秘新作研究：命中率+{0}%(後列)",
+                    "type": 1,
+                    "value": "0.5",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "50%",
+                      "per": "5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "極秘新作研究：回避率+{0}%(後列)",
+                    "type": 1,
+                    "value": "0.5",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 11,
+                    "evade": {
+                      "base": "50%",
+                      "per": "5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_17",
+              "on": "round",
+              "if": {
+                "pos": 1
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "大衆性の追求：受けるダメージ{0}%減少(中列)",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "0.03"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "30%",
+                      "per": "3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Audrey_N_18",
+              "on": "round",
+              "if": {
+                "pos": 2
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "極秘新作研究：命中率+{0}%(後列)",
+                    "type": 1,
+                    "value": "0.5",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "50%",
+                      "per": "5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "極秘新作研究：回避率+{0}%(後列)",
+                    "type": 1,
+                    "value": "0.5",
+                    "level": "0.05"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "50%",
+                      "per": "5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "技術先導：行動力+{0}%(前列)",
+              "type": 1,
+              "value": "0.15",
+              "level": "7.4999999999999997E-3"
+            },
+            "value": "0.15",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DAMAGE_REDUCE",
+            "desc": {
+              "desc": "大衆性の追求：受けるダメージ{0}%減少(中列)",
+              "type": 1,
+              "value": "0.3",
+              "level": "0.03"
+            },
+            "base": 0.3,
+            "per": 0.03,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_ACCURACY_UP",
+            "desc": {
+              "desc": "極秘新作研究：命中率+{0}%(後列)",
+              "type": 1,
+              "value": "0.5",
+              "level": "0.05"
+            },
+            "base": 0.5,
+            "per": 0.05,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_EVADE_UP",
+            "desc": {
+              "desc": "極秘新作研究：回避率+{0}%(後列)",
+              "type": 1,
+              "value": "0.5",
+              "level": "0.05"
+            },
+            "base": 0.5,
+            "per": 0.05,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_DAMAGE_REDUCE",
+            "desc": {
+              "desc": "大衆性の追求：受けるダメージ{0}%減少(中列)",
+              "type": 1,
+              "value": "0.3",
+              "level": "0.03"
+            },
+            "base": 0.3,
+            "per": 0.03,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ACCURACY_UP",
+            "desc": {
+              "desc": "極秘新作研究：命中率+{0}%(後列)",
+              "type": 1,
+              "value": "0.5",
+              "level": "0.05"
+            },
+            "base": 0.5,
+            "per": 0.05,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_EVADE_UP",
+            "desc": {
+              "desc": "極秘新作研究：回避率+{0}%(後列)",
+              "type": 1,
+              "value": "0.5",
+              "level": "0.05"
+            },
+            "base": 0.5,
+            "per": 0.05,
+            "chance": 1
+          }
+        ]
+      ]
+    }
+  },
+  "4": {
+    "key": "4",
+    "icon": "TeamAtkBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "8>25",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Audrey_N_4",
+              "on": "round",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "モデル選定：攻撃力+{0}%",
+                    "type": 1,
+                    "value": "0.1",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "モデル選定：クリティカル率+{0}%",
+                    "type": 1,
+                    "value": "0.05",
+                    "level": "5.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "モデル選定：命中率+{0}%",
+                    "type": 1,
+                    "value": "0.2",
+                    "level": "0.01"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "20%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "モデル選定：行動力+{0}%",
+                    "type": 1,
+                    "value": "0.05",
+                    "level": "2.5000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "5%",
+                      "per": "0.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "モデル選定：攻撃力+{0}%",
+              "type": 1,
+              "value": "0.1",
+              "level": "0.01"
+            },
+            "base": 0.1,
+            "per": 0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_CRITICAL_UP",
+            "desc": {
+              "desc": "モデル選定：クリティカル率+{0}%",
+              "type": 1,
+              "value": "0.05",
+              "level": "5.0000000000000001E-3"
+            },
+            "value": "0.05",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ACCURACY_UP",
+            "desc": {
+              "desc": "モデル選定：命中率+{0}%",
+              "type": 1,
+              "value": "0.2",
+              "level": "0.01"
+            },
+            "base": 0.2,
+            "per": 0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "モデル選定：行動力+{0}%",
+              "type": 1,
+              "value": "0.05",
+              "level": "2.5000000000000001E-3"
+            },
+            "value": "0.05",
+            "chance": 1
+          }
+        ]
+      ]
+    }
+  },
+  "5": {
+    "key": "5",
+    "icon": "TeamDefBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "fill",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Audrey_N_5",
+              "on": "round",
+              "if": {
+                "hp<=": {
+                  "target": "target",
+                  "value": "90%"
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DAMAGE_ABSORB",
+                  "desc": {
+                    "desc": "儀装上乗せ：バリア+{0}",
+                    "type": 0,
+                    "value": "60",
+                    "level": "30"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 38,
+                    "barrier": {
+                      "base": 60,
+                      "per": 30
+                    }
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "仕立て直し：防御力減少解除",
+                    "type": 0,
+                    "value": "3",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 89,
+                    "off": {
+                      "type": 3,
+                      "target": 1
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_DAMAGE_ABSORB",
+            "desc": {
+              "desc": "儀装上乗せ：バリア+{0}",
+              "type": 0,
+              "value": "60",
+              "level": "30"
+            },
+            "base": 60,
+            "per": 30,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_DEBUFF",
+            "desc": {
+              "desc": "仕立て直し：防御力減少解除",
+              "type": 0,
+              "value": "3",
+              "level": "0"
+            },
+            "base": 3,
+            "per": 0,
+            "chance": 1
+          }
+        ]
+      ]
+    }
+  }
+}

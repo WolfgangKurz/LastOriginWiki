@@ -1,0 +1,33 @@
+.WorldsMapGrid {
+	.Preload {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 0;
+		height: 0;
+		overflow: hidden;
+		opacity: 0;
+		pointer-events: none !important;
+	}
+	.MapGrid {
+		a {
+			text-decoration: none;
+		}
+
+		.NodeIcon {
+			filter: drop-shadow(0 0 3px #000);
+		}
+
+		:global(text) {
+			text-shadow: 0 0 3px #000;
+			font-weight: 600;
+			font-size: 14px;
+
+			&.missing {
+				// font-weight: normal;
+				font-size: 10px;
+				text-shadow: 0 0 3px #000, 0 0 2px #000, 0 0 1px #000;
+			}
+		}
+	}
+}

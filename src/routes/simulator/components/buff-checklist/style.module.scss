@@ -1,0 +1,74 @@
+.on-subbadge {
+	margin: 0 0.1em;
+	padding: 0em 0.35em;
+	border-radius: 0.25em;
+	background-color: transparentize($light, 0.25);
+	color: $dark;
+}
+
+.QuestionIcon {
+	margin-top: -0.125em;
+}
+.OverlapBadge {
+	cursor: default;
+	user-select: none;
+}
+.OverlapTooltip {
+	font-size: 0.96rem;
+	word-break: keep-all;
+	white-space: pre-line;
+}
+
+:global .buff-checklist > .list-group {
+	.badge {
+		padding: 0.1em 0.65em;
+		line-height: 1.8;
+
+		> .elem-icon,
+		.on-subbadge > .elem-icon {
+			margin: 0 4px 0 0;
+			vertical-align: text-bottom;
+		}
+	}
+
+	margin-top: 0.5em;
+	font-weight: normal;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	.buff-checkbox {
+		.input-group {
+			> input.form-control,
+			> input.form-control + div > span,
+			> button.btn {
+				padding-top: 0.2em;
+				padding-bottom: 0.2em;
+				line-height: 1.5;
+				font-size: 80%;
+			}
+		}
+
+		.input-group > button.btn {
+			padding: 0.15em 0.25em;
+			font-size: 85%;
+		}
+		.buff-stack-input {
+			padding-right: 4em;
+			width: 7em;
+			font-weight: bold;
+			text-align: center;
+
+			& + div > span {
+				position: absolute;
+				top: 1px;
+				right: 0.5em;
+				white-space: nowrap;
+				text-align: right;
+				z-index: 13;
+				pointer-events: none;
+			}
+		}
+	}
+}

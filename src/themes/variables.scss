@@ -1,0 +1,88 @@
+$rarities: (
+	C: #cecece,
+	B: #e2f0d9,
+	A: #deebf7,
+	S: #fff2cc,
+	SS: #fce391,
+	SSS: #fd8386,
+);
+
+$stat-atk: #fd4280;
+$stat-def: #0cb9eb;
+$stat-hp: #98d718;
+$stat-acc: $stat-hp;
+$stat-eva: $stat-hp;
+$stat-crit: #fe4d3f;
+$substory: #07499b;
+$event-exchange: #d040e0;
+$event-exchange-old: #701080;
+$exchange: #0cb9eb;
+$exchange-old: #06798b;
+$success-dark: darken($success, 15%);
+
+$rarity-C: map-get($rarities, C);
+$rarity-B: map-get($rarities, B);
+$rarity-A: map-get($rarities, A);
+$rarity-S: map-get($rarities, S);
+$rarity-SS: map-get($rarities, SS);
+$rarity-SSS: map-get($rarities, SSS);
+
+$semidark: transparentize($dark, 0.875);
+$semilight: transparentize($light, 0.875);
+$medidark: transparentize($dark, 0.75);
+$medilight: transparentize($light, 0.75);
+
+$colors: (
+	"semidark": $semidark,
+	"semilight": $semilight,
+	"medidark": $medidark,
+	"medilight": $medilight,
+
+	"black": #000,
+	"stat-atk": $stat-atk,
+	"stat-def": $stat-def,
+	"stat-hp": $stat-hp,
+	"stat-acc": $stat-acc,
+	"stat-eva": $stat-eva,
+	"stat-crit": $stat-crit,
+	"substory": $substory,
+	"event-exchange": $event-exchange,
+	"event-exchange-old": $event-exchange-old,
+	"exchange": $exchange,
+	"exchange-old": $exchange-old,
+	"rarity-C": $rarity-C,
+	"rarity-B": $rarity-B,
+	"rarity-A": $rarity-A,
+	"rarity-S": $rarity-S,
+	"rarity-SS": $rarity-SS,
+	"rarity-SSS": $rarity-SSS,
+	"orange": $orange-600,
+	"success-dark": $success-dark,
+);
+$theme-colors: map-merge($theme-colors, $colors);
+
+@each $key, $color in $colors {
+	$table-variants: map.set($table-variants, $key, shift-color($color, $table-bg-scale));
+}
+
+// $aspect-ratios: map-merge(
+// 	$aspect-ratios,
+// 	(
+// 		"2x3": calc(3 / 2 * 100%),
+// 		"2x4": calc(4 / 2 * 100%),
+// 		"2x5": calc(5 / 2 * 100%),
+// 		"2x5": calc(5 / 2 * 100%),
+// 	)
+// );
+@for $x from 1 through 10 {
+	@for $y from 1 through 10 {
+		$aspect-ratios: map.set($aspect-ratios, "#{$x}x#{$y}", (math.div($y, $x) * 100%));
+	}
+}
+
+@mixin font-ibm {
+	font-family: "IBM Plex Sans KR", "IBM Plex Sans", "Spoqa Han Sans", "Spoqa Han Sans JP", sans-serif;
+}
+@mixin font-exo2 {
+	font-family: "Exo 2", "Spoqa Han Sans", "Spoqa Han Sans JP", sans-serif;
+}

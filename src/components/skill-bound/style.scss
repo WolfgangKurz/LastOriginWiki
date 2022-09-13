@@ -1,0 +1,175 @@
+.skill-bound {
+	$w: 14px;
+	$h: math.div($w, 38) * 34;
+
+	$highlited: #00efef;
+
+	display: inline-block;
+	width: 120px;
+	text-shadow: 0 0 3px #000, 0 0 2px #000, 0 0 2px #000;
+
+	&.skill-text {
+		height: 60px;
+	}
+
+	span {
+		position: absolute;
+		width: $w;
+		height: $h;
+
+		background-image: url($assetsRoot + "/skill-parallelogram.png?20211018");
+		background-repeat: no-repeat;
+		background-size: ($w * 11) $h;
+
+		&.offset {
+			background-position-x: -$w;
+			z-index: 2;
+		}
+		&.target {
+			margin-top: -2px;
+			margin-left: -2px;
+			background-position-x: -($w * 2);
+			z-index: 2;
+
+			&.target-75 {
+				background-position-x: -($w * 3);
+			}
+			&.target-50 {
+				background-position-x: -($w * 4);
+			}
+			&.target-25 {
+				background-position-x: -($w * 5);
+			}
+			&.target-10 {
+				background-position-x: -($w * 6);
+			}
+		}
+		&.range {
+			background-position-x: -($w * 7);
+		}
+		/*
+		&.target.team {
+			background-position-x: -($w * 8);
+		}
+		&.target-75.team,
+		&.target-50.team {
+			background-position-x: -($w * 9);
+		}
+		&.target-25.team {
+			background-position-x: -($w * 10);
+		}
+		*/
+	}
+
+	.skill-range {
+		position: relative;
+		margin-bottom: 5px;
+		height: 24px;
+
+		> span {
+			top: 6px;
+			@for $i from 0 to 6 {
+				&[data-pos="#{$i + 1}"] {
+					left: (2px + (($w + 1) * $i));
+				}
+			}
+			&.range {
+				margin-left: -2px;
+				margin-top: -2px;
+			}
+		}
+
+		> .skill-range-circle {
+			float: right;
+			width: 24px;
+			height: 24px;
+			background-image: url($assetsRoot + "/range-circle.png");
+			background-repeat: no-repeat;
+			background-size: 24px 24px;
+			line-height: 22px;
+			text-align: center;
+			font-size: 13px;
+			color: #ffd91c;
+
+			&.bonused {
+				color: $highlited;
+			}
+		}
+	}
+
+	.skill-ap {
+		float: right;
+		margin: 2px 10px 0 0;
+		width: 22px;
+		line-height: 125%;
+		font-weight: bold;
+		font-size: 16px;
+		text-align: center;
+		color: $highlited;
+
+		> div {
+			color: #fff;
+		}
+	}
+
+	&[data-passive="1"] {
+		.skill-range,
+		.skill-ap {
+			opacity: 0.375;
+		}
+	}
+
+	.skill-grid {
+		position: relative;
+		margin: 0 10px;
+		width: 52px;
+		height: 46px;
+
+		> span {
+			$x1: 0px;
+			$x2: $w + 2;
+			$x3: $x2 * 2;
+			$x: $x1 $x2 $x3;
+
+			$y3: 0px;
+			$y2: $h + 3;
+			$y1: $y2 * 2;
+			$y: $y1 $y2 $y3;
+
+			@for $i from 0 to 9 {
+				&[data-pos="#{$i + 1}"] {
+					top: (2px + nth($y, floor(math.div($i, 3)) + 1));
+					left: (2px + nth($x, ($i % 3) + 1) + floor(math.div($i, 3)) * 2);
+				}
+			}
+		}
+	}
+
+	.global-text,
+	.team-text {
+		float: left;
+		width: 44px;
+		font-weight: bold;
+		font-size: 11px;
+		text-align: center;
+		white-space: nowrap;
+		color: $highlited;
+	}
+	.global-text {
+		padding-left: 10px;
+		width: 56px;
+	}
+	.team-text {
+		margin-right: -12px;
+		margin-left: 76px;
+	}
+	.global-text + .team-text {
+		margin-left: 20px;
+	}
+
+	.level-selector > button {
+		margin-top: 0.5em;
+		padding: 0.125em 0.5em;
+		font-size: 0.675rem;
+	}
+}

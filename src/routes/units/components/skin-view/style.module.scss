@@ -1,0 +1,330 @@
+.SkinAttrIcon {
+	display: block;
+	margin: auto;
+	padding: 2px;
+	height: 36px;
+}
+
+.SkinPropMarriage,
+.SkinPropAnimated,
+.SkinPropVoice,
+.SkinPropEffect,
+.SkinPropMotion,
+.SkinPropDamaged,
+.SkinPropBG {
+	position: absolute;
+	width: 38px;
+	height: 38px;
+	line-height: 26px;
+	font-size: 22px;
+
+	user-select: none;
+	z-index: 10;
+
+	:global(.alert) {
+		margin: 0;
+		padding: 0;
+		height: 38px;
+		background-color: $dark;
+		color: $light;
+
+		&.Invalid > img {
+			opacity: 0.33;
+		}
+	}
+}
+
+.SkinPropMarriage {
+	bottom: 130px;
+	left: 10px;
+}
+.SkinPropAnimated {
+	bottom: 10px;
+	left: 50px;
+}
+.SkinPropVoice {
+	bottom: 50px;
+	left: 10px;
+}
+.SkinPropEffect {
+	bottom: 50px;
+	left: 50px;
+}
+.SkinPropMotion {
+	bottom: 90px;
+	left: 10px;
+}
+.SkinPropDamaged {
+	bottom: 90px;
+	left: 50px;
+}
+.SkinPropBG {
+	bottom: 10px;
+	left: 10px;
+}
+
+.SkinToggle {
+	position: absolute;
+	background-repeat: no-repeat;
+	filter: drop-shadow(0 0 4px #000);
+	cursor: pointer;
+	z-index: 4;
+
+	&.Damaged {
+		top: 0px;
+		right: 0px;
+		width: 64px;
+		height: 62px;
+		background-image: url($assetsRoot + "/ui/icon-skin-damaged.png");
+		background-size: 128px 62px;
+
+		&[data-damaged="1"] {
+			background-position-x: -64px;
+		}
+	}
+	&.Simplified {
+		top: 70px;
+		right: 18px;
+		width: 28px;
+		height: 28px;
+		background-image: url($assetsRoot + "/ui/icon-skin-simplify.png");
+		background-position-x: -28px;
+		background-size: 56px 28px;
+
+		&[data-simplified="1"] {
+			background-position-x: 0;
+		}
+	}
+	&.BG {
+		top: 130px;
+		right: 18px;
+		width: 28px;
+		height: 28px;
+		background-image: url($assetsRoot + "/ui/icon-skin-bg.png");
+		background-position-x: -28px;
+		background-size: 56px 28px;
+
+		&[data-bg="1"] {
+			background-position-x: 0;
+		}
+	}
+	&.Platform {
+		// top: 180px;
+		// right: 18px;
+		top: 18px;
+		right: 68px;
+		width: 28px;
+		height: 28px;
+		background-image: url($assetsRoot + "/ui/icon-skin-platform.png");
+		background-position-x: -28px;
+		background-size: 56px 28px;
+
+		&[data-platform="1"] {
+			background-position-x: 0;
+		}
+	}
+	&.SD {
+		top: 18px;
+		right: 130px;
+		width: 28px;
+		height: 28px;
+		background-image: url($assetsRoot + "/ui/icon-skin-sd.png");
+		background-position-x: 0px;
+		background-size: 56px 28px;
+
+		&[data-sd="1"] {
+			background-position-x: -28px;
+		}
+	}
+}
+.SDList {
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	width: 104px;
+	height: auto;
+	font-size: 85%;
+	z-index: 4;
+}
+
+.SkinView {
+	.SkinFull {
+		position: relative;
+		padding: 0;
+		background-color: #000;
+		overflow: hidden;
+
+		@mixin FullSizeUnit {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+
+		.FullBG {
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+			transition: opacity 0.21s ease-in-out;
+			opacity: 1;
+
+			background-image: url($assetsRoot + "/bg/unit-bg-v2.jpg");
+
+			&::after {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background-image: url($assetsRoot + "/bg/unit-bg-pattern-v2.png");
+				background-position: center;
+				background-repeat: repeat;
+				opacity: 0.05;
+			}
+
+			&.Black {
+				opacity: 0;
+			}
+		}
+		.FullGroup {
+			position: absolute;
+			display: flex;
+			padding: 0;
+			left: 1em;
+			top: 1em;
+			max-width: 25%;
+			max-height: 25%;
+			text-align: left;
+			overflow: hidden;
+			opacity: 1;
+			transition: opacity 0.22s ease-in-out;
+
+			&.HideGroup {
+				opacity: 0;
+
+				> div > img {
+					pointer-events: all;
+				}
+			}
+
+			> div {
+				flex: 1;
+
+				> img {
+					width: 100%;
+					height: 100%;
+					object-fit: contain;
+					object-position: left top;
+
+					opacity: 0.22;
+					filter: drop-shadow(0 0 5px #000) drop-shadow(0 0 3px rgba(0, 0, 0, 0.5));
+					pointer-events: all;
+					transition: opacity 0.22s ease-in-out;
+
+					&:hover {
+						opacity: 0.92;
+					}
+				}
+			}
+		}
+		.FullUnit {
+			position: absolute;
+			display: flex;
+			padding: 4%;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			justify-content: center;
+
+			&.FullUnitMarginless {
+				padding: 0;
+
+				img {
+					margin: 0 !important;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+
+			> img,
+			> video,
+			> canvas {
+				margin: auto;
+				height: 100%;
+				object-fit: cover;
+
+				// &[data-dir="horz"] {
+				// 	height: 100%;
+				// }
+				// &[data-dir="vert"] {
+				// 	width: 100%;
+				// }
+
+				@include media-breakpoint-up("lg") {
+					margin-left: 0 !important;
+
+					@include FullSizeUnit;
+				}
+
+				&:focus {
+					outline: none !important;
+				}
+			}
+
+			> .SDVideo {
+				object-fit: scale-down !important;
+			}
+		}
+		&:not(.Collapsed) .FullUnit {
+			> img,
+			> video,
+			> canvas {
+				@include FullSizeUnit;
+			}
+		}
+
+		.Detail {
+			position: absolute;
+			right: 18px;
+			bottom: 18px;
+			width: 22px;
+			height: 22px;
+			background-image: url($assetsRoot + "/icon-detail.png");
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 22px 22px;
+			filter: drop-shadow(0 0 5px #000) drop-shadow(0 0 3px rgba(0, 0, 0, 0.5));
+			cursor: pointer;
+			z-index: 4;
+		}
+
+		.Price {
+			position: absolute;
+			padding: 1px 6px 3px;
+			bottom: 5px;
+			right: 5px;
+			border-radius: 4px;
+			background-color: rgba(0, 0, 0, 0.6);
+			text-shadow: 0 0 4px #000;
+			color: #fff;
+
+			> img {
+				height: 20px;
+			}
+		}
+		&.Collapsed .Price {
+			bottom: 55px;
+		}
+
+		&.Collapsed .FullGroup {
+			z-index: 3;
+			pointer-events: none;
+		}
+	}
+}

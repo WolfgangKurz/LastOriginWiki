@@ -1,0 +1,152 @@
+.EternalWarPage {
+	h4 {
+		&::before,
+		&::after {
+			content: "";
+			display: inline-block;
+			margin-bottom: 0.5rem;
+			width: 5rem;
+			height: 0.125rem;
+		}
+		&::before {
+			margin-right: 0.5rem;
+			background: linear-gradient(to left, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+		}
+		&::after {
+			margin-left: 0.5rem;
+			background: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+		}
+	}
+
+	.ChapterCard {
+		user-select: none;
+
+		.ChapterContent {
+			position: relative;
+
+			> img {
+				max-width: 100%;
+			}
+			> .ChapterDesc {
+				position: absolute;
+				padding: 0.125rem;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-color: transparentize($black, 0.66);
+
+				> div {
+					margin: 0.25rem 0.5rem;
+					padding: 0.125em 0.25rem;
+					min-height: 7.5rem;
+					border: 1px solid rgba(255, 255, 255, 0.33);
+					background-color: transparentize($black, 0.33);
+					line-height: 1.3;
+					white-space: pre-wrap;
+					word-break: keep-all;
+					text-align: left;
+					font-size: 80%;
+
+					@include media-breakpoint-up("lg") {
+						margin: 0.25rem 1.5rem;
+						min-height: 8.5rem;
+						line-height: 1.5;
+					}
+				}
+			}
+		}
+
+		.ChapterDescFooter {
+			white-space: pre-wrap;
+			word-break: keep-all;
+			text-align: left;
+			font-size: 80%;
+		}
+	}
+
+	.DropDown {
+		max-height: 20rem;
+		overflow: auto;
+	}
+
+	.StageImage {
+		padding: 0;
+		overflow: hidden;
+
+		> img {
+			max-width: 100%;
+		}
+	}
+
+	.RightSide {
+		> div {
+			top: 1rem;
+			// bottom: 1rem;
+		}
+
+		.StageTitle {
+			display: flex;
+			padding: 0.75rem 1.25rem;
+
+			&::before {
+				content: "[";
+			}
+			&::after {
+				content: "]";
+			}
+
+			> span {
+				display: block;
+				flex: 1;
+			}
+		}
+
+		.empty {
+			opacity: 0.33;
+		}
+
+		.Enemies :global {
+			.wave-button {
+				display: inline-block;
+				margin: 0.25em 0.5em;
+
+				.current-map-marker {
+					position: absolute;
+					transform: scale(0.7);
+				}
+			}
+
+			.enemy-grid-parent {
+				display: grid;
+				grid-template-columns: auto 1fr auto;
+				align-items: center;
+				
+				.enemy-grid {
+					$gap: 0.75em;
+
+					display: inline-grid;
+					grid-template-columns: repeat(3, 1fr);
+					grid-template-rows: repeat(3, 1fr);
+					gap: $gap;
+					vertical-align: middle;
+
+					> div {
+						position: relative;
+						padding: 1em;
+						border-radius: 8px;
+						line-height: 120%;
+						background-color: $gray-500;
+
+						&:empty {
+							background-color: $gray-300;
+						}
+					}
+					img {
+						max-width: 100px;
+						max-height: 100px;
+					}
+				}
+			} // .enemy-grid-parent
+		}
+	}
+}

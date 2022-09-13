@@ -1,0 +1,54 @@
+.GroupItem {
+	@include clearfix;
+
+	display: inline-block;
+	margin: 0.5em 0.5em;
+	padding: 1em;
+	border-radius: 0.25em;
+	background-color: $secondary;
+	color: $light;
+
+	.GroupId {
+		opacity: 0.5;
+	}
+}
+
+.GroupGrid {
+	display: grid;
+	padding: 0.5em;
+	grid-template-columns: 1fr auto auto auto 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+	gap: 0.25em;
+
+	border: 1px solid $secondary;
+	border-radius: 0.5em;
+	background: $light;
+
+	@for $i from 0 to 9 {
+		$x: ($i % 3) + 1 + 1;
+		$y: floor(math.div($i, 3)) + 1;
+
+		> *:nth-child(#{$i + 1}) {
+			grid-column: $x;
+			grid-row: $y;
+		}
+	}
+
+	> * {
+		width: 3em;
+		height: 3em;
+	}
+	> img {
+		cursor: pointer;
+	}
+	> span {
+		display: flex;
+		border-radius: 0.25em;
+		background-color: rgba(0, 0, 0, 0.5);
+		font-weight: bold;
+		color: rgba(255, 255, 255, 0.75);
+		justify-content: center;
+		align-items: center;
+		user-select: none !important;
+	}
+}

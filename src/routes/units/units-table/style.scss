@@ -1,0 +1,36 @@
+.unit-table {
+	th {
+		word-break: keep-all;
+	}
+	tbody th {
+		vertical-align: middle;
+	}
+	td {
+		border: 1px solid #ccc;
+
+		.unit-list-item {
+			padding: 2px 8px;
+			border-bottom: 1px solid #d8d8d8;
+			&:last-child {
+				border-bottom: 0;
+			}
+			&:nth-child(2n) {
+				background-color: #f0f0f0;
+			}
+
+			img.unit-face {
+				display: inline-block;
+				margin-right: 8px;
+				width: 48px;
+			}
+			div.unit-name {
+				line-height: 120%;
+				font-weight: bold;
+				font-size: 16px;
+			}
+			div.unit-flag .badge {
+				box-shadow: 0 0 1px #000;
+			}
+		}
+	}
+}

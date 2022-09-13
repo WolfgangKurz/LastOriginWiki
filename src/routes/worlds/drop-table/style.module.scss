@@ -1,0 +1,53 @@
+.Table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+
+	.TableHeader {
+		> tr:first-child th {
+			border-bottom-color: $secondary;
+		}
+		> tr:not(:first-child) th:not(:last-child) {
+			border-right-color: $secondary;
+		}
+		th {
+			background-color: $dark;
+			color: $light;
+		}
+	}
+
+	th,
+	td {
+		border: 1px solid $dark;
+
+		$ratio: 0.05, 0.09, 0.43, 0.43;
+		@for $i from 1 through 4 {
+			&:nth-child(#{$i}) {
+				$p: nth($ratio, $i) * 100%;
+				width: $p;
+			}
+		}
+	}
+
+	$bg-colors: (#61d42a, #fdc902, #ff3443);
+	@for $i from 1 through 3 {
+		tr[data-type="#{$i - 1}"] {
+			> td,
+			> th {
+				background-color: transparentize(nth($bg-colors, $i), 0.875);
+
+				&.NodeType {
+					background-color: nth($bg-colors, $i);
+					overflow: hidden;
+
+					> span {
+						display: inline-block;
+						transform: rotate(-90deg);
+						transform-origin: 50% 50%;
+						text-shadow: 0 0 3px $light;
+					}
+				}
+			}
+		}
+	}
+}

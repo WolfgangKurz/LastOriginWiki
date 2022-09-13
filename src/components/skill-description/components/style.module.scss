@@ -1,0 +1,137 @@
+.Buff {
+	margin: -3px 0.25em -2px 0;
+	max-height: 1.5em;
+	vertical-align: middle;
+}
+
+.Section {
+	border: 1px solid transparentize($dark, 0.5);
+	box-shadow: inset 0 0 0.75em transparentize($dark, 0.75);
+
+	& > .Section {
+		margin: -1em 0;
+		padding: 0.25em 0.45em;
+		border: 1px solid transparentize($dark, 0.5) !important;
+		font-size: 0.95em;
+	}
+	&.Subsection {
+		background-color: transparentize($dark, 0.85);
+		box-shadow: 0 0 0.25em transparentize($dark, 0.75);
+	}
+
+	&:global(.bg-success) > .Value {
+		color: $light !important;
+	}
+}
+
+.Value {
+	&[data-sign="+"] {
+		color: $primary;
+	}
+	&[data-sign="-"] {
+		color: $danger;
+	}
+}
+
+.Damage {
+	display: inline-block;
+	border-radius: 0.25em;
+	color: $dark;
+
+	padding: 0.125em 0.25em;
+	border: 1px solid transparentize($secondary, 0.5);
+	background-color: $light;
+}
+
+.Preload {
+	position: absolute;
+	display: inline-block;
+	left: 0;
+	top: 0;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	pointer-events: none;
+	opacity: 0.000001;
+}
+
+strike {
+	text-decoration: line-through;
+	opacity: 0.5;
+}
+
+.Comment {
+	position: relative;
+	display: inline-block;
+	font-weight: bold;
+	text-decoration: underline;
+	// user-select: none !important;
+	cursor: pointer;
+
+	> button {
+		position: absolute;
+		margin :0;
+		padding: 0;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+
+		&:focus + .CommentPopup {
+			opacity: 1;
+		}
+	}
+
+	> .CommentPopup {
+		position: absolute;
+		margin-top: 0.25em;
+		padding: 0.75em;
+		min-width: 20em;
+		min-height: 8em;
+		background-color: $light;
+		background-image: linear-gradient(to bottom, mix($white, $dark, 95%), mix($white, $dark, 80%));
+		box-shadow: 0 0.125em 0.5em $dark;
+		line-height: 1.8;
+		text-align: left;
+		font-weight: normal;
+		font-size: 1rem;
+		text-decoration: none;
+		pointer-events: none !important;
+		word-break: keep-all;
+		cursor: default;
+		color: $dark;
+		opacity: 0;
+		z-index: 100;
+		transition: opacity 0.25s ease;
+
+		&::before {
+			position: absolute;
+			content: "?";
+			display: block;
+			right: 1.5rem;
+			bottom: -2.5rem;
+			font-size: 9em;
+			z-index: -1;
+			transform: rotate(15deg);
+			opacity: 0.08;
+		}
+
+		> h2 {
+			margin-bottom: 0.75em;
+			font-weight: bold;
+			font-size: 100%;
+			color: $dark;
+			opacity: 0.88;
+		}
+
+		> .CommentLine {
+			padding: 2px 0 4px;
+			border-bottom: 1px solid #bec2c6;
+
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+	}
+}

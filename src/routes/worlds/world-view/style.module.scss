@@ -1,0 +1,66 @@
+:global .worlds-world {
+	.card {
+		background-color: rgba($black, 0.6);
+		color: $light;
+
+		&.disabled {
+			opacity: 0.88;
+		}
+
+		.card-body {
+			&::after {
+				content: "";
+				display: table;
+				clear: both;
+			}
+
+			img {
+				width: 100%;
+			}
+
+			.worlds-world-number {
+				font-weight: 600;
+				font-size: 0.8em;
+			}
+			.worlds-world-name {
+				display: inline-block;
+				font-weight: 500;
+				font-size: 1.1rem;
+			}
+
+			> .btn-group > button {
+				font-weight: bold;
+				font-size: 90%;
+			}
+		}
+	}
+}
+
+.EventBanner > img {
+	max-width: 100%;
+}
+
+.StoryWorld {
+	position: relative;
+	overflow: hidden;
+
+	> :global(.card-body) {
+		background: linear-gradient(to left, rgba($black, 0.65) 55%, transparent 85%, transparent 100%);
+		z-index: 1;
+
+		img {
+			opacity: 0;
+			pointer-events: none !important;
+		}
+	}
+
+	> .MapBack {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		max-width: 100% !important;
+	}
+}

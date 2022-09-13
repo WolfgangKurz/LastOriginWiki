@@ -1,0 +1,18 @@
+@import "@/../node_modules/bootstrap/scss/functions";
+@import "@/../node_modules/bootstrap/scss/variables";
+@import "@/../node_modules/bootstrap/scss/mixins";
+
+$assetsRoot: "https://lo.swaytwig.com/assets" !default;
+// $assetsRoot: "https://staging-lo.swaytwig.com/assets";
+$__theme__loaded: false !default;
+$mode: "PUB" !default;
+
+@if ($__theme__loaded == false) {
+	@if ($NODE_ENV == "development") {
+		$assetsRoot: "http://"+$LOCALHOST+"/assets" !global;
+		$mode: "DEV" !global;
+	}
+	$__theme__loaded: true !global;
+}
+
+@import "./variables";

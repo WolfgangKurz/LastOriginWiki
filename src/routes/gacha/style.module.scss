@@ -1,0 +1,84 @@
+.GachaList {
+	overflow-x: auto;
+	overflow-y: hidden;
+
+	> ul {
+		flex-wrap: nowrap;
+		white-space: nowrap;
+	}
+}
+
+img.TunaIcon {
+	margin-right: 0.25em;
+	height: 1em;
+}
+
+.ResultBody {
+	background-color: transparentize($dark, 0.22);
+	overflow: hidden;
+}
+
+$shadow: (
+	5: $rarity-SS,
+	// 4: #3164d1,
+	// 3: #a9e8fa,
+	// 2: $danger,
+	4: #3164d1,
+	3: #3164d1,
+	2: #3164d1,
+);
+
+@each $k, $c in $shadow {
+	.Result-#{$k} {
+		box-shadow: 0 0 15px $c;
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+.GachaResultBox {
+	animation-fill-mode: both;
+	animation-name: fadeIn;
+	animation-duration: 500ms !important;
+	animation-iteration-count: 1 !important;
+
+	@media print, (prefers-reduced-motion: reduce) {
+		animation-duration: 1ms !important;
+		transition-duration: 1ms !important;
+		animation-iteration-count: 1 !important;
+	}
+
+	.ResultIcon {
+		position: relative;
+		margin: 0.25em;
+
+		> .ResultCount {
+			position: absolute;
+			right: 0.125em;
+			bottom: 0.125em;
+			font-weight: bold;
+			text-shadow: 0 0 2px $dark, 0 0 2px $dark, 0 0 2px $dark, 0 0 2px $dark, 0 0 2px $dark, 0 0 2px $dark;
+			color: $light;
+		}
+	}
+	.ResultName {
+		padding: 0.25em;
+		background-color: transparentize($dark, 0.5);
+		text-shadow: 0 0 2px $dark, 0 0 2px $dark, 0 0 2px $dark, 0 0 2px $dark;
+		word-break: keep-all;
+		font-weight: bold;
+		font-size: 80% !important;
+	}
+}
+
+.ListName {
+	word-break: keep-all;
+	font-size: 90% !important;
+}

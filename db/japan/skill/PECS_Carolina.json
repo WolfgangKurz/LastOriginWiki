@@ -1,0 +1,5381 @@
+{
+  "1": {
+    "key": "1",
+    "icon": "WideBeamShot",
+    "target": "enemy",
+    "buffs": {
+      "index": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "data": [
+        {
+          "rate": 1.19,
+          "type": 0,
+          "range": 3,
+          "ap": 8,
+          "grid": "4>456",
+          "target_ground": true,
+          "summon": null,
+          "use": {
+            "key": "Effect_PECS_Carolina_N_4",
+            "count": 3
+          },
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Carolina_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "B.バスター：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.15",
+                    "level": "-7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-15%",
+                      "per": "-0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "B.バスター：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "B.バスター：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "LV.3 B.バスター：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Carolina_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_PECS_Carolina_N_4"
+                  ],
+                  "stack": 2,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "Lv.2 B.バスター：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-7.4999999999999997E-2",
+                    "level": "-3.7499999999999999E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-7.5%",
+                      "per": "-0.375%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "LV.2 B.バスター：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-2.5000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "Lv.2 B.バスター：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Carolina_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_PECS_Carolina_N_4"
+                  ],
+                  "stack": 3,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "Lv.3 B.バスター：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-7.4999999999999997E-2",
+                    "level": "-3.7499999999999999E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-7.5%",
+                      "per": "-0.375%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "LV.3 B.バスター：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-2.5000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "Lv.3 B.バスター：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "LV.3 B.バスター：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.29,
+          "type": 0,
+          "range": 3,
+          "ap": 8,
+          "grid": "4>456",
+          "target_ground": true,
+          "summon": null,
+          "use": {
+            "key": "Effect_PECS_Carolina_N_4",
+            "count": 3
+          },
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Carolina_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "B.バスター：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.15",
+                    "level": "-7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-15%",
+                      "per": "-0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "B.バスター：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "B.バスター：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "LV.3 B.バスター：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Carolina_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_PECS_Carolina_N_4"
+                  ],
+                  "stack": 2,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "Lv.2 B.バスター：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-7.4999999999999997E-2",
+                    "level": "-3.7499999999999999E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-7.5%",
+                      "per": "-0.375%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "LV.2 B.バスター：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-2.5000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "Lv.2 B.バスター：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Carolina_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_PECS_Carolina_N_4"
+                  ],
+                  "stack": 3,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "Lv.3 B.バスター：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-7.4999999999999997E-2",
+                    "level": "-3.7499999999999999E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-7.5%",
+                      "per": "-0.375%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "LV.3 B.バスター：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-2.5000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "Lv.3 B.バスター：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "LV.3 B.バスター：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.39,
+          "type": 0,
+          "range": 3,
+          "ap": 8,
+          "grid": "4>456",
+          "target_ground": true,
+          "summon": null,
+          "use": {
+            "key": "Effect_PECS_Carolina_N_4",
+            "count": 3
+          },
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Carolina_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "B.バスター：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.15",
+                    "level": "-7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-15%",
+                      "per": "-0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "B.バスター：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "B.バスター：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "LV.3 B.バスター：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Carolina_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_PECS_Carolina_N_4"
+                  ],
+                  "stack": 2,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "Lv.2 B.バスター：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-7.4999999999999997E-2",
+                    "level": "-3.7499999999999999E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-7.5%",
+                      "per": "-0.375%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "LV.2 B.バスター：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-2.5000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "Lv.2 B.バスター：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Carolina_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_PECS_Carolina_N_4"
+                  ],
+                  "stack": 3,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "Lv.3 B.バスター：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-7.4999999999999997E-2",
+                    "level": "-3.7499999999999999E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-7.5%",
+                      "per": "-0.375%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "LV.3 B.バスター：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-2.5000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "Lv.3 B.バスター：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "LV.3 B.バスター：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.49,
+          "type": 0,
+          "range": 3,
+          "ap": 8,
+          "grid": "4>456",
+          "target_ground": true,
+          "summon": null,
+          "use": {
+            "key": "Effect_PECS_Carolina_N_4",
+            "count": 3
+          },
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Carolina_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "B.バスター：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.15",
+                    "level": "-7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-15%",
+                      "per": "-0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "B.バスター：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "B.バスター：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "LV.3 B.バスター：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Carolina_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_PECS_Carolina_N_4"
+                  ],
+                  "stack": 2,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "Lv.2 B.バスター：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-7.4999999999999997E-2",
+                    "level": "-3.7499999999999999E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-7.5%",
+                      "per": "-0.375%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "LV.2 B.バスター：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-2.5000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "Lv.2 B.バスター：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Carolina_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_PECS_Carolina_N_4"
+                  ],
+                  "stack": 3,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "Lv.3 B.バスター：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-7.4999999999999997E-2",
+                    "level": "-3.7499999999999999E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-7.5%",
+                      "per": "-0.375%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "LV.3 B.バスター：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-2.5000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "Lv.3 B.バスター：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "LV.3 B.バスター：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.59,
+          "type": 0,
+          "range": 3,
+          "ap": 8,
+          "grid": "4>456",
+          "target_ground": true,
+          "summon": null,
+          "use": {
+            "key": "Effect_PECS_Carolina_N_4",
+            "count": 3
+          },
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Carolina_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "B.バスター：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.15",
+                    "level": "-7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-15%",
+                      "per": "-0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "B.バスター：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "B.バスター：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "LV.3 B.バスター：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Carolina_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_PECS_Carolina_N_4"
+                  ],
+                  "stack": 2,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "Lv.2 B.バスター：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-7.4999999999999997E-2",
+                    "level": "-3.7499999999999999E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-7.5%",
+                      "per": "-0.375%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "LV.2 B.バスター：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-2.5000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "Lv.2 B.バスター：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Carolina_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_PECS_Carolina_N_4"
+                  ],
+                  "stack": 3,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "Lv.3 B.バスター：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-7.4999999999999997E-2",
+                    "level": "-3.7499999999999999E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-7.5%",
+                      "per": "-0.375%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "LV.3 B.バスター：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-2.5000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "Lv.3 B.バスター：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "LV.3 B.バスター：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.69,
+          "type": 0,
+          "range": 3,
+          "ap": 8,
+          "grid": "4>456",
+          "target_ground": true,
+          "summon": null,
+          "use": {
+            "key": "Effect_PECS_Carolina_N_4",
+            "count": 3
+          },
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Carolina_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "B.バスター：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.15",
+                    "level": "-7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-15%",
+                      "per": "-0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "B.バスター：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "B.バスター：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "LV.3 B.バスター：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Carolina_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_PECS_Carolina_N_4"
+                  ],
+                  "stack": 2,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "Lv.2 B.バスター：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-7.4999999999999997E-2",
+                    "level": "-3.7499999999999999E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-7.5%",
+                      "per": "-0.375%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "LV.2 B.バスター：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-2.5000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "Lv.2 B.バスター：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Carolina_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_PECS_Carolina_N_4"
+                  ],
+                  "stack": 3,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "Lv.3 B.バスター：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-7.4999999999999997E-2",
+                    "level": "-3.7499999999999999E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-7.5%",
+                      "per": "-0.375%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "LV.3 B.バスター：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-2.5000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "Lv.3 B.バスター：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "LV.3 B.バスター：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.79,
+          "type": 0,
+          "range": 3,
+          "ap": 8,
+          "grid": "4>456",
+          "target_ground": true,
+          "summon": null,
+          "use": {
+            "key": "Effect_PECS_Carolina_N_4",
+            "count": 3
+          },
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Carolina_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "B.バスター：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.15",
+                    "level": "-7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-15%",
+                      "per": "-0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "B.バスター：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "B.バスター：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "LV.3 B.バスター：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Carolina_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_PECS_Carolina_N_4"
+                  ],
+                  "stack": 2,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "Lv.2 B.バスター：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-7.4999999999999997E-2",
+                    "level": "-3.7499999999999999E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-7.5%",
+                      "per": "-0.375%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "LV.2 B.バスター：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-2.5000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "Lv.2 B.バスター：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Carolina_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_PECS_Carolina_N_4"
+                  ],
+                  "stack": 3,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "Lv.3 B.バスター：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-7.4999999999999997E-2",
+                    "level": "-3.7499999999999999E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-7.5%",
+                      "per": "-0.375%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "LV.3 B.バスター：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-2.5000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "Lv.3 B.バスター：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "LV.3 B.バスター：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.89,
+          "type": 0,
+          "range": 3,
+          "ap": 8,
+          "grid": "4>456",
+          "target_ground": true,
+          "summon": null,
+          "use": {
+            "key": "Effect_PECS_Carolina_N_4",
+            "count": 3
+          },
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Carolina_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "B.バスター：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.15",
+                    "level": "-7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-15%",
+                      "per": "-0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "B.バスター：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "B.バスター：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "LV.3 B.バスター：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Carolina_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_PECS_Carolina_N_4"
+                  ],
+                  "stack": 2,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "Lv.2 B.バスター：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-7.4999999999999997E-2",
+                    "level": "-3.7499999999999999E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-7.5%",
+                      "per": "-0.375%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "LV.2 B.バスター：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-2.5000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "Lv.2 B.バスター：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Carolina_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_PECS_Carolina_N_4"
+                  ],
+                  "stack": 3,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "Lv.3 B.バスター：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-7.4999999999999997E-2",
+                    "level": "-3.7499999999999999E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-7.5%",
+                      "per": "-0.375%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "LV.3 B.バスター：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-2.5000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "Lv.3 B.バスター：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "LV.3 B.バスター：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.99,
+          "type": 0,
+          "range": 3,
+          "ap": 8,
+          "grid": "4>456",
+          "target_ground": true,
+          "summon": null,
+          "use": {
+            "key": "Effect_PECS_Carolina_N_4",
+            "count": 3
+          },
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Carolina_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "B.バスター：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.15",
+                    "level": "-7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-15%",
+                      "per": "-0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "B.バスター：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "B.バスター：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "LV.3 B.バスター：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Carolina_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_PECS_Carolina_N_4"
+                  ],
+                  "stack": 2,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "Lv.2 B.バスター：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-7.4999999999999997E-2",
+                    "level": "-3.7499999999999999E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-7.5%",
+                      "per": "-0.375%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "LV.2 B.バスター：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-2.5000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "Lv.2 B.バスター：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Carolina_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_PECS_Carolina_N_4"
+                  ],
+                  "stack": 3,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "Lv.3 B.バスター：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-7.4999999999999997E-2",
+                    "level": "-3.7499999999999999E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-7.5%",
+                      "per": "-0.375%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "LV.3 B.バスター：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-2.5000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "Lv.3 B.バスター：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "LV.3 B.バスター：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.09,
+          "type": 0,
+          "range": 3,
+          "ap": 8,
+          "grid": "4>456",
+          "target_ground": true,
+          "summon": null,
+          "use": {
+            "key": "Effect_PECS_Carolina_N_4",
+            "count": 3
+          },
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Carolina_N_1",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "B.バスター：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-0.15",
+                    "level": "-7.4999999999999997E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-15%",
+                      "per": "-0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "B.バスター：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "B.バスター：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.2",
+                    "level": "-0.01"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-20%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "LV.3 B.バスター：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Carolina_N_11",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_PECS_Carolina_N_4"
+                  ],
+                  "stack": 2,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "Lv.2 B.バスター：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-7.4999999999999997E-2",
+                    "level": "-3.7499999999999999E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-7.5%",
+                      "per": "-0.375%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "LV.2 B.バスター：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-2.5000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "Lv.2 B.バスター：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Carolina_N_12",
+              "on": "attack_success",
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_PECS_Carolina_N_4"
+                  ],
+                  "stack": 3,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_DOWN",
+                  "desc": {
+                    "desc": "Lv.3 B.バスター：攻撃力{0}%",
+                    "type": 1,
+                    "value": "-7.4999999999999997E-2",
+                    "level": "-3.7499999999999999E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "-7.5%",
+                      "per": "-0.375%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_DOWN",
+                  "desc": {
+                    "desc": "LV.3 B.バスター：クリティカル率{0}%",
+                    "type": 1,
+                    "value": "-0.05",
+                    "level": "-2.5000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "-5%",
+                      "per": "-0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "desc": {
+                    "desc": "Lv.3 B.バスター：命中率{0}%",
+                    "type": 1,
+                    "value": "-0.1",
+                    "level": "-5.0000000000000001E-3"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "-10%",
+                      "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "LV.3 B.バスター：受けるダメージ+{0}%",
+                    "type": 1,
+                    "value": "0.3",
+                    "level": "1.4999999999999999E-2"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "30%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_ATK_DOWN",
+            "desc": {
+              "desc": "B.バスター：攻撃力{0}%",
+              "type": 1,
+              "value": "-0.15",
+              "level": "-7.4999999999999997E-3"
+            },
+            "value": "-0.15",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_CRITICAL_DOWN",
+            "desc": {
+              "desc": "B.バスター：クリティカル率{0}%",
+              "type": 1,
+              "value": "-0.1",
+              "level": "-5.0000000000000001E-3"
+            },
+            "value": "-0.1",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ACCURACY_DOWN",
+            "desc": {
+              "desc": "B.バスター：命中率{0}%",
+              "type": 1,
+              "value": "-0.2",
+              "level": "-0.01"
+            },
+            "base": -0.2,
+            "per": -0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_VULNERABLE",
+            "desc": {
+              "desc": "LV.3 B.バスター：受けるダメージ+{0}%",
+              "type": 1,
+              "value": "0.3",
+              "level": "1.4999999999999999E-2"
+            },
+            "value": "0.3",
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_ATK_DOWN",
+            "desc": {
+              "desc": "Lv.2 B.バスター：攻撃力{0}%",
+              "type": 1,
+              "value": "-7.4999999999999997E-2",
+              "level": "-3.7499999999999999E-3"
+            },
+            "value": "-7.4999999999999997E-2",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_CRITICAL_DOWN",
+            "desc": {
+              "desc": "LV.2 B.バスター：クリティカル率{0}%",
+              "type": 1,
+              "value": "-0.05",
+              "level": "-2.5000000000000001E-3"
+            },
+            "value": "-0.05",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ACCURACY_DOWN",
+            "desc": {
+              "desc": "Lv.2 B.バスター：命中率{0}%",
+              "type": 1,
+              "value": "-0.1",
+              "level": "-5.0000000000000001E-3"
+            },
+            "value": "-0.1",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ATK_DOWN",
+            "desc": {
+              "desc": "Lv.3 B.バスター：攻撃力{0}%",
+              "type": 1,
+              "value": "-7.4999999999999997E-2",
+              "level": "-3.7499999999999999E-3"
+            },
+            "value": "-7.4999999999999997E-2",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_CRITICAL_DOWN",
+            "desc": {
+              "desc": "LV.3 B.バスター：クリティカル率{0}%",
+              "type": 1,
+              "value": "-0.05",
+              "level": "-2.5000000000000001E-3"
+            },
+            "value": "-0.05",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ACCURACY_DOWN",
+            "desc": {
+              "desc": "Lv.3 B.バスター：命中率{0}%",
+              "type": 1,
+              "value": "-0.1",
+              "level": "-5.0000000000000001E-3"
+            },
+            "value": "-0.1",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_VULNERABLE",
+            "desc": {
+              "desc": "LV.3 B.バスター：受けるダメージ+{0}%",
+              "type": 1,
+              "value": "0.3",
+              "level": "1.4999999999999999E-2"
+            },
+            "value": "0.3",
+            "chance": 1
+          }
+        ]
+      ]
+    }
+  },
+  "2": {
+    "key": "2",
+    "icon": "TeamAtkBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 8,
+          "grid": "24568",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 999,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Carolina_N_2",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "チアアップ！：攻撃力+{0}%",
+                    "type": 1,
+                    "value": "0.1",
+                    "level": "5.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_UP",
+                  "desc": {
+                    "desc": "チアアップ！：防御力+{0}%",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "チアアップ！：命中率+{0}%",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "チアアップ！：回避率+{0}%",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "LV.3チアアップ！：有害な効果解除",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 100,
+                    "off": 1
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Carolina_N_14",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_PECS_Carolina_N_4"
+                  ],
+                  "stack": 2,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "Lv.2チアアップ！：攻撃力+{0}%",
+                    "type": 1,
+                    "value": "0.05",
+                    "level": "2.5000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "5%",
+                      "per": "0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_UP",
+                  "desc": {
+                    "desc": "LV.2チアアップ！：防御力+{0}%",
+                    "type": 1,
+                    "value": "7.4999999999999997E-2",
+                    "level": "3.7499999999999999E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "7.5%",
+                      "per": "0.375%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "Lv.2チアアップ！：命中率+{0}%",
+                    "type": 1,
+                    "value": "7.4999999999999997E-2",
+                    "level": "3.7499999999999999E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "7.5%",
+                      "per": "0.375%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "LV.2チアアップ！：回避率+{0}%",
+                    "type": 1,
+                    "value": "7.4999999999999997E-2",
+                    "level": "3.7499999999999999E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "7.5%",
+                      "per": "0.375%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Carolina_N_15",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_PECS_Carolina_N_4"
+                  ],
+                  "stack": 3,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "Lv.3チアアップ！：攻撃力+{0}%",
+                    "type": 1,
+                    "value": "0.05",
+                    "level": "2.5000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "5%",
+                      "per": "0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_UP",
+                  "desc": {
+                    "desc": "LV.3チアアップ！：防御力+{0}%",
+                    "type": 1,
+                    "value": "7.4999999999999997E-2",
+                    "level": "3.7499999999999999E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "7.5%",
+                      "per": "0.375%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "Lv.3チアアップ！：命中率+{0}%",
+                    "type": 1,
+                    "value": "7.4999999999999997E-2",
+                    "level": "3.7499999999999999E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "7.5%",
+                      "per": "0.375%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "LV.3チアアップ！：回避率+{0}%",
+                    "type": 1,
+                    "value": "7.4999999999999997E-2",
+                    "level": "3.7499999999999999E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "7.5%",
+                      "per": "0.375%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "LV.3チアアップ！：有害な効果解除",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 100,
+                    "off": 1
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 8,
+          "grid": "fill",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 999,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Carolina_N_2",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "チアアップ！：攻撃力+{0}%",
+                    "type": 1,
+                    "value": "0.1",
+                    "level": "5.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_UP",
+                  "desc": {
+                    "desc": "チアアップ！：防御力+{0}%",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "チアアップ！：命中率+{0}%",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "チアアップ！：回避率+{0}%",
+                    "type": 1,
+                    "value": "0.15",
+                    "level": "7.4999999999999997E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "15%",
+                      "per": "0.75%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "LV.3チアアップ！：有害な効果解除",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 100,
+                    "off": 1
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Carolina_N_14",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_PECS_Carolina_N_4"
+                  ],
+                  "stack": 2,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "Lv.2チアアップ！：攻撃力+{0}%",
+                    "type": 1,
+                    "value": "0.05",
+                    "level": "2.5000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "5%",
+                      "per": "0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_UP",
+                  "desc": {
+                    "desc": "LV.2チアアップ！：防御力+{0}%",
+                    "type": 1,
+                    "value": "7.4999999999999997E-2",
+                    "level": "3.7499999999999999E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "7.5%",
+                      "per": "0.375%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "Lv.2チアアップ！：命中率+{0}%",
+                    "type": 1,
+                    "value": "7.4999999999999997E-2",
+                    "level": "3.7499999999999999E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "7.5%",
+                      "per": "0.375%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "LV.2チアアップ！：回避率+{0}%",
+                    "type": 1,
+                    "value": "7.4999999999999997E-2",
+                    "level": "3.7499999999999999E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "7.5%",
+                      "per": "0.375%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Carolina_N_15",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": {
+                "on": {
+                  "target": "self",
+                  "select": [
+                    "Effect_PECS_Carolina_N_4"
+                  ],
+                  "stack": 3,
+                  "attr": 4
+                }
+              },
+              "body": [
+                0
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "Lv.3チアアップ！：攻撃力+{0}%",
+                    "type": 1,
+                    "value": "0.05",
+                    "level": "2.5000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "5%",
+                      "per": "0.25%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_UP",
+                  "desc": {
+                    "desc": "LV.3チアアップ！：防御力+{0}%",
+                    "type": 1,
+                    "value": "7.4999999999999997E-2",
+                    "level": "3.7499999999999999E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "7.5%",
+                      "per": "0.375%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "Lv.3チアアップ！：命中率+{0}%",
+                    "type": 1,
+                    "value": "7.4999999999999997E-2",
+                    "level": "3.7499999999999999E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "7.5%",
+                      "per": "0.375%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_UP",
+                  "desc": {
+                    "desc": "LV.3チアアップ！：回避率+{0}%",
+                    "type": 1,
+                    "value": "7.4999999999999997E-2",
+                    "level": "3.7499999999999999E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "7.5%",
+                      "per": "0.375%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_DEBUFF",
+                  "desc": {
+                    "desc": "LV.3チアアップ！：有害な効果解除",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 100,
+                    "off": 1
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "チアアップ！：攻撃力+{0}%",
+              "type": 1,
+              "value": "0.1",
+              "level": "5.0000000000000001E-3"
+            },
+            "value": "0.1",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DEF_UP",
+            "desc": {
+              "desc": "チアアップ！：防御力+{0}%",
+              "type": 1,
+              "value": "0.15",
+              "level": "7.4999999999999997E-3"
+            },
+            "value": "0.15",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ACCURACY_UP",
+            "desc": {
+              "desc": "チアアップ！：命中率+{0}%",
+              "type": 1,
+              "value": "0.15",
+              "level": "7.4999999999999997E-3"
+            },
+            "value": "0.15",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_EVADE_UP",
+            "desc": {
+              "desc": "チアアップ！：回避率+{0}%",
+              "type": 1,
+              "value": "0.15",
+              "level": "7.4999999999999997E-3"
+            },
+            "value": "0.15",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_DEBUFF",
+            "desc": {
+              "desc": "LV.3チアアップ！：有害な効果解除",
+              "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "Lv.2チアアップ！：攻撃力+{0}%",
+              "type": 1,
+              "value": "0.05",
+              "level": "2.5000000000000001E-3"
+            },
+            "value": "0.05",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DEF_UP",
+            "desc": {
+              "desc": "LV.2チアアップ！：防御力+{0}%",
+              "type": 1,
+              "value": "7.4999999999999997E-2",
+              "level": "3.7499999999999999E-3"
+            },
+            "value": "7.4999999999999997E-2",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ACCURACY_UP",
+            "desc": {
+              "desc": "Lv.2チアアップ！：命中率+{0}%",
+              "type": 1,
+              "value": "7.4999999999999997E-2",
+              "level": "3.7499999999999999E-3"
+            },
+            "value": "7.4999999999999997E-2",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_EVADE_UP",
+            "desc": {
+              "desc": "LV.2チアアップ！：回避率+{0}%",
+              "type": 1,
+              "value": "7.4999999999999997E-2",
+              "level": "3.7499999999999999E-3"
+            },
+            "value": "7.4999999999999997E-2",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "Lv.3チアアップ！：攻撃力+{0}%",
+              "type": 1,
+              "value": "0.05",
+              "level": "2.5000000000000001E-3"
+            },
+            "value": "0.05",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DEF_UP",
+            "desc": {
+              "desc": "LV.3チアアップ！：防御力+{0}%",
+              "type": 1,
+              "value": "7.4999999999999997E-2",
+              "level": "3.7499999999999999E-3"
+            },
+            "value": "7.4999999999999997E-2",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ACCURACY_UP",
+            "desc": {
+              "desc": "Lv.3チアアップ！：命中率+{0}%",
+              "type": 1,
+              "value": "7.4999999999999997E-2",
+              "level": "3.7499999999999999E-3"
+            },
+            "value": "7.4999999999999997E-2",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_EVADE_UP",
+            "desc": {
+              "desc": "LV.3チアアップ！：回避率+{0}%",
+              "type": 1,
+              "value": "7.4999999999999997E-2",
+              "level": "3.7499999999999999E-3"
+            },
+            "value": "7.4999999999999997E-2",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_DEBUFF",
+            "desc": {
+              "desc": "LV.3チアアップ！：有害な効果解除",
+              "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 1
+          }
+        ]
+      ]
+    }
+  },
+  "3": {
+    "key": "3",
+    "icon": "TeamAtkBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "2468",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Carolina_N_3",
+              "on": "round",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Carolina_N_4"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "RBスピーカー：攻撃力+{0}%",
+                    "type": 1,
+                    "value": "0.1",
+                    "level": "5.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "RBスピーカー：クリティカル率+{0}%",
+                    "type": 1,
+                    "value": "0.08",
+                    "level": "4.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "8%",
+                      "per": "0.4%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "LBスピーカー：AP+{0}",
+                    "type": 0,
+                    "value": "0.5",
+                    "level": "2.5000000000000001E-2"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 20,
+                    "ap": {
+                      "base": 0.5,
+                      "per": 0.025
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "LBスピーカー：行動力+{0}%",
+                    "type": 1,
+                    "value": "0.06",
+                    "level": "3.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "6%",
+                      "per": "0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Carolina_N_13",
+              "on": "wait",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "LBスピーカー：AP+{0}",
+                    "type": 0,
+                    "value": "0.5",
+                    "level": "2.5000000000000001E-2"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 0.5,
+                      "per": 0.025
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Carolina_N_16",
+              "on": "wait",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "LBスピーカー：行動力+{0}%",
+                    "type": 1,
+                    "value": "0.06",
+                    "level": "3.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "6%",
+                      "per": "0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "around",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Carolina_N_3",
+              "on": "round",
+              "if": {
+                "on": {
+                  "func": "OR",
+                  "select": [
+                    "Effect_PECS_Carolina_N_4"
+                  ],
+                  "attr": 4
+                }
+              },
+              "body": [
+                0
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "RBスピーカー：攻撃力+{0}%",
+                    "type": 1,
+                    "value": "0.1",
+                    "level": "5.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "RBスピーカー：クリティカル率+{0}%",
+                    "type": 1,
+                    "value": "0.08",
+                    "level": "4.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "8%",
+                      "per": "0.4%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "LBスピーカー：AP+{0}",
+                    "type": 0,
+                    "value": "0.5",
+                    "level": "2.5000000000000001E-2"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 20,
+                    "ap": {
+                      "base": 0.5,
+                      "per": 0.025
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "LBスピーカー：行動力+{0}%",
+                    "type": 1,
+                    "value": "0.06",
+                    "level": "3.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "6%",
+                      "per": "0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Carolina_N_13",
+              "on": "wait",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "LBスピーカー：AP+{0}",
+                    "type": 0,
+                    "value": "0.5",
+                    "level": "2.5000000000000001E-2"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 0.5,
+                      "per": 0.025
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Carolina_N_16",
+              "on": "wait",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "LBスピーカー：行動力+{0}%",
+                    "type": 1,
+                    "value": "0.06",
+                    "level": "3.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "6%",
+                      "per": "0.3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "RBスピーカー：攻撃力+{0}%",
+              "type": 1,
+              "value": "0.1",
+              "level": "5.0000000000000001E-3"
+            },
+            "value": "0.1",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_CRITICAL_UP",
+            "desc": {
+              "desc": "RBスピーカー：クリティカル率+{0}%",
+              "type": 1,
+              "value": "0.08",
+              "level": "4.0000000000000001E-3"
+            },
+            "value": "0.08",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "LBスピーカー：AP+{0}",
+              "type": 0,
+              "value": "0.5",
+              "level": "2.5000000000000001E-2"
+            },
+            "value": "0.5",
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "LBスピーカー：行動力+{0}%",
+              "type": 1,
+              "value": "0.06",
+              "level": "3.0000000000000001E-3"
+            },
+            "value": "0.06",
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "LBスピーカー：AP+{0}",
+              "type": 0,
+              "value": "0.5",
+              "level": "2.5000000000000001E-2"
+            },
+            "value": "0.5",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "LBスピーカー：行動力+{0}%",
+              "type": 1,
+              "value": "0.06",
+              "level": "3.0000000000000001E-3"
+            },
+            "value": "0.06",
+            "chance": 1
+          }
+        ]
+      ]
+    }
+  },
+  "4": {
+    "key": "4",
+    "icon": "SelfSpdBuff",
+    "target": "team",
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "self",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Carolina_N_4",
+              "on": "attack_success",
+              "if": {
+                "troop": [
+                  "0"
+                ]
+              },
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "チアリーダー：行動力+{0}%",
+                    "type": 1,
+                    "value": "0.1",
+                    "level": "5.0000000000000001E-3"
+                  },
+                  "attr": 0,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 3
+            }
+          ]
+        }
+      ]
+    },
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "チアリーダー：行動力+{0}%",
+              "type": 1,
+              "value": "0.1",
+              "level": "5.0000000000000001E-3"
+            },
+            "value": "0.1",
+            "chance": 1
+          }
+        ]
+      ]
+    }
+  }
+}

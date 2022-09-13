@@ -1,0 +1,50 @@
+.drop-unit {
+	user-select: none;
+	// cursor: pointer;
+
+	.unit-face {
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+	}
+	span.unit-info {
+		opacity: 0.72;
+
+		i {
+			$basis: 18px;
+			display: inline-block;
+			width: $basis;
+			height: $basis;
+			margin-right: 4px;
+			background-size: ($basis * 3) ($basis * 2);
+			background-position: 0 0;
+			background-repeat: no-repeat;
+			vertical-align: bottom;
+
+			background-position-y: -$basis;
+
+			&[data-type] {
+				background-image: url($assetsRoot + "/unit-type.png");
+				&[data-type="0"] { // 경장
+					background-position-x: 0px;
+				}
+				&[data-type="2"] { // 기동
+					background-position-x: -$basis;
+				}
+				&[data-type="1"] { // 중장
+					background-position-x: -($basis * 2);
+				}
+			}
+			&[data-role] {
+				background-image: url($assetsRoot + "/unit-role.png");
+				&[data-role="1"] { // 공격기
+					background-position-x: 0px;
+				}
+				&[data-role="0"] { // 보호기
+					background-position-x: -$basis;
+				}
+				&[data-role="2"] { // 지원기
+					background-position-x: -($basis * 2);
+				}
+			}
+		}
+	}
+}

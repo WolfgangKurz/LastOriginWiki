@@ -1,20 +1,26 @@
-import { LocaleGet } from "@/libs/Locale";
-import { SortieCostType } from "@/libs/Types";
-import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, CURRENCY_TYPE, ITEM_TYPE, ROLE_TYPE } from "@/libs/Types/Enums";
-import webpChecker from "webp-checker";
+import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, CURRENCY_TYPE, ITEM_TYPE, ROLE_TYPE } from "@/types/Enums";
+import { SortieCostType } from "@/types/Cost";
 
-export const UnitLevelTable: number[] = [
-	0, 120, 129, 140, 152, 165, 182, 200, 218, 241,
-	264, 291, 321, 392, 434, 476, 523, 577, 638, 703,
-	773, 852, 937, 1035, 1141, 1260, 1386, 1528, 1682, 1852,
-	2043, 2251, 2481, 2734, 2982, 3256, 3556, 3890, 4254, 4634,
-	5052, 5511, 6019, 6574, 7227, 7973, 8787, 9614, 10506, 11486,
-	12509, 13584, 14712, 15895, 17132, 18426, 19776, 21185, 22653, 24181,
-	25770, 27421, 29136, 30914, 32757, 34667, 36644, 38688, 40802, 42986,
-	45241, 47568, 49968, 52443, 54992, 57618, 60320, 63101, 65961, 68901,
-	71922, 75025, 78212, 81482, 84837, 88279, 91808, 95424, 99130, 123219,
-	153161, 190380, 236642, 294146, 365624, 454470, 564906, 702178, 872807, 1003728,
-];
+import { getCookie } from "@/libs/Functions";
+
+import { LocaleGet } from "@/components/locale";
+
+export type ImageExtensionTypes = "webp" | "png";
+export const ImageExtensionList: ImageExtensionTypes[] = ["webp", "png"];
+
+export const IsDev = import.meta.env.DEV;
+export const IsStaging = false; // IsDev || false;
+export const IsAprilFool = false; // (d => d.getMonth() === 3 && d.getDate() === 1)(new Date()); // 04-01
+
+export const Host = IsDev
+	? `http://${import.meta.env.VITE_LOCALHOST}:${import.meta.env.VITE_ASSET_PORT}`
+	: IsStaging
+		? "https://staging-lo.swaytwig.com"
+		: "https://lo.swaytwig.com";
+
+export const AssetsRoot = `${Host}/assets`;
+export const DOTRoot = `${Host}/dot`;
+export const DataRoot = `${Host}/json`;
 
 export const SortieCost: SortieCostType = {
 	[ACTOR_GRADE.B]: {
@@ -481,6 +487,122 @@ export const SortieCost: SortieCostType = {
 			},
 		},
 	},
+	[ACTOR_GRADE.SSS]: {
+		[ACTOR_CLASS.LIGHT]: {
+			[ROLE_TYPE.DEFENDER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+			},
+			[ROLE_TYPE.ATTACKER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+			},
+			[ROLE_TYPE.SUPPORTER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+			},
+		},
+		[ACTOR_CLASS.HEAVY]: {
+			[ROLE_TYPE.DEFENDER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+			},
+			[ROLE_TYPE.ATTACKER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+			},
+			[ROLE_TYPE.SUPPORTER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+			},
+		},
+		[ACTOR_CLASS.AIR]: {
+			[ROLE_TYPE.DEFENDER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+			},
+			[ROLE_TYPE.ATTACKER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+			},
+			[ROLE_TYPE.SUPPORTER]: {
+				[ACTOR_BODY_TYPE.BIOROID]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+				[ACTOR_BODY_TYPE.AGS]: {
+					[CURRENCY_TYPE.METAL]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.NUTRIENT]: [0, 0, 0, 0, 0, 0],
+					[CURRENCY_TYPE.POWER]: [0, 0, 0, 0, 0, 0],
+				},
+			},
+		},
+	},
 };
 
 export const RarityDisplay: Record<ACTOR_GRADE, string> = {
@@ -488,18 +610,7 @@ export const RarityDisplay: Record<ACTOR_GRADE, string> = {
 	[ACTOR_GRADE.A]: "A",
 	[ACTOR_GRADE.S]: "S",
 	[ACTOR_GRADE.SS]: "SS",
-};
-
-export const UnitClassDisplay: Record<ACTOR_CLASS, string> = {
-	[ACTOR_CLASS.LIGHT]: "경장",
-	[ACTOR_CLASS.AIR]: "기동",
-	[ACTOR_CLASS.HEAVY]: "중장",
-};
-
-export const UnitRoleDisplay: Record<ROLE_TYPE, string> = {
-	[ROLE_TYPE.ATTACKER]: "공격기",
-	[ROLE_TYPE.DEFENDER]: "보호기",
-	[ROLE_TYPE.SUPPORTER]: "지원기",
+	[ACTOR_GRADE.SSS]: "SSS",
 };
 
 export function EquipTypeDisplay (): Record<ITEM_TYPE, string> {
@@ -513,64 +624,93 @@ export function EquipTypeDisplay (): Record<ITEM_TYPE, string> {
 	};
 }
 
-export const AssetsRoot = process.env.NODE_ENV === "development"
-	? "http://localhost:5500/assets"
-	// ? "https://lo.swaytwig.com/assets"
-	// : "https://lastorigin-wiki-assets.s3.ap-northeast-2.amazonaws.com";
-	: "/assets";
+export const UnitClassDisplay: Record<ACTOR_CLASS, string> = {
+	[ACTOR_CLASS.LIGHT]: "경장",
+	[ACTOR_CLASS.AIR]: "기동",
+	[ACTOR_CLASS.HEAVY]: "중장",
+};
 
-let webpAvailable = false;
-export async function initWEBP () {
-	return new Promise<void>((resolve) => {
-		webpChecker({
-			disableGlobal: true,
-			injectBodyClass: false,
-			imgURL: `${AssetsRoot}/webp/test.webp`,
-			callback: (s) => {
-				webpAvailable = s;
-				resolve();
-			},
-		});
-	});
+export const UnitRoleDisplay: Record<ROLE_TYPE, string> = {
+	[ROLE_TYPE.ATTACKER]: "공격기",
+	[ROLE_TYPE.DEFENDER]: "보호기",
+	[ROLE_TYPE.SUPPORTER]: "지원기",
+};
+
+export const TroopNameTable: Record<string, string> = {
+	/* eslint-disable camelcase */
+	Squad_080_1: "UNIT_GROUP_080",
+	Squad_3PFairy_1: "UNIT_GROUP_3PFairy",
+	Squad_3PFairy_2: "UNIT_GROUP_3PFairy II",
+	Squad_AACannonier_1: "UNIT_GROUP_AACannonier",
+	Squad_AGSRoboTech_1: "UNIT_GROUP_AGSRoboTech",
+	Squad_AGSRoboTech_2: "UNIT_GROUP_AGSRoboTech II",
+	Squad_AGSRoboTech_3: "UNIT_GROUP_AGSRoboTech III",
+	Squad_AGSRoboTech_4: "UNIT_GROUP_AGSRoboTech IV",
+	Squad_AmuseAttendant: "UNIT_GROUP_AmuseAttendant",
+	Squad_AngerOfTheHorde_1: "UNIT_GROUP_AngerOfTheHorde",
+	Squad_AngerOfTheHorde_2: "UNIT_GROUP_AngerOfTheHorde II",
+	Squad_AnywhereSeries_1: "UNIT_GROUP_AnywhereSeries",
+	Squad_AnywhereSeries_2: "UNIT_GROUP_AnywhereSeries II",
+	Squad_ArmoredMaiden_1: "UNIT_GROUP_ArmoredMaiden",
+	Squad_BattleMaid_1: "UNIT_GROUP_BattleMaid",
+	Squad_BattleMaid_2: "UNIT_GROUP_BattleMaid II",
+	Squad_Bermuda_1: "UNIT_GROUP_Bermuda",
+	Squad_Bermuda_2: "UNIT_GROUP_Bermuda II",
+	Squad_Bismarck: "UNIT_GROUP_Bismarck",
+	Squad_Bismarck_2: "UNIT_GROUP_Bismarck",
+	Squad_CityGuard_1: "UNIT_GROUP_CityGuard",
+	Squad_CityGuard_2: "UNIT_GROUP_CityGuard II",
+	Squad_CompanionSeries_1: "UNIT_GROUP_CompanionSeries",
+	Squad_CompanionSeries_2: "UNIT_GROUP_CompanionSeries II",
+	Squad_Dentertainment_1: "UNIT_GROUP_Dentertainment",
+	Squad_Dentertainment_2: "UNIT_GROUP_Dentertainment II",
+	Squad_Dentertainment_3: "UNIT_GROUP_Dentertainment III",
+	Squad_DoomBringer_1: "UNIT_GROUP_DoomBringer",
+	Squad_DoomBringer_2: "UNIT_GROUP_DoomBringer II",
+	Squad_GoldenWorkers_1: "UNIT_GROUP_GoldenWorkers",
+	Squad_GoldenWorkers_2: "UNIT_GROUP_GoldenWorkers II",
+	Squad_Horizon_1: "UNIT_GROUP_Horizon",
+	Squad_Kouhei: "UNIT_GROUP_Kouhei",
+	Squad_OrbitalWatcher_1: "UNIT_GROUP_OrbitalWatcher",
+	Squad_PublicServant_1: "UNIT_GROUP_PublicServant",
+	Squad_PublicServant_2: "UNIT_GROUP_PublicServant II",
+	Squad_PublicServant_3: "UNIT_GROUP_PublicServant III",
+	Squad_SkyKnight_1: "UNIT_GROUP_SkyKnight",
+	Squad_SkyKnight_2: "UNIT_GROUP_SkyKnight II",
+	Squad_SmartEnjoy: "UNIT_GROUP_SmartEnjoy",
+	Squad_SteelLine_1: "UNIT_GROUP_SteelLine",
+	Squad_SteelLine_2: "UNIT_GROUP_SteelLine II",
+	Squad_Strikers: "UNIT_GROUP_Strikers",
+	Squad_TeamMongus_1: "UNIT_GROUP_TeamMongus",
+	Squad_Walhalla_1: "UNIT_GROUP_Walhalla",
+	Squad_Walhalla_2: "UNIT_GROUP_Walhalla II",
+	Squad_WatcherOfNature: "UNIT_GROUP_WatcherOfNature",
+	/* eslint-enable camelcase */
+};
+
+export function ImageExtension (): ImageExtensionTypes {
+	// return webpAvailable ? "webp" : "png";
+	const list = ImageExtensionList as string[];
+	const cookie = getCookie("LO_IMGEXT");
+	if (cookie && list.includes(cookie)) return cookie as ImageExtensionTypes;
+	return "webp";
 }
 
-export function ImageExtension () {
-	return webpAvailable ? "webp" : "png";
+let playableWebM: boolean | null = null;
+export function CanPlayWebM (): boolean {
+	if (typeof playableWebM === "boolean") return playableWebM;
+
+	const video = document.createElement("video");
+	return playableWebM = (video.canPlayType("video/webm") !== "");
 }
 
-export const CurrentEvent = "Ev10";
-export const CurrentDate = (() => {
-	const d = new Date();
-	const y = d.getUTCFullYear() % 100;
-	const m = d.getUTCMonth() + 1;
-	return `${y}/${m}`;
-})();
 
-// export const WorldNames: Record<string, string> = (() => {
-// 	const keys = ["Story", "Sup1", "Cha", "Ev1", "Ev2", "Ev3", "Ev4", "Ev5", "Ev6", "EvA0", "Ev7", "Ev8", "Ev9", "Ev10"];
-// 	const ret: Record<string, string> = {};
-// 	keys.forEach(x => (ret[x] = LocaleGet(`WORLD_${x}`)));
-// 	return ret;
-// })();
-export const WorldIds: string[] = ["Story", "Sup1", "Cha", "Ev1", "Ev2", "Ev3", "Ev4", "Ev5", "Ev6", "EvA0", "Ev7", "Ev8", "Ev9", "Ev10"];
-
-// export const WorldDescriptions: Record<string, string> = {
-// 	Story: "",
-// 	Sup1: "",
-// 	Cha: "",
-// 	Ev1: "소완으로 인해 혼란에 빠진 오르카 안에선 무슨 일이?",
-// 	Ev2: "리오보로스의 유산을 찾아 떠나는 모험!",
-// 	Ev3: "마법 소녀들과 함께 뽀끄루 대마왕을 물리쳐주세요!",
-// 	Ev4: "과거에 얽매이지 마. 지금을 즐기는 거야!",
-// 	Ev5: "연말 파티를 준비하는 사령관에게 뻗쳐오는 마수는?",
-// 	Ev6: "티아멧은 '초코 여왕'과 얽힌 멸망 전 인류의 일그러짐과 마주하는데..",
-// 	Ev7: "가벼운 마음으로 요정 마을로 향한 사령관에게...?",
-// 	Ev8: "왓슨, 드디어 대단원이야!",
-// 	Ev9: "당신이 바라는 욕망은 무엇인가요?",
-// 	Ev10: "혼란스러운 오르카 호에서, 사령관은 웃고 있다...",
-// };
-
-export const SupplementaryUnit: Record<string, string> = {
+export const WorldIds: string[] = [
+	"Story", "Sub", "Cha",
+	"Ev1", "Ev2", "Ev3", "Ev4", "Ev5", "Ev6", "EvA0", "Ev7", "Ev8", "Ev9", "Ev10",
+	"Ev11", "Ev12", "Ev13", "Ev14", "Ev15", "Ev16", "Ev17", "Ev18",
+];
+export const SubStoryUnit: Record<string, string> = {
 	"S1-1": "AGS_Rampart",
 	"S1-2": "3P_ConstantiaS2",
 	"S2-1": "3P_Sowan",
@@ -582,4 +722,19 @@ export const SupplementaryUnit: Record<string, string> = {
 	"S10-1": "AGS_Rampart",
 	"S11-1": "3P_Aurora",
 	"S12-1": "3P_CSPerrault",
+	"S13-1": "3P_BlackLilith",
+	"S14-1": "BR_Brownie",
 };
+
+export const PermanentEvents: string[] = ["Ev1", "Ev2", "Ev3", "Ev4", "Ev5", "Ev6"];
+export const NewMapList: string[] = [];
+export const CurrentEvent = "Ev10";
+export const EventFrom = new Date(2022, 9 - 1, 5);
+export const EventTo = new Date(2022, 10 - 1, 3);
+
+export const CurrentDate = ((): string => {
+	const d = new Date();
+	const y = d.getUTCFullYear() % 100;
+	const m = d.getUTCMonth() + 1;
+	return `${y}/${m}`;
+})();

@@ -1,0 +1,28 @@
+.SkillTableFChange {
+	background-color: rgba($warning, 0.15);
+}
+.SkillFlavor {
+	position: relative;
+	margin: 0.5em 0 0.125em;
+	padding: 0.5em 2.25em;
+	background-color: transparentize($dark, 0.92);
+	text-align: left;
+	white-space: pre-wrap;
+
+	&::before,
+	&::after {
+		position: absolute;
+		display: inline-block;
+		top: 0;
+		font-size: 250%;
+		color: transparentize($dark, 0.2);
+	}
+	&::before {
+		content: "“";
+		left: 0.25em;
+	}
+	&::after {
+		content: "”";
+		right: 0.25em;
+	}
+}

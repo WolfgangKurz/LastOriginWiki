@@ -1,5 +1,15 @@
-import { SupplementaryUnit } from "@/libs/Const";
-import { LocaleGet } from "@/libs/Locale";
+import { SubStoryUnit } from "@/libs/Const";
+import { LocaleGet } from "@/components/locale";
+
+interface EntitySourceMonthlyData {
+	year: number;
+	month: number;
+}
+
+interface EntitySourceExchangePrice {
+	item: string;
+	value: number;
+}
 
 export default class EntitySource {
 	public readonly source: string;
@@ -8,34 +18,34 @@ export default class EntitySource {
 		this.source = source;
 	}
 
-	private get Parts () {
+	private get Parts (): string[] {
 		return this.source.split(":");
 	}
 
 	// -------------- SourceBadge 컴포넌트 사용
 	/** 전용 장비 여부 */
-	public get IsPrivateItem () {
+	public get IsPrivateItem (): boolean {
 		return this.Parts[0] === "Private";
 	}
 
 	/** 전용 장비 사용 가능 전투원 */
-	public get PrivateId () {
+	public get PrivateId (): string {
 		return this.Parts[1];
 	}
 
 	// -------------- 교환소
 	/** 교환소 교환 획득 여부 */
-	public get IsExchange () {
+	public get IsExchange (): boolean {
 		return this.Parts.includes("Exc");
 	}
 
 	/** 월간 교환소 획득 여부 (전투원/장비 탭) */
-	public get IsMonthly () {
+	public get IsMonthly (): boolean {
 		return this.IsExchange && this.Parts.length === 3;
 	}
 
 	/** 월간 교환소 정보 (전투원/장비 탭) */
-	public get MonthlyData () {
+	public get MonthlyData (): EntitySourceMonthlyData | null {
 		if (!this.IsMonthly) return null;
 
 		return {
@@ -45,7 +55,7 @@ export default class EntitySource {
 	}
 
 	/** 이벤트 교환소 교환에 필요한 자원 및 수량 */
-	public get ExchangePrice () {
+	public get ExchangePrice (): EntitySourceExchangePrice | null {
 		if (!this.IsEvent || !this.IsExchange) return null;
 
 		const offset = this.Parts.findIndex(x => x === "Exc");
@@ -55,7 +65,7 @@ export default class EntitySource {
 		};
 	}
 
-	public get ExchangeItemName () {
+	public get ExchangeItemName (): string {
 		const exc = this.ExchangePrice;
 		if (!exc) return "";
 
@@ -69,66 +79,68 @@ export default class EntitySource {
 			case "Battery4FM": return "대형 배터리";
 			case "BatteryFC-1": return "중형 배터리";
 			case "BatteryAA": return "소형 배터리";
+			case "NewYearTalent": return "오르카 달란트";
+			case "NewYearGoods": return "신년 행사 용품";
+			case "NewYearFood": return "신년 떡 세트";
+			case "SkyIdolGoods1": return "스카이나이츠 캔뱃지";
+			case "SkyIdolGoods10": return "스카이나이츠 응원봉";
+			case "SkyIdolGoods100": return "공연 입장 티켓";
 		}
 		return "???";
 	}
 
-	public get ExchangeDate () {
+	public get ExchangeDate (): string {
 		if (!this.IsExchange || this.IsEvent) return "";
-
 		return `${this.Parts[1]}/${this.Parts[2]}`;
 	}
 	// -------------- 교환소
 
 	// -------------- 이벤트
 	/** 이벤트 획득 여부 */
-	public get IsEvent () {
+	public get IsEvent (): boolean {
 		return this.Parts[0] === "Ev";
 	}
 
 	/** 이벤트 Id */
-	public get EventId () {
+	public get EventId (): string {
 		if (this.IsEvent)
 			return this.Parts[1];
 		return "Story";
 	}
 
-	/** 이벤트 이름 */
-	public get EventName () {
+	/** 이벤트 이름 **Locale Key** */
+	public get EventName (): string {
 		if (!this.IsEvent) return "";
-
-		return LocaleGet([`WORLD_${this.Parts[1]}`, this.Parts[1]]);
+		return `WORLD_${this.Parts[1]}`;
 	}
 
 	/** 부수를 포함한 이벤트 이름 */
-	public get FullEventName () {
+	public get FullEventName (): string {
 		if (!this.IsEvent) return "";
 
 		if (this.Parts.length === 4) {
 			const part = this.Parts[2];
-			if (part) return `${this.EventName} (${part}부)`;
+			if (part) return LocaleGet("COMMON_SOURCE_EVENT_PART", this.EventName, part);
 			return this.EventName; // 부수가 없으면 이벤트 이름 그대로
-		} else
-			return this.EventName;
+		} return this.EventName;
 	}
 	// -------------- 이벤트
 
 	// -------------- 외부 통신 요청
 	/** 외부 통신 요청의 보상 여부 */
-	public get IsChallenge () {
+	public get IsChallenge (): boolean {
 		return this.Parts[0].startsWith("Cha") || this.Parts[0].startsWith("*Cha");
 	}
 
 	/** 외부 통신 요청의 챌린지 Id */
-	public get ChallengeId () {
+	public get ChallengeId (): string {
 		if (!this.IsChallenge) return "";
-
 		return this.Parts[0].replace(/^\*?Cha([0-9]+)-.+$/, "$1");
 	}
 
-	/** 외부 통신 요청의 챌린지 이름 */
-	public get ChallengeName () {
-		return LocaleGet([`CHALLENGE_${this.ChallengeId}`, this.ChallengeId.toString()]);
+	/** 외부 통신 요청의 챌린지 이름 **Locale Key** */
+	public get ChallengeName (): string {
+		return `CHALLENGE_${this.ChallengeId}`;
 		// switch (this.ChallengeId) {
 		// 	case "1": return "밀고, 당기고, 불질러!";
 		// 	case "2": return "피조물과 설계자";
@@ -140,14 +152,14 @@ export default class EntitySource {
 	}
 
 	/** 외부 통신 요청의 챌린지 난이도 (1~4) */
-	public get ChallengeDifficulty () {
-		if (!this.IsChallenge) return 0;
-		const difficulty = (() => {
+	public get ChallengeDifficulty (): string {
+		if (!this.IsChallenge) return "";
+		const difficulty = ((): string[] => {
 			switch (this.ChallengeId) {
 				case "4":
 					return ["", "TROOPER", "MOBILITY", "ARMORED", "MAX"];
 				default:
-					return ["", "NORMAL", "HARD", "VERY HARD", "EXETREAM"];
+					return ["", "NORMAL", "HARD", "VERY HARD", "EXTREME"];
 			}
 		})();
 		return difficulty[parseInt(this.Parts[0].replace(/^\*?Cha[0-9]+-(.+)$/, "$1"), 10)];
@@ -156,38 +168,38 @@ export default class EntitySource {
 
 	// -------------- 맵
 	/** 사이드 스테이지 여부 */
-	public get IsSideMap () {
+	public get IsSideMap (): boolean {
 		if (!this.IsMap) return false;
 		if (this.IsEvent) { // 이벤트 맵인 경우는 지역이 4번째에 위치
 			return this.Parts.length === 4
 				? this.Parts[3].includes("B") || this.Parts[3].includes("s")
 				: this.Parts[2].includes("B") || this.Parts[2].includes("s");
-		} else
-			return this.Parts[0].includes("B") || this.Parts[0].includes("s");
+		} return this.Parts[0].includes("B") || this.Parts[0].includes("s");
 	}
 
 	/** Ex 스테이지 여부 */
-	public get IsExMap () {
+	public get IsExMap (): boolean {
 		if (!this.IsMap) return false;
 		if (this.IsEvent) { // 이벤트 맵인 경우는 지역이 4번째에 위치
 			return this.Parts.length === 4
 				? this.Parts[3].includes("Ex")
 				: this.Parts[2].includes("Ex");
-		} else
-			return this.Parts[0].includes("Ex");
+		} return this.Parts[0].includes("Ex");
 	}
 
 	/** 맵 보상 여부 */
-	public get IsMap () {
+	public get IsMap (): boolean {
 		return ![
-			this.IsEndlessWar, this.IsSupplementary, this.IsExchange,
+			this.IsEternalWarExchange, this.IsNewEternalWarExchange,
+			this.IsNewEternalWar,
+			this.IsSubStory, this.IsExchange,
 			this.IsLimited, this.IsPrivateItem, this.IsChallenge,
-			this.IsUninstalled,
+			this.IsUninstalled, this.IsRoguelike,
 		].some(x => x);
 	}
 
 	/** 클리어 보상 여부 */
-	public get IsReward () {
+	public get IsReward (): boolean {
 		if (this.IsEvent) {
 			return this.Parts.length === 4
 				? this.Parts[3][0] === "*"
@@ -199,59 +211,97 @@ export default class EntitySource {
 	}
 
 	/** 맵 이름 */
-	public get Map () {
-		const index = this.IsEvent ? this.Parts.length - 1 : 0;
-		return this.IsReward ? this.Parts[index].substr(1) : this.Parts[index];
+	public get Map (): string {
+		const index = this.IsEvent
+			? this.Parts.length - 1
+			: this.IsSubStory
+				? 1
+				: 0;
+		return this.IsReward && !this.IsSubStory
+			? this.Parts[index].substr(1)
+			: this.Parts[index];
 	}
 	// -------------- 맵
 
 	// -------------- 외전
 	/** 외전 획득 여부 */
-	public get IsSupplementary () {
-		return this.Parts[0].startsWith("S") || this.Parts[0].startsWith("*S");
+	public get IsSubStory (): boolean {
+		return this.Parts[0].startsWith("Sub") || this.Parts[0].startsWith("*Sub");
+	}
+
+	/** 외전 그룹 */
+	public get SubStoryGroup (): string {
+		if (!this.IsSubStory) return "";
+		if (this.Parts[0][0] === "*")
+			return this.Parts[0].substr(1);
+		return this.Parts[0];
 	}
 
 	/** 외전 대상 전투원 */
-	public get SupplementaryUnit () {
-		if (!this.IsSupplementary) return 0;
-
-		if (this.Parts[0][0] === "*")
-			return SupplementaryUnit[this.Parts[0].substr(1)];
-		else
-			return SupplementaryUnit[this.Parts[0]];
+	public get SubStoryUnit (): string {
+		if (!this.IsSubStory) return "";
+		return SubStoryUnit[this.Parts[1]];
 	}
 	// -------------- 외전
 
-	// -------------- 영전
-	/** 영전 획득 여부 */
-	public get IsEndlessWar () {
-		return this.Parts[0] === "EndlessWar";
+	// -------------- 영전 / 변화의성소
+	/** 영전 교환 여부 */
+	public get IsEternalWarExchange (): boolean {
+		return this.Parts[0] === "Alterium";
+	}
+
+	/** 변화의성소 교환 여부 */
+	public get IsNewEternalWarExchange (): boolean {
+		return this.Parts[0] === "RefinedAlterium";
+	}
+
+	/** 변화의성소 획득 여부 */
+	public get IsNewEternalWar (): boolean {
+		return this.Parts[0] === "NewEternalWar";
 	}
 
 	/** 광물 가격 */
-	public get EndlessWarPrice () {
-		if (!this.IsEndlessWar) return 0;
+	public get EternalWarPrice (): number {
+		if (!this.IsEternalWarExchange && !this.IsNewEternalWarExchange) return 0;
 		return parseInt(this.Parts[1], 10);
+	}
+	public get NewEternalWarPrice (): number {
+		return this.EternalWarPrice;
+	}
+
+	/** 변화의성소 맵 */
+	public get NewEternalWar (): string {
+		if (!this.IsNewEternalWar) return "";
+		return this.Parts[1];
 	}
 	// -------------- 영전
 
 	// -------------- 한정
-	public get IsLimited () {
+	public get IsLimited (): boolean {
 		return this.Parts[0] === "Limited";
 	}
 	// -------------- 한정
 
 	// -------------- 미실장
-	public get IsUninstalled () {
+	public get IsUninstalled (): boolean {
 		return this.Parts[0] === "Uninstalled";
 	}
 	// -------------- 미실장
 
-	public toShort () {
+	// -------------- 로그라이크
+	public get IsRoguelike (): boolean {
+		return this.Parts[0] === "Roguelike";
+	}
+	// -------------- 로그라이크
+
+	public toShort (): string {
 		const output: string[] = [];
 
 		if (this.IsUninstalled)
 			output.push("Uninstalled");
+
+		if (this.IsRoguelike)
+			output.push("Roguelike");
 
 		if (this.IsPrivateItem)
 			output.push("Private");
@@ -264,10 +314,16 @@ export default class EntitySource {
 
 		if (this.IsChallenge)
 			output.push("Challenge");
-		else if (this.IsEndlessWar)
-			output.push("EW");
-		else if (this.IsSupplementary)
-			output.push("Supplementary");
+
+		else if (this.IsEternalWarExchange)
+			output.push("EWR");
+		else if (this.IsNewEternalWarExchange)
+			output.push("NEWR");
+		else if (this.IsNewEternalWar)
+			output.push("NEW");
+
+		else if (this.IsSubStory)
+			output.push("SubStory");
 		else if (this.IsExchange) {
 			if (this.IsMonthly)
 				output.push("MExc");
@@ -283,32 +339,38 @@ export default class EntitySource {
 		return output.join(",");
 	}
 
-	public toString () {
+	public toString (): string {
 		const output: string[] = [];
 
 		if (this.IsUninstalled)
 			output.push("Uninstalled");
 
 		if (this.IsPrivateItem)
-			output.push("Private:" + this.PrivateId);
+			output.push(`Private:${this.PrivateId}`);
 
 		if (this.IsLimited)
 			output.push("Limit");
 
 		if (this.IsChallenge) {
 			if (this.IsReward)
-				output.push("*Challenge:" + this.ChallengeId + ":" + this.ChallengeDifficulty);
+				output.push(`*Challenge:${this.ChallengeId}:${this.ChallengeDifficulty}`);
 			else
-				output.push("Challenge:" + this.ChallengeId + ":" + this.ChallengeDifficulty);
-		} else if (this.IsEndlessWar)
-			output.push("EW");
-		else if (this.IsSupplementary)
-			output.push("Supplementary:" + this.SupplementaryUnit);
+				output.push(`Challenge:${this.ChallengeId}:${this.ChallengeDifficulty}`);
+
+		} else if (this.IsEternalWarExchange)
+			output.push("EWR");
+		else if (this.IsNewEternalWarExchange)
+			output.push("NEWR");
+		else if (this.IsNewEternalWar)
+			output.push(`NEW:${this.NewEternalWar}`);
+
+		else if (this.IsSubStory)
+			output.push(`SubStory:${this.SubStoryUnit}`);
 		else if (this.IsExchange) {
 			if (this.IsMonthly)
-				output.push("MExc:" + this.ExchangeDate);
+				output.push(`MExc:${this.ExchangeDate}`);
 			else if (this.IsEvent)
-				output.push("EExc:" + this.EventName);
+				output.push(`EExc:${this.EventName}`);
 			else
 				output.push("Exc");
 		} else if (this.IsEvent) {
